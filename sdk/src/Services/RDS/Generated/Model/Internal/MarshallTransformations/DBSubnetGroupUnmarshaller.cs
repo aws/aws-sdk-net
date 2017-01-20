@@ -54,6 +54,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("DBSubnetGroupArn", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DBSubnetGroupArn = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("DBSubnetGroupDescription", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

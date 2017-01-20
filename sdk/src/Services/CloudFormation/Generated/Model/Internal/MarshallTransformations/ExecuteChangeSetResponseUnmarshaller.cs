@@ -103,6 +103,10 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
             {
                 return new ChangeSetNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InsufficientCapabilitiesException"))
+            {
+                return new InsufficientCapabilitiesException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidChangeSetStatus"))
             {
                 return new InvalidChangeSetStatusException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);

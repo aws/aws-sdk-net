@@ -120,7 +120,10 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InstanceProfileList.
+        /// Gets and sets the property InstanceProfileList. 
+        /// <para>
+        /// A list of instance profiles that contain this role.
+        /// </para>
         /// </summary>
         public List<InstanceProfile> InstanceProfileList
         {

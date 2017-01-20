@@ -35,7 +35,11 @@ namespace Amazon.ElasticBeanstalk.Model
     /// <para>
     /// Related Topics
     /// </para>
-    ///  <ul> <li> <a>RequestEnvironmentInfo</a> </li> </ul>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>RequestEnvironmentInfo</a> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class RetrieveEnvironmentInfoRequest : AmazonElasticBeanstalkRequest
     {
@@ -51,7 +55,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Instantiates RetrieveEnvironmentInfoRequest with the parameterized properties
         /// </summary>
-        /// <param name="infoType"> The type of information to retrieve. </param>
+        /// <param name="infoType">The type of information to retrieve.</param>
         public RetrieveEnvironmentInfoRequest(EnvironmentInfoType infoType)
         {
             _infoType = infoType;
@@ -117,7 +121,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property InfoType. 
         /// <para>
-        ///  The type of information to retrieve. 
+        /// The type of information to retrieve.
         /// </para>
         /// </summary>
         public EnvironmentInfoType InfoType

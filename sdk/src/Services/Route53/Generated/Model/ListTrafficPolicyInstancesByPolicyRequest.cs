@@ -32,15 +32,17 @@ namespace Amazon.Route53.Model
     /// Gets information about the traffic policy instances that you created by using a specify
     /// traffic policy version.
     /// 
-    ///  <note>After you submit a <code>CreateTrafficPolicyInstance</code> or an <code>UpdateTrafficPolicyInstance</code>
+    ///  <note> 
+    /// <para>
+    /// After you submit a <code>CreateTrafficPolicyInstance</code> or an <code>UpdateTrafficPolicyInstance</code>
     /// request, there's a brief delay while Amazon Route 53 creates the resource record sets
     /// that are specified in the traffic policy definition. For more information, see the
-    /// <a>State</a> response element.</note> 
+    /// <code>State</code> response element.
+    /// </para>
+    ///  </note> 
     /// <para>
-    /// To get information about the traffic policy instances that you created by using a
-    /// specify traffic policy version, send a <code>GET</code> request to the <code>/<i>Route
-    /// 53 API version</i>/trafficpolicyinstance</code> resource and include the ID and version
-    /// of the traffic policy.
+    /// Send a <code>GET</code> request to the <code>/<i>Route 53 API version</i>/trafficpolicyinstance</code>
+    /// resource and include the ID and version of the traffic policy.
     /// </para>
     ///  
     /// <para>
@@ -53,7 +55,11 @@ namespace Amazon.Route53.Model
     /// The response includes five values that help you navigate from one group of <code>MaxItems</code>
     /// traffic policy instances to the next:
     /// </para>
-    ///  <ul> <li><b>IsTruncated</b> 
+    ///  <ul> <li> 
+    /// <para>
+    ///  <b>IsTruncated</b> 
+    /// </para>
+    ///  
     /// <para>
     /// If the value of <code>IsTruncated</code> in the response is <code>true</code>, there
     /// are more traffic policy instances associated with the specified traffic policy.
@@ -63,13 +69,21 @@ namespace Amazon.Route53.Model
     /// If <code>IsTruncated</code> is <code>false</code>, this response includes the last
     /// traffic policy instance that is associated with the specified traffic policy.
     /// </para>
-    ///  </li> <li><b>MaxItems</b> 
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>MaxItems</b> 
+    /// </para>
+    ///  
     /// <para>
     /// The value that you specified for the <code>MaxItems</code> parameter in the request
     /// that produced the current response.
     /// </para>
-    ///  </li> <li><b>HostedZoneIdMarker</b>, <b>TrafficPolicyInstanceNameMarker</b>, and
-    /// <b>TrafficPolicyInstanceTypeMarker</b> 
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>HostedZoneIdMarker</b>, <b>TrafficPolicyInstanceNameMarker</b>, and <b>TrafficPolicyInstanceTypeMarker</b>
+    /// 
+    /// </para>
+    ///  
     /// <para>
     /// If <code>IsTruncated</code> is <code>true</code>, these values in the response represent
     /// the first traffic policy instance in the next group of <code>MaxItems</code> traffic

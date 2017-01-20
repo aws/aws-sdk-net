@@ -19,6 +19,7 @@
 
 using System;
 using System.Collections.Generic;
+
 using Amazon.Runtime;
 using Amazon.IdentityManagement.Model;
 
@@ -104,7 +105,7 @@ namespace Amazon.IdentityManagement
     /// </para>
     ///  </li> </ul>
     /// </summary>
-    public partial interface IAmazonIdentityManagementService : IDisposable
+    public partial interface IAmazonIdentityManagementService : IAmazonService, IDisposable
     {
 
         
@@ -119,6 +120,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AddClientIDToOpenIDConnectProvider">REST API Reference for AddClientIDToOpenIDConnectProvider Operation</seealso>
         void AddClientIDToOpenIDConnectProviderAsync(AddClientIDToOpenIDConnectProviderRequest request, AmazonServiceCallback<AddClientIDToOpenIDConnectProviderRequest, AddClientIDToOpenIDConnectProviderResponse> callback, AsyncOptions options = null);
 
 
@@ -135,6 +137,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AddRoleToInstanceProfile">REST API Reference for AddRoleToInstanceProfile Operation</seealso>
         void AddRoleToInstanceProfileAsync(AddRoleToInstanceProfileRequest request, AmazonServiceCallback<AddRoleToInstanceProfileRequest, AddRoleToInstanceProfileResponse> callback, AsyncOptions options = null);
 
 
@@ -151,6 +154,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AddUserToGroup">REST API Reference for AddUserToGroup Operation</seealso>
         void AddUserToGroupAsync(AddUserToGroupRequest request, AmazonServiceCallback<AddUserToGroupRequest, AddUserToGroupResponse> callback, AsyncOptions options = null);
 
 
@@ -167,6 +171,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AttachGroupPolicy">REST API Reference for AttachGroupPolicy Operation</seealso>
         void AttachGroupPolicyAsync(AttachGroupPolicyRequest request, AmazonServiceCallback<AttachGroupPolicyRequest, AttachGroupPolicyResponse> callback, AsyncOptions options = null);
 
 
@@ -183,6 +188,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AttachRolePolicy">REST API Reference for AttachRolePolicy Operation</seealso>
         void AttachRolePolicyAsync(AttachRolePolicyRequest request, AmazonServiceCallback<AttachRolePolicyRequest, AttachRolePolicyResponse> callback, AsyncOptions options = null);
 
 
@@ -199,6 +205,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AttachUserPolicy">REST API Reference for AttachUserPolicy Operation</seealso>
         void AttachUserPolicyAsync(AttachUserPolicyRequest request, AmazonServiceCallback<AttachUserPolicyRequest, AttachUserPolicyResponse> callback, AsyncOptions options = null);
 
 
@@ -215,6 +222,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ChangePassword">REST API Reference for ChangePassword Operation</seealso>
         void ChangePasswordAsync(ChangePasswordRequest request, AmazonServiceCallback<ChangePasswordRequest, ChangePasswordResponse> callback, AsyncOptions options = null);
 
 
@@ -231,6 +239,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateAccessKey">REST API Reference for CreateAccessKey Operation</seealso>
         void CreateAccessKeyAsync(CreateAccessKeyRequest request, AmazonServiceCallback<CreateAccessKeyRequest, CreateAccessKeyResponse> callback, AsyncOptions options = null);
 
 
@@ -247,6 +256,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateAccountAlias">REST API Reference for CreateAccountAlias Operation</seealso>
         void CreateAccountAliasAsync(CreateAccountAliasRequest request, AmazonServiceCallback<CreateAccountAliasRequest, CreateAccountAliasResponse> callback, AsyncOptions options = null);
 
 
@@ -263,6 +273,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateGroup">REST API Reference for CreateGroup Operation</seealso>
         void CreateGroupAsync(CreateGroupRequest request, AmazonServiceCallback<CreateGroupRequest, CreateGroupResponse> callback, AsyncOptions options = null);
 
 
@@ -279,6 +290,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateInstanceProfile">REST API Reference for CreateInstanceProfile Operation</seealso>
         void CreateInstanceProfileAsync(CreateInstanceProfileRequest request, AmazonServiceCallback<CreateInstanceProfileRequest, CreateInstanceProfileResponse> callback, AsyncOptions options = null);
 
 
@@ -295,6 +307,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateLoginProfile">REST API Reference for CreateLoginProfile Operation</seealso>
         void CreateLoginProfileAsync(CreateLoginProfileRequest request, AmazonServiceCallback<CreateLoginProfileRequest, CreateLoginProfileResponse> callback, AsyncOptions options = null);
 
 
@@ -311,6 +324,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateOpenIDConnectProvider">REST API Reference for CreateOpenIDConnectProvider Operation</seealso>
         void CreateOpenIDConnectProviderAsync(CreateOpenIDConnectProviderRequest request, AmazonServiceCallback<CreateOpenIDConnectProviderRequest, CreateOpenIDConnectProviderResponse> callback, AsyncOptions options = null);
 
 
@@ -327,6 +341,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreatePolicy">REST API Reference for CreatePolicy Operation</seealso>
         void CreatePolicyAsync(CreatePolicyRequest request, AmazonServiceCallback<CreatePolicyRequest, CreatePolicyResponse> callback, AsyncOptions options = null);
 
 
@@ -343,6 +358,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreatePolicyVersion">REST API Reference for CreatePolicyVersion Operation</seealso>
         void CreatePolicyVersionAsync(CreatePolicyVersionRequest request, AmazonServiceCallback<CreatePolicyVersionRequest, CreatePolicyVersionResponse> callback, AsyncOptions options = null);
 
 
@@ -359,6 +375,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateRole">REST API Reference for CreateRole Operation</seealso>
         void CreateRoleAsync(CreateRoleRequest request, AmazonServiceCallback<CreateRoleRequest, CreateRoleResponse> callback, AsyncOptions options = null);
 
 
@@ -375,7 +392,25 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateSAMLProvider">REST API Reference for CreateSAMLProvider Operation</seealso>
         void CreateSAMLProviderAsync(CreateSAMLProviderRequest request, AmazonServiceCallback<CreateSAMLProviderRequest, CreateSAMLProviderResponse> callback, AsyncOptions options = null);
+
+
+        #endregion
+        
+        #region  CreateServiceSpecificCredential
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateServiceSpecificCredential operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateServiceSpecificCredential operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateServiceSpecificCredential">REST API Reference for CreateServiceSpecificCredential Operation</seealso>
+        void CreateServiceSpecificCredentialAsync(CreateServiceSpecificCredentialRequest request, AmazonServiceCallback<CreateServiceSpecificCredentialRequest, CreateServiceSpecificCredentialResponse> callback, AsyncOptions options = null);
 
 
         #endregion
@@ -391,6 +426,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateUser">REST API Reference for CreateUser Operation</seealso>
         void CreateUserAsync(CreateUserRequest request, AmazonServiceCallback<CreateUserRequest, CreateUserResponse> callback, AsyncOptions options = null);
 
 
@@ -407,6 +443,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateVirtualMFADevice">REST API Reference for CreateVirtualMFADevice Operation</seealso>
         void CreateVirtualMFADeviceAsync(CreateVirtualMFADeviceRequest request, AmazonServiceCallback<CreateVirtualMFADeviceRequest, CreateVirtualMFADeviceResponse> callback, AsyncOptions options = null);
 
 
@@ -423,6 +460,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeactivateMFADevice">REST API Reference for DeactivateMFADevice Operation</seealso>
         void DeactivateMFADeviceAsync(DeactivateMFADeviceRequest request, AmazonServiceCallback<DeactivateMFADeviceRequest, DeactivateMFADeviceResponse> callback, AsyncOptions options = null);
 
 
@@ -439,6 +477,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteAccessKey">REST API Reference for DeleteAccessKey Operation</seealso>
         void DeleteAccessKeyAsync(DeleteAccessKeyRequest request, AmazonServiceCallback<DeleteAccessKeyRequest, DeleteAccessKeyResponse> callback, AsyncOptions options = null);
 
 
@@ -455,6 +494,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteAccountAlias">REST API Reference for DeleteAccountAlias Operation</seealso>
         void DeleteAccountAliasAsync(DeleteAccountAliasRequest request, AmazonServiceCallback<DeleteAccountAliasRequest, DeleteAccountAliasResponse> callback, AsyncOptions options = null);
 
 
@@ -471,6 +511,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteAccountPasswordPolicy">REST API Reference for DeleteAccountPasswordPolicy Operation</seealso>
         void DeleteAccountPasswordPolicyAsync(DeleteAccountPasswordPolicyRequest request, AmazonServiceCallback<DeleteAccountPasswordPolicyRequest, DeleteAccountPasswordPolicyResponse> callback, AsyncOptions options = null);
 
 
@@ -487,6 +528,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteGroup">REST API Reference for DeleteGroup Operation</seealso>
         void DeleteGroupAsync(DeleteGroupRequest request, AmazonServiceCallback<DeleteGroupRequest, DeleteGroupResponse> callback, AsyncOptions options = null);
 
 
@@ -503,6 +545,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteGroupPolicy">REST API Reference for DeleteGroupPolicy Operation</seealso>
         void DeleteGroupPolicyAsync(DeleteGroupPolicyRequest request, AmazonServiceCallback<DeleteGroupPolicyRequest, DeleteGroupPolicyResponse> callback, AsyncOptions options = null);
 
 
@@ -519,6 +562,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteInstanceProfile">REST API Reference for DeleteInstanceProfile Operation</seealso>
         void DeleteInstanceProfileAsync(DeleteInstanceProfileRequest request, AmazonServiceCallback<DeleteInstanceProfileRequest, DeleteInstanceProfileResponse> callback, AsyncOptions options = null);
 
 
@@ -535,6 +579,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteLoginProfile">REST API Reference for DeleteLoginProfile Operation</seealso>
         void DeleteLoginProfileAsync(DeleteLoginProfileRequest request, AmazonServiceCallback<DeleteLoginProfileRequest, DeleteLoginProfileResponse> callback, AsyncOptions options = null);
 
 
@@ -551,6 +596,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteOpenIDConnectProvider">REST API Reference for DeleteOpenIDConnectProvider Operation</seealso>
         void DeleteOpenIDConnectProviderAsync(DeleteOpenIDConnectProviderRequest request, AmazonServiceCallback<DeleteOpenIDConnectProviderRequest, DeleteOpenIDConnectProviderResponse> callback, AsyncOptions options = null);
 
 
@@ -567,6 +613,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeletePolicy">REST API Reference for DeletePolicy Operation</seealso>
         void DeletePolicyAsync(DeletePolicyRequest request, AmazonServiceCallback<DeletePolicyRequest, DeletePolicyResponse> callback, AsyncOptions options = null);
 
 
@@ -583,6 +630,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeletePolicyVersion">REST API Reference for DeletePolicyVersion Operation</seealso>
         void DeletePolicyVersionAsync(DeletePolicyVersionRequest request, AmazonServiceCallback<DeletePolicyVersionRequest, DeletePolicyVersionResponse> callback, AsyncOptions options = null);
 
 
@@ -599,6 +647,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteRole">REST API Reference for DeleteRole Operation</seealso>
         void DeleteRoleAsync(DeleteRoleRequest request, AmazonServiceCallback<DeleteRoleRequest, DeleteRoleResponse> callback, AsyncOptions options = null);
 
 
@@ -615,6 +664,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteRolePolicy">REST API Reference for DeleteRolePolicy Operation</seealso>
         void DeleteRolePolicyAsync(DeleteRolePolicyRequest request, AmazonServiceCallback<DeleteRolePolicyRequest, DeleteRolePolicyResponse> callback, AsyncOptions options = null);
 
 
@@ -631,6 +681,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteSAMLProvider">REST API Reference for DeleteSAMLProvider Operation</seealso>
         void DeleteSAMLProviderAsync(DeleteSAMLProviderRequest request, AmazonServiceCallback<DeleteSAMLProviderRequest, DeleteSAMLProviderResponse> callback, AsyncOptions options = null);
 
 
@@ -647,7 +698,25 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteServerCertificate">REST API Reference for DeleteServerCertificate Operation</seealso>
         void DeleteServerCertificateAsync(DeleteServerCertificateRequest request, AmazonServiceCallback<DeleteServerCertificateRequest, DeleteServerCertificateResponse> callback, AsyncOptions options = null);
+
+
+        #endregion
+        
+        #region  DeleteServiceSpecificCredential
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteServiceSpecificCredential operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteServiceSpecificCredential operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteServiceSpecificCredential">REST API Reference for DeleteServiceSpecificCredential Operation</seealso>
+        void DeleteServiceSpecificCredentialAsync(DeleteServiceSpecificCredentialRequest request, AmazonServiceCallback<DeleteServiceSpecificCredentialRequest, DeleteServiceSpecificCredentialResponse> callback, AsyncOptions options = null);
 
 
         #endregion
@@ -663,6 +732,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteSigningCertificate">REST API Reference for DeleteSigningCertificate Operation</seealso>
         void DeleteSigningCertificateAsync(DeleteSigningCertificateRequest request, AmazonServiceCallback<DeleteSigningCertificateRequest, DeleteSigningCertificateResponse> callback, AsyncOptions options = null);
 
 
@@ -679,6 +749,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteSSHPublicKey">REST API Reference for DeleteSSHPublicKey Operation</seealso>
         void DeleteSSHPublicKeyAsync(DeleteSSHPublicKeyRequest request, AmazonServiceCallback<DeleteSSHPublicKeyRequest, DeleteSSHPublicKeyResponse> callback, AsyncOptions options = null);
 
 
@@ -695,6 +766,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteUser">REST API Reference for DeleteUser Operation</seealso>
         void DeleteUserAsync(DeleteUserRequest request, AmazonServiceCallback<DeleteUserRequest, DeleteUserResponse> callback, AsyncOptions options = null);
 
 
@@ -711,6 +783,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteUserPolicy">REST API Reference for DeleteUserPolicy Operation</seealso>
         void DeleteUserPolicyAsync(DeleteUserPolicyRequest request, AmazonServiceCallback<DeleteUserPolicyRequest, DeleteUserPolicyResponse> callback, AsyncOptions options = null);
 
 
@@ -727,6 +800,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteVirtualMFADevice">REST API Reference for DeleteVirtualMFADevice Operation</seealso>
         void DeleteVirtualMFADeviceAsync(DeleteVirtualMFADeviceRequest request, AmazonServiceCallback<DeleteVirtualMFADeviceRequest, DeleteVirtualMFADeviceResponse> callback, AsyncOptions options = null);
 
 
@@ -743,6 +817,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DetachGroupPolicy">REST API Reference for DetachGroupPolicy Operation</seealso>
         void DetachGroupPolicyAsync(DetachGroupPolicyRequest request, AmazonServiceCallback<DetachGroupPolicyRequest, DetachGroupPolicyResponse> callback, AsyncOptions options = null);
 
 
@@ -759,6 +834,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DetachRolePolicy">REST API Reference for DetachRolePolicy Operation</seealso>
         void DetachRolePolicyAsync(DetachRolePolicyRequest request, AmazonServiceCallback<DetachRolePolicyRequest, DetachRolePolicyResponse> callback, AsyncOptions options = null);
 
 
@@ -775,6 +851,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DetachUserPolicy">REST API Reference for DetachUserPolicy Operation</seealso>
         void DetachUserPolicyAsync(DetachUserPolicyRequest request, AmazonServiceCallback<DetachUserPolicyRequest, DetachUserPolicyResponse> callback, AsyncOptions options = null);
 
 
@@ -791,6 +868,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/EnableMFADevice">REST API Reference for EnableMFADevice Operation</seealso>
         void EnableMFADeviceAsync(EnableMFADeviceRequest request, AmazonServiceCallback<EnableMFADeviceRequest, EnableMFADeviceResponse> callback, AsyncOptions options = null);
 
 
@@ -807,6 +885,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GenerateCredentialReport">REST API Reference for GenerateCredentialReport Operation</seealso>
         void GenerateCredentialReportAsync(GenerateCredentialReportRequest request, AmazonServiceCallback<GenerateCredentialReportRequest, GenerateCredentialReportResponse> callback, AsyncOptions options = null);
 
 
@@ -823,6 +902,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetAccessKeyLastUsed">REST API Reference for GetAccessKeyLastUsed Operation</seealso>
         void GetAccessKeyLastUsedAsync(GetAccessKeyLastUsedRequest request, AmazonServiceCallback<GetAccessKeyLastUsedRequest, GetAccessKeyLastUsedResponse> callback, AsyncOptions options = null);
 
 
@@ -839,6 +919,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetAccountAuthorizationDetails">REST API Reference for GetAccountAuthorizationDetails Operation</seealso>
         void GetAccountAuthorizationDetailsAsync(GetAccountAuthorizationDetailsRequest request, AmazonServiceCallback<GetAccountAuthorizationDetailsRequest, GetAccountAuthorizationDetailsResponse> callback, AsyncOptions options = null);
 
 
@@ -855,6 +936,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetAccountPasswordPolicy">REST API Reference for GetAccountPasswordPolicy Operation</seealso>
         void GetAccountPasswordPolicyAsync(GetAccountPasswordPolicyRequest request, AmazonServiceCallback<GetAccountPasswordPolicyRequest, GetAccountPasswordPolicyResponse> callback, AsyncOptions options = null);
 
 
@@ -871,6 +953,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetAccountSummary">REST API Reference for GetAccountSummary Operation</seealso>
         void GetAccountSummaryAsync(GetAccountSummaryRequest request, AmazonServiceCallback<GetAccountSummaryRequest, GetAccountSummaryResponse> callback, AsyncOptions options = null);
 
 
@@ -894,7 +977,7 @@ namespace Amazon.IdentityManagement
         /// URL encoded to be included as a part of a real HTML request.
         /// </para>
         /// </summary>
-        /// <param name="policyInputList">A list of policies for which you want the list of context keys referenced in those policies. Each document is specified as a string containing the complete, valid JSON text of an IAM policy. The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters consisting of any printable ASCII character ranging from the space character (\u0020) through end of the ASCII character range (\u00FF). It also includes the special characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</param>
+        /// <param name="policyInputList">A list of policies for which you want the list of context keys referenced in those policies. Each document is specified as a string containing the complete, valid JSON text of an IAM policy. The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of characters consisting of any printable ASCII character ranging from the space character (\u0020) through end of the ASCII character range as well as the printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF). It also includes the special characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</param>
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">
         ///     A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
@@ -906,6 +989,7 @@ namespace Amazon.IdentityManagement
         /// The request was rejected because an invalid or out-of-range value was supplied for
         /// an input parameter.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetContextKeysForCustomPolicy">REST API Reference for GetContextKeysForCustomPolicy Operation</seealso>
         void GetContextKeysForCustomPolicyAsync(List<string> policyInputList,  AmazonServiceCallback<GetContextKeysForCustomPolicyRequest, GetContextKeysForCustomPolicyResponse> callback, AsyncOptions options = null);
 
         /// <summary>
@@ -916,6 +1000,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetContextKeysForCustomPolicy">REST API Reference for GetContextKeysForCustomPolicy Operation</seealso>
         void GetContextKeysForCustomPolicyAsync(GetContextKeysForCustomPolicyRequest request, AmazonServiceCallback<GetContextKeysForCustomPolicyRequest, GetContextKeysForCustomPolicyResponse> callback, AsyncOptions options = null);
 
 
@@ -966,6 +1051,7 @@ namespace Amazon.IdentityManagement
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetContextKeysForPrincipalPolicy">REST API Reference for GetContextKeysForPrincipalPolicy Operation</seealso>
         void GetContextKeysForPrincipalPolicyAsync(string policySourceArn,  AmazonServiceCallback<GetContextKeysForPrincipalPolicyRequest, GetContextKeysForPrincipalPolicyResponse> callback, AsyncOptions options = null);
 
         /// <summary>
@@ -995,7 +1081,7 @@ namespace Amazon.IdentityManagement
         /// </para>
         /// </summary>
         /// <param name="policySourceArn">The ARN of a user, group, or role whose policies contain the context keys that you want listed. If you specify a user, the list includes context keys that are found in all policies attached to the user as well as to all groups that the user is a member of. If you pick a group or a role, then it includes only those context keys that are found in policies attached to that entity. Note that all parameters are shown in unencoded form here for clarity, but must be URL encoded to be included as a part of a real HTML request. For more information about ARNs, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</param>
-        /// <param name="policyInputList">An optional list of additional policies for which you want the list of context keys that are referenced. The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters consisting of any printable ASCII character ranging from the space character (\u0020) through end of the ASCII character range (\u00FF). It also includes the special characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</param>
+        /// <param name="policyInputList">An optional list of additional policies for which you want the list of context keys that are referenced. The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of characters consisting of any printable ASCII character ranging from the space character (\u0020) through end of the ASCII character range as well as the printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF). It also includes the special characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</param>
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">
         ///     A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
@@ -1011,6 +1097,7 @@ namespace Amazon.IdentityManagement
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetContextKeysForPrincipalPolicy">REST API Reference for GetContextKeysForPrincipalPolicy Operation</seealso>
         void GetContextKeysForPrincipalPolicyAsync(string policySourceArn, List<string> policyInputList,  AmazonServiceCallback<GetContextKeysForPrincipalPolicyRequest, GetContextKeysForPrincipalPolicyResponse> callback, AsyncOptions options = null);
 
         /// <summary>
@@ -1021,6 +1108,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetContextKeysForPrincipalPolicy">REST API Reference for GetContextKeysForPrincipalPolicy Operation</seealso>
         void GetContextKeysForPrincipalPolicyAsync(GetContextKeysForPrincipalPolicyRequest request, AmazonServiceCallback<GetContextKeysForPrincipalPolicyRequest, GetContextKeysForPrincipalPolicyResponse> callback, AsyncOptions options = null);
 
 
@@ -1037,6 +1125,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetCredentialReport">REST API Reference for GetCredentialReport Operation</seealso>
         void GetCredentialReportAsync(GetCredentialReportRequest request, AmazonServiceCallback<GetCredentialReportRequest, GetCredentialReportResponse> callback, AsyncOptions options = null);
 
 
@@ -1053,6 +1142,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetGroup">REST API Reference for GetGroup Operation</seealso>
         void GetGroupAsync(GetGroupRequest request, AmazonServiceCallback<GetGroupRequest, GetGroupResponse> callback, AsyncOptions options = null);
 
 
@@ -1069,6 +1159,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetGroupPolicy">REST API Reference for GetGroupPolicy Operation</seealso>
         void GetGroupPolicyAsync(GetGroupPolicyRequest request, AmazonServiceCallback<GetGroupPolicyRequest, GetGroupPolicyResponse> callback, AsyncOptions options = null);
 
 
@@ -1085,6 +1176,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetInstanceProfile">REST API Reference for GetInstanceProfile Operation</seealso>
         void GetInstanceProfileAsync(GetInstanceProfileRequest request, AmazonServiceCallback<GetInstanceProfileRequest, GetInstanceProfileResponse> callback, AsyncOptions options = null);
 
 
@@ -1101,6 +1193,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetLoginProfile">REST API Reference for GetLoginProfile Operation</seealso>
         void GetLoginProfileAsync(GetLoginProfileRequest request, AmazonServiceCallback<GetLoginProfileRequest, GetLoginProfileResponse> callback, AsyncOptions options = null);
 
 
@@ -1117,6 +1210,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetOpenIDConnectProvider">REST API Reference for GetOpenIDConnectProvider Operation</seealso>
         void GetOpenIDConnectProviderAsync(GetOpenIDConnectProviderRequest request, AmazonServiceCallback<GetOpenIDConnectProviderRequest, GetOpenIDConnectProviderResponse> callback, AsyncOptions options = null);
 
 
@@ -1133,6 +1227,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetPolicy">REST API Reference for GetPolicy Operation</seealso>
         void GetPolicyAsync(GetPolicyRequest request, AmazonServiceCallback<GetPolicyRequest, GetPolicyResponse> callback, AsyncOptions options = null);
 
 
@@ -1149,6 +1244,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetPolicyVersion">REST API Reference for GetPolicyVersion Operation</seealso>
         void GetPolicyVersionAsync(GetPolicyVersionRequest request, AmazonServiceCallback<GetPolicyVersionRequest, GetPolicyVersionResponse> callback, AsyncOptions options = null);
 
 
@@ -1165,6 +1261,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetRole">REST API Reference for GetRole Operation</seealso>
         void GetRoleAsync(GetRoleRequest request, AmazonServiceCallback<GetRoleRequest, GetRoleResponse> callback, AsyncOptions options = null);
 
 
@@ -1181,6 +1278,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetRolePolicy">REST API Reference for GetRolePolicy Operation</seealso>
         void GetRolePolicyAsync(GetRolePolicyRequest request, AmazonServiceCallback<GetRolePolicyRequest, GetRolePolicyResponse> callback, AsyncOptions options = null);
 
 
@@ -1197,6 +1295,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetSAMLProvider">REST API Reference for GetSAMLProvider Operation</seealso>
         void GetSAMLProviderAsync(GetSAMLProviderRequest request, AmazonServiceCallback<GetSAMLProviderRequest, GetSAMLProviderResponse> callback, AsyncOptions options = null);
 
 
@@ -1213,6 +1312,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetServerCertificate">REST API Reference for GetServerCertificate Operation</seealso>
         void GetServerCertificateAsync(GetServerCertificateRequest request, AmazonServiceCallback<GetServerCertificateRequest, GetServerCertificateResponse> callback, AsyncOptions options = null);
 
 
@@ -1229,6 +1329,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetSSHPublicKey">REST API Reference for GetSSHPublicKey Operation</seealso>
         void GetSSHPublicKeyAsync(GetSSHPublicKeyRequest request, AmazonServiceCallback<GetSSHPublicKeyRequest, GetSSHPublicKeyResponse> callback, AsyncOptions options = null);
 
 
@@ -1245,6 +1346,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetUser">REST API Reference for GetUser Operation</seealso>
         void GetUserAsync(GetUserRequest request, AmazonServiceCallback<GetUserRequest, GetUserResponse> callback, AsyncOptions options = null);
 
 
@@ -1261,6 +1363,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetUserPolicy">REST API Reference for GetUserPolicy Operation</seealso>
         void GetUserPolicyAsync(GetUserPolicyRequest request, AmazonServiceCallback<GetUserPolicyRequest, GetUserPolicyResponse> callback, AsyncOptions options = null);
 
 
@@ -1277,6 +1380,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListAccessKeys">REST API Reference for ListAccessKeys Operation</seealso>
         void ListAccessKeysAsync(ListAccessKeysRequest request, AmazonServiceCallback<ListAccessKeysRequest, ListAccessKeysResponse> callback, AsyncOptions options = null);
 
 
@@ -1293,6 +1397,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListAccountAliases">REST API Reference for ListAccountAliases Operation</seealso>
         void ListAccountAliasesAsync(ListAccountAliasesRequest request, AmazonServiceCallback<ListAccountAliasesRequest, ListAccountAliasesResponse> callback, AsyncOptions options = null);
 
 
@@ -1309,6 +1414,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListAttachedGroupPolicies">REST API Reference for ListAttachedGroupPolicies Operation</seealso>
         void ListAttachedGroupPoliciesAsync(ListAttachedGroupPoliciesRequest request, AmazonServiceCallback<ListAttachedGroupPoliciesRequest, ListAttachedGroupPoliciesResponse> callback, AsyncOptions options = null);
 
 
@@ -1325,6 +1431,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListAttachedRolePolicies">REST API Reference for ListAttachedRolePolicies Operation</seealso>
         void ListAttachedRolePoliciesAsync(ListAttachedRolePoliciesRequest request, AmazonServiceCallback<ListAttachedRolePoliciesRequest, ListAttachedRolePoliciesResponse> callback, AsyncOptions options = null);
 
 
@@ -1341,6 +1448,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListAttachedUserPolicies">REST API Reference for ListAttachedUserPolicies Operation</seealso>
         void ListAttachedUserPoliciesAsync(ListAttachedUserPoliciesRequest request, AmazonServiceCallback<ListAttachedUserPoliciesRequest, ListAttachedUserPoliciesResponse> callback, AsyncOptions options = null);
 
 
@@ -1357,6 +1465,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListEntitiesForPolicy">REST API Reference for ListEntitiesForPolicy Operation</seealso>
         void ListEntitiesForPolicyAsync(ListEntitiesForPolicyRequest request, AmazonServiceCallback<ListEntitiesForPolicyRequest, ListEntitiesForPolicyResponse> callback, AsyncOptions options = null);
 
 
@@ -1373,6 +1482,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListGroupPolicies">REST API Reference for ListGroupPolicies Operation</seealso>
         void ListGroupPoliciesAsync(ListGroupPoliciesRequest request, AmazonServiceCallback<ListGroupPoliciesRequest, ListGroupPoliciesResponse> callback, AsyncOptions options = null);
 
 
@@ -1389,6 +1499,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListGroups">REST API Reference for ListGroups Operation</seealso>
         void ListGroupsAsync(ListGroupsRequest request, AmazonServiceCallback<ListGroupsRequest, ListGroupsResponse> callback, AsyncOptions options = null);
 
 
@@ -1405,6 +1516,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListGroupsForUser">REST API Reference for ListGroupsForUser Operation</seealso>
         void ListGroupsForUserAsync(ListGroupsForUserRequest request, AmazonServiceCallback<ListGroupsForUserRequest, ListGroupsForUserResponse> callback, AsyncOptions options = null);
 
 
@@ -1421,6 +1533,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListInstanceProfiles">REST API Reference for ListInstanceProfiles Operation</seealso>
         void ListInstanceProfilesAsync(ListInstanceProfilesRequest request, AmazonServiceCallback<ListInstanceProfilesRequest, ListInstanceProfilesResponse> callback, AsyncOptions options = null);
 
 
@@ -1437,6 +1550,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListInstanceProfilesForRole">REST API Reference for ListInstanceProfilesForRole Operation</seealso>
         void ListInstanceProfilesForRoleAsync(ListInstanceProfilesForRoleRequest request, AmazonServiceCallback<ListInstanceProfilesForRoleRequest, ListInstanceProfilesForRoleResponse> callback, AsyncOptions options = null);
 
 
@@ -1453,6 +1567,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListMFADevices">REST API Reference for ListMFADevices Operation</seealso>
         void ListMFADevicesAsync(ListMFADevicesRequest request, AmazonServiceCallback<ListMFADevicesRequest, ListMFADevicesResponse> callback, AsyncOptions options = null);
 
 
@@ -1469,6 +1584,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListOpenIDConnectProviders">REST API Reference for ListOpenIDConnectProviders Operation</seealso>
         void ListOpenIDConnectProvidersAsync(ListOpenIDConnectProvidersRequest request, AmazonServiceCallback<ListOpenIDConnectProvidersRequest, ListOpenIDConnectProvidersResponse> callback, AsyncOptions options = null);
 
 
@@ -1485,6 +1601,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListPolicies">REST API Reference for ListPolicies Operation</seealso>
         void ListPoliciesAsync(ListPoliciesRequest request, AmazonServiceCallback<ListPoliciesRequest, ListPoliciesResponse> callback, AsyncOptions options = null);
 
 
@@ -1501,6 +1618,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListPolicyVersions">REST API Reference for ListPolicyVersions Operation</seealso>
         void ListPolicyVersionsAsync(ListPolicyVersionsRequest request, AmazonServiceCallback<ListPolicyVersionsRequest, ListPolicyVersionsResponse> callback, AsyncOptions options = null);
 
 
@@ -1517,6 +1635,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListRolePolicies">REST API Reference for ListRolePolicies Operation</seealso>
         void ListRolePoliciesAsync(ListRolePoliciesRequest request, AmazonServiceCallback<ListRolePoliciesRequest, ListRolePoliciesResponse> callback, AsyncOptions options = null);
 
 
@@ -1533,6 +1652,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListRoles">REST API Reference for ListRoles Operation</seealso>
         void ListRolesAsync(ListRolesRequest request, AmazonServiceCallback<ListRolesRequest, ListRolesResponse> callback, AsyncOptions options = null);
 
 
@@ -1549,6 +1669,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListSAMLProviders">REST API Reference for ListSAMLProviders Operation</seealso>
         void ListSAMLProvidersAsync(ListSAMLProvidersRequest request, AmazonServiceCallback<ListSAMLProvidersRequest, ListSAMLProvidersResponse> callback, AsyncOptions options = null);
 
 
@@ -1565,7 +1686,25 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListServerCertificates">REST API Reference for ListServerCertificates Operation</seealso>
         void ListServerCertificatesAsync(ListServerCertificatesRequest request, AmazonServiceCallback<ListServerCertificatesRequest, ListServerCertificatesResponse> callback, AsyncOptions options = null);
+
+
+        #endregion
+        
+        #region  ListServiceSpecificCredentials
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListServiceSpecificCredentials operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListServiceSpecificCredentials operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListServiceSpecificCredentials">REST API Reference for ListServiceSpecificCredentials Operation</seealso>
+        void ListServiceSpecificCredentialsAsync(ListServiceSpecificCredentialsRequest request, AmazonServiceCallback<ListServiceSpecificCredentialsRequest, ListServiceSpecificCredentialsResponse> callback, AsyncOptions options = null);
 
 
         #endregion
@@ -1581,6 +1720,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListSigningCertificates">REST API Reference for ListSigningCertificates Operation</seealso>
         void ListSigningCertificatesAsync(ListSigningCertificatesRequest request, AmazonServiceCallback<ListSigningCertificatesRequest, ListSigningCertificatesResponse> callback, AsyncOptions options = null);
 
 
@@ -1597,6 +1737,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListSSHPublicKeys">REST API Reference for ListSSHPublicKeys Operation</seealso>
         void ListSSHPublicKeysAsync(ListSSHPublicKeysRequest request, AmazonServiceCallback<ListSSHPublicKeysRequest, ListSSHPublicKeysResponse> callback, AsyncOptions options = null);
 
 
@@ -1613,6 +1754,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListUserPolicies">REST API Reference for ListUserPolicies Operation</seealso>
         void ListUserPoliciesAsync(ListUserPoliciesRequest request, AmazonServiceCallback<ListUserPoliciesRequest, ListUserPoliciesResponse> callback, AsyncOptions options = null);
 
 
@@ -1629,6 +1771,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListUsers">REST API Reference for ListUsers Operation</seealso>
         void ListUsersAsync(ListUsersRequest request, AmazonServiceCallback<ListUsersRequest, ListUsersResponse> callback, AsyncOptions options = null);
 
 
@@ -1645,6 +1788,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListVirtualMFADevices">REST API Reference for ListVirtualMFADevices Operation</seealso>
         void ListVirtualMFADevicesAsync(ListVirtualMFADevicesRequest request, AmazonServiceCallback<ListVirtualMFADevicesRequest, ListVirtualMFADevicesResponse> callback, AsyncOptions options = null);
 
 
@@ -1661,6 +1805,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/PutGroupPolicy">REST API Reference for PutGroupPolicy Operation</seealso>
         void PutGroupPolicyAsync(PutGroupPolicyRequest request, AmazonServiceCallback<PutGroupPolicyRequest, PutGroupPolicyResponse> callback, AsyncOptions options = null);
 
 
@@ -1677,6 +1822,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/PutRolePolicy">REST API Reference for PutRolePolicy Operation</seealso>
         void PutRolePolicyAsync(PutRolePolicyRequest request, AmazonServiceCallback<PutRolePolicyRequest, PutRolePolicyResponse> callback, AsyncOptions options = null);
 
 
@@ -1693,6 +1839,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/PutUserPolicy">REST API Reference for PutUserPolicy Operation</seealso>
         void PutUserPolicyAsync(PutUserPolicyRequest request, AmazonServiceCallback<PutUserPolicyRequest, PutUserPolicyResponse> callback, AsyncOptions options = null);
 
 
@@ -1709,6 +1856,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/RemoveClientIDFromOpenIDConnectProvider">REST API Reference for RemoveClientIDFromOpenIDConnectProvider Operation</seealso>
         void RemoveClientIDFromOpenIDConnectProviderAsync(RemoveClientIDFromOpenIDConnectProviderRequest request, AmazonServiceCallback<RemoveClientIDFromOpenIDConnectProviderRequest, RemoveClientIDFromOpenIDConnectProviderResponse> callback, AsyncOptions options = null);
 
 
@@ -1725,6 +1873,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/RemoveRoleFromInstanceProfile">REST API Reference for RemoveRoleFromInstanceProfile Operation</seealso>
         void RemoveRoleFromInstanceProfileAsync(RemoveRoleFromInstanceProfileRequest request, AmazonServiceCallback<RemoveRoleFromInstanceProfileRequest, RemoveRoleFromInstanceProfileResponse> callback, AsyncOptions options = null);
 
 
@@ -1741,7 +1890,25 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/RemoveUserFromGroup">REST API Reference for RemoveUserFromGroup Operation</seealso>
         void RemoveUserFromGroupAsync(RemoveUserFromGroupRequest request, AmazonServiceCallback<RemoveUserFromGroupRequest, RemoveUserFromGroupResponse> callback, AsyncOptions options = null);
+
+
+        #endregion
+        
+        #region  ResetServiceSpecificCredential
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ResetServiceSpecificCredential operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ResetServiceSpecificCredential operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ResetServiceSpecificCredential">REST API Reference for ResetServiceSpecificCredential Operation</seealso>
+        void ResetServiceSpecificCredentialAsync(ResetServiceSpecificCredentialRequest request, AmazonServiceCallback<ResetServiceSpecificCredentialRequest, ResetServiceSpecificCredentialResponse> callback, AsyncOptions options = null);
 
 
         #endregion
@@ -1757,6 +1924,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ResyncMFADevice">REST API Reference for ResyncMFADevice Operation</seealso>
         void ResyncMFADeviceAsync(ResyncMFADeviceRequest request, AmazonServiceCallback<ResyncMFADeviceRequest, ResyncMFADeviceResponse> callback, AsyncOptions options = null);
 
 
@@ -1773,6 +1941,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/SetDefaultPolicyVersion">REST API Reference for SetDefaultPolicyVersion Operation</seealso>
         void SetDefaultPolicyVersionAsync(SetDefaultPolicyVersionRequest request, AmazonServiceCallback<SetDefaultPolicyVersionRequest, SetDefaultPolicyVersionResponse> callback, AsyncOptions options = null);
 
 
@@ -1789,6 +1958,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/SimulateCustomPolicy">REST API Reference for SimulateCustomPolicy Operation</seealso>
         void SimulateCustomPolicyAsync(SimulateCustomPolicyRequest request, AmazonServiceCallback<SimulateCustomPolicyRequest, SimulateCustomPolicyResponse> callback, AsyncOptions options = null);
 
 
@@ -1805,6 +1975,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/SimulatePrincipalPolicy">REST API Reference for SimulatePrincipalPolicy Operation</seealso>
         void SimulatePrincipalPolicyAsync(SimulatePrincipalPolicyRequest request, AmazonServiceCallback<SimulatePrincipalPolicyRequest, SimulatePrincipalPolicyResponse> callback, AsyncOptions options = null);
 
 
@@ -1821,6 +1992,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateAccessKey">REST API Reference for UpdateAccessKey Operation</seealso>
         void UpdateAccessKeyAsync(UpdateAccessKeyRequest request, AmazonServiceCallback<UpdateAccessKeyRequest, UpdateAccessKeyResponse> callback, AsyncOptions options = null);
 
 
@@ -1837,6 +2009,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateAccountPasswordPolicy">REST API Reference for UpdateAccountPasswordPolicy Operation</seealso>
         void UpdateAccountPasswordPolicyAsync(UpdateAccountPasswordPolicyRequest request, AmazonServiceCallback<UpdateAccountPasswordPolicyRequest, UpdateAccountPasswordPolicyResponse> callback, AsyncOptions options = null);
 
 
@@ -1853,6 +2026,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateAssumeRolePolicy">REST API Reference for UpdateAssumeRolePolicy Operation</seealso>
         void UpdateAssumeRolePolicyAsync(UpdateAssumeRolePolicyRequest request, AmazonServiceCallback<UpdateAssumeRolePolicyRequest, UpdateAssumeRolePolicyResponse> callback, AsyncOptions options = null);
 
 
@@ -1869,6 +2043,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateGroup">REST API Reference for UpdateGroup Operation</seealso>
         void UpdateGroupAsync(UpdateGroupRequest request, AmazonServiceCallback<UpdateGroupRequest, UpdateGroupResponse> callback, AsyncOptions options = null);
 
 
@@ -1885,6 +2060,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateLoginProfile">REST API Reference for UpdateLoginProfile Operation</seealso>
         void UpdateLoginProfileAsync(UpdateLoginProfileRequest request, AmazonServiceCallback<UpdateLoginProfileRequest, UpdateLoginProfileResponse> callback, AsyncOptions options = null);
 
 
@@ -1901,6 +2077,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateOpenIDConnectProviderThumbprint">REST API Reference for UpdateOpenIDConnectProviderThumbprint Operation</seealso>
         void UpdateOpenIDConnectProviderThumbprintAsync(UpdateOpenIDConnectProviderThumbprintRequest request, AmazonServiceCallback<UpdateOpenIDConnectProviderThumbprintRequest, UpdateOpenIDConnectProviderThumbprintResponse> callback, AsyncOptions options = null);
 
 
@@ -1917,6 +2094,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateSAMLProvider">REST API Reference for UpdateSAMLProvider Operation</seealso>
         void UpdateSAMLProviderAsync(UpdateSAMLProviderRequest request, AmazonServiceCallback<UpdateSAMLProviderRequest, UpdateSAMLProviderResponse> callback, AsyncOptions options = null);
 
 
@@ -1933,7 +2111,25 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateServerCertificate">REST API Reference for UpdateServerCertificate Operation</seealso>
         void UpdateServerCertificateAsync(UpdateServerCertificateRequest request, AmazonServiceCallback<UpdateServerCertificateRequest, UpdateServerCertificateResponse> callback, AsyncOptions options = null);
+
+
+        #endregion
+        
+        #region  UpdateServiceSpecificCredential
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateServiceSpecificCredential operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateServiceSpecificCredential operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateServiceSpecificCredential">REST API Reference for UpdateServiceSpecificCredential Operation</seealso>
+        void UpdateServiceSpecificCredentialAsync(UpdateServiceSpecificCredentialRequest request, AmazonServiceCallback<UpdateServiceSpecificCredentialRequest, UpdateServiceSpecificCredentialResponse> callback, AsyncOptions options = null);
 
 
         #endregion
@@ -1949,6 +2145,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateSigningCertificate">REST API Reference for UpdateSigningCertificate Operation</seealso>
         void UpdateSigningCertificateAsync(UpdateSigningCertificateRequest request, AmazonServiceCallback<UpdateSigningCertificateRequest, UpdateSigningCertificateResponse> callback, AsyncOptions options = null);
 
 
@@ -1965,6 +2162,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateSSHPublicKey">REST API Reference for UpdateSSHPublicKey Operation</seealso>
         void UpdateSSHPublicKeyAsync(UpdateSSHPublicKeyRequest request, AmazonServiceCallback<UpdateSSHPublicKeyRequest, UpdateSSHPublicKeyResponse> callback, AsyncOptions options = null);
 
 
@@ -1981,6 +2179,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateUser">REST API Reference for UpdateUser Operation</seealso>
         void UpdateUserAsync(UpdateUserRequest request, AmazonServiceCallback<UpdateUserRequest, UpdateUserResponse> callback, AsyncOptions options = null);
 
 
@@ -1997,6 +2196,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UploadServerCertificate">REST API Reference for UploadServerCertificate Operation</seealso>
         void UploadServerCertificateAsync(UploadServerCertificateRequest request, AmazonServiceCallback<UploadServerCertificateRequest, UploadServerCertificateResponse> callback, AsyncOptions options = null);
 
 
@@ -2013,6 +2213,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UploadSigningCertificate">REST API Reference for UploadSigningCertificate Operation</seealso>
         void UploadSigningCertificateAsync(UploadSigningCertificateRequest request, AmazonServiceCallback<UploadSigningCertificateRequest, UploadSigningCertificateResponse> callback, AsyncOptions options = null);
 
 
@@ -2029,6 +2230,7 @@ namespace Amazon.IdentityManagement
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UploadSSHPublicKey">REST API Reference for UploadSSHPublicKey Operation</seealso>
         void UploadSSHPublicKeyAsync(UploadSSHPublicKeyRequest request, AmazonServiceCallback<UploadSSHPublicKeyRequest, UploadSSHPublicKeyResponse> callback, AsyncOptions options = null);
 
 

@@ -23,6 +23,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.CloudFormation.Model;
 
 namespace Amazon.CloudFormation
@@ -32,11 +33,12 @@ namespace Amazon.CloudFormation
     ///
     /// AWS CloudFormation 
     /// <para>
-    /// AWS CloudFormation enables you to create and manage AWS infrastructure deployments
-    /// predictably and repeatedly. AWS CloudFormation helps you leverage AWS products such
-    /// as Amazon EC2, EBS, Amazon SNS, ELB, and Auto Scaling to build highly-reliable, highly
-    /// scalable, cost effective applications without worrying about creating and configuring
-    /// the underlying AWS infrastructure.
+    /// AWS CloudFormation allows you to create and manage AWS infrastructure deployments
+    /// predictably and repeatedly. You can use AWS CloudFormation to leverage AWS products,
+    /// such as Amazon Elastic Compute Cloud, Amazon Elastic Block Store, Amazon Simple Notification
+    /// Service, Elastic Load Balancing, and Auto Scaling to build highly-reliable, highly
+    /// scalable, cost-effective applications without creating or configuring the underlying
+    /// AWS infrastructure.
     /// </para>
     ///  
     /// <para>
@@ -47,17 +49,17 @@ namespace Amazon.CloudFormation
     /// </para>
     ///  
     /// <para>
-    /// For more information about this product, go to the <a href="http://aws.amazon.com/cloudformation/">CloudFormation
-    /// Product Page</a>.
+    /// For more information about AWS CloudFormation, see the <a href="http://aws.amazon.com/cloudformation/">AWS
+    /// CloudFormation Product Page</a>.
     /// </para>
     ///  
     /// <para>
-    /// Amazon CloudFormation makes use of other AWS products. If you need additional technical
-    /// information about a specific AWS product, you can find the product's technical documentation
-    /// at <a href="http://docs.aws.amazon.com/">http://docs.aws.amazon.com/</a>.
+    /// Amazon CloudFormation makes use of other AWS products. For additional technical information
+    /// about a specific AWS product, see its <a href="http://docs.aws.amazon.com/">technical
+    /// documentation</a>.
     /// </para>
     /// </summary>
-    public partial interface IAmazonCloudFormation : IDisposable
+    public partial interface IAmazonCloudFormation : IAmazonService, IDisposable
     {
 
         
@@ -77,6 +79,7 @@ namespace Amazon.CloudFormation
         /// <param name="request">Container for the necessary parameters to execute the CancelUpdateStack service method.</param>
         /// 
         /// <returns>The response from the CancelUpdateStack service method, as returned by CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CancelUpdateStack">REST API Reference for CancelUpdateStack Operation</seealso>
         CancelUpdateStackResponse CancelUpdateStack(CancelUpdateStackRequest request);
 
 
@@ -89,6 +92,7 @@ namespace Amazon.CloudFormation
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CancelUpdateStack">REST API Reference for CancelUpdateStack Operation</seealso>
         Task<CancelUpdateStackResponse> CancelUpdateStackAsync(CancelUpdateStackRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -117,6 +121,7 @@ namespace Amazon.CloudFormation
         /// <param name="request">Container for the necessary parameters to execute the ContinueUpdateRollback service method.</param>
         /// 
         /// <returns>The response from the ContinueUpdateRollback service method, as returned by CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ContinueUpdateRollback">REST API Reference for ContinueUpdateRollback Operation</seealso>
         ContinueUpdateRollbackResponse ContinueUpdateRollback(ContinueUpdateRollbackRequest request);
 
 
@@ -129,6 +134,7 @@ namespace Amazon.CloudFormation
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ContinueUpdateRollback">REST API Reference for ContinueUpdateRollback Operation</seealso>
         Task<ContinueUpdateRollbackResponse> ContinueUpdateRollbackAsync(ContinueUpdateRollbackRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -138,10 +144,10 @@ namespace Amazon.CloudFormation
 
         /// <summary>
         /// Creates a list of changes for a stack. AWS CloudFormation generates the change set
-        /// by comparing the stack's information with the information that you submit. A change
-        /// set can help you understand which resources AWS CloudFormation will change and how
-        /// it will change them before you update your stack. Change sets allow you to check before
-        /// you make a change so that you don't delete or replace critical resources.
+        /// by comparing the template's information with the information that you submit. A change
+        /// set can help you understand which resources AWS CloudFormation will change, and how
+        /// it will change them, before you update your stack. Change sets allow you to check
+        /// before making a change to avoid deleting or replacing critical resources.
         /// 
         ///  
         /// <para>
@@ -168,6 +174,7 @@ namespace Amazon.CloudFormation
         /// <exception cref="Amazon.CloudFormation.Model.LimitExceededException">
         /// Quota for the resource has already been reached.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">REST API Reference for CreateChangeSet Operation</seealso>
         CreateChangeSetResponse CreateChangeSet(CreateChangeSetRequest request);
 
 
@@ -180,6 +187,7 @@ namespace Amazon.CloudFormation
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">REST API Reference for CreateChangeSet Operation</seealso>
         Task<CreateChangeSetResponse> CreateChangeSetAsync(CreateChangeSetRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -205,6 +213,7 @@ namespace Amazon.CloudFormation
         /// <exception cref="Amazon.CloudFormation.Model.LimitExceededException">
         /// Quota for the resource has already been reached.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateStack">REST API Reference for CreateStack Operation</seealso>
         CreateStackResponse CreateStack(CreateStackRequest request);
 
 
@@ -217,6 +226,7 @@ namespace Amazon.CloudFormation
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateStack">REST API Reference for CreateStack Operation</seealso>
         Task<CreateStackResponse> CreateStackAsync(CreateStackRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -241,6 +251,7 @@ namespace Amazon.CloudFormation
         /// The specified change set cannot be used to update the stack. For example, the change
         /// set status might be <code>CREATE_IN_PROGRESS</code> or the stack status might be <code>UPDATE_IN_PROGRESS</code>.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeleteChangeSet">REST API Reference for DeleteChangeSet Operation</seealso>
         DeleteChangeSetResponse DeleteChangeSet(DeleteChangeSetRequest request);
 
 
@@ -253,6 +264,7 @@ namespace Amazon.CloudFormation
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeleteChangeSet">REST API Reference for DeleteChangeSet Operation</seealso>
         Task<DeleteChangeSetResponse> DeleteChangeSetAsync(DeleteChangeSetRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -268,6 +280,7 @@ namespace Amazon.CloudFormation
         /// <param name="request">Container for the necessary parameters to execute the DeleteStack service method.</param>
         /// 
         /// <returns>The response from the DeleteStack service method, as returned by CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeleteStack">REST API Reference for DeleteStack Operation</seealso>
         DeleteStackResponse DeleteStack(DeleteStackRequest request);
 
 
@@ -280,6 +293,7 @@ namespace Amazon.CloudFormation
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeleteStack">REST API Reference for DeleteStack Operation</seealso>
         Task<DeleteStackResponse> DeleteStackAsync(DeleteStackRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -294,6 +308,7 @@ namespace Amazon.CloudFormation
         /// <param name="request">Container for the necessary parameters to execute the DescribeAccountLimits service method.</param>
         /// 
         /// <returns>The response from the DescribeAccountLimits service method, as returned by CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeAccountLimits">REST API Reference for DescribeAccountLimits Operation</seealso>
         DescribeAccountLimitsResponse DescribeAccountLimits(DescribeAccountLimitsRequest request);
 
 
@@ -306,6 +321,7 @@ namespace Amazon.CloudFormation
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeAccountLimits">REST API Reference for DescribeAccountLimits Operation</seealso>
         Task<DescribeAccountLimitsResponse> DescribeAccountLimitsAsync(DescribeAccountLimitsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -325,6 +341,7 @@ namespace Amazon.CloudFormation
         /// The specified change set name or ID doesn't exit. To view valid change sets for a
         /// stack, use the <code>ListChangeSets</code> action.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeChangeSet">REST API Reference for DescribeChangeSet Operation</seealso>
         DescribeChangeSetResponse DescribeChangeSet(DescribeChangeSetRequest request);
 
 
@@ -337,6 +354,7 @@ namespace Amazon.CloudFormation
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeChangeSet">REST API Reference for DescribeChangeSet Operation</seealso>
         Task<DescribeChangeSetResponse> DescribeChangeSetAsync(DescribeChangeSetRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -359,6 +377,7 @@ namespace Amazon.CloudFormation
         /// <param name="request">Container for the necessary parameters to execute the DescribeStackEvents service method.</param>
         /// 
         /// <returns>The response from the DescribeStackEvents service method, as returned by CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackEvents">REST API Reference for DescribeStackEvents Operation</seealso>
         DescribeStackEventsResponse DescribeStackEvents(DescribeStackEventsRequest request);
 
 
@@ -371,6 +390,7 @@ namespace Amazon.CloudFormation
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackEvents">REST API Reference for DescribeStackEvents Operation</seealso>
         Task<DescribeStackEventsResponse> DescribeStackEventsAsync(DescribeStackEventsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -390,6 +410,7 @@ namespace Amazon.CloudFormation
         /// <param name="request">Container for the necessary parameters to execute the DescribeStackResource service method.</param>
         /// 
         /// <returns>The response from the DescribeStackResource service method, as returned by CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackResource">REST API Reference for DescribeStackResource Operation</seealso>
         DescribeStackResourceResponse DescribeStackResource(DescribeStackResourceRequest request);
 
 
@@ -402,6 +423,7 @@ namespace Amazon.CloudFormation
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackResource">REST API Reference for DescribeStackResource Operation</seealso>
         Task<DescribeStackResourceResponse> DescribeStackResourceAsync(DescribeStackResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -443,6 +465,7 @@ namespace Amazon.CloudFormation
         /// <param name="request">Container for the necessary parameters to execute the DescribeStackResources service method.</param>
         /// 
         /// <returns>The response from the DescribeStackResources service method, as returned by CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackResources">REST API Reference for DescribeStackResources Operation</seealso>
         DescribeStackResourcesResponse DescribeStackResources(DescribeStackResourcesRequest request);
 
 
@@ -455,6 +478,7 @@ namespace Amazon.CloudFormation
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackResources">REST API Reference for DescribeStackResources Operation</seealso>
         Task<DescribeStackResourcesResponse> DescribeStackResourcesAsync(DescribeStackResourcesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -465,31 +489,52 @@ namespace Amazon.CloudFormation
         /// <summary>
         /// Returns the description for the specified stack; if no stack name was specified, then
         /// it returns the description for all the stacks created.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If the stack does not exist, an <code>AmazonCloudFormationException</code> is returned.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeStacks service method, as returned by CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStacks">REST API Reference for DescribeStacks Operation</seealso>
         DescribeStacksResponse DescribeStacks();
 
 
         /// <summary>
         /// Returns the description for the specified stack; if no stack name was specified, then
         /// it returns the description for all the stacks created.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If the stack does not exist, an <code>AmazonCloudFormationException</code> is returned.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeStacks service method.</param>
         /// 
         /// <returns>The response from the DescribeStacks service method, as returned by CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStacks">REST API Reference for DescribeStacks Operation</seealso>
         DescribeStacksResponse DescribeStacks(DescribeStacksRequest request);
 
 
         /// <summary>
         /// Returns the description for the specified stack; if no stack name was specified, then
         /// it returns the description for all the stacks created.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If the stack does not exist, an <code>AmazonCloudFormationException</code> is returned.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
         /// <returns>The response from the DescribeStacks service method, as returned by CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStacks">REST API Reference for DescribeStacks Operation</seealso>
         Task<DescribeStacksResponse> DescribeStacksAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -502,6 +547,7 @@ namespace Amazon.CloudFormation
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStacks">REST API Reference for DescribeStacks Operation</seealso>
         Task<DescribeStacksResponse> DescribeStacksAsync(DescribeStacksRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -517,6 +563,7 @@ namespace Amazon.CloudFormation
         /// <param name="request">Container for the necessary parameters to execute the EstimateTemplateCost service method.</param>
         /// 
         /// <returns>The response from the EstimateTemplateCost service method, as returned by CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/EstimateTemplateCost">REST API Reference for EstimateTemplateCost Operation</seealso>
         EstimateTemplateCostResponse EstimateTemplateCost(EstimateTemplateCostRequest request);
 
 
@@ -529,6 +576,7 @@ namespace Amazon.CloudFormation
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/EstimateTemplateCost">REST API Reference for EstimateTemplateCost Operation</seealso>
         Task<EstimateTemplateCostResponse> EstimateTemplateCostAsync(EstimateTemplateCostRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -561,10 +609,15 @@ namespace Amazon.CloudFormation
         /// The specified change set name or ID doesn't exit. To view valid change sets for a
         /// stack, use the <code>ListChangeSets</code> action.
         /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.InsufficientCapabilitiesException">
+        /// The template contains resources with capabilities that were not specified in the Capabilities
+        /// parameter.
+        /// </exception>
         /// <exception cref="Amazon.CloudFormation.Model.InvalidChangeSetStatusException">
         /// The specified change set cannot be used to update the stack. For example, the change
         /// set status might be <code>CREATE_IN_PROGRESS</code> or the stack status might be <code>UPDATE_IN_PROGRESS</code>.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ExecuteChangeSet">REST API Reference for ExecuteChangeSet Operation</seealso>
         ExecuteChangeSetResponse ExecuteChangeSet(ExecuteChangeSetRequest request);
 
 
@@ -577,6 +630,7 @@ namespace Amazon.CloudFormation
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ExecuteChangeSet">REST API Reference for ExecuteChangeSet Operation</seealso>
         Task<ExecuteChangeSetResponse> ExecuteChangeSetAsync(ExecuteChangeSetRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -591,6 +645,7 @@ namespace Amazon.CloudFormation
         /// <param name="request">Container for the necessary parameters to execute the GetStackPolicy service method.</param>
         /// 
         /// <returns>The response from the GetStackPolicy service method, as returned by CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/GetStackPolicy">REST API Reference for GetStackPolicy Operation</seealso>
         GetStackPolicyResponse GetStackPolicy(GetStackPolicyRequest request);
 
 
@@ -603,6 +658,7 @@ namespace Amazon.CloudFormation
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/GetStackPolicy">REST API Reference for GetStackPolicy Operation</seealso>
         Task<GetStackPolicyResponse> GetStackPolicyAsync(GetStackPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -628,6 +684,11 @@ namespace Amazon.CloudFormation
         /// <param name="request">Container for the necessary parameters to execute the GetTemplate service method.</param>
         /// 
         /// <returns>The response from the GetTemplate service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.ChangeSetNotFoundException">
+        /// The specified change set name or ID doesn't exit. To view valid change sets for a
+        /// stack, use the <code>ListChangeSets</code> action.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/GetTemplate">REST API Reference for GetTemplate Operation</seealso>
         GetTemplateResponse GetTemplate(GetTemplateRequest request);
 
 
@@ -640,6 +701,7 @@ namespace Amazon.CloudFormation
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/GetTemplate">REST API Reference for GetTemplate Operation</seealso>
         Task<GetTemplateResponse> GetTemplateAsync(GetTemplateRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -667,6 +729,7 @@ namespace Amazon.CloudFormation
         /// <param name="request">Container for the necessary parameters to execute the GetTemplateSummary service method.</param>
         /// 
         /// <returns>The response from the GetTemplateSummary service method, as returned by CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/GetTemplateSummary">REST API Reference for GetTemplateSummary Operation</seealso>
         GetTemplateSummaryResponse GetTemplateSummary(GetTemplateSummaryRequest request);
 
 
@@ -679,6 +742,7 @@ namespace Amazon.CloudFormation
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/GetTemplateSummary">REST API Reference for GetTemplateSummary Operation</seealso>
         Task<GetTemplateSummaryResponse> GetTemplateSummaryAsync(GetTemplateSummaryRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -694,6 +758,7 @@ namespace Amazon.CloudFormation
         /// <param name="request">Container for the necessary parameters to execute the ListChangeSets service method.</param>
         /// 
         /// <returns>The response from the ListChangeSets service method, as returned by CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListChangeSets">REST API Reference for ListChangeSets Operation</seealso>
         ListChangeSetsResponse ListChangeSets(ListChangeSetsRequest request);
 
 
@@ -706,7 +771,79 @@ namespace Amazon.CloudFormation
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListChangeSets">REST API Reference for ListChangeSets Operation</seealso>
         Task<ListChangeSetsResponse> ListChangeSetsAsync(ListChangeSetsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListExports
+
+
+        /// <summary>
+        /// Lists all exported output values in the account and region in which you call this
+        /// action. Use this action to see the exported output values that you can import into
+        /// other stacks. To import values, use the <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-importvalue.html">
+        /// <code>Fn::ImportValue</code> </a> function. 
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-exports.html">
+        /// AWS CloudFormation Export Stack Output Values</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListExports service method.</param>
+        /// 
+        /// <returns>The response from the ListExports service method, as returned by CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListExports">REST API Reference for ListExports Operation</seealso>
+        ListExportsResponse ListExports(ListExportsRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListExports operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListExports operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListExports">REST API Reference for ListExports Operation</seealso>
+        Task<ListExportsResponse> ListExportsAsync(ListExportsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListImports
+
+
+        /// <summary>
+        /// Lists all stacks that are importing an exported output value. To modify or remove
+        /// an exported output value, first use this action to see which stacks are using it.
+        /// To see the exported output values in your account, see <a>ListExports</a>. 
+        /// 
+        ///  
+        /// <para>
+        /// For more information about importing an exported output value, see the <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-importvalue.html">
+        /// <code>Fn::ImportValue</code> </a> function. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListImports service method.</param>
+        /// 
+        /// <returns>The response from the ListImports service method, as returned by CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListImports">REST API Reference for ListImports Operation</seealso>
+        ListImportsResponse ListImports(ListImportsRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListImports operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListImports operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListImports">REST API Reference for ListImports Operation</seealso>
+        Task<ListImportsResponse> ListImportsAsync(ListImportsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -725,6 +862,7 @@ namespace Amazon.CloudFormation
         /// <param name="request">Container for the necessary parameters to execute the ListStackResources service method.</param>
         /// 
         /// <returns>The response from the ListStackResources service method, as returned by CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackResources">REST API Reference for ListStackResources Operation</seealso>
         ListStackResourcesResponse ListStackResources(ListStackResourcesRequest request);
 
 
@@ -737,6 +875,7 @@ namespace Amazon.CloudFormation
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackResources">REST API Reference for ListStackResources Operation</seealso>
         Task<ListStackResourcesResponse> ListStackResourcesAsync(ListStackResourcesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -752,6 +891,7 @@ namespace Amazon.CloudFormation
         /// </summary>
         /// 
         /// <returns>The response from the ListStacks service method, as returned by CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStacks">REST API Reference for ListStacks Operation</seealso>
         ListStacksResponse ListStacks();
 
 
@@ -764,6 +904,7 @@ namespace Amazon.CloudFormation
         /// <param name="request">Container for the necessary parameters to execute the ListStacks service method.</param>
         /// 
         /// <returns>The response from the ListStacks service method, as returned by CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStacks">REST API Reference for ListStacks Operation</seealso>
         ListStacksResponse ListStacks(ListStacksRequest request);
 
 
@@ -778,6 +919,7 @@ namespace Amazon.CloudFormation
         /// </param>
         /// 
         /// <returns>The response from the ListStacks service method, as returned by CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStacks">REST API Reference for ListStacks Operation</seealso>
         Task<ListStacksResponse> ListStacksAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -790,6 +932,7 @@ namespace Amazon.CloudFormation
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStacks">REST API Reference for ListStacks Operation</seealso>
         Task<ListStacksResponse> ListStacksAsync(ListStacksRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -803,6 +946,7 @@ namespace Amazon.CloudFormation
         /// <param name="request">Container for the necessary parameters to execute the SetStackPolicy service method.</param>
         /// 
         /// <returns>The response from the SetStackPolicy service method, as returned by CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/SetStackPolicy">REST API Reference for SetStackPolicy Operation</seealso>
         SetStackPolicyResponse SetStackPolicy(SetStackPolicyRequest request);
 
 
@@ -815,6 +959,7 @@ namespace Amazon.CloudFormation
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/SetStackPolicy">REST API Reference for SetStackPolicy Operation</seealso>
         Task<SetStackPolicyResponse> SetStackPolicyAsync(SetStackPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -833,6 +978,7 @@ namespace Amazon.CloudFormation
         /// <param name="request">Container for the necessary parameters to execute the SignalResource service method.</param>
         /// 
         /// <returns>The response from the SignalResource service method, as returned by CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/SignalResource">REST API Reference for SignalResource Operation</seealso>
         SignalResourceResponse SignalResource(SignalResourceRequest request);
 
 
@@ -845,6 +991,7 @@ namespace Amazon.CloudFormation
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/SignalResource">REST API Reference for SignalResource Operation</seealso>
         Task<SignalResourceResponse> SignalResourceAsync(SignalResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -876,6 +1023,7 @@ namespace Amazon.CloudFormation
         /// The template contains resources with capabilities that were not specified in the Capabilities
         /// parameter.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/UpdateStack">REST API Reference for UpdateStack Operation</seealso>
         UpdateStackResponse UpdateStack(UpdateStackRequest request);
 
 
@@ -888,6 +1036,7 @@ namespace Amazon.CloudFormation
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/UpdateStack">REST API Reference for UpdateStack Operation</seealso>
         Task<UpdateStackResponse> UpdateStackAsync(UpdateStackRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -896,30 +1045,39 @@ namespace Amazon.CloudFormation
 
 
         /// <summary>
-        /// Validates a specified template.
+        /// Validates a specified template. AWS CloudFormation first checks if the template is
+        /// valid JSON. If it isn't, AWS CloudFormation checks if the template is valid YAML.
+        /// If both these checks fail, AWS CloudFormation returns a template validation error.
         /// </summary>
         /// 
         /// <returns>The response from the ValidateTemplate service method, as returned by CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ValidateTemplate">REST API Reference for ValidateTemplate Operation</seealso>
         ValidateTemplateResponse ValidateTemplate();
 
 
         /// <summary>
-        /// Validates a specified template.
+        /// Validates a specified template. AWS CloudFormation first checks if the template is
+        /// valid JSON. If it isn't, AWS CloudFormation checks if the template is valid YAML.
+        /// If both these checks fail, AWS CloudFormation returns a template validation error.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ValidateTemplate service method.</param>
         /// 
         /// <returns>The response from the ValidateTemplate service method, as returned by CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ValidateTemplate">REST API Reference for ValidateTemplate Operation</seealso>
         ValidateTemplateResponse ValidateTemplate(ValidateTemplateRequest request);
 
 
         /// <summary>
-        /// Validates a specified template.
+        /// Validates a specified template. AWS CloudFormation first checks if the template is
+        /// valid JSON. If it isn't, AWS CloudFormation checks if the template is valid YAML.
+        /// If both these checks fail, AWS CloudFormation returns a template validation error.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
         /// <returns>The response from the ValidateTemplate service method, as returned by CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ValidateTemplate">REST API Reference for ValidateTemplate Operation</seealso>
         Task<ValidateTemplateResponse> ValidateTemplateAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -932,6 +1090,7 @@ namespace Amazon.CloudFormation
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ValidateTemplate">REST API Reference for ValidateTemplate Operation</seealso>
         Task<ValidateTemplateResponse> ValidateTemplateAsync(ValidateTemplateRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion

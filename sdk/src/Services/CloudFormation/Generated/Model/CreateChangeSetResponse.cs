@@ -33,6 +33,7 @@ namespace Amazon.CloudFormation.Model
     public partial class CreateChangeSetResponse : AmazonWebServiceResponse
     {
         private string _id;
+        private string _stackId;
 
         /// <summary>
         /// Gets and sets the property Id. 
@@ -50,6 +51,24 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StackId. 
+        /// <para>
+        /// The unique ID of the stack.
+        /// </para>
+        /// </summary>
+        public string StackId
+        {
+            get { return this._stackId; }
+            set { this._stackId = value; }
+        }
+
+        // Check to see if StackId property is set
+        internal bool IsSetStackId()
+        {
+            return this._stackId != null;
         }
 
     }

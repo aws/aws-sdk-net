@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// This is the response object from the RecordLifecycleActionHeartbeat operation.
+    /// Contains the output of RecordLifecycleActionHeartBeat.
     /// </summary>
     public partial class RecordLifecycleActionHeartbeatResponse : AmazonWebServiceResponse
     {

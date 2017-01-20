@@ -38,8 +38,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property CodeDeliveryDetails. 
         /// <para>
-        /// The code delivery details returned by the server response to get the user attribute
-        /// verification code.
+        /// The code delivery details returned by the server in response to the request to get
+        /// the user attribute verification code.
         /// </para>
         /// </summary>
         public CodeDeliveryDetailsType CodeDeliveryDetails

@@ -52,39 +52,99 @@ namespace Amazon.Glacier
     /// Amazon Glacier is a great storage choice when low storage cost is paramount, your
     /// data is rarely retrieved, and retrieval latency of several hours is acceptable. If
     /// your application requires fast or frequent access to your data, consider using Amazon
-    /// S3. For more information, go to <a href="http://aws.amazon.com/s3/">Amazon Simple
-    /// Storage Service (Amazon S3)</a>.
+    /// S3. For more information, see <a href="http://aws.amazon.com/s3/">Amazon Simple Storage
+    /// Service (Amazon S3)</a>.
     /// </para>
     ///  
     /// <para>
     /// You can store any kind of data in any format. There is no maximum limit on the total
-    /// amount of data you can store in Amazon Glacier. 
+    /// amount of data you can store in Amazon Glacier.
     /// </para>
     ///  
     /// <para>
     /// If you are a first-time user of Amazon Glacier, we recommend that you begin by reading
     /// the following sections in the <i>Amazon Glacier Developer Guide</i>:
     /// </para>
-    ///  <ul> <li>
+    ///  <ul> <li> 
     /// <para>
-    /// <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/introduction.html">What
+    ///  <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/introduction.html">What
     /// is Amazon Glacier</a> - This section of the Developer Guide describes the underlying
     /// data model, the operations it supports, and the AWS SDKs that you can use to interact
     /// with the service.
     /// </para>
-    /// </li> <li>
+    ///  </li> <li> 
     /// <para>
-    /// <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/amazon-glacier-getting-started.html">Getting
+    ///  <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/amazon-glacier-getting-started.html">Getting
     /// Started with Amazon Glacier</a> - The Getting Started section walks you through the
     /// process of creating a vault, uploading archives, creating jobs to download archives,
     /// retrieving the job output, and deleting archives.
     /// </para>
-    /// </li> </ul>
+    ///  </li> </ul>
     /// </summary>
     public partial class AmazonGlacierClient : AmazonServiceClient, IAmazonGlacier
     {
         
         #region Constructors
+
+#if CORECLR
+    
+        /// <summary>
+        /// Constructs AmazonGlacierClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
+        public AmazonGlacierClient()
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonGlacierConfig()) { }
+
+        /// <summary>
+        /// Constructs AmazonGlacierClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
+        /// <param name="region">The region to connect.</param>
+        public AmazonGlacierClient(RegionEndpoint region)
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonGlacierConfig{RegionEndpoint = region}) { }
+
+        /// <summary>
+        /// Constructs AmazonGlacierClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
+        /// <param name="config">The AmazonGlacierClient Configuration Object</param>
+        public AmazonGlacierClient(AmazonGlacierConfig config)
+            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+
+#endif
 
         /// <summary>
         /// Constructs AmazonGlacierClient with AWS Credentials
@@ -934,6 +994,37 @@ namespace Amazon.Glacier
 
         #endregion
         
+        #region  ListProvisionedCapacity
+
+        internal ListProvisionedCapacityResponse ListProvisionedCapacity(ListProvisionedCapacityRequest request)
+        {
+            var marshaller = new ListProvisionedCapacityRequestMarshaller();
+            var unmarshaller = ListProvisionedCapacityResponseUnmarshaller.Instance;
+
+            return Invoke<ListProvisionedCapacityRequest,ListProvisionedCapacityResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListProvisionedCapacity operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListProvisionedCapacity operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListProvisionedCapacityResponse> ListProvisionedCapacityAsync(ListProvisionedCapacityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListProvisionedCapacityRequestMarshaller();
+            var unmarshaller = ListProvisionedCapacityResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListProvisionedCapacityRequest,ListProvisionedCapacityResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListTagsForVault
 
         internal ListTagsForVaultResponse ListTagsForVault(ListTagsForVaultRequest request)
@@ -982,18 +1073,18 @@ namespace Amazon.Glacier
 
         /// <summary>
         /// This operation lists all vaults owned by the calling user's account. The list returned
-        /// in the response is ASCII-sorted by vault name. 
+        /// in the response is ASCII-sorted by vault name.
         /// 
         ///  
         /// <para>
         /// By default, this operation returns up to 1,000 items. If there are more vaults to
-        /// list, the response <code class="code">marker</code> field contains the vault Amazon
-        /// Resource Name (ARN) at which to continue the list with a new List Vaults request;
-        /// otherwise, the <code class="code">marker</code> field is <code class="code">null</code>.
-        /// To return a list of vaults that begins at a specific vault, set the <code class="code">marker</code>
-        /// request parameter to the vault ARN you obtained from a previous List Vaults request.
-        /// You can also limit the number of vaults returned in the response by specifying the
-        /// <code class="code">limit</code> parameter in the request. 
+        /// list, the response <code>marker</code> field contains the vault Amazon Resource Name
+        /// (ARN) at which to continue the list with a new List Vaults request; otherwise, the
+        /// <code>marker</code> field is <code>null</code>. To return a list of vaults that begins
+        /// at a specific vault, set the <code>marker</code> request parameter to the vault ARN
+        /// you obtained from a previous List Vaults request. You can also limit the number of
+        /// vaults returned in the response by specifying the <code>limit</code> parameter in
+        /// the request. 
         /// </para>
         ///  
         /// <para>
@@ -1005,7 +1096,7 @@ namespace Amazon.Glacier
         /// </para>
         ///  
         /// <para>
-        /// For conceptual information and underlying REST API, go to <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/retrieving-vault-info.html">Retrieving
+        /// For conceptual information and underlying REST API, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/retrieving-vault-info.html">Retrieving
         /// Vault Metadata in Amazon Glacier</a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vaults-get.html">List
         /// Vaults </a> in the <i>Amazon Glacier Developer Guide</i>. 
         /// </para>
@@ -1022,7 +1113,7 @@ namespace Amazon.Glacier
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
-        /// Returned if the specified resource, such as a vault, upload ID, or job ID, does not
+        /// Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
         /// exist.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
@@ -1049,6 +1140,37 @@ namespace Amazon.Glacier
             var unmarshaller = ListVaultsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListVaultsRequest,ListVaultsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PurchaseProvisionedCapacity
+
+        internal PurchaseProvisionedCapacityResponse PurchaseProvisionedCapacity(PurchaseProvisionedCapacityRequest request)
+        {
+            var marshaller = new PurchaseProvisionedCapacityRequestMarshaller();
+            var unmarshaller = PurchaseProvisionedCapacityResponseUnmarshaller.Instance;
+
+            return Invoke<PurchaseProvisionedCapacityRequest,PurchaseProvisionedCapacityResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PurchaseProvisionedCapacity operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PurchaseProvisionedCapacity operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<PurchaseProvisionedCapacityResponse> PurchaseProvisionedCapacityAsync(PurchaseProvisionedCapacityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new PurchaseProvisionedCapacityRequestMarshaller();
+            var unmarshaller = PurchaseProvisionedCapacityResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PurchaseProvisionedCapacityRequest,PurchaseProvisionedCapacityResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

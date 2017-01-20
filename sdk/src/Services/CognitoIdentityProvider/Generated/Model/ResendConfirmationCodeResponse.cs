@@ -28,15 +28,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// The response from the server when the Amazon Cognito service makes the request to
-    /// resend a confirmation code.
+    /// The response from the server when the Amazon Cognito Your User Pools service makes
+    /// the request to resend a confirmation code.
     /// </summary>
     public partial class ResendConfirmationCodeResponse : AmazonWebServiceResponse
     {
         private CodeDeliveryDetailsType _codeDeliveryDetails;
 
         /// <summary>
-        /// Gets and sets the property CodeDeliveryDetails.
+        /// Gets and sets the property CodeDeliveryDetails. 
+        /// <para>
+        /// The code delivery details returned by the server in response to the request to resend
+        /// the confirmation code.
+        /// </para>
         /// </summary>
         public CodeDeliveryDetailsType CodeDeliveryDetails
         {

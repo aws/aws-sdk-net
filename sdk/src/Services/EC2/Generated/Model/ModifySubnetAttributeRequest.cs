@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-11-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -29,18 +29,48 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifySubnetAttribute operation.
-    /// Modifies a subnet attribute.
+    /// Modifies a subnet attribute. You can only modify one attribute at a time.
     /// </summary>
     public partial class ModifySubnetAttributeRequest : AmazonEC2Request
     {
+        private bool? _assignIpv6AddressOnCreation;
         private bool? _mapPublicIpOnLaunch;
         private string _subnetId;
 
         /// <summary>
+        /// Gets and sets the property AssignIpv6AddressOnCreation. 
+        /// <para>
+        /// Specify <code>true</code> to indicate that network interfaces created in the specified
+        /// subnet should be assigned an IPv6 address. This includes a network interface that's
+        /// created when launching an instance into the subnet (the instance therefore receives
+        /// an IPv6 address). 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you enable the IPv6 addressing feature for your subnet, your network interface
+        /// or instance only receives an IPv6 address if it's created using version <code>2016-11-15</code>
+        /// or later of the Amazon EC2 API.
+        /// </para>
+        /// </summary>
+        public bool AssignIpv6AddressOnCreation
+        {
+            get { return this._assignIpv6AddressOnCreation.GetValueOrDefault(); }
+            set { this._assignIpv6AddressOnCreation = value; }
+        }
+
+        // Check to see if AssignIpv6AddressOnCreation property is set
+        internal bool IsSetAssignIpv6AddressOnCreation()
+        {
+            return this._assignIpv6AddressOnCreation.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property MapPublicIpOnLaunch. 
         /// <para>
-        /// Specify <code>true</code> to indicate that instances launched into the specified subnet
-        /// should be assigned public IP address.
+        /// Specify <code>true</code> to indicate that network interfaces created in the specified
+        /// subnet should be assigned a public IPv4 address. This includes a network interface
+        /// that's created when launching an instance into the subnet (the instance therefore
+        /// receives a public IPv4 address).
         /// </para>
         /// </summary>
         public bool MapPublicIpOnLaunch

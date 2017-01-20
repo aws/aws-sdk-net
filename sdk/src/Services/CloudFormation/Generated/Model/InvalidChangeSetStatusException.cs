@@ -25,7 +25,7 @@ namespace Amazon.CloudFormation.Model
     ///<summary>
     /// CloudFormation exception
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class InvalidChangeSetStatusException : AmazonCloudFormationException 
@@ -79,7 +79,7 @@ namespace Amazon.CloudFormation.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the InvalidChangeSetStatusException class with serialized data.
         /// </summary>

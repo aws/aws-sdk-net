@@ -29,7 +29,8 @@ namespace Amazon.Lambda.Model
 {
     /// <summary>
     /// Container for the parameters to the Invoke operation.
-    /// Invokes a specific Lambda function. 
+    /// Invokes a specific Lambda function. For an example, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/with-dynamodb-create-function.html#with-dbb-invoke-manually">Create
+    /// the Lambda Function and Test It Manually</a>. 
     /// 
     ///  
     /// <para>
@@ -37,7 +38,9 @@ namespace Amazon.Lambda.Model
     /// by providing function version or alias name that is pointing to the function version
     /// using the <code>Qualifier</code> parameter in the request. If you don't provide the
     /// <code>Qualifier</code> parameter, the <code>$LATEST</code> version of the Lambda function
-    /// is invoked. For information about the versioning feature, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
+    /// is invoked. Invocations occur at least once in response to an event and functions
+    /// must be idempotent to handle this. For information about the versioning feature, see
+    /// <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
     /// Lambda Function Versioning and Aliases</a>. 
     /// </para>
     ///  
@@ -83,7 +86,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property FunctionName. 
         /// <para>
-        /// The Lambda function name. 
+        /// The Lambda function name.
         /// </para>
         ///  
         /// <para>
@@ -137,7 +140,7 @@ namespace Amazon.Lambda.Model
         /// You can set this optional parameter to <code>Tail</code> in the request only if you
         /// specify the <code>InvocationType</code> parameter with value <code>RequestResponse</code>.
         /// In this case, AWS Lambda returns the base64-encoded last 4 KB of log data produced
-        /// by your Lambda function in the <code>x-amz-log-results</code> header. 
+        /// by your Lambda function in the <code>x-amz-log-result</code> header. 
         /// </para>
         /// </summary>
         public LogType LogType

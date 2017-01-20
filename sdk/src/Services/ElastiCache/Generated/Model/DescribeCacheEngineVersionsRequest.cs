@@ -29,8 +29,7 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeCacheEngineVersions operation.
-    /// The <i>DescribeCacheEngineVersions</i> action returns a list of the available cache
-    /// engines and their versions.
+    /// Returns a list of the available cache engines and their versions.
     /// </summary>
     public partial class DescribeCacheEngineVersionsRequest : AmazonElastiCacheRequest
     {
@@ -45,6 +44,11 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property CacheParameterGroupFamily. 
         /// <para>
         /// The name of a specific cache parameter group family to return details for.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values are: <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code>
+        /// | <code>redis3.2</code> 
         /// </para>
         ///  
         /// <para>
@@ -79,8 +83,8 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property DefaultOnly. 
         /// <para>
-        /// If <i>true</i>, specifies that only the default version of the specified engine or
-        /// engine and major version combination is to be returned.
+        /// If <code>true</code>, specifies that only the default version of the specified engine
+        /// or engine and major version combination is to be returned.
         /// </para>
         /// </summary>
         public bool DefaultOnly
@@ -140,8 +144,8 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property Marker. 
         /// <para>
         /// An optional marker returned from a prior request. Use this marker for pagination of
-        /// results from this action. If this parameter is specified, the response includes only
-        /// records beyond the marker, up to the value specified by <i>MaxRecords</i>.
+        /// results from this operation. If this parameter is specified, the response includes
+        /// only records beyond the marker, up to the value specified by <code>MaxRecords</code>.
         /// </para>
         /// </summary>
         public string Marker

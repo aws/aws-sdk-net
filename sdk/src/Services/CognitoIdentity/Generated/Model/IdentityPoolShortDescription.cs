@@ -36,7 +36,10 @@ namespace Amazon.CognitoIdentity.Model
         private string _identityPoolName;
 
         /// <summary>
-        /// Gets and sets the property IdentityPoolId. An identity pool ID in the format REGION:GUID.
+        /// Gets and sets the property IdentityPoolId. 
+        /// <para>
+        /// An identity pool ID in the format REGION:GUID.
+        /// </para>
         /// </summary>
         public string IdentityPoolId
         {
@@ -51,7 +54,10 @@ namespace Amazon.CognitoIdentity.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IdentityPoolName. A string that you provide.
+        /// Gets and sets the property IdentityPoolName. 
+        /// <para>
+        /// A string that you provide.
+        /// </para>
         /// </summary>
         public string IdentityPoolName
         {

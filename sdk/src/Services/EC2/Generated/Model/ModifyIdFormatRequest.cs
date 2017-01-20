@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-11-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -58,7 +58,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Resource. 
         /// <para>
-        /// The type of resource.
+        /// The type of resource: <code>instance</code> | <code>reservation</code> | <code>snapshot</code>
+        /// | <code>volume</code> 
         /// </para>
         /// </summary>
         public string Resource

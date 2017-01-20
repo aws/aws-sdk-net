@@ -13,5 +13,10 @@
     "DescribeReservedDBInstances",
     "DescribeReservedDBInstancesOfferings",
     "DescribeAccountAttributes"
-  ]
+  ],
+  "runtimePipelineOverride": {
+    "overrides":[
+      {"operation":"addBefore", "newType":"Amazon.RDS.Internal.PreSignedUrlRequestHandler", "targetType":"Amazon.Runtime.Internal.Marshaller", "constructorInput": "this.Credentials"}
+    ]
+  }
 }

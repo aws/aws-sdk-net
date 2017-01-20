@@ -102,6 +102,29 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetMaxConcurrency())
+                {
+                    context.Writer.WritePropertyName("MaxConcurrency");
+                    context.Writer.Write(publicRequest.MaxConcurrency);
+                }
+
+                if(publicRequest.IsSetMaxErrors())
+                {
+                    context.Writer.WritePropertyName("MaxErrors");
+                    context.Writer.Write(publicRequest.MaxErrors);
+                }
+
+                if(publicRequest.IsSetNotificationConfig())
+                {
+                    context.Writer.WritePropertyName("NotificationConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = NotificationConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.NotificationConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetOutputS3BucketName())
                 {
                     context.Writer.WritePropertyName("OutputS3BucketName");
@@ -112,6 +135,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("OutputS3KeyPrefix");
                     context.Writer.Write(publicRequest.OutputS3KeyPrefix);
+                }
+
+                if(publicRequest.IsSetOutputS3Region())
+                {
+                    context.Writer.WritePropertyName("OutputS3Region");
+                    context.Writer.Write(publicRequest.OutputS3Region);
                 }
 
                 if(publicRequest.IsSetParameters())
@@ -131,6 +160,28 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                         context.Writer.WriteArrayEnd();
                     }
                     context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetServiceRoleArn())
+                {
+                    context.Writer.WritePropertyName("ServiceRoleArn");
+                    context.Writer.Write(publicRequest.ServiceRoleArn);
+                }
+
+                if(publicRequest.IsSetTargets())
+                {
+                    context.Writer.WritePropertyName("Targets");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestTargetsListValue in publicRequest.Targets)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TargetMarshaller.Instance;
+                        marshaller.Marshall(publicRequestTargetsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
                 if(publicRequest.IsSetTimeoutSeconds())

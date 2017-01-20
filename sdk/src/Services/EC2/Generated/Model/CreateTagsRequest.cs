@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-11-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -30,7 +30,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the CreateTags operation.
     /// Adds or overwrites one or more tags for the specified Amazon EC2 resource or resources.
-    /// Each resource can have a maximum of 10 tags. Each tag consists of a key and optional
+    /// Each resource can have a maximum of 50 tags. Each tag consists of a key and optional
     /// value. Tag keys must be unique per resource.
     /// 
     ///  

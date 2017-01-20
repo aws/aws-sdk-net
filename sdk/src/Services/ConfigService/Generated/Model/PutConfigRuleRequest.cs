@@ -30,23 +30,22 @@ namespace Amazon.ConfigService.Model
     /// <summary>
     /// Container for the parameters to the PutConfigRule operation.
     /// Adds or updates an AWS Config rule for evaluating whether your AWS resources comply
-    /// with your desired configurations. 
+    /// with your desired configurations.
     /// 
     ///  
     /// <para>
-    /// You can use this action for customer managed Config rules and AWS managed Config rules.
-    /// A customer managed Config rule is a custom rule that you develop and maintain. An
-    /// AWS managed Config rule is a customizable, predefined rule that is provided by AWS
-    /// Config.
+    /// You can use this action for custom Config rules and AWS managed Config rules. A custom
+    /// Config rule is a rule that you develop and maintain. An AWS managed Config rule is
+    /// a customizable, predefined rule that AWS Config provides.
     /// </para>
     ///  
     /// <para>
-    /// If you are adding a new customer managed Config rule, you must first create the AWS
-    /// Lambda function that the rule invokes to evaluate your resources. When you use the
-    /// <code>PutConfigRule</code> action to add the rule to AWS Config, you must specify
-    /// the Amazon Resource Name (ARN) that AWS Lambda assigns to the function. Specify the
-    /// ARN for the <code>SourceIdentifier</code> key. This key is part of the <code>Source</code>
-    /// object, which is part of the <code>ConfigRule</code> object. 
+    /// If you are adding a new custom Config rule, you must first create the AWS Lambda function
+    /// that the rule invokes to evaluate your resources. When you use the <code>PutConfigRule</code>
+    /// action to add the rule to AWS Config, you must specify the Amazon Resource Name (ARN)
+    /// that AWS Lambda assigns to the function. Specify the ARN for the <code>SourceIdentifier</code>
+    /// key. This key is part of the <code>Source</code> object, which is part of the <code>ConfigRule</code>
+    /// object. 
     /// </para>
     ///  
     /// <para>
@@ -63,13 +62,18 @@ namespace Amazon.ConfigService.Model
     /// </para>
     ///  
     /// <para>
-    /// If you are updating a rule that you have added previously, specify the rule's <code>ConfigRuleName</code>,
-    /// <code>ConfigRuleId</code>, or <code>ConfigRuleArn</code> in the <code>ConfigRule</code>
-    /// data type that you use in this request.
+    /// If you are updating a rule that you added previously, you can specify the rule by
+    /// <code>ConfigRuleName</code>, <code>ConfigRuleId</code>, or <code>ConfigRuleArn</code>
+    /// in the <code>ConfigRule</code> data type that you use in this request.
     /// </para>
     ///  
     /// <para>
-    /// The maximum number of rules that AWS Config supports is 25.
+    /// The maximum number of rules that AWS Config supports is 50.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information about requesting a rule limit increase, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">AWS
+    /// Config Limits</a> in the <i>AWS General Reference Guide</i>.
     /// </para>
     ///  
     /// <para>

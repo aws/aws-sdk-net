@@ -45,6 +45,9 @@ namespace Amazon.S3.Model
         private ServerSideEncryptionCustomerMethod serverSideCustomerEncryption;
         private string serverSideEncryptionCustomerProvidedKey;
         private string serverSideEncryptionCustomerProvidedKeyMD5;
+        private RequestPayer requestPayer;
+
+        private int? partNumber;
 
         /// <summary>
         /// The name of the bucket containing the object.
@@ -270,7 +273,56 @@ namespace Amazon.S3.Model
         internal bool IsSetServerSideEncryptionCustomerProvidedKeyMD5()
         {
             return !System.String.IsNullOrEmpty(this.serverSideEncryptionCustomerProvidedKeyMD5);
-        }	
+        }
+
+        /// <summary>
+        /// Part number of the object being read. This is a positive integer between 1 and 10,000.
+        /// Effectively performs a 'ranged' GET request for the part specified. Useful for downloading just a part of an object.
+        /// </summary>
+        public int? PartNumber
+        {
+            get { return this.partNumber; }
+            set
+            {
+                if (value.HasValue)
+                {
+                    if (value < 1 || 10000 < value)
+                    {
+                        throw new ArgumentException("PartNumber must be a positve integer between 1 and 10,000.");
+                    }
+                }
+
+                this.partNumber = value;
+            }
+        }
+
+        /// <summary>
+        /// Checks if PartNumber property is set.
+        /// </summary>
+        /// <returns>true if PartNumber property is set.</returns>
+        internal bool IsSetPartNumber()
+        {
+            return this.partNumber.HasValue;
+        }
+
+        /// <summary>
+        /// Confirms that the requester knows that she or he will be charged for the list objects request.
+        /// Bucket owners need not specify this parameter in their requests.
+        /// </summary>
+        public RequestPayer RequestPayer
+        {
+            get { return this.requestPayer; }
+            set { this.requestPayer = value; }
+        }
+
+        /// <summary>
+        /// Checks to see if RequetsPayer is set.
+        /// </summary>
+        /// <returns>true, if RequestPayer property is set.</returns>
+        internal bool IsSetRequestPayer()
+        {
+            return requestPayer != null;
+        }
     }
 }
     

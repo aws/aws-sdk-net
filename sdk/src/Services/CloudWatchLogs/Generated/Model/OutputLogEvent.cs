@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
-    /// 
+    /// Represents a log event.
     /// </summary>
     public partial class OutputLogEvent
     {
@@ -37,7 +37,10 @@ namespace Amazon.CloudWatchLogs.Model
         private DateTime? _timestamp;
 
         /// <summary>
-        /// Gets and sets the property IngestionTime.
+        /// Gets and sets the property IngestionTime. 
+        /// <para>
+        /// The time the event was ingested.
+        /// </para>
         /// </summary>
         public DateTime IngestionTime
         {
@@ -52,7 +55,10 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Message.
+        /// Gets and sets the property Message. 
+        /// <para>
+        /// The data contained in the log event.
+        /// </para>
         /// </summary>
         public string Message
         {
@@ -67,7 +73,11 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Timestamp.
+        /// Gets and sets the property Timestamp. 
+        /// <para>
+        /// The time the event occurred, expressed as the number of milliseconds since Jan 1,
+        /// 1970 00:00:00 UTC.
+        /// </para>
         /// </summary>
         public DateTime Timestamp
         {

@@ -199,7 +199,7 @@ namespace Amazon.S3.Internal
             }
         }
 
-        static string DetermineBucketRegionCode(ClientConfig config)
+        static string DetermineBucketRegionCode(IClientConfig config)
         {
             if (config.RegionEndpoint != null && string.IsNullOrEmpty(config.ServiceURL))
                 return config.RegionEndpoint.SystemName;

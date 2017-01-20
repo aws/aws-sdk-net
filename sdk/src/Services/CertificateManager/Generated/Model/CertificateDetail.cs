@@ -37,6 +37,8 @@ namespace Amazon.CertificateManager.Model
         private DateTime? _createdAt;
         private string _domainName;
         private List<DomainValidation> _domainValidationOptions = new List<DomainValidation>();
+        private FailureReason _failureReason;
+        private DateTime? _importedAt;
         private List<string> _inUseBy = new List<string>();
         private DateTime? _issuedAt;
         private string _issuer;
@@ -50,13 +52,14 @@ namespace Amazon.CertificateManager.Model
         private CertificateStatus _status;
         private string _subject;
         private List<string> _subjectAlternativeNames = new List<string>();
+        private CertificateType _type;
 
         /// <summary>
         /// Gets and sets the property CertificateArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the certificate. For more information about ARNs,
         /// see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Names (ARNs) and AWS Service Namespaces</a>.
+        /// Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
         /// </para>
         /// </summary>
         public string CertificateArn
@@ -74,7 +77,8 @@ namespace Amazon.CertificateManager.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The time at which the certificate was requested.
+        /// The time at which the certificate was requested. This value exists only when the certificate
+        /// type is <code>AMAZON_ISSUED</code>.
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -92,8 +96,7 @@ namespace Amazon.CertificateManager.Model
         /// <summary>
         /// Gets and sets the property DomainName. 
         /// <para>
-        /// The fully qualified domain name (FQDN) for the certificate, such as www.example.com
-        /// or example.com.
+        /// The fully qualified domain name for the certificate, such as www.example.com or example.com.
         /// </para>
         /// </summary>
         public string DomainName
@@ -112,6 +115,7 @@ namespace Amazon.CertificateManager.Model
         /// Gets and sets the property DomainValidationOptions. 
         /// <para>
         /// Contains information about the email address or addresses used for domain validation.
+        /// This field exists only when the certificate type is <code>AMAZON_ISSUED</code>.
         /// </para>
         /// </summary>
         public List<DomainValidation> DomainValidationOptions
@@ -127,9 +131,48 @@ namespace Amazon.CertificateManager.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FailureReason. 
+        /// <para>
+        /// The reason the certificate request failed. This value exists only when the certificate
+        /// status is <code>FAILED</code>. For more information, see <a href="http://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed">Certificate
+        /// Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>.
+        /// </para>
+        /// </summary>
+        public FailureReason FailureReason
+        {
+            get { return this._failureReason; }
+            set { this._failureReason = value; }
+        }
+
+        // Check to see if FailureReason property is set
+        internal bool IsSetFailureReason()
+        {
+            return this._failureReason != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImportedAt. 
+        /// <para>
+        /// The date and time at which the certificate was imported. This value exists only when
+        /// the certificate type is <code>IMPORTED</code>.
+        /// </para>
+        /// </summary>
+        public DateTime ImportedAt
+        {
+            get { return this._importedAt.GetValueOrDefault(); }
+            set { this._importedAt = value; }
+        }
+
+        // Check to see if ImportedAt property is set
+        internal bool IsSetImportedAt()
+        {
+            return this._importedAt.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property InUseBy. 
         /// <para>
-        /// A list of ARNs for the resources that are using the certificate. An ACM Certificate
+        /// A list of ARNs for the AWS resources that are using the certificate. A certificate
         /// can be used by multiple AWS resources.
         /// </para>
         /// </summary>
@@ -148,7 +191,8 @@ namespace Amazon.CertificateManager.Model
         /// <summary>
         /// Gets and sets the property IssuedAt. 
         /// <para>
-        /// The time at which the certificate was issued.
+        /// The time at which the certificate was issued. This value exists only when the certificate
+        /// type is <code>AMAZON_ISSUED</code>.
         /// </para>
         /// </summary>
         public DateTime IssuedAt
@@ -166,7 +210,7 @@ namespace Amazon.CertificateManager.Model
         /// <summary>
         /// Gets and sets the property Issuer. 
         /// <para>
-        /// The X.500 distinguished name of the CA that issued and signed the certificate.
+        /// The name of the certificate authority that issued and signed the certificate.
         /// </para>
         /// </summary>
         public string Issuer
@@ -184,8 +228,7 @@ namespace Amazon.CertificateManager.Model
         /// <summary>
         /// Gets and sets the property KeyAlgorithm. 
         /// <para>
-        /// The algorithm used to generate the key pair (the public and private key). Currently
-        /// the only supported value is <code>RSA_2048</code>.
+        /// The algorithm that was used to generate the key pair (the public and private key).
         /// </para>
         /// </summary>
         public KeyAlgorithm KeyAlgorithm
@@ -295,8 +338,7 @@ namespace Amazon.CertificateManager.Model
         /// <summary>
         /// Gets and sets the property SignatureAlgorithm. 
         /// <para>
-        /// The algorithm used to generate a signature. Currently the only supported value is
-        /// <code>SHA256WITHRSA</code>.
+        /// The algorithm that was used to sign the certificate.
         /// </para>
         /// </summary>
         public string SignatureAlgorithm
@@ -332,8 +374,7 @@ namespace Amazon.CertificateManager.Model
         /// <summary>
         /// Gets and sets the property Subject. 
         /// <para>
-        /// The X.500 distinguished name of the entity associated with the public key contained
-        /// in the certificate.
+        /// The name of the entity that is associated with the public key contained in the certificate.
         /// </para>
         /// </summary>
         public string Subject
@@ -351,11 +392,11 @@ namespace Amazon.CertificateManager.Model
         /// <summary>
         /// Gets and sets the property SubjectAlternativeNames. 
         /// <para>
-        /// One or more domain names (subject alternative names) included in the certificate request.
-        /// After the certificate is issued, this list includes the domain names bound to the
-        /// public key contained in the certificate. The subject alternative names include the
-        /// canonical domain name (CN) of the certificate and additional domain names that can
-        /// be used to connect to the website.
+        /// One or more domain names (subject alternative names) included in the certificate.
+        /// This list contains the domain names that are bound to the public key that is contained
+        /// in the certificate. The subject alternative names include the canonical domain name
+        /// (CN) of the certificate and additional domain names that can be used to connect to
+        /// the website.
         /// </para>
         /// </summary>
         public List<string> SubjectAlternativeNames
@@ -368,6 +409,29 @@ namespace Amazon.CertificateManager.Model
         internal bool IsSetSubjectAlternativeNames()
         {
             return this._subjectAlternativeNames != null && this._subjectAlternativeNames.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The source of the certificate. For certificates provided by ACM, this value is <code>AMAZON_ISSUED</code>.
+        /// For certificates that you imported with <a>ImportCertificate</a>, this value is <code>IMPORTED</code>.
+        /// ACM does not provide <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
+        /// renewal</a> for imported certificates. For more information about the differences
+        /// between certificates that you import and those that ACM provides, see <a href="http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
+        /// Certificates</a> in the <i>AWS Certificate Manager User Guide</i>.
+        /// </para>
+        /// </summary>
+        public CertificateType Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
         }
 
     }

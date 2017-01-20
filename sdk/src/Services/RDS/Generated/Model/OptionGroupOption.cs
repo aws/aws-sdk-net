@@ -39,6 +39,8 @@ namespace Amazon.RDS.Model
         private string _minimumRequiredMinorEngineVersion;
         private string _name;
         private List<OptionGroupOptionSetting> _optionGroupOptionSettings = new List<OptionGroupOptionSetting>();
+        private List<OptionVersion> _optionGroupOptionVersions = new List<OptionVersion>();
+        private List<string> _optionsConflictsWith = new List<string>();
         private List<string> _optionsDependedOn = new List<string>();
         private bool? _permanent;
         private bool? _persistent;
@@ -155,8 +157,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property OptionGroupOptionSettings. 
         /// <para>
-        /// Specifies the option settings that are available (and the default value) for each
-        /// option in an option group.
+        /// The option settings that are available (and the default value) for each option in
+        /// an option group.
         /// </para>
         /// </summary>
         public List<OptionGroupOptionSetting> OptionGroupOptionSettings
@@ -172,9 +174,45 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OptionGroupOptionVersions. 
+        /// <para>
+        /// The versions that are available for the option.
+        /// </para>
+        /// </summary>
+        public List<OptionVersion> OptionGroupOptionVersions
+        {
+            get { return this._optionGroupOptionVersions; }
+            set { this._optionGroupOptionVersions = value; }
+        }
+
+        // Check to see if OptionGroupOptionVersions property is set
+        internal bool IsSetOptionGroupOptionVersions()
+        {
+            return this._optionGroupOptionVersions != null && this._optionGroupOptionVersions.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OptionsConflictsWith. 
+        /// <para>
+        /// The options that conflict with this option.
+        /// </para>
+        /// </summary>
+        public List<string> OptionsConflictsWith
+        {
+            get { return this._optionsConflictsWith; }
+            set { this._optionsConflictsWith = value; }
+        }
+
+        // Check to see if OptionsConflictsWith property is set
+        internal bool IsSetOptionsConflictsWith()
+        {
+            return this._optionsConflictsWith != null && this._optionsConflictsWith.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property OptionsDependedOn. 
         /// <para>
-        /// List of all options that are prerequisites for this option.
+        /// The options that are prerequisites for this option.
         /// </para>
         /// </summary>
         public List<string> OptionsDependedOn
@@ -192,9 +230,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Permanent. 
         /// <para>
-        /// A permanent option cannot be removed from the option group once the option group is
-        /// used, and it cannot be removed from the db instance after assigning an option group
-        /// with this permanent option.
+        /// Permanent options can never be removed from an option group. An option group containing
+        /// a permanent option can't be removed from a DB instance.
         /// </para>
         /// </summary>
         public bool Permanent
@@ -212,9 +249,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Persistent. 
         /// <para>
-        /// A persistent option cannot be removed from the option group once the option group
-        /// is used, but this option can be removed from the db instance while modifying the related
-        /// data and assigning another option group without this option.
+        /// Persistent options can't be removed from an option group while DB instances are associated
+        /// with the option group. If you disassociate all DB instances from the option group,
+        /// your can remove the persistent option from the option group.
         /// </para>
         /// </summary>
         public bool Persistent

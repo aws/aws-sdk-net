@@ -31,48 +31,53 @@ namespace Amazon.ECS.Model
     /// Container for the parameters to the CreateService operation.
     /// Runs and maintains a desired number of tasks from a specified task definition. If
     /// the number of tasks running in a service drops below <code>desiredCount</code>, Amazon
-    /// ECS spawns another instantiation of the task in the specified cluster. To update an
-    /// existing service, see <a>UpdateService</a>.
+    /// ECS spawns another copy of the task in the specified cluster. To update an existing
+    /// service, see <a>UpdateService</a>.
     /// 
     ///  
     /// <para>
     /// In addition to maintaining the desired count of tasks in your service, you can optionally
     /// run your service behind a load balancer. The load balancer distributes traffic across
-    /// the tasks that are associated with the service.
+    /// the tasks that are associated with the service. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service
+    /// Load Balancing</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
     /// </para>
     ///  
     /// <para>
     /// You can optionally specify a deployment configuration for your service. During a deployment
-    /// (which is triggered by changing the task definition of a service with an <a>UpdateService</a>
-    /// operation), the service scheduler uses the <code>minimumHealthyPercent</code> and
-    /// <code>maximumPercent</code> parameters to determine the deployment strategy.
+    /// (which is triggered by changing the task definition or the desired count of a service
+    /// with an <a>UpdateService</a> operation), the service scheduler uses the <code>minimumHealthyPercent</code>
+    /// and <code>maximumPercent</code> parameters to determine the deployment strategy.
     /// </para>
     ///  
     /// <para>
-    /// If the <code>minimumHealthyPercent</code> is below 100%, the scheduler can ignore
-    /// the <code>desiredCount</code> temporarily during a deployment. For example, if your
-    /// service has a <code>desiredCount</code> of four tasks, a <code>minimumHealthyPercent</code>
-    /// of 50% allows the scheduler to stop two existing tasks before starting two new tasks.
-    /// Tasks for services that <i>do not</i> use a load balancer are considered healthy if
-    /// they are in the <code>RUNNING</code> state; tasks for services that <i>do</i> use
-    /// a load balancer are considered healthy if they are in the <code>RUNNING</code> state
-    /// and the container instance it is hosted on is reported as healthy by the load balancer.
-    /// The default value for <code>minimumHealthyPercent</code> is 50% in the console and
-    /// 100% for the AWS CLI, the AWS SDKs, and the APIs.
+    /// The <code>minimumHealthyPercent</code> represents a lower limit on the number of your
+    /// service's tasks that must remain in the <code>RUNNING</code> state during a deployment,
+    /// as a percentage of the <code>desiredCount</code> (rounded up to the nearest integer).
+    /// This parameter enables you to deploy without using additional cluster capacity. For
+    /// example, if your service has a <code>desiredCount</code> of four tasks and a <code>minimumHealthyPercent</code>
+    /// of 50%, the scheduler may stop two existing tasks to free up cluster capacity before
+    /// starting two new tasks. Tasks for services that <i>do not</i> use a load balancer
+    /// are considered healthy if they are in the <code>RUNNING</code> state; tasks for services
+    /// that <i>do</i> use a load balancer are considered healthy if they are in the <code>RUNNING</code>
+    /// state and the container instance it is hosted on is reported as healthy by the load
+    /// balancer. The default value for <code>minimumHealthyPercent</code> is 50% in the console
+    /// and 100% for the AWS CLI, the AWS SDKs, and the APIs.
     /// </para>
     ///  
     /// <para>
     /// The <code>maximumPercent</code> parameter represents an upper limit on the number
-    /// of running tasks during a deployment, which enables you to define the deployment batch
-    /// size. For example, if your service has a <code>desiredCount</code> of four tasks,
-    /// a <code>maximumPercent</code> value of 200% starts four new tasks before stopping
-    /// the four older tasks (provided that the cluster resources required to do this are
-    /// available). The default value for <code>maximumPercent</code> is 200%.
+    /// of your service's tasks that are allowed in the <code>RUNNING</code> or <code>PENDING</code>
+    /// state during a deployment, as a percentage of the <code>desiredCount</code> (rounded
+    /// down to the nearest integer). This parameter enables you to define the deployment
+    /// batch size. For example, if your service has a <code>desiredCount</code> of four tasks
+    /// and a <code>maximumPercent</code> value of 200%, the scheduler may start four new
+    /// tasks before stopping the four older tasks (provided that the cluster resources required
+    /// to do this are available). The default value for <code>maximumPercent</code> is 200%.
     /// </para>
     ///  
     /// <para>
-    /// When the service scheduler launches new tasks, it attempts to balance them across
-    /// the Availability Zones in your cluster with the following logic:
+    /// When the service scheduler launches new tasks, it determines task placement in your
+    /// cluster with the following logic:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -81,6 +86,12 @@ namespace Amazon.ECS.Model
     /// instance attributes).
     /// </para>
     ///  </li> <li> 
+    /// <para>
+    /// By default, the service scheduler attempts to balance tasks across Availability Zones
+    /// in this manner (although you can choose a different placement strategy with the <code>placementStrategy</code>
+    /// parameter):
+    /// </para>
+    ///  <ul> <li> 
     /// <para>
     /// Sort the valid container instances by the fewest number of running tasks for this
     /// service in the same Availability Zone as the instance. For example, if zone A has
@@ -93,7 +104,7 @@ namespace Amazon.ECS.Model
     /// Zone (based on the previous steps), favoring container instances with the fewest number
     /// of running tasks for this service.
     /// </para>
-    ///  </li> </ul>
+    ///  </li> </ul> </li> </ul>
     /// </summary>
     public partial class CreateServiceRequest : AmazonECSRequest
     {
@@ -102,6 +113,8 @@ namespace Amazon.ECS.Model
         private DeploymentConfiguration _deploymentConfiguration;
         private int? _desiredCount;
         private List<LoadBalancer> _loadBalancers = new List<LoadBalancer>();
+        private List<PlacementConstraint> _placementConstraints = new List<PlacementConstraint>();
+        private List<PlacementStrategy> _placementStrategy = new List<PlacementStrategy>();
         private string _role;
         private string _serviceName;
         private string _taskDefinition;
@@ -185,9 +198,26 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property LoadBalancers. 
         /// <para>
-        /// A list of load balancer objects, containing the load balancer name, the container
-        /// name (as it appears in a container definition), and the container port to access from
-        /// the load balancer.
+        /// A load balancer object representing the load balancer to use with your service. Currently,
+        /// you are limited to one load balancer or target group per service. After you create
+        /// a service, the load balancer name or target group ARN, container name, and container
+        /// port specified in the service definition are immutable.
+        /// </para>
+        ///  
+        /// <para>
+        /// For Elastic Load Balancing Classic load balancers, this object must contain the load
+        /// balancer name, the container name (as it appears in a container definition), and the
+        /// container port to access from the load balancer. When a task from this service is
+        /// placed on a container instance, the container instance is registered with the load
+        /// balancer specified here.
+        /// </para>
+        ///  
+        /// <para>
+        /// For Elastic Load Balancing Application load balancers, this object must contain the
+        /// load balancer target group ARN, the container name (as it appears in a container definition),
+        /// and the container port to access from the load balancer. When a task from this service
+        /// is placed on a container instance, the container instance and port combination is
+        /// registered as a target in the target group specified here.
         /// </para>
         /// </summary>
         public List<LoadBalancer> LoadBalancers
@@ -200,6 +230,45 @@ namespace Amazon.ECS.Model
         internal bool IsSetLoadBalancers()
         {
             return this._loadBalancers != null && this._loadBalancers.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PlacementConstraints. 
+        /// <para>
+        /// An array of placement constraint objects to use for tasks in your service. You can
+        /// specify a maximum of 10 constraints per task (this limit includes constraints in the
+        /// task definition and those specified at run time). 
+        /// </para>
+        /// </summary>
+        public List<PlacementConstraint> PlacementConstraints
+        {
+            get { return this._placementConstraints; }
+            set { this._placementConstraints = value; }
+        }
+
+        // Check to see if PlacementConstraints property is set
+        internal bool IsSetPlacementConstraints()
+        {
+            return this._placementConstraints != null && this._placementConstraints.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PlacementStrategy. 
+        /// <para>
+        /// The placement strategy objects to use for tasks in your service. You can specify a
+        /// maximum of 5 strategy rules per service.
+        /// </para>
+        /// </summary>
+        public List<PlacementStrategy> PlacementStrategy
+        {
+            get { return this._placementStrategy; }
+            set { this._placementStrategy = value; }
+        }
+
+        // Check to see if PlacementStrategy property is set
+        internal bool IsSetPlacementStrategy()
+        {
+            return this._placementStrategy != null && this._placementStrategy.Count > 0; 
         }
 
         /// <summary>

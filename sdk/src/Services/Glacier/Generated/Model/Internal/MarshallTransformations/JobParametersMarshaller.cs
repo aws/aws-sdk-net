@@ -86,6 +86,12 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.SNSTopic);
             }
 
+            if(requestObject.IsSetTier())
+            {
+                context.Writer.WritePropertyName("Tier");
+                context.Writer.Write(requestObject.Tier);
+            }
+
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("Type");

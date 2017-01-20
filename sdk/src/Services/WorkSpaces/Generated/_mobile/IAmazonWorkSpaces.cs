@@ -23,6 +23,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.WorkSpaces.Model;
 
 namespace Amazon.WorkSpaces
@@ -32,11 +33,10 @@ namespace Amazon.WorkSpaces
     ///
     /// Amazon WorkSpaces Service 
     /// <para>
-    /// This is the <i>Amazon WorkSpaces API Reference</i>. This guide provides detailed information
-    /// about Amazon WorkSpaces operations, data types, parameters, and errors.
+    /// This reference provides detailed information about the Amazon WorkSpaces operations.
     /// </para>
     /// </summary>
-    public partial interface IAmazonWorkSpaces : IDisposable
+    public partial interface IAmazonWorkSpaces : IAmazonService, IDisposable
     {
                 
         #region  CreateTags
@@ -188,7 +188,7 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
-        /// Obtains information about the specified WorkSpaces. 
+        /// Obtains information about the specified WorkSpaces.
         /// 
         ///  
         /// <para>
@@ -229,6 +229,38 @@ namespace Amazon.WorkSpaces
 
         #endregion
                 
+        #region  DescribeWorkspacesConnectionStatus
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeWorkspacesConnectionStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeWorkspacesConnectionStatus operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DescribeWorkspacesConnectionStatusResponse> DescribeWorkspacesConnectionStatusAsync(DescribeWorkspacesConnectionStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ModifyWorkspaceProperties
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyWorkspaceProperties operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyWorkspaceProperties operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ModifyWorkspacePropertiesResponse> ModifyWorkspacePropertiesAsync(ModifyWorkspacePropertiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  RebootWorkspaces
 
 
@@ -258,6 +290,38 @@ namespace Amazon.WorkSpaces
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<RebuildWorkspacesResponse> RebuildWorkspacesAsync(RebuildWorkspacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  StartWorkspaces
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartWorkspaces operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartWorkspaces operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<StartWorkspacesResponse> StartWorkspacesAsync(StartWorkspacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  StopWorkspaces
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopWorkspaces operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopWorkspaces operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<StopWorkspacesResponse> StopWorkspacesAsync(StopWorkspacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

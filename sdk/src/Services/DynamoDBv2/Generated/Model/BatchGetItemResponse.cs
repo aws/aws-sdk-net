@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
-    /// Represents the output of a <i>BatchGetItem</i> operation.
+    /// Represents the output of a <code>BatchGetItem</code> operation.
     /// </summary>
     public partial class BatchGetItemResponse : AmazonWebServiceResponse
     {
@@ -39,7 +39,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property ConsumedCapacity. 
         /// <para>
-        /// The read capacity units consumed by the operation.
+        /// The read capacity units consumed by the entire <code>BatchGetItem</code> operation.
         /// </para>
         ///  
         /// <para>
@@ -47,11 +47,11 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <i>TableName</i> - The table that consumed the provisioned throughput.
+        ///  <code>TableName</code> - The table that consumed the provisioned throughput.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i>CapacityUnits</i> - The total number of capacity units consumed.
+        ///  <code>CapacityUnits</code> - The total number of capacity units consumed.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -70,9 +70,9 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property Responses. 
         /// <para>
-        /// A map of table name to a list of items. Each object in <i>Responses</i> consists of
-        /// a table name, along with a map of attribute data consisting of the data type and attribute
-        /// value.
+        /// A map of table name to a list of items. Each object in <code>Responses</code> consists
+        /// of a table name, along with a map of attribute data consisting of the data type and
+        /// attribute value.
         /// </para>
         /// </summary>
         public Dictionary<string, List<Dictionary<string, AttributeValue>>> Responses
@@ -91,9 +91,9 @@ namespace Amazon.DynamoDBv2.Model
         /// Gets and sets the property UnprocessedKeys. 
         /// <para>
         /// A map of tables and their respective keys that were not processed with the current
-        /// response. The <i>UnprocessedKeys</i> value is in the same form as <i>RequestItems</i>,
-        /// so the value can be provided directly to a subsequent <i>BatchGetItem</i> operation.
-        /// For more information, see <i>RequestItems</i> in the Request Parameters section.
+        /// response. The <code>UnprocessedKeys</code> value is in the same form as <code>RequestItems</code>,
+        /// so the value can be provided directly to a subsequent <code>BatchGetItem</code> operation.
+        /// For more information, see <code>RequestItems</code> in the Request Parameters section.
         /// </para>
         ///  
         /// <para>
@@ -101,24 +101,24 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <i>Keys</i> - An array of primary key attribute values that define specific items
-        /// in the table.
+        ///  <code>Keys</code> - An array of primary key attribute values that define specific
+        /// items in the table.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i>AttributesToGet</i> - One or more attributes to be retrieved from the table or
-        /// index. By default, all attributes are returned. If a requested attribute is not found,
-        /// it does not appear in the result.
+        ///  <code>ProjectionExpression</code> - One or more attributes to be retrieved from the
+        /// table or index. By default, all attributes are returned. If a requested attribute
+        /// is not found, it does not appear in the result.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i>ConsistentRead</i> - The consistency of a read operation. If set to <code>true</code>,
+        ///  <code>ConsistentRead</code> - The consistency of a read operation. If set to <code>true</code>,
         /// then a strongly consistent read is used; otherwise, an eventually consistent read
         /// is used.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If there are no unprocessed keys remaining, the response contains an empty <i>UnprocessedKeys</i>
+        /// If there are no unprocessed keys remaining, the response contains an empty <code>UnprocessedKeys</code>
         /// map.
         /// </para>
         /// </summary>

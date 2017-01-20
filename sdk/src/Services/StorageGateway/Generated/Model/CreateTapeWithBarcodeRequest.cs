@@ -32,7 +32,7 @@ namespace Amazon.StorageGateway.Model
     /// Creates a virtual tape by using your own barcode. You write data to the virtual tape
     /// and then archive the tape.
     /// 
-    ///  <note>
+    ///  <note> 
     /// <para>
     /// Cache storage must be allocated to the gateway before you can create a virtual tape.
     /// Use the <a>AddCache</a> operation to add cache storage to a gateway.
@@ -88,7 +88,7 @@ namespace Amazon.StorageGateway.Model
         /// <para>
         /// The size, in bytes, of the virtual tape that you want to create.
         /// </para>
-        ///  <note>
+        ///  <note> 
         /// <para>
         /// The size must be aligned by gigabyte (1024*1024*1024 byte).
         /// </para>

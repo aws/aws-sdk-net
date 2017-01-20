@@ -42,6 +42,7 @@ namespace Amazon.RDS.Model
         private string _offeringType;
         private string _productDescription;
         private List<RecurringCharge> _recurringCharges = new List<RecurringCharge>();
+        private string _reservedDBInstanceArn;
         private string _reservedDBInstanceId;
         private string _reservedDBInstancesOfferingId;
         private DateTime? _startTime;
@@ -208,6 +209,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetRecurringCharges()
         {
             return this._recurringCharges != null && this._recurringCharges.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReservedDBInstanceArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) for the reserved DB instance.
+        /// </para>
+        /// </summary>
+        public string ReservedDBInstanceArn
+        {
+            get { return this._reservedDBInstanceArn; }
+            set { this._reservedDBInstanceArn = value; }
+        }
+
+        // Check to see if ReservedDBInstanceArn property is set
+        internal bool IsSetReservedDBInstanceArn()
+        {
+            return this._reservedDBInstanceArn != null;
         }
 
         /// <summary>

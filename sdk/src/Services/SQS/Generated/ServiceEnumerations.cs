@@ -25,11 +25,85 @@ namespace Amazon.SQS
 {
 
     /// <summary>
+    /// Constants used for properties of type MessageSystemAttributeName.
+    /// </summary>
+    public class MessageSystemAttributeName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ApproximateFirstReceiveTimestamp for MessageSystemAttributeName
+        /// </summary>
+        public static readonly MessageSystemAttributeName ApproximateFirstReceiveTimestamp = new MessageSystemAttributeName("ApproximateFirstReceiveTimestamp");
+        /// <summary>
+        /// Constant ApproximateReceiveCount for MessageSystemAttributeName
+        /// </summary>
+        public static readonly MessageSystemAttributeName ApproximateReceiveCount = new MessageSystemAttributeName("ApproximateReceiveCount");
+        /// <summary>
+        /// Constant MessageDeduplicationId for MessageSystemAttributeName
+        /// </summary>
+        public static readonly MessageSystemAttributeName MessageDeduplicationId = new MessageSystemAttributeName("MessageDeduplicationId");
+        /// <summary>
+        /// Constant MessageGroupId for MessageSystemAttributeName
+        /// </summary>
+        public static readonly MessageSystemAttributeName MessageGroupId = new MessageSystemAttributeName("MessageGroupId");
+        /// <summary>
+        /// Constant SenderId for MessageSystemAttributeName
+        /// </summary>
+        public static readonly MessageSystemAttributeName SenderId = new MessageSystemAttributeName("SenderId");
+        /// <summary>
+        /// Constant SentTimestamp for MessageSystemAttributeName
+        /// </summary>
+        public static readonly MessageSystemAttributeName SentTimestamp = new MessageSystemAttributeName("SentTimestamp");
+        /// <summary>
+        /// Constant SequenceNumber for MessageSystemAttributeName
+        /// </summary>
+        public static readonly MessageSystemAttributeName SequenceNumber = new MessageSystemAttributeName("SequenceNumber");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MessageSystemAttributeName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MessageSystemAttributeName FindValue(string value)
+        {
+            return FindValue<MessageSystemAttributeName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MessageSystemAttributeName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type QueueAttributeName.
     /// </summary>
     public class QueueAttributeName : ConstantClass
     {
 
+        /// <summary>
+        /// Constant All for QueueAttributeName
+        /// </summary>
+        public static readonly QueueAttributeName All = new QueueAttributeName("All");
         /// <summary>
         /// Constant ApproximateNumberOfMessages for QueueAttributeName
         /// </summary>
@@ -43,6 +117,10 @@ namespace Amazon.SQS
         /// </summary>
         public static readonly QueueAttributeName ApproximateNumberOfMessagesNotVisible = new QueueAttributeName("ApproximateNumberOfMessagesNotVisible");
         /// <summary>
+        /// Constant ContentBasedDeduplication for QueueAttributeName
+        /// </summary>
+        public static readonly QueueAttributeName ContentBasedDeduplication = new QueueAttributeName("ContentBasedDeduplication");
+        /// <summary>
         /// Constant CreatedTimestamp for QueueAttributeName
         /// </summary>
         public static readonly QueueAttributeName CreatedTimestamp = new QueueAttributeName("CreatedTimestamp");
@@ -50,6 +128,10 @@ namespace Amazon.SQS
         /// Constant DelaySeconds for QueueAttributeName
         /// </summary>
         public static readonly QueueAttributeName DelaySeconds = new QueueAttributeName("DelaySeconds");
+        /// <summary>
+        /// Constant FifoQueue for QueueAttributeName
+        /// </summary>
+        public static readonly QueueAttributeName FifoQueue = new QueueAttributeName("FifoQueue");
         /// <summary>
         /// Constant LastModifiedTimestamp for QueueAttributeName
         /// </summary>

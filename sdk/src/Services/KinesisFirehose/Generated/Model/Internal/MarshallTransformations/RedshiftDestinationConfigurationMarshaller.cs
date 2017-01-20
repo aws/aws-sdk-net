@@ -79,6 +79,17 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Password);
             }
 
+            if(requestObject.IsSetProcessingConfiguration())
+            {
+                context.Writer.WritePropertyName("ProcessingConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ProcessingConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.ProcessingConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetRetryOptions())
             {
                 context.Writer.WritePropertyName("RetryOptions");
@@ -94,6 +105,23 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("RoleARN");
                 context.Writer.Write(requestObject.RoleARN);
+            }
+
+            if(requestObject.IsSetS3BackupConfiguration())
+            {
+                context.Writer.WritePropertyName("S3BackupConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = S3DestinationConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.S3BackupConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetS3BackupMode())
+            {
+                context.Writer.WritePropertyName("S3BackupMode");
+                context.Writer.Write(requestObject.S3BackupMode);
             }
 
             if(requestObject.IsSetS3Configuration())

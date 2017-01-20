@@ -272,11 +272,32 @@ namespace Amazon.CognitoIdentity
         /// <summary>
         /// Creates a new identity pool. The identity pool is a store of user identity information
         /// that is specific to your AWS account. The limit on identity pools is 60 per account.
-        /// The keys for <code>SupportedLoginProviders</code> are as follows: <ul> <li>Facebook:
-        /// <code>graph.facebook.com</code></li> <li>Google: <code>accounts.google.com</code></li>
-        /// <li>Amazon: <code>www.amazon.com</code></li> <li>Twitter: <code>api.twitter.com</code></li>
-        /// <li>Digits: <code>www.digits.com</code></li> </ul> You must use AWS Developer credentials
-        /// to call this API.
+        /// The keys for <code>SupportedLoginProviders</code> are as follows:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Facebook: <code>graph.facebook.com</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Google: <code>accounts.google.com</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon: <code>www.amazon.com</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Twitter: <code>api.twitter.com</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Digits: <code>www.digits.com</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// You must use AWS Developer credentials to call this API.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateIdentityPool service method.</param>
         /// 
@@ -299,6 +320,7 @@ namespace Amazon.CognitoIdentity
         /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
         /// Thrown when a request is throttled.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/CreateIdentityPool">REST API Reference for CreateIdentityPool Operation</seealso>
         public CreateIdentityPoolResponse CreateIdentityPool(CreateIdentityPoolRequest request)
         {
             var marshaller = new CreateIdentityPoolRequestMarshaller();
@@ -316,6 +338,7 @@ namespace Amazon.CognitoIdentity
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/CreateIdentityPool">REST API Reference for CreateIdentityPool Operation</seealso>
         public Task<CreateIdentityPoolResponse> CreateIdentityPoolAsync(CreateIdentityPoolRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateIdentityPoolRequestMarshaller();
@@ -334,7 +357,7 @@ namespace Amazon.CognitoIdentity
         /// Deletes identities from an identity pool. You can specify a list of 1-60 identities
         /// that you want to delete.
         /// 
-        /// 
+        ///  
         /// <para>
         /// You must use AWS Developer credentials to call this API.
         /// </para>
@@ -351,6 +374,7 @@ namespace Amazon.CognitoIdentity
         /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
         /// Thrown when a request is throttled.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/DeleteIdentities">REST API Reference for DeleteIdentities Operation</seealso>
         public DeleteIdentitiesResponse DeleteIdentities(DeleteIdentitiesRequest request)
         {
             var marshaller = new DeleteIdentitiesRequestMarshaller();
@@ -368,6 +392,7 @@ namespace Amazon.CognitoIdentity
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/DeleteIdentities">REST API Reference for DeleteIdentities Operation</seealso>
         public Task<DeleteIdentitiesResponse> DeleteIdentitiesAsync(DeleteIdentitiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteIdentitiesRequestMarshaller();
@@ -386,7 +411,7 @@ namespace Amazon.CognitoIdentity
         /// Deletes a user pool. Once a pool is deleted, users will not be able to authenticate
         /// with the pool.
         /// 
-        /// 
+        ///  
         /// <para>
         /// You must use AWS Developer credentials to call this API.
         /// </para>
@@ -409,6 +434,7 @@ namespace Amazon.CognitoIdentity
         /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
         /// Thrown when a request is throttled.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/DeleteIdentityPool">REST API Reference for DeleteIdentityPool Operation</seealso>
         public DeleteIdentityPoolResponse DeleteIdentityPool(string identityPoolId)
         {
             var request = new DeleteIdentityPoolRequest();
@@ -421,7 +447,7 @@ namespace Amazon.CognitoIdentity
         /// Deletes a user pool. Once a pool is deleted, users will not be able to authenticate
         /// with the pool.
         /// 
-        /// 
+        ///  
         /// <para>
         /// You must use AWS Developer credentials to call this API.
         /// </para>
@@ -444,6 +470,7 @@ namespace Amazon.CognitoIdentity
         /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
         /// Thrown when a request is throttled.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/DeleteIdentityPool">REST API Reference for DeleteIdentityPool Operation</seealso>
         public DeleteIdentityPoolResponse DeleteIdentityPool(DeleteIdentityPoolRequest request)
         {
             var marshaller = new DeleteIdentityPoolRequestMarshaller();
@@ -457,7 +484,7 @@ namespace Amazon.CognitoIdentity
         /// Deletes a user pool. Once a pool is deleted, users will not be able to authenticate
         /// with the pool.
         /// 
-        /// 
+        ///  
         /// <para>
         /// You must use AWS Developer credentials to call this API.
         /// </para>
@@ -483,6 +510,7 @@ namespace Amazon.CognitoIdentity
         /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
         /// Thrown when a request is throttled.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/DeleteIdentityPool">REST API Reference for DeleteIdentityPool Operation</seealso>
         public Task<DeleteIdentityPoolResponse> DeleteIdentityPoolAsync(string identityPoolId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new DeleteIdentityPoolRequest();
@@ -499,6 +527,7 @@ namespace Amazon.CognitoIdentity
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/DeleteIdentityPool">REST API Reference for DeleteIdentityPool Operation</seealso>
         public Task<DeleteIdentityPoolResponse> DeleteIdentityPoolAsync(DeleteIdentityPoolRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteIdentityPoolRequestMarshaller();
@@ -517,7 +546,7 @@ namespace Amazon.CognitoIdentity
         /// Returns metadata related to the given identity, including when the identity was created
         /// and any associated linked logins.
         /// 
-        /// 
+        ///  
         /// <para>
         /// You must use AWS Developer credentials to call this API.
         /// </para>
@@ -540,6 +569,7 @@ namespace Amazon.CognitoIdentity
         /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
         /// Thrown when a request is throttled.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/DescribeIdentity">REST API Reference for DescribeIdentity Operation</seealso>
         public DescribeIdentityResponse DescribeIdentity(string identityId)
         {
             var request = new DescribeIdentityRequest();
@@ -552,7 +582,7 @@ namespace Amazon.CognitoIdentity
         /// Returns metadata related to the given identity, including when the identity was created
         /// and any associated linked logins.
         /// 
-        /// 
+        ///  
         /// <para>
         /// You must use AWS Developer credentials to call this API.
         /// </para>
@@ -575,6 +605,7 @@ namespace Amazon.CognitoIdentity
         /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
         /// Thrown when a request is throttled.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/DescribeIdentity">REST API Reference for DescribeIdentity Operation</seealso>
         public DescribeIdentityResponse DescribeIdentity(DescribeIdentityRequest request)
         {
             var marshaller = new DescribeIdentityRequestMarshaller();
@@ -588,7 +619,7 @@ namespace Amazon.CognitoIdentity
         /// Returns metadata related to the given identity, including when the identity was created
         /// and any associated linked logins.
         /// 
-        /// 
+        ///  
         /// <para>
         /// You must use AWS Developer credentials to call this API.
         /// </para>
@@ -614,6 +645,7 @@ namespace Amazon.CognitoIdentity
         /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
         /// Thrown when a request is throttled.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/DescribeIdentity">REST API Reference for DescribeIdentity Operation</seealso>
         public Task<DescribeIdentityResponse> DescribeIdentityAsync(string identityId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new DescribeIdentityRequest();
@@ -630,6 +662,7 @@ namespace Amazon.CognitoIdentity
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/DescribeIdentity">REST API Reference for DescribeIdentity Operation</seealso>
         public Task<DescribeIdentityResponse> DescribeIdentityAsync(DescribeIdentityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeIdentityRequestMarshaller();
@@ -648,7 +681,7 @@ namespace Amazon.CognitoIdentity
         /// Gets details about a particular identity pool, including the pool name, ID description,
         /// creation date, and current number of users.
         /// 
-        /// 
+        ///  
         /// <para>
         /// You must use AWS Developer credentials to call this API.
         /// </para>
@@ -671,6 +704,7 @@ namespace Amazon.CognitoIdentity
         /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
         /// Thrown when a request is throttled.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/DescribeIdentityPool">REST API Reference for DescribeIdentityPool Operation</seealso>
         public DescribeIdentityPoolResponse DescribeIdentityPool(string identityPoolId)
         {
             var request = new DescribeIdentityPoolRequest();
@@ -683,7 +717,7 @@ namespace Amazon.CognitoIdentity
         /// Gets details about a particular identity pool, including the pool name, ID description,
         /// creation date, and current number of users.
         /// 
-        /// 
+        ///  
         /// <para>
         /// You must use AWS Developer credentials to call this API.
         /// </para>
@@ -706,6 +740,7 @@ namespace Amazon.CognitoIdentity
         /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
         /// Thrown when a request is throttled.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/DescribeIdentityPool">REST API Reference for DescribeIdentityPool Operation</seealso>
         public DescribeIdentityPoolResponse DescribeIdentityPool(DescribeIdentityPoolRequest request)
         {
             var marshaller = new DescribeIdentityPoolRequestMarshaller();
@@ -719,7 +754,7 @@ namespace Amazon.CognitoIdentity
         /// Gets details about a particular identity pool, including the pool name, ID description,
         /// creation date, and current number of users.
         /// 
-        /// 
+        ///  
         /// <para>
         /// You must use AWS Developer credentials to call this API.
         /// </para>
@@ -745,6 +780,7 @@ namespace Amazon.CognitoIdentity
         /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
         /// Thrown when a request is throttled.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/DescribeIdentityPool">REST API Reference for DescribeIdentityPool Operation</seealso>
         public Task<DescribeIdentityPoolResponse> DescribeIdentityPoolAsync(string identityPoolId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new DescribeIdentityPoolRequest();
@@ -761,6 +797,7 @@ namespace Amazon.CognitoIdentity
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/DescribeIdentityPool">REST API Reference for DescribeIdentityPool Operation</seealso>
         public Task<DescribeIdentityPoolResponse> DescribeIdentityPoolAsync(DescribeIdentityPoolRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeIdentityPoolRequestMarshaller();
@@ -781,7 +818,7 @@ namespace Amazon.CognitoIdentity
         /// it will be passed through to AWS Security Token Service with the appropriate role
         /// for the token.
         /// 
-        /// 
+        ///  
         /// <para>
         /// This is a public API. You do not need any credentials to call this API.
         /// </para>
@@ -814,6 +851,7 @@ namespace Amazon.CognitoIdentity
         /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
         /// Thrown when a request is throttled.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetCredentialsForIdentity">REST API Reference for GetCredentialsForIdentity Operation</seealso>
         public GetCredentialsForIdentityResponse GetCredentialsForIdentity(string identityId)
         {
             var request = new GetCredentialsForIdentityRequest();
@@ -828,7 +866,7 @@ namespace Amazon.CognitoIdentity
         /// it will be passed through to AWS Security Token Service with the appropriate role
         /// for the token.
         /// 
-        /// 
+        ///  
         /// <para>
         /// This is a public API. You do not need any credentials to call this API.
         /// </para>
@@ -862,6 +900,7 @@ namespace Amazon.CognitoIdentity
         /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
         /// Thrown when a request is throttled.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetCredentialsForIdentity">REST API Reference for GetCredentialsForIdentity Operation</seealso>
         public GetCredentialsForIdentityResponse GetCredentialsForIdentity(string identityId, Dictionary<string, string> logins)
         {
             var request = new GetCredentialsForIdentityRequest();
@@ -877,7 +916,7 @@ namespace Amazon.CognitoIdentity
         /// it will be passed through to AWS Security Token Service with the appropriate role
         /// for the token.
         /// 
-        /// 
+        ///  
         /// <para>
         /// This is a public API. You do not need any credentials to call this API.
         /// </para>
@@ -910,6 +949,7 @@ namespace Amazon.CognitoIdentity
         /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
         /// Thrown when a request is throttled.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetCredentialsForIdentity">REST API Reference for GetCredentialsForIdentity Operation</seealso>
         public GetCredentialsForIdentityResponse GetCredentialsForIdentity(GetCredentialsForIdentityRequest request)
         {
             var marshaller = new GetCredentialsForIdentityRequestMarshaller();
@@ -925,7 +965,7 @@ namespace Amazon.CognitoIdentity
         /// it will be passed through to AWS Security Token Service with the appropriate role
         /// for the token.
         /// 
-        /// 
+        ///  
         /// <para>
         /// This is a public API. You do not need any credentials to call this API.
         /// </para>
@@ -961,6 +1001,7 @@ namespace Amazon.CognitoIdentity
         /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
         /// Thrown when a request is throttled.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetCredentialsForIdentity">REST API Reference for GetCredentialsForIdentity Operation</seealso>
         public Task<GetCredentialsForIdentityResponse> GetCredentialsForIdentityAsync(string identityId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new GetCredentialsForIdentityRequest();
@@ -975,7 +1016,7 @@ namespace Amazon.CognitoIdentity
         /// it will be passed through to AWS Security Token Service with the appropriate role
         /// for the token.
         /// 
-        /// 
+        ///  
         /// <para>
         /// This is a public API. You do not need any credentials to call this API.
         /// </para>
@@ -1012,6 +1053,7 @@ namespace Amazon.CognitoIdentity
         /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
         /// Thrown when a request is throttled.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetCredentialsForIdentity">REST API Reference for GetCredentialsForIdentity Operation</seealso>
         public Task<GetCredentialsForIdentityResponse> GetCredentialsForIdentityAsync(string identityId, Dictionary<string, string> logins, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new GetCredentialsForIdentityRequest();
@@ -1029,6 +1071,7 @@ namespace Amazon.CognitoIdentity
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetCredentialsForIdentity">REST API Reference for GetCredentialsForIdentity Operation</seealso>
         public Task<GetCredentialsForIdentityResponse> GetCredentialsForIdentityAsync(GetCredentialsForIdentityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetCredentialsForIdentityRequestMarshaller();
@@ -1047,7 +1090,7 @@ namespace Amazon.CognitoIdentity
         /// Generates (or retrieves) a Cognito ID. Supplying multiple logins will create an implicit
         /// linked account.
         /// 
-        /// 
+        ///  
         /// <para>
         /// This is a public API. You do not need any credentials to call this API.
         /// </para>
@@ -1079,6 +1122,7 @@ namespace Amazon.CognitoIdentity
         /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
         /// Thrown when a request is throttled.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetId">REST API Reference for GetId Operation</seealso>
         public GetIdResponse GetId(GetIdRequest request)
         {
             var marshaller = new GetIdRequestMarshaller();
@@ -1096,6 +1140,7 @@ namespace Amazon.CognitoIdentity
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetId">REST API Reference for GetId Operation</seealso>
         public Task<GetIdResponse> GetIdAsync(GetIdRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetIdRequestMarshaller();
@@ -1113,7 +1158,7 @@ namespace Amazon.CognitoIdentity
         /// <summary>
         /// Gets the roles for an identity pool.
         /// 
-        /// 
+        ///  
         /// <para>
         /// You must use AWS Developer credentials to call this API.
         /// </para>
@@ -1139,6 +1184,7 @@ namespace Amazon.CognitoIdentity
         /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
         /// Thrown when a request is throttled.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetIdentityPoolRoles">REST API Reference for GetIdentityPoolRoles Operation</seealso>
         public GetIdentityPoolRolesResponse GetIdentityPoolRoles(string identityPoolId)
         {
             var request = new GetIdentityPoolRolesRequest();
@@ -1150,7 +1196,7 @@ namespace Amazon.CognitoIdentity
         /// <summary>
         /// Gets the roles for an identity pool.
         /// 
-        /// 
+        ///  
         /// <para>
         /// You must use AWS Developer credentials to call this API.
         /// </para>
@@ -1176,6 +1222,7 @@ namespace Amazon.CognitoIdentity
         /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
         /// Thrown when a request is throttled.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetIdentityPoolRoles">REST API Reference for GetIdentityPoolRoles Operation</seealso>
         public GetIdentityPoolRolesResponse GetIdentityPoolRoles(GetIdentityPoolRolesRequest request)
         {
             var marshaller = new GetIdentityPoolRolesRequestMarshaller();
@@ -1188,7 +1235,7 @@ namespace Amazon.CognitoIdentity
         /// <summary>
         /// Gets the roles for an identity pool.
         /// 
-        /// 
+        ///  
         /// <para>
         /// You must use AWS Developer credentials to call this API.
         /// </para>
@@ -1217,6 +1264,7 @@ namespace Amazon.CognitoIdentity
         /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
         /// Thrown when a request is throttled.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetIdentityPoolRoles">REST API Reference for GetIdentityPoolRoles Operation</seealso>
         public Task<GetIdentityPoolRolesResponse> GetIdentityPoolRolesAsync(string identityPoolId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new GetIdentityPoolRolesRequest();
@@ -1233,6 +1281,7 @@ namespace Amazon.CognitoIdentity
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetIdentityPoolRoles">REST API Reference for GetIdentityPoolRoles Operation</seealso>
         public Task<GetIdentityPoolRolesResponse> GetIdentityPoolRolesAsync(GetIdentityPoolRolesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetIdentityPoolRolesRequestMarshaller();
@@ -1256,7 +1305,7 @@ namespace Amazon.CognitoIdentity
         /// <para>
         /// The OpenId token is valid for 15 minutes.
         /// </para>
-        /// 
+        ///  
         /// <para>
         /// This is a public API. You do not need any credentials to call this API.
         /// </para>
@@ -1285,6 +1334,7 @@ namespace Amazon.CognitoIdentity
         /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
         /// Thrown when a request is throttled.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetOpenIdToken">REST API Reference for GetOpenIdToken Operation</seealso>
         public GetOpenIdTokenResponse GetOpenIdToken(string identityId)
         {
             var request = new GetOpenIdTokenRequest();
@@ -1302,7 +1352,7 @@ namespace Amazon.CognitoIdentity
         /// <para>
         /// The OpenId token is valid for 15 minutes.
         /// </para>
-        /// 
+        ///  
         /// <para>
         /// This is a public API. You do not need any credentials to call this API.
         /// </para>
@@ -1331,6 +1381,7 @@ namespace Amazon.CognitoIdentity
         /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
         /// Thrown when a request is throttled.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetOpenIdToken">REST API Reference for GetOpenIdToken Operation</seealso>
         public GetOpenIdTokenResponse GetOpenIdToken(GetOpenIdTokenRequest request)
         {
             var marshaller = new GetOpenIdTokenRequestMarshaller();
@@ -1349,7 +1400,7 @@ namespace Amazon.CognitoIdentity
         /// <para>
         /// The OpenId token is valid for 15 minutes.
         /// </para>
-        /// 
+        ///  
         /// <para>
         /// This is a public API. You do not need any credentials to call this API.
         /// </para>
@@ -1381,6 +1432,7 @@ namespace Amazon.CognitoIdentity
         /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
         /// Thrown when a request is throttled.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetOpenIdToken">REST API Reference for GetOpenIdToken Operation</seealso>
         public Task<GetOpenIdTokenResponse> GetOpenIdTokenAsync(string identityId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new GetOpenIdTokenRequest();
@@ -1397,6 +1449,7 @@ namespace Amazon.CognitoIdentity
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetOpenIdToken">REST API Reference for GetOpenIdToken Operation</seealso>
         public Task<GetOpenIdTokenResponse> GetOpenIdTokenAsync(GetOpenIdTokenRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetOpenIdTokenRequestMarshaller();
@@ -1427,7 +1480,7 @@ namespace Amazon.CognitoIdentity
         /// identity, you can do so by providing the existing <code>IdentityId</code>. This API
         /// will create the identity in the specified <code>IdentityPoolId</code>.
         /// </para>
-        /// 
+        ///  
         /// <para>
         /// You must use AWS Developer credentials to call this API.
         /// </para>
@@ -1457,6 +1510,7 @@ namespace Amazon.CognitoIdentity
         /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
         /// Thrown when a request is throttled.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetOpenIdTokenForDeveloperIdentity">REST API Reference for GetOpenIdTokenForDeveloperIdentity Operation</seealso>
         public GetOpenIdTokenForDeveloperIdentityResponse GetOpenIdTokenForDeveloperIdentity(GetOpenIdTokenForDeveloperIdentityRequest request)
         {
             var marshaller = new GetOpenIdTokenForDeveloperIdentityRequestMarshaller();
@@ -1474,6 +1528,7 @@ namespace Amazon.CognitoIdentity
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetOpenIdTokenForDeveloperIdentity">REST API Reference for GetOpenIdTokenForDeveloperIdentity Operation</seealso>
         public Task<GetOpenIdTokenForDeveloperIdentityResponse> GetOpenIdTokenForDeveloperIdentityAsync(GetOpenIdTokenForDeveloperIdentityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetOpenIdTokenForDeveloperIdentityRequestMarshaller();
@@ -1491,7 +1546,7 @@ namespace Amazon.CognitoIdentity
         /// <summary>
         /// Lists the identities in a pool.
         /// 
-        /// 
+        ///  
         /// <para>
         /// You must use AWS Developer credentials to call this API.
         /// </para>
@@ -1514,6 +1569,7 @@ namespace Amazon.CognitoIdentity
         /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
         /// Thrown when a request is throttled.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/ListIdentities">REST API Reference for ListIdentities Operation</seealso>
         public ListIdentitiesResponse ListIdentities(ListIdentitiesRequest request)
         {
             var marshaller = new ListIdentitiesRequestMarshaller();
@@ -1531,6 +1587,7 @@ namespace Amazon.CognitoIdentity
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/ListIdentities">REST API Reference for ListIdentities Operation</seealso>
         public Task<ListIdentitiesResponse> ListIdentitiesAsync(ListIdentitiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListIdentitiesRequestMarshaller();
@@ -1548,7 +1605,7 @@ namespace Amazon.CognitoIdentity
         /// <summary>
         /// Lists all of the Cognito identity pools registered for your account.
         /// 
-        /// 
+        ///  
         /// <para>
         /// You must use AWS Developer credentials to call this API.
         /// </para>
@@ -1568,6 +1625,7 @@ namespace Amazon.CognitoIdentity
         /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
         /// Thrown when a request is throttled.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/ListIdentityPools">REST API Reference for ListIdentityPools Operation</seealso>
         public ListIdentityPoolsResponse ListIdentityPools(ListIdentityPoolsRequest request)
         {
             var marshaller = new ListIdentityPoolsRequestMarshaller();
@@ -1585,6 +1643,7 @@ namespace Amazon.CognitoIdentity
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/ListIdentityPools">REST API Reference for ListIdentityPools Operation</seealso>
         public Task<ListIdentityPoolsResponse> ListIdentityPoolsAsync(ListIdentityPoolsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListIdentityPoolsRequestMarshaller();
@@ -1610,7 +1669,7 @@ namespace Amazon.CognitoIdentity
         /// and is the same as the request. Otherwise a <code>ResourceConflictException</code>
         /// is thrown.
         /// 
-        /// 
+        ///  
         /// <para>
         /// You must use AWS Developer credentials to call this API.
         /// </para>
@@ -1636,6 +1695,7 @@ namespace Amazon.CognitoIdentity
         /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
         /// Thrown when a request is throttled.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/LookupDeveloperIdentity">REST API Reference for LookupDeveloperIdentity Operation</seealso>
         public LookupDeveloperIdentityResponse LookupDeveloperIdentity(LookupDeveloperIdentityRequest request)
         {
             var marshaller = new LookupDeveloperIdentityRequestMarshaller();
@@ -1653,6 +1713,7 @@ namespace Amazon.CognitoIdentity
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/LookupDeveloperIdentity">REST API Reference for LookupDeveloperIdentity Operation</seealso>
         public Task<LookupDeveloperIdentityResponse> LookupDeveloperIdentityAsync(LookupDeveloperIdentityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new LookupDeveloperIdentityRequestMarshaller();
@@ -1676,7 +1737,7 @@ namespace Amazon.CognitoIdentity
         /// users can be merged. If the users to be merged are associated with the same public
         /// provider, but as two different users, an exception will be thrown.
         /// 
-        /// 
+        ///  
         /// <para>
         /// You must use AWS Developer credentials to call this API.
         /// </para>
@@ -1702,6 +1763,7 @@ namespace Amazon.CognitoIdentity
         /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
         /// Thrown when a request is throttled.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/MergeDeveloperIdentities">REST API Reference for MergeDeveloperIdentities Operation</seealso>
         public MergeDeveloperIdentitiesResponse MergeDeveloperIdentities(MergeDeveloperIdentitiesRequest request)
         {
             var marshaller = new MergeDeveloperIdentitiesRequestMarshaller();
@@ -1719,6 +1781,7 @@ namespace Amazon.CognitoIdentity
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/MergeDeveloperIdentities">REST API Reference for MergeDeveloperIdentities Operation</seealso>
         public Task<MergeDeveloperIdentitiesResponse> MergeDeveloperIdentitiesAsync(MergeDeveloperIdentitiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new MergeDeveloperIdentitiesRequestMarshaller();
@@ -1734,10 +1797,10 @@ namespace Amazon.CognitoIdentity
 
 
         /// <summary>
-        /// Sets the roles for an identity pool. These roles are used when making calls to <code>GetCredentialsForIdentity</code>
+        /// Sets the roles for an identity pool. These roles are used when making calls to <a>GetCredentialsForIdentity</a>
         /// action.
         /// 
-        /// 
+        ///  
         /// <para>
         /// You must use AWS Developer credentials to call this API.
         /// </para>
@@ -1767,6 +1830,7 @@ namespace Amazon.CognitoIdentity
         /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
         /// Thrown when a request is throttled.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/SetIdentityPoolRoles">REST API Reference for SetIdentityPoolRoles Operation</seealso>
         public SetIdentityPoolRolesResponse SetIdentityPoolRoles(string identityPoolId, Dictionary<string, string> roles)
         {
             var request = new SetIdentityPoolRolesRequest();
@@ -1777,10 +1841,10 @@ namespace Amazon.CognitoIdentity
 
 
         /// <summary>
-        /// Sets the roles for an identity pool. These roles are used when making calls to <code>GetCredentialsForIdentity</code>
+        /// Sets the roles for an identity pool. These roles are used when making calls to <a>GetCredentialsForIdentity</a>
         /// action.
         /// 
-        /// 
+        ///  
         /// <para>
         /// You must use AWS Developer credentials to call this API.
         /// </para>
@@ -1809,6 +1873,7 @@ namespace Amazon.CognitoIdentity
         /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
         /// Thrown when a request is throttled.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/SetIdentityPoolRoles">REST API Reference for SetIdentityPoolRoles Operation</seealso>
         public SetIdentityPoolRolesResponse SetIdentityPoolRoles(SetIdentityPoolRolesRequest request)
         {
             var marshaller = new SetIdentityPoolRolesRequestMarshaller();
@@ -1819,10 +1884,10 @@ namespace Amazon.CognitoIdentity
 
 
         /// <summary>
-        /// Sets the roles for an identity pool. These roles are used when making calls to <code>GetCredentialsForIdentity</code>
+        /// Sets the roles for an identity pool. These roles are used when making calls to <a>GetCredentialsForIdentity</a>
         /// action.
         /// 
-        /// 
+        ///  
         /// <para>
         /// You must use AWS Developer credentials to call this API.
         /// </para>
@@ -1855,6 +1920,7 @@ namespace Amazon.CognitoIdentity
         /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
         /// Thrown when a request is throttled.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/SetIdentityPoolRoles">REST API Reference for SetIdentityPoolRoles Operation</seealso>
         public Task<SetIdentityPoolRolesResponse> SetIdentityPoolRolesAsync(string identityPoolId, Dictionary<string, string> roles, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new SetIdentityPoolRolesRequest();
@@ -1872,6 +1938,7 @@ namespace Amazon.CognitoIdentity
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/SetIdentityPoolRoles">REST API Reference for SetIdentityPoolRoles Operation</seealso>
         public Task<SetIdentityPoolRolesResponse> SetIdentityPoolRolesAsync(SetIdentityPoolRolesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new SetIdentityPoolRolesRequestMarshaller();
@@ -1892,7 +1959,7 @@ namespace Amazon.CognitoIdentity
         /// a given Cognito identity, you remove all federated identities as well as the developer
         /// user identifier, the Cognito identity becomes inaccessible.
         /// 
-        /// 
+        ///  
         /// <para>
         /// You must use AWS Developer credentials to call this API.
         /// </para>
@@ -1918,6 +1985,7 @@ namespace Amazon.CognitoIdentity
         /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
         /// Thrown when a request is throttled.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/UnlinkDeveloperIdentity">REST API Reference for UnlinkDeveloperIdentity Operation</seealso>
         public UnlinkDeveloperIdentityResponse UnlinkDeveloperIdentity(UnlinkDeveloperIdentityRequest request)
         {
             var marshaller = new UnlinkDeveloperIdentityRequestMarshaller();
@@ -1935,6 +2003,7 @@ namespace Amazon.CognitoIdentity
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/UnlinkDeveloperIdentity">REST API Reference for UnlinkDeveloperIdentity Operation</seealso>
         public Task<UnlinkDeveloperIdentityResponse> UnlinkDeveloperIdentityAsync(UnlinkDeveloperIdentityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UnlinkDeveloperIdentityRequestMarshaller();
@@ -1954,7 +2023,7 @@ namespace Amazon.CognitoIdentity
         /// new identities next time they are seen. Removing the last linked login will make this
         /// identity inaccessible.
         /// 
-        /// 
+        ///  
         /// <para>
         /// This is a public API. You do not need any credentials to call this API.
         /// </para>
@@ -1983,6 +2052,7 @@ namespace Amazon.CognitoIdentity
         /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
         /// Thrown when a request is throttled.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/UnlinkIdentity">REST API Reference for UnlinkIdentity Operation</seealso>
         public UnlinkIdentityResponse UnlinkIdentity(UnlinkIdentityRequest request)
         {
             var marshaller = new UnlinkIdentityRequestMarshaller();
@@ -2000,6 +2070,7 @@ namespace Amazon.CognitoIdentity
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/UnlinkIdentity">REST API Reference for UnlinkIdentity Operation</seealso>
         public Task<UnlinkIdentityResponse> UnlinkIdentityAsync(UnlinkIdentityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UnlinkIdentityRequestMarshaller();
@@ -2017,7 +2088,7 @@ namespace Amazon.CognitoIdentity
         /// <summary>
         /// Updates a user pool.
         /// 
-        /// 
+        ///  
         /// <para>
         /// You must use AWS Developer credentials to call this API.
         /// </para>
@@ -2049,6 +2120,7 @@ namespace Amazon.CognitoIdentity
         /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
         /// Thrown when a request is throttled.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/UpdateIdentityPool">REST API Reference for UpdateIdentityPool Operation</seealso>
         public UpdateIdentityPoolResponse UpdateIdentityPool(UpdateIdentityPoolRequest request)
         {
             var marshaller = new UpdateIdentityPoolRequestMarshaller();
@@ -2066,6 +2138,7 @@ namespace Amazon.CognitoIdentity
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/UpdateIdentityPool">REST API Reference for UpdateIdentityPool Operation</seealso>
         public Task<UpdateIdentityPoolResponse> UpdateIdentityPoolAsync(UpdateIdentityPoolRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateIdentityPoolRequestMarshaller();

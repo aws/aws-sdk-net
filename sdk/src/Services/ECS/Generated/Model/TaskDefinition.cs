@@ -34,10 +34,13 @@ namespace Amazon.ECS.Model
     {
         private List<ContainerDefinition> _containerDefinitions = new List<ContainerDefinition>();
         private string _family;
+        private NetworkMode _networkMode;
+        private List<TaskDefinitionPlacementConstraint> _placementConstraints = new List<TaskDefinitionPlacementConstraint>();
         private List<Attribute> _requiresAttributes = new List<Attribute>();
         private int? _revision;
         private TaskDefinitionStatus _status;
         private string _taskDefinitionArn;
+        private string _taskRoleArn;
         private List<Volume> _volumes = new List<Volume>();
 
         /// <summary>
@@ -45,7 +48,7 @@ namespace Amazon.ECS.Model
         /// <para>
         /// A list of container definitions in JSON format that describe the different containers
         /// that make up your task. For more information about container definition parameters
-        /// and defaults, see <a href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonECS/latest/developerguidetask_defintions.html">Amazon
+        /// and defaults, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon
         /// ECS Task Definitions</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -77,6 +80,56 @@ namespace Amazon.ECS.Model
         internal bool IsSetFamily()
         {
             return this._family != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkMode. 
+        /// <para>
+        /// The Docker networking mode to use for the containers in the task. The valid values
+        /// are <code>none</code>, <code>bridge</code>, and <code>host</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If the network mode is <code>none</code>, the containers do not have external connectivity.
+        /// The default Docker network mode is <code>bridge</code>. The <code>host</code> network
+        /// mode offers the highest networking performance for containers because it uses the
+        /// host network stack instead of the virtualized network stack provided by the <code>bridge</code>
+        /// mode.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.docker.com/engine/reference/run/#network-settings">Network
+        /// settings</a> in the <i>Docker run reference</i>.
+        /// </para>
+        /// </summary>
+        public NetworkMode NetworkMode
+        {
+            get { return this._networkMode; }
+            set { this._networkMode = value; }
+        }
+
+        // Check to see if NetworkMode property is set
+        internal bool IsSetNetworkMode()
+        {
+            return this._networkMode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PlacementConstraints. 
+        /// <para>
+        /// An array of placement constraint objects to use for tasks. 
+        /// </para>
+        /// </summary>
+        public List<TaskDefinitionPlacementConstraint> PlacementConstraints
+        {
+            get { return this._placementConstraints; }
+            set { this._placementConstraints = value; }
+        }
+
+        // Check to see if PlacementConstraints property is set
+        internal bool IsSetPlacementConstraints()
+        {
+            return this._placementConstraints != null && this._placementConstraints.Count > 0; 
         }
 
         /// <summary>
@@ -156,10 +209,30 @@ namespace Amazon.ECS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property TaskRoleArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the IAM role that containers in this task can assume.
+        /// All containers in this task are granted the permissions that are specified in this
+        /// role.
+        /// </para>
+        /// </summary>
+        public string TaskRoleArn
+        {
+            get { return this._taskRoleArn; }
+            set { this._taskRoleArn = value; }
+        }
+
+        // Check to see if TaskRoleArn property is set
+        internal bool IsSetTaskRoleArn()
+        {
+            return this._taskRoleArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Volumes. 
         /// <para>
         /// The list of volumes in a task. For more information about volume definition parameters
-        /// and defaults, see <a href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonECS/latest/developerguidetask_defintions.html">Amazon
+        /// and defaults, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon
         /// ECS Task Definitions</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
         /// </para>
         /// </summary>

@@ -29,9 +29,10 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeFleetEvents operation.
-    /// Retrieves entries from the fleet event log. You can specify a time range to limit
-    /// the result set. Use the pagination parameters to retrieve results as a set of sequential
-    /// pages. If successful, a collection of event log entries matching the request are returned.
+    /// Retrieves entries from the specified fleet's event log. You can specify a time range
+    /// to limit the result set. Use the pagination parameters to retrieve results as a set
+    /// of sequential pages. If successful, a collection of event log entries matching the
+    /// request are returned.
     /// </summary>
     public partial class DescribeFleetEventsRequest : AmazonGameLiftRequest
     {
@@ -45,8 +46,8 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property EndTime. 
         /// <para>
         /// Most recent date to retrieve event logs for. If no end time is specified, this call
-        /// returns entries from the specified start time up to the present. Format is an integer
-        /// representing the number of seconds since the Unix epoch (Unix time).
+        /// returns entries from the specified start time up to the present. Format is a number
+        /// expressed in Unix time as milliseconds (ex: "1469498468.057").
         /// </para>
         /// </summary>
         public DateTime EndTime
@@ -64,7 +65,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property FleetId. 
         /// <para>
-        /// Unique identifier for the fleet to get event logs for. 
+        /// Unique identifier for the fleet to get event logs for.
         /// </para>
         /// </summary>
         public string FleetId
@@ -82,7 +83,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
-        /// Maximum number of results to return. You can use this parameter with <i>NextToken</i>
+        /// Maximum number of results to return. Use this parameter with <code>NextToken</code>
         /// to get results as a set of sequential pages.
         /// </para>
         /// </summary>
@@ -123,8 +124,7 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// Earliest date to retrieve event logs for. If no start time is specified, this call
         /// returns entries starting from when the fleet was created to the specified end time.
-        /// Format is an integer representing the number of seconds since the Unix epoch (Unix
-        /// time).
+        /// Format is a number expressed in Unix time as milliseconds (ex: "1469498468.057").
         /// </para>
         /// </summary>
         public DateTime StartTime

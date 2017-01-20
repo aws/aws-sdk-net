@@ -77,14 +77,14 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property SourceIdentifier. 
         /// <para>
-        /// For AWS managed Config rules, a pre-defined identifier from a list. To reference the
-        /// list, see <a href="http://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Using
+        /// For AWS Config managed rules, a predefined identifier from a list. For example, <code>IAM_PASSWORD_POLICY</code>
+        /// is a managed rule. To reference a managed rule, see <a href="http://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Using
         /// AWS Managed Config Rules</a>.
         /// </para>
         ///  
         /// <para>
-        /// For customer managed Config rules, the identifier is the Amazon Resource Name (ARN)
-        /// of the rule's AWS Lambda function.
+        /// For custom rules, the identifier is the Amazon Resource Name (ARN) of the rule's AWS
+        /// Lambda function, such as <code>arn:aws:lambda:us-east-1:123456789012:function:custom_rule_name</code>.
         /// </para>
         /// </summary>
         public string SourceIdentifier

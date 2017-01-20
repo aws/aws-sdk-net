@@ -147,6 +147,12 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
                     response.StatusMessage = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Tier", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Tier = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("VaultARN", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -37,7 +37,7 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Gets and sets the property LockId. 
         /// <para>
-        ///  The lock ID, which is used to complete the vault locking process.
+        /// The lock ID, which is used to complete the vault locking process.
         /// </para>
         /// </summary>
         public string LockId

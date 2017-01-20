@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// See the example below for a sample response.
+    /// Health details for an AWS Elastic Beanstalk environment.
     /// </summary>
     public partial class DescribeEnvironmentHealthResponse : AmazonWebServiceResponse
     {
@@ -42,7 +42,10 @@ namespace Amazon.ElasticBeanstalk.Model
         private EnvironmentHealth _status;
 
         /// <summary>
-        /// Gets and sets the property ApplicationMetrics.
+        /// Gets and sets the property ApplicationMetrics. 
+        /// <para>
+        /// Application request metrics for the environment.
+        /// </para>
         /// </summary>
         public ApplicationMetrics ApplicationMetrics
         {
@@ -59,7 +62,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property Causes. 
         /// <para>
-        /// Returns potential causes for the reported status.
+        /// Descriptions of the data that contributed to the environment's current health status.
         /// </para>
         /// </summary>
         public List<string> Causes
@@ -77,9 +80,8 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property Color. 
         /// <para>
-        /// Returns the color indicator that tells you information about the health of the environment.
-        /// For more information, see <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health
-        /// Colors and Statuses</a>.
+        /// The <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health
+        /// color</a> of the environment.
         /// </para>
         /// </summary>
         public string Color
@@ -97,7 +99,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property EnvironmentName. 
         /// <para>
-        /// The AWS Elastic Beanstalk environment name.
+        /// The environment's name.
         /// </para>
         /// </summary>
         public string EnvironmentName
@@ -115,7 +117,8 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property HealthStatus. 
         /// <para>
-        /// Contains the response body with information about the health of the environment.
+        /// The <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health
+        /// status</a> of the environment. For example, <code>Ok</code>.
         /// </para>
         /// </summary>
         public string HealthStatus
@@ -131,7 +134,10 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InstancesHealth.
+        /// Gets and sets the property InstancesHealth. 
+        /// <para>
+        /// Summary health information for the instances in the environment.
+        /// </para>
         /// </summary>
         public InstanceHealthSummary InstancesHealth
         {
@@ -148,7 +154,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property RefreshedAt. 
         /// <para>
-        /// The date and time the information was last refreshed.
+        /// The date and time that the health information was retrieved.
         /// </para>
         /// </summary>
         public DateTime RefreshedAt
@@ -166,8 +172,8 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Returns the health status value of the environment. For more information, see <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health
-        /// Colors and Statuses</a>.
+        /// The environment's operational status. <code>Ready</code>, <code>Launching</code>,
+        /// <code>Updating</code>, <code>Terminating</code>, or <code>Terminated</code>.
         /// </para>
         /// </summary>
         public EnvironmentHealth Status

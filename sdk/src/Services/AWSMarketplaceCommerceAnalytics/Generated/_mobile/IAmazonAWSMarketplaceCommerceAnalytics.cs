@@ -23,6 +23,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.AWSMarketplaceCommerceAnalytics.Model;
 
 namespace Amazon.AWSMarketplaceCommerceAnalytics
@@ -32,7 +33,7 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics
     ///
     /// Provides AWS Marketplace business intelligence data on-demand.
     /// </summary>
-    public partial interface IAmazonAWSMarketplaceCommerceAnalytics : IDisposable
+    public partial interface IAmazonAWSMarketplaceCommerceAnalytics : IAmazonService, IDisposable
     {
                 
         #region  GenerateDataSet
@@ -47,7 +48,25 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplacecommerceanalytics-2015-07-01/GenerateDataSet">REST API Reference for GenerateDataSet Operation</seealso>
         Task<GenerateDataSetResponse> GenerateDataSetAsync(GenerateDataSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  StartSupportDataExport
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartSupportDataExport operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartSupportDataExport operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplacecommerceanalytics-2015-07-01/StartSupportDataExport">REST API Reference for StartSupportDataExport Operation</seealso>
+        Task<StartSupportDataExportResponse> StartSupportDataExportAsync(StartSupportDataExportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

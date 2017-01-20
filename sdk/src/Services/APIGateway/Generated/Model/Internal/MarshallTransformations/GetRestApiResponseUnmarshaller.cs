@@ -51,6 +51,12 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("binaryMediaTypes", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.BinaryMediaTypes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("createdDate", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
@@ -73,6 +79,12 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Name = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("version", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Version = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("warnings", targetDepth))

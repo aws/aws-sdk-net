@@ -40,7 +40,7 @@ namespace Amazon.WorkSpaces.Model
         /// <para>
         /// If not null, more results are available. Pass this value for the <code>NextToken</code>
         /// parameter in a subsequent call to this operation to retrieve the next set of items.
-        /// This token is valid for one day and must be used within that timeframe.
+        /// This token is valid for one day and must be used within that time frame.
         /// </para>
         /// </summary>
         public string NextToken

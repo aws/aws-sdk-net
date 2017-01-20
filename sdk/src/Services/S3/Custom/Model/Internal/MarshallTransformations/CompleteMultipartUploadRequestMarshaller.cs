@@ -43,6 +43,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             request.HttpMethod = "POST";
 
+            if (completeMultipartUploadRequest.IsSetRequestPayer())
+                request.Headers.Add(S3Constants.AmzHeaderRequestPayer, S3Transforms.ToStringValue(completeMultipartUploadRequest.RequestPayer.ToString()));
+
             request.ResourcePath = string.Format(CultureInfo.InvariantCulture, "/{0}/{1}",
                                                  S3Transforms.ToStringValue(completeMultipartUploadRequest.BucketName),
                                                  S3Transforms.ToStringValue(completeMultipartUploadRequest.Key));

@@ -46,13 +46,13 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ClusterIdentifier. 
         /// <para>
-        ///  The unique identifier of the source cluster that you want to disable copying of snapshots
-        /// to a destination region. 
+        /// The unique identifier of the source cluster that you want to disable copying of snapshots
+        /// to a destination region.
         /// </para>
         ///  
         /// <para>
-        ///  Constraints: Must be the valid name of an existing cluster that has cross-region
-        /// snapshot copy enabled. 
+        /// Constraints: Must be the valid name of an existing cluster that has cross-region snapshot
+        /// copy enabled.
         /// </para>
         /// </summary>
         public string ClusterIdentifier

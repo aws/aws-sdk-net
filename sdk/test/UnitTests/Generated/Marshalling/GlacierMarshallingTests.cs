@@ -19,6 +19,7 @@
 
 
 using System;
+using System.Globalization;
 using System.IO;
 using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -673,6 +674,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("Glacier")]
+        public void ListProvisionedCapacityMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListProvisionedCapacity");
+
+            var request = InstantiateClassGenerator.Execute<ListProvisionedCapacityRequest>();
+            var marshaller = new ListProvisionedCapacityRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            RequestValidator.Validate("ListProvisionedCapacity", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString());
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = ListProvisionedCapacityResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as ListProvisionedCapacityResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Glacier")]
         public void ListTagsForVaultMarshallTest()
         {
             var operation = service_model.FindOperation("ListTagsForVault");
@@ -729,6 +762,39 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = ListVaultsResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as ListVaultsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Glacier")]
+        public void PurchaseProvisionedCapacityMarshallTest()
+        {
+            var operation = service_model.FindOperation("PurchaseProvisionedCapacity");
+
+            var request = InstantiateClassGenerator.Execute<PurchaseProvisionedCapacityRequest>();
+            var marshaller = new PurchaseProvisionedCapacityRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            RequestValidator.Validate("PurchaseProvisionedCapacity", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amz-capacity-id","x-amz-capacity-id_Value"},
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString());
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = PurchaseProvisionedCapacityResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as PurchaseProvisionedCapacityResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 

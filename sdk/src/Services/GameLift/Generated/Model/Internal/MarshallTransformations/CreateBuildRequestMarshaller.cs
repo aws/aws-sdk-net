@@ -73,6 +73,23 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
+                if(publicRequest.IsSetOperatingSystem())
+                {
+                    context.Writer.WritePropertyName("OperatingSystem");
+                    context.Writer.Write(publicRequest.OperatingSystem);
+                }
+
+                if(publicRequest.IsSetStorageLocation())
+                {
+                    context.Writer.WritePropertyName("StorageLocation");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = S3LocationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.StorageLocation, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetVersion())
                 {
                     context.Writer.WritePropertyName("Version");

@@ -28,7 +28,7 @@ namespace Amazon.MobileAnalytics
     ///<summary>
     /// Common exception for the MobileAnalytics service.
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class AmazonMobileAnalyticsException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.MobileAnalytics
         {
         }
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the AmazonMobileAnalyticsException class with serialized data.
         /// </summary>

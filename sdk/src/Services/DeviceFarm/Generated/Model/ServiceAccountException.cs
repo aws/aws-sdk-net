@@ -25,7 +25,7 @@ namespace Amazon.DeviceFarm.Model
     ///<summary>
     /// DeviceFarm exception
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class ServiceAccountException : AmazonDeviceFarmException 
@@ -79,7 +79,7 @@ namespace Amazon.DeviceFarm.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the ServiceAccountException class with serialized data.
         /// </summary>

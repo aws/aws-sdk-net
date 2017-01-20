@@ -44,13 +44,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         [ClassInitialize()]
         public static void Initialize(TestContext a)
         {
-            StreamWriter writer = File.CreateText("PutObjectFile.txt");
-            writer.Write("This is some sample text.!!");
-            writer.Close();
-
             bucketName = S3TestUtils.CreateBucket(Client);
         }
-
 
         [ClassCleanup]
         public static void ClassCleanup()
@@ -58,6 +53,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             AmazonS3Util.DeleteS3BucketWithObjects(Client, bucketName);
             if (Directory.Exists(basePath))
                 Directory.Delete(basePath, true);
+
             BaseClean();
         }
 

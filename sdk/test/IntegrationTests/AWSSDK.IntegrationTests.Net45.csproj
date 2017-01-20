@@ -41,14 +41,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.configuration" />
@@ -212,6 +204,10 @@
       <Project>{156D9313-7650-4141-8DCD-D3C8DBBF7642}</Project>
       <Name>AWSSDK.ElasticBeanstalk.Net45</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\ElasticLoadBalancingV2\AWSSDK.ElasticLoadBalancingV2.Net45.csproj">
+      <Project>{4449e966-e00f-4673-b468-48866576da5c}</Project>
+      <Name>AWSSDK.ElasticLoadBalancingV2.Net45</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\ElasticLoadBalancing\AWSSDK.ElasticLoadBalancing.Net45.csproj">
       <Project>{AB715742-9EE8-4D2A-AD38-F0E75723A9AB}</Project>
       <Name>AWSSDK.ElasticLoadBalancing.Net45</Name>
@@ -284,6 +280,10 @@
       <Project>{9123E499-47D5-4B7C-BAB4-155A96CA5E9C}</Project>
       <Name>AWSSDK.OpsWorks.Net45</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\Polly\AWSSDK.Polly.Net45.csproj">
+      <Project>{0DA4279F-8955-40E6-8A3C-42CFEC91262A}</Project>
+      <Name>AWSSDK.Polly.Net45</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\RDS\AWSSDK.RDS.Net45.csproj">
       <Project>{18F3ECAE-0CD6-4A59-8CB2-80533F276AA3}</Project>
       <Name>AWSSDK.RDS.Net45</Name>
@@ -308,6 +308,10 @@
       <Project>{BB266953-D765-4BC6-9315-D206548CB8A6}</Project>
       <Name>AWSSDK.SecurityToken.Net45</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\ServerMigrationService\AWSSDK.ServerMigrationService.Net45.csproj">
+      <Project>{ea3466fb-6c7a-490c-9ce8-4eeec1b98ead}</Project>
+      <Name>AWSSDK.ServerMigrationService.Net45</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\SimpleDB\AWSSDK.SimpleDB.Net45.csproj">
       <Project>{781F0A71-6561-4A11-9AED-1D16163938CE}</Project>
       <Name>AWSSDK.SimpleDB.Net45</Name>
@@ -328,6 +332,10 @@
       <Project>{E8FF4CE2-1557-428B-97CE-859C8DCBA2D2}</Project>
       <Name>AWSSDK.SimpleWorkflow.Net45</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\Snowball\AWSSDK.Snowball.Net45.csproj">
+      <Project>{f54015b4-1f57-474e-8351-b9819bebc5b0}</Project>
+      <Name>AWSSDK.Snowball.Net45</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\SQS\AWSSDK.SQS.Net45.csproj">
       <Project>{3E6F35CA-693B-45D6-8AC0-BAE9BE94F2BB}</Project>
       <Name>AWSSDK.SQS.Net45</Name>
@@ -344,6 +352,10 @@
       <Project>{60819F67-5CD7-41A4-9E02-BB27E5A3F715}</Project>
       <Name>AWSSDK.WorkSpaces.Net45</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Common\AWSSDK.CommonTest.Net45.csproj">
+      <Project>{5de41572-b345-4727-ad6d-0d08ab92e49b}</Project>
+      <Name>AWSSDK.CommonTest.Net45</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Config\App.45.config">
@@ -351,6 +363,11 @@
     </None>
     <EmbeddedResource Include="Tests\CloudTrailBucketPolicy.json" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Tests\ListObjectsResponse.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

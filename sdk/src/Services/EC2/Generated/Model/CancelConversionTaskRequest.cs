@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-11-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -36,9 +36,8 @@ namespace Amazon.EC2.Model
     /// 
     ///  
     /// <para>
-    /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html">Using
-    /// the Command Line Tools to Import Your Virtual Machine to Amazon EC2</a> in the <i>Amazon
-    /// Elastic Compute Cloud User Guide</i>.
+    /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/CommandLineReference/ec2-cli-vmimport-export.html">Importing
+    /// a Virtual Machine Using the Amazon EC2 CLI</a>.
     /// </para>
     /// </summary>
     public partial class CancelConversionTaskRequest : AmazonEC2Request

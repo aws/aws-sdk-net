@@ -32,8 +32,8 @@ namespace Amazon.AutoScaling.Model
     /// 
     ///  
     /// <para>
-    /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US_SuspendResume.html#process-types">Auto
-    /// Scaling Processes</a> in the <i>Auto Scaling Developer Guide</i>.
+    /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-suspend-resume-processes.html#process-types">Auto
+    /// Scaling Processes</a> in the <i>Auto Scaling User Guide</i>.
     /// </para>
     /// </summary>
     public partial class ProcessType
@@ -45,39 +45,39 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// One of the following processes:
         /// </para>
-        ///  <ul> <li>
+        ///  <ul> <li> 
         /// <para>
-        /// <code>Launch</code>
+        ///  <code>Launch</code> 
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <code>Terminate</code>
+        ///  <code>Terminate</code> 
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <code>AddToLoadBalancer</code>
+        ///  <code>AddToLoadBalancer</code> 
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <code>AlarmNotification</code>
+        ///  <code>AlarmNotification</code> 
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <code>AZRebalance</code>
+        ///  <code>AZRebalance</code> 
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <code>HealthCheck</code>
+        ///  <code>HealthCheck</code> 
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <code>ReplaceUnhealthy</code>
+        ///  <code>ReplaceUnhealthy</code> 
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <code>ScheduledActions</code>
+        ///  <code>ScheduledActions</code> 
         /// </para>
-        /// </li> </ul>
+        ///  </li> </ul>
         /// </summary>
         public string ProcessName
         {

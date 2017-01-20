@@ -29,6 +29,9 @@ namespace Amazon.APIGateway.Model
 {
     /// <summary>
     /// Represents a collection of <a>Authorizer</a> resources.
+    /// 
+    ///  <div class="seeAlso"> <a href="http://docs.aws.amazon.com/apigateway/latest/developerguide/use-custom-authorizer.html">Enable
+    /// custom authorization</a> </div>
     /// </summary>
     public partial class GetAuthorizersResponse : AmazonWebServiceResponse
     {

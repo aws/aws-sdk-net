@@ -39,6 +39,7 @@
     <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
   </PropertyGroup>
   <PropertyGroup>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <Choose>
@@ -90,10 +91,13 @@
     <Compile Include="Amazon.Runtime\Internal\Auth\*.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.Runtime\Internal\Auth\_bcl+coreclr\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.Runtime\Internal\Settings\*.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.Runtime\Internal\Settings\_bcl\*.cs">
+    <Compile Include="Amazon.Runtime\Internal\Settings\_bcl+coreclr\*.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.Runtime\Internal\Transform\*.cs">
@@ -108,6 +112,9 @@
     <Compile Include="Amazon.Runtime\Internal\Util\_bcl\*.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.Runtime\Internal\Util\_bcl+coreclr\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.Runtime\Internal\Util\_bcl+sl\*.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -118,6 +125,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.Runtime\Pipeline\ErrorHandler\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Runtime\Pipeline\ErrorHandler\_bcl\*.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.Runtime\Pipeline\Handlers\*.cs">
@@ -136,6 +146,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.Runtime\SharedInterfaces\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Runtime\SharedInterfaces\_bcl\*.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.Runtime\_bcl\*.cs">
@@ -162,6 +175,18 @@
     <Compile Include="Amazon.Util\_bcl\*.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.Util\_bcl+coreclr\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\UnityAssemblies\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RegionEndpoint\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="ThirdParty\*.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -177,25 +202,25 @@
     <Compile Include="ThirdParty\MD5\_bcl\*.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ThirdParty\_bcl\*.cs">
+    <Compile Include="ThirdParty\_bcl+coreclr\*.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ThirdParty\_bcl\BouncyCastle\*.cs">
+    <Compile Include="ThirdParty\_bcl+coreclr\BouncyCastle\*.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ThirdParty\_bcl\BouncyCastle\Asn1\*.cs">
+    <Compile Include="ThirdParty\_bcl+coreclr\BouncyCastle\Asn1\*.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ThirdParty\_bcl\BouncyCastle\Asn1\Utilities\*.cs">
+    <Compile Include="ThirdParty\_bcl+coreclr\BouncyCastle\Asn1\Utilities\*.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ThirdParty\_bcl\BouncyCastle\Math\*.cs">
+    <Compile Include="ThirdParty\_bcl+coreclr\BouncyCastle\Math\*.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ThirdParty\_bcl\BouncyCastle\OpenSsl\*.cs">
+    <Compile Include="ThirdParty\_bcl+coreclr\BouncyCastle\OpenSsl\*.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ThirdParty\_bcl\BouncyCastle\OpenSsl\pem\*.cs">
+    <Compile Include="ThirdParty\_bcl+coreclr\BouncyCastle\OpenSsl\pem\*.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="_bcl\*.cs">
@@ -204,9 +229,6 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="endpoints.json">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="endpoints.customizations.json">
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>

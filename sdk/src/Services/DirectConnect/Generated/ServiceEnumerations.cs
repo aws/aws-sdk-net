@@ -25,6 +25,168 @@ namespace Amazon.DirectConnect
 {
 
     /// <summary>
+    /// Constants used for properties of type AddressFamily.
+    /// </summary>
+    public class AddressFamily : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Ipv4 for AddressFamily
+        /// </summary>
+        public static readonly AddressFamily Ipv4 = new AddressFamily("ipv4");
+        /// <summary>
+        /// Constant Ipv6 for AddressFamily
+        /// </summary>
+        public static readonly AddressFamily Ipv6 = new AddressFamily("ipv6");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AddressFamily(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AddressFamily FindValue(string value)
+        {
+            return FindValue<AddressFamily>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AddressFamily(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type BGPPeerState.
+    /// </summary>
+    public class BGPPeerState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Available for BGPPeerState
+        /// </summary>
+        public static readonly BGPPeerState Available = new BGPPeerState("available");
+        /// <summary>
+        /// Constant Deleted for BGPPeerState
+        /// </summary>
+        public static readonly BGPPeerState Deleted = new BGPPeerState("deleted");
+        /// <summary>
+        /// Constant Deleting for BGPPeerState
+        /// </summary>
+        public static readonly BGPPeerState Deleting = new BGPPeerState("deleting");
+        /// <summary>
+        /// Constant Pending for BGPPeerState
+        /// </summary>
+        public static readonly BGPPeerState Pending = new BGPPeerState("pending");
+        /// <summary>
+        /// Constant Verifying for BGPPeerState
+        /// </summary>
+        public static readonly BGPPeerState Verifying = new BGPPeerState("verifying");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BGPPeerState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BGPPeerState FindValue(string value)
+        {
+            return FindValue<BGPPeerState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BGPPeerState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type BGPStatus.
+    /// </summary>
+    public class BGPStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Down for BGPStatus
+        /// </summary>
+        public static readonly BGPStatus Down = new BGPStatus("down");
+        /// <summary>
+        /// Constant Up for BGPStatus
+        /// </summary>
+        public static readonly BGPStatus Up = new BGPStatus("up");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BGPStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BGPStatus FindValue(string value)
+        {
+            return FindValue<BGPStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BGPStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ConnectionState.
     /// </summary>
     public class ConnectionState : ConstantClass

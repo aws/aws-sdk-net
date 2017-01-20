@@ -38,14 +38,73 @@ namespace Amazon.WorkSpaces
     ///
     /// Amazon WorkSpaces Service 
     /// <para>
-    /// This is the <i>Amazon WorkSpaces API Reference</i>. This guide provides detailed information
-    /// about Amazon WorkSpaces operations, data types, parameters, and errors.
+    /// This reference provides detailed information about the Amazon WorkSpaces operations.
     /// </para>
     /// </summary>
     public partial class AmazonWorkSpacesClient : AmazonServiceClient, IAmazonWorkSpaces
     {
         
         #region Constructors
+
+#if CORECLR
+    
+        /// <summary>
+        /// Constructs AmazonWorkSpacesClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
+        public AmazonWorkSpacesClient()
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonWorkSpacesConfig()) { }
+
+        /// <summary>
+        /// Constructs AmazonWorkSpacesClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
+        /// <param name="region">The region to connect.</param>
+        public AmazonWorkSpacesClient(RegionEndpoint region)
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonWorkSpacesConfig{RegionEndpoint = region}) { }
+
+        /// <summary>
+        /// Constructs AmazonWorkSpacesClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
+        /// <param name="config">The AmazonWorkSpacesClient Configuration Object</param>
+        public AmazonWorkSpacesClient(AmazonWorkSpacesConfig config)
+            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+
+#endif
 
         /// <summary>
         /// Constructs AmazonWorkSpacesClient with AWS Credentials
@@ -431,7 +490,7 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
-        /// Obtains information about the specified WorkSpaces. 
+        /// Obtains information about the specified WorkSpaces.
         /// 
         ///  
         /// <para>
@@ -479,6 +538,68 @@ namespace Amazon.WorkSpaces
             var unmarshaller = DescribeWorkspacesResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeWorkspacesRequest,DescribeWorkspacesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeWorkspacesConnectionStatus
+
+        internal DescribeWorkspacesConnectionStatusResponse DescribeWorkspacesConnectionStatus(DescribeWorkspacesConnectionStatusRequest request)
+        {
+            var marshaller = new DescribeWorkspacesConnectionStatusRequestMarshaller();
+            var unmarshaller = DescribeWorkspacesConnectionStatusResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeWorkspacesConnectionStatusRequest,DescribeWorkspacesConnectionStatusResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeWorkspacesConnectionStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeWorkspacesConnectionStatus operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeWorkspacesConnectionStatusResponse> DescribeWorkspacesConnectionStatusAsync(DescribeWorkspacesConnectionStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeWorkspacesConnectionStatusRequestMarshaller();
+            var unmarshaller = DescribeWorkspacesConnectionStatusResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeWorkspacesConnectionStatusRequest,DescribeWorkspacesConnectionStatusResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ModifyWorkspaceProperties
+
+        internal ModifyWorkspacePropertiesResponse ModifyWorkspaceProperties(ModifyWorkspacePropertiesRequest request)
+        {
+            var marshaller = new ModifyWorkspacePropertiesRequestMarshaller();
+            var unmarshaller = ModifyWorkspacePropertiesResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyWorkspacePropertiesRequest,ModifyWorkspacePropertiesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyWorkspaceProperties operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyWorkspaceProperties operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ModifyWorkspacePropertiesResponse> ModifyWorkspacePropertiesAsync(ModifyWorkspacePropertiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ModifyWorkspacePropertiesRequestMarshaller();
+            var unmarshaller = ModifyWorkspacePropertiesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ModifyWorkspacePropertiesRequest,ModifyWorkspacePropertiesResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -541,6 +662,68 @@ namespace Amazon.WorkSpaces
             var unmarshaller = RebuildWorkspacesResponseUnmarshaller.Instance;
 
             return InvokeAsync<RebuildWorkspacesRequest,RebuildWorkspacesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartWorkspaces
+
+        internal StartWorkspacesResponse StartWorkspaces(StartWorkspacesRequest request)
+        {
+            var marshaller = new StartWorkspacesRequestMarshaller();
+            var unmarshaller = StartWorkspacesResponseUnmarshaller.Instance;
+
+            return Invoke<StartWorkspacesRequest,StartWorkspacesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartWorkspaces operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartWorkspaces operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<StartWorkspacesResponse> StartWorkspacesAsync(StartWorkspacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new StartWorkspacesRequestMarshaller();
+            var unmarshaller = StartWorkspacesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartWorkspacesRequest,StartWorkspacesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StopWorkspaces
+
+        internal StopWorkspacesResponse StopWorkspaces(StopWorkspacesRequest request)
+        {
+            var marshaller = new StopWorkspacesRequestMarshaller();
+            var unmarshaller = StopWorkspacesResponseUnmarshaller.Instance;
+
+            return Invoke<StopWorkspacesRequest,StopWorkspacesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopWorkspaces operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopWorkspaces operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<StopWorkspacesResponse> StopWorkspacesAsync(StopWorkspacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new StopWorkspacesRequestMarshaller();
+            var unmarshaller = StopWorkspacesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StopWorkspacesRequest,StopWorkspacesResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

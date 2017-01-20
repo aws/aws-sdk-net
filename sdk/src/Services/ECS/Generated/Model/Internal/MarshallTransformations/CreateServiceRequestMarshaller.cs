@@ -112,6 +112,38 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetPlacementConstraints())
+                {
+                    context.Writer.WritePropertyName("placementConstraints");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestPlacementConstraintsListValue in publicRequest.PlacementConstraints)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = PlacementConstraintMarshaller.Instance;
+                        marshaller.Marshall(publicRequestPlacementConstraintsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetPlacementStrategy())
+                {
+                    context.Writer.WritePropertyName("placementStrategy");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestPlacementStrategyListValue in publicRequest.PlacementStrategy)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = PlacementStrategyMarshaller.Instance;
+                        marshaller.Marshall(publicRequestPlacementStrategyListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetRole())
                 {
                     context.Writer.WritePropertyName("role");

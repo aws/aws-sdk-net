@@ -41,7 +41,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property HttpMethod. 
         /// <para>
-        /// The HTTP verb identifier for the parent <a>Method</a> resource.
+        /// The HTTP verb of the <a>Method</a> resource.
         /// </para>
         /// </summary>
         public string HttpMethod

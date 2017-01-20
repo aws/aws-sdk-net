@@ -254,6 +254,7 @@ namespace Amazon.Inspector
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error code describes the entity.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/AddAttributesToFindings">REST API Reference for AddAttributesToFindings Operation</seealso>
         public AddAttributesToFindingsResponse AddAttributesToFindings(AddAttributesToFindingsRequest request)
         {
             var marshaller = new AddAttributesToFindingsRequestMarshaller();
@@ -271,6 +272,7 @@ namespace Amazon.Inspector
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/AddAttributesToFindings">REST API Reference for AddAttributesToFindings Operation</seealso>
         public Task<AddAttributesToFindingsResponse> AddAttributesToFindingsAsync(AddAttributesToFindingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AddAttributesToFindingsRequestMarshaller();
@@ -313,6 +315,7 @@ namespace Amazon.Inspector
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error code describes the entity.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/CreateAssessmentTarget">REST API Reference for CreateAssessmentTarget Operation</seealso>
         public CreateAssessmentTargetResponse CreateAssessmentTarget(CreateAssessmentTargetRequest request)
         {
             var marshaller = new CreateAssessmentTargetRequestMarshaller();
@@ -330,6 +333,7 @@ namespace Amazon.Inspector
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/CreateAssessmentTarget">REST API Reference for CreateAssessmentTarget Operation</seealso>
         public Task<CreateAssessmentTargetResponse> CreateAssessmentTargetAsync(CreateAssessmentTargetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateAssessmentTargetRequestMarshaller();
@@ -369,6 +373,7 @@ namespace Amazon.Inspector
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error code describes the entity.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/CreateAssessmentTemplate">REST API Reference for CreateAssessmentTemplate Operation</seealso>
         public CreateAssessmentTemplateResponse CreateAssessmentTemplate(CreateAssessmentTemplateRequest request)
         {
             var marshaller = new CreateAssessmentTemplateRequestMarshaller();
@@ -386,6 +391,7 @@ namespace Amazon.Inspector
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/CreateAssessmentTemplate">REST API Reference for CreateAssessmentTemplate Operation</seealso>
         public Task<CreateAssessmentTemplateResponse> CreateAssessmentTemplateAsync(CreateAssessmentTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateAssessmentTemplateRequestMarshaller();
@@ -423,6 +429,7 @@ namespace Amazon.Inspector
         /// The request was rejected because it attempted to create resources beyond the current
         /// AWS account limits. The error code describes the limit exceeded.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/CreateResourceGroup">REST API Reference for CreateResourceGroup Operation</seealso>
         public CreateResourceGroupResponse CreateResourceGroup(CreateResourceGroupRequest request)
         {
             var marshaller = new CreateResourceGroupRequestMarshaller();
@@ -440,6 +447,7 @@ namespace Amazon.Inspector
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/CreateResourceGroup">REST API Reference for CreateResourceGroup Operation</seealso>
         public Task<CreateResourceGroupResponse> CreateResourceGroupAsync(CreateResourceGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateResourceGroupRequestMarshaller();
@@ -477,6 +485,7 @@ namespace Amazon.Inspector
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error code describes the entity.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DeleteAssessmentRun">REST API Reference for DeleteAssessmentRun Operation</seealso>
         public DeleteAssessmentRunResponse DeleteAssessmentRun(DeleteAssessmentRunRequest request)
         {
             var marshaller = new DeleteAssessmentRunRequestMarshaller();
@@ -494,6 +503,7 @@ namespace Amazon.Inspector
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DeleteAssessmentRun">REST API Reference for DeleteAssessmentRun Operation</seealso>
         public Task<DeleteAssessmentRunResponse> DeleteAssessmentRunAsync(DeleteAssessmentRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteAssessmentRunRequestMarshaller();
@@ -531,6 +541,7 @@ namespace Amazon.Inspector
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error code describes the entity.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DeleteAssessmentTarget">REST API Reference for DeleteAssessmentTarget Operation</seealso>
         public DeleteAssessmentTargetResponse DeleteAssessmentTarget(DeleteAssessmentTargetRequest request)
         {
             var marshaller = new DeleteAssessmentTargetRequestMarshaller();
@@ -548,6 +559,7 @@ namespace Amazon.Inspector
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DeleteAssessmentTarget">REST API Reference for DeleteAssessmentTarget Operation</seealso>
         public Task<DeleteAssessmentTargetResponse> DeleteAssessmentTargetAsync(DeleteAssessmentTargetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteAssessmentTargetRequestMarshaller();
@@ -585,6 +597,7 @@ namespace Amazon.Inspector
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error code describes the entity.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DeleteAssessmentTemplate">REST API Reference for DeleteAssessmentTemplate Operation</seealso>
         public DeleteAssessmentTemplateResponse DeleteAssessmentTemplate(DeleteAssessmentTemplateRequest request)
         {
             var marshaller = new DeleteAssessmentTemplateRequestMarshaller();
@@ -602,6 +615,7 @@ namespace Amazon.Inspector
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DeleteAssessmentTemplate">REST API Reference for DeleteAssessmentTemplate Operation</seealso>
         public Task<DeleteAssessmentTemplateResponse> DeleteAssessmentTemplateAsync(DeleteAssessmentTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteAssessmentTemplateRequestMarshaller();
@@ -629,6 +643,7 @@ namespace Amazon.Inspector
         /// The request was rejected because an invalid or out-of-range value was supplied for
         /// an input parameter.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeAssessmentRuns">REST API Reference for DescribeAssessmentRuns Operation</seealso>
         public DescribeAssessmentRunsResponse DescribeAssessmentRuns(DescribeAssessmentRunsRequest request)
         {
             var marshaller = new DescribeAssessmentRunsRequestMarshaller();
@@ -646,6 +661,7 @@ namespace Amazon.Inspector
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeAssessmentRuns">REST API Reference for DescribeAssessmentRuns Operation</seealso>
         public Task<DescribeAssessmentRunsResponse> DescribeAssessmentRunsAsync(DescribeAssessmentRunsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeAssessmentRunsRequestMarshaller();
@@ -674,6 +690,7 @@ namespace Amazon.Inspector
         /// The request was rejected because an invalid or out-of-range value was supplied for
         /// an input parameter.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeAssessmentTargets">REST API Reference for DescribeAssessmentTargets Operation</seealso>
         public DescribeAssessmentTargetsResponse DescribeAssessmentTargets(DescribeAssessmentTargetsRequest request)
         {
             var marshaller = new DescribeAssessmentTargetsRequestMarshaller();
@@ -691,6 +708,7 @@ namespace Amazon.Inspector
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeAssessmentTargets">REST API Reference for DescribeAssessmentTargets Operation</seealso>
         public Task<DescribeAssessmentTargetsResponse> DescribeAssessmentTargetsAsync(DescribeAssessmentTargetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeAssessmentTargetsRequestMarshaller();
@@ -719,6 +737,7 @@ namespace Amazon.Inspector
         /// The request was rejected because an invalid or out-of-range value was supplied for
         /// an input parameter.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeAssessmentTemplates">REST API Reference for DescribeAssessmentTemplates Operation</seealso>
         public DescribeAssessmentTemplatesResponse DescribeAssessmentTemplates(DescribeAssessmentTemplatesRequest request)
         {
             var marshaller = new DescribeAssessmentTemplatesRequestMarshaller();
@@ -736,6 +755,7 @@ namespace Amazon.Inspector
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeAssessmentTemplates">REST API Reference for DescribeAssessmentTemplates Operation</seealso>
         public Task<DescribeAssessmentTemplatesResponse> DescribeAssessmentTemplatesAsync(DescribeAssessmentTemplatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeAssessmentTemplatesRequestMarshaller();
@@ -759,6 +779,7 @@ namespace Amazon.Inspector
         /// <exception cref="Amazon.Inspector.Model.InternalException">
         /// Internal server error.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeCrossAccountAccessRole">REST API Reference for DescribeCrossAccountAccessRole Operation</seealso>
         public DescribeCrossAccountAccessRoleResponse DescribeCrossAccountAccessRole(DescribeCrossAccountAccessRoleRequest request)
         {
             var marshaller = new DescribeCrossAccountAccessRoleRequestMarshaller();
@@ -776,6 +797,7 @@ namespace Amazon.Inspector
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeCrossAccountAccessRole">REST API Reference for DescribeCrossAccountAccessRole Operation</seealso>
         public Task<DescribeCrossAccountAccessRoleResponse> DescribeCrossAccountAccessRoleAsync(DescribeCrossAccountAccessRoleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeCrossAccountAccessRoleRequestMarshaller();
@@ -803,6 +825,7 @@ namespace Amazon.Inspector
         /// The request was rejected because an invalid or out-of-range value was supplied for
         /// an input parameter.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeFindings">REST API Reference for DescribeFindings Operation</seealso>
         public DescribeFindingsResponse DescribeFindings(DescribeFindingsRequest request)
         {
             var marshaller = new DescribeFindingsRequestMarshaller();
@@ -820,6 +843,7 @@ namespace Amazon.Inspector
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeFindings">REST API Reference for DescribeFindings Operation</seealso>
         public Task<DescribeFindingsResponse> DescribeFindingsAsync(DescribeFindingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeFindingsRequestMarshaller();
@@ -847,6 +871,7 @@ namespace Amazon.Inspector
         /// The request was rejected because an invalid or out-of-range value was supplied for
         /// an input parameter.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeResourceGroups">REST API Reference for DescribeResourceGroups Operation</seealso>
         public DescribeResourceGroupsResponse DescribeResourceGroups(DescribeResourceGroupsRequest request)
         {
             var marshaller = new DescribeResourceGroupsRequestMarshaller();
@@ -864,6 +889,7 @@ namespace Amazon.Inspector
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeResourceGroups">REST API Reference for DescribeResourceGroups Operation</seealso>
         public Task<DescribeResourceGroupsResponse> DescribeResourceGroupsAsync(DescribeResourceGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeResourceGroupsRequestMarshaller();
@@ -891,6 +917,7 @@ namespace Amazon.Inspector
         /// The request was rejected because an invalid or out-of-range value was supplied for
         /// an input parameter.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeRulesPackages">REST API Reference for DescribeRulesPackages Operation</seealso>
         public DescribeRulesPackagesResponse DescribeRulesPackages(DescribeRulesPackagesRequest request)
         {
             var marshaller = new DescribeRulesPackagesRequestMarshaller();
@@ -908,6 +935,7 @@ namespace Amazon.Inspector
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeRulesPackages">REST API Reference for DescribeRulesPackages Operation</seealso>
         public Task<DescribeRulesPackagesResponse> DescribeRulesPackagesAsync(DescribeRulesPackagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeRulesPackagesRequestMarshaller();
@@ -942,6 +970,7 @@ namespace Amazon.Inspector
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error code describes the entity.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/GetTelemetryMetadata">REST API Reference for GetTelemetryMetadata Operation</seealso>
         public GetTelemetryMetadataResponse GetTelemetryMetadata(GetTelemetryMetadataRequest request)
         {
             var marshaller = new GetTelemetryMetadataRequestMarshaller();
@@ -959,6 +988,7 @@ namespace Amazon.Inspector
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/GetTelemetryMetadata">REST API Reference for GetTelemetryMetadata Operation</seealso>
         public Task<GetTelemetryMetadataResponse> GetTelemetryMetadataAsync(GetTelemetryMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetTelemetryMetadataRequestMarshaller();
@@ -994,6 +1024,7 @@ namespace Amazon.Inspector
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error code describes the entity.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListAssessmentRunAgents">REST API Reference for ListAssessmentRunAgents Operation</seealso>
         public ListAssessmentRunAgentsResponse ListAssessmentRunAgents(ListAssessmentRunAgentsRequest request)
         {
             var marshaller = new ListAssessmentRunAgentsRequestMarshaller();
@@ -1011,6 +1042,7 @@ namespace Amazon.Inspector
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListAssessmentRunAgents">REST API Reference for ListAssessmentRunAgents Operation</seealso>
         public Task<ListAssessmentRunAgentsResponse> ListAssessmentRunAgentsAsync(ListAssessmentRunAgentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListAssessmentRunAgentsRequestMarshaller();
@@ -1046,6 +1078,7 @@ namespace Amazon.Inspector
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error code describes the entity.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListAssessmentRuns">REST API Reference for ListAssessmentRuns Operation</seealso>
         public ListAssessmentRunsResponse ListAssessmentRuns(ListAssessmentRunsRequest request)
         {
             var marshaller = new ListAssessmentRunsRequestMarshaller();
@@ -1063,6 +1096,7 @@ namespace Amazon.Inspector
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListAssessmentRuns">REST API Reference for ListAssessmentRuns Operation</seealso>
         public Task<ListAssessmentRunsResponse> ListAssessmentRunsAsync(ListAssessmentRunsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListAssessmentRunsRequestMarshaller();
@@ -1095,6 +1129,7 @@ namespace Amazon.Inspector
         /// The request was rejected because an invalid or out-of-range value was supplied for
         /// an input parameter.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListAssessmentTargets">REST API Reference for ListAssessmentTargets Operation</seealso>
         public ListAssessmentTargetsResponse ListAssessmentTargets(ListAssessmentTargetsRequest request)
         {
             var marshaller = new ListAssessmentTargetsRequestMarshaller();
@@ -1112,6 +1147,7 @@ namespace Amazon.Inspector
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListAssessmentTargets">REST API Reference for ListAssessmentTargets Operation</seealso>
         public Task<ListAssessmentTargetsResponse> ListAssessmentTargetsAsync(ListAssessmentTargetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListAssessmentTargetsRequestMarshaller();
@@ -1147,6 +1183,7 @@ namespace Amazon.Inspector
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error code describes the entity.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListAssessmentTemplates">REST API Reference for ListAssessmentTemplates Operation</seealso>
         public ListAssessmentTemplatesResponse ListAssessmentTemplates(ListAssessmentTemplatesRequest request)
         {
             var marshaller = new ListAssessmentTemplatesRequestMarshaller();
@@ -1164,6 +1201,7 @@ namespace Amazon.Inspector
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListAssessmentTemplates">REST API Reference for ListAssessmentTemplates Operation</seealso>
         public Task<ListAssessmentTemplatesResponse> ListAssessmentTemplatesAsync(ListAssessmentTemplatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListAssessmentTemplatesRequestMarshaller();
@@ -1200,6 +1238,7 @@ namespace Amazon.Inspector
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error code describes the entity.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListEventSubscriptions">REST API Reference for ListEventSubscriptions Operation</seealso>
         public ListEventSubscriptionsResponse ListEventSubscriptions(ListEventSubscriptionsRequest request)
         {
             var marshaller = new ListEventSubscriptionsRequestMarshaller();
@@ -1217,6 +1256,7 @@ namespace Amazon.Inspector
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListEventSubscriptions">REST API Reference for ListEventSubscriptions Operation</seealso>
         public Task<ListEventSubscriptionsResponse> ListEventSubscriptionsAsync(ListEventSubscriptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListEventSubscriptionsRequestMarshaller();
@@ -1252,6 +1292,7 @@ namespace Amazon.Inspector
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error code describes the entity.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListFindings">REST API Reference for ListFindings Operation</seealso>
         public ListFindingsResponse ListFindings(ListFindingsRequest request)
         {
             var marshaller = new ListFindingsRequestMarshaller();
@@ -1269,6 +1310,7 @@ namespace Amazon.Inspector
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListFindings">REST API Reference for ListFindings Operation</seealso>
         public Task<ListFindingsResponse> ListFindingsAsync(ListFindingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListFindingsRequestMarshaller();
@@ -1299,6 +1341,7 @@ namespace Amazon.Inspector
         /// The request was rejected because an invalid or out-of-range value was supplied for
         /// an input parameter.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListRulesPackages">REST API Reference for ListRulesPackages Operation</seealso>
         public ListRulesPackagesResponse ListRulesPackages(ListRulesPackagesRequest request)
         {
             var marshaller = new ListRulesPackagesRequestMarshaller();
@@ -1316,6 +1359,7 @@ namespace Amazon.Inspector
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListRulesPackages">REST API Reference for ListRulesPackages Operation</seealso>
         public Task<ListRulesPackagesResponse> ListRulesPackagesAsync(ListRulesPackagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListRulesPackagesRequestMarshaller();
@@ -1350,6 +1394,7 @@ namespace Amazon.Inspector
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error code describes the entity.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
             var marshaller = new ListTagsForResourceRequestMarshaller();
@@ -1367,6 +1412,7 @@ namespace Amazon.Inspector
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListTagsForResourceRequestMarshaller();
@@ -1406,6 +1452,7 @@ namespace Amazon.Inspector
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error code describes the entity.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/PreviewAgents">REST API Reference for PreviewAgents Operation</seealso>
         public PreviewAgentsResponse PreviewAgents(PreviewAgentsRequest request)
         {
             var marshaller = new PreviewAgentsRequestMarshaller();
@@ -1423,6 +1470,7 @@ namespace Amazon.Inspector
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/PreviewAgents">REST API Reference for PreviewAgents Operation</seealso>
         public Task<PreviewAgentsResponse> PreviewAgentsAsync(PreviewAgentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PreviewAgentsRequestMarshaller();
@@ -1458,6 +1506,7 @@ namespace Amazon.Inspector
         /// The request was rejected because an invalid or out-of-range value was supplied for
         /// an input parameter.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/RegisterCrossAccountAccessRole">REST API Reference for RegisterCrossAccountAccessRole Operation</seealso>
         public RegisterCrossAccountAccessRoleResponse RegisterCrossAccountAccessRole(RegisterCrossAccountAccessRoleRequest request)
         {
             var marshaller = new RegisterCrossAccountAccessRoleRequestMarshaller();
@@ -1475,6 +1524,7 @@ namespace Amazon.Inspector
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/RegisterCrossAccountAccessRole">REST API Reference for RegisterCrossAccountAccessRole Operation</seealso>
         public Task<RegisterCrossAccountAccessRoleResponse> RegisterCrossAccountAccessRoleAsync(RegisterCrossAccountAccessRoleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RegisterCrossAccountAccessRoleRequestMarshaller();
@@ -1510,6 +1560,7 @@ namespace Amazon.Inspector
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error code describes the entity.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/RemoveAttributesFromFindings">REST API Reference for RemoveAttributesFromFindings Operation</seealso>
         public RemoveAttributesFromFindingsResponse RemoveAttributesFromFindings(RemoveAttributesFromFindingsRequest request)
         {
             var marshaller = new RemoveAttributesFromFindingsRequestMarshaller();
@@ -1527,6 +1578,7 @@ namespace Amazon.Inspector
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/RemoveAttributesFromFindings">REST API Reference for RemoveAttributesFromFindings Operation</seealso>
         public Task<RemoveAttributesFromFindingsResponse> RemoveAttributesFromFindingsAsync(RemoveAttributesFromFindingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RemoveAttributesFromFindingsRequestMarshaller();
@@ -1562,6 +1614,7 @@ namespace Amazon.Inspector
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error code describes the entity.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/SetTagsForResource">REST API Reference for SetTagsForResource Operation</seealso>
         public SetTagsForResourceResponse SetTagsForResource(SetTagsForResourceRequest request)
         {
             var marshaller = new SetTagsForResourceRequestMarshaller();
@@ -1579,6 +1632,7 @@ namespace Amazon.Inspector
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/SetTagsForResource">REST API Reference for SetTagsForResource Operation</seealso>
         public Task<SetTagsForResourceResponse> SetTagsForResourceAsync(SetTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new SetTagsForResourceRequestMarshaller();
@@ -1627,6 +1681,7 @@ namespace Amazon.Inspector
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error code describes the entity.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/StartAssessmentRun">REST API Reference for StartAssessmentRun Operation</seealso>
         public StartAssessmentRunResponse StartAssessmentRun(StartAssessmentRunRequest request)
         {
             var marshaller = new StartAssessmentRunRequestMarshaller();
@@ -1644,6 +1699,7 @@ namespace Amazon.Inspector
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/StartAssessmentRun">REST API Reference for StartAssessmentRun Operation</seealso>
         public Task<StartAssessmentRunResponse> StartAssessmentRunAsync(StartAssessmentRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new StartAssessmentRunRequestMarshaller();
@@ -1678,6 +1734,7 @@ namespace Amazon.Inspector
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error code describes the entity.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/StopAssessmentRun">REST API Reference for StopAssessmentRun Operation</seealso>
         public StopAssessmentRunResponse StopAssessmentRun(StopAssessmentRunRequest request)
         {
             var marshaller = new StopAssessmentRunRequestMarshaller();
@@ -1695,6 +1752,7 @@ namespace Amazon.Inspector
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/StopAssessmentRun">REST API Reference for StopAssessmentRun Operation</seealso>
         public Task<StopAssessmentRunResponse> StopAssessmentRunAsync(StopAssessmentRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new StopAssessmentRunRequestMarshaller();
@@ -1734,6 +1792,7 @@ namespace Amazon.Inspector
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error code describes the entity.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/SubscribeToEvent">REST API Reference for SubscribeToEvent Operation</seealso>
         public SubscribeToEventResponse SubscribeToEvent(SubscribeToEventRequest request)
         {
             var marshaller = new SubscribeToEventRequestMarshaller();
@@ -1751,6 +1810,7 @@ namespace Amazon.Inspector
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/SubscribeToEvent">REST API Reference for SubscribeToEvent Operation</seealso>
         public Task<SubscribeToEventResponse> SubscribeToEventAsync(SubscribeToEventRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new SubscribeToEventRequestMarshaller();
@@ -1786,6 +1846,7 @@ namespace Amazon.Inspector
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error code describes the entity.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/UnsubscribeFromEvent">REST API Reference for UnsubscribeFromEvent Operation</seealso>
         public UnsubscribeFromEventResponse UnsubscribeFromEvent(UnsubscribeFromEventRequest request)
         {
             var marshaller = new UnsubscribeFromEventRequestMarshaller();
@@ -1803,6 +1864,7 @@ namespace Amazon.Inspector
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/UnsubscribeFromEvent">REST API Reference for UnsubscribeFromEvent Operation</seealso>
         public Task<UnsubscribeFromEventResponse> UnsubscribeFromEventAsync(UnsubscribeFromEventRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UnsubscribeFromEventRequestMarshaller();
@@ -1837,6 +1899,7 @@ namespace Amazon.Inspector
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error code describes the entity.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/UpdateAssessmentTarget">REST API Reference for UpdateAssessmentTarget Operation</seealso>
         public UpdateAssessmentTargetResponse UpdateAssessmentTarget(UpdateAssessmentTargetRequest request)
         {
             var marshaller = new UpdateAssessmentTargetRequestMarshaller();
@@ -1854,6 +1917,7 @@ namespace Amazon.Inspector
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/UpdateAssessmentTarget">REST API Reference for UpdateAssessmentTarget Operation</seealso>
         public Task<UpdateAssessmentTargetResponse> UpdateAssessmentTargetAsync(UpdateAssessmentTargetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateAssessmentTargetRequestMarshaller();

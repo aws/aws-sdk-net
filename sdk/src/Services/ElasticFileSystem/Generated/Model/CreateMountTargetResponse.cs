@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticFileSystem.Model
 {
     /// <summary>
-    /// This object provides description of a mount target.
+    /// Provides a description of a mount target.
     /// </summary>
     public partial class CreateMountTargetResponse : AmazonWebServiceResponse
     {
@@ -43,7 +43,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property FileSystemId. 
         /// <para>
-        /// The ID of the file system for which the mount target is intended.
+        /// ID of the file system for which the mount target is intended.
         /// </para>
         /// </summary>
         public string FileSystemId
@@ -61,7 +61,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property IpAddress. 
         /// <para>
-        /// The address at which the file system may be mounted via the mount target.
+        /// Address at which the file system may be mounted via the mount target.
         /// </para>
         /// </summary>
         public string IpAddress
@@ -79,7 +79,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property LifeCycleState. 
         /// <para>
-        /// The lifecycle state the mount target is in.
+        /// Lifecycle state of the mount target.
         /// </para>
         /// </summary>
         public LifeCycleState LifeCycleState
@@ -97,7 +97,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property MountTargetId. 
         /// <para>
-        /// The system-assigned mount target ID. 
+        /// System-assigned mount target ID.
         /// </para>
         /// </summary>
         public string MountTargetId
@@ -115,8 +115,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property NetworkInterfaceId. 
         /// <para>
-        /// The ID of the network interface that Amazon EFS created when it created the mount
-        /// target.
+        /// ID of the network interface that Amazon EFS created when it created the mount target.
         /// </para>
         /// </summary>
         public string NetworkInterfaceId
@@ -134,7 +133,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property OwnerId. 
         /// <para>
-        /// The AWS account ID that owns the resource.
+        /// AWS account ID that owns the resource.
         /// </para>
         /// </summary>
         public string OwnerId
@@ -152,7 +151,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property SubnetId. 
         /// <para>
-        /// The ID of the subnet that the mount target is in.
+        /// ID of the mount target's subnet.
         /// </para>
         /// </summary>
         public string SubnetId

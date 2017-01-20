@@ -45,7 +45,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property EnvironmentId. 
         /// <para>
-        ///  The ID of the environment to restart the server for. 
+        /// The ID of the environment to restart the server for.
         /// </para>
         ///  
         /// <para>
@@ -69,7 +69,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property EnvironmentName. 
         /// <para>
-        ///  The name of the environment to restart the server for. 
+        /// The name of the environment to restart the server for.
         /// </para>
         ///  
         /// <para>

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2016-01-28.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-11-25.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// An invalidation list.
+    /// The <code>InvalidationList</code> complex type describes the list of invalidation
+    /// objects. For more information about invalidation, see <a href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html">Invalidating
+    /// Objects (Web Distributions Only)</a> in the <i>Amazon CloudFront Developer Guide</i>.
     /// </summary>
     public partial class InvalidationList
     {
@@ -45,10 +47,13 @@ namespace Amazon.CloudFront.Model
         public InvalidationList() { }
 
         /// <summary>
-        /// Gets and sets the property IsTruncated. A flag that indicates whether more invalidation
-        /// batch requests remain to be listed. If your results were truncated, you can make a
-        /// follow-up pagination request using the Marker request parameter to retrieve more invalidation
-        /// batches in the list.
+        /// Gets and sets the property IsTruncated. 
+        /// <para>
+        /// A flag that indicates whether more invalidation batch requests remain to be listed.
+        /// If your results were truncated, you can make a follow-up pagination request using
+        /// the <code>Marker</code> request parameter to retrieve more invalidation batches in
+        /// the list.
+        /// </para>
         /// </summary>
         public bool IsTruncated
         {
@@ -63,8 +68,11 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Items. A complex type that contains one InvalidationSummary
-        /// element for each invalidation batch that was created by the current AWS account.
+        /// Gets and sets the property Items. 
+        /// <para>
+        /// A complex type that contains one <code>InvalidationSummary</code> element for each
+        /// invalidation batch created by the current AWS account.
+        /// </para>
         /// </summary>
         public List<InvalidationSummary> Items
         {
@@ -79,7 +87,10 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Marker. The value you provided for the Marker request parameter.
+        /// Gets and sets the property Marker. 
+        /// <para>
+        /// The value that you provided for the <code>Marker</code> request parameter.
+        /// </para>
         /// </summary>
         public string Marker
         {
@@ -94,8 +105,10 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaxItems. The value you provided for the MaxItems request
-        /// parameter.
+        /// Gets and sets the property MaxItems. 
+        /// <para>
+        /// The value that you provided for the <code>MaxItems</code> request parameter.
+        /// </para>
         /// </summary>
         public int MaxItems
         {
@@ -110,9 +123,12 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextMarker. If IsTruncated is true, this element is present
-        /// and contains the value you can use for the Marker request parameter to continue listing
-        /// your invalidation batches where they left off.
+        /// Gets and sets the property NextMarker. 
+        /// <para>
+        /// If <code>IsTruncated</code> is <code>true</code>, this element is present and contains
+        /// the value that you can use for the <code>Marker</code> request parameter to continue
+        /// listing your invalidation batches where they left off.
+        /// </para>
         /// </summary>
         public string NextMarker
         {
@@ -127,8 +143,10 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Quantity. The number of invalidation batches that were
-        /// created by the current AWS account.
+        /// Gets and sets the property Quantity. 
+        /// <para>
+        /// The number of invalidation batches that were created by the current AWS account. 
+        /// </para>
         /// </summary>
         public int Quantity
         {

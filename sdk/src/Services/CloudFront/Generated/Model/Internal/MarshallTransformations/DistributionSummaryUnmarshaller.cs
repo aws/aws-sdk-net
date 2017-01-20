@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2016-01-28.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-11-25.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -61,6 +61,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         unmarshalledObject.Aliases = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ARN", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ARN = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("CacheBehaviors", targetDepth))
                     {
                         var unmarshaller = CacheBehaviorsUnmarshaller.Instance;
@@ -97,10 +103,22 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         unmarshalledObject.Enabled = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("HttpVersion", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.HttpVersion = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Id", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.Id = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("IsIPV6Enabled", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.IsIPV6Enabled = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("LastModifiedTime", targetDepth))

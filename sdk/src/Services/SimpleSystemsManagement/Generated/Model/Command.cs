@@ -34,14 +34,24 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
         private string _commandId;
         private string _comment;
+        private int? _completedCount;
         private string _documentName;
+        private int? _errorCount;
         private DateTime? _expiresAfter;
         private List<string> _instanceIds = new List<string>();
+        private string _maxConcurrency;
+        private string _maxErrors;
+        private NotificationConfig _notificationConfig;
         private string _outputS3BucketName;
         private string _outputS3KeyPrefix;
+        private string _outputS3Region;
         private Dictionary<string, List<string>> _parameters = new Dictionary<string, List<string>>();
         private DateTime? _requestedDateTime;
+        private string _serviceRole;
         private CommandStatus _status;
+        private string _statusDetails;
+        private int? _targetCount;
+        private List<Target> _targets = new List<Target>();
 
         /// <summary>
         /// Gets and sets the property CommandId. 
@@ -81,6 +91,27 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CompletedCount. 
+        /// <para>
+        /// The number of targets for which the command invocation reached a terminal state. Terminal
+        /// states include the following: <code>Success</code>, <code>Failed</code>, <code>Execution
+        /// Timed Out</code>, <code>Delivery Timed Out</code>, <code>Canceled</code>, <code>Terminated</code>,
+        /// or <code>Undeliverable</code>.
+        /// </para>
+        /// </summary>
+        public int CompletedCount
+        {
+            get { return this._completedCount.GetValueOrDefault(); }
+            set { this._completedCount = value; }
+        }
+
+        // Check to see if CompletedCount property is set
+        internal bool IsSetCompletedCount()
+        {
+            return this._completedCount.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property DocumentName. 
         /// <para>
         /// The name of the SSM document requested for execution.
@@ -96,6 +127,25 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetDocumentName()
         {
             return this._documentName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ErrorCount. 
+        /// <para>
+        /// The number of targets for which the status is <code>Failed</code> or <code>Execution
+        /// Timed Out</code>.
+        /// </para>
+        /// </summary>
+        public int ErrorCount
+        {
+            get { return this._errorCount.GetValueOrDefault(); }
+            set { this._errorCount = value; }
+        }
+
+        // Check to see if ErrorCount property is set
+        internal bool IsSetErrorCount()
+        {
+            return this._errorCount.HasValue; 
         }
 
         /// <summary>
@@ -137,6 +187,70 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MaxConcurrency. 
+        /// <para>
+        /// The maximum number of instances that are allowed to execute the command at the same
+        /// time. You can specify a number of instances, such as 10, or a percentage of instances,
+        /// such as 10%. The default value is 50. For more information about how to use <code>MaxConcurrency</code>,
+        /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing
+        /// a Command Using Amazon EC2 Run Command</a> (Linux) or <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing
+        /// a Command Using Amazon EC2 Run Command</a> (Windows). 
+        /// </para>
+        /// </summary>
+        public string MaxConcurrency
+        {
+            get { return this._maxConcurrency; }
+            set { this._maxConcurrency = value; }
+        }
+
+        // Check to see if MaxConcurrency property is set
+        internal bool IsSetMaxConcurrency()
+        {
+            return this._maxConcurrency != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxErrors. 
+        /// <para>
+        /// The maximum number of errors allowed before the system stops sending the command to
+        /// additional targets. You can specify a number of errors, such as 10, or a percentage
+        /// or errors, such as 10%. The default value is 50. For more information about how to
+        /// use <code>MaxErrors</code>, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing
+        /// a Command Using Amazon EC2 Run Command</a> (Linux) or <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing
+        /// a Command Using Amazon EC2 Run Command</a> (Windows).
+        /// </para>
+        /// </summary>
+        public string MaxErrors
+        {
+            get { return this._maxErrors; }
+            set { this._maxErrors = value; }
+        }
+
+        // Check to see if MaxErrors property is set
+        internal bool IsSetMaxErrors()
+        {
+            return this._maxErrors != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NotificationConfig. 
+        /// <para>
+        /// Configurations for sending notifications about command status changes. 
+        /// </para>
+        /// </summary>
+        public NotificationConfig NotificationConfig
+        {
+            get { return this._notificationConfig; }
+            set { this._notificationConfig = value; }
+        }
+
+        // Check to see if NotificationConfig property is set
+        internal bool IsSetNotificationConfig()
+        {
+            return this._notificationConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property OutputS3BucketName. 
         /// <para>
         /// The S3 bucket where the responses to the command executions should be stored. This
@@ -172,6 +286,25 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetOutputS3KeyPrefix()
         {
             return this._outputS3KeyPrefix != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutputS3Region. 
+        /// <para>
+        /// The region where the Amazon Simple Storage Service (Amazon S3) output bucket is located.
+        /// The default value is the region where Run Command is being called.
+        /// </para>
+        /// </summary>
+        public string OutputS3Region
+        {
+            get { return this._outputS3Region; }
+            set { this._outputS3Region = value; }
+        }
+
+        // Check to see if OutputS3Region property is set
+        internal bool IsSetOutputS3Region()
+        {
+            return this._outputS3Region != null;
         }
 
         /// <summary>
@@ -211,6 +344,25 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ServiceRole. 
+        /// <para>
+        /// The IAM service role that Run Command uses to act on your behalf when sending notifications
+        /// about command status changes. 
+        /// </para>
+        /// </summary>
+        public string ServiceRole
+        {
+            get { return this._serviceRole; }
+            set { this._serviceRole = value; }
+        }
+
+        // Check to see if ServiceRole property is set
+        internal bool IsSetServiceRole()
+        {
+            return this._serviceRole != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
         /// The status of the command.
@@ -226,6 +378,115 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StatusDetails. 
+        /// <para>
+        /// A detailed status of the command execution. <code>StatusDetails</code> includes more
+        /// information than <code>Status</code> because it includes states resulting from error
+        /// and concurrency control parameters. <code>StatusDetails</code> can show different
+        /// results than <code>Status</code>. For more information about these statuses, see <a
+        /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-commands.html">Monitor
+        /// Commands</a> (Linux) or <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/monitor-commands.html">Monitor
+        /// Commands</a> (Windows). <code>StatusDetails</code> can be one of the following values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Pending – The command has not been sent to any instances.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// In Progress – The command has been sent to at least one instance but has not reached
+        /// a final state on all instances.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Success – The command successfully executed on all invocations. This is a terminal
+        /// state.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Delivery Timed Out – The value of <code>MaxErrors</code> or more command invocations
+        /// shows a status of <code>Delivery Timed Out</code>. This is a terminal state.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Execution Timed Out – The value of <code>MaxErrors</code> or more command invocations
+        /// shows a status of <code>Execution Timed Out</code>. This is a terminal state.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Failed – The value of <code>MaxErrors</code> or more command invocations shows a status
+        /// of <code>Failed</code>. This is a terminal state.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Incomplete – The command was attempted on all instances and one or more invocations
+        /// does not have a value of <code>Success</code> but not enough invocations failed for
+        /// the status to be <code>Failed</code>. This is a terminal state.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Canceled – The command was terminated before it was completed. This is a terminal
+        /// state.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Rate Exceeded – The number of instances targeted by the command exceeded the account
+        /// limit for pending invocations. The system has canceled the command before executing
+        /// it on any instance. This is a terminal state.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public string StatusDetails
+        {
+            get { return this._statusDetails; }
+            set { this._statusDetails = value; }
+        }
+
+        // Check to see if StatusDetails property is set
+        internal bool IsSetStatusDetails()
+        {
+            return this._statusDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetCount. 
+        /// <para>
+        /// The number of targets for the command.
+        /// </para>
+        /// </summary>
+        public int TargetCount
+        {
+            get { return this._targetCount.GetValueOrDefault(); }
+            set { this._targetCount = value; }
+        }
+
+        // Check to see if TargetCount property is set
+        internal bool IsSetTargetCount()
+        {
+            return this._targetCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Targets. 
+        /// <para>
+        /// An array of search criteria that targets instances using a <code>Key</code>;<code>Value</code>
+        /// combination that you specify. <code>Targets</code> is required if you don't provide
+        /// one or more instance IDs in the call.
+        /// </para>
+        /// </summary>
+        public List<Target> Targets
+        {
+            get { return this._targets; }
+            set { this._targets = value; }
+        }
+
+        // Check to see if Targets property is set
+        internal bool IsSetTargets()
+        {
+            return this._targets != null && this._targets.Count > 0; 
         }
 
     }

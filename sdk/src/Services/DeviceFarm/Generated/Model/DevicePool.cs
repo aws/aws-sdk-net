@@ -119,15 +119,15 @@ namespace Amazon.DeviceFarm.Model
         /// <para>
         /// Allowed values include:
         /// </para>
-        ///  <ul> <li>
+        ///  <ul> <li> 
         /// <para>
         /// CURATED: A device pool that is created and managed by AWS Device Farm.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// PRIVATE: A device pool that is created and managed by the device pool developer.
         /// </para>
-        /// </li> </ul>
+        ///  </li> </ul>
         /// </summary>
         public DevicePoolType Type
         {

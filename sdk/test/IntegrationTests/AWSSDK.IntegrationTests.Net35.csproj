@@ -19,6 +19,7 @@
     <TargetFrameworkProfile />
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
+    <AnalyzerPath>..\TestAnalyzer\IntegrationTestsAnalyzer\bin\Debug\IntegrationTestsAnalyzer.dll</AnalyzerPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -65,6 +66,9 @@
       </ItemGroup>
     </Otherwise>
   </Choose>
+  <ItemGroup Condition="Exists('$(AnalyzerPath)')">
+    <Analyzer Include="$(AnalyzerPath)" />
+  </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include=".\Tests\*.cs" />
@@ -196,6 +200,10 @@
       <Project>{E1B654A3-8244-46E6-980C-597AD119A958}</Project>
       <Name>AWSSDK.ElasticBeanstalk.Net35</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\ElasticLoadBalancingV2\AWSSDK.ElasticLoadBalancingV2.Net35.csproj">
+      <Project>{61a7a84f-a00c-420a-bf81-e5a54815ca4f}</Project>
+      <Name>AWSSDK.ElasticLoadBalancingV2.Net35</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\ElasticLoadBalancing\AWSSDK.ElasticLoadBalancing.Net35.csproj">
       <Project>{46291AE6-55A8-4311-AE68-B2FAF11516B1}</Project>
       <Name>AWSSDK.ElasticLoadBalancing.Net35</Name>
@@ -268,6 +276,10 @@
       <Project>{E0546F85-E14F-4AD6-B123-749F143D87FA}</Project>
       <Name>AWSSDK.OpsWorks.Net35</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\Polly\AWSSDK.Polly.Net35.csproj">
+      <Project>{C3D9E0A3-7F97-48E0-B37E-05E73449F607}</Project>
+      <Name>AWSSDK.Polly.Net35</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\RDS\AWSSDK.RDS.Net35.csproj">
       <Project>{BA873643-A43A-4DA1-A0EF-2419CE4FD4C0}</Project>
       <Name>AWSSDK.RDS.Net35</Name>
@@ -292,6 +304,10 @@
       <Project>{BEE8DED7-9D01-419B-896F-0C5C7D98126A}</Project>
       <Name>AWSSDK.SecurityToken.Net35</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\ServerMigrationService\AWSSDK.ServerMigrationService.Net35.csproj">
+      <Project>{35571cdb-4af0-401a-a329-c8f3534eec01}</Project>
+      <Name>AWSSDK.ServerMigrationService.Net35</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\SimpleDB\AWSSDK.SimpleDB.Net35.csproj">
       <Project>{18355D7A-4D71-4CBF-AC85-EB9CA5E3533E}</Project>
       <Name>AWSSDK.SimpleDB.Net35</Name>
@@ -312,6 +328,10 @@
       <Project>{8B31C371-88B2-4EB4-82CB-8B26318F78A1}</Project>
       <Name>AWSSDK.SimpleWorkflow.Net35</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\Snowball\AWSSDK.Snowball.Net35.csproj">
+      <Project>{f0dbf63f-511a-4780-b23d-a0555938d941}</Project>
+      <Name>AWSSDK.Snowball.Net35</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\SQS\AWSSDK.SQS.Net35.csproj">
       <Project>{1A3A5C87-069B-4D11-854A-F476BA5122F4}</Project>
       <Name>AWSSDK.SQS.Net35</Name>
@@ -328,6 +348,10 @@
       <Project>{63422F3B-8FAC-4E5F-A27C-07FB8742E8BD}</Project>
       <Name>AWSSDK.WorkSpaces.Net35</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Common\AWSSDK.CommonTest.Net35.csproj">
+      <Project>{740165b9-e662-4b09-a990-683dd332f61d}</Project>
+      <Name>AWSSDK.CommonTest.Net35</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Config\App.35.config">
@@ -338,6 +362,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Tests\35\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Tests\ListObjectsResponse.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

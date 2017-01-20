@@ -23,7 +23,7 @@ using System.Globalization;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Util;
 
-#if PCL
+#if ADD_SUPPORT_ICLONEABLE
 using Amazon.MissingTypes;
 #endif
 

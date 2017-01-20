@@ -80,7 +80,7 @@ namespace Amazon.Runtime.Internal.Transform
             UInt32 parsed;
             if (responseData != null && UInt32.TryParse(responseData.GetHeaderValue("x-amz-crc32"), out parsed))
             {
-                this.Crc32Result = (int)parsed;
+                this.Crc32Result = unchecked((int) parsed);
                 this.CrcStream = new CrcCalculatorStream(responseStream, contentLength);
             }
         }
@@ -503,7 +503,7 @@ namespace Amazon.Runtime.Internal.Transform
                     }
                     if (_xmlReader != null)
                     {
-#if PCL
+#if PCL || CORECLR
                         _xmlReader.Dispose();
 #else
                         _xmlReader.Close();

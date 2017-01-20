@@ -118,7 +118,7 @@ namespace Amazon.SecurityToken.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_oidc_manual">Using
+    ///  <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_oidc_manual.html">Using
     /// Web Identity Federation APIs for Mobile Apps</a> and <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_assumerolewithwebidentity">Federation
     /// Through a Web-based Identity Provider</a>. 
     /// </para>
@@ -161,6 +161,17 @@ namespace Amazon.SecurityToken.Model
         /// The duration, in seconds, of the role session. The value can range from 900 seconds
         /// (15 minutes) to 3600 seconds (1 hour). By default, the value is set to 3600 seconds.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This is separate from the duration of a console session that you might request using
+        /// the returned credentials. The request to the federation endpoint for a console sign-in
+        /// token takes a <code>SessionDuration</code> parameter that specifies the maximum length
+        /// of the console session, separately from the <code>DurationSeconds</code> parameter
+        /// on this API. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-custom-url.html">Creating
+        /// a URL that Enables Federated Users to Access the AWS Management Console</a> in the
+        /// <i>IAM User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         public int DurationSeconds
         {
@@ -275,9 +286,9 @@ namespace Amazon.SecurityToken.Model
         /// </para>
         ///  
         /// <para>
-        /// The format for this parameter, as described by its regex pattern, is a string of characters
-        /// consisting of upper- and lower-case alphanumeric characters with no spaces. You can
-        /// also include any of the following characters: =,.@-
+        /// The regex used to validate this parameter is a string of characters consisting of
+        /// upper- and lower-case alphanumeric characters with no spaces. You can also include
+        /// underscores or any of the following characters: =,.@-
         /// </para>
         /// </summary>
         public string RoleSessionName

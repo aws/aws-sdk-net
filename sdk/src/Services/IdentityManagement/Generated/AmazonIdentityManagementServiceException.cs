@@ -28,7 +28,7 @@ namespace Amazon.IdentityManagement
     ///<summary>
     /// Common exception for the IdentityManagementService service.
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class AmazonIdentityManagementServiceException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.IdentityManagement
         {
         }
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the AmazonIdentityManagementServiceException class with serialized data.
         /// </summary>

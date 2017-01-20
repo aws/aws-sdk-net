@@ -78,7 +78,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
 
             if (structure.PayloadMemberName != null)
             {
-                this.WriteStructure(writer, structure.Members[0].Shape);
+                this.WriteStructure(writer, structure.PayloadMember.Shape);
                 return;
             }
 
@@ -96,6 +96,10 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
                 else if (member.OverrideDataType != null && string.Equals(member.OverrideDataType.Unmarshaller, "Amazon.Runtime.Internal.Transform.DateTimeUnmarshaller"))
                 {
                     writer.Write(Constants.DEFAULT_DATE.ToString(AWSSDKUtils.ISO8601DateFormat, CultureInfo.InvariantCulture));
+                }
+                else if (member.OverrideDataType != null && string.Equals(member.OverrideDataType.Unmarshaller, "Amazon.Runtime.Internal.Transform.DecimalUnmarshaller"))
+                {
+                    writer.Write(Constants.DEFAULT_DECIMAL.ToString(CultureInfo.InvariantCulture));
                 }
                 else
                 {

@@ -31,13 +31,13 @@ namespace Amazon.GameLift.Model
     /// Container for the parameters to the ListAliases operation.
     /// Retrieves a collection of alias records for this AWS account. You can filter the result
     /// set by alias name and/or routing strategy type. Use the pagination parameters to retrieve
-    /// results in sequential pages. 
+    /// results in sequential pages.
     /// 
-    ///  <note>
+    ///  <note> 
     /// <para>
     /// Aliases are not listed in any particular order.
     /// </para>
-    /// </note>
+    ///  </note>
     /// </summary>
     public partial class ListAliasesRequest : AmazonGameLiftRequest
     {
@@ -49,7 +49,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
-        /// Maximum number of results to return. You can use this parameter with <i>NextToken</i>
+        /// Maximum number of results to return. Use this parameter with <code>NextToken</code>
         /// to get results as a set of sequential pages.
         /// </para>
         /// </summary>
@@ -68,7 +68,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Descriptive label associated with this alias. Alias names do not need to be unique.
+        /// Descriptive label associated with an alias. Alias names do not need to be unique.
         /// </para>
         /// </summary>
         public string Name
@@ -107,13 +107,24 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property RoutingStrategyType. 
         /// <para>
         /// Type of routing to filter results on. Use this parameter to retrieve only aliases
-        /// of a certain type. To retrieve all aliases, leave this parameter empty. Possible routing
-        /// types include: <ul><li>SIMPLE: The alias resolves to one specific fleet. Use this
-        /// type when routing to active fleets.</li><li>TERMINAL: The alias does not resolve to
-        /// a fleet but instead can be used to display a message to the user. A terminal alias
-        /// throws a TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message
-        /// embedded.</li></ul>
+        /// of a certain type. To retrieve all aliases, leave this parameter empty.
         /// </para>
+        ///  
+        /// <para>
+        /// Possible routing types include the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>SIMPLE</b> – The alias resolves to one specific fleet. Use this type when routing
+        /// to active fleets.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>TERMINAL</b> – The alias does not resolve to a fleet but instead can be used to
+        /// display a message to the user. A terminal alias throws a TerminalRoutingStrategyException
+        /// with the <a>RoutingStrategy</a> message embedded.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public RoutingStrategyType RoutingStrategyType
         {

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-16"?>
+<property-value-rules>
+  <property-value-rule>
+    <property>Amazon.CostAndUsageReport.Model.DeleteReportDefinitionRequest.ReportName</property>
+    <max>256</max>
+    <pattern>[0-9A-Za-z!\-_.*\'()]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostAndUsageReport.Model.DescribeReportDefinitionsRequest.MaxResults</property>
+    <min>5</min>
+    <max>5</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostAndUsageReport.Model.ReportDefinition.ReportName</property>
+    <max>256</max>
+    <pattern>[0-9A-Za-z!\-_.*\'()]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostAndUsageReport.Model.ReportDefinition.S3Bucket</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostAndUsageReport.Model.ReportDefinition.S3Prefix</property>
+    <max>256</max>
+    <pattern>[0-9A-Za-z!\-_.*\'()/]*</pattern>
+  </property-value-rule>
+</property-value-rules>

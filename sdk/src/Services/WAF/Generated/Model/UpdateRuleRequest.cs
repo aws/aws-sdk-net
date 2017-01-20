@@ -36,9 +36,16 @@ namespace Amazon.WAF.Model
     /// to be allowed, blocked, or counted. For example, suppose you add the following to
     /// a <code>Rule</code>: 
     /// 
-    ///  <ul> <li>A <code>ByteMatchSet</code> that matches the value <code>BadBot</code> in
-    /// the <code>User-Agent</code> header</li> <li>An <code>IPSet</code> that matches the
-    /// IP address <code>192.0.2.44</code></li> </ul> 
+    ///  <ul> <li> 
+    /// <para>
+    /// A <code>ByteMatchSet</code> that matches the value <code>BadBot</code> in the <code>User-Agent</code>
+    /// header
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// An <code>IPSet</code> that matches the IP address <code>192.0.2.44</code> 
+    /// </para>
+    ///  </li> </ul> 
     /// <para>
     /// You then add the <code>Rule</code> to a <code>WebACL</code> and specify that you want
     /// to block requests that satisfy the <code>Rule</code>. For a request to be blocked,
@@ -49,12 +56,28 @@ namespace Amazon.WAF.Model
     /// <para>
     /// To create and configure a <code>Rule</code>, perform the following steps:
     /// </para>
-    ///  <ol> <li>Create and update the predicates that you want to include in the <code>Rule</code>.</li>
-    /// <li>Create the <code>Rule</code>. See <a>CreateRule</a>.</li> <li>Use <code>GetChangeToken</code>
-    /// to get the change token that you provide in the <code>ChangeToken</code> parameter
-    /// of an <a>UpdateRule</a> request.</li> <li>Submit an <code>UpdateRule</code> request
-    /// to add predicates to the <code>Rule</code>.</li> <li>Create and update a <code>WebACL</code>
-    /// that contains the <code>Rule</code>. See <a>CreateWebACL</a>.</li> </ol> 
+    ///  <ol> <li> 
+    /// <para>
+    /// Create and update the predicates that you want to include in the <code>Rule</code>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Create the <code>Rule</code>. See <a>CreateRule</a>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code>
+    /// parameter of an <a>UpdateRule</a> request.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Submit an <code>UpdateRule</code> request to add predicates to the <code>Rule</code>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Create and update a <code>WebACL</code> that contains the <code>Rule</code>. See <a>CreateWebACL</a>.
+    /// </para>
+    ///  </li> </ol> 
     /// <para>
     /// If you want to replace one <code>ByteMatchSet</code> or <code>IPSet</code> with another,
     /// you delete the existing one and add the new one.
@@ -115,9 +138,20 @@ namespace Amazon.WAF.Model
         /// An array of <code>RuleUpdate</code> objects that you want to insert into or delete
         /// from a <a>Rule</a>. For more information, see the applicable data types:
         /// </para>
-        ///  <ul> <li><a>RuleUpdate</a>: Contains <code>Action</code> and <code>Predicate</code></li>
-        /// <li><a>Predicate</a>: Contains <code>DataId</code>, <code>Negated</code>, and <code>Type</code></li>
-        /// <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code></li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>RuleUpdate</a>: Contains <code>Action</code> and <code>Predicate</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>Predicate</a>: Contains <code>DataId</code>, <code>Negated</code>, and <code>Type</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public List<RuleUpdate> Updates
         {

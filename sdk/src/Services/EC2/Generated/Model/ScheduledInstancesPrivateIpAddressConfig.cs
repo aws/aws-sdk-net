@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-11-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes a private IP address for a Scheduled Instance.
+    /// Describes a private IPv4 address for a Scheduled Instance.
     /// </summary>
     public partial class ScheduledInstancesPrivateIpAddressConfig
     {
@@ -38,7 +38,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Primary. 
         /// <para>
-        /// Indicates whether this is a primary IP address. Otherwise, this is a secondary IP
+        /// Indicates whether this is a primary IPv4 address. Otherwise, this is a secondary IPv4
         /// address.
         /// </para>
         /// </summary>
@@ -57,7 +57,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property PrivateIpAddress. 
         /// <para>
-        /// The IP address.
+        /// The IPv4 address.
         /// </para>
         /// </summary>
         public string PrivateIpAddress

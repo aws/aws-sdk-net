@@ -21,6 +21,7 @@
 using System;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.CloudWatchEvents.Model;
 
 namespace Amazon.CloudWatchEvents
@@ -44,7 +45,7 @@ namespace Amazon.CloudWatchEvents
     /// CloudWatch Developer Guide</a>. 
     /// </para>
     /// </summary>
-    public partial interface IAmazonCloudWatchEvents : IDisposable
+    public partial interface IAmazonCloudWatchEvents : IAmazonService, IDisposable
     {
 
         
@@ -530,10 +531,10 @@ namespace Amazon.CloudWatchEvents
         /// a target. When a rule is triggered due to a matched event, if for a target:
         /// </para>
         ///  <ul> <li>Neither <b>Input</b> nor <b>InputPath</b> is specified, then the entire
-        /// event is passed to the target in JSON form.</li> <li> <b>InputPath</b> is specified
+        /// event is passed to the target in JSON form.</li> <li><b>InputPath</b> is specified
         /// in the form of JSONPath (e.g. <b>$.detail</b>), then only the part of the event specified
         /// in the path is passed to the target (e.g. only the detail part of the event is passed).
-        /// </li> <li> <b>Input</b> is specified in the form of a valid JSON, then the matched
+        /// </li> <li><b>Input</b> is specified in the form of a valid JSON, then the matched
         /// event is overridden with this constant.</li> </ul> 
         /// <para>
         ///  <b>Note:</b> When you add targets to a rule, when the associated rule triggers, new

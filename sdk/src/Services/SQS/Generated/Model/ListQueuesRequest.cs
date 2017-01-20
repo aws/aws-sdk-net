@@ -30,8 +30,8 @@ namespace Amazon.SQS.Model
     /// <summary>
     /// Container for the parameters to the ListQueues operation.
     /// Returns a list of your queues. The maximum number of queues that can be returned is
-    /// 1000. If you specify a value for the optional <code>QueueNamePrefix</code> parameter,
-    /// only queues with a name beginning with the specified value are returned.
+    /// 1,000. If you specify a value for the optional <code>QueueNamePrefix</code> parameter,
+    /// only queues with a name that begins with the specified value are returned.
     /// </summary>
     public partial class ListQueuesRequest : AmazonSQSRequest
     {

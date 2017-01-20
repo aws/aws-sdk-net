@@ -28,20 +28,24 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// Represents a collection of cache nodes in a replication group.
+    /// Represents a collection of cache nodes in a replication group. One node in the node
+    /// group is the read/write primary node. All the other nodes are read-only Replica nodes.
     /// </summary>
     public partial class NodeGroup
     {
         private string _nodeGroupId;
         private List<NodeGroupMember> _nodeGroupMembers = new List<NodeGroupMember>();
         private Endpoint _primaryEndpoint;
+        private string _slots;
         private string _status;
 
         /// <summary>
         /// Gets and sets the property NodeGroupId. 
         /// <para>
-        /// The identifier for the node group. A replication group contains only one node group;
-        /// therefore, the node group ID is 0001.
+        /// The identifier for the node group (shard). A Redis (cluster mode disabled) replication
+        /// group contains only 1 node group; therefore, the node group ID is 0001. A Redis (cluster
+        /// mode enabled) replication group contains 1 to 15 node groups numbered 0001 to 0015.
+        /// 
         /// </para>
         /// </summary>
         public string NodeGroupId
@@ -59,7 +63,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property NodeGroupMembers. 
         /// <para>
-        /// A list containing information about individual nodes within the node group.
+        /// A list containing information about individual nodes within the node group (shard).
         /// </para>
         /// </summary>
         public List<NodeGroupMember> NodeGroupMembers
@@ -75,7 +79,10 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PrimaryEndpoint.
+        /// Gets and sets the property PrimaryEndpoint. 
+        /// <para>
+        /// The endpoint of the primary node in this node group (shard).
+        /// </para>
         /// </summary>
         public Endpoint PrimaryEndpoint
         {
@@ -90,9 +97,28 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Slots. 
+        /// <para>
+        /// The keyspace for this node group (shard).
+        /// </para>
+        /// </summary>
+        public string Slots
+        {
+            get { return this._slots; }
+            set { this._slots = value; }
+        }
+
+        // Check to see if Slots property is set
+        internal bool IsSetSlots()
+        {
+            return this._slots != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current state of this replication group - <i>creating</i>, <i>available</i>, etc.
+        /// The current state of this replication group - <code>creating</code>, <code>available</code>,
+        /// etc.
         /// </para>
         /// </summary>
         public string Status

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2016-01-28.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-11-25.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -33,6 +33,7 @@ namespace Amazon.CloudFront.Model
     public partial class StreamingDistribution
     {
         private ActiveTrustedSigners _activeTrustedSigners;
+        private string _arn;
         private string _domainName;
         private string _id;
         private DateTime? _lastModifiedTime;
@@ -45,14 +46,26 @@ namespace Amazon.CloudFront.Model
         public StreamingDistribution() { }
 
         /// <summary>
-        /// Gets and sets the property ActiveTrustedSigners. CloudFront automatically adds this
-        /// element to the response only if you've set up the distribution to serve private content
-        /// with signed URLs. The element lists the key pair IDs that CloudFront is aware of for
-        /// each trusted signer. The Signer child element lists the AWS account number of the
-        /// trusted signer (or an empty Self element if the signer is you). The Signer element
-        /// also includes the IDs of any active key pairs associated with the trusted signer's
-        /// AWS account. If no KeyPairId element appears for a Signer, that signer can't create
-        /// working signed URLs.
+        /// Gets and sets the property ActiveTrustedSigners. 
+        /// <para>
+        /// A complex type that lists the AWS accounts, if any, that you included in the <code>TrustedSigners</code>
+        /// complex type for this distribution. These are the accounts that you want to allow
+        /// to create signed URLs for private content.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <code>Signer</code> complex type lists the AWS account number of the trusted signer
+        /// or <code>self</code> if the signer is the AWS account that created the distribution.
+        /// The <code>Signer</code> element also includes the IDs of any active CloudFront key
+        /// pairs that are associated with the trusted signer's AWS account. If no <code>KeyPairId</code>
+        /// element appears for a <code>Signer</code>, that signer can't create signed URLs.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
+        /// Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.
+        /// 
+        /// </para>
         /// </summary>
         public ActiveTrustedSigners ActiveTrustedSigners
         {
@@ -67,8 +80,26 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DomainName. The domain name corresponding to the streaming
-        /// distribution. For example: s5c39gqb8ow64r.cloudfront.net.
+        /// Gets and sets the property ARN.
+        /// </summary>
+        public string ARN
+        {
+            get { return this._arn; }
+            set { this._arn = value; }
+        }
+
+        // Check to see if ARN property is set
+        internal bool IsSetARN()
+        {
+            return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DomainName. 
+        /// <para>
+        /// The domain name that corresponds to the streaming distribution. For example: <code>s5c39gqb8ow64r.cloudfront.net</code>.
+        /// 
+        /// </para>
         /// </summary>
         public string DomainName
         {
@@ -83,8 +114,10 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Id. The identifier for the streaming distribution. For
-        /// example: EGTXBD79H29TRA8.
+        /// Gets and sets the property Id. 
+        /// <para>
+        /// The identifier for the RTMP distribution. For example: <code>EGTXBD79EXAMPLE</code>.
+        /// </para>
         /// </summary>
         public string Id
         {
@@ -99,8 +132,10 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LastModifiedTime. The date and time the distribution was
-        /// last modified.
+        /// Gets and sets the property LastModifiedTime. 
+        /// <para>
+        /// The date and time that the distribution was last modified. 
+        /// </para>
         /// </summary>
         public DateTime LastModifiedTime
         {
@@ -115,9 +150,11 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Status. The current status of the streaming distribution.
-        /// When the status is Deployed, the distribution's information is fully propagated throughout
-        /// the Amazon CloudFront system.
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The current status of the RTMP distribution. When the status is <code>Deployed</code>,
+        /// the distribution's information is propagated to all CloudFront edge locations.
+        /// </para>
         /// </summary>
         public string Status
         {
@@ -132,8 +169,10 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StreamingDistributionConfig. The current configuration
-        /// information for the streaming distribution.
+        /// Gets and sets the property StreamingDistributionConfig. 
+        /// <para>
+        /// The current configuration information for the RTMP distribution.
+        /// </para>
         /// </summary>
         public StreamingDistributionConfig StreamingDistributionConfig
         {

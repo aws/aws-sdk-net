@@ -41,8 +41,14 @@ namespace Amazon.SimpleSystemsManagement.Model
         private string _comment;
         private string _documentName;
         private string _instanceId;
+        private string _instanceName;
+        private NotificationConfig _notificationConfig;
         private DateTime? _requestedDateTime;
+        private string _serviceRole;
+        private string _standardErrorUrl;
+        private string _standardOutputUrl;
         private CommandInvocationStatus _status;
+        private string _statusDetails;
         private string _traceOutput;
 
         /// <summary>
@@ -134,6 +140,45 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
+        /// Gets and sets the property InstanceName. 
+        /// <para>
+        /// The name of the invocation target. For Amazon EC2 instances this is the value for
+        /// the <code>aws:Name</code> tag. For on-premises instances, this is the name of the
+        /// instance.
+        /// </para>
+        /// </summary>
+        public string InstanceName
+        {
+            get { return this._instanceName; }
+            set { this._instanceName = value; }
+        }
+
+        // Check to see if InstanceName property is set
+        internal bool IsSetInstanceName()
+        {
+            return this._instanceName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NotificationConfig. 
+        /// <para>
+        /// Configurations for sending notifications about command status changes on a per instance
+        /// basis.
+        /// </para>
+        /// </summary>
+        public NotificationConfig NotificationConfig
+        {
+            get { return this._notificationConfig; }
+            set { this._notificationConfig = value; }
+        }
+
+        // Check to see if NotificationConfig property is set
+        internal bool IsSetNotificationConfig()
+        {
+            return this._notificationConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RequestedDateTime. 
         /// <para>
         /// The time and date the request was sent to this instance.
@@ -152,6 +197,67 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ServiceRole. 
+        /// <para>
+        /// The IAM service role that Run Command uses to act on your behalf when sending notifications
+        /// about command status changes on a per instance basis.
+        /// </para>
+        /// </summary>
+        public string ServiceRole
+        {
+            get { return this._serviceRole; }
+            set { this._serviceRole = value; }
+        }
+
+        // Check to see if ServiceRole property is set
+        internal bool IsSetServiceRole()
+        {
+            return this._serviceRole != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StandardErrorUrl. 
+        /// <para>
+        /// The URL to the plugin’s StdErr file in Amazon S3, if the Amazon S3 bucket was defined
+        /// for the parent command. For an invocation, <code>StandardErrorUrl</code> is populated
+        /// if there is just one plugin defined for the command, and the Amazon S3 bucket was
+        /// defined for the command.
+        /// </para>
+        /// </summary>
+        public string StandardErrorUrl
+        {
+            get { return this._standardErrorUrl; }
+            set { this._standardErrorUrl = value; }
+        }
+
+        // Check to see if StandardErrorUrl property is set
+        internal bool IsSetStandardErrorUrl()
+        {
+            return this._standardErrorUrl != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StandardOutputUrl. 
+        /// <para>
+        /// The URL to the plugin’s StdOut file in Amazon S3, if the Amazon S3 bucket was defined
+        /// for the parent command. For an invocation, <code>StandardOutputUrl</code> is populated
+        /// if there is just one plugin defined for the command, and the Amazon S3 bucket was
+        /// defined for the command.
+        /// </para>
+        /// </summary>
+        public string StandardOutputUrl
+        {
+            get { return this._standardOutputUrl; }
+            set { this._standardOutputUrl = value; }
+        }
+
+        // Check to see if StandardOutputUrl property is set
+        internal bool IsSetStandardOutputUrl()
+        {
+            return this._standardOutputUrl != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
         /// Whether or not the invocation succeeded, failed, or is pending.
@@ -167,6 +273,84 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StatusDetails. 
+        /// <para>
+        /// A detailed status of the command execution for each invocation (each instance targeted
+        /// by the command). <code>StatusDetails</code> includes more information than <code>Status</code>
+        /// because it includes states resulting from error and concurrency control parameters.
+        /// <code>StatusDetails</code> can show different results than <code>Status</code>. For
+        /// more information about these statuses, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-commands.html">Monitor
+        /// Commands</a> (Linux) or <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/monitor-commands.html">Monitor
+        /// Commands</a> (Windows). <code>StatusDetails</code> can be one of the following values:
+        /// 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Pending – The command has not been sent to the instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// In Progress – The command has been sent to the instance but has not reached a terminal
+        /// state.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Success – The execution of the command or plugin was successfully completed. This
+        /// is a terminal state.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Delivery Timed Out – The command was not delivered to the instance before the delivery
+        /// timeout expired. Delivery timeouts do not count against the parent command’s <code>MaxErrors</code>
+        /// limit, but they do contribute to whether the parent command status is <code>Success</code>
+        /// or <code>Incomplete</code>. This is a terminal state.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Execution Timed Out – Command execution started on the instance, but the execution
+        /// was not complete before the execution timeout expired. Execution timeouts count against
+        /// the <code>MaxErrors</code> limit of the parent command. This is a terminal state.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Failed – The command was not successful on the instance. For a plugin, this indicates
+        /// that the result code was not zero. For a command invocation, this indicates that the
+        /// result code for one or more plugins was not zero. Invocation failures count against
+        /// the <code>MaxErrors</code> limit of the parent command. This is a terminal state.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Canceled – The command was terminated before it was completed. This is a terminal
+        /// state.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Undeliverable – The command can't be delivered to the instance. The instance might
+        /// not exist or might not be responding. Undeliverable invocations don't count against
+        /// the parent command’s <code>MaxErrors</code> limit and don't contribute to whether
+        /// the parent command status is <code>Success</code> or <code>Incomplete</code>. This
+        /// is a terminal state.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Terminated – The parent command exceeded its <code>MaxErrors</code> limit and subsequent
+        /// command invocations were canceled by the system. This is a terminal state.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public string StatusDetails
+        {
+            get { return this._statusDetails; }
+            set { this._statusDetails = value; }
+        }
+
+        // Check to see if StatusDetails property is set
+        internal bool IsSetStatusDetails()
+        {
+            return this._statusDetails != null;
         }
 
         /// <summary>

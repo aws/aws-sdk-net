@@ -60,6 +60,9 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 
             string uriResourcePath = "/cacertificate";
             
+            if (publicRequest.IsSetAllowAutoRegistration())
+                request.Parameters.Add("allowAutoRegistration", StringUtils.FromBool(publicRequest.AllowAutoRegistration));
+            
             if (publicRequest.IsSetSetAsActive())
                 request.Parameters.Add("setAsActive", StringUtils.FromBool(publicRequest.SetAsActive));
             request.ResourcePath = uriResourcePath;

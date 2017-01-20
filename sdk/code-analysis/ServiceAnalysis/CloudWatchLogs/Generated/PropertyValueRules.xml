@@ -211,6 +211,16 @@
     <pattern>[\.\-_/#A-Za-z0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.DescribeMetricFiltersRequest.MetricName</property>
+    <max>255</max>
+    <pattern>[^:*$]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.DescribeMetricFiltersRequest.MetricNamespace</property>
+    <max>255</max>
+    <pattern>[^:*$]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.DescribeMetricFiltersRequest.NextToken</property>
     <min>1</min>
   </property-value-rule>
@@ -313,6 +323,12 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.ListTagsLogGroupRequest.LogGroupName</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>[\.\-_/#A-Za-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.PutDestinationRequest.DestinationName</property>
     <min>1</min>
     <max>512</max>
@@ -405,9 +421,21 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.TagLogGroupRequest.LogGroupName</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>[\.\-_/#A-Za-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.TestMetricFilterRequest.FilterPattern</property>
     <min>0</min>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.UntagLogGroupRequest.LogGroupName</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>[\.\-_/#A-Za-z0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.DataAlreadyAcceptedException.ExpectedSequenceToken</property>
@@ -560,6 +588,12 @@
     <property>Amazon.CloudWatchLogs.Model.MetricFilter.FilterPattern</property>
     <min>0</min>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.MetricFilter.LogGroupName</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>[\.\-_/#A-Za-z0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.MetricFilterMatchRecord.EventMessage</property>

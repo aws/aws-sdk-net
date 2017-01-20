@@ -34,9 +34,34 @@ namespace Amazon.ECR.Model
     /// </summary>
     public partial class BatchGetImageRequest : AmazonECRRequest
     {
+        private List<string> _acceptedMediaTypes = new List<string>();
         private List<ImageIdentifier> _imageIds = new List<ImageIdentifier>();
         private string _registryId;
         private string _repositoryName;
+
+        /// <summary>
+        /// Gets and sets the property AcceptedMediaTypes. 
+        /// <para>
+        /// The accepted media types for the request.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values: <code>application/vnd.docker.distribution.manifest.v1+json</code> |
+        /// <code>application/vnd.docker.distribution.manifest.v2+json</code> | <code>application/vnd.oci.image.manifest.v1+json</code>
+        /// 
+        /// </para>
+        /// </summary>
+        public List<string> AcceptedMediaTypes
+        {
+            get { return this._acceptedMediaTypes; }
+            set { this._acceptedMediaTypes = value; }
+        }
+
+        // Check to see if AcceptedMediaTypes property is set
+        internal bool IsSetAcceptedMediaTypes()
+        {
+            return this._acceptedMediaTypes != null && this._acceptedMediaTypes.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property ImageIds. 

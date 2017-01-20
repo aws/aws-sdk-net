@@ -21,6 +21,7 @@
 using System;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.AWSMarketplaceCommerceAnalytics.Model;
 
 namespace Amazon.AWSMarketplaceCommerceAnalytics
@@ -30,7 +31,7 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics
     ///
     /// Provides AWS Marketplace business intelligence data on-demand.
     /// </summary>
-    public partial interface IAmazonAWSMarketplaceCommerceAnalytics : IDisposable
+    public partial interface IAmazonAWSMarketplaceCommerceAnalytics : IAmazonService, IDisposable
     {
 
         
@@ -54,6 +55,7 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics
         /// <exception cref="Amazon.AWSMarketplaceCommerceAnalytics.Model.MarketplaceCommerceAnalyticsException">
         /// This exception is thrown when an internal service error occurs.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplacecommerceanalytics-2015-07-01/GenerateDataSet">REST API Reference for GenerateDataSet Operation</seealso>
         GenerateDataSetResponse GenerateDataSet(GenerateDataSetRequest request);
 
         /// <summary>
@@ -67,6 +69,7 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGenerateDataSet
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplacecommerceanalytics-2015-07-01/GenerateDataSet">REST API Reference for GenerateDataSet Operation</seealso>
         IAsyncResult BeginGenerateDataSet(GenerateDataSetRequest request, AsyncCallback callback, object state);
 
 
@@ -78,7 +81,59 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGenerateDataSet.</param>
         /// 
         /// <returns>Returns a  GenerateDataSetResult from AWSMarketplaceCommerceAnalytics.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplacecommerceanalytics-2015-07-01/GenerateDataSet">REST API Reference for GenerateDataSet Operation</seealso>
         GenerateDataSetResponse EndGenerateDataSet(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  StartSupportDataExport
+
+
+        /// <summary>
+        /// Given a data set type and a from date, asynchronously publishes the requested customer
+        /// support data to the specified S3 bucket and notifies the specified SNS topic once
+        /// the data is available. Returns a unique request identifier that can be used to correlate
+        /// requests with notifications from the SNS topic. Data sets will be published in comma-separated
+        /// values (CSV) format with the file name {data_set_type}_YYYY-MM-DD'T'HH-mm-ss'Z'.csv.
+        /// If a file with the same name already exists (e.g. if the same data set is requested
+        /// twice), the original file will be overwritten by the new file. Requires a Role with
+        /// an attached permissions policy providing Allow permissions for the following actions:
+        /// s3:PutObject, s3:GetBucketLocation, sns:GetTopicAttributes, sns:Publish, iam:GetRolePolicy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartSupportDataExport service method.</param>
+        /// 
+        /// <returns>The response from the StartSupportDataExport service method, as returned by AWSMarketplaceCommerceAnalytics.</returns>
+        /// <exception cref="Amazon.AWSMarketplaceCommerceAnalytics.Model.MarketplaceCommerceAnalyticsException">
+        /// This exception is thrown when an internal service error occurs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplacecommerceanalytics-2015-07-01/StartSupportDataExport">REST API Reference for StartSupportDataExport Operation</seealso>
+        StartSupportDataExportResponse StartSupportDataExport(StartSupportDataExportRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartSupportDataExport operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartSupportDataExport operation on AmazonAWSMarketplaceCommerceAnalyticsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartSupportDataExport
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplacecommerceanalytics-2015-07-01/StartSupportDataExport">REST API Reference for StartSupportDataExport Operation</seealso>
+        IAsyncResult BeginStartSupportDataExport(StartSupportDataExportRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartSupportDataExport operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartSupportDataExport.</param>
+        /// 
+        /// <returns>Returns a  StartSupportDataExportResult from AWSMarketplaceCommerceAnalytics.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplacecommerceanalytics-2015-07-01/StartSupportDataExport">REST API Reference for StartSupportDataExport Operation</seealso>
+        StartSupportDataExportResponse EndStartSupportDataExport(IAsyncResult asyncResult);
 
         #endregion
         

@@ -32,7 +32,7 @@ namespace ServiceClientGenerator
                 { "FileVersion", Manifest.CoreFileVersion }
             };
 
-            session["NuGetPreviewFlag"] = manifest.DefaultToPreview ? GeneratorDriver.NuGetPreviewFlag : "";
+            session["NuGetPreviewFlag"] = manifest.DefaultToPreview ? manifest.PreviewLabel : "";
             session["DisablePCLSupport"] = options.DisablePCLSupport;
         }
 

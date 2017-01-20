@@ -36,7 +36,11 @@ namespace Amazon.CognitoIdentityProvider.Model
         private bool? _userConfirmed;
 
         /// <summary>
-        /// Gets and sets the property CodeDeliveryDetails.
+        /// Gets and sets the property CodeDeliveryDetails. 
+        /// <para>
+        /// The code delivery details returned by the server response to the user registration
+        /// request.
+        /// </para>
         /// </summary>
         public CodeDeliveryDetailsType CodeDeliveryDetails
         {

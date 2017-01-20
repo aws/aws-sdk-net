@@ -47,7 +47,8 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property IamUserArn. 
         /// <para>
-        /// The user's IAM ARN. For more information about IAM ARNs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+        /// The user's IAM ARN. This can also be a federated user's ARN. For more information
+        /// about IAM ARNs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
         /// Identifiers</a>.
         /// </para>
         /// </summary>

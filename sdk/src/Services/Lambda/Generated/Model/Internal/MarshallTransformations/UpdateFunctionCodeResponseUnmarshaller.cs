@@ -63,10 +63,22 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     response.CodeSize = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DeadLetterConfig", targetDepth))
+                {
+                    var unmarshaller = DeadLetterConfigUnmarshaller.Instance;
+                    response.DeadLetterConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Description", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Description = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Environment", targetDepth))
+                {
+                    var unmarshaller = EnvironmentResponseUnmarshaller.Instance;
+                    response.Environment = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("FunctionArn", targetDepth))
@@ -85,6 +97,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Handler = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("KMSKeyArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.KMSKeyArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("LastModified", targetDepth))

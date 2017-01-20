@@ -29,9 +29,13 @@ namespace Amazon.Route53.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTrafficPolicyVersions operation.
-    /// Gets information about all of the versions for a specified traffic policy. <code>ListTrafficPolicyVersions</code>
-    /// lists only versions that have not been deleted.
+    /// Gets information about all of the versions for a specified traffic policy.
     /// 
+    ///  
+    /// <para>
+    /// Send a <code>GET</code> request to the <code>/<i>Amazon Route 53 API version</i>/trafficpolicy</code>
+    /// resource and specify the ID of the traffic policy for which you want to list versions.
+    /// </para>
     ///  
     /// <para>
     /// Amazon Route 53 returns a maximum of 100 items in each response. If you have a lot
@@ -40,10 +44,14 @@ namespace Amazon.Route53.Model
     /// </para>
     ///  
     /// <para>
-    /// The response includes three values that help you navigate from one group of <code>maxitems</code>maxitems
+    /// The response includes three values that help you navigate from one group of <code>maxitems</code>
     /// traffic policies to the next:
     /// </para>
-    ///  <ul> <li><b>IsTruncated</b></li> 
+    ///  <ul> <li> 
+    /// <para>
+    ///  <b>IsTruncated</b> 
+    /// </para>
+    ///  
     /// <para>
     /// If the value of <code>IsTruncated</code> in the response is <code>true</code>, there
     /// are more traffic policy versions associated with the specified traffic policy.
@@ -53,7 +61,11 @@ namespace Amazon.Route53.Model
     /// If <code>IsTruncated</code> is <code>false</code>, this response includes the last
     /// traffic policy version that is associated with the specified traffic policy.
     /// </para>
-    ///  <li><b>TrafficPolicyVersionMarker</b></li> 
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>TrafficPolicyVersionMarker</b> 
+    /// </para>
+    ///  
     /// <para>
     /// The ID of the next traffic policy version that is associated with the current AWS
     /// account. If you want to list more traffic policies, make another call to <code>ListTrafficPolicyVersions</code>,
@@ -65,12 +77,16 @@ namespace Amazon.Route53.Model
     /// If <code>IsTruncated</code> is <code>false</code>, Amazon Route 53 omits the <code>TrafficPolicyVersionMarker</code>
     /// element from the response.
     /// </para>
-    ///  <li><b>MaxItems</b></li> 
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>MaxItems</b> 
+    /// </para>
+    ///  
     /// <para>
     /// The value that you specified for the <code>MaxItems</code> parameter in the request
     /// that produced the current response.
     /// </para>
-    ///  </ul>
+    ///  </li> </ul>
     /// </summary>
     public partial class ListTrafficPolicyVersionsRequest : AmazonRoute53Request
     {

@@ -38,7 +38,7 @@ namespace Amazon.Kinesis.Model
         /// Gets and sets the property StreamDescription. 
         /// <para>
         /// The current status of the stream, the stream ARN, an array of shard objects that comprise
-        /// the stream, and states whether there are more shards available.
+        /// the stream, and whether there are more shards available.
         /// </para>
         /// </summary>
         public StreamDescription StreamDescription

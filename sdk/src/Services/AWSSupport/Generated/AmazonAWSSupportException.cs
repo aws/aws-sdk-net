@@ -28,7 +28,7 @@ namespace Amazon.AWSSupport
     ///<summary>
     /// Common exception for the AWSSupport service.
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class AmazonAWSSupportException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.AWSSupport
         {
         }
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the AmazonAWSSupportException class with serialized data.
         /// </summary>

@@ -29,14 +29,14 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateClusterSecurityGroup operation.
-    /// Creates a new Amazon Redshift security group. You use security groups to control
-    /// access to non-VPC clusters. 
+    /// Creates a new Amazon Redshift security group. You use security groups to control access
+    /// to non-VPC clusters.
     /// 
     ///  
     /// <para>
     ///  For information about managing security groups, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Amazon
     /// Redshift Cluster Security Groups</a> in the <i>Amazon Redshift Cluster Management
-    /// Guide</i>. 
+    /// Guide</i>.
     /// </para>
     /// </summary>
     public partial class CreateClusterSecurityGroupRequest : AmazonRedshiftRequest
@@ -48,18 +48,27 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ClusterSecurityGroupName. 
         /// <para>
-        ///  The name for the security group. Amazon Redshift stores the value as a lowercase
-        /// string. 
+        /// The name for the security group. Amazon Redshift stores the value as a lowercase string.
         /// </para>
         ///  
         /// <para>
-        /// Constraints: 
+        /// Constraints:
         /// </para>
-        ///  <ul> <li>Must contain no more than 255 alphanumeric characters or hyphens.</li> <li>Must
-        /// not be "Default".</li> <li>Must be unique for all security groups that are created
-        /// by your AWS account.</li> </ul> 
+        ///  <ul> <li> 
         /// <para>
-        /// Example: <code>examplesecuritygroup</code>
+        /// Must contain no more than 255 alphanumeric characters or hyphens.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Must not be "Default".
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Must be unique for all security groups that are created by your AWS account.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Example: <code>examplesecuritygroup</code> 
         /// </para>
         /// </summary>
         public string ClusterSecurityGroupName
@@ -77,7 +86,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        ///  A description for the security group. 
+        /// A description for the security group.
         /// </para>
         /// </summary>
         public string Description

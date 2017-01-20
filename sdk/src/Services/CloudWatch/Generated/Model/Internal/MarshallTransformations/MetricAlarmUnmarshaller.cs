@@ -110,6 +110,12 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                         unmarshalledObject.EvaluationPeriods = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ExtendedStatistic", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ExtendedStatistic = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("InsufficientDataActions/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

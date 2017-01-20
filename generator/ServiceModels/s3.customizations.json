@@ -11,7 +11,7 @@
                 "operation": "replace",
                 "newType": "Amazon.Runtime.Internal.RetryHandler",
                 "targetType": "Amazon.Runtime.Internal.RetryHandler",
-                "constructorInput": "new Amazon.S3.Internal.AmazonS3RetryPolicy(this.Config.MaxErrorRetry)"
+                "constructorInput": "new Amazon.S3.Internal.AmazonS3RetryPolicy(this.Config)"
             }
         ]
     },
@@ -29,7 +29,7 @@
                     "operation": "replace",
                     "newType": "Amazon.Runtime.Internal.RetryHandler",
                     "targetType": "Amazon.Runtime.Internal.RetryHandler",
-                    "constructorInput": "new Amazon.S3.Internal.AmazonS3RetryPolicy(this.Config.MaxErrorRetry)"
+                    "constructorInput": "new Amazon.S3.Internal.AmazonS3RetryPolicy(this.Config)"
                 }
             ]
         },

@@ -43,10 +43,10 @@ namespace Amazon.ElastiCache
     /// </para>
     ///  
     /// <para>
-    /// With ElastiCache, customers gain all of the benefits of a high-performance, in-memory
-    /// cache with far less of the administrative burden of launching and managing a distributed
-    /// cache. The service makes setup, scaling, and cluster failure handling much simpler
-    /// than in a self-managed cache deployment.
+    /// With ElastiCache, customers get all of the benefits of a high-performance, in-memory
+    /// cache with less of the administrative burden involved in launching and managing a
+    /// distributed cache. The service makes setup, scaling, and cluster failure handling
+    /// much simpler than in a self-managed cache deployment.
     /// </para>
     ///  
     /// <para>
@@ -59,6 +59,66 @@ namespace Amazon.ElastiCache
     {
         
         #region Constructors
+
+#if CORECLR
+    
+        /// <summary>
+        /// Constructs AmazonElastiCacheClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
+        public AmazonElastiCacheClient()
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonElastiCacheConfig()) { }
+
+        /// <summary>
+        /// Constructs AmazonElastiCacheClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
+        /// <param name="region">The region to connect.</param>
+        public AmazonElastiCacheClient(RegionEndpoint region)
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonElastiCacheConfig{RegionEndpoint = region}) { }
+
+        /// <summary>
+        /// Constructs AmazonElastiCacheClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
+        /// <param name="config">The AmazonElastiCacheClient Configuration Object</param>
+        public AmazonElastiCacheClient(AmazonElastiCacheConfig config)
+            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+
+#endif
 
         /// <summary>
         /// Constructs AmazonElastiCacheClient with AWS Credentials
@@ -207,6 +267,7 @@ namespace Amazon.ElastiCache
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/AddTagsToResource">REST API Reference for AddTagsToResource Operation</seealso>
         public Task<AddTagsToResourceResponse> AddTagsToResourceAsync(AddTagsToResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AddTagsToResourceRequestMarshaller();
@@ -238,6 +299,7 @@ namespace Amazon.ElastiCache
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/AuthorizeCacheSecurityGroupIngress">REST API Reference for AuthorizeCacheSecurityGroupIngress Operation</seealso>
         public Task<AuthorizeCacheSecurityGroupIngressResponse> AuthorizeCacheSecurityGroupIngressAsync(AuthorizeCacheSecurityGroupIngressRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AuthorizeCacheSecurityGroupIngressRequestMarshaller();
@@ -269,6 +331,7 @@ namespace Amazon.ElastiCache
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CopySnapshot">REST API Reference for CopySnapshot Operation</seealso>
         public Task<CopySnapshotResponse> CopySnapshotAsync(CopySnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CopySnapshotRequestMarshaller();
@@ -300,6 +363,7 @@ namespace Amazon.ElastiCache
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateCacheCluster">REST API Reference for CreateCacheCluster Operation</seealso>
         public Task<CreateCacheClusterResponse> CreateCacheClusterAsync(CreateCacheClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateCacheClusterRequestMarshaller();
@@ -331,6 +395,7 @@ namespace Amazon.ElastiCache
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateCacheParameterGroup">REST API Reference for CreateCacheParameterGroup Operation</seealso>
         public Task<CreateCacheParameterGroupResponse> CreateCacheParameterGroupAsync(CreateCacheParameterGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateCacheParameterGroupRequestMarshaller();
@@ -362,6 +427,7 @@ namespace Amazon.ElastiCache
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateCacheSecurityGroup">REST API Reference for CreateCacheSecurityGroup Operation</seealso>
         public Task<CreateCacheSecurityGroupResponse> CreateCacheSecurityGroupAsync(CreateCacheSecurityGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateCacheSecurityGroupRequestMarshaller();
@@ -393,6 +459,7 @@ namespace Amazon.ElastiCache
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateCacheSubnetGroup">REST API Reference for CreateCacheSubnetGroup Operation</seealso>
         public Task<CreateCacheSubnetGroupResponse> CreateCacheSubnetGroupAsync(CreateCacheSubnetGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateCacheSubnetGroupRequestMarshaller();
@@ -424,6 +491,7 @@ namespace Amazon.ElastiCache
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateReplicationGroup">REST API Reference for CreateReplicationGroup Operation</seealso>
         public Task<CreateReplicationGroupResponse> CreateReplicationGroupAsync(CreateReplicationGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateReplicationGroupRequestMarshaller();
@@ -455,6 +523,7 @@ namespace Amazon.ElastiCache
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateSnapshot">REST API Reference for CreateSnapshot Operation</seealso>
         public Task<CreateSnapshotResponse> CreateSnapshotAsync(CreateSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateSnapshotRequestMarshaller();
@@ -486,6 +555,7 @@ namespace Amazon.ElastiCache
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteCacheCluster">REST API Reference for DeleteCacheCluster Operation</seealso>
         public Task<DeleteCacheClusterResponse> DeleteCacheClusterAsync(DeleteCacheClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteCacheClusterRequestMarshaller();
@@ -517,6 +587,7 @@ namespace Amazon.ElastiCache
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteCacheParameterGroup">REST API Reference for DeleteCacheParameterGroup Operation</seealso>
         public Task<DeleteCacheParameterGroupResponse> DeleteCacheParameterGroupAsync(DeleteCacheParameterGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteCacheParameterGroupRequestMarshaller();
@@ -548,6 +619,7 @@ namespace Amazon.ElastiCache
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteCacheSecurityGroup">REST API Reference for DeleteCacheSecurityGroup Operation</seealso>
         public Task<DeleteCacheSecurityGroupResponse> DeleteCacheSecurityGroupAsync(DeleteCacheSecurityGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteCacheSecurityGroupRequestMarshaller();
@@ -579,6 +651,7 @@ namespace Amazon.ElastiCache
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteCacheSubnetGroup">REST API Reference for DeleteCacheSubnetGroup Operation</seealso>
         public Task<DeleteCacheSubnetGroupResponse> DeleteCacheSubnetGroupAsync(DeleteCacheSubnetGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteCacheSubnetGroupRequestMarshaller();
@@ -610,6 +683,7 @@ namespace Amazon.ElastiCache
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteReplicationGroup">REST API Reference for DeleteReplicationGroup Operation</seealso>
         public Task<DeleteReplicationGroupResponse> DeleteReplicationGroupAsync(DeleteReplicationGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteReplicationGroupRequestMarshaller();
@@ -641,6 +715,7 @@ namespace Amazon.ElastiCache
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteSnapshot">REST API Reference for DeleteSnapshot Operation</seealso>
         public Task<DeleteSnapshotResponse> DeleteSnapshotAsync(DeleteSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteSnapshotRequestMarshaller();
@@ -668,32 +743,31 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// The <i>DescribeCacheClusters</i> action returns information about all provisioned
-        /// cache clusters if no cache cluster identifier is specified, or about a specific cache
-        /// cluster if a cache cluster identifier is supplied.
+        /// Returns information about all provisioned cache clusters if no cache cluster identifier
+        /// is specified, or about a specific cache cluster if a cache cluster identifier is supplied.
         /// 
         ///  
         /// <para>
-        /// By default, abbreviated information about the cache clusters(s) will be returned.
-        /// You can use the optional <i>ShowDetails</i> flag to retrieve detailed information
-        /// about the cache nodes associated with the cache clusters. These details include the
-        /// DNS address and port for the cache node endpoint.
+        /// By default, abbreviated information about the cache clusters are returned. You can
+        /// use the optional <code>ShowDetails</code> flag to retrieve detailed information about
+        /// the cache nodes associated with the cache clusters. These details include the DNS
+        /// address and port for the cache node endpoint.
         /// </para>
         ///  
         /// <para>
-        /// If the cluster is in the CREATING state, only cluster level information will be displayed
+        /// If the cluster is in the CREATING state, only cluster-level information is displayed
         /// until all of the nodes are successfully provisioned.
         /// </para>
         ///  
         /// <para>
-        /// If the cluster is in the DELETING state, only cluster level information will be displayed.
+        /// If the cluster is in the DELETING state, only cluster-level information is displayed.
         /// </para>
         ///  
         /// <para>
         /// If cache nodes are currently being added to the cache cluster, node endpoint information
-        /// and creation time for the additional nodes will not be displayed until they are completely
-        /// provisioned. When the cache cluster state is <i>available</i>, the cluster is ready
-        /// for use.
+        /// and creation time for the additional nodes are not displayed until they are completely
+        /// provisioned. When the cache cluster state is <code>available</code>, the cluster is
+        /// ready for use.
         /// </para>
         ///  
         /// <para>
@@ -715,6 +789,7 @@ namespace Amazon.ElastiCache
         /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeCacheClusters">REST API Reference for DescribeCacheClusters Operation</seealso>
         public Task<DescribeCacheClustersResponse> DescribeCacheClustersAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeCacheClustersAsync(new DescribeCacheClustersRequest(), cancellationToken);
@@ -730,6 +805,7 @@ namespace Amazon.ElastiCache
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeCacheClusters">REST API Reference for DescribeCacheClusters Operation</seealso>
         public Task<DescribeCacheClustersResponse> DescribeCacheClustersAsync(DescribeCacheClustersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeCacheClustersRequestMarshaller();
@@ -757,14 +833,14 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// The <i>DescribeCacheEngineVersions</i> action returns a list of the available cache
-        /// engines and their versions.
+        /// Returns a list of the available cache engines and their versions.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
         /// <returns>The response from the DescribeCacheEngineVersions service method, as returned by ElastiCache.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeCacheEngineVersions">REST API Reference for DescribeCacheEngineVersions Operation</seealso>
         public Task<DescribeCacheEngineVersionsResponse> DescribeCacheEngineVersionsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeCacheEngineVersionsAsync(new DescribeCacheEngineVersionsRequest(), cancellationToken);
@@ -780,6 +856,7 @@ namespace Amazon.ElastiCache
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeCacheEngineVersions">REST API Reference for DescribeCacheEngineVersions Operation</seealso>
         public Task<DescribeCacheEngineVersionsResponse> DescribeCacheEngineVersionsAsync(DescribeCacheEngineVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeCacheEngineVersionsRequestMarshaller();
@@ -807,9 +884,8 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// The <i>DescribeCacheParameterGroups</i> action returns a list of cache parameter group
-        /// descriptions. If a cache parameter group name is specified, the list will contain
-        /// only the descriptions for that group.
+        /// Returns a list of cache parameter group descriptions. If a cache parameter group name
+        /// is specified, the list contains only the descriptions for that group.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -826,6 +902,7 @@ namespace Amazon.ElastiCache
         /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeCacheParameterGroups">REST API Reference for DescribeCacheParameterGroups Operation</seealso>
         public Task<DescribeCacheParameterGroupsResponse> DescribeCacheParameterGroupsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeCacheParameterGroupsAsync(new DescribeCacheParameterGroupsRequest(), cancellationToken);
@@ -841,6 +918,7 @@ namespace Amazon.ElastiCache
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeCacheParameterGroups">REST API Reference for DescribeCacheParameterGroups Operation</seealso>
         public Task<DescribeCacheParameterGroupsResponse> DescribeCacheParameterGroupsAsync(DescribeCacheParameterGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeCacheParameterGroupsRequestMarshaller();
@@ -872,6 +950,7 @@ namespace Amazon.ElastiCache
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeCacheParameters">REST API Reference for DescribeCacheParameters Operation</seealso>
         public Task<DescribeCacheParametersResponse> DescribeCacheParametersAsync(DescribeCacheParametersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeCacheParametersRequestMarshaller();
@@ -899,9 +978,8 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// The <i>DescribeCacheSecurityGroups</i> action returns a list of cache security group
-        /// descriptions. If a cache security group name is specified, the list will contain only
-        /// the description of that group.
+        /// Returns a list of cache security group descriptions. If a cache security group name
+        /// is specified, the list contains only the description of that group.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -918,6 +996,7 @@ namespace Amazon.ElastiCache
         /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeCacheSecurityGroups">REST API Reference for DescribeCacheSecurityGroups Operation</seealso>
         public Task<DescribeCacheSecurityGroupsResponse> DescribeCacheSecurityGroupsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeCacheSecurityGroupsAsync(new DescribeCacheSecurityGroupsRequest(), cancellationToken);
@@ -933,6 +1012,7 @@ namespace Amazon.ElastiCache
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeCacheSecurityGroups">REST API Reference for DescribeCacheSecurityGroups Operation</seealso>
         public Task<DescribeCacheSecurityGroupsResponse> DescribeCacheSecurityGroupsAsync(DescribeCacheSecurityGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeCacheSecurityGroupsRequestMarshaller();
@@ -960,9 +1040,8 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// The <i>DescribeCacheSubnetGroups</i> action returns a list of cache subnet group descriptions.
-        /// If a subnet group name is specified, the list will contain only the description of
-        /// that group.
+        /// Returns a list of cache subnet group descriptions. If a subnet group name is specified,
+        /// the list contains only the description of that group.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -972,6 +1051,7 @@ namespace Amazon.ElastiCache
         /// <exception cref="Amazon.ElastiCache.Model.CacheSubnetGroupNotFoundException">
         /// The requested cache subnet group name does not refer to an existing cache subnet group.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeCacheSubnetGroups">REST API Reference for DescribeCacheSubnetGroups Operation</seealso>
         public Task<DescribeCacheSubnetGroupsResponse> DescribeCacheSubnetGroupsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeCacheSubnetGroupsAsync(new DescribeCacheSubnetGroupsRequest(), cancellationToken);
@@ -987,6 +1067,7 @@ namespace Amazon.ElastiCache
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeCacheSubnetGroups">REST API Reference for DescribeCacheSubnetGroups Operation</seealso>
         public Task<DescribeCacheSubnetGroupsResponse> DescribeCacheSubnetGroupsAsync(DescribeCacheSubnetGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeCacheSubnetGroupsRequestMarshaller();
@@ -1018,6 +1099,7 @@ namespace Amazon.ElastiCache
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeEngineDefaultParameters">REST API Reference for DescribeEngineDefaultParameters Operation</seealso>
         public Task<DescribeEngineDefaultParametersResponse> DescribeEngineDefaultParametersAsync(DescribeEngineDefaultParametersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeEngineDefaultParametersRequestMarshaller();
@@ -1045,10 +1127,9 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// The <i>DescribeEvents</i> action returns events related to cache clusters, cache security
-        /// groups, and cache parameter groups. You can obtain events specific to a particular
-        /// cache cluster, cache security group, or cache parameter group by providing the name
-        /// as a parameter.
+        /// Returns events related to cache clusters, cache security groups, and cache parameter
+        /// groups. You can obtain events specific to a particular cache cluster, cache security
+        /// group, or cache parameter group by providing the name as a parameter.
         /// 
         ///  
         /// <para>
@@ -1067,6 +1148,7 @@ namespace Amazon.ElastiCache
         /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeEvents">REST API Reference for DescribeEvents Operation</seealso>
         public Task<DescribeEventsResponse> DescribeEventsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeEventsAsync(new DescribeEventsRequest(), cancellationToken);
@@ -1082,6 +1164,7 @@ namespace Amazon.ElastiCache
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeEvents">REST API Reference for DescribeEvents Operation</seealso>
         public Task<DescribeEventsResponse> DescribeEventsAsync(DescribeEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeEventsRequestMarshaller();
@@ -1109,9 +1192,14 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// The <i>DescribeReplicationGroups</i> action returns information about a particular
-        /// replication group. If no identifier is specified, <i>DescribeReplicationGroups</i>
-        /// returns information about all replication groups.
+        /// Returns information about a particular replication group. If no identifier is specified,
+        /// <code>DescribeReplicationGroups</code> returns information about all replication groups.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This operation is valid for Redis only.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -1127,6 +1215,7 @@ namespace Amazon.ElastiCache
         /// <exception cref="Amazon.ElastiCache.Model.ReplicationGroupNotFoundException">
         /// The specified replication group does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeReplicationGroups">REST API Reference for DescribeReplicationGroups Operation</seealso>
         public Task<DescribeReplicationGroupsResponse> DescribeReplicationGroupsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeReplicationGroupsAsync(new DescribeReplicationGroupsRequest(), cancellationToken);
@@ -1142,6 +1231,7 @@ namespace Amazon.ElastiCache
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeReplicationGroups">REST API Reference for DescribeReplicationGroups Operation</seealso>
         public Task<DescribeReplicationGroupsResponse> DescribeReplicationGroupsAsync(DescribeReplicationGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeReplicationGroupsRequestMarshaller();
@@ -1169,8 +1259,8 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// The <i>DescribeReservedCacheNodes</i> action returns information about reserved cache
-        /// nodes for this account, or about a specified reserved cache node.
+        /// Returns information about reserved cache nodes for this account, or about a specified
+        /// reserved cache node.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -1186,6 +1276,7 @@ namespace Amazon.ElastiCache
         /// <exception cref="Amazon.ElastiCache.Model.ReservedCacheNodeNotFoundException">
         /// The requested reserved cache node was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeReservedCacheNodes">REST API Reference for DescribeReservedCacheNodes Operation</seealso>
         public Task<DescribeReservedCacheNodesResponse> DescribeReservedCacheNodesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeReservedCacheNodesAsync(new DescribeReservedCacheNodesRequest(), cancellationToken);
@@ -1201,6 +1292,7 @@ namespace Amazon.ElastiCache
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeReservedCacheNodes">REST API Reference for DescribeReservedCacheNodes Operation</seealso>
         public Task<DescribeReservedCacheNodesResponse> DescribeReservedCacheNodesAsync(DescribeReservedCacheNodesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeReservedCacheNodesRequestMarshaller();
@@ -1228,8 +1320,7 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// The <i>DescribeReservedCacheNodesOfferings</i> action lists available reserved cache
-        /// node offerings.
+        /// Lists available reserved cache node offerings.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -1245,6 +1336,7 @@ namespace Amazon.ElastiCache
         /// <exception cref="Amazon.ElastiCache.Model.ReservedCacheNodesOfferingNotFoundException">
         /// The requested cache node offering does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeReservedCacheNodesOfferings">REST API Reference for DescribeReservedCacheNodesOfferings Operation</seealso>
         public Task<DescribeReservedCacheNodesOfferingsResponse> DescribeReservedCacheNodesOfferingsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeReservedCacheNodesOfferingsAsync(new DescribeReservedCacheNodesOfferingsRequest(), cancellationToken);
@@ -1260,6 +1352,7 @@ namespace Amazon.ElastiCache
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeReservedCacheNodesOfferings">REST API Reference for DescribeReservedCacheNodesOfferings Operation</seealso>
         public Task<DescribeReservedCacheNodesOfferingsResponse> DescribeReservedCacheNodesOfferingsAsync(DescribeReservedCacheNodesOfferingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeReservedCacheNodesOfferingsRequestMarshaller();
@@ -1287,10 +1380,15 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// The <i>DescribeSnapshots</i> action returns information about cache cluster snapshots.
-        /// By default, <i>DescribeSnapshots</i> lists all of your snapshots; it can optionally
-        /// describe a single snapshot, or just the snapshots associated with a particular cache
-        /// cluster.
+        /// Returns information about cache cluster or replication group snapshots. By default,
+        /// <code>DescribeSnapshots</code> lists all of your snapshots; it can optionally describe
+        /// a single snapshot, or just the snapshots associated with a particular cache cluster.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This operation is valid for Redis only.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -1309,6 +1407,7 @@ namespace Amazon.ElastiCache
         /// <exception cref="Amazon.ElastiCache.Model.SnapshotNotFoundException">
         /// The requested snapshot name does not refer to an existing snapshot.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeSnapshots">REST API Reference for DescribeSnapshots Operation</seealso>
         public Task<DescribeSnapshotsResponse> DescribeSnapshotsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeSnapshotsAsync(new DescribeSnapshotsRequest(), cancellationToken);
@@ -1324,6 +1423,7 @@ namespace Amazon.ElastiCache
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeSnapshots">REST API Reference for DescribeSnapshots Operation</seealso>
         public Task<DescribeSnapshotsResponse> DescribeSnapshotsAsync(DescribeSnapshotsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeSnapshotsRequestMarshaller();
@@ -1355,6 +1455,7 @@ namespace Amazon.ElastiCache
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ListAllowedNodeTypeModifications">REST API Reference for ListAllowedNodeTypeModifications Operation</seealso>
         public Task<ListAllowedNodeTypeModificationsResponse> ListAllowedNodeTypeModificationsAsync(ListAllowedNodeTypeModificationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListAllowedNodeTypeModificationsRequestMarshaller();
@@ -1386,6 +1487,7 @@ namespace Amazon.ElastiCache
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListTagsForResourceRequestMarshaller();
@@ -1417,6 +1519,7 @@ namespace Amazon.ElastiCache
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyCacheCluster">REST API Reference for ModifyCacheCluster Operation</seealso>
         public Task<ModifyCacheClusterResponse> ModifyCacheClusterAsync(ModifyCacheClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ModifyCacheClusterRequestMarshaller();
@@ -1448,6 +1551,7 @@ namespace Amazon.ElastiCache
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyCacheParameterGroup">REST API Reference for ModifyCacheParameterGroup Operation</seealso>
         public Task<ModifyCacheParameterGroupResponse> ModifyCacheParameterGroupAsync(ModifyCacheParameterGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ModifyCacheParameterGroupRequestMarshaller();
@@ -1479,6 +1583,7 @@ namespace Amazon.ElastiCache
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyCacheSubnetGroup">REST API Reference for ModifyCacheSubnetGroup Operation</seealso>
         public Task<ModifyCacheSubnetGroupResponse> ModifyCacheSubnetGroupAsync(ModifyCacheSubnetGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ModifyCacheSubnetGroupRequestMarshaller();
@@ -1510,6 +1615,7 @@ namespace Amazon.ElastiCache
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyReplicationGroup">REST API Reference for ModifyReplicationGroup Operation</seealso>
         public Task<ModifyReplicationGroupResponse> ModifyReplicationGroupAsync(ModifyReplicationGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ModifyReplicationGroupRequestMarshaller();
@@ -1541,6 +1647,7 @@ namespace Amazon.ElastiCache
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/PurchaseReservedCacheNodesOffering">REST API Reference for PurchaseReservedCacheNodesOffering Operation</seealso>
         public Task<PurchaseReservedCacheNodesOfferingResponse> PurchaseReservedCacheNodesOfferingAsync(PurchaseReservedCacheNodesOfferingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PurchaseReservedCacheNodesOfferingRequestMarshaller();
@@ -1572,6 +1679,7 @@ namespace Amazon.ElastiCache
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/RebootCacheCluster">REST API Reference for RebootCacheCluster Operation</seealso>
         public Task<RebootCacheClusterResponse> RebootCacheClusterAsync(RebootCacheClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RebootCacheClusterRequestMarshaller();
@@ -1603,6 +1711,7 @@ namespace Amazon.ElastiCache
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/RemoveTagsFromResource">REST API Reference for RemoveTagsFromResource Operation</seealso>
         public Task<RemoveTagsFromResourceResponse> RemoveTagsFromResourceAsync(RemoveTagsFromResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RemoveTagsFromResourceRequestMarshaller();
@@ -1634,6 +1743,7 @@ namespace Amazon.ElastiCache
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ResetCacheParameterGroup">REST API Reference for ResetCacheParameterGroup Operation</seealso>
         public Task<ResetCacheParameterGroupResponse> ResetCacheParameterGroupAsync(ResetCacheParameterGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ResetCacheParameterGroupRequestMarshaller();
@@ -1665,6 +1775,7 @@ namespace Amazon.ElastiCache
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/RevokeCacheSecurityGroupIngress">REST API Reference for RevokeCacheSecurityGroupIngress Operation</seealso>
         public Task<RevokeCacheSecurityGroupIngressResponse> RevokeCacheSecurityGroupIngressAsync(RevokeCacheSecurityGroupIngressRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RevokeCacheSecurityGroupIngressRequestMarshaller();

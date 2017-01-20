@@ -51,24 +51,24 @@ namespace Amazon.StorageGateway
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayHTTPRequestsHeaders.html">AWS
+    ///  <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPI.html#AWSStorageGatewayHTTPRequestsHeaders">AWS
     /// Storage Gateway Required Request Headers</a>: Describes the required headers that
     /// you must send with every POST request to AWS Storage Gateway.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewaySigningRequests.html">Signing
+    ///  <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPI.html#AWSStorageGatewaySigningRequests">Signing
     /// Requests</a>: AWS Storage Gateway requires that you authenticate every request you
     /// send; this topic describes how sign such a request.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/APIErrorResponses.html">Error
+    ///  <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPI.html#APIErrorResponses">Error
     /// Responses</a>: Provides reference information about AWS Storage Gateway errors.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPIOperations.html">Operations
+    ///  <a href="http://docs.aws.amazon.com/storagegateway/latest/APIReference/API_Operations.html">Operations
     /// in AWS Storage Gateway</a>: Contains detailed descriptions of all AWS Storage Gateway
     /// operations, their request parameters, response elements, possible errors, and examples
     /// of requests and responses.
@@ -315,7 +315,7 @@ namespace Amazon.StorageGateway
         /// The activation process also associates your gateway with your account; for more information,
         /// see <a>UpdateGatewayInformation</a>.
         /// 
-        ///  <note>
+        ///  <note> 
         /// <para>
         /// You must turn on the gateway VM before you can activate your gateway.
         /// </para>
@@ -332,6 +332,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ActivateGateway">REST API Reference for ActivateGateway Operation</seealso>
         public ActivateGatewayResponse ActivateGateway(ActivateGatewayRequest request)
         {
             var marshaller = new ActivateGatewayRequestMarshaller();
@@ -349,6 +350,7 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ActivateGateway">REST API Reference for ActivateGateway Operation</seealso>
         public Task<ActivateGatewayResponse> ActivateGatewayAsync(ActivateGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ActivateGatewayRequestMarshaller();
@@ -385,6 +387,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AddCache">REST API Reference for AddCache Operation</seealso>
         public AddCacheResponse AddCache(AddCacheRequest request)
         {
             var marshaller = new AddCacheRequestMarshaller();
@@ -402,6 +405,7 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AddCache">REST API Reference for AddCache Operation</seealso>
         public Task<AddCacheResponse> AddCacheAsync(AddCacheRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AddCacheRequestMarshaller();
@@ -451,6 +455,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AddTagsToResource">REST API Reference for AddTagsToResource Operation</seealso>
         public AddTagsToResourceResponse AddTagsToResource(AddTagsToResourceRequest request)
         {
             var marshaller = new AddTagsToResourceRequestMarshaller();
@@ -468,6 +473,7 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AddTagsToResource">REST API Reference for AddTagsToResource Operation</seealso>
         public Task<AddTagsToResourceResponse> AddTagsToResourceAsync(AddTagsToResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AddTagsToResourceRequestMarshaller();
@@ -505,6 +511,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AddUploadBuffer">REST API Reference for AddUploadBuffer Operation</seealso>
         public AddUploadBufferResponse AddUploadBuffer(AddUploadBufferRequest request)
         {
             var marshaller = new AddUploadBufferRequestMarshaller();
@@ -522,6 +529,7 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AddUploadBuffer">REST API Reference for AddUploadBuffer Operation</seealso>
         public Task<AddUploadBufferResponse> AddUploadBufferAsync(AddUploadBufferRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AddUploadBufferRequestMarshaller();
@@ -564,6 +572,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AddWorkingStorage">REST API Reference for AddWorkingStorage Operation</seealso>
         public AddWorkingStorageResponse AddWorkingStorage(AddWorkingStorageRequest request)
         {
             var marshaller = new AddWorkingStorageRequestMarshaller();
@@ -581,6 +590,7 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AddWorkingStorage">REST API Reference for AddWorkingStorage Operation</seealso>
         public Task<AddWorkingStorageResponse> AddWorkingStorageAsync(AddWorkingStorageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AddWorkingStorageRequestMarshaller();
@@ -610,6 +620,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CancelArchival">REST API Reference for CancelArchival Operation</seealso>
         public CancelArchivalResponse CancelArchival(CancelArchivalRequest request)
         {
             var marshaller = new CancelArchivalRequestMarshaller();
@@ -627,6 +638,7 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CancelArchival">REST API Reference for CancelArchival Operation</seealso>
         public Task<CancelArchivalResponse> CancelArchivalAsync(CancelArchivalRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CancelArchivalRequestMarshaller();
@@ -656,6 +668,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CancelRetrieval">REST API Reference for CancelRetrieval Operation</seealso>
         public CancelRetrievalResponse CancelRetrieval(CancelRetrievalRequest request)
         {
             var marshaller = new CancelRetrievalRequestMarshaller();
@@ -673,6 +686,7 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CancelRetrieval">REST API Reference for CancelRetrieval Operation</seealso>
         public Task<CancelRetrievalResponse> CancelRetrievalAsync(CancelRetrievalRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CancelRetrievalRequestMarshaller();
@@ -691,7 +705,7 @@ namespace Amazon.StorageGateway
         /// Creates a cached volume on a specified cached gateway. This operation is supported
         /// only for the gateway-cached volume architecture.
         /// 
-        ///  <note>
+        ///  <note> 
         /// <para>
         /// Cache storage must be allocated to the gateway before you can create a cached volume.
         /// Use the <a>AddCache</a> operation to add cache storage to a gateway. 
@@ -701,8 +715,15 @@ namespace Amazon.StorageGateway
         /// In the request, you must specify the gateway, size of the volume in bytes, the iSCSI
         /// target name, an IP address on which to expose the target, and a unique client token.
         /// In response, AWS Storage Gateway creates the volume and returns information about
-        /// it such as the volume Amazon Resource Name (ARN), its size, and the iSCSI target ARN
-        /// that initiators can use to connect to the volume target.
+        /// it. This information includes the volume Amazon Resource Name (ARN), its size, and
+        /// the iSCSI target ARN that initiators can use to connect to the volume target.
+        /// </para>
+        ///  
+        /// <para>
+        /// Optionally, you can provide the ARN for an existing volume as the <code>SourceVolumeARN</code>
+        /// for this cached volume, which creates an exact copy of the existing volume’s latest
+        /// recovery point. The <code>VolumeSizeInBytes</code> value must be equal to or larger
+        /// than the size of the copied volume, in bytes.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCachediSCSIVolume service method.</param>
@@ -716,6 +737,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateCachediSCSIVolume">REST API Reference for CreateCachediSCSIVolume Operation</seealso>
         public CreateCachediSCSIVolumeResponse CreateCachediSCSIVolume(CreateCachediSCSIVolumeRequest request)
         {
             var marshaller = new CreateCachediSCSIVolumeRequestMarshaller();
@@ -733,12 +755,62 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateCachediSCSIVolume">REST API Reference for CreateCachediSCSIVolume Operation</seealso>
         public Task<CreateCachediSCSIVolumeResponse> CreateCachediSCSIVolumeAsync(CreateCachediSCSIVolumeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateCachediSCSIVolumeRequestMarshaller();
             var unmarshaller = CreateCachediSCSIVolumeResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateCachediSCSIVolumeRequest,CreateCachediSCSIVolumeResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateNFSFileShare
+
+
+        /// <summary>
+        /// Creates a file share on an existing file gateway. In Storage Gateway, a file share
+        /// is a file system mount point backed by Amazon S3 cloud storage. Storage Gateway exposes
+        /// file shares using a Network File System (NFS) interface.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateNFSFileShare service method.</param>
+        /// 
+        /// <returns>The response from the CreateNFSFileShare service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// For more information, see the error and message fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateNFSFileShare">REST API Reference for CreateNFSFileShare Operation</seealso>
+        public CreateNFSFileShareResponse CreateNFSFileShare(CreateNFSFileShareRequest request)
+        {
+            var marshaller = new CreateNFSFileShareRequestMarshaller();
+            var unmarshaller = CreateNFSFileShareResponseUnmarshaller.Instance;
+
+            return Invoke<CreateNFSFileShareRequest,CreateNFSFileShareResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateNFSFileShare operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateNFSFileShare operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateNFSFileShare">REST API Reference for CreateNFSFileShare Operation</seealso>
+        public Task<CreateNFSFileShareResponse> CreateNFSFileShareAsync(CreateNFSFileShareRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateNFSFileShareRequestMarshaller();
+            var unmarshaller = CreateNFSFileShareResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateNFSFileShareRequest,CreateNFSFileShareResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -768,7 +840,7 @@ namespace Amazon.StorageGateway
         /// ID. You can use this snapshot ID to check the snapshot progress or later use it when
         /// you want to create a volume from a snapshot.
         /// </para>
-        ///  <note>
+        ///  <note> 
         /// <para>
         /// To list or delete a snapshot, you must use the Amazon EC2 API. For more information,
         /// see DescribeSnapshots or DeleteSnapshot in the <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Operations.html">EC2
@@ -793,6 +865,11 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.ServiceUnavailableErrorException">
+        /// An internal server error has occurred because the service is unavailable. For more
+        /// information, see the error and message fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateSnapshot">REST API Reference for CreateSnapshot Operation</seealso>
         public CreateSnapshotResponse CreateSnapshot(CreateSnapshotRequest request)
         {
             var marshaller = new CreateSnapshotRequestMarshaller();
@@ -810,6 +887,7 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateSnapshot">REST API Reference for CreateSnapshot Operation</seealso>
         public Task<CreateSnapshotResponse> CreateSnapshotAsync(CreateSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateSnapshotRequestMarshaller();
@@ -861,6 +939,11 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.ServiceUnavailableErrorException">
+        /// An internal server error has occurred because the service is unavailable. For more
+        /// information, see the error and message fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateSnapshotFromVolumeRecoveryPoint">REST API Reference for CreateSnapshotFromVolumeRecoveryPoint Operation</seealso>
         public CreateSnapshotFromVolumeRecoveryPointResponse CreateSnapshotFromVolumeRecoveryPoint(CreateSnapshotFromVolumeRecoveryPointRequest request)
         {
             var marshaller = new CreateSnapshotFromVolumeRecoveryPointRequestMarshaller();
@@ -878,6 +961,7 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateSnapshotFromVolumeRecoveryPoint">REST API Reference for CreateSnapshotFromVolumeRecoveryPoint Operation</seealso>
         public Task<CreateSnapshotFromVolumeRecoveryPointResponse> CreateSnapshotFromVolumeRecoveryPointAsync(CreateSnapshotFromVolumeRecoveryPointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateSnapshotFromVolumeRecoveryPointRequestMarshaller();
@@ -922,6 +1006,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateStorediSCSIVolume">REST API Reference for CreateStorediSCSIVolume Operation</seealso>
         public CreateStorediSCSIVolumeResponse CreateStorediSCSIVolume(CreateStorediSCSIVolumeRequest request)
         {
             var marshaller = new CreateStorediSCSIVolumeRequestMarshaller();
@@ -939,6 +1024,7 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateStorediSCSIVolume">REST API Reference for CreateStorediSCSIVolume Operation</seealso>
         public Task<CreateStorediSCSIVolumeResponse> CreateStorediSCSIVolumeAsync(CreateStorediSCSIVolumeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateStorediSCSIVolumeRequestMarshaller();
@@ -957,7 +1043,7 @@ namespace Amazon.StorageGateway
         /// Creates one or more virtual tapes. You write data to the virtual tapes and then archive
         /// the tapes.
         /// 
-        ///  <note>
+        ///  <note> 
         /// <para>
         /// Cache storage must be allocated to the gateway before you can create virtual tapes.
         /// Use the <a>AddCache</a> operation to add cache storage to a gateway. 
@@ -975,6 +1061,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateTapes">REST API Reference for CreateTapes Operation</seealso>
         public CreateTapesResponse CreateTapes(CreateTapesRequest request)
         {
             var marshaller = new CreateTapesRequestMarshaller();
@@ -992,6 +1079,7 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateTapes">REST API Reference for CreateTapes Operation</seealso>
         public Task<CreateTapesResponse> CreateTapesAsync(CreateTapesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateTapesRequestMarshaller();
@@ -1010,7 +1098,7 @@ namespace Amazon.StorageGateway
         /// Creates a virtual tape by using your own barcode. You write data to the virtual tape
         /// and then archive the tape.
         /// 
-        ///  <note>
+        ///  <note> 
         /// <para>
         /// Cache storage must be allocated to the gateway before you can create a virtual tape.
         /// Use the <a>AddCache</a> operation to add cache storage to a gateway.
@@ -1028,6 +1116,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateTapeWithBarcode">REST API Reference for CreateTapeWithBarcode Operation</seealso>
         public CreateTapeWithBarcodeResponse CreateTapeWithBarcode(CreateTapeWithBarcodeRequest request)
         {
             var marshaller = new CreateTapeWithBarcodeRequestMarshaller();
@@ -1045,6 +1134,7 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateTapeWithBarcode">REST API Reference for CreateTapeWithBarcode Operation</seealso>
         public Task<CreateTapeWithBarcodeResponse> CreateTapeWithBarcodeAsync(CreateTapeWithBarcodeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateTapeWithBarcodeRequestMarshaller();
@@ -1076,6 +1166,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteBandwidthRateLimit">REST API Reference for DeleteBandwidthRateLimit Operation</seealso>
         public DeleteBandwidthRateLimitResponse DeleteBandwidthRateLimit(DeleteBandwidthRateLimitRequest request)
         {
             var marshaller = new DeleteBandwidthRateLimitRequestMarshaller();
@@ -1093,6 +1184,7 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteBandwidthRateLimit">REST API Reference for DeleteBandwidthRateLimit Operation</seealso>
         public Task<DeleteBandwidthRateLimitResponse> DeleteBandwidthRateLimitAsync(DeleteBandwidthRateLimitRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteBandwidthRateLimitRequestMarshaller();
@@ -1122,6 +1214,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteChapCredentials">REST API Reference for DeleteChapCredentials Operation</seealso>
         public DeleteChapCredentialsResponse DeleteChapCredentials(DeleteChapCredentialsRequest request)
         {
             var marshaller = new DeleteChapCredentialsRequestMarshaller();
@@ -1139,12 +1232,60 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteChapCredentials">REST API Reference for DeleteChapCredentials Operation</seealso>
         public Task<DeleteChapCredentialsResponse> DeleteChapCredentialsAsync(DeleteChapCredentialsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteChapCredentialsRequestMarshaller();
             var unmarshaller = DeleteChapCredentialsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteChapCredentialsRequest,DeleteChapCredentialsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteFileShare
+
+
+        /// <summary>
+        /// Deletes a file share from a file gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFileShare service method.</param>
+        /// 
+        /// <returns>The response from the DeleteFileShare service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// For more information, see the error and message fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteFileShare">REST API Reference for DeleteFileShare Operation</seealso>
+        public DeleteFileShareResponse DeleteFileShare(DeleteFileShareRequest request)
+        {
+            var marshaller = new DeleteFileShareRequestMarshaller();
+            var unmarshaller = DeleteFileShareResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteFileShareRequest,DeleteFileShareResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteFileShare operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFileShare operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteFileShare">REST API Reference for DeleteFileShare Operation</seealso>
+        public Task<DeleteFileShareResponse> DeleteFileShareAsync(DeleteFileShareRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteFileShareRequestMarshaller();
+            var unmarshaller = DeleteFileShareResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteFileShareRequest,DeleteFileShareResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1187,6 +1328,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteGateway">REST API Reference for DeleteGateway Operation</seealso>
         public DeleteGatewayResponse DeleteGateway(DeleteGatewayRequest request)
         {
             var marshaller = new DeleteGatewayRequestMarshaller();
@@ -1204,6 +1346,7 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteGateway">REST API Reference for DeleteGateway Operation</seealso>
         public Task<DeleteGatewayResponse> DeleteGatewayAsync(DeleteGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteGatewayRequestMarshaller();
@@ -1247,6 +1390,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteSnapshotSchedule">REST API Reference for DeleteSnapshotSchedule Operation</seealso>
         public DeleteSnapshotScheduleResponse DeleteSnapshotSchedule(DeleteSnapshotScheduleRequest request)
         {
             var marshaller = new DeleteSnapshotScheduleRequestMarshaller();
@@ -1264,6 +1408,7 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteSnapshotSchedule">REST API Reference for DeleteSnapshotSchedule Operation</seealso>
         public Task<DeleteSnapshotScheduleResponse> DeleteSnapshotScheduleAsync(DeleteSnapshotScheduleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteSnapshotScheduleRequestMarshaller();
@@ -1292,6 +1437,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteTape">REST API Reference for DeleteTape Operation</seealso>
         public DeleteTapeResponse DeleteTape(DeleteTapeRequest request)
         {
             var marshaller = new DeleteTapeRequestMarshaller();
@@ -1309,6 +1455,7 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteTape">REST API Reference for DeleteTape Operation</seealso>
         public Task<DeleteTapeResponse> DeleteTapeAsync(DeleteTapeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteTapeRequestMarshaller();
@@ -1337,6 +1484,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteTapeArchive">REST API Reference for DeleteTapeArchive Operation</seealso>
         public DeleteTapeArchiveResponse DeleteTapeArchive(DeleteTapeArchiveRequest request)
         {
             var marshaller = new DeleteTapeArchiveRequestMarshaller();
@@ -1354,6 +1502,7 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteTapeArchive">REST API Reference for DeleteTapeArchive Operation</seealso>
         public Task<DeleteTapeArchiveResponse> DeleteTapeArchiveAsync(DeleteTapeArchiveRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteTapeArchiveRequestMarshaller();
@@ -1400,6 +1549,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteVolume">REST API Reference for DeleteVolume Operation</seealso>
         public DeleteVolumeResponse DeleteVolume(DeleteVolumeRequest request)
         {
             var marshaller = new DeleteVolumeRequestMarshaller();
@@ -1417,6 +1567,7 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteVolume">REST API Reference for DeleteVolume Operation</seealso>
         public Task<DeleteVolumeResponse> DeleteVolumeAsync(DeleteVolumeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteVolumeRequestMarshaller();
@@ -1454,6 +1605,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeBandwidthRateLimit">REST API Reference for DescribeBandwidthRateLimit Operation</seealso>
         public DescribeBandwidthRateLimitResponse DescribeBandwidthRateLimit(DescribeBandwidthRateLimitRequest request)
         {
             var marshaller = new DescribeBandwidthRateLimitRequestMarshaller();
@@ -1471,6 +1623,7 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeBandwidthRateLimit">REST API Reference for DescribeBandwidthRateLimit Operation</seealso>
         public Task<DescribeBandwidthRateLimitResponse> DescribeBandwidthRateLimitAsync(DescribeBandwidthRateLimitRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeBandwidthRateLimitRequestMarshaller();
@@ -1506,6 +1659,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeCache">REST API Reference for DescribeCache Operation</seealso>
         public DescribeCacheResponse DescribeCache(DescribeCacheRequest request)
         {
             var marshaller = new DescribeCacheRequestMarshaller();
@@ -1523,6 +1677,7 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeCache">REST API Reference for DescribeCache Operation</seealso>
         public Task<DescribeCacheResponse> DescribeCacheAsync(DescribeCacheRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeCacheRequestMarshaller();
@@ -1559,6 +1714,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeCachediSCSIVolumes">REST API Reference for DescribeCachediSCSIVolumes Operation</seealso>
         public DescribeCachediSCSIVolumesResponse DescribeCachediSCSIVolumes(DescribeCachediSCSIVolumesRequest request)
         {
             var marshaller = new DescribeCachediSCSIVolumesRequestMarshaller();
@@ -1576,6 +1732,7 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeCachediSCSIVolumes">REST API Reference for DescribeCachediSCSIVolumes Operation</seealso>
         public Task<DescribeCachediSCSIVolumesResponse> DescribeCachediSCSIVolumesAsync(DescribeCachediSCSIVolumesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeCachediSCSIVolumesRequestMarshaller();
@@ -1605,6 +1762,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeChapCredentials">REST API Reference for DescribeChapCredentials Operation</seealso>
         public DescribeChapCredentialsResponse DescribeChapCredentials(DescribeChapCredentialsRequest request)
         {
             var marshaller = new DescribeChapCredentialsRequestMarshaller();
@@ -1622,6 +1780,7 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeChapCredentials">REST API Reference for DescribeChapCredentials Operation</seealso>
         public Task<DescribeChapCredentialsResponse> DescribeChapCredentialsAsync(DescribeChapCredentialsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeChapCredentialsRequestMarshaller();
@@ -1652,6 +1811,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeGatewayInformation">REST API Reference for DescribeGatewayInformation Operation</seealso>
         public DescribeGatewayInformationResponse DescribeGatewayInformation(DescribeGatewayInformationRequest request)
         {
             var marshaller = new DescribeGatewayInformationRequestMarshaller();
@@ -1669,6 +1829,7 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeGatewayInformation">REST API Reference for DescribeGatewayInformation Operation</seealso>
         public Task<DescribeGatewayInformationResponse> DescribeGatewayInformationAsync(DescribeGatewayInformationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeGatewayInformationRequestMarshaller();
@@ -1698,6 +1859,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeMaintenanceStartTime">REST API Reference for DescribeMaintenanceStartTime Operation</seealso>
         public DescribeMaintenanceStartTimeResponse DescribeMaintenanceStartTime(DescribeMaintenanceStartTimeRequest request)
         {
             var marshaller = new DescribeMaintenanceStartTimeRequestMarshaller();
@@ -1715,12 +1877,60 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeMaintenanceStartTime">REST API Reference for DescribeMaintenanceStartTime Operation</seealso>
         public Task<DescribeMaintenanceStartTimeResponse> DescribeMaintenanceStartTimeAsync(DescribeMaintenanceStartTimeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeMaintenanceStartTimeRequestMarshaller();
             var unmarshaller = DescribeMaintenanceStartTimeResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeMaintenanceStartTimeRequest,DescribeMaintenanceStartTimeResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeNFSFileShares
+
+
+        /// <summary>
+        /// Gets a description for one or more file shares from a file gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeNFSFileShares service method.</param>
+        /// 
+        /// <returns>The response from the DescribeNFSFileShares service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// For more information, see the error and message fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeNFSFileShares">REST API Reference for DescribeNFSFileShares Operation</seealso>
+        public DescribeNFSFileSharesResponse DescribeNFSFileShares(DescribeNFSFileSharesRequest request)
+        {
+            var marshaller = new DescribeNFSFileSharesRequestMarshaller();
+            var unmarshaller = DescribeNFSFileSharesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeNFSFileSharesRequest,DescribeNFSFileSharesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeNFSFileShares operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeNFSFileShares operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeNFSFileShares">REST API Reference for DescribeNFSFileShares Operation</seealso>
+        public Task<DescribeNFSFileSharesResponse> DescribeNFSFileSharesAsync(DescribeNFSFileSharesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeNFSFileSharesRequestMarshaller();
+            var unmarshaller = DescribeNFSFileSharesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeNFSFileSharesRequest,DescribeNFSFileSharesResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1745,6 +1955,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeSnapshotSchedule">REST API Reference for DescribeSnapshotSchedule Operation</seealso>
         public DescribeSnapshotScheduleResponse DescribeSnapshotSchedule(DescribeSnapshotScheduleRequest request)
         {
             var marshaller = new DescribeSnapshotScheduleRequestMarshaller();
@@ -1762,6 +1973,7 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeSnapshotSchedule">REST API Reference for DescribeSnapshotSchedule Operation</seealso>
         public Task<DescribeSnapshotScheduleResponse> DescribeSnapshotScheduleAsync(DescribeSnapshotScheduleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeSnapshotScheduleRequestMarshaller();
@@ -1792,6 +2004,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeStorediSCSIVolumes">REST API Reference for DescribeStorediSCSIVolumes Operation</seealso>
         public DescribeStorediSCSIVolumesResponse DescribeStorediSCSIVolumes(DescribeStorediSCSIVolumesRequest request)
         {
             var marshaller = new DescribeStorediSCSIVolumesRequestMarshaller();
@@ -1809,6 +2022,7 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeStorediSCSIVolumes">REST API Reference for DescribeStorediSCSIVolumes Operation</seealso>
         public Task<DescribeStorediSCSIVolumesResponse> DescribeStorediSCSIVolumesAsync(DescribeStorediSCSIVolumesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeStorediSCSIVolumesRequestMarshaller();
@@ -1842,6 +2056,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeTapeArchives">REST API Reference for DescribeTapeArchives Operation</seealso>
         public DescribeTapeArchivesResponse DescribeTapeArchives()
         {
             return DescribeTapeArchives(new DescribeTapeArchivesRequest());
@@ -1868,6 +2083,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeTapeArchives">REST API Reference for DescribeTapeArchives Operation</seealso>
         public DescribeTapeArchivesResponse DescribeTapeArchives(DescribeTapeArchivesRequest request)
         {
             var marshaller = new DescribeTapeArchivesRequestMarshaller();
@@ -1899,6 +2115,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeTapeArchives">REST API Reference for DescribeTapeArchives Operation</seealso>
         public Task<DescribeTapeArchivesResponse> DescribeTapeArchivesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeTapeArchivesAsync(new DescribeTapeArchivesRequest(), cancellationToken);
@@ -1912,6 +2129,7 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeTapeArchives">REST API Reference for DescribeTapeArchives Operation</seealso>
         public Task<DescribeTapeArchivesResponse> DescribeTapeArchivesAsync(DescribeTapeArchivesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeTapeArchivesRequestMarshaller();
@@ -1948,6 +2166,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeTapeRecoveryPoints">REST API Reference for DescribeTapeRecoveryPoints Operation</seealso>
         public DescribeTapeRecoveryPointsResponse DescribeTapeRecoveryPoints(DescribeTapeRecoveryPointsRequest request)
         {
             var marshaller = new DescribeTapeRecoveryPointsRequestMarshaller();
@@ -1965,6 +2184,7 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeTapeRecoveryPoints">REST API Reference for DescribeTapeRecoveryPoints Operation</seealso>
         public Task<DescribeTapeRecoveryPointsResponse> DescribeTapeRecoveryPointsAsync(DescribeTapeRecoveryPointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeTapeRecoveryPointsRequestMarshaller();
@@ -1995,6 +2215,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeTapes">REST API Reference for DescribeTapes Operation</seealso>
         public DescribeTapesResponse DescribeTapes(DescribeTapesRequest request)
         {
             var marshaller = new DescribeTapesRequestMarshaller();
@@ -2012,6 +2233,7 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeTapes">REST API Reference for DescribeTapes Operation</seealso>
         public Task<DescribeTapesResponse> DescribeTapesAsync(DescribeTapesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeTapesRequestMarshaller();
@@ -2047,6 +2269,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeUploadBuffer">REST API Reference for DescribeUploadBuffer Operation</seealso>
         public DescribeUploadBufferResponse DescribeUploadBuffer(DescribeUploadBufferRequest request)
         {
             var marshaller = new DescribeUploadBufferRequestMarshaller();
@@ -2064,6 +2287,7 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeUploadBuffer">REST API Reference for DescribeUploadBuffer Operation</seealso>
         public Task<DescribeUploadBufferResponse> DescribeUploadBufferAsync(DescribeUploadBufferRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeUploadBufferRequestMarshaller();
@@ -2098,6 +2322,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeVTLDevices">REST API Reference for DescribeVTLDevices Operation</seealso>
         public DescribeVTLDevicesResponse DescribeVTLDevices(DescribeVTLDevicesRequest request)
         {
             var marshaller = new DescribeVTLDevicesRequestMarshaller();
@@ -2115,6 +2340,7 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeVTLDevices">REST API Reference for DescribeVTLDevices Operation</seealso>
         public Task<DescribeVTLDevicesResponse> DescribeVTLDevicesAsync(DescribeVTLDevicesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeVTLDevicesRequestMarshaller();
@@ -2156,6 +2382,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeWorkingStorage">REST API Reference for DescribeWorkingStorage Operation</seealso>
         public DescribeWorkingStorageResponse DescribeWorkingStorage(DescribeWorkingStorageRequest request)
         {
             var marshaller = new DescribeWorkingStorageRequestMarshaller();
@@ -2173,6 +2400,7 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeWorkingStorage">REST API Reference for DescribeWorkingStorage Operation</seealso>
         public Task<DescribeWorkingStorageResponse> DescribeWorkingStorageAsync(DescribeWorkingStorageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeWorkingStorageRequestMarshaller();
@@ -2195,7 +2423,7 @@ namespace Amazon.StorageGateway
         /// <para>
         /// Use this operation for a gateway-VTL that is not reachable or not functioning.
         /// </para>
-        ///  <important>
+        ///  <important> 
         /// <para>
         /// Once a gateway is disabled it cannot be enabled.
         /// </para>
@@ -2212,6 +2440,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DisableGateway">REST API Reference for DisableGateway Operation</seealso>
         public DisableGatewayResponse DisableGateway(DisableGatewayRequest request)
         {
             var marshaller = new DisableGatewayRequestMarshaller();
@@ -2229,12 +2458,61 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DisableGateway">REST API Reference for DisableGateway Operation</seealso>
         public Task<DisableGatewayResponse> DisableGatewayAsync(DisableGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DisableGatewayRequestMarshaller();
             var unmarshaller = DisableGatewayResponseUnmarshaller.Instance;
 
             return InvokeAsync<DisableGatewayRequest,DisableGatewayResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListFileShares
+
+
+        /// <summary>
+        /// Gets a list of the file shares for a specific file gateway, or the list of file shares
+        /// that belong to the calling user account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFileShares service method.</param>
+        /// 
+        /// <returns>The response from the ListFileShares service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// For more information, see the error and message fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListFileShares">REST API Reference for ListFileShares Operation</seealso>
+        public ListFileSharesResponse ListFileShares(ListFileSharesRequest request)
+        {
+            var marshaller = new ListFileSharesRequestMarshaller();
+            var unmarshaller = ListFileSharesResponseUnmarshaller.Instance;
+
+            return Invoke<ListFileSharesRequest,ListFileSharesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListFileShares operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListFileShares operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListFileShares">REST API Reference for ListFileShares Operation</seealso>
+        public Task<ListFileSharesResponse> ListFileSharesAsync(ListFileSharesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListFileSharesRequestMarshaller();
+            var unmarshaller = ListFileSharesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListFileSharesRequest,ListFileSharesResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -2270,6 +2548,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListGateways">REST API Reference for ListGateways Operation</seealso>
         public ListGatewaysResponse ListGateways()
         {
             return ListGateways(new ListGatewaysRequest());
@@ -2304,6 +2583,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListGateways">REST API Reference for ListGateways Operation</seealso>
         public ListGatewaysResponse ListGateways(ListGatewaysRequest request)
         {
             var marshaller = new ListGatewaysRequestMarshaller();
@@ -2343,6 +2623,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListGateways">REST API Reference for ListGateways Operation</seealso>
         public Task<ListGatewaysResponse> ListGatewaysAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return ListGatewaysAsync(new ListGatewaysRequest(), cancellationToken);
@@ -2356,6 +2637,7 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListGateways">REST API Reference for ListGateways Operation</seealso>
         public Task<ListGatewaysResponse> ListGatewaysAsync(ListGatewaysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListGatewaysRequestMarshaller();
@@ -2395,6 +2677,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListLocalDisks">REST API Reference for ListLocalDisks Operation</seealso>
         public ListLocalDisksResponse ListLocalDisks(ListLocalDisksRequest request)
         {
             var marshaller = new ListLocalDisksRequestMarshaller();
@@ -2412,6 +2695,7 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListLocalDisks">REST API Reference for ListLocalDisks Operation</seealso>
         public Task<ListLocalDisksResponse> ListLocalDisksAsync(ListLocalDisksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListLocalDisksRequestMarshaller();
@@ -2440,6 +2724,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
             var marshaller = new ListTagsForResourceRequestMarshaller();
@@ -2457,6 +2742,7 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListTagsForResourceRequestMarshaller();
@@ -2497,6 +2783,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListTapes">REST API Reference for ListTapes Operation</seealso>
         public ListTapesResponse ListTapes(ListTapesRequest request)
         {
             var marshaller = new ListTapesRequestMarshaller();
@@ -2514,6 +2801,7 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListTapes">REST API Reference for ListTapes Operation</seealso>
         public Task<ListTapesResponse> ListTapesAsync(ListTapesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListTapesRequestMarshaller();
@@ -2543,6 +2831,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListVolumeInitiators">REST API Reference for ListVolumeInitiators Operation</seealso>
         public ListVolumeInitiatorsResponse ListVolumeInitiators(ListVolumeInitiatorsRequest request)
         {
             var marshaller = new ListVolumeInitiatorsRequestMarshaller();
@@ -2560,6 +2849,7 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListVolumeInitiators">REST API Reference for ListVolumeInitiators Operation</seealso>
         public Task<ListVolumeInitiatorsResponse> ListVolumeInitiatorsAsync(ListVolumeInitiatorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListVolumeInitiatorsRequestMarshaller();
@@ -2597,6 +2887,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListVolumeRecoveryPoints">REST API Reference for ListVolumeRecoveryPoints Operation</seealso>
         public ListVolumeRecoveryPointsResponse ListVolumeRecoveryPoints(ListVolumeRecoveryPointsRequest request)
         {
             var marshaller = new ListVolumeRecoveryPointsRequestMarshaller();
@@ -2614,6 +2905,7 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListVolumeRecoveryPoints">REST API Reference for ListVolumeRecoveryPoints Operation</seealso>
         public Task<ListVolumeRecoveryPointsResponse> ListVolumeRecoveryPointsAsync(ListVolumeRecoveryPointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListVolumeRecoveryPointsRequestMarshaller();
@@ -2631,7 +2923,8 @@ namespace Amazon.StorageGateway
         /// <summary>
         /// Lists the iSCSI stored volumes of a gateway. Results are sorted by volume ARN. The
         /// response includes only the volume ARNs. If you want additional volume information,
-        /// use the <a>DescribeStorediSCSIVolumes</a> API.
+        /// use the <a>DescribeStorediSCSIVolumes</a> or the <a>DescribeCachediSCSIVolumes</a>
+        /// API.
         /// 
         ///  
         /// <para>
@@ -2653,6 +2946,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListVolumes">REST API Reference for ListVolumes Operation</seealso>
         public ListVolumesResponse ListVolumes(ListVolumesRequest request)
         {
             var marshaller = new ListVolumesRequestMarshaller();
@@ -2670,6 +2964,7 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListVolumes">REST API Reference for ListVolumes Operation</seealso>
         public Task<ListVolumesResponse> ListVolumesAsync(ListVolumesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListVolumesRequestMarshaller();
@@ -2698,6 +2993,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/RemoveTagsFromResource">REST API Reference for RemoveTagsFromResource Operation</seealso>
         public RemoveTagsFromResourceResponse RemoveTagsFromResource(RemoveTagsFromResourceRequest request)
         {
             var marshaller = new RemoveTagsFromResourceRequestMarshaller();
@@ -2715,6 +3011,7 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/RemoveTagsFromResource">REST API Reference for RemoveTagsFromResource Operation</seealso>
         public Task<RemoveTagsFromResourceResponse> RemoveTagsFromResourceAsync(RemoveTagsFromResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RemoveTagsFromResourceRequestMarshaller();
@@ -2757,6 +3054,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ResetCache">REST API Reference for ResetCache Operation</seealso>
         public ResetCacheResponse ResetCache(string gatewayARN)
         {
             var request = new ResetCacheRequest();
@@ -2793,6 +3091,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ResetCache">REST API Reference for ResetCache Operation</seealso>
         public ResetCacheResponse ResetCache(ResetCacheRequest request)
         {
             var marshaller = new ResetCacheRequestMarshaller();
@@ -2833,6 +3132,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ResetCache">REST API Reference for ResetCache Operation</seealso>
         public Task<ResetCacheResponse> ResetCacheAsync(string gatewayARN, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new ResetCacheRequest();
@@ -2849,6 +3149,7 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ResetCache">REST API Reference for ResetCache Operation</seealso>
         public Task<ResetCacheResponse> ResetCacheAsync(ResetCacheRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ResetCacheRequestMarshaller();
@@ -2887,6 +3188,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/RetrieveTapeArchive">REST API Reference for RetrieveTapeArchive Operation</seealso>
         public RetrieveTapeArchiveResponse RetrieveTapeArchive(RetrieveTapeArchiveRequest request)
         {
             var marshaller = new RetrieveTapeArchiveRequestMarshaller();
@@ -2904,6 +3206,7 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/RetrieveTapeArchive">REST API Reference for RetrieveTapeArchive Operation</seealso>
         public Task<RetrieveTapeArchiveResponse> RetrieveTapeArchiveAsync(RetrieveTapeArchiveRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RetrieveTapeArchiveRequestMarshaller();
@@ -2927,7 +3230,7 @@ namespace Amazon.StorageGateway
         /// the tape is consistent. If your gateway crashes, virtual tapes that have recovery
         /// points can be recovered to a new gateway.
         /// </para>
-        ///  <note>
+        ///  <note> 
         /// <para>
         /// The virtual tape can be retrieved to only one gateway. The retrieved tape is read-only.
         /// The virtual tape can be retrieved to only a gateway-VTL. There is no charge for retrieving
@@ -2946,6 +3249,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/RetrieveTapeRecoveryPoint">REST API Reference for RetrieveTapeRecoveryPoint Operation</seealso>
         public RetrieveTapeRecoveryPointResponse RetrieveTapeRecoveryPoint(RetrieveTapeRecoveryPointRequest request)
         {
             var marshaller = new RetrieveTapeRecoveryPointRequestMarshaller();
@@ -2963,6 +3267,7 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/RetrieveTapeRecoveryPoint">REST API Reference for RetrieveTapeRecoveryPoint Operation</seealso>
         public Task<RetrieveTapeRecoveryPointResponse> RetrieveTapeRecoveryPointAsync(RetrieveTapeRecoveryPointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RetrieveTapeRecoveryPointRequestMarshaller();
@@ -2994,6 +3299,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/SetLocalConsolePassword">REST API Reference for SetLocalConsolePassword Operation</seealso>
         public SetLocalConsolePasswordResponse SetLocalConsolePassword(SetLocalConsolePasswordRequest request)
         {
             var marshaller = new SetLocalConsolePasswordRequestMarshaller();
@@ -3011,6 +3317,7 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/SetLocalConsolePassword">REST API Reference for SetLocalConsolePassword Operation</seealso>
         public Task<SetLocalConsolePasswordResponse> SetLocalConsolePasswordAsync(SetLocalConsolePasswordRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new SetLocalConsolePasswordRequestMarshaller();
@@ -3034,7 +3341,7 @@ namespace Amazon.StorageGateway
         /// The operation shuts down the gateway service component running in the storage gateway's
         /// virtual machine (VM) and not the VM.
         /// </para>
-        ///  <note>
+        ///  <note> 
         /// <para>
         /// If you want to shut down the VM, it is recommended that you first shut down the gateway
         /// component in the VM to avoid unpredictable conditions.
@@ -3046,7 +3353,7 @@ namespace Amazon.StorageGateway
         /// see <a>ActivateGateway</a>. Your applications cannot read from or write to the gateway's
         /// storage volumes, and there are no snapshots taken.
         /// </para>
-        ///  <note>
+        ///  <note> 
         /// <para>
         /// When you make a shutdown request, you will get a <code>200 OK</code> success response
         /// immediately. However, it might take some time for the gateway to shut down. You can
@@ -3070,6 +3377,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ShutdownGateway">REST API Reference for ShutdownGateway Operation</seealso>
         public ShutdownGatewayResponse ShutdownGateway(ShutdownGatewayRequest request)
         {
             var marshaller = new ShutdownGatewayRequestMarshaller();
@@ -3087,6 +3395,7 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ShutdownGateway">REST API Reference for ShutdownGateway Operation</seealso>
         public Task<ShutdownGatewayResponse> ShutdownGatewayAsync(ShutdownGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ShutdownGatewayRequestMarshaller();
@@ -3107,7 +3416,7 @@ namespace Amazon.StorageGateway
         /// from or write to the gateway's storage volumes and you will be able to take snapshot
         /// backups.
         /// 
-        ///  <note>
+        ///  <note> 
         /// <para>
         /// When you make a request, you will get a 200 OK success response immediately. However,
         /// it might take some time for the gateway to be ready. You should call <a>DescribeGatewayInformation</a>
@@ -3131,6 +3440,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/StartGateway">REST API Reference for StartGateway Operation</seealso>
         public StartGatewayResponse StartGateway(StartGatewayRequest request)
         {
             var marshaller = new StartGatewayRequestMarshaller();
@@ -3148,6 +3458,7 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/StartGateway">REST API Reference for StartGateway Operation</seealso>
         public Task<StartGatewayResponse> StartGatewayAsync(StartGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new StartGatewayRequestMarshaller();
@@ -3190,6 +3501,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateBandwidthRateLimit">REST API Reference for UpdateBandwidthRateLimit Operation</seealso>
         public UpdateBandwidthRateLimitResponse UpdateBandwidthRateLimit(UpdateBandwidthRateLimitRequest request)
         {
             var marshaller = new UpdateBandwidthRateLimitRequestMarshaller();
@@ -3207,6 +3519,7 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateBandwidthRateLimit">REST API Reference for UpdateBandwidthRateLimit Operation</seealso>
         public Task<UpdateBandwidthRateLimitResponse> UpdateBandwidthRateLimitAsync(UpdateBandwidthRateLimitRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateBandwidthRateLimitRequestMarshaller();
@@ -3244,6 +3557,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateChapCredentials">REST API Reference for UpdateChapCredentials Operation</seealso>
         public UpdateChapCredentialsResponse UpdateChapCredentials(UpdateChapCredentialsRequest request)
         {
             var marshaller = new UpdateChapCredentialsRequestMarshaller();
@@ -3261,6 +3575,7 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateChapCredentials">REST API Reference for UpdateChapCredentials Operation</seealso>
         public Task<UpdateChapCredentialsResponse> UpdateChapCredentialsAsync(UpdateChapCredentialsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateChapCredentialsRequestMarshaller();
@@ -3280,7 +3595,7 @@ namespace Amazon.StorageGateway
         /// specify which gateway to update, use the Amazon Resource Name (ARN) of the gateway
         /// in your request.
         /// 
-        ///  <note>
+        ///  <note> 
         /// <para>
         /// For Gateways activated after September 2, 2015, the gateway's ARN contains the gateway
         /// ID rather than the gateway name. However, changing the name of the gateway has no
@@ -3299,6 +3614,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateGatewayInformation">REST API Reference for UpdateGatewayInformation Operation</seealso>
         public UpdateGatewayInformationResponse UpdateGatewayInformation(UpdateGatewayInformationRequest request)
         {
             var marshaller = new UpdateGatewayInformationRequestMarshaller();
@@ -3316,6 +3632,7 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateGatewayInformation">REST API Reference for UpdateGatewayInformation Operation</seealso>
         public Task<UpdateGatewayInformationResponse> UpdateGatewayInformationAsync(UpdateGatewayInformationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateGatewayInformationRequestMarshaller();
@@ -3334,13 +3651,13 @@ namespace Amazon.StorageGateway
         /// Updates the gateway virtual machine (VM) software. The request immediately triggers
         /// the software update.
         /// 
-        ///  <note>
+        ///  <note> 
         /// <para>
         /// When you make this request, you get a <code>200 OK</code> success response immediately.
         /// However, it might take some time for the update to complete. You can call <a>DescribeGatewayInformation</a>
         /// to verify the gateway is in the <code>STATE_RUNNING</code> state.
         /// </para>
-        ///  </note> <important>
+        ///  </note> <important> 
         /// <para>
         /// A software update forces a system restart of your gateway. You can minimize the chance
         /// of any disruption to your applications by increasing your iSCSI Initiators' timeouts.
@@ -3362,6 +3679,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateGatewaySoftwareNow">REST API Reference for UpdateGatewaySoftwareNow Operation</seealso>
         public UpdateGatewaySoftwareNowResponse UpdateGatewaySoftwareNow(UpdateGatewaySoftwareNowRequest request)
         {
             var marshaller = new UpdateGatewaySoftwareNowRequestMarshaller();
@@ -3379,6 +3697,7 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateGatewaySoftwareNow">REST API Reference for UpdateGatewaySoftwareNow Operation</seealso>
         public Task<UpdateGatewaySoftwareNowResponse> UpdateGatewaySoftwareNowAsync(UpdateGatewaySoftwareNowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateGatewaySoftwareNowRequestMarshaller();
@@ -3408,6 +3727,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateMaintenanceStartTime">REST API Reference for UpdateMaintenanceStartTime Operation</seealso>
         public UpdateMaintenanceStartTimeResponse UpdateMaintenanceStartTime(UpdateMaintenanceStartTimeRequest request)
         {
             var marshaller = new UpdateMaintenanceStartTimeRequestMarshaller();
@@ -3425,12 +3745,66 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateMaintenanceStartTime">REST API Reference for UpdateMaintenanceStartTime Operation</seealso>
         public Task<UpdateMaintenanceStartTimeResponse> UpdateMaintenanceStartTimeAsync(UpdateMaintenanceStartTimeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateMaintenanceStartTimeRequestMarshaller();
             var unmarshaller = UpdateMaintenanceStartTimeResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateMaintenanceStartTimeRequest,UpdateMaintenanceStartTimeResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateNFSFileShare
+
+
+        /// <summary>
+        /// Updates a file share. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// To leave a file share field unchanged, set the corresponding input field to null.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateNFSFileShare service method.</param>
+        /// 
+        /// <returns>The response from the UpdateNFSFileShare service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// For more information, see the error and message fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateNFSFileShare">REST API Reference for UpdateNFSFileShare Operation</seealso>
+        public UpdateNFSFileShareResponse UpdateNFSFileShare(UpdateNFSFileShareRequest request)
+        {
+            var marshaller = new UpdateNFSFileShareRequestMarshaller();
+            var unmarshaller = UpdateNFSFileShareResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateNFSFileShareRequest,UpdateNFSFileShareResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateNFSFileShare operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateNFSFileShare operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateNFSFileShare">REST API Reference for UpdateNFSFileShare Operation</seealso>
+        public Task<UpdateNFSFileShareResponse> UpdateNFSFileShareAsync(UpdateNFSFileShareRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateNFSFileShareRequestMarshaller();
+            var unmarshaller = UpdateNFSFileShareResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateNFSFileShareRequest,UpdateNFSFileShareResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -3466,6 +3840,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateSnapshotSchedule">REST API Reference for UpdateSnapshotSchedule Operation</seealso>
         public UpdateSnapshotScheduleResponse UpdateSnapshotSchedule(UpdateSnapshotScheduleRequest request)
         {
             var marshaller = new UpdateSnapshotScheduleRequestMarshaller();
@@ -3483,6 +3858,7 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateSnapshotSchedule">REST API Reference for UpdateSnapshotSchedule Operation</seealso>
         public Task<UpdateSnapshotScheduleResponse> UpdateSnapshotScheduleAsync(UpdateSnapshotScheduleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateSnapshotScheduleRequestMarshaller();
@@ -3513,6 +3889,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateVTLDeviceType">REST API Reference for UpdateVTLDeviceType Operation</seealso>
         public UpdateVTLDeviceTypeResponse UpdateVTLDeviceType(UpdateVTLDeviceTypeRequest request)
         {
             var marshaller = new UpdateVTLDeviceTypeRequestMarshaller();
@@ -3530,6 +3907,7 @@ namespace Amazon.StorageGateway
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateVTLDeviceType">REST API Reference for UpdateVTLDeviceType Operation</seealso>
         public Task<UpdateVTLDeviceTypeResponse> UpdateVTLDeviceTypeAsync(UpdateVTLDeviceTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateVTLDeviceTypeRequestMarshaller();

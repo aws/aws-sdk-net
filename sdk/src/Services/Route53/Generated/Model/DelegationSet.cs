@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// A complex type that contains name server information.
+    /// A complex type that describes the name servers for this hosted zone.
     /// </summary>
     public partial class DelegationSet
     {
@@ -44,14 +44,17 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Instantiates DelegationSet with the parameterized properties
         /// </summary>
-        /// <param name="nameServers">A complex type that contains the authoritative name servers for the hosted zone. Use the method provided by your domain registrar to add an NS record to your domain for each <code>NameServer</code> that is assigned to your hosted zone.</param>
+        /// <param name="nameServers">A complex type that contains a list of the authoritative name servers for the hosted zone.</param>
         public DelegationSet(List<string> nameServers)
         {
             _nameServers = nameServers;
         }
 
         /// <summary>
-        /// Gets and sets the property Id.
+        /// Gets and sets the property Id. 
+        /// <para>
+        /// The ID that Amazon Route 53 assigns to a reusable delegation set.
+        /// </para>
         /// </summary>
         public string Id
         {
@@ -66,7 +69,14 @@ namespace Amazon.Route53.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CallerReference.
+        /// Gets and sets the property CallerReference. 
+        /// <para>
+        /// A unique string that identifies the request, and that allows you to retry failed <code>CreateReusableDelegationSet</code>
+        /// requests without the risk of executing the operation twice. You must use a unique
+        /// <code>CallerReference</code> string every time you submit a <code>CreateReusableDelegationSet</code>
+        /// request. <code>CallerReference</code> can be any unique string, for example, a date/time
+        /// stamp.
+        /// </para>
         /// </summary>
         public string CallerReference
         {
@@ -83,9 +93,8 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property NameServers. 
         /// <para>
-        /// A complex type that contains the authoritative name servers for the hosted zone. Use
-        /// the method provided by your domain registrar to add an NS record to your domain for
-        /// each <code>NameServer</code> that is assigned to your hosted zone.
+        /// A complex type that contains a list of the authoritative name servers for the hosted
+        /// zone.
         /// </para>
         /// </summary>
         public List<string> NameServers

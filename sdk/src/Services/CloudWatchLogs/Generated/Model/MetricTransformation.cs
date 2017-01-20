@@ -28,16 +28,39 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
-    /// 
+    /// Indicates how to transform ingested log events into metric data in a CloudWatch metric.
     /// </summary>
     public partial class MetricTransformation
     {
+        private double? _defaultValue;
         private string _metricName;
         private string _metricNamespace;
         private string _metricValue;
 
         /// <summary>
-        /// Gets and sets the property MetricName.
+        /// Gets and sets the property DefaultValue. 
+        /// <para>
+        /// (Optional) The value to emit when a filter pattern does not match a log event. This
+        /// value can be null.
+        /// </para>
+        /// </summary>
+        public double DefaultValue
+        {
+            get { return this._defaultValue.GetValueOrDefault(); }
+            set { this._defaultValue = value; }
+        }
+
+        // Check to see if DefaultValue property is set
+        internal bool IsSetDefaultValue()
+        {
+            return this._defaultValue.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MetricName. 
+        /// <para>
+        /// The name of the CloudWatch metric.
+        /// </para>
         /// </summary>
         public string MetricName
         {
@@ -52,7 +75,10 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MetricNamespace.
+        /// Gets and sets the property MetricNamespace. 
+        /// <para>
+        /// The namespace of the CloudWatch metric.
+        /// </para>
         /// </summary>
         public string MetricNamespace
         {
@@ -67,7 +93,11 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MetricValue.
+        /// Gets and sets the property MetricValue. 
+        /// <para>
+        /// The value to publish to the CloudWatch metric when a filter pattern matches a log
+        /// event.
+        /// </para>
         /// </summary>
         public string MetricValue
         {

@@ -87,6 +87,12 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         response.Id = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("StackId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.StackId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                 } 
            }
 

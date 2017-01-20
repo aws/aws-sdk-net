@@ -25,7 +25,7 @@ namespace Amazon.Route53.Model
     ///<summary>
     /// Route53 exception
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class TooManyHostedZonesException : AmazonRoute53Exception 
@@ -79,7 +79,7 @@ namespace Amazon.Route53.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the TooManyHostedZonesException class with serialized data.
         /// </summary>

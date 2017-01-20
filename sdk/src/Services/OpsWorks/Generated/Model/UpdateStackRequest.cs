@@ -179,7 +179,7 @@ namespace Amazon.OpsWorks.Model
         /// <para>
         /// A string that contains user-defined, custom JSON. It can be used to override the corresponding
         /// default stack configuration JSON values or to pass data to recipes. The string should
-        /// be in the following format and escape characters such as '"':
+        /// be in the following format:
         /// </para>
         ///  
         /// <para>
@@ -258,6 +258,10 @@ namespace Amazon.OpsWorks.Model
         /// <para>
         /// A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu
         /// 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>CentOS 7</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>

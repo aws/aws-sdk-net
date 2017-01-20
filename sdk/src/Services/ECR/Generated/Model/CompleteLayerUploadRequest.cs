@@ -36,7 +36,8 @@ namespace Amazon.ECR.Model
     ///  <note> 
     /// <para>
     /// This operation is used by the Amazon ECR proxy, and it is not intended for general
-    /// use by customers. Use the <code>docker</code> CLI to pull, tag, and push images.
+    /// use by customers for pulling and pushing images. In most cases, you should use the
+    /// <code>docker</code> CLI to pull, tag, and push images.
     /// </para>
     ///  </note>
     /// </summary>

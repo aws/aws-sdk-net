@@ -67,7 +67,7 @@ namespace Amazon.WAF.Model
         /// </para>
         ///  
         /// <para>
-        /// <b>CONTAINS</b>
+        ///  <b>CONTAINS</b> 
         /// </para>
         ///  
         /// <para>
@@ -76,7 +76,7 @@ namespace Amazon.WAF.Model
         /// </para>
         ///  
         /// <para>
-        /// <b>CONTAINS_WORD</b>
+        ///  <b>CONTAINS_WORD</b> 
         /// </para>
         ///  
         /// <para>
@@ -85,18 +85,32 @@ namespace Amazon.WAF.Model
         /// (A-Z, a-z, 0-9, or _). In addition, <code>TargetString</code> must be a word, which
         /// means one of the following:
         /// </para>
-        ///  <ul> <li><code>TargetString</code> exactly matches the value of the specified part
-        /// of the web request, such as the value of a header.</li> <li><code>TargetString</code>
-        /// is at the beginning of the specified part of the web request and is followed by a
-        /// character other than an alphanumeric character or underscore (_), for example, <code>BadBot;</code>.</li>
-        /// <li><code>TargetString</code> is at the end of the specified part of the web request
-        /// and is preceded by a character other than an alphanumeric character or underscore
-        /// (_), for example, <code>;BadBot</code>.</li> <li><code>TargetString</code> is in the
-        /// middle of the specified part of the web request and is preceded and followed by characters
-        /// other than alphanumeric characters or underscore (_), for example, <code>-BadBot;</code>.</li>
-        /// </ul> 
+        ///  <ul> <li> 
         /// <para>
-        /// <b>EXACTLY</b>
+        ///  <code>TargetString</code> exactly matches the value of the specified part of the
+        /// web request, such as the value of a header.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>TargetString</code> is at the beginning of the specified part of the web request
+        /// and is followed by a character other than an alphanumeric character or underscore
+        /// (_), for example, <code>BadBot;</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>TargetString</code> is at the end of the specified part of the web request
+        /// and is preceded by a character other than an alphanumeric character or underscore
+        /// (_), for example, <code>;BadBot</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>TargetString</code> is in the middle of the specified part of the web request
+        /// and is preceded and followed by characters other than alphanumeric characters or underscore
+        /// (_), for example, <code>-BadBot;</code>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>EXACTLY</b> 
         /// </para>
         ///  
         /// <para>
@@ -105,7 +119,7 @@ namespace Amazon.WAF.Model
         /// </para>
         ///  
         /// <para>
-        /// <b>STARTS_WITH</b>
+        ///  <b>STARTS_WITH</b> 
         /// </para>
         ///  
         /// <para>
@@ -114,7 +128,7 @@ namespace Amazon.WAF.Model
         /// </para>
         ///  
         /// <para>
-        /// <b>ENDS_WITH</b>
+        ///  <b>ENDS_WITH</b> 
         /// </para>
         ///  
         /// <para>
@@ -145,35 +159,51 @@ namespace Amazon.WAF.Model
         /// <para>
         /// Valid values depend on the values that you specified for <code>FieldToMatch</code>:
         /// </para>
-        ///  <ul> <li><code>HEADER</code>: The value that you want AWS WAF to search for in the
-        /// request header that you specified in <a>FieldToMatch</a>, for example, the value of
-        /// the <code>User-Agent</code> or <code>Referer</code> header.</li> <li><code>METHOD</code>:
-        /// The HTTP method, which indicates the type of operation specified in the request. CloudFront
-        /// supports the following methods: <code>DELETE</code>, <code>GET</code>, <code>HEAD</code>,
-        /// <code>OPTIONS</code>, <code>PATCH</code>, <code>POST</code>, and <code>PUT</code>.</li>
-        /// <li><code>QUERY_STRING</code>: The value that you want AWS WAF to search for in the
-        /// query string, which is the part of a URL that appears after a <code>?</code> character.</li>
-        /// <li><code>URI</code>: The value that you want AWS WAF to search for in the part of
-        /// a URL that identifies a resource, for example, <code>/images/daily-ad.jpg</code>.</li>
-        /// <li><code>BODY</code>: The part of a request that contains any additional data that
-        /// you want to send to your web server as the HTTP request body, such as data from a
-        /// form. The request body immediately follows the request headers. Note that only the
-        /// first <code>8192</code> bytes of the request body are forwarded to AWS WAF for inspection.
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>HEADER</code>: The value that you want AWS WAF to search for in the request
+        /// header that you specified in <a>FieldToMatch</a>, for example, the value of the <code>User-Agent</code>
+        /// or <code>Referer</code> header.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>METHOD</code>: The HTTP method, which indicates the type of operation specified
+        /// in the request. CloudFront supports the following methods: <code>DELETE</code>, <code>GET</code>,
+        /// <code>HEAD</code>, <code>OPTIONS</code>, <code>PATCH</code>, <code>POST</code>, and
+        /// <code>PUT</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>QUERY_STRING</code>: The value that you want AWS WAF to search for in the query
+        /// string, which is the part of a URL that appears after a <code>?</code> character.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>URI</code>: The value that you want AWS WAF to search for in the part of a
+        /// URL that identifies a resource, for example, <code>/images/daily-ad.jpg</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>BODY</code>: The part of a request that contains any additional data that you
+        /// want to send to your web server as the HTTP request body, such as data from a form.
+        /// The request body immediately follows the request headers. Note that only the first
+        /// <code>8192</code> bytes of the request body are forwarded to AWS WAF for inspection.
         /// To allow or block requests based on the length of the body, you can create a size
-        /// constraint set. For more information, see <a>CreateSizeConstraintSet</a>. </li> </ul>
-        /// 
+        /// constraint set. For more information, see <a>CreateSizeConstraintSet</a>. 
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// If <code>TargetString</code> includes alphabetic characters A-Z and a-z, note that
         /// the value is case sensitive.
         /// </para>
         ///  
         /// <para>
-        /// <b>If you're using the AWS WAF API</b>
+        ///  <b>If you're using the AWS WAF API</b> 
         /// </para>
         ///  
         /// <para>
         /// Specify a base64-encoded version of the value. The maximum length of the value before
-        /// you base64-encode it is 50 bytes. 
+        /// you base64-encode it is 50 bytes.
         /// </para>
         ///  
         /// <para>
@@ -185,7 +215,7 @@ namespace Amazon.WAF.Model
         /// </para>
         ///  
         /// <para>
-        /// <b>If you're using the AWS CLI or one of the AWS SDKs</b>
+        ///  <b>If you're using the AWS CLI or one of the AWS SDKs</b> 
         /// </para>
         ///  
         /// <para>
@@ -215,7 +245,7 @@ namespace Amazon.WAF.Model
         /// </para>
         ///  
         /// <para>
-        /// <b>CMD_LINE</b>
+        ///  <b>CMD_LINE</b> 
         /// </para>
         ///  
         /// <para>
@@ -223,42 +253,101 @@ namespace Amazon.WAF.Model
         /// command and using unusual formatting to disguise some or all of the command, use this
         /// option to perform the following transformations:
         /// </para>
-        ///  <ul> <li>Delete the following characters: \ " ' ^</li> <li>Delete spaces before the
-        /// following characters: / (</li> <li>Replace the following characters with a space:
-        /// , ;</li> <li>Replace multiple spaces with one space</li> <li>Convert uppercase letters
-        /// (A-Z) to lowercase (a-z)</li> </ul> 
+        ///  <ul> <li> 
         /// <para>
-        /// <b>COMPRESS_WHITE_SPACE</b>
+        /// Delete the following characters: \ " ' ^
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Delete spaces before the following characters: / (
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Replace the following characters with a space: , ;
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Replace multiple spaces with one space
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Convert uppercase letters (A-Z) to lowercase (a-z)
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>COMPRESS_WHITE_SPACE</b> 
         /// </para>
         ///  
         /// <para>
         /// Use this option to replace the following characters with a space character (decimal
         /// 32):
         /// </para>
-        ///  <ul> <li>\f, formfeed, decimal 12</li> <li>\t, tab, decimal 9</li> <li>\n, newline,
-        /// decimal 10</li> <li>\r, carriage return, decimal 13</li> <li>\v, vertical tab, decimal
-        /// 11</li> <li>non-breaking space, decimal 160</li> </ul> 
+        ///  <ul> <li> 
         /// <para>
-        /// <code>COMPRESS_WHITE_SPACE</code> also replaces multiple spaces with one space.
+        /// \f, formfeed, decimal 12
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// \t, tab, decimal 9
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// \n, newline, decimal 10
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// \r, carriage return, decimal 13
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// \v, vertical tab, decimal 11
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// non-breaking space, decimal 160
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <code>COMPRESS_WHITE_SPACE</code> also replaces multiple spaces with one space.
         /// </para>
         ///  
         /// <para>
-        /// <b>HTML_ENTITY_DECODE</b>
+        ///  <b>HTML_ENTITY_DECODE</b> 
         /// </para>
         ///  
         /// <para>
         /// Use this option to replace HTML-encoded characters with unencoded characters. <code>HTML_ENTITY_DECODE</code>
         /// performs the following operations:
         /// </para>
-        ///  <ul> <li>Replaces <code>(ampersand)quot;</code> with <code>"</code></li> <li>Replaces
-        /// <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160</li> <li>Replaces
-        /// <code>(ampersand)lt;</code> with a "less than" symbol</li> <li>Replaces <code>(ampersand)gt;</code>
-        /// with <code>></code></li> <li>Replaces characters that are represented in hexadecimal
-        /// format, <code>(ampersand)#xhhhh;</code>, with the corresponding characters</li> <li>Replaces
-        /// characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>,
-        /// with the corresponding characters</li> </ul> 
+        ///  <ul> <li> 
         /// <para>
-        /// <b>LOWERCASE</b>
+        /// Replaces <code>(ampersand)quot;</code> with <code>"</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Replaces <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Replaces <code>(ampersand)lt;</code> with a "less than" symbol
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Replaces <code>(ampersand)gt;</code> with <code>&gt;</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Replaces characters that are represented in hexadecimal format, <code>(ampersand)#xhhhh;</code>,
+        /// with the corresponding characters
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Replaces characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>,
+        /// with the corresponding characters
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>LOWERCASE</b> 
         /// </para>
         ///  
         /// <para>
@@ -266,7 +355,7 @@ namespace Amazon.WAF.Model
         /// </para>
         ///  
         /// <para>
-        /// <b>URL_DECODE</b>
+        ///  <b>URL_DECODE</b> 
         /// </para>
         ///  
         /// <para>
@@ -274,7 +363,7 @@ namespace Amazon.WAF.Model
         /// </para>
         ///  
         /// <para>
-        /// <b>NONE</b>
+        ///  <b>NONE</b> 
         /// </para>
         ///  
         /// <para>

@@ -35,6 +35,8 @@ namespace Amazon.DeviceFarm.Model
         private string _arn;
         private string _carrier;
         private CPU _cpu;
+        private string _fleetName;
+        private string _fleetType;
         private DeviceFormFactor _formFactor;
         private long? _heapSize;
         private string _image;
@@ -45,6 +47,7 @@ namespace Amazon.DeviceFarm.Model
         private string _os;
         private DevicePlatform _platform;
         private string _radio;
+        private bool? _remoteAccessEnabled;
         private Resolution _resolution;
 
         /// <summary>
@@ -102,6 +105,43 @@ namespace Amazon.DeviceFarm.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FleetName. 
+        /// <para>
+        /// The name of the fleet to which this device belongs.
+        /// </para>
+        /// </summary>
+        public string FleetName
+        {
+            get { return this._fleetName; }
+            set { this._fleetName = value; }
+        }
+
+        // Check to see if FleetName property is set
+        internal bool IsSetFleetName()
+        {
+            return this._fleetName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FleetType. 
+        /// <para>
+        /// The type of fleet to which this device belongs. Possible values for fleet type are
+        /// PRIVATE and PUBLIC.
+        /// </para>
+        /// </summary>
+        public string FleetType
+        {
+            get { return this._fleetType; }
+            set { this._fleetType = value; }
+        }
+
+        // Check to see if FleetType property is set
+        internal bool IsSetFleetType()
+        {
+            return this._fleetType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property FormFactor. 
         /// <para>
         /// The device's form factor.
@@ -110,15 +150,15 @@ namespace Amazon.DeviceFarm.Model
         /// <para>
         /// Allowed values include:
         /// </para>
-        ///  <ul> <li>
+        ///  <ul> <li> 
         /// <para>
         /// PHONE: The phone form factor.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// TABLET: The tablet form factor.
         /// </para>
-        /// </li> </ul>
+        ///  </li> </ul>
         /// </summary>
         public DeviceFormFactor FormFactor
         {
@@ -267,15 +307,15 @@ namespace Amazon.DeviceFarm.Model
         /// <para>
         /// Allowed values include:
         /// </para>
-        ///  <ul> <li>
+        ///  <ul> <li> 
         /// <para>
         /// ANDROID: The Android platform.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// IOS: The iOS platform.
         /// </para>
-        /// </li> </ul>
+        ///  </li> </ul>
         /// </summary>
         public DevicePlatform Platform
         {
@@ -305,6 +345,24 @@ namespace Amazon.DeviceFarm.Model
         internal bool IsSetRadio()
         {
             return this._radio != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RemoteAccessEnabled. 
+        /// <para>
+        /// Specifies whether remote access has been enabled for the specified device.
+        /// </para>
+        /// </summary>
+        public bool RemoteAccessEnabled
+        {
+            get { return this._remoteAccessEnabled.GetValueOrDefault(); }
+            set { this._remoteAccessEnabled = value; }
+        }
+
+        // Check to see if RemoteAccessEnabled property is set
+        internal bool IsSetRemoteAccessEnabled()
+        {
+            return this._remoteAccessEnabled.HasValue; 
         }
 
         /// <summary>

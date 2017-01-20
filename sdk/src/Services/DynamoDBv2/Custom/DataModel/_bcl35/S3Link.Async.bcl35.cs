@@ -36,7 +36,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <summary>
         /// Initiates the asynchronous execution of the UploadStream operation.
         /// </summary>
-        /// <param name="sourcePath">Path of the file to be uploaded.</param>
+        /// <param name="stream">The stream of data to upload.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property</param>

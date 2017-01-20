@@ -30,6 +30,9 @@ namespace Amazon.APIGateway.Model
     /// <summary>
     /// Represents a unique identifier for a version of a deployed <a>RestApi</a> that is
     /// callable by users.
+    /// 
+    ///  <div class="seeAlso"> <a href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-deploy-api.html">Deploy
+    /// an API</a> </div>
     /// </summary>
     public partial class CreateStageResponse : AmazonWebServiceResponse
     {
@@ -40,6 +43,7 @@ namespace Amazon.APIGateway.Model
         private DateTime? _createdDate;
         private string _deploymentId;
         private string _description;
+        private string _documentationVersion;
         private DateTime? _lastUpdatedDate;
         private Dictionary<string, MethodSetting> _methodSettings = new Dictionary<string, MethodSetting>();
         private string _stageName;
@@ -100,7 +104,10 @@ namespace Amazon.APIGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ClientCertificateId.
+        /// Gets and sets the property ClientCertificateId. 
+        /// <para>
+        /// The identifier of a client certificate for an API stage.
+        /// </para>
         /// </summary>
         public string ClientCertificateId
         {
@@ -170,6 +177,24 @@ namespace Amazon.APIGateway.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DocumentationVersion. 
+        /// <para>
+        /// The version of the associated API documentation.
+        /// </para>
+        /// </summary>
+        public string DocumentationVersion
+        {
+            get { return this._documentationVersion; }
+            set { this._documentationVersion = value; }
+        }
+
+        // Check to see if DocumentationVersion property is set
+        internal bool IsSetDocumentationVersion()
+        {
+            return this._documentationVersion != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property LastUpdatedDate. 
         /// <para>
         /// The date and time that information about the stage was last updated, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
@@ -191,9 +216,10 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property MethodSettings. 
         /// <para>
-        /// A map that defines the method settings for a <a>Stage</a> resource. Keys are defined
-        /// as <code>{resource_path}/{http_method}</code> for an individual method override, or
-        /// <code>\*/\*</code> for the settings applied to all methods in the stage.
+        /// A map that defines the method settings for a <a>Stage</a> resource. Keys (designated
+        /// as <code>/{method_setting_key</code> below) are method paths defined as <code>{resource_path}/{http_method}</code>
+        /// for an individual method override, or <code>/\*/\*</code> for overriding all methods
+        /// in the stage. 
         /// </para>
         /// </summary>
         public Dictionary<string, MethodSetting> MethodSettings
@@ -231,7 +257,7 @@ namespace Amazon.APIGateway.Model
         /// Gets and sets the property Variables. 
         /// <para>
         /// A map that defines the stage variables for a <a>Stage</a> resource. Variable names
-        /// can have alphanumeric characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
+        /// can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Variables

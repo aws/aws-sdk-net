@@ -172,6 +172,38 @@ namespace Amazon.Runtime.Internal.Transform
     }
 
     /// <summary>
+    /// Unmarshaller for decimal fields
+    /// </summary>
+    public class DecimalUnmarshaller : IUnmarshaller<decimal, XmlUnmarshallerContext>, IUnmarshaller<decimal, JsonUnmarshallerContext>
+    {
+        private DecimalUnmarshaller() { }
+
+        private static DecimalUnmarshaller _instance = new DecimalUnmarshaller();
+
+        public static DecimalUnmarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
+        public static DecimalUnmarshaller GetInstance()
+        {
+            return DecimalUnmarshaller.Instance;
+        }
+
+        public decimal Unmarshall(XmlUnmarshallerContext context)
+        {
+            return SimpleTypeUnmarshaller<decimal>.Unmarshall(context);
+        }
+        public decimal Unmarshall(JsonUnmarshallerContext context)
+        {
+            return SimpleTypeUnmarshaller<decimal>.Unmarshall(context);
+        }
+    }
+
+    /// <summary>
     /// Unmarshaller for bool fields
     /// </summary>
     public class BoolUnmarshaller : IUnmarshaller<bool, XmlUnmarshallerContext>, IUnmarshaller<bool, JsonUnmarshallerContext>

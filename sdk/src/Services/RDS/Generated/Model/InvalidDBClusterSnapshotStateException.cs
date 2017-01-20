@@ -25,7 +25,7 @@ namespace Amazon.RDS.Model
     ///<summary>
     /// RDS exception
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class InvalidDBClusterSnapshotStateException : AmazonRDSException 
@@ -79,7 +79,7 @@ namespace Amazon.RDS.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the InvalidDBClusterSnapshotStateException class with serialized data.
         /// </summary>

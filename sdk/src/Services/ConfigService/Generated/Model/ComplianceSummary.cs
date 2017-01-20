@@ -28,8 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// The number of AWS Config rules or AWS resources that are compliant and noncompliant,
-    /// up to a maximum.
+    /// The number of AWS Config rules or AWS resources that are compliant and noncompliant.
     /// </summary>
     public partial class ComplianceSummary
     {

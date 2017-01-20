@@ -28,9 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatch.Model
 {
     /// <summary>
-    /// The <code>MetricDatum</code> data type encapsulates the information sent with <a>PutMetricData</a>
-    /// to either create a new metric or add new values to be aggregated into an existing
-    /// metric.
+    /// Encapsulates the information sent to either create a metric or add new values to be
+    /// aggregated into an existing metric.
     /// </summary>
     public partial class MetricDatum
     {
@@ -44,9 +43,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property Dimensions. 
         /// <para>
-        ///  A list of dimensions associated with the metric. Note, when using the Dimensions
-        /// value in a query, you need to append .member.N to it (e.g., Dimensions.member.N).
-        /// 
+        /// The dimensions associated with the metric.
         /// </para>
         /// </summary>
         public List<Dimension> Dimensions
@@ -64,7 +61,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property MetricName. 
         /// <para>
-        ///  The name of the metric. 
+        /// The name of the metric.
         /// </para>
         /// </summary>
         public string MetricName
@@ -82,7 +79,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property StatisticValues. 
         /// <para>
-        ///  A set of statistical values describing the metric. 
+        /// The statistical values for the metric.
         /// </para>
         /// </summary>
         public StatisticSet StatisticValues
@@ -100,9 +97,8 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property Timestamp. 
         /// <para>
-        ///  The time stamp used for the metric in ISO 8601 Universal Coordinated Time (UTC) format.
-        /// If not specified, the default value is set to the time the metric data was received.
-        /// 
+        /// The time the metric data was received, expressed as the number of milliseconds since
+        /// Jan 1, 1970 00:00:00 UTC.
         /// </para>
         /// </summary>
         public DateTime Timestamp
@@ -120,7 +116,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property Unit. 
         /// <para>
-        ///  The unit of the metric. 
+        /// The unit of the metric.
         /// </para>
         /// </summary>
         public StandardUnit Unit
@@ -138,13 +134,15 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        ///  The value for the metric. 
+        /// The value for the metric.
         /// </para>
-        ///  <important>Although the <code>Value</code> parameter accepts numbers of type <code>Double</code>,
-        /// Amazon CloudWatch rejects values that are either too small or too large. Values must
-        /// be in the range of 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base
-        /// 2). In addition, special values (e.g., NaN, +Infinity, -Infinity) are not supported.
-        /// </important>
+        ///  
+        /// <para>
+        /// Although the parameter accepts numbers of type Double, Amazon CloudWatch rejects values
+        /// that are either too small or too large. Values must be in the range of 8.515920e-109
+        /// to 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base 2). In addition, special values
+        /// (for example, NaN, +Infinity, -Infinity) are not supported.
+        /// </para>
         /// </summary>
         public double Value
         {

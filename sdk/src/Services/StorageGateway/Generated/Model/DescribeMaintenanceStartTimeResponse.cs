@@ -28,7 +28,25 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
-    /// This is the response object from the DescribeMaintenanceStartTime operation.
+    /// A JSON object containing the following fields:
+    /// 
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>DescribeMaintenanceStartTimeOutput$DayOfWeek</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeMaintenanceStartTimeOutput$HourOfDay</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeMaintenanceStartTimeOutput$MinuteOfHour</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeMaintenanceStartTimeOutput$Timezone</a> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class DescribeMaintenanceStartTimeResponse : AmazonWebServiceResponse
     {
@@ -39,7 +57,11 @@ namespace Amazon.StorageGateway.Model
         private string _timezone;
 
         /// <summary>
-        /// Gets and sets the property DayOfWeek.
+        /// Gets and sets the property DayOfWeek. 
+        /// <para>
+        /// An ordinal number between 0 and 6 that represents the day of the week, where 0 represents
+        /// Sunday and 6 represents Saturday. The day of week is in the time zone of the gateway.
+        /// </para>
         /// </summary>
         public int DayOfWeek
         {
@@ -69,7 +91,11 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property HourOfDay.
+        /// Gets and sets the property HourOfDay. 
+        /// <para>
+        /// The hour component of the maintenance start time represented as <i>hh</i>, where <i>hh</i>
+        /// is the hour (0 to 23). The hour of the day is in the time zone of the gateway.
+        /// </para>
         /// </summary>
         public int HourOfDay
         {
@@ -84,7 +110,12 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MinuteOfHour.
+        /// Gets and sets the property MinuteOfHour. 
+        /// <para>
+        /// The minute component of the maintenance start time represented as <i>mm</i>, where
+        /// <i>mm</i> is the minute (0 to 59). The minute of the hour is in the time zone of the
+        /// gateway.
+        /// </para>
         /// </summary>
         public int MinuteOfHour
         {

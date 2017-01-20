@@ -36,6 +36,7 @@ namespace Amazon.ElasticBeanstalk.Model
     {
         private string _applicationName;
         private string _description;
+        private ApplicationResourceLifecycleConfig _resourceLifecycleConfig;
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -90,6 +91,25 @@ namespace Amazon.ElasticBeanstalk.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceLifecycleConfig. 
+        /// <para>
+        /// Specify an application resource lifecycle configuration to prevent your application
+        /// from accumulating too many versions.
+        /// </para>
+        /// </summary>
+        public ApplicationResourceLifecycleConfig ResourceLifecycleConfig
+        {
+            get { return this._resourceLifecycleConfig; }
+            set { this._resourceLifecycleConfig = value; }
+        }
+
+        // Check to see if ResourceLifecycleConfig property is set
+        internal bool IsSetResourceLifecycleConfig()
+        {
+            return this._resourceLifecycleConfig != null;
         }
 
     }

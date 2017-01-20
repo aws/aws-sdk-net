@@ -16,6 +16,7 @@ using System;
 using System.Net;
 using System.Collections.Generic;
 using Amazon.S3.Model;
+using Amazon.S3.Util;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
@@ -93,6 +94,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 response.AbortDate = S3Transforms.ToDateTime(responseData.GetHeaderValue(HeaderKeys.XAmzAbortDateHeader));
             if (responseData.IsHeaderPresent(HeaderKeys.XAmzAbortRuleIdHeader))
                 response.AbortRuleId = S3Transforms.ToString(responseData.GetHeaderValue(HeaderKeys.XAmzAbortRuleIdHeader));
+            if (responseData.IsHeaderPresent(S3Constants.AmzHeaderRequestCharged))
+                response.RequestCharged = RequestCharged.FindValue(responseData.GetHeaderValue(S3Constants.AmzHeaderRequestCharged));
 
             return;
         }

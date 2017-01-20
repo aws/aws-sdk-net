@@ -29,14 +29,38 @@ namespace Amazon.APIGateway.Model
 {
     /// <summary>
     /// Represents a REST API.
+    /// 
+    ///  <div class="seeAlso"> <a href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Create
+    /// an API</a> </div>
     /// </summary>
     public partial class UpdateRestApiResponse : AmazonWebServiceResponse
     {
+        private List<string> _binaryMediaTypes = new List<string>();
         private DateTime? _createdDate;
         private string _description;
         private string _id;
         private string _name;
+        private string _version;
         private List<string> _warnings = new List<string>();
+
+        /// <summary>
+        /// Gets and sets the property BinaryMediaTypes. 
+        /// <para>
+        /// The list of binary media types supported by the <a>RestApi</a>. By default, the <a>RestApi</a>
+        /// supports only UTF-8-encoded text payloads.
+        /// </para>
+        /// </summary>
+        public List<string> BinaryMediaTypes
+        {
+            get { return this._binaryMediaTypes; }
+            set { this._binaryMediaTypes = value; }
+        }
+
+        // Check to see if BinaryMediaTypes property is set
+        internal bool IsSetBinaryMediaTypes()
+        {
+            return this._binaryMediaTypes != null && this._binaryMediaTypes.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property CreatedDate. 
@@ -113,7 +137,29 @@ namespace Amazon.APIGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Warnings.
+        /// Gets and sets the property Version. 
+        /// <para>
+        /// A version identifier for the API.
+        /// </para>
+        /// </summary>
+        public string Version
+        {
+            get { return this._version; }
+            set { this._version = value; }
+        }
+
+        // Check to see if Version property is set
+        internal bool IsSetVersion()
+        {
+            return this._version != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Warnings. 
+        /// <para>
+        /// The warning messages reported when <code>failonwarnings</code> is turned on during
+        /// API import.
+        /// </para>
         /// </summary>
         public List<string> Warnings
         {

@@ -25,7 +25,7 @@ namespace Amazon.OpsWorks.Model
     ///<summary>
     /// OpsWorks exception
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class ValidationException : AmazonOpsWorksException 
@@ -79,7 +79,7 @@ namespace Amazon.OpsWorks.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the ValidationException class with serialized data.
         /// </summary>

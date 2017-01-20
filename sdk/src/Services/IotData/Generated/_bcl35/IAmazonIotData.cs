@@ -21,6 +21,7 @@
 using System;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.IotData.Model;
 
 namespace Amazon.IotData
@@ -37,7 +38,7 @@ namespace Amazon.IotData
     /// is a persistent representation of your things and their state in the AWS cloud.
     /// </para>
     /// </summary>
-    public partial interface IAmazonIotData : IDisposable
+    public partial interface IAmazonIotData : IAmazonService, IDisposable
     {
 
         

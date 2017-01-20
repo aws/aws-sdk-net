@@ -29,37 +29,40 @@
 <#
 	if(!Convert.ToBoolean(this.Session["DisablePCLSupport"]))
 	{
-#>
-      <group targetFramework="portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10">
-<#
-		foreach(var awsDependencyKVP in ((IDictionary<string, string>)this.Session["AWSDependencies"]))
+		List<string> pclTargetFrameworks = new List<string>{"portable-net45+win8+wpa81+wp8", "MonoAndroid10", "Xamarin.iOS10", "MonoTouch10"};
+		foreach(var targetFramework in pclTargetFrameworks)
 		{
 #>
-        <dependency id="<#=awsDependencyKVP.Key#>" version="<#=awsDependencyKVP.Value#>" />
+      <group targetFramework="<#=targetFramework#>">
 <#
-		}
-#>
-<#
-		if(this.Session.ContainsKey("NugetDependencies"))
-		{
-			var dependencies = (Dictionary<string,List<Dependency>>)this.Session["NugetDependencies"];
-			if(!Convert.ToBoolean(this.Session["DisablePCLSupport"]))
+			foreach(var awsDependencyKVP in ((IDictionary<string, string>)this.Session["AWSDependencies"]))
 			{
-				if(dependencies.ContainsKey("PCL"))
+#>
+		<dependency id="<#=awsDependencyKVP.Key#>" version="<#=awsDependencyKVP.Value#>" />
+<#
+			}
+#>
+<#
+			if(this.Session.ContainsKey("NugetDependencies"))
+			{
+				var dependencies = (Dictionary<string,List<Dependency>>)this.Session["NugetDependencies"];
+				if(!Convert.ToBoolean(this.Session["DisablePCLSupport"]))
 				{
-					foreach(var dependency in dependencies["PCL"])
+					if(dependencies.ContainsKey("PCL"))
 					{
+						foreach(var dependency in dependencies["PCL"])
+						{
 #>
 		<dependency id="<#=dependency.Name#>" version="<#=dependency.Version#>" />
 <#		
+						}
 					}
 				}
-			}
-		}	
+			}	
 #>
       </group>
-
 <#
+		}
 	}
 #>
 <#
@@ -106,6 +109,17 @@
     }
 #>
       </group>
+      <group targetFramework="uap">
+        <dependency id="Microsoft.NETCore.UniversalWindowsPlatform" version="5.2.2"/>
+<#
+            foreach(var awsDependencyKVP in ((IDictionary<string, string>)this.Session["AWSDependencies"]))
+            {
+#>
+        <dependency id="<#=awsDependencyKVP.Key#>" version="<#=awsDependencyKVP.Value#>" />
+<#
+            }
+#>
+      </group>
     </dependencies>
   </metadata> 
   <files>
@@ -125,23 +139,32 @@
 	if(!Convert.ToBoolean(this.Session["DisablePCLSupport"]))
 	{
 #>
-<#
-		if(((string)this.Session["AssemblyName"]).Equals("AWSSDK.MobileAnalytics",StringComparison.CurrentCultureIgnoreCase) || ((string)this.Session["AssemblyName"]).Equals("AWSSDK.CognitoSync",StringComparison.CurrentCultureIgnoreCase))
-		{
-#>
+    <file src=".\bin\Release\pcl\\<#=this.Session["AssemblyName"]#>.dll" target="lib\portable-net45+win8+wpa81+wp8" />
+    <file src=".\bin\Release\pcl\\<#=this.Session["AssemblyName"]#>.xml" target="lib\portable-net45+win8+wpa81+wp8" />
+    <file src=".\bin\Release\pcl\\<#=this.Session["AssemblyName"]#>.pdb" target="lib\portable-net45+win8+wpa81+wp8" />
 
-    <file src="<#=Path.Combine(".", "bin", "Release", "Xamarin.iOS10", (string)this.Session["AssemblyName"] + ".dll")#>" target="lib\Xamarin.iOS10" />
-    <file src="<#=Path.Combine(".", "bin", "Release", "Xamarin.iOS10", (string)this.Session["AssemblyName"] + ".xml")#>" target="lib\Xamarin.iOS10" />
-    <file src="<#=Path.Combine(".", "bin", "Release", "Xamarin.iOS10", (string)this.Session["AssemblyName"] + ".pdb")#>" target="lib\Xamarin.iOS10" />
-<#
-		}
-#>
+    <file src=".\bin\Release\pcl\\<#=this.Session["AssemblyName"]#>.dll" target="lib\MonoAndroid10" />
+    <file src=".\bin\Release\pcl\\<#=this.Session["AssemblyName"]#>.xml" target="lib\MonoAndroid10" />
 
-    <file src=".\bin\Release\pcl\\<#=this.Session["AssemblyName"]#>.dll" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
-    <file src=".\bin\Release\pcl\\<#=this.Session["AssemblyName"]#>.xml" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
-    <file src=".\bin\Release\pcl\\<#=this.Session["AssemblyName"]#>.pdb" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
+    <file src=".\bin\Release\pcl\\<#=this.Session["AssemblyName"]#>.dll" target="lib\Xamarin.iOS10" />
+    <file src=".\bin\Release\pcl\\<#=this.Session["AssemblyName"]#>.xml" target="lib\Xamarin.iOS10" />
+
+    <file src=".\bin\Release\pcl\\<#=this.Session["AssemblyName"]#>.dll" target="lib\MonoTouch10" />
+    <file src=".\bin\Release\pcl\\<#=this.Session["AssemblyName"]#>.xml" target="lib\MonoTouch10" />
+    <file src=".\bin\Release\pcl\\<#=this.Session["AssemblyName"]#>.pdb" target="lib\MonoTouch10" />
+
+<#
+	}
+
+	if(Convert.ToBoolean(this.Session["CoreCLRSupport"]))
+	{
+#>
+    <file src="<#=Path.Combine(".", "bin", "Release", "netstandard1.3", (string)this.Session["AssemblyName"] + ".dll")#>" target="lib\netstandard1.3" />
+    <file src="<#=Path.Combine(".", "bin", "Release", "netstandard1.3", (string)this.Session["AssemblyName"] + ".xml")#>" target="lib\netstandard1.3" />
+    <file src="<#=Path.Combine(".", "bin", "Release", "netstandard1.3", (string)this.Session["AssemblyName"] + ".pdb")#>" target="lib\netstandard1.3" />
 <#
 	}
 #>
+
   </files>
 </package>

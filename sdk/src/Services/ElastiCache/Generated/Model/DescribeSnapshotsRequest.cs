@@ -29,16 +29,23 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeSnapshots operation.
-    /// The <i>DescribeSnapshots</i> action returns information about cache cluster snapshots.
-    /// By default, <i>DescribeSnapshots</i> lists all of your snapshots; it can optionally
-    /// describe a single snapshot, or just the snapshots associated with a particular cache
-    /// cluster.
+    /// Returns information about cache cluster or replication group snapshots. By default,
+    /// <code>DescribeSnapshots</code> lists all of your snapshots; it can optionally describe
+    /// a single snapshot, or just the snapshots associated with a particular cache cluster.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// This operation is valid for Redis only.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DescribeSnapshotsRequest : AmazonElastiCacheRequest
     {
         private string _cacheClusterId;
         private string _marker;
         private int? _maxRecords;
+        private string _replicationGroupId;
+        private bool? _showNodeGroupConfig;
         private string _snapshotName;
         private string _snapshotSource;
 
@@ -46,7 +53,7 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property CacheClusterId. 
         /// <para>
         /// A user-supplied cluster identifier. If this parameter is specified, only snapshots
-        /// associated with that specific cache cluster will be described.
+        /// associated with that specific cache cluster are described.
         /// </para>
         /// </summary>
         public string CacheClusterId
@@ -65,8 +72,8 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property Marker. 
         /// <para>
         /// An optional marker returned from a prior request. Use this marker for pagination of
-        /// results from this action. If this parameter is specified, the response includes only
-        /// records beyond the marker, up to the value specified by <i>MaxRecords</i>.
+        /// results from this operation. If this parameter is specified, the response includes
+        /// only records beyond the marker, up to the value specified by <code>MaxRecords</code>.
         /// </para>
         /// </summary>
         public string Marker
@@ -110,10 +117,48 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ReplicationGroupId. 
+        /// <para>
+        /// A user-supplied replication group identifier. If this parameter is specified, only
+        /// snapshots associated with that specific replication group are described.
+        /// </para>
+        /// </summary>
+        public string ReplicationGroupId
+        {
+            get { return this._replicationGroupId; }
+            set { this._replicationGroupId = value; }
+        }
+
+        // Check to see if ReplicationGroupId property is set
+        internal bool IsSetReplicationGroupId()
+        {
+            return this._replicationGroupId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ShowNodeGroupConfig. 
+        /// <para>
+        /// A Boolean value which if true, the node group (shard) configuration is included in
+        /// the snapshot description.
+        /// </para>
+        /// </summary>
+        public bool ShowNodeGroupConfig
+        {
+            get { return this._showNodeGroupConfig.GetValueOrDefault(); }
+            set { this._showNodeGroupConfig = value; }
+        }
+
+        // Check to see if ShowNodeGroupConfig property is set
+        internal bool IsSetShowNodeGroupConfig()
+        {
+            return this._showNodeGroupConfig.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property SnapshotName. 
         /// <para>
         /// A user-supplied name of the snapshot. If this parameter is specified, only this snapshot
-        /// will be described.
+        /// are described.
         /// </para>
         /// </summary>
         public string SnapshotName

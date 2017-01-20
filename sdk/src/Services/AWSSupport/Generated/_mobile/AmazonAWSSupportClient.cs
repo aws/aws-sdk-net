@@ -45,35 +45,65 @@ namespace Amazon.AWSSupport
     /// </para>
     ///  
     /// <para>
-    /// The AWS Support service also exposes a set of <a href="https://aws.amazon.com/premiumsupport/trustedadvisor/">Trusted
+    /// The AWS Support service also exposes a set of <a href="http://aws.amazon.com/premiumsupport/trustedadvisor/">Trusted
     /// Advisor</a> features. You can retrieve a list of checks and their descriptions, get
     /// check results, specify checks to refresh, and get the refresh status of checks. 
     /// </para>
     ///  
     /// <para>
-    /// The following list describes the AWS Support case management operations: 
+    /// The following list describes the AWS Support case management operations:
     /// </para>
-    ///  <ul> <li> <b>Service names, issue categories, and available severity levels. </b>The
-    /// <a>DescribeServices</a> and <a>DescribeSeverityLevels</a> operations return AWS service
-    /// names, service codes, service categories, and problem severity levels. You use these
-    /// values when you call the <a>CreateCase</a> operation. </li> <li> <b>Case creation,
-    /// case details, and case resolution.</b> The <a>CreateCase</a>, <a>DescribeCases</a>,
+    ///  <ul> <li> 
+    /// <para>
+    ///  <b>Service names, issue categories, and available severity levels. </b>The <a>DescribeServices</a>
+    /// and <a>DescribeSeverityLevels</a> operations return AWS service names, service codes,
+    /// service categories, and problem severity levels. You use these values when you call
+    /// the <a>CreateCase</a> operation. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>Case creation, case details, and case resolution.</b> The <a>CreateCase</a>, <a>DescribeCases</a>,
     /// <a>DescribeAttachment</a>, and <a>ResolveCase</a> operations create AWS Support cases,
-    /// retrieve information about cases, and resolve cases.</li> <li> <b>Case communication.</b>
-    /// The <a>DescribeCommunications</a>, <a>AddCommunicationToCase</a>, and <a>AddAttachmentsToSet</a>
-    /// operations retrieve and add communications and attachments to AWS Support cases. </li>
-    /// </ul> 
+    /// retrieve information about cases, and resolve cases.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>Case communication.</b> The <a>DescribeCommunications</a>, <a>AddCommunicationToCase</a>,
+    /// and <a>AddAttachmentsToSet</a> operations retrieve and add communications and attachments
+    /// to AWS Support cases. 
+    /// </para>
+    ///  </li> </ul> 
     /// <para>
     /// The following list describes the operations available from the AWS Support service
     /// for Trusted Advisor:
     /// </para>
-    ///  <ul> <li> <a>DescribeTrustedAdvisorChecks</a> returns the list of checks that run
-    /// against your AWS resources.</li> <li>Using the <code>CheckId</code> for a specific
-    /// check returned by <a>DescribeTrustedAdvisorChecks</a>, you can call <a>DescribeTrustedAdvisorCheckResult</a>
-    /// to obtain the results for the check you specified.</li> <li> <a>DescribeTrustedAdvisorCheckSummaries</a>
-    /// returns summarized results for one or more Trusted Advisor checks.</li> <li> <a>RefreshTrustedAdvisorCheck</a>
-    /// requests that Trusted Advisor rerun a specified check. </li> <li> <a>DescribeTrustedAdvisorCheckRefreshStatuses</a>
-    /// reports the refresh status of one or more checks. </li> </ul> 
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>DescribeTrustedAdvisorChecks</a> returns the list of checks that run against your
+    /// AWS resources.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Using the <code>checkId</code> for a specific check returned by <a>DescribeTrustedAdvisorChecks</a>,
+    /// you can call <a>DescribeTrustedAdvisorCheckResult</a> to obtain the results for the
+    /// check you specified.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeTrustedAdvisorCheckSummaries</a> returns summarized results for one or
+    /// more Trusted Advisor checks.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>RefreshTrustedAdvisorCheck</a> requests that Trusted Advisor rerun a specified
+    /// check. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeTrustedAdvisorCheckRefreshStatuses</a> reports the refresh status of one
+    /// or more checks. 
+    /// </para>
+    ///  </li> </ul> 
     /// <para>
     /// For authentication of requests, AWS Support uses <a href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
     /// Version 4 Signing Process</a>.
@@ -90,6 +120,66 @@ namespace Amazon.AWSSupport
     {
         
         #region Constructors
+
+#if CORECLR
+    
+        /// <summary>
+        /// Constructs AmazonAWSSupportClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
+        public AmazonAWSSupportClient()
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonAWSSupportConfig()) { }
+
+        /// <summary>
+        /// Constructs AmazonAWSSupportClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
+        /// <param name="region">The region to connect.</param>
+        public AmazonAWSSupportClient(RegionEndpoint region)
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonAWSSupportConfig{RegionEndpoint = region}) { }
+
+        /// <summary>
+        /// Constructs AmazonAWSSupportClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
+        /// <param name="config">The AmazonAWSSupportClient Configuration Object</param>
+        public AmazonAWSSupportClient(AmazonAWSSupportConfig config)
+            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+
+#endif
 
         /// <summary>
         /// Constructs AmazonAWSSupportClient with AWS Credentials

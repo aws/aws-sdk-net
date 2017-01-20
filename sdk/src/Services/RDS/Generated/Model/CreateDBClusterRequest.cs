@@ -34,7 +34,7 @@ namespace Amazon.RDS.Model
     ///  
     /// <para>
     /// You can use the <code>ReplicationSourceIdentifier</code> parameter to create the DB
-    /// cluster as a Read Replica of another DB cluster.
+    /// cluster as a Read Replica of another DB cluster or Amazon RDS MySQL DB instance.
     /// </para>
     ///  
     /// <para>
@@ -197,8 +197,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property DBClusterParameterGroupName. 
         /// <para>
         ///  The name of the DB cluster parameter group to associate with this DB cluster. If
-        /// this argument is omitted, <code>default.aurora5.6</code> for the specified engine
-        /// will be used. 
+        /// this argument is omitted, <code>default.aurora5.6</code> will be used. 
         /// </para>
         ///  
         /// <para>
@@ -340,7 +339,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property MasterUsername. 
         /// <para>
-        /// The name of the master user for the client DB cluster.
+        /// The name of the master user for the DB cluster.
         /// </para>
         ///  
         /// <para>
@@ -529,8 +528,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property ReplicationSourceIdentifier. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the source DB cluster if this DB cluster is created
-        /// as a Read Replica.
+        /// The Amazon Resource Name (ARN) of the source DB instance or DB cluster if this DB
+        /// cluster is created as a Read Replica.
         /// </para>
         /// </summary>
         public string ReplicationSourceIdentifier

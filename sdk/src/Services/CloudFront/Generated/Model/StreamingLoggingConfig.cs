@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2016-01-28.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-11-25.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -37,8 +37,10 @@ namespace Amazon.CloudFront.Model
         private string _prefix;
 
         /// <summary>
-        /// Gets and sets the property Bucket. The Amazon S3 bucket to store the access logs in,
-        /// for example, myawslogbucket.s3.amazonaws.com.
+        /// Gets and sets the property Bucket. 
+        /// <para>
+        /// The Amazon S3 bucket to store the access logs in, for example, <code>myawslogbucket.s3.amazonaws.com</code>.
+        /// </para>
         /// </summary>
         public string Bucket
         {
@@ -53,12 +55,16 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Enabled. Specifies whether you want CloudFront to save
-        /// access logs to an Amazon S3 bucket. If you do not want to enable logging when you
-        /// create a streaming distribution or if you want to disable logging for an existing
-        /// streaming distribution, specify false for Enabled, and specify empty Bucket and Prefix
-        /// elements. If you specify false for Enabled but you specify values for Bucket and Prefix,
-        /// the values are automatically deleted.
+        /// Gets and sets the property Enabled. 
+        /// <para>
+        /// Specifies whether you want CloudFront to save access logs to an Amazon S3 bucket.
+        /// If you do not want to enable logging when you create a streaming distribution or if
+        /// you want to disable logging for an existing streaming distribution, specify <code>false</code>
+        /// for <code>Enabled</code>, and specify <code>empty Bucket</code> and <code>Prefix</code>
+        /// elements. If you specify <code>false</code> for <code>Enabled</code> but you specify
+        /// values for <code>Bucket</code> and <code>Prefix</code>, the values are automatically
+        /// deleted. 
+        /// </para>
         /// </summary>
         public bool Enabled
         {
@@ -73,10 +79,13 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Prefix. An optional string that you want CloudFront to
-        /// prefix to the access log filenames for this streaming distribution, for example, myprefix/.
-        /// If you want to enable logging, but you do not want to specify a prefix, you still
-        /// must include an empty Prefix element in the Logging element.
+        /// Gets and sets the property Prefix. 
+        /// <para>
+        /// An optional string that you want CloudFront to prefix to the access log <code>filenames</code>
+        /// for this streaming distribution, for example, <code>myprefix/</code>. If you want
+        /// to enable logging, but you do not want to specify a prefix, you still must include
+        /// an empty <code>Prefix</code> element in the <code>Logging</code> element.
+        /// </para>
         /// </summary>
         public string Prefix
         {

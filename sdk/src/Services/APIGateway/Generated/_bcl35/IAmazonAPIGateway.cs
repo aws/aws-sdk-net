@@ -21,6 +21,7 @@
 using System;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.APIGateway.Model;
 
 namespace Amazon.APIGateway
@@ -30,13 +31,13 @@ namespace Amazon.APIGateway
     ///
     /// Amazon API Gateway 
     /// <para>
-    /// Amazon API Gateway helps developers deliver robust, secure and scalable mobile and
-    /// web application backends. Amazon API Gateway allows developers to securely connect
+    /// Amazon API Gateway helps developers deliver robust, secure, and scalable mobile and
+    /// web application back ends. Amazon API Gateway allows developers to securely connect
     /// mobile and web applications to APIs that run on AWS Lambda, Amazon EC2, or other publicly
     /// addressable web services that are hosted outside of AWS.
     /// </para>
     /// </summary>
-    public partial interface IAmazonAPIGateway : IDisposable
+    public partial interface IAmazonAPIGateway : IAmazonService, IDisposable
     {
 
         
@@ -44,12 +45,18 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// Create an <a>ApiKey</a> resource.
+        /// Create an <a>ApiKey</a> resource. 
+        /// 
+        ///  <div class="seeAlso"><a href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/create-api-key.html">AWS
+        /// CLI</a></div>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateApiKey service method.</param>
         /// 
         /// <returns>The response from the CreateApiKey service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
         /// 
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
@@ -97,6 +104,9 @@ namespace Amazon.APIGateway
 
         /// <summary>
         /// Adds a new <a>Authorizer</a> resource to an existing <a>RestApi</a> resource.
+        /// 
+        ///  <div class="seeAlso"><a href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/create-authorizer.html">AWS
+        /// CLI</a></div>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAuthorizer service method.</param>
         /// 
@@ -252,6 +262,116 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>Returns a  CreateDeploymentResult from APIGateway.</returns>
         CreateDeploymentResponse EndCreateDeployment(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateDocumentationPart
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDocumentationPart service method.</param>
+        /// 
+        /// <returns>The response from the CreateDocumentationPart service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        CreateDocumentationPartResponse CreateDocumentationPart(CreateDocumentationPartRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateDocumentationPart operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateDocumentationPart operation on AmazonAPIGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDocumentationPart
+        ///         operation.</returns>
+        IAsyncResult BeginCreateDocumentationPart(CreateDocumentationPartRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateDocumentationPart operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateDocumentationPart.</param>
+        /// 
+        /// <returns>Returns a  CreateDocumentationPartResult from APIGateway.</returns>
+        CreateDocumentationPartResponse EndCreateDocumentationPart(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateDocumentationVersion
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDocumentationVersion service method.</param>
+        /// 
+        /// <returns>The response from the CreateDocumentationVersion service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        CreateDocumentationVersionResponse CreateDocumentationVersion(CreateDocumentationVersionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateDocumentationVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateDocumentationVersion operation on AmazonAPIGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDocumentationVersion
+        ///         operation.</returns>
+        IAsyncResult BeginCreateDocumentationVersion(CreateDocumentationVersionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateDocumentationVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateDocumentationVersion.</param>
+        /// 
+        /// <returns>Returns a  CreateDocumentationVersionResult from APIGateway.</returns>
+        CreateDocumentationVersionResponse EndCreateDocumentationVersion(IAsyncResult asyncResult);
 
         #endregion
         
@@ -519,6 +639,114 @@ namespace Amazon.APIGateway
 
         #endregion
         
+        #region  CreateUsagePlan
+
+
+        /// <summary>
+        /// Creates a usage plan with the throttle and quota limits, as well as the associated
+        /// API stages, specified in the payload.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateUsagePlan service method.</param>
+        /// 
+        /// <returns>The response from the CreateUsagePlan service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        CreateUsagePlanResponse CreateUsagePlan(CreateUsagePlanRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateUsagePlan operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateUsagePlan operation on AmazonAPIGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateUsagePlan
+        ///         operation.</returns>
+        IAsyncResult BeginCreateUsagePlan(CreateUsagePlanRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateUsagePlan operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateUsagePlan.</param>
+        /// 
+        /// <returns>Returns a  CreateUsagePlanResult from APIGateway.</returns>
+        CreateUsagePlanResponse EndCreateUsagePlan(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateUsagePlanKey
+
+
+        /// <summary>
+        /// Creates a usage plan key for adding an existing API key to a usage plan.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateUsagePlanKey service method.</param>
+        /// 
+        /// <returns>The response from the CreateUsagePlanKey service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        CreateUsagePlanKeyResponse CreateUsagePlanKey(CreateUsagePlanKeyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateUsagePlanKey operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateUsagePlanKey operation on AmazonAPIGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateUsagePlanKey
+        ///         operation.</returns>
+        IAsyncResult BeginCreateUsagePlanKey(CreateUsagePlanKeyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateUsagePlanKey operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateUsagePlanKey.</param>
+        /// 
+        /// <returns>Returns a  CreateUsagePlanKeyResult from APIGateway.</returns>
+        CreateUsagePlanKeyResponse EndCreateUsagePlanKey(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteApiKey
 
 
@@ -570,6 +798,9 @@ namespace Amazon.APIGateway
 
         /// <summary>
         /// Deletes an existing <a>Authorizer</a> resource.
+        /// 
+        ///  <div class="seeAlso"><a href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/delete-authorizer.html">AWS
+        /// CLI</a></div>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAuthorizer service method.</param>
         /// 
@@ -762,6 +993,110 @@ namespace Amazon.APIGateway
 
         #endregion
         
+        #region  DeleteDocumentationPart
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDocumentationPart service method.</param>
+        /// 
+        /// <returns>The response from the DeleteDocumentationPart service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        DeleteDocumentationPartResponse DeleteDocumentationPart(DeleteDocumentationPartRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteDocumentationPart operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDocumentationPart operation on AmazonAPIGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDocumentationPart
+        ///         operation.</returns>
+        IAsyncResult BeginDeleteDocumentationPart(DeleteDocumentationPartRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteDocumentationPart operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteDocumentationPart.</param>
+        /// 
+        /// <returns>Returns a  DeleteDocumentationPartResult from APIGateway.</returns>
+        DeleteDocumentationPartResponse EndDeleteDocumentationPart(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteDocumentationVersion
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDocumentationVersion service method.</param>
+        /// 
+        /// <returns>The response from the DeleteDocumentationVersion service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        DeleteDocumentationVersionResponse DeleteDocumentationVersion(DeleteDocumentationVersionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteDocumentationVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDocumentationVersion operation on AmazonAPIGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDocumentationVersion
+        ///         operation.</returns>
+        IAsyncResult BeginDeleteDocumentationVersion(DeleteDocumentationVersionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteDocumentationVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteDocumentationVersion.</param>
+        /// 
+        /// <returns>Returns a  DeleteDocumentationVersionResult from APIGateway.</returns>
+        DeleteDocumentationVersionResponse EndDeleteDocumentationVersion(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteDomainName
 
 
@@ -817,6 +1152,9 @@ namespace Amazon.APIGateway
         /// <param name="request">Container for the necessary parameters to execute the DeleteIntegration service method.</param>
         /// 
         /// <returns>The response from the DeleteIntegration service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// 
         /// </exception>
@@ -863,6 +1201,12 @@ namespace Amazon.APIGateway
         /// <param name="request">Container for the necessary parameters to execute the DeleteIntegrationResponse service method.</param>
         /// 
         /// <returns>The response from the DeleteIntegrationResponse service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// 
         /// </exception>
@@ -909,6 +1253,9 @@ namespace Amazon.APIGateway
         /// <param name="request">Container for the necessary parameters to execute the DeleteMethod service method.</param>
         /// 
         /// <returns>The response from the DeleteMethod service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// 
         /// </exception>
@@ -955,6 +1302,12 @@ namespace Amazon.APIGateway
         /// <param name="request">Container for the necessary parameters to execute the DeleteMethodResponse service method.</param>
         /// 
         /// <returns>The response from the DeleteMethodResponse service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// 
         /// </exception>
@@ -1191,6 +1544,108 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>Returns a  DeleteStageResult from APIGateway.</returns>
         DeleteStageResponse EndDeleteStage(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteUsagePlan
+
+
+        /// <summary>
+        /// Deletes a usage plan of a given plan Id.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteUsagePlan service method.</param>
+        /// 
+        /// <returns>The response from the DeleteUsagePlan service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        DeleteUsagePlanResponse DeleteUsagePlan(DeleteUsagePlanRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteUsagePlan operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteUsagePlan operation on AmazonAPIGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteUsagePlan
+        ///         operation.</returns>
+        IAsyncResult BeginDeleteUsagePlan(DeleteUsagePlanRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteUsagePlan operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteUsagePlan.</param>
+        /// 
+        /// <returns>Returns a  DeleteUsagePlanResult from APIGateway.</returns>
+        DeleteUsagePlanResponse EndDeleteUsagePlan(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteUsagePlanKey
+
+
+        /// <summary>
+        /// Deletes a usage plan key and remove the underlying API key from the associated usage
+        /// plan.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteUsagePlanKey service method.</param>
+        /// 
+        /// <returns>The response from the DeleteUsagePlanKey service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        DeleteUsagePlanKeyResponse DeleteUsagePlanKey(DeleteUsagePlanKeyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteUsagePlanKey operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteUsagePlanKey operation on AmazonAPIGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteUsagePlanKey
+        ///         operation.</returns>
+        IAsyncResult BeginDeleteUsagePlanKey(DeleteUsagePlanKeyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteUsagePlanKey operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteUsagePlanKey.</param>
+        /// 
+        /// <returns>Returns a  DeleteUsagePlanKeyResult from APIGateway.</returns>
+        DeleteUsagePlanKeyResponse EndDeleteUsagePlanKey(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1481,6 +1936,9 @@ namespace Amazon.APIGateway
 
         /// <summary>
         /// Describe an existing <a>Authorizer</a> resource.
+        /// 
+        ///  <div class="seeAlso"><a href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/get-authorizer.html">AWS
+        /// CLI</a></div>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAuthorizer service method.</param>
         /// 
@@ -1527,6 +1985,9 @@ namespace Amazon.APIGateway
 
         /// <summary>
         /// Describe an existing <a>Authorizers</a> resource.
+        /// 
+        ///  <div class="seeAlso"><a href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/get-authorizers.html">AWS
+        /// CLI</a></div>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAuthorizers service method.</param>
         /// 
@@ -1850,6 +2311,196 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>Returns a  GetDeploymentsResult from APIGateway.</returns>
         GetDeploymentsResponse EndGetDeployments(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetDocumentationPart
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDocumentationPart service method.</param>
+        /// 
+        /// <returns>The response from the GetDocumentationPart service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        GetDocumentationPartResponse GetDocumentationPart(GetDocumentationPartRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDocumentationPart operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDocumentationPart operation on AmazonAPIGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDocumentationPart
+        ///         operation.</returns>
+        IAsyncResult BeginGetDocumentationPart(GetDocumentationPartRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetDocumentationPart operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDocumentationPart.</param>
+        /// 
+        /// <returns>Returns a  GetDocumentationPartResult from APIGateway.</returns>
+        GetDocumentationPartResponse EndGetDocumentationPart(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetDocumentationParts
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDocumentationParts service method.</param>
+        /// 
+        /// <returns>The response from the GetDocumentationParts service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        GetDocumentationPartsResponse GetDocumentationParts(GetDocumentationPartsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDocumentationParts operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDocumentationParts operation on AmazonAPIGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDocumentationParts
+        ///         operation.</returns>
+        IAsyncResult BeginGetDocumentationParts(GetDocumentationPartsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetDocumentationParts operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDocumentationParts.</param>
+        /// 
+        /// <returns>Returns a  GetDocumentationPartsResult from APIGateway.</returns>
+        GetDocumentationPartsResponse EndGetDocumentationParts(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetDocumentationVersion
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDocumentationVersion service method.</param>
+        /// 
+        /// <returns>The response from the GetDocumentationVersion service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        GetDocumentationVersionResponse GetDocumentationVersion(GetDocumentationVersionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDocumentationVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDocumentationVersion operation on AmazonAPIGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDocumentationVersion
+        ///         operation.</returns>
+        IAsyncResult BeginGetDocumentationVersion(GetDocumentationVersionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetDocumentationVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDocumentationVersion.</param>
+        /// 
+        /// <returns>Returns a  GetDocumentationVersionResult from APIGateway.</returns>
+        GetDocumentationVersionResponse EndGetDocumentationVersion(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetDocumentationVersions
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDocumentationVersions service method.</param>
+        /// 
+        /// <returns>The response from the GetDocumentationVersions service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        GetDocumentationVersionsResponse GetDocumentationVersions(GetDocumentationVersionsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDocumentationVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDocumentationVersions operation on AmazonAPIGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDocumentationVersions
+        ///         operation.</returns>
+        IAsyncResult BeginGetDocumentationVersions(GetDocumentationVersionsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetDocumentationVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDocumentationVersions.</param>
+        /// 
+        /// <returns>Returns a  GetDocumentationVersionsResult from APIGateway.</returns>
+        GetDocumentationVersionsResponse EndGetDocumentationVersions(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2563,6 +3214,95 @@ namespace Amazon.APIGateway
 
         #endregion
         
+        #region  GetSdkType
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSdkType service method.</param>
+        /// 
+        /// <returns>The response from the GetSdkType service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        GetSdkTypeResponse GetSdkType(GetSdkTypeRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSdkType operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetSdkType operation on AmazonAPIGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSdkType
+        ///         operation.</returns>
+        IAsyncResult BeginGetSdkType(GetSdkTypeRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetSdkType operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSdkType.</param>
+        /// 
+        /// <returns>Returns a  GetSdkTypeResult from APIGateway.</returns>
+        GetSdkTypeResponse EndGetSdkType(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetSdkTypes
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSdkTypes service method.</param>
+        /// 
+        /// <returns>The response from the GetSdkTypes service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        GetSdkTypesResponse GetSdkTypes(GetSdkTypesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSdkTypes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetSdkTypes operation on AmazonAPIGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSdkTypes
+        ///         operation.</returns>
+        IAsyncResult BeginGetSdkTypes(GetSdkTypesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetSdkTypes operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSdkTypes.</param>
+        /// 
+        /// <returns>Returns a  GetSdkTypesResult from APIGateway.</returns>
+        GetSdkTypesResponse EndGetSdkTypes(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetStage
 
 
@@ -2655,6 +3395,362 @@ namespace Amazon.APIGateway
 
         #endregion
         
+        #region  GetUsage
+
+
+        /// <summary>
+        /// Gets the usage data of a usage plan in a specified time interval.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetUsage service method.</param>
+        /// 
+        /// <returns>The response from the GetUsage service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        GetUsageResponse GetUsage(GetUsageRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetUsage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetUsage operation on AmazonAPIGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetUsage
+        ///         operation.</returns>
+        IAsyncResult BeginGetUsage(GetUsageRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetUsage operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetUsage.</param>
+        /// 
+        /// <returns>Returns a  GetUsageResult from APIGateway.</returns>
+        GetUsageResponse EndGetUsage(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetUsagePlan
+
+
+        /// <summary>
+        /// Gets a usage plan of a given plan identifier.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetUsagePlan service method.</param>
+        /// 
+        /// <returns>The response from the GetUsagePlan service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        GetUsagePlanResponse GetUsagePlan(GetUsagePlanRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetUsagePlan operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetUsagePlan operation on AmazonAPIGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetUsagePlan
+        ///         operation.</returns>
+        IAsyncResult BeginGetUsagePlan(GetUsagePlanRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetUsagePlan operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetUsagePlan.</param>
+        /// 
+        /// <returns>Returns a  GetUsagePlanResult from APIGateway.</returns>
+        GetUsagePlanResponse EndGetUsagePlan(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetUsagePlanKey
+
+
+        /// <summary>
+        /// Gets a usage plan key of a given key identifier.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetUsagePlanKey service method.</param>
+        /// 
+        /// <returns>The response from the GetUsagePlanKey service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        GetUsagePlanKeyResponse GetUsagePlanKey(GetUsagePlanKeyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetUsagePlanKey operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetUsagePlanKey operation on AmazonAPIGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetUsagePlanKey
+        ///         operation.</returns>
+        IAsyncResult BeginGetUsagePlanKey(GetUsagePlanKeyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetUsagePlanKey operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetUsagePlanKey.</param>
+        /// 
+        /// <returns>Returns a  GetUsagePlanKeyResult from APIGateway.</returns>
+        GetUsagePlanKeyResponse EndGetUsagePlanKey(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetUsagePlanKeys
+
+
+        /// <summary>
+        /// Gets all the usage plan keys representing the API keys added to a specified usage
+        /// plan.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetUsagePlanKeys service method.</param>
+        /// 
+        /// <returns>The response from the GetUsagePlanKeys service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        GetUsagePlanKeysResponse GetUsagePlanKeys(GetUsagePlanKeysRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetUsagePlanKeys operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetUsagePlanKeys operation on AmazonAPIGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetUsagePlanKeys
+        ///         operation.</returns>
+        IAsyncResult BeginGetUsagePlanKeys(GetUsagePlanKeysRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetUsagePlanKeys operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetUsagePlanKeys.</param>
+        /// 
+        /// <returns>Returns a  GetUsagePlanKeysResult from APIGateway.</returns>
+        GetUsagePlanKeysResponse EndGetUsagePlanKeys(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetUsagePlans
+
+
+        /// <summary>
+        /// Gets all the usage plans of the caller's account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetUsagePlans service method.</param>
+        /// 
+        /// <returns>The response from the GetUsagePlans service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        GetUsagePlansResponse GetUsagePlans(GetUsagePlansRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetUsagePlans operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetUsagePlans operation on AmazonAPIGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetUsagePlans
+        ///         operation.</returns>
+        IAsyncResult BeginGetUsagePlans(GetUsagePlansRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetUsagePlans operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetUsagePlans.</param>
+        /// 
+        /// <returns>Returns a  GetUsagePlansResult from APIGateway.</returns>
+        GetUsagePlansResponse EndGetUsagePlans(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ImportApiKeys
+
+
+        /// <summary>
+        /// Import API keys from an external source, such as a CSV-formatted file.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ImportApiKeys service method.</param>
+        /// 
+        /// <returns>The response from the ImportApiKeys service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        ImportApiKeysResponse ImportApiKeys(ImportApiKeysRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ImportApiKeys operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ImportApiKeys operation on AmazonAPIGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndImportApiKeys
+        ///         operation.</returns>
+        IAsyncResult BeginImportApiKeys(ImportApiKeysRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ImportApiKeys operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginImportApiKeys.</param>
+        /// 
+        /// <returns>Returns a  ImportApiKeysResult from APIGateway.</returns>
+        ImportApiKeysResponse EndImportApiKeys(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ImportDocumentationParts
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ImportDocumentationParts service method.</param>
+        /// 
+        /// <returns>The response from the ImportDocumentationParts service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        ImportDocumentationPartsResponse ImportDocumentationParts(ImportDocumentationPartsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ImportDocumentationParts operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ImportDocumentationParts operation on AmazonAPIGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndImportDocumentationParts
+        ///         operation.</returns>
+        IAsyncResult BeginImportDocumentationParts(ImportDocumentationPartsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ImportDocumentationParts operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginImportDocumentationParts.</param>
+        /// 
+        /// <returns>Returns a  ImportDocumentationPartsResult from APIGateway.</returns>
+        ImportDocumentationPartsResponse EndImportDocumentationParts(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ImportRestApi
 
 
@@ -2666,6 +3762,9 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the ImportRestApi service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
         /// 
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
@@ -2936,6 +4035,9 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
         /// 
         /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
         /// 
         /// </exception>
@@ -2982,6 +4084,9 @@ namespace Amazon.APIGateway
         /// <summary>
         /// Simulate the execution of an <a>Authorizer</a> in your <a>RestApi</a> with headers,
         /// parameters, and an incoming request body.
+        /// 
+        ///  <div class="seeAlso"> <a href="http://docs.aws.amazon.com/apigateway/latest/developerguide/use-custom-authorizer.html">Enable
+        /// custom authorizers</a> </div>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TestInvokeAuthorizer service method.</param>
         /// 
@@ -3137,6 +4242,9 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
         /// 
         /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// 
         /// </exception>
@@ -3179,6 +4287,9 @@ namespace Amazon.APIGateway
 
         /// <summary>
         /// Updates an existing <a>Authorizer</a> resource.
+        /// 
+        ///  <div class="seeAlso"><a href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/update-authorizer.html">AWS
+        /// CLI</a></div>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAuthorizer service method.</param>
         /// 
@@ -3373,6 +4484,113 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>Returns a  UpdateDeploymentResult from APIGateway.</returns>
         UpdateDeploymentResponse EndUpdateDeployment(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateDocumentationPart
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDocumentationPart service method.</param>
+        /// 
+        /// <returns>The response from the UpdateDocumentationPart service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        UpdateDocumentationPartResponse UpdateDocumentationPart(UpdateDocumentationPartRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateDocumentationPart operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDocumentationPart operation on AmazonAPIGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateDocumentationPart
+        ///         operation.</returns>
+        IAsyncResult BeginUpdateDocumentationPart(UpdateDocumentationPartRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateDocumentationPart operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateDocumentationPart.</param>
+        /// 
+        /// <returns>Returns a  UpdateDocumentationPartResult from APIGateway.</returns>
+        UpdateDocumentationPartResponse EndUpdateDocumentationPart(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateDocumentationVersion
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDocumentationVersion service method.</param>
+        /// 
+        /// <returns>The response from the UpdateDocumentationVersion service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        UpdateDocumentationVersionResponse UpdateDocumentationVersion(UpdateDocumentationVersionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateDocumentationVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDocumentationVersion operation on AmazonAPIGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateDocumentationVersion
+        ///         operation.</returns>
+        IAsyncResult BeginUpdateDocumentationVersion(UpdateDocumentationVersionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateDocumentationVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateDocumentationVersion.</param>
+        /// 
+        /// <returns>Returns a  UpdateDocumentationVersionResult from APIGateway.</returns>
+        UpdateDocumentationVersionResponse EndUpdateDocumentationVersion(IAsyncResult asyncResult);
 
         #endregion
         
@@ -3844,6 +5062,108 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>Returns a  UpdateStageResult from APIGateway.</returns>
         UpdateStageResponse EndUpdateStage(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateUsage
+
+
+        /// <summary>
+        /// Grants a temporary extension to the reamining quota of a usage plan associated with
+        /// a specified API key.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateUsage service method.</param>
+        /// 
+        /// <returns>The response from the UpdateUsage service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        UpdateUsageResponse UpdateUsage(UpdateUsageRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateUsage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateUsage operation on AmazonAPIGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateUsage
+        ///         operation.</returns>
+        IAsyncResult BeginUpdateUsage(UpdateUsageRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateUsage operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateUsage.</param>
+        /// 
+        /// <returns>Returns a  UpdateUsageResult from APIGateway.</returns>
+        UpdateUsageResponse EndUpdateUsage(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateUsagePlan
+
+
+        /// <summary>
+        /// Updates a usage plan of a given plan Id.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateUsagePlan service method.</param>
+        /// 
+        /// <returns>The response from the UpdateUsagePlan service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        UpdateUsagePlanResponse UpdateUsagePlan(UpdateUsagePlanRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateUsagePlan operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateUsagePlan operation on AmazonAPIGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateUsagePlan
+        ///         operation.</returns>
+        IAsyncResult BeginUpdateUsagePlan(UpdateUsagePlanRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateUsagePlan operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateUsagePlan.</param>
+        /// 
+        /// <returns>Returns a  UpdateUsagePlanResult from APIGateway.</returns>
+        UpdateUsagePlanResponse EndUpdateUsagePlan(IAsyncResult asyncResult);
 
         #endregion
         

@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
  *  Copyright 2008-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  *  this file except in compliance with the License. A copy of the License is located at
@@ -28,6 +28,47 @@ using Amazon.Util;
 
 namespace Amazon.S3
 {
+    /// <summary>
+    /// The file format used when exporting data to Amazon S3.
+    /// </summary>
+    public sealed class AnalyticsS3ExportFileFormat : ConstantClass
+    {
+        /// <summary>
+        /// CSV file format.
+        /// </summary>
+        public static readonly AnalyticsS3ExportFileFormat CSV = new AnalyticsS3ExportFileFormat("CSV");
+
+        /// <summary>
+        /// Construct instance of AnalyticsS3ExportFileFormat. 
+        /// </summary>
+        /// <param name="value"></param>
+        public AnalyticsS3ExportFileFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static AnalyticsS3ExportFileFormat FindValue(string value)
+        {
+            return FindValue<AnalyticsS3ExportFileFormat>(value);
+        }
+
+        /// <summary>
+        /// Converts the string to an AnalyticsS3ExportFileFormat.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static implicit operator AnalyticsS3ExportFileFormat(string value)
+        {
+            return FindValue<AnalyticsS3ExportFileFormat>(value);
+        }
+
+    }
+
     /// <summary>
     /// Represents the accelerate status for a bucket.
     /// </summary>
@@ -181,9 +222,21 @@ namespace Amazon.S3
         /// </summary>
         public static readonly S3Region US = new S3Region("");
         /// <summary>
-        /// Specifies that the S3 Bucket should use EU locality.
+        /// Specifies that the S3 Bucket should use US-EAST-2 locality.
+        /// </summary>
+        public static readonly S3Region USE2 = new S3Region("us-east-2");
+        /// <summary>
+        /// Specifies that the S3 Bucket should use EU locality which defaults to EU-WEST-1
         /// </summary>
         public static readonly S3Region EU = new S3Region("EU");
+        /// <summary>
+        /// Specifies that the S3 Bucket should use the EU-WEST-1 locality.
+        /// </summary>
+        public static readonly S3Region EUW1 = new S3Region("eu-west-1");
+        /// <summary>
+        /// Specifies that the S3 Bucket should use the EU-WEST-2 locality.
+        /// </summary>
+        public static readonly S3Region EUW2 = new S3Region("eu-west-2");
         /// <summary>
         /// Specifies that the S3 Bucket should use the EU-CENTRAL-1 locality.
         /// </summary>
@@ -217,6 +270,10 @@ namespace Amazon.S3
         /// </summary>
         public static readonly S3Region APN2 = new S3Region("ap-northeast-2");
         /// <summary>
+        /// Specifies that the S3 Bucket should use the AP-SOUTH-1 locality.
+        /// </summary>
+        public static readonly S3Region APS3 = new S3Region("ap-south-1");
+        /// <summary>
         /// Specifies that the S3 Bucket should use the SA-EAST-1 locality.
         /// </summary>
         public static readonly S3Region SAE1 = new S3Region("sa-east-1");
@@ -224,6 +281,10 @@ namespace Amazon.S3
         /// Specifies that the S3 Bucket should use CN-NORTH-1 locality.
         /// </summary>
         public static readonly S3Region CN1 = new S3Region("cn-north-1");
+        /// <summary>
+        /// Specifies that the S3 Bucket should use CA-CENTRAL-1 locality.
+        /// </summary>
+        public static readonly S3Region CAN1 = new S3Region("ca-central-1");
 
         /// <summary>
         /// Specifies that the S3 Bucket should use US-WEST-1 locality.
@@ -872,6 +933,201 @@ namespace Amazon.S3
     }
 
     /// <summary>
+    /// A list of all Inventory Formats.
+    /// </summary>
+    public sealed class InventoryFormat : ConstantClass
+    {
+        /// <summary>
+        ///  CSV inventory format
+        /// </summary>
+        public static readonly InventoryFormat CSV = new InventoryFormat("CSV");
+
+        /// <summary>
+        /// Construct instance of InventoryFormat.
+        /// </summary>
+        /// <param name="value"></param>
+        public InventoryFormat(string value) 
+            : base(value) 
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The string representation of the InventoryFormat.</param>
+        /// <returns>The InventoryFormat object for that string.</returns>
+        public static InventoryFormat FindValue(string value)
+        {
+            return FindValue<InventoryFormat>(value);
+        }
+
+        /// <summary>
+        /// Convert string to InventoryFormat.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static implicit operator InventoryFormat(string value)
+        {
+            return FindValue<InventoryFormat>(value);
+        }
+
+    }
+
+    /// <summary>
+    /// A list of inventory included object versions.
+    /// </summary>
+    public sealed class InventoryIncludedObjectVersions : ConstantClass
+    {
+        /// <summary>
+        ///  All Inventory Included Object Versions
+        /// </summary>
+        public static readonly InventoryIncludedObjectVersions All = new InventoryIncludedObjectVersions("All");
+
+        /// <summary>
+        ///  Current Inventory Included Object Versions
+        /// </summary>
+        public static readonly InventoryIncludedObjectVersions Current = new InventoryIncludedObjectVersions("Current");
+
+        /// <summary>
+        /// Construct instance of InventoryIncludedObjectVersions.
+        /// </summary>
+        /// <param name="value"></param>
+        public InventoryIncludedObjectVersions(string value) 
+            : base(value) 
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The string representation of the InventoryIncludedObjectVersions.</param>
+        /// <returns>The InventoryIncludedObjectVersions object for that string.</returns>
+        public static InventoryIncludedObjectVersions FindValue(string value)
+        {
+            return FindValue<InventoryIncludedObjectVersions>(value);
+        }
+
+        /// <summary>
+        /// Convert string to InventoryIncludedObjectVersions.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static implicit operator InventoryIncludedObjectVersions(string value)
+        {
+            return FindValue<InventoryIncludedObjectVersions>(value);
+        }
+    }
+
+    /// <summary>
+    /// A list of inventory frequencies.
+    /// </summary>
+    public sealed class InventoryFrequency : ConstantClass
+    {
+        /// <summary>
+        ///  Daily Inventory Frequency
+        /// </summary>
+        public static readonly InventoryFrequency Daily = new InventoryFrequency("Daily");
+
+        /// <summary>
+        ///  Weekly Inventory Frequency
+        /// </summary>
+        public static readonly InventoryFrequency Weekly = new InventoryFrequency("Weekly");
+
+        /// <summary>
+        /// Construct instance of InventoryFrequency.
+        /// </summary>
+        /// <param name="value"></param>
+        public InventoryFrequency(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The string representation of the InventoryFrequency.</param>
+        /// <returns>The InventoryFrequency object for that string.</returns>
+        public static InventoryFrequency FindValue(string value)
+        {
+            return FindValue<InventoryFrequency>(value);
+        }
+
+        /// <summary>
+        /// Convert string to InventoryFrequency.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static implicit operator InventoryFrequency(string value)
+        {
+            return FindValue<InventoryFrequency>(value);
+        }
+    }
+
+    /// <summary>
+    /// A list of inventory optional fields.
+    /// </summary>
+    public sealed class InventoryOptionalField : ConstantClass
+    {
+        /// <summary>
+        ///  InventoryOptionalField for Size
+        /// </summary>
+        public static readonly InventoryOptionalField Size = new InventoryOptionalField("Size");
+
+        /// <summary>
+        ///  InventoryOptionalField for LastModifiedDate
+        /// </summary>
+        public static readonly InventoryOptionalField LastModifiedDate = new InventoryOptionalField("LastModifiedDate");
+
+        /// <summary>
+        ///  InventoryOptionalField for StorageClass
+        /// </summary>
+        public static readonly InventoryOptionalField StorageClass = new InventoryOptionalField("StorageClass");
+
+        /// <summary>
+        ///  InventoryOptionalField for ETag
+        /// </summary>
+        public static readonly InventoryOptionalField ETag = new InventoryOptionalField("ETag");
+
+        /// <summary>
+        ///  InventoryOptionalField for IsMultipartUploaded
+        /// </summary>
+        public static readonly InventoryOptionalField IsMultipartUploaded = new InventoryOptionalField("IsMultipartUploaded");
+
+        /// <summary>
+        ///  InventoryOptionalField for ReplicationStatus
+        /// </summary>
+        public static readonly InventoryOptionalField ReplicationStatus = new InventoryOptionalField("ReplicationStatus");
+
+        /// <summary>
+        /// Construct instance of InventoryOptionalField.
+        /// </summary>
+        /// <param name="value"></param>
+        public InventoryOptionalField(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The string representation of the InventoryOptionalField.</param>
+        /// <returns>The InventoryIncludedObjectVersions object for that string.</returns>
+        public static InventoryOptionalField FindValue(string value)
+        {
+            return FindValue<InventoryOptionalField>(value);
+        }
+
+        /// <summary>
+        /// Convert string to InventoryOptionalField.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static implicit operator InventoryOptionalField(string value)
+        {
+            return FindValue<InventoryOptionalField>(value);
+        }
+    }
+    /// <summary>
     /// The status of the replication job associated with this source object.
     /// </summary>
     public sealed class ReplicationStatus : ConstantClass
@@ -970,9 +1226,140 @@ namespace Amazon.S3
         {
             return FindValue<ReplicationRuleStatus>(value);
         }
+    }
+
+    /// <summary>
+    /// Specifies whether the object tag-set are copied from the source object or replaced with tag-set provided in the request.
+    /// </summary>
+    internal sealed class TaggingDirective : ConstantClass
+    {
+        /// <summary>
+        /// The object tag-set is copied from the source object.
+        /// </summary>
+        public static readonly TaggingDirective COPY = new TaggingDirective("COPY");
+
+        /// <summary>
+        /// The object tag-set is replaced with tag-set provided in the request.
+        /// </summary>
+        public static readonly TaggingDirective REPLACE = new TaggingDirective("REPLACE");
+
+        /// <summary>
+        /// Construct instance of TaggingDirective
+        /// </summary>
+        public TaggingDirective(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The string representation of the TaggingDirective.</param>
+        /// <returns>The TaggingDirective object for that string.</returns>
+        public static TaggingDirective FindValue(string value)
+        {
+            return FindValue<TaggingDirective>(value);
+        }
+
+        /// <summary>
+        /// Convert string to TaggingDirective.
+        /// </summary>
+        public static implicit operator TaggingDirective(string value)
+        {
+            return FindValue<TaggingDirective>(value);
+        }
+    }
+
+    /// <summary>
+    /// All enumerations type for retrieval tier for Glacier restore.
+    /// </summary>
+    public sealed class GlacierJobTier : ConstantClass
+    {
+        /// <summary>
+        /// Standard Tier for Glacier restore.
+        /// </summary>
+        public static readonly GlacierJobTier Standard = new GlacierJobTier("Standard");
+
+        /// <summary>
+        /// Bulk Tier for Glacier restore.
+        /// </summary>
+        public static readonly GlacierJobTier Bulk = new GlacierJobTier("Bulk");
+
+        /// <summary>
+        /// Expedited Tier for Glacier restore.
+        /// </summary>
+        public static readonly GlacierJobTier Expedited = new GlacierJobTier("Expedited");
+
+        /// <summary>
+        /// Construct instance of RestoreObjectRequestGlacierJobTier
+        /// </summary>
+        /// <param name="value"></param>
+        private GlacierJobTier(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The string representation of the RestoreObjectRequestGlacierJobTier.</param>
+        /// <returns>The RestoreObjectRequestGlacierJobTier object for that string.</returns>
+        public static GlacierJobTier FindValue(string value)
+        {
+            return FindValue<GlacierJobTier>(value);
+        }
+
+        /// <summary>
+        /// Convert string to RestoreObjectRequestGlacierJobTier.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static implicit operator GlacierJobTier(string value)
+        {
+            return FindValue<GlacierJobTier>(value);
+        }
 
     }
 
+    /// <summary>
+    /// The version of the output schema to use when exporting data.
+    /// </summary>
+    public sealed class StorageClassAnalysisSchemaVersion : ConstantClass
+    {
+        /// <summary>
+        /// The schema output version V_1.
+        /// </summary>
+        public static readonly StorageClassAnalysisSchemaVersion V_1 = new StorageClassAnalysisSchemaVersion("V_1");
+
+        /// <summary>
+        /// Construct instance of StorageClassAnalysisSchemaVersion
+        /// </summary>
+        /// <param name="value"></param>
+        public StorageClassAnalysisSchemaVersion(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The string representation of the StorageClassAnalysisSchemaVersion.</param>
+        /// <returns>The StorageClassAnalysisSchemaVersion object for that string.</returns>
+        public static StorageClassAnalysisSchemaVersion FindValue(string value)
+        {
+            return FindValue<StorageClassAnalysisSchemaVersion>(value);
+        }
+
+        /// <summary>
+        /// Convert string to StorageClassAnalysisSchemaVersion.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static implicit operator StorageClassAnalysisSchemaVersion(string value)
+        {
+            return FindValue<StorageClassAnalysisSchemaVersion>(value);
+        }
+    }
 
     internal enum S3QueryParameter
     {
@@ -998,5 +1385,69 @@ namespace Amazon.S3
         MaxUploads,
         KeyMarker,
         UploadIdMarker
+    }
+
+    /// <summary>
+    /// Acknowledges that requester pays for the operation.
+    /// </summary>
+    public sealed class RequestPayer : ConstantClass
+    {
+        /// <summary>
+        /// Requester pays for the operation.
+        /// </summary>
+        public static readonly RequestPayer Requester = new RequestPayer("requester");
+
+        private RequestPayer(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the RequestPayer instance for the string value.
+        /// </summary>
+        public static RequestPayer FindValue(string value)
+        {
+            return FindValue<RequestPayer>(value);
+        }
+
+        /// <summary>
+        /// Converts string to RequestPayer instance
+        /// </summary>
+        public static implicit operator RequestPayer(string value)
+        {
+            return FindValue<RequestPayer>(value);
+        }
+    }
+
+    /// <summary>
+    /// The response from S3 that it confirms that requester pays.
+    /// </summary>
+    public sealed class RequestCharged : ConstantClass
+    {
+        /// <summary>
+        /// S3 acknowledges that the requester pays.
+        /// </summary>
+        public static readonly RequestCharged Requester = new RequestCharged("requester");
+
+        private RequestCharged(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the RequestCharged instance for the string value
+        /// </summary>
+        public static RequestCharged FindValue(string value)
+        {
+            return FindValue<RequestCharged>(value);
+        }
+
+        /// <summary>
+        ///  converts the string to RequestCharged instance
+        /// </summary>
+        public static implicit operator RequestCharged(string value)
+        {
+            return FindValue<RequestCharged>(value);
+        }
     }
 }

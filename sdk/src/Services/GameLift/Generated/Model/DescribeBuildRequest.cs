@@ -39,7 +39,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property BuildId. 
         /// <para>
-        /// Unique identifier for the build you want to retrieve properties for. 
+        /// Unique identifier of the build that you want to retrieve properties for.
         /// </para>
         /// </summary>
         public string BuildId

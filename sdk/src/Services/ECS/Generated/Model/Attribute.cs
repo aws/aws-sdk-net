@@ -28,17 +28,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// The attributes applicable to a container instance when it is registered.
+    /// Attributes are name-value pairs associated with various Amazon ECS objects. Attributes
+    /// allow you to extend the Amazon ECS data model by adding custom metadata to your resources.
     /// </summary>
     public partial class Attribute
     {
         private string _name;
+        private string _targetId;
+        private TargetType _targetType;
         private string _value;
 
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the container instance attribute.
+        /// The name of the attribute. Up to 128 letters (uppercase and lowercase), numbers, hyphens,
+        /// underscores, and periods are allowed.
         /// </para>
         /// </summary>
         public string Name
@@ -54,10 +58,50 @@ namespace Amazon.ECS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property TargetId. 
+        /// <para>
+        /// The ID of the target. You can specify the short form ID for a resource or the full
+        /// Amazon Resource Name (ARN).
+        /// </para>
+        /// </summary>
+        public string TargetId
+        {
+            get { return this._targetId; }
+            set { this._targetId = value; }
+        }
+
+        // Check to see if TargetId property is set
+        internal bool IsSetTargetId()
+        {
+            return this._targetId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetType. 
+        /// <para>
+        /// The type of the target with which to attach the attribute. This parameter is required
+        /// if you use the short form ID for a resource instead of the full Amazon Resource Name
+        /// (ARN).
+        /// </para>
+        /// </summary>
+        public TargetType TargetType
+        {
+            get { return this._targetType; }
+            set { this._targetType = value; }
+        }
+
+        // Check to see if TargetType property is set
+        internal bool IsSetTargetType()
+        {
+            return this._targetType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The value of the container instance attribute (at this time, the value here is <code>Null</code>,
-        /// but this could change in future revisions for expandability).
+        /// The value of the attribute. Up to 128 letters (uppercase and lowercase), numbers,
+        /// hyphens, underscores, periods, at signs (@), forward slashes, colons, and spaces are
+        /// allowed.
         /// </para>
         /// </summary>
         public string Value

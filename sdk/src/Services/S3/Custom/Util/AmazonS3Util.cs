@@ -20,21 +20,19 @@
  *
  */
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.S3.Model;
+using Amazon.S3.Model.Internal.MarshallTransformations;
+using Amazon.Util;
 using System;
 using System.Collections.Generic;
-using System.Collections.Specialized;
 using System.Globalization;
 using System.IO;
 using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
-
-using Amazon.S3.Model;
-using Amazon.Util;
-using System.Threading;
-using Amazon.Runtime.Internal;
-using Amazon.S3.Model.Internal.MarshallTransformations;
-using Amazon.Runtime;
+using System.Xml;
 
 namespace Amazon.S3.Util
 {
@@ -446,6 +444,61 @@ namespace Amazon.S3.Util
                 parameterMap.Add(parameterName, parameterValue);
         }
 
+        internal static string TagSetToQueryString(List<Tag> tags)
+        {
+            StringBuilder builder = new StringBuilder();
+            foreach(var tag in tags)
+            {
+                AddQueryStringParameter(builder, tag.Key, tag.Value);
+            }
+            return builder.ToString();
+        }
+
+        internal static void SerializeTagToXml(XmlWriter xmlWriter, Tag tag)
+        {
+            xmlWriter.WriteStartElement("Tag", "");
+
+            if (tag.IsSetKey())
+            {
+                xmlWriter.WriteElementString("Key", "", S3Transforms.ToXmlStringValue(tag.Key));
+            }
+            if (tag.IsSetValue())
+            {
+                xmlWriter.WriteElementString("Value", "", S3Transforms.ToXmlStringValue(tag.Value));
+            }
+
+            xmlWriter.WriteEndElement();
+        }
+
+        internal static void SerializeTagSetToXml(XmlWriter xmlWriter, List<Tag> tagset)
+        {
+            xmlWriter.WriteStartElement("TagSet", "");
+
+            if (tagset != null && tagset.Count > 0)
+            {
+                foreach (var tag in tagset)
+                {
+                    SerializeTagToXml(xmlWriter, tag);
+                }
+            }
+            xmlWriter.WriteEndElement();
+        }
+
+        internal static string SerializeTaggingToXml(Tagging tagging)
+        {
+            var stringWriter = new StringWriter(CultureInfo.InvariantCulture);
+            using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = Encoding.UTF8, OmitXmlDeclaration = true }))
+            {
+                xmlWriter.WriteStartElement("Tagging", "");
+
+                SerializeTagSetToXml(xmlWriter, tagging.TagSet);
+
+                xmlWriter.WriteEndElement();
+            }
+
+            return stringWriter.ToString();
+        }
+
         internal static void ParseAmzRestoreHeader(string header, out bool restoreInProgress, out DateTime? restoreExpiration)
         {
             const string ONGOING_REQUEST = "ongoing-request";
@@ -480,5 +533,81 @@ namespace Amazon.S3.Util
                     restoreExpiration = parseDate;
             }
         }
+
+#if AWS_ASYNC_API
+        /// <summary>
+        /// Determines whether an S3 bucket exists or not.
+        /// This is done by:
+        /// 1. Creating a PreSigned Url for the bucket. To work with Signature V4 only regions, as
+        /// well as Signature V4-optional regions, we keep the expiry to within the maximum for V4 
+        /// (which is one week).
+        /// 2. Making a HEAD request to the Url
+        /// </summary>
+        /// <param name="bucketName">The name of the bucket to check.</param>
+        /// <param name="s3Client">The Amazon S3 Client to use for S3 specific operations.</param>
+        /// <returns></returns>
+        public static async System.Threading.Tasks.Task<bool> DoesS3BucketExistAsync(IAmazonS3 s3Client, string bucketName)
+        {
+            if (s3Client == null)
+            {
+                throw new ArgumentNullException("s3Client", "The s3Client cannot be null!");
+            }
+
+            if (String.IsNullOrEmpty(bucketName))
+            {
+                throw new ArgumentNullException("bucketName", "The bucketName cannot be null or the empty string!");
+            }
+
+            var request = new GetPreSignedUrlRequest
+            {
+                BucketName = bucketName,
+                Expires = DateTime.Now.AddDays(1),
+                Verb = HttpVerb.HEAD,
+                Protocol = Protocol.HTTP
+            };
+
+            var url = s3Client.GetPreSignedURL(request);
+            var uri = new Uri(url);
+
+            var httpRequest = WebRequest.Create(uri) as HttpWebRequest;
+            httpRequest.Method = "HEAD";
+            var concreteClient = s3Client as AmazonS3Client;
+            if (concreteClient != null)
+            {
+
+                concreteClient.ConfigureProxy(httpRequest);
+            }
+
+            try
+            {
+#if PCL
+                var result = httpRequest.BeginGetResponse(null, null);
+                using (var httpResponse = httpRequest.EndGetResponse(result) as HttpWebResponse)
+#else 
+                using (var httpResponse = await httpRequest.GetResponseAsync().ConfigureAwait(false) as HttpWebResponse)
+#endif          
+                {
+                    // If all went well, the bucket was found!
+                    return true;
+                }
+            }
+            catch (WebException we)
+            {
+                using (var errorResponse = we.Response as HttpWebResponse)
+                {
+                    if (errorResponse != null)
+                    {
+                        var code = errorResponse.StatusCode;
+                        return code != HttpStatusCode.NotFound &&
+                            code != HttpStatusCode.BadRequest;
+                    }
+
+                    // The Error Response is null which is indicative of either
+                    // a bad request or some other problem
+                    return false;
+                }
+            }
+        }
+#endif
     }
 }

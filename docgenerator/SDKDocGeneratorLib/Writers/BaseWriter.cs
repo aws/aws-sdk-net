@@ -13,7 +13,6 @@ namespace SDKDocGenerator.Writers
     public abstract class BaseWriter
     {
         protected FrameworkVersion _version;
-        protected IDictionary<string, XElement> _currentNDoc;
         protected bool _unityVersionOfAsyncExists = false;
         protected bool _referAsyncAlternativeUnity = false;
         protected bool _referAsyncAlternativePCL = false;
@@ -55,12 +54,18 @@ namespace SDKDocGenerator.Writers
                     + "Click <a href=\"https://{0}/en_us/aws/latest/userguide/services.html\">Getting Started with Amazon AWS</a> to see specific differences applicable to the China (Beijing) Region.";
 
         public GenerationManifest Artifacts { get; private set; }
+        public AbstractTypeProvider TypeProvider { get; private set; }
 
-        protected BaseWriter(GenerationManifest artifacts, FrameworkVersion version)
+        protected BaseWriter(GenerationManifest artifacts, AbstractTypeProvider typeProvider, FrameworkVersion version)
         {
             Artifacts = artifacts;
+            TypeProvider = typeProvider;
             _version = version;
-            _currentNDoc = this.Artifacts.NDocForPlatform(); // yields the default platform ndoc
+        }
+
+        protected BaseWriter(GenerationManifest artifacts, FrameworkVersion version)
+            : this(artifacts, artifacts.AssemblyWrapper, version)
+        {
         }
 
         public string BJSRegionDisclaimer
@@ -204,7 +209,7 @@ namespace SDKDocGenerator.Writers
                             writer.WriteLine("<input type=\"text\" name=\"searchQuery\" id=\"sq\">");
                             writer.WriteLine("<input type=\"image\" alt=\"Go\" src=\"../resources/search-button.png\" id=\"sb\">");
                         writer.WriteLine("</div>");
-                        writer.WriteLine("<input id=\"this_doc_product\" type=\"hidden\" value=\"AWS SDK Version 2 for .NET\" name=\"this_doc_product\">");
+                        writer.WriteLine("<input id=\"this_doc_product\" type=\"hidden\" value=\"AWS SDK Version 3 for .NET\" name=\"this_doc_product\">");
                         writer.WriteLine("<input id=\"this_doc_guide\" type=\"hidden\" value=\"API Reference\" name=\"this_doc_guide\">");
                         writer.WriteLine("<input type=\"hidden\" value=\"en_us\" name=\"doc_locale\">");
                     writer.WriteLine("</form>");
@@ -248,7 +253,7 @@ namespace SDKDocGenerator.Writers
         private string GenerateFeedbackHTML()
         {
             var filename = FilenameGenerator.Escape(Path.GetFileNameWithoutExtension(GenerateFilename()));
-            const string baseUrl = "https://aws-portal.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04";
+            const string baseUrl = "https://docs.aws.amazon.com/forms/aws-doc-feedback";
             var queryString = string.Format("?service_name={0}&amp;file_name={1}",
                                             "NET-Ref-V3",  // service_name
                                             filename   // guide_name
@@ -431,7 +436,7 @@ namespace SDKDocGenerator.Writers
             var element = GetSummaryDocumentation();
             if (element != null)
             {
-                var htmlDocs = NDocUtilities.TransformDocumentationToHTML(element, "summary", Artifacts.AssemblyWrapper, this._version);
+                var htmlDocs = NDocUtilities.TransformDocumentationToHTML(element, "summary", TypeProvider, this._version);
                 writer.WriteLine(htmlDocs);
 
                 AddSummaryNotes(writer);
@@ -445,7 +450,7 @@ namespace SDKDocGenerator.Writers
             var element = GetSummaryDocumentation();
             if (element != null)
             {
-                var htmlDocs = NDocUtilities.TransformDocumentationToHTML(element, "remarks", Artifacts.AssemblyWrapper, this._version);
+                var htmlDocs = NDocUtilities.TransformDocumentationToHTML(element, "remarks", TypeProvider, this._version);
                 if (string.IsNullOrEmpty(htmlDocs))
                     return;
 
@@ -460,11 +465,26 @@ namespace SDKDocGenerator.Writers
             var element = GetSummaryDocumentation();
             if (element != null)
             {
-                var htmlDocs = NDocUtilities.TransformDocumentationToHTML(element, "example", Artifacts.AssemblyWrapper, this._version);
+                var htmlDocs = NDocUtilities.TransformDocumentationToHTML(element, "example", TypeProvider, this._version);
                 if (string.IsNullOrEmpty(htmlDocs))
                     return;
 
                 AddSectionHeader(writer, "Examples");
+                writer.WriteLine(htmlDocs);
+                AddSectionClosing(writer);
+            }
+        }
+
+        protected void AddSeeAlso(TextWriter writer)
+        {
+            var element = GetSummaryDocumentation();
+            if (element != null)
+            {
+                var htmlDocs = NDocUtilities.TransformDocumentationToHTML(element, "seealso", TypeProvider, this._version);
+                if (string.IsNullOrEmpty(htmlDocs))
+                    return;
+
+                AddSectionHeader(writer, "See Also");
                 writer.WriteLine(htmlDocs);
                 AddSectionClosing(writer);
             }
@@ -489,13 +509,19 @@ namespace SDKDocGenerator.Writers
 
             var docs35 = NDocUtilities.FindDocumentation(Artifacts.NDocForPlatform("net35"), wrapper);
             var docs45 = NDocUtilities.FindDocumentation(Artifacts.NDocForPlatform("net45"), wrapper);
+            var docsCore = NDocUtilities.FindDocumentation(Artifacts.NDocForPlatform("netstandard1.3"), wrapper);
             var docsPCL = NDocUtilities.FindDocumentation(Artifacts.NDocForPlatform("pcl"), wrapper);
             var docsUnity = NDocUtilities.FindDocumentation(Artifacts.NDocForPlatform("unity"), wrapper);
 
             // If there is no documentation then assume it is available for all platforms, excluding Unity.
-            var boolNoDocs = docs35 == null && docs45 == null && docsPCL == null && docsUnity == null;
+            var boolNoDocs = docs35 == null && docs45 == null && docsCore == null && docsPCL == null && docsUnity == null;
 
-            var sb = new StringBuilder();
+            // .NET core Framework
+            if (boolNoDocs || (wrapper != null && docsCore != null))
+                writer.WriteLine("<p><strong>.NET Core: </strong><br/>Supported in: 1.3<br/>");
+
+            // .NET Framework
+            StringBuilder sb = new StringBuilder();
             if (boolNoDocs || (wrapper != null && docs45 != null))
                 sb.Append("4.5");
             if (boolNoDocs || (wrapper != null && docs35 != null))
@@ -568,11 +594,11 @@ namespace SDKDocGenerator.Writers
 
         public void WriteCrossReferenceTagReplacement(TextWriter writer, string typeName)
         {
-            var replacement = CreateCrossReferenceTagReplacement(Artifacts.AssemblyWrapper, typeName, this._version);
+            var replacement = CreateCrossReferenceTagReplacement(TypeProvider, typeName, this._version);
             writer.Write(replacement);
         }
 
-        public static string CreateCrossReferenceTagReplacement(AssemblyWrapper assembly, string crefTypeName, FrameworkVersion version)
+        public static string CreateCrossReferenceTagReplacement(AbstractTypeProvider typeProvider, string crefTypeName, FrameworkVersion version)
         {
             const string amazonNamespaceRoot = "Amazon.";
 
@@ -585,7 +611,7 @@ namespace SDKDocGenerator.Writers
             else
                 typeName = crefTypeName;
 
-            var typeWrapper = assembly.GetType(typeName);
+            var typeWrapper = typeProvider.GetType(typeName);
 
             if (typeWrapper != null)
                 url = string.Format("./{0}", FilenameGenerator.GenerateFilename(typeWrapper));

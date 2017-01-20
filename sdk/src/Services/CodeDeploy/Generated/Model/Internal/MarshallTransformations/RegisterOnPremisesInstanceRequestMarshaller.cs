@@ -67,6 +67,12 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetIamSessionArn())
+                {
+                    context.Writer.WritePropertyName("iamSessionArn");
+                    context.Writer.Write(publicRequest.IamSessionArn);
+                }
+
                 if(publicRequest.IsSetIamUserArn())
                 {
                     context.Writer.WritePropertyName("iamUserArn");

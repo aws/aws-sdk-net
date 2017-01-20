@@ -33,7 +33,7 @@ namespace Amazon.CognitoIdentity.Model
     /// new identities next time they are seen. Removing the last linked login will make this
     /// identity inaccessible.
     /// 
-    /// 
+    ///  
     /// <para>
     /// This is a public API. You do not need any credentials to call this API.
     /// </para>
@@ -45,7 +45,10 @@ namespace Amazon.CognitoIdentity.Model
         private List<string> _loginsToRemove = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property IdentityId. A unique identifier in the format REGION:GUID.
+        /// Gets and sets the property IdentityId. 
+        /// <para>
+        /// A unique identifier in the format REGION:GUID.
+        /// </para>
         /// </summary>
         public string IdentityId
         {
@@ -60,8 +63,10 @@ namespace Amazon.CognitoIdentity.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Logins. A set of optional name-value pairs that map provider
-        /// names to provider tokens.
+        /// Gets and sets the property Logins. 
+        /// <para>
+        /// A set of optional name-value pairs that map provider names to provider tokens.
+        /// </para>
         /// </summary>
         public Dictionary<string, string> Logins
         {
@@ -76,7 +81,10 @@ namespace Amazon.CognitoIdentity.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LoginsToRemove. Provider names to unlink from this identity.
+        /// Gets and sets the property LoginsToRemove. 
+        /// <para>
+        /// Provider names to unlink from this identity.
+        /// </para>
         /// </summary>
         public List<string> LoginsToRemove
         {

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-11-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -168,7 +168,11 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SriovNetSupport.
+        /// Gets and sets the property SriovNetSupport. 
+        /// <para>
+        /// Indicates whether enhanced networking with the Intel 82599 Virtual Function interface
+        /// is enabled.
+        /// </para>
         /// </summary>
         public string SriovNetSupport
         {

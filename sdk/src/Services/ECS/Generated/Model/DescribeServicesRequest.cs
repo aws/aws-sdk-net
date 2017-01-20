@@ -58,7 +58,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Services. 
         /// <para>
-        /// A list of services to describe.
+        /// A list of services to describe. You may specify up to 10 services to describe in a
+        /// single operation.
         /// </para>
         /// </summary>
         public List<string> Services

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2016-01-28.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-11-25.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// A distribution Configuration.
+    /// A distribution configuration.
     /// </summary>
     public partial class DistributionConfig
     {
@@ -40,6 +40,8 @@ namespace Amazon.CloudFront.Model
         private DefaultCacheBehavior _defaultCacheBehavior;
         private string _defaultRootObject;
         private bool? _enabled;
+        private HttpVersion _httpVersion;
+        private bool? _isIPV6Enabled;
         private LoggingConfig _logging;
         private Origins _origins;
         private PriceClass _priceClass;
@@ -55,8 +57,8 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Instantiates DistributionConfig with the parameterized properties
         /// </summary>
-        /// <param name="callerReference">A unique number that ensures the request can't be replayed. If the CallerReference is new (no matter the content of the DistributionConfig object), a new distribution is created. If the CallerReference is a value you already sent in a previous request to create a distribution, and the content of the DistributionConfig is identical to the original request (ignoring white space), the response includes the same information returned to the original request. If the CallerReference is a value you already sent in a previous request to create a distribution but the content of the DistributionConfig is different from the original request, CloudFront returns a DistributionAlreadyExists error.</param>
-        /// <param name="enabled">Whether the distribution is enabled to accept end user requests for content.</param>
+        /// <param name="callerReference">A unique value (for example, a date-time stamp) that ensures that the request can't be replayed. If the value of <code>CallerReference</code> is new (regardless of the content of the <code>DistributionConfig</code> object), CloudFront creates a new distribution. If <code>CallerReference</code> is a value you already sent in a previous request to create a distribution, and if the content of the <code>DistributionConfig</code> is identical to the original request (ignoring white space), CloudFront returns the same the response that it returned to the original request. If <code>CallerReference</code> is a value you already sent in a previous request to create a distribution but the content of the <code>DistributionConfig</code> is different from the original request, CloudFront returns a <code>DistributionAlreadyExists</code> error.</param>
+        /// <param name="enabled">Specifies whether you want CloudFront to save access logs to an Amazon S3 bucket. If you do not want to enable logging when you create a distribution, or if you want to disable logging for an existing distribution, specify <code>false</code> for <code>Enabled</code>, and specify empty <code>Bucket</code> and <code>Prefix</code> elements. If you specify <code>false</code> for <code>Enabled</code> but you specify values for <code>Bucket</code> and <code>Prefix</code>, the values are automatically deleted.</param>
         public DistributionConfig(string callerReference, bool enabled)
         {
             _callerReference = callerReference;
@@ -64,8 +66,11 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Aliases. A complex type that contains information about
-        /// CNAMEs (alternate domain names), if any, for this distribution.
+        /// Gets and sets the property Aliases. 
+        /// <para>
+        /// A complex type that contains information about CNAMEs (alternate domain names), if
+        /// any, for this distribution.
+        /// </para>
         /// </summary>
         public Aliases Aliases
         {
@@ -80,8 +85,10 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CacheBehaviors. A complex type that contains zero or more
-        /// CacheBehavior elements.
+        /// Gets and sets the property CacheBehaviors. 
+        /// <para>
+        /// A complex type that contains zero or more <code>CacheBehavior</code> elements. 
+        /// </para>
         /// </summary>
         public CacheBehaviors CacheBehaviors
         {
@@ -96,15 +103,30 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CallerReference. A unique number that ensures the request
-        /// can't be replayed. If the CallerReference is new (no matter the content of the DistributionConfig
-        /// object), a new distribution is created. If the CallerReference is a value you already
-        /// sent in a previous request to create a distribution, and the content of the DistributionConfig
-        /// is identical to the original request (ignoring white space), the response includes
-        /// the same information returned to the original request. If the CallerReference is a
-        /// value you already sent in a previous request to create a distribution but the content
-        /// of the DistributionConfig is different from the original request, CloudFront returns
-        /// a DistributionAlreadyExists error.
+        /// Gets and sets the property CallerReference. 
+        /// <para>
+        /// A unique value (for example, a date-time stamp) that ensures that the request can't
+        /// be replayed.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the value of <code>CallerReference</code> is new (regardless of the content of
+        /// the <code>DistributionConfig</code> object), CloudFront creates a new distribution.
+        /// </para>
+        ///  
+        /// <para>
+        /// If <code>CallerReference</code> is a value you already sent in a previous request
+        /// to create a distribution, and if the content of the <code>DistributionConfig</code>
+        /// is identical to the original request (ignoring white space), CloudFront returns the
+        /// same the response that it returned to the original request.
+        /// </para>
+        ///  
+        /// <para>
+        /// If <code>CallerReference</code> is a value you already sent in a previous request
+        /// to create a distribution but the content of the <code>DistributionConfig</code> is
+        /// different from the original request, CloudFront returns a <code>DistributionAlreadyExists</code>
+        /// error.
+        /// </para>
         /// </summary>
         public string CallerReference
         {
@@ -119,7 +141,24 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Comment. Any comments you want to include about the distribution.
+        /// Gets and sets the property Comment. 
+        /// <para>
+        /// Any comments you want to include about the distribution.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you don't want to specify a comment, include an empty <code>Comment</code> element.
+        /// </para>
+        ///  
+        /// <para>
+        /// To delete an existing comment, update the distribution configuration and include an
+        /// empty <code>Comment</code> element.
+        /// </para>
+        ///  
+        /// <para>
+        /// To add or change a comment, update the distribution configuration and specify the
+        /// new comment.
+        /// </para>
         /// </summary>
         public string Comment
         {
@@ -134,8 +173,24 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CustomErrorResponses. A complex type that contains zero
-        /// or more CustomErrorResponse elements.
+        /// Gets and sets the property CustomErrorResponses. 
+        /// <para>
+        /// A complex type that controls the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Whether CloudFront replaces HTTP status codes in the 4xx and 5xx range with custom
+        /// error messages before returning the response to the viewer.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// How long CloudFront caches HTTP status codes in the 4xx and 5xx range.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information about custom error pages, see <a href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html">Customizing
+        /// Error Responses</a> in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
         /// </summary>
         public CustomErrorResponses CustomErrorResponses
         {
@@ -150,10 +205,12 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DefaultCacheBehavior. A complex type that describes the
-        /// default cache behavior if you do not specify a CacheBehavior element or if files don't
-        /// match any of the values of PathPattern in CacheBehavior elements.You must create exactly
-        /// one default cache behavior.
+        /// Gets and sets the property DefaultCacheBehavior. 
+        /// <para>
+        /// A complex type that describes the default cache behavior if you do not specify a <code>CacheBehavior</code>
+        /// element or if files don't match any of the values of <code>PathPattern</code> in <code>CacheBehavior</code>
+        /// elements. You must create exactly one default cache behavior.
+        /// </para>
         /// </summary>
         public DefaultCacheBehavior DefaultCacheBehavior
         {
@@ -168,15 +225,38 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DefaultRootObject. The object that you want CloudFront
-        /// to return (for example, index.html) when an end user requests the root URL for your
-        /// distribution (http://www.example.com) instead of an object in your distribution (http://www.example.com/index.html).
+        /// Gets and sets the property DefaultRootObject. 
+        /// <para>
+        /// The object that you want CloudFront to request from your origin (for example, <code>index.html</code>)
+        /// when a viewer requests the root URL for your distribution (<code>http://www.example.com</code>)
+        /// instead of an object in your distribution (<code>http://www.example.com/product-description.html</code>).
         /// Specifying a default root object avoids exposing the contents of your distribution.
+        /// </para>
+        ///  
+        /// <para>
+        /// Specify only the object name, for example, <code>index.html</code>. Do not add a <code>/</code>
+        /// before the object name.
+        /// </para>
+        ///  
+        /// <para>
         /// If you don't want to specify a default root object when you create a distribution,
-        /// include an empty DefaultRootObject element. To delete the default root object from
-        /// an existing distribution, update the distribution configuration and include an empty
-        /// DefaultRootObject element. To replace the default root object, update the distribution
-        /// configuration and specify the new object.
+        /// include an empty <code>DefaultRootObject</code> element.
+        /// </para>
+        ///  
+        /// <para>
+        /// To delete the default root object from an existing distribution, update the distribution
+        /// configuration and include an empty <code>DefaultRootObject</code> element.
+        /// </para>
+        ///  
+        /// <para>
+        /// To replace the default root object, update the distribution configuration and specify
+        /// the new object.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about the default root object, see <a href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DefaultRootObject.html">Creating
+        /// a Default Root Object</a> in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
         /// </summary>
         public string DefaultRootObject
         {
@@ -191,8 +271,21 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Enabled. Whether the distribution is enabled to accept
-        /// end user requests for content.
+        /// Gets and sets the property Enabled. 
+        /// <para>
+        /// Specifies whether you want CloudFront to save access logs to an Amazon S3 bucket.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you do not want to enable logging when you create a distribution, or if you want
+        /// to disable logging for an existing distribution, specify <code>false</code> for <code>Enabled</code>,
+        /// and specify empty <code>Bucket</code> and <code>Prefix</code> elements.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify <code>false</code> for <code>Enabled</code> but you specify values
+        /// for <code>Bucket</code> and <code>Prefix</code>, the values are automatically deleted.
+        /// </para>
         /// </summary>
         public bool Enabled
         {
@@ -207,8 +300,105 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Logging. A complex type that controls whether access logs
-        /// are written for the distribution.
+        /// Gets and sets the property HttpVersion. 
+        /// <para>
+        /// (Optional) Specify the maximum HTTP version that you want viewers to use to communicate
+        /// with CloudFront. The default value for new web distributions is http2. Viewers that
+        /// don't support HTTP/2 automatically use an earlier HTTP version.
+        /// </para>
+        ///  
+        /// <para>
+        /// For viewers and CloudFront to use HTTP/2, viewers must support TLS 1.2 or later, and
+        /// must support Server Name Identification (SNI).
+        /// </para>
+        ///  
+        /// <para>
+        /// In general, configuring CloudFront to communicate with viewers using HTTP/2 reduces
+        /// latency. You can improve performance by optimizing for HTTP/2. For more information,
+        /// do an Internet search for "http/2 optimization." 
+        /// </para>
+        /// </summary>
+        public HttpVersion HttpVersion
+        {
+            get { return this._httpVersion; }
+            set { this._httpVersion = value; }
+        }
+
+        // Check to see if HttpVersion property is set
+        internal bool IsSetHttpVersion()
+        {
+            return this._httpVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsIPV6Enabled. 
+        /// <para>
+        /// If you want CloudFront to respond to IPv6 DNS requests with an IPv6 address for your
+        /// distribution, specify <code>true</code>. If you specify <code>false</code>, CloudFront
+        /// responds to IPv6 DNS requests with the DNS response code <code>NOERROR</code> and
+        /// with no IP addresses. This allows viewers to submit a second request, for an IPv4
+        /// address for your distribution. 
+        /// </para>
+        ///  
+        /// <para>
+        /// In general, you should enable IPv6 if you have users on IPv6 networks who want to
+        /// access your content. However, if you're using signed URLs or signed cookies to restrict
+        /// access to your content, and if you're using a custom policy that includes the <code>IpAddress</code>
+        /// parameter to restrict the IP addresses that can access your content, do not enable
+        /// IPv6. If you want to restrict access to some content by IP address and not restrict
+        /// access to other content (or restrict access but not by IP address), you can create
+        /// two distributions. For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-creating-signed-url-custom-policy.html">Creating
+        /// a Signed URL Using a Custom Policy</a> in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you're using an Amazon Route 53 alias resource record set to route traffic to your
+        /// CloudFront distribution, you need to create a second alias resource record set when
+        /// both of the following are true:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You enable IPv6 for the distribution
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You're using alternate domain names in the URLs for your objects
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-cloudfront-distribution.html">Routing
+        /// Traffic to an Amazon CloudFront Web Distribution by Using Your Domain Name</a> in
+        /// the <i>Amazon Route 53 Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you created a CNAME resource record set, either with Amazon Route 53 or with another
+        /// DNS service, you don't need to make any changes. A CNAME record will route traffic
+        /// to your distribution regardless of the IP address format of the viewer request.
+        /// </para>
+        /// </summary>
+        public bool IsIPV6Enabled
+        {
+            get { return this._isIPV6Enabled.GetValueOrDefault(); }
+            set { this._isIPV6Enabled = value; }
+        }
+
+        // Check to see if IsIPV6Enabled property is set
+        internal bool IsSetIsIPV6Enabled()
+        {
+            return this._isIPV6Enabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Logging. 
+        /// <para>
+        /// A complex type that controls whether access logs are written for the distribution.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about logging, see <a href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AccessLogs.html">Access
+        /// Logs</a> in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
         /// </summary>
         public LoggingConfig Logging
         {
@@ -223,8 +413,10 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Origins. A complex type that contains information about
-        /// origins for this distribution.
+        /// Gets and sets the property Origins. 
+        /// <para>
+        /// A complex type that contains information about origins for this distribution. 
+        /// </para>
         /// </summary>
         public Origins Origins
         {
@@ -239,8 +431,27 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PriceClass. A complex type that contains information about
-        /// price class for this distribution.
+        /// Gets and sets the property PriceClass. 
+        /// <para>
+        /// The price class that corresponds with the maximum price that you want to pay for CloudFront
+        /// service. If you specify <code>PriceClass_All</code>, CloudFront responds to requests
+        /// for your objects from all CloudFront edge locations.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify a price class other than <code>PriceClass_All</code>, CloudFront serves
+        /// your objects from the CloudFront edge location that has the lowest latency among the
+        /// edge locations in your price class. Viewers who are in or near regions that are excluded
+        /// from your specified price class may encounter slower performance.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about price classes, see <a href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PriceClass.html">Choosing
+        /// the Price Class for a CloudFront Distribution</a> in the <i>Amazon CloudFront Developer
+        /// Guide</i>. For information about CloudFront pricing, including how price classes map
+        /// to CloudFront regions, see <a href="https://aws.amazon.com/cloudfront/pricing/">Amazon
+        /// CloudFront Pricing</a>.
+        /// </para>
         /// </summary>
         public PriceClass PriceClass
         {
@@ -285,8 +496,22 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property WebACLId. (Optional) If you're using AWS WAF to filter
-        /// CloudFront requests, the Id of the AWS WAF web ACL that is associated with the distribution.
+        /// Gets and sets the property WebACLId. 
+        /// <para>
+        /// A unique identifier that specifies the AWS WAF web ACL, if any, to associate with
+        /// this distribution.
+        /// </para>
+        ///  
+        /// <para>
+        /// AWS WAF is a web application firewall that lets you monitor the HTTP and HTTPS requests
+        /// that are forwarded to CloudFront, and lets you control access to your content. Based
+        /// on conditions that you specify, such as the IP addresses that requests originate from
+        /// or the values of query strings, CloudFront responds to requests either with the requested
+        /// content or with an HTTP 403 status code (Forbidden). You can also configure CloudFront
+        /// to return a custom error page when a request is blocked. For more information about
+        /// AWS WAF, see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/what-is-aws-waf.html">AWS
+        /// WAF Developer Guide</a>. 
+        /// </para>
         /// </summary>
         public string WebACLId
         {

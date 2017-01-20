@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// Encloses a message ID for successfully enqueued message of a <a>SendMessageBatch</a>.
+    /// Encloses a <code>MessageId</code> for a successfully-enqueued message in a <code>
+    /// <a>SendMessageBatch</a> </code>.
     /// </summary>
     public partial class SendMessageBatchResultEntry
     {
@@ -36,6 +37,7 @@ namespace Amazon.SQS.Model
         private string _md5OfMessageAttributes;
         private string _md5OfMessageBody;
         private string _messageId;
+        private string _sequenceNumber;
 
         /// <summary>
         /// Gets and sets the property Id. 
@@ -58,10 +60,9 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Gets and sets the property MD5OfMessageAttributes. 
         /// <para>
-        /// An MD5 digest of the non-URL-encoded message attribute string. This can be used to
-        /// verify that Amazon SQS received the message batch correctly. Amazon SQS first URL
-        /// decodes the message before creating the MD5 digest. For information about MD5, go
-        /// to <a href="http://www.faqs.org/rfcs/rfc1321.html">http://www.faqs.org/rfcs/rfc1321.html</a>.
+        /// An MD5 digest of the non-URL-encoded message attribute string. You can use this attribute
+        /// to verify that Amazon SQS received the message correctly. Amazon SQS URL-decodes the
+        /// message before creating the MD5 digest. For information on MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.
         /// </para>
         /// </summary>
         public string MD5OfMessageAttributes
@@ -79,9 +80,9 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Gets and sets the property MD5OfMessageBody. 
         /// <para>
-        /// An MD5 digest of the non-URL-encoded message body string. This can be used to verify
-        /// that Amazon SQS received the message correctly. Amazon SQS first URL decodes the message
-        /// before creating the MD5 digest. For information about MD5, go to <a href="http://www.faqs.org/rfcs/rfc1321.html">http://www.faqs.org/rfcs/rfc1321.html</a>.
+        /// An MD5 digest of the non-URL-encoded message attribute string. You can use this attribute
+        /// to verify that Amazon SQS received the message correctly. Amazon SQS URL-decodes the
+        /// message before creating the MD5 digest. For information on MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.
         /// </para>
         /// </summary>
         public string MD5OfMessageBody
@@ -112,6 +113,33 @@ namespace Amazon.SQS.Model
         internal bool IsSetMessageId()
         {
             return this._messageId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SequenceNumber. 
+        /// <para>
+        /// This parameter applies only to FIFO (first-in-first-out) queues.
+        /// </para>
+        ///  
+        /// <para>
+        /// A large, non-consecutive number that Amazon SQS assigns to each message.
+        /// </para>
+        ///  
+        /// <para>
+        /// The length of <code>SequenceNumber</code> is 128 bits. As <code>SequenceNumber</code>
+        /// continues to increase for a particular <code>MessageGroupId</code>.
+        /// </para>
+        /// </summary>
+        public string SequenceNumber
+        {
+            get { return this._sequenceNumber; }
+            set { this._sequenceNumber = value; }
+        }
+
+        // Check to see if SequenceNumber property is set
+        internal bool IsSetSequenceNumber()
+        {
+            return this._sequenceNumber != null;
         }
 
     }

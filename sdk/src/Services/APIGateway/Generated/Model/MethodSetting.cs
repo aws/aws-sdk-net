@@ -65,7 +65,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property CacheTtlInSeconds. 
         /// <para>
-        /// Specifies the time to live (TTL) in seconds, for cached responses. The higher a the
+        /// Specifies the time to live (TTL), in seconds, for cached responses. The higher the
         /// TTL, the longer the response will be cached. The PATCH path for this setting is <code>/{method_setting_key}/caching/ttlInSeconds</code>,
         /// and the value is an integer.
         /// </para>
@@ -105,9 +105,9 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property DataTraceEnabled. 
         /// <para>
-        /// Specifies the whether data trace logging is enabled for this method, which effects
-        /// the log entries pushed to Amazon CloudWatch Logs. The PATCH path for this setting
-        /// is <code>/{method_setting_key}/logging/dataTrace</code>, and the value is a Boolean.
+        /// Specifies whether data trace logging is enabled for this method, which effects the
+        /// log entries pushed to Amazon CloudWatch Logs. The PATCH path for this setting is <code>/{method_setting_key}/logging/dataTrace</code>,
+        /// and the value is a Boolean.
         /// </para>
         /// </summary>
         public bool DataTraceEnabled
@@ -223,8 +223,8 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property UnauthorizedCacheControlHeaderStrategy. 
         /// <para>
-        /// Specifies the strategy on how to handle the unauthorized requests for cache invalidation.
-        /// The PATCH path for this setting is <code>/{method_setting_key}/caching/unauthorizedCacheControlHeaderStrategy</code>,
+        /// Specifies how to handle unauthorized requests for cache invalidation. The PATCH path
+        /// for this setting is <code>/{method_setting_key}/caching/unauthorizedCacheControlHeaderStrategy</code>,
         /// and the available values are <code>FAIL_WITH_403</code>, <code>SUCCEED_WITH_RESPONSE_HEADER</code>,
         /// <code>SUCCEED_WITHOUT_RESPONSE_HEADER</code>.
         /// </para>

@@ -28,15 +28,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// Represents the output of one of the following actions:
+    /// Represents the output of one of the following operations:
     /// 
     ///  <ul> <li> 
     /// <para>
-    ///  <i>ModifyCacheParameterGroup</i> 
+    ///  <code>ModifyCacheParameterGroup</code> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <i>ResetCacheParameterGroup</i> 
+    ///  <code>ResetCacheParameterGroup</code> 
     /// </para>
     ///  </li> </ul>
     /// </summary>

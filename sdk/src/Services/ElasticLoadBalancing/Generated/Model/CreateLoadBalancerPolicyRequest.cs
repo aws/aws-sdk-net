@@ -34,8 +34,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     ///  
     /// <para>
     /// Policies are settings that are saved for your load balancer and that can be applied
-    /// to the front-end listener or the back-end application server, depending on the policy
-    /// type.
+    /// to the listener or the application server, depending on the policy type.
     /// </para>
     /// </summary>
     public partial class CreateLoadBalancerPolicyRequest : AmazonElasticLoadBalancingRequest
@@ -66,7 +65,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property PolicyAttributes. 
         /// <para>
-        /// The attributes for the policy.
+        /// The policy attributes.
         /// </para>
         /// </summary>
         public List<PolicyAttribute> PolicyAttributes

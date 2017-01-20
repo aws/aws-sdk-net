@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// This is the response object from the DescribeLifecycleHookTypes operation.
+    /// Contains the output of DescribeLifecycleHookTypes.
     /// </summary>
     public partial class DescribeLifecycleHookTypesResponse : AmazonWebServiceResponse
     {
@@ -37,17 +37,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property LifecycleHookTypes. 
         /// <para>
-        /// One or more of the following notification types:
+        /// The lifecycle hook types.
         /// </para>
-        ///  <ul> <li>
-        /// <para>
-        /// <code>autoscaling:EC2_INSTANCE_LAUNCHING</code>
-        /// </para>
-        /// </li> <li>
-        /// <para>
-        /// <code>autoscaling:EC2_INSTANCE_TERMINATING</code>
-        /// </para>
-        /// </li> </ul>
         /// </summary>
         public List<string> LifecycleHookTypes
         {

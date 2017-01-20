@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// This is the response object from the DescribeTableRestoreStatus operation.
+    /// 
     /// </summary>
     public partial class DescribeTableRestoreStatusResponse : AmazonWebServiceResponse
     {
@@ -57,7 +57,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property TableRestoreStatusDetails. 
         /// <para>
-        /// A list of status details for one or more table restore requests. 
+        /// A list of status details for one or more table restore requests.
         /// </para>
         /// </summary>
         public List<TableRestoreStatus> TableRestoreStatusDetails

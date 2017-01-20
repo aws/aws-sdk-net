@@ -25,7 +25,7 @@ using Amazon.S3.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.S3.Util;
 using Amazon.SecurityToken.SAML;
-
+using Amazon.DynamoDBv2;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests
 {
@@ -33,6 +33,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
     public class General
     {
         [TestMethod]
+        [TestCategory("General")]
         public void TestSerializingExceptions()
         {
             using(var client = new Amazon.S3.AmazonS3Client())
@@ -66,6 +67,54 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
 #pragma warning restore 618
 
+            }
+        }
+
+        
+        [TestMethod]
+        [TestCategory("General")]
+        public void TestSerializaingObjects()
+        {
+            DeleteObjectsResponse response = new DeleteObjectsResponse
+            {
+                DeletedObjects = new List<DeletedObject>
+                {
+                    new DeletedObject{ Key = "hello", VersionId ="version" },
+                    new DeletedObject{ Key = "world", VersionId ="version" },
+                    new DeletedObject{ Key = "!!!" ,  VersionId ="version"}
+                },
+                DeleteErrors = new List<DeleteError>
+                {
+                    new DeleteError{ Code = "200", Key = "key", Message = "Some Message!" },
+                    new DeleteError{ Code = "500", Key = "key", Message = "Some Message!" }
+                },
+                RequestCharged = RequestCharged.Requester
+            };
+
+            var serializer = new BinaryFormatter();
+            using (var ms = new MemoryStream())
+            {
+                serializer.Serialize(ms, response);
+                ms.Seek(0, SeekOrigin.Begin);
+                DeleteObjectsResponse deserialized = serializer.Deserialize(ms) as DeleteObjectsResponse;
+
+
+                List<string> deleteObjectKeys = new List<string>{ "hello", "world", "!!!"};
+                // Validate deserialized dataa
+                foreach (var obj in deserialized.DeletedObjects)
+                {
+                    Assert.AreEqual(obj.VersionId, "version");
+                    Assert.IsTrue(deleteObjectKeys.Contains(obj.Key));
+                }
+
+                List<string> errorCodes = new List<string>{ "200", "500" };
+                foreach (var error in deserialized.DeleteErrors)
+                {
+                    Assert.AreEqual(error.Key, "key");
+                    Assert.IsTrue(errorCodes.Contains(error.Code));
+                }
+
+                Assert.AreEqual(deserialized.RequestCharged, RequestCharged.Requester);
             }
         }
 
@@ -256,6 +305,26 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         }
 
         [TestMethod]
+        [TestCategory("General")]
+        public void JsonCountSerializationBug()
+        {
+            var json = @"{""Data"":{""NotCount"":""42""}}";
+            var poco = ThirdParty.Json.LitJson.JsonMapper.ToObject<Poco>(json);
+            Assert.AreEqual(1, poco.Data.Count);
+            Assert.AreEqual("42", poco.Data["NotCount"]);
+
+            json = @"{""Data"":{""Count"":""Dracula""}}";
+            poco = ThirdParty.Json.LitJson.JsonMapper.ToObject<Poco>(json);
+            Assert.AreEqual(1, poco.Data.Count);
+            Assert.AreEqual("Dracula", poco.Data["Count"]);
+        }
+        private class Poco
+        {
+            public Dictionary<string, string> Data { get; set; }
+        }
+
+        [TestMethod]
+        [TestCategory("General")]
         public void TestSDKExceptions()
         {
             var allTypes = new List<Type>();
@@ -310,16 +379,18 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         }
 
         [TestMethod]
+        [TestCategory("General")]
         public void TestLargeRetryCount()
         {
             var maxRetries = 1000;
             var maxMilliseconds = 1;
-
-            var coreRetryPolicy = new DefaultRetryPolicy(100)
+            ClientConfig config = new AmazonDynamoDBConfig();
+            config.MaxErrorRetry = 100;
+            var coreRetryPolicy = new DefaultRetryPolicy(config)
             {
                 MaxBackoffInMilliseconds = maxMilliseconds
             };
-            var ddbRetryPolicy = new DynamoDBRetryPolicy(100)
+            var ddbRetryPolicy = new DynamoDBRetryPolicy(config)
             {
                 MaxBackoffInMilliseconds = maxMilliseconds
             };
@@ -334,6 +405,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         }
 
         [TestMethod]
+        [TestCategory("General")]
         public void TestBidiCharsInUri()
         {
             var bidiChar = '\u200E';
@@ -363,6 +435,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         }
 
         [TestMethod]
+        [TestCategory("General")]
         public void TestClientDispose()
         {
             IAmazonS3 client;
@@ -478,6 +551,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         // correctly handle clock skew errors.
         // By default it only tests a small subset of services.
         [TestMethod]
+        [TestCategory("General")]
         public void TestClockSkewCorrection()
         {
             VerifyClockSkewSetting();

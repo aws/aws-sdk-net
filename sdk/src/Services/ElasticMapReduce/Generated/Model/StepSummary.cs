@@ -42,7 +42,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// Gets and sets the property ActionOnFailure. 
         /// <para>
         /// This specifies what action to take when the cluster step fails. Possible values are
-        /// TERMINATE_CLUSTER, CANCEL_AND_WAIT, and CONTINUE. 
+        /// TERMINATE_CLUSTER, CANCEL_AND_WAIT, and CONTINUE.
         /// </para>
         /// </summary>
         public ActionOnFailure ActionOnFailure
@@ -60,7 +60,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property Config. 
         /// <para>
-        /// The Hadoop job configuration of the cluster step. 
+        /// The Hadoop job configuration of the cluster step.
         /// </para>
         /// </summary>
         public HadoopStepConfig Config
@@ -78,7 +78,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The identifier of the cluster step. 
+        /// The identifier of the cluster step.
         /// </para>
         /// </summary>
         public string Id
@@ -96,7 +96,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the cluster step. 
+        /// The name of the cluster step.
         /// </para>
         /// </summary>
         public string Name
@@ -114,7 +114,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current execution status details of the cluster step. 
+        /// The current execution status details of the cluster step.
         /// </para>
         /// </summary>
         public StepStatus Status

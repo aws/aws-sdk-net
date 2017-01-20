@@ -30,8 +30,6 @@ namespace Amazon.DatabaseMigrationService.Model
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
     /// Lists all tags for an AWS DMS resource.
-    /// 
-    ///  <note/>
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonDatabaseMigrationServiceRequest
     {

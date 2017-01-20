@@ -35,7 +35,11 @@ namespace Amazon.CognitoIdentityProvider.Model
         private CodeDeliveryDetailsType _codeDeliveryDetails;
 
         /// <summary>
-        /// Gets and sets the property CodeDeliveryDetails.
+        /// Gets and sets the property CodeDeliveryDetails. 
+        /// <para>
+        /// The code delivery details returned by the server in response to the request to reset
+        /// a password.
+        /// </para>
         /// </summary>
         public CodeDeliveryDetailsType CodeDeliveryDetails
         {

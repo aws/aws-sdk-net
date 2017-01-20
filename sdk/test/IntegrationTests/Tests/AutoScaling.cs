@@ -23,7 +23,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             BaseClean();
         }
 
-		// Test disabled, $ and time constraints
+        // Test disabled, $ and time constraints
         //[TestMethod]
         //[TestCategory("AutoScaling")]
         public void AutoScalingGroupCRUDTest()

@@ -41,10 +41,21 @@ namespace Amazon.WAF.Model
     /// <para>
     /// To permanently delete a <code>Rule</code> from AWS WAF, perform the following steps:
     /// </para>
-    ///  <ol> <li>Update the <code>Rule</code> to remove predicates, if any. For more information,
-    /// see <a>UpdateRule</a>.</li> <li>Use <a>GetChangeToken</a> to get the change token
-    /// that you provide in the <code>ChangeToken</code> parameter of a <code>DeleteRule</code>
-    /// request.</li> <li>Submit a <code>DeleteRule</code> request.</li> </ol>
+    ///  <ol> <li> 
+    /// <para>
+    /// Update the <code>Rule</code> to remove predicates, if any. For more information, see
+    /// <a>UpdateRule</a>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code>
+    /// parameter of a <code>DeleteRule</code> request.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Submit a <code>DeleteRule</code> request.
+    /// </para>
+    ///  </li> </ol>
     /// </summary>
     public partial class DeleteRuleRequest : AmazonWAFRequest
     {

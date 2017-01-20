@@ -38,6 +38,7 @@ namespace Amazon.DatabaseMigrationService.Model
         private string _engineVersion;
         private DateTime? _instanceCreateTime;
         private string _kmsKeyId;
+        private bool? _multiAZ;
         private ReplicationPendingModifiedValues _pendingModifiedValues;
         private string _preferredMaintenanceWindow;
         private bool? _publiclyAccessible;
@@ -45,15 +46,18 @@ namespace Amazon.DatabaseMigrationService.Model
         private string _replicationInstanceClass;
         private string _replicationInstanceIdentifier;
         private string _replicationInstancePrivateIpAddress;
+        private List<string> _replicationInstancePrivateIpAddresses = new List<string>();
         private string _replicationInstancePublicIpAddress;
+        private List<string> _replicationInstancePublicIpAddresses = new List<string>();
         private string _replicationInstanceStatus;
         private ReplicationSubnetGroup _replicationSubnetGroup;
+        private string _secondaryAvailabilityZone;
+        private List<VpcSecurityGroupMembership> _vpcSecurityGroups = new List<VpcSecurityGroupMembership>();
 
         /// <summary>
         /// Gets and sets the property AllocatedStorage. 
         /// <para>
-        ///  The amount of storage (in gigabytes) that is allocated for the replication instance.
-        /// 
+        /// The amount of storage (in gigabytes) that is allocated for the replication instance.
         /// </para>
         /// </summary>
         public int AllocatedStorage
@@ -108,7 +112,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
-        ///  The engine version number of the replication instance. 
+        /// The engine version number of the replication instance.
         /// </para>
         /// </summary>
         public string EngineVersion
@@ -144,10 +148,10 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        ///  The KMS key identifier that is used to encrypt the content on the replication instance.
+        /// The KMS key identifier that is used to encrypt the content on the replication instance.
         /// If you do not specify a value for the KmsKeyId parameter, then AWS DMS will use your
         /// default encryption key. AWS KMS creates the default encryption key for your AWS account.
-        /// Your AWS account has a different default encryption key for each AWS region. 
+        /// Your AWS account has a different default encryption key for each AWS region.
         /// </para>
         /// </summary>
         public string KmsKeyId
@@ -160,6 +164,26 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetKmsKeyId()
         {
             return this._kmsKeyId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MultiAZ. 
+        /// <para>
+        ///  Specifies if the replication instance is a Multi-AZ deployment. You cannot set the
+        /// <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.
+        /// 
+        /// </para>
+        /// </summary>
+        public bool MultiAZ
+        {
+            get { return this._multiAZ.GetValueOrDefault(); }
+            set { this._multiAZ = value; }
+        }
+
+        // Check to see if MultiAZ property is set
+        internal bool IsSetMultiAZ()
+        {
+            return this._multiAZ.HasValue; 
         }
 
         /// <summary>
@@ -239,12 +263,12 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ReplicationInstanceClass. 
         /// <para>
-        ///  The compute and memory capacity of the replication instance. 
+        /// The compute and memory capacity of the replication instance.
         /// </para>
         ///  
         /// <para>
         ///  Valid Values: <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large |
-        /// dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code>
+        /// dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code> 
         /// </para>
         /// </summary>
         public string ReplicationInstanceClass
@@ -268,11 +292,21 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <para>
         /// Constraints:
         /// </para>
-        ///  <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li> <li>First
-        /// character must be a letter.</li> <li>Cannot end with a hyphen or contain two consecutive
-        /// hyphens.</li> </ul> 
+        ///  <ul> <li> 
         /// <para>
-        /// Example: <code>myrepinstance</code>
+        /// Must contain from 1 to 63 alphanumeric characters or hyphens.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// First character must be a letter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cannot end with a hyphen or contain two consecutive hyphens.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Example: <code>myrepinstance</code> 
         /// </para>
         /// </summary>
         public string ReplicationInstanceIdentifier
@@ -306,6 +340,24 @@ namespace Amazon.DatabaseMigrationService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ReplicationInstancePrivateIpAddresses. 
+        /// <para>
+        /// The private IP address of the replication instance.
+        /// </para>
+        /// </summary>
+        public List<string> ReplicationInstancePrivateIpAddresses
+        {
+            get { return this._replicationInstancePrivateIpAddresses; }
+            set { this._replicationInstancePrivateIpAddresses = value; }
+        }
+
+        // Check to see if ReplicationInstancePrivateIpAddresses property is set
+        internal bool IsSetReplicationInstancePrivateIpAddresses()
+        {
+            return this._replicationInstancePrivateIpAddresses != null && this._replicationInstancePrivateIpAddresses.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property ReplicationInstancePublicIpAddress. 
         /// <para>
         /// The public IP address of the replication instance.
@@ -321,6 +373,24 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetReplicationInstancePublicIpAddress()
         {
             return this._replicationInstancePublicIpAddress != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReplicationInstancePublicIpAddresses. 
+        /// <para>
+        /// The public IP address of the replication instance.
+        /// </para>
+        /// </summary>
+        public List<string> ReplicationInstancePublicIpAddresses
+        {
+            get { return this._replicationInstancePublicIpAddresses; }
+            set { this._replicationInstancePublicIpAddresses = value; }
+        }
+
+        // Check to see if ReplicationInstancePublicIpAddresses property is set
+        internal bool IsSetReplicationInstancePublicIpAddresses()
+        {
+            return this._replicationInstancePublicIpAddresses != null && this._replicationInstancePublicIpAddresses.Count > 0; 
         }
 
         /// <summary>
@@ -357,6 +427,42 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetReplicationSubnetGroup()
         {
             return this._replicationSubnetGroup != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecondaryAvailabilityZone. 
+        /// <para>
+        /// The availability zone of the standby replication instance in a Multi-AZ deployment.
+        /// </para>
+        /// </summary>
+        public string SecondaryAvailabilityZone
+        {
+            get { return this._secondaryAvailabilityZone; }
+            set { this._secondaryAvailabilityZone = value; }
+        }
+
+        // Check to see if SecondaryAvailabilityZone property is set
+        internal bool IsSetSecondaryAvailabilityZone()
+        {
+            return this._secondaryAvailabilityZone != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcSecurityGroups. 
+        /// <para>
+        /// The VPC security group for the instance.
+        /// </para>
+        /// </summary>
+        public List<VpcSecurityGroupMembership> VpcSecurityGroups
+        {
+            get { return this._vpcSecurityGroups; }
+            set { this._vpcSecurityGroups = value; }
+        }
+
+        // Check to see if VpcSecurityGroups property is set
+        internal bool IsSetVpcSecurityGroups()
+        {
+            return this._vpcSecurityGroups != null && this._vpcSecurityGroups.Count > 0; 
         }
 
     }

@@ -28,19 +28,23 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
-    /// 
+    /// Represents a subscription filter.
     /// </summary>
     public partial class SubscriptionFilter
     {
         private long? _creationTime;
         private string _destinationArn;
+        private Distribution _distribution;
         private string _filterName;
         private string _filterPattern;
         private string _logGroupName;
         private string _roleArn;
 
         /// <summary>
-        /// Gets and sets the property CreationTime.
+        /// Gets and sets the property CreationTime. 
+        /// <para>
+        /// The creation time of the subscription filter.
+        /// </para>
         /// </summary>
         public long CreationTime
         {
@@ -55,7 +59,10 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DestinationArn.
+        /// Gets and sets the property DestinationArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the destination.
+        /// </para>
         /// </summary>
         public string DestinationArn
         {
@@ -70,7 +77,29 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FilterName.
+        /// Gets and sets the property Distribution. 
+        /// <para>
+        /// The method used to distribute log data to the destination, when the destination is
+        /// an Amazon Kinesis stream.
+        /// </para>
+        /// </summary>
+        public Distribution Distribution
+        {
+            get { return this._distribution; }
+            set { this._distribution = value; }
+        }
+
+        // Check to see if Distribution property is set
+        internal bool IsSetDistribution()
+        {
+            return this._distribution != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FilterName. 
+        /// <para>
+        /// The name of the subscription filter.
+        /// </para>
         /// </summary>
         public string FilterName
         {
@@ -100,7 +129,10 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LogGroupName.
+        /// Gets and sets the property LogGroupName. 
+        /// <para>
+        /// The name of the log group.
+        /// </para>
         /// </summary>
         public string LogGroupName
         {

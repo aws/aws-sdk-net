@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 
+using Amazon.S3.Util;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using System.Globalization;
@@ -39,6 +40,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             IRequest request = new DefaultRequest(getObjectTorrentRequest, "AmazonS3");
 
             request.HttpMethod = "GET";
+
+            if (getObjectTorrentRequest.IsSetRequestPayer())
+                request.Headers.Add(S3Constants.AmzHeaderRequestPayer, S3Transforms.ToStringValue(getObjectTorrentRequest.RequestPayer.ToString()));
+            if (getObjectTorrentRequest.IsSetRequestPayer())
+                request.Headers.Add(S3Constants.AmzHeaderRequestPayer, S3Transforms.ToStringValue(getObjectTorrentRequest.RequestPayer.ToString()));
 
             request.ResourcePath = string.Format(CultureInfo.InvariantCulture, "/{0}/{1}",
                                                  S3Transforms.ToStringValue(getObjectTorrentRequest.BucketName),

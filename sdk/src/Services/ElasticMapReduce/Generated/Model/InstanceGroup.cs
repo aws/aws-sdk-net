@@ -33,6 +33,7 @@ namespace Amazon.ElasticMapReduce.Model
     /// </summary>
     public partial class InstanceGroup
     {
+        private AutoScalingPolicyDescription _autoScalingPolicy;
         private string _bidPrice;
         private List<Configuration> _configurations = new List<Configuration>();
         private List<EbsBlockDevice> _ebsBlockDevices = new List<EbsBlockDevice>();
@@ -46,6 +47,27 @@ namespace Amazon.ElasticMapReduce.Model
         private int? _runningInstanceCount;
         private ShrinkPolicy _shrinkPolicy;
         private InstanceGroupStatus _status;
+
+        /// <summary>
+        /// Gets and sets the property AutoScalingPolicy. 
+        /// <para>
+        /// An automatic scaling policy for a core instance group or task instance group in an
+        /// Amazon EMR cluster. The automatic scaling policy defines how an instance group dynamically
+        /// adds and terminates EC2 instances in response to the value of a CloudWatch metric.
+        /// See PutAutoScalingPolicy.
+        /// </para>
+        /// </summary>
+        public AutoScalingPolicyDescription AutoScalingPolicy
+        {
+            get { return this._autoScalingPolicy; }
+            set { this._autoScalingPolicy = value; }
+        }
+
+        // Check to see if AutoScalingPolicy property is set
+        internal bool IsSetAutoScalingPolicy()
+        {
+            return this._autoScalingPolicy != null;
+        }
 
         /// <summary>
         /// Gets and sets the property BidPrice. 
@@ -67,11 +89,11 @@ namespace Amazon.ElasticMapReduce.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Configurations. <note>
+        /// Gets and sets the property Configurations. <note> 
         /// <para>
         /// Amazon EMR releases 4.x or later.
         /// </para>
-        /// </note> 
+        ///  </note> 
         /// <para>
         /// The list of configurations supplied for an EMR cluster instance group. You can specify
         /// a separate configuration for each instance group (master, core, and task).
@@ -110,9 +132,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property EbsOptimized. 
         /// <para>
-        /// If the instance group is EBS-optimized. An Amazon EBS–optimized instance uses an optimized
+        /// If the instance group is EBS-optimized. An Amazon EBS-optimized instance uses an optimized
         /// configuration stack and provides additional, dedicated capacity for Amazon EBS I/O.
-        /// 
         /// </para>
         /// </summary>
         public bool EbsOptimized
@@ -166,7 +187,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
-        /// The EC2 instance type for all instances in the instance group. 
+        /// The EC2 instance type for all instances in the instance group.
         /// </para>
         /// </summary>
         public string InstanceType
@@ -221,7 +242,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property RequestedInstanceCount. 
         /// <para>
-        /// The target number of instances for the instance group. 
+        /// The target number of instances for the instance group.
         /// </para>
         /// </summary>
         public int RequestedInstanceCount

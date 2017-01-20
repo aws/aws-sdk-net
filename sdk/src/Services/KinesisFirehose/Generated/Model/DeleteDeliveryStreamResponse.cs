@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisFirehose.Model
 {
     /// <summary>
-    /// Contains the output of <a>DeleteDeliveryStream</a>.
+    /// This is the response object from the DeleteDeliveryStream operation.
     /// </summary>
     public partial class DeleteDeliveryStreamResponse : AmazonWebServiceResponse
     {

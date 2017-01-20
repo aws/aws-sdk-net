@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2016-01-28.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-11-25.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -37,8 +37,10 @@ namespace Amazon.CloudFront.Model
         private StreamingDistribution _streamingDistribution;
 
         /// <summary>
-        /// Gets and sets the property ETag. The current version of the streaming distribution
-        /// created.
+        /// Gets and sets the property ETag. 
+        /// <para>
+        /// The current version of the streaming distribution created.
+        /// </para>
         /// </summary>
         public string ETag
         {
@@ -53,8 +55,11 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Location. The fully qualified URI of the new streaming
-        /// distribution resource just created. For example: https://cloudfront.amazonaws.com/2010-11-01/streaming-distribution/EGTXBD79H29TRA8.
+        /// Gets and sets the property Location. 
+        /// <para>
+        /// The fully qualified URI of the new streaming distribution resource just created. For
+        /// example: <code>https://cloudfront.amazonaws.com/2010-11-01/streaming-distribution/EGTXBD79H29TRA8</code>.
+        /// </para>
         /// </summary>
         public string Location
         {
@@ -69,7 +74,10 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StreamingDistribution. The streaming distribution's information.
+        /// Gets and sets the property StreamingDistribution. 
+        /// <para>
+        /// The streaming distribution's information.
+        /// </para>
         /// </summary>
         public StreamingDistribution StreamingDistribution
         {

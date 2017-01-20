@@ -91,6 +91,12 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.CacheNamespace);
                 }
 
+                if(publicRequest.IsSetContentHandling())
+                {
+                    context.Writer.WritePropertyName("contentHandling");
+                    context.Writer.Write(publicRequest.ContentHandling);
+                }
+
                 if(publicRequest.IsSetCredentials())
                 {
                     context.Writer.WritePropertyName("credentials");

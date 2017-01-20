@@ -88,6 +88,12 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
                     unmarshalledObject.ElasticsearchClusterConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ElasticsearchVersion", targetDepth))
+                {
+                    var unmarshaller = ElasticsearchVersionStatusUnmarshaller.Instance;
+                    unmarshalledObject.ElasticsearchVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SnapshotOptions", targetDepth))
                 {
                     var unmarshaller = SnapshotOptionsStatusUnmarshaller.Instance;

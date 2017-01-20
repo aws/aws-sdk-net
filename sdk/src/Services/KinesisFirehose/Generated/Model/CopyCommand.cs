@@ -42,7 +42,7 @@ namespace Amazon.KinesisFirehose.Model
         /// Optional parameters to use with the Amazon Redshift <code>COPY</code> command. For
         /// more information, see the "Optional Parameters" section of <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">Amazon
         /// Redshift COPY command</a>. Some possible examples that would apply to Firehose are
-        /// as follows.
+        /// as follows:
         /// </para>
         ///  
         /// <para>

@@ -30,18 +30,18 @@ namespace Amazon.Glacier.Model
     /// <summary>
     /// Container for the parameters to the ListVaults operation.
     /// This operation lists all vaults owned by the calling user's account. The list returned
-    /// in the response is ASCII-sorted by vault name. 
+    /// in the response is ASCII-sorted by vault name.
     /// 
     ///  
     /// <para>
     /// By default, this operation returns up to 1,000 items. If there are more vaults to
-    /// list, the response <code class="code">marker</code> field contains the vault Amazon
-    /// Resource Name (ARN) at which to continue the list with a new List Vaults request;
-    /// otherwise, the <code class="code">marker</code> field is <code class="code">null</code>.
-    /// To return a list of vaults that begins at a specific vault, set the <code class="code">marker</code>
-    /// request parameter to the vault ARN you obtained from a previous List Vaults request.
-    /// You can also limit the number of vaults returned in the response by specifying the
-    /// <code class="code">limit</code> parameter in the request. 
+    /// list, the response <code>marker</code> field contains the vault Amazon Resource Name
+    /// (ARN) at which to continue the list with a new List Vaults request; otherwise, the
+    /// <code>marker</code> field is <code>null</code>. To return a list of vaults that begins
+    /// at a specific vault, set the <code>marker</code> request parameter to the vault ARN
+    /// you obtained from a previous List Vaults request. You can also limit the number of
+    /// vaults returned in the response by specifying the <code>limit</code> parameter in
+    /// the request. 
     /// </para>
     ///  
     /// <para>
@@ -53,7 +53,7 @@ namespace Amazon.Glacier.Model
     /// </para>
     ///  
     /// <para>
-    /// For conceptual information and underlying REST API, go to <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/retrieving-vault-info.html">Retrieving
+    /// For conceptual information and underlying REST API, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/retrieving-vault-info.html">Retrieving
     /// Vault Metadata in Amazon Glacier</a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vaults-get.html">List
     /// Vaults </a> in the <i>Amazon Glacier Developer Guide</i>. 
     /// </para>
@@ -72,7 +72,7 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Instantiates ListVaultsRequest with the parameterized properties
         /// </summary>
-        /// <param name="accountId">The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with the credentials used to sign the request. You can either specify an AWS account ID or optionally a single apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you specify your account ID, do not include any hyphens (apos-apos) in the ID.</param>
+        /// <param name="accountId">The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with the credentials used to sign the request. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you specify your account ID, do not include any hyphens ('-') in the ID.</param>
         public ListVaultsRequest(string accountId)
         {
             _accountId = accountId;
@@ -81,9 +81,9 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Instantiates ListVaultsRequest with the parameterized properties
         /// </summary>
-        /// <param name="accountId">The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with the credentials used to sign the request. You can either specify an AWS account ID or optionally a single apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you specify your account ID, do not include any hyphens (apos-apos) in the ID.</param>
+        /// <param name="accountId">The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with the credentials used to sign the request. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you specify your account ID, do not include any hyphens ('-') in the ID.</param>
         /// <param name="marker">A string used for pagination. The marker specifies the vault ARN after which the listing of vaults should begin.</param>
-        /// <param name="limit">The maximum number of items returned in the response. If you don't specify a value, the List Vaults operation returns up to 1,000 items.</param>
+        /// <param name="limit">The maximum number of vaults to be returned. The default limit is 1000. The number of vaults returned might be fewer than the specified limit, but the number of returned vaults never exceeds the limit.</param>
         public ListVaultsRequest(string accountId, string marker, int limit)
         {
             _accountId = accountId;
@@ -96,10 +96,10 @@ namespace Amazon.Glacier.Model
         /// <para>
         /// The <code>AccountId</code> value is the AWS account ID. This value must match the
         /// AWS account ID associated with the credentials used to sign the request. You can either
-        /// specify an AWS account ID or optionally a single apos<code>-</code>apos (hyphen),
-        /// in which case Amazon Glacier uses the AWS account ID associated with the credentials
-        /// used to sign the request. If you specify your account ID, do not include any hyphens
-        /// (apos-apos) in the ID.
+        /// specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which
+        /// case Amazon Glacier uses the AWS account ID associated with the credentials used to
+        /// sign the request. If you specify your account ID, do not include any hyphens ('-')
+        /// in the ID.
         /// </para>
         /// </summary>
         public string AccountId
@@ -117,8 +117,9 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
-        /// The maximum number of items returned in the response. If you don't specify a value,
-        /// the List Vaults operation returns up to 1,000 items.
+        /// The maximum number of vaults to be returned. The default limit is 1000. The number
+        /// of vaults returned might be fewer than the specified limit, but the number of returned
+        /// vaults never exceeds the limit.
         /// </para>
         /// </summary>
         public int Limit

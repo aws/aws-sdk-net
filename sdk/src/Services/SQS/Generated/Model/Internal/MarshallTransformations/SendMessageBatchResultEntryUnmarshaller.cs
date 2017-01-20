@@ -78,6 +78,12 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
                         unmarshalledObject.MessageId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("SequenceNumber", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.SequenceNumber = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {

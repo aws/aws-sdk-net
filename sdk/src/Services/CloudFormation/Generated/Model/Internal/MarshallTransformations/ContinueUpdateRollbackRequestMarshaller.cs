@@ -58,6 +58,19 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
 
             if(publicRequest != null)
             {
+                if(publicRequest.IsSetResourcesToSkip())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.ResourcesToSkip)
+                    {
+                        request.Parameters.Add("ResourcesToSkip" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
+                }
+                if(publicRequest.IsSetRoleARN())
+                {
+                    request.Parameters.Add("RoleARN", StringUtils.FromString(publicRequest.RoleARN));
+                }
                 if(publicRequest.IsSetStackName())
                 {
                     request.Parameters.Add("StackName", StringUtils.FromString(publicRequest.StackName));

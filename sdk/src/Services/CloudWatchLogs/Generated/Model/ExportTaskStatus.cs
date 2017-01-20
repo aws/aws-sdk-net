@@ -38,7 +38,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property Code. 
         /// <para>
-        /// Status code of the export task.
+        /// The status code of the export task.
         /// </para>
         /// </summary>
         public ExportTaskStatusCode Code
@@ -56,7 +56,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property Message. 
         /// <para>
-        /// Status message related to the <code class="code">code</code>.
+        /// The status message related to the status code.
         /// </para>
         /// </summary>
         public string Message

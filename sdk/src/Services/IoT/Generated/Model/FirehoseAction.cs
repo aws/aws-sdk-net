@@ -34,6 +34,7 @@ namespace Amazon.IoT.Model
     {
         private string _deliveryStreamName;
         private string _roleArn;
+        private string _separator;
 
         /// <summary>
         /// Gets and sets the property DeliveryStreamName. 
@@ -69,6 +70,26 @@ namespace Amazon.IoT.Model
         internal bool IsSetRoleArn()
         {
             return this._roleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Separator. 
+        /// <para>
+        /// A character separator that will be used to separate records written to the Firehose
+        /// stream. Valid values are: '\n' (newline), '\t' (tab), '\r\n' (Windows newline), ','
+        /// (comma).
+        /// </para>
+        /// </summary>
+        public string Separator
+        {
+            get { return this._separator; }
+            set { this._separator = value; }
+        }
+
+        // Check to see if Separator property is set
+        internal bool IsSetSeparator()
+        {
+            return this._separator != null;
         }
 
     }

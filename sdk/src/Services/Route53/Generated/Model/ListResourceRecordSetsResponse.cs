@@ -28,8 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// A complex type that contains information about the resource record sets that are returned
-    /// by the request and information about the response.
+    /// A complex type that contains list information for the resource record set.
     /// </summary>
     public partial class ListResourceRecordSetsResponse : AmazonWebServiceResponse
     {
@@ -43,8 +42,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property ResourceRecordSets. 
         /// <para>
-        /// A complex type that contains information about the resource record sets that are returned
-        /// by the request.
+        /// Information about multiple resource record sets.
         /// </para>
         /// </summary>
         public List<ResourceRecordSet> ResourceRecordSets
@@ -62,13 +60,9 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property IsTruncated. 
         /// <para>
-        /// A flag that indicates whether there are more resource record sets to be listed. If
-        /// your results were truncated, you can make a follow-up request for the next page of
-        /// results by using the <a>ListResourceRecordSetsResponse$NextRecordName</a> element.
-        /// </para>
-        ///  
-        /// <para>
-        /// Valid Values: <code>true</code> | <code>false</code>
+        /// A flag that indicates whether more resource record sets remain to be listed. If your
+        /// results were truncated, you can make a follow-up pagination request by using the <code>NextRecordName</code>
+        /// element.
         /// </para>
         /// </summary>
         public bool IsTruncated
@@ -86,8 +80,11 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property NextRecordName. 
         /// <para>
-        /// If the results were truncated, the name of the next record in the list. This element
-        /// is present only if <a>ListResourceRecordSetsResponse$IsTruncated</a> is true. 
+        /// If the results were truncated, the name of the next record in the list.
+        /// </para>
+        ///  
+        /// <para>
+        /// This element is present only if <code>IsTruncated</code> is true. 
         /// </para>
         /// </summary>
         public string NextRecordName
@@ -105,8 +102,11 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property NextRecordType. 
         /// <para>
-        /// If the results were truncated, the type of the next record in the list. This element
-        /// is present only if <a>ListResourceRecordSetsResponse$IsTruncated</a> is true. 
+        /// If the results were truncated, the type of the next record in the list.
+        /// </para>
+        ///  
+        /// <para>
+        /// This element is present only if <code>IsTruncated</code> is true. 
         /// </para>
         /// </summary>
         public RRType NextRecordType
@@ -124,9 +124,9 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property NextRecordIdentifier. 
         /// <para>
-        /// <i>Weighted resource record sets only:</i> If results were truncated for a given DNS
-        /// name and type, the value of <code>SetIdentifier</code> for the next resource record
-        /// set that has the current DNS name and type.
+        ///  <i>Weighted, latency, geolocation, and failover resource record sets only</i>: If
+        /// results were truncated for a given DNS name and type, the value of <code>SetIdentifier</code>
+        /// for the next resource record set that has the current DNS name and type.
         /// </para>
         /// </summary>
         public string NextRecordIdentifier
@@ -144,8 +144,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property MaxItems. 
         /// <para>
-        /// The maximum number of records you requested. The maximum value of <code>MaxItems</code>
-        /// is 100.
+        /// The maximum number of records you requested.
         /// </para>
         /// </summary>
         public string MaxItems

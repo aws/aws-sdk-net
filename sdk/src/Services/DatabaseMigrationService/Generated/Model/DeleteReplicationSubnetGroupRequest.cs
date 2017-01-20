@@ -30,8 +30,6 @@ namespace Amazon.DatabaseMigrationService.Model
     /// <summary>
     /// Container for the parameters to the DeleteReplicationSubnetGroup operation.
     /// Deletes a subnet group.
-    /// 
-    ///  <note/>
     /// </summary>
     public partial class DeleteReplicationSubnetGroupRequest : AmazonDatabaseMigrationServiceRequest
     {

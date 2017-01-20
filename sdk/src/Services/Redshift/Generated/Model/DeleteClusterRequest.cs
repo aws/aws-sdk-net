@@ -33,11 +33,11 @@ namespace Amazon.Redshift.Model
     /// indicates that the request was received correctly. Use <a>DescribeClusters</a> to
     /// monitor the status of the deletion. The delete operation cannot be canceled or reverted
     /// once submitted. For more information about managing clusters, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
-    /// Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i> . 
+    /// Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
     /// 
     ///  
     /// <para>
-    ///  If you want to shut down the cluster and retain it for future use, set <i>SkipFinalClusterSnapshot</i>
+    /// If you want to shut down the cluster and retain it for future use, set <i>SkipFinalClusterSnapshot</i>
     /// to <code>false</code> and specify a name for <i>FinalClusterSnapshotIdentifier</i>.
     /// You can later restore this snapshot to resume using the cluster. If a final cluster
     /// snapshot is requested, the status of the cluster will be "final-snapshot" while the
@@ -47,7 +47,7 @@ namespace Amazon.Redshift.Model
     ///  
     /// <para>
     ///  For more information about managing clusters, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
-    /// Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i> . 
+    /// Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
     /// </para>
     /// </summary>
     public partial class DeleteClusterRequest : AmazonRedshiftRequest
@@ -59,15 +59,29 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ClusterIdentifier. 
         /// <para>
-        ///  The identifier of the cluster to be deleted. 
+        /// The identifier of the cluster to be deleted.
         /// </para>
         ///  
         /// <para>
         /// Constraints:
         /// </para>
-        ///  <ul> <li>Must contain lowercase characters.</li> <li>Must contain from 1 to 63 alphanumeric
-        /// characters or hyphens.</li> <li>First character must be a letter.</li> <li>Cannot
-        /// end with a hyphen or contain two consecutive hyphens.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must contain lowercase characters.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Must contain from 1 to 63 alphanumeric characters or hyphens.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// First character must be a letter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cannot end with a hyphen or contain two consecutive hyphens.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string ClusterIdentifier
         {
@@ -84,7 +98,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property FinalClusterSnapshotIdentifier. 
         /// <para>
-        ///  The identifier of the final snapshot that is to be created immediately before deleting
+        /// The identifier of the final snapshot that is to be created immediately before deleting
         /// the cluster. If this parameter is provided, <i>SkipFinalClusterSnapshot</i> must be
         /// <code>false</code>. 
         /// </para>
@@ -92,9 +106,19 @@ namespace Amazon.Redshift.Model
         /// <para>
         /// Constraints:
         /// </para>
-        ///  <ul> <li>Must be 1 to 255 alphanumeric characters.</li> <li>First character must
-        /// be a letter.</li> <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
-        /// </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must be 1 to 255 alphanumeric characters.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// First character must be a letter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cannot end with a hyphen or contain two consecutive hyphens.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string FinalClusterSnapshotIdentifier
         {
@@ -111,15 +135,19 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property SkipFinalClusterSnapshot. 
         /// <para>
-        ///  Determines whether a final snapshot of the cluster is created before Amazon Redshift
+        /// Determines whether a final snapshot of the cluster is created before Amazon Redshift
         /// deletes the cluster. If <code>true</code>, a final cluster snapshot is not created.
         /// If <code>false</code>, a final cluster snapshot is created before the cluster is deleted.
         /// 
         /// </para>
-        ///  <note>The <i>FinalClusterSnapshotIdentifier</i> parameter must be specified if <i>SkipFinalClusterSnapshot</i>
-        /// is <code>false</code>.</note> 
+        ///  <note> 
         /// <para>
-        /// Default: <code>false</code>
+        /// The <i>FinalClusterSnapshotIdentifier</i> parameter must be specified if <i>SkipFinalClusterSnapshot</i>
+        /// is <code>false</code>.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Default: <code>false</code> 
         /// </para>
         /// </summary>
         public bool SkipFinalClusterSnapshot

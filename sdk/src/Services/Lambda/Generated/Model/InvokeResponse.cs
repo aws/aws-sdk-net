@@ -84,7 +84,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Payload. 
         /// <para>
-        ///  It is the JSON representation of the object returned by the Lambda function. In This
+        ///  It is the JSON representation of the object returned by the Lambda function. This
         /// is present only if the invocation type is <code>RequestResponse</code>. 
         /// </para>
         ///  

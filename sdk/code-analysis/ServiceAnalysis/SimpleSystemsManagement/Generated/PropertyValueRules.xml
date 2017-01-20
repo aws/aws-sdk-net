@@ -6,12 +6,50 @@
     <max>36</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.CreateActivationRequest.DefaultInstanceName</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.CreateActivationRequest.Description</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.CreateActivationRequest.IamRole</property>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.CreateActivationRequest.RegistrationLimit</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.CreateActivationResponse.ActivationCode</property>
+    <min>20</min>
+    <max>250</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.CreateActivationResponse.ActivationId</property>
+    <pattern>^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.CreateAssociationRequest.DocumentVersion</property>
+    <pattern>([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.CreateAssociationRequest.InstanceId</property>
-    <pattern>(^i-(\w{8}|\w{17})$)|(^op-\w{17}$)</pattern>
+    <pattern>(^i-(\w{8}|\w{17})$)|(^mi-\w{17}$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.CreateAssociationRequest.Name</property>
     <pattern>^[a-zA-Z0-9_\-.]{3,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.CreateAssociationRequest.ScheduleExpression</property>
+    <min>1</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.CreateDocumentRequest.Content</property>
@@ -22,8 +60,70 @@
     <pattern>^[a-zA-Z0-9_\-.]{3,128}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.CreateMaintenanceWindowRequest.ClientToken</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.CreateMaintenanceWindowRequest.Cutoff</property>
+    <min>0</min>
+    <max>23</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.CreateMaintenanceWindowRequest.Duration</property>
+    <min>1</min>
+    <max>24</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.CreateMaintenanceWindowRequest.Name</property>
+    <min>3</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9_\-.]{3,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.CreateMaintenanceWindowRequest.Schedule</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.CreateMaintenanceWindowResponse.WindowId</property>
+    <min>20</min>
+    <max>20</max>
+    <pattern>^mw-[0-9a-f]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.CreatePatchBaselineRequest.ClientToken</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.CreatePatchBaselineRequest.Description</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.CreatePatchBaselineRequest.Name</property>
+    <min>3</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9_\-.]{3,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.CreatePatchBaselineResponse.BaselineId</property>
+    <min>20</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9_\-:/]{20,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DeleteActivationRequest.ActivationId</property>
+    <pattern>^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DeleteAssociationRequest.AssociationId</property>
+    <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.DeleteAssociationRequest.InstanceId</property>
-    <pattern>(^i-(\w{8}|\w{17})$)|(^op-\w{17}$)</pattern>
+    <pattern>(^i-(\w{8}|\w{17})$)|(^mi-\w{17}$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.DeleteAssociationRequest.Name</property>
@@ -34,12 +134,141 @@
     <pattern>^[a-zA-Z0-9_\-.]{3,128}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DeleteMaintenanceWindowRequest.WindowId</property>
+    <min>20</min>
+    <max>20</max>
+    <pattern>^mw-[0-9a-f]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DeleteMaintenanceWindowResponse.WindowId</property>
+    <min>20</min>
+    <max>20</max>
+    <pattern>^mw-[0-9a-f]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DeleteParameterRequest.Name</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^(?!^([aA][wW][sS]|[sS][sS][mM]))(?=^[a-zA-Z0-9_.-]*$).*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DeletePatchBaselineRequest.BaselineId</property>
+    <min>20</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9_\-:/]{20,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DeletePatchBaselineResponse.BaselineId</property>
+    <min>20</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9_\-:/]{20,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DeregisterManagedInstanceRequest.InstanceId</property>
+    <pattern>^mi-[0-9a-f]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DeregisterPatchBaselineForPatchGroupRequest.BaselineId</property>
+    <min>20</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9_\-:/]{20,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DeregisterPatchBaselineForPatchGroupRequest.PatchGroup</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DeregisterPatchBaselineForPatchGroupResponse.BaselineId</property>
+    <min>20</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9_\-:/]{20,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DeregisterPatchBaselineForPatchGroupResponse.PatchGroup</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DeregisterTargetFromMaintenanceWindowRequest.WindowId</property>
+    <min>20</min>
+    <max>20</max>
+    <pattern>^mw-[0-9a-f]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DeregisterTargetFromMaintenanceWindowRequest.WindowTargetId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DeregisterTargetFromMaintenanceWindowResponse.WindowId</property>
+    <min>20</min>
+    <max>20</max>
+    <pattern>^mw-[0-9a-f]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DeregisterTargetFromMaintenanceWindowResponse.WindowTargetId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DeregisterTaskFromMaintenanceWindowRequest.WindowId</property>
+    <min>20</min>
+    <max>20</max>
+    <pattern>^mw-[0-9a-f]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DeregisterTaskFromMaintenanceWindowRequest.WindowTaskId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DeregisterTaskFromMaintenanceWindowResponse.WindowId</property>
+    <min>20</min>
+    <max>20</max>
+    <pattern>^mw-[0-9a-f]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DeregisterTaskFromMaintenanceWindowResponse.WindowTaskId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DescribeActivationsRequest.MaxResults</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DescribeAssociationRequest.AssociationId</property>
+    <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.DescribeAssociationRequest.InstanceId</property>
-    <pattern>(^i-(\w{8}|\w{17})$)|(^op-\w{17}$)</pattern>
+    <pattern>(^i-(\w{8}|\w{17})$)|(^mi-\w{17}$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.DescribeAssociationRequest.Name</property>
     <pattern>^[a-zA-Z0-9_\-.]{3,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DescribeAutomationExecutionsRequest.MaxResults</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DescribeAvailablePatchesRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DescribeDocumentRequest.DocumentVersion</property>
+    <pattern>([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.DescribeDocumentRequest.Name</property>
@@ -50,9 +279,244 @@
     <pattern>^[a-zA-Z0-9_\-.]{3,128}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DescribeEffectiveInstanceAssociationsRequest.InstanceId</property>
+    <pattern>(^i-(\w{8}|\w{17})$)|(^mi-\w{17}$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DescribeEffectiveInstanceAssociationsRequest.MaxResults</property>
+    <min>1</min>
+    <max>5</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DescribeEffectivePatchesForPatchBaselineRequest.BaselineId</property>
+    <min>20</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9_\-:/]{20,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DescribeEffectivePatchesForPatchBaselineRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DescribeInstanceAssociationsStatusRequest.InstanceId</property>
+    <pattern>(^i-(\w{8}|\w{17})$)|(^mi-\w{17}$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DescribeInstanceAssociationsStatusRequest.MaxResults</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.DescribeInstanceInformationRequest.MaxResults</property>
     <min>5</min>
     <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DescribeInstancePatchesRequest.InstanceId</property>
+    <pattern>(^i-(\w{8}|\w{17})$)|(^mi-\w{17}$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DescribeInstancePatchesRequest.MaxResults</property>
+    <min>10</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DescribeInstancePatchStatesRequest.MaxResults</property>
+    <min>10</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DescribeInstancePatchStatesForPatchGroupRequest.MaxResults</property>
+    <min>10</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DescribeInstancePatchStatesForPatchGroupRequest.PatchGroup</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DescribeMaintenanceWindowExecutionsRequest.MaxResults</property>
+    <min>10</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DescribeMaintenanceWindowExecutionsRequest.WindowId</property>
+    <min>20</min>
+    <max>20</max>
+    <pattern>^mw-[0-9a-f]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DescribeMaintenanceWindowExecutionTaskInvocationsRequest.MaxResults</property>
+    <min>10</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DescribeMaintenanceWindowExecutionTaskInvocationsRequest.TaskId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DescribeMaintenanceWindowExecutionTaskInvocationsRequest.WindowExecutionId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DescribeMaintenanceWindowExecutionTasksRequest.MaxResults</property>
+    <min>10</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DescribeMaintenanceWindowExecutionTasksRequest.WindowExecutionId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DescribeMaintenanceWindowsRequest.MaxResults</property>
+    <min>10</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DescribeMaintenanceWindowTargetsRequest.MaxResults</property>
+    <min>10</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DescribeMaintenanceWindowTargetsRequest.WindowId</property>
+    <min>20</min>
+    <max>20</max>
+    <pattern>^mw-[0-9a-f]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DescribeMaintenanceWindowTasksRequest.MaxResults</property>
+    <min>10</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DescribeMaintenanceWindowTasksRequest.WindowId</property>
+    <min>20</min>
+    <max>20</max>
+    <pattern>^mw-[0-9a-f]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DescribeParametersRequest.MaxResults</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DescribePatchBaselinesRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DescribePatchGroupsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DescribePatchGroupStateRequest.PatchGroup</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.GetAutomationExecutionRequest.AutomationExecutionId</property>
+    <min>36</min>
+    <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.GetCommandInvocationRequest.CommandId</property>
+    <min>36</min>
+    <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.GetCommandInvocationRequest.InstanceId</property>
+    <pattern>(^i-(\w{8}|\w{17})$)|(^mi-\w{17}$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.GetCommandInvocationRequest.PluginName</property>
+    <min>4</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.GetCommandInvocationResponse.CommandId</property>
+    <min>36</min>
+    <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.GetCommandInvocationResponse.Comment</property>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.GetCommandInvocationResponse.DocumentName</property>
+    <pattern>^[a-zA-Z0-9_\-.]{3,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.GetCommandInvocationResponse.ExecutionElapsedTime</property>
+    <pattern>^([\-]?\d{4}(?!\d{2}\b))((-?)((0[1-9]|1[0-2])(\3([12]\d|0[1-9]|3[01]))?|W([0-4]\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\d|[12]\d{2}|3([0-5]\d|6[1-6])))([T\s]((([01]\d|2[0-3])((:?)[0-5]\d)?|24\:?00)([\.,]\d(?!:))?)?(\17[0-5]\d([\.,]\d)?)?([zZ]|([\-])([01]\d|2[0-3]):?([0-5]\d)?)?)?)?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.GetCommandInvocationResponse.ExecutionEndDateTime</property>
+    <pattern>^([\-]?\d{4}(?!\d{2}\b))((-?)((0[1-9]|1[0-2])(\3([12]\d|0[1-9]|3[01]))?|W([0-4]\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\d|[12]\d{2}|3([0-5]\d|6[1-6])))([T\s]((([01]\d|2[0-3])((:?)[0-5]\d)?|24\:?00)([\.,]\d(?!:))?)?(\17[0-5]\d([\.,]\d)?)?([zZ]|([\-])([01]\d|2[0-3]):?([0-5]\d)?)?)?)?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.GetCommandInvocationResponse.ExecutionStartDateTime</property>
+    <pattern>^([\-]?\d{4}(?!\d{2}\b))((-?)((0[1-9]|1[0-2])(\3([12]\d|0[1-9]|3[01]))?|W([0-4]\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\d|[12]\d{2}|3([0-5]\d|6[1-6])))([T\s]((([01]\d|2[0-3])((:?)[0-5]\d)?|24\:?00)([\.,]\d(?!:))?)?(\17[0-5]\d([\.,]\d)?)?([zZ]|([\-])([01]\d|2[0-3]):?([0-5]\d)?)?)?)?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.GetCommandInvocationResponse.InstanceId</property>
+    <pattern>(^i-(\w{8}|\w{17})$)|(^mi-\w{17}$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.GetCommandInvocationResponse.PluginName</property>
+    <min>4</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.GetCommandInvocationResponse.StandardErrorContent</property>
+    <max>8000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.GetCommandInvocationResponse.StandardOutputContent</property>
+    <max>24000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.GetCommandInvocationResponse.StatusDetails</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.GetDefaultPatchBaselineResponse.BaselineId</property>
+    <min>20</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9_\-:/]{20,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.GetDeployablePatchSnapshotForInstanceRequest.InstanceId</property>
+    <pattern>(^i-(\w{8}|\w{17})$)|(^mi-\w{17}$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.GetDeployablePatchSnapshotForInstanceRequest.SnapshotId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.GetDeployablePatchSnapshotForInstanceResponse.InstanceId</property>
+    <pattern>(^i-(\w{8}|\w{17})$)|(^mi-\w{17}$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.GetDeployablePatchSnapshotForInstanceResponse.SnapshotId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.GetDocumentRequest.DocumentVersion</property>
+    <pattern>([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.GetDocumentRequest.Name</property>
@@ -63,13 +527,184 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.GetDocumentResponse.DocumentVersion</property>
+    <pattern>([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.GetDocumentResponse.Name</property>
     <pattern>^[a-zA-Z0-9_\-.:/]{3,128}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.GetInventoryRequest.MaxResults</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.GetInventorySchemaRequest.MaxResults</property>
+    <min>50</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.GetInventorySchemaRequest.TypeName</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.GetMaintenanceWindowRequest.WindowId</property>
+    <min>20</min>
+    <max>20</max>
+    <pattern>^mw-[0-9a-f]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.GetMaintenanceWindowResponse.Cutoff</property>
+    <min>0</min>
+    <max>23</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.GetMaintenanceWindowResponse.Duration</property>
+    <min>1</min>
+    <max>24</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.GetMaintenanceWindowResponse.Name</property>
+    <min>3</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9_\-.]{3,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.GetMaintenanceWindowResponse.Schedule</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.GetMaintenanceWindowResponse.WindowId</property>
+    <min>20</min>
+    <max>20</max>
+    <pattern>^mw-[0-9a-f]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.GetMaintenanceWindowExecutionRequest.WindowExecutionId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.GetMaintenanceWindowExecutionResponse.StatusDetails</property>
+    <min>0</min>
+    <max>250</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.GetMaintenanceWindowExecutionResponse.WindowExecutionId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.GetMaintenanceWindowExecutionTaskRequest.TaskId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.GetMaintenanceWindowExecutionTaskRequest.WindowExecutionId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.GetMaintenanceWindowExecutionTaskResponse.MaxConcurrency</property>
+    <min>1</min>
+    <max>7</max>
+    <pattern>^[1-9]\d*$|[0-9][%]|[1-9][0-9][%]|[1][0][0][%]|[0-9]?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.GetMaintenanceWindowExecutionTaskResponse.MaxErrors</property>
+    <min>1</min>
+    <max>7</max>
+    <pattern>^[1-9]\d*$|[0-9][%]|[1-9][0-9][%]|[1][0][0][%]|[0-9]?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.GetMaintenanceWindowExecutionTaskResponse.Priority</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.GetMaintenanceWindowExecutionTaskResponse.StatusDetails</property>
+    <min>0</min>
+    <max>250</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.GetMaintenanceWindowExecutionTaskResponse.TaskArn</property>
+    <min>1</min>
+    <max>1600</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.GetMaintenanceWindowExecutionTaskResponse.TaskExecutionId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.GetMaintenanceWindowExecutionTaskResponse.WindowExecutionId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.GetParameterHistoryRequest.MaxResults</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.GetParameterHistoryRequest.Name</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^(?!^([aA][wW][sS]|[sS][sS][mM]))(?=^[a-zA-Z0-9_.-]*$).*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.GetPatchBaselineRequest.BaselineId</property>
+    <min>20</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9_\-:/]{20,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.GetPatchBaselineResponse.BaselineId</property>
+    <min>20</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9_\-:/]{20,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.GetPatchBaselineResponse.Description</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.GetPatchBaselineResponse.Name</property>
+    <min>3</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9_\-.]{3,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.GetPatchBaselineForPatchGroupRequest.PatchGroup</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.GetPatchBaselineForPatchGroupResponse.BaselineId</property>
+    <min>20</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9_\-:/]{20,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.GetPatchBaselineForPatchGroupResponse.PatchGroup</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.ListAssociationsRequest.MaxResults</property>
     <min>1</min>
-    <max>25</max>
+    <max>50</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.ListCommandInvocationsRequest.CommandId</property>
@@ -78,7 +713,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.ListCommandInvocationsRequest.InstanceId</property>
-    <pattern>(^i-(\w{8}|\w{17})$)|(^op-\w{17}$)</pattern>
+    <pattern>(^i-(\w{8}|\w{17})$)|(^mi-\w{17}$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.ListCommandInvocationsRequest.MaxResults</property>
@@ -92,7 +727,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.ListCommandsRequest.InstanceId</property>
-    <pattern>(^i-(\w{8}|\w{17})$)|(^op-\w{17}$)</pattern>
+    <pattern>(^i-(\w{8}|\w{17})$)|(^mi-\w{17}$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.ListCommandsRequest.MaxResults</property>
@@ -105,8 +740,173 @@
     <max>50</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.ListDocumentVersionsRequest.MaxResults</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.ListDocumentVersionsRequest.Name</property>
+    <pattern>^[a-zA-Z0-9_\-.]{3,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.ListInventoryEntriesRequest.InstanceId</property>
+    <pattern>(^i-(\w{8}|\w{17})$)|(^mi-\w{17}$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.ListInventoryEntriesRequest.MaxResults</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.ListInventoryEntriesRequest.TypeName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^(AWS|Custom):.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.ListInventoryEntriesResponse.CaptureTime</property>
+    <pattern>^(20)[0-9][0-9]-(0[1-9]|1[012])-([12][0-9]|3[01]|0[1-9])(T)(2[0-3]|[0-1][0-9])(:[0-5][0-9])(:[0-5][0-9])(Z)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.ListInventoryEntriesResponse.InstanceId</property>
+    <pattern>(^i-(\w{8}|\w{17})$)|(^mi-\w{17}$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.ListInventoryEntriesResponse.SchemaVersion</property>
+    <pattern>^([0-9]{1,6})(\.[0-9]{1,6})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.ListInventoryEntriesResponse.TypeName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^(AWS|Custom):.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.ModifyDocumentPermissionRequest.Name</property>
     <pattern>^[a-zA-Z0-9_\-.]{3,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.PutInventoryRequest.InstanceId</property>
+    <pattern>(^i-(\w{8}|\w{17})$)|(^mi-\w{17}$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.PutParameterRequest.Description</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.PutParameterRequest.KeyId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^([a-zA-Z0-9:/_-]+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.PutParameterRequest.Name</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^(?!^([aA][wW][sS]|[sS][sS][mM]))(?=^[a-zA-Z0-9_.-]*$).*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.PutParameterRequest.Value</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^(?:(?!(\{\{.*\}\})).)*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.RegisterDefaultPatchBaselineRequest.BaselineId</property>
+    <min>20</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9_\-:/]{20,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.RegisterDefaultPatchBaselineResponse.BaselineId</property>
+    <min>20</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9_\-:/]{20,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.RegisterPatchBaselineForPatchGroupRequest.BaselineId</property>
+    <min>20</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9_\-:/]{20,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.RegisterPatchBaselineForPatchGroupRequest.PatchGroup</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.RegisterPatchBaselineForPatchGroupResponse.BaselineId</property>
+    <min>20</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9_\-:/]{20,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.RegisterPatchBaselineForPatchGroupResponse.PatchGroup</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.RegisterTargetWithMaintenanceWindowRequest.ClientToken</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.RegisterTargetWithMaintenanceWindowRequest.OwnerInformation</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.RegisterTargetWithMaintenanceWindowRequest.WindowId</property>
+    <min>20</min>
+    <max>20</max>
+    <pattern>^mw-[0-9a-f]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.RegisterTargetWithMaintenanceWindowResponse.WindowTargetId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.RegisterTaskWithMaintenanceWindowRequest.ClientToken</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.RegisterTaskWithMaintenanceWindowRequest.MaxConcurrency</property>
+    <min>1</min>
+    <max>7</max>
+    <pattern>^[1-9]\d*$|[0-9][%]|[1-9][0-9][%]|[1][0][0][%]|[0-9]?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.RegisterTaskWithMaintenanceWindowRequest.MaxErrors</property>
+    <min>1</min>
+    <max>7</max>
+    <pattern>^[1-9]\d*$|[0-9][%]|[1-9][0-9][%]|[1][0][0][%]|[0-9]?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.RegisterTaskWithMaintenanceWindowRequest.Priority</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.RegisterTaskWithMaintenanceWindowRequest.TaskArn</property>
+    <min>1</min>
+    <max>1600</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.RegisterTaskWithMaintenanceWindowRequest.WindowId</property>
+    <min>20</min>
+    <max>20</max>
+    <pattern>^mw-[0-9a-f]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.RegisterTaskWithMaintenanceWindowResponse.WindowTaskId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.SendCommandRequest.Comment</property>
@@ -121,6 +921,18 @@
     <pattern>^[a-zA-Z0-9_\-.:/]{3,128}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.SendCommandRequest.MaxConcurrency</property>
+    <min>1</min>
+    <max>7</max>
+    <pattern>^[1-9]\d*$|[0-9][%]|[1-9][0-9][%]|[1][0][0][%]|[0-9]?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.SendCommandRequest.MaxErrors</property>
+    <min>1</min>
+    <max>7</max>
+    <pattern>^[1-9]\d*$|[0-9][%]|[1-9][0-9][%]|[1][0][0][%]|[0-9]?</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.SendCommandRequest.OutputS3BucketName</property>
     <min>3</min>
     <max>63</max>
@@ -130,33 +942,240 @@
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.SendCommandRequest.OutputS3Region</property>
+    <min>3</min>
+    <max>20</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.SendCommandRequest.TimeoutSeconds</property>
     <min>30</min>
     <max>2592000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.StartAutomationExecutionRequest.DocumentName</property>
+    <pattern>^[a-zA-Z0-9_\-.:/]{3,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.StartAutomationExecutionRequest.DocumentVersion</property>
+    <pattern>([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.StartAutomationExecutionResponse.AutomationExecutionId</property>
+    <min>36</min>
+    <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.StopAutomationExecutionRequest.AutomationExecutionId</property>
+    <min>36</min>
+    <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.UpdateAssociationRequest.AssociationId</property>
+    <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.UpdateAssociationRequest.DocumentVersion</property>
+    <pattern>([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.UpdateAssociationRequest.ScheduleExpression</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.UpdateAssociationStatusRequest.InstanceId</property>
-    <pattern>(^i-(\w{8}|\w{17})$)|(^op-\w{17}$)</pattern>
+    <pattern>(^i-(\w{8}|\w{17})$)|(^mi-\w{17}$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.UpdateAssociationStatusRequest.Name</property>
     <pattern>^[a-zA-Z0-9_\-.]{3,128}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.UpdateDocumentRequest.Content</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.UpdateDocumentRequest.DocumentVersion</property>
+    <pattern>([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.UpdateDocumentRequest.Name</property>
+    <pattern>^[a-zA-Z0-9_\-.]{3,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.UpdateDocumentDefaultVersionRequest.DocumentVersion</property>
+    <pattern>(^[1-9][0-9]*$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.UpdateDocumentDefaultVersionRequest.Name</property>
+    <pattern>^[a-zA-Z0-9_\-.]{3,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.UpdateMaintenanceWindowRequest.Cutoff</property>
+    <min>0</min>
+    <max>23</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.UpdateMaintenanceWindowRequest.Duration</property>
+    <min>1</min>
+    <max>24</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.UpdateMaintenanceWindowRequest.Name</property>
+    <min>3</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9_\-.]{3,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.UpdateMaintenanceWindowRequest.Schedule</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.UpdateMaintenanceWindowRequest.WindowId</property>
+    <min>20</min>
+    <max>20</max>
+    <pattern>^mw-[0-9a-f]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.UpdateMaintenanceWindowResponse.Cutoff</property>
+    <min>0</min>
+    <max>23</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.UpdateMaintenanceWindowResponse.Duration</property>
+    <min>1</min>
+    <max>24</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.UpdateMaintenanceWindowResponse.Name</property>
+    <min>3</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9_\-.]{3,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.UpdateMaintenanceWindowResponse.Schedule</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.UpdateMaintenanceWindowResponse.WindowId</property>
+    <min>20</min>
+    <max>20</max>
+    <pattern>^mw-[0-9a-f]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.UpdateManagedInstanceRoleRequest.IamRole</property>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.UpdateManagedInstanceRoleRequest.InstanceId</property>
+    <pattern>^mi-[0-9a-f]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.UpdatePatchBaselineRequest.BaselineId</property>
+    <min>20</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9_\-:/]{20,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.UpdatePatchBaselineRequest.Description</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.UpdatePatchBaselineRequest.Name</property>
+    <min>3</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9_\-.]{3,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.UpdatePatchBaselineResponse.BaselineId</property>
+    <min>20</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9_\-:/]{20,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.UpdatePatchBaselineResponse.Description</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.UpdatePatchBaselineResponse.Name</property>
+    <min>3</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9_\-.]{3,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.Activation.ActivationId</property>
+    <pattern>^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.Activation.DefaultInstanceName</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.Activation.Description</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.Activation.IamRole</property>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.Activation.RegistrationLimit</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.Activation.RegistrationsCount</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.Association.AssociationId</property>
+    <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.Association.DocumentVersion</property>
+    <pattern>([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.Association.InstanceId</property>
-    <pattern>(^i-(\w{8}|\w{17})$)|(^op-\w{17}$)</pattern>
+    <pattern>(^i-(\w{8}|\w{17})$)|(^mi-\w{17}$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.Association.Name</property>
     <pattern>^[a-zA-Z0-9_\-.]{3,128}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.Association.ScheduleExpression</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.AssociationDescription.AssociationId</property>
+    <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.AssociationDescription.DocumentVersion</property>
+    <pattern>([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.AssociationDescription.InstanceId</property>
-    <pattern>(^i-(\w{8}|\w{17})$)|(^op-\w{17}$)</pattern>
+    <pattern>(^i-(\w{8}|\w{17})$)|(^mi-\w{17}$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.AssociationDescription.Name</property>
     <pattern>^[a-zA-Z0-9_\-.]{3,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.AssociationDescription.ScheduleExpression</property>
+    <min>1</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.AssociationFilter.Value</property>
@@ -168,7 +1187,34 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.AssociationStatus.Message</property>
+    <min>1</min>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.AutomationExecution.AutomationExecutionId</property>
+    <min>36</min>
+    <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.AutomationExecution.DocumentName</property>
+    <pattern>^[a-zA-Z0-9_\-.]{3,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.AutomationExecution.DocumentVersion</property>
+    <pattern>([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.AutomationExecutionMetadata.AutomationExecutionId</property>
+    <min>36</min>
+    <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.AutomationExecutionMetadata.DocumentName</property>
+    <pattern>^[a-zA-Z0-9_\-.]{3,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.AutomationExecutionMetadata.DocumentVersion</property>
+    <pattern>([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.Command.CommandId</property>
@@ -184,6 +1230,18 @@
     <pattern>^[a-zA-Z0-9_\-.]{3,128}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.Command.MaxConcurrency</property>
+    <min>1</min>
+    <max>7</max>
+    <pattern>^[1-9]\d*$|[0-9][%]|[1-9][0-9][%]|[1][0][0][%]|[0-9]?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.Command.MaxErrors</property>
+    <min>1</min>
+    <max>7</max>
+    <pattern>^[1-9]\d*$|[0-9][%]|[1-9][0-9][%]|[1][0][0][%]|[0-9]?</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.Command.OutputS3BucketName</property>
     <min>3</min>
     <max>63</max>
@@ -191,6 +1249,16 @@
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.Command.OutputS3KeyPrefix</property>
     <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.Command.OutputS3Region</property>
+    <min>3</min>
+    <max>20</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.Command.StatusDetails</property>
+    <min>0</min>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.CommandFilter.Value</property>
@@ -211,7 +1279,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.CommandInvocation.InstanceId</property>
-    <pattern>(^i-(\w{8}|\w{17})$)|(^op-\w{17}$)</pattern>
+    <pattern>(^i-(\w{8}|\w{17})$)|(^mi-\w{17}$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.CommandInvocation.InstanceName</property>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.CommandInvocation.StatusDetails</property>
+    <min>0</min>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.CommandInvocation.TraceOutput</property>
@@ -235,35 +1312,547 @@
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.CommandPlugin.OutputS3Region</property>
+    <min>3</min>
+    <max>20</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.CommandPlugin.StatusDetails</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.CreateAssociationBatchRequestEntry.DocumentVersion</property>
+    <pattern>([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.CreateAssociationBatchRequestEntry.InstanceId</property>
-    <pattern>(^i-(\w{8}|\w{17})$)|(^op-\w{17}$)</pattern>
+    <pattern>(^i-(\w{8}|\w{17})$)|(^mi-\w{17}$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.CreateAssociationBatchRequestEntry.Name</property>
     <pattern>^[a-zA-Z0-9_\-.]{3,128}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.CreateAssociationBatchRequestEntry.ScheduleExpression</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DocumentDefaultVersionDescription.DefaultVersion</property>
+    <pattern>([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DocumentDefaultVersionDescription.Name</property>
+    <pattern>^[a-zA-Z0-9_\-.]{3,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DocumentDescription.DefaultVersion</property>
+    <pattern>([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DocumentDescription.DocumentVersion</property>
+    <pattern>([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.DocumentDescription.Hash</property>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DocumentDescription.LatestVersion</property>
+    <pattern>([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.DocumentDescription.Name</property>
     <pattern>^[a-zA-Z0-9_\-.:/]{3,128}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DocumentDescription.SchemaVersion</property>
+    <pattern>([0-9]+)\.([0-9]+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.DocumentFilter.Value</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DocumentIdentifier.DocumentVersion</property>
+    <pattern>([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.DocumentIdentifier.Name</property>
     <pattern>^[a-zA-Z0-9_\-.:/]{3,128}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DocumentIdentifier.SchemaVersion</property>
+    <pattern>([0-9]+)\.([0-9]+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DocumentVersionInfo.DocumentVersion</property>
+    <pattern>([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DocumentVersionInfo.Name</property>
+    <pattern>^[a-zA-Z0-9_\-.]{3,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.InstanceAssociation.AssociationId</property>
+    <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.InstanceAssociation.Content</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.InstanceAssociation.InstanceId</property>
+    <pattern>(^i-(\w{8}|\w{17})$)|(^mi-\w{17}$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.InstanceAssociationStatusInfo.AssociationId</property>
+    <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.InstanceAssociationStatusInfo.DocumentVersion</property>
+    <pattern>([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.InstanceAssociationStatusInfo.ErrorCode</property>
+    <max>10</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.InstanceAssociationStatusInfo.ExecutionSummary</property>
+    <min>1</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.InstanceAssociationStatusInfo.InstanceId</property>
+    <pattern>(^i-(\w{8}|\w{17})$)|(^mi-\w{17}$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.InstanceAssociationStatusInfo.Name</property>
+    <pattern>^[a-zA-Z0-9_\-.]{3,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.InstanceInformation.ActivationId</property>
+    <pattern>^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.InstanceInformation.AgentVersion</property>
     <pattern>^[0-9]{1,6}(\.[0-9]{1,6}){2,3}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.InstanceInformation.ComputerName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.InstanceInformation.IamRole</property>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.InstanceInformation.InstanceId</property>
-    <pattern>(^i-(\w{8}|\w{17})$)|(^op-\w{17}$)</pattern>
+    <pattern>(^i-(\w{8}|\w{17})$)|(^mi-\w{17}$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.InstanceInformation.IPAddress</property>
+    <min>1</min>
+    <max>46</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.InstanceInformationStringFilter.Key</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.InstancePatchState.BaselineId</property>
+    <min>20</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9_\-:/]{20,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.InstancePatchState.InstanceId</property>
+    <pattern>(^i-(\w{8}|\w{17})$)|(^mi-\w{17}$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.InstancePatchState.OwnerInformation</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.InstancePatchState.PatchGroup</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.InstancePatchState.SnapshotId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.InstancePatchStateFilter.Key</property>
+    <min>1</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.InvalidItemContentException.TypeName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^(AWS|Custom):.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.InventoryFilter.Key</property>
+    <min>1</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.InventoryItem.CaptureTime</property>
+    <pattern>^(20)[0-9][0-9]-(0[1-9]|1[012])-([12][0-9]|3[01]|0[1-9])(T)(2[0-3]|[0-1][0-9])(:[0-5][0-9])(:[0-5][0-9])(Z)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.InventoryItem.ContentHash</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.InventoryItem.SchemaVersion</property>
+    <pattern>^([0-9]{1,6})(\.[0-9]{1,6})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.InventoryItem.TypeName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^(AWS|Custom):.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.InventoryItemSchema.TypeName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^(AWS|Custom):.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.InventoryItemSchema.Version</property>
+    <pattern>^([0-9]{1,6})(\.[0-9]{1,6})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.InventoryResultItem.CaptureTime</property>
+    <pattern>^(20)[0-9][0-9]-(0[1-9]|1[012])-([12][0-9]|3[01]|0[1-9])(T)(2[0-3]|[0-1][0-9])(:[0-5][0-9])(:[0-5][0-9])(Z)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.InventoryResultItem.ContentHash</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.InventoryResultItem.SchemaVersion</property>
+    <pattern>^([0-9]{1,6})(\.[0-9]{1,6})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.InventoryResultItem.TypeName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^(AWS|Custom):.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.ItemContentMismatchException.TypeName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^(AWS|Custom):.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.ItemSizeLimitExceededException.TypeName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^(AWS|Custom):.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.LoggingInfo.S3BucketName</property>
+    <min>3</min>
+    <max>63</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.LoggingInfo.S3KeyPrefix</property>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.LoggingInfo.S3Region</property>
+    <min>3</min>
+    <max>20</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.MaintenanceWindowExecution.StatusDetails</property>
+    <min>0</min>
+    <max>250</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.MaintenanceWindowExecution.WindowExecutionId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.MaintenanceWindowExecution.WindowId</property>
+    <min>20</min>
+    <max>20</max>
+    <pattern>^mw-[0-9a-f]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.MaintenanceWindowExecutionTaskIdentity.StatusDetails</property>
+    <min>0</min>
+    <max>250</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.MaintenanceWindowExecutionTaskIdentity.TaskArn</property>
+    <min>1</min>
+    <max>1600</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.MaintenanceWindowExecutionTaskIdentity.TaskExecutionId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.MaintenanceWindowExecutionTaskIdentity.WindowExecutionId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.MaintenanceWindowExecutionTaskInvocationIdentity.InvocationId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.MaintenanceWindowExecutionTaskInvocationIdentity.OwnerInformation</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.MaintenanceWindowExecutionTaskInvocationIdentity.StatusDetails</property>
+    <min>0</min>
+    <max>250</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.MaintenanceWindowExecutionTaskInvocationIdentity.TaskExecutionId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.MaintenanceWindowExecutionTaskInvocationIdentity.WindowExecutionId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.MaintenanceWindowExecutionTaskInvocationIdentity.WindowTargetId</property>
+    <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.MaintenanceWindowFilter.Key</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.MaintenanceWindowIdentity.Cutoff</property>
+    <min>0</min>
+    <max>23</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.MaintenanceWindowIdentity.Duration</property>
+    <min>1</min>
+    <max>24</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.MaintenanceWindowIdentity.Name</property>
+    <min>3</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9_\-.]{3,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.MaintenanceWindowIdentity.WindowId</property>
+    <min>20</min>
+    <max>20</max>
+    <pattern>^mw-[0-9a-f]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.MaintenanceWindowTarget.OwnerInformation</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.MaintenanceWindowTarget.WindowId</property>
+    <min>20</min>
+    <max>20</max>
+    <pattern>^mw-[0-9a-f]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.MaintenanceWindowTarget.WindowTargetId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.MaintenanceWindowTask.MaxConcurrency</property>
+    <min>1</min>
+    <max>7</max>
+    <pattern>^[1-9]\d*$|[0-9][%]|[1-9][0-9][%]|[1][0][0][%]|[0-9]?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.MaintenanceWindowTask.MaxErrors</property>
+    <min>1</min>
+    <max>7</max>
+    <pattern>^[1-9]\d*$|[0-9][%]|[1-9][0-9][%]|[1][0][0][%]|[0-9]?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.MaintenanceWindowTask.Priority</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.MaintenanceWindowTask.TaskArn</property>
+    <min>1</min>
+    <max>1600</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.MaintenanceWindowTask.WindowId</property>
+    <min>20</min>
+    <max>20</max>
+    <pattern>^mw-[0-9a-f]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.MaintenanceWindowTask.WindowTaskId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.Parameter.Name</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^(?!^([aA][wW][sS]|[sS][sS][mM]))(?=^[a-zA-Z0-9_.-]*$).*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.Parameter.Value</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^(?:(?!(\{\{.*\}\})).)*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.ParameterHistory.Description</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.ParameterHistory.KeyId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^([a-zA-Z0-9:/_-]+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.ParameterHistory.Name</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^(?!^([aA][wW][sS]|[sS][sS][mM]))(?=^[a-zA-Z0-9_.-]*$).*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.ParameterHistory.Value</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^(?:(?!(\{\{.*\}\})).)*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.ParameterMetadata.Description</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.ParameterMetadata.KeyId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^([a-zA-Z0-9:/_-]+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.ParameterMetadata.Name</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^(?!^([aA][wW][sS]|[sS][sS][mM]))(?=^[a-zA-Z0-9_.-]*$).*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.Patch.Id</property>
+    <pattern>(^KB[0-9]{1,7}$)|(^MS[0-9]{2}\-[0-9]{3}$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.PatchBaselineIdentity.BaselineDescription</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.PatchBaselineIdentity.BaselineId</property>
+    <min>20</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9_\-:/]{20,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.PatchBaselineIdentity.BaselineName</property>
+    <min>3</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9_\-.]{3,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.PatchGroupPatchBaselineMapping.PatchGroup</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.PatchOrchestratorFilter.Key</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.PatchRule.ApproveAfterDays</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.ResultAttribute.TypeName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^(AWS|Custom):.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.S3OutputLocation.OutputS3BucketName</property>
+    <min>3</min>
+    <max>63</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.S3OutputLocation.OutputS3KeyPrefix</property>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.S3OutputLocation.OutputS3Region</property>
+    <min>3</min>
+    <max>20</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.StepExecution.Action</property>
+    <pattern>^aws:[a-zA-Z]{3,25}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.Tag.Key</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^(?!^(?i)aws:)(?=^[\p{L}\p{Z}\p{N}_.:/=+\-@]*$).*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.Tag.Value</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.Target.Key</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[\p{L}\p{Z}\p{N}_.:/=\-@]*$</pattern>
   </property-value-rule>
 </property-value-rules>

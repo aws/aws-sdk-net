@@ -94,6 +94,13 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         response.CapabilitiesReason = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("DeclaredTransforms/member", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        response.DeclaredTransforms.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("Description", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

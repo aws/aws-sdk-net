@@ -42,7 +42,7 @@ namespace Amazon.SecurityToken.Model
     /// 
     ///  <note> 
     /// <para>
-    ///  If you are creating a mobile-based or browser-based app that can authenticate users
+    /// If you are creating a mobile-based or browser-based app that can authenticate users
     /// using a web identity provider like Login with Amazon, Facebook, Google, or an OpenID
     /// Connect-compatible identity provider, we recommend that you use <a href="http://aws.amazon.com/cognito/">Amazon
     /// Cognito</a> or <code>AssumeRoleWithWebIdentity</code>. For more information, see <a
@@ -78,7 +78,7 @@ namespace Amazon.SecurityToken.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// You cannot call any STS APIs.
+    /// You cannot call any STS APIs except <code>GetCallerIdentity</code>.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -147,7 +147,7 @@ namespace Amazon.SecurityToken.Model
         /// <summary>
         /// Instantiates GetFederationTokenRequest with the parameterized properties
         /// </summary>
-        /// <param name="name">The name of the federated user. The name is used as an identifier for the temporary security credentials (such as <code>Bob</code>). For example, you can reference the federated user name in a resource-based policy, such as in an Amazon S3 bucket policy. The format for this parameter, as described by its regex pattern, is a string of characters consisting of upper- and lower-case alphanumeric characters with no spaces. You can also include any of the following characters: =,.@-</param>
+        /// <param name="name">The name of the federated user. The name is used as an identifier for the temporary security credentials (such as <code>Bob</code>). For example, you can reference the federated user name in a resource-based policy, such as in an Amazon S3 bucket policy. The regex used to validate this parameter is a string of characters consisting of upper- and lower-case alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@-</param>
         public GetFederationTokenRequest(string name)
         {
             _name = name;
@@ -185,9 +185,9 @@ namespace Amazon.SecurityToken.Model
         /// </para>
         ///  
         /// <para>
-        /// The format for this parameter, as described by its regex pattern, is a string of characters
-        /// consisting of upper- and lower-case alphanumeric characters with no spaces. You can
-        /// also include any of the following characters: =,.@-
+        /// The regex used to validate this parameter is a string of characters consisting of
+        /// upper- and lower-case alphanumeric characters with no spaces. You can also include
+        /// underscores or any of the following characters: =,.@-
         /// </para>
         /// </summary>
         public string Name

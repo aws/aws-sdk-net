@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2016-01-28.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-11-25.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -45,10 +45,13 @@ namespace Amazon.CloudFront.Model
         public StreamingDistributionList() { }
 
         /// <summary>
-        /// Gets and sets the property IsTruncated. A flag that indicates whether more streaming
-        /// distributions remain to be listed. If your results were truncated, you can make a
-        /// follow-up pagination request using the Marker request parameter to retrieve more distributions
-        /// in the list.
+        /// Gets and sets the property IsTruncated. 
+        /// <para>
+        /// A flag that indicates whether more streaming distributions remain to be listed. If
+        /// your results were truncated, you can make a follow-up pagination request using the
+        /// <code>Marker</code> request parameter to retrieve more distributions in the list.
+        /// 
+        /// </para>
         /// </summary>
         public bool IsTruncated
         {
@@ -63,8 +66,11 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Items. A complex type that contains one StreamingDistributionSummary
-        /// element for each distribution that was created by the current AWS account.
+        /// Gets and sets the property Items. 
+        /// <para>
+        /// A complex type that contains one <code>StreamingDistributionSummary</code> element
+        /// for each distribution that was created by the current AWS account.
+        /// </para>
         /// </summary>
         public List<StreamingDistributionSummary> Items
         {
@@ -79,7 +85,10 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Marker. The value you provided for the Marker request parameter.
+        /// Gets and sets the property Marker. 
+        /// <para>
+        /// The value you provided for the <code>Marker</code> request parameter. 
+        /// </para>
         /// </summary>
         public string Marker
         {
@@ -94,8 +103,10 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaxItems. The value you provided for the MaxItems request
-        /// parameter.
+        /// Gets and sets the property MaxItems. 
+        /// <para>
+        /// The value you provided for the <code>MaxItems</code> request parameter. 
+        /// </para>
         /// </summary>
         public int MaxItems
         {
@@ -110,9 +121,12 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextMarker. If IsTruncated is true, this element is present
-        /// and contains the value you can use for the Marker request parameter to continue listing
-        /// your streaming distributions where they left off.
+        /// Gets and sets the property NextMarker. 
+        /// <para>
+        /// If <code>IsTruncated</code> is <code>true</code>, this element is present and contains
+        /// the value you can use for the <code>Marker</code> request parameter to continue listing
+        /// your RTMP distributions where they left off. 
+        /// </para>
         /// </summary>
         public string NextMarker
         {
@@ -127,8 +141,11 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Quantity. The number of streaming distributions that were
-        /// created by the current AWS account.
+        /// Gets and sets the property Quantity. 
+        /// <para>
+        /// The number of streaming distributions that were created by the current AWS account.
+        /// 
+        /// </para>
         /// </summary>
         public int Quantity
         {

@@ -28,9 +28,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// Set of key-value pairs containing information your game server requires to set up
-    /// sessions. This object allows you to pass in any set of data needed for your game.
-    /// For more information, see the <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/">Amazon
+    /// Set of key-value pairs containing information a server process requires to set up
+    /// a game session. This object allows you to pass in any set of data needed for your
+    /// game. For more information, see the <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/">Amazon
     /// GameLift Developer Guide</a>.
     /// </summary>
     public partial class GameProperty
@@ -39,7 +39,10 @@ namespace Amazon.GameLift.Model
         private string _value;
 
         /// <summary>
-        /// Gets and sets the property Key.
+        /// Gets and sets the property Key. 
+        /// <para>
+        /// TBD
+        /// </para>
         /// </summary>
         public string Key
         {
@@ -54,7 +57,10 @@ namespace Amazon.GameLift.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Value.
+        /// Gets and sets the property Value. 
+        /// <para>
+        /// TBD
+        /// </para>
         /// </summary>
         public string Value
         {

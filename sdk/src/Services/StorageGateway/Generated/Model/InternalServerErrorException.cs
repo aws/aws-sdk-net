@@ -25,7 +25,7 @@ namespace Amazon.StorageGateway.Model
     ///<summary>
     /// StorageGateway exception
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class InternalServerErrorException : AmazonStorageGatewayException 
@@ -79,7 +79,7 @@ namespace Amazon.StorageGateway.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the InternalServerErrorException class with serialized data.
         /// </summary>

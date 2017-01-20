@@ -32,6 +32,7 @@ namespace Amazon.S3.Model
         private string srcVersionId;
         private ServerSideEncryptionMethod serverSideEncryption;
         private string serverSideEncryptionKeyManagementServiceKeyId;
+        private RequestCharged requestCharged;
 
         /// <summary>
         /// Gets and sets the ETag property.
@@ -101,6 +102,24 @@ namespace Amazon.S3.Model
         internal bool IsSetServerSideEncryptionKeyManagementServiceKeyId()
         {
             return !System.String.IsNullOrEmpty(this.serverSideEncryptionKeyManagementServiceKeyId);
+        }
+
+        /// <summary>
+        /// If present, indicates that the requester was successfully charged for the request.
+        /// </summary>
+        public RequestCharged RequestCharged
+        {
+            get { return this.requestCharged; }
+            set { this.requestCharged = value; }
+        }
+
+        /// <summary>
+        /// Checks to see if RequestCharged is set.
+        /// </summary>
+        /// <returns>true, if RequestCharged property is set.</returns>
+        internal bool IsSetRequestCharged()
+        {
+            return requestCharged != null;
         }
     }
 }

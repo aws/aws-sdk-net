@@ -31,7 +31,11 @@ namespace Amazon.ElasticBeanstalk.Model
     /// Container for the parameters to the DescribeEvents operation.
     /// Returns list of event descriptions matching criteria up to the last 6 weeks.
     /// 
-    ///  <note>This action returns the most recent 1,000 events from the specified <code>NextToken</code>.</note>
+    ///  <note> 
+    /// <para>
+    /// This action returns the most recent 1,000 events from the specified <code>NextToken</code>.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DescribeEventsRequest : AmazonElasticBeanstalkRequest
     {
@@ -131,8 +135,8 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property MaxRecords. 
         /// <para>
-        ///  Specifies the maximum number of events that can be returned, beginning with the most
-        /// recent event. 
+        /// Specifies the maximum number of events that can be returned, beginning with the most
+        /// recent event.
         /// </para>
         /// </summary>
         public int MaxRecords
@@ -150,7 +154,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  Pagination token. If specified, the events return the next batch of results. 
+        /// Pagination token. If specified, the events return the next batch of results.
         /// </para>
         /// </summary>
         public string NextToken
@@ -168,8 +172,8 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property RequestId. 
         /// <para>
-        ///  If specified, AWS Elastic Beanstalk restricts the described events to include only
-        /// those associated with this request ID. 
+        /// If specified, AWS Elastic Beanstalk restricts the described events to include only
+        /// those associated with this request ID.
         /// </para>
         /// </summary>
         public string RequestId
@@ -187,8 +191,8 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property Severity. 
         /// <para>
-        ///  If specified, limits the events returned from this call to include only those with
-        /// the specified severity or higher. 
+        /// If specified, limits the events returned from this call to include only those with
+        /// the specified severity or higher.
         /// </para>
         /// </summary>
         public EventSeverity Severity

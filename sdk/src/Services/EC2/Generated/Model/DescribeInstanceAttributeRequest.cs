@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-11-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -50,7 +50,7 @@ namespace Amazon.EC2.Model
         /// Instantiates DescribeInstanceAttributeRequest with the parameterized properties
         /// </summary>
         /// <param name="instanceId">The ID of the instance.</param>
-        /// <param name="attribute">The instance attribute.</param>
+        /// <param name="attribute">The instance attribute. Note: The <code>enaSupport</code> attribute is not supported at this time.</param>
         public DescribeInstanceAttributeRequest(string instanceId, InstanceAttributeName attribute)
         {
             _instanceId = instanceId;
@@ -61,6 +61,10 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property Attribute. 
         /// <para>
         /// The instance attribute.
+        /// </para>
+        ///  
+        /// <para>
+        /// Note: The <code>enaSupport</code> attribute is not supported at this time.
         /// </para>
         /// </summary>
         public InstanceAttributeName Attribute

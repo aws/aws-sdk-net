@@ -29,7 +29,7 @@ namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
     /// Container for the parameters to the BatchGetDeploymentGroups operation.
-    /// Get information about one or more deployment groups.
+    /// Gets information about one or more deployment groups.
     /// </summary>
     public partial class BatchGetDeploymentGroupsRequest : AmazonCodeDeployRequest
     {

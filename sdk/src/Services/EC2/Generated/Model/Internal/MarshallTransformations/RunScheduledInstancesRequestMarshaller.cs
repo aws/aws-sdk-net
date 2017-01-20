@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-11-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -54,13 +54,17 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
             request.Parameters.Add("Action", "RunScheduledInstances");
-            request.Parameters.Add("Version", "2016-04-01");
+            request.Parameters.Add("Version", "2016-11-15");
 
             if(publicRequest != null)
             {
                 if(publicRequest.IsSetClientToken())
                 {
                     request.Parameters.Add("ClientToken", StringUtils.FromString(publicRequest.ClientToken));
+                }
+                else if(!(publicRequest.IsSetClientToken()))
+                {
+                    request.Parameters.Add("ClientToken", StringUtils.FromString(Guid.NewGuid().ToString()));
                 }
                 if(publicRequest.IsSetInstanceCount())
                 {
@@ -180,6 +184,22 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                 foreach(var publicRequestLaunchSpecificationlistValuelistValue in publicRequestLaunchSpecificationlistValue.Groups)
                                 {
                                     request.Parameters.Add("LaunchSpecification" + "." + "NetworkInterface" + "." + publicRequestLaunchSpecificationlistValueIndex + "." + "Group" + "." + publicRequestLaunchSpecificationlistValuelistValueIndex, StringUtils.FromString(publicRequestLaunchSpecificationlistValuelistValue));
+                                    publicRequestLaunchSpecificationlistValuelistValueIndex++;
+                                }
+                            }
+                            if(publicRequestLaunchSpecificationlistValue.IsSetIpv6AddressCount())
+                            {
+                                request.Parameters.Add("LaunchSpecification" + "." + "NetworkInterface" + "." + publicRequestLaunchSpecificationlistValueIndex + "." + "Ipv6AddressCount", StringUtils.FromInt(publicRequestLaunchSpecificationlistValue.Ipv6AddressCount));
+                            }
+                            if(publicRequestLaunchSpecificationlistValue.IsSetIpv6Addresses())
+                            {
+                                int publicRequestLaunchSpecificationlistValuelistValueIndex = 1;
+                                foreach(var publicRequestLaunchSpecificationlistValuelistValue in publicRequestLaunchSpecificationlistValue.Ipv6Addresses)
+                                {
+                                    if(publicRequestLaunchSpecificationlistValuelistValue.IsSetIpv6Address())
+                                    {
+                                        request.Parameters.Add("LaunchSpecification" + "." + "NetworkInterface" + "." + publicRequestLaunchSpecificationlistValueIndex + "." + "Ipv6Address" + "." + publicRequestLaunchSpecificationlistValuelistValueIndex + "." + "Ipv6Address", StringUtils.FromString(publicRequestLaunchSpecificationlistValuelistValue.Ipv6Address));
+                                    }
                                     publicRequestLaunchSpecificationlistValuelistValueIndex++;
                                 }
                             }

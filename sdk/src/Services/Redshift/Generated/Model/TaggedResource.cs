@@ -57,15 +57,48 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        ///  The type of resource with which the tag is associated. Valid resource types are:
-        /// <ul> <li>Cluster</li> <li>CIDR/IP</li> <li>EC2 security group</li> <li>Snapshot</li>
-        /// <li>Cluster security group</li> <li>Subnet group</li> <li>HSM connection</li> <li>HSM
-        /// certificate</li> <li>Parameter group</li> </ul> 
+        /// The type of resource with which the tag is associated. Valid resource types are: 
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        ///  For more information about Amazon Redshift resource types and constructing ARNs,
-        /// go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/constructing-redshift-arn.html">Constructing
+        /// Cluster
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CIDR/IP
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// EC2 security group
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Snapshot
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cluster security group
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Subnet group
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// HSM connection
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// HSM certificate
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Parameter group
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information about Amazon Redshift resource types and constructing ARNs, go
+        /// to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/constructing-redshift-arn.html">Constructing
         /// an Amazon Redshift Amazon Resource Name (ARN)</a> in the Amazon Redshift Cluster Management
         /// Guide. 
         /// </para>
@@ -85,7 +118,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property Tag. 
         /// <para>
-        /// The tag for the resource. 
+        /// The tag for the resource.
         /// </para>
         /// </summary>
         public Tag Tag

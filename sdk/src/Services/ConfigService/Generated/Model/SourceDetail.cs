@@ -28,12 +28,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// Provides the source and type of the event that triggers AWS Config to evaluate your
-    /// AWS resources against a rule.
+    /// Provides the source and the message types that trigger AWS Config to evaluate your
+    /// AWS resources against a rule. It also provides the frequency with which you want AWS
+    /// Config to run evaluations for the rule if the trigger type is periodic. You can specify
+    /// the parameter values for <code>SourceDetail</code> only for custom rules.
     /// </summary>
     public partial class SourceDetail
     {
         private EventSource _eventSource;
+        private MaximumExecutionFrequency _maximumExecutionFrequency;
         private MessageType _messageType;
 
         /// <summary>
@@ -56,12 +59,57 @@ namespace Amazon.ConfigService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MaximumExecutionFrequency. 
+        /// <para>
+        /// The frequency that you want AWS Config to run evaluations for a rule that is triggered
+        /// periodically. If you specify a value for <code>MaximumExecutionFrequency</code>, then
+        /// <code>MessageType</code> must use the <code>ScheduledNotification</code> value.
+        /// </para>
+        /// </summary>
+        public MaximumExecutionFrequency MaximumExecutionFrequency
+        {
+            get { return this._maximumExecutionFrequency; }
+            set { this._maximumExecutionFrequency = value; }
+        }
+
+        // Check to see if MaximumExecutionFrequency property is set
+        internal bool IsSetMaximumExecutionFrequency()
+        {
+            return this._maximumExecutionFrequency != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property MessageType. 
         /// <para>
-        /// The type of SNS message that triggers AWS Config to run an evaluation. For evaluations
-        /// that are initiated when AWS Config delivers a configuration item change notification,
-        /// you must use <code>ConfigurationItemChangeNotification</code>. For evaluations that
-        /// are initiated when AWS Config delivers a configuration snapshot, you must use <code>ConfigurationSnapshotDeliveryCompleted</code>.
+        /// The type of notification that triggers AWS Config to run an evaluation for a rule.
+        /// You can specify the following notification types:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>ConfigurationItemChangeNotification</code> - Triggers an evaluation when AWS
+        /// Config delivers a configuration item as a result of a resource change.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>OversizedConfigurationItemChangeNotification</code> - Triggers an evaluation
+        /// when AWS Config delivers an oversized configuration item. AWS Config may generate
+        /// this notification type when a resource changes and the notification exceeds the maximum
+        /// size allowed by Amazon SNS.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ScheduledNotification</code> - Triggers a periodic evaluation at the frequency
+        /// specified for <code>MaximumExecutionFrequency</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ConfigurationSnapshotDeliveryCompleted</code> - Triggers a periodic evaluation
+        /// when AWS Config delivers a configuration snapshot.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If you want your custom rule to be triggered by configuration changes, specify both
+        /// <code>ConfigurationItemChangeNotification</code> and <code>OversizedConfigurationItemChangeNotification</code>.
         /// 
         /// </para>
         /// </summary>

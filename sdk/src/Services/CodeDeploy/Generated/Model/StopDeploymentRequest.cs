@@ -33,7 +33,27 @@ namespace Amazon.CodeDeploy.Model
     /// </summary>
     public partial class StopDeploymentRequest : AmazonCodeDeployRequest
     {
+        private bool? _autoRollbackEnabled;
         private string _deploymentId;
+
+        /// <summary>
+        /// Gets and sets the property AutoRollbackEnabled. 
+        /// <para>
+        /// Indicates, when a deployment is stopped, whether instances that have been updated
+        /// should be rolled back to the previous version of the application revision.
+        /// </para>
+        /// </summary>
+        public bool AutoRollbackEnabled
+        {
+            get { return this._autoRollbackEnabled.GetValueOrDefault(); }
+            set { this._autoRollbackEnabled = value; }
+        }
+
+        // Check to see if AutoRollbackEnabled property is set
+        internal bool IsSetAutoRollbackEnabled()
+        {
+            return this._autoRollbackEnabled.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property DeploymentId. 

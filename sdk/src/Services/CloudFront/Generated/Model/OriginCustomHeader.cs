@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2016-01-28.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-11-25.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// A complex type that contains information related to a Header
+    /// A complex type that contains <code>HeaderName</code> and <code>HeaderValue</code>
+    /// elements, if any, for this distribution.
     /// </summary>
     public partial class OriginCustomHeader
     {
@@ -36,7 +37,13 @@ namespace Amazon.CloudFront.Model
         private string _headerValue;
 
         /// <summary>
-        /// Gets and sets the property HeaderName. The header's name.
+        /// Gets and sets the property HeaderName. 
+        /// <para>
+        /// The name of a header that you want CloudFront to forward to your origin. For more
+        /// information, see <a href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/forward-custom-headers.html">Forwarding
+        /// Custom Headers to Your Origin (Web Distributions Only)</a> in the <i>Amazon Amazon
+        /// CloudFront Developer Guide</i>.
+        /// </para>
         /// </summary>
         public string HeaderName
         {
@@ -51,7 +58,10 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property HeaderValue. The header's value.
+        /// Gets and sets the property HeaderValue. 
+        /// <para>
+        /// The value for the header that you specified in the <code>HeaderName</code> field.
+        /// </para>
         /// </summary>
         public string HeaderValue
         {

@@ -130,6 +130,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("StopReason", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StopReason = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("TableMappings", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -40,6 +40,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     public partial class CreateDocumentRequest : AmazonSimpleSystemsManagementRequest
     {
         private string _content;
+        private DocumentType _documentType;
         private string _name;
 
         /// <summary>
@@ -74,6 +75,25 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetContent()
         {
             return this._content != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DocumentType. 
+        /// <para>
+        /// The type of document to create. Valid document types include: Policy, Automation,
+        /// and Command.
+        /// </para>
+        /// </summary>
+        public DocumentType DocumentType
+        {
+            get { return this._documentType; }
+            set { this._documentType = value; }
+        }
+
+        // Check to see if DocumentType property is set
+        internal bool IsSetDocumentType()
+        {
+            return this._documentType != null;
         }
 
         /// <summary>

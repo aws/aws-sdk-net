@@ -34,7 +34,7 @@ namespace Amazon.Runtime
 
         protected RuntimePipeline RuntimePipeline { get; set; }
         protected internal AWSCredentials Credentials { get; private set; }
-        public ClientConfig Config { get; private set; }
+        public IClientConfig Config { get; private set; }
 
         protected virtual bool SupportResponseLogging
         {
@@ -445,7 +445,7 @@ namespace Amazon.Runtime
                     postUnmarshallHandler,
                     new Signer(),
                     new CredentialsRetriever(this.Credentials),
-                    new RetryHandler(new DefaultRetryPolicy(this.Config.MaxErrorRetry)),
+                    new RetryHandler(new DefaultRetryPolicy(this.Config)),
                     postMarshallHandler,
                     new EndpointResolver(),
                     new Marshaller(),

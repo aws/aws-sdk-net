@@ -45,7 +45,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Instantiates PutRetentionPolicyRequest with the parameterized properties
         /// </summary>
-        /// <param name="logGroupName">The name of the log group to associate the retention policy with.</param>
+        /// <param name="logGroupName">The name of the log group.</param>
         /// <param name="retentionInDays">Sets the PutRetentionPolicyRequest RetentionInDays property</param>
         public PutRetentionPolicyRequest(string logGroupName, int retentionInDays)
         {
@@ -56,7 +56,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property LogGroupName. 
         /// <para>
-        /// The name of the log group to associate the retention policy with.
+        /// The name of the log group.
         /// </para>
         /// </summary>
         public string LogGroupName

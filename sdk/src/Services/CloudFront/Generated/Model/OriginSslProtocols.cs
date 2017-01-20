@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2016-01-28.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-11-25.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// A complex type that contains the list of SSL/TLS protocols that you want CloudFront
-    /// to use when communicating with your origin over HTTPS.
+    /// A complex type that contains information about the SSL/TLS protocols that CloudFront
+    /// can use when establishing an HTTPS connection with your origin.
     /// </summary>
     public partial class OriginSslProtocols
     {
@@ -37,9 +37,10 @@ namespace Amazon.CloudFront.Model
         private int? _quantity;
 
         /// <summary>
-        /// Gets and sets the property Items. A complex type that contains one SslProtocol element
-        /// for each SSL/TLS protocol that you want to allow CloudFront to use when establishing
-        /// an HTTPS connection with this origin.
+        /// Gets and sets the property Items. 
+        /// <para>
+        /// A list that contains allowed SSL/TLS protocols for this distribution.
+        /// </para>
         /// </summary>
         public List<string> Items
         {
@@ -54,8 +55,11 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Quantity. The number of SSL/TLS protocols that you want
-        /// to allow CloudFront to use when establishing an HTTPS connection with this origin.
+        /// Gets and sets the property Quantity. 
+        /// <para>
+        /// The number of SSL/TLS protocols that you want to allow CloudFront to use when establishing
+        /// an HTTPS connection with this origin. 
+        /// </para>
         /// </summary>
         public int Quantity
         {

@@ -25,7 +25,7 @@ namespace Amazon.CodeCommit.Model
     ///<summary>
     /// CodeCommit exception
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class CommitDoesNotExistException : AmazonCodeCommitException 
@@ -79,7 +79,7 @@ namespace Amazon.CodeCommit.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the CommitDoesNotExistException class with serialized data.
         /// </summary>

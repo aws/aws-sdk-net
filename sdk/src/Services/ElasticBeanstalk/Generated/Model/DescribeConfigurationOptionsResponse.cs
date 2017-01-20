@@ -56,7 +56,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property SolutionStackName. 
         /// <para>
-        ///  The name of the solution stack these configuration options belong to. 
+        /// The name of the solution stack these configuration options belong to.
         /// </para>
         /// </summary>
         public string SolutionStackName

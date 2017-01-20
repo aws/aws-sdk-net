@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// Represents the output of a <i>DescribeEngineDefaultParameters</i> action.
+    /// Represents the output of a <code>DescribeEngineDefaultParameters</code> operation.
     /// </summary>
     public partial class EngineDefaults
     {
@@ -61,6 +61,11 @@ namespace Amazon.ElastiCache.Model
         /// <para>
         /// Specifies the name of the cache parameter group family to which the engine default
         /// parameters apply.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values are: <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code>
+        /// | <code>redis3.2</code> 
         /// </para>
         /// </summary>
         public string CacheParameterGroupFamily

@@ -59,10 +59,17 @@ namespace Amazon.WAF.Model
         /// <para>
         /// Specify an IPv4 address by using CIDR notation. For example:
         /// </para>
-        ///  <ul> <li>To configure AWS WAF to allow, block, or count requests that originated
-        /// from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</li> <li>To configure
-        /// AWS WAF to allow, block, or count requests that originated from IP addresses from
-        /// 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</li> </ul> 
+        ///  <ul> <li> 
+        /// <para>
+        /// To configure AWS WAF to allow, block, or count requests that originated from the IP
+        /// address 192.0.2.44, specify <code>192.0.2.44/32</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To configure AWS WAF to allow, block, or count requests that originated from IP addresses
+        /// from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// AWS WAF supports only /8, /16, /24, and /32 IP addresses.
         /// </para>

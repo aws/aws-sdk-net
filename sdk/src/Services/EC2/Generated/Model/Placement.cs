@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-11-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes the placement for the instance.
+    /// Describes the placement of an instance.
     /// </summary>
     public partial class Placement
     {
@@ -55,7 +55,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Affinity. 
         /// <para>
-        /// The affinity setting for the instance on the Dedicated host. This parameter is not
+        /// The affinity setting for the instance on the Dedicated Host. This parameter is not
         /// supported for the <a>ImportInstance</a> command.
         /// </para>
         /// </summary>
@@ -110,8 +110,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property HostId. 
         /// <para>
-        /// The ID of the Dedicted host on which the instance resides. This parameter is not support
-        /// for the <a>ImportInstance</a> command.
+        /// The ID of the Dedicated Host on which the instance resides. This parameter is not
+        /// supported for the <a>ImportInstance</a> command.
         /// </para>
         /// </summary>
         public string HostId

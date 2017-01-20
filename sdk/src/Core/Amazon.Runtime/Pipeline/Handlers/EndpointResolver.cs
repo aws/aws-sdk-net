@@ -88,10 +88,10 @@ namespace Amazon.Runtime.Internal
             return DetermineEndpoint(requestContext.ClientConfig, requestContext.Request);
         }
 
-        public static Uri DetermineEndpoint(ClientConfig config, IRequest request)
+        public static Uri DetermineEndpoint(IClientConfig config, IRequest request)
         {
             return request.AlternateEndpoint != null
-                 ? new Uri(ClientConfig.GetUrl(request.AlternateEndpoint, config.RegionEndpointServiceName, config.UseHttp))
+                 ? new Uri(ClientConfig.GetUrl(request.AlternateEndpoint, config.RegionEndpointServiceName, config.UseHttp, config.UseDualstackEndpoint))
                  : new Uri(config.DetermineServiceURL());
         }
     }

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-11-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -32,8 +32,28 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class VpcPeeringConnectionOptionsDescription
     {
+        private bool? _allowDnsResolutionFromRemoteVpc;
         private bool? _allowEgressFromLocalClassicLinkToRemoteVpc;
         private bool? _allowEgressFromLocalVpcToRemoteClassicLink;
+
+        /// <summary>
+        /// Gets and sets the property AllowDnsResolutionFromRemoteVpc. 
+        /// <para>
+        /// Indicates whether a local VPC can resolve public DNS hostnames to private IP addresses
+        /// when queried from instances in a peer VPC.
+        /// </para>
+        /// </summary>
+        public bool AllowDnsResolutionFromRemoteVpc
+        {
+            get { return this._allowDnsResolutionFromRemoteVpc.GetValueOrDefault(); }
+            set { this._allowDnsResolutionFromRemoteVpc = value; }
+        }
+
+        // Check to see if AllowDnsResolutionFromRemoteVpc property is set
+        internal bool IsSetAllowDnsResolutionFromRemoteVpc()
+        {
+            return this._allowDnsResolutionFromRemoteVpc.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property AllowEgressFromLocalClassicLinkToRemoteVpc. 

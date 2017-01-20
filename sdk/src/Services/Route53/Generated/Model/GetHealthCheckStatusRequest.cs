@@ -29,9 +29,9 @@ namespace Amazon.Route53.Model
 {
     /// <summary>
     /// Container for the parameters to the GetHealthCheckStatus operation.
-    /// To retrieve the health check status, send a <code>GET</code> request to the <code>/<i>Route
-    /// 53 API version</i>/healthcheck/<i>health check ID</i>/status</code> resource. You
-    /// can use this call to get a health check's current status.
+    /// Gets status of a specified health check. Send a <code>GET</code> request to the <code>/2013-04-01/healthcheck/<i>health
+    /// check ID</i>/status</code> resource. You can use this call to get a health check's
+    /// current status.
     /// </summary>
     public partial class GetHealthCheckStatusRequest : AmazonRoute53Request
     {
@@ -60,17 +60,21 @@ namespace Amazon.Route53.Model
         /// Route 53 to base the choice in part on the status of a health check. Configuring health
         /// checks only makes sense in the following configurations:
         /// </para>
-        ///  <ul> <li>You're checking the health of the resource record sets in a weighted, latency,
-        /// geolocation, or failover resource record set, and you specify health check IDs for
-        /// all of the resource record sets. If the health check for one resource record set specifies
-        /// an endpoint that is not healthy, Amazon Route 53 stops responding to queries using
-        /// the value for that resource record set.</li> <li>
+        ///  <ul> <li> 
+        /// <para>
+        /// You're checking the health of the resource record sets in a weighted, latency, geolocation,
+        /// or failover resource record set, and you specify health check IDs for all of the resource
+        /// record sets. If the health check for one resource record set specifies an endpoint
+        /// that is not healthy, Amazon Route 53 stops responding to queries using the value for
+        /// that resource record set.
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         /// You set <code>EvaluateTargetHealth</code> to <code>true</code> for the resource record
         /// sets in an alias, weighted alias, latency alias, geolocation alias, or failover alias
         /// resource record set, and you specify health check IDs for all of the resource record
         /// sets that are referenced by the alias resource record sets. For more information about
-        /// this configuration, see <a>EvaluateTargetHealth</a>.
+        /// this configuration, see <code>EvaluateTargetHealth</code>.
         /// </para>
         ///  
         /// <para>
@@ -100,10 +104,13 @@ namespace Amazon.Route53.Model
         /// as <code>us-east-1-www.example.com</code>), not the name of the resource record sets
         /// (example.com).
         /// </para>
-        ///  <important>In this configuration, if you create a health check for which the value
-        /// of <code>FullyQualifiedDomainName</code> matches the name of the resource record sets
-        /// and then associate the health check with those resource record sets, health check
-        /// results will be unpredictable.</important>
+        ///  <important> 
+        /// <para>
+        /// In this configuration, if you create a health check for which the value of <code>FullyQualifiedDomainName</code>
+        /// matches the name of the resource record sets and then associate the health check with
+        /// those resource record sets, health check results will be unpredictable.
+        /// </para>
+        ///  </important>
         /// </summary>
         public string HealthCheckId
         {

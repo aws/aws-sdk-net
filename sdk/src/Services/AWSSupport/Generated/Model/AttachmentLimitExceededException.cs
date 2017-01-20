@@ -25,7 +25,7 @@ namespace Amazon.AWSSupport.Model
     ///<summary>
     /// AWSSupport exception
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class AttachmentLimitExceededException : AmazonAWSSupportException 
@@ -79,7 +79,7 @@ namespace Amazon.AWSSupport.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the AttachmentLimitExceededException class with serialized data.
         /// </summary>

@@ -33,13 +33,21 @@ namespace Amazon.CodeDeploy
     /// <summary>
     /// Implementation for accessing CodeDeploy
     ///
-    /// AWS CodeDeploy <b>Overview</b> 
+    /// AWS CodeDeploy 
+    /// <para>
+    ///  <b>Overview</b> 
+    /// </para>
+    ///  
     /// <para>
     /// This reference guide provides descriptions of the AWS CodeDeploy APIs. For more information
-    /// about AWS CodeDeploy, see the <a href="docs.aws.amazon.com/codedeploy/latest/userguide">AWS
+    /// about AWS CodeDeploy, see the <a href="http://docs.aws.amazon.com/codedeploy/latest/userguide">AWS
     /// CodeDeploy User Guide</a>.
     /// </para>
+    ///  
+    /// <para>
     ///  <b>Using the APIs</b> 
+    /// </para>
+    ///  
     /// <para>
     /// You can use the AWS CodeDeploy APIs to work with the following:
     /// </para>
@@ -95,7 +103,7 @@ namespace Amazon.CodeDeploy
     /// These revisions contain source content (such as source code, web pages, executable
     /// files, and deployment scripts) along with an application specification (AppSpec) file.
     /// (The AppSpec file is unique to AWS CodeDeploy; it defines the deployment actions you
-    /// want AWS CodeDeploy to execute.) Ffor application revisions stored in Amazon S3 buckets,
+    /// want AWS CodeDeploy to execute.) For application revisions stored in Amazon S3 buckets,
     /// an application revision is uniquely identified by its Amazon S3 object key and its
     /// ETag, version, or both. For application revisions stored in GitHub repositories, an
     /// application revision is uniquely identified by its repository name and commit ID.
@@ -321,6 +329,7 @@ namespace Amazon.CodeDeploy
         /// <exception cref="Amazon.CodeDeploy.Model.TagRequiredException">
         /// A tag was not specified.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/AddTagsToOnPremisesInstances">REST API Reference for AddTagsToOnPremisesInstances Operation</seealso>
         public AddTagsToOnPremisesInstancesResponse AddTagsToOnPremisesInstances(AddTagsToOnPremisesInstancesRequest request)
         {
             var marshaller = new AddTagsToOnPremisesInstancesRequestMarshaller();
@@ -340,6 +349,7 @@ namespace Amazon.CodeDeploy
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAddTagsToOnPremisesInstances
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/AddTagsToOnPremisesInstances">REST API Reference for AddTagsToOnPremisesInstances Operation</seealso>
         public IAsyncResult BeginAddTagsToOnPremisesInstances(AddTagsToOnPremisesInstancesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AddTagsToOnPremisesInstancesRequestMarshaller();
@@ -356,6 +366,7 @@ namespace Amazon.CodeDeploy
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAddTagsToOnPremisesInstances.</param>
         /// 
         /// <returns>Returns a  AddTagsToOnPremisesInstancesResult from CodeDeploy.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/AddTagsToOnPremisesInstances">REST API Reference for AddTagsToOnPremisesInstances Operation</seealso>
         public  AddTagsToOnPremisesInstancesResponse EndAddTagsToOnPremisesInstances(IAsyncResult asyncResult)
         {
             return EndInvoke<AddTagsToOnPremisesInstancesResponse>(asyncResult);
@@ -389,6 +400,7 @@ namespace Amazon.CodeDeploy
         /// <exception cref="Amazon.CodeDeploy.Model.RevisionRequiredException">
         /// The revision ID was not specified.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetApplicationRevisions">REST API Reference for BatchGetApplicationRevisions Operation</seealso>
         public BatchGetApplicationRevisionsResponse BatchGetApplicationRevisions(BatchGetApplicationRevisionsRequest request)
         {
             var marshaller = new BatchGetApplicationRevisionsRequestMarshaller();
@@ -408,6 +420,7 @@ namespace Amazon.CodeDeploy
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchGetApplicationRevisions
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetApplicationRevisions">REST API Reference for BatchGetApplicationRevisions Operation</seealso>
         public IAsyncResult BeginBatchGetApplicationRevisions(BatchGetApplicationRevisionsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new BatchGetApplicationRevisionsRequestMarshaller();
@@ -424,6 +437,7 @@ namespace Amazon.CodeDeploy
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchGetApplicationRevisions.</param>
         /// 
         /// <returns>Returns a  BatchGetApplicationRevisionsResult from CodeDeploy.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetApplicationRevisions">REST API Reference for BatchGetApplicationRevisions Operation</seealso>
         public  BatchGetApplicationRevisionsResponse EndBatchGetApplicationRevisions(IAsyncResult asyncResult)
         {
             return EndInvoke<BatchGetApplicationRevisionsResponse>(asyncResult);
@@ -451,6 +465,7 @@ namespace Amazon.CodeDeploy
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidApplicationNameException">
         /// The application name was specified in an invalid format.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetApplications">REST API Reference for BatchGetApplications Operation</seealso>
         public BatchGetApplicationsResponse BatchGetApplications(BatchGetApplicationsRequest request)
         {
             var marshaller = new BatchGetApplicationsRequestMarshaller();
@@ -470,6 +485,7 @@ namespace Amazon.CodeDeploy
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchGetApplications
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetApplications">REST API Reference for BatchGetApplications Operation</seealso>
         public IAsyncResult BeginBatchGetApplications(BatchGetApplicationsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new BatchGetApplicationsRequestMarshaller();
@@ -486,6 +502,7 @@ namespace Amazon.CodeDeploy
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchGetApplications.</param>
         /// 
         /// <returns>Returns a  BatchGetApplicationsResult from CodeDeploy.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetApplications">REST API Reference for BatchGetApplications Operation</seealso>
         public  BatchGetApplicationsResponse EndBatchGetApplications(IAsyncResult asyncResult)
         {
             return EndInvoke<BatchGetApplicationsResponse>(asyncResult);
@@ -496,7 +513,7 @@ namespace Amazon.CodeDeploy
         #region  BatchGetDeploymentGroups
 
         /// <summary>
-        /// Get information about one or more deployment groups.
+        /// Gets information about one or more deployment groups.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchGetDeploymentGroups service method.</param>
         /// 
@@ -519,6 +536,7 @@ namespace Amazon.CodeDeploy
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidDeploymentGroupNameException">
         /// The deployment group name was specified in an invalid format.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetDeploymentGroups">REST API Reference for BatchGetDeploymentGroups Operation</seealso>
         public BatchGetDeploymentGroupsResponse BatchGetDeploymentGroups(BatchGetDeploymentGroupsRequest request)
         {
             var marshaller = new BatchGetDeploymentGroupsRequestMarshaller();
@@ -538,6 +556,7 @@ namespace Amazon.CodeDeploy
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchGetDeploymentGroups
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetDeploymentGroups">REST API Reference for BatchGetDeploymentGroups Operation</seealso>
         public IAsyncResult BeginBatchGetDeploymentGroups(BatchGetDeploymentGroupsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new BatchGetDeploymentGroupsRequestMarshaller();
@@ -554,6 +573,7 @@ namespace Amazon.CodeDeploy
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchGetDeploymentGroups.</param>
         /// 
         /// <returns>Returns a  BatchGetDeploymentGroupsResult from CodeDeploy.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetDeploymentGroups">REST API Reference for BatchGetDeploymentGroups Operation</seealso>
         public  BatchGetDeploymentGroupsResponse EndBatchGetDeploymentGroups(IAsyncResult asyncResult)
         {
             return EndInvoke<BatchGetDeploymentGroupsResponse>(asyncResult);
@@ -587,6 +607,7 @@ namespace Amazon.CodeDeploy
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidInstanceNameException">
         /// The specified on-premises instance name was specified in an invalid format.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetDeploymentInstances">REST API Reference for BatchGetDeploymentInstances Operation</seealso>
         public BatchGetDeploymentInstancesResponse BatchGetDeploymentInstances(BatchGetDeploymentInstancesRequest request)
         {
             var marshaller = new BatchGetDeploymentInstancesRequestMarshaller();
@@ -606,6 +627,7 @@ namespace Amazon.CodeDeploy
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchGetDeploymentInstances
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetDeploymentInstances">REST API Reference for BatchGetDeploymentInstances Operation</seealso>
         public IAsyncResult BeginBatchGetDeploymentInstances(BatchGetDeploymentInstancesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new BatchGetDeploymentInstancesRequestMarshaller();
@@ -622,6 +644,7 @@ namespace Amazon.CodeDeploy
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchGetDeploymentInstances.</param>
         /// 
         /// <returns>Returns a  BatchGetDeploymentInstancesResult from CodeDeploy.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetDeploymentInstances">REST API Reference for BatchGetDeploymentInstances Operation</seealso>
         public  BatchGetDeploymentInstancesResponse EndBatchGetDeploymentInstances(IAsyncResult asyncResult)
         {
             return EndInvoke<BatchGetDeploymentInstancesResponse>(asyncResult);
@@ -646,6 +669,7 @@ namespace Amazon.CodeDeploy
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidDeploymentIdException">
         /// At least one of the deployment IDs was specified in an invalid format.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetDeployments">REST API Reference for BatchGetDeployments Operation</seealso>
         public BatchGetDeploymentsResponse BatchGetDeployments(BatchGetDeploymentsRequest request)
         {
             var marshaller = new BatchGetDeploymentsRequestMarshaller();
@@ -665,6 +689,7 @@ namespace Amazon.CodeDeploy
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchGetDeployments
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetDeployments">REST API Reference for BatchGetDeployments Operation</seealso>
         public IAsyncResult BeginBatchGetDeployments(BatchGetDeploymentsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new BatchGetDeploymentsRequestMarshaller();
@@ -681,6 +706,7 @@ namespace Amazon.CodeDeploy
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchGetDeployments.</param>
         /// 
         /// <returns>Returns a  BatchGetDeploymentsResult from CodeDeploy.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetDeployments">REST API Reference for BatchGetDeployments Operation</seealso>
         public  BatchGetDeploymentsResponse EndBatchGetDeployments(IAsyncResult asyncResult)
         {
             return EndInvoke<BatchGetDeploymentsResponse>(asyncResult);
@@ -705,6 +731,7 @@ namespace Amazon.CodeDeploy
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidInstanceNameException">
         /// The specified on-premises instance name was specified in an invalid format.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetOnPremisesInstances">REST API Reference for BatchGetOnPremisesInstances Operation</seealso>
         public BatchGetOnPremisesInstancesResponse BatchGetOnPremisesInstances(BatchGetOnPremisesInstancesRequest request)
         {
             var marshaller = new BatchGetOnPremisesInstancesRequestMarshaller();
@@ -724,6 +751,7 @@ namespace Amazon.CodeDeploy
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchGetOnPremisesInstances
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetOnPremisesInstances">REST API Reference for BatchGetOnPremisesInstances Operation</seealso>
         public IAsyncResult BeginBatchGetOnPremisesInstances(BatchGetOnPremisesInstancesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new BatchGetOnPremisesInstancesRequestMarshaller();
@@ -740,6 +768,7 @@ namespace Amazon.CodeDeploy
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchGetOnPremisesInstances.</param>
         /// 
         /// <returns>Returns a  BatchGetOnPremisesInstancesResult from CodeDeploy.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetOnPremisesInstances">REST API Reference for BatchGetOnPremisesInstances Operation</seealso>
         public  BatchGetOnPremisesInstancesResponse EndBatchGetOnPremisesInstances(IAsyncResult asyncResult)
         {
             return EndInvoke<BatchGetOnPremisesInstancesResponse>(asyncResult);
@@ -768,6 +797,7 @@ namespace Amazon.CodeDeploy
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidApplicationNameException">
         /// The application name was specified in an invalid format.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateApplication">REST API Reference for CreateApplication Operation</seealso>
         public CreateApplicationResponse CreateApplication(CreateApplicationRequest request)
         {
             var marshaller = new CreateApplicationRequestMarshaller();
@@ -787,6 +817,7 @@ namespace Amazon.CodeDeploy
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateApplication
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateApplication">REST API Reference for CreateApplication Operation</seealso>
         public IAsyncResult BeginCreateApplication(CreateApplicationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateApplicationRequestMarshaller();
@@ -803,6 +834,7 @@ namespace Amazon.CodeDeploy
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateApplication.</param>
         /// 
         /// <returns>Returns a  CreateApplicationResult from CodeDeploy.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateApplication">REST API Reference for CreateApplication Operation</seealso>
         public  CreateApplicationResponse EndCreateApplication(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateApplicationResponse>(asyncResult);
@@ -842,6 +874,11 @@ namespace Amazon.CodeDeploy
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidApplicationNameException">
         /// The application name was specified in an invalid format.
         /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidAutoRollbackConfigException">
+        /// The automatic rollback configuration was specified in an invalid format. For example,
+        /// automatic rollback is enabled but an invalid triggering event type or no event types
+        /// were listed.
+        /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidDeploymentConfigNameException">
         /// The deployment configuration name was specified in an invalid format.
         /// </exception>
@@ -851,9 +888,13 @@ namespace Amazon.CodeDeploy
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidRevisionException">
         /// The revision was specified in an invalid format.
         /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.RevisionDoesNotExistException">
+        /// The named revision does not exist with the applicable IAM user or AWS account.
+        /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.RevisionRequiredException">
         /// The revision ID was not specified.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateDeployment">REST API Reference for CreateDeployment Operation</seealso>
         public CreateDeploymentResponse CreateDeployment(CreateDeploymentRequest request)
         {
             var marshaller = new CreateDeploymentRequestMarshaller();
@@ -873,6 +914,7 @@ namespace Amazon.CodeDeploy
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDeployment
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateDeployment">REST API Reference for CreateDeployment Operation</seealso>
         public IAsyncResult BeginCreateDeployment(CreateDeploymentRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateDeploymentRequestMarshaller();
@@ -889,6 +931,7 @@ namespace Amazon.CodeDeploy
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateDeployment.</param>
         /// 
         /// <returns>Returns a  CreateDeploymentResult from CodeDeploy.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateDeployment">REST API Reference for CreateDeployment Operation</seealso>
         public  CreateDeploymentResponse EndCreateDeployment(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateDeploymentResponse>(asyncResult);
@@ -920,6 +963,7 @@ namespace Amazon.CodeDeploy
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidMinimumHealthyHostValueException">
         /// The minimum healthy instance value was specified in an invalid format.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateDeploymentConfig">REST API Reference for CreateDeploymentConfig Operation</seealso>
         public CreateDeploymentConfigResponse CreateDeploymentConfig(CreateDeploymentConfigRequest request)
         {
             var marshaller = new CreateDeploymentConfigRequestMarshaller();
@@ -939,6 +983,7 @@ namespace Amazon.CodeDeploy
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDeploymentConfig
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateDeploymentConfig">REST API Reference for CreateDeploymentConfig Operation</seealso>
         public IAsyncResult BeginCreateDeploymentConfig(CreateDeploymentConfigRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateDeploymentConfigRequestMarshaller();
@@ -955,6 +1000,7 @@ namespace Amazon.CodeDeploy
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateDeploymentConfig.</param>
         /// 
         /// <returns>Returns a  CreateDeploymentConfigResult from CodeDeploy.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateDeploymentConfig">REST API Reference for CreateDeploymentConfig Operation</seealso>
         public  CreateDeploymentConfigResponse EndCreateDeploymentConfig(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateDeploymentConfigResponse>(asyncResult);
@@ -970,6 +1016,9 @@ namespace Amazon.CodeDeploy
         /// <param name="request">Container for the necessary parameters to execute the CreateDeploymentGroup service method.</param>
         /// 
         /// <returns>The response from the CreateDeploymentGroup service method, as returned by CodeDeploy.</returns>
+        /// <exception cref="Amazon.CodeDeploy.Model.AlarmsLimitExceededException">
+        /// The maximum number of alarms for a deployment group (10) was exceeded.
+        /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.ApplicationDoesNotExistException">
         /// The application does not exist with the applicable IAM user or AWS account.
         /// </exception>
@@ -989,8 +1038,38 @@ namespace Amazon.CodeDeploy
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentGroupNameRequiredException">
         /// The deployment group name was not specified.
         /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidAlarmConfigException">
+        /// The format of the alarm configuration is invalid. Possible causes include:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// The alarm list is null.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The alarm object is null.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The alarm name is empty or null or exceeds the 255 character limit.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Two alarms with the same name have been specified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The alarm configuration is enabled but the alarm list is empty.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidApplicationNameException">
         /// The application name was specified in an invalid format.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidAutoRollbackConfigException">
+        /// The automatic rollback configuration was specified in an invalid format. For example,
+        /// automatic rollback is enabled but an invalid triggering event type or no event types
+        /// were listed.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidAutoScalingGroupException">
         /// The Auto Scaling group was specified in an invalid format or does not exist.
@@ -1024,6 +1103,7 @@ namespace Amazon.CodeDeploy
         /// <exception cref="Amazon.CodeDeploy.Model.TriggerTargetsLimitExceededException">
         /// The maximum allowed number of triggers was exceeded.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateDeploymentGroup">REST API Reference for CreateDeploymentGroup Operation</seealso>
         public CreateDeploymentGroupResponse CreateDeploymentGroup(CreateDeploymentGroupRequest request)
         {
             var marshaller = new CreateDeploymentGroupRequestMarshaller();
@@ -1043,6 +1123,7 @@ namespace Amazon.CodeDeploy
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDeploymentGroup
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateDeploymentGroup">REST API Reference for CreateDeploymentGroup Operation</seealso>
         public IAsyncResult BeginCreateDeploymentGroup(CreateDeploymentGroupRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateDeploymentGroupRequestMarshaller();
@@ -1059,6 +1140,7 @@ namespace Amazon.CodeDeploy
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateDeploymentGroup.</param>
         /// 
         /// <returns>Returns a  CreateDeploymentGroupResult from CodeDeploy.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateDeploymentGroup">REST API Reference for CreateDeploymentGroup Operation</seealso>
         public  CreateDeploymentGroupResponse EndCreateDeploymentGroup(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateDeploymentGroupResponse>(asyncResult);
@@ -1080,6 +1162,7 @@ namespace Amazon.CodeDeploy
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidApplicationNameException">
         /// The application name was specified in an invalid format.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeleteApplication">REST API Reference for DeleteApplication Operation</seealso>
         public DeleteApplicationResponse DeleteApplication(DeleteApplicationRequest request)
         {
             var marshaller = new DeleteApplicationRequestMarshaller();
@@ -1099,6 +1182,7 @@ namespace Amazon.CodeDeploy
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteApplication
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeleteApplication">REST API Reference for DeleteApplication Operation</seealso>
         public IAsyncResult BeginDeleteApplication(DeleteApplicationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteApplicationRequestMarshaller();
@@ -1115,6 +1199,7 @@ namespace Amazon.CodeDeploy
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteApplication.</param>
         /// 
         /// <returns>Returns a  DeleteApplicationResult from CodeDeploy.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeleteApplication">REST API Reference for DeleteApplication Operation</seealso>
         public  DeleteApplicationResponse EndDeleteApplication(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteApplicationResponse>(asyncResult);
@@ -1127,8 +1212,12 @@ namespace Amazon.CodeDeploy
         /// <summary>
         /// Deletes a deployment configuration.
         /// 
-        ///  <note>A deployment configuration cannot be deleted if it is currently in use. Predefined
-        /// configurations cannot be deleted.</note>
+        ///  <note> 
+        /// <para>
+        /// A deployment configuration cannot be deleted if it is currently in use. Predefined
+        /// configurations cannot be deleted.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDeploymentConfig service method.</param>
         /// 
@@ -1145,6 +1234,7 @@ namespace Amazon.CodeDeploy
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidOperationException">
         /// An invalid operation was detected.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeleteDeploymentConfig">REST API Reference for DeleteDeploymentConfig Operation</seealso>
         public DeleteDeploymentConfigResponse DeleteDeploymentConfig(DeleteDeploymentConfigRequest request)
         {
             var marshaller = new DeleteDeploymentConfigRequestMarshaller();
@@ -1164,6 +1254,7 @@ namespace Amazon.CodeDeploy
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDeploymentConfig
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeleteDeploymentConfig">REST API Reference for DeleteDeploymentConfig Operation</seealso>
         public IAsyncResult BeginDeleteDeploymentConfig(DeleteDeploymentConfigRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteDeploymentConfigRequestMarshaller();
@@ -1180,6 +1271,7 @@ namespace Amazon.CodeDeploy
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteDeploymentConfig.</param>
         /// 
         /// <returns>Returns a  DeleteDeploymentConfigResult from CodeDeploy.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeleteDeploymentConfig">REST API Reference for DeleteDeploymentConfig Operation</seealso>
         public  DeleteDeploymentConfigResponse EndDeleteDeploymentConfig(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteDeploymentConfigResponse>(asyncResult);
@@ -1212,6 +1304,7 @@ namespace Amazon.CodeDeploy
         /// was specified, the specified service role does not grant the appropriate permissions
         /// to Auto Scaling.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeleteDeploymentGroup">REST API Reference for DeleteDeploymentGroup Operation</seealso>
         public DeleteDeploymentGroupResponse DeleteDeploymentGroup(DeleteDeploymentGroupRequest request)
         {
             var marshaller = new DeleteDeploymentGroupRequestMarshaller();
@@ -1231,6 +1324,7 @@ namespace Amazon.CodeDeploy
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDeploymentGroup
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeleteDeploymentGroup">REST API Reference for DeleteDeploymentGroup Operation</seealso>
         public IAsyncResult BeginDeleteDeploymentGroup(DeleteDeploymentGroupRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteDeploymentGroupRequestMarshaller();
@@ -1247,6 +1341,7 @@ namespace Amazon.CodeDeploy
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteDeploymentGroup.</param>
         /// 
         /// <returns>Returns a  DeleteDeploymentGroupResult from CodeDeploy.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeleteDeploymentGroup">REST API Reference for DeleteDeploymentGroup Operation</seealso>
         public  DeleteDeploymentGroupResponse EndDeleteDeploymentGroup(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteDeploymentGroupResponse>(asyncResult);
@@ -1268,6 +1363,7 @@ namespace Amazon.CodeDeploy
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidInstanceNameException">
         /// The specified on-premises instance name was specified in an invalid format.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeregisterOnPremisesInstance">REST API Reference for DeregisterOnPremisesInstance Operation</seealso>
         public DeregisterOnPremisesInstanceResponse DeregisterOnPremisesInstance(DeregisterOnPremisesInstanceRequest request)
         {
             var marshaller = new DeregisterOnPremisesInstanceRequestMarshaller();
@@ -1287,6 +1383,7 @@ namespace Amazon.CodeDeploy
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeregisterOnPremisesInstance
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeregisterOnPremisesInstance">REST API Reference for DeregisterOnPremisesInstance Operation</seealso>
         public IAsyncResult BeginDeregisterOnPremisesInstance(DeregisterOnPremisesInstanceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeregisterOnPremisesInstanceRequestMarshaller();
@@ -1303,6 +1400,7 @@ namespace Amazon.CodeDeploy
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeregisterOnPremisesInstance.</param>
         /// 
         /// <returns>Returns a  DeregisterOnPremisesInstanceResult from CodeDeploy.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeregisterOnPremisesInstance">REST API Reference for DeregisterOnPremisesInstance Operation</seealso>
         public  DeregisterOnPremisesInstanceResponse EndDeregisterOnPremisesInstance(IAsyncResult asyncResult)
         {
             return EndInvoke<DeregisterOnPremisesInstanceResponse>(asyncResult);
@@ -1327,6 +1425,7 @@ namespace Amazon.CodeDeploy
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidApplicationNameException">
         /// The application name was specified in an invalid format.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetApplication">REST API Reference for GetApplication Operation</seealso>
         public GetApplicationResponse GetApplication(GetApplicationRequest request)
         {
             var marshaller = new GetApplicationRequestMarshaller();
@@ -1346,6 +1445,7 @@ namespace Amazon.CodeDeploy
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetApplication
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetApplication">REST API Reference for GetApplication Operation</seealso>
         public IAsyncResult BeginGetApplication(GetApplicationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetApplicationRequestMarshaller();
@@ -1362,6 +1462,7 @@ namespace Amazon.CodeDeploy
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetApplication.</param>
         /// 
         /// <returns>Returns a  GetApplicationResult from CodeDeploy.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetApplication">REST API Reference for GetApplication Operation</seealso>
         public  GetApplicationResponse EndGetApplication(IAsyncResult asyncResult)
         {
             return EndInvoke<GetApplicationResponse>(asyncResult);
@@ -1395,6 +1496,7 @@ namespace Amazon.CodeDeploy
         /// <exception cref="Amazon.CodeDeploy.Model.RevisionRequiredException">
         /// The revision ID was not specified.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetApplicationRevision">REST API Reference for GetApplicationRevision Operation</seealso>
         public GetApplicationRevisionResponse GetApplicationRevision(GetApplicationRevisionRequest request)
         {
             var marshaller = new GetApplicationRevisionRequestMarshaller();
@@ -1414,6 +1516,7 @@ namespace Amazon.CodeDeploy
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetApplicationRevision
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetApplicationRevision">REST API Reference for GetApplicationRevision Operation</seealso>
         public IAsyncResult BeginGetApplicationRevision(GetApplicationRevisionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetApplicationRevisionRequestMarshaller();
@@ -1430,6 +1533,7 @@ namespace Amazon.CodeDeploy
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetApplicationRevision.</param>
         /// 
         /// <returns>Returns a  GetApplicationRevisionResult from CodeDeploy.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetApplicationRevision">REST API Reference for GetApplicationRevision Operation</seealso>
         public  GetApplicationRevisionResponse EndGetApplicationRevision(IAsyncResult asyncResult)
         {
             return EndInvoke<GetApplicationRevisionResponse>(asyncResult);
@@ -1454,6 +1558,7 @@ namespace Amazon.CodeDeploy
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidDeploymentIdException">
         /// At least one of the deployment IDs was specified in an invalid format.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeployment">REST API Reference for GetDeployment Operation</seealso>
         public GetDeploymentResponse GetDeployment(GetDeploymentRequest request)
         {
             var marshaller = new GetDeploymentRequestMarshaller();
@@ -1473,6 +1578,7 @@ namespace Amazon.CodeDeploy
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDeployment
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeployment">REST API Reference for GetDeployment Operation</seealso>
         public IAsyncResult BeginGetDeployment(GetDeploymentRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetDeploymentRequestMarshaller();
@@ -1489,6 +1595,7 @@ namespace Amazon.CodeDeploy
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDeployment.</param>
         /// 
         /// <returns>Returns a  GetDeploymentResult from CodeDeploy.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeployment">REST API Reference for GetDeployment Operation</seealso>
         public  GetDeploymentResponse EndGetDeployment(IAsyncResult asyncResult)
         {
             return EndInvoke<GetDeploymentResponse>(asyncResult);
@@ -1513,6 +1620,7 @@ namespace Amazon.CodeDeploy
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidDeploymentConfigNameException">
         /// The deployment configuration name was specified in an invalid format.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeploymentConfig">REST API Reference for GetDeploymentConfig Operation</seealso>
         public GetDeploymentConfigResponse GetDeploymentConfig(GetDeploymentConfigRequest request)
         {
             var marshaller = new GetDeploymentConfigRequestMarshaller();
@@ -1532,6 +1640,7 @@ namespace Amazon.CodeDeploy
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDeploymentConfig
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeploymentConfig">REST API Reference for GetDeploymentConfig Operation</seealso>
         public IAsyncResult BeginGetDeploymentConfig(GetDeploymentConfigRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetDeploymentConfigRequestMarshaller();
@@ -1548,6 +1657,7 @@ namespace Amazon.CodeDeploy
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDeploymentConfig.</param>
         /// 
         /// <returns>Returns a  GetDeploymentConfigResult from CodeDeploy.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeploymentConfig">REST API Reference for GetDeploymentConfig Operation</seealso>
         public  GetDeploymentConfigResponse EndGetDeploymentConfig(IAsyncResult asyncResult)
         {
             return EndInvoke<GetDeploymentConfigResponse>(asyncResult);
@@ -1581,6 +1691,7 @@ namespace Amazon.CodeDeploy
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidDeploymentGroupNameException">
         /// The deployment group name was specified in an invalid format.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeploymentGroup">REST API Reference for GetDeploymentGroup Operation</seealso>
         public GetDeploymentGroupResponse GetDeploymentGroup(GetDeploymentGroupRequest request)
         {
             var marshaller = new GetDeploymentGroupRequestMarshaller();
@@ -1600,6 +1711,7 @@ namespace Amazon.CodeDeploy
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDeploymentGroup
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeploymentGroup">REST API Reference for GetDeploymentGroup Operation</seealso>
         public IAsyncResult BeginGetDeploymentGroup(GetDeploymentGroupRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetDeploymentGroupRequestMarshaller();
@@ -1616,6 +1728,7 @@ namespace Amazon.CodeDeploy
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDeploymentGroup.</param>
         /// 
         /// <returns>Returns a  GetDeploymentGroupResult from CodeDeploy.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeploymentGroup">REST API Reference for GetDeploymentGroup Operation</seealso>
         public  GetDeploymentGroupResponse EndGetDeploymentGroup(IAsyncResult asyncResult)
         {
             return EndInvoke<GetDeploymentGroupResponse>(asyncResult);
@@ -1649,6 +1762,7 @@ namespace Amazon.CodeDeploy
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidInstanceNameException">
         /// The specified on-premises instance name was specified in an invalid format.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeploymentInstance">REST API Reference for GetDeploymentInstance Operation</seealso>
         public GetDeploymentInstanceResponse GetDeploymentInstance(GetDeploymentInstanceRequest request)
         {
             var marshaller = new GetDeploymentInstanceRequestMarshaller();
@@ -1668,6 +1782,7 @@ namespace Amazon.CodeDeploy
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDeploymentInstance
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeploymentInstance">REST API Reference for GetDeploymentInstance Operation</seealso>
         public IAsyncResult BeginGetDeploymentInstance(GetDeploymentInstanceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetDeploymentInstanceRequestMarshaller();
@@ -1684,6 +1799,7 @@ namespace Amazon.CodeDeploy
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDeploymentInstance.</param>
         /// 
         /// <returns>Returns a  GetDeploymentInstanceResult from CodeDeploy.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeploymentInstance">REST API Reference for GetDeploymentInstance Operation</seealso>
         public  GetDeploymentInstanceResponse EndGetDeploymentInstance(IAsyncResult asyncResult)
         {
             return EndInvoke<GetDeploymentInstanceResponse>(asyncResult);
@@ -1708,6 +1824,7 @@ namespace Amazon.CodeDeploy
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidInstanceNameException">
         /// The specified on-premises instance name was specified in an invalid format.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetOnPremisesInstance">REST API Reference for GetOnPremisesInstance Operation</seealso>
         public GetOnPremisesInstanceResponse GetOnPremisesInstance(GetOnPremisesInstanceRequest request)
         {
             var marshaller = new GetOnPremisesInstanceRequestMarshaller();
@@ -1727,6 +1844,7 @@ namespace Amazon.CodeDeploy
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetOnPremisesInstance
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetOnPremisesInstance">REST API Reference for GetOnPremisesInstance Operation</seealso>
         public IAsyncResult BeginGetOnPremisesInstance(GetOnPremisesInstanceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetOnPremisesInstanceRequestMarshaller();
@@ -1743,6 +1861,7 @@ namespace Amazon.CodeDeploy
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetOnPremisesInstance.</param>
         /// 
         /// <returns>Returns a  GetOnPremisesInstanceResult from CodeDeploy.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetOnPremisesInstance">REST API Reference for GetOnPremisesInstance Operation</seealso>
         public  GetOnPremisesInstanceResponse EndGetOnPremisesInstance(IAsyncResult asyncResult)
         {
             return EndInvoke<GetOnPremisesInstanceResponse>(asyncResult);
@@ -1788,6 +1907,7 @@ namespace Amazon.CodeDeploy
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidSortOrderException">
         /// The sort order was specified in an invalid format.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListApplicationRevisions">REST API Reference for ListApplicationRevisions Operation</seealso>
         public ListApplicationRevisionsResponse ListApplicationRevisions(ListApplicationRevisionsRequest request)
         {
             var marshaller = new ListApplicationRevisionsRequestMarshaller();
@@ -1807,6 +1927,7 @@ namespace Amazon.CodeDeploy
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListApplicationRevisions
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListApplicationRevisions">REST API Reference for ListApplicationRevisions Operation</seealso>
         public IAsyncResult BeginListApplicationRevisions(ListApplicationRevisionsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListApplicationRevisionsRequestMarshaller();
@@ -1823,6 +1944,7 @@ namespace Amazon.CodeDeploy
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListApplicationRevisions.</param>
         /// 
         /// <returns>Returns a  ListApplicationRevisionsResult from CodeDeploy.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListApplicationRevisions">REST API Reference for ListApplicationRevisions Operation</seealso>
         public  ListApplicationRevisionsResponse EndListApplicationRevisions(IAsyncResult asyncResult)
         {
             return EndInvoke<ListApplicationRevisionsResponse>(asyncResult);
@@ -1840,6 +1962,7 @@ namespace Amazon.CodeDeploy
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidNextTokenException">
         /// The next token was specified in an invalid format.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListApplications">REST API Reference for ListApplications Operation</seealso>
         public ListApplicationsResponse ListApplications()
         {
             return ListApplications(new ListApplicationsRequest());
@@ -1854,6 +1977,7 @@ namespace Amazon.CodeDeploy
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidNextTokenException">
         /// The next token was specified in an invalid format.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListApplications">REST API Reference for ListApplications Operation</seealso>
         public ListApplicationsResponse ListApplications(ListApplicationsRequest request)
         {
             var marshaller = new ListApplicationsRequestMarshaller();
@@ -1873,6 +1997,7 @@ namespace Amazon.CodeDeploy
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListApplications
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListApplications">REST API Reference for ListApplications Operation</seealso>
         public IAsyncResult BeginListApplications(ListApplicationsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListApplicationsRequestMarshaller();
@@ -1889,6 +2014,7 @@ namespace Amazon.CodeDeploy
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListApplications.</param>
         /// 
         /// <returns>Returns a  ListApplicationsResult from CodeDeploy.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListApplications">REST API Reference for ListApplications Operation</seealso>
         public  ListApplicationsResponse EndListApplications(IAsyncResult asyncResult)
         {
             return EndInvoke<ListApplicationsResponse>(asyncResult);
@@ -1906,6 +2032,7 @@ namespace Amazon.CodeDeploy
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidNextTokenException">
         /// The next token was specified in an invalid format.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeploymentConfigs">REST API Reference for ListDeploymentConfigs Operation</seealso>
         public ListDeploymentConfigsResponse ListDeploymentConfigs()
         {
             return ListDeploymentConfigs(new ListDeploymentConfigsRequest());
@@ -1920,6 +2047,7 @@ namespace Amazon.CodeDeploy
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidNextTokenException">
         /// The next token was specified in an invalid format.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeploymentConfigs">REST API Reference for ListDeploymentConfigs Operation</seealso>
         public ListDeploymentConfigsResponse ListDeploymentConfigs(ListDeploymentConfigsRequest request)
         {
             var marshaller = new ListDeploymentConfigsRequestMarshaller();
@@ -1939,6 +2067,7 @@ namespace Amazon.CodeDeploy
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDeploymentConfigs
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeploymentConfigs">REST API Reference for ListDeploymentConfigs Operation</seealso>
         public IAsyncResult BeginListDeploymentConfigs(ListDeploymentConfigsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListDeploymentConfigsRequestMarshaller();
@@ -1955,6 +2084,7 @@ namespace Amazon.CodeDeploy
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDeploymentConfigs.</param>
         /// 
         /// <returns>Returns a  ListDeploymentConfigsResult from CodeDeploy.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeploymentConfigs">REST API Reference for ListDeploymentConfigs Operation</seealso>
         public  ListDeploymentConfigsResponse EndListDeploymentConfigs(IAsyncResult asyncResult)
         {
             return EndInvoke<ListDeploymentConfigsResponse>(asyncResult);
@@ -1983,6 +2113,7 @@ namespace Amazon.CodeDeploy
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidNextTokenException">
         /// The next token was specified in an invalid format.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeploymentGroups">REST API Reference for ListDeploymentGroups Operation</seealso>
         public ListDeploymentGroupsResponse ListDeploymentGroups(ListDeploymentGroupsRequest request)
         {
             var marshaller = new ListDeploymentGroupsRequestMarshaller();
@@ -2002,6 +2133,7 @@ namespace Amazon.CodeDeploy
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDeploymentGroups
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeploymentGroups">REST API Reference for ListDeploymentGroups Operation</seealso>
         public IAsyncResult BeginListDeploymentGroups(ListDeploymentGroupsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListDeploymentGroupsRequestMarshaller();
@@ -2018,6 +2150,7 @@ namespace Amazon.CodeDeploy
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDeploymentGroups.</param>
         /// 
         /// <returns>Returns a  ListDeploymentGroupsResult from CodeDeploy.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeploymentGroups">REST API Reference for ListDeploymentGroups Operation</seealso>
         public  ListDeploymentGroupsResponse EndListDeploymentGroups(IAsyncResult asyncResult)
         {
             return EndInvoke<ListDeploymentGroupsResponse>(asyncResult);
@@ -2052,6 +2185,7 @@ namespace Amazon.CodeDeploy
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidNextTokenException">
         /// The next token was specified in an invalid format.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeploymentInstances">REST API Reference for ListDeploymentInstances Operation</seealso>
         public ListDeploymentInstancesResponse ListDeploymentInstances(ListDeploymentInstancesRequest request)
         {
             var marshaller = new ListDeploymentInstancesRequestMarshaller();
@@ -2071,6 +2205,7 @@ namespace Amazon.CodeDeploy
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDeploymentInstances
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeploymentInstances">REST API Reference for ListDeploymentInstances Operation</seealso>
         public IAsyncResult BeginListDeploymentInstances(ListDeploymentInstancesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListDeploymentInstancesRequestMarshaller();
@@ -2087,6 +2222,7 @@ namespace Amazon.CodeDeploy
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDeploymentInstances.</param>
         /// 
         /// <returns>Returns a  ListDeploymentInstancesResult from CodeDeploy.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeploymentInstances">REST API Reference for ListDeploymentInstances Operation</seealso>
         public  ListDeploymentInstancesResponse EndListDeploymentInstances(IAsyncResult asyncResult)
         {
             return EndInvoke<ListDeploymentInstancesResponse>(asyncResult);
@@ -2130,6 +2266,7 @@ namespace Amazon.CodeDeploy
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidTimeRangeException">
         /// The specified time range was specified in an invalid format.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeployments">REST API Reference for ListDeployments Operation</seealso>
         public ListDeploymentsResponse ListDeployments(ListDeploymentsRequest request)
         {
             var marshaller = new ListDeploymentsRequestMarshaller();
@@ -2149,6 +2286,7 @@ namespace Amazon.CodeDeploy
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDeployments
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeployments">REST API Reference for ListDeployments Operation</seealso>
         public IAsyncResult BeginListDeployments(ListDeploymentsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListDeploymentsRequestMarshaller();
@@ -2165,6 +2303,7 @@ namespace Amazon.CodeDeploy
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDeployments.</param>
         /// 
         /// <returns>Returns a  ListDeploymentsResult from CodeDeploy.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeployments">REST API Reference for ListDeployments Operation</seealso>
         public  ListDeploymentsResponse EndListDeployments(IAsyncResult asyncResult)
         {
             return EndInvoke<ListDeploymentsResponse>(asyncResult);
@@ -2196,6 +2335,7 @@ namespace Amazon.CodeDeploy
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidTagFilterException">
         /// The specified tag filter was specified in an invalid format.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListOnPremisesInstances">REST API Reference for ListOnPremisesInstances Operation</seealso>
         public ListOnPremisesInstancesResponse ListOnPremisesInstances(ListOnPremisesInstancesRequest request)
         {
             var marshaller = new ListOnPremisesInstancesRequestMarshaller();
@@ -2215,6 +2355,7 @@ namespace Amazon.CodeDeploy
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListOnPremisesInstances
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListOnPremisesInstances">REST API Reference for ListOnPremisesInstances Operation</seealso>
         public IAsyncResult BeginListOnPremisesInstances(ListOnPremisesInstancesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListOnPremisesInstancesRequestMarshaller();
@@ -2231,6 +2372,7 @@ namespace Amazon.CodeDeploy
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListOnPremisesInstances.</param>
         /// 
         /// <returns>Returns a  ListOnPremisesInstancesResult from CodeDeploy.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListOnPremisesInstances">REST API Reference for ListOnPremisesInstances Operation</seealso>
         public  ListOnPremisesInstancesResponse EndListOnPremisesInstances(IAsyncResult asyncResult)
         {
             return EndInvoke<ListOnPremisesInstancesResponse>(asyncResult);
@@ -2264,6 +2406,7 @@ namespace Amazon.CodeDeploy
         /// <exception cref="Amazon.CodeDeploy.Model.RevisionRequiredException">
         /// The revision ID was not specified.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/RegisterApplicationRevision">REST API Reference for RegisterApplicationRevision Operation</seealso>
         public RegisterApplicationRevisionResponse RegisterApplicationRevision(RegisterApplicationRevisionRequest request)
         {
             var marshaller = new RegisterApplicationRevisionRequestMarshaller();
@@ -2283,6 +2426,7 @@ namespace Amazon.CodeDeploy
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRegisterApplicationRevision
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/RegisterApplicationRevision">REST API Reference for RegisterApplicationRevision Operation</seealso>
         public IAsyncResult BeginRegisterApplicationRevision(RegisterApplicationRevisionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RegisterApplicationRevisionRequestMarshaller();
@@ -2299,6 +2443,7 @@ namespace Amazon.CodeDeploy
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRegisterApplicationRevision.</param>
         /// 
         /// <returns>Returns a  RegisterApplicationRevisionResult from CodeDeploy.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/RegisterApplicationRevision">REST API Reference for RegisterApplicationRevision Operation</seealso>
         public  RegisterApplicationRevisionResponse EndRegisterApplicationRevision(IAsyncResult asyncResult)
         {
             return EndInvoke<RegisterApplicationRevisionResponse>(asyncResult);
@@ -2310,10 +2455,25 @@ namespace Amazon.CodeDeploy
 
         /// <summary>
         /// Registers an on-premises instance.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Only one IAM ARN (an IAM session ARN or IAM user ARN) is supported in the request.
+        /// You cannot use both.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterOnPremisesInstance service method.</param>
         /// 
         /// <returns>The response from the RegisterOnPremisesInstance service method, as returned by CodeDeploy.</returns>
+        /// <exception cref="Amazon.CodeDeploy.Model.IamArnRequiredException">
+        /// No IAM ARN was included in the request. You must use an IAM session ARN or IAM user
+        /// ARN in the request.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.IamSessionArnAlreadyRegisteredException">
+        /// The request included an IAM session ARN that has already been used to register a different
+        /// instance.
+        /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.IamUserArnAlreadyRegisteredException">
         /// The specified IAM user ARN is already registered with an on-premises instance.
         /// </exception>
@@ -2326,12 +2486,20 @@ namespace Amazon.CodeDeploy
         /// <exception cref="Amazon.CodeDeploy.Model.InstanceNameRequiredException">
         /// An on-premises instance name was not specified.
         /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidIamSessionArnException">
+        /// The IAM session ARN was specified in an invalid format.
+        /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidIamUserArnException">
         /// The IAM user ARN was specified in an invalid format.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidInstanceNameException">
         /// The specified on-premises instance name was specified in an invalid format.
         /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.MultipleIamArnsProvidedException">
+        /// Both an IAM user ARN and an IAM session ARN were included in the request. Use only
+        /// one ARN type.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/RegisterOnPremisesInstance">REST API Reference for RegisterOnPremisesInstance Operation</seealso>
         public RegisterOnPremisesInstanceResponse RegisterOnPremisesInstance(RegisterOnPremisesInstanceRequest request)
         {
             var marshaller = new RegisterOnPremisesInstanceRequestMarshaller();
@@ -2351,6 +2519,7 @@ namespace Amazon.CodeDeploy
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRegisterOnPremisesInstance
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/RegisterOnPremisesInstance">REST API Reference for RegisterOnPremisesInstance Operation</seealso>
         public IAsyncResult BeginRegisterOnPremisesInstance(RegisterOnPremisesInstanceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RegisterOnPremisesInstanceRequestMarshaller();
@@ -2367,6 +2536,7 @@ namespace Amazon.CodeDeploy
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRegisterOnPremisesInstance.</param>
         /// 
         /// <returns>Returns a  RegisterOnPremisesInstanceResult from CodeDeploy.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/RegisterOnPremisesInstance">REST API Reference for RegisterOnPremisesInstance Operation</seealso>
         public  RegisterOnPremisesInstanceResponse EndRegisterOnPremisesInstance(IAsyncResult asyncResult)
         {
             return EndInvoke<RegisterOnPremisesInstanceResponse>(asyncResult);
@@ -2400,6 +2570,7 @@ namespace Amazon.CodeDeploy
         /// <exception cref="Amazon.CodeDeploy.Model.TagRequiredException">
         /// A tag was not specified.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/RemoveTagsFromOnPremisesInstances">REST API Reference for RemoveTagsFromOnPremisesInstances Operation</seealso>
         public RemoveTagsFromOnPremisesInstancesResponse RemoveTagsFromOnPremisesInstances(RemoveTagsFromOnPremisesInstancesRequest request)
         {
             var marshaller = new RemoveTagsFromOnPremisesInstancesRequestMarshaller();
@@ -2419,6 +2590,7 @@ namespace Amazon.CodeDeploy
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRemoveTagsFromOnPremisesInstances
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/RemoveTagsFromOnPremisesInstances">REST API Reference for RemoveTagsFromOnPremisesInstances Operation</seealso>
         public IAsyncResult BeginRemoveTagsFromOnPremisesInstances(RemoveTagsFromOnPremisesInstancesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RemoveTagsFromOnPremisesInstancesRequestMarshaller();
@@ -2435,6 +2607,7 @@ namespace Amazon.CodeDeploy
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRemoveTagsFromOnPremisesInstances.</param>
         /// 
         /// <returns>Returns a  RemoveTagsFromOnPremisesInstancesResult from CodeDeploy.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/RemoveTagsFromOnPremisesInstances">REST API Reference for RemoveTagsFromOnPremisesInstances Operation</seealso>
         public  RemoveTagsFromOnPremisesInstancesResponse EndRemoveTagsFromOnPremisesInstances(IAsyncResult asyncResult)
         {
             return EndInvoke<RemoveTagsFromOnPremisesInstancesResponse>(asyncResult);
@@ -2462,6 +2635,7 @@ namespace Amazon.CodeDeploy
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidDeploymentIdException">
         /// At least one of the deployment IDs was specified in an invalid format.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/StopDeployment">REST API Reference for StopDeployment Operation</seealso>
         public StopDeploymentResponse StopDeployment(StopDeploymentRequest request)
         {
             var marshaller = new StopDeploymentRequestMarshaller();
@@ -2481,6 +2655,7 @@ namespace Amazon.CodeDeploy
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopDeployment
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/StopDeployment">REST API Reference for StopDeployment Operation</seealso>
         public IAsyncResult BeginStopDeployment(StopDeploymentRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new StopDeploymentRequestMarshaller();
@@ -2497,6 +2672,7 @@ namespace Amazon.CodeDeploy
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopDeployment.</param>
         /// 
         /// <returns>Returns a  StopDeploymentResult from CodeDeploy.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/StopDeployment">REST API Reference for StopDeployment Operation</seealso>
         public  StopDeploymentResponse EndStopDeployment(IAsyncResult asyncResult)
         {
             return EndInvoke<StopDeploymentResponse>(asyncResult);
@@ -2525,6 +2701,7 @@ namespace Amazon.CodeDeploy
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidApplicationNameException">
         /// The application name was specified in an invalid format.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/UpdateApplication">REST API Reference for UpdateApplication Operation</seealso>
         public UpdateApplicationResponse UpdateApplication(UpdateApplicationRequest request)
         {
             var marshaller = new UpdateApplicationRequestMarshaller();
@@ -2544,6 +2721,7 @@ namespace Amazon.CodeDeploy
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateApplication
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/UpdateApplication">REST API Reference for UpdateApplication Operation</seealso>
         public IAsyncResult BeginUpdateApplication(UpdateApplicationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateApplicationRequestMarshaller();
@@ -2560,6 +2738,7 @@ namespace Amazon.CodeDeploy
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateApplication.</param>
         /// 
         /// <returns>Returns a  UpdateApplicationResult from CodeDeploy.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/UpdateApplication">REST API Reference for UpdateApplication Operation</seealso>
         public  UpdateApplicationResponse EndUpdateApplication(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateApplicationResponse>(asyncResult);
@@ -2575,6 +2754,9 @@ namespace Amazon.CodeDeploy
         /// <param name="request">Container for the necessary parameters to execute the UpdateDeploymentGroup service method.</param>
         /// 
         /// <returns>The response from the UpdateDeploymentGroup service method, as returned by CodeDeploy.</returns>
+        /// <exception cref="Amazon.CodeDeploy.Model.AlarmsLimitExceededException">
+        /// The maximum number of alarms for a deployment group (10) was exceeded.
+        /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.ApplicationDoesNotExistException">
         /// The application does not exist with the applicable IAM user or AWS account.
         /// </exception>
@@ -2594,8 +2776,38 @@ namespace Amazon.CodeDeploy
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentGroupNameRequiredException">
         /// The deployment group name was not specified.
         /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidAlarmConfigException">
+        /// The format of the alarm configuration is invalid. Possible causes include:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// The alarm list is null.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The alarm object is null.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The alarm name is empty or null or exceeds the 255 character limit.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Two alarms with the same name have been specified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The alarm configuration is enabled but the alarm list is empty.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidApplicationNameException">
         /// The application name was specified in an invalid format.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidAutoRollbackConfigException">
+        /// The automatic rollback configuration was specified in an invalid format. For example,
+        /// automatic rollback is enabled but an invalid triggering event type or no event types
+        /// were listed.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidAutoScalingGroupException">
         /// The Auto Scaling group was specified in an invalid format or does not exist.
@@ -2626,6 +2838,7 @@ namespace Amazon.CodeDeploy
         /// <exception cref="Amazon.CodeDeploy.Model.TriggerTargetsLimitExceededException">
         /// The maximum allowed number of triggers was exceeded.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/UpdateDeploymentGroup">REST API Reference for UpdateDeploymentGroup Operation</seealso>
         public UpdateDeploymentGroupResponse UpdateDeploymentGroup(UpdateDeploymentGroupRequest request)
         {
             var marshaller = new UpdateDeploymentGroupRequestMarshaller();
@@ -2645,6 +2858,7 @@ namespace Amazon.CodeDeploy
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateDeploymentGroup
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/UpdateDeploymentGroup">REST API Reference for UpdateDeploymentGroup Operation</seealso>
         public IAsyncResult BeginUpdateDeploymentGroup(UpdateDeploymentGroupRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateDeploymentGroupRequestMarshaller();
@@ -2661,6 +2875,7 @@ namespace Amazon.CodeDeploy
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateDeploymentGroup.</param>
         /// 
         /// <returns>Returns a  UpdateDeploymentGroupResult from CodeDeploy.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/UpdateDeploymentGroup">REST API Reference for UpdateDeploymentGroup Operation</seealso>
         public  UpdateDeploymentGroupResponse EndUpdateDeploymentGroup(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateDeploymentGroupResponse>(asyncResult);

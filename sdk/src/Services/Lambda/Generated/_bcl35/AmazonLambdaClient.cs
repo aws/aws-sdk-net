@@ -35,13 +35,13 @@ namespace Amazon.Lambda
     ///
     /// AWS Lambda 
     /// <para>
-    /// <b>Overview</b>
+    ///  <b>Overview</b> 
     /// </para>
     ///  
     /// <para>
     /// This is the <i>AWS Lambda API Reference</i>. The AWS Lambda Developer Guide provides
-    /// additional information. For the service overview, go to <a href="http://docs.aws.amazon.com/lambda/latest/dg/welcome.html">What
-    /// is AWS Lambda</a>, and for information about how the service works, go to <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">AWS
+    /// additional information. For the service overview, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/welcome.html">What
+    /// is AWS Lambda</a>, and for information about how the service works, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">AWS
     /// Lambda: How it Works</a> in the <i>AWS Lambda Developer Guide</i>.
     /// </para>
     /// </summary>
@@ -283,6 +283,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/AddPermission">REST API Reference for AddPermission Operation</seealso>
         public AddPermissionResponse AddPermission(AddPermissionRequest request)
         {
             var marshaller = new AddPermissionRequestMarshaller();
@@ -302,6 +303,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAddPermission
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/AddPermission">REST API Reference for AddPermission Operation</seealso>
         public IAsyncResult BeginAddPermission(AddPermissionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AddPermissionRequestMarshaller();
@@ -318,6 +320,7 @@ namespace Amazon.Lambda
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAddPermission.</param>
         /// 
         /// <returns>Returns a  AddPermissionResult from Lambda.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/AddPermission">REST API Reference for AddPermission Operation</seealso>
         public  AddPermissionResponse EndAddPermission(IAsyncResult asyncResult)
         {
             return EndInvoke<AddPermissionResponse>(asyncResult);
@@ -332,9 +335,10 @@ namespace Amazon.Lambda
         /// see <a href="http://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">Introduction
         /// to AWS Lambda Aliases</a>.
         /// 
-        ///  Alias names are unique for a given function. 
+        ///  
         /// <para>
-        /// This requires permission for the lambda:CreateAlias action.
+        /// Alias names are unique for a given function. This requires permission for the lambda:CreateAlias
+        /// action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAlias service method.</param>
@@ -358,6 +362,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateAlias">REST API Reference for CreateAlias Operation</seealso>
         public CreateAliasResponse CreateAlias(CreateAliasRequest request)
         {
             var marshaller = new CreateAliasRequestMarshaller();
@@ -377,6 +382,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateAlias
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateAlias">REST API Reference for CreateAlias Operation</seealso>
         public IAsyncResult BeginCreateAlias(CreateAliasRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateAliasRequestMarshaller();
@@ -393,6 +399,7 @@ namespace Amazon.Lambda
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateAlias.</param>
         /// 
         /// <returns>Returns a  CreateAliasResult from Lambda.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateAlias">REST API Reference for CreateAlias Operation</seealso>
         public  CreateAliasResponse EndCreateAlias(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateAliasResponse>(asyncResult);
@@ -410,30 +417,30 @@ namespace Amazon.Lambda
         ///  
         /// <para>
         /// This association between a stream source and a Lambda function is called the event
-        /// source mapping. 
+        /// source mapping.
         /// </para>
-        ///  <important>This event source mapping is relevant only in the AWS Lambda pull model,
-        /// where AWS Lambda invokes the function. For more information, go to <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">AWS
-        /// Lambda: How it Works</a> in the <i>AWS Lambda Developer Guide</i>.</important> 
+        ///  <important>
         /// <para>
-        ///  You provide mapping information (for example, which stream to read from and which
-        /// Lambda function to invoke) in the request body. 
+        /// This event source mapping is relevant only in the AWS Lambda pull model, where AWS
+        /// Lambda invokes the function. For more information, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">AWS
+        /// Lambda: How it Works</a> in the <i>AWS Lambda Developer Guide</i>.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// You provide mapping information (for example, which stream to read from and which
+        /// Lambda function to invoke) in the request body.
         /// </para>
         ///  
         /// <para>
-        ///  Each event source, such as an Amazon Kinesis or a DynamoDB stream, can be associated
+        /// Each event source, such as an Amazon Kinesis or a DynamoDB stream, can be associated
         /// with multiple AWS Lambda function. A given Lambda function can be associated with
-        /// multiple AWS event sources. 
+        /// multiple AWS event sources.
         /// </para>
-        ///  
-        /// <para>
         ///  
         /// <para>
         /// If you are using versioning, you can specify a specific function version or an alias
         /// via the function name parameter. For more information about versioning, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
         /// Lambda Function Versioning and Aliases</a>. 
-        /// </para>
-        ///  
         /// </para>
         ///  
         /// <para>
@@ -462,6 +469,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateEventSourceMapping">REST API Reference for CreateEventSourceMapping Operation</seealso>
         public CreateEventSourceMappingResponse CreateEventSourceMapping(CreateEventSourceMappingRequest request)
         {
             var marshaller = new CreateEventSourceMappingRequestMarshaller();
@@ -481,6 +489,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateEventSourceMapping
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateEventSourceMapping">REST API Reference for CreateEventSourceMapping Operation</seealso>
         public IAsyncResult BeginCreateEventSourceMapping(CreateEventSourceMappingRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateEventSourceMappingRequestMarshaller();
@@ -497,6 +506,7 @@ namespace Amazon.Lambda
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateEventSourceMapping.</param>
         /// 
         /// <returns>Returns a  CreateEventSourceMappingResult from Lambda.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateEventSourceMapping">REST API Reference for CreateEventSourceMapping Operation</seealso>
         public  CreateEventSourceMappingResponse EndCreateEventSourceMapping(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateEventSourceMappingResponse>(asyncResult);
@@ -510,7 +520,7 @@ namespace Amazon.Lambda
         /// Creates a new Lambda function. The function metadata is created from the request parameters,
         /// and the code for the function is provided by a .zip file in the request body. If the
         /// function name already exists, the operation will fail. Note that the function name
-        /// is case-sensitive. 
+        /// is case-sensitive.
         /// 
         ///  
         /// <para>
@@ -548,6 +558,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateFunction">REST API Reference for CreateFunction Operation</seealso>
         public CreateFunctionResponse CreateFunction(CreateFunctionRequest request)
         {
             var marshaller = new CreateFunctionRequestMarshaller();
@@ -567,6 +578,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateFunction
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateFunction">REST API Reference for CreateFunction Operation</seealso>
         public IAsyncResult BeginCreateFunction(CreateFunctionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateFunctionRequestMarshaller();
@@ -583,6 +595,7 @@ namespace Amazon.Lambda
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateFunction.</param>
         /// 
         /// <returns>Returns a  CreateFunctionResult from Lambda.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateFunction">REST API Reference for CreateFunction Operation</seealso>
         public  CreateFunctionResponse EndCreateFunction(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateFunctionResponse>(asyncResult);
@@ -615,6 +628,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteAlias">REST API Reference for DeleteAlias Operation</seealso>
         public DeleteAliasResponse DeleteAlias(DeleteAliasRequest request)
         {
             var marshaller = new DeleteAliasRequestMarshaller();
@@ -634,6 +648,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteAlias
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteAlias">REST API Reference for DeleteAlias Operation</seealso>
         public IAsyncResult BeginDeleteAlias(DeleteAliasRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteAliasRequestMarshaller();
@@ -650,6 +665,7 @@ namespace Amazon.Lambda
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAlias.</param>
         /// 
         /// <returns>Returns a  DeleteAliasResult from Lambda.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteAlias">REST API Reference for DeleteAlias Operation</seealso>
         public  DeleteAliasResponse EndDeleteAlias(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteAliasResponse>(asyncResult);
@@ -687,6 +703,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteEventSourceMapping">REST API Reference for DeleteEventSourceMapping Operation</seealso>
         public DeleteEventSourceMappingResponse DeleteEventSourceMapping(DeleteEventSourceMappingRequest request)
         {
             var marshaller = new DeleteEventSourceMappingRequestMarshaller();
@@ -706,6 +723,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteEventSourceMapping
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteEventSourceMapping">REST API Reference for DeleteEventSourceMapping Operation</seealso>
         public IAsyncResult BeginDeleteEventSourceMapping(DeleteEventSourceMappingRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteEventSourceMappingRequestMarshaller();
@@ -722,6 +740,7 @@ namespace Amazon.Lambda
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteEventSourceMapping.</param>
         /// 
         /// <returns>Returns a  DeleteEventSourceMappingResult from Lambda.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteEventSourceMapping">REST API Reference for DeleteEventSourceMapping Operation</seealso>
         public  DeleteEventSourceMappingResponse EndDeleteEventSourceMapping(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteEventSourceMappingResponse>(asyncResult);
@@ -774,6 +793,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunction">REST API Reference for DeleteFunction Operation</seealso>
         public DeleteFunctionResponse DeleteFunction(string functionName)
         {
             var request = new DeleteFunctionRequest();
@@ -825,6 +845,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunction">REST API Reference for DeleteFunction Operation</seealso>
         public DeleteFunctionResponse DeleteFunction(DeleteFunctionRequest request)
         {
             var marshaller = new DeleteFunctionRequestMarshaller();
@@ -844,6 +865,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteFunction
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunction">REST API Reference for DeleteFunction Operation</seealso>
         public IAsyncResult BeginDeleteFunction(DeleteFunctionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteFunctionRequestMarshaller();
@@ -860,9 +882,77 @@ namespace Amazon.Lambda
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteFunction.</param>
         /// 
         /// <returns>Returns a  DeleteFunctionResult from Lambda.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunction">REST API Reference for DeleteFunction Operation</seealso>
         public  DeleteFunctionResponse EndDeleteFunction(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteFunctionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetAccountSettings
+
+        /// <summary>
+        /// Returns a customer's account settings.
+        /// 
+        ///  
+        /// <para>
+        /// You can use this operation to retrieve Lambda limits information, such as code size
+        /// and concurrency limits. For more information about limits, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/limits.html">AWS
+        /// Lambda Limits</a>. You can also retrieve resource usage statistics, such as code storage
+        /// usage and function count.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAccountSettings service method.</param>
+        /// 
+        /// <returns>The response from the GetAccountSettings service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The AWS Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetAccountSettings">REST API Reference for GetAccountSettings Operation</seealso>
+        public GetAccountSettingsResponse GetAccountSettings(GetAccountSettingsRequest request)
+        {
+            var marshaller = new GetAccountSettingsRequestMarshaller();
+            var unmarshaller = GetAccountSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<GetAccountSettingsRequest,GetAccountSettingsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAccountSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAccountSettings operation on AmazonLambdaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAccountSettings
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetAccountSettings">REST API Reference for GetAccountSettings Operation</seealso>
+        public IAsyncResult BeginGetAccountSettings(GetAccountSettingsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new GetAccountSettingsRequestMarshaller();
+            var unmarshaller = GetAccountSettingsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetAccountSettingsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetAccountSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAccountSettings.</param>
+        /// 
+        /// <returns>Returns a  GetAccountSettingsResult from Lambda.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetAccountSettings">REST API Reference for GetAccountSettings Operation</seealso>
+        public  GetAccountSettingsResponse EndGetAccountSettings(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetAccountSettingsResponse>(asyncResult);
         }
 
         #endregion
@@ -897,6 +987,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetAlias">REST API Reference for GetAlias Operation</seealso>
         public GetAliasResponse GetAlias(GetAliasRequest request)
         {
             var marshaller = new GetAliasRequestMarshaller();
@@ -916,6 +1007,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAlias
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetAlias">REST API Reference for GetAlias Operation</seealso>
         public IAsyncResult BeginGetAlias(GetAliasRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetAliasRequestMarshaller();
@@ -932,6 +1024,7 @@ namespace Amazon.Lambda
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAlias.</param>
         /// 
         /// <returns>Returns a  GetAliasResult from Lambda.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetAlias">REST API Reference for GetAlias Operation</seealso>
         public  GetAliasResponse EndGetAlias(IAsyncResult asyncResult)
         {
             return EndInvoke<GetAliasResponse>(asyncResult);
@@ -968,6 +1061,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetEventSourceMapping">REST API Reference for GetEventSourceMapping Operation</seealso>
         public GetEventSourceMappingResponse GetEventSourceMapping(GetEventSourceMappingRequest request)
         {
             var marshaller = new GetEventSourceMappingRequestMarshaller();
@@ -987,6 +1081,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetEventSourceMapping
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetEventSourceMapping">REST API Reference for GetEventSourceMapping Operation</seealso>
         public IAsyncResult BeginGetEventSourceMapping(GetEventSourceMappingRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetEventSourceMappingRequestMarshaller();
@@ -1003,6 +1098,7 @@ namespace Amazon.Lambda
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetEventSourceMapping.</param>
         /// 
         /// <returns>Returns a  GetEventSourceMappingResult from Lambda.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetEventSourceMapping">REST API Reference for GetEventSourceMapping Operation</seealso>
         public  GetEventSourceMappingResponse EndGetEventSourceMapping(IAsyncResult asyncResult)
         {
             return EndInvoke<GetEventSourceMappingResponse>(asyncResult);
@@ -1031,7 +1127,7 @@ namespace Amazon.Lambda
         /// This operation requires permission for the <code>lambda:GetFunction</code> action.
         /// </para>
         /// </summary>
-        /// <param name="functionName">The Lambda function name.   You can specify a function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN) of the function (for example, <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda also allows you to specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character in length. </param>
+        /// <param name="functionName">The Lambda function name.  You can specify a function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN) of the function (for example, <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda also allows you to specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character in length. </param>
         /// 
         /// <returns>The response from the GetFunction service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
@@ -1049,6 +1145,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunction">REST API Reference for GetFunction Operation</seealso>
         public GetFunctionResponse GetFunction(string functionName)
         {
             var request = new GetFunctionRequest();
@@ -1094,6 +1191,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunction">REST API Reference for GetFunction Operation</seealso>
         public GetFunctionResponse GetFunction(GetFunctionRequest request)
         {
             var marshaller = new GetFunctionRequestMarshaller();
@@ -1113,6 +1211,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetFunction
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunction">REST API Reference for GetFunction Operation</seealso>
         public IAsyncResult BeginGetFunction(GetFunctionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetFunctionRequestMarshaller();
@@ -1129,6 +1228,7 @@ namespace Amazon.Lambda
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetFunction.</param>
         /// 
         /// <returns>Returns a  GetFunctionResult from Lambda.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunction">REST API Reference for GetFunction Operation</seealso>
         public  GetFunctionResponse EndGetFunction(IAsyncResult asyncResult)
         {
             return EndInvoke<GetFunctionResponse>(asyncResult);
@@ -1175,6 +1275,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionConfiguration">REST API Reference for GetFunctionConfiguration Operation</seealso>
         public GetFunctionConfigurationResponse GetFunctionConfiguration(string functionName)
         {
             var request = new GetFunctionConfigurationRequest();
@@ -1220,6 +1321,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionConfiguration">REST API Reference for GetFunctionConfiguration Operation</seealso>
         public GetFunctionConfigurationResponse GetFunctionConfiguration(GetFunctionConfigurationRequest request)
         {
             var marshaller = new GetFunctionConfigurationRequestMarshaller();
@@ -1239,6 +1341,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetFunctionConfiguration
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionConfiguration">REST API Reference for GetFunctionConfiguration Operation</seealso>
         public IAsyncResult BeginGetFunctionConfiguration(GetFunctionConfigurationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetFunctionConfigurationRequestMarshaller();
@@ -1255,6 +1358,7 @@ namespace Amazon.Lambda
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetFunctionConfiguration.</param>
         /// 
         /// <returns>Returns a  GetFunctionConfigurationResult from Lambda.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionConfiguration">REST API Reference for GetFunctionConfiguration Operation</seealso>
         public  GetFunctionConfigurationResponse EndGetFunctionConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<GetFunctionConfigurationResponse>(asyncResult);
@@ -1281,7 +1385,7 @@ namespace Amazon.Lambda
         /// </para>
         ///  
         /// <para>
-        /// You need permission for the <code>lambda:GetPolicy action.</code>
+        /// You need permission for the <code>lambda:GetPolicy action.</code> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPolicy service method.</param>
@@ -1302,6 +1406,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetPolicy">REST API Reference for GetPolicy Operation</seealso>
         public GetPolicyResponse GetPolicy(GetPolicyRequest request)
         {
             var marshaller = new GetPolicyRequestMarshaller();
@@ -1321,6 +1426,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetPolicy
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetPolicy">REST API Reference for GetPolicy Operation</seealso>
         public IAsyncResult BeginGetPolicy(GetPolicyRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetPolicyRequestMarshaller();
@@ -1337,6 +1443,7 @@ namespace Amazon.Lambda
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetPolicy.</param>
         /// 
         /// <returns>Returns a  GetPolicyResult from Lambda.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetPolicy">REST API Reference for GetPolicy Operation</seealso>
         public  GetPolicyResponse EndGetPolicy(IAsyncResult asyncResult)
         {
             return EndInvoke<GetPolicyResponse>(asyncResult);
@@ -1347,7 +1454,8 @@ namespace Amazon.Lambda
         #region  Invoke
 
         /// <summary>
-        /// Invokes a specific Lambda function. 
+        /// Invokes a specific Lambda function. For an example, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/with-dynamodb-create-function.html#with-dbb-invoke-manually">Create
+        /// the Lambda Function and Test It Manually</a>. 
         /// 
         ///  
         /// <para>
@@ -1355,7 +1463,9 @@ namespace Amazon.Lambda
         /// by providing function version or alias name that is pointing to the function version
         /// using the <code>Qualifier</code> parameter in the request. If you don't provide the
         /// <code>Qualifier</code> parameter, the <code>$LATEST</code> version of the Lambda function
-        /// is invoked. For information about the versioning feature, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
+        /// is invoked. Invocations occur at least once in response to an event and functions
+        /// must be idempotent to handle this. For information about the versioning feature, see
+        /// <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
         /// Lambda Function Versioning and Aliases</a>. 
         /// </para>
         ///  
@@ -1370,7 +1480,7 @@ namespace Amazon.Lambda
         /// 
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.EC2ThrottledException">
-        /// AWS Lambda was throttled by Amazon EC2 during Lambda function initiatization using
+        /// AWS Lambda was throttled by Amazon EC2 during Lambda function initialization using
         /// the execution role provided for the Lambda function.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.EC2UnexpectedException">
@@ -1396,6 +1506,25 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.InvalidSubnetIDException">
         /// The Subnet ID provided in the Lambda function VPC configuration is invalid.
         /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.InvalidZipFileException">
+        /// AWS Lambda could not unzip the function zip file.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.KMSAccessDeniedException">
+        /// Lambda was unable to decrypt the environment variables because KMS access was denied.
+        /// Check the Lambda function's KMS permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.KMSDisabledException">
+        /// Lambda was unable to decrypt the environment variables because the KMS key used is
+        /// disabled. Check the Lambda function's KMS key settings.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.KMSInvalidStateException">
+        /// Lambda was unable to decrypt the environment variables because the KMS key used is
+        /// in an invalid state for Decrypt. Check the function's KMS key settings.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.KMSNotFoundException">
+        /// Lambda was unable to decrypt the environment variables because the KMS key was not
+        /// found. Check the function's KMS key settings.
+        /// </exception>
         /// <exception cref="Amazon.Lambda.Model.RequestTooLargeException">
         /// The request payload exceeded the <code>Invoke</code> request body JSON input limit.
         /// For more information, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/limits.html">Limits</a>.
@@ -1417,6 +1546,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.UnsupportedMediaTypeException">
         /// The content type of the <code>Invoke</code> request body is not JSON.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/Invoke">REST API Reference for Invoke Operation</seealso>
         public InvokeResponse Invoke(InvokeRequest request)
         {
             var marshaller = new InvokeRequestMarshaller();
@@ -1436,6 +1566,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndInvoke
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/Invoke">REST API Reference for Invoke Operation</seealso>
         public IAsyncResult BeginInvoke(InvokeRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new InvokeRequestMarshaller();
@@ -1452,6 +1583,7 @@ namespace Amazon.Lambda
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginInvoke.</param>
         /// 
         /// <returns>Returns a  InvokeResult from Lambda.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/Invoke">REST API Reference for Invoke Operation</seealso>
         public  InvokeResponse EndInvoke(IAsyncResult asyncResult)
         {
             return EndInvoke<InvokeResponse>(asyncResult);
@@ -1462,8 +1594,11 @@ namespace Amazon.Lambda
         #region  InvokeAsync
 
         /// <summary>
-        /// <important>This API is deprecated. We recommend you use <code>Invoke</code> API (see
-        /// <a>Invoke</a>).</important> 
+        /// <important>
+        /// <para>
+        /// This API is deprecated. We recommend you use <code>Invoke</code> API (see <a>Invoke</a>).
+        /// </para>
+        ///  </important> 
         /// <para>
         /// Submits an invocation request to AWS Lambda. Upon receiving the request, Lambda executes
         /// the specified function asynchronously. To see the logs generated by the Lambda function
@@ -1487,6 +1622,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.ServiceException">
         /// The AWS Lambda service encountered an internal error.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/InvokeAsync">REST API Reference for InvokeAsync Operation</seealso>
         [Obsolete("This API is deprecated. We recommend that you use Invoke API instead.")]
         public InvokeAsyncResponse InvokeAsync(InvokeAsyncRequest request)
         {
@@ -1507,6 +1643,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndInvokeAsync
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/InvokeAsync">REST API Reference for InvokeAsync Operation</seealso>
         [Obsolete("This API is deprecated. We recommend that you use Invoke API instead.")]
         public IAsyncResult BeginInvokeAsync(InvokeAsyncRequest request, AsyncCallback callback, object state)
         {
@@ -1524,6 +1661,7 @@ namespace Amazon.Lambda
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginInvokeAsync.</param>
         /// 
         /// <returns>Returns a  InvokeAsyncResult from Lambda.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/InvokeAsync">REST API Reference for InvokeAsync Operation</seealso>
         [Obsolete("This API is deprecated. We recommend that you use Invoke API instead.")]
         public  InvokeAsyncResponse EndInvokeAsync(IAsyncResult asyncResult)
         {
@@ -1563,6 +1701,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListAliases">REST API Reference for ListAliases Operation</seealso>
         public ListAliasesResponse ListAliases(ListAliasesRequest request)
         {
             var marshaller = new ListAliasesRequestMarshaller();
@@ -1582,6 +1721,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAliases
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListAliases">REST API Reference for ListAliases Operation</seealso>
         public IAsyncResult BeginListAliases(ListAliasesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListAliasesRequestMarshaller();
@@ -1598,6 +1738,7 @@ namespace Amazon.Lambda
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAliases.</param>
         /// 
         /// <returns>Returns a  ListAliasesResult from Lambda.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListAliases">REST API Reference for ListAliases Operation</seealso>
         public  ListAliasesResponse EndListAliases(IAsyncResult asyncResult)
         {
             return EndInvoke<ListAliasesResponse>(asyncResult);
@@ -1647,6 +1788,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListEventSourceMappings">REST API Reference for ListEventSourceMappings Operation</seealso>
         public ListEventSourceMappingsResponse ListEventSourceMappings(ListEventSourceMappingsRequest request)
         {
             var marshaller = new ListEventSourceMappingsRequestMarshaller();
@@ -1666,6 +1808,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListEventSourceMappings
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListEventSourceMappings">REST API Reference for ListEventSourceMappings Operation</seealso>
         public IAsyncResult BeginListEventSourceMappings(ListEventSourceMappingsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListEventSourceMappingsRequestMarshaller();
@@ -1682,6 +1825,7 @@ namespace Amazon.Lambda
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListEventSourceMappings.</param>
         /// 
         /// <returns>Returns a  ListEventSourceMappingsResult from Lambda.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListEventSourceMappings">REST API Reference for ListEventSourceMappings Operation</seealso>
         public  ListEventSourceMappingsResponse EndListEventSourceMappings(IAsyncResult asyncResult)
         {
             return EndInvoke<ListEventSourceMappingsResponse>(asyncResult);
@@ -1715,6 +1859,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctions">REST API Reference for ListFunctions Operation</seealso>
         public ListFunctionsResponse ListFunctions()
         {
             var request = new ListFunctionsRequest();
@@ -1747,6 +1892,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctions">REST API Reference for ListFunctions Operation</seealso>
         public ListFunctionsResponse ListFunctions(ListFunctionsRequest request)
         {
             var marshaller = new ListFunctionsRequestMarshaller();
@@ -1766,6 +1912,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListFunctions
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctions">REST API Reference for ListFunctions Operation</seealso>
         public IAsyncResult BeginListFunctions(ListFunctionsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListFunctionsRequestMarshaller();
@@ -1782,6 +1929,7 @@ namespace Amazon.Lambda
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListFunctions.</param>
         /// 
         /// <returns>Returns a  ListFunctionsResult from Lambda.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctions">REST API Reference for ListFunctions Operation</seealso>
         public  ListFunctionsResponse EndListFunctions(IAsyncResult asyncResult)
         {
             return EndInvoke<ListFunctionsResponse>(asyncResult);
@@ -1814,6 +1962,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListVersionsByFunction">REST API Reference for ListVersionsByFunction Operation</seealso>
         public ListVersionsByFunctionResponse ListVersionsByFunction(ListVersionsByFunctionRequest request)
         {
             var marshaller = new ListVersionsByFunctionRequestMarshaller();
@@ -1833,6 +1982,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListVersionsByFunction
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListVersionsByFunction">REST API Reference for ListVersionsByFunction Operation</seealso>
         public IAsyncResult BeginListVersionsByFunction(ListVersionsByFunctionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListVersionsByFunctionRequestMarshaller();
@@ -1849,6 +1999,7 @@ namespace Amazon.Lambda
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListVersionsByFunction.</param>
         /// 
         /// <returns>Returns a  ListVersionsByFunctionResult from Lambda.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListVersionsByFunction">REST API Reference for ListVersionsByFunction Operation</seealso>
         public  ListVersionsByFunctionResponse EndListVersionsByFunction(IAsyncResult asyncResult)
         {
             return EndInvoke<ListVersionsByFunctionResponse>(asyncResult);
@@ -1886,6 +2037,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PublishVersion">REST API Reference for PublishVersion Operation</seealso>
         public PublishVersionResponse PublishVersion(PublishVersionRequest request)
         {
             var marshaller = new PublishVersionRequestMarshaller();
@@ -1905,6 +2057,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPublishVersion
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PublishVersion">REST API Reference for PublishVersion Operation</seealso>
         public IAsyncResult BeginPublishVersion(PublishVersionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new PublishVersionRequestMarshaller();
@@ -1921,6 +2074,7 @@ namespace Amazon.Lambda
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPublishVersion.</param>
         /// 
         /// <returns>Returns a  PublishVersionResult from Lambda.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PublishVersion">REST API Reference for PublishVersion Operation</seealso>
         public  PublishVersionResponse EndPublishVersion(IAsyncResult asyncResult)
         {
             return EndInvoke<PublishVersionResponse>(asyncResult);
@@ -1934,7 +2088,6 @@ namespace Amazon.Lambda
         /// You can remove individual permissions from an resource policy associated with a Lambda
         /// function by providing a statement ID that you provided when you added the permission.
         /// 
-        /// 
         ///  
         /// <para>
         /// If you are using versioning, the permissions you remove are specific to the Lambda
@@ -1946,7 +2099,7 @@ namespace Amazon.Lambda
         ///  
         /// <para>
         /// Note that removal of a permission will cause an active event source to lose permission
-        /// to the function. 
+        /// to the function.
         /// </para>
         ///  
         /// <para>
@@ -1971,6 +2124,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/RemovePermission">REST API Reference for RemovePermission Operation</seealso>
         public RemovePermissionResponse RemovePermission(RemovePermissionRequest request)
         {
             var marshaller = new RemovePermissionRequestMarshaller();
@@ -1990,6 +2144,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRemovePermission
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/RemovePermission">REST API Reference for RemovePermission Operation</seealso>
         public IAsyncResult BeginRemovePermission(RemovePermissionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RemovePermissionRequestMarshaller();
@@ -2006,6 +2161,7 @@ namespace Amazon.Lambda
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRemovePermission.</param>
         /// 
         /// <returns>Returns a  RemovePermissionResult from Lambda.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/RemovePermission">REST API Reference for RemovePermission Operation</seealso>
         public  RemovePermissionResponse EndRemovePermission(IAsyncResult asyncResult)
         {
             return EndInvoke<RemovePermissionResponse>(asyncResult);
@@ -2043,6 +2199,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateAlias">REST API Reference for UpdateAlias Operation</seealso>
         public UpdateAliasResponse UpdateAlias(UpdateAliasRequest request)
         {
             var marshaller = new UpdateAliasRequestMarshaller();
@@ -2062,6 +2219,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateAlias
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateAlias">REST API Reference for UpdateAlias Operation</seealso>
         public IAsyncResult BeginUpdateAlias(UpdateAliasRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateAliasRequestMarshaller();
@@ -2078,6 +2236,7 @@ namespace Amazon.Lambda
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateAlias.</param>
         /// 
         /// <returns>Returns a  UpdateAliasResult from Lambda.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateAlias">REST API Reference for UpdateAlias Operation</seealso>
         public  UpdateAliasResponse EndUpdateAlias(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateAliasResponse>(asyncResult);
@@ -2091,7 +2250,7 @@ namespace Amazon.Lambda
         /// You can update an event source mapping. This is useful if you want to change the parameters
         /// of the existing mapping without losing your position in the stream. You can change
         /// which function will receive the stream records, but to change the stream itself, you
-        /// must create a new mapping. 
+        /// must create a new mapping.
         /// 
         ///  
         /// <para>
@@ -2134,6 +2293,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateEventSourceMapping">REST API Reference for UpdateEventSourceMapping Operation</seealso>
         public UpdateEventSourceMappingResponse UpdateEventSourceMapping(UpdateEventSourceMappingRequest request)
         {
             var marshaller = new UpdateEventSourceMappingRequestMarshaller();
@@ -2153,6 +2313,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateEventSourceMapping
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateEventSourceMapping">REST API Reference for UpdateEventSourceMapping Operation</seealso>
         public IAsyncResult BeginUpdateEventSourceMapping(UpdateEventSourceMappingRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateEventSourceMappingRequestMarshaller();
@@ -2169,6 +2330,7 @@ namespace Amazon.Lambda
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateEventSourceMapping.</param>
         /// 
         /// <returns>Returns a  UpdateEventSourceMappingResult from Lambda.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateEventSourceMapping">REST API Reference for UpdateEventSourceMapping Operation</seealso>
         public  UpdateEventSourceMappingResponse EndUpdateEventSourceMapping(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateEventSourceMappingResponse>(asyncResult);
@@ -2181,7 +2343,6 @@ namespace Amazon.Lambda
         /// <summary>
         /// Updates the code for the specified Lambda function. This operation must only be used
         /// on an existing Lambda function and cannot be used to update the function configuration.
-        /// 
         /// 
         ///  
         /// <para>
@@ -2217,6 +2378,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionCode">REST API Reference for UpdateFunctionCode Operation</seealso>
         public UpdateFunctionCodeResponse UpdateFunctionCode(UpdateFunctionCodeRequest request)
         {
             var marshaller = new UpdateFunctionCodeRequestMarshaller();
@@ -2236,6 +2398,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateFunctionCode
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionCode">REST API Reference for UpdateFunctionCode Operation</seealso>
         public IAsyncResult BeginUpdateFunctionCode(UpdateFunctionCodeRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateFunctionCodeRequestMarshaller();
@@ -2252,6 +2415,7 @@ namespace Amazon.Lambda
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateFunctionCode.</param>
         /// 
         /// <returns>Returns a  UpdateFunctionCodeResult from Lambda.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionCode">REST API Reference for UpdateFunctionCode Operation</seealso>
         public  UpdateFunctionCodeResponse EndUpdateFunctionCode(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateFunctionCodeResponse>(asyncResult);
@@ -2265,7 +2429,7 @@ namespace Amazon.Lambda
         /// Updates the configuration parameters for the specified Lambda function by using the
         /// values provided in the request. You provide only the parameters you want to change.
         /// This operation must only be used on an existing Lambda function and cannot be used
-        /// to update the function's code. 
+        /// to update the function's code.
         /// 
         ///  
         /// <para>
@@ -2298,6 +2462,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionConfiguration">REST API Reference for UpdateFunctionConfiguration Operation</seealso>
         public UpdateFunctionConfigurationResponse UpdateFunctionConfiguration(UpdateFunctionConfigurationRequest request)
         {
             var marshaller = new UpdateFunctionConfigurationRequestMarshaller();
@@ -2317,6 +2482,7 @@ namespace Amazon.Lambda
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateFunctionConfiguration
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionConfiguration">REST API Reference for UpdateFunctionConfiguration Operation</seealso>
         public IAsyncResult BeginUpdateFunctionConfiguration(UpdateFunctionConfigurationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateFunctionConfigurationRequestMarshaller();
@@ -2333,6 +2499,7 @@ namespace Amazon.Lambda
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateFunctionConfiguration.</param>
         /// 
         /// <returns>Returns a  UpdateFunctionConfigurationResult from Lambda.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionConfiguration">REST API Reference for UpdateFunctionConfiguration Operation</seealso>
         public  UpdateFunctionConfigurationResponse EndUpdateFunctionConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateFunctionConfigurationResponse>(asyncResult);

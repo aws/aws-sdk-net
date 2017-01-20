@@ -25,7 +25,7 @@ namespace Amazon.ElasticMapReduce.Model
     ///<summary>
     /// ElasticMapReduce exception
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class InternalServerException : AmazonElasticMapReduceException 
@@ -79,7 +79,7 @@ namespace Amazon.ElasticMapReduce.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the InternalServerException class with serialized data.
         /// </summary>

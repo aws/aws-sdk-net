@@ -21,7 +21,7 @@ namespace Amazon.Runtime
     /// <summary>
     /// Exception thrown by the SDK for errors that occur within the SDK.
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class AmazonClientException : Exception
@@ -30,7 +30,7 @@ namespace Amazon.Runtime
 
         public AmazonClientException(string message, Exception innerException) : base(message, innerException) { }
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the AmazonClientException class with serialized data.
         /// </summary>

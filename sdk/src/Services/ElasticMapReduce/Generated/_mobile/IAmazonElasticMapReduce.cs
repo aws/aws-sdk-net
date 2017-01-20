@@ -23,6 +23,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.ElasticMapReduce.Model;
 
 namespace Amazon.ElasticMapReduce
@@ -30,12 +31,12 @@ namespace Amazon.ElasticMapReduce
     /// <summary>
     /// Interface for accessing ElasticMapReduce
     ///
-    /// Amazon Elastic MapReduce (Amazon EMR) is a web service that makes it easy to process
-    /// large amounts of data efficiently. Amazon EMR uses Hadoop processing combined with
-    /// several AWS products to do tasks such as web indexing, data mining, log file analysis,
-    /// machine learning, scientific simulation, and data warehousing.
+    /// Amazon EMR is a web service that makes it easy to process large amounts of data efficiently.
+    /// Amazon EMR uses Hadoop processing combined with several AWS products to do tasks such
+    /// as web indexing, data mining, log file analysis, machine learning, scientific simulation,
+    /// and data warehousing.
     /// </summary>
-    public partial interface IAmazonElasticMapReduce : IDisposable
+    public partial interface IAmazonElasticMapReduce : IAmazonService, IDisposable
     {
                 
         #region  AddInstanceGroups
@@ -86,6 +87,54 @@ namespace Amazon.ElasticMapReduce
 
         #endregion
                 
+        #region  CancelSteps
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CancelSteps operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CancelSteps operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<CancelStepsResponse> CancelStepsAsync(CancelStepsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateSecurityConfiguration
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateSecurityConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateSecurityConfiguration operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<CreateSecurityConfigurationResponse> CreateSecurityConfigurationAsync(CreateSecurityConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteSecurityConfiguration
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteSecurityConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSecurityConfiguration operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DeleteSecurityConfigurationResponse> DeleteSecurityConfigurationAsync(DeleteSecurityConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DescribeCluster
 
 
@@ -130,26 +179,33 @@ namespace Amazon.ElasticMapReduce
         /// 
         ///  
         /// <para>
-        ///  DescribeJobFlows returns a list of job flows that match all of the supplied parameters.
+        /// DescribeJobFlows returns a list of job flows that match all of the supplied parameters.
         /// The parameters can include a list of job flow IDs, job flow states, and restrictions
         /// on job flow creation date and time.
         /// </para>
         ///  
         /// <para>
-        ///  Regardless of supplied parameters, only job flows created within the last two months
+        /// Regardless of supplied parameters, only job flows created within the last two months
         /// are returned.
         /// </para>
         ///  
         /// <para>
-        ///  If no parameters are supplied, then job flows matching either of the following criteria
+        /// If no parameters are supplied, then job flows matching either of the following criteria
         /// are returned:
         /// </para>
-        ///  <ul> <li>Job flows created and completed in the last two weeks</li> <li> Job flows
-        /// created within the last two months that are in one of the following states: <code>RUNNING</code>,
-        /// <code>WAITING</code>, <code>SHUTTING_DOWN</code>, <code>STARTING</code> </li> </ul>
-        /// 
+        ///  <ul> <li> 
         /// <para>
-        ///  Amazon Elastic MapReduce can return a maximum of 512 job flow descriptions. 
+        /// Job flows created and completed in the last two weeks
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  Job flows created within the last two months that are in one of the following states:
+        /// <code>RUNNING</code>, <code>WAITING</code>, <code>SHUTTING_DOWN</code>, <code>STARTING</code>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Amazon EMR can return a maximum of 512 job flow descriptions.
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">
@@ -176,6 +232,22 @@ namespace Amazon.ElasticMapReduce
         /// <returns>The task object representing the asynchronous operation.</returns>
         [Obsolete("This API is deprecated and will eventually be removed. We recommend that you use ListClusters, DescribeCluster, ListSteps, ListInstanceGroups and ListBootstrapActions instead.")]
         Task<DescribeJobFlowsResponse> DescribeJobFlowsAsync(DescribeJobFlowsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeSecurityConfiguration
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeSecurityConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSecurityConfiguration operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DescribeSecurityConfigurationResponse> DescribeSecurityConfigurationAsync(DescribeSecurityConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -351,11 +423,28 @@ namespace Amazon.ElasticMapReduce
 
         #endregion
                 
+        #region  ListSecurityConfigurations
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListSecurityConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListSecurityConfigurations operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ListSecurityConfigurationsResponse> ListSecurityConfigurationsAsync(ListSecurityConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListSteps
 
 
         /// <summary>
-        /// Provides a list of steps for the cluster.
+        /// Provides a list of steps for the cluster in reverse order unless you specify stepIds
+        /// with the request.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -397,6 +486,38 @@ namespace Amazon.ElasticMapReduce
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<ModifyInstanceGroupsResponse> ModifyInstanceGroupsAsync(ModifyInstanceGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  PutAutoScalingPolicy
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutAutoScalingPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutAutoScalingPolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<PutAutoScalingPolicyResponse> PutAutoScalingPolicyAsync(PutAutoScalingPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  RemoveAutoScalingPolicy
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RemoveAutoScalingPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RemoveAutoScalingPolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<RemoveAutoScalingPolicyResponse> RemoveAutoScalingPolicyAsync(RemoveAutoScalingPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

@@ -40,14 +40,29 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information, see the following in the <i>Elastic Load Balancing Developer
-    /// Guide</i>:
+    /// For more information, see the following in the <i>Classic Load Balancers Guide</i>:
     /// </para>
-    ///  <ul> <li><a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#request-routing">Cross-Zone
-    /// Load Balancing</a></li> <li><a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#conn-drain">Connection
-    /// Draining</a></li> <li><a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/access-log-collection.html">Access
-    /// Logs</a></li> <li><a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#idle-timeout">Idle
-    /// Connection Timeout</a></li> </ul>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-crosszone-lb.html">Cross-Zone
+    /// Load Balancing</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-conn-drain.html">Connection
+    /// Draining</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/access-log-collection.html">Access
+    /// Logs</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-idle-timeout.html">Idle
+    /// Connection Timeout</a> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class ModifyLoadBalancerAttributesRequest : AmazonElasticLoadBalancingRequest
     {

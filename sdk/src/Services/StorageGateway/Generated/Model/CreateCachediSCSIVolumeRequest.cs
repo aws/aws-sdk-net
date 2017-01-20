@@ -32,7 +32,7 @@ namespace Amazon.StorageGateway.Model
     /// Creates a cached volume on a specified cached gateway. This operation is supported
     /// only for the gateway-cached volume architecture.
     /// 
-    ///  <note>
+    ///  <note> 
     /// <para>
     /// Cache storage must be allocated to the gateway before you can create a cached volume.
     /// Use the <a>AddCache</a> operation to add cache storage to a gateway. 
@@ -42,8 +42,15 @@ namespace Amazon.StorageGateway.Model
     /// In the request, you must specify the gateway, size of the volume in bytes, the iSCSI
     /// target name, an IP address on which to expose the target, and a unique client token.
     /// In response, AWS Storage Gateway creates the volume and returns information about
-    /// it such as the volume Amazon Resource Name (ARN), its size, and the iSCSI target ARN
-    /// that initiators can use to connect to the volume target.
+    /// it. This information includes the volume Amazon Resource Name (ARN), its size, and
+    /// the iSCSI target ARN that initiators can use to connect to the volume target.
+    /// </para>
+    ///  
+    /// <para>
+    /// Optionally, you can provide the ARN for an existing volume as the <code>SourceVolumeARN</code>
+    /// for this cached volume, which creates an exact copy of the existing volume’s latest
+    /// recovery point. The <code>VolumeSizeInBytes</code> value must be equal to or larger
+    /// than the size of the copied volume, in bytes.
     /// </para>
     /// </summary>
     public partial class CreateCachediSCSIVolumeRequest : AmazonStorageGatewayRequest
@@ -52,6 +59,7 @@ namespace Amazon.StorageGateway.Model
         private string _gatewayARN;
         private string _networkInterfaceId;
         private string _snapshotId;
+        private string _sourceVolumeARN;
         private string _targetName;
         private long? _volumeSizeInBytes;
 
@@ -113,6 +121,27 @@ namespace Amazon.StorageGateway.Model
         internal bool IsSetSnapshotId()
         {
             return this._snapshotId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceVolumeARN. 
+        /// <para>
+        /// The ARN for an existing volume. Specifying this ARN makes the new volume into an exact
+        /// copy of the specified existing volume's latest recovery point. The <code>VolumeSizeInBytes</code>
+        /// value for this new volume must be equal to or larger than the size of the existing
+        /// volume, in bytes.
+        /// </para>
+        /// </summary>
+        public string SourceVolumeARN
+        {
+            get { return this._sourceVolumeARN; }
+            set { this._sourceVolumeARN = value; }
+        }
+
+        // Check to see if SourceVolumeARN property is set
+        internal bool IsSetSourceVolumeARN()
+        {
+            return this._sourceVolumeARN != null;
         }
 
         /// <summary>

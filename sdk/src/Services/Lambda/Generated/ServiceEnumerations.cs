@@ -31,6 +31,10 @@ namespace Amazon.Lambda
     {
 
         /// <summary>
+        /// Constant AT_TIMESTAMP for EventSourcePosition
+        /// </summary>
+        public static readonly EventSourcePosition AT_TIMESTAMP = new EventSourcePosition("AT_TIMESTAMP");
+        /// <summary>
         /// Constant LATEST for EventSourcePosition
         /// </summary>
         public static readonly EventSourcePosition LATEST = new EventSourcePosition("LATEST");
@@ -185,6 +189,10 @@ namespace Amazon.Lambda
     {
 
         /// <summary>
+        /// Constant Dotnetcore10 for Runtime
+        /// </summary>
+        public static readonly Runtime Dotnetcore10 = new Runtime("dotnetcore1.0");
+        /// <summary>
         /// Constant Java8 for Runtime
         /// </summary>
         public static readonly Runtime Java8 = new Runtime("java8");
@@ -196,6 +204,10 @@ namespace Amazon.Lambda
         /// Constant Nodejs43 for Runtime
         /// </summary>
         public static readonly Runtime Nodejs43 = new Runtime("nodejs4.3");
+        /// <summary>
+        /// Constant Nodejs43Edge for Runtime
+        /// </summary>
+        public static readonly Runtime Nodejs43Edge = new Runtime("nodejs4.3-edge");
         /// <summary>
         /// Constant Python27 for Runtime
         /// </summary>
@@ -230,6 +242,60 @@ namespace Amazon.Lambda
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Runtime(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ThrottleReason.
+    /// </summary>
+    public class ThrottleReason : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CallerRateLimitExceeded for ThrottleReason
+        /// </summary>
+        public static readonly ThrottleReason CallerRateLimitExceeded = new ThrottleReason("CallerRateLimitExceeded");
+        /// <summary>
+        /// Constant ConcurrentInvocationLimitExceeded for ThrottleReason
+        /// </summary>
+        public static readonly ThrottleReason ConcurrentInvocationLimitExceeded = new ThrottleReason("ConcurrentInvocationLimitExceeded");
+        /// <summary>
+        /// Constant FunctionInvocationRateLimitExceeded for ThrottleReason
+        /// </summary>
+        public static readonly ThrottleReason FunctionInvocationRateLimitExceeded = new ThrottleReason("FunctionInvocationRateLimitExceeded");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ThrottleReason(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ThrottleReason FindValue(string value)
+        {
+            return FindValue<ThrottleReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ThrottleReason(string value)
         {
             return FindValue(value);
         }

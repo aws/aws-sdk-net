@@ -40,6 +40,8 @@ namespace Amazon.ECS.Model
         private List<ServiceEvent> _events = new List<ServiceEvent>();
         private List<LoadBalancer> _loadBalancers = new List<LoadBalancer>();
         private int? _pendingCount;
+        private List<PlacementConstraint> _placementConstraints = new List<PlacementConstraint>();
+        private List<PlacementStrategy> _placementStrategy = new List<PlacementStrategy>();
         private string _roleArn;
         private int? _runningCount;
         private string _serviceArn;
@@ -68,7 +70,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The Unix time in seconds and milliseconds when the service was created.
+        /// The Unix timestamp for when the service was created.
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -161,9 +163,9 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property LoadBalancers. 
         /// <para>
-        /// A list of load balancer objects, containing the load balancer name, the container
-        /// name (as it appears in a container definition), and the container port to access from
-        /// the load balancer.
+        /// A list of Elastic Load Balancing load balancer objects, containing the load balancer
+        /// name, the container name (as it appears in a container definition), and the container
+        /// port to access from the load balancer.
         /// </para>
         /// </summary>
         public List<LoadBalancer> LoadBalancers
@@ -197,10 +199,47 @@ namespace Amazon.ECS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PlacementConstraints. 
+        /// <para>
+        /// The placement constraints for the tasks in the service.
+        /// </para>
+        /// </summary>
+        public List<PlacementConstraint> PlacementConstraints
+        {
+            get { return this._placementConstraints; }
+            set { this._placementConstraints = value; }
+        }
+
+        // Check to see if PlacementConstraints property is set
+        internal bool IsSetPlacementConstraints()
+        {
+            return this._placementConstraints != null && this._placementConstraints.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PlacementStrategy. 
+        /// <para>
+        /// The placement strategy that determines how tasks for the service are placed.
+        /// </para>
+        /// </summary>
+        public List<PlacementStrategy> PlacementStrategy
+        {
+            get { return this._placementStrategy; }
+            set { this._placementStrategy = value; }
+        }
+
+        // Check to see if PlacementStrategy property is set
+        internal bool IsSetPlacementStrategy()
+        {
+            return this._placementStrategy != null && this._placementStrategy.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the IAM role associated with the service that allows
-        /// the Amazon ECS container agent to register container instances with a load balancer.
+        /// the Amazon ECS container agent to register container instances with an Elastic Load
+        /// Balancing load balancer.
         /// </para>
         /// </summary>
         public string RoleArn

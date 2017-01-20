@@ -251,6 +251,7 @@ namespace Amazon.Inspector
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error code describes the entity.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/AddAttributesToFindings">REST API Reference for AddAttributesToFindings Operation</seealso>
         public AddAttributesToFindingsResponse AddAttributesToFindings(AddAttributesToFindingsRequest request)
         {
             var marshaller = new AddAttributesToFindingsRequestMarshaller();
@@ -270,6 +271,7 @@ namespace Amazon.Inspector
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAddAttributesToFindings
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/AddAttributesToFindings">REST API Reference for AddAttributesToFindings Operation</seealso>
         public IAsyncResult BeginAddAttributesToFindings(AddAttributesToFindingsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AddAttributesToFindingsRequestMarshaller();
@@ -286,6 +288,7 @@ namespace Amazon.Inspector
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAddAttributesToFindings.</param>
         /// 
         /// <returns>Returns a  AddAttributesToFindingsResult from Inspector.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/AddAttributesToFindings">REST API Reference for AddAttributesToFindings Operation</seealso>
         public  AddAttributesToFindingsResponse EndAddAttributesToFindings(IAsyncResult asyncResult)
         {
             return EndInvoke<AddAttributesToFindingsResponse>(asyncResult);
@@ -323,6 +326,7 @@ namespace Amazon.Inspector
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error code describes the entity.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/CreateAssessmentTarget">REST API Reference for CreateAssessmentTarget Operation</seealso>
         public CreateAssessmentTargetResponse CreateAssessmentTarget(CreateAssessmentTargetRequest request)
         {
             var marshaller = new CreateAssessmentTargetRequestMarshaller();
@@ -342,6 +346,7 @@ namespace Amazon.Inspector
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateAssessmentTarget
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/CreateAssessmentTarget">REST API Reference for CreateAssessmentTarget Operation</seealso>
         public IAsyncResult BeginCreateAssessmentTarget(CreateAssessmentTargetRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateAssessmentTargetRequestMarshaller();
@@ -358,6 +363,7 @@ namespace Amazon.Inspector
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateAssessmentTarget.</param>
         /// 
         /// <returns>Returns a  CreateAssessmentTargetResult from Inspector.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/CreateAssessmentTarget">REST API Reference for CreateAssessmentTarget Operation</seealso>
         public  CreateAssessmentTargetResponse EndCreateAssessmentTarget(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateAssessmentTargetResponse>(asyncResult);
@@ -392,6 +398,7 @@ namespace Amazon.Inspector
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error code describes the entity.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/CreateAssessmentTemplate">REST API Reference for CreateAssessmentTemplate Operation</seealso>
         public CreateAssessmentTemplateResponse CreateAssessmentTemplate(CreateAssessmentTemplateRequest request)
         {
             var marshaller = new CreateAssessmentTemplateRequestMarshaller();
@@ -411,6 +418,7 @@ namespace Amazon.Inspector
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateAssessmentTemplate
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/CreateAssessmentTemplate">REST API Reference for CreateAssessmentTemplate Operation</seealso>
         public IAsyncResult BeginCreateAssessmentTemplate(CreateAssessmentTemplateRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateAssessmentTemplateRequestMarshaller();
@@ -427,6 +435,7 @@ namespace Amazon.Inspector
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateAssessmentTemplate.</param>
         /// 
         /// <returns>Returns a  CreateAssessmentTemplateResult from Inspector.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/CreateAssessmentTemplate">REST API Reference for CreateAssessmentTemplate Operation</seealso>
         public  CreateAssessmentTemplateResponse EndCreateAssessmentTemplate(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateAssessmentTemplateResponse>(asyncResult);
@@ -459,6 +468,7 @@ namespace Amazon.Inspector
         /// The request was rejected because it attempted to create resources beyond the current
         /// AWS account limits. The error code describes the limit exceeded.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/CreateResourceGroup">REST API Reference for CreateResourceGroup Operation</seealso>
         public CreateResourceGroupResponse CreateResourceGroup(CreateResourceGroupRequest request)
         {
             var marshaller = new CreateResourceGroupRequestMarshaller();
@@ -478,6 +488,7 @@ namespace Amazon.Inspector
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateResourceGroup
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/CreateResourceGroup">REST API Reference for CreateResourceGroup Operation</seealso>
         public IAsyncResult BeginCreateResourceGroup(CreateResourceGroupRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateResourceGroupRequestMarshaller();
@@ -494,6 +505,7 @@ namespace Amazon.Inspector
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateResourceGroup.</param>
         /// 
         /// <returns>Returns a  CreateResourceGroupResult from Inspector.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/CreateResourceGroup">REST API Reference for CreateResourceGroup Operation</seealso>
         public  CreateResourceGroupResponse EndCreateResourceGroup(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateResourceGroupResponse>(asyncResult);
@@ -526,6 +538,7 @@ namespace Amazon.Inspector
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error code describes the entity.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DeleteAssessmentRun">REST API Reference for DeleteAssessmentRun Operation</seealso>
         public DeleteAssessmentRunResponse DeleteAssessmentRun(DeleteAssessmentRunRequest request)
         {
             var marshaller = new DeleteAssessmentRunRequestMarshaller();
@@ -545,6 +558,7 @@ namespace Amazon.Inspector
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteAssessmentRun
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DeleteAssessmentRun">REST API Reference for DeleteAssessmentRun Operation</seealso>
         public IAsyncResult BeginDeleteAssessmentRun(DeleteAssessmentRunRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteAssessmentRunRequestMarshaller();
@@ -561,6 +575,7 @@ namespace Amazon.Inspector
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAssessmentRun.</param>
         /// 
         /// <returns>Returns a  DeleteAssessmentRunResult from Inspector.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DeleteAssessmentRun">REST API Reference for DeleteAssessmentRun Operation</seealso>
         public  DeleteAssessmentRunResponse EndDeleteAssessmentRun(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteAssessmentRunResponse>(asyncResult);
@@ -593,6 +608,7 @@ namespace Amazon.Inspector
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error code describes the entity.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DeleteAssessmentTarget">REST API Reference for DeleteAssessmentTarget Operation</seealso>
         public DeleteAssessmentTargetResponse DeleteAssessmentTarget(DeleteAssessmentTargetRequest request)
         {
             var marshaller = new DeleteAssessmentTargetRequestMarshaller();
@@ -612,6 +628,7 @@ namespace Amazon.Inspector
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteAssessmentTarget
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DeleteAssessmentTarget">REST API Reference for DeleteAssessmentTarget Operation</seealso>
         public IAsyncResult BeginDeleteAssessmentTarget(DeleteAssessmentTargetRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteAssessmentTargetRequestMarshaller();
@@ -628,6 +645,7 @@ namespace Amazon.Inspector
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAssessmentTarget.</param>
         /// 
         /// <returns>Returns a  DeleteAssessmentTargetResult from Inspector.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DeleteAssessmentTarget">REST API Reference for DeleteAssessmentTarget Operation</seealso>
         public  DeleteAssessmentTargetResponse EndDeleteAssessmentTarget(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteAssessmentTargetResponse>(asyncResult);
@@ -660,6 +678,7 @@ namespace Amazon.Inspector
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error code describes the entity.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DeleteAssessmentTemplate">REST API Reference for DeleteAssessmentTemplate Operation</seealso>
         public DeleteAssessmentTemplateResponse DeleteAssessmentTemplate(DeleteAssessmentTemplateRequest request)
         {
             var marshaller = new DeleteAssessmentTemplateRequestMarshaller();
@@ -679,6 +698,7 @@ namespace Amazon.Inspector
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteAssessmentTemplate
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DeleteAssessmentTemplate">REST API Reference for DeleteAssessmentTemplate Operation</seealso>
         public IAsyncResult BeginDeleteAssessmentTemplate(DeleteAssessmentTemplateRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteAssessmentTemplateRequestMarshaller();
@@ -695,6 +715,7 @@ namespace Amazon.Inspector
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAssessmentTemplate.</param>
         /// 
         /// <returns>Returns a  DeleteAssessmentTemplateResult from Inspector.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DeleteAssessmentTemplate">REST API Reference for DeleteAssessmentTemplate Operation</seealso>
         public  DeleteAssessmentTemplateResponse EndDeleteAssessmentTemplate(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteAssessmentTemplateResponse>(asyncResult);
@@ -717,6 +738,7 @@ namespace Amazon.Inspector
         /// The request was rejected because an invalid or out-of-range value was supplied for
         /// an input parameter.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeAssessmentRuns">REST API Reference for DescribeAssessmentRuns Operation</seealso>
         public DescribeAssessmentRunsResponse DescribeAssessmentRuns(DescribeAssessmentRunsRequest request)
         {
             var marshaller = new DescribeAssessmentRunsRequestMarshaller();
@@ -736,6 +758,7 @@ namespace Amazon.Inspector
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAssessmentRuns
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeAssessmentRuns">REST API Reference for DescribeAssessmentRuns Operation</seealso>
         public IAsyncResult BeginDescribeAssessmentRuns(DescribeAssessmentRunsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeAssessmentRunsRequestMarshaller();
@@ -752,6 +775,7 @@ namespace Amazon.Inspector
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAssessmentRuns.</param>
         /// 
         /// <returns>Returns a  DescribeAssessmentRunsResult from Inspector.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeAssessmentRuns">REST API Reference for DescribeAssessmentRuns Operation</seealso>
         public  DescribeAssessmentRunsResponse EndDescribeAssessmentRuns(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeAssessmentRunsResponse>(asyncResult);
@@ -775,6 +799,7 @@ namespace Amazon.Inspector
         /// The request was rejected because an invalid or out-of-range value was supplied for
         /// an input parameter.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeAssessmentTargets">REST API Reference for DescribeAssessmentTargets Operation</seealso>
         public DescribeAssessmentTargetsResponse DescribeAssessmentTargets(DescribeAssessmentTargetsRequest request)
         {
             var marshaller = new DescribeAssessmentTargetsRequestMarshaller();
@@ -794,6 +819,7 @@ namespace Amazon.Inspector
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAssessmentTargets
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeAssessmentTargets">REST API Reference for DescribeAssessmentTargets Operation</seealso>
         public IAsyncResult BeginDescribeAssessmentTargets(DescribeAssessmentTargetsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeAssessmentTargetsRequestMarshaller();
@@ -810,6 +836,7 @@ namespace Amazon.Inspector
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAssessmentTargets.</param>
         /// 
         /// <returns>Returns a  DescribeAssessmentTargetsResult from Inspector.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeAssessmentTargets">REST API Reference for DescribeAssessmentTargets Operation</seealso>
         public  DescribeAssessmentTargetsResponse EndDescribeAssessmentTargets(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeAssessmentTargetsResponse>(asyncResult);
@@ -833,6 +860,7 @@ namespace Amazon.Inspector
         /// The request was rejected because an invalid or out-of-range value was supplied for
         /// an input parameter.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeAssessmentTemplates">REST API Reference for DescribeAssessmentTemplates Operation</seealso>
         public DescribeAssessmentTemplatesResponse DescribeAssessmentTemplates(DescribeAssessmentTemplatesRequest request)
         {
             var marshaller = new DescribeAssessmentTemplatesRequestMarshaller();
@@ -852,6 +880,7 @@ namespace Amazon.Inspector
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAssessmentTemplates
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeAssessmentTemplates">REST API Reference for DescribeAssessmentTemplates Operation</seealso>
         public IAsyncResult BeginDescribeAssessmentTemplates(DescribeAssessmentTemplatesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeAssessmentTemplatesRequestMarshaller();
@@ -868,6 +897,7 @@ namespace Amazon.Inspector
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAssessmentTemplates.</param>
         /// 
         /// <returns>Returns a  DescribeAssessmentTemplatesResult from Inspector.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeAssessmentTemplates">REST API Reference for DescribeAssessmentTemplates Operation</seealso>
         public  DescribeAssessmentTemplatesResponse EndDescribeAssessmentTemplates(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeAssessmentTemplatesResponse>(asyncResult);
@@ -886,6 +916,7 @@ namespace Amazon.Inspector
         /// <exception cref="Amazon.Inspector.Model.InternalException">
         /// Internal server error.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeCrossAccountAccessRole">REST API Reference for DescribeCrossAccountAccessRole Operation</seealso>
         public DescribeCrossAccountAccessRoleResponse DescribeCrossAccountAccessRole(DescribeCrossAccountAccessRoleRequest request)
         {
             var marshaller = new DescribeCrossAccountAccessRoleRequestMarshaller();
@@ -905,6 +936,7 @@ namespace Amazon.Inspector
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeCrossAccountAccessRole
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeCrossAccountAccessRole">REST API Reference for DescribeCrossAccountAccessRole Operation</seealso>
         public IAsyncResult BeginDescribeCrossAccountAccessRole(DescribeCrossAccountAccessRoleRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeCrossAccountAccessRoleRequestMarshaller();
@@ -921,6 +953,7 @@ namespace Amazon.Inspector
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeCrossAccountAccessRole.</param>
         /// 
         /// <returns>Returns a  DescribeCrossAccountAccessRoleResult from Inspector.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeCrossAccountAccessRole">REST API Reference for DescribeCrossAccountAccessRole Operation</seealso>
         public  DescribeCrossAccountAccessRoleResponse EndDescribeCrossAccountAccessRole(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeCrossAccountAccessRoleResponse>(asyncResult);
@@ -943,6 +976,7 @@ namespace Amazon.Inspector
         /// The request was rejected because an invalid or out-of-range value was supplied for
         /// an input parameter.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeFindings">REST API Reference for DescribeFindings Operation</seealso>
         public DescribeFindingsResponse DescribeFindings(DescribeFindingsRequest request)
         {
             var marshaller = new DescribeFindingsRequestMarshaller();
@@ -962,6 +996,7 @@ namespace Amazon.Inspector
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeFindings
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeFindings">REST API Reference for DescribeFindings Operation</seealso>
         public IAsyncResult BeginDescribeFindings(DescribeFindingsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeFindingsRequestMarshaller();
@@ -978,6 +1013,7 @@ namespace Amazon.Inspector
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeFindings.</param>
         /// 
         /// <returns>Returns a  DescribeFindingsResult from Inspector.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeFindings">REST API Reference for DescribeFindings Operation</seealso>
         public  DescribeFindingsResponse EndDescribeFindings(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeFindingsResponse>(asyncResult);
@@ -1000,6 +1036,7 @@ namespace Amazon.Inspector
         /// The request was rejected because an invalid or out-of-range value was supplied for
         /// an input parameter.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeResourceGroups">REST API Reference for DescribeResourceGroups Operation</seealso>
         public DescribeResourceGroupsResponse DescribeResourceGroups(DescribeResourceGroupsRequest request)
         {
             var marshaller = new DescribeResourceGroupsRequestMarshaller();
@@ -1019,6 +1056,7 @@ namespace Amazon.Inspector
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeResourceGroups
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeResourceGroups">REST API Reference for DescribeResourceGroups Operation</seealso>
         public IAsyncResult BeginDescribeResourceGroups(DescribeResourceGroupsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeResourceGroupsRequestMarshaller();
@@ -1035,6 +1073,7 @@ namespace Amazon.Inspector
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeResourceGroups.</param>
         /// 
         /// <returns>Returns a  DescribeResourceGroupsResult from Inspector.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeResourceGroups">REST API Reference for DescribeResourceGroups Operation</seealso>
         public  DescribeResourceGroupsResponse EndDescribeResourceGroups(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeResourceGroupsResponse>(asyncResult);
@@ -1057,6 +1096,7 @@ namespace Amazon.Inspector
         /// The request was rejected because an invalid or out-of-range value was supplied for
         /// an input parameter.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeRulesPackages">REST API Reference for DescribeRulesPackages Operation</seealso>
         public DescribeRulesPackagesResponse DescribeRulesPackages(DescribeRulesPackagesRequest request)
         {
             var marshaller = new DescribeRulesPackagesRequestMarshaller();
@@ -1076,6 +1116,7 @@ namespace Amazon.Inspector
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeRulesPackages
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeRulesPackages">REST API Reference for DescribeRulesPackages Operation</seealso>
         public IAsyncResult BeginDescribeRulesPackages(DescribeRulesPackagesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeRulesPackagesRequestMarshaller();
@@ -1092,6 +1133,7 @@ namespace Amazon.Inspector
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeRulesPackages.</param>
         /// 
         /// <returns>Returns a  DescribeRulesPackagesResult from Inspector.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeRulesPackages">REST API Reference for DescribeRulesPackages Operation</seealso>
         public  DescribeRulesPackagesResponse EndDescribeRulesPackages(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeRulesPackagesResponse>(asyncResult);
@@ -1121,6 +1163,7 @@ namespace Amazon.Inspector
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error code describes the entity.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/GetTelemetryMetadata">REST API Reference for GetTelemetryMetadata Operation</seealso>
         public GetTelemetryMetadataResponse GetTelemetryMetadata(GetTelemetryMetadataRequest request)
         {
             var marshaller = new GetTelemetryMetadataRequestMarshaller();
@@ -1140,6 +1183,7 @@ namespace Amazon.Inspector
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetTelemetryMetadata
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/GetTelemetryMetadata">REST API Reference for GetTelemetryMetadata Operation</seealso>
         public IAsyncResult BeginGetTelemetryMetadata(GetTelemetryMetadataRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetTelemetryMetadataRequestMarshaller();
@@ -1156,6 +1200,7 @@ namespace Amazon.Inspector
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetTelemetryMetadata.</param>
         /// 
         /// <returns>Returns a  GetTelemetryMetadataResult from Inspector.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/GetTelemetryMetadata">REST API Reference for GetTelemetryMetadata Operation</seealso>
         public  GetTelemetryMetadataResponse EndGetTelemetryMetadata(IAsyncResult asyncResult)
         {
             return EndInvoke<GetTelemetryMetadataResponse>(asyncResult);
@@ -1186,6 +1231,7 @@ namespace Amazon.Inspector
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error code describes the entity.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListAssessmentRunAgents">REST API Reference for ListAssessmentRunAgents Operation</seealso>
         public ListAssessmentRunAgentsResponse ListAssessmentRunAgents(ListAssessmentRunAgentsRequest request)
         {
             var marshaller = new ListAssessmentRunAgentsRequestMarshaller();
@@ -1205,6 +1251,7 @@ namespace Amazon.Inspector
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAssessmentRunAgents
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListAssessmentRunAgents">REST API Reference for ListAssessmentRunAgents Operation</seealso>
         public IAsyncResult BeginListAssessmentRunAgents(ListAssessmentRunAgentsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListAssessmentRunAgentsRequestMarshaller();
@@ -1221,6 +1268,7 @@ namespace Amazon.Inspector
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAssessmentRunAgents.</param>
         /// 
         /// <returns>Returns a  ListAssessmentRunAgentsResult from Inspector.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListAssessmentRunAgents">REST API Reference for ListAssessmentRunAgents Operation</seealso>
         public  ListAssessmentRunAgentsResponse EndListAssessmentRunAgents(IAsyncResult asyncResult)
         {
             return EndInvoke<ListAssessmentRunAgentsResponse>(asyncResult);
@@ -1251,6 +1299,7 @@ namespace Amazon.Inspector
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error code describes the entity.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListAssessmentRuns">REST API Reference for ListAssessmentRuns Operation</seealso>
         public ListAssessmentRunsResponse ListAssessmentRuns(ListAssessmentRunsRequest request)
         {
             var marshaller = new ListAssessmentRunsRequestMarshaller();
@@ -1270,6 +1319,7 @@ namespace Amazon.Inspector
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAssessmentRuns
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListAssessmentRuns">REST API Reference for ListAssessmentRuns Operation</seealso>
         public IAsyncResult BeginListAssessmentRuns(ListAssessmentRunsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListAssessmentRunsRequestMarshaller();
@@ -1286,6 +1336,7 @@ namespace Amazon.Inspector
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAssessmentRuns.</param>
         /// 
         /// <returns>Returns a  ListAssessmentRunsResult from Inspector.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListAssessmentRuns">REST API Reference for ListAssessmentRuns Operation</seealso>
         public  ListAssessmentRunsResponse EndListAssessmentRuns(IAsyncResult asyncResult)
         {
             return EndInvoke<ListAssessmentRunsResponse>(asyncResult);
@@ -1313,6 +1364,7 @@ namespace Amazon.Inspector
         /// The request was rejected because an invalid or out-of-range value was supplied for
         /// an input parameter.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListAssessmentTargets">REST API Reference for ListAssessmentTargets Operation</seealso>
         public ListAssessmentTargetsResponse ListAssessmentTargets(ListAssessmentTargetsRequest request)
         {
             var marshaller = new ListAssessmentTargetsRequestMarshaller();
@@ -1332,6 +1384,7 @@ namespace Amazon.Inspector
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAssessmentTargets
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListAssessmentTargets">REST API Reference for ListAssessmentTargets Operation</seealso>
         public IAsyncResult BeginListAssessmentTargets(ListAssessmentTargetsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListAssessmentTargetsRequestMarshaller();
@@ -1348,6 +1401,7 @@ namespace Amazon.Inspector
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAssessmentTargets.</param>
         /// 
         /// <returns>Returns a  ListAssessmentTargetsResult from Inspector.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListAssessmentTargets">REST API Reference for ListAssessmentTargets Operation</seealso>
         public  ListAssessmentTargetsResponse EndListAssessmentTargets(IAsyncResult asyncResult)
         {
             return EndInvoke<ListAssessmentTargetsResponse>(asyncResult);
@@ -1378,6 +1432,7 @@ namespace Amazon.Inspector
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error code describes the entity.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListAssessmentTemplates">REST API Reference for ListAssessmentTemplates Operation</seealso>
         public ListAssessmentTemplatesResponse ListAssessmentTemplates(ListAssessmentTemplatesRequest request)
         {
             var marshaller = new ListAssessmentTemplatesRequestMarshaller();
@@ -1397,6 +1452,7 @@ namespace Amazon.Inspector
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAssessmentTemplates
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListAssessmentTemplates">REST API Reference for ListAssessmentTemplates Operation</seealso>
         public IAsyncResult BeginListAssessmentTemplates(ListAssessmentTemplatesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListAssessmentTemplatesRequestMarshaller();
@@ -1413,6 +1469,7 @@ namespace Amazon.Inspector
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAssessmentTemplates.</param>
         /// 
         /// <returns>Returns a  ListAssessmentTemplatesResult from Inspector.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListAssessmentTemplates">REST API Reference for ListAssessmentTemplates Operation</seealso>
         public  ListAssessmentTemplatesResponse EndListAssessmentTemplates(IAsyncResult asyncResult)
         {
             return EndInvoke<ListAssessmentTemplatesResponse>(asyncResult);
@@ -1444,6 +1501,7 @@ namespace Amazon.Inspector
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error code describes the entity.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListEventSubscriptions">REST API Reference for ListEventSubscriptions Operation</seealso>
         public ListEventSubscriptionsResponse ListEventSubscriptions(ListEventSubscriptionsRequest request)
         {
             var marshaller = new ListEventSubscriptionsRequestMarshaller();
@@ -1463,6 +1521,7 @@ namespace Amazon.Inspector
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListEventSubscriptions
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListEventSubscriptions">REST API Reference for ListEventSubscriptions Operation</seealso>
         public IAsyncResult BeginListEventSubscriptions(ListEventSubscriptionsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListEventSubscriptionsRequestMarshaller();
@@ -1479,6 +1538,7 @@ namespace Amazon.Inspector
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListEventSubscriptions.</param>
         /// 
         /// <returns>Returns a  ListEventSubscriptionsResult from Inspector.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListEventSubscriptions">REST API Reference for ListEventSubscriptions Operation</seealso>
         public  ListEventSubscriptionsResponse EndListEventSubscriptions(IAsyncResult asyncResult)
         {
             return EndInvoke<ListEventSubscriptionsResponse>(asyncResult);
@@ -1509,6 +1569,7 @@ namespace Amazon.Inspector
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error code describes the entity.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListFindings">REST API Reference for ListFindings Operation</seealso>
         public ListFindingsResponse ListFindings(ListFindingsRequest request)
         {
             var marshaller = new ListFindingsRequestMarshaller();
@@ -1528,6 +1589,7 @@ namespace Amazon.Inspector
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListFindings
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListFindings">REST API Reference for ListFindings Operation</seealso>
         public IAsyncResult BeginListFindings(ListFindingsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListFindingsRequestMarshaller();
@@ -1544,6 +1606,7 @@ namespace Amazon.Inspector
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListFindings.</param>
         /// 
         /// <returns>Returns a  ListFindingsResult from Inspector.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListFindings">REST API Reference for ListFindings Operation</seealso>
         public  ListFindingsResponse EndListFindings(IAsyncResult asyncResult)
         {
             return EndInvoke<ListFindingsResponse>(asyncResult);
@@ -1569,6 +1632,7 @@ namespace Amazon.Inspector
         /// The request was rejected because an invalid or out-of-range value was supplied for
         /// an input parameter.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListRulesPackages">REST API Reference for ListRulesPackages Operation</seealso>
         public ListRulesPackagesResponse ListRulesPackages(ListRulesPackagesRequest request)
         {
             var marshaller = new ListRulesPackagesRequestMarshaller();
@@ -1588,6 +1652,7 @@ namespace Amazon.Inspector
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListRulesPackages
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListRulesPackages">REST API Reference for ListRulesPackages Operation</seealso>
         public IAsyncResult BeginListRulesPackages(ListRulesPackagesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListRulesPackagesRequestMarshaller();
@@ -1604,6 +1669,7 @@ namespace Amazon.Inspector
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListRulesPackages.</param>
         /// 
         /// <returns>Returns a  ListRulesPackagesResult from Inspector.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListRulesPackages">REST API Reference for ListRulesPackages Operation</seealso>
         public  ListRulesPackagesResponse EndListRulesPackages(IAsyncResult asyncResult)
         {
             return EndInvoke<ListRulesPackagesResponse>(asyncResult);
@@ -1633,6 +1699,7 @@ namespace Amazon.Inspector
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error code describes the entity.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
             var marshaller = new ListTagsForResourceRequestMarshaller();
@@ -1652,6 +1719,7 @@ namespace Amazon.Inspector
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTagsForResource
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListTagsForResourceRequestMarshaller();
@@ -1668,6 +1736,7 @@ namespace Amazon.Inspector
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTagsForResource.</param>
         /// 
         /// <returns>Returns a  ListTagsForResourceResult from Inspector.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public  ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult)
         {
             return EndInvoke<ListTagsForResourceResponse>(asyncResult);
@@ -1702,6 +1771,7 @@ namespace Amazon.Inspector
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error code describes the entity.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/PreviewAgents">REST API Reference for PreviewAgents Operation</seealso>
         public PreviewAgentsResponse PreviewAgents(PreviewAgentsRequest request)
         {
             var marshaller = new PreviewAgentsRequestMarshaller();
@@ -1721,6 +1791,7 @@ namespace Amazon.Inspector
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPreviewAgents
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/PreviewAgents">REST API Reference for PreviewAgents Operation</seealso>
         public IAsyncResult BeginPreviewAgents(PreviewAgentsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new PreviewAgentsRequestMarshaller();
@@ -1737,6 +1808,7 @@ namespace Amazon.Inspector
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPreviewAgents.</param>
         /// 
         /// <returns>Returns a  PreviewAgentsResult from Inspector.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/PreviewAgents">REST API Reference for PreviewAgents Operation</seealso>
         public  PreviewAgentsResponse EndPreviewAgents(IAsyncResult asyncResult)
         {
             return EndInvoke<PreviewAgentsResponse>(asyncResult);
@@ -1767,6 +1839,7 @@ namespace Amazon.Inspector
         /// The request was rejected because an invalid or out-of-range value was supplied for
         /// an input parameter.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/RegisterCrossAccountAccessRole">REST API Reference for RegisterCrossAccountAccessRole Operation</seealso>
         public RegisterCrossAccountAccessRoleResponse RegisterCrossAccountAccessRole(RegisterCrossAccountAccessRoleRequest request)
         {
             var marshaller = new RegisterCrossAccountAccessRoleRequestMarshaller();
@@ -1786,6 +1859,7 @@ namespace Amazon.Inspector
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRegisterCrossAccountAccessRole
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/RegisterCrossAccountAccessRole">REST API Reference for RegisterCrossAccountAccessRole Operation</seealso>
         public IAsyncResult BeginRegisterCrossAccountAccessRole(RegisterCrossAccountAccessRoleRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RegisterCrossAccountAccessRoleRequestMarshaller();
@@ -1802,6 +1876,7 @@ namespace Amazon.Inspector
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRegisterCrossAccountAccessRole.</param>
         /// 
         /// <returns>Returns a  RegisterCrossAccountAccessRoleResult from Inspector.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/RegisterCrossAccountAccessRole">REST API Reference for RegisterCrossAccountAccessRole Operation</seealso>
         public  RegisterCrossAccountAccessRoleResponse EndRegisterCrossAccountAccessRole(IAsyncResult asyncResult)
         {
             return EndInvoke<RegisterCrossAccountAccessRoleResponse>(asyncResult);
@@ -1832,6 +1907,7 @@ namespace Amazon.Inspector
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error code describes the entity.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/RemoveAttributesFromFindings">REST API Reference for RemoveAttributesFromFindings Operation</seealso>
         public RemoveAttributesFromFindingsResponse RemoveAttributesFromFindings(RemoveAttributesFromFindingsRequest request)
         {
             var marshaller = new RemoveAttributesFromFindingsRequestMarshaller();
@@ -1851,6 +1927,7 @@ namespace Amazon.Inspector
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRemoveAttributesFromFindings
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/RemoveAttributesFromFindings">REST API Reference for RemoveAttributesFromFindings Operation</seealso>
         public IAsyncResult BeginRemoveAttributesFromFindings(RemoveAttributesFromFindingsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RemoveAttributesFromFindingsRequestMarshaller();
@@ -1867,6 +1944,7 @@ namespace Amazon.Inspector
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRemoveAttributesFromFindings.</param>
         /// 
         /// <returns>Returns a  RemoveAttributesFromFindingsResult from Inspector.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/RemoveAttributesFromFindings">REST API Reference for RemoveAttributesFromFindings Operation</seealso>
         public  RemoveAttributesFromFindingsResponse EndRemoveAttributesFromFindings(IAsyncResult asyncResult)
         {
             return EndInvoke<RemoveAttributesFromFindingsResponse>(asyncResult);
@@ -1897,6 +1975,7 @@ namespace Amazon.Inspector
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error code describes the entity.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/SetTagsForResource">REST API Reference for SetTagsForResource Operation</seealso>
         public SetTagsForResourceResponse SetTagsForResource(SetTagsForResourceRequest request)
         {
             var marshaller = new SetTagsForResourceRequestMarshaller();
@@ -1916,6 +1995,7 @@ namespace Amazon.Inspector
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSetTagsForResource
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/SetTagsForResource">REST API Reference for SetTagsForResource Operation</seealso>
         public IAsyncResult BeginSetTagsForResource(SetTagsForResourceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new SetTagsForResourceRequestMarshaller();
@@ -1932,6 +2012,7 @@ namespace Amazon.Inspector
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetTagsForResource.</param>
         /// 
         /// <returns>Returns a  SetTagsForResourceResult from Inspector.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/SetTagsForResource">REST API Reference for SetTagsForResource Operation</seealso>
         public  SetTagsForResourceResponse EndSetTagsForResource(IAsyncResult asyncResult)
         {
             return EndInvoke<SetTagsForResourceResponse>(asyncResult);
@@ -1975,6 +2056,7 @@ namespace Amazon.Inspector
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error code describes the entity.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/StartAssessmentRun">REST API Reference for StartAssessmentRun Operation</seealso>
         public StartAssessmentRunResponse StartAssessmentRun(StartAssessmentRunRequest request)
         {
             var marshaller = new StartAssessmentRunRequestMarshaller();
@@ -1994,6 +2076,7 @@ namespace Amazon.Inspector
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartAssessmentRun
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/StartAssessmentRun">REST API Reference for StartAssessmentRun Operation</seealso>
         public IAsyncResult BeginStartAssessmentRun(StartAssessmentRunRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new StartAssessmentRunRequestMarshaller();
@@ -2010,6 +2093,7 @@ namespace Amazon.Inspector
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartAssessmentRun.</param>
         /// 
         /// <returns>Returns a  StartAssessmentRunResult from Inspector.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/StartAssessmentRun">REST API Reference for StartAssessmentRun Operation</seealso>
         public  StartAssessmentRunResponse EndStartAssessmentRun(IAsyncResult asyncResult)
         {
             return EndInvoke<StartAssessmentRunResponse>(asyncResult);
@@ -2039,6 +2123,7 @@ namespace Amazon.Inspector
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error code describes the entity.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/StopAssessmentRun">REST API Reference for StopAssessmentRun Operation</seealso>
         public StopAssessmentRunResponse StopAssessmentRun(StopAssessmentRunRequest request)
         {
             var marshaller = new StopAssessmentRunRequestMarshaller();
@@ -2058,6 +2143,7 @@ namespace Amazon.Inspector
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopAssessmentRun
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/StopAssessmentRun">REST API Reference for StopAssessmentRun Operation</seealso>
         public IAsyncResult BeginStopAssessmentRun(StopAssessmentRunRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new StopAssessmentRunRequestMarshaller();
@@ -2074,6 +2160,7 @@ namespace Amazon.Inspector
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopAssessmentRun.</param>
         /// 
         /// <returns>Returns a  StopAssessmentRunResult from Inspector.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/StopAssessmentRun">REST API Reference for StopAssessmentRun Operation</seealso>
         public  StopAssessmentRunResponse EndStopAssessmentRun(IAsyncResult asyncResult)
         {
             return EndInvoke<StopAssessmentRunResponse>(asyncResult);
@@ -2108,6 +2195,7 @@ namespace Amazon.Inspector
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error code describes the entity.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/SubscribeToEvent">REST API Reference for SubscribeToEvent Operation</seealso>
         public SubscribeToEventResponse SubscribeToEvent(SubscribeToEventRequest request)
         {
             var marshaller = new SubscribeToEventRequestMarshaller();
@@ -2127,6 +2215,7 @@ namespace Amazon.Inspector
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSubscribeToEvent
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/SubscribeToEvent">REST API Reference for SubscribeToEvent Operation</seealso>
         public IAsyncResult BeginSubscribeToEvent(SubscribeToEventRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new SubscribeToEventRequestMarshaller();
@@ -2143,6 +2232,7 @@ namespace Amazon.Inspector
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSubscribeToEvent.</param>
         /// 
         /// <returns>Returns a  SubscribeToEventResult from Inspector.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/SubscribeToEvent">REST API Reference for SubscribeToEvent Operation</seealso>
         public  SubscribeToEventResponse EndSubscribeToEvent(IAsyncResult asyncResult)
         {
             return EndInvoke<SubscribeToEventResponse>(asyncResult);
@@ -2173,6 +2263,7 @@ namespace Amazon.Inspector
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error code describes the entity.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/UnsubscribeFromEvent">REST API Reference for UnsubscribeFromEvent Operation</seealso>
         public UnsubscribeFromEventResponse UnsubscribeFromEvent(UnsubscribeFromEventRequest request)
         {
             var marshaller = new UnsubscribeFromEventRequestMarshaller();
@@ -2192,6 +2283,7 @@ namespace Amazon.Inspector
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUnsubscribeFromEvent
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/UnsubscribeFromEvent">REST API Reference for UnsubscribeFromEvent Operation</seealso>
         public IAsyncResult BeginUnsubscribeFromEvent(UnsubscribeFromEventRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UnsubscribeFromEventRequestMarshaller();
@@ -2208,6 +2300,7 @@ namespace Amazon.Inspector
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUnsubscribeFromEvent.</param>
         /// 
         /// <returns>Returns a  UnsubscribeFromEventResult from Inspector.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/UnsubscribeFromEvent">REST API Reference for UnsubscribeFromEvent Operation</seealso>
         public  UnsubscribeFromEventResponse EndUnsubscribeFromEvent(IAsyncResult asyncResult)
         {
             return EndInvoke<UnsubscribeFromEventResponse>(asyncResult);
@@ -2237,6 +2330,7 @@ namespace Amazon.Inspector
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error code describes the entity.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/UpdateAssessmentTarget">REST API Reference for UpdateAssessmentTarget Operation</seealso>
         public UpdateAssessmentTargetResponse UpdateAssessmentTarget(UpdateAssessmentTargetRequest request)
         {
             var marshaller = new UpdateAssessmentTargetRequestMarshaller();
@@ -2256,6 +2350,7 @@ namespace Amazon.Inspector
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateAssessmentTarget
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/UpdateAssessmentTarget">REST API Reference for UpdateAssessmentTarget Operation</seealso>
         public IAsyncResult BeginUpdateAssessmentTarget(UpdateAssessmentTargetRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateAssessmentTargetRequestMarshaller();
@@ -2272,6 +2367,7 @@ namespace Amazon.Inspector
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateAssessmentTarget.</param>
         /// 
         /// <returns>Returns a  UpdateAssessmentTargetResult from Inspector.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/UpdateAssessmentTarget">REST API Reference for UpdateAssessmentTarget Operation</seealso>
         public  UpdateAssessmentTargetResponse EndUpdateAssessmentTarget(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateAssessmentTargetResponse>(asyncResult);

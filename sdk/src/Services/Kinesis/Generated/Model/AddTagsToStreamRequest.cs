@@ -30,7 +30,7 @@ namespace Amazon.Kinesis.Model
     /// <summary>
     /// Container for the parameters to the AddTagsToStream operation.
     /// Adds or updates tags for the specified Amazon Kinesis stream. Each stream can have
-    /// up to 10 tags. 
+    /// up to 10 tags.
     /// 
     ///  
     /// <para>

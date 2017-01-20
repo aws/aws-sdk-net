@@ -28,9 +28,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// IP addresses and port settings used to limit access by incoming traffic (players)
-    /// to a fleet. Permissions specify a range of IP addresses and port settings that must
-    /// be used to gain access to a game server on a fleet machine.
+    /// A range of IP addresses and port settings that allow inbound traffic to connect to
+    /// server processes on GameLift. Each game session hosted on a fleet is assigned a unique
+    /// combination of IP address and port number, which must fall into the fleet's allowed
+    /// ranges. This combination is included in the <a>GameSession</a> object.
     /// </summary>
     public partial class IpPermission
     {
@@ -42,7 +43,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property FromPort. 
         /// <para>
-        /// Starting value for a range of allowed port numbers. 
+        /// Starting value for a range of allowed port numbers.
         /// </para>
         /// </summary>
         public int FromPort
@@ -99,7 +100,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property ToPort. 
         /// <para>
         /// Ending value for a range of allowed port numbers. Port numbers are end-inclusive.
-        /// This value must be higher than <i>FromPort</i>.
+        /// This value must be higher than <code>FromPort</code>.
         /// </para>
         /// </summary>
         public int ToPort

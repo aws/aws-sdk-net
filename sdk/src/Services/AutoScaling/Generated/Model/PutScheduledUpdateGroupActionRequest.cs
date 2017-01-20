@@ -31,12 +31,12 @@ namespace Amazon.AutoScaling.Model
     /// Container for the parameters to the PutScheduledUpdateGroupAction operation.
     /// Creates or updates a scheduled scaling action for an Auto Scaling group. When updating
     /// a scheduled scaling action, if you leave a parameter unspecified, the corresponding
-    /// value remains unchanged in the affected Auto Scaling group. 
+    /// value remains unchanged.
     /// 
     ///  
     /// <para>
-    /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/schedule_time.html">Scheduled
-    /// Scaling</a> in the <i>Auto Scaling Developer Guide</i>.
+    /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/schedule_time.html">Scheduled
+    /// Scaling</a> in the <i>Auto Scaling User Guide</i>.
     /// </para>
     /// </summary>
     public partial class PutScheduledUpdateGroupActionRequest : AmazonAutoScalingRequest
@@ -72,7 +72,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property DesiredCapacity. 
         /// <para>
-        ///  The number of EC2 instances that should be running in the group. 
+        /// The number of EC2 instances that should be running in the group.
         /// </para>
         /// </summary>
         public int DesiredCapacity
@@ -90,7 +90,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        /// The time for this action to end.
+        /// The time for the recurring schedule to end. Auto Scaling does not perform the action
+        /// after this time.
         /// </para>
         /// </summary>
         public DateTime EndTime
@@ -108,7 +109,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property MaxSize. 
         /// <para>
-        ///  The maximum size for the Auto Scaling group. 
+        /// The maximum size for the Auto Scaling group.
         /// </para>
         /// </summary>
         public int MaxSize
@@ -126,7 +127,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property MinSize. 
         /// <para>
-        ///  The minimum size for the Auto Scaling group. 
+        /// The minimum size for the Auto Scaling group.
         /// </para>
         /// </summary>
         public int MinSize
@@ -144,14 +145,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Recurrence. 
         /// <para>
-        /// The time when recurring future actions will start. Start time is specified by the
-        /// user following the Unix cron syntax format. For more information, see <a href="http://en.wikipedia.org/wiki/Cron">Cron</a>
-        /// in Wikipedia.
-        /// </para>
-        ///  
-        /// <para>
-        /// When <code>StartTime</code> and <code>EndTime</code> are specified with <code>Recurrence</code>,
-        /// they form the boundaries of when the recurring action will start and stop.
+        /// The recurring schedule for this action, in Unix cron syntax format. For more information,
+        /// see <a href="http://en.wikipedia.org/wiki/Cron">Cron</a> in Wikipedia.
         /// </para>
         /// </summary>
         public string Recurrence
@@ -192,13 +187,12 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// If you try to schedule your action in the past, Auto Scaling returns an error message.
-        /// 
+        /// If you specify <code>Recurrence</code> and <code>StartTime</code>, Auto Scaling performs
+        /// the action at this time, and then performs the action based on the specified recurrence.
         /// </para>
         ///  
         /// <para>
-        /// When <code>StartTime</code> and <code>EndTime</code> are specified with <code>Recurrence</code>,
-        /// they form the boundaries of when the recurring action starts and stops.
+        /// If you try to schedule your action in the past, Auto Scaling returns an error message.
         /// </para>
         /// </summary>
         public DateTime StartTime

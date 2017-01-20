@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// For CLOUDWATCH_METRIC health checks, a complex type that contains information about
-    /// the CloudWatch alarm that you're associating with the health check.
+    /// A complex type that contains information about the CloudWatch alarm that Amazon Route
+    /// 53 is monitoring for this health check.
     /// </summary>
     public partial class CloudWatchAlarmConfiguration
     {
@@ -45,7 +45,8 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property EvaluationPeriods. 
         /// <para>
-        /// The number of periods over which data is compared to the specified threshold.
+        /// For the metric that the CloudWatch alarm is associated with, the number of periods
+        /// that the metric is compared to the threshold.
         /// </para>
         /// </summary>
         public int EvaluationPeriods
@@ -63,9 +64,8 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property Threshold. 
         /// <para>
-        /// The value that the metric is compared with to determine the state of the alarm. For
-        /// example, if you want the health check to fail if the average TCP connection time is
-        /// greater than 500 milliseconds for more than 60 seconds, the threshold is 500.
+        /// For the metric that the CloudWatch alarm is associated with, the value the metric
+        /// is compared with.
         /// </para>
         /// </summary>
         public double Threshold
@@ -83,12 +83,8 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property ComparisonOperator. 
         /// <para>
-        /// The arithmetic operation to use when comparing the specified Statistic and Threshold.
-        /// </para>
-        ///  
-        /// <para>
-        /// Valid Values are <code>GreaterThanOrEqualToThreshold</code>, <code>GreaterThanThreshold</code>,
-        /// <code>LessThanThreshold</code> and <code>LessThanOrEqualToThreshold</code>
+        /// For the metric that the CloudWatch alarm is associated with, the arithmetic operation
+        /// that is used for the comparison.
         /// </para>
         /// </summary>
         public ComparisonOperator ComparisonOperator
@@ -106,7 +102,8 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property Period. 
         /// <para>
-        /// An integer that represents the period in seconds over which the statistic is applied.
+        /// For the metric that the CloudWatch alarm is associated with, the duration of one evaluation
+        /// period in seconds.
         /// </para>
         /// </summary>
         public int Period
@@ -124,7 +121,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property MetricName. 
         /// <para>
-        /// The name of the CloudWatch metric that is associated with the CloudWatch alarm.
+        /// The name of the CloudWatch metric that the alarm is associated with.
         /// </para>
         /// </summary>
         public string MetricName
@@ -142,7 +139,10 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property Namespace. 
         /// <para>
-        /// The namespace of the CloudWatch metric that is associated with the CloudWatch alarm.
+        /// The namespace of the metric that the alarm is associated with. For more information,
+        /// see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon
+        /// CloudWatch Namespaces, Dimensions, and Metrics Reference</a> in the <i>Amazon CloudWatch
+        /// User Guide</i>.
         /// </para>
         /// </summary>
         public string Namespace
@@ -160,13 +160,8 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property Statistic. 
         /// <para>
-        /// The statistic to apply to the CloudWatch metric that is associated with the CloudWatch
-        /// alarm.
-        /// </para>
-        ///  
-        /// <para>
-        /// Valid Values are <code>SampleCount</code>, <code>Average</code>, <code>Sum</code>,
-        /// <code>Minimum</code> and <code>Maximum</code>
+        /// For the metric that the CloudWatch alarm is associated with, the statistic that is
+        /// applied to the metric.
         /// </para>
         /// </summary>
         public Statistic Statistic
@@ -184,10 +179,10 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property Dimensions. 
         /// <para>
-        /// A list of <code>Dimension</code> elements for the CloudWatch metric that is associated
-        /// with the CloudWatch alarm. For information about the metrics and dimensions that CloudWatch
-        /// supports, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon
-        /// CloudWatch Namespaces, Dimensions, and Metrics Reference</a>.
+        /// For the metric that the CloudWatch alarm is associated with, a complex type that contains
+        /// information about the dimensions for the metric.For information, see <a href=" http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon
+        /// CloudWatch Namespaces, Dimensions, and Metrics Reference</a> in the <i>Amazon CloudWatch
+        /// User Guide</i>.
         /// </para>
         /// </summary>
         public List<Dimension> Dimensions

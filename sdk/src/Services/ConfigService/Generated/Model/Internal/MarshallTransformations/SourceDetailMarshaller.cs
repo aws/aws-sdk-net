@@ -51,6 +51,12 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.EventSource);
             }
 
+            if(requestObject.IsSetMaximumExecutionFrequency())
+            {
+                context.Writer.WritePropertyName("MaximumExecutionFrequency");
+                context.Writer.Write(requestObject.MaximumExecutionFrequency);
+            }
+
             if(requestObject.IsSetMessageType())
             {
                 context.Writer.WritePropertyName("MessageType");

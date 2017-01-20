@@ -71,7 +71,7 @@ namespace Amazon.WAF.Model
         /// </para>
         ///  
         /// <para>
-        /// <code>SqlInjectionMatchSetId</code> is returned by <a>CreateSqlInjectionMatchSet</a>
+        ///  <code>SqlInjectionMatchSetId</code> is returned by <a>CreateSqlInjectionMatchSet</a>
         /// and by <a>ListSqlInjectionMatchSets</a>.
         /// </para>
         /// </summary>

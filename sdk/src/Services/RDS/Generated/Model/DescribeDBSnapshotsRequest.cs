@@ -268,7 +268,8 @@ namespace Amazon.RDS.Model
         ///  </li> </ul> 
         /// <para>
         /// If you don't specify a <code>SnapshotType</code> value, then both automated and manual
-        /// snapshots are returned. You can include shared snapshots with these results by setting
+        /// snapshots are returned. Shared and public DB snapshots are not included in the returned
+        /// results by default. You can include shared snapshots with these results by setting
         /// the <code>IncludeShared</code> parameter to <code>true</code>. You can include public
         /// snapshots with these results by setting the <code>IncludePublic</code> parameter to
         /// <code>true</code>.

@@ -102,15 +102,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>GettingStarted.tt</DependentUpon>
     </Compile>
-    <Compile Include="Generators\Examples\ExampleMetadata.cs">
-      <DependentUpon>ExampleMetadata.tt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <Compile Include="Generators\Examples\ExampleCode.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ExampleCode.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generators\Examples\ExampleMetadata.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExampleMetadata.tt</DependentUpon>
     </Compile>
     <Compile Include="Generators\NuGet\CoreNuspec.cs">
       <AutoGen>True</AutoGen>
@@ -126,6 +126,21 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AndroidProjectFile.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generators\ProjectFiles\CoreCLRProjectFile.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CoreCLRProjectFile.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generators\ProjectFiles\CoreCLRProjectJson.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CoreCLRProjectJson.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generators\ProjectFiles\CoreCLRSolutionFile.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CoreCLRSolutionFile.tt</DependentUpon>
     </Compile>
     <Compile Include="Generators\CodeAnalysis\CodeAnalysisProjectFile.cs">
       <AutoGen>True</AutoGen>
@@ -661,14 +676,14 @@
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>VsixTestProfileFile.cs</LastGenOutput>
     </Content>
-    <Content Include="Generators\Examples\ExampleMetadata.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>ExampleMetadata.cs</LastGenOutput>
-    </Content>
-    <Content Include="Generators\Examples\ExampleCode.tt">
+    <None Include="Generators\Examples\ExampleCode.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ExampleCode.cs</LastGenOutput>
-    </Content>
+    </None>
+    <None Include="Generators\Examples\ExampleMetadata.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ExampleMetadata.cs</LastGenOutput>
+    </None>
     <Content Include="Generators\NuGet\NuGetPackageReadmeSection.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>NuGetPackageReadmeSection.cs</LastGenOutput>
@@ -678,7 +693,20 @@
       <LastGenOutput>CodeAnalysisProjectFile.cs</LastGenOutput>
     </Content>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Generators\ProjectFiles\CoreCLRProjectFile.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>CoreCLRProjectFile.cs</LastGenOutput>
+    </Content>
+    <Content Include="Generators\ProjectFiles\CoreCLRProjectJson.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>CoreCLRProjectJson.cs</LastGenOutput>
+    </Content>
+    <Content Include="Generators\ProjectFiles\CoreCLRSolutionFile.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>CoreCLRSolutionFile.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

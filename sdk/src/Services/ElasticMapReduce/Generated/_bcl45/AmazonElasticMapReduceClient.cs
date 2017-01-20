@@ -36,10 +36,10 @@ namespace Amazon.ElasticMapReduce
     /// <summary>
     /// Implementation for accessing ElasticMapReduce
     ///
-    /// Amazon Elastic MapReduce (Amazon EMR) is a web service that makes it easy to process
-    /// large amounts of data efficiently. Amazon EMR uses Hadoop processing combined with
-    /// several AWS products to do tasks such as web indexing, data mining, log file analysis,
-    /// machine learning, scientific simulation, and data warehousing.
+    /// Amazon EMR is a web service that makes it easy to process large amounts of data efficiently.
+    /// Amazon EMR uses Hadoop processing combined with several AWS products to do tasks such
+    /// as web indexing, data mining, log file analysis, machine learning, scientific simulation,
+    /// and data warehousing.
     /// </summary>
     public partial class AmazonElasticMapReduceClient : AmazonServiceClient, IAmazonElasticMapReduce
     {
@@ -232,7 +232,7 @@ namespace Amazon.ElasticMapReduce
 
 
         /// <summary>
-        /// AddInstanceGroups adds an instance group to a running cluster.
+        /// Adds one or more instance groups to a running cluster.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddInstanceGroups service method.</param>
         /// 
@@ -273,8 +273,8 @@ namespace Amazon.ElasticMapReduce
 
 
         /// <summary>
-        /// AddJobFlowSteps adds new steps to a running job flow. A maximum of 256 steps are
-        /// allowed in each job flow. 
+        /// AddJobFlowSteps adds new steps to a running job flow. A maximum of 256 steps are allowed
+        /// in each job flow.
         /// 
         ///  
         /// <para>
@@ -282,26 +282,25 @@ namespace Amazon.ElasticMapReduce
         /// require more than 256 steps to process your data. You can bypass the 256-step limitation
         /// in various ways, including using the SSH shell to connect to the master node and submitting
         /// queries directly to the software running on the master node, such as Hive and Hadoop.
-        /// For more information on how to do this, go to <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/AddMoreThan256Steps.html">Add
-        /// More than 256 Steps to a Job Flow</a> in the <i>Amazon Elastic MapReduce Developer's
-        /// Guide</i>.
+        /// For more information on how to do this, see <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/AddMoreThan256Steps.html">Add
+        /// More than 256 Steps to a Job Flow</a> in the <i>Amazon EMR Developer's Guide</i>.
         /// </para>
         ///  
         /// <para>
-        ///  A step specifies the location of a JAR file stored either on the master node of the
+        /// A step specifies the location of a JAR file stored either on the master node of the
         /// job flow or in Amazon S3. Each step is performed by the main function of the main
         /// class of the JAR file. The main class can be specified either in the manifest of the
-        /// JAR or by using the MainFunction parameter of the step. 
+        /// JAR or by using the MainFunction parameter of the step.
         /// </para>
         ///  
         /// <para>
-        ///  Elastic MapReduce executes each step in the order listed. For a step to be considered
-        /// complete, the main function must exit with a zero exit code and all Hadoop jobs started
-        /// while the step was running must have completed and run successfully. 
+        /// Amazon EMR executes each step in the order listed. For a step to be considered complete,
+        /// the main function must exit with a zero exit code and all Hadoop jobs started while
+        /// the step was running must have completed and run successfully.
         /// </para>
         ///  
         /// <para>
-        ///  You can only add steps to a job flow that is in one of the following states: STARTING,
+        /// You can only add steps to a job flow that is in one of the following states: STARTING,
         /// BOOTSTRAPPING, RUNNING, or WAITING.
         /// </para>
         /// </summary>
@@ -381,6 +380,141 @@ namespace Amazon.ElasticMapReduce
             var unmarshaller = AddTagsResponseUnmarshaller.Instance;
 
             return InvokeAsync<AddTagsRequest,AddTagsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CancelSteps
+
+
+        /// <summary>
+        /// Cancels a pending step or steps in a running cluster. Available only in Amazon EMR
+        /// versions 4.8.0 and later, excluding version 5.0.0. A maximum of 256 steps are allowed
+        /// in each CancelSteps request. CancelSteps is idempotent but asynchronous; it does not
+        /// guarantee a step will be canceled, even if the request is successfully submitted.
+        /// You can only cancel steps that are in a <code>PENDING</code> state.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelSteps service method.</param>
+        /// 
+        /// <returns>The response from the CancelSteps service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerErrorException">
+        /// Indicates that an error occurred while processing the request and that the request
+        /// was not completed.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        public CancelStepsResponse CancelSteps(CancelStepsRequest request)
+        {
+            var marshaller = new CancelStepsRequestMarshaller();
+            var unmarshaller = CancelStepsResponseUnmarshaller.Instance;
+
+            return Invoke<CancelStepsRequest,CancelStepsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CancelSteps operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CancelSteps operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<CancelStepsResponse> CancelStepsAsync(CancelStepsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CancelStepsRequestMarshaller();
+            var unmarshaller = CancelStepsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CancelStepsRequest,CancelStepsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateSecurityConfiguration
+
+
+        /// <summary>
+        /// Creates a security configuration, which is stored in the service and can be specified
+        /// when a cluster is created.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSecurityConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the CreateSecurityConfiguration service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the EMR service.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        public CreateSecurityConfigurationResponse CreateSecurityConfiguration(CreateSecurityConfigurationRequest request)
+        {
+            var marshaller = new CreateSecurityConfigurationRequestMarshaller();
+            var unmarshaller = CreateSecurityConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateSecurityConfigurationRequest,CreateSecurityConfigurationResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateSecurityConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateSecurityConfiguration operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<CreateSecurityConfigurationResponse> CreateSecurityConfigurationAsync(CreateSecurityConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateSecurityConfigurationRequestMarshaller();
+            var unmarshaller = CreateSecurityConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateSecurityConfigurationRequest,CreateSecurityConfigurationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteSecurityConfiguration
+
+
+        /// <summary>
+        /// Deletes a security configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSecurityConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteSecurityConfiguration service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the EMR service.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        public DeleteSecurityConfigurationResponse DeleteSecurityConfiguration(DeleteSecurityConfigurationRequest request)
+        {
+            var marshaller = new DeleteSecurityConfigurationRequestMarshaller();
+            var unmarshaller = DeleteSecurityConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteSecurityConfigurationRequest,DeleteSecurityConfigurationResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteSecurityConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSecurityConfiguration operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteSecurityConfigurationResponse> DeleteSecurityConfigurationAsync(DeleteSecurityConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteSecurityConfigurationRequestMarshaller();
+            var unmarshaller = DeleteSecurityConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteSecurityConfigurationRequest,DeleteSecurityConfigurationResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -478,26 +612,33 @@ namespace Amazon.ElasticMapReduce
         /// 
         ///  
         /// <para>
-        ///  DescribeJobFlows returns a list of job flows that match all of the supplied parameters.
+        /// DescribeJobFlows returns a list of job flows that match all of the supplied parameters.
         /// The parameters can include a list of job flow IDs, job flow states, and restrictions
         /// on job flow creation date and time.
         /// </para>
         ///  
         /// <para>
-        ///  Regardless of supplied parameters, only job flows created within the last two months
+        /// Regardless of supplied parameters, only job flows created within the last two months
         /// are returned.
         /// </para>
         ///  
         /// <para>
-        ///  If no parameters are supplied, then job flows matching either of the following criteria
+        /// If no parameters are supplied, then job flows matching either of the following criteria
         /// are returned:
         /// </para>
-        ///  <ul> <li>Job flows created and completed in the last two weeks</li> <li> Job flows
-        /// created within the last two months that are in one of the following states: <code>RUNNING</code>,
-        /// <code>WAITING</code>, <code>SHUTTING_DOWN</code>, <code>STARTING</code> </li> </ul>
-        /// 
+        ///  <ul> <li> 
         /// <para>
-        ///  Amazon Elastic MapReduce can return a maximum of 512 job flow descriptions. 
+        /// Job flows created and completed in the last two weeks
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  Job flows created within the last two months that are in one of the following states:
+        /// <code>RUNNING</code>, <code>WAITING</code>, <code>SHUTTING_DOWN</code>, <code>STARTING</code>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Amazon EMR can return a maximum of 512 job flow descriptions.
         /// </para>
         /// </summary>
         /// 
@@ -520,26 +661,33 @@ namespace Amazon.ElasticMapReduce
         /// 
         ///  
         /// <para>
-        ///  DescribeJobFlows returns a list of job flows that match all of the supplied parameters.
+        /// DescribeJobFlows returns a list of job flows that match all of the supplied parameters.
         /// The parameters can include a list of job flow IDs, job flow states, and restrictions
         /// on job flow creation date and time.
         /// </para>
         ///  
         /// <para>
-        ///  Regardless of supplied parameters, only job flows created within the last two months
+        /// Regardless of supplied parameters, only job flows created within the last two months
         /// are returned.
         /// </para>
         ///  
         /// <para>
-        ///  If no parameters are supplied, then job flows matching either of the following criteria
+        /// If no parameters are supplied, then job flows matching either of the following criteria
         /// are returned:
         /// </para>
-        ///  <ul> <li>Job flows created and completed in the last two weeks</li> <li> Job flows
-        /// created within the last two months that are in one of the following states: <code>RUNNING</code>,
-        /// <code>WAITING</code>, <code>SHUTTING_DOWN</code>, <code>STARTING</code> </li> </ul>
-        /// 
+        ///  <ul> <li> 
         /// <para>
-        ///  Amazon Elastic MapReduce can return a maximum of 512 job flow descriptions. 
+        /// Job flows created and completed in the last two weeks
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  Job flows created within the last two months that are in one of the following states:
+        /// <code>RUNNING</code>, <code>WAITING</code>, <code>SHUTTING_DOWN</code>, <code>STARTING</code>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Amazon EMR can return a maximum of 512 job flow descriptions.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeJobFlows service method.</param>
@@ -566,26 +714,33 @@ namespace Amazon.ElasticMapReduce
         /// 
         ///  
         /// <para>
-        ///  DescribeJobFlows returns a list of job flows that match all of the supplied parameters.
+        /// DescribeJobFlows returns a list of job flows that match all of the supplied parameters.
         /// The parameters can include a list of job flow IDs, job flow states, and restrictions
         /// on job flow creation date and time.
         /// </para>
         ///  
         /// <para>
-        ///  Regardless of supplied parameters, only job flows created within the last two months
+        /// Regardless of supplied parameters, only job flows created within the last two months
         /// are returned.
         /// </para>
         ///  
         /// <para>
-        ///  If no parameters are supplied, then job flows matching either of the following criteria
+        /// If no parameters are supplied, then job flows matching either of the following criteria
         /// are returned:
         /// </para>
-        ///  <ul> <li>Job flows created and completed in the last two weeks</li> <li> Job flows
-        /// created within the last two months that are in one of the following states: <code>RUNNING</code>,
-        /// <code>WAITING</code>, <code>SHUTTING_DOWN</code>, <code>STARTING</code> </li> </ul>
-        /// 
+        ///  <ul> <li> 
         /// <para>
-        ///  Amazon Elastic MapReduce can return a maximum of 512 job flow descriptions. 
+        /// Job flows created and completed in the last two weeks
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  Job flows created within the last two months that are in one of the following states:
+        /// <code>RUNNING</code>, <code>WAITING</code>, <code>SHUTTING_DOWN</code>, <code>STARTING</code>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Amazon EMR can return a maximum of 512 job flow descriptions.
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">
@@ -618,6 +773,49 @@ namespace Amazon.ElasticMapReduce
             var unmarshaller = DescribeJobFlowsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeJobFlowsRequest,DescribeJobFlowsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeSecurityConfiguration
+
+
+        /// <summary>
+        /// Provides the details of a security configuration by returning the configuration JSON.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSecurityConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DescribeSecurityConfiguration service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the EMR service.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        public DescribeSecurityConfigurationResponse DescribeSecurityConfiguration(DescribeSecurityConfigurationRequest request)
+        {
+            var marshaller = new DescribeSecurityConfigurationRequestMarshaller();
+            var unmarshaller = DescribeSecurityConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeSecurityConfigurationRequest,DescribeSecurityConfigurationResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeSecurityConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSecurityConfiguration operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeSecurityConfigurationResponse> DescribeSecurityConfigurationAsync(DescribeSecurityConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeSecurityConfigurationRequestMarshaller();
+            var unmarshaller = DescribeSecurityConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeSecurityConfigurationRequest,DescribeSecurityConfigurationResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1039,11 +1237,58 @@ namespace Amazon.ElasticMapReduce
 
         #endregion
         
+        #region  ListSecurityConfigurations
+
+
+        /// <summary>
+        /// Lists all the security configurations visible to this account, providing their creation
+        /// dates and times, and their names. This call returns a maximum of 50 clusters per call,
+        /// but returns a marker to track the paging of the cluster list across multiple ListSecurityConfigurations
+        /// calls.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSecurityConfigurations service method.</param>
+        /// 
+        /// <returns>The response from the ListSecurityConfigurations service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the EMR service.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        public ListSecurityConfigurationsResponse ListSecurityConfigurations(ListSecurityConfigurationsRequest request)
+        {
+            var marshaller = new ListSecurityConfigurationsRequestMarshaller();
+            var unmarshaller = ListSecurityConfigurationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListSecurityConfigurationsRequest,ListSecurityConfigurationsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListSecurityConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListSecurityConfigurations operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListSecurityConfigurationsResponse> ListSecurityConfigurationsAsync(ListSecurityConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListSecurityConfigurationsRequestMarshaller();
+            var unmarshaller = ListSecurityConfigurationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListSecurityConfigurationsRequest,ListSecurityConfigurationsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListSteps
 
 
         /// <summary>
-        /// Provides a list of steps for the cluster.
+        /// Provides a list of steps for the cluster in reverse order unless you specify stepIds
+        /// with the request.
         /// </summary>
         /// 
         /// <returns>The response from the ListSteps service method, as returned by ElasticMapReduce.</returns>
@@ -1060,7 +1305,8 @@ namespace Amazon.ElasticMapReduce
 
 
         /// <summary>
-        /// Provides a list of steps for the cluster.
+        /// Provides a list of steps for the cluster in reverse order unless you specify stepIds
+        /// with the request.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSteps service method.</param>
         /// 
@@ -1081,7 +1327,8 @@ namespace Amazon.ElasticMapReduce
 
 
         /// <summary>
-        /// Provides a list of steps for the cluster.
+        /// Provides a list of steps for the cluster in reverse order unless you specify stepIds
+        /// with the request.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -1161,6 +1408,84 @@ namespace Amazon.ElasticMapReduce
 
         #endregion
         
+        #region  PutAutoScalingPolicy
+
+
+        /// <summary>
+        /// Creates or updates an automatic scaling policy for a core instance group or task instance
+        /// group in an Amazon EMR cluster. The automatic scaling policy defines how an instance
+        /// group dynamically adds and terminates EC2 instances in response to the value of a
+        /// CloudWatch metric.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAutoScalingPolicy service method.</param>
+        /// 
+        /// <returns>The response from the PutAutoScalingPolicy service method, as returned by ElasticMapReduce.</returns>
+        public PutAutoScalingPolicyResponse PutAutoScalingPolicy(PutAutoScalingPolicyRequest request)
+        {
+            var marshaller = new PutAutoScalingPolicyRequestMarshaller();
+            var unmarshaller = PutAutoScalingPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<PutAutoScalingPolicyRequest,PutAutoScalingPolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutAutoScalingPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutAutoScalingPolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<PutAutoScalingPolicyResponse> PutAutoScalingPolicyAsync(PutAutoScalingPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new PutAutoScalingPolicyRequestMarshaller();
+            var unmarshaller = PutAutoScalingPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutAutoScalingPolicyRequest,PutAutoScalingPolicyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  RemoveAutoScalingPolicy
+
+
+        /// <summary>
+        /// Removes an automatic scaling policy from a specified instance group within an EMR
+        /// cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RemoveAutoScalingPolicy service method.</param>
+        /// 
+        /// <returns>The response from the RemoveAutoScalingPolicy service method, as returned by ElasticMapReduce.</returns>
+        public RemoveAutoScalingPolicyResponse RemoveAutoScalingPolicy(RemoveAutoScalingPolicyRequest request)
+        {
+            var marshaller = new RemoveAutoScalingPolicyRequestMarshaller();
+            var unmarshaller = RemoveAutoScalingPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<RemoveAutoScalingPolicyRequest,RemoveAutoScalingPolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RemoveAutoScalingPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RemoveAutoScalingPolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<RemoveAutoScalingPolicyResponse> RemoveAutoScalingPolicyAsync(RemoveAutoScalingPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new RemoveAutoScalingPolicyRequestMarshaller();
+            var unmarshaller = RemoveAutoScalingPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RemoveAutoScalingPolicyRequest,RemoveAutoScalingPolicyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  RemoveTags
 
 
@@ -1217,11 +1542,11 @@ namespace Amazon.ElasticMapReduce
 
         /// <summary>
         /// RunJobFlow creates and starts running a new job flow. The job flow will run the steps
-        /// specified. Once the job flow completes, the cluster is stopped and the HDFS partition
+        /// specified. After the job flow completes, the cluster is stopped and the HDFS partition
         /// is lost. To prevent loss of data, configure the last step of the job flow to store
         /// results in Amazon S3. If the <a>JobFlowInstancesConfig</a> <code>KeepJobFlowAliveWhenNoSteps</code>
         /// parameter is set to <code>TRUE</code>, the job flow will transition to the WAITING
-        /// state rather than shutting down once the steps have completed. 
+        /// state rather than shutting down after the steps have completed. 
         /// 
         ///  
         /// <para>
@@ -1239,9 +1564,8 @@ namespace Amazon.ElasticMapReduce
         /// require more than 256 steps to process your data. You can bypass the 256-step limitation
         /// in various ways, including using the SSH shell to connect to the master node and submitting
         /// queries directly to the software running on the master node, such as Hive and Hadoop.
-        /// For more information on how to do this, go to <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/AddMoreThan256Steps.html">Add
-        /// More than 256 Steps to a Job Flow</a> in the <i>Amazon Elastic MapReduce Developer's
-        /// Guide</i>.
+        /// For more information on how to do this, see <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/Management/Guide/AddMoreThan256Steps.html">Add
+        /// More than 256 Steps to a Job Flow</a> in the <i>Amazon EMR Management Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -1287,17 +1611,17 @@ namespace Amazon.ElasticMapReduce
 
 
         /// <summary>
-        /// SetTerminationProtection locks a job flow so the Amazon EC2 instances in the cluster
-        /// cannot be terminated by user intervention, an API call, or in the event of a job-flow
-        /// error. The cluster still terminates upon successful completion of the job flow. Calling
-        /// SetTerminationProtection on a job flow is analogous to calling the Amazon EC2 DisableAPITermination
-        /// API on all of the EC2 instances in a cluster.
+        /// SetTerminationProtection locks a job flow so the EC2 instances in the cluster cannot
+        /// be terminated by user intervention, an API call, or in the event of a job-flow error.
+        /// The cluster still terminates upon successful completion of the job flow. Calling SetTerminationProtection
+        /// on a job flow is analogous to calling the Amazon EC2 DisableAPITermination API on
+        /// all of the EC2 instances in a cluster.
         /// 
         ///  
         /// <para>
-        ///  SetTerminationProtection is used to prevent accidental termination of a job flow
-        /// and to ensure that in the event of an error, the instances will persist so you can
-        /// recover any data stored in their ephemeral instance storage.
+        /// SetTerminationProtection is used to prevent accidental termination of a job flow and
+        /// to ensure that in the event of an error, the instances will persist so you can recover
+        /// any data stored in their ephemeral instance storage.
         /// </para>
         ///  
         /// <para>
@@ -1307,8 +1631,8 @@ namespace Amazon.ElasticMapReduce
         /// </para>
         ///  
         /// <para>
-        ///  For more information, go to <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/UsingEMR_TerminationProtection.html">Protecting
-        /// a Job Flow from Termination</a> in the <i>Amazon Elastic MapReduce Developer's Guide.</i>
+        ///  For more information, see<a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/UsingEMR_TerminationProtection.html">Protecting
+        /// a Job Flow from Termination</a> in the <i>Amazon EMR Guide.</i> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetTerminationProtection service method.</param>
@@ -1398,14 +1722,14 @@ namespace Amazon.ElasticMapReduce
         /// TerminateJobFlows shuts a list of job flows down. When a job flow is shut down, any
         /// step not yet completed is canceled and the EC2 instances on which the job flow is
         /// running are stopped. Any log files not already saved are uploaded to Amazon S3 if
-        /// a LogUri was specified when the job flow was created. 
+        /// a LogUri was specified when the job flow was created.
         /// 
         ///  
         /// <para>
-        ///  The maximum number of JobFlows allowed is 10. The call to TerminateJobFlows is asynchronous.
-        /// Depending on the configuration of the job flow, it may take up to 5-20 minutes for
+        /// The maximum number of JobFlows allowed is 10. The call to TerminateJobFlows is asynchronous.
+        /// Depending on the configuration of the job flow, it may take up to 1-5 minutes for
         /// the job flow to completely terminate and release allocated resources, such as Amazon
-        /// EC2 instances. 
+        /// EC2 instances.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TerminateJobFlows service method.</param>

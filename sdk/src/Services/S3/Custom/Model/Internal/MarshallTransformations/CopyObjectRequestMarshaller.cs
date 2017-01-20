@@ -63,6 +63,16 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (copyObjectRequest.IsSetUnmodifiedSinceDate())
                 request.Headers.Add(HeaderKeys.XAmzCopySourceIfUnmodifiedSinceHeader, S3Transforms.ToStringValue(copyObjectRequest.UnmodifiedSinceDate));
 
+            if (copyObjectRequest.IsSetTagSet())
+            {
+                request.Headers.Add(S3Constants.AmzHeaderTagging, AmazonS3Util.TagSetToQueryString(copyObjectRequest.TagSet));
+                request.Headers.Add(S3Constants.AmzHeaderTaggingDirective, TaggingDirective.REPLACE.Value);
+            }
+            else
+            {
+                request.Headers.Add(S3Constants.AmzHeaderTaggingDirective, TaggingDirective.COPY.Value);
+            }
+
             request.Headers.Add(HeaderKeys.XAmzMetadataDirectiveHeader, S3Transforms.ToStringValue(copyObjectRequest.MetadataDirective.ToString()));
 
             if (copyObjectRequest.IsSetServerSideEncryptionMethod())
@@ -95,6 +105,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             if (copyObjectRequest.IsSetWebsiteRedirectLocation())
                 request.Headers.Add(HeaderKeys.XAmzWebsiteRedirectLocationHeader, S3Transforms.ToStringValue(copyObjectRequest.WebsiteRedirectLocation));
+
+            if (copyObjectRequest.IsSetRequestPayer())
+                request.Headers.Add(S3Constants.AmzHeaderRequestPayer, S3Transforms.ToStringValue(copyObjectRequest.RequestPayer.ToString()));
 
             AmazonS3Util.SetMetadataHeaders(request, copyObjectRequest.Metadata);
 

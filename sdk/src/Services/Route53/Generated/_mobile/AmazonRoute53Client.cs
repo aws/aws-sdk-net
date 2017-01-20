@@ -43,6 +43,66 @@ namespace Amazon.Route53
         
         #region Constructors
 
+#if CORECLR
+    
+        /// <summary>
+        /// Constructs AmazonRoute53Client with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
+        public AmazonRoute53Client()
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonRoute53Config()) { }
+
+        /// <summary>
+        /// Constructs AmazonRoute53Client with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
+        /// <param name="region">The region to connect.</param>
+        public AmazonRoute53Client(RegionEndpoint region)
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonRoute53Config{RegionEndpoint = region}) { }
+
+        /// <summary>
+        /// Constructs AmazonRoute53Client with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
+        /// <param name="config">The AmazonRoute53Client Configuration Object</param>
+        public AmazonRoute53Client(AmazonRoute53Config config)
+            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+
+#endif
+
         /// <summary>
         /// Constructs AmazonRoute53Client with AWS Credentials
         /// </summary>
@@ -199,6 +259,7 @@ namespace Amazon.Route53
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/AssociateVPCWithHostedZone">REST API Reference for AssociateVPCWithHostedZone Operation</seealso>
         public Task<AssociateVPCWithHostedZoneResponse> AssociateVPCWithHostedZoneAsync(AssociateVPCWithHostedZoneRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AssociateVPCWithHostedZoneRequestMarshaller();
@@ -230,6 +291,7 @@ namespace Amazon.Route53
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ChangeResourceRecordSets">REST API Reference for ChangeResourceRecordSets Operation</seealso>
         public Task<ChangeResourceRecordSetsResponse> ChangeResourceRecordSetsAsync(ChangeResourceRecordSetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ChangeResourceRecordSetsRequestMarshaller();
@@ -261,6 +323,7 @@ namespace Amazon.Route53
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ChangeTagsForResource">REST API Reference for ChangeTagsForResource Operation</seealso>
         public Task<ChangeTagsForResourceResponse> ChangeTagsForResourceAsync(ChangeTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ChangeTagsForResourceRequestMarshaller();
@@ -292,6 +355,7 @@ namespace Amazon.Route53
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateHealthCheck">REST API Reference for CreateHealthCheck Operation</seealso>
         public Task<CreateHealthCheckResponse> CreateHealthCheckAsync(CreateHealthCheckRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateHealthCheckRequestMarshaller();
@@ -323,6 +387,7 @@ namespace Amazon.Route53
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateHostedZone">REST API Reference for CreateHostedZone Operation</seealso>
         public Task<CreateHostedZoneResponse> CreateHostedZoneAsync(CreateHostedZoneRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateHostedZoneRequestMarshaller();
@@ -354,6 +419,7 @@ namespace Amazon.Route53
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateReusableDelegationSet">REST API Reference for CreateReusableDelegationSet Operation</seealso>
         public Task<CreateReusableDelegationSetResponse> CreateReusableDelegationSetAsync(CreateReusableDelegationSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateReusableDelegationSetRequestMarshaller();
@@ -385,6 +451,7 @@ namespace Amazon.Route53
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateTrafficPolicy">REST API Reference for CreateTrafficPolicy Operation</seealso>
         public Task<CreateTrafficPolicyResponse> CreateTrafficPolicyAsync(CreateTrafficPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateTrafficPolicyRequestMarshaller();
@@ -416,6 +483,7 @@ namespace Amazon.Route53
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateTrafficPolicyInstance">REST API Reference for CreateTrafficPolicyInstance Operation</seealso>
         public Task<CreateTrafficPolicyInstanceResponse> CreateTrafficPolicyInstanceAsync(CreateTrafficPolicyInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateTrafficPolicyInstanceRequestMarshaller();
@@ -447,12 +515,45 @@ namespace Amazon.Route53
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateTrafficPolicyVersion">REST API Reference for CreateTrafficPolicyVersion Operation</seealso>
         public Task<CreateTrafficPolicyVersionResponse> CreateTrafficPolicyVersionAsync(CreateTrafficPolicyVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateTrafficPolicyVersionRequestMarshaller();
             var unmarshaller = CreateTrafficPolicyVersionResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateTrafficPolicyVersionRequest,CreateTrafficPolicyVersionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateVPCAssociationAuthorization
+
+        internal CreateVPCAssociationAuthorizationResponse CreateVPCAssociationAuthorization(CreateVPCAssociationAuthorizationRequest request)
+        {
+            var marshaller = new CreateVPCAssociationAuthorizationRequestMarshaller();
+            var unmarshaller = CreateVPCAssociationAuthorizationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateVPCAssociationAuthorizationRequest,CreateVPCAssociationAuthorizationResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateVPCAssociationAuthorization operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateVPCAssociationAuthorization operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateVPCAssociationAuthorization">REST API Reference for CreateVPCAssociationAuthorization Operation</seealso>
+        public Task<CreateVPCAssociationAuthorizationResponse> CreateVPCAssociationAuthorizationAsync(CreateVPCAssociationAuthorizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateVPCAssociationAuthorizationRequestMarshaller();
+            var unmarshaller = CreateVPCAssociationAuthorizationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateVPCAssociationAuthorizationRequest,CreateVPCAssociationAuthorizationResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -478,6 +579,7 @@ namespace Amazon.Route53
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteHealthCheck">REST API Reference for DeleteHealthCheck Operation</seealso>
         public Task<DeleteHealthCheckResponse> DeleteHealthCheckAsync(DeleteHealthCheckRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteHealthCheckRequestMarshaller();
@@ -509,6 +611,7 @@ namespace Amazon.Route53
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteHostedZone">REST API Reference for DeleteHostedZone Operation</seealso>
         public Task<DeleteHostedZoneResponse> DeleteHostedZoneAsync(DeleteHostedZoneRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteHostedZoneRequestMarshaller();
@@ -540,6 +643,7 @@ namespace Amazon.Route53
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteReusableDelegationSet">REST API Reference for DeleteReusableDelegationSet Operation</seealso>
         public Task<DeleteReusableDelegationSetResponse> DeleteReusableDelegationSetAsync(DeleteReusableDelegationSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteReusableDelegationSetRequestMarshaller();
@@ -571,6 +675,7 @@ namespace Amazon.Route53
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteTrafficPolicy">REST API Reference for DeleteTrafficPolicy Operation</seealso>
         public Task<DeleteTrafficPolicyResponse> DeleteTrafficPolicyAsync(DeleteTrafficPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteTrafficPolicyRequestMarshaller();
@@ -602,12 +707,45 @@ namespace Amazon.Route53
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteTrafficPolicyInstance">REST API Reference for DeleteTrafficPolicyInstance Operation</seealso>
         public Task<DeleteTrafficPolicyInstanceResponse> DeleteTrafficPolicyInstanceAsync(DeleteTrafficPolicyInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteTrafficPolicyInstanceRequestMarshaller();
             var unmarshaller = DeleteTrafficPolicyInstanceResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteTrafficPolicyInstanceRequest,DeleteTrafficPolicyInstanceResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteVPCAssociationAuthorization
+
+        internal DeleteVPCAssociationAuthorizationResponse DeleteVPCAssociationAuthorization(DeleteVPCAssociationAuthorizationRequest request)
+        {
+            var marshaller = new DeleteVPCAssociationAuthorizationRequestMarshaller();
+            var unmarshaller = DeleteVPCAssociationAuthorizationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteVPCAssociationAuthorizationRequest,DeleteVPCAssociationAuthorizationResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteVPCAssociationAuthorization operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVPCAssociationAuthorization operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteVPCAssociationAuthorization">REST API Reference for DeleteVPCAssociationAuthorization Operation</seealso>
+        public Task<DeleteVPCAssociationAuthorizationResponse> DeleteVPCAssociationAuthorizationAsync(DeleteVPCAssociationAuthorizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteVPCAssociationAuthorizationRequestMarshaller();
+            var unmarshaller = DeleteVPCAssociationAuthorizationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteVPCAssociationAuthorizationRequest,DeleteVPCAssociationAuthorizationResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -633,6 +771,7 @@ namespace Amazon.Route53
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DisassociateVPCFromHostedZone">REST API Reference for DisassociateVPCFromHostedZone Operation</seealso>
         public Task<DisassociateVPCFromHostedZoneResponse> DisassociateVPCFromHostedZoneAsync(DisassociateVPCFromHostedZoneRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DisassociateVPCFromHostedZoneRequestMarshaller();
@@ -664,45 +803,13 @@ namespace Amazon.Route53
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetChange">REST API Reference for GetChange Operation</seealso>
         public Task<GetChangeResponse> GetChangeAsync(GetChangeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetChangeRequestMarshaller();
             var unmarshaller = GetChangeResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetChangeRequest,GetChangeResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
-        }
-
-        #endregion
-        
-        #region  GetChangeDetails
-
-        [Obsolete("This operation is deprecated because it is an experimental feature not intended for use.")]
-        internal GetChangeDetailsResponse GetChangeDetails(GetChangeDetailsRequest request)
-        {
-            var marshaller = new GetChangeDetailsRequestMarshaller();
-            var unmarshaller = GetChangeDetailsResponseUnmarshaller.Instance;
-
-            return Invoke<GetChangeDetailsRequest,GetChangeDetailsResponse>(request, marshaller, unmarshaller);
-        }
-
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the GetChangeDetails operation.
-        /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetChangeDetails operation.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
-        [Obsolete("This operation is deprecated because it is an experimental feature not intended for use.")]
-        public Task<GetChangeDetailsResponse> GetChangeDetailsAsync(GetChangeDetailsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var marshaller = new GetChangeDetailsRequestMarshaller();
-            var unmarshaller = GetChangeDetailsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetChangeDetailsRequest,GetChangeDetailsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -728,6 +835,7 @@ namespace Amazon.Route53
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetCheckerIpRanges">REST API Reference for GetCheckerIpRanges Operation</seealso>
         public Task<GetCheckerIpRangesResponse> GetCheckerIpRangesAsync(GetCheckerIpRangesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetCheckerIpRangesRequestMarshaller();
@@ -759,6 +867,7 @@ namespace Amazon.Route53
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetGeoLocation">REST API Reference for GetGeoLocation Operation</seealso>
         public Task<GetGeoLocationResponse> GetGeoLocationAsync(GetGeoLocationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetGeoLocationRequestMarshaller();
@@ -790,6 +899,7 @@ namespace Amazon.Route53
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHealthCheck">REST API Reference for GetHealthCheck Operation</seealso>
         public Task<GetHealthCheckResponse> GetHealthCheckAsync(GetHealthCheckRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetHealthCheckRequestMarshaller();
@@ -821,6 +931,7 @@ namespace Amazon.Route53
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHealthCheckCount">REST API Reference for GetHealthCheckCount Operation</seealso>
         public Task<GetHealthCheckCountResponse> GetHealthCheckCountAsync(GetHealthCheckCountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetHealthCheckCountRequestMarshaller();
@@ -852,6 +963,7 @@ namespace Amazon.Route53
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHealthCheckLastFailureReason">REST API Reference for GetHealthCheckLastFailureReason Operation</seealso>
         public Task<GetHealthCheckLastFailureReasonResponse> GetHealthCheckLastFailureReasonAsync(GetHealthCheckLastFailureReasonRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetHealthCheckLastFailureReasonRequestMarshaller();
@@ -883,6 +995,7 @@ namespace Amazon.Route53
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHealthCheckStatus">REST API Reference for GetHealthCheckStatus Operation</seealso>
         public Task<GetHealthCheckStatusResponse> GetHealthCheckStatusAsync(GetHealthCheckStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetHealthCheckStatusRequestMarshaller();
@@ -914,6 +1027,7 @@ namespace Amazon.Route53
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHostedZone">REST API Reference for GetHostedZone Operation</seealso>
         public Task<GetHostedZoneResponse> GetHostedZoneAsync(GetHostedZoneRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetHostedZoneRequestMarshaller();
@@ -941,8 +1055,8 @@ namespace Amazon.Route53
 
 
         /// <summary>
-        /// To retrieve a count of all your hosted zones, send a <code>GET</code> request to the
-        /// <code>/<i>Route 53 API version</i>/hostedzonecount</code> resource.
+        /// Retrieves a count of all your hosted zones. Send a <code>GET</code> request to the
+        /// <code>/2013-04-01/hostedzonecount</code> resource.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -950,8 +1064,9 @@ namespace Amazon.Route53
         /// 
         /// <returns>The response from the GetHostedZoneCount service method, as returned by Route53.</returns>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
-        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// The input is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHostedZoneCount">REST API Reference for GetHostedZoneCount Operation</seealso>
         public Task<GetHostedZoneCountResponse> GetHostedZoneCountAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return GetHostedZoneCountAsync(new GetHostedZoneCountRequest(), cancellationToken);
@@ -967,6 +1082,7 @@ namespace Amazon.Route53
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHostedZoneCount">REST API Reference for GetHostedZoneCount Operation</seealso>
         public Task<GetHostedZoneCountResponse> GetHostedZoneCountAsync(GetHostedZoneCountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetHostedZoneCountRequestMarshaller();
@@ -998,6 +1114,7 @@ namespace Amazon.Route53
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetReusableDelegationSet">REST API Reference for GetReusableDelegationSet Operation</seealso>
         public Task<GetReusableDelegationSetResponse> GetReusableDelegationSetAsync(GetReusableDelegationSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetReusableDelegationSetRequestMarshaller();
@@ -1029,6 +1146,7 @@ namespace Amazon.Route53
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetTrafficPolicy">REST API Reference for GetTrafficPolicy Operation</seealso>
         public Task<GetTrafficPolicyResponse> GetTrafficPolicyAsync(GetTrafficPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetTrafficPolicyRequestMarshaller();
@@ -1060,6 +1178,7 @@ namespace Amazon.Route53
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetTrafficPolicyInstance">REST API Reference for GetTrafficPolicyInstance Operation</seealso>
         public Task<GetTrafficPolicyInstanceResponse> GetTrafficPolicyInstanceAsync(GetTrafficPolicyInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetTrafficPolicyInstanceRequestMarshaller();
@@ -1091,78 +1210,13 @@ namespace Amazon.Route53
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetTrafficPolicyInstanceCount">REST API Reference for GetTrafficPolicyInstanceCount Operation</seealso>
         public Task<GetTrafficPolicyInstanceCountResponse> GetTrafficPolicyInstanceCountAsync(GetTrafficPolicyInstanceCountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetTrafficPolicyInstanceCountRequestMarshaller();
             var unmarshaller = GetTrafficPolicyInstanceCountResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetTrafficPolicyInstanceCountRequest,GetTrafficPolicyInstanceCountResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
-        }
-
-        #endregion
-        
-        #region  ListChangeBatchesByHostedZone
-
-        [Obsolete("This operation is deprecated because it is an experimental feature not intended for use.")]
-        internal ListChangeBatchesByHostedZoneResponse ListChangeBatchesByHostedZone(ListChangeBatchesByHostedZoneRequest request)
-        {
-            var marshaller = new ListChangeBatchesByHostedZoneRequestMarshaller();
-            var unmarshaller = ListChangeBatchesByHostedZoneResponseUnmarshaller.Instance;
-
-            return Invoke<ListChangeBatchesByHostedZoneRequest,ListChangeBatchesByHostedZoneResponse>(request, marshaller, unmarshaller);
-        }
-
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the ListChangeBatchesByHostedZone operation.
-        /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListChangeBatchesByHostedZone operation.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
-        [Obsolete("This operation is deprecated because it is an experimental feature not intended for use.")]
-        public Task<ListChangeBatchesByHostedZoneResponse> ListChangeBatchesByHostedZoneAsync(ListChangeBatchesByHostedZoneRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var marshaller = new ListChangeBatchesByHostedZoneRequestMarshaller();
-            var unmarshaller = ListChangeBatchesByHostedZoneResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListChangeBatchesByHostedZoneRequest,ListChangeBatchesByHostedZoneResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
-        }
-
-        #endregion
-        
-        #region  ListChangeBatchesByRRSet
-
-        [Obsolete("This operation is deprecated because it is an experimental feature not intended for use.")]
-        internal ListChangeBatchesByRRSetResponse ListChangeBatchesByRRSet(ListChangeBatchesByRRSetRequest request)
-        {
-            var marshaller = new ListChangeBatchesByRRSetRequestMarshaller();
-            var unmarshaller = ListChangeBatchesByRRSetResponseUnmarshaller.Instance;
-
-            return Invoke<ListChangeBatchesByRRSetRequest,ListChangeBatchesByRRSetResponse>(request, marshaller, unmarshaller);
-        }
-
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the ListChangeBatchesByRRSet operation.
-        /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListChangeBatchesByRRSet operation.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
-        [Obsolete("This operation is deprecated because it is an experimental feature not intended for use.")]
-        public Task<ListChangeBatchesByRRSetResponse> ListChangeBatchesByRRSetAsync(ListChangeBatchesByRRSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var marshaller = new ListChangeBatchesByRRSetRequestMarshaller();
-            var unmarshaller = ListChangeBatchesByRRSetResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListChangeBatchesByRRSetRequest,ListChangeBatchesByRRSetResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1184,22 +1238,17 @@ namespace Amazon.Route53
 
 
         /// <summary>
-        /// To retrieve a list of supported geo locations, send a <code>GET</code> request to
-        /// the <code>/<i>Route 53 API version</i>/geolocations</code> resource. The response
-        /// to this request includes a <code>GeoLocationDetailsList</code> element with zero,
-        /// one, or multiple <code>GeoLocationDetails</code> child elements. The list is sorted
-        /// by country code, and then subdivision code, followed by continents at the end of the
-        /// list. 
+        /// Retrieves a list of supported geo locations. Send a <code>GET</code> request to the
+        /// <code>/2013-04-01/geolocations</code> resource. The response to this request includes
+        /// a <code>GeoLocationDetailsList</code> element for each location that Amazon Route
+        /// 53 supports.
         /// 
         ///  
         /// <para>
-        /// By default, the list of geo locations is displayed on a single page. You can control
-        /// the length of the page that is displayed by using the <code>MaxItems</code> parameter.
-        /// If the list is truncated, <code>IsTruncated</code> will be set to <i>true</i> and
-        /// a combination of <code>NextContinentCode, NextCountryCode, NextSubdivisionCode</code>
-        /// will be populated. You can pass these as parameters to <code>StartContinentCode, StartCountryCode,
-        /// StartSubdivisionCode</code> to control the geo location that the list begins with.
-        /// 
+        /// Countries are listed first, and continents are listed last. If Amazon Route 53 supports
+        /// subdivisions for a country (for example, states or provinces), the subdivisions for
+        /// that country are listed in alphabetical order immediately after the corresponding
+        /// country. 
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">
@@ -1208,8 +1257,9 @@ namespace Amazon.Route53
         /// 
         /// <returns>The response from the ListGeoLocations service method, as returned by Route53.</returns>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
-        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// The input is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListGeoLocations">REST API Reference for ListGeoLocations Operation</seealso>
         public Task<ListGeoLocationsResponse> ListGeoLocationsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return ListGeoLocationsAsync(new ListGeoLocationsRequest(), cancellationToken);
@@ -1225,6 +1275,7 @@ namespace Amazon.Route53
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListGeoLocations">REST API Reference for ListGeoLocations Operation</seealso>
         public Task<ListGeoLocationsResponse> ListGeoLocationsAsync(ListGeoLocationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListGeoLocationsRequestMarshaller();
@@ -1252,16 +1303,19 @@ namespace Amazon.Route53
 
 
         /// <summary>
-        /// To retrieve a list of your health checks, send a <code>GET</code> request to the <code>/<i>Route
-        /// 53 API version</i>/healthcheck</code> resource. The response to this request includes
-        /// a <code>HealthChecks</code> element with zero, one, or multiple <code>HealthCheck</code>
-        /// child elements. By default, the list of health checks is displayed on a single page.
-        /// You can control the length of the page that is displayed by using the <code>MaxItems</code>
-        /// parameter. You can use the <code>Marker</code> parameter to control the health check
-        /// that the list begins with. 
+        /// Retrieve a list of your health checks. Send a <code>GET</code> request to the <code>/2013-04-01/healthcheck</code>
+        /// resource. The response to this request includes a <code>HealthChecks</code> element
+        /// with zero or more <code>HealthCheck</code> child elements. By default, the list of
+        /// health checks is displayed on a single page. You can control the length of the page
+        /// that is displayed by using the <code>MaxItems</code> parameter. You can use the <code>Marker</code>
+        /// parameter to control the health check that the list begins with.
         /// 
-        ///  <note> Amazon Route 53 returns a maximum of 100 items. If you set MaxItems to a value
-        /// greater than 100, Amazon Route 53 returns only the first 100.</note>
+        ///  
+        /// <para>
+        /// For information about listing health checks using the Amazon Route 53 console, see
+        /// <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Amazon
+        /// Route 53 Health Checks and DNS Failover</a>.
+        /// </para>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -1273,8 +1327,9 @@ namespace Amazon.Route53
         /// Please consider using a newer endpoint or a tool that does so.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
-        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// The input is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHealthChecks">REST API Reference for ListHealthChecks Operation</seealso>
         public Task<ListHealthChecksResponse> ListHealthChecksAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return ListHealthChecksAsync(new ListHealthChecksRequest(), cancellationToken);
@@ -1290,6 +1345,7 @@ namespace Amazon.Route53
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHealthChecks">REST API Reference for ListHealthChecks Operation</seealso>
         public Task<ListHealthChecksResponse> ListHealthChecksAsync(ListHealthChecksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListHealthChecksRequestMarshaller();
@@ -1317,16 +1373,47 @@ namespace Amazon.Route53
 
 
         /// <summary>
-        /// To retrieve a list of your hosted zones, send a <code>GET</code> request to the <code>/<i>Route
-        /// 53 API version</i>/hostedzone</code> resource. The response to this request includes
-        /// a <code>HostedZones</code> element with zero, one, or multiple <code>HostedZone</code>
-        /// child elements. By default, the list of hosted zones is displayed on a single page.
-        /// You can control the length of the page that is displayed by using the <code>MaxItems</code>
-        /// parameter. You can use the <code>Marker</code> parameter to control the hosted zone
-        /// that the list begins with. 
+        /// To retrieve a list of your public and private hosted zones, send a <code>GET</code>
+        /// request to the <code>/2013-04-01/hostedzone</code> resource. The response to this
+        /// request includes a <code>HostedZones</code> child element for each hosted zone created
+        /// by the current AWS account.
         /// 
-        ///  <note> Amazon Route 53 returns a maximum of 100 items. If you set MaxItems to a value
-        /// greater than 100, Amazon Route 53 returns only the first 100.</note>
+        ///  
+        /// <para>
+        /// Amazon Route 53 returns a maximum of 100 items in each response. If you have a lot
+        /// of hosted zones, you can use the <code>maxitems</code> parameter to list them in groups
+        /// of up to 100. The response includes four values that help navigate from one group
+        /// of <code>maxitems</code> hosted zones to the next:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>MaxItems</code> is the value specified for the <code>maxitems</code> parameter
+        /// in the request that produced the current response.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the value of <code>IsTruncated</code> in the response is true, there are more hosted
+        /// zones associated with the current AWS account. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>NextMarker</code> is the hosted zone ID of the next hosted zone that is associated
+        /// with the current AWS account. If you want to list more hosted zones, make another
+        /// call to <code>ListHostedZones</code>, and specify the value of the <code>NextMarker</code>
+        /// element in the marker parameter. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If <code>IsTruncated</code> is false, the <code>NextMarker</code> element is omitted
+        /// from the response.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you're making the second or subsequent call to <code>ListHostedZones</code>, the
+        /// <code>Marker</code> element matches the value that you specified in the <code>marker</code>
+        /// parameter in the previous request.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -1334,14 +1421,15 @@ namespace Amazon.Route53
         /// 
         /// <returns>The response from the ListHostedZones service method, as returned by Route53.</returns>
         /// <exception cref="Amazon.Route53.Model.DelegationSetNotReusableException">
-        /// The specified delegation set has not been marked as reusable.
+        /// A reusable delegation set with the specified ID does not exist.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
-        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// The input is not valid.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchDelegationSetException">
-        /// The specified delegation set does not exist.
+        /// A reusable delegation set with the specified ID does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHostedZones">REST API Reference for ListHostedZones Operation</seealso>
         public Task<ListHostedZonesResponse> ListHostedZonesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return ListHostedZonesAsync(new ListHostedZonesRequest(), cancellationToken);
@@ -1357,6 +1445,7 @@ namespace Amazon.Route53
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHostedZones">REST API Reference for ListHostedZones Operation</seealso>
         public Task<ListHostedZonesResponse> ListHostedZonesAsync(ListHostedZonesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListHostedZonesRequestMarshaller();
@@ -1388,6 +1477,7 @@ namespace Amazon.Route53
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHostedZonesByName">REST API Reference for ListHostedZonesByName Operation</seealso>
         public Task<ListHostedZonesByNameResponse> ListHostedZonesByNameAsync(ListHostedZonesByNameRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListHostedZonesByNameRequestMarshaller();
@@ -1419,6 +1509,7 @@ namespace Amazon.Route53
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListResourceRecordSets">REST API Reference for ListResourceRecordSets Operation</seealso>
         public Task<ListResourceRecordSetsResponse> ListResourceRecordSetsAsync(ListResourceRecordSetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListResourceRecordSetsRequestMarshaller();
@@ -1447,15 +1538,19 @@ namespace Amazon.Route53
 
         /// <summary>
         /// To retrieve a list of your reusable delegation sets, send a <code>GET</code> request
-        /// to the <code>/<i>Route 53 API version</i>/delegationset</code> resource. The response
-        /// to this request includes a <code>DelegationSets</code> element with zero, one, or
-        /// multiple <code>DelegationSet</code> child elements. By default, the list of delegation
-        /// sets is displayed on a single page. You can control the length of the page that is
-        /// displayed by using the <code>MaxItems</code> parameter. You can use the <code>Marker</code>
-        /// parameter to control the delegation set that the list begins with. 
+        /// to the <code>/2013-04-01/delegationset</code> resource. The response to this request
+        /// includes a <code>DelegationSets</code> element with zero, one, or multiple <code>DelegationSet</code>
+        /// child elements. By default, the list of delegation sets is displayed on a single page.
+        /// You can control the length of the page that is displayed by using the <code>MaxItems</code>
+        /// parameter. You can use the <code>Marker</code> parameter to control the delegation
+        /// set that the list begins with. 
         /// 
-        ///  <note> Amazon Route 53 returns a maximum of 100 items. If you set MaxItems to a value
-        /// greater than 100, Amazon Route 53 returns only the first 100.</note>
+        ///  <note> 
+        /// <para>
+        ///  Amazon Route 53 returns a maximum of 100 items. If you set MaxItems to a value greater
+        /// than 100, Amazon Route 53 returns only the first 100.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -1463,8 +1558,9 @@ namespace Amazon.Route53
         /// 
         /// <returns>The response from the ListReusableDelegationSets service method, as returned by Route53.</returns>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
-        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// The input is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListReusableDelegationSets">REST API Reference for ListReusableDelegationSets Operation</seealso>
         public Task<ListReusableDelegationSetsResponse> ListReusableDelegationSetsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return ListReusableDelegationSetsAsync(new ListReusableDelegationSetsRequest(), cancellationToken);
@@ -1480,6 +1576,7 @@ namespace Amazon.Route53
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListReusableDelegationSets">REST API Reference for ListReusableDelegationSets Operation</seealso>
         public Task<ListReusableDelegationSetsResponse> ListReusableDelegationSetsAsync(ListReusableDelegationSetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListReusableDelegationSetsRequestMarshaller();
@@ -1511,6 +1608,7 @@ namespace Amazon.Route53
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListTagsForResourceRequestMarshaller();
@@ -1542,6 +1640,7 @@ namespace Amazon.Route53
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTagsForResources">REST API Reference for ListTagsForResources Operation</seealso>
         public Task<ListTagsForResourcesResponse> ListTagsForResourcesAsync(ListTagsForResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListTagsForResourcesRequestMarshaller();
@@ -1573,6 +1672,7 @@ namespace Amazon.Route53
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicies">REST API Reference for ListTrafficPolicies Operation</seealso>
         public Task<ListTrafficPoliciesResponse> ListTrafficPoliciesAsync(ListTrafficPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListTrafficPoliciesRequestMarshaller();
@@ -1604,6 +1704,7 @@ namespace Amazon.Route53
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicyInstances">REST API Reference for ListTrafficPolicyInstances Operation</seealso>
         public Task<ListTrafficPolicyInstancesResponse> ListTrafficPolicyInstancesAsync(ListTrafficPolicyInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListTrafficPolicyInstancesRequestMarshaller();
@@ -1635,6 +1736,7 @@ namespace Amazon.Route53
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicyInstancesByHostedZone">REST API Reference for ListTrafficPolicyInstancesByHostedZone Operation</seealso>
         public Task<ListTrafficPolicyInstancesByHostedZoneResponse> ListTrafficPolicyInstancesByHostedZoneAsync(ListTrafficPolicyInstancesByHostedZoneRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListTrafficPolicyInstancesByHostedZoneRequestMarshaller();
@@ -1666,6 +1768,7 @@ namespace Amazon.Route53
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicyInstancesByPolicy">REST API Reference for ListTrafficPolicyInstancesByPolicy Operation</seealso>
         public Task<ListTrafficPolicyInstancesByPolicyResponse> ListTrafficPolicyInstancesByPolicyAsync(ListTrafficPolicyInstancesByPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListTrafficPolicyInstancesByPolicyRequestMarshaller();
@@ -1697,12 +1800,77 @@ namespace Amazon.Route53
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicyVersions">REST API Reference for ListTrafficPolicyVersions Operation</seealso>
         public Task<ListTrafficPolicyVersionsResponse> ListTrafficPolicyVersionsAsync(ListTrafficPolicyVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListTrafficPolicyVersionsRequestMarshaller();
             var unmarshaller = ListTrafficPolicyVersionsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListTrafficPolicyVersionsRequest,ListTrafficPolicyVersionsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListVPCAssociationAuthorizations
+
+        internal ListVPCAssociationAuthorizationsResponse ListVPCAssociationAuthorizations(ListVPCAssociationAuthorizationsRequest request)
+        {
+            var marshaller = new ListVPCAssociationAuthorizationsRequestMarshaller();
+            var unmarshaller = ListVPCAssociationAuthorizationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListVPCAssociationAuthorizationsRequest,ListVPCAssociationAuthorizationsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListVPCAssociationAuthorizations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListVPCAssociationAuthorizations operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListVPCAssociationAuthorizations">REST API Reference for ListVPCAssociationAuthorizations Operation</seealso>
+        public Task<ListVPCAssociationAuthorizationsResponse> ListVPCAssociationAuthorizationsAsync(ListVPCAssociationAuthorizationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListVPCAssociationAuthorizationsRequestMarshaller();
+            var unmarshaller = ListVPCAssociationAuthorizationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListVPCAssociationAuthorizationsRequest,ListVPCAssociationAuthorizationsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  TestDNSAnswer
+
+        internal TestDNSAnswerResponse TestDNSAnswer(TestDNSAnswerRequest request)
+        {
+            var marshaller = new TestDNSAnswerRequestMarshaller();
+            var unmarshaller = TestDNSAnswerResponseUnmarshaller.Instance;
+
+            return Invoke<TestDNSAnswerRequest,TestDNSAnswerResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TestDNSAnswer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TestDNSAnswer operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/TestDNSAnswer">REST API Reference for TestDNSAnswer Operation</seealso>
+        public Task<TestDNSAnswerResponse> TestDNSAnswerAsync(TestDNSAnswerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new TestDNSAnswerRequestMarshaller();
+            var unmarshaller = TestDNSAnswerResponseUnmarshaller.Instance;
+
+            return InvokeAsync<TestDNSAnswerRequest,TestDNSAnswerResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1728,6 +1896,7 @@ namespace Amazon.Route53
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateHealthCheck">REST API Reference for UpdateHealthCheck Operation</seealso>
         public Task<UpdateHealthCheckResponse> UpdateHealthCheckAsync(UpdateHealthCheckRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateHealthCheckRequestMarshaller();
@@ -1759,6 +1928,7 @@ namespace Amazon.Route53
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateHostedZoneComment">REST API Reference for UpdateHostedZoneComment Operation</seealso>
         public Task<UpdateHostedZoneCommentResponse> UpdateHostedZoneCommentAsync(UpdateHostedZoneCommentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateHostedZoneCommentRequestMarshaller();
@@ -1790,6 +1960,7 @@ namespace Amazon.Route53
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateTrafficPolicyComment">REST API Reference for UpdateTrafficPolicyComment Operation</seealso>
         public Task<UpdateTrafficPolicyCommentResponse> UpdateTrafficPolicyCommentAsync(UpdateTrafficPolicyCommentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateTrafficPolicyCommentRequestMarshaller();
@@ -1821,6 +1992,7 @@ namespace Amazon.Route53
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateTrafficPolicyInstance">REST API Reference for UpdateTrafficPolicyInstance Operation</seealso>
         public Task<UpdateTrafficPolicyInstanceResponse> UpdateTrafficPolicyInstanceAsync(UpdateTrafficPolicyInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateTrafficPolicyInstanceRequestMarshaller();

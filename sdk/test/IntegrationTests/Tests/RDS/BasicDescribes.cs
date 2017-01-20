@@ -403,7 +403,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.RDS
             var optionGroup = Client.CreateOptionGroup(new CreateOptionGroupRequest
             {
                 EngineName = "mysql",
-                MajorEngineVersion = "5.1",
+                MajorEngineVersion = "5.5",
                  OptionGroupName = name,
                  OptionGroupDescription = "Basic test OptionGroup"                  
             }).OptionGroup;
@@ -567,6 +567,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.RDS
         }
 
         [TestMethod]
+        [TestCategory("RDS")]
         public void TestDescribeDBInstanceException()
         {
             try

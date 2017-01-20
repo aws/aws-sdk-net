@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-11-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -38,6 +38,7 @@ namespace Amazon.EC2.Model
         private string _description;
         private List<GroupIdentifier> _groups = new List<GroupIdentifier>();
         private NetworkInterfaceType _interfaceType;
+        private List<NetworkInterfaceIpv6Address> _ipv6Addresses = new List<NetworkInterfaceIpv6Address>();
         private string _macAddress;
         private string _networkInterfaceId;
         private string _ownerId;
@@ -55,7 +56,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Association. 
         /// <para>
-        /// The association information for an Elastic IP associated with the network interface.
+        /// The association information for an Elastic IP address (IPv4) associated with the network
+        /// interface.
         /// </para>
         /// </summary>
         public NetworkInterfaceAssociation Association
@@ -161,6 +163,24 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Ipv6Addresses. 
+        /// <para>
+        /// The IPv6 addresses associated with the network interface.
+        /// </para>
+        /// </summary>
+        public List<NetworkInterfaceIpv6Address> Ipv6Addresses
+        {
+            get { return this._ipv6Addresses; }
+            set { this._ipv6Addresses = value; }
+        }
+
+        // Check to see if Ipv6Addresses property is set
+        internal bool IsSetIpv6Addresses()
+        {
+            return this._ipv6Addresses != null && this._ipv6Addresses.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property MacAddress. 
         /// <para>
         /// The MAC address.
@@ -235,7 +255,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property PrivateIpAddress. 
         /// <para>
-        /// The IP address of the network interface within the subnet.
+        /// The IPv4 address of the network interface within the subnet.
         /// </para>
         /// </summary>
         public string PrivateIpAddress
@@ -253,7 +273,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property PrivateIpAddresses. 
         /// <para>
-        /// The private IP addresses associated with the network interface.
+        /// The private IPv4 addresses associated with the network interface.
         /// </para>
         /// </summary>
         public List<NetworkInterfacePrivateIpAddress> PrivateIpAddresses

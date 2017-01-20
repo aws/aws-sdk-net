@@ -28,20 +28,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// The MD5OfMessageBody and MessageId elements.
+    /// The <code>MD5OfMessageBody</code> and <code>MessageId</code> elements.
     /// </summary>
     public partial class SendMessageResponse : AmazonWebServiceResponse
     {
         private string _md5OfMessageAttributes;
         private string _md5OfMessageBody;
         private string _messageId;
+        private string _sequenceNumber;
 
         /// <summary>
         /// Gets and sets the property MD5OfMessageAttributes. 
         /// <para>
-        /// An MD5 digest of the non-URL-encoded message attribute string. This can be used to
-        /// verify that Amazon SQS received the message correctly. Amazon SQS first URL decodes
-        /// the message before creating the MD5 digest. For information about MD5, go to <a href="http://www.faqs.org/rfcs/rfc1321.html">http://www.faqs.org/rfcs/rfc1321.html</a>.
+        /// An MD5 digest of the non-URL-encoded message attribute string. You can use this attribute
+        /// to verify that Amazon SQS received the message correctly. Amazon SQS URL-decodes the
+        /// message before creating the MD5 digest. For information on MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.
         /// </para>
         /// </summary>
         public string MD5OfMessageAttributes
@@ -59,9 +60,9 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Gets and sets the property MD5OfMessageBody. 
         /// <para>
-        /// An MD5 digest of the non-URL-encoded message body string. This can be used to verify
-        /// that Amazon SQS received the message correctly. Amazon SQS first URL decodes the message
-        /// before creating the MD5 digest. For information about MD5, go to <a href="http://www.faqs.org/rfcs/rfc1321.html">http://www.faqs.org/rfcs/rfc1321.html</a>.
+        /// An MD5 digest of the non-URL-encoded message attribute string. You can use this attribute
+        /// to verify that Amazon SQS received the message correctly. Amazon SQS URL-decodes the
+        /// message before creating the MD5 digest. For information on MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.
         /// </para>
         /// </summary>
         public string MD5OfMessageBody
@@ -79,8 +80,8 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Gets and sets the property MessageId. 
         /// <para>
-        ///  An element containing the message ID of the message sent to the queue. For more information,
-        /// see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ImportantIdentifiers.html">Queue
+        /// An attribute containing the <code>MessageId</code> of the message sent to the queue.
+        /// For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html">Queue
         /// and Message Identifiers</a> in the <i>Amazon SQS Developer Guide</i>. 
         /// </para>
         /// </summary>
@@ -94,6 +95,33 @@ namespace Amazon.SQS.Model
         internal bool IsSetMessageId()
         {
             return this._messageId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SequenceNumber. 
+        /// <para>
+        /// This parameter applies only to FIFO (first-in-first-out) queues.
+        /// </para>
+        ///  
+        /// <para>
+        /// A large, non-consecutive number that Amazon SQS assigns to each message.
+        /// </para>
+        ///  
+        /// <para>
+        /// The length of <code>SequenceNumber</code> is 128 bits. <code>SequenceNumber</code>
+        /// continues to increase for a particular <code>MessageGroupId</code>.
+        /// </para>
+        /// </summary>
+        public string SequenceNumber
+        {
+            get { return this._sequenceNumber; }
+            set { this._sequenceNumber = value; }
+        }
+
+        // Check to see if SequenceNumber property is set
+        internal bool IsSetSequenceNumber()
+        {
+            return this._sequenceNumber != null;
         }
 
     }

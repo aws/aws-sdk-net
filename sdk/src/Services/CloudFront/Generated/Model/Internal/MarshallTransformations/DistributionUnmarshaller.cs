@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2016-01-28.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-11-25.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -59,6 +59,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = ActiveTrustedSignersUnmarshaller.Instance;
                         unmarshalledObject.ActiveTrustedSigners = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ARN", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ARN = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("DistributionConfig", targetDepth))

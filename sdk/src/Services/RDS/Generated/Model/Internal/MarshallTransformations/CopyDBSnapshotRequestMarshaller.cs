@@ -66,6 +66,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("KmsKeyId", StringUtils.FromString(publicRequest.KmsKeyId));
                 }
+                if(publicRequest.IsSetPreSignedUrl())
+                {
+                    request.Parameters.Add("PreSignedUrl", StringUtils.FromString(publicRequest.PreSignedUrl));
+                }
                 if(publicRequest.IsSetSourceDBSnapshotIdentifier())
                 {
                     request.Parameters.Add("SourceDBSnapshotIdentifier", StringUtils.FromString(publicRequest.SourceDBSnapshotIdentifier));

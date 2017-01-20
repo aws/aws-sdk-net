@@ -13,12 +13,13 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using <#=this.Config.Namespace#>.Model;
 
 namespace <#=this.Config.Namespace#>
 {
 <#    this.FormatServiceInterfaceDocumentation(this.Config.ServiceModel.Documentation); #>
-	public partial interface IAmazon<#=this.Config.BaseName#> : IDisposable
+	public partial interface IAmazon<#=this.Config.BaseName#> : IAmazonService, IDisposable
 	{
 
 		<#
@@ -86,7 +87,7 @@ this.FormatOperationDocumentationSync(operation, true);
 #>
 
 <#
-			AddAsyncDocumentation(operation.Name);
+			AddAsyncDocumentation(operation);
 			if(operation.IsDeprecated)
 			{
 #>

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2016-01-28.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-11-25.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -43,8 +43,8 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Instantiates InvalidationBatch with the parameterized properties
         /// </summary>
-        /// <param name="paths">The path of the object to invalidate. The path is relative to the distribution and must begin with a slash (/). You must enclose each invalidation object with the Path element tags. If the path includes non-ASCII characters or unsafe characters as defined in RFC 1783 (http://www.ietf.org/rfc/rfc1738.txt), URL encode those characters. Do not URL encode any other characters in the path, or CloudFront will not invalidate the old version of the updated object.</param>
-        /// <param name="callerReference">A unique name that ensures the request can't be replayed. If the CallerReference is new (no matter the content of the Path object), a new distribution is created. If the CallerReference is a value you already sent in a previous request to create an invalidation batch, and the content of each Path element is identical to the original request, the response includes the same information returned to the original request. If the CallerReference is a value you already sent in a previous request to create a distribution but the content of any Path is different from the original request, CloudFront returns an InvalidationBatchAlreadyExists error.</param>
+        /// <param name="paths">A complex type that contains information about the objects that you want to invalidate. For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html#invalidation-specifying-objects">Specifying the Objects to Invalidate</a> in the <i>Amazon CloudFront Developer Guide</i>. </param>
+        /// <param name="callerReference">A value that you specify to uniquely identify an invalidation request. CloudFront uses the value to prevent you from accidentally resubmitting an identical request. Whenever you create a new invalidation request, you must specify a new value for <code>CallerReference</code> and change other values in the request as applicable. One way to ensure that the value of <code>CallerReference</code> is unique is to use a <code>timestamp</code>, for example, <code>20120301090000</code>. If you make a second invalidation request with the same value for <code>CallerReference</code>, and if the rest of the request is the same, CloudFront doesn't create a new invalidation request. Instead, CloudFront returns information about the invalidation request that you previously created with the same <code>CallerReference</code>. If <code>CallerReference</code> is a value you already sent in a previous invalidation batch request but the content of any <code>Path</code> is different from the original request, CloudFront returns an <code>InvalidationBatchAlreadyExists</code> error.</param>
         public InvalidationBatch(Paths paths, string callerReference)
         {
             _paths = paths;
@@ -54,22 +54,35 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Instantiates InvalidationBatch with the parameterized properties
         /// </summary>
-        /// <param name="callerReference">A unique name that ensures the request can't be replayed. If the CallerReference is new (no matter the content of the Path object), a new distribution is created. If the CallerReference is a value you already sent in a previous request to create an invalidation batch, and the content of each Path element is identical to the original request, the response includes the same information returned to the original request. If the CallerReference is a value you already sent in a previous request to create a distribution but the content of any Path is different from the original request, CloudFront returns an InvalidationBatchAlreadyExists error.</param>
+        /// <param name="callerReference">A value that you specify to uniquely identify an invalidation request. CloudFront uses the value to prevent you from accidentally resubmitting an identical request. Whenever you create a new invalidation request, you must specify a new value for <code>CallerReference</code> and change other values in the request as applicable. One way to ensure that the value of <code>CallerReference</code> is unique is to use a <code>timestamp</code>, for example, <code>20120301090000</code>. If you make a second invalidation request with the same value for <code>CallerReference</code>, and if the rest of the request is the same, CloudFront doesn't create a new invalidation request. Instead, CloudFront returns information about the invalidation request that you previously created with the same <code>CallerReference</code>. If <code>CallerReference</code> is a value you already sent in a previous invalidation batch request but the content of any <code>Path</code> is different from the original request, CloudFront returns an <code>InvalidationBatchAlreadyExists</code> error.</param>
         public InvalidationBatch(string callerReference)
         {
             _callerReference = callerReference;
         }
 
         /// <summary>
-        /// Gets and sets the property CallerReference. A unique name that ensures the request
-        /// can't be replayed. If the CallerReference is new (no matter the content of the Path
-        /// object), a new distribution is created. If the CallerReference is a value you already
-        /// sent in a previous request to create an invalidation batch, and the content of each
-        /// Path element is identical to the original request, the response includes the same
-        /// information returned to the original request. If the CallerReference is a value you
-        /// already sent in a previous request to create a distribution but the content of any
-        /// Path is different from the original request, CloudFront returns an InvalidationBatchAlreadyExists
-        /// error.
+        /// Gets and sets the property CallerReference. 
+        /// <para>
+        /// A value that you specify to uniquely identify an invalidation request. CloudFront
+        /// uses the value to prevent you from accidentally resubmitting an identical request.
+        /// Whenever you create a new invalidation request, you must specify a new value for <code>CallerReference</code>
+        /// and change other values in the request as applicable. One way to ensure that the value
+        /// of <code>CallerReference</code> is unique is to use a <code>timestamp</code>, for
+        /// example, <code>20120301090000</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you make a second invalidation request with the same value for <code>CallerReference</code>,
+        /// and if the rest of the request is the same, CloudFront doesn't create a new invalidation
+        /// request. Instead, CloudFront returns information about the invalidation request that
+        /// you previously created with the same <code>CallerReference</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If <code>CallerReference</code> is a value you already sent in a previous invalidation
+        /// batch request but the content of any <code>Path</code> is different from the original
+        /// request, CloudFront returns an <code>InvalidationBatchAlreadyExists</code> error.
+        /// </para>
         /// </summary>
         public string CallerReference
         {
@@ -84,12 +97,12 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Paths. The path of the object to invalidate. The path is
-        /// relative to the distribution and must begin with a slash (/). You must enclose each
-        /// invalidation object with the Path element tags. If the path includes non-ASCII characters
-        /// or unsafe characters as defined in RFC 1783 (http://www.ietf.org/rfc/rfc1738.txt),
-        /// URL encode those characters. Do not URL encode any other characters in the path, or
-        /// CloudFront will not invalidate the old version of the updated object.
+        /// Gets and sets the property Paths. 
+        /// <para>
+        /// A complex type that contains information about the objects that you want to invalidate.
+        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html#invalidation-specifying-objects">Specifying
+        /// the Objects to Invalidate</a> in the <i>Amazon CloudFront Developer Guide</i>. 
+        /// </para>
         /// </summary>
         public Paths Paths
         {

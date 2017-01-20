@@ -25,7 +25,7 @@ namespace Amazon.CertificateManager.Model
     ///<summary>
     /// CertificateManager exception
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class InvalidArnException : AmazonCertificateManagerException 
@@ -79,7 +79,7 @@ namespace Amazon.CertificateManager.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the InvalidArnException class with serialized data.
         /// </summary>

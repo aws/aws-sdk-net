@@ -33,29 +33,59 @@ namespace Amazon.AWSSupport.Model
     /// of the AWS Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create
     /// Case</a> page. Its parameters require you to specify the following information: 
     /// 
-    ///  <ol> <li> <b>IssueType.</b> The type of issue for the case. You can specify either
-    /// "customer-service" or "technical." If you do not indicate a value, the default is
-    /// "technical." </li> <li> <b>ServiceCode.</b> The code for an AWS service. You obtain
-    /// the <code>ServiceCode</code> by calling <a>DescribeServices</a>. </li> <li> <b>CategoryCode.</b>
-    /// The category for the service defined for the <code>ServiceCode</code> value. You also
-    /// obtain the category code for a service by calling <a>DescribeServices</a>. Each AWS
-    /// service defines its own set of category codes. </li> <li> <b>SeverityCode.</b> A value
-    /// that indicates the urgency of the case, which in turn determines the response time
-    /// according to your service level agreement with AWS Support. You obtain the SeverityCode
-    /// by calling <a>DescribeSeverityLevels</a>.</li> <li> <b>Subject.</b> The <b>Subject</b>
-    /// field on the AWS Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create
-    /// Case</a> page.</li> <li> <b>CommunicationBody.</b> The <b>Description</b> field on
-    /// the AWS Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create
-    /// Case</a> page.</li> <li> <b>AttachmentSetId.</b> The ID of a set of attachments that
-    /// has been created by using <a>AddAttachmentsToSet</a>.</li> <li> <b>Language.</b> The
-    /// human language in which AWS Support handles the case. English and Japanese are currently
-    /// supported.</li> <li> <b>CcEmailAddresses.</b> The AWS Support Center <b>CC</b> field
-    /// on the <a href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a>
-    /// page. You can list email addresses to be copied on any correspondence about the case.
-    /// The account that opens the case is already identified by passing the AWS Credentials
-    /// in the HTTP POST method or in a method or function call from one of the programming
-    /// languages supported by an <a href="http://aws.amazon.com/tools/">AWS SDK</a>. </li>
-    /// </ol> <note>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <b>issueType.</b> The type of issue for the case. You can specify either "customer-service"
+    /// or "technical." If you do not indicate a value, the default is "technical." 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>serviceCode.</b> The code for an AWS service. You obtain the <code>serviceCode</code>
+    /// by calling <a>DescribeServices</a>. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>categoryCode.</b> The category for the service defined for the <code>serviceCode</code>
+    /// value. You also obtain the category code for a service by calling <a>DescribeServices</a>.
+    /// Each AWS service defines its own set of category codes. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>severityCode.</b> A value that indicates the urgency of the case, which in turn
+    /// determines the response time according to your service level agreement with AWS Support.
+    /// You obtain the SeverityCode by calling <a>DescribeSeverityLevels</a>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>subject.</b> The <b>Subject</b> field on the AWS Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create
+    /// Case</a> page.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>communicationBody.</b> The <b>Description</b> field on the AWS Support Center
+    /// <a href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a>
+    /// page.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>attachmentSetId.</b> The ID of a set of attachments that has been created by using
+    /// <a>AddAttachmentsToSet</a>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>language.</b> The human language in which AWS Support handles the case. English
+    /// and Japanese are currently supported.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>ccEmailAddresses.</b> The AWS Support Center <b>CC</b> field on the <a href="https://console.aws.amazon.com/support/home#/case/create">Create
+    /// Case</a> page. You can list email addresses to be copied on any correspondence about
+    /// the case. The account that opens the case is already identified by passing the AWS
+    /// Credentials in the HTTP POST method or in a method or function call from one of the
+    /// programming languages supported by an <a href="http://aws.amazon.com/tools/">AWS SDK</a>.
+    /// 
+    /// </para>
+    ///  </li> </ul> <note> 
     /// <para>
     /// To add additional communication or attachments to an existing case, use <a>AddCommunicationToCase</a>.
     /// </para>
@@ -99,7 +129,7 @@ namespace Amazon.AWSSupport.Model
         /// <summary>
         /// Gets and sets the property CategoryCode. 
         /// <para>
-        /// The category of problem for the AWS Support case. 
+        /// The category of problem for the AWS Support case.
         /// </para>
         /// </summary>
         public string CategoryCode
@@ -154,7 +184,7 @@ namespace Amazon.AWSSupport.Model
         /// Gets and sets the property IssueType. 
         /// <para>
         /// The type of issue for the case. You can specify either "customer-service" or "technical."
-        /// If you do not indicate a value, the default is "technical." 
+        /// If you do not indicate a value, the default is "technical."
         /// </para>
         /// </summary>
         public string IssueType
@@ -212,13 +242,13 @@ namespace Amazon.AWSSupport.Model
         /// <para>
         /// The code for the severity level returned by the call to <a>DescribeSeverityLevels</a>.
         /// </para>
-        ///  <note>
+        ///  <note> 
         /// <para>
         /// The availability of severity levels depends on each customer's support subscription.
         /// In other words, your subscription may not necessarily require the urgent level of
         /// response time.
         /// </para>
-        /// </note>
+        ///  </note>
         /// </summary>
         public string SeverityCode
         {

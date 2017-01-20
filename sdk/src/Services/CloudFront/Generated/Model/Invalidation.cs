@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2016-01-28.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-11-25.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -43,8 +43,10 @@ namespace Amazon.CloudFront.Model
         public Invalidation() { }
 
         /// <summary>
-        /// Gets and sets the property CreateTime. The date and time the invalidation request
-        /// was first made.
+        /// Gets and sets the property CreateTime. 
+        /// <para>
+        /// The date and time the invalidation request was first made. 
+        /// </para>
         /// </summary>
         public DateTime CreateTime
         {
@@ -59,8 +61,10 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Id. The identifier for the invalidation request. For example:
-        /// IDFDVBD632BHDS5.
+        /// Gets and sets the property Id. 
+        /// <para>
+        /// The identifier for the invalidation request. For example: <code>IDFDVBD632BHDS5</code>.
+        /// </para>
         /// </summary>
         public string Id
         {
@@ -75,8 +79,10 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InvalidationBatch. The current invalidation information
-        /// for the batch request.
+        /// Gets and sets the property InvalidationBatch. 
+        /// <para>
+        /// The current invalidation information for the batch request. 
+        /// </para>
         /// </summary>
         public InvalidationBatch InvalidationBatch
         {
@@ -91,8 +97,11 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Status. The status of the invalidation request. When the
-        /// invalidation batch is finished, the status is Completed.
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The status of the invalidation request. When the invalidation batch is finished, the
+        /// status is <code>Completed</code>.
+        /// </para>
         /// </summary>
         public string Status
         {

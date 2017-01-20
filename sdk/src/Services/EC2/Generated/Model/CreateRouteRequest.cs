@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-11-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -34,13 +34,14 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// You must specify one of the following targets: Internet gateway or virtual private
-    /// gateway, NAT instance, NAT gateway, VPC peering connection, or network interface.
+    /// gateway, NAT instance, NAT gateway, VPC peering connection, network interface, or
+    /// egress-only Internet gateway.
     /// </para>
     ///  
     /// <para>
     /// When determining how to route traffic, we use the route with the most specific match.
-    /// For example, let's say the traffic is destined for <code>192.0.2.3</code>, and the
-    /// route table includes the following two routes:
+    /// For example, traffic is destined for the IPv4 address <code>192.0.2.3</code>, and
+    /// the route table includes the following two IPv4 routes:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -65,6 +66,8 @@ namespace Amazon.EC2.Model
     public partial class CreateRouteRequest : AmazonEC2Request
     {
         private string _destinationCidrBlock;
+        private string _destinationIpv6CidrBlock;
+        private string _egressOnlyInternetGatewayId;
         private string _gatewayId;
         private string _instanceId;
         private string _natGatewayId;
@@ -75,8 +78,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property DestinationCidrBlock. 
         /// <para>
-        /// The CIDR address block used for the destination match. Routing decisions are based
-        /// on the most specific match.
+        /// The IPv4 CIDR address block used for the destination match. Routing decisions are
+        /// based on the most specific match.
         /// </para>
         /// </summary>
         public string DestinationCidrBlock
@@ -89,6 +92,43 @@ namespace Amazon.EC2.Model
         internal bool IsSetDestinationCidrBlock()
         {
             return this._destinationCidrBlock != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DestinationIpv6CidrBlock. 
+        /// <para>
+        /// The IPv6 CIDR block used for the destination match. Routing decisions are based on
+        /// the most specific match.
+        /// </para>
+        /// </summary>
+        public string DestinationIpv6CidrBlock
+        {
+            get { return this._destinationIpv6CidrBlock; }
+            set { this._destinationIpv6CidrBlock = value; }
+        }
+
+        // Check to see if DestinationIpv6CidrBlock property is set
+        internal bool IsSetDestinationIpv6CidrBlock()
+        {
+            return this._destinationIpv6CidrBlock != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EgressOnlyInternetGatewayId. 
+        /// <para>
+        /// [IPv6 traffic only] The ID of an egress-only Internet gateway.
+        /// </para>
+        /// </summary>
+        public string EgressOnlyInternetGatewayId
+        {
+            get { return this._egressOnlyInternetGatewayId; }
+            set { this._egressOnlyInternetGatewayId = value; }
+        }
+
+        // Check to see if EgressOnlyInternetGatewayId property is set
+        internal bool IsSetEgressOnlyInternetGatewayId()
+        {
+            return this._egressOnlyInternetGatewayId != null;
         }
 
         /// <summary>
@@ -131,7 +171,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property NatGatewayId. 
         /// <para>
-        /// The ID of a NAT gateway.
+        /// [IPv4 traffic only] The ID of a NAT gateway.
         /// </para>
         /// </summary>
         public string NatGatewayId

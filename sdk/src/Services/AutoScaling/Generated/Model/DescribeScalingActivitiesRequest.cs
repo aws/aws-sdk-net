@@ -29,10 +29,7 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeScalingActivities operation.
-    /// Describes one or more scaling activities for the specified Auto Scaling group. If
-    /// you omit the <code>ActivityIds</code>, the call returns all activities from the past
-    /// six weeks. Activities are sorted by the start time. Activities still in progress appear
-    /// first on the list.
+    /// Describes one or more scaling activities for the specified Auto Scaling group.
     /// </summary>
     public partial class DescribeScalingActivitiesRequest : AmazonAutoScalingRequest
     {
@@ -44,10 +41,11 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property ActivityIds. 
         /// <para>
-        /// The activity IDs of the desired scaling activities. If this list is omitted, all activities
-        /// are described. If you specify an Auto Scaling group, the results are limited to that
-        /// group. The list of requested activities cannot contain more than 50 items. If unknown
-        /// activities are requested, they are ignored with no error.
+        /// The activity IDs of the desired scaling activities. If you omit this parameter, all
+        /// activities for the past six weeks are described. If you specify an Auto Scaling group,
+        /// the results are limited to that group. The list of requested activities cannot contain
+        /// more than 50 items. If unknown activities are requested, they are ignored with no
+        /// error.
         /// </para>
         /// </summary>
         public List<string> ActivityIds

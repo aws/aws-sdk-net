@@ -40,25 +40,17 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property KeyId. 
         /// <para>
-        /// A unique identifier for the customer master key. This value can be a globally unique
-        /// identifier, a fully specified ARN to either an alias or a key, or an alias name prefixed
-        /// by "alias/".
+        /// A unique identifier for the customer master key (CMK). You can use the unique key
+        /// ID or the Amazon Resource Name (ARN) of the CMK. Examples:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
+        /// Unique key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Alias ARN Example - arn:aws:kms:us-east-1:123456789012:alias/MyAliasName
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Alias Name Example - alias/MyAliasName
+        /// Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>

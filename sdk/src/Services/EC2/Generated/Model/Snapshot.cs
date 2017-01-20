@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-11-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -128,8 +128,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property OwnerAlias. 
         /// <para>
-        /// The AWS account alias (for example, <code>amazon</code>, <code>self</code>) or AWS
-        /// account ID that owns the snapshot.
+        ///  Value from an Amazon-maintained list (<code>amazon</code> | <code>aws-marketplace</code>
+        /// | <code>microsoft</code>) of snapshot owners. Not to be confused with the user-configured
+        /// AWS account alias, which is set from the IAM console. 
         /// </para>
         /// </summary>
         public string OwnerAlias
@@ -277,7 +278,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property VolumeId. 
         /// <para>
-        /// The ID of the volume that was used to create the snapshot.
+        /// The ID of the volume that was used to create the snapshot. Snapshots created by the
+        /// <a>CopySnapshot</a> action have an arbitrary volume ID that should not be used for
+        /// any purpose.
         /// </para>
         /// </summary>
         public string VolumeId

@@ -59,7 +59,10 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The upload's file name.
+        /// The upload's file name. The name should not contain the '/' character. If uploading
+        /// an iOS app, the file name needs to end with the <code>.ipa</code> extension. If uploading
+        /// an Android app, the file name needs to end with the <code>.apk</code> extension. For
+        /// all others, the file name must end with the <code>.zip</code> file extension.
         /// </para>
         /// </summary>
         public string Name
@@ -101,73 +104,73 @@ namespace Amazon.DeviceFarm.Model
         /// <para>
         /// Must be one of the following values:
         /// </para>
-        ///  <ul> <li>
+        ///  <ul> <li> 
         /// <para>
         /// ANDROID_APP: An Android upload.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// IOS_APP: An iOS upload.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// WEB_APP: A web appliction upload.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// EXTERNAL_DATA: An external data upload.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// APPIUM_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// APPIUM_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// APPIUM_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// CALABASH_TEST_PACKAGE: A Calabash test package upload.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// UIAUTOMATION_TEST_PACKAGE: A uiautomation test package upload.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// XCTEST_TEST_PACKAGE: An XCode test package upload.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.
         /// </para>
-        /// </li> </ul> 
+        ///  </li> </ul> 
         /// <para>
-        /// <b>Note</b> If you call <code>CreateUpload</code> with <code>WEB_APP</code> specified,
+        ///  <b>Note</b> If you call <code>CreateUpload</code> with <code>WEB_APP</code> specified,
         /// AWS Device Farm throws an <code>ArgumentException</code> error.
         /// </para>
         /// </summary>

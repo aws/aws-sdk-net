@@ -30,12 +30,12 @@ namespace Amazon.ElasticFileSystem.Model
     /// <summary>
     /// Container for the parameters to the DescribeTags operation.
     /// Returns the tags associated with a file system. The order of tags returned in the
-    /// response of one <code>DescribeTags</code> call, and the order of tags returned across
-    /// the responses of a multi-call iteration (when using pagination), is unspecified. 
+    /// response of one <code>DescribeTags</code> call and the order of tags returned across
+    /// the responses of a multi-call iteration (when using pagination) is unspecified. 
     /// 
     ///  
     /// <para>
-    ///  This operation requires permission for the <code>elasticfilesystem:DescribeTags</code>
+    ///  This operation requires permissions for the <code>elasticfilesystem:DescribeTags</code>
     /// action. 
     /// </para>
     /// </summary>
@@ -53,7 +53,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Instantiates DescribeTagsRequest with the parameterized properties
         /// </summary>
-        /// <param name="fileSystemId">The ID of the file system whose tag set you want to retrieve.</param>
+        /// <param name="fileSystemId">ID of the file system whose tag set you want to retrieve.</param>
         public DescribeTagsRequest(string fileSystemId)
         {
             _fileSystemId = fileSystemId;
@@ -62,7 +62,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property FileSystemId. 
         /// <para>
-        /// The ID of the file system whose tag set you want to retrieve.
+        /// ID of the file system whose tag set you want to retrieve.
         /// </para>
         /// </summary>
         public string FileSystemId
@@ -80,9 +80,9 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        /// Optional. String. Opaque pagination token returned from a previous <code>DescribeTags</code>
-        /// operation. If present, it specifies to continue the list from where the previous call
-        /// left off.
+        /// (Optional) Opaque pagination token returned from a previous <code>DescribeTags</code>
+        /// operation (String). If present, it specifies to continue the list from where the previous
+        /// call left off.
         /// </para>
         /// </summary>
         public string Marker
@@ -100,7 +100,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property MaxItems. 
         /// <para>
-        /// Optional. Maximum number of file system tags to return in the response. It must be
+        /// (Optional) Maximum number of file system tags to return in the response. It must be
         /// an integer with a value greater than zero.
         /// </para>
         /// </summary>

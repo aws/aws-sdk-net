@@ -33,6 +33,7 @@ namespace Amazon.APIGateway.Model
     /// </summary>
     public partial class PutIntegrationResponseRequest : AmazonAPIGatewayRequest
     {
+        private ContentHandlingStrategy _contentHandling;
         private string _httpMethod;
         private string _resourceId;
         private Dictionary<string, string> _responseParameters = new Dictionary<string, string>();
@@ -40,6 +41,41 @@ namespace Amazon.APIGateway.Model
         private string _restApiId;
         private string _selectionPattern;
         private string _statusCode;
+
+        /// <summary>
+        /// Gets and sets the property ContentHandling. 
+        /// <para>
+        /// Specifies how to handle response payload content type conversions. Supported values
+        /// are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following
+        /// behaviors:
+        /// </para>
+        ///  <ul> <li>
+        /// <para>
+        /// <code>CONVERT_TO_BINARY</code>: Converts a response payload from a Base64-encoded
+        /// string to the corresponding binary blob.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// <code>CONVERT_TO_TEXT</code>: Converts a response payload from a binary blob to a
+        /// Base64-encoded string.
+        /// </para>
+        /// </li> </ul> 
+        /// <para>
+        /// If this property is not defined, the response payload will be passed through from
+        /// the integration response to the method response without modification.
+        /// </para>
+        /// </summary>
+        public ContentHandlingStrategy ContentHandling
+        {
+            get { return this._contentHandling; }
+            set { this._contentHandling = value; }
+        }
+
+        // Check to see if ContentHandling property is set
+        internal bool IsSetContentHandling()
+        {
+            return this._contentHandling != null;
+        }
 
         /// <summary>
         /// Gets and sets the property HttpMethod. 
@@ -80,12 +116,15 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property ResponseParameters. 
         /// <para>
-        /// Represents response parameters that can be read from the backend response. Response
-        /// parameters are represented as a key/value map, with a destination as the key and a
-        /// source as the value. A destination must match an existing response parameter in the
-        /// <a>Method</a>. The source can be a header from the backend response, or a static value.
-        /// Static values are specified using enclosing single quotes, and backend response headers
-        /// can be read using the pattern <code>integration.response.header.{name}</code>.
+        /// A key-value map specifying response parameters that are passed to the method response
+        /// from the back end. The key is a method response header parameter name and the mapped
+        /// value is an integration response header value, a static value enclosed within a pair
+        /// of single quotes, or a JSON expression from the integration response body. The mapping
+        /// key must match the pattern of <code>method.response.header.{name}</code>, where <code>name</code>
+        /// is a valid and unique header name. The mapped non-static value must match the pattern
+        /// of <code>integration.response.header.{name}</code> or <code>integration.response.body.{JSON-expression}</code>,
+        /// where <code>name</code> must be a valid and unique response header name and <code>JSON-expression</code>
+        /// a valid JSON expression without the <code>$</code> prefix.
         /// </para>
         /// </summary>
         public Dictionary<string, string> ResponseParameters

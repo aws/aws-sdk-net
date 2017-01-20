@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// A complex type containing tags for the specified resource.
+    /// A complex type that contains information about the health checks or hosted zones for
+    /// which you want to list tags.
     /// </summary>
     public partial class ListTagsForResourceResponse : AmazonWebServiceResponse
     {

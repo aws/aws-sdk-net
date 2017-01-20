@@ -21,6 +21,7 @@
 using System;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.StorageGateway.Model;
 
 namespace Amazon.StorageGateway
@@ -43,24 +44,24 @@ namespace Amazon.StorageGateway
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayHTTPRequestsHeaders.html">AWS
+    ///  <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPI.html#AWSStorageGatewayHTTPRequestsHeaders">AWS
     /// Storage Gateway Required Request Headers</a>: Describes the required headers that
     /// you must send with every POST request to AWS Storage Gateway.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewaySigningRequests.html">Signing
+    ///  <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPI.html#AWSStorageGatewaySigningRequests">Signing
     /// Requests</a>: AWS Storage Gateway requires that you authenticate every request you
     /// send; this topic describes how sign such a request.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/APIErrorResponses.html">Error
+    ///  <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPI.html#APIErrorResponses">Error
     /// Responses</a>: Provides reference information about AWS Storage Gateway errors.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPIOperations.html">Operations
+    ///  <a href="http://docs.aws.amazon.com/storagegateway/latest/APIReference/API_Operations.html">Operations
     /// in AWS Storage Gateway</a>: Contains detailed descriptions of all AWS Storage Gateway
     /// operations, their request parameters, response elements, possible errors, and examples
     /// of requests and responses.
@@ -108,7 +109,7 @@ namespace Amazon.StorageGateway
     /// </para>
     ///  </important>
     /// </summary>
-    public partial interface IAmazonStorageGateway : IDisposable
+    public partial interface IAmazonStorageGateway : IAmazonService, IDisposable
     {
 
         
@@ -124,7 +125,7 @@ namespace Amazon.StorageGateway
         /// The activation process also associates your gateway with your account; for more information,
         /// see <a>UpdateGatewayInformation</a>.
         /// 
-        ///  <note>
+        ///  <note> 
         /// <para>
         /// You must turn on the gateway VM before you can activate your gateway.
         /// </para>
@@ -141,6 +142,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ActivateGateway">REST API Reference for ActivateGateway Operation</seealso>
         ActivateGatewayResponse ActivateGateway(ActivateGatewayRequest request);
 
         /// <summary>
@@ -154,6 +156,7 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndActivateGateway
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ActivateGateway">REST API Reference for ActivateGateway Operation</seealso>
         IAsyncResult BeginActivateGateway(ActivateGatewayRequest request, AsyncCallback callback, object state);
 
 
@@ -165,6 +168,7 @@ namespace Amazon.StorageGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginActivateGateway.</param>
         /// 
         /// <returns>Returns a  ActivateGatewayResult from StorageGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ActivateGateway">REST API Reference for ActivateGateway Operation</seealso>
         ActivateGatewayResponse EndActivateGateway(IAsyncResult asyncResult);
 
         #endregion
@@ -194,6 +198,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AddCache">REST API Reference for AddCache Operation</seealso>
         AddCacheResponse AddCache(AddCacheRequest request);
 
         /// <summary>
@@ -207,6 +212,7 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAddCache
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AddCache">REST API Reference for AddCache Operation</seealso>
         IAsyncResult BeginAddCache(AddCacheRequest request, AsyncCallback callback, object state);
 
 
@@ -218,6 +224,7 @@ namespace Amazon.StorageGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAddCache.</param>
         /// 
         /// <returns>Returns a  AddCacheResult from StorageGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AddCache">REST API Reference for AddCache Operation</seealso>
         AddCacheResponse EndAddCache(IAsyncResult asyncResult);
 
         #endregion
@@ -260,6 +267,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AddTagsToResource">REST API Reference for AddTagsToResource Operation</seealso>
         AddTagsToResourceResponse AddTagsToResource(AddTagsToResourceRequest request);
 
         /// <summary>
@@ -273,6 +281,7 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAddTagsToResource
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AddTagsToResource">REST API Reference for AddTagsToResource Operation</seealso>
         IAsyncResult BeginAddTagsToResource(AddTagsToResourceRequest request, AsyncCallback callback, object state);
 
 
@@ -284,6 +293,7 @@ namespace Amazon.StorageGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAddTagsToResource.</param>
         /// 
         /// <returns>Returns a  AddTagsToResourceResult from StorageGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AddTagsToResource">REST API Reference for AddTagsToResource Operation</seealso>
         AddTagsToResourceResponse EndAddTagsToResource(IAsyncResult asyncResult);
 
         #endregion
@@ -314,6 +324,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AddUploadBuffer">REST API Reference for AddUploadBuffer Operation</seealso>
         AddUploadBufferResponse AddUploadBuffer(AddUploadBufferRequest request);
 
         /// <summary>
@@ -327,6 +338,7 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAddUploadBuffer
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AddUploadBuffer">REST API Reference for AddUploadBuffer Operation</seealso>
         IAsyncResult BeginAddUploadBuffer(AddUploadBufferRequest request, AsyncCallback callback, object state);
 
 
@@ -338,6 +350,7 @@ namespace Amazon.StorageGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAddUploadBuffer.</param>
         /// 
         /// <returns>Returns a  AddUploadBufferResult from StorageGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AddUploadBuffer">REST API Reference for AddUploadBuffer Operation</seealso>
         AddUploadBufferResponse EndAddUploadBuffer(IAsyncResult asyncResult);
 
         #endregion
@@ -373,6 +386,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AddWorkingStorage">REST API Reference for AddWorkingStorage Operation</seealso>
         AddWorkingStorageResponse AddWorkingStorage(AddWorkingStorageRequest request);
 
         /// <summary>
@@ -386,6 +400,7 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAddWorkingStorage
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AddWorkingStorage">REST API Reference for AddWorkingStorage Operation</seealso>
         IAsyncResult BeginAddWorkingStorage(AddWorkingStorageRequest request, AsyncCallback callback, object state);
 
 
@@ -397,6 +412,7 @@ namespace Amazon.StorageGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAddWorkingStorage.</param>
         /// 
         /// <returns>Returns a  AddWorkingStorageResult from StorageGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AddWorkingStorage">REST API Reference for AddWorkingStorage Operation</seealso>
         AddWorkingStorageResponse EndAddWorkingStorage(IAsyncResult asyncResult);
 
         #endregion
@@ -419,6 +435,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CancelArchival">REST API Reference for CancelArchival Operation</seealso>
         CancelArchivalResponse CancelArchival(CancelArchivalRequest request);
 
         /// <summary>
@@ -432,6 +449,7 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCancelArchival
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CancelArchival">REST API Reference for CancelArchival Operation</seealso>
         IAsyncResult BeginCancelArchival(CancelArchivalRequest request, AsyncCallback callback, object state);
 
 
@@ -443,6 +461,7 @@ namespace Amazon.StorageGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCancelArchival.</param>
         /// 
         /// <returns>Returns a  CancelArchivalResult from StorageGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CancelArchival">REST API Reference for CancelArchival Operation</seealso>
         CancelArchivalResponse EndCancelArchival(IAsyncResult asyncResult);
 
         #endregion
@@ -465,6 +484,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CancelRetrieval">REST API Reference for CancelRetrieval Operation</seealso>
         CancelRetrievalResponse CancelRetrieval(CancelRetrievalRequest request);
 
         /// <summary>
@@ -478,6 +498,7 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCancelRetrieval
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CancelRetrieval">REST API Reference for CancelRetrieval Operation</seealso>
         IAsyncResult BeginCancelRetrieval(CancelRetrievalRequest request, AsyncCallback callback, object state);
 
 
@@ -489,6 +510,7 @@ namespace Amazon.StorageGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCancelRetrieval.</param>
         /// 
         /// <returns>Returns a  CancelRetrievalResult from StorageGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CancelRetrieval">REST API Reference for CancelRetrieval Operation</seealso>
         CancelRetrievalResponse EndCancelRetrieval(IAsyncResult asyncResult);
 
         #endregion
@@ -500,7 +522,7 @@ namespace Amazon.StorageGateway
         /// Creates a cached volume on a specified cached gateway. This operation is supported
         /// only for the gateway-cached volume architecture.
         /// 
-        ///  <note>
+        ///  <note> 
         /// <para>
         /// Cache storage must be allocated to the gateway before you can create a cached volume.
         /// Use the <a>AddCache</a> operation to add cache storage to a gateway. 
@@ -510,8 +532,15 @@ namespace Amazon.StorageGateway
         /// In the request, you must specify the gateway, size of the volume in bytes, the iSCSI
         /// target name, an IP address on which to expose the target, and a unique client token.
         /// In response, AWS Storage Gateway creates the volume and returns information about
-        /// it such as the volume Amazon Resource Name (ARN), its size, and the iSCSI target ARN
-        /// that initiators can use to connect to the volume target.
+        /// it. This information includes the volume Amazon Resource Name (ARN), its size, and
+        /// the iSCSI target ARN that initiators can use to connect to the volume target.
+        /// </para>
+        ///  
+        /// <para>
+        /// Optionally, you can provide the ARN for an existing volume as the <code>SourceVolumeARN</code>
+        /// for this cached volume, which creates an exact copy of the existing volume’s latest
+        /// recovery point. The <code>VolumeSizeInBytes</code> value must be equal to or larger
+        /// than the size of the copied volume, in bytes.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCachediSCSIVolume service method.</param>
@@ -525,6 +554,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateCachediSCSIVolume">REST API Reference for CreateCachediSCSIVolume Operation</seealso>
         CreateCachediSCSIVolumeResponse CreateCachediSCSIVolume(CreateCachediSCSIVolumeRequest request);
 
         /// <summary>
@@ -538,6 +568,7 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateCachediSCSIVolume
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateCachediSCSIVolume">REST API Reference for CreateCachediSCSIVolume Operation</seealso>
         IAsyncResult BeginCreateCachediSCSIVolume(CreateCachediSCSIVolumeRequest request, AsyncCallback callback, object state);
 
 
@@ -549,7 +580,58 @@ namespace Amazon.StorageGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateCachediSCSIVolume.</param>
         /// 
         /// <returns>Returns a  CreateCachediSCSIVolumeResult from StorageGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateCachediSCSIVolume">REST API Reference for CreateCachediSCSIVolume Operation</seealso>
         CreateCachediSCSIVolumeResponse EndCreateCachediSCSIVolume(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateNFSFileShare
+
+
+        /// <summary>
+        /// Creates a file share on an existing file gateway. In Storage Gateway, a file share
+        /// is a file system mount point backed by Amazon S3 cloud storage. Storage Gateway exposes
+        /// file shares using a Network File System (NFS) interface.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateNFSFileShare service method.</param>
+        /// 
+        /// <returns>The response from the CreateNFSFileShare service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// For more information, see the error and message fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateNFSFileShare">REST API Reference for CreateNFSFileShare Operation</seealso>
+        CreateNFSFileShareResponse CreateNFSFileShare(CreateNFSFileShareRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateNFSFileShare operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateNFSFileShare operation on AmazonStorageGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateNFSFileShare
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateNFSFileShare">REST API Reference for CreateNFSFileShare Operation</seealso>
+        IAsyncResult BeginCreateNFSFileShare(CreateNFSFileShareRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateNFSFileShare operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateNFSFileShare.</param>
+        /// 
+        /// <returns>Returns a  CreateNFSFileShareResult from StorageGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateNFSFileShare">REST API Reference for CreateNFSFileShare Operation</seealso>
+        CreateNFSFileShareResponse EndCreateNFSFileShare(IAsyncResult asyncResult);
 
         #endregion
         
@@ -577,7 +659,7 @@ namespace Amazon.StorageGateway
         /// ID. You can use this snapshot ID to check the snapshot progress or later use it when
         /// you want to create a volume from a snapshot.
         /// </para>
-        ///  <note>
+        ///  <note> 
         /// <para>
         /// To list or delete a snapshot, you must use the Amazon EC2 API. For more information,
         /// see DescribeSnapshots or DeleteSnapshot in the <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Operations.html">EC2
@@ -602,6 +684,11 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.ServiceUnavailableErrorException">
+        /// An internal server error has occurred because the service is unavailable. For more
+        /// information, see the error and message fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateSnapshot">REST API Reference for CreateSnapshot Operation</seealso>
         CreateSnapshotResponse CreateSnapshot(CreateSnapshotRequest request);
 
         /// <summary>
@@ -615,6 +702,7 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateSnapshot
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateSnapshot">REST API Reference for CreateSnapshot Operation</seealso>
         IAsyncResult BeginCreateSnapshot(CreateSnapshotRequest request, AsyncCallback callback, object state);
 
 
@@ -626,6 +714,7 @@ namespace Amazon.StorageGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateSnapshot.</param>
         /// 
         /// <returns>Returns a  CreateSnapshotResult from StorageGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateSnapshot">REST API Reference for CreateSnapshot Operation</seealso>
         CreateSnapshotResponse EndCreateSnapshot(IAsyncResult asyncResult);
 
         #endregion
@@ -670,6 +759,11 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.ServiceUnavailableErrorException">
+        /// An internal server error has occurred because the service is unavailable. For more
+        /// information, see the error and message fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateSnapshotFromVolumeRecoveryPoint">REST API Reference for CreateSnapshotFromVolumeRecoveryPoint Operation</seealso>
         CreateSnapshotFromVolumeRecoveryPointResponse CreateSnapshotFromVolumeRecoveryPoint(CreateSnapshotFromVolumeRecoveryPointRequest request);
 
         /// <summary>
@@ -683,6 +777,7 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateSnapshotFromVolumeRecoveryPoint
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateSnapshotFromVolumeRecoveryPoint">REST API Reference for CreateSnapshotFromVolumeRecoveryPoint Operation</seealso>
         IAsyncResult BeginCreateSnapshotFromVolumeRecoveryPoint(CreateSnapshotFromVolumeRecoveryPointRequest request, AsyncCallback callback, object state);
 
 
@@ -694,6 +789,7 @@ namespace Amazon.StorageGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateSnapshotFromVolumeRecoveryPoint.</param>
         /// 
         /// <returns>Returns a  CreateSnapshotFromVolumeRecoveryPointResult from StorageGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateSnapshotFromVolumeRecoveryPoint">REST API Reference for CreateSnapshotFromVolumeRecoveryPoint Operation</seealso>
         CreateSnapshotFromVolumeRecoveryPointResponse EndCreateSnapshotFromVolumeRecoveryPoint(IAsyncResult asyncResult);
 
         #endregion
@@ -731,6 +827,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateStorediSCSIVolume">REST API Reference for CreateStorediSCSIVolume Operation</seealso>
         CreateStorediSCSIVolumeResponse CreateStorediSCSIVolume(CreateStorediSCSIVolumeRequest request);
 
         /// <summary>
@@ -744,6 +841,7 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateStorediSCSIVolume
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateStorediSCSIVolume">REST API Reference for CreateStorediSCSIVolume Operation</seealso>
         IAsyncResult BeginCreateStorediSCSIVolume(CreateStorediSCSIVolumeRequest request, AsyncCallback callback, object state);
 
 
@@ -755,6 +853,7 @@ namespace Amazon.StorageGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateStorediSCSIVolume.</param>
         /// 
         /// <returns>Returns a  CreateStorediSCSIVolumeResult from StorageGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateStorediSCSIVolume">REST API Reference for CreateStorediSCSIVolume Operation</seealso>
         CreateStorediSCSIVolumeResponse EndCreateStorediSCSIVolume(IAsyncResult asyncResult);
 
         #endregion
@@ -766,7 +865,7 @@ namespace Amazon.StorageGateway
         /// Creates one or more virtual tapes. You write data to the virtual tapes and then archive
         /// the tapes.
         /// 
-        ///  <note>
+        ///  <note> 
         /// <para>
         /// Cache storage must be allocated to the gateway before you can create virtual tapes.
         /// Use the <a>AddCache</a> operation to add cache storage to a gateway. 
@@ -784,6 +883,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateTapes">REST API Reference for CreateTapes Operation</seealso>
         CreateTapesResponse CreateTapes(CreateTapesRequest request);
 
         /// <summary>
@@ -797,6 +897,7 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateTapes
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateTapes">REST API Reference for CreateTapes Operation</seealso>
         IAsyncResult BeginCreateTapes(CreateTapesRequest request, AsyncCallback callback, object state);
 
 
@@ -808,6 +909,7 @@ namespace Amazon.StorageGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateTapes.</param>
         /// 
         /// <returns>Returns a  CreateTapesResult from StorageGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateTapes">REST API Reference for CreateTapes Operation</seealso>
         CreateTapesResponse EndCreateTapes(IAsyncResult asyncResult);
 
         #endregion
@@ -819,7 +921,7 @@ namespace Amazon.StorageGateway
         /// Creates a virtual tape by using your own barcode. You write data to the virtual tape
         /// and then archive the tape.
         /// 
-        ///  <note>
+        ///  <note> 
         /// <para>
         /// Cache storage must be allocated to the gateway before you can create a virtual tape.
         /// Use the <a>AddCache</a> operation to add cache storage to a gateway.
@@ -837,6 +939,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateTapeWithBarcode">REST API Reference for CreateTapeWithBarcode Operation</seealso>
         CreateTapeWithBarcodeResponse CreateTapeWithBarcode(CreateTapeWithBarcodeRequest request);
 
         /// <summary>
@@ -850,6 +953,7 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateTapeWithBarcode
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateTapeWithBarcode">REST API Reference for CreateTapeWithBarcode Operation</seealso>
         IAsyncResult BeginCreateTapeWithBarcode(CreateTapeWithBarcodeRequest request, AsyncCallback callback, object state);
 
 
@@ -861,6 +965,7 @@ namespace Amazon.StorageGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateTapeWithBarcode.</param>
         /// 
         /// <returns>Returns a  CreateTapeWithBarcodeResult from StorageGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateTapeWithBarcode">REST API Reference for CreateTapeWithBarcode Operation</seealso>
         CreateTapeWithBarcodeResponse EndCreateTapeWithBarcode(IAsyncResult asyncResult);
 
         #endregion
@@ -885,6 +990,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteBandwidthRateLimit">REST API Reference for DeleteBandwidthRateLimit Operation</seealso>
         DeleteBandwidthRateLimitResponse DeleteBandwidthRateLimit(DeleteBandwidthRateLimitRequest request);
 
         /// <summary>
@@ -898,6 +1004,7 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteBandwidthRateLimit
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteBandwidthRateLimit">REST API Reference for DeleteBandwidthRateLimit Operation</seealso>
         IAsyncResult BeginDeleteBandwidthRateLimit(DeleteBandwidthRateLimitRequest request, AsyncCallback callback, object state);
 
 
@@ -909,6 +1016,7 @@ namespace Amazon.StorageGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteBandwidthRateLimit.</param>
         /// 
         /// <returns>Returns a  DeleteBandwidthRateLimitResult from StorageGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteBandwidthRateLimit">REST API Reference for DeleteBandwidthRateLimit Operation</seealso>
         DeleteBandwidthRateLimitResponse EndDeleteBandwidthRateLimit(IAsyncResult asyncResult);
 
         #endregion
@@ -931,6 +1039,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteChapCredentials">REST API Reference for DeleteChapCredentials Operation</seealso>
         DeleteChapCredentialsResponse DeleteChapCredentials(DeleteChapCredentialsRequest request);
 
         /// <summary>
@@ -944,6 +1053,7 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteChapCredentials
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteChapCredentials">REST API Reference for DeleteChapCredentials Operation</seealso>
         IAsyncResult BeginDeleteChapCredentials(DeleteChapCredentialsRequest request, AsyncCallback callback, object state);
 
 
@@ -955,7 +1065,56 @@ namespace Amazon.StorageGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteChapCredentials.</param>
         /// 
         /// <returns>Returns a  DeleteChapCredentialsResult from StorageGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteChapCredentials">REST API Reference for DeleteChapCredentials Operation</seealso>
         DeleteChapCredentialsResponse EndDeleteChapCredentials(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteFileShare
+
+
+        /// <summary>
+        /// Deletes a file share from a file gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFileShare service method.</param>
+        /// 
+        /// <returns>The response from the DeleteFileShare service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// For more information, see the error and message fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteFileShare">REST API Reference for DeleteFileShare Operation</seealso>
+        DeleteFileShareResponse DeleteFileShare(DeleteFileShareRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteFileShare operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFileShare operation on AmazonStorageGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteFileShare
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteFileShare">REST API Reference for DeleteFileShare Operation</seealso>
+        IAsyncResult BeginDeleteFileShare(DeleteFileShareRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteFileShare operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteFileShare.</param>
+        /// 
+        /// <returns>Returns a  DeleteFileShareResult from StorageGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteFileShare">REST API Reference for DeleteFileShare Operation</seealso>
+        DeleteFileShareResponse EndDeleteFileShare(IAsyncResult asyncResult);
 
         #endregion
         
@@ -996,6 +1155,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteGateway">REST API Reference for DeleteGateway Operation</seealso>
         DeleteGatewayResponse DeleteGateway(DeleteGatewayRequest request);
 
         /// <summary>
@@ -1009,6 +1169,7 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteGateway
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteGateway">REST API Reference for DeleteGateway Operation</seealso>
         IAsyncResult BeginDeleteGateway(DeleteGatewayRequest request, AsyncCallback callback, object state);
 
 
@@ -1020,6 +1181,7 @@ namespace Amazon.StorageGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteGateway.</param>
         /// 
         /// <returns>Returns a  DeleteGatewayResult from StorageGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteGateway">REST API Reference for DeleteGateway Operation</seealso>
         DeleteGatewayResponse EndDeleteGateway(IAsyncResult asyncResult);
 
         #endregion
@@ -1056,6 +1218,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteSnapshotSchedule">REST API Reference for DeleteSnapshotSchedule Operation</seealso>
         DeleteSnapshotScheduleResponse DeleteSnapshotSchedule(DeleteSnapshotScheduleRequest request);
 
         /// <summary>
@@ -1069,6 +1232,7 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteSnapshotSchedule
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteSnapshotSchedule">REST API Reference for DeleteSnapshotSchedule Operation</seealso>
         IAsyncResult BeginDeleteSnapshotSchedule(DeleteSnapshotScheduleRequest request, AsyncCallback callback, object state);
 
 
@@ -1080,6 +1244,7 @@ namespace Amazon.StorageGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteSnapshotSchedule.</param>
         /// 
         /// <returns>Returns a  DeleteSnapshotScheduleResult from StorageGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteSnapshotSchedule">REST API Reference for DeleteSnapshotSchedule Operation</seealso>
         DeleteSnapshotScheduleResponse EndDeleteSnapshotSchedule(IAsyncResult asyncResult);
 
         #endregion
@@ -1101,6 +1266,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteTape">REST API Reference for DeleteTape Operation</seealso>
         DeleteTapeResponse DeleteTape(DeleteTapeRequest request);
 
         /// <summary>
@@ -1114,6 +1280,7 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteTape
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteTape">REST API Reference for DeleteTape Operation</seealso>
         IAsyncResult BeginDeleteTape(DeleteTapeRequest request, AsyncCallback callback, object state);
 
 
@@ -1125,6 +1292,7 @@ namespace Amazon.StorageGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteTape.</param>
         /// 
         /// <returns>Returns a  DeleteTapeResult from StorageGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteTape">REST API Reference for DeleteTape Operation</seealso>
         DeleteTapeResponse EndDeleteTape(IAsyncResult asyncResult);
 
         #endregion
@@ -1146,6 +1314,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteTapeArchive">REST API Reference for DeleteTapeArchive Operation</seealso>
         DeleteTapeArchiveResponse DeleteTapeArchive(DeleteTapeArchiveRequest request);
 
         /// <summary>
@@ -1159,6 +1328,7 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteTapeArchive
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteTapeArchive">REST API Reference for DeleteTapeArchive Operation</seealso>
         IAsyncResult BeginDeleteTapeArchive(DeleteTapeArchiveRequest request, AsyncCallback callback, object state);
 
 
@@ -1170,6 +1340,7 @@ namespace Amazon.StorageGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteTapeArchive.</param>
         /// 
         /// <returns>Returns a  DeleteTapeArchiveResult from StorageGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteTapeArchive">REST API Reference for DeleteTapeArchive Operation</seealso>
         DeleteTapeArchiveResponse EndDeleteTapeArchive(IAsyncResult asyncResult);
 
         #endregion
@@ -1209,6 +1380,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteVolume">REST API Reference for DeleteVolume Operation</seealso>
         DeleteVolumeResponse DeleteVolume(DeleteVolumeRequest request);
 
         /// <summary>
@@ -1222,6 +1394,7 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteVolume
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteVolume">REST API Reference for DeleteVolume Operation</seealso>
         IAsyncResult BeginDeleteVolume(DeleteVolumeRequest request, AsyncCallback callback, object state);
 
 
@@ -1233,6 +1406,7 @@ namespace Amazon.StorageGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteVolume.</param>
         /// 
         /// <returns>Returns a  DeleteVolumeResult from StorageGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteVolume">REST API Reference for DeleteVolume Operation</seealso>
         DeleteVolumeResponse EndDeleteVolume(IAsyncResult asyncResult);
 
         #endregion
@@ -1263,6 +1437,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeBandwidthRateLimit">REST API Reference for DescribeBandwidthRateLimit Operation</seealso>
         DescribeBandwidthRateLimitResponse DescribeBandwidthRateLimit(DescribeBandwidthRateLimitRequest request);
 
         /// <summary>
@@ -1276,6 +1451,7 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeBandwidthRateLimit
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeBandwidthRateLimit">REST API Reference for DescribeBandwidthRateLimit Operation</seealso>
         IAsyncResult BeginDescribeBandwidthRateLimit(DescribeBandwidthRateLimitRequest request, AsyncCallback callback, object state);
 
 
@@ -1287,6 +1463,7 @@ namespace Amazon.StorageGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeBandwidthRateLimit.</param>
         /// 
         /// <returns>Returns a  DescribeBandwidthRateLimitResult from StorageGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeBandwidthRateLimit">REST API Reference for DescribeBandwidthRateLimit Operation</seealso>
         DescribeBandwidthRateLimitResponse EndDescribeBandwidthRateLimit(IAsyncResult asyncResult);
 
         #endregion
@@ -1315,6 +1492,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeCache">REST API Reference for DescribeCache Operation</seealso>
         DescribeCacheResponse DescribeCache(DescribeCacheRequest request);
 
         /// <summary>
@@ -1328,6 +1506,7 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeCache
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeCache">REST API Reference for DescribeCache Operation</seealso>
         IAsyncResult BeginDescribeCache(DescribeCacheRequest request, AsyncCallback callback, object state);
 
 
@@ -1339,6 +1518,7 @@ namespace Amazon.StorageGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeCache.</param>
         /// 
         /// <returns>Returns a  DescribeCacheResult from StorageGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeCache">REST API Reference for DescribeCache Operation</seealso>
         DescribeCacheResponse EndDescribeCache(IAsyncResult asyncResult);
 
         #endregion
@@ -1368,6 +1548,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeCachediSCSIVolumes">REST API Reference for DescribeCachediSCSIVolumes Operation</seealso>
         DescribeCachediSCSIVolumesResponse DescribeCachediSCSIVolumes(DescribeCachediSCSIVolumesRequest request);
 
         /// <summary>
@@ -1381,6 +1562,7 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeCachediSCSIVolumes
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeCachediSCSIVolumes">REST API Reference for DescribeCachediSCSIVolumes Operation</seealso>
         IAsyncResult BeginDescribeCachediSCSIVolumes(DescribeCachediSCSIVolumesRequest request, AsyncCallback callback, object state);
 
 
@@ -1392,6 +1574,7 @@ namespace Amazon.StorageGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeCachediSCSIVolumes.</param>
         /// 
         /// <returns>Returns a  DescribeCachediSCSIVolumesResult from StorageGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeCachediSCSIVolumes">REST API Reference for DescribeCachediSCSIVolumes Operation</seealso>
         DescribeCachediSCSIVolumesResponse EndDescribeCachediSCSIVolumes(IAsyncResult asyncResult);
 
         #endregion
@@ -1414,6 +1597,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeChapCredentials">REST API Reference for DescribeChapCredentials Operation</seealso>
         DescribeChapCredentialsResponse DescribeChapCredentials(DescribeChapCredentialsRequest request);
 
         /// <summary>
@@ -1427,6 +1611,7 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeChapCredentials
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeChapCredentials">REST API Reference for DescribeChapCredentials Operation</seealso>
         IAsyncResult BeginDescribeChapCredentials(DescribeChapCredentialsRequest request, AsyncCallback callback, object state);
 
 
@@ -1438,6 +1623,7 @@ namespace Amazon.StorageGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeChapCredentials.</param>
         /// 
         /// <returns>Returns a  DescribeChapCredentialsResult from StorageGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeChapCredentials">REST API Reference for DescribeChapCredentials Operation</seealso>
         DescribeChapCredentialsResponse EndDescribeChapCredentials(IAsyncResult asyncResult);
 
         #endregion
@@ -1461,6 +1647,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeGatewayInformation">REST API Reference for DescribeGatewayInformation Operation</seealso>
         DescribeGatewayInformationResponse DescribeGatewayInformation(DescribeGatewayInformationRequest request);
 
         /// <summary>
@@ -1474,6 +1661,7 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeGatewayInformation
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeGatewayInformation">REST API Reference for DescribeGatewayInformation Operation</seealso>
         IAsyncResult BeginDescribeGatewayInformation(DescribeGatewayInformationRequest request, AsyncCallback callback, object state);
 
 
@@ -1485,6 +1673,7 @@ namespace Amazon.StorageGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeGatewayInformation.</param>
         /// 
         /// <returns>Returns a  DescribeGatewayInformationResult from StorageGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeGatewayInformation">REST API Reference for DescribeGatewayInformation Operation</seealso>
         DescribeGatewayInformationResponse EndDescribeGatewayInformation(IAsyncResult asyncResult);
 
         #endregion
@@ -1507,6 +1696,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeMaintenanceStartTime">REST API Reference for DescribeMaintenanceStartTime Operation</seealso>
         DescribeMaintenanceStartTimeResponse DescribeMaintenanceStartTime(DescribeMaintenanceStartTimeRequest request);
 
         /// <summary>
@@ -1520,6 +1710,7 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeMaintenanceStartTime
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeMaintenanceStartTime">REST API Reference for DescribeMaintenanceStartTime Operation</seealso>
         IAsyncResult BeginDescribeMaintenanceStartTime(DescribeMaintenanceStartTimeRequest request, AsyncCallback callback, object state);
 
 
@@ -1531,7 +1722,56 @@ namespace Amazon.StorageGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeMaintenanceStartTime.</param>
         /// 
         /// <returns>Returns a  DescribeMaintenanceStartTimeResult from StorageGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeMaintenanceStartTime">REST API Reference for DescribeMaintenanceStartTime Operation</seealso>
         DescribeMaintenanceStartTimeResponse EndDescribeMaintenanceStartTime(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeNFSFileShares
+
+
+        /// <summary>
+        /// Gets a description for one or more file shares from a file gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeNFSFileShares service method.</param>
+        /// 
+        /// <returns>The response from the DescribeNFSFileShares service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// For more information, see the error and message fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeNFSFileShares">REST API Reference for DescribeNFSFileShares Operation</seealso>
+        DescribeNFSFileSharesResponse DescribeNFSFileShares(DescribeNFSFileSharesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeNFSFileShares operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeNFSFileShares operation on AmazonStorageGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeNFSFileShares
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeNFSFileShares">REST API Reference for DescribeNFSFileShares Operation</seealso>
+        IAsyncResult BeginDescribeNFSFileShares(DescribeNFSFileSharesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeNFSFileShares operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeNFSFileShares.</param>
+        /// 
+        /// <returns>Returns a  DescribeNFSFileSharesResult from StorageGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeNFSFileShares">REST API Reference for DescribeNFSFileShares Operation</seealso>
+        DescribeNFSFileSharesResponse EndDescribeNFSFileShares(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1554,6 +1794,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeSnapshotSchedule">REST API Reference for DescribeSnapshotSchedule Operation</seealso>
         DescribeSnapshotScheduleResponse DescribeSnapshotSchedule(DescribeSnapshotScheduleRequest request);
 
         /// <summary>
@@ -1567,6 +1808,7 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeSnapshotSchedule
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeSnapshotSchedule">REST API Reference for DescribeSnapshotSchedule Operation</seealso>
         IAsyncResult BeginDescribeSnapshotSchedule(DescribeSnapshotScheduleRequest request, AsyncCallback callback, object state);
 
 
@@ -1578,6 +1820,7 @@ namespace Amazon.StorageGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeSnapshotSchedule.</param>
         /// 
         /// <returns>Returns a  DescribeSnapshotScheduleResult from StorageGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeSnapshotSchedule">REST API Reference for DescribeSnapshotSchedule Operation</seealso>
         DescribeSnapshotScheduleResponse EndDescribeSnapshotSchedule(IAsyncResult asyncResult);
 
         #endregion
@@ -1601,6 +1844,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeStorediSCSIVolumes">REST API Reference for DescribeStorediSCSIVolumes Operation</seealso>
         DescribeStorediSCSIVolumesResponse DescribeStorediSCSIVolumes(DescribeStorediSCSIVolumesRequest request);
 
         /// <summary>
@@ -1614,6 +1858,7 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeStorediSCSIVolumes
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeStorediSCSIVolumes">REST API Reference for DescribeStorediSCSIVolumes Operation</seealso>
         IAsyncResult BeginDescribeStorediSCSIVolumes(DescribeStorediSCSIVolumesRequest request, AsyncCallback callback, object state);
 
 
@@ -1625,6 +1870,7 @@ namespace Amazon.StorageGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeStorediSCSIVolumes.</param>
         /// 
         /// <returns>Returns a  DescribeStorediSCSIVolumesResult from StorageGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeStorediSCSIVolumes">REST API Reference for DescribeStorediSCSIVolumes Operation</seealso>
         DescribeStorediSCSIVolumesResponse EndDescribeStorediSCSIVolumes(IAsyncResult asyncResult);
 
         #endregion
@@ -1651,6 +1897,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeTapeArchives">REST API Reference for DescribeTapeArchives Operation</seealso>
         DescribeTapeArchivesResponse DescribeTapeArchives();
 
         /// <summary>
@@ -1673,6 +1920,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeTapeArchives">REST API Reference for DescribeTapeArchives Operation</seealso>
         DescribeTapeArchivesResponse DescribeTapeArchives(DescribeTapeArchivesRequest request);
 
         /// <summary>
@@ -1686,6 +1934,7 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeTapeArchives
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeTapeArchives">REST API Reference for DescribeTapeArchives Operation</seealso>
         IAsyncResult BeginDescribeTapeArchives(DescribeTapeArchivesRequest request, AsyncCallback callback, object state);
 
 
@@ -1697,6 +1946,7 @@ namespace Amazon.StorageGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeTapeArchives.</param>
         /// 
         /// <returns>Returns a  DescribeTapeArchivesResult from StorageGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeTapeArchives">REST API Reference for DescribeTapeArchives Operation</seealso>
         DescribeTapeArchivesResponse EndDescribeTapeArchives(IAsyncResult asyncResult);
 
         #endregion
@@ -1726,6 +1976,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeTapeRecoveryPoints">REST API Reference for DescribeTapeRecoveryPoints Operation</seealso>
         DescribeTapeRecoveryPointsResponse DescribeTapeRecoveryPoints(DescribeTapeRecoveryPointsRequest request);
 
         /// <summary>
@@ -1739,6 +1990,7 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeTapeRecoveryPoints
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeTapeRecoveryPoints">REST API Reference for DescribeTapeRecoveryPoints Operation</seealso>
         IAsyncResult BeginDescribeTapeRecoveryPoints(DescribeTapeRecoveryPointsRequest request, AsyncCallback callback, object state);
 
 
@@ -1750,6 +2002,7 @@ namespace Amazon.StorageGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeTapeRecoveryPoints.</param>
         /// 
         /// <returns>Returns a  DescribeTapeRecoveryPointsResult from StorageGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeTapeRecoveryPoints">REST API Reference for DescribeTapeRecoveryPoints Operation</seealso>
         DescribeTapeRecoveryPointsResponse EndDescribeTapeRecoveryPoints(IAsyncResult asyncResult);
 
         #endregion
@@ -1773,6 +2026,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeTapes">REST API Reference for DescribeTapes Operation</seealso>
         DescribeTapesResponse DescribeTapes(DescribeTapesRequest request);
 
         /// <summary>
@@ -1786,6 +2040,7 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeTapes
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeTapes">REST API Reference for DescribeTapes Operation</seealso>
         IAsyncResult BeginDescribeTapes(DescribeTapesRequest request, AsyncCallback callback, object state);
 
 
@@ -1797,6 +2052,7 @@ namespace Amazon.StorageGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeTapes.</param>
         /// 
         /// <returns>Returns a  DescribeTapesResult from StorageGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeTapes">REST API Reference for DescribeTapes Operation</seealso>
         DescribeTapesResponse EndDescribeTapes(IAsyncResult asyncResult);
 
         #endregion
@@ -1825,6 +2081,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeUploadBuffer">REST API Reference for DescribeUploadBuffer Operation</seealso>
         DescribeUploadBufferResponse DescribeUploadBuffer(DescribeUploadBufferRequest request);
 
         /// <summary>
@@ -1838,6 +2095,7 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeUploadBuffer
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeUploadBuffer">REST API Reference for DescribeUploadBuffer Operation</seealso>
         IAsyncResult BeginDescribeUploadBuffer(DescribeUploadBufferRequest request, AsyncCallback callback, object state);
 
 
@@ -1849,6 +2107,7 @@ namespace Amazon.StorageGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeUploadBuffer.</param>
         /// 
         /// <returns>Returns a  DescribeUploadBufferResult from StorageGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeUploadBuffer">REST API Reference for DescribeUploadBuffer Operation</seealso>
         DescribeUploadBufferResponse EndDescribeUploadBuffer(IAsyncResult asyncResult);
 
         #endregion
@@ -1876,6 +2135,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeVTLDevices">REST API Reference for DescribeVTLDevices Operation</seealso>
         DescribeVTLDevicesResponse DescribeVTLDevices(DescribeVTLDevicesRequest request);
 
         /// <summary>
@@ -1889,6 +2149,7 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeVTLDevices
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeVTLDevices">REST API Reference for DescribeVTLDevices Operation</seealso>
         IAsyncResult BeginDescribeVTLDevices(DescribeVTLDevicesRequest request, AsyncCallback callback, object state);
 
 
@@ -1900,6 +2161,7 @@ namespace Amazon.StorageGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeVTLDevices.</param>
         /// 
         /// <returns>Returns a  DescribeVTLDevicesResult from StorageGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeVTLDevices">REST API Reference for DescribeVTLDevices Operation</seealso>
         DescribeVTLDevicesResponse EndDescribeVTLDevices(IAsyncResult asyncResult);
 
         #endregion
@@ -1934,6 +2196,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeWorkingStorage">REST API Reference for DescribeWorkingStorage Operation</seealso>
         DescribeWorkingStorageResponse DescribeWorkingStorage(DescribeWorkingStorageRequest request);
 
         /// <summary>
@@ -1947,6 +2210,7 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeWorkingStorage
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeWorkingStorage">REST API Reference for DescribeWorkingStorage Operation</seealso>
         IAsyncResult BeginDescribeWorkingStorage(DescribeWorkingStorageRequest request, AsyncCallback callback, object state);
 
 
@@ -1958,6 +2222,7 @@ namespace Amazon.StorageGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeWorkingStorage.</param>
         /// 
         /// <returns>Returns a  DescribeWorkingStorageResult from StorageGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeWorkingStorage">REST API Reference for DescribeWorkingStorage Operation</seealso>
         DescribeWorkingStorageResponse EndDescribeWorkingStorage(IAsyncResult asyncResult);
 
         #endregion
@@ -1973,7 +2238,7 @@ namespace Amazon.StorageGateway
         /// <para>
         /// Use this operation for a gateway-VTL that is not reachable or not functioning.
         /// </para>
-        ///  <important>
+        ///  <important> 
         /// <para>
         /// Once a gateway is disabled it cannot be enabled.
         /// </para>
@@ -1990,6 +2255,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DisableGateway">REST API Reference for DisableGateway Operation</seealso>
         DisableGatewayResponse DisableGateway(DisableGatewayRequest request);
 
         /// <summary>
@@ -2003,6 +2269,7 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisableGateway
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DisableGateway">REST API Reference for DisableGateway Operation</seealso>
         IAsyncResult BeginDisableGateway(DisableGatewayRequest request, AsyncCallback callback, object state);
 
 
@@ -2014,7 +2281,57 @@ namespace Amazon.StorageGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisableGateway.</param>
         /// 
         /// <returns>Returns a  DisableGatewayResult from StorageGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DisableGateway">REST API Reference for DisableGateway Operation</seealso>
         DisableGatewayResponse EndDisableGateway(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListFileShares
+
+
+        /// <summary>
+        /// Gets a list of the file shares for a specific file gateway, or the list of file shares
+        /// that belong to the calling user account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFileShares service method.</param>
+        /// 
+        /// <returns>The response from the ListFileShares service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// For more information, see the error and message fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListFileShares">REST API Reference for ListFileShares Operation</seealso>
+        ListFileSharesResponse ListFileShares(ListFileSharesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListFileShares operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListFileShares operation on AmazonStorageGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListFileShares
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListFileShares">REST API Reference for ListFileShares Operation</seealso>
+        IAsyncResult BeginListFileShares(ListFileSharesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListFileShares operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListFileShares.</param>
+        /// 
+        /// <returns>Returns a  ListFileSharesResult from StorageGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListFileShares">REST API Reference for ListFileShares Operation</seealso>
+        ListFileSharesResponse EndListFileShares(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2048,6 +2365,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListGateways">REST API Reference for ListGateways Operation</seealso>
         ListGatewaysResponse ListGateways();
 
         /// <summary>
@@ -2078,6 +2396,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListGateways">REST API Reference for ListGateways Operation</seealso>
         ListGatewaysResponse ListGateways(ListGatewaysRequest request);
 
         /// <summary>
@@ -2091,6 +2410,7 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListGateways
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListGateways">REST API Reference for ListGateways Operation</seealso>
         IAsyncResult BeginListGateways(ListGatewaysRequest request, AsyncCallback callback, object state);
 
 
@@ -2102,6 +2422,7 @@ namespace Amazon.StorageGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListGateways.</param>
         /// 
         /// <returns>Returns a  ListGatewaysResult from StorageGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListGateways">REST API Reference for ListGateways Operation</seealso>
         ListGatewaysResponse EndListGateways(IAsyncResult asyncResult);
 
         #endregion
@@ -2134,6 +2455,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListLocalDisks">REST API Reference for ListLocalDisks Operation</seealso>
         ListLocalDisksResponse ListLocalDisks(ListLocalDisksRequest request);
 
         /// <summary>
@@ -2147,6 +2469,7 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListLocalDisks
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListLocalDisks">REST API Reference for ListLocalDisks Operation</seealso>
         IAsyncResult BeginListLocalDisks(ListLocalDisksRequest request, AsyncCallback callback, object state);
 
 
@@ -2158,6 +2481,7 @@ namespace Amazon.StorageGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListLocalDisks.</param>
         /// 
         /// <returns>Returns a  ListLocalDisksResult from StorageGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListLocalDisks">REST API Reference for ListLocalDisks Operation</seealso>
         ListLocalDisksResponse EndListLocalDisks(IAsyncResult asyncResult);
 
         #endregion
@@ -2179,6 +2503,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
 
         /// <summary>
@@ -2192,6 +2517,7 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTagsForResource
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state);
 
 
@@ -2203,6 +2529,7 @@ namespace Amazon.StorageGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTagsForResource.</param>
         /// 
         /// <returns>Returns a  ListTagsForResourceResult from StorageGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult);
 
         #endregion
@@ -2236,6 +2563,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListTapes">REST API Reference for ListTapes Operation</seealso>
         ListTapesResponse ListTapes(ListTapesRequest request);
 
         /// <summary>
@@ -2249,6 +2577,7 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTapes
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListTapes">REST API Reference for ListTapes Operation</seealso>
         IAsyncResult BeginListTapes(ListTapesRequest request, AsyncCallback callback, object state);
 
 
@@ -2260,6 +2589,7 @@ namespace Amazon.StorageGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTapes.</param>
         /// 
         /// <returns>Returns a  ListTapesResult from StorageGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListTapes">REST API Reference for ListTapes Operation</seealso>
         ListTapesResponse EndListTapes(IAsyncResult asyncResult);
 
         #endregion
@@ -2282,6 +2612,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListVolumeInitiators">REST API Reference for ListVolumeInitiators Operation</seealso>
         ListVolumeInitiatorsResponse ListVolumeInitiators(ListVolumeInitiatorsRequest request);
 
         /// <summary>
@@ -2295,6 +2626,7 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListVolumeInitiators
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListVolumeInitiators">REST API Reference for ListVolumeInitiators Operation</seealso>
         IAsyncResult BeginListVolumeInitiators(ListVolumeInitiatorsRequest request, AsyncCallback callback, object state);
 
 
@@ -2306,6 +2638,7 @@ namespace Amazon.StorageGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListVolumeInitiators.</param>
         /// 
         /// <returns>Returns a  ListVolumeInitiatorsResult from StorageGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListVolumeInitiators">REST API Reference for ListVolumeInitiators Operation</seealso>
         ListVolumeInitiatorsResponse EndListVolumeInitiators(IAsyncResult asyncResult);
 
         #endregion
@@ -2336,6 +2669,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListVolumeRecoveryPoints">REST API Reference for ListVolumeRecoveryPoints Operation</seealso>
         ListVolumeRecoveryPointsResponse ListVolumeRecoveryPoints(ListVolumeRecoveryPointsRequest request);
 
         /// <summary>
@@ -2349,6 +2683,7 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListVolumeRecoveryPoints
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListVolumeRecoveryPoints">REST API Reference for ListVolumeRecoveryPoints Operation</seealso>
         IAsyncResult BeginListVolumeRecoveryPoints(ListVolumeRecoveryPointsRequest request, AsyncCallback callback, object state);
 
 
@@ -2360,6 +2695,7 @@ namespace Amazon.StorageGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListVolumeRecoveryPoints.</param>
         /// 
         /// <returns>Returns a  ListVolumeRecoveryPointsResult from StorageGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListVolumeRecoveryPoints">REST API Reference for ListVolumeRecoveryPoints Operation</seealso>
         ListVolumeRecoveryPointsResponse EndListVolumeRecoveryPoints(IAsyncResult asyncResult);
 
         #endregion
@@ -2370,7 +2706,8 @@ namespace Amazon.StorageGateway
         /// <summary>
         /// Lists the iSCSI stored volumes of a gateway. Results are sorted by volume ARN. The
         /// response includes only the volume ARNs. If you want additional volume information,
-        /// use the <a>DescribeStorediSCSIVolumes</a> API.
+        /// use the <a>DescribeStorediSCSIVolumes</a> or the <a>DescribeCachediSCSIVolumes</a>
+        /// API.
         /// 
         ///  
         /// <para>
@@ -2392,6 +2729,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListVolumes">REST API Reference for ListVolumes Operation</seealso>
         ListVolumesResponse ListVolumes(ListVolumesRequest request);
 
         /// <summary>
@@ -2405,6 +2743,7 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListVolumes
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListVolumes">REST API Reference for ListVolumes Operation</seealso>
         IAsyncResult BeginListVolumes(ListVolumesRequest request, AsyncCallback callback, object state);
 
 
@@ -2416,6 +2755,7 @@ namespace Amazon.StorageGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListVolumes.</param>
         /// 
         /// <returns>Returns a  ListVolumesResult from StorageGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListVolumes">REST API Reference for ListVolumes Operation</seealso>
         ListVolumesResponse EndListVolumes(IAsyncResult asyncResult);
 
         #endregion
@@ -2437,6 +2777,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/RemoveTagsFromResource">REST API Reference for RemoveTagsFromResource Operation</seealso>
         RemoveTagsFromResourceResponse RemoveTagsFromResource(RemoveTagsFromResourceRequest request);
 
         /// <summary>
@@ -2450,6 +2791,7 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRemoveTagsFromResource
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/RemoveTagsFromResource">REST API Reference for RemoveTagsFromResource Operation</seealso>
         IAsyncResult BeginRemoveTagsFromResource(RemoveTagsFromResourceRequest request, AsyncCallback callback, object state);
 
 
@@ -2461,6 +2803,7 @@ namespace Amazon.StorageGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRemoveTagsFromResource.</param>
         /// 
         /// <returns>Returns a  RemoveTagsFromResourceResult from StorageGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/RemoveTagsFromResource">REST API Reference for RemoveTagsFromResource Operation</seealso>
         RemoveTagsFromResourceResponse EndRemoveTagsFromResource(IAsyncResult asyncResult);
 
         #endregion
@@ -2496,6 +2839,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ResetCache">REST API Reference for ResetCache Operation</seealso>
         ResetCacheResponse ResetCache(string gatewayARN);
 
         /// <summary>
@@ -2526,6 +2870,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ResetCache">REST API Reference for ResetCache Operation</seealso>
         ResetCacheResponse ResetCache(ResetCacheRequest request);
 
         /// <summary>
@@ -2539,6 +2884,7 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndResetCache
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ResetCache">REST API Reference for ResetCache Operation</seealso>
         IAsyncResult BeginResetCache(ResetCacheRequest request, AsyncCallback callback, object state);
 
 
@@ -2550,6 +2896,7 @@ namespace Amazon.StorageGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginResetCache.</param>
         /// 
         /// <returns>Returns a  ResetCacheResult from StorageGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ResetCache">REST API Reference for ResetCache Operation</seealso>
         ResetCacheResponse EndResetCache(IAsyncResult asyncResult);
 
         #endregion
@@ -2581,6 +2928,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/RetrieveTapeArchive">REST API Reference for RetrieveTapeArchive Operation</seealso>
         RetrieveTapeArchiveResponse RetrieveTapeArchive(RetrieveTapeArchiveRequest request);
 
         /// <summary>
@@ -2594,6 +2942,7 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRetrieveTapeArchive
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/RetrieveTapeArchive">REST API Reference for RetrieveTapeArchive Operation</seealso>
         IAsyncResult BeginRetrieveTapeArchive(RetrieveTapeArchiveRequest request, AsyncCallback callback, object state);
 
 
@@ -2605,6 +2954,7 @@ namespace Amazon.StorageGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRetrieveTapeArchive.</param>
         /// 
         /// <returns>Returns a  RetrieveTapeArchiveResult from StorageGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/RetrieveTapeArchive">REST API Reference for RetrieveTapeArchive Operation</seealso>
         RetrieveTapeArchiveResponse EndRetrieveTapeArchive(IAsyncResult asyncResult);
 
         #endregion
@@ -2621,7 +2971,7 @@ namespace Amazon.StorageGateway
         /// the tape is consistent. If your gateway crashes, virtual tapes that have recovery
         /// points can be recovered to a new gateway.
         /// </para>
-        ///  <note>
+        ///  <note> 
         /// <para>
         /// The virtual tape can be retrieved to only one gateway. The retrieved tape is read-only.
         /// The virtual tape can be retrieved to only a gateway-VTL. There is no charge for retrieving
@@ -2640,6 +2990,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/RetrieveTapeRecoveryPoint">REST API Reference for RetrieveTapeRecoveryPoint Operation</seealso>
         RetrieveTapeRecoveryPointResponse RetrieveTapeRecoveryPoint(RetrieveTapeRecoveryPointRequest request);
 
         /// <summary>
@@ -2653,6 +3004,7 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRetrieveTapeRecoveryPoint
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/RetrieveTapeRecoveryPoint">REST API Reference for RetrieveTapeRecoveryPoint Operation</seealso>
         IAsyncResult BeginRetrieveTapeRecoveryPoint(RetrieveTapeRecoveryPointRequest request, AsyncCallback callback, object state);
 
 
@@ -2664,6 +3016,7 @@ namespace Amazon.StorageGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRetrieveTapeRecoveryPoint.</param>
         /// 
         /// <returns>Returns a  RetrieveTapeRecoveryPointResult from StorageGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/RetrieveTapeRecoveryPoint">REST API Reference for RetrieveTapeRecoveryPoint Operation</seealso>
         RetrieveTapeRecoveryPointResponse EndRetrieveTapeRecoveryPoint(IAsyncResult asyncResult);
 
         #endregion
@@ -2688,6 +3041,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/SetLocalConsolePassword">REST API Reference for SetLocalConsolePassword Operation</seealso>
         SetLocalConsolePasswordResponse SetLocalConsolePassword(SetLocalConsolePasswordRequest request);
 
         /// <summary>
@@ -2701,6 +3055,7 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSetLocalConsolePassword
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/SetLocalConsolePassword">REST API Reference for SetLocalConsolePassword Operation</seealso>
         IAsyncResult BeginSetLocalConsolePassword(SetLocalConsolePasswordRequest request, AsyncCallback callback, object state);
 
 
@@ -2712,6 +3067,7 @@ namespace Amazon.StorageGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetLocalConsolePassword.</param>
         /// 
         /// <returns>Returns a  SetLocalConsolePasswordResult from StorageGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/SetLocalConsolePassword">REST API Reference for SetLocalConsolePassword Operation</seealso>
         SetLocalConsolePasswordResponse EndSetLocalConsolePassword(IAsyncResult asyncResult);
 
         #endregion
@@ -2728,7 +3084,7 @@ namespace Amazon.StorageGateway
         /// The operation shuts down the gateway service component running in the storage gateway's
         /// virtual machine (VM) and not the VM.
         /// </para>
-        ///  <note>
+        ///  <note> 
         /// <para>
         /// If you want to shut down the VM, it is recommended that you first shut down the gateway
         /// component in the VM to avoid unpredictable conditions.
@@ -2740,7 +3096,7 @@ namespace Amazon.StorageGateway
         /// see <a>ActivateGateway</a>. Your applications cannot read from or write to the gateway's
         /// storage volumes, and there are no snapshots taken.
         /// </para>
-        ///  <note>
+        ///  <note> 
         /// <para>
         /// When you make a shutdown request, you will get a <code>200 OK</code> success response
         /// immediately. However, it might take some time for the gateway to shut down. You can
@@ -2764,6 +3120,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ShutdownGateway">REST API Reference for ShutdownGateway Operation</seealso>
         ShutdownGatewayResponse ShutdownGateway(ShutdownGatewayRequest request);
 
         /// <summary>
@@ -2777,6 +3134,7 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndShutdownGateway
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ShutdownGateway">REST API Reference for ShutdownGateway Operation</seealso>
         IAsyncResult BeginShutdownGateway(ShutdownGatewayRequest request, AsyncCallback callback, object state);
 
 
@@ -2788,6 +3146,7 @@ namespace Amazon.StorageGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginShutdownGateway.</param>
         /// 
         /// <returns>Returns a  ShutdownGatewayResult from StorageGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ShutdownGateway">REST API Reference for ShutdownGateway Operation</seealso>
         ShutdownGatewayResponse EndShutdownGateway(IAsyncResult asyncResult);
 
         #endregion
@@ -2801,7 +3160,7 @@ namespace Amazon.StorageGateway
         /// from or write to the gateway's storage volumes and you will be able to take snapshot
         /// backups.
         /// 
-        ///  <note>
+        ///  <note> 
         /// <para>
         /// When you make a request, you will get a 200 OK success response immediately. However,
         /// it might take some time for the gateway to be ready. You should call <a>DescribeGatewayInformation</a>
@@ -2825,6 +3184,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/StartGateway">REST API Reference for StartGateway Operation</seealso>
         StartGatewayResponse StartGateway(StartGatewayRequest request);
 
         /// <summary>
@@ -2838,6 +3198,7 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartGateway
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/StartGateway">REST API Reference for StartGateway Operation</seealso>
         IAsyncResult BeginStartGateway(StartGatewayRequest request, AsyncCallback callback, object state);
 
 
@@ -2849,6 +3210,7 @@ namespace Amazon.StorageGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartGateway.</param>
         /// 
         /// <returns>Returns a  StartGatewayResult from StorageGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/StartGateway">REST API Reference for StartGateway Operation</seealso>
         StartGatewayResponse EndStartGateway(IAsyncResult asyncResult);
 
         #endregion
@@ -2884,6 +3246,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateBandwidthRateLimit">REST API Reference for UpdateBandwidthRateLimit Operation</seealso>
         UpdateBandwidthRateLimitResponse UpdateBandwidthRateLimit(UpdateBandwidthRateLimitRequest request);
 
         /// <summary>
@@ -2897,6 +3260,7 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateBandwidthRateLimit
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateBandwidthRateLimit">REST API Reference for UpdateBandwidthRateLimit Operation</seealso>
         IAsyncResult BeginUpdateBandwidthRateLimit(UpdateBandwidthRateLimitRequest request, AsyncCallback callback, object state);
 
 
@@ -2908,6 +3272,7 @@ namespace Amazon.StorageGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateBandwidthRateLimit.</param>
         /// 
         /// <returns>Returns a  UpdateBandwidthRateLimitResult from StorageGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateBandwidthRateLimit">REST API Reference for UpdateBandwidthRateLimit Operation</seealso>
         UpdateBandwidthRateLimitResponse EndUpdateBandwidthRateLimit(IAsyncResult asyncResult);
 
         #endregion
@@ -2938,6 +3303,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateChapCredentials">REST API Reference for UpdateChapCredentials Operation</seealso>
         UpdateChapCredentialsResponse UpdateChapCredentials(UpdateChapCredentialsRequest request);
 
         /// <summary>
@@ -2951,6 +3317,7 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateChapCredentials
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateChapCredentials">REST API Reference for UpdateChapCredentials Operation</seealso>
         IAsyncResult BeginUpdateChapCredentials(UpdateChapCredentialsRequest request, AsyncCallback callback, object state);
 
 
@@ -2962,6 +3329,7 @@ namespace Amazon.StorageGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateChapCredentials.</param>
         /// 
         /// <returns>Returns a  UpdateChapCredentialsResult from StorageGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateChapCredentials">REST API Reference for UpdateChapCredentials Operation</seealso>
         UpdateChapCredentialsResponse EndUpdateChapCredentials(IAsyncResult asyncResult);
 
         #endregion
@@ -2974,7 +3342,7 @@ namespace Amazon.StorageGateway
         /// specify which gateway to update, use the Amazon Resource Name (ARN) of the gateway
         /// in your request.
         /// 
-        ///  <note>
+        ///  <note> 
         /// <para>
         /// For Gateways activated after September 2, 2015, the gateway's ARN contains the gateway
         /// ID rather than the gateway name. However, changing the name of the gateway has no
@@ -2993,6 +3361,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateGatewayInformation">REST API Reference for UpdateGatewayInformation Operation</seealso>
         UpdateGatewayInformationResponse UpdateGatewayInformation(UpdateGatewayInformationRequest request);
 
         /// <summary>
@@ -3006,6 +3375,7 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateGatewayInformation
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateGatewayInformation">REST API Reference for UpdateGatewayInformation Operation</seealso>
         IAsyncResult BeginUpdateGatewayInformation(UpdateGatewayInformationRequest request, AsyncCallback callback, object state);
 
 
@@ -3017,6 +3387,7 @@ namespace Amazon.StorageGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateGatewayInformation.</param>
         /// 
         /// <returns>Returns a  UpdateGatewayInformationResult from StorageGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateGatewayInformation">REST API Reference for UpdateGatewayInformation Operation</seealso>
         UpdateGatewayInformationResponse EndUpdateGatewayInformation(IAsyncResult asyncResult);
 
         #endregion
@@ -3028,13 +3399,13 @@ namespace Amazon.StorageGateway
         /// Updates the gateway virtual machine (VM) software. The request immediately triggers
         /// the software update.
         /// 
-        ///  <note>
+        ///  <note> 
         /// <para>
         /// When you make this request, you get a <code>200 OK</code> success response immediately.
         /// However, it might take some time for the update to complete. You can call <a>DescribeGatewayInformation</a>
         /// to verify the gateway is in the <code>STATE_RUNNING</code> state.
         /// </para>
-        ///  </note> <important>
+        ///  </note> <important> 
         /// <para>
         /// A software update forces a system restart of your gateway. You can minimize the chance
         /// of any disruption to your applications by increasing your iSCSI Initiators' timeouts.
@@ -3056,6 +3427,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateGatewaySoftwareNow">REST API Reference for UpdateGatewaySoftwareNow Operation</seealso>
         UpdateGatewaySoftwareNowResponse UpdateGatewaySoftwareNow(UpdateGatewaySoftwareNowRequest request);
 
         /// <summary>
@@ -3069,6 +3441,7 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateGatewaySoftwareNow
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateGatewaySoftwareNow">REST API Reference for UpdateGatewaySoftwareNow Operation</seealso>
         IAsyncResult BeginUpdateGatewaySoftwareNow(UpdateGatewaySoftwareNowRequest request, AsyncCallback callback, object state);
 
 
@@ -3080,6 +3453,7 @@ namespace Amazon.StorageGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateGatewaySoftwareNow.</param>
         /// 
         /// <returns>Returns a  UpdateGatewaySoftwareNowResult from StorageGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateGatewaySoftwareNow">REST API Reference for UpdateGatewaySoftwareNow Operation</seealso>
         UpdateGatewaySoftwareNowResponse EndUpdateGatewaySoftwareNow(IAsyncResult asyncResult);
 
         #endregion
@@ -3102,6 +3476,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateMaintenanceStartTime">REST API Reference for UpdateMaintenanceStartTime Operation</seealso>
         UpdateMaintenanceStartTimeResponse UpdateMaintenanceStartTime(UpdateMaintenanceStartTimeRequest request);
 
         /// <summary>
@@ -3115,6 +3490,7 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateMaintenanceStartTime
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateMaintenanceStartTime">REST API Reference for UpdateMaintenanceStartTime Operation</seealso>
         IAsyncResult BeginUpdateMaintenanceStartTime(UpdateMaintenanceStartTimeRequest request, AsyncCallback callback, object state);
 
 
@@ -3126,7 +3502,62 @@ namespace Amazon.StorageGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateMaintenanceStartTime.</param>
         /// 
         /// <returns>Returns a  UpdateMaintenanceStartTimeResult from StorageGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateMaintenanceStartTime">REST API Reference for UpdateMaintenanceStartTime Operation</seealso>
         UpdateMaintenanceStartTimeResponse EndUpdateMaintenanceStartTime(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateNFSFileShare
+
+
+        /// <summary>
+        /// Updates a file share. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// To leave a file share field unchanged, set the corresponding input field to null.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateNFSFileShare service method.</param>
+        /// 
+        /// <returns>The response from the UpdateNFSFileShare service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// For more information, see the error and message fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateNFSFileShare">REST API Reference for UpdateNFSFileShare Operation</seealso>
+        UpdateNFSFileShareResponse UpdateNFSFileShare(UpdateNFSFileShareRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateNFSFileShare operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateNFSFileShare operation on AmazonStorageGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateNFSFileShare
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateNFSFileShare">REST API Reference for UpdateNFSFileShare Operation</seealso>
+        IAsyncResult BeginUpdateNFSFileShare(UpdateNFSFileShareRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateNFSFileShare operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateNFSFileShare.</param>
+        /// 
+        /// <returns>Returns a  UpdateNFSFileShareResult from StorageGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateNFSFileShare">REST API Reference for UpdateNFSFileShare Operation</seealso>
+        UpdateNFSFileShareResponse EndUpdateNFSFileShare(IAsyncResult asyncResult);
 
         #endregion
         
@@ -3160,6 +3591,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateSnapshotSchedule">REST API Reference for UpdateSnapshotSchedule Operation</seealso>
         UpdateSnapshotScheduleResponse UpdateSnapshotSchedule(UpdateSnapshotScheduleRequest request);
 
         /// <summary>
@@ -3173,6 +3605,7 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateSnapshotSchedule
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateSnapshotSchedule">REST API Reference for UpdateSnapshotSchedule Operation</seealso>
         IAsyncResult BeginUpdateSnapshotSchedule(UpdateSnapshotScheduleRequest request, AsyncCallback callback, object state);
 
 
@@ -3184,6 +3617,7 @@ namespace Amazon.StorageGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateSnapshotSchedule.</param>
         /// 
         /// <returns>Returns a  UpdateSnapshotScheduleResult from StorageGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateSnapshotSchedule">REST API Reference for UpdateSnapshotSchedule Operation</seealso>
         UpdateSnapshotScheduleResponse EndUpdateSnapshotSchedule(IAsyncResult asyncResult);
 
         #endregion
@@ -3207,6 +3641,7 @@ namespace Amazon.StorageGateway
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateVTLDeviceType">REST API Reference for UpdateVTLDeviceType Operation</seealso>
         UpdateVTLDeviceTypeResponse UpdateVTLDeviceType(UpdateVTLDeviceTypeRequest request);
 
         /// <summary>
@@ -3220,6 +3655,7 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateVTLDeviceType
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateVTLDeviceType">REST API Reference for UpdateVTLDeviceType Operation</seealso>
         IAsyncResult BeginUpdateVTLDeviceType(UpdateVTLDeviceTypeRequest request, AsyncCallback callback, object state);
 
 
@@ -3231,6 +3667,7 @@ namespace Amazon.StorageGateway
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateVTLDeviceType.</param>
         /// 
         /// <returns>Returns a  UpdateVTLDeviceTypeResult from StorageGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateVTLDeviceType">REST API Reference for UpdateVTLDeviceType Operation</seealso>
         UpdateVTLDeviceTypeResponse EndUpdateVTLDeviceType(IAsyncResult asyncResult);
 
         #endregion

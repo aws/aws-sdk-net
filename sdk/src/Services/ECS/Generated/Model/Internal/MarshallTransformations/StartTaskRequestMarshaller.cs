@@ -84,6 +84,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetGroup())
+                {
+                    context.Writer.WritePropertyName("group");
+                    context.Writer.Write(publicRequest.Group);
+                }
+
                 if(publicRequest.IsSetOverrides())
                 {
                     context.Writer.WritePropertyName("overrides");

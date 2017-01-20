@@ -35,13 +35,13 @@ namespace Amazon.Lambda
     ///
     /// AWS Lambda 
     /// <para>
-    /// <b>Overview</b>
+    ///  <b>Overview</b> 
     /// </para>
     ///  
     /// <para>
     /// This is the <i>AWS Lambda API Reference</i>. The AWS Lambda Developer Guide provides
-    /// additional information. For the service overview, go to <a href="http://docs.aws.amazon.com/lambda/latest/dg/welcome.html">What
-    /// is AWS Lambda</a>, and for information about how the service works, go to <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">AWS
+    /// additional information. For the service overview, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/welcome.html">What
+    /// is AWS Lambda</a>, and for information about how the service works, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">AWS
     /// Lambda: How it Works</a> in the <i>AWS Lambda Developer Guide</i>.
     /// </para>
     /// </summary>
@@ -185,6 +185,7 @@ namespace Amazon.Lambda
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/AddPermission">REST API Reference for AddPermission Operation</seealso>
         public void AddPermissionAsync(AddPermissionRequest request, AmazonServiceCallback<AddPermissionRequest, AddPermissionResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
@@ -212,6 +213,7 @@ namespace Amazon.Lambda
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateAlias">REST API Reference for CreateAlias Operation</seealso>
         public void CreateAliasAsync(CreateAliasRequest request, AmazonServiceCallback<CreateAliasRequest, CreateAliasResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
@@ -239,6 +241,7 @@ namespace Amazon.Lambda
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateEventSourceMapping">REST API Reference for CreateEventSourceMapping Operation</seealso>
         public void CreateEventSourceMappingAsync(CreateEventSourceMappingRequest request, AmazonServiceCallback<CreateEventSourceMappingRequest, CreateEventSourceMappingResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
@@ -266,6 +269,7 @@ namespace Amazon.Lambda
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateFunction">REST API Reference for CreateFunction Operation</seealso>
         public void CreateFunctionAsync(CreateFunctionRequest request, AmazonServiceCallback<CreateFunctionRequest, CreateFunctionResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
@@ -294,6 +298,7 @@ namespace Amazon.Lambda
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteAlias">REST API Reference for DeleteAlias Operation</seealso>
         public void DeleteAliasAsync(DeleteAliasRequest request, AmazonServiceCallback<DeleteAliasRequest, DeleteAliasResponse> callback, AsyncOptions options = null)
         {
             if (AWSConfigs.HttpClient == AWSConfigs.HttpClientOption.UnityWWW)
@@ -326,6 +331,7 @@ namespace Amazon.Lambda
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteEventSourceMapping">REST API Reference for DeleteEventSourceMapping Operation</seealso>
         public void DeleteEventSourceMappingAsync(DeleteEventSourceMappingRequest request, AmazonServiceCallback<DeleteEventSourceMappingRequest, DeleteEventSourceMappingResponse> callback, AsyncOptions options = null)
         {
             if (AWSConfigs.HttpClient == AWSConfigs.HttpClientOption.UnityWWW)
@@ -398,6 +404,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunction">REST API Reference for DeleteFunction Operation</seealso>
         public void DeleteFunctionAsync(string functionName,  AmazonServiceCallback<DeleteFunctionRequest, DeleteFunctionResponse> callback, AsyncOptions options = null)
         {
             var request = new DeleteFunctionRequest();
@@ -415,6 +422,7 @@ namespace Amazon.Lambda
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunction">REST API Reference for DeleteFunction Operation</seealso>
         public void DeleteFunctionAsync(DeleteFunctionRequest request, AmazonServiceCallback<DeleteFunctionRequest, DeleteFunctionResponse> callback, AsyncOptions options = null)
         {
             if (AWSConfigs.HttpClient == AWSConfigs.HttpClientOption.UnityWWW)
@@ -436,6 +444,34 @@ namespace Amazon.Lambda
 
         #endregion
         
+        #region  GetAccountSettings
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAccountSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAccountSettings operation on AmazonLambdaClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetAccountSettings">REST API Reference for GetAccountSettings Operation</seealso>
+        public void GetAccountSettingsAsync(GetAccountSettingsRequest request, AmazonServiceCallback<GetAccountSettingsRequest, GetAccountSettingsResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var marshaller = new GetAccountSettingsRequestMarshaller();
+            var unmarshaller = GetAccountSettingsResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<GetAccountSettingsRequest,GetAccountSettingsResponse> responseObject 
+                            = new AmazonServiceResult<GetAccountSettingsRequest,GetAccountSettingsResponse>((GetAccountSettingsRequest)req, (GetAccountSettingsResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<GetAccountSettingsRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
         #region  GetAlias
 
         /// <summary>
@@ -446,6 +482,7 @@ namespace Amazon.Lambda
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetAlias">REST API Reference for GetAlias Operation</seealso>
         public void GetAliasAsync(GetAliasRequest request, AmazonServiceCallback<GetAliasRequest, GetAliasResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
@@ -473,6 +510,7 @@ namespace Amazon.Lambda
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetEventSourceMapping">REST API Reference for GetEventSourceMapping Operation</seealso>
         public void GetEventSourceMappingAsync(GetEventSourceMappingRequest request, AmazonServiceCallback<GetEventSourceMappingRequest, GetEventSourceMappingResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
@@ -511,7 +549,7 @@ namespace Amazon.Lambda
         /// This operation requires permission for the <code>lambda:GetFunction</code> action.
         /// </para>
         /// </summary>
-        /// <param name="functionName">The Lambda function name.   You can specify a function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN) of the function (for example, <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda also allows you to specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character in length. </param>
+        /// <param name="functionName">The Lambda function name.  You can specify a function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN) of the function (for example, <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda also allows you to specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character in length. </param>
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">
         ///     A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
@@ -534,6 +572,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunction">REST API Reference for GetFunction Operation</seealso>
         public void GetFunctionAsync(string functionName,  AmazonServiceCallback<GetFunctionRequest, GetFunctionResponse> callback, AsyncOptions options = null)
         {
             var request = new GetFunctionRequest();
@@ -550,6 +589,7 @@ namespace Amazon.Lambda
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunction">REST API Reference for GetFunction Operation</seealso>
         public void GetFunctionAsync(GetFunctionRequest request, AmazonServiceCallback<GetFunctionRequest, GetFunctionResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
@@ -611,6 +651,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionConfiguration">REST API Reference for GetFunctionConfiguration Operation</seealso>
         public void GetFunctionConfigurationAsync(string functionName,  AmazonServiceCallback<GetFunctionConfigurationRequest, GetFunctionConfigurationResponse> callback, AsyncOptions options = null)
         {
             var request = new GetFunctionConfigurationRequest();
@@ -627,6 +668,7 @@ namespace Amazon.Lambda
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionConfiguration">REST API Reference for GetFunctionConfiguration Operation</seealso>
         public void GetFunctionConfigurationAsync(GetFunctionConfigurationRequest request, AmazonServiceCallback<GetFunctionConfigurationRequest, GetFunctionConfigurationResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
@@ -654,6 +696,7 @@ namespace Amazon.Lambda
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetPolicy">REST API Reference for GetPolicy Operation</seealso>
         public void GetPolicyAsync(GetPolicyRequest request, AmazonServiceCallback<GetPolicyRequest, GetPolicyResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
@@ -681,6 +724,7 @@ namespace Amazon.Lambda
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/Invoke">REST API Reference for Invoke Operation</seealso>
         public void InvokeAsync(InvokeRequest request, AmazonServiceCallback<InvokeRequest, InvokeResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
@@ -708,6 +752,7 @@ namespace Amazon.Lambda
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/InvokeAsync">REST API Reference for InvokeAsync Operation</seealso>
         [Obsolete("This API is deprecated. We recommend that you use Invoke API instead.")]
         public void InvokeAsyncAsync(InvokeAsyncRequest request, AmazonServiceCallback<InvokeAsyncRequest, InvokeAsyncResponse> callback, AsyncOptions options = null)
         {
@@ -736,6 +781,7 @@ namespace Amazon.Lambda
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListAliases">REST API Reference for ListAliases Operation</seealso>
         public void ListAliasesAsync(ListAliasesRequest request, AmazonServiceCallback<ListAliasesRequest, ListAliasesResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
@@ -763,6 +809,7 @@ namespace Amazon.Lambda
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListEventSourceMappings">REST API Reference for ListEventSourceMappings Operation</seealso>
         public void ListEventSourceMappingsAsync(ListEventSourceMappingsRequest request, AmazonServiceCallback<ListEventSourceMappingsRequest, ListEventSourceMappingsResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
@@ -811,6 +858,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctions">REST API Reference for ListFunctions Operation</seealso>
         public void ListFunctionsAsync( AmazonServiceCallback<ListFunctionsRequest, ListFunctionsResponse> callback, AsyncOptions options = null)
         {
             var request = new ListFunctionsRequest();
@@ -826,6 +874,7 @@ namespace Amazon.Lambda
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctions">REST API Reference for ListFunctions Operation</seealso>
         public void ListFunctionsAsync(ListFunctionsRequest request, AmazonServiceCallback<ListFunctionsRequest, ListFunctionsResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
@@ -853,6 +902,7 @@ namespace Amazon.Lambda
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListVersionsByFunction">REST API Reference for ListVersionsByFunction Operation</seealso>
         public void ListVersionsByFunctionAsync(ListVersionsByFunctionRequest request, AmazonServiceCallback<ListVersionsByFunctionRequest, ListVersionsByFunctionResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
@@ -880,6 +930,7 @@ namespace Amazon.Lambda
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PublishVersion">REST API Reference for PublishVersion Operation</seealso>
         public void PublishVersionAsync(PublishVersionRequest request, AmazonServiceCallback<PublishVersionRequest, PublishVersionResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
@@ -908,6 +959,7 @@ namespace Amazon.Lambda
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/RemovePermission">REST API Reference for RemovePermission Operation</seealso>
         public void RemovePermissionAsync(RemovePermissionRequest request, AmazonServiceCallback<RemovePermissionRequest, RemovePermissionResponse> callback, AsyncOptions options = null)
         {
             if (AWSConfigs.HttpClient == AWSConfigs.HttpClientOption.UnityWWW)
@@ -940,6 +992,7 @@ namespace Amazon.Lambda
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateAlias">REST API Reference for UpdateAlias Operation</seealso>
         public void UpdateAliasAsync(UpdateAliasRequest request, AmazonServiceCallback<UpdateAliasRequest, UpdateAliasResponse> callback, AsyncOptions options = null)
         {
             if (AWSConfigs.HttpClient == AWSConfigs.HttpClientOption.UnityWWW)
@@ -972,6 +1025,7 @@ namespace Amazon.Lambda
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateEventSourceMapping">REST API Reference for UpdateEventSourceMapping Operation</seealso>
         public void UpdateEventSourceMappingAsync(UpdateEventSourceMappingRequest request, AmazonServiceCallback<UpdateEventSourceMappingRequest, UpdateEventSourceMappingResponse> callback, AsyncOptions options = null)
         {
             if (AWSConfigs.HttpClient == AWSConfigs.HttpClientOption.UnityWWW)
@@ -1004,6 +1058,7 @@ namespace Amazon.Lambda
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionCode">REST API Reference for UpdateFunctionCode Operation</seealso>
         public void UpdateFunctionCodeAsync(UpdateFunctionCodeRequest request, AmazonServiceCallback<UpdateFunctionCodeRequest, UpdateFunctionCodeResponse> callback, AsyncOptions options = null)
         {
             if (AWSConfigs.HttpClient == AWSConfigs.HttpClientOption.UnityWWW)
@@ -1036,6 +1091,7 @@ namespace Amazon.Lambda
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionConfiguration">REST API Reference for UpdateFunctionConfiguration Operation</seealso>
         public void UpdateFunctionConfigurationAsync(UpdateFunctionConfigurationRequest request, AmazonServiceCallback<UpdateFunctionConfigurationRequest, UpdateFunctionConfigurationResponse> callback, AsyncOptions options = null)
         {
             if (AWSConfigs.HttpClient == AWSConfigs.HttpClientOption.UnityWWW)

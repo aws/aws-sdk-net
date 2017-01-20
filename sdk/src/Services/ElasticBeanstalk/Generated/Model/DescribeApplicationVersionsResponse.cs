@@ -33,11 +33,12 @@ namespace Amazon.ElasticBeanstalk.Model
     public partial class DescribeApplicationVersionsResponse : AmazonWebServiceResponse
     {
         private List<ApplicationVersionDescription> _applicationVersions = new List<ApplicationVersionDescription>();
+        private string _nextToken;
 
         /// <summary>
         /// Gets and sets the property ApplicationVersions. 
         /// <para>
-        /// List of <code>ApplicationVersionDescription</code> objects sorted by order of creation.
+        /// List of <code>ApplicationVersionDescription</code> objects sorted in order of creation.
         /// </para>
         /// </summary>
         public List<ApplicationVersionDescription> ApplicationVersions
@@ -50,6 +51,25 @@ namespace Amazon.ElasticBeanstalk.Model
         internal bool IsSetApplicationVersions()
         {
             return this._applicationVersions != null && this._applicationVersions.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// For a paginated request, the token that you can pass in a subsequent request to get
+        /// the next page.
+        /// </para>
+        /// </summary>
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
         }
 
     }

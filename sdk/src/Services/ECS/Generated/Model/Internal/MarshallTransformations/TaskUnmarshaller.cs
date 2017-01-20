@@ -94,6 +94,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.DesiredStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("group", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Group = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("lastStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -140,6 +146,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TaskDefinitionArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("version", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.Version = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

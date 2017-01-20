@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// A complex type that contains the response for the request.
+    /// A complex type that contains the response information for the request.
     /// </summary>
     public partial class ListHostedZonesByNameResponse : AmazonWebServiceResponse
     {
@@ -43,8 +43,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property HostedZones. 
         /// <para>
-        /// A complex type that contains information about the hosted zones associated with the
-        /// current AWS account.
+        /// A complex type that contains general information about the hosted zone.
         /// </para>
         /// </summary>
         public List<HostedZone> HostedZones
@@ -62,7 +61,9 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property DNSName. 
         /// <para>
-        /// The <code>DNSName</code> value sent in the request.
+        /// For the second and subsequent calls to <code>ListHostedZonesByName</code>, <code>DNSName</code>
+        /// is the value that you specified for the <code>dnsname</code> parameter in the request
+        /// that produced the current response.
         /// </para>
         /// </summary>
         public string DNSName
@@ -80,7 +81,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property HostedZoneId. 
         /// <para>
-        /// The <code>HostedZoneId</code> value sent in the request.
+        /// The ID that Amazon Route 53 assigned to the hosted zone when you created it.
         /// </para>
         /// </summary>
         public string HostedZoneId
@@ -98,13 +99,11 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property IsTruncated. 
         /// <para>
-        /// A flag indicating whether there are more hosted zones to be listed. If your results
-        /// were truncated, you can make a follow-up request for the next page of results by using
-        /// the <code>NextDNSName</code> and <code>NextHostedZoneId</code> elements.
-        /// </para>
-        ///  
-        /// <para>
-        /// Valid Values: <code>true</code> | <code>false</code>
+        /// A flag that indicates whether there are more hosted zones to be listed. If the response
+        /// was truncated, you can get the next group of <code>maxitems</code> hosted zones by
+        /// calling <code>ListHostedZonesByName</code> again and specifying the values of <code>NextDNSName</code>
+        /// and <code>NextHostedZoneId</code> elements in the <code>dnsname</code> and <code>hostedzoneid</code>
+        /// parameters.
         /// </para>
         /// </summary>
         public bool IsTruncated
@@ -122,12 +121,15 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property NextDNSName. 
         /// <para>
-        /// If <a>ListHostedZonesByNameResponse$IsTruncated</a> is <code>true</code>, there are
-        /// more hosted zones associated with the current AWS account. To get the next page of
-        /// results, make another request to <code>ListHostedZonesByName</code>. Specify the value
-        /// of <a>ListHostedZonesByNameResponse$NextDNSName</a> in the <a>ListHostedZonesByNameRequest$DNSName</a>
-        /// element and <a>ListHostedZonesByNameResponse$NextHostedZoneId</a> in the <a>ListHostedZonesByNameRequest$HostedZoneId</a>
-        /// element.
+        /// If <code>IsTruncated</code> is true, the value of <code>NextDNSName</code> is the
+        /// name of the first hosted zone in the next group of <code>maxitems</code> hosted zones.
+        /// Call <code>ListHostedZonesByName</code> again and specify the value of <code>NextDNSName</code>
+        /// and <code>NextHostedZoneId</code> in the <code>dnsname</code> and <code>hostedzoneid</code>
+        /// parameters, respectively.
+        /// </para>
+        ///  
+        /// <para>
+        /// This element is present only if <code>IsTruncated</code> is <code>true</code>.
         /// </para>
         /// </summary>
         public string NextDNSName
@@ -145,12 +147,15 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property NextHostedZoneId. 
         /// <para>
-        /// If <a>ListHostedZonesByNameResponse$IsTruncated</a> is <code>true</code>, there are
-        /// more hosted zones associated with the current AWS account. To get the next page of
-        /// results, make another request to <code>ListHostedZonesByName</code>. Specify the value
-        /// of <a>ListHostedZonesByNameResponse$NextDNSName</a> in the <a>ListHostedZonesByNameRequest$DNSName</a>
-        /// element and <a>ListHostedZonesByNameResponse$NextHostedZoneId</a> in the <a>ListHostedZonesByNameRequest$HostedZoneId</a>
-        /// element.
+        /// If <code>IsTruncated</code> is <code>true</code>, the value of <code>NextHostedZoneId</code>
+        /// identifies the first hosted zone in the next group of <code>maxitems</code> hosted
+        /// zones. Call <code>ListHostedZonesByName</code> again and specify the value of <code>NextDNSName</code>
+        /// and <code>NextHostedZoneId</code> in the <code>dnsname</code> and <code>hostedzoneid</code>
+        /// parameters, respectively.
+        /// </para>
+        ///  
+        /// <para>
+        /// This element is present only if <code>IsTruncated</code> is <code>true</code>.
         /// </para>
         /// </summary>
         public string NextHostedZoneId
@@ -168,12 +173,8 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property MaxItems. 
         /// <para>
-        /// The maximum number of hosted zones to be included in the response body. If the number
-        /// of hosted zones associated with this AWS account exceeds <code>MaxItems</code>, the
-        /// value of <a>ListHostedZonesByNameResponse$IsTruncated</a> in the response is <code>true</code>.
-        /// Call <code>ListHostedZonesByName</code> again and specify the value of <a>ListHostedZonesByNameResponse$NextDNSName</a>
-        /// and <a>ListHostedZonesByNameResponse$NextHostedZoneId</a> elements respectively to
-        /// get the next page of results.
+        /// The value that you specified for the <code>maxitems</code> parameter in the call to
+        /// <code>ListHostedZonesByName</code> that produced the current response.
         /// </para>
         /// </summary>
         public string MaxItems

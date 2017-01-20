@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 
+using Amazon.S3.Util;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 
@@ -33,6 +34,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListObjectsV2Request listObjectsRequest)
         {
             IRequest request = new DefaultRequest(listObjectsRequest, "AmazonS3");
+
+            if (listObjectsRequest.IsSetRequestPayer())
+                request.Headers.Add(S3Constants.AmzHeaderRequestPayer, S3Transforms.ToStringValue(listObjectsRequest.RequestPayer.ToString()));
 
             request.HttpMethod = "GET";
 

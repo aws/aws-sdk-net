@@ -73,6 +73,12 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.AliasId);
                 }
 
+                if(publicRequest.IsSetCreatorId())
+                {
+                    context.Writer.WritePropertyName("CreatorId");
+                    context.Writer.Write(publicRequest.CreatorId);
+                }
+
                 if(publicRequest.IsSetFleetId())
                 {
                     context.Writer.WritePropertyName("FleetId");
@@ -93,6 +99,12 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                         context.Writer.WriteObjectEnd();
                     }
                     context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetGameSessionId())
+                {
+                    context.Writer.WritePropertyName("GameSessionId");
+                    context.Writer.Write(publicRequest.GameSessionId);
                 }
 
                 if(publicRequest.IsSetMaximumPlayerSessionCount())

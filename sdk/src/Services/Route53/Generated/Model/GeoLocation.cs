@@ -39,18 +39,17 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property ContinentCode. 
         /// <para>
-        /// The code for a continent geo location. Note: only continent locations have a continent
-        /// code.
+        /// The two-letter code for the continent.
         /// </para>
         ///  
         /// <para>
         /// Valid values: <code>AF</code> | <code>AN</code> | <code>AS</code> | <code>EU</code>
-        /// | <code>OC</code> | <code>NA</code> | <code>SA</code>
+        /// | <code>OC</code> | <code>NA</code> | <code>SA</code> 
         /// </para>
         ///  
         /// <para>
         /// Constraint: Specifying <code>ContinentCode</code> with either <code>CountryCode</code>
-        /// or <code>SubdivisionCode</code> returns an <a>InvalidInput</a> error.
+        /// or <code>SubdivisionCode</code> returns an <code>InvalidInput</code> error.
         /// </para>
         /// </summary>
         public string ContinentCode
@@ -68,13 +67,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property CountryCode. 
         /// <para>
-        /// The code for a country geo location. The default location uses '*' for the country
-        /// code and will match all locations that are not matched by a geo location.
-        /// </para>
-        ///  
-        /// <para>
-        /// The default geo location uses a <code>*</code> for the country code. All other country
-        /// codes follow the ISO 3166 two-character code.
+        /// The two-letter code for the country.
         /// </para>
         /// </summary>
         public string CountryCode
@@ -92,13 +85,8 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property SubdivisionCode. 
         /// <para>
-        /// The code for a country's subdivision (e.g., a province of Canada). A subdivision code
-        /// is only valid with the appropriate country code.
-        /// </para>
-        ///  
-        /// <para>
-        /// Constraint: Specifying <code>SubdivisionCode</code> without <code>CountryCode</code>
-        /// returns an <a>InvalidInput</a> error.
+        /// The code for the subdivision, for example, a state in the United States or a province
+        /// in Canada.
         /// </para>
         /// </summary>
         public string SubdivisionCode

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-11-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -31,13 +31,12 @@ namespace Amazon.EC2.Model
     /// Container for the parameters to the DetachVolume operation.
     /// Detaches an EBS volume from an instance. Make sure to unmount any file systems on
     /// the device within your operating system before detaching the volume. Failure to do
-    /// so results in the volume being stuck in a busy state while detaching.
+    /// so can result in the volume becoming stuck in the <code>busy</code> state while detaching.
+    /// If this happens, detachment can be delayed indefinitely until you unmount the volume,
+    /// force detachment, reboot the instance, or all three. If an EBS volume is the root
+    /// device of an instance, it can't be detached while the instance is running. To detach
+    /// the root volume, stop the instance first.
     /// 
-    ///  
-    /// <para>
-    /// If an Amazon EBS volume is the root device of an instance, it can't be detached while
-    /// the instance is running. To detach the root volume, stop the instance first.
-    /// </para>
     ///  
     /// <para>
     /// When a volume with an AWS Marketplace product code is detached from an instance, the

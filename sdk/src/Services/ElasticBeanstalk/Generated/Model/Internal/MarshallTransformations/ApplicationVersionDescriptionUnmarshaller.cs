@@ -60,6 +60,12 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                         unmarshalledObject.ApplicationName = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("BuildArn", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.BuildArn = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("DateCreated", targetDepth))
                     {
                         var unmarshaller = DateTimeUnmarshaller.Instance;
@@ -76,6 +82,12 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("SourceBuildInformation", targetDepth))
+                    {
+                        var unmarshaller = SourceBuildInformationUnmarshaller.Instance;
+                        unmarshalledObject.SourceBuildInformation = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("SourceBundle", targetDepth))

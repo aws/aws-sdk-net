@@ -93,8 +93,6 @@ namespace Amazon.Runtime.Internal
                         throw new AmazonUnmarshallingException(requestId, lastKnownLocation: null, responseBody: body, innerException: e);
                     }
 
-                    Debug.Assert(errorResponseException != null);
-
                     requestContext.Metrics.AddProperty(Metric.AWSRequestID, errorResponseException.RequestId);
                     requestContext.Metrics.AddProperty(Metric.AWSErrorCode, errorResponseException.ErrorCode);
 
@@ -143,7 +141,6 @@ namespace Amazon.Runtime.Internal
                 {
                     var unmarshaller = requestContext.Unmarshaller;
                     var readEntireResponse = requestContext.ClientConfig.LogResponse ||
-                            requestContext.ClientConfig.ReadEntireResponse ||
                             AWSConfigs.LoggingConfig.LogResponses != ResponseLoggingOption.Never;
 
                     UnmarshallerContext errorContext = unmarshaller.CreateContext(

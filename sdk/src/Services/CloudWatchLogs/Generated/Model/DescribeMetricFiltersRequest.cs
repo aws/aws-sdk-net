@@ -29,23 +29,17 @@ namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeMetricFilters operation.
-    /// Returns all the metrics filters associated with the specified log group. The list
-    /// returned in the response is ASCII-sorted by filter name. 
-    /// 
-    ///  
-    /// <para>
-    ///  By default, this operation returns up to 50 metric filters. If there are more metric
-    /// filters to list, the response would contain a <code class="code">nextToken</code>
-    /// value in the response body. You can also limit the number of metric filters returned
-    /// in the response by specifying the <code class="code">limit</code> parameter in the
-    /// request. 
-    /// </para>
+    /// Lists the specified metric filters. You can list all the metric filters or filter
+    /// the results by log name, prefix, metric name, and metric namespace. The results are
+    /// ASCII-sorted by filter name.
     /// </summary>
     public partial class DescribeMetricFiltersRequest : AmazonCloudWatchLogsRequest
     {
         private string _filterNamePrefix;
         private int? _limit;
         private string _logGroupName;
+        private string _metricName;
+        private string _metricNamespace;
         private string _nextToken;
 
         /// <summary>
@@ -56,7 +50,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Instantiates DescribeMetricFiltersRequest with the parameterized properties
         /// </summary>
-        /// <param name="logGroupName">The log group name for which metric filters are to be listed.</param>
+        /// <param name="logGroupName">The name of the log group.</param>
         public DescribeMetricFiltersRequest(string logGroupName)
         {
             _logGroupName = logGroupName;
@@ -65,8 +59,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property FilterNamePrefix. 
         /// <para>
-        /// Will only return metric filters that match the provided filterNamePrefix. If you don't
-        /// specify a value, no prefix filter is applied.
+        /// The prefix to match.
         /// </para>
         /// </summary>
         public string FilterNamePrefix
@@ -84,8 +77,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
-        ///  The maximum number of items returned in the response. If you don't specify a value,
-        /// the request would return up to 50 items. 
+        /// The maximum number of items returned. If you don't specify a value, the default is
+        /// up to 50 items.
         /// </para>
         /// </summary>
         public int Limit
@@ -103,7 +96,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property LogGroupName. 
         /// <para>
-        /// The log group name for which metric filters are to be listed.
+        /// The name of the log group.
         /// </para>
         /// </summary>
         public string LogGroupName
@@ -119,11 +112,46 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MetricName. 
+        /// <para>
+        /// The name of the CloudWatch metric.
+        /// </para>
+        /// </summary>
+        public string MetricName
+        {
+            get { return this._metricName; }
+            set { this._metricName = value; }
+        }
+
+        // Check to see if MetricName property is set
+        internal bool IsSetMetricName()
+        {
+            return this._metricName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MetricNamespace. 
+        /// <para>
+        /// The namespace of the CloudWatch metric.
+        /// </para>
+        /// </summary>
+        public string MetricNamespace
+        {
+            get { return this._metricNamespace; }
+            set { this._metricNamespace = value; }
+        }
+
+        // Check to see if MetricNamespace property is set
+        internal bool IsSetMetricNamespace()
+        {
+            return this._metricNamespace != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  A string token used for pagination that points to the next page of results. It must
-        /// be a value obtained from the response of the previous <code class="code">DescribeMetricFilters</code>
-        /// request. 
+        /// The token for the next set of items to return. (You received this token from a previous
+        /// call.)
         /// </para>
         /// </summary>
         public string NextToken

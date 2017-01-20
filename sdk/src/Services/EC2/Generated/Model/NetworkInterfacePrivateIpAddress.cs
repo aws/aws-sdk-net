@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-11-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes the private IP address of a network interface.
+    /// Describes the private IPv4 address of a network interface.
     /// </summary>
     public partial class NetworkInterfacePrivateIpAddress
     {
@@ -40,7 +40,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Association. 
         /// <para>
-        /// The association information for an Elastic IP address associated with the network
+        /// The association information for an Elastic IP address (IPv4) associated with the network
         /// interface.
         /// </para>
         /// </summary>
@@ -59,7 +59,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Primary. 
         /// <para>
-        /// Indicates whether this IP address is the primary private IP address of the network
+        /// Indicates whether this IPv4 address is the primary private IPv4 address of the network
         /// interface.
         /// </para>
         /// </summary>
@@ -96,7 +96,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property PrivateIpAddress. 
         /// <para>
-        /// The private IP address.
+        /// The private IPv4 address.
         /// </para>
         /// </summary>
         public string PrivateIpAddress

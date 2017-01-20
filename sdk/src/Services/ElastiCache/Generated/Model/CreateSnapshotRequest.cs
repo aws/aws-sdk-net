@@ -29,19 +29,26 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateSnapshot operation.
-    /// The <i>CreateSnapshot</i> action creates a copy of an entire cache cluster at a specific
-    /// moment in time.
+    /// Creates a copy of an entire cache cluster or replication group at a specific moment
+    /// in time.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// This operation is valid for Redis only.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class CreateSnapshotRequest : AmazonElastiCacheRequest
     {
         private string _cacheClusterId;
+        private string _replicationGroupId;
         private string _snapshotName;
 
         /// <summary>
         /// Gets and sets the property CacheClusterId. 
         /// <para>
-        /// The identifier of an existing cache cluster. The snapshot will be created from this
-        /// cache cluster.
+        /// The identifier of an existing cache cluster. The snapshot is created from this cache
+        /// cluster.
         /// </para>
         /// </summary>
         public string CacheClusterId
@@ -54,6 +61,25 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetCacheClusterId()
         {
             return this._cacheClusterId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReplicationGroupId. 
+        /// <para>
+        /// The identifier of an existing replication group. The snapshot is created from this
+        /// replication group.
+        /// </para>
+        /// </summary>
+        public string ReplicationGroupId
+        {
+            get { return this._replicationGroupId; }
+            set { this._replicationGroupId = value; }
+        }
+
+        // Check to see if ReplicationGroupId property is set
+        internal bool IsSetReplicationGroupId()
+        {
+            return this._replicationGroupId != null;
         }
 
         /// <summary>

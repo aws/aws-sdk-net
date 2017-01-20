@@ -46,6 +46,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             if (deleteObjectsRequest.IsSetMfaCodes())
                 request.Headers.Add(HeaderKeys.XAmzMfaHeader, deleteObjectsRequest.MfaCodes.FormattedMfaCodes);
+            if (deleteObjectsRequest.IsSetRequestPayer())
+                request.Headers.Add(S3Constants.AmzHeaderRequestPayer, S3Transforms.ToStringValue(deleteObjectsRequest.RequestPayer.ToString()));
 
             request.ResourcePath = string.Concat("/", S3Transforms.ToStringValue(deleteObjectsRequest.BucketName));
 

@@ -29,7 +29,7 @@ namespace Amazon.CloudWatch.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteAlarms operation.
-    /// Deletes all specified alarms. In the event of an error, no alarms are deleted.
+    /// Deletes the specified alarms. In the event of an error, no alarms are deleted.
     /// </summary>
     public partial class DeleteAlarmsRequest : AmazonCloudWatchRequest
     {
@@ -38,7 +38,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property AlarmNames. 
         /// <para>
-        ///  A list of alarms to be deleted. 
+        /// The alarms to be deleted.
         /// </para>
         /// </summary>
         public List<string> AlarmNames

@@ -51,6 +51,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.BucketName);
             }
 
+            if(requestObject.IsSetCannedAcl())
+            {
+                context.Writer.WritePropertyName("cannedAcl");
+                context.Writer.Write(requestObject.CannedAcl);
+            }
+
             if(requestObject.IsSetKey())
             {
                 context.Writer.WritePropertyName("key");

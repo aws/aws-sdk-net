@@ -154,7 +154,12 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Projection.
+        /// Gets and sets the property Projection. 
+        /// <para>
+        /// Represents attributes that are copied (projected) from the table into the global secondary
+        /// index. These are in addition to the primary key attributes and index key attributes,
+        /// which are automatically projected. 
+        /// </para>
         /// </summary>
         public Projection Projection
         {

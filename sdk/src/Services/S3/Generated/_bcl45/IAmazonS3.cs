@@ -23,6 +23,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.S3.Model;
 
 namespace Amazon.S3
@@ -32,7 +33,7 @@ namespace Amazon.S3
     ///
     /// 
     /// </summary>
-    public partial interface IAmazonS3 : IDisposable
+    public partial interface IAmazonS3 : IAmazonService, IDisposable
     {
 
         
@@ -329,6 +330,83 @@ namespace Amazon.S3
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<DeleteBucketResponse> DeleteBucketAsync(DeleteBucketRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteBucketAnalyticsConfiguration
+
+
+        /// <summary>
+        /// Deletes an analytics configuration for the bucket (specified by the analytics configuration
+        /// ID).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBucketAnalyticsConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteBucketAnalyticsConfiguration service method, as returned by S3.</returns>
+        DeleteBucketAnalyticsConfigurationResponse DeleteBucketAnalyticsConfiguration(DeleteBucketAnalyticsConfigurationRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteBucketAnalyticsConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBucketAnalyticsConfiguration operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DeleteBucketAnalyticsConfigurationResponse> DeleteBucketAnalyticsConfigurationAsync(DeleteBucketAnalyticsConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteBucketInventoryConfiguration
+
+
+        /// <summary>
+        /// Deletes an inventory configuration (identified by the inventory ID) from the bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBucketInventoryConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteBucketInventoryConfiguration service method, as returned by S3.</returns>
+        DeleteBucketInventoryConfigurationResponse DeleteBucketInventoryConfiguration(DeleteBucketInventoryConfigurationRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteBucketInventoryConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBucketInventoryConfiguration operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DeleteBucketInventoryConfigurationResponse> DeleteBucketInventoryConfigurationAsync(DeleteBucketInventoryConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteBucketMetricsConfiguration
+
+
+        /// <summary>
+        /// Deletes a metrics configuration (specified by the metrics configuration ID) from the
+        /// bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBucketMetricsConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteBucketMetricsConfiguration service method, as returned by S3.</returns>
+        DeleteBucketMetricsConfigurationResponse DeleteBucketMetricsConfiguration(DeleteBucketMetricsConfigurationRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteBucketMetricsConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBucketMetricsConfiguration operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DeleteBucketMetricsConfigurationResponse> DeleteBucketMetricsConfigurationAsync(DeleteBucketMetricsConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -682,6 +760,31 @@ namespace Amazon.S3
 
         #endregion
         
+        #region  DeleteObjectTagging
+
+
+        /// <summary>
+        /// Removes the tag-set from an existing object.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteObjectTagging service method.</param>
+        /// 
+        /// <returns>The response from the DeleteObjectTagging service method, as returned by S3.</returns>
+        DeleteObjectTaggingResponse DeleteObjectTagging(DeleteObjectTaggingRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteObjectTagging operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteObjectTagging operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DeleteObjectTaggingResponse> DeleteObjectTaggingAsync(DeleteObjectTaggingRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetACL
 
 
@@ -767,6 +870,57 @@ namespace Amazon.S3
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<GetBucketAccelerateConfigurationResponse> GetBucketAccelerateConfigurationAsync(GetBucketAccelerateConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetBucketAnalyticsConfiguration
+
+
+        /// <summary>
+        /// Gets an analytics configuration for the bucket (specified by the analytics configuration
+        /// ID).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketAnalyticsConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetBucketAnalyticsConfiguration service method, as returned by S3.</returns>
+        GetBucketAnalyticsConfigurationResponse GetBucketAnalyticsConfiguration(GetBucketAnalyticsConfigurationRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetBucketAnalyticsConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketAnalyticsConfiguration operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetBucketAnalyticsConfigurationResponse> GetBucketAnalyticsConfigurationAsync(GetBucketAnalyticsConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetBucketInventoryConfiguration
+
+
+        /// <summary>
+        /// Returns an inventory configuration (identified by the inventory ID) from the bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketInventoryConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetBucketInventoryConfiguration service method, as returned by S3.</returns>
+        GetBucketInventoryConfigurationResponse GetBucketInventoryConfiguration(GetBucketInventoryConfigurationRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetBucketInventoryConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketInventoryConfiguration operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetBucketInventoryConfigurationResponse> GetBucketInventoryConfigurationAsync(GetBucketInventoryConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -858,6 +1012,32 @@ namespace Amazon.S3
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<GetBucketLoggingResponse> GetBucketLoggingAsync(GetBucketLoggingRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetBucketMetricsConfiguration
+
+
+        /// <summary>
+        /// Gets a metrics configuration (specified by the metrics configuration ID) from the
+        /// bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketMetricsConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetBucketMetricsConfiguration service method, as returned by S3.</returns>
+        GetBucketMetricsConfigurationResponse GetBucketMetricsConfiguration(GetBucketMetricsConfigurationRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetBucketMetricsConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketMetricsConfiguration operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetBucketMetricsConfigurationResponse> GetBucketMetricsConfigurationAsync(GetBucketMetricsConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1367,6 +1547,31 @@ namespace Amazon.S3
 
         #endregion
         
+        #region  GetObjectTagging
+
+
+        /// <summary>
+        /// Returns the tag-set of an object.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetObjectTagging service method.</param>
+        /// 
+        /// <returns>The response from the GetObjectTagging service method, as returned by S3.</returns>
+        GetObjectTaggingResponse GetObjectTagging(GetObjectTaggingRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetObjectTagging operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetObjectTagging operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetObjectTaggingResponse> GetObjectTaggingAsync(GetObjectTaggingRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetObjectTorrent
 
 
@@ -1480,6 +1685,81 @@ namespace Amazon.S3
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<InitiateMultipartUploadResponse> InitiateMultipartUploadAsync(InitiateMultipartUploadRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListBucketAnalyticsConfigurations
+
+
+        /// <summary>
+        /// Lists the analytics configurations for the bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListBucketAnalyticsConfigurations service method.</param>
+        /// 
+        /// <returns>The response from the ListBucketAnalyticsConfigurations service method, as returned by S3.</returns>
+        ListBucketAnalyticsConfigurationsResponse ListBucketAnalyticsConfigurations(ListBucketAnalyticsConfigurationsRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListBucketAnalyticsConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListBucketAnalyticsConfigurations operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ListBucketAnalyticsConfigurationsResponse> ListBucketAnalyticsConfigurationsAsync(ListBucketAnalyticsConfigurationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListBucketInventoryConfigurations
+
+
+        /// <summary>
+        /// Returns a list of inventory configurations for the bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListBucketInventoryConfigurations service method.</param>
+        /// 
+        /// <returns>The response from the ListBucketInventoryConfigurations service method, as returned by S3.</returns>
+        ListBucketInventoryConfigurationsResponse ListBucketInventoryConfigurations(ListBucketInventoryConfigurationsRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListBucketInventoryConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListBucketInventoryConfigurations operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ListBucketInventoryConfigurationsResponse> ListBucketInventoryConfigurationsAsync(ListBucketInventoryConfigurationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListBucketMetricsConfigurations
+
+
+        /// <summary>
+        /// Lists the metrics configurations for the bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListBucketMetricsConfigurations service method.</param>
+        /// 
+        /// <returns>The response from the ListBucketMetricsConfigurations service method, as returned by S3.</returns>
+        ListBucketMetricsConfigurationsResponse ListBucketMetricsConfigurations(ListBucketMetricsConfigurationsRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListBucketMetricsConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListBucketMetricsConfigurations operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ListBucketMetricsConfigurationsResponse> ListBucketMetricsConfigurationsAsync(ListBucketMetricsConfigurationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1897,6 +2177,57 @@ namespace Amazon.S3
 
         #endregion
         
+        #region  PutBucketAnalyticsConfiguration
+
+
+        /// <summary>
+        /// Sets an analytics configuration for the bucket (specified by the analytics configuration
+        /// ID).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutBucketAnalyticsConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the PutBucketAnalyticsConfiguration service method, as returned by S3.</returns>
+        PutBucketAnalyticsConfigurationResponse PutBucketAnalyticsConfiguration(PutBucketAnalyticsConfigurationRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutBucketAnalyticsConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutBucketAnalyticsConfiguration operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<PutBucketAnalyticsConfigurationResponse> PutBucketAnalyticsConfigurationAsync(PutBucketAnalyticsConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  PutBucketInventoryConfiguration
+
+
+        /// <summary>
+        /// Adds an inventory configuration (identified by the inventory ID) from the bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutBucketInventoryConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the PutBucketInventoryConfiguration service method, as returned by S3.</returns>
+        PutBucketInventoryConfigurationResponse PutBucketInventoryConfiguration(PutBucketInventoryConfigurationRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutBucketInventoryConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutBucketInventoryConfiguration operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<PutBucketInventoryConfigurationResponse> PutBucketInventoryConfigurationAsync(PutBucketInventoryConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  PutBucketLogging
 
 
@@ -1921,6 +2252,31 @@ namespace Amazon.S3
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<PutBucketLoggingResponse> PutBucketLoggingAsync(PutBucketLoggingRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  PutBucketMetricsConfiguration
+
+
+        /// <summary>
+        /// Sets a metrics configuration (specified by the metrics configuration ID) for the bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutBucketMetricsConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the PutBucketMetricsConfiguration service method, as returned by S3.</returns>
+        PutBucketMetricsConfigurationResponse PutBucketMetricsConfiguration(PutBucketMetricsConfigurationRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutBucketMetricsConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutBucketMetricsConfiguration operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<PutBucketMetricsConfigurationResponse> PutBucketMetricsConfigurationAsync(PutBucketMetricsConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -2338,6 +2694,31 @@ namespace Amazon.S3
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<PutObjectResponse> PutObjectAsync(PutObjectRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  PutObjectTagging
+
+
+        /// <summary>
+        /// Sets the supplied tag-set to an object that already exists in a bucket
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutObjectTagging service method.</param>
+        /// 
+        /// <returns>The response from the PutObjectTagging service method, as returned by S3.</returns>
+        PutObjectTaggingResponse PutObjectTagging(PutObjectTaggingRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutObjectTagging operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutObjectTagging operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<PutObjectTaggingResponse> PutObjectTaggingAsync(PutObjectTaggingRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

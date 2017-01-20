@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-11-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -46,6 +46,11 @@ namespace Amazon.EC2.Model
     /// <para>
     /// To copy an encrypted snapshot that has been shared from another account, you must
     /// have permissions for the CMK used to encrypt the snapshot.
+    /// </para>
+    ///  </note> <note> 
+    /// <para>
+    /// Snapshots created by the CopySnapshot action have an arbitrary volume ID that should
+    /// not be used for any purpose.
     /// </para>
     ///  </note> 
     /// <para>

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-11-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -54,10 +54,14 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
             request.Parameters.Add("Action", "ModifySubnetAttribute");
-            request.Parameters.Add("Version", "2016-04-01");
+            request.Parameters.Add("Version", "2016-11-15");
 
             if(publicRequest != null)
             {
+                if(publicRequest.IsSetAssignIpv6AddressOnCreation())
+                {
+                    request.Parameters.Add("AssignIpv6AddressOnCreation.Value", StringUtils.FromBool(publicRequest.AssignIpv6AddressOnCreation));
+                }
                 if(publicRequest.IsSetMapPublicIpOnLaunch())
                 {
                     request.Parameters.Add("MapPublicIpOnLaunch.Value", StringUtils.FromBool(publicRequest.MapPublicIpOnLaunch));

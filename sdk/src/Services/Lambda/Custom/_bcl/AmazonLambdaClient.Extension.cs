@@ -49,7 +49,9 @@ namespace Amazon.Lambda
         /// <exception cref="ServiceException"/>
         public InvokeAsyncResponse InvokeAsync(string functionName, string invokeArgs)
         {
+#pragma warning disable 618
             return this.InvokeAsync(new InvokeAsyncRequest { FunctionName = functionName, InvokeArgs = invokeArgs });
+#pragma warning restore 618
         }
     }
 }

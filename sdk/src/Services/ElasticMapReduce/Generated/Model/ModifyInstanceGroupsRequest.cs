@@ -35,6 +35,7 @@ namespace Amazon.ElasticMapReduce.Model
     /// </summary>
     public partial class ModifyInstanceGroupsRequest : AmazonElasticMapReduceRequest
     {
+        private string _clusterId;
         private List<InstanceGroupModifyConfig> _instanceGroups = new List<InstanceGroupModifyConfig>();
 
         /// <summary>
@@ -49,6 +50,24 @@ namespace Amazon.ElasticMapReduce.Model
         public ModifyInstanceGroupsRequest(List<InstanceGroupModifyConfig> instanceGroups)
         {
             _instanceGroups = instanceGroups;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ClusterId. 
+        /// <para>
+        /// The ID of the cluster to which the instance group belongs.
+        /// </para>
+        /// </summary>
+        public string ClusterId
+        {
+            get { return this._clusterId; }
+            set { this._clusterId = value; }
+        }
+
+        // Check to see if ClusterId property is set
+        internal bool IsSetClusterId()
+        {
+            return this._clusterId != null;
         }
 
         /// <summary>

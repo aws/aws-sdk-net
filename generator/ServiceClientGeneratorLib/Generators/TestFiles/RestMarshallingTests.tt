@@ -10,6 +10,7 @@
 
 
 using System;
+using System.Globalization;
 using System.IO;
 using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -60,9 +61,22 @@ if( operation.ResponseHeaderMembers.Count() > 0 )
 		{
 			foreach (var member in operation.ResponseHeaderMembers)
 			{
+				if (member.Shape.IsString)
+				{
 #>
 					{"<#=member.MarshallLocationName#>","<#=member.MarshallLocationName#>_Value"},
 <#	
+				}
+				else if (member.Shape.IsInt)
+				{
+#>
+					{"<#=member.MarshallLocationName#>",int.MaxValue.ToString(CultureInfo.InvariantCulture)},
+<#	
+				}
+				else
+				{
+					throw new Exception("Member " + member.Shape.Name + " cannot be handled because it's type, " + member.Shape.Type + ", is not handled.  Please Update RestMarshallingTests.tt.");
+				}
 			}
 		}				
 #>					{"x-amzn-RequestId", Guid.NewGuid().ToString()},

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-11-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -29,9 +29,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeSpotPriceHistory operation.
-    /// Describes the Spot price history. The prices returned are listed in chronological
-    /// order, from the oldest to the most recent, for up to the past 90 days. For more information,
-    /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-history.html">Spot
+    /// Describes the Spot price history. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-history.html">Spot
     /// Instance Pricing History</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// 
     ///  
@@ -138,7 +136,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property InstanceTypes. 
         /// <para>
-        /// Filters the results by the specified instance types.
+        /// Filters the results by the specified instance types. Note that T2 and HS1 instance
+        /// types are not supported.
         /// </para>
         /// </summary>
         public List<string> InstanceTypes

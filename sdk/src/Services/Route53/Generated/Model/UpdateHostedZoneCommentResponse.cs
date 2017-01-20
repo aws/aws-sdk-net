@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// A complex type containing information about the specified hosted zone after the update.
+    /// A complex type that contains the response to the UpdateHostedZoneCommentRequest.
     /// </summary>
     public partial class UpdateHostedZoneCommentResponse : AmazonWebServiceResponse
     {

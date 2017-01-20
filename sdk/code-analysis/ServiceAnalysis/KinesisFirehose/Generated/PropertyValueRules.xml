@@ -7,6 +7,12 @@
     <pattern>[a-zA-Z0-9_.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.KinesisFirehose.Model.CreateDeliveryStreamResponse.DeliveryStreamARN</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.DeleteDeliveryStreamRequest.DeliveryStreamName</property>
     <min>1</min>
     <max>64</max>
@@ -89,6 +95,12 @@
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.CopyCommand.DataTableName</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisFirehose.Model.DeliveryStreamDescription.DeliveryStreamARN</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.DeliveryStreamDescription.DeliveryStreamName</property>
@@ -189,10 +201,51 @@
     <max>7200</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.KinesisFirehose.Model.ExtendedS3DestinationConfiguration.BucketARN</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisFirehose.Model.ExtendedS3DestinationConfiguration.RoleARN</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisFirehose.Model.ExtendedS3DestinationDescription.BucketARN</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisFirehose.Model.ExtendedS3DestinationDescription.RoleARN</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisFirehose.Model.ExtendedS3DestinationUpdate.BucketARN</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisFirehose.Model.ExtendedS3DestinationUpdate.RoleARN</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.KMSEncryptionConfig.AWSKMSKeyARN</property>
     <min>1</min>
     <max>512</max>
     <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisFirehose.Model.ProcessorParameter.ParameterValue</property>
+    <min>1</min>
+    <max>512</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.PutRecordBatchResponseEntry.RecordId</property>

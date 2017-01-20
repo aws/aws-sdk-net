@@ -33,16 +33,16 @@ namespace Amazon.RDS.Model
     /// 
     ///  
     /// <para>
-    /// A failover for a DB cluster promotes one of the read-only instances in the DB cluster
-    /// to the master DB instance (the cluster writer) and deletes the current primary instance.
+    /// A failover for a DB cluster promotes one of the Aurora Replicas (read-only instances)
+    /// in the DB cluster to be the primary instance (the cluster writer).
     /// </para>
     ///  
     /// <para>
-    /// Amazon Aurora will automatically fail over to a read-only instance, if one exists,
-    /// when the primary instance fails. You can force a failover when you want to simulate
-    /// a failure of a DB instance for testing. Because each instance in a DB cluster has
-    /// its own endpoint address, you will need to clean up and re-establish any existing
-    /// connections that use those endpoint addresses when the failover is complete.
+    /// Amazon Aurora will automatically fail over to an Aurora Replica, if one exists, when
+    /// the primary instance fails. You can force a failover when you want to simulate a failure
+    /// of a primary instance for testing. Because each instance in a DB cluster has its own
+    /// endpoint address, you will need to clean up and re-establish any existing connections
+    /// that use those endpoint addresses when the failover is complete.
     /// </para>
     ///  
     /// <para>
@@ -53,6 +53,7 @@ namespace Amazon.RDS.Model
     public partial class FailoverDBClusterRequest : AmazonRDSRequest
     {
         private string _dbClusterIdentifier;
+        private string _targetDBInstanceIdentifier;
 
         /// <summary>
         /// Gets and sets the property DBClusterIdentifier. 
@@ -87,6 +88,29 @@ namespace Amazon.RDS.Model
         internal bool IsSetDBClusterIdentifier()
         {
             return this._dbClusterIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetDBInstanceIdentifier. 
+        /// <para>
+        /// The name of the instance to promote to the primary instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// You must specify the instance identifier for an Aurora Replica in the DB cluster.
+        /// For example, <code>mydbcluster-replica1</code>.
+        /// </para>
+        /// </summary>
+        public string TargetDBInstanceIdentifier
+        {
+            get { return this._targetDBInstanceIdentifier; }
+            set { this._targetDBInstanceIdentifier = value; }
+        }
+
+        // Check to see if TargetDBInstanceIdentifier property is set
+        internal bool IsSetTargetDBInstanceIdentifier()
+        {
+            return this._targetDBInstanceIdentifier != null;
         }
 
     }

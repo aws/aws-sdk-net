@@ -37,6 +37,7 @@ namespace Amazon.Kinesis.Model
         private int? _retentionPeriodHours;
         private List<Shard> _shards = new List<Shard>();
         private string _streamARN;
+        private DateTime? _streamCreationTimestamp;
         private string _streamName;
         private StreamStatus _streamStatus;
 
@@ -131,6 +132,24 @@ namespace Amazon.Kinesis.Model
         }
 
         /// <summary>
+        /// Gets and sets the property StreamCreationTimestamp. 
+        /// <para>
+        /// The approximate time that the stream was created.
+        /// </para>
+        /// </summary>
+        public DateTime StreamCreationTimestamp
+        {
+            get { return this._streamCreationTimestamp.GetValueOrDefault(); }
+            set { this._streamCreationTimestamp = value; }
+        }
+
+        // Check to see if StreamCreationTimestamp property is set
+        internal bool IsSetStreamCreationTimestamp()
+        {
+            return this._streamCreationTimestamp.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property StreamName. 
         /// <para>
         /// The name of the stream being described.
@@ -154,14 +173,29 @@ namespace Amazon.Kinesis.Model
         /// The current status of the stream being described. The stream status is one of the
         /// following states:
         /// </para>
-        ///  <ul> <li><code>CREATING</code> - The stream is being created. Amazon Kinesis immediately
-        /// returns and sets <code>StreamStatus</code> to <code>CREATING</code>.</li> <li><code>DELETING</code>
-        /// - The stream is being deleted. The specified stream is in the <code>DELETING</code>
-        /// state until Amazon Kinesis completes the deletion.</li> <li><code>ACTIVE</code> -
-        /// The stream exists and is ready for read and write operations or deletion. You should
-        /// perform read and write operations only on an <code>ACTIVE</code> stream.</li> <li><code>UPDATING</code>
-        /// - Shards in the stream are being merged or split. Read and write operations continue
-        /// to work while the stream is in the <code>UPDATING</code> state.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>CREATING</code> - The stream is being created. Amazon Kinesis immediately returns
+        /// and sets <code>StreamStatus</code> to <code>CREATING</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DELETING</code> - The stream is being deleted. The specified stream is in the
+        /// <code>DELETING</code> state until Amazon Kinesis completes the deletion.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ACTIVE</code> - The stream exists and is ready for read and write operations
+        /// or deletion. You should perform read and write operations only on an <code>ACTIVE</code>
+        /// stream.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>UPDATING</code> - Shards in the stream are being merged or split. Read and
+        /// write operations continue to work while the stream is in the <code>UPDATING</code>
+        /// state.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public StreamStatus StreamStatus
         {

@@ -29,37 +29,38 @@ namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
     /// Container for the parameters to the BatchGetItem operation.
-    /// The <i>BatchGetItem</i> operation returns the attributes of one or more items from
-    /// one or more tables. You identify requested items by primary key.
+    /// The <code>BatchGetItem</code> operation returns the attributes of one or more items
+    /// from one or more tables. You identify requested items by primary key.
     /// 
     ///  
     /// <para>
     /// A single operation can retrieve up to 16 MB of data, which can contain as many as
-    /// 100 items. <i>BatchGetItem</i> will return a partial result if the response size limit
-    /// is exceeded, the table's provisioned throughput is exceeded, or an internal processing
-    /// failure occurs. If a partial result is returned, the operation returns a value for
-    /// <i>UnprocessedKeys</i>. You can use this value to retry the operation starting with
-    /// the next item to get.
+    /// 100 items. <code>BatchGetItem</code> will return a partial result if the response
+    /// size limit is exceeded, the table's provisioned throughput is exceeded, or an internal
+    /// processing failure occurs. If a partial result is returned, the operation returns
+    /// a value for <code>UnprocessedKeys</code>. You can use this value to retry the operation
+    /// starting with the next item to get.
     /// </para>
     ///  <important> 
     /// <para>
-    /// If you request more than 100 items <i>BatchGetItem</i> will return a <i>ValidationException</i>
+    /// If you request more than 100 items <code>BatchGetItem</code> will return a <code>ValidationException</code>
     /// with the message "Too many items requested for the BatchGetItem call".
     /// </para>
     ///  </important> 
     /// <para>
     /// For example, if you ask to retrieve 100 items, but each individual item is 300 KB
     /// in size, the system returns 52 items (so as not to exceed the 16 MB limit). It also
-    /// returns an appropriate <i>UnprocessedKeys</i> value so you can get the next page of
-    /// results. If desired, your application can include its own logic to assemble the pages
-    /// of results into one data set.
+    /// returns an appropriate <code>UnprocessedKeys</code> value so you can get the next
+    /// page of results. If desired, your application can include its own logic to assemble
+    /// the pages of results into one data set.
     /// </para>
     ///  
     /// <para>
     /// If <i>none</i> of the items can be processed due to insufficient provisioned throughput
-    /// on all of the tables in the request, then <i>BatchGetItem</i> will return a <i>ProvisionedThroughputExceededException</i>.
-    /// If <i>at least one</i> of the items is successfully processed, then <i>BatchGetItem</i>
-    /// completes successfully, while returning the keys of the unread items in <i>UnprocessedKeys</i>.
+    /// on all of the tables in the request, then <code>BatchGetItem</code> will return a
+    /// <code>ProvisionedThroughputExceededException</code>. If <i>at least one</i> of the
+    /// items is successfully processed, then <code>BatchGetItem</code> completes successfully,
+    /// while returning the keys of the unread items in <code>UnprocessedKeys</code>.
     /// </para>
     ///  <important> 
     /// <para>
@@ -77,19 +78,20 @@ namespace Amazon.DynamoDBv2.Model
     /// </para>
     ///  </important> 
     /// <para>
-    /// By default, <i>BatchGetItem</i> performs eventually consistent reads on every table
-    /// in the request. If you want strongly consistent reads instead, you can set <i>ConsistentRead</i>
+    /// By default, <code>BatchGetItem</code> performs eventually consistent reads on every
+    /// table in the request. If you want strongly consistent reads instead, you can set <code>ConsistentRead</code>
     /// to <code>true</code> for any or all tables.
     /// </para>
     ///  
     /// <para>
-    /// In order to minimize response latency, <i>BatchGetItem</i> retrieves items in parallel.
+    /// In order to minimize response latency, <code>BatchGetItem</code> retrieves items in
+    /// parallel.
     /// </para>
     ///  
     /// <para>
     /// When designing your application, keep in mind that DynamoDB does not return items
     /// in any particular order. To help parse the response by item, include the primary key
-    /// values for the items in your request in the <i>AttributesToGet</i> parameter.
+    /// values for the items in your request in the <code>ProjectionExpression</code> parameter.
     /// </para>
     ///  
     /// <para>
@@ -112,7 +114,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Instantiates BatchGetItemRequest with the parameterized properties
         /// </summary>
-        /// <param name="requestItems">A map of one or more table names and, for each table, a map that describes one or more items to retrieve from that table. Each table name can be used only once per <i>BatchGetItem</i> request. Each element in the map of items to retrieve consists of the following: <ul> <li>  <i>ConsistentRead</i> - If <code>true</code>, a strongly consistent read is used; if <code>false</code> (the default), an eventually consistent read is used. </li> <li>  <i>ExpressionAttributeNames</i> - One or more substitution tokens for attribute names in the <i>ProjectionExpression</i> parameter. The following are some use cases for using <i>ExpressionAttributeNames</i>: <ul> <li> To access an attribute whose name conflicts with a DynamoDB reserved word. </li> <li> To create a placeholder for repeating occurrences of an attribute name in an expression. </li> <li> To prevent special characters in an attribute name from being misinterpreted in an expression. </li> </ul> Use the <b>#</b> character in an expression to dereference an attribute name. For example, consider the following attribute name: <ul> <li>  <code>Percentile</code>  </li> </ul> The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For the complete list of reserved words, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for <i>ExpressionAttributeNames</i>: <ul> <li>  <code>{"#P":"Percentile"}</code>  </li> </ul> You could then use this substitution in an expression, as in this example: <ul> <li>  <code>#P = :val</code>  </li> </ul> <note> Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>, which are placeholders for the actual value at runtime. </note> For more information on expression attribute names, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </li> <li>  <i>Keys</i> - An array of primary key attribute values that define specific items in the table. For each primary key, you must provide <i>all</i> of the key attributes. For example, with a simple primary key, you only need to provide the partition key value. For a composite key, you must provide <i>both</i> the partition key value and the sort key value. </li> <li>  <i>ProjectionExpression</i> - A string that identifies one or more attributes to retrieve from the table. These attributes can include scalars, sets, or elements of a JSON document. The attributes in the expression must be separated by commas. If no attribute names are specified, then all attributes will be returned. If any of the requested attributes are not found, they will not appear in the result. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </li> <li>  <i>AttributesToGet</i> -  <important> This is a legacy parameter, for backward compatibility. New applications should use <i>ProjectionExpression</i> instead. Do not combine legacy parameters and expression parameters in a single API call; otherwise, DynamoDB will return a <i>ValidationException</i> exception. This parameter allows you to retrieve attributes of type List or Map; however, it cannot retrieve individual elements within a List or a Map. </important> The names of one or more attributes to retrieve. If no attribute names are provided, then all attributes will be returned. If any of the requested attributes are not found, they will not appear in the result. Note that <i>AttributesToGet</i> has no effect on provisioned throughput consumption. DynamoDB determines capacity units consumed based on item size, not on the amount of data that is returned to an application. </li> </ul></param>
+        /// <param name="requestItems">A map of one or more table names and, for each table, a map that describes one or more items to retrieve from that table. Each table name can be used only once per <code>BatchGetItem</code> request. Each element in the map of items to retrieve consists of the following: <ul> <li>  <code>ConsistentRead</code> - If <code>true</code>, a strongly consistent read is used; if <code>false</code> (the default), an eventually consistent read is used. </li> <li>  <code>ExpressionAttributeNames</code> - One or more substitution tokens for attribute names in the <code>ProjectionExpression</code> parameter. The following are some use cases for using <code>ExpressionAttributeNames</code>: <ul> <li> To access an attribute whose name conflicts with a DynamoDB reserved word. </li> <li> To create a placeholder for repeating occurrences of an attribute name in an expression. </li> <li> To prevent special characters in an attribute name from being misinterpreted in an expression. </li> </ul> Use the <b>#</b> character in an expression to dereference an attribute name. For example, consider the following attribute name: <ul> <li>  <code>Percentile</code>  </li> </ul> The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For the complete list of reserved words, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for <code>ExpressionAttributeNames</code>: <ul> <li>  <code>{"#P":"Percentile"}</code>  </li> </ul> You could then use this substitution in an expression, as in this example: <ul> <li>  <code>#P = :val</code>  </li> </ul> <note> Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>, which are placeholders for the actual value at runtime. </note> For more information on expression attribute names, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </li> <li>  <code>Keys</code> - An array of primary key attribute values that define specific items in the table. For each primary key, you must provide <i>all</i> of the key attributes. For example, with a simple primary key, you only need to provide the partition key value. For a composite key, you must provide <i>both</i> the partition key value and the sort key value. </li> <li>  <code>ProjectionExpression</code> - A string that identifies one or more attributes to retrieve from the table. These attributes can include scalars, sets, or elements of a JSON document. The attributes in the expression must be separated by commas. If no attribute names are specified, then all attributes will be returned. If any of the requested attributes are not found, they will not appear in the result. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </li> <li>  <code>AttributesToGet</code> - This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.  </li> </ul></param>
         public BatchGetItemRequest(Dictionary<string, KeysAndAttributes> requestItems)
         {
             _requestItems = requestItems;
@@ -121,7 +123,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Instantiates BatchGetItemRequest with the parameterized properties
         /// </summary>
-        /// <param name="requestItems">A map of one or more table names and, for each table, a map that describes one or more items to retrieve from that table. Each table name can be used only once per <i>BatchGetItem</i> request. Each element in the map of items to retrieve consists of the following: <ul> <li>  <i>ConsistentRead</i> - If <code>true</code>, a strongly consistent read is used; if <code>false</code> (the default), an eventually consistent read is used. </li> <li>  <i>ExpressionAttributeNames</i> - One or more substitution tokens for attribute names in the <i>ProjectionExpression</i> parameter. The following are some use cases for using <i>ExpressionAttributeNames</i>: <ul> <li> To access an attribute whose name conflicts with a DynamoDB reserved word. </li> <li> To create a placeholder for repeating occurrences of an attribute name in an expression. </li> <li> To prevent special characters in an attribute name from being misinterpreted in an expression. </li> </ul> Use the <b>#</b> character in an expression to dereference an attribute name. For example, consider the following attribute name: <ul> <li>  <code>Percentile</code>  </li> </ul> The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For the complete list of reserved words, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for <i>ExpressionAttributeNames</i>: <ul> <li>  <code>{"#P":"Percentile"}</code>  </li> </ul> You could then use this substitution in an expression, as in this example: <ul> <li>  <code>#P = :val</code>  </li> </ul> <note> Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>, which are placeholders for the actual value at runtime. </note> For more information on expression attribute names, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </li> <li>  <i>Keys</i> - An array of primary key attribute values that define specific items in the table. For each primary key, you must provide <i>all</i> of the key attributes. For example, with a simple primary key, you only need to provide the partition key value. For a composite key, you must provide <i>both</i> the partition key value and the sort key value. </li> <li>  <i>ProjectionExpression</i> - A string that identifies one or more attributes to retrieve from the table. These attributes can include scalars, sets, or elements of a JSON document. The attributes in the expression must be separated by commas. If no attribute names are specified, then all attributes will be returned. If any of the requested attributes are not found, they will not appear in the result. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </li> <li>  <i>AttributesToGet</i> -  <important> This is a legacy parameter, for backward compatibility. New applications should use <i>ProjectionExpression</i> instead. Do not combine legacy parameters and expression parameters in a single API call; otherwise, DynamoDB will return a <i>ValidationException</i> exception. This parameter allows you to retrieve attributes of type List or Map; however, it cannot retrieve individual elements within a List or a Map. </important> The names of one or more attributes to retrieve. If no attribute names are provided, then all attributes will be returned. If any of the requested attributes are not found, they will not appear in the result. Note that <i>AttributesToGet</i> has no effect on provisioned throughput consumption. DynamoDB determines capacity units consumed based on item size, not on the amount of data that is returned to an application. </li> </ul></param>
+        /// <param name="requestItems">A map of one or more table names and, for each table, a map that describes one or more items to retrieve from that table. Each table name can be used only once per <code>BatchGetItem</code> request. Each element in the map of items to retrieve consists of the following: <ul> <li>  <code>ConsistentRead</code> - If <code>true</code>, a strongly consistent read is used; if <code>false</code> (the default), an eventually consistent read is used. </li> <li>  <code>ExpressionAttributeNames</code> - One or more substitution tokens for attribute names in the <code>ProjectionExpression</code> parameter. The following are some use cases for using <code>ExpressionAttributeNames</code>: <ul> <li> To access an attribute whose name conflicts with a DynamoDB reserved word. </li> <li> To create a placeholder for repeating occurrences of an attribute name in an expression. </li> <li> To prevent special characters in an attribute name from being misinterpreted in an expression. </li> </ul> Use the <b>#</b> character in an expression to dereference an attribute name. For example, consider the following attribute name: <ul> <li>  <code>Percentile</code>  </li> </ul> The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For the complete list of reserved words, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you could specify the following for <code>ExpressionAttributeNames</code>: <ul> <li>  <code>{"#P":"Percentile"}</code>  </li> </ul> You could then use this substitution in an expression, as in this example: <ul> <li>  <code>#P = :val</code>  </li> </ul> <note> Tokens that begin with the <b>:</b> character are <i>expression attribute values</i>, which are placeholders for the actual value at runtime. </note> For more information on expression attribute names, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </li> <li>  <code>Keys</code> - An array of primary key attribute values that define specific items in the table. For each primary key, you must provide <i>all</i> of the key attributes. For example, with a simple primary key, you only need to provide the partition key value. For a composite key, you must provide <i>both</i> the partition key value and the sort key value. </li> <li>  <code>ProjectionExpression</code> - A string that identifies one or more attributes to retrieve from the table. These attributes can include scalars, sets, or elements of a JSON document. The attributes in the expression must be separated by commas. If no attribute names are specified, then all attributes will be returned. If any of the requested attributes are not found, they will not appear in the result. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </li> <li>  <code>AttributesToGet</code> - This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a> in the <i>Amazon DynamoDB Developer Guide</i>.  </li> </ul></param>
         /// <param name="returnConsumedCapacity">Sets the BatchGetItemRequest ReturnConsumedCapacity property</param>
         public BatchGetItemRequest(Dictionary<string, KeysAndAttributes> requestItems, ReturnConsumedCapacity returnConsumedCapacity)
         {
@@ -134,7 +136,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <para>
         /// A map of one or more table names and, for each table, a map that describes one or
         /// more items to retrieve from that table. Each table name can be used only once per
-        /// <i>BatchGetItem</i> request.
+        /// <code>BatchGetItem</code> request.
         /// </para>
         ///  
         /// <para>
@@ -142,14 +144,14 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <i>ConsistentRead</i> - If <code>true</code>, a strongly consistent read is used;
-        /// if <code>false</code> (the default), an eventually consistent read is used.
+        ///  <code>ConsistentRead</code> - If <code>true</code>, a strongly consistent read is
+        /// used; if <code>false</code> (the default), an eventually consistent read is used.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i>ExpressionAttributeNames</i> - One or more substitution tokens for attribute names
-        /// in the <i>ProjectionExpression</i> parameter. The following are some use cases for
-        /// using <i>ExpressionAttributeNames</i>:
+        ///  <code>ExpressionAttributeNames</code> - One or more substitution tokens for attribute
+        /// names in the <code>ProjectionExpression</code> parameter. The following are some use
+        /// cases for using <code>ExpressionAttributeNames</code>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -178,7 +180,7 @@ namespace Amazon.DynamoDBv2.Model
         /// The name of this attribute conflicts with a reserved word, so it cannot be used directly
         /// in an expression. (For the complete list of reserved words, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
         /// Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you
-        /// could specify the following for <i>ExpressionAttributeNames</i>:
+        /// could specify the following for <code>ExpressionAttributeNames</code>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -204,17 +206,17 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i>Keys</i> - An array of primary key attribute values that define specific items
-        /// in the table. For each primary key, you must provide <i>all</i> of the key attributes.
+        ///  <code>Keys</code> - An array of primary key attribute values that define specific
+        /// items in the table. For each primary key, you must provide <i>all</i> of the key attributes.
         /// For example, with a simple primary key, you only need to provide the partition key
         /// value. For a composite key, you must provide <i>both</i> the partition key value and
         /// the sort key value.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i>ProjectionExpression</i> - A string that identifies one or more attributes to
-        /// retrieve from the table. These attributes can include scalars, sets, or elements of
-        /// a JSON document. The attributes in the expression must be separated by commas.
+        ///  <code>ProjectionExpression</code> - A string that identifies one or more attributes
+        /// to retrieve from the table. These attributes can include scalars, sets, or elements
+        /// of a JSON document. The attributes in the expression must be separated by commas.
         /// </para>
         ///  
         /// <para>
@@ -228,31 +230,9 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i>AttributesToGet</i> - 
-        /// </para>
-        ///  <important> 
-        /// <para>
-        /// This is a legacy parameter, for backward compatibility. New applications should use
-        /// <i>ProjectionExpression</i> instead. Do not combine legacy parameters and expression
-        /// parameters in a single API call; otherwise, DynamoDB will return a <i>ValidationException</i>
-        /// exception.
-        /// </para>
-        ///  
-        /// <para>
-        /// This parameter allows you to retrieve attributes of type List or Map; however, it
-        /// cannot retrieve individual elements within a List or a Map.
-        /// </para>
-        ///  </important> 
-        /// <para>
-        /// The names of one or more attributes to retrieve. If no attribute names are provided,
-        /// then all attributes will be returned. If any of the requested attributes are not found,
-        /// they will not appear in the result.
-        /// </para>
-        ///  
-        /// <para>
-        /// Note that <i>AttributesToGet</i> has no effect on provisioned throughput consumption.
-        /// DynamoDB determines capacity units consumed based on item size, not on the amount
-        /// of data that is returned to an application.
+        ///  <code>AttributesToGet</code> - This is a legacy parameter. Use <code>ProjectionExpression</code>
+        /// instead. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a>
+        /// in the <i>Amazon DynamoDB Developer Guide</i>. 
         /// </para>
         ///  </li> </ul>
         /// </summary>

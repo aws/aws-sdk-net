@@ -30,11 +30,37 @@ namespace Amazon.CodeDeploy.Model
     /// <summary>
     /// Container for the parameters to the RegisterOnPremisesInstance operation.
     /// Registers an on-premises instance.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// Only one IAM ARN (an IAM session ARN or IAM user ARN) is supported in the request.
+    /// You cannot use both.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class RegisterOnPremisesInstanceRequest : AmazonCodeDeployRequest
     {
+        private string _iamSessionArn;
         private string _iamUserArn;
         private string _instanceName;
+
+        /// <summary>
+        /// Gets and sets the property IamSessionArn. 
+        /// <para>
+        /// The ARN of the IAM session to associate with the on-premises instance.
+        /// </para>
+        /// </summary>
+        public string IamSessionArn
+        {
+            get { return this._iamSessionArn; }
+            set { this._iamSessionArn = value; }
+        }
+
+        // Check to see if IamSessionArn property is set
+        internal bool IsSetIamSessionArn()
+        {
+            return this._iamSessionArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property IamUserArn. 

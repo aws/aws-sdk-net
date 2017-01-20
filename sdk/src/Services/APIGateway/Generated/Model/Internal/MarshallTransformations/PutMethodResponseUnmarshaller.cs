@@ -87,6 +87,12 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                     response.MethodResponses = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("operationName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.OperationName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("requestModels", targetDepth))
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);

@@ -28,14 +28,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
-    /// Represents the data for an attribute. You can set one, and only one, of the elements.
+    /// Represents the data for an attribute.
     /// 
     ///  
     /// <para>
-    /// Each attribute in an item is a name-value pair. An attribute can be single-valued
-    /// or multi-valued set. For example, a book item can have title and authors attributes.
-    /// Each book has one title but can have many authors. The multi-valued attribute is a
-    /// set; duplicate values are not allowed.
+    /// Each attribute value is described as a name-value pair. The name is the data type,
+    /// and the value is the data itself.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes">Data
+    /// Types</a> in the <i>Amazon DynamoDB Developer Guide</i>.
     /// </para>
     /// </summary>
     public partial class AttributeValue
@@ -59,7 +62,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Instantiates AttributeValue with the parameterized properties
         /// </summary>
-        /// <param name="s">A String data type.</param>
+        /// <param name="s">An attribute of type String. For example:  <code>"S": "Hello"</code> </param>
         public AttributeValue(string s)
         {
             _s = s;
@@ -68,7 +71,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Instantiates AttributeValue with the parameterized properties
         /// </summary>
-        /// <param name="ss">A String Set data type.</param>
+        /// <param name="ss">An attribute of type String Set. For example:  <code>"SS": ["Giraffe", "Hippo" ,"Zebra"]</code> </param>
         public AttributeValue(List<string> ss)
         {
             _ss = ss;
@@ -77,7 +80,11 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property B. 
         /// <para>
-        /// A Binary data type.
+        /// An attribute of type Binary. For example:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>"B": "dGhpcyB0ZXh0IGlzIGJhc2U2NC1lbmNvZGVk"</code> 
         /// </para>
         /// </summary>
         public MemoryStream B
@@ -95,7 +102,11 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property BOOL. 
         /// <para>
-        /// A Boolean data type.
+        /// An attribute of type Boolean. For example:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>"BOOL": true</code> 
         /// </para>
         /// </summary>
         public bool BOOL
@@ -135,7 +146,11 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property BS. 
         /// <para>
-        /// A Binary Set data type.
+        /// An attribute of type Binary Set. For example:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>"BS": ["U3Vubnk=", "UmFpbnk=", "U25vd3k="]</code> 
         /// </para>
         /// </summary>
         public List<MemoryStream> BS
@@ -153,7 +168,11 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property L. 
         /// <para>
-        /// A List of attribute values.
+        /// An attribute of type List. For example:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>"L": ["Cookies", "Coffee", 3.14159]</code> 
         /// </para>
         /// </summary>
         public List<AttributeValue> L
@@ -193,7 +212,11 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property M. 
         /// <para>
-        /// A Map of attribute values.
+        /// An attribute of type Map. For example:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>"M": {"Name": {"S": "Joe"}, "Age": {"N": "35"}}</code> 
         /// </para>
         /// </summary>
         public Dictionary<string, AttributeValue> M
@@ -233,7 +256,17 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property N. 
         /// <para>
-        /// A Number data type.
+        /// An attribute of type Number. For example:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>"N": "123.45"</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Numbers are sent across the network to DynamoDB as strings, to maximize compatibility
+        /// across languages and libraries. However, DynamoDB treats them as number type attributes
+        /// for mathematical operations.
         /// </para>
         /// </summary>
         public string N
@@ -251,7 +284,17 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property NS. 
         /// <para>
-        /// A Number Set data type.
+        /// An attribute of type Number Set. For example:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>"NS": ["42.2", "-19", "7.5", "3.14"]</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Numbers are sent across the network to DynamoDB as strings, to maximize compatibility
+        /// across languages and libraries. However, DynamoDB treats them as number type attributes
+        /// for mathematical operations.
         /// </para>
         /// </summary>
         public List<string> NS
@@ -269,7 +312,11 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property NULL. 
         /// <para>
-        /// A Null data type.
+        /// An attribute of type Null. For example:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>"NULL": true</code> 
         /// </para>
         /// </summary>
         public bool NULL
@@ -287,7 +334,11 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property S. 
         /// <para>
-        /// A String data type.
+        /// An attribute of type String. For example:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>"S": "Hello"</code> 
         /// </para>
         /// </summary>
         public string S
@@ -305,7 +356,11 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property SS. 
         /// <para>
-        /// A String Set data type.
+        /// An attribute of type String Set. For example:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>"SS": ["Giraffe", "Hippo" ,"Zebra"]</code> 
         /// </para>
         /// </summary>
         public List<string> SS

@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// Encloses the id of an entry in <a>ChangeMessageVisibilityBatch</a>.
+    /// Encloses the <code>Id</code> of an entry in <code> <a>ChangeMessageVisibilityBatch</a>
+    /// </code>.
     /// </summary>
     public partial class ChangeMessageVisibilityBatchResultEntry
     {

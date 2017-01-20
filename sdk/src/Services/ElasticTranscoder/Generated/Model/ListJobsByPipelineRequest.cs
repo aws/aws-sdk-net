@@ -85,7 +85,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// <summary>
         /// Gets and sets the property PipelineId. 
         /// <para>
-        ///  The ID of the pipeline for which you want to get job information. 
+        /// The ID of the pipeline for which you want to get job information.
         /// </para>
         /// </summary>
         public string PipelineId

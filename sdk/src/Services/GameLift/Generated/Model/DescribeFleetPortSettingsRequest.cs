@@ -29,10 +29,12 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeFleetPortSettings operation.
-    /// Retrieves the port settings for a fleet. Port settings are used to limit incoming
-    /// traffic access to game servers in the fleet. To get a fleet's port settings, specify
-    /// a fleet ID. If successful, an <a>IpPermission</a> object is returned for the requested
-    /// fleet ID. If the requested fleet has been deleted, the result set will be empty.
+    /// Retrieves the inbound connection permissions for a fleet. Connection permissions include
+    /// a range of IP addresses and port settings that incoming traffic can use to access
+    /// server processes in the fleet. To get a fleet's inbound connection permissions, specify
+    /// a fleet ID. If successful, a collection of <a>IpPermission</a> objects is returned
+    /// for the requested fleet ID. If the requested fleet has been deleted, the result set
+    /// is empty.
     /// </summary>
     public partial class DescribeFleetPortSettingsRequest : AmazonGameLiftRequest
     {
@@ -41,7 +43,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property FleetId. 
         /// <para>
-        /// Unique identifier for the fleet you want to retrieve port settings for. 
+        /// Unique identifier for the fleet you want to retrieve port settings for.
         /// </para>
         /// </summary>
         public string FleetId

@@ -40,7 +40,15 @@ namespace Amazon.StorageGateway.Model
         private string _gatewayARN;
 
         /// <summary>
-        /// Gets and sets the property BandwidthType.
+        /// Gets and sets the property BandwidthType. 
+        /// <para>
+        /// One of the BandwidthType values that indicates the gateway bandwidth rate limit to
+        /// delete.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Values: <code>Upload</code>, <code>Download</code>, <code>All</code>.
+        /// </para>
         /// </summary>
         public string BandwidthType
         {

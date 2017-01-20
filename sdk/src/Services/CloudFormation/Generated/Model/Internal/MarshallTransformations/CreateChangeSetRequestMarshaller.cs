@@ -71,6 +71,10 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ChangeSetName", StringUtils.FromString(publicRequest.ChangeSetName));
                 }
+                if(publicRequest.IsSetChangeSetType())
+                {
+                    request.Parameters.Add("ChangeSetType", StringUtils.FromString(publicRequest.ChangeSetType));
+                }
                 if(publicRequest.IsSetClientToken())
                 {
                     request.Parameters.Add("ClientToken", StringUtils.FromString(publicRequest.ClientToken));
@@ -116,6 +120,10 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         request.Parameters.Add("ResourceTypes" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
                         publicRequestlistValueIndex++;
                     }
+                }
+                if(publicRequest.IsSetRoleARN())
+                {
+                    request.Parameters.Add("RoleARN", StringUtils.FromString(publicRequest.RoleARN));
                 }
                 if(publicRequest.IsSetStackName())
                 {

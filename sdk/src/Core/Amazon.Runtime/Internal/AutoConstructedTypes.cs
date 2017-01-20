@@ -12,11 +12,39 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+
+#if !PCL && !CORECLR
+using System.Runtime.Serialization;
+#endif
 
 namespace Amazon.Runtime.Internal
 {
+    /// <summary>
+    /// Collection used to indicate if the property was initialized was created by the SDK.
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class AutoConstructedList<T> : List<T>
     {
+    }
+
+    /// <summary>
+    /// Collection used to indicate if the property was initialized was created by the SDK.
+    /// </summary>
+    /// <typeparam name="K"></typeparam>
+    /// <typeparam name="V"></typeparam>
+#if !PCL && !CORECLR
+    [Serializable]
+#endif
+    public class AutoConstructedDictionary<K, V> : Dictionary<K, V>
+    {
+#if !PCL && !CORECLR        
+        protected AutoConstructedDictionary(SerializationInfo info, StreamingContext context)
+            : base(info, context)
+        {
+
+        }
+#endif
     }
 }

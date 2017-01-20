@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2016-01-28.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-11-25.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -36,8 +36,12 @@ namespace Amazon.CloudFront.Model
         private int? _quantity;
 
         /// <summary>
-        /// Gets and sets the property Items. A complex type that contains the custom headers
-        /// for this Origin.
+        /// Gets and sets the property Items. 
+        /// <para>
+        ///  <b>Optional</b>: A list that contains one <code>OriginCustomHeader</code> element
+        /// for each custom header that you want CloudFront to forward to the origin. If Quantity
+        /// is <code>0</code>, omit <code>Items</code>.
+        /// </para>
         /// </summary>
         public List<OriginCustomHeader> Items
         {
@@ -52,7 +56,10 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Quantity. The number of custom headers for this origin.
+        /// Gets and sets the property Quantity. 
+        /// <para>
+        /// The number of custom headers, if any, for this distribution.
+        /// </para>
         /// </summary>
         public int Quantity
         {

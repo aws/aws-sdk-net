@@ -94,6 +94,12 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
                     unmarshalledObject.IndexRotationPeriod = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ProcessingConfiguration", targetDepth))
+                {
+                    var unmarshaller = ProcessingConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.ProcessingConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RetryOptions", targetDepth))
                 {
                     var unmarshaller = ElasticsearchRetryOptionsUnmarshaller.Instance;

@@ -90,7 +90,7 @@ namespace Amazon.CognitoSync.SyncManager
 
             if (e.IsAvailable)
             {
-                await SynchronizeAsync();
+                await SynchronizeAsync().ConfigureAwait(false);
             }
         }
 

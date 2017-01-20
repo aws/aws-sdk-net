@@ -28,14 +28,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
-    /// Represents the output of an <i>UpdateTable</i> operation.
+    /// Represents the output of an <code>UpdateTable</code> operation.
     /// </summary>
     public partial class UpdateTableResponse : AmazonWebServiceResponse
     {
         private TableDescription _tableDescription;
 
         /// <summary>
-        /// Gets and sets the property TableDescription.
+        /// Gets and sets the property TableDescription. 
+        /// <para>
+        /// Represents the properties of the table.
+        /// </para>
         /// </summary>
         public TableDescription TableDescription
         {

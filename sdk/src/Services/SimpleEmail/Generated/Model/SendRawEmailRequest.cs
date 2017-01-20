@@ -64,6 +64,10 @@ namespace Amazon.SimpleEmail.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
+    /// Amazon SES overrides any Message-ID and Date headers you provide.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     /// For every message that you send, the total number of recipients (To:, CC: and BCC:)
     /// is counted against your sending quota - the maximum number of emails you can send
     /// in a 24-hour period. For information about your sending quota, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">Amazon
@@ -109,12 +113,14 @@ namespace Amazon.SimpleEmail.Model
     /// </summary>
     public partial class SendRawEmailRequest : AmazonSimpleEmailServiceRequest
     {
+        private string _configurationSetName;
         private List<string> _destinations = new List<string>();
         private string _fromArn;
         private RawMessage _rawMessage;
         private string _returnPathArn;
         private string _source;
         private string _sourceArn;
+        private List<MessageTag> _tags = new List<MessageTag>();
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -124,10 +130,28 @@ namespace Amazon.SimpleEmail.Model
         /// <summary>
         /// Instantiates SendRawEmailRequest with the parameterized properties
         /// </summary>
-        /// <param name="rawMessage">The raw text of the message. The client is responsible for ensuring the following: <ul> <li> Message must contain a header and a body, separated by a blank line. </li> <li> All required header fields must be present. </li> <li> Each part of a multipart MIME message must be formatted properly. </li> <li> MIME content types must be among those supported by Amazon SES. For more information, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mime-types.html">Amazon SES Developer Guide</a>. </li> <li> Content must be base64-encoded, if MIME requires it. </li> </ul></param>
+        /// <param name="rawMessage">The raw text of the message. The client is responsible for ensuring the following: <ul> <li> Message must contain a header and a body, separated by a blank line. </li> <li> All required header fields must be present. </li> <li> Each part of a multipart MIME message must be formatted properly. </li> <li> MIME content types must be among those supported by Amazon SES. For more information, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mime-types.html">Amazon SES Developer Guide</a>. </li> <li> Must be base64-encoded. </li> </ul></param>
         public SendRawEmailRequest(RawMessage rawMessage)
         {
             _rawMessage = rawMessage;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConfigurationSetName. 
+        /// <para>
+        /// The name of the configuration set to use when you send an email using <code>SendRawEmail</code>.
+        /// </para>
+        /// </summary>
+        public string ConfigurationSetName
+        {
+            get { return this._configurationSetName; }
+            set { this._configurationSetName = value; }
+        }
+
+        // Check to see if ConfigurationSetName property is set
+        internal bool IsSetConfigurationSetName()
+        {
+            return this._configurationSetName != null;
         }
 
         /// <summary>
@@ -207,7 +231,7 @@ namespace Amazon.SimpleEmail.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Content must be base64-encoded, if MIME requires it.
+        /// Must be base64-encoded.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -338,6 +362,26 @@ namespace Amazon.SimpleEmail.Model
         internal bool IsSetSourceArn()
         {
             return this._sourceArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A list of tags, in the form of name/value pairs, to apply to an email that you send
+        /// using <code>SendRawEmail</code>. Tags correspond to characteristics of the email that
+        /// you define, so that you can publish email sending events.
+        /// </para>
+        /// </summary>
+        public List<MessageTag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

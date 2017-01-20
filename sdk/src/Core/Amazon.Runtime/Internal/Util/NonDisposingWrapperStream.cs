@@ -18,7 +18,7 @@ namespace Amazon.Runtime.Internal.Util
         public NonDisposingWrapperStream(Stream baseStream) : base (baseStream)
         {
         }
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// The Close implementation for this wrapper stream
         /// does not close the underlying stream.

@@ -81,6 +81,13 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
+                    if (context.TestExpression("StagesAvailable/member", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        response.StagesAvailable.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("TemplateBody", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -104,6 +111,10 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            if (errorResponse.Code != null && errorResponse.Code.Equals("ChangeSetNotFound"))
+            {
+                return new ChangeSetNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             return new AmazonCloudFormationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
         private static GetTemplateResponseUnmarshaller _instance = new GetTemplateResponseUnmarshaller();        

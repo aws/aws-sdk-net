@@ -32,7 +32,7 @@ namespace Amazon.Lambda.Model
     /// Updates the configuration parameters for the specified Lambda function by using the
     /// values provided in the request. You provide only the parameters you want to change.
     /// This operation must only be used on an existing Lambda function and cannot be used
-    /// to update the function's code. 
+    /// to update the function's code.
     /// 
     ///  
     /// <para>
@@ -49,14 +49,36 @@ namespace Amazon.Lambda.Model
     /// </summary>
     public partial class UpdateFunctionConfigurationRequest : AmazonLambdaRequest
     {
+        private DeadLetterConfig _deadLetterConfig;
         private string _description;
+        private Environment _environment;
         private string _functionName;
         private string _handler;
+        private string _kmsKeyArn;
         private int? _memorySize;
         private string _role;
         private Runtime _runtime;
         private int? _timeout;
         private VpcConfig _vpcConfig;
+
+        /// <summary>
+        /// Gets and sets the property DeadLetterConfig. 
+        /// <para>
+        /// The parent object that contains the target Amazon Resource Name (ARN) of an Amazon
+        /// SQS queue or Amazon SNS topic.
+        /// </para>
+        /// </summary>
+        public DeadLetterConfig DeadLetterConfig
+        {
+            get { return this._deadLetterConfig; }
+            set { this._deadLetterConfig = value; }
+        }
+
+        // Check to see if DeadLetterConfig property is set
+        internal bool IsSetDeadLetterConfig()
+        {
+            return this._deadLetterConfig != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -75,6 +97,24 @@ namespace Amazon.Lambda.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Environment. 
+        /// <para>
+        /// The parent object that contains your environment's configuration settings.
+        /// </para>
+        /// </summary>
+        public Environment Environment
+        {
+            get { return this._environment; }
+            set { this._environment = value; }
+        }
+
+        // Check to see if Environment property is set
+        internal bool IsSetEnvironment()
+        {
+            return this._environment != null;
         }
 
         /// <summary>
@@ -123,6 +163,26 @@ namespace Amazon.Lambda.Model
         }
 
         /// <summary>
+        /// Gets and sets the property KMSKeyArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the KMS key used to encrypt your function's environment
+        /// variables. If you elect to use the AWS Lambda default service key, pass in an empty
+        /// string ("") for this parameter.
+        /// </para>
+        /// </summary>
+        public string KMSKeyArn
+        {
+            get { return this._kmsKeyArn; }
+            set { this._kmsKeyArn = value; }
+        }
+
+        // Check to see if KMSKeyArn property is set
+        internal bool IsSetKMSKeyArn()
+        {
+            return this._kmsKeyArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property MemorySize. 
         /// <para>
         /// The amount of memory, in MB, your Lambda function is given. AWS Lambda uses this memory
@@ -148,7 +208,7 @@ namespace Amazon.Lambda.Model
         /// Gets and sets the property Role. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the IAM role that Lambda will assume when it executes
-        /// your function. 
+        /// your function.
         /// </para>
         /// </summary>
         public string Role
@@ -164,7 +224,21 @@ namespace Amazon.Lambda.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Runtime.
+        /// Gets and sets the property Runtime. 
+        /// <para>
+        /// The runtime environment for the Lambda function.
+        /// </para>
+        ///  
+        /// <para>
+        /// To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime
+        /// (v0.10.42), set the value to "nodejs".
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You can no longer downgrade to the v0.10.42 runtime version. This version will no
+        /// longer be supported as of early 2017.
+        /// </para>
+        ///  </note>
         /// </summary>
         public Runtime Runtime
         {
@@ -183,7 +257,7 @@ namespace Amazon.Lambda.Model
         /// <para>
         /// The function execution time at which AWS Lambda should terminate the function. Because
         /// the execution time has cost implications, we recommend you set this value based on
-        /// your expected execution time. The default is 3 seconds. 
+        /// your expected execution time. The default is 3 seconds.
         /// </para>
         /// </summary>
         public int Timeout

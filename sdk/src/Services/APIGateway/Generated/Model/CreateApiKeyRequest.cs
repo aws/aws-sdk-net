@@ -29,14 +29,38 @@ namespace Amazon.APIGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateApiKey operation.
-    /// Create an <a>ApiKey</a> resource.
+    /// Create an <a>ApiKey</a> resource. 
+    /// 
+    ///  <div class="seeAlso"><a href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/create-api-key.html">AWS
+    /// CLI</a></div>
     /// </summary>
     public partial class CreateApiKeyRequest : AmazonAPIGatewayRequest
     {
+        private string _customerId;
         private string _description;
         private bool? _enabled;
+        private bool? _generateDistinctId;
         private string _name;
         private List<StageKey> _stageKeys = new List<StageKey>();
+        private string _value;
+
+        /// <summary>
+        /// Gets and sets the property CustomerId. 
+        /// <para>
+        /// An AWS Marketplace customer identifier , when integrating with the AWS SaaS Marketplace.
+        /// </para>
+        /// </summary>
+        public string CustomerId
+        {
+            get { return this._customerId; }
+            set { this._customerId = value; }
+        }
+
+        // Check to see if CustomerId property is set
+        internal bool IsSetCustomerId()
+        {
+            return this._customerId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -75,6 +99,25 @@ namespace Amazon.APIGateway.Model
         }
 
         /// <summary>
+        /// Gets and sets the property GenerateDistinctId. 
+        /// <para>
+        /// Specifies whether (<code>true</code>) or not (<code>false</code>) the key identifier
+        /// is distinct from the created API key value.
+        /// </para>
+        /// </summary>
+        public bool GenerateDistinctId
+        {
+            get { return this._generateDistinctId.GetValueOrDefault(); }
+            set { this._generateDistinctId = value; }
+        }
+
+        // Check to see if GenerateDistinctId property is set
+        internal bool IsSetGenerateDistinctId()
+        {
+            return this._generateDistinctId.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
         /// The name of the <a>ApiKey</a>.
@@ -95,7 +138,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property StageKeys. 
         /// <para>
-        /// Specifies whether the <a>ApiKey</a> can be used by callers.
+        /// DEPRECATED FOR USAGE PLANS - Specifies stages associated with the API key.
         /// </para>
         /// </summary>
         public List<StageKey> StageKeys
@@ -108,6 +151,24 @@ namespace Amazon.APIGateway.Model
         internal bool IsSetStageKeys()
         {
             return this._stageKeys != null && this._stageKeys.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Value. 
+        /// <para>
+        /// Specifies a value of the API key.
+        /// </para>
+        /// </summary>
+        public string Value
+        {
+            get { return this._value; }
+            set { this._value = value; }
+        }
+
+        // Check to see if Value property is set
+        internal bool IsSetValue()
+        {
+            return this._value != null;
         }
 
     }

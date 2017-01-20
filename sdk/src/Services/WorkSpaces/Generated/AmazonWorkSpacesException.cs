@@ -28,7 +28,7 @@ namespace Amazon.WorkSpaces
     ///<summary>
     /// Common exception for the WorkSpaces service.
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class AmazonWorkSpacesException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.WorkSpaces
         {
         }
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the AmazonWorkSpacesException class with serialized data.
         /// </summary>

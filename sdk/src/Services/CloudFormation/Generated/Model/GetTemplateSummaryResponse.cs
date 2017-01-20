@@ -34,6 +34,7 @@ namespace Amazon.CloudFormation.Model
     {
         private List<string> _capabilities = new List<string>();
         private string _capabilitiesReason;
+        private List<string> _declaredTransforms = new List<string>();
         private string _description;
         private string _metadata;
         private List<ParameterDeclaration> _parameters = new List<ParameterDeclaration>();
@@ -43,11 +44,15 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Capabilities. 
         /// <para>
-        /// The capabilities found within the template. Currently, AWS CloudFormation supports
-        /// only the CAPABILITY_IAM capability. If your template contains IAM resources, you must
-        /// specify the CAPABILITY_IAM value for this parameter when you use the <a>CreateStack</a>
-        /// or <a>UpdateStack</a> actions with your template; otherwise, those actions return
-        /// an InsufficientCapabilities error.
+        /// The capabilities found within the template. If your template contains IAM resources,
+        /// you must specify the CAPABILITY_IAM or CAPABILITY_NAMED_IAM value for this parameter
+        /// when you use the <a>CreateStack</a> or <a>UpdateStack</a> actions with your template;
+        /// otherwise, those actions return an InsufficientCapabilities error.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
+        /// IAM Resources in AWS CloudFormation Templates</a>.
         /// </para>
         /// </summary>
         public List<string> Capabilities
@@ -79,6 +84,24 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetCapabilitiesReason()
         {
             return this._capabilitiesReason != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeclaredTransforms. 
+        /// <para>
+        /// A list of the transforms that are declared in the template.
+        /// </para>
+        /// </summary>
+        public List<string> DeclaredTransforms
+        {
+            get { return this._declaredTransforms; }
+            set { this._declaredTransforms = value; }
+        }
+
+        // Check to see if DeclaredTransforms property is set
+        internal bool IsSetDeclaredTransforms()
+        {
+            return this._declaredTransforms != null && this._declaredTransforms.Count > 0; 
         }
 
         /// <summary>

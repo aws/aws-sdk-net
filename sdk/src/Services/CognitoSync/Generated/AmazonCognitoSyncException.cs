@@ -28,7 +28,7 @@ namespace Amazon.CognitoSync
     ///<summary>
     /// Common exception for the CognitoSync service.
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class AmazonCognitoSyncException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.CognitoSync
         {
         }
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the AmazonCognitoSyncException class with serialized data.
         /// </summary>

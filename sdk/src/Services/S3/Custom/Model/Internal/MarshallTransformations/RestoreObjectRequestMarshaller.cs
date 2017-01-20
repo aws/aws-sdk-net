@@ -43,6 +43,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             request.HttpMethod = "POST";
 
+            if (restoreObjectRequest.IsSetRequestPayer())
+                request.Headers.Add(S3Constants.AmzHeaderRequestPayer, S3Transforms.ToStringValue(restoreObjectRequest.RequestPayer.ToString()));
+
             request.ResourcePath = string.Format(CultureInfo.InvariantCulture, "/{0}/{1}",
                                                  S3Transforms.ToStringValue(restoreObjectRequest.BucketName),
                                                  S3Transforms.ToStringValue(restoreObjectRequest.Key));
@@ -56,6 +59,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             {
                     xmlWriter.WriteStartElement("RestoreRequest", "");
                     xmlWriter.WriteElementString("Days", "", S3Transforms.ToXmlStringValue(restoreObjectRequest.Days));
+                    xmlWriter.WriteStartElement("GlacierJobParameters", "");
+                    xmlWriter.WriteElementString("Tier", "", S3Transforms.ToXmlStringValue(restoreObjectRequest.Tier));
+                    xmlWriter.WriteEndElement();
                     xmlWriter.WriteEndElement();
             }
 

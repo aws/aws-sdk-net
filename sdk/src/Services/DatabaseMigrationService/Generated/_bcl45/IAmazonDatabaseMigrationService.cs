@@ -23,6 +23,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.DatabaseMigrationService.Model;
 
 namespace Amazon.DatabaseMigrationService
@@ -32,14 +33,15 @@ namespace Amazon.DatabaseMigrationService
     ///
     /// AWS Database Migration Service 
     /// <para>
-    ///  AWS Database Migration Service (AWS DMS) can migrate your data to and from the most
+    /// AWS Database Migration Service (AWS DMS) can migrate your data to and from the most
     /// widely used commercial and open-source databases such as Oracle, PostgreSQL, Microsoft
-    /// SQL Server, MariaDB, Amazon Aurora, and MySQL. The service supports homogeneous migrations
-    /// such as Oracle to Oracle, as well as heterogeneous migrations between different database
-    /// platforms, such as Oracle to MySQL or SQL Server to PostgreSQL. 
+    /// SQL Server, Amazon Redshift, MariaDB, Amazon Aurora, MySQL, and SAP Adaptive Server
+    /// Enterprise (ASE). The service supports homogeneous migrations such as Oracle to Oracle,
+    /// as well as heterogeneous migrations between different database platforms, such as
+    /// Oracle to MySQL or SQL Server to PostgreSQL.
     /// </para>
     /// </summary>
-    public partial interface IAmazonDatabaseMigrationService : IDisposable
+    public partial interface IAmazonDatabaseMigrationService : IAmazonService, IDisposable
     {
 
         
@@ -51,8 +53,6 @@ namespace Amazon.DatabaseMigrationService
         /// group, and migration task. These tags can also be used with cost allocation reporting
         /// to track cost associated with DMS resources, or used in a Condition statement in an
         /// IAM policy for DMS.
-        /// 
-        ///  <note/>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddTagsToResource service method.</param>
         /// 
@@ -60,6 +60,7 @@ namespace Amazon.DatabaseMigrationService
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/AddTagsToResource">REST API Reference for AddTagsToResource Operation</seealso>
         AddTagsToResourceResponse AddTagsToResource(AddTagsToResourceRequest request);
 
 
@@ -72,6 +73,7 @@ namespace Amazon.DatabaseMigrationService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/AddTagsToResource">REST API Reference for AddTagsToResource Operation</seealso>
         Task<AddTagsToResourceResponse> AddTagsToResourceAsync(AddTagsToResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -81,21 +83,29 @@ namespace Amazon.DatabaseMigrationService
 
         /// <summary>
         /// Creates an endpoint using the provided settings.
-        /// 
-        ///  <note/>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEndpoint service method.</param>
         /// 
         /// <returns>The response from the CreateEndpoint service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
+        /// AWS DMS was denied access to the endpoint.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSKeyNotAccessibleException">
         /// AWS DMS cannot access the KMS key.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceAlreadyExistsException">
         /// The resource you are attempting to create already exists.
         /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceQuotaExceededException">
         /// The quota for this resource quota has been exceeded.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateEndpoint">REST API Reference for CreateEndpoint Operation</seealso>
         CreateEndpointResponse CreateEndpoint(CreateEndpointRequest request);
 
 
@@ -108,6 +118,7 @@ namespace Amazon.DatabaseMigrationService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateEndpoint">REST API Reference for CreateEndpoint Operation</seealso>
         Task<CreateEndpointResponse> CreateEndpointAsync(CreateEndpointRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -117,8 +128,6 @@ namespace Amazon.DatabaseMigrationService
 
         /// <summary>
         /// Creates the replication instance using the specified parameters.
-        /// 
-        ///  <note/>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateReplicationInstance service method.</param>
         /// 
@@ -154,6 +163,7 @@ namespace Amazon.DatabaseMigrationService
         /// <exception cref="Amazon.DatabaseMigrationService.Model.StorageQuotaExceededException">
         /// The storage quota has been exceeded.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateReplicationInstance">REST API Reference for CreateReplicationInstance Operation</seealso>
         CreateReplicationInstanceResponse CreateReplicationInstance(CreateReplicationInstanceRequest request);
 
 
@@ -166,6 +176,7 @@ namespace Amazon.DatabaseMigrationService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateReplicationInstance">REST API Reference for CreateReplicationInstance Operation</seealso>
         Task<CreateReplicationInstanceResponse> CreateReplicationInstanceAsync(CreateReplicationInstanceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -175,8 +186,6 @@ namespace Amazon.DatabaseMigrationService
 
         /// <summary>
         /// Creates a replication subnet group given a list of the subnet IDs in a VPC.
-        /// 
-        ///  <note/>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateReplicationSubnetGroup service method.</param>
         /// 
@@ -200,6 +209,7 @@ namespace Amazon.DatabaseMigrationService
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceQuotaExceededException">
         /// The quota for this resource quota has been exceeded.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateReplicationSubnetGroup">REST API Reference for CreateReplicationSubnetGroup Operation</seealso>
         CreateReplicationSubnetGroupResponse CreateReplicationSubnetGroup(CreateReplicationSubnetGroupRequest request);
 
 
@@ -212,6 +222,7 @@ namespace Amazon.DatabaseMigrationService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateReplicationSubnetGroup">REST API Reference for CreateReplicationSubnetGroup Operation</seealso>
         Task<CreateReplicationSubnetGroupResponse> CreateReplicationSubnetGroupAsync(CreateReplicationSubnetGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -221,8 +232,6 @@ namespace Amazon.DatabaseMigrationService
 
         /// <summary>
         /// Creates a replication task using the specified parameters.
-        /// 
-        ///  <note/>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateReplicationTask service method.</param>
         /// 
@@ -242,6 +251,7 @@ namespace Amazon.DatabaseMigrationService
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceQuotaExceededException">
         /// The quota for this resource quota has been exceeded.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateReplicationTask">REST API Reference for CreateReplicationTask Operation</seealso>
         CreateReplicationTaskResponse CreateReplicationTask(CreateReplicationTaskRequest request);
 
 
@@ -254,7 +264,41 @@ namespace Amazon.DatabaseMigrationService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateReplicationTask">REST API Reference for CreateReplicationTask Operation</seealso>
         Task<CreateReplicationTaskResponse> CreateReplicationTaskAsync(CreateReplicationTaskRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteCertificate
+
+
+        /// <summary>
+        /// Deletes the specified certificate.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCertificate service method.</param>
+        /// 
+        /// <returns>The response from the DeleteCertificate service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteCertificate">REST API Reference for DeleteCertificate Operation</seealso>
+        DeleteCertificateResponse DeleteCertificate(DeleteCertificateRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteCertificate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCertificate operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteCertificate">REST API Reference for DeleteCertificate Operation</seealso>
+        Task<DeleteCertificateResponse> DeleteCertificateAsync(DeleteCertificateRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -262,10 +306,13 @@ namespace Amazon.DatabaseMigrationService
 
 
         /// <summary>
-        /// Deletes the specified endpoint. 
+        /// Deletes the specified endpoint.
         /// 
-        ///  <note>All tasks associated with the endpoint must be deleted before you can delete
-        /// the endpoint.</note>
+        ///  <note> 
+        /// <para>
+        /// All tasks associated with the endpoint must be deleted before you can delete the endpoint.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteEndpoint service method.</param>
         /// 
@@ -276,6 +323,7 @@ namespace Amazon.DatabaseMigrationService
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteEndpoint">REST API Reference for DeleteEndpoint Operation</seealso>
         DeleteEndpointResponse DeleteEndpoint(DeleteEndpointRequest request);
 
 
@@ -288,6 +336,7 @@ namespace Amazon.DatabaseMigrationService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteEndpoint">REST API Reference for DeleteEndpoint Operation</seealso>
         Task<DeleteEndpointResponse> DeleteEndpointAsync(DeleteEndpointRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -296,10 +345,14 @@ namespace Amazon.DatabaseMigrationService
 
 
         /// <summary>
-        /// Deletes the specified replication instance. 
+        /// Deletes the specified replication instance.
         /// 
-        ///  <note>You must delete any migration tasks that are associated with the replication
-        /// instance before you can delete it.</note>
+        ///  <note> 
+        /// <para>
+        /// You must delete any migration tasks that are associated with the replication instance
+        /// before you can delete it.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteReplicationInstance service method.</param>
         /// 
@@ -310,6 +363,7 @@ namespace Amazon.DatabaseMigrationService
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteReplicationInstance">REST API Reference for DeleteReplicationInstance Operation</seealso>
         DeleteReplicationInstanceResponse DeleteReplicationInstance(DeleteReplicationInstanceRequest request);
 
 
@@ -322,6 +376,7 @@ namespace Amazon.DatabaseMigrationService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteReplicationInstance">REST API Reference for DeleteReplicationInstance Operation</seealso>
         Task<DeleteReplicationInstanceResponse> DeleteReplicationInstanceAsync(DeleteReplicationInstanceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -331,8 +386,6 @@ namespace Amazon.DatabaseMigrationService
 
         /// <summary>
         /// Deletes a subnet group.
-        /// 
-        ///  <note/>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteReplicationSubnetGroup service method.</param>
         /// 
@@ -343,6 +396,7 @@ namespace Amazon.DatabaseMigrationService
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteReplicationSubnetGroup">REST API Reference for DeleteReplicationSubnetGroup Operation</seealso>
         DeleteReplicationSubnetGroupResponse DeleteReplicationSubnetGroup(DeleteReplicationSubnetGroupRequest request);
 
 
@@ -355,6 +409,7 @@ namespace Amazon.DatabaseMigrationService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteReplicationSubnetGroup">REST API Reference for DeleteReplicationSubnetGroup Operation</seealso>
         Task<DeleteReplicationSubnetGroupResponse> DeleteReplicationSubnetGroupAsync(DeleteReplicationSubnetGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -364,8 +419,6 @@ namespace Amazon.DatabaseMigrationService
 
         /// <summary>
         /// Deletes the specified replication task.
-        /// 
-        ///  <note/>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteReplicationTask service method.</param>
         /// 
@@ -376,6 +429,7 @@ namespace Amazon.DatabaseMigrationService
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteReplicationTask">REST API Reference for DeleteReplicationTask Operation</seealso>
         DeleteReplicationTaskResponse DeleteReplicationTask(DeleteReplicationTaskRequest request);
 
 
@@ -388,6 +442,7 @@ namespace Amazon.DatabaseMigrationService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteReplicationTask">REST API Reference for DeleteReplicationTask Operation</seealso>
         Task<DeleteReplicationTaskResponse> DeleteReplicationTaskAsync(DeleteReplicationTaskRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -399,17 +454,17 @@ namespace Amazon.DatabaseMigrationService
         /// Lists all of the AWS DMS attributes for a customer account. The attributes include
         /// AWS DMS quotas for the account, such as the number of replication instances allowed.
         /// The description for a quota includes the quota name, current usage toward that quota,
-        /// and the quota's maximum value. 
+        /// and the quota's maximum value.
         /// 
         ///  
         /// <para>
         /// This command does not take any parameters.
         /// </para>
-        ///  <note/>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAccountAttributes service method.</param>
         /// 
         /// <returns>The response from the DescribeAccountAttributes service method, as returned by DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeAccountAttributes">REST API Reference for DescribeAccountAttributes Operation</seealso>
         DescribeAccountAttributesResponse DescribeAccountAttributes(DescribeAccountAttributesRequest request);
 
 
@@ -422,7 +477,38 @@ namespace Amazon.DatabaseMigrationService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeAccountAttributes">REST API Reference for DescribeAccountAttributes Operation</seealso>
         Task<DescribeAccountAttributesResponse> DescribeAccountAttributesAsync(DescribeAccountAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeCertificates
+
+
+        /// <summary>
+        /// Provides a description of the certificate.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCertificates service method.</param>
+        /// 
+        /// <returns>The response from the DescribeCertificates service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeCertificates">REST API Reference for DescribeCertificates Operation</seealso>
+        DescribeCertificatesResponse DescribeCertificates(DescribeCertificatesRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeCertificates operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCertificates operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeCertificates">REST API Reference for DescribeCertificates Operation</seealso>
+        Task<DescribeCertificatesResponse> DescribeCertificatesAsync(DescribeCertificatesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -432,8 +518,6 @@ namespace Amazon.DatabaseMigrationService
         /// <summary>
         /// Describes the status of the connections that have been made between the replication
         /// instance and an endpoint. Connections are created when you test an endpoint.
-        /// 
-        ///  <note/>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeConnections service method.</param>
         /// 
@@ -441,6 +525,7 @@ namespace Amazon.DatabaseMigrationService
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeConnections">REST API Reference for DescribeConnections Operation</seealso>
         DescribeConnectionsResponse DescribeConnections(DescribeConnectionsRequest request);
 
 
@@ -453,6 +538,7 @@ namespace Amazon.DatabaseMigrationService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeConnections">REST API Reference for DescribeConnections Operation</seealso>
         Task<DescribeConnectionsResponse> DescribeConnectionsAsync(DescribeConnectionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -462,8 +548,6 @@ namespace Amazon.DatabaseMigrationService
 
         /// <summary>
         /// Returns information about the endpoints for your account in the current region.
-        /// 
-        ///  <note/>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEndpoints service method.</param>
         /// 
@@ -471,6 +555,7 @@ namespace Amazon.DatabaseMigrationService
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeEndpoints">REST API Reference for DescribeEndpoints Operation</seealso>
         DescribeEndpointsResponse DescribeEndpoints(DescribeEndpointsRequest request);
 
 
@@ -483,6 +568,7 @@ namespace Amazon.DatabaseMigrationService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeEndpoints">REST API Reference for DescribeEndpoints Operation</seealso>
         Task<DescribeEndpointsResponse> DescribeEndpointsAsync(DescribeEndpointsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -492,12 +578,11 @@ namespace Amazon.DatabaseMigrationService
 
         /// <summary>
         /// Returns information about the type of endpoints available.
-        /// 
-        ///  <note/>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEndpointTypes service method.</param>
         /// 
         /// <returns>The response from the DescribeEndpointTypes service method, as returned by DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeEndpointTypes">REST API Reference for DescribeEndpointTypes Operation</seealso>
         DescribeEndpointTypesResponse DescribeEndpointTypes(DescribeEndpointTypesRequest request);
 
 
@@ -510,6 +595,7 @@ namespace Amazon.DatabaseMigrationService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeEndpointTypes">REST API Reference for DescribeEndpointTypes Operation</seealso>
         Task<DescribeEndpointTypesResponse> DescribeEndpointTypesAsync(DescribeEndpointTypesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -520,12 +606,11 @@ namespace Amazon.DatabaseMigrationService
         /// <summary>
         /// Returns information about the replication instance types that can be created in the
         /// specified region.
-        /// 
-        ///  <note/>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeOrderableReplicationInstances service method.</param>
         /// 
         /// <returns>The response from the DescribeOrderableReplicationInstances service method, as returned by DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeOrderableReplicationInstances">REST API Reference for DescribeOrderableReplicationInstances Operation</seealso>
         DescribeOrderableReplicationInstancesResponse DescribeOrderableReplicationInstances(DescribeOrderableReplicationInstancesRequest request);
 
 
@@ -538,6 +623,7 @@ namespace Amazon.DatabaseMigrationService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeOrderableReplicationInstances">REST API Reference for DescribeOrderableReplicationInstances Operation</seealso>
         Task<DescribeOrderableReplicationInstancesResponse> DescribeOrderableReplicationInstancesAsync(DescribeOrderableReplicationInstancesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -547,8 +633,6 @@ namespace Amazon.DatabaseMigrationService
 
         /// <summary>
         /// Returns the status of the RefreshSchemas operation.
-        /// 
-        ///  <note/>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeRefreshSchemasStatus service method.</param>
         /// 
@@ -559,6 +643,7 @@ namespace Amazon.DatabaseMigrationService
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeRefreshSchemasStatus">REST API Reference for DescribeRefreshSchemasStatus Operation</seealso>
         DescribeRefreshSchemasStatusResponse DescribeRefreshSchemasStatus(DescribeRefreshSchemasStatusRequest request);
 
 
@@ -571,6 +656,7 @@ namespace Amazon.DatabaseMigrationService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeRefreshSchemasStatus">REST API Reference for DescribeRefreshSchemasStatus Operation</seealso>
         Task<DescribeRefreshSchemasStatusResponse> DescribeRefreshSchemasStatusAsync(DescribeRefreshSchemasStatusRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -580,8 +666,6 @@ namespace Amazon.DatabaseMigrationService
 
         /// <summary>
         /// Returns information about replication instances for your account in the current region.
-        /// 
-        ///  <note/>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeReplicationInstances service method.</param>
         /// 
@@ -589,6 +673,7 @@ namespace Amazon.DatabaseMigrationService
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationInstances">REST API Reference for DescribeReplicationInstances Operation</seealso>
         DescribeReplicationInstancesResponse DescribeReplicationInstances(DescribeReplicationInstancesRequest request);
 
 
@@ -601,6 +686,7 @@ namespace Amazon.DatabaseMigrationService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationInstances">REST API Reference for DescribeReplicationInstances Operation</seealso>
         Task<DescribeReplicationInstancesResponse> DescribeReplicationInstancesAsync(DescribeReplicationInstancesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -610,8 +696,6 @@ namespace Amazon.DatabaseMigrationService
 
         /// <summary>
         /// Returns information about the replication subnet groups.
-        /// 
-        ///  <note/>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeReplicationSubnetGroups service method.</param>
         /// 
@@ -619,6 +703,7 @@ namespace Amazon.DatabaseMigrationService
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationSubnetGroups">REST API Reference for DescribeReplicationSubnetGroups Operation</seealso>
         DescribeReplicationSubnetGroupsResponse DescribeReplicationSubnetGroups(DescribeReplicationSubnetGroupsRequest request);
 
 
@@ -631,6 +716,7 @@ namespace Amazon.DatabaseMigrationService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationSubnetGroups">REST API Reference for DescribeReplicationSubnetGroups Operation</seealso>
         Task<DescribeReplicationSubnetGroupsResponse> DescribeReplicationSubnetGroupsAsync(DescribeReplicationSubnetGroupsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -640,8 +726,6 @@ namespace Amazon.DatabaseMigrationService
 
         /// <summary>
         /// Returns information about replication tasks for your account in the current region.
-        /// 
-        ///  <note/>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeReplicationTasks service method.</param>
         /// 
@@ -649,6 +733,7 @@ namespace Amazon.DatabaseMigrationService
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationTasks">REST API Reference for DescribeReplicationTasks Operation</seealso>
         DescribeReplicationTasksResponse DescribeReplicationTasks(DescribeReplicationTasksRequest request);
 
 
@@ -661,6 +746,7 @@ namespace Amazon.DatabaseMigrationService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationTasks">REST API Reference for DescribeReplicationTasks Operation</seealso>
         Task<DescribeReplicationTasksResponse> DescribeReplicationTasksAsync(DescribeReplicationTasksRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -670,8 +756,6 @@ namespace Amazon.DatabaseMigrationService
 
         /// <summary>
         /// Returns information about the schema for the specified endpoint.
-        /// 
-        ///  <note/>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSchemas service method.</param>
         /// 
@@ -682,6 +766,7 @@ namespace Amazon.DatabaseMigrationService
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeSchemas">REST API Reference for DescribeSchemas Operation</seealso>
         DescribeSchemasResponse DescribeSchemas(DescribeSchemasRequest request);
 
 
@@ -694,6 +779,7 @@ namespace Amazon.DatabaseMigrationService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeSchemas">REST API Reference for DescribeSchemas Operation</seealso>
         Task<DescribeSchemasResponse> DescribeSchemasAsync(DescribeSchemasRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -704,8 +790,6 @@ namespace Amazon.DatabaseMigrationService
         /// <summary>
         /// Returns table statistics on the database migration task, including table name, rows
         /// inserted, rows updated, and rows deleted.
-        /// 
-        ///  <note/>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeTableStatistics service method.</param>
         /// 
@@ -716,6 +800,7 @@ namespace Amazon.DatabaseMigrationService
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeTableStatistics">REST API Reference for DescribeTableStatistics Operation</seealso>
         DescribeTableStatisticsResponse DescribeTableStatistics(DescribeTableStatisticsRequest request);
 
 
@@ -728,7 +813,41 @@ namespace Amazon.DatabaseMigrationService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeTableStatistics">REST API Reference for DescribeTableStatistics Operation</seealso>
         Task<DescribeTableStatisticsResponse> DescribeTableStatisticsAsync(DescribeTableStatisticsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ImportCertificate
+
+
+        /// <summary>
+        /// Uploads the specified certificate.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ImportCertificate service method.</param>
+        /// 
+        /// <returns>The response from the ImportCertificate service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidCertificateException">
+        /// The certificate was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceAlreadyExistsException">
+        /// The resource you are attempting to create already exists.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ImportCertificate">REST API Reference for ImportCertificate Operation</seealso>
+        ImportCertificateResponse ImportCertificate(ImportCertificateRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ImportCertificate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ImportCertificate operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ImportCertificate">REST API Reference for ImportCertificate Operation</seealso>
+        Task<ImportCertificateResponse> ImportCertificateAsync(ImportCertificateRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -737,8 +856,6 @@ namespace Amazon.DatabaseMigrationService
 
         /// <summary>
         /// Lists all tags for an AWS DMS resource.
-        /// 
-        ///  <note/>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
@@ -746,6 +863,7 @@ namespace Amazon.DatabaseMigrationService
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
 
 
@@ -758,6 +876,7 @@ namespace Amazon.DatabaseMigrationService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -767,8 +886,6 @@ namespace Amazon.DatabaseMigrationService
 
         /// <summary>
         /// Modifies the specified endpoint.
-        /// 
-        ///  <note/>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyEndpoint service method.</param>
         /// 
@@ -785,6 +902,7 @@ namespace Amazon.DatabaseMigrationService
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyEndpoint">REST API Reference for ModifyEndpoint Operation</seealso>
         ModifyEndpointResponse ModifyEndpoint(ModifyEndpointRequest request);
 
 
@@ -797,6 +915,7 @@ namespace Amazon.DatabaseMigrationService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyEndpoint">REST API Reference for ModifyEndpoint Operation</seealso>
         Task<ModifyEndpointResponse> ModifyEndpointAsync(ModifyEndpointRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -808,7 +927,10 @@ namespace Amazon.DatabaseMigrationService
         /// Modifies the replication instance to apply new settings. You can change one or more
         /// parameters by specifying these parameters and the new values in the request.
         /// 
-        ///  <note>Some settings are applied during the maintenance window.</note>
+        ///  
+        /// <para>
+        /// Some settings are applied during the maintenance window.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyReplicationInstance service method.</param>
         /// 
@@ -831,6 +953,7 @@ namespace Amazon.DatabaseMigrationService
         /// <exception cref="Amazon.DatabaseMigrationService.Model.UpgradeDependencyFailureException">
         /// An upgrade dependency is preventing the database migration.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyReplicationInstance">REST API Reference for ModifyReplicationInstance Operation</seealso>
         ModifyReplicationInstanceResponse ModifyReplicationInstance(ModifyReplicationInstanceRequest request);
 
 
@@ -843,6 +966,7 @@ namespace Amazon.DatabaseMigrationService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyReplicationInstance">REST API Reference for ModifyReplicationInstance Operation</seealso>
         Task<ModifyReplicationInstanceResponse> ModifyReplicationInstanceAsync(ModifyReplicationInstanceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -852,12 +976,13 @@ namespace Amazon.DatabaseMigrationService
 
         /// <summary>
         /// Modifies the settings for the specified replication subnet group.
-        /// 
-        ///  <note/>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyReplicationSubnetGroup service method.</param>
         /// 
         /// <returns>The response from the ModifyReplicationSubnetGroup service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
+        /// AWS DMS was denied access to the endpoint.
+        /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidSubnetException">
         /// The subnet provided is invalid.
         /// </exception>
@@ -874,6 +999,7 @@ namespace Amazon.DatabaseMigrationService
         /// <exception cref="Amazon.DatabaseMigrationService.Model.SubnetAlreadyInUseException">
         /// The specified subnet is already in use.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyReplicationSubnetGroup">REST API Reference for ModifyReplicationSubnetGroup Operation</seealso>
         ModifyReplicationSubnetGroupResponse ModifyReplicationSubnetGroup(ModifyReplicationSubnetGroupRequest request);
 
 
@@ -886,7 +1012,53 @@ namespace Amazon.DatabaseMigrationService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyReplicationSubnetGroup">REST API Reference for ModifyReplicationSubnetGroup Operation</seealso>
         Task<ModifyReplicationSubnetGroupResponse> ModifyReplicationSubnetGroupAsync(ModifyReplicationSubnetGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ModifyReplicationTask
+
+
+        /// <summary>
+        /// Modifies the specified replication task.
+        /// 
+        ///  
+        /// <para>
+        /// You can't modify the task endpoints. The task must be stopped before you can modify
+        /// it. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyReplicationTask service method.</param>
+        /// 
+        /// <returns>The response from the ModifyReplicationTask service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSKeyNotAccessibleException">
+        /// AWS DMS cannot access the KMS key.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceAlreadyExistsException">
+        /// The resource you are attempting to create already exists.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyReplicationTask">REST API Reference for ModifyReplicationTask Operation</seealso>
+        ModifyReplicationTaskResponse ModifyReplicationTask(ModifyReplicationTaskRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyReplicationTask operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyReplicationTask operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyReplicationTask">REST API Reference for ModifyReplicationTask Operation</seealso>
+        Task<ModifyReplicationTaskResponse> ModifyReplicationTaskAsync(ModifyReplicationTaskRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -897,8 +1069,6 @@ namespace Amazon.DatabaseMigrationService
         /// Populates the schema for the specified endpoint. This is an asynchronous operation
         /// and can take several minutes. You can check the status of this operation by calling
         /// the DescribeRefreshSchemasStatus operation.
-        /// 
-        ///  <note/>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RefreshSchemas service method.</param>
         /// 
@@ -915,6 +1085,7 @@ namespace Amazon.DatabaseMigrationService
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceQuotaExceededException">
         /// The quota for this resource quota has been exceeded.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/RefreshSchemas">REST API Reference for RefreshSchemas Operation</seealso>
         RefreshSchemasResponse RefreshSchemas(RefreshSchemasRequest request);
 
 
@@ -927,6 +1098,7 @@ namespace Amazon.DatabaseMigrationService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/RefreshSchemas">REST API Reference for RefreshSchemas Operation</seealso>
         Task<RefreshSchemasResponse> RefreshSchemasAsync(RefreshSchemasRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -936,8 +1108,6 @@ namespace Amazon.DatabaseMigrationService
 
         /// <summary>
         /// Removes metadata tags from a DMS resource.
-        /// 
-        ///  <note/>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemoveTagsFromResource service method.</param>
         /// 
@@ -945,6 +1115,7 @@ namespace Amazon.DatabaseMigrationService
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/RemoveTagsFromResource">REST API Reference for RemoveTagsFromResource Operation</seealso>
         RemoveTagsFromResourceResponse RemoveTagsFromResource(RemoveTagsFromResourceRequest request);
 
 
@@ -957,6 +1128,7 @@ namespace Amazon.DatabaseMigrationService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/RemoveTagsFromResource">REST API Reference for RemoveTagsFromResource Operation</seealso>
         Task<RemoveTagsFromResourceResponse> RemoveTagsFromResourceAsync(RemoveTagsFromResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -966,8 +1138,6 @@ namespace Amazon.DatabaseMigrationService
 
         /// <summary>
         /// Starts the replication task.
-        /// 
-        ///  <note/>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartReplicationTask service method.</param>
         /// 
@@ -978,6 +1148,7 @@ namespace Amazon.DatabaseMigrationService
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartReplicationTask">REST API Reference for StartReplicationTask Operation</seealso>
         StartReplicationTaskResponse StartReplicationTask(StartReplicationTaskRequest request);
 
 
@@ -990,6 +1161,7 @@ namespace Amazon.DatabaseMigrationService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartReplicationTask">REST API Reference for StartReplicationTask Operation</seealso>
         Task<StartReplicationTaskResponse> StartReplicationTaskAsync(StartReplicationTaskRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -999,8 +1171,6 @@ namespace Amazon.DatabaseMigrationService
 
         /// <summary>
         /// Stops the replication task.
-        /// 
-        ///  <note/>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopReplicationTask service method.</param>
         /// 
@@ -1011,6 +1181,7 @@ namespace Amazon.DatabaseMigrationService
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StopReplicationTask">REST API Reference for StopReplicationTask Operation</seealso>
         StopReplicationTaskResponse StopReplicationTask(StopReplicationTaskRequest request);
 
 
@@ -1023,6 +1194,7 @@ namespace Amazon.DatabaseMigrationService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StopReplicationTask">REST API Reference for StopReplicationTask Operation</seealso>
         Task<StopReplicationTaskResponse> StopReplicationTaskAsync(StopReplicationTaskRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1031,9 +1203,7 @@ namespace Amazon.DatabaseMigrationService
 
 
         /// <summary>
-        /// Tests the connection between the replication instance and the endpoint. 
-        /// 
-        ///  <note/>
+        /// Tests the connection between the replication instance and the endpoint.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TestConnection service method.</param>
         /// 
@@ -1050,6 +1220,7 @@ namespace Amazon.DatabaseMigrationService
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceQuotaExceededException">
         /// The quota for this resource quota has been exceeded.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/TestConnection">REST API Reference for TestConnection Operation</seealso>
         TestConnectionResponse TestConnection(TestConnectionRequest request);
 
 
@@ -1062,6 +1233,7 @@ namespace Amazon.DatabaseMigrationService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/TestConnection">REST API Reference for TestConnection Operation</seealso>
         Task<TestConnectionResponse> TestConnectionAsync(TestConnectionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion

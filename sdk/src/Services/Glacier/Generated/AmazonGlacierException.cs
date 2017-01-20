@@ -28,7 +28,7 @@ namespace Amazon.Glacier
     ///<summary>
     /// Common exception for the Glacier service.
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class AmazonGlacierException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.Glacier
         {
         }
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the AmazonGlacierException class with serialized data.
         /// </summary>

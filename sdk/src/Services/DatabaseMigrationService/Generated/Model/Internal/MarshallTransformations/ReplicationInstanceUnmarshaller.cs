@@ -100,6 +100,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.KmsKeyId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("MultiAZ", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.MultiAZ = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("PendingModifiedValues", targetDepth))
                 {
                     var unmarshaller = ReplicationPendingModifiedValuesUnmarshaller.Instance;
@@ -142,10 +148,22 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.ReplicationInstancePrivateIpAddress = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ReplicationInstancePrivateIpAddresses", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.ReplicationInstancePrivateIpAddresses = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ReplicationInstancePublicIpAddress", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ReplicationInstancePublicIpAddress = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ReplicationInstancePublicIpAddresses", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.ReplicationInstancePublicIpAddresses = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ReplicationInstanceStatus", targetDepth))
@@ -158,6 +176,18 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = ReplicationSubnetGroupUnmarshaller.Instance;
                     unmarshalledObject.ReplicationSubnetGroup = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SecondaryAvailabilityZone", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SecondaryAvailabilityZone = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("VpcSecurityGroups", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<VpcSecurityGroupMembership, VpcSecurityGroupMembershipUnmarshaller>(VpcSecurityGroupMembershipUnmarshaller.Instance);
+                    unmarshalledObject.VpcSecurityGroups = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

@@ -25,7 +25,7 @@ namespace Amazon.ElasticFileSystem.Model
     ///<summary>
     /// ElasticFileSystem exception
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class IpAddressInUseException : AmazonElasticFileSystemException 
@@ -79,7 +79,7 @@ namespace Amazon.ElasticFileSystem.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the IpAddressInUseException class with serialized data.
         /// </summary>

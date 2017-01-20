@@ -25,7 +25,7 @@ namespace Amazon.SimpleDB.Model
     ///<summary>
     /// SimpleDB exception
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class InvalidNumberValueTestsException : AmazonSimpleDBException 
@@ -84,7 +84,7 @@ namespace Amazon.SimpleDB.Model
         public float BoxUsage { get; set; }
 
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the InvalidNumberValueTestsException class with serialized data.
         /// </summary>

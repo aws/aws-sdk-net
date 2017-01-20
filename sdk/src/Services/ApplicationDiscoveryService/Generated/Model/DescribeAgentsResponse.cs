@@ -38,10 +38,11 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property AgentsInfo. 
         /// <para>
-        /// Lists AWS agents by ID or lists all agents associated with your user account if you
-        /// did not specify an agent ID. The output includes agent IDs, IP addresses, media access
-        /// control (MAC) addresses, agent health, host name where the agent resides, and the
-        /// version number of each agent.
+        /// Lists agents or the Connector by ID or lists all agents/Connectors associated with
+        /// your user account if you did not specify an agent/Connector ID. The output includes
+        /// agent/Connector IDs, IP addresses, media access control (MAC) addresses, agent/Connector
+        /// health, host name where the agent/Connector resides, and the version number of each
+        /// agent/Connector.
         /// </para>
         /// </summary>
         public List<AgentInfo> AgentsInfo
@@ -59,7 +60,10 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The call returns a token. Use this token to get the next set of results.
+        /// Token to retrieve the next set of results. For example, if you specified 100 IDs for
+        /// <code>DescribeAgentsRequest$agentIds</code> but set <code>DescribeAgentsRequest$maxResults</code>
+        /// to 10, you received a set of 10 results along with this token. Use this token in the
+        /// next query to retrieve the next set of 10.
         /// </para>
         /// </summary>
         public string NextToken

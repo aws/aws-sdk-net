@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2016-01-28.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-11-25.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -28,7 +28,22 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// A complex type that contains zero or more CustomErrorResponse elements.
+    /// A complex type that controls:
+    /// 
+    ///  <ul> <li> 
+    /// <para>
+    /// Whether CloudFront replaces HTTP status codes in the 4xx and 5xx range with custom
+    /// error messages before returning the response to the viewer.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// How long CloudFront caches HTTP status codes in the 4xx and 5xx range.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// For more information about custom error pages, see <a href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html">Customizing
+    /// Error Responses</a> in the <i>Amazon CloudFront Developer Guide</i>.
+    /// </para>
     /// </summary>
     public partial class CustomErrorResponses
     {
@@ -36,8 +51,12 @@ namespace Amazon.CloudFront.Model
         private int? _quantity;
 
         /// <summary>
-        /// Gets and sets the property Items. Optional: A complex type that contains custom error
-        /// responses for this distribution. If Quantity is 0, you can omit Items.
+        /// Gets and sets the property Items. 
+        /// <para>
+        /// A complex type that contains a <code>CustomErrorResponse</code> element for each HTTP
+        /// status code for which you want to specify a custom error page and/or a caching duration.
+        /// 
+        /// </para>
         /// </summary>
         public List<CustomErrorResponse> Items
         {
@@ -52,8 +71,12 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Quantity. The number of custom error responses for this
-        /// distribution.
+        /// Gets and sets the property Quantity. 
+        /// <para>
+        /// The number of HTTP status codes for which you want to specify a custom error page
+        /// and/or a caching duration. If <code>Quantity</code> is <code>0</code>, you can omit
+        /// <code>Items</code>.
+        /// </para>
         /// </summary>
         public int Quantity
         {

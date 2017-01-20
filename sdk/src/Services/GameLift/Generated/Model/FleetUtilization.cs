@@ -34,6 +34,7 @@ namespace Amazon.GameLift.Model
     public partial class FleetUtilization
     {
         private int? _activeGameSessionCount;
+        private int? _activeServerProcessCount;
         private int? _currentPlayerSessionCount;
         private string _fleetId;
         private int? _maximumPlayerSessionCount;
@@ -41,7 +42,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property ActiveGameSessionCount. 
         /// <para>
-        /// Number of active game sessions currently being hosted on fleet game servers.
+        /// Number of active game sessions currently being hosted on all instances in the fleet.
         /// </para>
         /// </summary>
         public int ActiveGameSessionCount
@@ -57,9 +58,28 @@ namespace Amazon.GameLift.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ActiveServerProcessCount. 
+        /// <para>
+        /// Number of server processes in an <code>ACTIVE</code> status currently running across
+        /// all instances in the fleet
+        /// </para>
+        /// </summary>
+        public int ActiveServerProcessCount
+        {
+            get { return this._activeServerProcessCount.GetValueOrDefault(); }
+            set { this._activeServerProcessCount = value; }
+        }
+
+        // Check to see if ActiveServerProcessCount property is set
+        internal bool IsSetActiveServerProcessCount()
+        {
+            return this._activeServerProcessCount.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property CurrentPlayerSessionCount. 
         /// <para>
-        /// Number of active player sessions currently being hosted on fleet game servers.
+        /// Number of active player sessions currently being hosted on all instances in the fleet.
         /// </para>
         /// </summary>
         public int CurrentPlayerSessionCount
@@ -95,7 +115,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property MaximumPlayerSessionCount. 
         /// <para>
-        /// Maximum players allowed across all game sessions currently hosted in the fleet.
+        /// Maximum players allowed across all game sessions currently being hosted on all instances
+        /// in the fleet.
         /// </para>
         /// </summary>
         public int MaximumPlayerSessionCount

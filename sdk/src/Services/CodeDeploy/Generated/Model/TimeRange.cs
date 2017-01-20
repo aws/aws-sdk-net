@@ -40,7 +40,11 @@ namespace Amazon.CodeDeploy.Model
         /// <para>
         /// The end time of the time range.
         /// </para>
-        ///  <note>Specify null to leave the end time open-ended.</note>
+        ///  <note> 
+        /// <para>
+        /// Specify null to leave the end time open-ended.
+        /// </para>
+        ///  </note>
         /// </summary>
         public DateTime End
         {
@@ -59,7 +63,11 @@ namespace Amazon.CodeDeploy.Model
         /// <para>
         /// The start time of the time range.
         /// </para>
-        ///  <note>Specify null to leave the start time open-ended.</note>
+        ///  <note> 
+        /// <para>
+        /// Specify null to leave the start time open-ended.
+        /// </para>
+        ///  </note>
         /// </summary>
         public DateTime Start
         {

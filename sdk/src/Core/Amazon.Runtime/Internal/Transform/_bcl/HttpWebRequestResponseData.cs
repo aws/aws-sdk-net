@@ -21,7 +21,7 @@ using System.Text;
 
 namespace Amazon.Runtime.Internal.Transform
 {
-#if !PCL
+#if !PCL && !CORECLR
     // This exception is marked Serializable, but its ResponseBody field is not
     // serialized/deserialized.
     [Serializable]

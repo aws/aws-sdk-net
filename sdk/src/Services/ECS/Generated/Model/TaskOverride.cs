@@ -33,6 +33,7 @@ namespace Amazon.ECS.Model
     public partial class TaskOverride
     {
         private List<ContainerOverride> _containerOverrides = new List<ContainerOverride>();
+        private string _taskRoleArn;
 
         /// <summary>
         /// Gets and sets the property ContainerOverrides. 
@@ -50,6 +51,26 @@ namespace Amazon.ECS.Model
         internal bool IsSetContainerOverrides()
         {
             return this._containerOverrides != null && this._containerOverrides.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TaskRoleArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the IAM role that containers in this task can assume.
+        /// All containers in this task are granted the permissions that are specified in this
+        /// role.
+        /// </para>
+        /// </summary>
+        public string TaskRoleArn
+        {
+            get { return this._taskRoleArn; }
+            set { this._taskRoleArn = value; }
+        }
+
+        // Check to see if TaskRoleArn property is set
+        internal bool IsSetTaskRoleArn()
+        {
+            return this._taskRoleArn != null;
         }
 
     }

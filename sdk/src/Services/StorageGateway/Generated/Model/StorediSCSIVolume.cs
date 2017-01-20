@@ -28,10 +28,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
-    /// 
+    /// Describes an iSCSI stored volume.
     /// </summary>
     public partial class StorediSCSIVolume
     {
+        private DateTime? _createdDate;
         private bool? _preservedExistingData;
         private string _sourceSnapshotId;
         private string _volumeARN;
@@ -44,7 +45,30 @@ namespace Amazon.StorageGateway.Model
         private string _volumeType;
 
         /// <summary>
-        /// Gets and sets the property PreservedExistingData.
+        /// Gets and sets the property CreatedDate.
+        /// </summary>
+        public DateTime CreatedDate
+        {
+            get { return this._createdDate.GetValueOrDefault(); }
+            set { this._createdDate = value; }
+        }
+
+        // Check to see if CreatedDate property is set
+        internal bool IsSetCreatedDate()
+        {
+            return this._createdDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PreservedExistingData. 
+        /// <para>
+        /// Indicates if when the stored volume was created, existing data on the underlying local
+        /// disk was preserved.
+        /// </para>
+        ///  
+        /// <para>
+        ///  Valid Values: true, false
+        /// </para>
         /// </summary>
         public bool PreservedExistingData
         {
@@ -59,7 +83,11 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SourceSnapshotId.
+        /// Gets and sets the property SourceSnapshotId. 
+        /// <para>
+        /// If the stored volume was created from a snapshot, this field contains the snapshot
+        /// ID used, e.g. snap-78e22663. Otherwise, this field is not included.
+        /// </para>
         /// </summary>
         public string SourceSnapshotId
         {
@@ -74,7 +102,10 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VolumeARN.
+        /// Gets and sets the property VolumeARN. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the storage volume.
+        /// </para>
         /// </summary>
         public string VolumeARN
         {
@@ -89,7 +120,11 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VolumeDiskId.
+        /// Gets and sets the property VolumeDiskId. 
+        /// <para>
+        /// The ID of the local disk that was specified in the <a>CreateStorediSCSIVolume</a>
+        /// operation.
+        /// </para>
         /// </summary>
         public string VolumeDiskId
         {
@@ -104,7 +139,10 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VolumeId.
+        /// Gets and sets the property VolumeId. 
+        /// <para>
+        /// The unique identifier of the volume, e.g. vol-AE4B946D.
+        /// </para>
         /// </summary>
         public string VolumeId
         {
@@ -119,7 +157,11 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VolumeiSCSIAttributes.
+        /// Gets and sets the property VolumeiSCSIAttributes. 
+        /// <para>
+        /// An <a>VolumeiSCSIAttributes</a> object that represents a collection of iSCSI attributes
+        /// for one stored volume.
+        /// </para>
         /// </summary>
         public VolumeiSCSIAttributes VolumeiSCSIAttributes
         {
@@ -134,7 +176,12 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VolumeProgress.
+        /// Gets and sets the property VolumeProgress. 
+        /// <para>
+        /// Represents the percentage complete if the volume is restoring or bootstrapping that
+        /// represents the percent of data transferred. This field does not appear in the response
+        /// if the stored volume is not restoring or bootstrapping.
+        /// </para>
         /// </summary>
         public double VolumeProgress
         {
@@ -149,7 +196,10 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VolumeSizeInBytes.
+        /// Gets and sets the property VolumeSizeInBytes. 
+        /// <para>
+        /// The size of the volume in bytes.
+        /// </para>
         /// </summary>
         public long VolumeSizeInBytes
         {
@@ -164,7 +214,10 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VolumeStatus.
+        /// Gets and sets the property VolumeStatus. 
+        /// <para>
+        /// One of the VolumeStatus values that indicates the state of the storage volume.
+        /// </para>
         /// </summary>
         public string VolumeStatus
         {
@@ -179,7 +232,10 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VolumeType.
+        /// Gets and sets the property VolumeType. 
+        /// <para>
+        /// One of the VolumeType enumeration values describing the type of the volume.
+        /// </para>
         /// </summary>
         public string VolumeType
         {

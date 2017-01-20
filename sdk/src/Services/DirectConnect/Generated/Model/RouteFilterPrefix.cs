@@ -42,7 +42,11 @@ namespace Amazon.DirectConnect.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: 10.10.10.0/24,10.10.11.0/24
+        /// IPv6 CIDRs must be at least a /64 or shorter
+        /// </para>
+        ///  
+        /// <para>
+        /// Example: 10.10.10.0/24,10.10.11.0/24,2001:db8::/64
         /// </para>
         /// </summary>
         public string Cidr

@@ -146,6 +146,14 @@ namespace Amazon.ConfigService
         /// Constant DELETING for ConfigRuleState
         /// </summary>
         public static readonly ConfigRuleState DELETING = new ConfigRuleState("DELETING");
+        /// <summary>
+        /// Constant DELETING_RESULTS for ConfigRuleState
+        /// </summary>
+        public static readonly ConfigRuleState DELETING_RESULTS = new ConfigRuleState("DELETING_RESULTS");
+        /// <summary>
+        /// Constant EVALUATING for ConfigRuleState
+        /// </summary>
+        public static readonly ConfigRuleState EVALUATING = new ConfigRuleState("EVALUATING");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -416,6 +424,14 @@ namespace Amazon.ConfigService
         /// Constant ConfigurationSnapshotDeliveryCompleted for MessageType
         /// </summary>
         public static readonly MessageType ConfigurationSnapshotDeliveryCompleted = new MessageType("ConfigurationSnapshotDeliveryCompleted");
+        /// <summary>
+        /// Constant OversizedConfigurationItemChangeNotification for MessageType
+        /// </summary>
+        public static readonly MessageType OversizedConfigurationItemChangeNotification = new MessageType("OversizedConfigurationItemChangeNotification");
+        /// <summary>
+        /// Constant ScheduledNotification for MessageType
+        /// </summary>
+        public static readonly MessageType ScheduledNotification = new MessageType("ScheduledNotification");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -563,6 +579,10 @@ namespace Amazon.ConfigService
     {
 
         /// <summary>
+        /// Constant AWSACMCertificate for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSACMCertificate = new ResourceType("AWS::ACM::Certificate");
+        /// <summary>
         /// Constant AWSCloudTrailTrail for ResourceType
         /// </summary>
         public static readonly ResourceType AWSCloudTrailTrail = new ResourceType("AWS::CloudTrail::Trail");
@@ -623,6 +643,10 @@ namespace Amazon.ConfigService
         /// </summary>
         public static readonly ResourceType AWSEC2VPNGateway = new ResourceType("AWS::EC2::VPNGateway");
         /// <summary>
+        /// Constant AWSElasticLoadBalancingV2LoadBalancer for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSElasticLoadBalancingV2LoadBalancer = new ResourceType("AWS::ElasticLoadBalancingV2::LoadBalancer");
+        /// <summary>
         /// Constant AWSIAMGroup for ResourceType
         /// </summary>
         public static readonly ResourceType AWSIAMGroup = new ResourceType("AWS::IAM::Group");
@@ -638,6 +662,58 @@ namespace Amazon.ConfigService
         /// Constant AWSIAMUser for ResourceType
         /// </summary>
         public static readonly ResourceType AWSIAMUser = new ResourceType("AWS::IAM::User");
+        /// <summary>
+        /// Constant AWSRDSDBInstance for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSRDSDBInstance = new ResourceType("AWS::RDS::DBInstance");
+        /// <summary>
+        /// Constant AWSRDSDBSecurityGroup for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSRDSDBSecurityGroup = new ResourceType("AWS::RDS::DBSecurityGroup");
+        /// <summary>
+        /// Constant AWSRDSDBSnapshot for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSRDSDBSnapshot = new ResourceType("AWS::RDS::DBSnapshot");
+        /// <summary>
+        /// Constant AWSRDSDBSubnetGroup for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSRDSDBSubnetGroup = new ResourceType("AWS::RDS::DBSubnetGroup");
+        /// <summary>
+        /// Constant AWSRDSEventSubscription for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSRDSEventSubscription = new ResourceType("AWS::RDS::EventSubscription");
+        /// <summary>
+        /// Constant AWSRedshiftCluster for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSRedshiftCluster = new ResourceType("AWS::Redshift::Cluster");
+        /// <summary>
+        /// Constant AWSRedshiftClusterParameterGroup for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSRedshiftClusterParameterGroup = new ResourceType("AWS::Redshift::ClusterParameterGroup");
+        /// <summary>
+        /// Constant AWSRedshiftClusterSecurityGroup for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSRedshiftClusterSecurityGroup = new ResourceType("AWS::Redshift::ClusterSecurityGroup");
+        /// <summary>
+        /// Constant AWSRedshiftClusterSnapshot for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSRedshiftClusterSnapshot = new ResourceType("AWS::Redshift::ClusterSnapshot");
+        /// <summary>
+        /// Constant AWSRedshiftClusterSubnetGroup for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSRedshiftClusterSubnetGroup = new ResourceType("AWS::Redshift::ClusterSubnetGroup");
+        /// <summary>
+        /// Constant AWSRedshiftEventSubscription for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSRedshiftEventSubscription = new ResourceType("AWS::Redshift::EventSubscription");
+        /// <summary>
+        /// Constant AWSS3Bucket for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSS3Bucket = new ResourceType("AWS::S3::Bucket");
+        /// <summary>
+        /// Constant AWSSSMManagedInstanceInventory for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSSSMManagedInstanceInventory = new ResourceType("AWS::SSM::ManagedInstanceInventory");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

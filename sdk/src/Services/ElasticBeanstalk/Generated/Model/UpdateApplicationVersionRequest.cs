@@ -29,10 +29,14 @@ namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateApplicationVersion operation.
-    /// Updates the specified application version to have the specified properties. 
+    /// Updates the specified application version to have the specified properties.
     /// 
-    ///  <note> If a property (for example, <code>description</code>) is not provided, the
-    /// value remains unchanged. To clear properties, specify an empty string. </note>
+    ///  <note> 
+    /// <para>
+    /// If a property (for example, <code>description</code>) is not provided, the value remains
+    /// unchanged. To clear properties, specify an empty string.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class UpdateApplicationVersionRequest : AmazonElasticBeanstalkRequest
     {
@@ -48,8 +52,8 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Instantiates UpdateApplicationVersionRequest with the parameterized properties
         /// </summary>
-        /// <param name="applicationName"> The name of the application associated with this version.   If no application is found with this name, <code>UpdateApplication</code> returns an <code>InvalidParameterValue</code> error. </param>
-        /// <param name="versionLabel">The name of the version to update.  If no application version is found with this label, <code>UpdateApplication</code> returns an <code>InvalidParameterValue</code> error. </param>
+        /// <param name="applicationName">The name of the application associated with this version.  If no application is found with this name, <code>UpdateApplication</code> returns an <code>InvalidParameterValue</code> error.</param>
+        /// <param name="versionLabel">The name of the version to update. If no application version is found with this label, <code>UpdateApplication</code> returns an <code>InvalidParameterValue</code> error. </param>
         public UpdateApplicationVersionRequest(string applicationName, string versionLabel)
         {
             _applicationName = applicationName;
@@ -59,12 +63,12 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property ApplicationName. 
         /// <para>
-        ///  The name of the application associated with this version. 
+        /// The name of the application associated with this version.
         /// </para>
         ///  
         /// <para>
         ///  If no application is found with this name, <code>UpdateApplication</code> returns
-        /// an <code>InvalidParameterValue</code> error. 
+        /// an <code>InvalidParameterValue</code> error.
         /// </para>
         /// </summary>
         public string ApplicationName
@@ -82,7 +86,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A new description for this release.
+        /// A new description for this version.
         /// </para>
         /// </summary>
         public string Description
@@ -104,7 +108,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </para>
         ///  
         /// <para>
-        ///  If no application version is found with this label, <code>UpdateApplication</code>
+        /// If no application version is found with this label, <code>UpdateApplication</code>
         /// returns an <code>InvalidParameterValue</code> error. 
         /// </para>
         /// </summary>

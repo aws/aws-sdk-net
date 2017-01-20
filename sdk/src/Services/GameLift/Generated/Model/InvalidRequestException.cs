@@ -25,7 +25,7 @@ namespace Amazon.GameLift.Model
     ///<summary>
     /// GameLift exception
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class InvalidRequestException : AmazonGameLiftException 
@@ -79,7 +79,7 @@ namespace Amazon.GameLift.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the InvalidRequestException class with serialized data.
         /// </summary>

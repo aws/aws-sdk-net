@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2016-01-28.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-11-25.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -46,7 +46,7 @@ namespace Amazon.CloudFront.Model
         /// Instantiates UpdateStreamingDistributionRequest with the parameterized properties
         /// </summary>
         /// <param name="id">The streaming distribution's id.</param>
-        /// <param name="ifMatch">The value of the ETag header you received when retrieving the streaming distribution's configuration. For example: E2QWRUHAPOMQZL.</param>
+        /// <param name="ifMatch">The value of the <code>ETag</code> header that you received when retrieving the streaming distribution's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</param>
         /// <param name="streamingDistributionConfig">The streaming distribution's configuration information.</param>
         public UpdateStreamingDistributionRequest(string id, string ifMatch, StreamingDistributionConfig streamingDistributionConfig)
         {
@@ -56,7 +56,10 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Id. The streaming distribution's id.
+        /// Gets and sets the property Id. 
+        /// <para>
+        /// The streaming distribution's id.
+        /// </para>
         /// </summary>
         public string Id
         {
@@ -71,8 +74,11 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IfMatch. The value of the ETag header you received when
-        /// retrieving the streaming distribution's configuration. For example: E2QWRUHAPOMQZL.
+        /// Gets and sets the property IfMatch. 
+        /// <para>
+        /// The value of the <code>ETag</code> header that you received when retrieving the streaming
+        /// distribution's configuration. For example: <code>E2QWRUHAPOMQZL</code>.
+        /// </para>
         /// </summary>
         public string IfMatch
         {
@@ -87,8 +93,10 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StreamingDistributionConfig. The streaming distribution's
-        /// configuration information.
+        /// Gets and sets the property StreamingDistributionConfig. 
+        /// <para>
+        /// The streaming distribution's configuration information.
+        /// </para>
         /// </summary>
         public StreamingDistributionConfig StreamingDistributionConfig
         {

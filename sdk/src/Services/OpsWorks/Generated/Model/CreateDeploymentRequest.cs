@@ -111,8 +111,7 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property CustomJson. 
         /// <para>
         /// A string that contains user-defined, custom JSON. It is used to override the corresponding
-        /// default stack configuration JSON values. The string should be in the following format
-        /// and must escape characters such as '"':
+        /// default stack configuration JSON values. The string should be in the following format:
         /// </para>
         ///  
         /// <para>

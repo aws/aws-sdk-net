@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2016-01-28.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-11-25.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -46,7 +46,7 @@ namespace Amazon.CloudFront.Model
         /// Instantiates UpdateCloudFrontOriginAccessIdentityRequest with the parameterized properties
         /// </summary>
         /// <param name="id">The identity's id.</param>
-        /// <param name="ifMatch">The value of the ETag header you received when retrieving the identity's configuration. For example: E2QWRUHAPOMQZL.</param>
+        /// <param name="ifMatch">The value of the <code>ETag</code> header that you received when retrieving the identity's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</param>
         /// <param name="cloudFrontOriginAccessIdentityConfig">The identity's configuration information.</param>
         public UpdateCloudFrontOriginAccessIdentityRequest(string id, string ifMatch, CloudFrontOriginAccessIdentityConfig cloudFrontOriginAccessIdentityConfig)
         {
@@ -56,8 +56,10 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CloudFrontOriginAccessIdentityConfig. The identity's configuration
-        /// information.
+        /// Gets and sets the property CloudFrontOriginAccessIdentityConfig. 
+        /// <para>
+        /// The identity's configuration information.
+        /// </para>
         /// </summary>
         public CloudFrontOriginAccessIdentityConfig CloudFrontOriginAccessIdentityConfig
         {
@@ -72,7 +74,10 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Id. The identity's id.
+        /// Gets and sets the property Id. 
+        /// <para>
+        /// The identity's id.
+        /// </para>
         /// </summary>
         public string Id
         {
@@ -87,8 +92,11 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IfMatch. The value of the ETag header you received when
-        /// retrieving the identity's configuration. For example: E2QWRUHAPOMQZL.
+        /// Gets and sets the property IfMatch. 
+        /// <para>
+        /// The value of the <code>ETag</code> header that you received when retrieving the identity's
+        /// configuration. For example: <code>E2QWRUHAPOMQZL</code>.
+        /// </para>
         /// </summary>
         public string IfMatch
         {

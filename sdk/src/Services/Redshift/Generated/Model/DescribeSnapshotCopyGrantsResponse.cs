@@ -38,7 +38,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        ///  An optional parameter that specifies the starting point to return a set of response
+        /// An optional parameter that specifies the starting point to return a set of response
         /// records. When the results of a <code>DescribeSnapshotCopyGrant</code> request exceed
         /// the value specified in <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code>
         /// field of the response. You can retrieve the next set of response records by providing
@@ -47,7 +47,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  
         /// <para>
-        ///  Constraints: You can specify either the <b>SnapshotCopyGrantName</b> parameter or
+        /// Constraints: You can specify either the <b>SnapshotCopyGrantName</b> parameter or
         /// the <b>Marker</b> parameter, but not both. 
         /// </para>
         /// </summary>

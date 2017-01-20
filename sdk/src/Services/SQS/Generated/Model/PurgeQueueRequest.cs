@@ -29,20 +29,20 @@ namespace Amazon.SQS.Model
 {
     /// <summary>
     /// Container for the parameters to the PurgeQueue operation.
-    /// Deletes the messages in a queue specified by the <b>queue URL</b>.
+    /// Deletes the messages in a queue specified by the <code>QueueURL</code> parameter.
     /// 
-    ///  <important>
+    ///  <important> 
     /// <para>
-    /// When you use the <code>PurgeQueue</code> API, the deleted messages in the queue cannot
-    /// be retrieved.
+    /// When you use the <code>PurgeQueue</code> action, you can't retrieve a message deleted
+    /// from a queue.
     /// </para>
-    /// </important> 
+    ///  </important> 
     /// <para>
     /// When you purge a queue, the message deletion process takes up to 60 seconds. All messages
-    /// sent to the queue before calling <code>PurgeQueue</code> will be deleted; messages
-    /// sent to the queue while it is being purged may be deleted. While the queue is being
-    /// purged, messages sent to the queue before <code>PurgeQueue</code> was called may be
-    /// received, but will be deleted within the next minute.
+    /// sent to the queue before calling the <code>PurgeQueue</code> action are deleted. Messages
+    /// sent to the queue while it is being purged might be deleted. While the queue is being
+    /// purged, messages sent to the queue before <code>PurgeQueue</code> is called might
+    /// be received, but are deleted within the next minute.
     /// </para>
     /// </summary>
     public partial class PurgeQueueRequest : AmazonSQSRequest
@@ -52,8 +52,7 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Gets and sets the property QueueUrl. 
         /// <para>
-        /// The queue URL of the queue to delete the messages from when using the <code>PurgeQueue</code>
-        /// API.
+        /// The URL of the queue from which the <code>PurgeQueue</code> action deletes messages.
         /// </para>
         ///  
         /// <para>

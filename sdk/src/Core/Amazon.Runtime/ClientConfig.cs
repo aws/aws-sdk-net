@@ -1,4 +1,4 @@
-﻿ /*
+ /*
  * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -28,7 +28,7 @@ namespace Amazon.Runtime
     /// This class is the base class of all the configurations settings to connect
     /// to a service.
     /// </summary>
-    public abstract partial class ClientConfig
+    public abstract partial class ClientConfig : IClientConfig
     {
         // Represents infinite timeout. http://msdn.microsoft.com/en-us/library/system.threading.timeout.infinite.aspx
         internal static readonly TimeSpan InfiniteTimeout = TimeSpan.FromMilliseconds(-1);
@@ -38,6 +38,8 @@ namespace Amazon.Runtime
 
         private RegionEndpoint regionEndpoint = null;
         private bool probeForRegionEndpoint = true;
+
+        private bool throttleRetries = true;
 
         private bool useHttp = false;
         private string serviceURL = null;
@@ -56,6 +58,7 @@ namespace Amazon.Runtime
         private bool disableLogging = false;
         private TimeSpan? timeout = null;
         private bool allowAutoRedirect = true;
+        private bool useDualstackEndpoint = false;
 
         /// <summary>
         /// Gets Service Version
@@ -98,7 +101,7 @@ namespace Amazon.Runtime
         {
             get
             {
-#if BCL
+#if BCL || CORECLR
                 if (probeForRegionEndpoint)
                 {
                     RegionEndpoint = GetDefaultRegionEndpoint();
@@ -115,7 +118,7 @@ namespace Amazon.Runtime
 
                 if (this.regionEndpoint != null)
                 {
-                    var endpoint = this.regionEndpoint.GetEndpointForService(RegionEndpointServiceName);
+                    var endpoint = this.regionEndpoint.GetEndpointForService(RegionEndpointServiceName, this.UseDualstackEndpoint);
                     if (endpoint != null && endpoint.SignatureVersionOverride != null)
                         this.SignatureVersion = endpoint.SignatureVersionOverride;
                 }
@@ -169,15 +172,15 @@ namespace Amazon.Runtime
             }
             else
             {
-                url = GetUrl(this.RegionEndpoint, this.RegionEndpointServiceName, this.UseHttp);
+                url = GetUrl(this.RegionEndpoint, this.RegionEndpointServiceName, this.UseHttp, this.UseDualstackEndpoint);
             }
 
             return url;
         }
 
-        internal static string GetUrl(RegionEndpoint regionEndpoint, string regionEndpointServiceName, bool useHttp)
+        internal static string GetUrl(RegionEndpoint regionEndpoint, string regionEndpointServiceName, bool useHttp, bool useDualStack)
         {
-            var endpoint = regionEndpoint.GetEndpointForService(regionEndpointServiceName);
+            var endpoint = regionEndpoint.GetEndpointForService(regionEndpointServiceName, useDualStack);
             string url = new Uri(string.Format(CultureInfo.InvariantCulture, "{0}{1}", useHttp ? "http://" : "https://", endpoint.Hostname)).AbsoluteUri;
             return url;
         }
@@ -215,9 +218,9 @@ namespace Amazon.Runtime
         }
 
         /// <summary>
-        /// Gets and sets the LogResponse.
-        /// If this property is set to true, the service response
-        /// is read in its entirety and logged.
+        /// Gets and sets the LogResponse property.
+        /// If this property is set to true, the service response is logged.
+        /// The size of response being logged is controlled by the AWSConfigs.LoggingConfig.LogResponsesSizeLimit property.
         /// </summary>
         public bool LogResponse
         {
@@ -226,10 +229,13 @@ namespace Amazon.Runtime
         }
 
         /// <summary>
-        /// Gets and sets the ReadEntireResponse.
-        /// If this property is set to true, the service response
-        /// is read in its entirety before being processed.
+        /// Gets and sets the ReadEntireResponse property.
+        /// NOTE: This property does not effect response processing and is deprecated.
+        /// To enable response logging, the ClientConfig.LogResponse and AWSConfigs.LoggingConfig
+        /// properties can be used.
         /// </summary>
+        [Obsolete("This property does not effect response processing and is deprecated." +
+            "To enable response logging, the ClientConfig.LogResponse and AWSConfigs.LoggingConfig.LogResponses properties can be used.")]
         public bool ReadEntireResponse
         {
             get { return this.readEntireResponse; }
@@ -278,7 +284,7 @@ namespace Amazon.Runtime
         /// This flag controls if .NET HTTP infrastructure should follow redirection
         ///  responses (e.g. HTTP 307 - temporary redirect).
         /// </summary>
-        protected internal bool AllowAutoRedirect
+        public bool AllowAutoRedirect
         {
             get
             {
@@ -375,6 +381,37 @@ namespace Amazon.Runtime
         }
 
         /// <summary>
+        /// Configures the endpoint calculation for a service to go to a dual stack (ipv6 enabled) endpoint
+        /// for the configured region.
+        /// </summary>
+        /// <remarks>
+        /// Note: AWS services are enabling dualstack endpoints over time. It is your responsibility to check 
+        /// that the service actually supports a dualstack endpoint in the configured region before enabling 
+        /// this option for a service.
+        /// </remarks>
+        public bool UseDualstackEndpoint
+        {
+            get { return useDualstackEndpoint; }
+            set { useDualstackEndpoint = value; }
+        }
+
+        /// <summary>
+        /// Enable or disable the Retry Throttling feature by setting the ThrottleRetries flag to True/False resepctively.
+        /// Retry Throttling is a feature that intelligently throttles retry attempts when a large precentage of requests 
+        /// are failing and retries are unsuccessful as well. In such situations the allotted retry capacity for the service URL
+        /// will be drained until requests start to succeed again. Once the requisite capacity is available, retries would 
+        /// be permitted again. When retries are throttled, the service enters a fail-fast behaviour as the traditional retry attempt
+        /// for the request would be circumvented. Hence, errors will resurface quickly. This will result in a greated number of exceptions
+        /// but prevents requests being tied up in unsuccessful retry attempts.
+        /// Note: Retry Throttling is enabled by default. Set the ThrottleRetries flag to false to switch off this feature.
+        /// </summary>
+        public bool ThrottleRetries
+        {
+            get { return throttleRetries; }
+            set { throttleRetries = value; }
+        }
+
+        /// <summary>
         /// Enable or disable the Nagle algorithm on the underlying http
         /// client.
         /// 
@@ -420,5 +457,34 @@ namespace Amazon.Runtime
             return requestTimeout.HasValue ? requestTimeout
                 : (clientTimeout.HasValue ? clientTimeout : null);
         }
+
+#if CORECLR || PCL
+
+
+#if CORECLR
+        bool cacheHttpClient = true;
+#else
+        bool cacheHttpClient = false;
+#endif
+        /// <summary>
+        /// <para>
+        /// This is a switch used for performance testing and is not intended for production applications 
+        /// to change. This switch may be removed in a future version of the SDK as the .NET Core platform matures.
+        /// </para>
+        /// <para>
+        /// If true, the HttpClient is cached and reused for every request made by the service client 
+        /// and shared with other service clients.
+        /// </para>
+        /// <para>
+        /// For the .NET Core platform this is default to true because the HttpClient manages the connection
+        /// pool.
+        /// </para>
+        /// </summary>
+        public bool CacheHttpClient
+        {
+            get { return this.cacheHttpClient; }
+            set { this.cacheHttpClient = value; }
+        }
+#endif
     }
 }

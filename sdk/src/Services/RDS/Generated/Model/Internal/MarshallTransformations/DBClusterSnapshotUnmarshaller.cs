@@ -79,6 +79,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.DBClusterIdentifier = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("DBClusterSnapshotArn", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DBClusterSnapshotArn = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("DBClusterSnapshotIdentifier", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

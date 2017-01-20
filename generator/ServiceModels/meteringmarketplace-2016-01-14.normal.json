@@ -11,6 +11,23 @@
     "targetPrefix":"AWSMPMeteringService"
   },
   "operations":{
+    "BatchMeterUsage":{
+      "name":"BatchMeterUsage",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"BatchMeterUsageRequest"},
+      "output":{"shape":"BatchMeterUsageResult"},
+      "errors":[
+        {"shape":"InternalServiceErrorException"},
+        {"shape":"InvalidProductCodeException"},
+        {"shape":"InvalidUsageDimensionException"},
+        {"shape":"InvalidCustomerIdentifierException"},
+        {"shape":"TimestampOutOfBoundsException"},
+        {"shape":"ThrottlingException"}
+      ]
+    },
     "MeterUsage":{
       "name":"MeterUsage",
       "http":{
@@ -28,17 +45,62 @@
         {"shape":"DuplicateRequestException"},
         {"shape":"ThrottlingException"}
       ],
-      "documentation":"<p>API to emit metering records. For identical requests, the API is idempotent. It simply returns the metering record ID. </p>"
+      "documentation":"<p>API to emit metering records. For identical requests, the API is idempotent. It simply returns the metering record ID.</p>"
+    },
+    "ResolveCustomer":{
+      "name":"ResolveCustomer",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"ResolveCustomerRequest"},
+      "output":{"shape":"ResolveCustomerResult"},
+      "errors":[
+        {"shape":"InvalidTokenException"},
+        {"shape":"ExpiredTokenException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServiceErrorException"}
+      ]
     }
   },
   "shapes":{
+    "BatchMeterUsageRequest":{
+      "type":"structure",
+      "required":[
+        "UsageRecords",
+        "ProductCode"
+      ],
+      "members":{
+        "UsageRecords":{"shape":"UsageRecordList"},
+        "ProductCode":{"shape":"ProductCode"}
+      }
+    },
+    "BatchMeterUsageResult":{
+      "type":"structure",
+      "members":{
+        "Results":{"shape":"UsageRecordResultList"},
+        "UnprocessedRecords":{"shape":"UsageRecordList"}
+      }
+    },
     "Boolean":{"type":"boolean"},
+    "CustomerIdentifier":{
+      "type":"string",
+      "max":255,
+      "min":1
+    },
     "DuplicateRequestException":{
       "type":"structure",
       "members":{
         "message":{"shape":"errorMessage"}
       },
-      "documentation":"<p>A metering record has already been emitted by the same EC2 instance for the given {usageDimension, timestamp} with a different usageQuantity. </p>",
+      "documentation":"<p>A metering record has already been emitted by the same EC2 instance for the given {usageDimension, timestamp} with a different usageQuantity.</p>",
+      "exception":true
+    },
+    "ExpiredTokenException":{
+      "type":"structure",
+      "members":{
+        "message":{"shape":"errorMessage"}
+      },
       "exception":true
     },
     "InternalServiceErrorException":{
@@ -49,6 +111,13 @@
       "documentation":"<p>An internal error has occurred. Retry your request. If the problem persists, post a message with details on the AWS forums.</p>",
       "exception":true,
       "fault":true
+    },
+    "InvalidCustomerIdentifierException":{
+      "type":"structure",
+      "members":{
+        "message":{"shape":"errorMessage"}
+      },
+      "exception":true
     },
     "InvalidEndpointRegionException":{
       "type":"structure",
@@ -64,6 +133,13 @@
         "message":{"shape":"errorMessage"}
       },
       "documentation":"<p>The product code passed does not match the product code used for publishing the product.</p>",
+      "exception":true
+    },
+    "InvalidTokenException":{
+      "type":"structure",
+      "members":{
+        "message":{"shape":"errorMessage"}
+      },
       "exception":true
     },
     "InvalidUsageDimensionException":{
@@ -90,7 +166,7 @@
         },
         "Timestamp":{
           "shape":"Timestamp",
-          "documentation":"<p>Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored. </p>"
+          "documentation":"<p>Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored.</p>"
         },
         "UsageDimension":{
           "shape":"UsageDimension",
@@ -102,7 +178,7 @@
         },
         "DryRun":{
           "shape":"Boolean",
-          "documentation":"<p>Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException. </p>"
+          "documentation":"<p>Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException.</p>"
         }
       }
     },
@@ -112,10 +188,28 @@
         "MeteringRecordId":{"shape":"String"}
       }
     },
+    "NonEmptyString":{
+      "type":"string",
+      "pattern":"\\S+"
+    },
     "ProductCode":{
       "type":"string",
       "max":255,
       "min":1
+    },
+    "ResolveCustomerRequest":{
+      "type":"structure",
+      "required":["RegistrationToken"],
+      "members":{
+        "RegistrationToken":{"shape":"NonEmptyString"}
+      }
+    },
+    "ResolveCustomerResult":{
+      "type":"structure",
+      "members":{
+        "CustomerIdentifier":{"shape":"CustomerIdentifier"},
+        "ProductCode":{"shape":"ProductCode"}
+      }
     },
     "String":{"type":"string"},
     "ThrottlingException":{
@@ -142,10 +236,51 @@
     },
     "UsageQuantity":{
       "type":"integer",
-      "max":10000,
+      "max":1000000,
       "min":0
+    },
+    "UsageRecord":{
+      "type":"structure",
+      "required":[
+        "Timestamp",
+        "CustomerIdentifier",
+        "Dimension",
+        "Quantity"
+      ],
+      "members":{
+        "Timestamp":{"shape":"Timestamp"},
+        "CustomerIdentifier":{"shape":"CustomerIdentifier"},
+        "Dimension":{"shape":"UsageDimension"},
+        "Quantity":{"shape":"UsageQuantity"}
+      }
+    },
+    "UsageRecordList":{
+      "type":"list",
+      "member":{"shape":"UsageRecord"},
+      "max":25,
+      "min":0
+    },
+    "UsageRecordResult":{
+      "type":"structure",
+      "members":{
+        "UsageRecord":{"shape":"UsageRecord"},
+        "MeteringRecordId":{"shape":"String"},
+        "Status":{"shape":"UsageRecordResultStatus"}
+      }
+    },
+    "UsageRecordResultList":{
+      "type":"list",
+      "member":{"shape":"UsageRecordResult"}
+    },
+    "UsageRecordResultStatus":{
+      "type":"string",
+      "enum":[
+        "Success",
+        "CustomerNotSubscribed",
+        "DuplicateRecord"
+      ]
     },
     "errorMessage":{"type":"string"}
   },
-  "documentation":"<fullname>AWS Marketplace Metering Service</fullname> <p>This reference provides descriptions of the low-level AWS Marketplace Metering Service API. </p> <p>AWS Marketplace sellers can use this API to submit usage data for custom usage dimensions.</p> <p><b>Submitting Metering Records</b></p> <ul> <li> <p><i>MeterUsage</i>- Submits the metering record for a Marketplace product.</p> </li> </ul>"
+  "documentation":"<fullname>AWS Marketplace Metering Service</fullname> <p>This reference provides descriptions of the low-level AWS Marketplace Metering Service API.</p> <p>AWS Marketplace sellers can use this API to submit usage data for custom usage dimensions.</p> <p> <b>Submitting Metering Records</b> </p> <ul> <li> <p> <i>MeterUsage</i>- Submits the metering record for a Marketplace product. </p> </li> </ul>"
 }

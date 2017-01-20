@@ -29,12 +29,13 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateAssociation operation.
-    /// Associates the specified SSM document with the specified instance.
+    /// Associates the specified SSM document with the specified instances or targets.
     /// 
     ///  
     /// <para>
-    /// When you associate an SSM document with an instance, the configuration agent on the
-    /// instance processes the document and configures the instance as specified.
+    /// When you associate an SSM document with one or more instances using instance IDs or
+    /// tags, the SSM agent running on the instance processes the document and configures
+    /// the instance as specified.
     /// </para>
     ///  
     /// <para>
@@ -44,9 +45,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class CreateAssociationRequest : AmazonSimpleSystemsManagementRequest
     {
+        private string _documentVersion;
         private string _instanceId;
         private string _name;
+        private InstanceAssociationOutputLocation _outputLocation;
         private Dictionary<string, List<string>> _parameters = new Dictionary<string, List<string>>();
+        private string _scheduleExpression;
+        private List<Target> _targets = new List<Target>();
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -62,6 +67,25 @@ namespace Amazon.SimpleSystemsManagement.Model
         {
             _instanceId = instanceId;
             _name = name;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DocumentVersion. 
+        /// <para>
+        /// The document version you want to associate with the target(s). Can be a specific version
+        /// or the default version.
+        /// </para>
+        /// </summary>
+        public string DocumentVersion
+        {
+            get { return this._documentVersion; }
+            set { this._documentVersion = value; }
+        }
+
+        // Check to see if DocumentVersion property is set
+        internal bool IsSetDocumentVersion()
+        {
+            return this._documentVersion != null;
         }
 
         /// <summary>
@@ -101,6 +125,30 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OutputLocation. 
+        /// <para>
+        /// An Amazon S3 bucket where you want to store the output details of the request. For
+        /// example:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>"{ \"S3Location\": { \"OutputS3Region\": \"&lt;region&gt;\", \"OutputS3BucketName\":
+        /// \"bucket name\", \"OutputS3KeyPrefix\": \"folder name\" } }"</code> 
+        /// </para>
+        /// </summary>
+        public InstanceAssociationOutputLocation OutputLocation
+        {
+            get { return this._outputLocation; }
+            set { this._outputLocation = value; }
+        }
+
+        // Check to see if OutputLocation property is set
+        internal bool IsSetOutputLocation()
+        {
+            return this._outputLocation != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Parameters. 
         /// <para>
         /// The parameters for the documents runtime configuration. 
@@ -116,6 +164,48 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetParameters()
         {
             return this._parameters != null && this._parameters.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScheduleExpression. 
+        /// <para>
+        /// A cron expression when the association will be applied to the target(s). Supported
+        /// expressions are every half, 1, 2, 4, 8 or 12 hour(s); every specified day and time
+        /// of the week. For example: cron(0 0/30 * 1/1 * ? *) to run every thirty minutes; cron(0
+        /// 0 0/4 1/1 * ? *) to run every four hours; and cron(0 0 10 ? * SUN *) to run every
+        /// Sunday at 10 a.m.
+        /// </para>
+        /// </summary>
+        public string ScheduleExpression
+        {
+            get { return this._scheduleExpression; }
+            set { this._scheduleExpression = value; }
+        }
+
+        // Check to see if ScheduleExpression property is set
+        internal bool IsSetScheduleExpression()
+        {
+            return this._scheduleExpression != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Targets. 
+        /// <para>
+        /// The targets (either instances or tags) for the association. Instances are specified
+        /// using Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are specified
+        /// using Key=&lt;tag name&gt;,Values=&lt;tag value&gt;.
+        /// </para>
+        /// </summary>
+        public List<Target> Targets
+        {
+            get { return this._targets; }
+            set { this._targets = value; }
+        }
+
+        // Check to see if Targets property is set
+        internal bool IsSetTargets()
+        {
+            return this._targets != null && this._targets.Count > 0; 
         }
 
     }

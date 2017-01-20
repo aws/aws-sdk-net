@@ -76,6 +76,18 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
                     unmarshalledObject.AgentNetworkInfoList = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("agentType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AgentType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("collectionStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CollectionStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("connectorId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -92,6 +104,18 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.HostName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("lastHealthPingTime", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LastHealthPingTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("registeredTime", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RegisteredTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("version", targetDepth))

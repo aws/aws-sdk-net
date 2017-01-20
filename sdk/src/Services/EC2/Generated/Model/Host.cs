@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-11-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes the properties of the Dedicated host.
+    /// Describes the properties of the Dedicated Host.
     /// </summary>
     public partial class Host
     {
@@ -63,7 +63,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
         /// <para>
-        /// The Availability Zone of the Dedicated host.
+        /// The Availability Zone of the Dedicated Host.
         /// </para>
         /// </summary>
         public string AvailabilityZone
@@ -81,7 +81,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AvailableCapacity. 
         /// <para>
-        /// The number of new instances that can be launched onto the Dedicated host.
+        /// The number of new instances that can be launched onto the Dedicated Host.
         /// </para>
         /// </summary>
         public AvailableCapacity AvailableCapacity
@@ -119,7 +119,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property HostId. 
         /// <para>
-        /// The ID of the Dedicated host.
+        /// The ID of the Dedicated Host.
         /// </para>
         /// </summary>
         public string HostId
@@ -137,7 +137,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property HostProperties. 
         /// <para>
-        /// The hardware specifications of the Dedicated host.
+        /// The hardware specifications of the Dedicated Host.
         /// </para>
         /// </summary>
         public HostProperties HostProperties
@@ -155,8 +155,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property HostReservationId. 
         /// <para>
-        /// The reservation ID of the Dedicated host. This returns a <code>null</code> response
-        /// if the Dedicated host doesn't have an associated reservation.
+        /// The reservation ID of the Dedicated Host. This returns a <code>null</code> response
+        /// if the Dedicated Host doesn't have an associated reservation.
         /// </para>
         /// </summary>
         public string HostReservationId
@@ -174,7 +174,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Instances. 
         /// <para>
-        /// The IDs and instance type that are currently running on the Dedicated host.
+        /// The IDs and instance type that are currently running on the Dedicated Host.
         /// </para>
         /// </summary>
         public List<HostInstance> Instances
@@ -192,7 +192,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The Dedicated host's state.
+        /// The Dedicated Host's state.
         /// </para>
         /// </summary>
         public AllocationState State

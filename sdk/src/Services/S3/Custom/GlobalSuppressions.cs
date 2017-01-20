@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -20,6 +20,11 @@ using System.Diagnostics.CodeAnalysis;
 [module: SuppressMessage("Microsoft.Usage", "CA1801:ReviewUnusedParameters", Scope = "member", Target = "Amazon.S3.Model.Internal.MarshallTransformations.PutBucketResponseUnmarshaller.#UnmarshallResult(Amazon.Runtime.Internal.Transform.XmlUnmarshallerContext,Amazon.S3.Model.PutBucketResponse)", MessageId = "response")]
 [module: SuppressMessage("Microsoft.Usage", "CA1801:ReviewUnusedParameters", Scope = "member", Target = "Amazon.S3.Model.Internal.MarshallTransformations.S3Transforms.#ToURLEncodedValue(System.Int32,System.Boolean)", MessageId = "path")]
 [module: SuppressMessage("Microsoft.Usage", "CA1801:ReviewUnusedParameters", Scope = "member", Target = "Amazon.S3.Model.Internal.MarshallTransformations.S3Transforms.#ToURLEncodedValue(System.DateTime,System.Boolean)", MessageId = "path")]
+
+// Allow unused parameter in order to simplify conditional compilation
+[module: SuppressMessage("Microsoft.Usage", "CA1801:ReviewUnusedParameters", Scope = "member", Target = "Amazon.S3.AmazonS3HttpUtil.#GetHead(Amazon.S3.IAmazonS3,Amazon.Runtime.IClientConfig,System.String,System.String)", MessageId = "s3Client")]
+[module: SuppressMessage("Microsoft.Usage", "CA1801:ReviewUnusedParameters", Scope = "member", Target = "Amazon.S3.AmazonS3HttpUtil.#GetHeadAsync(Amazon.S3.IAmazonS3,Amazon.Runtime.IClientConfig,System.String,System.String)", MessageId = "s3Client")]
+
 // Array properties/fields
 [module: SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays", Scope = "member", Target = "Amazon.S3.Util.S3PostUploadError.#elements")]
 // Suppressions for exceptions in setters
@@ -62,6 +67,7 @@ using System.Diagnostics.CodeAnalysis;
 [module: SuppressMessage("Microsoft.Globalization", "CA1308:NormalizeStringsToUppercase", Scope = "member", Target = "Amazon.S3.Internal.S3Signer.#BuildCanonicalizedHeaders(System.Collections.Generic.IDictionary`2<System.String,System.String>)")]
 [module: SuppressMessage("Microsoft.Globalization", "CA1307:SpecifyStringComparison", Scope = "member", Target = "Amazon.S3.Internal.S3Signer.#BuildCanonicalizedResource(Amazon.Runtime.Internal.IRequest)")]
 [module: SuppressMessage("Microsoft.Globalization", "CA1308:NormalizeStringsToUppercase", Scope="member", Target="Amazon.S3.Model.Internal.MarshallTransformations.ListObjectsV2RequestMarshaller.#Marshall(Amazon.S3.Model.ListObjectsV2Request)")]
+[module: SuppressMessage("Microsoft.Globalization", "CA1308:NormalizeStringsToUppercase", Scope = "member", Target = "Amazon.S3.Model.Internal.MarshallTransformations.PutBucketInventoryConfigurationRequestMarshaller.#Marshall(Amazon.S3.Model.PutBucketInventoryConfigurationRequest)")]
 // Uri properties should not be strings
 [module: SuppressMessage("Microsoft.Design", "CA1054:UriParametersShouldNotBeStrings", Scope="member", Target="Amazon.SQS.IAmazonSQS.#AuthorizeS3ToSendMessage(System.String,System.String)", MessageId="0#")]
 [module: SuppressMessage("Microsoft.Design", "CA1056:UriPropertiesShouldNotBeStrings", Scope = "member", Target = "Amazon.S3.Model.S3Grantee.#URI")]
@@ -84,8 +90,6 @@ using System.Diagnostics.CodeAnalysis;
 [module: SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic", Scope = "member", Target = "Amazon.S3.Transfer.TransferUtility.#EndAbortMultipartUploads(System.IAsyncResult)")]
 [module: SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic", Scope = "member", Target = "Amazon.Runtime.Internal.Auth.S3Signer.#SignRequest(Amazon.Runtime.Internal.IRequest,Amazon.Runtime.ClientConfig,Amazon.Runtime.Internal.Util.RequestMetrics,System.String,System.String)")]
 [module: SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic", Scope = "member", Target = "Amazon.Runtime.Internal.Auth.S3Signer.#SignRequest(Amazon.Runtime.Internal.IRequest,Amazon.Runtime.Internal.Util.RequestMetrics,System.String,System.String)")]
-// ISerializable attribute
-[module: SuppressMessage("Microsoft.Usage", "CA2237:MarkISerializableTypesWithSerializable", Scope = "type", Target = "Amazon.S3.Util.S3PostUploadException")]
 // Override methods on comparable types
 [module: SuppressMessage("Microsoft.Design", "CA1036:OverrideMethodsOnComparableTypes", Scope = "type", Target = "Amazon.S3.Model.PartETag")]
 // Suppressions for various *url* params being strings.
@@ -120,16 +124,22 @@ using System.Diagnostics.CodeAnalysis;
 [module: SuppressMessage("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes", Scope = "member", Target = "Amazon.S3.AmazonS3Client.#Amazon.Runtime.SharedInterfaces.ICoreAmazonS3.GetObjectStreamAsync(System.String,System.String,System.Collections.Generic.IDictionary`2<System.String,System.Object>,System.Threading.CancellationToken)")]
 [module: SuppressMessage("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes", Scope = "member", Target = "Amazon.S3.AmazonS3Client.#Amazon.Runtime.SharedInterfaces.ICoreAmazonS3.UploadObjectFromFilePathAsync(System.String,System.String,System.String,System.Collections.Generic.IDictionary`2<System.String,System.Object>,System.Threading.CancellationToken)")]
 [module: SuppressMessage("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes", Scope = "member", Target = "Amazon.S3.AmazonS3Client.#Amazon.Runtime.SharedInterfaces.ICoreAmazonS3.UploadObjectFromStreamAsync(System.String,System.String,System.IO.Stream,System.Collections.Generic.IDictionary`2<System.String,System.Object>,System.Threading.CancellationToken)")]
+[module: SuppressMessage("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes", Scope = "member", Target = "Amazon.S3.AmazonS3Client.#Amazon.Runtime.SharedInterfaces.ICoreAmazonS3.MakeObjectPublicAsync(System.String,System.String,System.Boolean)")]
+[module: SuppressMessage("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes", Scope = "member", Target = "Amazon.S3.AmazonS3Client.#Amazon.Runtime.SharedInterfaces.ICoreAmazonS3.GetAllObjectKeysAsync(System.String,System.String,System.Collections.Generic.IDictionary`2<System.String,System.Object>)")]
+[module: SuppressMessage("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes", Scope = "member", Target = "Amazon.S3.AmazonS3Client.#Amazon.Runtime.SharedInterfaces.ICoreAmazonS3.DeletesAsync(System.String,System.Collections.Generic.IEnumerable`1<System.String>,System.Collections.Generic.IDictionary`2<System.String,System.Object>,System.Threading.CancellationToken)")]
+[module: SuppressMessage("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes", Scope = "member", Target = "Amazon.S3.AmazonS3Client.#Amazon.Runtime.SharedInterfaces.ICoreAmazonS3.EnsureBucketExistsAsync(System.String)")]
+[module: SuppressMessage("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes", Scope = "member", Target = "Amazon.S3.AmazonS3Client.#Amazon.Runtime.SharedInterfaces.ICoreAmazonS3.DoesS3BucketExistAsync(System.String)")]
+
 // Calling overridable methods in constructors
 [module: SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors", Scope = "member", Target = "Amazon.V4ClientSection.#.ctor(System.Xml.Linq.XElement)")]
 [module: SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors", Scope = "member", Target = "Amazon.V4ClientSectionRoot.#.ctor(System.Xml.Linq.XElement)")]
 // Unused private field
 [module: SuppressMessage("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields", Scope = "member", Target = "Amazon.S3.Transfer.Internal.SimpleUploadCommand.#_config")]
 
-// Exceptions being thrown from Expires property getter for GetObjectResponse and GetObjectMetadataResponse classes.
-[module: SuppressMessage("Microsoft.Design", "CA1065:DoNotRaiseExceptionsInUnexpectedLocations", Scope = "member", Target = "Amazon.S3.Model.GetObjectResponse.#get_Expires()")]
-[module: SuppressMessage("Microsoft.Design", "CA1065:DoNotRaiseExceptionsInUnexpectedLocations", Scope = "member", Target = "Amazon.S3.Model.GetObjectMetadataResponse.#get_Expires()")]
-
 [module: SuppressMessage("Microsoft.Usage", "CA2208:InstantiateArgumentExceptionsCorrectly", Scope = "member", Target = "Amazon.S3.Model.Internal.MarshallTransformations.GetObjectTorrentRequestMarshaller.#Marshall(Amazon.S3.Model.GetObjectTorrentRequest)")]
 [module: SuppressMessage("Microsoft.Usage", "CA2208:InstantiateArgumentExceptionsCorrectly", Scope = "member", Target = "Amazon.S3.Model.Internal.MarshallTransformations.GetObjectRequestMarshaller.#Marshall(Amazon.S3.Model.GetObjectRequest)")]
 [module: SuppressMessage("Microsoft.Usage", "CA2208:InstantiateArgumentExceptionsCorrectly", Scope = "member", Target = "Amazon.S3.Model.Internal.MarshallTransformations.GetObjectMetadataRequestMarshaller.#Marshall(Amazon.S3.Model.GetObjectMetadataRequest)")]
+
+[module: SuppressMessage("Microsoft.Performance", "CA1810:InitializeReferenceTypeStaticFieldsInline", Scope = "member", Target = "Amazon.AWSConfigsS3.#.cctor()")]
+
+[module: SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures", Scope="member", Target="Amazon.S3.AmazonS3Client.#ListObjectsByTagsCoalescedAsync(Amazon.S3.Model.ListObjectsByTagsRequest)")]

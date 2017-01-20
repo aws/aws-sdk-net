@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2016-01-28.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-11-25.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -28,7 +28,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// The CloudFrontOriginAccessIdentityList type.
+    /// Lists the origin access identities for CloudFront.Send a <code>GET</code> request
+    /// to the <code>/<i>CloudFront API version</i>/origin-access-identity/cloudfront</code>
+    /// resource. The response includes a <code>CloudFrontOriginAccessIdentityList</code>
+    /// element with zero or more <code>CloudFrontOriginAccessIdentitySummary</code> child
+    /// elements. By default, your entire list of origin access identities is returned in
+    /// one single page. If the list is long, you can paginate it using the <code>MaxItems</code>
+    /// and <code>Marker</code> parameters.
     /// </summary>
     public partial class CloudFrontOriginAccessIdentityList
     {
@@ -45,10 +51,12 @@ namespace Amazon.CloudFront.Model
         public CloudFrontOriginAccessIdentityList() { }
 
         /// <summary>
-        /// Gets and sets the property IsTruncated. A flag that indicates whether more origin
-        /// access identities remain to be listed. If your results were truncated, you can make
-        /// a follow-up pagination request using the Marker request parameter to retrieve more
-        /// items in the list.
+        /// Gets and sets the property IsTruncated. 
+        /// <para>
+        /// A flag that indicates whether more origin access identities remain to be listed. If
+        /// your results were truncated, you can make a follow-up pagination request using the
+        /// <code>Marker</code> request parameter to retrieve more items in the list.
+        /// </para>
         /// </summary>
         public bool IsTruncated
         {
@@ -63,8 +71,11 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Items. A complex type that contains one CloudFrontOriginAccessIdentitySummary
+        /// Gets and sets the property Items. 
+        /// <para>
+        /// A complex type that contains one <code>CloudFrontOriginAccessIdentitySummary</code>
         /// element for each origin access identity that was created by the current AWS account.
+        /// </para>
         /// </summary>
         public List<CloudFrontOriginAccessIdentitySummary> Items
         {
@@ -79,7 +90,14 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Marker. The value you provided for the Marker request parameter.
+        /// Gets and sets the property Marker. 
+        /// <para>
+        /// Use this when paginating results to indicate where to begin in your list of origin
+        /// access identities. The results include identities in the list that occur after the
+        /// marker. To get the next page of results, set the <code>Marker</code> to the value
+        /// of the <code>NextMarker</code> from the current page's response (which is also the
+        /// ID of the last identity on that page). 
+        /// </para>
         /// </summary>
         public string Marker
         {
@@ -94,8 +112,10 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaxItems. The value you provided for the MaxItems request
-        /// parameter.
+        /// Gets and sets the property MaxItems. 
+        /// <para>
+        /// The maximum number of origin access identities you want in the response body. 
+        /// </para>
         /// </summary>
         public int MaxItems
         {
@@ -110,9 +130,12 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextMarker. If IsTruncated is true, this element is present
-        /// and contains the value you can use for the Marker request parameter to continue listing
-        /// your origin access identities where they left off.
+        /// Gets and sets the property NextMarker. 
+        /// <para>
+        /// If <code>IsTruncated</code> is <code>true</code>, this element is present and contains
+        /// the value you can use for the <code>Marker</code> request parameter to continue listing
+        /// your origin access identities where they left off. 
+        /// </para>
         /// </summary>
         public string NextMarker
         {
@@ -127,8 +150,11 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Quantity. The number of CloudFront origin access identities
-        /// that were created by the current AWS account.
+        /// Gets and sets the property Quantity. 
+        /// <para>
+        /// The number of CloudFront origin access identities that were created by the current
+        /// AWS account. 
+        /// </para>
         /// </summary>
         public int Quantity
         {

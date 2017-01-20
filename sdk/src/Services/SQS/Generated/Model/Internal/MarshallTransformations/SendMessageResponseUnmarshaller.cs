@@ -99,6 +99,12 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
                         response.MessageId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("SequenceNumber", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.SequenceNumber = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                 } 
            }
 

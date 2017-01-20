@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-11-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -35,11 +35,16 @@ namespace Amazon.EC2.Model
     /// <para>
     /// When you create each subnet, you provide the VPC ID and the CIDR block you want for
     /// the subnet. After you create a subnet, you can't change its CIDR block. The subnet's
-    /// CIDR block can be the same as the VPC's CIDR block (assuming you want only a single
-    /// subnet in the VPC), or a subset of the VPC's CIDR block. If you create more than one
-    /// subnet in a VPC, the subnets' CIDR blocks must not overlap. The smallest subnet (and
-    /// VPC) you can create uses a /28 netmask (16 IP addresses), and the largest uses a /16
-    /// netmask (65,536 IP addresses).
+    /// IPv4 CIDR block can be the same as the VPC's IPv4 CIDR block (assuming you want only
+    /// a single subnet in the VPC), or a subset of the VPC's IPv4 CIDR block. If you create
+    /// more than one subnet in a VPC, the subnets' CIDR blocks must not overlap. The smallest
+    /// IPv4 subnet (and VPC) you can create uses a /28 netmask (16 IPv4 addresses), and the
+    /// largest uses a /16 netmask (65,536 IPv4 addresses).
+    /// </para>
+    ///  
+    /// <para>
+    /// If you've associated an IPv6 CIDR block with your VPC, you can create a subnet with
+    /// an IPv6 CIDR block that uses a /64 prefix length. 
     /// </para>
     ///  <important> 
     /// <para>
@@ -69,6 +74,7 @@ namespace Amazon.EC2.Model
     {
         private string _availabilityZone;
         private string _cidrBlock;
+        private string _ipv6CidrBlock;
         private string _vpcId;
 
         /// <summary>
@@ -80,7 +86,7 @@ namespace Amazon.EC2.Model
         /// Instantiates CreateSubnetRequest with the parameterized properties
         /// </summary>
         /// <param name="vpcId">The ID of the VPC.</param>
-        /// <param name="cidrBlock">The network range for the subnet, in CIDR notation. For example, <code>10.0.0.0/24</code>.</param>
+        /// <param name="cidrBlock">The IPv4 network range for the subnet, in CIDR notation. For example, <code>10.0.0.0/24</code>.</param>
         public CreateSubnetRequest(string vpcId, string cidrBlock)
         {
             _vpcId = vpcId;
@@ -113,7 +119,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property CidrBlock. 
         /// <para>
-        /// The network range for the subnet, in CIDR notation. For example, <code>10.0.0.0/24</code>.
+        /// The IPv4 network range for the subnet, in CIDR notation. For example, <code>10.0.0.0/24</code>.
         /// </para>
         /// </summary>
         public string CidrBlock
@@ -126,6 +132,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetCidrBlock()
         {
             return this._cidrBlock != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Ipv6CidrBlock. 
+        /// <para>
+        /// The IPv6 network range for the subnet, in CIDR notation. The subnet size must use
+        /// a /64 prefix length.
+        /// </para>
+        /// </summary>
+        public string Ipv6CidrBlock
+        {
+            get { return this._ipv6CidrBlock; }
+            set { this._ipv6CidrBlock = value; }
+        }
+
+        // Check to see if Ipv6CidrBlock property is set
+        internal bool IsSetIpv6CidrBlock()
+        {
+            return this._ipv6CidrBlock != null;
         }
 
         /// <summary>

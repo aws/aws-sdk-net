@@ -29,22 +29,21 @@ namespace Amazon.Glacier.Model
 {
     /// <summary>
     /// Container for the parameters to the InitiateVaultLock operation.
-    /// This operation initiates the vault locking process by doing the following: <ul> <li>
+    /// This operation initiates the vault locking process by doing the following:
     /// 
+    ///  <ul> <li> 
     /// <para>
     /// Installing a vault lock policy on the specified vault.
-    /// 
+    /// </para>
     ///  </li> <li> 
     /// <para>
     /// Setting the lock state of vault lock to <code>InProgress</code>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Returning a lock ID, which is used to complete the vault locking process. 
+    /// Returning a lock ID, which is used to complete the vault locking process.
     /// </para>
     ///  </li> </ul> 
-    /// </para>
-    ///  
     /// <para>
     /// You can set one vault lock policy for each vault and this policy can be up to 20 KB
     /// in size. For more information about vault lock policies, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-lock-policy.html">Amazon
@@ -90,10 +89,10 @@ namespace Amazon.Glacier.Model
         /// <para>
         /// The <code>AccountId</code> value is the AWS account ID. This value must match the
         /// AWS account ID associated with the credentials used to sign the request. You can either
-        /// specify an AWS account ID or optionally a single apos<code>-</code>apos (hyphen),
-        /// in which case Amazon Glacier uses the AWS account ID associated with the credentials
-        /// used to sign the request. If you specify your account ID, do not include any hyphens
-        /// (apos-apos) in the ID.
+        /// specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which
+        /// case Amazon Glacier uses the AWS account ID associated with the credentials used to
+        /// sign the request. If you specify your account ID, do not include any hyphens ('-')
+        /// in the ID.
         /// </para>
         /// </summary>
         public string AccountId

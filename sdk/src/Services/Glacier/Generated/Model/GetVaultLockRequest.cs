@@ -30,10 +30,12 @@ namespace Amazon.Glacier.Model
     /// <summary>
     /// Container for the parameters to the GetVaultLock operation.
     /// This operation retrieves the following attributes from the <code>lock-policy</code>
-    /// subresource set on the specified vault: <ul> <li> 
+    /// subresource set on the specified vault: 
+    /// 
+    ///  <ul> <li> 
     /// <para>
     /// The vault lock policy set on the vault.
-    /// 
+    /// </para>
     ///  </li> <li> 
     /// <para>
     /// The state of the vault lock, which is either <code>InProgess</code> or <code>Locked</code>.
@@ -47,8 +49,6 @@ namespace Amazon.Glacier.Model
     /// When the vault lock was initiated and put into the <code>InProgress</code> state.
     /// </para>
     ///  </li> </ul> 
-    /// </para>
-    ///  
     /// <para>
     /// A vault lock is put into the <code>InProgress</code> state by calling <a>InitiateVaultLock</a>.
     /// A vault lock is put into the <code>Locked</code> state by calling <a>CompleteVaultLock</a>.
@@ -72,10 +72,10 @@ namespace Amazon.Glacier.Model
         /// Gets and sets the property AccountId. 
         /// <para>
         /// The <code>AccountId</code> value is the AWS account ID of the account that owns the
-        /// vault. You can either specify an AWS account ID or optionally a single apos<code>-</code>apos
+        /// vault. You can either specify an AWS account ID or optionally a single '<code>-</code>'
         /// (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the
         /// credentials used to sign the request. If you use an account ID, do not include any
-        /// hyphens (apos-apos) in the ID.
+        /// hyphens ('-') in the ID.
         /// </para>
         /// </summary>
         public string AccountId

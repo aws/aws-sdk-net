@@ -71,6 +71,12 @@ namespace Amazon.ECR.Model
         /// returned the <code>nextToken</code> value. This value is <code>null</code> when there
         /// are no more results to return.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This token should be treated as an opaque identifier that is only used to retrieve
+        /// the next items in a list and not for other programmatic purposes.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string NextToken
         {

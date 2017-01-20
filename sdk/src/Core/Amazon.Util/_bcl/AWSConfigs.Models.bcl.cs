@@ -42,6 +42,8 @@ namespace Amazon.Util
                 Port = section.Port;
                 Username = section.Username;
                 Password = section.Password;
+                BypassList = new List<string>(section.BypassList);
+                BypassOnLocal = section.BypassOnLocal.GetValueOrDefault();
             }
         }
     }

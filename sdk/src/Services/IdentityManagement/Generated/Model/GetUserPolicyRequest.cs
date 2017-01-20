@@ -32,7 +32,15 @@ namespace Amazon.IdentityManagement.Model
     /// Retrieves the specified inline policy document that is embedded in the specified IAM
     /// user.
     /// 
-    ///  
+    ///  <note> 
+    /// <para>
+    /// Policies returned by this API are URL-encoded compliant with <a href="https://tools.ietf.org/html/rfc3986">RFC
+    /// 3986</a>. You can use a URL decoding method to convert the policy back to plain JSON
+    /// text. For example, if you use Java, you can use the <code>decode</code> method of
+    /// the <code>java.net.URLDecoder</code> utility class in the Java SDK. Other languages
+    /// and SDKs provide similar functionality.
+    /// </para>
+    ///  </note> 
     /// <para>
     /// An IAM user can also have managed policies attached to it. To retrieve a managed policy
     /// document that is attached to a user, use <a>GetPolicy</a> to determine the policy's
@@ -57,8 +65,8 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Instantiates GetUserPolicyRequest with the parameterized properties
         /// </summary>
-        /// <param name="userName">The name of the user who the policy is associated with. The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: =,.@-</param>
-        /// <param name="policyName">The name of the policy document to get. The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: =,.@-</param>
+        /// <param name="userName">The name of the user who the policy is associated with. This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: =,.@-</param>
+        /// <param name="policyName">The name of the policy document to get. This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: =,.@-</param>
         public GetUserPolicyRequest(string userName, string policyName)
         {
             _userName = userName;
@@ -72,9 +80,9 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
-        /// is a string of characters consisting of upper and lowercase alphanumeric characters
-        /// with no spaces. You can also include any of the following characters: =,.@-
+        /// This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
+        /// a string of characters consisting of upper and lowercase alphanumeric characters with
+        /// no spaces. You can also include any of the following characters: =,.@-
         /// </para>
         /// </summary>
         public string PolicyName
@@ -96,9 +104,9 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
-        /// is a string of characters consisting of upper and lowercase alphanumeric characters
-        /// with no spaces. You can also include any of the following characters: =,.@-
+        /// This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
+        /// a string of characters consisting of upper and lowercase alphanumeric characters with
+        /// no spaces. You can also include any of the following characters: =,.@-
         /// </para>
         /// </summary>
         public string UserName

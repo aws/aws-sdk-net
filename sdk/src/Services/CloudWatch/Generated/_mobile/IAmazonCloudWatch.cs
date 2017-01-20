@@ -23,6 +23,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.CloudWatch.Model;
 
 namespace Amazon.CloudWatch
@@ -50,7 +51,7 @@ namespace Amazon.CloudWatch
     /// utilization, application performance, and operational health.
     /// </para>
     /// </summary>
-    public partial interface IAmazonCloudWatch : IDisposable
+    public partial interface IAmazonCloudWatch : IAmazonService, IDisposable
     {
                 
         #region  DeleteAlarms
@@ -73,12 +74,15 @@ namespace Amazon.CloudWatch
 
 
         /// <summary>
-        /// Retrieves history for the specified alarm. Filter alarms by date range or item type.
-        /// If an alarm name is not specified, Amazon CloudWatch returns histories for all of
-        /// the owner's alarms. 
+        /// Retrieves the history for the specified alarm. You can filter the results by date
+        /// range or item type. If an alarm name is not specified, the histories for all alarms
+        /// are returned.
         /// 
-        ///  <note> Amazon CloudWatch retains the history of an alarm for two weeks, whether or
-        /// not you delete the alarm. </note>
+        ///  
+        /// <para>
+        /// Note that Amazon CloudWatch retains the history of an alarm even if you delete the
+        /// alarm.
+        /// </para>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -108,9 +112,9 @@ namespace Amazon.CloudWatch
 
 
         /// <summary>
-        /// Retrieves alarms with the specified names. If no name is specified, all alarms for
-        /// the user are returned. Alarms can be retrieved by using only a prefix for the alarm
-        /// name, the alarm state, or a prefix for any action.
+        /// Retrieves the specified alarms. If no alarms are specified, all alarms are returned.
+        /// Alarms can be retrieved by using only a prefix for the alarm name, the alarm state,
+        /// or a prefix for any action.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -204,16 +208,19 @@ namespace Amazon.CloudWatch
 
 
         /// <summary>
-        /// Returns a list of valid metrics stored for the AWS account owner. Returned metrics
-        /// can be used with <a>GetMetricStatistics</a> to obtain statistical data for a given
-        /// metric. 
+        /// List the specified metrics. You can use the returned metrics with <a>GetMetricStatistics</a>
+        /// to obtain statistical data.
         /// 
-        ///  <note> Up to 500 results are returned for any one call. To retrieve further results,
-        /// use returned <code>NextToken</code> values with subsequent <code>ListMetrics</code>
-        /// operations. </note> <note> If you create a metric with the <a>PutMetricData</a> action,
-        /// allow up to fifteen minutes for the metric to appear in calls to the <code>ListMetrics</code>
-        /// action. Statistics about the metric, however, are available sooner using <a>GetMetricStatistics</a>.
-        /// </note>
+        ///  
+        /// <para>
+        /// Up to 500 results are returned for any one call. To retrieve additional results, use
+        /// the returned token with subsequent calls.
+        /// </para>
+        ///  
+        /// <para>
+        /// After you create a metric, allow up to fifteen minutes before the metric appears.
+        /// Statistics about the metric, however, are available sooner using <a>GetMetricStatistics</a>.
+        /// </para>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -221,11 +228,10 @@ namespace Amazon.CloudWatch
         /// 
         /// <returns>The response from the ListMetrics service method, as returned by CloudWatch.</returns>
         /// <exception cref="Amazon.CloudWatch.Model.InternalServiceException">
-        /// Indicates that the request processing has failed due to some unknown error, exception,
-        /// or failure.
+        /// Request processing has failed due to some unknown error, exception, or failure.
         /// </exception>
         /// <exception cref="Amazon.CloudWatch.Model.InvalidParameterValueException">
-        /// Bad or out-of-range value was supplied for the input parameter.
+        /// The value of an input parameter is bad or out-of-range.
         /// </exception>
         Task<ListMetricsResponse> ListMetricsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 

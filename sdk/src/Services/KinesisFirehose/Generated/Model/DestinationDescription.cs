@@ -34,6 +34,7 @@ namespace Amazon.KinesisFirehose.Model
     {
         private string _destinationId;
         private ElasticsearchDestinationDescription _elasticsearchDestinationDescription;
+        private ExtendedS3DestinationDescription _extendedS3DestinationDescription;
         private RedshiftDestinationDescription _redshiftDestinationDescription;
         private S3DestinationDescription _s3DestinationDescription;
 
@@ -74,6 +75,24 @@ namespace Amazon.KinesisFirehose.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ExtendedS3DestinationDescription. 
+        /// <para>
+        /// The destination in Amazon S3.
+        /// </para>
+        /// </summary>
+        public ExtendedS3DestinationDescription ExtendedS3DestinationDescription
+        {
+            get { return this._extendedS3DestinationDescription; }
+            set { this._extendedS3DestinationDescription = value; }
+        }
+
+        // Check to see if ExtendedS3DestinationDescription property is set
+        internal bool IsSetExtendedS3DestinationDescription()
+        {
+            return this._extendedS3DestinationDescription != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RedshiftDestinationDescription. 
         /// <para>
         /// The destination in Amazon Redshift.
@@ -94,7 +113,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property S3DestinationDescription. 
         /// <para>
-        /// The Amazon S3 destination.
+        /// [Deprecated] The destination in Amazon S3.
         /// </para>
         /// </summary>
         public S3DestinationDescription S3DestinationDescription

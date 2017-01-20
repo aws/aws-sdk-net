@@ -38,6 +38,7 @@ namespace Amazon.APIGateway.Model
         private CacheClusterSize _cacheClusterSize;
         private string _deploymentId;
         private string _description;
+        private string _documentationVersion;
         private string _restApiId;
         private string _stageName;
         private Dictionary<string, string> _variables = new Dictionary<string, string>();
@@ -115,6 +116,24 @@ namespace Amazon.APIGateway.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DocumentationVersion. 
+        /// <para>
+        /// The version of the associated API documentation.
+        /// </para>
+        /// </summary>
+        public string DocumentationVersion
+        {
+            get { return this._documentationVersion; }
+            set { this._documentationVersion = value; }
+        }
+
+        // Check to see if DocumentationVersion property is set
+        internal bool IsSetDocumentationVersion()
+        {
+            return this._documentationVersion != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RestApiId. 
         /// <para>
         /// The identifier of the <a>RestApi</a> resource for the <a>Stage</a> resource to create.
@@ -154,7 +173,7 @@ namespace Amazon.APIGateway.Model
         /// Gets and sets the property Variables. 
         /// <para>
         /// A map that defines the stage variables for the new <a>Stage</a> resource. Variable
-        /// names can have alphanumeric characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
+        /// names can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Variables

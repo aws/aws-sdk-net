@@ -32,6 +32,13 @@ namespace Amazon.DirectConnect.Model
     /// Creates a new public virtual interface. A virtual interface is the VLAN that transports
     /// AWS Direct Connect traffic. A public virtual interface supports sending traffic to
     /// public services of AWS such as Amazon Simple Storage Service (Amazon S3).
+    /// 
+    ///  
+    /// <para>
+    /// When creating an IPv6 public virtual interface (addressFamily is 'ipv6'), the customer
+    /// and amazon address fields should be left blank to use auto-assigned IPv6 space. Custom
+    /// IPv6 Addresses are currently not supported.
+    /// </para>
     /// </summary>
     public partial class CreatePublicVirtualInterfaceRequest : AmazonDirectConnectRequest
     {

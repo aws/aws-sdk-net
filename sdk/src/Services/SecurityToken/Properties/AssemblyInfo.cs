@@ -15,6 +15,8 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL) -  AWS Security Token Service. The AWS Security Token Service (AWS STS) enables you to provide trusted users with temporary credentials that provide controlled access to your AWS resources.")]
 #elif UNITY
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Unity) - AWS Security Token Service. The AWS Security Token Service (AWS STS) enables you to provide trusted users with temporary credentials that provide controlled access to your AWS resources.")]
+#elif CORECLR
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (CoreCLR)- AWS Security Token Service. The AWS Security Token Service (AWS STS) enables you to provide trusted users with temporary credentials that provide controlled access to your AWS resources.")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif
@@ -22,7 +24,7 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyProduct("Amazon Web Services SDK for .NET")]
 [assembly: AssemblyCompany("Amazon.com, Inc")]
-[assembly: AssemblyCopyright("Copyright 2009-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.")]
+[assembly: AssemblyCopyright("Copyright 2009-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -41,8 +43,8 @@ using System.Runtime.CompilerServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("3.1")]
-[assembly: AssemblyFileVersion("3.1.4.1")]
+[assembly: AssemblyVersion("3.3")]
+[assembly: AssemblyFileVersion("3.3.0.8")]
 
 #if WINDOWS_PHONE || UNITY
 [assembly: System.CLSCompliant(false)]

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoT.Model
 {
     /// <summary>
-    /// Describes an action that writes data to an Amazon Elasticsearch Service; domain.
+    /// Describes an action that writes data to an Amazon Elasticsearch Service domain.
     /// </summary>
     public partial class ElasticsearchAction
     {

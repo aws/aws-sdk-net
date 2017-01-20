@@ -38,14 +38,15 @@ namespace Amazon.GameLift.Model
         private string _ipAddress;
         private string _playerId;
         private string _playerSessionId;
+        private int? _port;
         private PlayerSessionStatus _status;
         private DateTime? _terminationTime;
 
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// Time stamp indicating when this object was created. Format is an integer representing
-        /// the number of seconds since the Unix epoch (Unix time).
+        /// Time stamp indicating when this data object was created. Format is a number expressed
+        /// in Unix time as milliseconds (ex: "1469498468.057").
         /// </para>
         /// </summary>
         public DateTime CreationTime
@@ -81,7 +82,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property GameSessionId. 
         /// <para>
-        /// Unique identifier for a game session.
+        /// Unique identifier for the game session that the player session is connected to.
         /// </para>
         /// </summary>
         public string GameSessionId
@@ -100,7 +101,6 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property IpAddress. 
         /// <para>
         /// Game session IP address. All player sessions reference the game session location.
-        /// 
         /// </para>
         /// </summary>
         public string IpAddress
@@ -152,15 +152,53 @@ namespace Amazon.GameLift.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Port. 
+        /// <para>
+        /// Port number for the game session. To connect to a GameLift server process, an app
+        /// needs both the IP address and port number.
+        /// </para>
+        /// </summary>
+        public int Port
+        {
+            get { return this._port.GetValueOrDefault(); }
+            set { this._port = value; }
+        }
+
+        // Check to see if Port property is set
+        internal bool IsSetPort()
+        {
+            return this._port.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Current status of the player session. Possible player session states include: <ul><li>RESERVED:
-        /// The player session request has been received, but the player has not yet connected
-        /// to the game server and/or been validated. </li><li>ACTIVE: The player has been validated
-        /// by the game server and is currently connected.</li><li>COMPLETED: The player connection
-        /// has been dropped.</li><li>TIMEDOUT: A player session request was received, but the
-        /// player did not connect and/or was not validated within the time-out limit (60 seconds).</li></ul>
+        /// Current status of the player session.
         /// </para>
+        ///  
+        /// <para>
+        /// Possible player session statuses include the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>RESERVED</b> – The player session request has been received, but the player has
+        /// not yet connected to the server process and/or been validated. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>ACTIVE</b> – The player has been validated by the server process and is currently
+        /// connected.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>COMPLETED</b> – The player connection has been dropped.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>TIMEDOUT</b> – A player session request was received, but the player did not connect
+        /// and/or was not validated within the time-out limit (60 seconds).
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public PlayerSessionStatus Status
         {
@@ -177,8 +215,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property TerminationTime. 
         /// <para>
-        /// Time stamp indicating when this fleet was terminated. Format is an integer representing
-        /// the number of seconds since the Unix epoch (Unix time).
+        /// Time stamp indicating when this data object was terminated. Format is a number expressed
+        /// in Unix time as milliseconds (ex: "1469498468.057").
         /// </para>
         /// </summary>
         public DateTime TerminationTime

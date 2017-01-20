@@ -56,11 +56,17 @@ namespace Amazon.Util.Internal
             }
 
             var environmentInfo = ServiceFactory.Instance.GetService<IEnvironmentInfo>();
-            _customSdkUserAgent = string.Format(CultureInfo.InvariantCulture, "{0}/{1} {2} OS/{3} {4}",
+            string executionEnvironmentString = "";
+#if BCL || CORECLR
+            executionEnvironmentString = GetExecutionEnvironmentUserAgentString();
+#endif 
+
+            _customSdkUserAgent = string.Format(CultureInfo.InvariantCulture, "{0}/{1} {2} OS/{3} {4} {5}",
                 _userAgentBaseName,
                 _versionNumber,
                 environmentInfo.FrameworkUserAgent,
-                environmentInfo.PlatformUserAgent,                
+                environmentInfo.PlatformUserAgent,
+                executionEnvironmentString,
                 _customData).Trim();
         }
 
@@ -75,12 +81,13 @@ namespace Amazon.Util.Internal
             var environmentInfo = ServiceFactory.Instance.GetService<IEnvironmentInfo>();
 
 #if BCL
-            return string.Format(CultureInfo.InvariantCulture, "{0}/{1} aws-sdk-dotnet-core/{2} {3} OS/{4} {5}",
+            return string.Format(CultureInfo.InvariantCulture, "{0}/{1} aws-sdk-dotnet-core/{2} {3} OS/{4} {5} {6}",
                 _userAgentBaseName,
                 serviceSdkVersion,
                 CoreVersionNumber,
                 environmentInfo.FrameworkUserAgent,
                 environmentInfo.PlatformUserAgent,
+                GetExecutionEnvironmentUserAgentString(),
                 _customData).Trim();
 #elif PCL
             return string.Format(CultureInfo.InvariantCulture, "{0}/{1} aws-sdk-dotnet-core/{2} {3} OS/{4} {5} {6}",
@@ -98,6 +105,15 @@ namespace Amazon.Util.Internal
                 CoreVersionNumber,
                 environmentInfo.FrameworkUserAgent,
                 environmentInfo.PlatformUserAgent,
+                _customData).Trim();
+#elif CORECLR
+            return string.Format(CultureInfo.InvariantCulture, "{0}/{1} aws-sdk-dotnet-core/{2} {3} OS/{4} {5} {6}",
+                _userAgentBaseName,
+                serviceSdkVersion,
+                CoreVersionNumber,
+                environmentInfo.FrameworkUserAgent,
+                environmentInfo.PlatformUserAgent,
+                GetExecutionEnvironmentUserAgentString(),
                 _customData).Trim();
 #endif
         }
@@ -190,6 +206,27 @@ namespace Amazon.Util.Internal
             key = default(TKey);
             return false;
         }
+
+#if BCL || CORECLR
+        internal static string EXECUTION_ENVIRONMENT_ENVVAR = "AWS_EXECUTION_ENV";
+        internal static string GetExecutionEnvironment()
+        {
+            return Environment.GetEnvironmentVariable(EXECUTION_ENVIRONMENT_ENVVAR);
+        }
+
+        private static string GetExecutionEnvironmentUserAgentString()
+        {
+            string userAgentString = "";
+            
+            string executionEnvValue = GetExecutionEnvironment();
+            if (!string.IsNullOrEmpty(executionEnvValue))
+            {
+                userAgentString = string.Format(CultureInfo.InvariantCulture, "exec-env/{0}", executionEnvValue);
+            }
+
+            return userAgentString;
+        }
+#endif
 
         #region IsSet methods
 

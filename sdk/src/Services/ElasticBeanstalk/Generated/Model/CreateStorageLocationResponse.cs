@@ -37,7 +37,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property S3Bucket. 
         /// <para>
-        ///  The name of the Amazon S3 bucket created. 
+        /// The name of the Amazon S3 bucket created.
         /// </para>
         /// </summary>
         public string S3Bucket

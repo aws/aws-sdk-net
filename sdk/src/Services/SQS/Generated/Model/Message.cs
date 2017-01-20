@@ -48,7 +48,7 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Gets and sets the property Attributes. 
         /// <para>
-        /// <code>SenderId</code>, <code>SentTimestamp</code>, <code>ApproximateReceiveCount</code>,
+        ///  <code>SenderId</code>, <code>SentTimestamp</code>, <code>ApproximateReceiveCount</code>,
         /// and/or <code>ApproximateFirstReceiveTimestamp</code>. <code>SentTimestamp</code> and
         /// <code>ApproximateFirstReceiveTimestamp</code> are each returned as an integer representing
         /// the <a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in milliseconds.
@@ -105,9 +105,9 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Gets and sets the property MD5OfMessageAttributes. 
         /// <para>
-        /// An MD5 digest of the non-URL-encoded message attribute string. This can be used to
-        /// verify that Amazon SQS received the message correctly. Amazon SQS first URL decodes
-        /// the message before creating the MD5 digest. For information about MD5, go to <a href="http://www.faqs.org/rfcs/rfc1321.html">http://www.faqs.org/rfcs/rfc1321.html</a>.
+        /// An MD5 digest of the non-URL-encoded message attribute string. You can use this attribute
+        /// to verify that Amazon SQS received the message correctly. Amazon SQS URL-decodes the
+        /// message before creating the MD5 digest. For information on MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.
         /// </para>
         /// </summary>
         public string MD5OfMessageAttributes
@@ -125,9 +125,9 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Gets and sets the property MessageAttributes. 
         /// <para>
-        /// Each message attribute consists of a Name, Type, and Value. For more information,
-        /// see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributesNTV">Message
-        /// Attribute Items</a>.
+        /// Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation">Message
+        /// Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.
         /// </para>
         /// </summary>
         public Dictionary<string, MessageAttributeValue> MessageAttributes
@@ -145,8 +145,8 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Gets and sets the property MessageId. 
         /// <para>
-        /// A unique identifier for the message. Message IDs are considered unique across all
-        /// AWS accounts for an extended period of time.
+        /// A unique identifier for the message. A <code>MessageId</code>is considered unique
+        /// across all AWS accounts for an extended period of time.
         /// </para>
         /// </summary>
         public string MessageId

@@ -23,6 +23,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.CognitoIdentityProvider.Model;
 
 namespace Amazon.CognitoIdentityProvider
@@ -30,16 +31,21 @@ namespace Amazon.CognitoIdentityProvider
     /// <summary>
     /// Interface for accessing CognitoIdentityProvider
     ///
-    /// You can create a user pool in Amazon Cognito Identity to manage directories and users.
-    /// You can authenticate a user to obtain tokens related to user identity and access policies.
+    /// Using the Amazon Cognito Your User Pools API, you can create a user pool to manage
+    /// directories and users. You can authenticate a user to obtain tokens related to user
+    /// identity and access policies.
     /// 
     ///  
     /// <para>
-    /// This API reference provides information about user pools in Amazon Cognito Identity,
-    /// which is a new capability that is available as a beta.
+    /// This API reference provides information about user pools in Amazon Cognito Your User
+    /// Pools.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information, see the Amazon Cognito Documentation.
     /// </para>
     /// </summary>
-    public partial interface IAmazonCognitoIdentityProvider : IDisposable
+    public partial interface IAmazonCognitoIdentityProvider : IAmazonService, IDisposable
     {
                 
         #region  AddCustomAttributes
@@ -71,6 +77,22 @@ namespace Amazon.CognitoIdentityProvider
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<AdminConfirmSignUpResponse> AdminConfirmSignUpAsync(AdminConfirmSignUpRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  AdminCreateUser
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AdminCreateUser operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AdminCreateUser operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<AdminCreateUserResponse> AdminCreateUserAsync(AdminCreateUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -138,6 +160,38 @@ namespace Amazon.CognitoIdentityProvider
 
         #endregion
                 
+        #region  AdminForgetDevice
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AdminForgetDevice operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AdminForgetDevice operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<AdminForgetDeviceResponse> AdminForgetDeviceAsync(AdminForgetDeviceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  AdminGetDevice
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AdminGetDevice operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AdminGetDevice operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<AdminGetDeviceResponse> AdminGetDeviceAsync(AdminGetDeviceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  AdminGetUser
 
 
@@ -151,6 +205,38 @@ namespace Amazon.CognitoIdentityProvider
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<AdminGetUserResponse> AdminGetUserAsync(AdminGetUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  AdminInitiateAuth
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AdminInitiateAuth operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AdminInitiateAuth operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<AdminInitiateAuthResponse> AdminInitiateAuthAsync(AdminInitiateAuthRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  AdminListDevices
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AdminListDevices operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AdminListDevices operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<AdminListDevicesResponse> AdminListDevicesAsync(AdminListDevicesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -170,6 +256,22 @@ namespace Amazon.CognitoIdentityProvider
 
         #endregion
                 
+        #region  AdminRespondToAuthChallenge
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AdminRespondToAuthChallenge operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AdminRespondToAuthChallenge operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<AdminRespondToAuthChallengeResponse> AdminRespondToAuthChallengeAsync(AdminRespondToAuthChallengeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  AdminSetUserSettings
 
 
@@ -183,6 +285,22 @@ namespace Amazon.CognitoIdentityProvider
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<AdminSetUserSettingsResponse> AdminSetUserSettingsAsync(AdminSetUserSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  AdminUpdateDeviceStatus
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AdminUpdateDeviceStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AdminUpdateDeviceStatus operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<AdminUpdateDeviceStatusResponse> AdminUpdateDeviceStatusAsync(AdminUpdateDeviceStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -202,6 +320,22 @@ namespace Amazon.CognitoIdentityProvider
 
         #endregion
                 
+        #region  AdminUserGlobalSignOut
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AdminUserGlobalSignOut operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AdminUserGlobalSignOut operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<AdminUserGlobalSignOutResponse> AdminUserGlobalSignOutAsync(AdminUserGlobalSignOutRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ChangePassword
 
 
@@ -215,6 +349,22 @@ namespace Amazon.CognitoIdentityProvider
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<ChangePasswordResponse> ChangePasswordAsync(ChangePasswordRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ConfirmDevice
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ConfirmDevice operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ConfirmDevice operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ConfirmDeviceResponse> ConfirmDeviceAsync(ConfirmDeviceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -247,6 +397,22 @@ namespace Amazon.CognitoIdentityProvider
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<ConfirmSignUpResponse> ConfirmSignUpAsync(ConfirmSignUpRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateUserImportJob
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateUserImportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateUserImportJob operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<CreateUserImportJobResponse> CreateUserImportJobAsync(CreateUserImportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -346,6 +512,22 @@ namespace Amazon.CognitoIdentityProvider
 
         #endregion
                 
+        #region  DescribeUserImportJob
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeUserImportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeUserImportJob operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DescribeUserImportJobResponse> DescribeUserImportJobAsync(DescribeUserImportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DescribeUserPool
 
 
@@ -378,6 +560,22 @@ namespace Amazon.CognitoIdentityProvider
 
         #endregion
                 
+        #region  ForgetDevice
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ForgetDevice operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ForgetDevice operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ForgetDeviceResponse> ForgetDeviceAsync(ForgetDeviceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ForgotPassword
 
 
@@ -391,6 +589,38 @@ namespace Amazon.CognitoIdentityProvider
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<ForgotPasswordResponse> ForgotPasswordAsync(ForgotPasswordRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetCSVHeader
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetCSVHeader operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetCSVHeader operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetCSVHeaderResponse> GetCSVHeaderAsync(GetCSVHeaderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetDevice
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDevice operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDevice operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetDeviceResponse> GetDeviceAsync(GetDeviceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -423,6 +653,70 @@ namespace Amazon.CognitoIdentityProvider
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<GetUserAttributeVerificationCodeResponse> GetUserAttributeVerificationCodeAsync(GetUserAttributeVerificationCodeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GlobalSignOut
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GlobalSignOut operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GlobalSignOut operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GlobalSignOutResponse> GlobalSignOutAsync(GlobalSignOutRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  InitiateAuth
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the InitiateAuth operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the InitiateAuth operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<InitiateAuthResponse> InitiateAuthAsync(InitiateAuthRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListDevices
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDevices operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDevices operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ListDevicesResponse> ListDevicesAsync(ListDevicesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListUserImportJobs
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListUserImportJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListUserImportJobs operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ListUserImportJobsResponse> ListUserImportJobsAsync(ListUserImportJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -490,6 +784,22 @@ namespace Amazon.CognitoIdentityProvider
 
         #endregion
                 
+        #region  RespondToAuthChallenge
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RespondToAuthChallenge operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RespondToAuthChallenge operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<RespondToAuthChallengeResponse> RespondToAuthChallengeAsync(RespondToAuthChallengeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  SetUserSettings
 
 
@@ -519,6 +829,54 @@ namespace Amazon.CognitoIdentityProvider
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<SignUpResponse> SignUpAsync(SignUpRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  StartUserImportJob
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartUserImportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartUserImportJob operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<StartUserImportJobResponse> StartUserImportJobAsync(StartUserImportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  StopUserImportJob
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopUserImportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopUserImportJob operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<StopUserImportJobResponse> StopUserImportJobAsync(StopUserImportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateDeviceStatus
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateDeviceStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDeviceStatus operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<UpdateDeviceStatusResponse> UpdateDeviceStatusAsync(UpdateDeviceStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

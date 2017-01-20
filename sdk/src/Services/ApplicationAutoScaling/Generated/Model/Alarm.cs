@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ApplicationAutoScaling.Model
 {
     /// <summary>
-    /// An object representing a CloudWatch alarm associated with a scaling policy.
+    /// Represents a CloudWatch alarm associated with a scaling policy.
     /// </summary>
     public partial class Alarm
     {

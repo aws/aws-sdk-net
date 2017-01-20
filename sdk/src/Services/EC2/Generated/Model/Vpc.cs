@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-11-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -35,6 +35,7 @@ namespace Amazon.EC2.Model
         private string _cidrBlock;
         private string _dhcpOptionsId;
         private Tenancy _instanceTenancy;
+        private List<VpcIpv6CidrBlockAssociation> _ipv6CidrBlockAssociationSet = new List<VpcIpv6CidrBlockAssociation>();
         private bool? _isDefault;
         private VpcState _state;
         private List<Tag> _tags = new List<Tag>();
@@ -43,7 +44,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property CidrBlock. 
         /// <para>
-        /// The CIDR block for the VPC.
+        /// The IPv4 CIDR block for the VPC.
         /// </para>
         /// </summary>
         public string CidrBlock
@@ -93,6 +94,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetInstanceTenancy()
         {
             return this._instanceTenancy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Ipv6CidrBlockAssociationSet. 
+        /// <para>
+        /// Information about the IPv6 CIDR blocks associated with the VPC.
+        /// </para>
+        /// </summary>
+        public List<VpcIpv6CidrBlockAssociation> Ipv6CidrBlockAssociationSet
+        {
+            get { return this._ipv6CidrBlockAssociationSet; }
+            set { this._ipv6CidrBlockAssociationSet = value; }
+        }
+
+        // Check to see if Ipv6CidrBlockAssociationSet property is set
+        internal bool IsSetIpv6CidrBlockAssociationSet()
+        {
+            return this._ipv6CidrBlockAssociationSet != null && this._ipv6CidrBlockAssociationSet.Count > 0; 
         }
 
         /// <summary>

@@ -39,8 +39,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property Events. 
         /// <para>
-        /// A list of <code class="code">FilteredLogEvent</code> objects representing the matched
-        /// events from the request.
+        /// The matched events.
         /// </para>
         /// </summary>
         public List<FilteredLogEvent> Events
@@ -58,9 +57,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A pagination token obtained from a <code class="code">FilterLogEvents</code> response
-        /// to continue paginating the FilterLogEvents results. This token is omitted from the
-        /// response when there are no other events to display.
+        /// The token to use when requesting the next set of items. The token expires after 24
+        /// hours.
         /// </para>
         /// </summary>
         public string NextToken
@@ -78,9 +76,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property SearchedLogStreams. 
         /// <para>
-        /// A list of <code class="code">SearchedLogStream</code> objects indicating which log
-        /// streams have been searched in this request and whether each has been searched completely
-        /// or still has more to be paginated.
+        /// Indicates which log streams have been searched and whether each has been searched
+        /// completely.
         /// </para>
         /// </summary>
         public List<SearchedLogStream> SearchedLogStreams

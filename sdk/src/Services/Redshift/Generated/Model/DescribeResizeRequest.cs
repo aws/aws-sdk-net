@@ -36,7 +36,7 @@ namespace Amazon.Redshift.Model
     /// 
     ///  
     /// <para>
-    ///  A resize operation can be requested using <a>ModifyCluster</a> and specifying a different
+    /// A resize operation can be requested using <a>ModifyCluster</a> and specifying a different
     /// number or type of nodes for the cluster. 
     /// </para>
     /// </summary>
@@ -47,13 +47,12 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ClusterIdentifier. 
         /// <para>
-        ///  The unique identifier of a cluster whose resize progress you are requesting. This
-        /// parameter is case-sensitive. 
+        /// The unique identifier of a cluster whose resize progress you are requesting. This
+        /// parameter is case-sensitive.
         /// </para>
         ///  
         /// <para>
         /// By default, resize operations for all clusters defined for an AWS account are returned.
-        /// 
         /// </para>
         /// </summary>
         public string ClusterIdentifier

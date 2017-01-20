@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
-    /// 
+    /// Represents the rejected events.
     /// </summary>
     public partial class RejectedLogEventsInfo
     {
@@ -37,7 +37,10 @@ namespace Amazon.CloudWatchLogs.Model
         private int? _tooOldLogEventEndIndex;
 
         /// <summary>
-        /// Gets and sets the property ExpiredLogEventEndIndex.
+        /// Gets and sets the property ExpiredLogEventEndIndex. 
+        /// <para>
+        /// The expired log events.
+        /// </para>
         /// </summary>
         public int ExpiredLogEventEndIndex
         {
@@ -52,7 +55,10 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TooNewLogEventStartIndex.
+        /// Gets and sets the property TooNewLogEventStartIndex. 
+        /// <para>
+        /// The log events that are too new.
+        /// </para>
         /// </summary>
         public int TooNewLogEventStartIndex
         {
@@ -67,7 +73,10 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TooOldLogEventEndIndex.
+        /// Gets and sets the property TooOldLogEventEndIndex. 
+        /// <para>
+        /// The log events that are too old.
+        /// </para>
         /// </summary>
         public int TooOldLogEventEndIndex
         {

@@ -35,7 +35,10 @@ namespace Amazon.ECS.Model
         private Task _task;
 
         /// <summary>
-        /// Gets and sets the property Task.
+        /// Gets and sets the property Task. 
+        /// <para>
+        /// The task that was stopped.
+        /// </para>
         /// </summary>
         public Task Task
         {

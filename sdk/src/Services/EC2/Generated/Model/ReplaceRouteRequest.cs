@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-11-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -31,7 +31,7 @@ namespace Amazon.EC2.Model
     /// Container for the parameters to the ReplaceRoute operation.
     /// Replaces an existing route within a route table in a VPC. You must provide only one
     /// of the following: Internet gateway or virtual private gateway, NAT instance, NAT gateway,
-    /// VPC peering connection, or network interface.
+    /// VPC peering connection, network interface, or egress-only Internet gateway.
     /// 
     ///  
     /// <para>
@@ -42,6 +42,8 @@ namespace Amazon.EC2.Model
     public partial class ReplaceRouteRequest : AmazonEC2Request
     {
         private string _destinationCidrBlock;
+        private string _destinationIpv6CidrBlock;
+        private string _egressOnlyInternetGatewayId;
         private string _gatewayId;
         private string _instanceId;
         private string _natGatewayId;
@@ -52,8 +54,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property DestinationCidrBlock. 
         /// <para>
-        /// The CIDR address block used for the destination match. The value you provide must
-        /// match the CIDR of an existing route in the table.
+        /// The IPv4 CIDR address block used for the destination match. The value you provide
+        /// must match the CIDR of an existing route in the table.
         /// </para>
         /// </summary>
         public string DestinationCidrBlock
@@ -66,6 +68,43 @@ namespace Amazon.EC2.Model
         internal bool IsSetDestinationCidrBlock()
         {
             return this._destinationCidrBlock != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DestinationIpv6CidrBlock. 
+        /// <para>
+        /// The IPv6 CIDR address block used for the destination match. The value you provide
+        /// must match the CIDR of an existing route in the table.
+        /// </para>
+        /// </summary>
+        public string DestinationIpv6CidrBlock
+        {
+            get { return this._destinationIpv6CidrBlock; }
+            set { this._destinationIpv6CidrBlock = value; }
+        }
+
+        // Check to see if DestinationIpv6CidrBlock property is set
+        internal bool IsSetDestinationIpv6CidrBlock()
+        {
+            return this._destinationIpv6CidrBlock != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EgressOnlyInternetGatewayId. 
+        /// <para>
+        /// [IPv6 traffic only] The ID of an egress-only Internet gateway.
+        /// </para>
+        /// </summary>
+        public string EgressOnlyInternetGatewayId
+        {
+            get { return this._egressOnlyInternetGatewayId; }
+            set { this._egressOnlyInternetGatewayId = value; }
+        }
+
+        // Check to see if EgressOnlyInternetGatewayId property is set
+        internal bool IsSetEgressOnlyInternetGatewayId()
+        {
+            return this._egressOnlyInternetGatewayId != null;
         }
 
         /// <summary>
@@ -107,7 +146,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property NatGatewayId. 
         /// <para>
-        /// The ID of a NAT gateway.
+        /// [IPv4 traffic only] The ID of a NAT gateway.
         /// </para>
         /// </summary>
         public string NatGatewayId

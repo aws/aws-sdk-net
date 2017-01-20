@@ -30,19 +30,20 @@ namespace Amazon.ECS.Model
     /// <summary>
     /// Container for the parameters to the StartTask operation.
     /// Starts a new task from the specified task definition on the specified container instance
-    /// or instances. To use the default Amazon ECS scheduler to place your task, use <code>RunTask</code>
-    /// instead.
+    /// or instances.
     /// 
-    ///  <important> 
+    ///  
     /// <para>
-    /// The list of container instances to start tasks on is limited to 10.
+    /// Alternatively, you can use <a>RunTask</a> to place tasks for you. For more information,
+    /// see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html">Scheduling
+    /// Tasks</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
     /// </para>
-    ///  </important>
     /// </summary>
     public partial class StartTaskRequest : AmazonECSRequest
     {
         private string _cluster;
         private List<string> _containerInstances = new List<string>();
+        private string _group;
         private TaskOverride _overrides;
         private string _startedBy;
         private string _taskDefinition;
@@ -51,7 +52,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Cluster. 
         /// <para>
         /// The short name or full Amazon Resource Name (ARN) of the cluster on which to start
-        /// your task. If you do not specify a cluster, the default cluster is assumed..
+        /// your task. If you do not specify a cluster, the default cluster is assumed.
         /// </para>
         /// </summary>
         public string Cluster
@@ -70,13 +71,9 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property ContainerInstances. 
         /// <para>
         /// The container instance IDs or full Amazon Resource Name (ARN) entries for the container
-        /// instances on which you would like to place your task.
+        /// instances on which you would like to place your task. You can specify up to 10 container
+        /// instances.
         /// </para>
-        ///  <important> 
-        /// <para>
-        /// The list of container instances to start tasks on is limited to 10.
-        /// </para>
-        ///  </important>
         /// </summary>
         public List<string> ContainerInstances
         {
@@ -88,6 +85,25 @@ namespace Amazon.ECS.Model
         internal bool IsSetContainerInstances()
         {
             return this._containerInstances != null && this._containerInstances.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Group. 
+        /// <para>
+        /// The task group to associate with the task. By default, if you do not specify a task
+        /// group, the default group is <code>family:TASKDEF-FAMILY</code>.
+        /// </para>
+        /// </summary>
+        public string Group
+        {
+            get { return this._group; }
+            set { this._group = value; }
+        }
+
+        // Check to see if Group property is set
+        internal bool IsSetGroup()
+        {
+            return this._group != null;
         }
 
         /// <summary>

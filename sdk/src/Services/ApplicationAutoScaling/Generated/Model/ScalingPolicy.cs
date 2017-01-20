@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ApplicationAutoScaling.Model
 {
     /// <summary>
-    /// An object representing a scaling policy.
+    /// Represents a scaling policy.
     /// </summary>
     public partial class ScalingPolicy
     {
@@ -45,7 +45,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <summary>
         /// Gets and sets the property Alarms. 
         /// <para>
-        /// The CloudWatch alarms that are associated with the scaling policy.
+        /// The CloudWatch alarms associated with the scaling policy.
         /// </para>
         /// </summary>
         public List<Alarm> Alarms
@@ -135,10 +135,25 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
-        /// The unique identifier string for the resource associated with the scaling policy.
-        /// For Amazon ECS services, this value is the resource type, followed by the cluster
-        /// name and service name, such as <code>service/default/sample-webapp</code>.
+        /// The identifier of the resource associated with the scaling policy. This string consists
+        /// of the resource type and unique identifier.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// ECS service - The resource type is <code>service</code> and the unique identifier
+        /// is the cluster name and service name. Example: <code>service/default/sample-webapp</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Spot fleet request - The resource type is <code>spot-fleet-request</code> and the
+        /// unique identifier is the Spot fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// EMR cluster - The resource type is <code>instancegroup</code> and the unique identifier
+        /// is the cluster ID and instance group ID. Example: <code>instancegroup/j-2EEZNYKUA1NTV/ig-1791Y4E1L8YI0</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string ResourceId
         {
@@ -155,10 +170,24 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <summary>
         /// Gets and sets the property ScalableDimension. 
         /// <para>
-        /// The scalable dimension associated with the scaling policy. The scalable dimension
-        /// contains the service namespace, resource type, and scaling property, such as <code>ecs:service:DesiredCount</code>
-        /// for the desired task count of an Amazon ECS service.
+        /// The scalable dimension. This string consists of the service namespace, resource type,
+        /// and scaling property.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>ecs:service:DesiredCount</code> - The desired task count of an ECS service.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot
+        /// fleet request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count of
+        /// an EMR Instance Group.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public ScalableDimension ScalableDimension
         {
@@ -175,9 +204,8 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <summary>
         /// Gets and sets the property ServiceNamespace. 
         /// <para>
-        /// The namespace for the AWS service that the scaling policy is associated with. For
-        /// more information, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
-        /// Service Namespaces</a> in the Amazon Web Services General Reference.
+        /// The namespace of the AWS service. For more information, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
+        /// Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </summary>
         public ServiceNamespace ServiceNamespace

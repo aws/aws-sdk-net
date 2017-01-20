@@ -29,14 +29,13 @@ namespace Amazon.CloudWatch.Model
 {
     /// <summary>
     /// Container for the parameters to the SetAlarmState operation.
-    /// Temporarily sets the state of an alarm. When the updated <code>StateValue</code>
+    /// Temporarily sets the state of an alarm for testing purposes. When the updated state
     /// differs from the previous value, the action configured for the appropriate state is
     /// invoked. For example, if your alarm is configured to send an Amazon SNS message when
-    /// an alarm is triggered, temporarily changing the alarm's state to <b>ALARM</b> will
-    /// send an Amazon SNS message. This is not a permanent change. The next periodic alarm
-    /// check (in about a minute) will set the alarm to its actual state. Because the alarm
-    /// state change happens very quickly, it is typically only visibile in the alarm's <b>History</b>
-    /// tab in the Amazon CloudWatch console or through <code>DescribeAlarmHistory</code>.
+    /// an alarm is triggered, temporarily changing the alarm state to <code>ALARM</code>
+    /// sends an Amazon SNS message. The alarm returns to its actual state (often within seconds).
+    /// Because the alarm state change happens very quickly, it is typically only visible
+    /// in the alarm's <b>History</b> tab in the Amazon CloudWatch console or through <a>DescribeAlarmHistory</a>.
     /// </summary>
     public partial class SetAlarmStateRequest : AmazonCloudWatchRequest
     {
@@ -48,8 +47,8 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property AlarmName. 
         /// <para>
-        ///  The descriptive name for the alarm. This name must be unique within the user's AWS
-        /// account. The maximum length is 255 characters. 
+        /// The name for the alarm. This name must be unique within the AWS account. The maximum
+        /// length is 255 characters.
         /// </para>
         /// </summary>
         public string AlarmName
@@ -67,8 +66,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property StateReason. 
         /// <para>
-        ///  The reason that this alarm is set to this specific state (in human-readable text
-        /// format) 
+        /// The reason that this alarm is set to this specific state, in text format.
         /// </para>
         /// </summary>
         public string StateReason
@@ -86,8 +84,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property StateReasonData. 
         /// <para>
-        ///  The reason that this alarm is set to this specific state (in machine-readable JSON
-        /// format) 
+        /// The reason that this alarm is set to this specific state, in JSON format.
         /// </para>
         /// </summary>
         public string StateReasonData
@@ -105,7 +102,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property StateValue. 
         /// <para>
-        ///  The value of the state. 
+        /// The value of the state.
         /// </para>
         /// </summary>
         public StateValue StateValue

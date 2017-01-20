@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// Represents the output of a <i>DescribeReplicationGroups</i> action.
+    /// Represents the output of a <code>DescribeReplicationGroups</code> operation.
     /// </summary>
     public partial class DescribeReplicationGroupsResponse : AmazonWebServiceResponse
     {

@@ -85,8 +85,11 @@ namespace Amazon
         
         // for reading from awsconfigs.xml
         private static object _lock = new object();
-        private static bool configPresent = true;
         private static List<string> standardConfigs = new List<string>() { "region", "logging", "correctForClockSkew" };
+
+#pragma warning disable 414
+        private static bool configPresent = true;
+#pragma warning restore 414
 
         // New config section
         private static RootConfig _rootConfig = new RootConfig();
@@ -331,7 +334,7 @@ namespace Amazon
 
         /// <summary>
         /// Key for the EndpointDefinition property.
-        /// <seealso cref="Amazon.AWSConfigs.LogMetrics"/>
+        /// <seealso cref="Amazon.AWSConfigs.EndpointDefinition"/>
         /// </summary>
         public const string EndpointDefinitionKey = "AWSEndpointDefinition";
 
@@ -341,7 +344,7 @@ namespace Amazon
         /// &lt;configSections&gt;
         ///   &lt;section name="aws" type="Amazon.AWSSection, AWSSDK"/&gt;
         /// &lt;/configSections&gt;
-        /// &lt;aws endpointDefinition="c:\config\endpoints.xml" /&gt;
+        /// &lt;aws endpointDefinition="c:\config\endpoints.json" /&gt;
         /// </code>
         /// </summary>
         public static string EndpointDefinition
@@ -406,7 +409,7 @@ namespace Amazon
         ///   &lt;section name="aws" type="Amazon.AWSSection, AWSSDK"/&gt;
         /// &lt;/configSections&gt;
         /// &lt;aws&gt;
-        ///   &lt;proxy host="localhost" port="8888" username="1" password="1" /&gt;
+        ///   &lt;proxy host="localhost" port="8888" username="1" password="1" bypassList="addressexpr1;addressexpr2;..." bypassOnLocal="true" /&gt;
         /// &lt;/aws&gt;
         /// </code>
         /// </summary>
@@ -547,7 +550,12 @@ namespace Amazon
         /// <summary>
         /// Log using System.Diagnostics
         /// </summary>
-        SystemDiagnostics = 2
+        SystemDiagnostics = 2,
+
+        /// <summary>
+        /// Log to the console
+        /// </summary>
+        Console = 16
 #if PCL 
         ,
         /// <summary>

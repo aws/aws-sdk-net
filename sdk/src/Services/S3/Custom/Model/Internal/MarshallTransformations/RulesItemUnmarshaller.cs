@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -16,6 +16,8 @@ using System.Collections.Generic;
 
 using Amazon.S3.Model;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Util;
+using Amazon.Runtime;
 
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
@@ -52,7 +54,25 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Prefix", targetDepth))
                     {
                         rulesItem.Prefix = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        continue;
+                    }
+                    if (context.TestExpression("Filter", targetDepth))
+                    {
+                        var predicateList = LifecycleFilterPredicateListUnmarshaller.Instance.Unmarshall(context);
+
+                        if (predicateList.Count == 1)
+                        {
+                            rulesItem.Filter = new LifecycleFilter()
+                            {
+                                LifecycleFilterPredicate = predicateList[0]
+                            };
+                        }
+                        else if (predicateList.Count > 1)
+                        {
+                            var requestId = context.ResponseData.GetHeaderValue(HeaderKeys.RequestIdHeader);
+                            var message = "The Filter element must contain at most one 'Prefix', 'Tag', or 'And' predicate.";
+                            throw new AmazonUnmarshallingException(requestId, context.CurrentPath, context.ResponseBody, message, null);
+                        }
                         continue;
                     }
                     if (context.TestExpression("Status", targetDepth))

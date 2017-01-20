@@ -38,9 +38,15 @@ namespace Amazon.SimpleSystemsManagement.Model
         private DocumentHashType _documentHashType;
         private string _documentName;
         private List<string> _instanceIds = new List<string>();
+        private string _maxConcurrency;
+        private string _maxErrors;
+        private NotificationConfig _notificationConfig;
         private string _outputS3BucketName;
         private string _outputS3KeyPrefix;
+        private string _outputS3Region;
         private Dictionary<string, List<string>> _parameters = new Dictionary<string, List<string>>();
+        private string _serviceRoleArn;
+        private List<Target> _targets = new List<Target>();
         private int? _timeoutSeconds;
 
         /// <summary>
@@ -52,7 +58,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Instantiates SendCommandRequest with the parameterized properties
         /// </summary>
         /// <param name="documentName">Required. The name of the SSM document to execute. This can be an SSM public document or a custom document.</param>
-        /// <param name="instanceIds">Required. The instance IDs where the command should execute.</param>
+        /// <param name="instanceIds">Required. The instance IDs where the command should execute. You can specify a maximum of 50 IDs.</param>
         public SendCommandRequest(string documentName, List<string> instanceIds)
         {
             _documentName = documentName;
@@ -146,7 +152,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property InstanceIds. 
         /// <para>
-        /// Required. The instance IDs where the command should execute.
+        /// Required. The instance IDs where the command should execute. You can specify a maximum
+        /// of 50 IDs.
         /// </para>
         /// </summary>
         public List<string> InstanceIds
@@ -159,6 +166,71 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetInstanceIds()
         {
             return this._instanceIds != null && this._instanceIds.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxConcurrency. 
+        /// <para>
+        /// (Optional) The maximum number of instances that are allowed to execute the command
+        /// at the same time. You can specify a number such as “10” or a percentage such as “10%”.
+        /// The default value is 50. For more information about how to use <code>MaxConcurrency</code>,
+        /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing
+        /// a Command Using Amazon EC2 Run Command</a> (Linux) or <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing
+        /// a Command Using Amazon EC2 Run Command</a> (Windows).
+        /// </para>
+        /// </summary>
+        public string MaxConcurrency
+        {
+            get { return this._maxConcurrency; }
+            set { this._maxConcurrency = value; }
+        }
+
+        // Check to see if MaxConcurrency property is set
+        internal bool IsSetMaxConcurrency()
+        {
+            return this._maxConcurrency != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxErrors. 
+        /// <para>
+        /// The maximum number of errors allowed without the command failing. When the command
+        /// fails one more time beyond the value of <code>MaxErrors</code>, the systems stops
+        /// sending the command to additional targets. You can specify a number like “10” or a
+        /// percentage like “10%”. The default value is 50. For more information about how to
+        /// use <code>MaxErrors</code>, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing
+        /// a Command Using Amazon EC2 Run Command</a> (Linux) or <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing
+        /// a Command Using Amazon EC2 Run Command</a> (Windows).
+        /// </para>
+        /// </summary>
+        public string MaxErrors
+        {
+            get { return this._maxErrors; }
+            set { this._maxErrors = value; }
+        }
+
+        // Check to see if MaxErrors property is set
+        internal bool IsSetMaxErrors()
+        {
+            return this._maxErrors != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NotificationConfig. 
+        /// <para>
+        /// Configurations for sending notifications.
+        /// </para>
+        /// </summary>
+        public NotificationConfig NotificationConfig
+        {
+            get { return this._notificationConfig; }
+            set { this._notificationConfig = value; }
+        }
+
+        // Check to see if NotificationConfig property is set
+        internal bool IsSetNotificationConfig()
+        {
+            return this._notificationConfig != null;
         }
 
         /// <summary>
@@ -198,6 +270,25 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OutputS3Region. 
+        /// <para>
+        /// (Optional) The region where the Amazon Simple Storage Service (Amazon S3) output bucket
+        /// is located. The default value is the region where Run Command is being called.
+        /// </para>
+        /// </summary>
+        public string OutputS3Region
+        {
+            get { return this._outputS3Region; }
+            set { this._outputS3Region = value; }
+        }
+
+        // Check to see if OutputS3Region property is set
+        internal bool IsSetOutputS3Region()
+        {
+            return this._outputS3Region != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Parameters. 
         /// <para>
         /// The required and optional parameters specified in the SSM document being executed.
@@ -213,6 +304,47 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetParameters()
         {
             return this._parameters != null && this._parameters.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServiceRoleArn. 
+        /// <para>
+        /// The IAM role that Systems Manager uses to send notifications. 
+        /// </para>
+        /// </summary>
+        public string ServiceRoleArn
+        {
+            get { return this._serviceRoleArn; }
+            set { this._serviceRoleArn = value; }
+        }
+
+        // Check to see if ServiceRoleArn property is set
+        internal bool IsSetServiceRoleArn()
+        {
+            return this._serviceRoleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Targets. 
+        /// <para>
+        /// (Optional) An array of search criteria that targets instances using a <code>Key</code>;<code>Value</code>
+        /// combination that you specify. <code>Targets</code> is required if you don't provide
+        /// one or more instance IDs in the call. For more information about how to use <code>Targets</code>,
+        /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing
+        /// a Command Using Amazon EC2 Run Command</a> (Linux) or <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing
+        /// a Command Using Amazon EC2 Run Command</a> (Windows).
+        /// </para>
+        /// </summary>
+        public List<Target> Targets
+        {
+            get { return this._targets; }
+            set { this._targets = value; }
+        }
+
+        // Check to see if Targets property is set
+        internal bool IsSetTargets()
+        {
+            return this._targets != null && this._targets.Count > 0; 
         }
 
         /// <summary>

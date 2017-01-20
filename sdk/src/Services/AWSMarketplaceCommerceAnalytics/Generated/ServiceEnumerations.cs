@@ -75,6 +75,10 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics
         /// </summary>
         public static readonly DataSetType DailyBusinessUsageByInstanceType = new DataSetType("daily_business_usage_by_instance_type");
         /// <summary>
+        /// Constant Disbursed_amount_by_instance_hours for DataSetType
+        /// </summary>
+        public static readonly DataSetType Disbursed_amount_by_instance_hours = new DataSetType("disbursed_amount_by_instance_hours");
+        /// <summary>
         /// Constant Disbursed_amount_by_product_with_uncollected_funds for DataSetType
         /// </summary>
         public static readonly DataSetType Disbursed_amount_by_product_with_uncollected_funds = new DataSetType("disbursed_amount_by_product_with_uncollected_funds");
@@ -102,6 +106,10 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics
         /// Constant MonthlyRevenueBillingAndRevenueData for DataSetType
         /// </summary>
         public static readonly DataSetType MonthlyRevenueBillingAndRevenueData = new DataSetType("monthly_revenue_billing_and_revenue_data");
+        /// <summary>
+        /// Constant Sales_compensation_billed_revenue for DataSetType
+        /// </summary>
+        public static readonly DataSetType Sales_compensation_billed_revenue = new DataSetType("sales_compensation_billed_revenue");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -132,6 +140,56 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DataSetType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SupportDataSetType.
+    /// </summary>
+    public class SupportDataSetType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Customer_support_contacts_data for SupportDataSetType
+        /// </summary>
+        public static readonly SupportDataSetType Customer_support_contacts_data = new SupportDataSetType("customer_support_contacts_data");
+        /// <summary>
+        /// Constant Test_customer_support_contacts_data for SupportDataSetType
+        /// </summary>
+        public static readonly SupportDataSetType Test_customer_support_contacts_data = new SupportDataSetType("test_customer_support_contacts_data");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SupportDataSetType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SupportDataSetType FindValue(string value)
+        {
+            return FindValue<SupportDataSetType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SupportDataSetType(string value)
         {
             return FindValue(value);
         }

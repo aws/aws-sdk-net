@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-11-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -97,7 +97,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property LaunchSpecification. 
         /// <para>
-        /// The launch specification.
+        /// The launch specification. You must match the instance type, Availability Zone, network,
+        /// and platform of the schedule that you purchased.
         /// </para>
         /// </summary>
         public ScheduledInstancesLaunchSpecification LaunchSpecification

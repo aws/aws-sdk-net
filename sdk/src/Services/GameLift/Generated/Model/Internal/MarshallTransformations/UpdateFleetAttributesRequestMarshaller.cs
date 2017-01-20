@@ -85,6 +85,23 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
+                if(publicRequest.IsSetNewGameSessionProtectionPolicy())
+                {
+                    context.Writer.WritePropertyName("NewGameSessionProtectionPolicy");
+                    context.Writer.Write(publicRequest.NewGameSessionProtectionPolicy);
+                }
+
+                if(publicRequest.IsSetResourceCreationLimitPolicy())
+                {
+                    context.Writer.WritePropertyName("ResourceCreationLimitPolicy");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ResourceCreationLimitPolicyMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ResourceCreationLimitPolicy, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

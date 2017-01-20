@@ -39,8 +39,8 @@ namespace Amazon.AutoScaling.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroup.html">Auto
-    /// Scaling Groups</a> in the <i>Auto Scaling Developer Guide</i>.
+    /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/AutoScalingGroup.html">Auto
+    /// Scaling Groups</a> in the <i>Auto Scaling User Guide</i>.
     /// </para>
     /// </summary>
     public partial class CreateAutoScalingGroupRequest : AmazonAutoScalingRequest
@@ -59,6 +59,7 @@ namespace Amazon.AutoScaling.Model
         private bool? _newInstancesProtectedFromScaleIn;
         private string _placementGroup;
         private List<Tag> _tags = new List<Tag>();
+        private List<string> _targetGroupARNs = new List<string>();
         private List<string> _terminationPolicies = new List<string>();
         private string _vpcZoneIdentifier;
 
@@ -107,8 +108,8 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Auto
-        /// Scaling Cooldowns</a> in the <i>Auto Scaling Developer Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/Cooldown.html">Auto
+        /// Scaling Cooldowns</a> in the <i>Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         public int DefaultCooldown
@@ -148,7 +149,7 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// The amount of time, in seconds, that Auto Scaling waits before checking the health
         /// status of an EC2 instance that has come into service. During this time, any health
-        /// check failures for the instance are ignored. The default is 300.
+        /// check failures for the instance are ignored. The default is 0.
         /// </para>
         ///  
         /// <para>
@@ -156,8 +157,8 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/healthcheck.html">Health
-        /// Checks</a> in the <i>Auto Scaling Developer Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/healthcheck.html">Health
+        /// Checks</a> in the <i>Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         public int HealthCheckGracePeriod
@@ -181,8 +182,8 @@ namespace Amazon.AutoScaling.Model
         ///  
         /// <para>
         /// By default, health checks use Amazon EC2 instance status checks to determine the health
-        /// of an instance. For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/healthcheck.html">Health
-        /// Checks</a> in the <i>Auto Scaling Developer Guide</i>.
+        /// of an instance. For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/healthcheck.html">Health
+        /// Checks</a> in the <i>Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         public string HealthCheckType
@@ -211,8 +212,8 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/create-asg-from-instance.html">Create
-        /// an Auto Scaling Group Using an EC2 Instance</a> in the <i>Auto Scaling Developer Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/create-asg-from-instance.html">Create
+        /// an Auto Scaling Group Using an EC2 Instance</a> in the <i>Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         public string InstanceId
@@ -249,12 +250,13 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property LoadBalancerNames. 
         /// <para>
-        /// One or more load balancers.
+        /// One or more Classic load balancers. To specify an Application load balancer, use <code>TargetGroupARNs</code>
+        /// instead.
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US_SetUpASLBApp.html">Using
-        /// a Load Balancer With an Auto Scaling Group</a> in the <i>Auto Scaling Developer Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/create-asg-from-instance.html">Using
+        /// a Load Balancer With an Auto Scaling Group</a> in the <i>Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         public List<string> LoadBalancerNames
@@ -351,8 +353,8 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/ASTagging.html">Tagging
-        /// Auto Scaling Groups and Instances</a> in the <i>Auto Scaling Developer Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/autoscaling-tagging.html">Tagging
+        /// Auto Scaling Groups and Instances</a> in the <i>Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         public List<Tag> Tags
@@ -368,6 +370,24 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
+        /// Gets and sets the property TargetGroupARNs. 
+        /// <para>
+        /// The Amazon Resource Names (ARN) of the target groups.
+        /// </para>
+        /// </summary>
+        public List<string> TargetGroupARNs
+        {
+            get { return this._targetGroupARNs; }
+            set { this._targetGroupARNs = value; }
+        }
+
+        // Check to see if TargetGroupARNs property is set
+        internal bool IsSetTargetGroupARNs()
+        {
+            return this._targetGroupARNs != null && this._targetGroupARNs.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property TerminationPolicies. 
         /// <para>
         /// One or more termination policies used to select the instance to terminate. These policies
@@ -375,9 +395,9 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingBehavior.InstanceTermination.html">Controlling
+        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-instance-termination.html">Controlling
         /// Which Instances Auto Scaling Terminates During Scale In</a> in the <i>Auto Scaling
-        /// Developer Guide</i>.
+        /// User Guide</i>.
         /// </para>
         /// </summary>
         public List<string> TerminationPolicies
@@ -404,8 +424,8 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/asg-in-vpc.html">Launching
-        /// Auto Scaling Instances in a VPC</a> in the <i>Auto Scaling Developer Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/asg-in-vpc.html">Launching
+        /// Auto Scaling Instances in a VPC</a> in the <i>Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         public string VPCZoneIdentifier

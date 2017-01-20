@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-11-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -43,7 +43,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>accepter-vpc-info.cidr-block</code> - The CIDR block of the peer VPC.
+        ///  <code>accepter-vpc-info.cidr-block</code> - The IPv4 CIDR block of the peer VPC.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -60,7 +60,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>requester-vpc-info.cidr-block</code> - The CIDR block of the requester's VPC.
+        ///  <code>requester-vpc-info.cidr-block</code> - The IPv4 CIDR block of the requester's
+        /// VPC.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -85,7 +86,9 @@ namespace Amazon.EC2.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned
-        /// to the resource.
+        /// to the resource. Specify the key of the tag in the filter name and the value of the
+        /// tag in the filter value. For example, for the tag Purpose=X, specify <code>tag:Purpose</code>
+        /// for the filter name and <code>X</code> for the filter value.
         /// </para>
         ///  </li> <li> 
         /// <para>

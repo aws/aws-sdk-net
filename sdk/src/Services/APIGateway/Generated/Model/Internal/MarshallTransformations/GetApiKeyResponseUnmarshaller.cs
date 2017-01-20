@@ -57,6 +57,12 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                     response.CreatedDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("customerId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.CustomerId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("description", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -91,6 +97,12 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     response.StageKeys = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("value", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Value = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

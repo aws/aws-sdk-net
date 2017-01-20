@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// 
+    /// The Amazon EBS configuration of a cluster instance.
     /// </summary>
     public partial class EbsConfiguration
     {
@@ -36,7 +36,10 @@ namespace Amazon.ElasticMapReduce.Model
         private bool? _ebsOptimized;
 
         /// <summary>
-        /// Gets and sets the property EbsBlockDeviceConfigs.
+        /// Gets and sets the property EbsBlockDeviceConfigs. 
+        /// <para>
+        /// An array of Amazon EBS volume specifications attached to a cluster instance.
+        /// </para>
         /// </summary>
         public List<EbsBlockDeviceConfig> EbsBlockDeviceConfigs
         {
@@ -51,7 +54,10 @@ namespace Amazon.ElasticMapReduce.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EbsOptimized.
+        /// Gets and sets the property EbsOptimized. 
+        /// <para>
+        /// Indicates whether an Amazon EBS volume is EBS-optimized.
+        /// </para>
         /// </summary>
         public bool EbsOptimized
         {

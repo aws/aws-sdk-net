@@ -64,6 +64,12 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AdminCreateUserConfig", targetDepth))
+                {
+                    var unmarshaller = AdminCreateUserConfigTypeUnmarshaller.Instance;
+                    unmarshalledObject.AdminCreateUserConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("AliasAttributes", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
@@ -80,6 +86,24 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreationDate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("DeviceConfiguration", targetDepth))
+                {
+                    var unmarshaller = DeviceConfigurationTypeUnmarshaller.Instance;
+                    unmarshalledObject.DeviceConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("EmailConfiguration", targetDepth))
+                {
+                    var unmarshaller = EmailConfigurationTypeUnmarshaller.Instance;
+                    unmarshalledObject.EmailConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("EmailConfigurationFailure", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EmailConfigurationFailure = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("EmailVerificationMessage", targetDepth))
@@ -146,6 +170,18 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SmsAuthenticationMessage = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SmsConfiguration", targetDepth))
+                {
+                    var unmarshaller = SmsConfigurationTypeUnmarshaller.Instance;
+                    unmarshalledObject.SmsConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SmsConfigurationFailure", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SmsConfigurationFailure = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SmsVerificationMessage", targetDepth))

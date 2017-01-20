@@ -41,8 +41,8 @@ namespace Amazon.ElasticTranscoder.Model
         /// <summary>
         /// Gets and sets the property Encryption. 
         /// <para>
-        /// The encryption settings, if any, that you want Elastic Transcoder to apply to your
-        /// caption sources.
+        /// The encryption settings, if any, that Elastic Transcoder needs to decyrpt your caption
+        /// sources, or that you want Elastic Transcoder to apply to your caption sources.
         /// </para>
         /// </summary>
         public Encryption Encryption
@@ -98,17 +98,19 @@ namespace Amazon.ElasticTranscoder.Model
         /// <summary>
         /// Gets and sets the property Language. 
         /// <para>
-        /// A string that specifies the language of the caption. Specify this as one of:
+        /// A string that specifies the language of the caption. If you specified multiple inputs
+        /// with captions, the caption language must match in order to be included in the output.
+        /// Specify this as one of:
         /// </para>
-        ///  <ul> <li>
+        ///  <ul> <li> 
         /// <para>
         /// 2-character ISO 639-1 code
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// 3-character ISO 639-2 code
         /// </para>
-        /// </li> </ul> 
+        ///  </li> </ul> 
         /// <para>
         /// For more information on ISO language codes and language names, see the List of ISO
         /// 639-1 codes.

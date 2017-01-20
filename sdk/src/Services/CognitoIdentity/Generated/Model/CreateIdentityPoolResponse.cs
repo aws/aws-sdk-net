@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentity.Model
 {
     /// <summary>
-    /// An object representing a Cognito identity pool.
+    /// An object representing an Amazon Cognito identity pool.
     /// </summary>
     public partial class CreateIdentityPoolResponse : AmazonWebServiceResponse
     {
@@ -42,8 +42,10 @@ namespace Amazon.CognitoIdentity.Model
         private Dictionary<string, string> _supportedLoginProviders = new Dictionary<string, string>();
 
         /// <summary>
-        /// Gets and sets the property AllowUnauthenticatedIdentities. TRUE if the identity pool
-        /// supports unauthenticated logins.
+        /// Gets and sets the property AllowUnauthenticatedIdentities. 
+        /// <para>
+        /// TRUE if the identity pool supports unauthenticated logins.
+        /// </para>
         /// </summary>
         public bool AllowUnauthenticatedIdentities
         {
@@ -94,7 +96,10 @@ namespace Amazon.CognitoIdentity.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IdentityPoolId. An identity pool ID in the format REGION:GUID.
+        /// Gets and sets the property IdentityPoolId. 
+        /// <para>
+        /// An identity pool ID in the format REGION:GUID.
+        /// </para>
         /// </summary>
         public string IdentityPoolId
         {

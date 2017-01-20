@@ -37,7 +37,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ConfigurationRecordersStatus. 
         /// <para>
-        ///  A list that contains status of the specified recorders. 
+        /// A list that contains status of the specified recorders.
         /// </para>
         /// </summary>
         public List<ConfigurationRecorderStatus> ConfigurationRecordersStatus

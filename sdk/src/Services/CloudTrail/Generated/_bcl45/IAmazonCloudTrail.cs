@@ -23,6 +23,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.CloudTrail.Model;
 
 namespace Amazon.CloudTrail
@@ -54,11 +55,12 @@ namespace Amazon.CloudTrail
     /// </para>
     ///  </note> 
     /// <para>
-    /// See the CloudTrail User Guide for information about the data that is included with
-    /// each AWS API call listed in the log files.
+    /// See the <a href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-user-guide.html">AWS
+    /// CloudTrail User Guide</a> for information about the data that is included with each
+    /// AWS API call listed in the log files.
     /// </para>
     /// </summary>
-    public partial interface IAmazonCloudTrail : IDisposable
+    public partial interface IAmazonCloudTrail : IAmazonService, IDisposable
     {
 
         
@@ -66,7 +68,7 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
-        /// Adds one or more tags to a trail, up to a limit of 10. Tags must be unique per trail.
+        /// Adds one or more tags to a trail, up to a limit of 50. Tags must be unique per trail.
         /// Overwrites an existing tag's value when a new value is specified for an existing tag
         /// key. If you specify a key without a value, the tag will be created with the specified
         /// key and a value of null. You can tag a trail that applies to all regions only from
@@ -127,7 +129,7 @@ namespace Amazon.CloudTrail
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.TagsLimitExceededException">
         /// The number of tags per trail has exceeded the permitted amount. Currently, the limit
-        /// is 10.
+        /// is 50.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
         /// This exception is thrown when the requested operation is not supported.
@@ -389,6 +391,87 @@ namespace Amazon.CloudTrail
 
         #endregion
         
+        #region  GetEventSelectors
+
+
+        /// <summary>
+        /// Describes the settings for the event selectors that you configured for your trail.
+        /// The information returned for your event selectors includes the following:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// The S3 objects that you are logging for data events.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If your event selector includes management events.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If your event selector includes read-only events, write-only events, or all. 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-event-selectors-for-a-trail.html">Configuring
+        /// Event Selectors for Trails</a> in the <i>AWS CloudTrail User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEventSelectors service method.</param>
+        /// 
+        /// <returns>The response from the GetEventSelectors service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidTrailNameException">
+        /// This exception is thrown when the provided trail name is not valid. Trail names must
+        /// meet the following requirements:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_),
+        /// or dashes (-)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start with a letter or number, and end with a letter or number
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Be between 3 and 128 characters
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
+        /// and <code>my--namespace</code> are invalid.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Not be in IP address format (for example, 192.168.5.4)
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
+        /// This exception is thrown when the requested operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.TrailNotFoundException">
+        /// This exception is thrown when the trail with the given name is not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
+        /// This exception is thrown when the requested operation is not supported.
+        /// </exception>
+        GetEventSelectorsResponse GetEventSelectors(GetEventSelectorsRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetEventSelectors operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetEventSelectors operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetEventSelectorsResponse> GetEventSelectorsAsync(GetEventSelectorsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetTrailStatus
 
 
@@ -581,13 +664,34 @@ namespace Amazon.CloudTrail
         /// Looks up API activity events captured by CloudTrail that create, update, or delete
         /// resources in your account. Events for a region can be looked up for the times in which
         /// you had CloudTrail turned on in that region during the last seven days. Lookup supports
-        /// five different attributes: time range (defined by a start time and end time), user
-        /// name, event name, resource type, and resource name. All attributes are optional. The
-        /// maximum number of attributes that can be specified in any one lookup request are time
-        /// range and one other attribute. The default number of results returned is 10, with
-        /// a maximum of 50 possible. The response includes a token that you can use to get the
-        /// next page of results.
+        /// the following attributes:
         /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Event ID
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Event name
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Resource name
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Resource type
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// User name
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// All attributes are optional. The default number of results returned is 10, with a
+        /// maximum of 50 possible. The response includes a token that you can use to get the
+        /// next page of results.
+        /// </para>
         ///  <important> 
         /// <para>
         /// The rate of lookup requests is limited to one per second per account. If this limit
@@ -630,6 +734,135 @@ namespace Amazon.CloudTrail
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<LookupEventsResponse> LookupEventsAsync(LookupEventsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  PutEventSelectors
+
+
+        /// <summary>
+        /// Configures an event selector for your trail. Use event selectors to specify the type
+        /// of events that you want your trail to log. When an event occurs in your account, CloudTrail
+        /// evaluates the event selectors in all trails. For each trail, if the event matches
+        /// any event selector, the trail processes and logs the event. If the event doesn't match
+        /// any event selector, the trail doesn't log the event. 
+        /// 
+        ///  
+        /// <para>
+        /// Example
+        /// </para>
+        ///  <ol> <li> 
+        /// <para>
+        /// You create an event selector for a trail and specify that you want write-only events.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The EC2 <code>GetConsoleOutput</code> and <code>RunInstances</code> API operations
+        /// occur in your account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CloudTrail evaluates whether the events match your event selectors.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <code>RunInstances</code> is a write-only event and it matches your event selector.
+        /// The trail logs the event.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <code>GetConsoleOutput</code> is a read-only event but it doesn't match your event
+        /// selector. The trail doesn't log the event. 
+        /// </para>
+        ///  </li> </ol> 
+        /// <para>
+        /// The <code>PutEventSelectors</code> operation must be called from the region in which
+        /// the trail was created; otherwise, an <code>InvalidHomeRegionException</code> is thrown.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can configure up to five event selectors for each trail. For more information,
+        /// see <a href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-event-selectors-for-a-trail.html">Configuring
+        /// Event Selectors for Trails</a> in the <i>AWS CloudTrail User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutEventSelectors service method.</param>
+        /// 
+        /// <returns>The response from the PutEventSelectors service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidEventSelectorsException">
+        /// This exception is thrown when the <code>PutEventSelectors</code> operation is called
+        /// with an invalid number of event selectors, data resources, or an invalid value for
+        /// a parameter:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Specify a valid number of event selectors (1 to 5) for a trail.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Specify a valid number of data resources (1 to 50) for an event selector.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Specify a valid value for a parameter. For example, specifying the <code>ReadWriteType</code>
+        /// parameter with a value of <code>read-only</code> is invalid.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidHomeRegionException">
+        /// This exception is thrown when an operation is called on a trail from a region other
+        /// than the region in which the trail was created.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidTrailNameException">
+        /// This exception is thrown when the provided trail name is not valid. Trail names must
+        /// meet the following requirements:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_),
+        /// or dashes (-)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start with a letter or number, and end with a letter or number
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Be between 3 and 128 characters
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
+        /// and <code>my--namespace</code> are invalid.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Not be in IP address format (for example, 192.168.5.4)
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
+        /// This exception is thrown when the requested operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.TrailNotFoundException">
+        /// This exception is thrown when the trail with the given name is not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
+        /// This exception is thrown when the requested operation is not supported.
+        /// </exception>
+        PutEventSelectorsResponse PutEventSelectors(PutEventSelectorsRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutEventSelectors operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutEventSelectors operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<PutEventSelectorsResponse> PutEventSelectorsAsync(PutEventSelectorsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

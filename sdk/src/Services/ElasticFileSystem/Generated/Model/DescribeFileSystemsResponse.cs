@@ -39,7 +39,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property FileSystems. 
         /// <para>
-        /// An array of file system descriptions.
+        /// Array of file system descriptions.
         /// </para>
         /// </summary>
         public List<FileSystemDescription> FileSystems
@@ -57,7 +57,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        /// A string, present if provided by caller in the request.
+        /// Present if provided by caller in the request (String).
         /// </para>
         /// </summary>
         public string Marker
@@ -75,7 +75,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property NextMarker. 
         /// <para>
-        /// A string, present if there are more file systems than returned in the response. You
+        /// Present if there are more file systems than returned in the response (String). You
         /// can use the <code>NextMarker</code> in the subsequent request to fetch the descriptions.
         /// </para>
         /// </summary>

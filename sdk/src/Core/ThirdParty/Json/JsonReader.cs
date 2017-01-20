@@ -31,7 +31,9 @@ namespace ThirdParty.Json.LitJson
         ArrayEnd,
 
         Int,
+        UInt,
         Long,
+        ULong,
         Double,
 
         String,
@@ -150,6 +152,15 @@ namespace ThirdParty.Json.LitJson
                 return;
             }
 
+            uint n_uint32;
+            if (UInt32.TryParse(number, NumberStyles.Any, CultureInfo.InvariantCulture, out n_uint32))
+            {
+                token = JsonToken.UInt;
+                token_value = n_uint32;
+
+                return;
+            }
+
             long n_int64;
             if (Int64.TryParse(number, NumberStyles.Any, CultureInfo.InvariantCulture, out n_int64))
             {
@@ -159,9 +170,18 @@ namespace ThirdParty.Json.LitJson
                 return;
             }
 
+            ulong n_uint64;
+            if (UInt64.TryParse(number, NumberStyles.Any, CultureInfo.InvariantCulture, out n_uint64))
+            {
+                token = JsonToken.ULong;
+                token_value = n_uint64;
+
+                return;
+            }
+
             // Shouldn't happen, but just in case, return something
-            token = JsonToken.Int;
-            token_value = 0;
+            token = JsonToken.ULong;
+            token_value = default(ulong);
         }
 
         private void ProcessSymbol ()
@@ -324,7 +344,9 @@ namespace ThirdParty.Json.LitJson
                         this.token == JsonToken.Boolean ||
                         this.token == JsonToken.Double ||
                         this.token == JsonToken.Int ||
+                        this.token == JsonToken.UInt ||
                         this.token == JsonToken.Long ||
+                        this.token == JsonToken.ULong ||
                         this.token == JsonToken.Null ||
                         this.token == JsonToken.String
                         ))

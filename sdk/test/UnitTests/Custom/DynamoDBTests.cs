@@ -10,6 +10,8 @@ using Amazon.Auth.AccessControlPolicy.ActionIdentifiers;
 using Amazon.DynamoDBv2.DocumentModel;
 using Amazon.DynamoDBv2.DataModel;
 
+using ThirdParty.Json.LitJson;
+
 namespace AWSSDK_DotNet35.UnitTests
 {
     [TestClass]
@@ -55,6 +57,48 @@ namespace AWSSDK_DotNet35.UnitTests
                     subTypes.Add(type);
             }
             return subTypes;
+        }
+
+        [TestMethod]
+        public void DocumentFromJsonTest()
+        {
+            string jsonDocument =
+@"{
+""Zero""   : 0,
+""PInt""   : 2147483647,
+""NInt""   : -2147483648,
+""UInt""   : 4294967295,
+""Long""   : 4294967296,
+""PLong""  : 9223372036854775807,
+""NLong""  : -9223372036854775808, 
+""ULong""  : 18446744073709551615,
+""Double"" : 0.0,
+""PDouble"": 1.7976931348623157E+308,
+""NDouble"": -1.7976931348623157E+308
+}";
+            var dynamoDBDocument = Document.FromJson(jsonDocument);
+
+            Assert.IsNotNull(dynamoDBDocument);
+
+            Assert.AreEqual(0,                          dynamoDBDocument["Zero"].AsInt());
+            Assert.AreEqual(2147483647,                 dynamoDBDocument["PInt"].AsInt());
+            Assert.AreEqual(-2147483648,                dynamoDBDocument["NInt"].AsInt());
+            Assert.AreEqual(4294967295,                 dynamoDBDocument["UInt"].AsUInt());
+            Assert.AreEqual(4294967296,                 dynamoDBDocument["Long"].AsLong());
+            Assert.AreEqual(9223372036854775807,        dynamoDBDocument["PLong"].AsLong());
+            Assert.AreEqual(-9223372036854775808,       dynamoDBDocument["NLong"].AsLong());
+            Assert.AreEqual(18446744073709551615,       dynamoDBDocument["ULong"].AsULong());
+            Assert.AreEqual(0.0,                        dynamoDBDocument["Double"].AsDouble());
+            Assert.AreEqual(1.7976931348623157E+308,    dynamoDBDocument["PDouble"].AsDouble());
+            Assert.AreEqual(-1.7976931348623157E+308,   dynamoDBDocument["NDouble"].AsDouble());
+
+            JsonData jsonOriginal = JsonMapper.ToObject(jsonDocument);
+            JsonData jsonNew = JsonMapper.ToObject(dynamoDBDocument.ToJson());
+
+            foreach (string property in jsonOriginal.PropertyNames)
+            {
+                Assert.AreEqual(jsonOriginal[property].ToString(), jsonNew[property].ToString());
+            }
         }
     }
 }

@@ -51,7 +51,10 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SubscriptionFilters.
+        /// Gets and sets the property SubscriptionFilters. 
+        /// <para>
+        /// The subscription filters.
+        /// </para>
         /// </summary>
         public List<SubscriptionFilter> SubscriptionFilters
         {

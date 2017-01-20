@@ -70,6 +70,12 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
                     unmarshalledObject.DeregisterTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("iamSessionArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.IamSessionArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("iamUserArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

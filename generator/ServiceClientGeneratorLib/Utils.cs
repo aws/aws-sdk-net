@@ -55,14 +55,25 @@ namespace ServiceClientGenerator
             }
         }
 
-        public static string GetProjectGuid(string projectFile)
+        public static string GetProjectGuid(string projectPath)
         {
-            var content = File.ReadAllText(projectFile);
+            var xdoc = new XmlDocument();
+            xdoc.Load(projectPath);
+            var propertyGroups = xdoc.GetElementsByTagName("PropertyGroup");
 
-            var pos = content.IndexOf("<ProjectGuid>", StringComparison.OrdinalIgnoreCase) + "<ProjectGuid>".Length;
-            var lastPos = content.IndexOf("</ProjectGuid>", pos, StringComparison.OrdinalIgnoreCase);
-            var guid = content.Substring(pos, lastPos - pos);
-            return guid;
+            int propertyGroupIndex;
+            if (string.Equals(Path.GetExtension(projectPath), ".xproj", StringComparison.CurrentCultureIgnoreCase))
+                propertyGroupIndex = 1;
+            else
+                propertyGroupIndex = 0;
+
+            var element = ((XmlElement)propertyGroups[propertyGroupIndex]).GetElementsByTagName("ProjectGuid")[0];
+
+            if (element == null)
+                throw new ApplicationException("Failed to find project guid for existing project: " + projectPath);
+
+            var projectGuid = element.InnerText;
+            return projectGuid;
         }
 
         public static string SafeGetString(this JsonData self, string propertyName)

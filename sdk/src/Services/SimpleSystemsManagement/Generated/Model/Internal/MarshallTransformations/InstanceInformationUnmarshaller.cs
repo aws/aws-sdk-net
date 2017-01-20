@@ -64,10 +64,40 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("ActivationId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ActivationId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("AgentVersion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AgentVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AssociationOverview", targetDepth))
+                {
+                    var unmarshaller = InstanceAggregatedAssociationOverviewUnmarshaller.Instance;
+                    unmarshalledObject.AssociationOverview = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AssociationStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AssociationStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ComputerName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ComputerName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("IamRole", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.IamRole = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("InstanceId", targetDepth))
@@ -76,16 +106,40 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     unmarshalledObject.InstanceId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("IPAddress", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.IPAddress = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("IsLatestVersion", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
                     unmarshalledObject.IsLatestVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LastAssociationExecutionDate", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.LastAssociationExecutionDate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LastPingDateTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastPingDateTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LastSuccessfulAssociationExecutionDate", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.LastSuccessfulAssociationExecutionDate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Name", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("PingStatus", targetDepth))
@@ -110,6 +164,18 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PlatformVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RegistrationDate", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.RegistrationDate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ResourceType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

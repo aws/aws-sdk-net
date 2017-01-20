@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// 
+    /// A complex type that contains settings for the new traffic policy instance.
     /// </summary>
     public partial class TrafficPolicyInstance
     {
@@ -43,7 +43,10 @@ namespace Amazon.Route53.Model
         private RRType _trafficPolicyType;
 
         /// <summary>
-        /// Gets and sets the property Id.
+        /// Gets and sets the property Id. 
+        /// <para>
+        /// The ID that Amazon Route 53 assigned to the new traffic policy instance.
+        /// </para>
         /// </summary>
         public string Id
         {
@@ -58,7 +61,10 @@ namespace Amazon.Route53.Model
         }
 
         /// <summary>
-        /// Gets and sets the property HostedZoneId.
+        /// Gets and sets the property HostedZoneId. 
+        /// <para>
+        /// The ID of the hosted zone that Amazon Route 53 created resource record sets in.
+        /// </para>
         /// </summary>
         public string HostedZoneId
         {
@@ -73,7 +79,12 @@ namespace Amazon.Route53.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name.
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The DNS name, such as www.example.com, for which Amazon Route 53 responds to queries
+        /// by using the resource record sets that are associated with this traffic policy instance.
+        /// 
+        /// </para>
         /// </summary>
         public string Name
         {
@@ -88,7 +99,11 @@ namespace Amazon.Route53.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TTL.
+        /// Gets and sets the property TTL. 
+        /// <para>
+        /// The TTL that Amazon Route 53 assigned to all of the resource record sets that it created
+        /// in the specified hosted zone.
+        /// </para>
         /// </summary>
         public long TTL
         {
@@ -103,7 +118,27 @@ namespace Amazon.Route53.Model
         }
 
         /// <summary>
-        /// Gets and sets the property State.
+        /// Gets and sets the property State. 
+        /// <para>
+        /// The value of <code>State</code> is one of the following values:
+        /// </para>
+        ///  <dl> <dt>Applied</dt> <dd> 
+        /// <para>
+        /// Amazon Route 53 has finished creating resource record sets, and changes have propagated
+        /// to all Amazon Route 53 edge locations.
+        /// </para>
+        ///  </dd> <dt>Creating</dt> <dd> 
+        /// <para>
+        /// Amazon Route 53 is creating the resource record sets. Use <code>GetTrafficPolicyInstance</code>
+        /// to confirm that the <code>CreateTrafficPolicyInstance</code> request completed successfully.
+        /// </para>
+        ///  </dd> <dt>Failed</dt> <dd> 
+        /// <para>
+        /// Amazon Route 53 wasn't able to create or update the resource record sets. When the
+        /// value of <code>State</code> is <code>Failed</code>, see <code>Message</code> for an
+        /// explanation of what caused the request to fail.
+        /// </para>
+        ///  </dd> </dl>
         /// </summary>
         public string State
         {
@@ -118,7 +153,11 @@ namespace Amazon.Route53.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Message.
+        /// Gets and sets the property Message. 
+        /// <para>
+        /// If <code>State</code> is <code>Failed</code>, an explanation of the reason for the
+        /// failure. If <code>State</code> is another value, <code>Message</code> is empty.
+        /// </para>
         /// </summary>
         public string Message
         {
@@ -133,7 +172,11 @@ namespace Amazon.Route53.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TrafficPolicyId.
+        /// Gets and sets the property TrafficPolicyId. 
+        /// <para>
+        /// The ID of the traffic policy that Amazon Route 53 used to create resource record sets
+        /// in the specified hosted zone.
+        /// </para>
         /// </summary>
         public string TrafficPolicyId
         {
@@ -148,7 +191,11 @@ namespace Amazon.Route53.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TrafficPolicyVersion.
+        /// Gets and sets the property TrafficPolicyVersion. 
+        /// <para>
+        /// The version of the traffic policy that Amazon Route 53 used to create resource record
+        /// sets in the specified hosted zone.
+        /// </para>
         /// </summary>
         public int TrafficPolicyVersion
         {
@@ -163,7 +210,11 @@ namespace Amazon.Route53.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TrafficPolicyType.
+        /// Gets and sets the property TrafficPolicyType. 
+        /// <para>
+        /// The DNS type that Amazon Route 53 assigned to all of the resource record sets that
+        /// it created for this traffic policy instance. 
+        /// </para>
         /// </summary>
         public RRType TrafficPolicyType
         {

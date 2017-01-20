@@ -29,9 +29,13 @@ namespace Amazon.Route53.Model
 {
     /// <summary>
     /// Container for the parameters to the GetTrafficPolicy operation.
-    /// Gets information about a specific traffic policy version. To get the information,
-    /// send a <code>GET</code> request to the <code>/<i>Route 53 API version</i>/trafficpolicy</code>
+    /// Gets information about a specific traffic policy version.
+    /// 
+    ///  
+    /// <para>
+    /// Send a <code>GET</code> request to the <code>/<i>Amazon Route 53 API version</i>/trafficpolicy</code>
     /// resource.
+    /// </para>
     /// </summary>
     public partial class GetTrafficPolicyRequest : AmazonRoute53Request
     {

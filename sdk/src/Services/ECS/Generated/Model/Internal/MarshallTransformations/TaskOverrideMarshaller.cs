@@ -61,6 +61,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetTaskRoleArn())
+            {
+                context.Writer.WritePropertyName("taskRoleArn");
+                context.Writer.Write(requestObject.TaskRoleArn);
+            }
+
         }
 
         /// <summary>

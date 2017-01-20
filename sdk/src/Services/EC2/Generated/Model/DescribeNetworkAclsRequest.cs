@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-11-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -67,7 +67,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>entry.cidr</code> - The CIDR range specified in the entry.
+        ///  <code>entry.cidr</code> - The IPv4 CIDR range specified in the entry.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -80,6 +80,10 @@ namespace Amazon.EC2.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>entry.icmp.type</code> - The ICMP type specified in the entry, if any.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>entry.ipv6-cidr</code> - The IPv6 CIDR range specified in the entry.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -113,7 +117,9 @@ namespace Amazon.EC2.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned
-        /// to the resource.
+        /// to the resource. Specify the key of the tag in the filter name and the value of the
+        /// tag in the filter value. For example, for the tag Purpose=X, specify <code>tag:Purpose</code>
+        /// for the filter name and <code>X</code> for the filter value.
         /// </para>
         ///  </li> <li> 
         /// <para>

@@ -85,6 +85,17 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.FrameRate);
             }
 
+            if(requestObject.IsSetInputCaptions())
+            {
+                context.Writer.WritePropertyName("InputCaptions");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = InputCaptionsMarshaller.Instance;
+                marshaller.Marshall(requestObject.InputCaptions, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetInterlaced())
             {
                 context.Writer.WritePropertyName("Interlaced");
@@ -101,6 +112,17 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("Resolution");
                 context.Writer.Write(requestObject.Resolution);
+            }
+
+            if(requestObject.IsSetTimeSpan())
+            {
+                context.Writer.WritePropertyName("TimeSpan");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = TimeSpanMarshaller.Instance;
+                marshaller.Marshall(requestObject.TimeSpan, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
         }

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-11-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -34,13 +34,15 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// For more information about network interfaces, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic
-    /// Network Interfaces</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// Network Interfaces</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
     /// </para>
     /// </summary>
     public partial class CreateNetworkInterfaceRequest : AmazonEC2Request
     {
         private string _description;
         private List<string> _groups = new List<string>();
+        private int? _ipv6AddressCount;
+        private List<InstanceIpv6Address> _ipv6Addresses = new List<InstanceIpv6Address>();
         private string _privateIpAddress;
         private List<PrivateIpAddressSpecification> _privateIpAddresses = new List<PrivateIpAddressSpecification>();
         private int? _secondaryPrivateIpAddressCount;
@@ -83,11 +85,52 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Ipv6AddressCount. 
+        /// <para>
+        /// The number of IPv6 addresses to assign to a network interface. Amazon EC2 automatically
+        /// selects the IPv6 addresses from the subnet range. You can't use this option if specifying
+        /// specific IPv6 addresses. If your subnet has the <code>AssignIpv6AddressOnCreation</code>
+        /// attribute set to <code>true</code>, you can specify <code>0</code> to override this
+        /// setting.
+        /// </para>
+        /// </summary>
+        public int Ipv6AddressCount
+        {
+            get { return this._ipv6AddressCount.GetValueOrDefault(); }
+            set { this._ipv6AddressCount = value; }
+        }
+
+        // Check to see if Ipv6AddressCount property is set
+        internal bool IsSetIpv6AddressCount()
+        {
+            return this._ipv6AddressCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Ipv6Addresses. 
+        /// <para>
+        /// One or more specific IPv6 addresses from the IPv6 CIDR block range of your subnet.
+        /// You can't use this option if you're specifying a number of IPv6 addresses.
+        /// </para>
+        /// </summary>
+        public List<InstanceIpv6Address> Ipv6Addresses
+        {
+            get { return this._ipv6Addresses; }
+            set { this._ipv6Addresses = value; }
+        }
+
+        // Check to see if Ipv6Addresses property is set
+        internal bool IsSetIpv6Addresses()
+        {
+            return this._ipv6Addresses != null && this._ipv6Addresses.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property PrivateIpAddress. 
         /// <para>
-        /// The primary private IP address of the network interface. If you don't specify an IP
-        /// address, Amazon EC2 selects one for you from the subnet range. If you specify an IP
-        /// address, you cannot indicate any IP addresses specified in <code>privateIpAddresses</code>
+        /// The primary private IPv4 address of the network interface. If you don't specify an
+        /// IPv4 address, Amazon EC2 selects one for you from the subnet's IPv4 CIDR range. If
+        /// you specify an IP address, you cannot indicate any IP addresses specified in <code>privateIpAddresses</code>
         /// as primary (only one IP address can be designated as primary).
         /// </para>
         /// </summary>
@@ -106,7 +149,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property PrivateIpAddresses. 
         /// <para>
-        /// One or more private IP addresses.
+        /// One or more private IPv4 addresses.
         /// </para>
         /// </summary>
         public List<PrivateIpAddressSpecification> PrivateIpAddresses
@@ -124,17 +167,17 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SecondaryPrivateIpAddressCount. 
         /// <para>
-        /// The number of secondary private IP addresses to assign to a network interface. When
-        /// you specify a number of secondary IP addresses, Amazon EC2 selects these IP addresses
-        /// within the subnet range. You can't specify this option and specify more than one private
-        /// IP address using <code>privateIpAddresses</code>.
+        /// The number of secondary private IPv4 addresses to assign to a network interface. When
+        /// you specify a number of secondary IPv4 addresses, Amazon EC2 selects these IP addresses
+        /// within the subnet's IPv4 CIDR range. You can't specify this option and specify more
+        /// than one private IP address using <code>privateIpAddresses</code>.
         /// </para>
         ///  
         /// <para>
         /// The number of IP addresses you can assign to a network interface varies by instance
-        /// type. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#AvailableIpPerENI">Private
-        /// IP Addresses Per ENI Per Instance Type</a> in the <i>Amazon Elastic Compute Cloud
-        /// User Guide</i>.
+        /// type. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#AvailableIpPerENI">IP
+        /// Addresses Per ENI Per Instance Type</a> in the <i>Amazon Virtual Private Cloud User
+        /// Guide</i>.
         /// </para>
         /// </summary>
         public int SecondaryPrivateIpAddressCount

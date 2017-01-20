@@ -39,7 +39,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property CreationDateTime. 
         /// <para>
-        /// The date and time when the cluster step was created. 
+        /// The date and time when the cluster step was created.
         /// </para>
         /// </summary>
         public DateTime CreationDateTime
@@ -57,7 +57,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property EndDateTime. 
         /// <para>
-        /// The date and time when the cluster step execution completed or failed. 
+        /// The date and time when the cluster step execution completed or failed.
         /// </para>
         /// </summary>
         public DateTime EndDateTime
@@ -75,7 +75,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property StartDateTime. 
         /// <para>
-        /// The date and time when the cluster step execution started. 
+        /// The date and time when the cluster step execution started.
         /// </para>
         /// </summary>
         public DateTime StartDateTime

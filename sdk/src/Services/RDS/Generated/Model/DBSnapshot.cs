@@ -48,6 +48,7 @@ namespace Amazon.RDS.Model
         private int? _allocatedStorage;
         private string _availabilityZone;
         private string _dbInstanceIdentifier;
+        private string _dbSnapshotArn;
         private string _dbSnapshotIdentifier;
         private bool? _encrypted;
         private string _engine;
@@ -67,6 +68,7 @@ namespace Amazon.RDS.Model
         private string _status;
         private string _storageType;
         private string _tdeCredentialArn;
+        private string _timezone;
         private string _vpcId;
 
         /// <summary>
@@ -123,6 +125,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetDBInstanceIdentifier()
         {
             return this._dbInstanceIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DBSnapshotArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) for the DB snapshot.
+        /// </para>
+        /// </summary>
+        public string DBSnapshotArn
+        {
+            get { return this._dbSnapshotArn; }
+            set { this._dbSnapshotArn = value; }
+        }
+
+        // Check to see if DBSnapshotArn property is set
+        internal bool IsSetDBSnapshotArn()
+        {
+            return this._dbSnapshotArn != null;
         }
 
         /// <summary>
@@ -437,7 +457,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property StorageType. 
         /// <para>
-        /// Specifies the storage type associated with DB Snapshot.
+        /// Specifies the storage type associated with DB snapshot.
         /// </para>
         /// </summary>
         public string StorageType
@@ -455,7 +475,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property TdeCredentialArn. 
         /// <para>
-        /// The ARN from the Key Store with which to associate the instance for TDE encryption.
+        /// The ARN from the key store with which to associate the instance for TDE encryption.
         /// </para>
         /// </summary>
         public string TdeCredentialArn
@@ -468,6 +488,26 @@ namespace Amazon.RDS.Model
         internal bool IsSetTdeCredentialArn()
         {
             return this._tdeCredentialArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Timezone. 
+        /// <para>
+        /// The time zone of the DB snapshot. In most cases, the <code>Timezone</code> element
+        /// is empty. <code>Timezone</code> content appears only for snapshots taken from Microsoft
+        /// SQL Server DB instances that were created with a time zone specified. 
+        /// </para>
+        /// </summary>
+        public string Timezone
+        {
+            get { return this._timezone; }
+            set { this._timezone = value; }
+        }
+
+        // Check to see if Timezone property is set
+        internal bool IsSetTimezone()
+        {
+            return this._timezone != null;
         }
 
         /// <summary>

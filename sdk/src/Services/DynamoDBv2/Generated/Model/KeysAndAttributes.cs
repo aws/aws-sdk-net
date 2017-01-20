@@ -49,9 +49,9 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property AttributesToGet. 
         /// <para>
-        /// One or more attributes to retrieve from the table or index. If no attribute names
-        /// are specified then all attributes will be returned. If any of the specified attributes
-        /// are not found, they will not appear in the result.
+        /// This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more
+        /// information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy
+        /// Conditional Parameters</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         /// </summary>
         public List<string> AttributesToGet
@@ -89,7 +89,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Gets and sets the property ExpressionAttributeNames. 
         /// <para>
         /// One or more substitution tokens for attribute names in an expression. The following
-        /// are some use cases for using <i>ExpressionAttributeNames</i>:
+        /// are some use cases for using <code>ExpressionAttributeNames</code>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -118,7 +118,7 @@ namespace Amazon.DynamoDBv2.Model
         /// The name of this attribute conflicts with a reserved word, so it cannot be used directly
         /// in an expression. (For the complete list of reserved words, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
         /// Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you
-        /// could specify the following for <i>ExpressionAttributeNames</i>:
+        /// could specify the following for <code>ExpressionAttributeNames</code>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -179,7 +179,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <para>
         /// A string that identifies one or more attributes to retrieve from the table. These
         /// attributes can include scalars, sets, or elements of a JSON document. The attributes
-        /// in the <i>ProjectionExpression</i> must be separated by commas.
+        /// in the <code>ProjectionExpression</code> must be separated by commas.
         /// </para>
         ///  
         /// <para>
@@ -191,11 +191,6 @@ namespace Amazon.DynamoDBv2.Model
         /// For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
         /// Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
-        ///  <note> 
-        /// <para>
-        ///  <i>ProjectionExpression</i> replaces the legacy <i>AttributesToGet</i> parameter.
-        /// </para>
-        ///  </note>
         /// </summary>
         public string ProjectionExpression
         {

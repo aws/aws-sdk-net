@@ -31,24 +31,37 @@ namespace Amazon.CloudWatchLogs.Model
     /// Container for the parameters to the PutSubscriptionFilter operation.
     /// Creates or updates a subscription filter and associates it with the specified log
     /// group. Subscription filters allow you to subscribe to a real-time stream of log events
-    /// ingested through <code class="code">PutLogEvents</code> requests and have them delivered
-    /// to a specific destination. Currently, the supported destinations are: <ul> <li> An
-    /// Amazon Kinesis stream belonging to the same account as the subscription filter, for
-    /// same-account delivery. </li> <li> A logical destination (used via an ARN of <code>Destination</code>)
-    /// belonging to a different account, for cross-account delivery. </li> <li> An Amazon
-    /// Kinesis Firehose stream belonging to the same account as the subscription filter,
-    /// for same-account delivery. </li> <li> An AWS Lambda function belonging to the same
-    /// account as the subscription filter, for same-account delivery. </li> </ul> 
+    /// ingested through <a>PutLogEvents</a> and have them delivered to a specific destination.
+    /// Currently, the supported destinations are:
     /// 
-    ///  
+    ///  <ul> <li> 
     /// <para>
-    ///  Currently there can only be one subscription filter associated with a log group.
-    /// 
+    /// An Amazon Kinesis stream belonging to the same account as the subscription filter,
+    /// for same-account delivery.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// A logical destination that belongs to a different account, for cross-account delivery.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// An Amazon Kinesis Firehose stream that belongs to the same account as the subscription
+    /// filter, for same-account delivery.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// An AWS Lambda function that belongs to the same account as the subscription filter,
+    /// for same-account delivery.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// There can only be one subscription filter associated with a log group.
     /// </para>
     /// </summary>
     public partial class PutSubscriptionFilterRequest : AmazonCloudWatchLogsRequest
     {
         private string _destinationArn;
+        private Distribution _distribution;
         private string _filterName;
         private string _filterPattern;
         private string _logGroupName;
@@ -58,14 +71,29 @@ namespace Amazon.CloudWatchLogs.Model
         /// Gets and sets the property DestinationArn. 
         /// <para>
         /// The ARN of the destination to deliver matching log events to. Currently, the supported
-        /// destinations are: <ul> <li> An Amazon Kinesis stream belonging to the same account
-        /// as the subscription filter, for same-account delivery. </li> <li> A logical destination
-        /// (used via an ARN of <code>Destination</code>) belonging to a different account, for
-        /// cross-account delivery. </li> <li> An Amazon Kinesis Firehose stream belonging to
-        /// the same account as the subscription filter, for same-account delivery. </li> <li>
-        /// An AWS Lambda function belonging to the same account as the subscription filter, for
-        /// same-account delivery. </li> </ul> 
+        /// destinations are:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// An Amazon Kinesis stream belonging to the same account as the subscription filter,
+        /// for same-account delivery.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A logical destination (specified using an ARN) belonging to a different account, for
+        /// cross-account delivery.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// An Amazon Kinesis Firehose stream belonging to the same account as the subscription
+        /// filter, for same-account delivery.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// An AWS Lambda function belonging to the same account as the subscription filter, for
+        /// same-account delivery.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string DestinationArn
         {
@@ -77,6 +105,26 @@ namespace Amazon.CloudWatchLogs.Model
         internal bool IsSetDestinationArn()
         {
             return this._destinationArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Distribution. 
+        /// <para>
+        /// The method used to distribute log data to the destination, when the destination is
+        /// an Amazon Kinesis stream. By default, log data is grouped by log stream. For a more
+        /// even distribution, you can group log data randomly.
+        /// </para>
+        /// </summary>
+        public Distribution Distribution
+        {
+            get { return this._distribution; }
+            set { this._distribution = value; }
+        }
+
+        // Check to see if Distribution property is set
+        internal bool IsSetDistribution()
+        {
+            return this._distribution != null;
         }
 
         /// <summary>
@@ -100,8 +148,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property FilterPattern. 
         /// <para>
-        /// A valid CloudWatch Logs filter pattern for subscribing to a filtered stream of log
-        /// events.
+        /// A filter pattern for subscribing to a filtered stream of log events.
         /// </para>
         /// </summary>
         public string FilterPattern
@@ -119,7 +166,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property LogGroupName. 
         /// <para>
-        /// The name of the log group to associate the subscription filter with.
+        /// The name of the log group.
         /// </para>
         /// </summary>
         public string LogGroupName
@@ -139,8 +186,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <para>
         /// The ARN of an IAM role that grants CloudWatch Logs permissions to deliver ingested
         /// log events to the destination stream. You don't need to provide the ARN when you are
-        /// working with a logical destination (used via an ARN of <code>Destination</code>) for
-        /// cross-account delivery.
+        /// working with a logical destination for cross-account delivery.
         /// </para>
         /// </summary>
         public string RoleArn

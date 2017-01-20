@@ -79,6 +79,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Count);
                 }
 
+                if(publicRequest.IsSetGroup())
+                {
+                    context.Writer.WritePropertyName("group");
+                    context.Writer.Write(publicRequest.Group);
+                }
+
                 if(publicRequest.IsSetOverrides())
                 {
                     context.Writer.WritePropertyName("overrides");
@@ -88,6 +94,38 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     marshaller.Marshall(publicRequest.Overrides, context);
 
                     context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetPlacementConstraints())
+                {
+                    context.Writer.WritePropertyName("placementConstraints");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestPlacementConstraintsListValue in publicRequest.PlacementConstraints)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = PlacementConstraintMarshaller.Instance;
+                        marshaller.Marshall(publicRequestPlacementConstraintsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetPlacementStrategy())
+                {
+                    context.Writer.WritePropertyName("placementStrategy");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestPlacementStrategyListValue in publicRequest.PlacementStrategy)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = PlacementStrategyMarshaller.Instance;
+                        marshaller.Marshall(publicRequestPlacementStrategyListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
                 if(publicRequest.IsSetStartedBy())

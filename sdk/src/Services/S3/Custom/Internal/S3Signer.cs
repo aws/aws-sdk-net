@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Runtime.Internal.Auth;
+using Amazon.S3.Util;
 
 #pragma warning disable 1591
 
@@ -45,15 +46,27 @@ namespace Amazon.S3.Internal
             get { return ClientProtocol.RestProtocol; }
         }
 
-        public override void Sign(IRequest request, ClientConfig clientConfig, RequestMetrics metrics, string awsAccessKeyId, string awsSecretAccessKey)
+        public override void Sign(IRequest request, IClientConfig clientConfig, RequestMetrics metrics, string awsAccessKeyId, string awsSecretAccessKey)
         {
             var signer = SelectSigner(this, _useSigV4, request, clientConfig);
             var aws4Signer = signer as AWS4Signer;
             var useV4 = aws4Signer != null;
 
-            //var aws4Signer = SelectSigner(clientConfig) as AWS4Signer;
             if (useV4)
             {
+                AmazonS3Uri s3Uri;
+                if (AmazonS3Uri.TryParseAmazonS3Uri(request.Endpoint, out s3Uri))
+                {
+                    if (s3Uri.Bucket != null)
+                    {
+                        RegionEndpoint cachedRegion;
+                        if (BucketRegionDetector.BucketRegionCache.TryGetValue(s3Uri.Bucket, out cachedRegion))
+                        {
+                            request.AlternateEndpoint = cachedRegion;
+                        }
+                    }
+                }
+
                 var signingResult = aws4Signer.SignRequest(request, clientConfig, metrics, awsAccessKeyId, awsSecretAccessKey);
                 request.Headers[HeaderKeys.AuthorizationHeader] = signingResult.ForAuthorizationHeader;
                 if (request.UseChunkEncoding)
@@ -157,6 +170,18 @@ namespace Amazon.S3.Internal
             StringComparer.OrdinalIgnoreCase
         );
 
+        //This is a list of sub resources that S3 does not expect to be signed
+        //and thus have to be excluded from the signer. This is only applicable to S3SigV2 signer
+        //id:- subresource belongs to analytics,inventory and metrics S3 APIs
+        private static readonly HashSet<string> SubResourcesSigningExclusion = new HashSet<string>
+        (
+            new[]
+            {
+                "id"
+            },
+            StringComparer.OrdinalIgnoreCase
+        );
+
         static string BuildCanonicalizedResource(IRequest request)
         {
             // CanonicalResourcePrefix will hold the bucket name if we switched to virtual host addressing
@@ -174,7 +199,10 @@ namespace Amazon.S3.Internal
             {
                 foreach (var subResource in request.SubResources)
                 {
-                    resourcesToSign.Add(subResource.Key, subResource.Value);
+                    if (!SubResourcesSigningExclusion.Contains(subResource.Key))
+                    {
+                        resourcesToSign.Add(subResource.Key, subResource.Value);
+                    }
                 }
             }
 

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// This is the response object from the DescribePolicies operation.
+    /// Contains the output of DescribePolicies.
     /// </summary>
     public partial class DescribePoliciesResponse : AmazonWebServiceResponse
     {

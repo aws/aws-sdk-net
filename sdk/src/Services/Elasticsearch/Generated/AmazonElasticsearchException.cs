@@ -28,7 +28,7 @@ namespace Amazon.Elasticsearch
     ///<summary>
     /// Common exception for the Elasticsearch service.
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class AmazonElasticsearchException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.Elasticsearch
         {
         }
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the AmazonElasticsearchException class with serialized data.
         /// </summary>

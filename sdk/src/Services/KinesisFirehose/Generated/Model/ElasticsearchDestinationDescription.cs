@@ -37,6 +37,7 @@ namespace Amazon.KinesisFirehose.Model
         private string _domainARN;
         private string _indexName;
         private ElasticsearchIndexRotationPeriod _indexRotationPeriod;
+        private ProcessingConfiguration _processingConfiguration;
         private ElasticsearchRetryOptions _retryOptions;
         private string _roleARN;
         private ElasticsearchS3BackupMode _s3BackupMode;
@@ -46,7 +47,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property BufferingHints. 
         /// <para>
-        /// Buffering options.
+        /// The buffering options.
         /// </para>
         /// </summary>
         public ElasticsearchBufferingHints BufferingHints
@@ -64,7 +65,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property CloudWatchLoggingOptions. 
         /// <para>
-        /// CloudWatch logging options.
+        /// The CloudWatch logging options.
         /// </para>
         /// </summary>
         public CloudWatchLoggingOptions CloudWatchLoggingOptions
@@ -134,9 +135,27 @@ namespace Amazon.KinesisFirehose.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ProcessingConfiguration. 
+        /// <para>
+        /// The data processing configuration.
+        /// </para>
+        /// </summary>
+        public ProcessingConfiguration ProcessingConfiguration
+        {
+            get { return this._processingConfiguration; }
+            set { this._processingConfiguration = value; }
+        }
+
+        // Check to see if ProcessingConfiguration property is set
+        internal bool IsSetProcessingConfiguration()
+        {
+            return this._processingConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RetryOptions. 
         /// <para>
-        /// Elasticsearch retry options.
+        /// The Amazon ES retry options.
         /// </para>
         /// </summary>
         public ElasticsearchRetryOptions RetryOptions
@@ -172,7 +191,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property S3BackupMode. 
         /// <para>
-        /// Amazon S3 backup mode.
+        /// The Amazon S3 backup mode.
         /// </para>
         /// </summary>
         public ElasticsearchS3BackupMode S3BackupMode
@@ -188,7 +207,10 @@ namespace Amazon.KinesisFirehose.Model
         }
 
         /// <summary>
-        /// Gets and sets the property S3DestinationDescription.
+        /// Gets and sets the property S3DestinationDescription. 
+        /// <para>
+        /// The Amazon S3 destination.
+        /// </para>
         /// </summary>
         public S3DestinationDescription S3DestinationDescription
         {

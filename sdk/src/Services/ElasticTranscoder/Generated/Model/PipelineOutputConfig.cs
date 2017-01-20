@@ -40,17 +40,33 @@ namespace Amazon.ElasticTranscoder.Model
         /// Gets and sets the property Bucket. 
         /// <para>
         ///  The Amazon S3 bucket in which you want Elastic Transcoder to save the transcoded
-        /// files. Specify this value when all of the following are true: <ul> <li>You want to
-        /// save transcoded files, thumbnails (if any), and playlists (if any) together in one
-        /// bucket.</li> <li>You do not want to specify the users or groups who have access to
-        /// the transcoded files, thumbnails, and playlists.</li> <li>You do not want to specify
-        /// the permissions that Elastic Transcoder grants to the files. </li> <li>You want to
-        /// associate the transcoded files and thumbnails with the Amazon S3 Standard storage
-        /// class.</li> </ul> If you want to save transcoded files and playlists in one bucket
-        /// and thumbnails in another bucket, specify which users can access the transcoded files
-        /// or the permissions the users have, or change the Amazon S3 storage class, omit OutputBucket
-        /// and specify values for <code>ContentConfig</code> and <code>ThumbnailConfig</code>
-        /// instead. 
+        /// files. Specify this value when all of the following are true:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You want to save transcoded files, thumbnails (if any), and playlists (if any) together
+        /// in one bucket.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You do not want to specify the users or groups who have access to the transcoded files,
+        /// thumbnails, and playlists.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You do not want to specify the permissions that Elastic Transcoder grants to the files.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You want to associate the transcoded files and thumbnails with the Amazon S3 Standard
+        /// storage class.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If you want to save transcoded files and playlists in one bucket and thumbnails in
+        /// another bucket, specify which users can access the transcoded files or the permissions
+        /// the users have, or change the Amazon S3 storage class, omit OutputBucket and specify
+        /// values for <code>ContentConfig</code> and <code>ThumbnailConfig</code> instead. 
         /// </para>
         /// </summary>
         public string Bucket

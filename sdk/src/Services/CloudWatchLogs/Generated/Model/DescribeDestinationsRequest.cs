@@ -29,16 +29,7 @@ namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeDestinations operation.
-    /// Returns all the destinations that are associated with the AWS account making the
-    /// request. The list returned in the response is ASCII-sorted by destination name. 
-    /// 
-    ///  
-    /// <para>
-    ///  By default, this operation returns up to 50 destinations. If there are more destinations
-    /// to list, the response would contain a <code class="code">nextToken</code> value in
-    /// the response body. You can also limit the number of destinations returned in the response
-    /// by specifying the <code class="code">limit</code> parameter in the request. 
-    /// </para>
+    /// Lists all your destinations. The results are ASCII-sorted by destination name.
     /// </summary>
     public partial class DescribeDestinationsRequest : AmazonCloudWatchLogsRequest
     {
@@ -49,8 +40,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property DestinationNamePrefix. 
         /// <para>
-        /// Will only return destinations that match the provided destinationNamePrefix. If you
-        /// don't specify a value, no prefix is applied.
+        /// The prefix to match. If you don't specify a value, no prefix filter is applied.
         /// </para>
         /// </summary>
         public string DestinationNamePrefix
@@ -66,7 +56,11 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Limit.
+        /// Gets and sets the property Limit. 
+        /// <para>
+        /// The maximum number of items returned. If you don't specify a value, the default is
+        /// up to 50 items.
+        /// </para>
         /// </summary>
         public int Limit
         {
@@ -81,7 +75,11 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token for the next set of items to return. (You received this token from a previous
+        /// call.)
+        /// </para>
         /// </summary>
         public string NextToken
         {

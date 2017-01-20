@@ -29,12 +29,19 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateCacheCluster operation.
-    /// The <i>CreateCacheCluster</i> action creates a cache cluster. All nodes in the cache
-    /// cluster run the same protocol-compliant cache engine software, either Memcached or
-    /// Redis.
+    /// Creates a cache cluster. All nodes in the cache cluster run the same protocol-compliant
+    /// cache engine software, either Memcached or Redis.
+    /// 
+    ///  <important> 
+    /// <para>
+    /// Due to current limitations on Redis (cluster mode disabled), this operation or parameter
+    /// is not supported on Redis (cluster mode enabled) replication groups.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class CreateCacheClusterRequest : AmazonElastiCacheRequest
     {
+        private string _authToken;
         private bool? _autoMinorVersionUpgrade;
         private AZMode _azMode;
         private string _cacheClusterId;
@@ -66,11 +73,11 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Instantiates CreateCacheClusterRequest with the parameterized properties
         /// </summary>
-        /// <param name="cacheClusterId">The node group identifier. This parameter is stored as a lowercase string.  <b>Constraints:</b>  <ul> <li> A name must contain from 1 to 20 alphanumeric characters or hyphens. </li> <li> The first character must be a letter. </li> <li> A name cannot end with a hyphen or contain two consecutive hyphens. </li> </ul></param>
-        /// <param name="numCacheNodes">The initial number of cache nodes that the cache cluster will have. For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be between 1 and 20. If you need more than 20 nodes for your Memcached cluster, please fill out the ElastiCache Limit Increase Request form at <a href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/">http://aws.amazon.com/contact-us/elasticache-node-limit-request/</a>.</param>
-        /// <param name="cacheNodeType">The compute and memory capacity of the nodes in the node group. Valid node types are as follows: <ul> <li> General purpose: <ul> <li> Current generation: <code>cache.t2.micro</code>, <code>cache.t2.small</code>, <code>cache.t2.medium</code>, <code>cache.m3.medium</code>, <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code>  </li> <li> Previous generation: <code>cache.t1.micro</code>, <code>cache.m1.small</code>, <code>cache.m1.medium</code>, <code>cache.m1.large</code>, <code>cache.m1.xlarge</code>  </li> </ul> </li> <li> Compute optimized: <code>cache.c1.xlarge</code>  </li> <li> Memory optimized: <ul> <li> Current generation: <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>, <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>  </li> <li> Previous generation: <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code>  </li> </ul> </li> </ul>  <b>Notes:</b>  <ul> <li> All t2 instances are created in an Amazon Virtual Private Cloud (VPC). </li> <li> Redis backup/restore is not supported for t2 instances. </li> <li> Redis Append-only files (AOF) functionality is not supported for t1 or t2 instances. </li> </ul> For a complete listing of cache node types and specifications, see <a href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#CacheParameterGroups.Memcached.NodeSpecific">Cache Node Type-Specific Parameters for Memcached</a> or <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#CacheParameterGroups.Redis.NodeSpecific">Cache Node Type-Specific Parameters for Redis</a>.</param>
-        /// <param name="engine">The name of the cache engine to be used for this cache cluster. Valid values for this parameter are:  <code>memcached</code> | <code>redis</code> </param>
-        /// <param name="cacheSecurityGroupNames">A list of security group names to associate with this cache cluster. Use this parameter only when you are creating a cache cluster outside of an Amazon Virtual Private Cloud (VPC).</param>
+        /// <param name="cacheClusterId">The node group (shard) identifier. This parameter is stored as a lowercase string.  <b>Constraints:</b>  <ul> <li> A name must contain from 1 to 20 alphanumeric characters or hyphens. </li> <li> The first character must be a letter. </li> <li> A name cannot end with a hyphen or contain two consecutive hyphens. </li> </ul></param>
+        /// <param name="numCacheNodes">The initial number of cache nodes that the cache cluster has. For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be between 1 and 20. If you need more than 20 nodes for your Memcached cluster, please fill out the ElastiCache Limit Increase Request form at <a href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/">http://aws.amazon.com/contact-us/elasticache-node-limit-request/</a>.</param>
+        /// <param name="cacheNodeType">The compute and memory capacity of the nodes in the node group (shard). Valid node types are as follows: <ul> <li> General purpose: <ul> <li> Current generation: <code>cache.t2.micro</code>, <code>cache.t2.small</code>, <code>cache.t2.medium</code>, <code>cache.m3.medium</code>, <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code>, <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>, <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>, <code>cache.m4.10xlarge</code>  </li> <li> Previous generation: <code>cache.t1.micro</code>, <code>cache.m1.small</code>, <code>cache.m1.medium</code>, <code>cache.m1.large</code>, <code>cache.m1.xlarge</code>  </li> </ul> </li> <li> Compute optimized: <code>cache.c1.xlarge</code>  </li> <li> Memory optimized: <ul> <li> Current generation: <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>, <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>  </li> <li> Previous generation: <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code>  </li> </ul> </li> </ul>  <b>Notes:</b>  <ul> <li> All T2 instances are created in an Amazon Virtual Private Cloud (Amazon VPC). </li> <li> Redis backup/restore is not supported for Redis (cluster mode disabled) T1 and T2 instances. Backup/restore is supported on Redis (cluster mode enabled) T2 instances. </li> <li> Redis Append-only files (AOF) functionality is not supported for T1 or T2 instances. </li> </ul> For a complete listing of node types and specifications, see <a href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product Features and Details</a> and either <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific">Cache Node Type-Specific Parameters for Memcached</a> or <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific">Cache Node Type-Specific Parameters for Redis</a>.</param>
+        /// <param name="engine">The name of the cache engine to be used for this cache cluster. Valid values for this parameter are: <code>memcached</code> | <code>redis</code> </param>
+        /// <param name="cacheSecurityGroupNames">A list of security group names to associate with this cache cluster. Use this parameter only when you are creating a cache cluster outside of an Amazon Virtual Private Cloud (Amazon VPC).</param>
         public CreateCacheClusterRequest(string cacheClusterId, int numCacheNodes, string cacheNodeType, string engine, List<string> cacheSecurityGroupNames)
         {
             _cacheClusterId = cacheClusterId;
@@ -78,6 +85,45 @@ namespace Amazon.ElastiCache.Model
             _cacheNodeType = cacheNodeType;
             _engine = engine;
             _cacheSecurityGroupNames = cacheSecurityGroupNames;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AuthToken. 
+        /// <para>
+        ///  <b>Reserved parameter.</b> The password used to access a password protected server.
+        /// </para>
+        ///  
+        /// <para>
+        /// Password constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must be only printable ASCII characters.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Must be at least 16 characters and no more than 128 characters in length.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cannot contain any of the following characters: '/', '"', or "@". 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="http://redis.io/commands/AUTH">AUTH password</a>
+        /// at Redis.
+        /// </para>
+        /// </summary>
+        public string AuthToken
+        {
+            get { return this._authToken; }
+            set { this._authToken = value; }
+        }
+
+        // Check to see if AuthToken property is set
+        internal bool IsSetAuthToken()
+        {
+            return this._authToken != null;
         }
 
         /// <summary>
@@ -101,7 +147,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property AZMode. 
         /// <para>
-        /// Specifies whether the nodes in this Memcached node group are created in a single Availability
+        /// Specifies whether the nodes in this Memcached cluster are created in a single Availability
         /// Zone or created across multiple Availability Zones in the cluster's region.
         /// </para>
         ///  
@@ -129,7 +175,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property CacheClusterId. 
         /// <para>
-        /// The node group identifier. This parameter is stored as a lowercase string.
+        /// The node group (shard) identifier. This parameter is stored as a lowercase string.
         /// </para>
         ///  
         /// <para>
@@ -164,7 +210,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property CacheNodeType. 
         /// <para>
-        /// The compute and memory capacity of the nodes in the node group.
+        /// The compute and memory capacity of the nodes in the node group (shard).
         /// </para>
         ///  
         /// <para>
@@ -178,7 +224,9 @@ namespace Amazon.ElastiCache.Model
         /// <para>
         /// Current generation: <code>cache.t2.micro</code>, <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
         /// <code>cache.m3.medium</code>, <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>,
-        /// <code>cache.m3.2xlarge</code> 
+        /// <code>cache.m3.2xlarge</code>, <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
+        /// <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>, <code>cache.m4.10xlarge</code>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -209,21 +257,22 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// All t2 instances are created in an Amazon Virtual Private Cloud (VPC).
+        /// All T2 instances are created in an Amazon Virtual Private Cloud (Amazon VPC).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Redis backup/restore is not supported for t2 instances.
+        /// Redis backup/restore is not supported for Redis (cluster mode disabled) T1 and T2
+        /// instances. Backup/restore is supported on Redis (cluster mode enabled) T2 instances.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Redis Append-only files (AOF) functionality is not supported for t1 or t2 instances.
+        /// Redis Append-only files (AOF) functionality is not supported for T1 or T2 instances.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For a complete listing of cache node types and specifications, see <a href="http://aws.amazon.com/elasticache/details">Amazon
-        /// ElastiCache Product Features and Details</a> and <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#CacheParameterGroups.Memcached.NodeSpecific">Cache
-        /// Node Type-Specific Parameters for Memcached</a> or <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#CacheParameterGroups.Redis.NodeSpecific">Cache
+        /// For a complete listing of node types and specifications, see <a href="http://aws.amazon.com/elasticache/details">Amazon
+        /// ElastiCache Product Features and Details</a> and either <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific">Cache
+        /// Node Type-Specific Parameters for Memcached</a> or <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific">Cache
         /// Node Type-Specific Parameters for Redis</a>.
         /// </para>
         /// </summary>
@@ -243,7 +292,9 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property CacheParameterGroupName. 
         /// <para>
         /// The name of the parameter group to associate with this cache cluster. If this argument
-        /// is omitted, the default parameter group for the specified engine is used.
+        /// is omitted, the default parameter group for the specified engine is used. You cannot
+        /// use any parameter group which has <code>cluster-enabled='yes'</code> when creating
+        /// a cluster.
         /// </para>
         /// </summary>
         public string CacheParameterGroupName
@@ -266,7 +317,7 @@ namespace Amazon.ElastiCache.Model
         ///  
         /// <para>
         /// Use this parameter only when you are creating a cache cluster outside of an Amazon
-        /// Virtual Private Cloud (VPC).
+        /// Virtual Private Cloud (Amazon VPC).
         /// </para>
         /// </summary>
         public List<string> CacheSecurityGroupNames
@@ -289,8 +340,15 @@ namespace Amazon.ElastiCache.Model
         ///  
         /// <para>
         /// Use this parameter only when you are creating a cache cluster in an Amazon Virtual
-        /// Private Cloud (VPC).
+        /// Private Cloud (Amazon VPC).
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// If you're going to launch your cluster in an Amazon VPC, you need to create a subnet
+        /// group before you start creating a cluster. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SubnetGroups.html">Subnets
+        /// and Subnet Groups</a>.
+        /// </para>
+        ///  </important>
         /// </summary>
         public string CacheSubnetGroupName
         {
@@ -311,11 +369,7 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values for this parameter are:
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>memcached</code> | <code>redis</code> 
+        /// Valid values for this parameter are: <code>memcached</code> | <code>redis</code> 
         /// </para>
         /// </summary>
         public string Engine
@@ -334,7 +388,7 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property EngineVersion. 
         /// <para>
         /// The version number of the cache engine to be used for this cache cluster. To view
-        /// the supported cache engine versions, use the <i>DescribeCacheEngineVersions</i> action.
+        /// the supported cache engine versions, use the DescribeCacheEngineVersions operation.
         /// </para>
         ///  
         /// <para>
@@ -360,7 +414,7 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property NotificationTopicArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic
-        /// to which notifications will be sent.
+        /// to which notifications are sent.
         /// </para>
         ///  <note> 
         /// <para>
@@ -383,7 +437,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property NumCacheNodes. 
         /// <para>
-        /// The initial number of cache nodes that the cache cluster will have.
+        /// The initial number of cache nodes that the cache cluster has.
         /// </para>
         ///  
         /// <para>
@@ -411,7 +465,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property Port. 
         /// <para>
-        /// The port number on which each of the cache nodes will accept connections.
+        /// The port number on which each of the cache nodes accepts connections.
         /// </para>
         /// </summary>
         public int Port
@@ -429,7 +483,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property PreferredAvailabilityZone. 
         /// <para>
-        /// The EC2 Availability Zone in which the cache cluster will be created.
+        /// The EC2 Availability Zone in which the cache cluster is created.
         /// </para>
         ///  
         /// <para>
@@ -456,8 +510,8 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property PreferredAvailabilityZones. 
         /// <para>
-        /// A list of the Availability Zones in which cache nodes will be created. The order of
-        /// the zones in the list is not important.
+        /// A list of the Availability Zones in which cache nodes are created. The order of the
+        /// zones in the list is not important.
         /// </para>
         ///  
         /// <para>
@@ -482,16 +536,6 @@ namespace Amazon.ElastiCache.Model
         /// <para>
         /// Default: System chosen Availability Zones.
         /// </para>
-        ///  
-        /// <para>
-        /// Example: One Memcached node in each of three different Availability Zones: <code>PreferredAvailabilityZones.member.1=us-west-2a&amp;amp;PreferredAvailabilityZones.member.2=us-west-2b&amp;amp;PreferredAvailabilityZones.member.3=us-west-2c</code>
-        /// 
-        /// </para>
-        ///  
-        /// <para>
-        /// Example: All three Memcached nodes in one Availability Zone: <code>PreferredAvailabilityZones.member.1=us-west-2a&amp;amp;PreferredAvailabilityZones.member.2=us-west-2a&amp;amp;PreferredAvailabilityZones.member.3=us-west-2a</code>
-        /// 
-        /// </para>
         /// </summary>
         public List<string> PreferredAvailabilityZones
         {
@@ -512,6 +556,16 @@ namespace Amazon.ElastiCache.Model
         /// It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC).
         /// The minimum maintenance window is a 60 minute period. Valid values for <code>ddd</code>
         /// are:
+        /// </para>
+        ///  
+        /// <para>
+        /// Specifies the weekly time range during which maintenance on the cluster is performed.
+        /// It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC).
+        /// The minimum maintenance window is a 60 minute period.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values for <code>ddd</code> are:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -543,7 +597,7 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Example: <code>sun:05:00-sun:09:00</code> 
+        /// Example: <code>sun:23:00-mon:01:30</code> 
         /// </para>
         /// </summary>
         public string PreferredMaintenanceWindow
@@ -559,18 +613,23 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ReplicationGroupId. 
+        /// Gets and sets the property ReplicationGroupId. <important> 
+        /// <para>
+        /// Due to current limitations on Redis (cluster mode disabled), this operation or parameter
+        /// is not supported on Redis (cluster mode enabled) replication groups.
+        /// </para>
+        ///  </important> 
         /// <para>
         /// The ID of the replication group to which this cache cluster should belong. If this
-        /// parameter is specified, the cache cluster will be added to the specified replication
-        /// group as a read replica; otherwise, the cache cluster will be a standalone primary
-        /// that is not part of any replication group.
+        /// parameter is specified, the cache cluster is added to the specified replication group
+        /// as a read replica; otherwise, the cache cluster is a standalone primary that is not
+        /// part of any replication group.
         /// </para>
         ///  
         /// <para>
-        /// If the specified replication group is Multi-AZ enabled and the availability zone is
-        /// not specified, the cache cluster will be created in availability zones that provide
-        /// the best spread of read replicas across availability zones.
+        /// If the specified replication group is Multi-AZ enabled and the Availability Zone is
+        /// not specified, the cache cluster is created in Availability Zones that provide the
+        /// best spread of read replicas across Availability Zones.
         /// </para>
         ///  <note> 
         /// <para>
@@ -598,7 +657,7 @@ namespace Amazon.ElastiCache.Model
         ///  
         /// <para>
         /// Use this parameter only when you are creating a cache cluster in an Amazon Virtual
-        /// Private Cloud (VPC).
+        /// Private Cloud (Amazon VPC).
         /// </para>
         /// </summary>
         public List<string> SecurityGroupIds
@@ -617,8 +676,8 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property SnapshotArns. 
         /// <para>
         /// A single-element string list containing an Amazon Resource Name (ARN) that uniquely
-        /// identifies a Redis RDB snapshot file stored in Amazon S3. The snapshot file will be
-        /// used to populate the node group. The Amazon S3 object name in the ARN cannot contain
+        /// identifies a Redis RDB snapshot file stored in Amazon S3. The snapshot file is used
+        /// to populate the node group (shard). The Amazon S3 object name in the ARN cannot contain
         /// any commas.
         /// </para>
         ///  <note> 
@@ -645,8 +704,9 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property SnapshotName. 
         /// <para>
-        /// The name of a snapshot from which to restore data into the new node group. The snapshot
-        /// status changes to <code>restoring</code> while the new node group is being created.
+        /// The name of a Redis snapshot from which to restore data into the new node group (shard).
+        /// The snapshot status changes to <code>restoring</code> while the new node group (shard)
+        /// is being created.
         /// </para>
         ///  <note> 
         /// <para>
@@ -669,9 +729,9 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property SnapshotRetentionLimit. 
         /// <para>
-        /// The number of days for which ElastiCache will retain automatic snapshots before deleting
-        /// them. For example, if you set <code>SnapshotRetentionLimit</code> to 5, then a snapshot
-        /// that was taken today will be retained for 5 days before being deleted.
+        /// The number of days for which ElastiCache retains automatic snapshots before deleting
+        /// them. For example, if you set <code>SnapshotRetentionLimit</code> to 5, a snapshot
+        /// taken today is retained for 5 days before being deleted.
         /// </para>
         ///  <note> 
         /// <para>
@@ -697,8 +757,8 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property SnapshotWindow. 
         /// <para>
-        /// The daily time range (in UTC) during which ElastiCache will begin taking a daily snapshot
-        /// of your node group.
+        /// The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot
+        /// of your node group (shard).
         /// </para>
         ///  
         /// <para>
@@ -706,8 +766,8 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        /// If you do not specify this parameter, then ElastiCache will automatically choose an
-        /// appropriate time range.
+        /// If you do not specify this parameter, ElastiCache automatically chooses an appropriate
+        /// time range.
         /// </para>
         ///  
         /// <para>

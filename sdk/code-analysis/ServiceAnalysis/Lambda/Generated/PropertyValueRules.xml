@@ -129,6 +129,10 @@
     <pattern>[^\s]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Lambda.Model.CreateFunctionRequest.KMSKeyArn</property>
+    <pattern>(arn:aws:[a-z0-9-.]+:.*)|()</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Lambda.Model.CreateFunctionRequest.MemorySize</property>
     <min>128</min>
     <max>1536</max>
@@ -160,6 +164,10 @@
     <property>Amazon.Lambda.Model.CreateFunctionResponse.Handler</property>
     <max>128</max>
     <pattern>[^\s]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.CreateFunctionResponse.KMSKeyArn</property>
+    <pattern>(arn:aws:[a-z0-9-.]+:.*)|()</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.CreateFunctionResponse.MemorySize</property>
@@ -308,6 +316,10 @@
     <pattern>[^\s]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Lambda.Model.GetFunctionConfigurationResponse.KMSKeyArn</property>
+    <pattern>(arn:aws:[a-z0-9-.]+:.*)|()</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Lambda.Model.GetFunctionConfigurationResponse.MemorySize</property>
     <min>128</min>
     <max>1536</max>
@@ -434,6 +446,10 @@
     <property>Amazon.Lambda.Model.PublishVersionResponse.Handler</property>
     <max>128</max>
     <pattern>[^\s]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.PublishVersionResponse.KMSKeyArn</property>
+    <pattern>(arn:aws:[a-z0-9-.]+:.*)|()</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.PublishVersionResponse.MemorySize</property>
@@ -583,6 +599,10 @@
     <pattern>[^\s]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Lambda.Model.UpdateFunctionCodeResponse.KMSKeyArn</property>
+    <pattern>(arn:aws:[a-z0-9-.]+:.*)|()</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Lambda.Model.UpdateFunctionCodeResponse.MemorySize</property>
     <min>128</min>
     <max>1536</max>
@@ -618,6 +638,10 @@
     <pattern>[^\s]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Lambda.Model.UpdateFunctionConfigurationRequest.KMSKeyArn</property>
+    <pattern>(arn:aws:[a-z0-9-.]+:.*)|()</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Lambda.Model.UpdateFunctionConfigurationRequest.MemorySize</property>
     <min>128</min>
     <max>1536</max>
@@ -651,6 +675,10 @@
     <pattern>[^\s]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Lambda.Model.UpdateFunctionConfigurationResponse.KMSKeyArn</property>
+    <pattern>(arn:aws:[a-z0-9-.]+:.*)|()</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Lambda.Model.UpdateFunctionConfigurationResponse.MemorySize</property>
     <min>128</min>
     <max>1536</max>
@@ -668,6 +696,10 @@
     <min>1</min>
     <max>1024</max>
     <pattern>(\$LATEST|[0-9]+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.DeadLetterConfig.TargetArn</property>
+    <pattern>(arn:aws:[a-z0-9-.]+:.*)|()</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.FunctionCode.S3Bucket</property>

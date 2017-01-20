@@ -85,6 +85,11 @@
     <pattern>^[a-zA-Z0-9:/_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.DeleteImportedKeyMaterialRequest.KeyId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.KeyManagementService.Model.DescribeKeyRequest.KeyId</property>
     <min>1</min>
     <max>256</max>
@@ -203,6 +208,41 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.GetKeyRotationStatusRequest.KeyId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.GetParametersForImportRequest.KeyId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.GetParametersForImportResponse.ImportToken</property>
+    <min>1</min>
+    <max>6144</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.GetParametersForImportResponse.KeyId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.GetParametersForImportResponse.PublicKey</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.ImportKeyMaterialRequest.EncryptedKeyMaterial</property>
+    <min>1</min>
+    <max>6144</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.ImportKeyMaterialRequest.ImportToken</property>
+    <min>1</min>
+    <max>6144</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.ImportKeyMaterialRequest.KeyId</property>
     <min>1</min>
     <max>256</max>
   </property-value-rule>

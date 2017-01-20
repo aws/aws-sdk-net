@@ -29,6 +29,9 @@ namespace Amazon.APIGateway.Model
 {
     /// <summary>
     /// Represents a collection of <a>Model</a> resources.
+    /// 
+    ///  <div class="seeAlso"> <a>Method</a>, <a>MethodResponse</a>, <a href="http://docs.aws.amazon.com/apigateway/latest/developerguide/models-mappings.html">Models
+    /// and Mappings</a> </div>
     /// </summary>
     public partial class GetModelsResponse : AmazonWebServiceResponse
     {

@@ -1,5 +1,5 @@
 ﻿/*******************************************************************************
- *  Copyright 2008-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ *  Copyright 2008-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  *  this file except in compliance with the License. A copy of the License is located at
  *
@@ -47,7 +47,7 @@ namespace Amazon.Util
         public const string ExpectHeader = "Expect";
         public const string AcceptHeader = "Accept";
         public const string ConnectionHeader = "Connection";
-		public const string StatusHeader = "Status";
+        public const string StatusHeader = "Status";
         public const string XHttpMethodOverrideHeader = "X-HTTP-Method-Override";
 
         public const string RequestIdHeader = "x-amzn-RequestId";
@@ -64,6 +64,7 @@ namespace Amazon.Util
         public const string XAmzNonceHeader = "x-amz-nonce";
         public const string XAmzServerSideEncryptionHeader = "x-amz-server-side-encryption";
         public const string XAmzServerSideEncryptionAwsKmsKeyIdHeader = "x-amz-server-side-encryption-aws-kms-key-id";
+        public const string XAmzBucketRegion = "x-amz-bucket-region";
 
         public const string XAmzSSECustomerAlgorithmHeader = "x-amz-server-side-encryption-customer-algorithm";
         public const string XAmzSSECustomerKeyHeader = "x-amz-server-side-encryption-customer-key";
@@ -89,5 +90,6 @@ namespace Amazon.Util
         public const string XAmzUserAgentHeader = "x-amz-user-agent";
         public const string XAmzAbortDateHeader = "x-amz-abort-date";
         public const string XAmzAbortRuleIdHeader = "x-amz-abort-rule-id";
+        public const string XAmznTraceIdHeader = " x-amzn-trace-id";
     }
 }

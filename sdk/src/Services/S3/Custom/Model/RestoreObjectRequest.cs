@@ -33,7 +33,8 @@ namespace Amazon.S3.Model
         private string key;
         private int? days;
         private string versionId;
-
+		private RequestPayer requestPayer;
+		private GlacierJobTier tier;
         /// <summary>
         /// Gets and sets the BucketName property.
         /// </summary>
@@ -95,6 +96,43 @@ namespace Amazon.S3.Model
         {
             return this.versionId != null;
         }
+
+		/// <summary>
+        /// Confirms that the requester knows that she or he will be charged for the list objects request.
+        /// Bucket owners need not specify this parameter in their requests.
+        /// </summary>
+        public RequestPayer RequestPayer
+        {
+            get { return this.requestPayer; }
+            set { this.requestPayer = value; }
+        }
+
+
+        /// <summary>
+        /// Checks to see if RequetsPayer is set.
+        /// </summary>
+        /// <returns>true, if RequestPayer property is set.</returns>
+        internal bool IsSetRequestPayer()
+        {
+            return requestPayer != null;
+        }
+
+		/// <summary>
+        /// Glacier retrieval tier at which the restore will be processed.
+        /// Glacier related prameters pertaining to this job.
+        /// </summary>
+        public GlacierJobTier Tier
+        {
+            get { return this.tier; }
+            set { this.tier = value; }
+        }
+
+
+        // Check to see if Tier property is set
+        internal bool IsSetTier()
+        {
+            return this.tier != null;
+        } 
     }
 }
     

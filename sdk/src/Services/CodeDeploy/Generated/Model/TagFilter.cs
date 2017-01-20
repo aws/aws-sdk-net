@@ -59,8 +59,19 @@ namespace Amazon.CodeDeploy.Model
         /// <para>
         /// The on-premises instance tag filter type:
         /// </para>
-        ///  <ul> <li>KEY_ONLY: Key only.</li> <li>VALUE_ONLY: Value only.</li> <li>KEY_AND_VALUE:
-        /// Key and value.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// KEY_ONLY: Key only.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// VALUE_ONLY: Value only.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// KEY_AND_VALUE: Key and value.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public TagFilterType Type
         {

@@ -85,6 +85,17 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.IndexRotationPeriod);
             }
 
+            if(requestObject.IsSetProcessingConfiguration())
+            {
+                context.Writer.WritePropertyName("ProcessingConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ProcessingConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.ProcessingConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetRetryOptions())
             {
                 context.Writer.WritePropertyName("RetryOptions");

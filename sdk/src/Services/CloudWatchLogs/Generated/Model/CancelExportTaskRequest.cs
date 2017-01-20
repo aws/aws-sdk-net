@@ -29,7 +29,12 @@ namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
     /// Container for the parameters to the CancelExportTask operation.
-    /// Cancels an export task if it is in <code>PENDING</code> or <code>RUNNING</code> state.
+    /// Cancels the specified export task.
+    /// 
+    ///  
+    /// <para>
+    /// The task must be in the <code>PENDING</code> or <code>RUNNING</code> state.
+    /// </para>
     /// </summary>
     public partial class CancelExportTaskRequest : AmazonCloudWatchLogsRequest
     {
@@ -38,7 +43,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property TaskId. 
         /// <para>
-        /// Id of the export task to cancel.
+        /// The ID of the export task.
         /// </para>
         /// </summary>
         public string TaskId

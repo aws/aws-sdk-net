@@ -76,6 +76,22 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetInputs())
+                {
+                    context.Writer.WritePropertyName("Inputs");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestInputsListValue in publicRequest.Inputs)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = JobInputMarshaller.Instance;
+                        marshaller.Marshall(publicRequestInputsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetOutput())
                 {
                     context.Writer.WritePropertyName("Output");

@@ -28,6 +28,7 @@ namespace Amazon.S3.Model
     {
         private string deleteMarker;
         private string versionId;
+        private RequestCharged requestCharged;
 
         /// <summary>
         /// Specifies whether the versioned object that was permanently deleted was (true) or was not (false) a delete marker.
@@ -59,6 +60,24 @@ namespace Amazon.S3.Model
         internal bool IsSetVersionId()
         {
             return this.versionId != null;
+        }
+
+        /// <summary>
+        /// If present, indicates that the requester was successfully charged for the request.
+        /// </summary>
+        public RequestCharged RequestCharged
+        {
+            get { return this.requestCharged; }
+            set { this.requestCharged = value; }
+        }
+
+        /// <summary>
+        /// Checks to see if RequestCharged is set.
+        /// </summary>
+        /// <returns>true, if RequestCharged property is set.</returns>
+        internal bool IsSetRequestCharged()
+        {
+            return requestCharged != null;
         }
     }
 }

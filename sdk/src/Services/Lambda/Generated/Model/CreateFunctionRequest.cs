@@ -32,7 +32,7 @@ namespace Amazon.Lambda.Model
     /// Creates a new Lambda function. The function metadata is created from the request parameters,
     /// and the code for the function is provided by a .zip file in the request body. If the
     /// function name already exists, the operation will fail. Note that the function name
-    /// is case-sensitive. 
+    /// is case-sensitive.
     /// 
     ///  
     /// <para>
@@ -49,9 +49,12 @@ namespace Amazon.Lambda.Model
     public partial class CreateFunctionRequest : AmazonLambdaRequest
     {
         private FunctionCode _code;
+        private DeadLetterConfig _deadLetterConfig;
         private string _description;
+        private Environment _environment;
         private string _functionName;
         private string _handler;
+        private string _kmsKeyArn;
         private int? _memorySize;
         private bool? _publish;
         private string _role;
@@ -62,7 +65,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Code. 
         /// <para>
-        /// The code for the Lambda function. 
+        /// The code for the Lambda function.
         /// </para>
         /// </summary>
         public FunctionCode Code
@@ -75,6 +78,25 @@ namespace Amazon.Lambda.Model
         internal bool IsSetCode()
         {
             return this._code != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeadLetterConfig. 
+        /// <para>
+        /// The parent object that contains the target Amazon Resource Name (ARN) of an Amazon
+        /// SQS queue or Amazon SNS topic. 
+        /// </para>
+        /// </summary>
+        public DeadLetterConfig DeadLetterConfig
+        {
+            get { return this._deadLetterConfig; }
+            set { this._deadLetterConfig = value; }
+        }
+
+        // Check to see if DeadLetterConfig property is set
+        internal bool IsSetDeadLetterConfig()
+        {
+            return this._deadLetterConfig != null;
         }
 
         /// <summary>
@@ -97,11 +119,27 @@ namespace Amazon.Lambda.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Environment.
+        /// </summary>
+        public Environment Environment
+        {
+            get { return this._environment; }
+            set { this._environment = value; }
+        }
+
+        // Check to see if Environment property is set
+        internal bool IsSetEnvironment()
+        {
+            return this._environment != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property FunctionName. 
         /// <para>
         /// The name you want to assign to the function you are uploading. The function names
         /// appear in the console and are returned in the <a>ListFunctions</a> API. Function names
-        /// are used to specify functions to other AWS Lambda APIs, such as <a>Invoke</a>. 
+        /// are used to specify functions to other AWS Lambda API operations, such as <a>Invoke</a>.
+        /// 
         /// </para>
         /// </summary>
         public string FunctionName
@@ -139,6 +177,25 @@ namespace Amazon.Lambda.Model
         }
 
         /// <summary>
+        /// Gets and sets the property KMSKeyArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the KMS key used to encrypt your function's environment
+        /// variables. If not provided, AWS Lambda will use a default service key.
+        /// </para>
+        /// </summary>
+        public string KMSKeyArn
+        {
+            get { return this._kmsKeyArn; }
+            set { this._kmsKeyArn = value; }
+        }
+
+        // Check to see if KMSKeyArn property is set
+        internal bool IsSetKMSKeyArn()
+        {
+            return this._kmsKeyArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property MemorySize. 
         /// <para>
         /// The amount of memory, in MB, your Lambda function is given. Lambda uses this memory
@@ -164,7 +221,7 @@ namespace Amazon.Lambda.Model
         /// Gets and sets the property Publish. 
         /// <para>
         /// This boolean parameter can be used to request AWS Lambda to create the Lambda function
-        /// and publish a version as an atomic operation. 
+        /// and publish a version as an atomic operation.
         /// </para>
         /// </summary>
         public bool Publish
@@ -203,8 +260,20 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Runtime. 
         /// <para>
-        /// The runtime environment for the Lambda function you are uploading. 
+        /// The runtime environment for the Lambda function you are uploading.
         /// </para>
+        ///  
+        /// <para>
+        /// To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime
+        /// (v0.10.42), set the value to "nodejs".
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You can no longer create functions using the v0.10.42 runtime version as of November,
+        /// 2016. Existing functions will be supported until early 2017, but we recommend you
+        /// migrate them to nodejs4.3 runtime version as soon as possible.
+        /// </para>
+        ///  </note>
         /// </summary>
         public Runtime Runtime
         {
@@ -223,7 +292,7 @@ namespace Amazon.Lambda.Model
         /// <para>
         /// The function execution time at which Lambda should terminate the function. Because
         /// the execution time has cost implications, we recommend you set this value based on
-        /// your expected execution time. The default is 3 seconds. 
+        /// your expected execution time. The default is 3 seconds.
         /// </para>
         /// </summary>
         public int Timeout

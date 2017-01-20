@@ -115,11 +115,31 @@ namespace Amazon.CodeDeploy.Model
         /// <para>
         /// The deployment status for this instance:
         /// </para>
-        ///  <ul> <li>Pending: The deployment is pending for this instance.</li> <li>In Progress:
-        /// The deployment is in progress for this instance.</li> <li>Succeeded: The deployment
-        /// has succeeded for this instance.</li> <li>Failed: The deployment has failed for this
-        /// instance.</li> <li>Skipped: The deployment has been skipped for this instance.</li>
-        /// <li>Unknown: The deployment status is unknown for this instance.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// Pending: The deployment is pending for this instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// In Progress: The deployment is in progress for this instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Succeeded: The deployment has succeeded for this instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Failed: The deployment has failed for this instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Skipped: The deployment has been skipped for this instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Unknown: The deployment status is unknown for this instance.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public InstanceStatus Status
         {

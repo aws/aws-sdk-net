@@ -25,6 +25,7 @@ using System.Globalization;
 using System.IO;
 using System.Text;
 using System.Linq;
+using System.Net;
 
 namespace Amazon.Util
 {
@@ -94,7 +95,7 @@ namespace Amazon.Util
         // per http://msdn.microsoft.com/en-us/library/hh367887%28v=vs.110%29.aspx
         private static string DetermineValidPathCharacters()
         {
-            const string basePathCharacters = "/:'()!*[]";
+            const string basePathCharacters = "/:'()!*[]$";
 
             var sb = new StringBuilder();
             foreach (var c in basePathCharacters)
@@ -143,7 +144,7 @@ namespace Amazon.Util
 
         #endregion
 
-        
+
 
         #region Internal Methods
 
@@ -331,7 +332,7 @@ namespace Amazon.Util
             if (delimIndex >= 0)
                 url = url.Substring(delimIndex + 2);
 
-            if(url.EndsWith("/", StringComparison.Ordinal))
+            if (url.EndsWith("/", StringComparison.Ordinal))
                 url = url.Substring(0, url.Length - 1);
 
             int awsIndex = url.IndexOf(".amazonaws.com", StringComparison.Ordinal);
@@ -387,7 +388,7 @@ namespace Amazon.Util
             if (delimIndex >= 0)
                 url = url.Substring(delimIndex + 2);
 
-            string[] urlParts = url.Split(new char[] {'.'}, StringSplitOptions.RemoveEmptyEntries);
+            string[] urlParts = url.Split(new char[] { '.' }, StringSplitOptions.RemoveEmptyEntries);
             if (urlParts == null || urlParts.Length == 0)
                 return string.Empty;
 
@@ -422,7 +423,14 @@ namespace Amazon.Util
 
         public static int ConvertToUnixEpochSeconds(DateTime dateTime)
         {
-            return (int)ConvertToUnixEpochMilliSeconds(dateTime);
+            TimeSpan ts = new TimeSpan(dateTime.ToUniversalTime().Ticks - EPOCH_START.Ticks);
+            return Convert.ToInt32(ts.TotalSeconds);
+        }
+
+        public static string ConvertToUnixEpochSecondsString(DateTime dateTime)
+        {
+            TimeSpan ts = new TimeSpan(dateTime.ToUniversalTime().Ticks - EPOCH_START.Ticks);
+            return Convert.ToInt64(ts.TotalSeconds).ToString(CultureInfo.InvariantCulture);
         }
 
         public static double ConvertToUnixEpochMilliSeconds(DateTime dateTime)
@@ -596,8 +604,8 @@ namespace Amazon.Util
             {
                 destination.Write(array, 0, count);
             }
-        }        
-	#endregion
+        }
+        #endregion
 
         #region Public Methods and Properties
 
@@ -825,7 +833,7 @@ namespace Amazon.Util
             if (string.IsNullOrEmpty(input))
                 return false;
 
-            foreach(var c in input)
+            foreach (var c in input)
             {
                 if (IsBidiControlChar(c))
                     return true;
@@ -850,7 +858,101 @@ namespace Amazon.Util
             );
         }
 
+        public static string DownloadStringContent(Uri uri)
+        {
+            return DownloadStringContent(uri, TimeSpan.Zero);
+        }
+
+        public static string DownloadStringContent(Uri uri, TimeSpan timeout)
+        {
+#if PCL || CORECLR
+            using (var client = new System.Net.Http.HttpClient())
+            {
+                if (timeout > TimeSpan.Zero)
+                    client.Timeout = timeout;
+                var content = AsyncHelpers.RunSync<string>(() =>
+                {
+                    return client.GetStringAsync(uri);
+                });
+                return content;
+            }
+#else
+            HttpWebRequest request = HttpWebRequest.Create(uri) as HttpWebRequest;
+            if (timeout > TimeSpan.Zero)
+                request.Timeout = (int)timeout.TotalMilliseconds;
+            var asyncResult = request.BeginGetResponse(null, null);
+            using (HttpWebResponse response = request.EndGetResponse(asyncResult) as HttpWebResponse)
+            using (StreamReader reader = new StreamReader(response.GetResponseStream()))
+            {
+                return reader.ReadToEnd();
+            }
+#endif
+        }
+
+        public static Stream OpenStream(Uri uri)
+        {
+#if CORECLR
+            using (var client = new System.Net.Http.HttpClient())
+            {
+                var task = client.GetStreamAsync(uri);
+                return task.Result;
+            }
+#else
+            HttpWebRequest request = WebRequest.Create(uri) as HttpWebRequest;
+            var asynResult = request.BeginGetResponse(null, null);
+            HttpWebResponse response = request.EndGetResponse(asynResult) as HttpWebResponse;
+            return response.GetResponseStream();
+#endif
+        }
+
         #endregion
         
+    }
+
+    public class JitteredDelay
+    {
+        private TimeSpan _maxDelay;
+        private TimeSpan _variance;
+        private TimeSpan _baseIncrement;
+        private Random _rand = null;
+        private int _count = 0;
+
+        public JitteredDelay(TimeSpan baseIncrement, TimeSpan variance)
+            : this(baseIncrement, variance, new TimeSpan(0, 0, 30))
+        {
+        }
+
+        public JitteredDelay(TimeSpan baseIncrement, TimeSpan variance, TimeSpan maxDelay)
+        {
+            _baseIncrement = baseIncrement;
+            _variance = variance;
+            _maxDelay = maxDelay;
+            _rand = new System.Random();
+        }
+
+        public TimeSpan GetRetryDelay(int attemptCount)
+        {
+            long ticks = (_baseIncrement.Ticks * (long)Math.Pow(2, attemptCount) + (long)(_rand.NextDouble() * _variance.Ticks));
+            return new TimeSpan(ticks);
+        }
+
+        public TimeSpan Next()
+        {
+            long nextTick = GetRetryDelay(_count + 1).Ticks;
+            if (nextTick < _maxDelay.Ticks)
+            {
+                _count++;
+            }
+            else
+            {
+                nextTick = _maxDelay.Ticks;
+            }
+            return new TimeSpan(nextTick);
+        }
+
+        public void Reset()
+        {
+            _count = 0;
+        }
     }
 }

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2016-01-28.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-11-25.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -43,14 +43,17 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Instantiates GetCloudFrontOriginAccessIdentityRequest with the parameterized properties
         /// </summary>
-        /// <param name="id">The identity's id.</param>
+        /// <param name="id">The identity's ID.</param>
         public GetCloudFrontOriginAccessIdentityRequest(string id)
         {
             _id = id;
         }
 
         /// <summary>
-        /// Gets and sets the property Id. The identity's id.
+        /// Gets and sets the property Id. 
+        /// <para>
+        /// The identity's ID.
+        /// </para>
         /// </summary>
         public string Id
         {

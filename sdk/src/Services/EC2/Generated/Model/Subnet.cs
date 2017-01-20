@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-11-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -32,15 +32,36 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class Subnet
     {
+        private bool? _assignIpv6AddressOnCreation;
         private string _availabilityZone;
         private int? _availableIpAddressCount;
         private string _cidrBlock;
         private bool? _defaultForAz;
+        private List<SubnetIpv6CidrBlockAssociation> _ipv6CidrBlockAssociationSet = new List<SubnetIpv6CidrBlockAssociation>();
         private bool? _mapPublicIpOnLaunch;
         private SubnetState _state;
         private string _subnetId;
         private List<Tag> _tags = new List<Tag>();
         private string _vpcId;
+
+        /// <summary>
+        /// Gets and sets the property AssignIpv6AddressOnCreation. 
+        /// <para>
+        /// Indicates whether a network interface created in this subnet (including a network
+        /// interface created by <a>RunInstances</a>) receives an IPv6 address.
+        /// </para>
+        /// </summary>
+        public bool AssignIpv6AddressOnCreation
+        {
+            get { return this._assignIpv6AddressOnCreation.GetValueOrDefault(); }
+            set { this._assignIpv6AddressOnCreation = value; }
+        }
+
+        // Check to see if AssignIpv6AddressOnCreation property is set
+        internal bool IsSetAssignIpv6AddressOnCreation()
+        {
+            return this._assignIpv6AddressOnCreation.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
@@ -63,8 +84,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AvailableIpAddressCount. 
         /// <para>
-        /// The number of unused IP addresses in the subnet. Note that the IP addresses for any
-        /// stopped instances are considered unavailable.
+        /// The number of unused private IPv4 addresses in the subnet. Note that the IPv4 addresses
+        /// for any stopped instances are considered unavailable.
         /// </para>
         /// </summary>
         public int AvailableIpAddressCount
@@ -82,7 +103,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property CidrBlock. 
         /// <para>
-        /// The CIDR block assigned to the subnet.
+        /// The IPv4 CIDR block assigned to the subnet.
         /// </para>
         /// </summary>
         public string CidrBlock
@@ -116,9 +137,27 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Ipv6CidrBlockAssociationSet. 
+        /// <para>
+        /// Information about the IPv6 CIDR blocks associated with the subnet.
+        /// </para>
+        /// </summary>
+        public List<SubnetIpv6CidrBlockAssociation> Ipv6CidrBlockAssociationSet
+        {
+            get { return this._ipv6CidrBlockAssociationSet; }
+            set { this._ipv6CidrBlockAssociationSet = value; }
+        }
+
+        // Check to see if Ipv6CidrBlockAssociationSet property is set
+        internal bool IsSetIpv6CidrBlockAssociationSet()
+        {
+            return this._ipv6CidrBlockAssociationSet != null && this._ipv6CidrBlockAssociationSet.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property MapPublicIpOnLaunch. 
         /// <para>
-        /// Indicates whether instances launched in this subnet receive a public IP address.
+        /// Indicates whether instances launched in this subnet receive a public IPv4 address.
         /// </para>
         /// </summary>
         public bool MapPublicIpOnLaunch

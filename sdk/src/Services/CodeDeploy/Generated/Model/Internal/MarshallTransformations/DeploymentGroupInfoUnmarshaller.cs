@@ -64,10 +64,22 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("alarmConfiguration", targetDepth))
+                {
+                    var unmarshaller = AlarmConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.AlarmConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("applicationName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ApplicationName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("autoRollbackConfiguration", targetDepth))
+                {
+                    var unmarshaller = AutoRollbackConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.AutoRollbackConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("autoScalingGroups", targetDepth))

@@ -53,7 +53,9 @@ namespace Amazon.Runtime.Internal
 
             _exceptionHandlers = new Dictionary<Type, IExceptionHandler>
             {
+#if BCL
                 {typeof(WebException), new WebExceptionHandler(this.Logger)},
+#endif
                 {typeof(HttpErrorResponseException), new HttpErrorResponseExceptionHandler(this.Logger)}
             };
         }
@@ -81,7 +83,7 @@ namespace Amazon.Runtime.Internal
             }
         }
 
-#if AWS_ASYNC_API 
+#if AWS_ASYNC_API
 
         /// <summary>
         /// Handles and processes any exception thrown from underlying handlers.

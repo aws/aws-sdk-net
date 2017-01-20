@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// This output contains the boostrap actions detail .
+    /// This output contains the bootstrap actions detail.
     /// </summary>
     public partial class ListBootstrapActionsResponse : AmazonWebServiceResponse
     {
@@ -38,7 +38,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property BootstrapActions. 
         /// <para>
-        /// The bootstrap actions associated with the cluster .
+        /// The bootstrap actions associated with the cluster.
         /// </para>
         /// </summary>
         public List<Command> BootstrapActions
@@ -56,7 +56,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        /// The pagination token that indicates the next set of results to retrieve .
+        /// The pagination token that indicates the next set of results to retrieve.
         /// </para>
         /// </summary>
         public string Marker

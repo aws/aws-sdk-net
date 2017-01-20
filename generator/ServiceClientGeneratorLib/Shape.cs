@@ -287,6 +287,20 @@ namespace ServiceClientGenerator
             }
         }
 
+
+        /// <summary>
+        /// Find the member that is marked as payload
+        /// </summary>
+        public Member PayloadMember
+        {
+            get
+            {
+                return Members.SingleOrDefault<Member>(m => string.Equals(m.ModeledName, PayloadMemberName
+                    , StringComparison.InvariantCultureIgnoreCase));
+            }
+        }
+
+
         /// <summary>
         /// Returns if the shape should be generated as an exception for the service
         /// </summary>
@@ -457,7 +471,8 @@ namespace ServiceClientGenerator
                     long min;
                     if (!long.TryParse(value.ToString(), out min))
                     {
-                        throw new Exception(string.Format("Failed to parse min value {0} for shape {1}", value, this.Name));
+                        Console.WriteLine("Generator does not support non-integer values for Min.");
+                        return null;
                     }
                     return min;
                 }
@@ -476,7 +491,8 @@ namespace ServiceClientGenerator
                     long max;
                     if (!long.TryParse(value.ToString(), out max))
                     {
-                        throw new Exception(string.Format("Failed to parse max value {0} for shape {1}", value, this.Name));
+                        Console.WriteLine("Generator does not support non-integer values for Max.");
+                        return null;
                     }
                     return max;
                 }

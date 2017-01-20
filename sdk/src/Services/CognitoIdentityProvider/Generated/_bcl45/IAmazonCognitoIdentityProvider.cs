@@ -23,6 +23,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.CognitoIdentityProvider.Model;
 
 namespace Amazon.CognitoIdentityProvider
@@ -30,16 +31,21 @@ namespace Amazon.CognitoIdentityProvider
     /// <summary>
     /// Interface for accessing CognitoIdentityProvider
     ///
-    /// You can create a user pool in Amazon Cognito Identity to manage directories and users.
-    /// You can authenticate a user to obtain tokens related to user identity and access policies.
+    /// Using the Amazon Cognito Your User Pools API, you can create a user pool to manage
+    /// directories and users. You can authenticate a user to obtain tokens related to user
+    /// identity and access policies.
     /// 
     ///  
     /// <para>
-    /// This API reference provides information about user pools in Amazon Cognito Identity,
-    /// which is a new capability that is available as a beta.
+    /// This API reference provides information about user pools in Amazon Cognito Your User
+    /// Pools.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information, see the Amazon Cognito Documentation.
     /// </para>
     /// </summary>
-    public partial interface IAmazonCognitoIdentityProvider : IDisposable
+    public partial interface IAmazonCognitoIdentityProvider : IAmazonService, IDisposable
     {
 
         
@@ -58,12 +64,19 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception gets thrown when a user is not authorized.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service cannot find the requested
         /// resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
         /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserImportInProgressException">
+        /// This exception is thrown when you are trying to modify a user pool while a user import
+        /// job is in progress for that pool.
         /// </exception>
         AddCustomAttributesResponse AddCustomAttributes(AddCustomAttributesRequest request);
 
@@ -126,6 +139,9 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception gets thrown when the Amazon Cognito service encounters a user validation
         /// exception with the AWS Lambda service.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
+        /// This exception is thrown when a user is not found.
+        /// </exception>
         AdminConfirmSignUpResponse AdminConfirmSignUp(AdminConfirmSignUpRequest request);
 
 
@@ -139,6 +155,96 @@ namespace Amazon.CognitoIdentityProvider
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<AdminConfirmSignUpResponse> AdminConfirmSignUpAsync(AdminConfirmSignUpRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  AdminCreateUser
+
+
+        /// <summary>
+        /// Creates a new user in the specified user pool and sends a welcome message via email
+        /// or phone (SMS). This message is based on a template that you configured in your call
+        /// to CreateUserPool or UpdateUserPool. This template includes your custom sign-up instructions
+        /// and placeholders for user name and temporary password.
+        /// 
+        ///  
+        /// <para>
+        /// Requires developer credentials.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AdminCreateUser service method.</param>
+        /// 
+        /// <returns>The response from the AdminCreateUser service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.CodeDeliveryFailureException">
+        /// This exception is thrown when a verification code fails to deliver successfully.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidLambdaResponseException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid AWS
+        /// Lambda response.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidPasswordException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid password.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleAccessPolicyException">
+        /// This exception is returned when the role provided for SMS configuration does not have
+        /// permission to publish using Amazon SNS.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleTrustRelationshipException">
+        /// This exception is thrown when the trust relationship is invalid for the role provided
+        /// for SMS configuration. This can happen if you do not trust <b>cognito-idp.amazonaws.com</b>
+        /// or the external ID provided in the role does not match what is provided in the SMS
+        /// configuration for the user pool.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception gets thrown when a user is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.PreconditionNotMetException">
+        /// This exception is thrown when a precondition is not met.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service cannot find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UnexpectedLambdaException">
+        /// This exception gets thrown when the Amazon Cognito service encounters an unexpected
+        /// exception with the AWS Lambda service.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UnsupportedUserStateException">
+        /// The request failed because the user is in an unsupported state.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserLambdaValidationException">
+        /// This exception gets thrown when the Amazon Cognito service encounters a user validation
+        /// exception with the AWS Lambda service.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UsernameExistsException">
+        /// This exception is thrown when Amazon Cognito encounters a user name that already exists
+        /// in the user pool.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
+        /// This exception is thrown when a user is not found.
+        /// </exception>
+        AdminCreateUserResponse AdminCreateUser(AdminCreateUserRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AdminCreateUser operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AdminCreateUser operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<AdminCreateUserResponse> AdminCreateUserAsync(AdminCreateUserRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -157,12 +263,18 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception gets thrown when a user is not authorized.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service cannot find the requested
         /// resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
         /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
+        /// This exception is thrown when a user is not found.
         /// </exception>
         AdminDeleteUserResponse AdminDeleteUser(AdminDeleteUserRequest request);
 
@@ -195,12 +307,18 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception gets thrown when a user is not authorized.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service cannot find the requested
         /// resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
         /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
+        /// This exception is thrown when a user is not found.
         /// </exception>
         AdminDeleteUserAttributesResponse AdminDeleteUserAttributes(AdminDeleteUserAttributesRequest request);
 
@@ -233,12 +351,18 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception gets thrown when a user is not authorized.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service cannot find the requested
         /// resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
         /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
+        /// This exception is thrown when a user is not found.
         /// </exception>
         AdminDisableUserResponse AdminDisableUser(AdminDisableUserRequest request);
 
@@ -271,12 +395,18 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception gets thrown when a user is not authorized.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service cannot find the requested
         /// resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
         /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
+        /// This exception is thrown when a user is not found.
         /// </exception>
         AdminEnableUserResponse AdminEnableUser(AdminEnableUserRequest request);
 
@@ -291,6 +421,97 @@ namespace Amazon.CognitoIdentityProvider
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<AdminEnableUserResponse> AdminEnableUserAsync(AdminEnableUserRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  AdminForgetDevice
+
+
+        /// <summary>
+        /// Forgets the device, as an administrator.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AdminForgetDevice service method.</param>
+        /// 
+        /// <returns>The response from the AdminForgetDevice service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidUserPoolConfigurationException">
+        /// This exception is thrown when the user pool configuration is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception gets thrown when a user is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service cannot find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
+        /// This exception is thrown when a user is not found.
+        /// </exception>
+        AdminForgetDeviceResponse AdminForgetDevice(AdminForgetDeviceRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AdminForgetDevice operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AdminForgetDevice operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<AdminForgetDeviceResponse> AdminForgetDeviceAsync(AdminForgetDeviceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  AdminGetDevice
+
+
+        /// <summary>
+        /// Gets the device, as an administrator.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AdminGetDevice service method.</param>
+        /// 
+        /// <returns>The response from the AdminGetDevice service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidUserPoolConfigurationException">
+        /// This exception is thrown when the user pool configuration is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception gets thrown when a user is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service cannot find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        AdminGetDeviceResponse AdminGetDevice(AdminGetDeviceRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AdminGetDevice operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AdminGetDevice operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<AdminGetDeviceResponse> AdminGetDeviceAsync(AdminGetDeviceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -310,12 +531,18 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception gets thrown when a user is not authorized.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service cannot find the requested
         /// resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
         /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
+        /// This exception is thrown when a user is not found.
         /// </exception>
         AdminGetUserResponse AdminGetUser(AdminGetUserRequest request);
 
@@ -333,12 +560,146 @@ namespace Amazon.CognitoIdentityProvider
 
         #endregion
         
+        #region  AdminInitiateAuth
+
+
+        /// <summary>
+        /// Initiates the authentication flow, as an administrator.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AdminInitiateAuth service method.</param>
+        /// 
+        /// <returns>The response from the AdminInitiateAuth service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidLambdaResponseException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid AWS
+        /// Lambda response.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleAccessPolicyException">
+        /// This exception is returned when the role provided for SMS configuration does not have
+        /// permission to publish using Amazon SNS.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleTrustRelationshipException">
+        /// This exception is thrown when the trust relationship is invalid for the role provided
+        /// for SMS configuration. This can happen if you do not trust <b>cognito-idp.amazonaws.com</b>
+        /// or the external ID provided in the role does not match what is provided in the SMS
+        /// configuration for the user pool.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidUserPoolConfigurationException">
+        /// This exception is thrown when the user pool configuration is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.MFAMethodNotFoundException">
+        /// This exception is thrown when Amazon Cognito cannot find a multi-factor authentication
+        /// (MFA) method.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception gets thrown when a user is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
+        /// This exception is thrown when a password reset is required.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service cannot find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UnexpectedLambdaException">
+        /// This exception gets thrown when the Amazon Cognito service encounters an unexpected
+        /// exception with the AWS Lambda service.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserLambdaValidationException">
+        /// This exception gets thrown when the Amazon Cognito service encounters a user validation
+        /// exception with the AWS Lambda service.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotConfirmedException">
+        /// This exception is thrown when a user is not confirmed successfully.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
+        /// This exception is thrown when a user is not found.
+        /// </exception>
+        AdminInitiateAuthResponse AdminInitiateAuth(AdminInitiateAuthRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AdminInitiateAuth operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AdminInitiateAuth operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<AdminInitiateAuthResponse> AdminInitiateAuthAsync(AdminInitiateAuthRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  AdminListDevices
+
+
+        /// <summary>
+        /// Lists devices, as an administrator.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AdminListDevices service method.</param>
+        /// 
+        /// <returns>The response from the AdminListDevices service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidUserPoolConfigurationException">
+        /// This exception is thrown when the user pool configuration is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception gets thrown when a user is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service cannot find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        AdminListDevicesResponse AdminListDevices(AdminListDevicesRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AdminListDevices operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AdminListDevices operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<AdminListDevicesResponse> AdminListDevicesAsync(AdminListDevicesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  AdminResetUserPassword
 
 
         /// <summary>
         /// Resets the specified user's password in a user pool as an administrator. Works on
         /// any user.
+        /// 
+        ///  
+        /// <para>
+        /// When a developer calls this API, the current password is invalidated, so it must be
+        /// changed. If a user tries to sign in after the API is called, the app will get a PasswordResetRequiredException
+        /// exception back and should direct the user down the flow to reset the password, which
+        /// is the same as the forgot password flow. In addition, if the user pool has phone verification
+        /// selected and a verified phone number exists for the user, or if email verification
+        /// is selected and a verified email exists for the user, calling this API will also result
+        /// in sending a message to the end user with the code to change their password.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AdminResetUserPassword service method.</param>
         /// 
@@ -374,6 +735,9 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception gets thrown when the Amazon Cognito service encounters a user validation
         /// exception with the AWS Lambda service.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
+        /// This exception is thrown when a user is not found.
+        /// </exception>
         AdminResetUserPasswordResponse AdminResetUserPassword(AdminResetUserPasswordRequest request);
 
 
@@ -390,6 +754,99 @@ namespace Amazon.CognitoIdentityProvider
 
         #endregion
         
+        #region  AdminRespondToAuthChallenge
+
+
+        /// <summary>
+        /// Responds to an authentication challenge, as an administrator.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AdminRespondToAuthChallenge service method.</param>
+        /// 
+        /// <returns>The response from the AdminRespondToAuthChallenge service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.AliasExistsException">
+        /// This exception is thrown when a user tries to confirm the account with an email or
+        /// phone number that has already been supplied as an alias from a different account.
+        /// This exception tells user that an account with this email or phone already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.CodeMismatchException">
+        /// This exception is thrown if the provided code does not match what the server was expecting.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ExpiredCodeException">
+        /// This exception is thrown if a code has expired.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidLambdaResponseException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid AWS
+        /// Lambda response.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidPasswordException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid password.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleAccessPolicyException">
+        /// This exception is returned when the role provided for SMS configuration does not have
+        /// permission to publish using Amazon SNS.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleTrustRelationshipException">
+        /// This exception is thrown when the trust relationship is invalid for the role provided
+        /// for SMS configuration. This can happen if you do not trust <b>cognito-idp.amazonaws.com</b>
+        /// or the external ID provided in the role does not match what is provided in the SMS
+        /// configuration for the user pool.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidUserPoolConfigurationException">
+        /// This exception is thrown when the user pool configuration is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.MFAMethodNotFoundException">
+        /// This exception is thrown when Amazon Cognito cannot find a multi-factor authentication
+        /// (MFA) method.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception gets thrown when a user is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
+        /// This exception is thrown when a password reset is required.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service cannot find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UnexpectedLambdaException">
+        /// This exception gets thrown when the Amazon Cognito service encounters an unexpected
+        /// exception with the AWS Lambda service.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserLambdaValidationException">
+        /// This exception gets thrown when the Amazon Cognito service encounters a user validation
+        /// exception with the AWS Lambda service.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotConfirmedException">
+        /// This exception is thrown when a user is not confirmed successfully.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
+        /// This exception is thrown when a user is not found.
+        /// </exception>
+        AdminRespondToAuthChallengeResponse AdminRespondToAuthChallenge(AdminRespondToAuthChallengeRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AdminRespondToAuthChallenge operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AdminRespondToAuthChallenge operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<AdminRespondToAuthChallengeResponse> AdminRespondToAuthChallengeAsync(AdminRespondToAuthChallengeRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  AdminSetUserSettings
 
 
@@ -399,6 +856,9 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="request">Container for the necessary parameters to execute the AdminSetUserSettings service method.</param>
         /// 
         /// <returns>The response from the AdminSetUserSettings service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
         /// </exception>
@@ -408,6 +868,9 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service cannot find the requested
         /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
+        /// This exception is thrown when a user is not found.
         /// </exception>
         AdminSetUserSettingsResponse AdminSetUserSettings(AdminSetUserSettingsRequest request);
 
@@ -422,6 +885,53 @@ namespace Amazon.CognitoIdentityProvider
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<AdminSetUserSettingsResponse> AdminSetUserSettingsAsync(AdminSetUserSettingsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  AdminUpdateDeviceStatus
+
+
+        /// <summary>
+        /// Updates the device status as an administrator.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AdminUpdateDeviceStatus service method.</param>
+        /// 
+        /// <returns>The response from the AdminUpdateDeviceStatus service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidUserPoolConfigurationException">
+        /// This exception is thrown when the user pool configuration is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception gets thrown when a user is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service cannot find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
+        /// This exception is thrown when a user is not found.
+        /// </exception>
+        AdminUpdateDeviceStatusResponse AdminUpdateDeviceStatus(AdminUpdateDeviceStatusRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AdminUpdateDeviceStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AdminUpdateDeviceStatus operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<AdminUpdateDeviceStatusResponse> AdminUpdateDeviceStatusAsync(AdminUpdateDeviceStatusRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -450,6 +960,9 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception gets thrown when a user is not authorized.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service cannot find the requested
         /// resource.
@@ -465,6 +978,9 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception gets thrown when the Amazon Cognito service encounters a user validation
         /// exception with the AWS Lambda service.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
+        /// This exception is thrown when a user is not found.
+        /// </exception>
         AdminUpdateUserAttributesResponse AdminUpdateUserAttributes(AdminUpdateUserAttributesRequest request);
 
 
@@ -478,6 +994,50 @@ namespace Amazon.CognitoIdentityProvider
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<AdminUpdateUserAttributesResponse> AdminUpdateUserAttributesAsync(AdminUpdateUserAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  AdminUserGlobalSignOut
+
+
+        /// <summary>
+        /// Signs out users from all devices, as an administrator.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AdminUserGlobalSignOut service method.</param>
+        /// 
+        /// <returns>The response from the AdminUserGlobalSignOut service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception gets thrown when a user is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service cannot find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
+        /// This exception is thrown when a user is not found.
+        /// </exception>
+        AdminUserGlobalSignOutResponse AdminUserGlobalSignOut(AdminUserGlobalSignOutRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AdminUserGlobalSignOut operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AdminUserGlobalSignOut operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<AdminUserGlobalSignOutResponse> AdminUserGlobalSignOutAsync(AdminUserGlobalSignOutRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -499,8 +1059,14 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidPasswordException">
         /// This exception is thrown when the Amazon Cognito service encounters an invalid password.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.LimitExceededException">
+        /// This exception is thrown when a user exceeds the limit for a requested AWS resource.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception gets thrown when a user is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
+        /// This exception is thrown when a password reset is required.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service cannot find the requested
@@ -508,6 +1074,12 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
         /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotConfirmedException">
+        /// This exception is thrown when a user is not confirmed successfully.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
+        /// This exception is thrown when a user is not found.
         /// </exception>
         ChangePasswordResponse ChangePassword(ChangePasswordRequest request);
 
@@ -522,6 +1094,70 @@ namespace Amazon.CognitoIdentityProvider
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<ChangePasswordResponse> ChangePasswordAsync(ChangePasswordRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ConfirmDevice
+
+
+        /// <summary>
+        /// Confirms tracking of the device. This API call is the call that beings device tracking.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ConfirmDevice service method.</param>
+        /// 
+        /// <returns>The response from the ConfirmDevice service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidLambdaResponseException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid AWS
+        /// Lambda response.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidPasswordException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid password.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidUserPoolConfigurationException">
+        /// This exception is thrown when the user pool configuration is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception gets thrown when a user is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
+        /// This exception is thrown when a password reset is required.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service cannot find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UsernameExistsException">
+        /// This exception is thrown when Amazon Cognito encounters a user name that already exists
+        /// in the user pool.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotConfirmedException">
+        /// This exception is thrown when a user is not confirmed successfully.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
+        /// This exception is thrown when a user is not found.
+        /// </exception>
+        ConfirmDeviceResponse ConfirmDevice(ConfirmDeviceRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ConfirmDevice operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ConfirmDevice operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ConfirmDeviceResponse> ConfirmDeviceAsync(ConfirmDeviceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -578,6 +1214,12 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserLambdaValidationException">
         /// This exception gets thrown when the Amazon Cognito service encounters a user validation
         /// exception with the AWS Lambda service.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotConfirmedException">
+        /// This exception is thrown when a user is not confirmed successfully.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
+        /// This exception is thrown when a user is not found.
         /// </exception>
         ConfirmForgotPasswordResponse ConfirmForgotPassword(ConfirmForgotPasswordRequest request);
 
@@ -650,6 +1292,9 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception gets thrown when the Amazon Cognito service encounters a user validation
         /// exception with the AWS Lambda service.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
+        /// This exception is thrown when a user is not found.
+        /// </exception>
         ConfirmSignUpResponse ConfirmSignUp(ConfirmSignUpRequest request);
 
 
@@ -666,6 +1311,53 @@ namespace Amazon.CognitoIdentityProvider
 
         #endregion
         
+        #region  CreateUserImportJob
+
+
+        /// <summary>
+        /// Creates the user import job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateUserImportJob service method.</param>
+        /// 
+        /// <returns>The response from the CreateUserImportJob service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.LimitExceededException">
+        /// This exception is thrown when a user exceeds the limit for a requested AWS resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception gets thrown when a user is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.PreconditionNotMetException">
+        /// This exception is thrown when a precondition is not met.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service cannot find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        CreateUserImportJobResponse CreateUserImportJob(CreateUserImportJobRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateUserImportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateUserImportJob operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<CreateUserImportJobResponse> CreateUserImportJobAsync(CreateUserImportJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateUserPool
 
 
@@ -678,11 +1370,28 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidEmailRoleAccessPolicyException">
+        /// This exception is thrown when Amazon Cognito is not allowed to use your email identity.
+        /// HTTP status code: 400.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleAccessPolicyException">
+        /// This exception is returned when the role provided for SMS configuration does not have
+        /// permission to publish using Amazon SNS.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleTrustRelationshipException">
+        /// This exception is thrown when the trust relationship is invalid for the role provided
+        /// for SMS configuration. This can happen if you do not trust <b>cognito-idp.amazonaws.com</b>
+        /// or the external ID provided in the role does not match what is provided in the SMS
+        /// configuration for the user pool.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.LimitExceededException">
         /// This exception is thrown when a user exceeds the limit for a requested AWS resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception gets thrown when a user is not authorized.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
         /// This exception gets thrown when the user has made too many requests for a given operation.
@@ -720,6 +1429,9 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.LimitExceededException">
         /// This exception is thrown when a user exceeds the limit for a requested AWS resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception gets thrown when a user is not authorized.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service cannot find the requested
@@ -762,12 +1474,21 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception gets thrown when a user is not authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
+        /// This exception is thrown when a password reset is required.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service cannot find the requested
         /// resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
         /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotConfirmedException">
+        /// This exception is thrown when a user is not confirmed successfully.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
+        /// This exception is thrown when a user is not found.
         /// </exception>
         DeleteUserResponse DeleteUser(DeleteUserRequest request);
 
@@ -803,12 +1524,21 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception gets thrown when a user is not authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
+        /// This exception is thrown when a password reset is required.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service cannot find the requested
         /// resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
         /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotConfirmedException">
+        /// This exception is thrown when a user is not confirmed successfully.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
+        /// This exception is thrown when a user is not found.
         /// </exception>
         DeleteUserAttributesResponse DeleteUserAttributes(DeleteUserAttributesRequest request);
 
@@ -841,12 +1571,19 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception gets thrown when a user is not authorized.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service cannot find the requested
         /// resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
         /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserImportInProgressException">
+        /// This exception is thrown when you are trying to modify a user pool while a user import
+        /// job is in progress for that pool.
         /// </exception>
         DeleteUserPoolResponse DeleteUserPool(DeleteUserPoolRequest request);
 
@@ -879,6 +1616,9 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception gets thrown when a user is not authorized.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service cannot find the requested
         /// resource.
@@ -902,6 +1642,47 @@ namespace Amazon.CognitoIdentityProvider
 
         #endregion
         
+        #region  DescribeUserImportJob
+
+
+        /// <summary>
+        /// Describes the user import job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeUserImportJob service method.</param>
+        /// 
+        /// <returns>The response from the DescribeUserImportJob service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception gets thrown when a user is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service cannot find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        DescribeUserImportJobResponse DescribeUserImportJob(DescribeUserImportJobRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeUserImportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeUserImportJob operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DescribeUserImportJobResponse> DescribeUserImportJobAsync(DescribeUserImportJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeUserPool
 
 
@@ -916,6 +1697,9 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception gets thrown when a user is not authorized.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service cannot find the requested
@@ -956,6 +1740,9 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception gets thrown when a user is not authorized.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service cannot find the requested
         /// resource.
@@ -979,6 +1766,59 @@ namespace Amazon.CognitoIdentityProvider
 
         #endregion
         
+        #region  ForgetDevice
+
+
+        /// <summary>
+        /// Forgets the specified device.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ForgetDevice service method.</param>
+        /// 
+        /// <returns>The response from the ForgetDevice service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidUserPoolConfigurationException">
+        /// This exception is thrown when the user pool configuration is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception gets thrown when a user is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
+        /// This exception is thrown when a password reset is required.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service cannot find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotConfirmedException">
+        /// This exception is thrown when a user is not confirmed successfully.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
+        /// This exception is thrown when a user is not found.
+        /// </exception>
+        ForgetDeviceResponse ForgetDevice(ForgetDeviceRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ForgetDevice operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ForgetDevice operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ForgetDeviceResponse> ForgetDeviceAsync(ForgetDeviceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ForgotPassword
 
 
@@ -988,8 +1828,15 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="request">Container for the necessary parameters to execute the ForgotPassword service method.</param>
         /// 
         /// <returns>The response from the ForgotPassword service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.CodeDeliveryFailureException">
+        /// This exception is thrown when a verification code fails to deliver successfully.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidEmailRoleAccessPolicyException">
+        /// This exception is thrown when Amazon Cognito is not allowed to use your email identity.
+        /// HTTP status code: 400.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidLambdaResponseException">
         /// This exception is thrown when the Amazon Cognito service encounters an invalid AWS
@@ -997,6 +1844,16 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleAccessPolicyException">
+        /// This exception is returned when the role provided for SMS configuration does not have
+        /// permission to publish using Amazon SNS.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleTrustRelationshipException">
+        /// This exception is thrown when the trust relationship is invalid for the role provided
+        /// for SMS configuration. This can happen if you do not trust <b>cognito-idp.amazonaws.com</b>
+        /// or the external ID provided in the role does not match what is provided in the SMS
+        /// configuration for the user pool.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.LimitExceededException">
         /// This exception is thrown when a user exceeds the limit for a requested AWS resource.
@@ -1019,6 +1876,12 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception gets thrown when the Amazon Cognito service encounters a user validation
         /// exception with the AWS Lambda service.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotConfirmedException">
+        /// This exception is thrown when a user is not confirmed successfully.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
+        /// This exception is thrown when a user is not found.
+        /// </exception>
         ForgotPasswordResponse ForgotPassword(ForgotPasswordRequest request);
 
 
@@ -1032,6 +1895,101 @@ namespace Amazon.CognitoIdentityProvider
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<ForgotPasswordResponse> ForgotPasswordAsync(ForgotPasswordRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetCSVHeader
+
+
+        /// <summary>
+        /// Gets the header information for the .csv file to be used as input for the user import
+        /// job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCSVHeader service method.</param>
+        /// 
+        /// <returns>The response from the GetCSVHeader service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception gets thrown when a user is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service cannot find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        GetCSVHeaderResponse GetCSVHeader(GetCSVHeaderRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetCSVHeader operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetCSVHeader operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetCSVHeaderResponse> GetCSVHeaderAsync(GetCSVHeaderRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetDevice
+
+
+        /// <summary>
+        /// Gets the device.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDevice service method.</param>
+        /// 
+        /// <returns>The response from the GetDevice service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidUserPoolConfigurationException">
+        /// This exception is thrown when the user pool configuration is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception gets thrown when a user is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
+        /// This exception is thrown when a password reset is required.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service cannot find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotConfirmedException">
+        /// This exception is thrown when a user is not confirmed successfully.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
+        /// This exception is thrown when a user is not found.
+        /// </exception>
+        GetDeviceResponse GetDevice(GetDeviceRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDevice operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDevice operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetDeviceResponse> GetDeviceAsync(GetDeviceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1053,12 +2011,21 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception gets thrown when a user is not authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
+        /// This exception is thrown when a password reset is required.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service cannot find the requested
         /// resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
         /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotConfirmedException">
+        /// This exception is thrown when a user is not confirmed successfully.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
+        /// This exception is thrown when a user is not found.
         /// </exception>
         GetUserResponse GetUser(GetUserRequest request);
 
@@ -1085,8 +2052,15 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="request">Container for the necessary parameters to execute the GetUserAttributeVerificationCode service method.</param>
         /// 
         /// <returns>The response from the GetUserAttributeVerificationCode service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.CodeDeliveryFailureException">
+        /// This exception is thrown when a verification code fails to deliver successfully.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidEmailRoleAccessPolicyException">
+        /// This exception is thrown when Amazon Cognito is not allowed to use your email identity.
+        /// HTTP status code: 400.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidLambdaResponseException">
         /// This exception is thrown when the Amazon Cognito service encounters an invalid AWS
@@ -1095,8 +2069,24 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleAccessPolicyException">
+        /// This exception is returned when the role provided for SMS configuration does not have
+        /// permission to publish using Amazon SNS.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleTrustRelationshipException">
+        /// This exception is thrown when the trust relationship is invalid for the role provided
+        /// for SMS configuration. This can happen if you do not trust <b>cognito-idp.amazonaws.com</b>
+        /// or the external ID provided in the role does not match what is provided in the SMS
+        /// configuration for the user pool.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.LimitExceededException">
+        /// This exception is thrown when a user exceeds the limit for a requested AWS resource.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception gets thrown when a user is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
+        /// This exception is thrown when a password reset is required.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service cannot find the requested
@@ -1112,6 +2102,12 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserLambdaValidationException">
         /// This exception gets thrown when the Amazon Cognito service encounters a user validation
         /// exception with the AWS Lambda service.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotConfirmedException">
+        /// This exception is thrown when a user is not confirmed successfully.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
+        /// This exception is thrown when a user is not found.
         /// </exception>
         GetUserAttributeVerificationCodeResponse GetUserAttributeVerificationCode(GetUserAttributeVerificationCodeRequest request);
 
@@ -1129,6 +2125,212 @@ namespace Amazon.CognitoIdentityProvider
 
         #endregion
         
+        #region  GlobalSignOut
+
+
+        /// <summary>
+        /// Signs out users from all devices.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GlobalSignOut service method.</param>
+        /// 
+        /// <returns>The response from the GlobalSignOut service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception gets thrown when a user is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
+        /// This exception is thrown when a password reset is required.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service cannot find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotConfirmedException">
+        /// This exception is thrown when a user is not confirmed successfully.
+        /// </exception>
+        GlobalSignOutResponse GlobalSignOut(GlobalSignOutRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GlobalSignOut operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GlobalSignOut operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GlobalSignOutResponse> GlobalSignOutAsync(GlobalSignOutRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  InitiateAuth
+
+
+        /// <summary>
+        /// Initiates the authentication flow.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the InitiateAuth service method.</param>
+        /// 
+        /// <returns>The response from the InitiateAuth service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidLambdaResponseException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid AWS
+        /// Lambda response.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidUserPoolConfigurationException">
+        /// This exception is thrown when the user pool configuration is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception gets thrown when a user is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
+        /// This exception is thrown when a password reset is required.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service cannot find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UnexpectedLambdaException">
+        /// This exception gets thrown when the Amazon Cognito service encounters an unexpected
+        /// exception with the AWS Lambda service.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserLambdaValidationException">
+        /// This exception gets thrown when the Amazon Cognito service encounters a user validation
+        /// exception with the AWS Lambda service.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotConfirmedException">
+        /// This exception is thrown when a user is not confirmed successfully.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
+        /// This exception is thrown when a user is not found.
+        /// </exception>
+        InitiateAuthResponse InitiateAuth(InitiateAuthRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the InitiateAuth operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the InitiateAuth operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<InitiateAuthResponse> InitiateAuthAsync(InitiateAuthRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListDevices
+
+
+        /// <summary>
+        /// Lists the devices.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDevices service method.</param>
+        /// 
+        /// <returns>The response from the ListDevices service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidUserPoolConfigurationException">
+        /// This exception is thrown when the user pool configuration is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception gets thrown when a user is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
+        /// This exception is thrown when a password reset is required.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service cannot find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotConfirmedException">
+        /// This exception is thrown when a user is not confirmed successfully.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
+        /// This exception is thrown when a user is not found.
+        /// </exception>
+        ListDevicesResponse ListDevices(ListDevicesRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDevices operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDevices operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ListDevicesResponse> ListDevicesAsync(ListDevicesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListUserImportJobs
+
+
+        /// <summary>
+        /// Lists the user import jobs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListUserImportJobs service method.</param>
+        /// 
+        /// <returns>The response from the ListUserImportJobs service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception gets thrown when a user is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service cannot find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        ListUserImportJobsResponse ListUserImportJobs(ListUserImportJobsRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListUserImportJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListUserImportJobs operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ListUserImportJobsResponse> ListUserImportJobsAsync(ListUserImportJobsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListUserPoolClients
 
 
@@ -1143,6 +2345,9 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception gets thrown when a user is not authorized.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service cannot find the requested
@@ -1182,6 +2387,9 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception gets thrown when a user is not authorized.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
         /// This exception gets thrown when the user has made too many requests for a given operation.
         /// </exception>
@@ -1216,6 +2424,9 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception gets thrown when a user is not authorized.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service cannot find the requested
         /// resource.
@@ -1249,8 +2460,15 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="request">Container for the necessary parameters to execute the ResendConfirmationCode service method.</param>
         /// 
         /// <returns>The response from the ResendConfirmationCode service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.CodeDeliveryFailureException">
+        /// This exception is thrown when a verification code fails to deliver successfully.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidEmailRoleAccessPolicyException">
+        /// This exception is thrown when Amazon Cognito is not allowed to use your email identity.
+        /// HTTP status code: 400.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidLambdaResponseException">
         /// This exception is thrown when the Amazon Cognito service encounters an invalid AWS
@@ -1258,6 +2476,16 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleAccessPolicyException">
+        /// This exception is returned when the role provided for SMS configuration does not have
+        /// permission to publish using Amazon SNS.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleTrustRelationshipException">
+        /// This exception is thrown when the trust relationship is invalid for the role provided
+        /// for SMS configuration. This can happen if you do not trust <b>cognito-idp.amazonaws.com</b>
+        /// or the external ID provided in the role does not match what is provided in the SMS
+        /// configuration for the user pool.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.LimitExceededException">
         /// This exception is thrown when a user exceeds the limit for a requested AWS resource.
@@ -1280,6 +2508,9 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception gets thrown when the Amazon Cognito service encounters a user validation
         /// exception with the AWS Lambda service.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
+        /// This exception is thrown when a user is not found.
+        /// </exception>
         ResendConfirmationCodeResponse ResendConfirmationCode(ResendConfirmationCodeRequest request);
 
 
@@ -1296,6 +2527,99 @@ namespace Amazon.CognitoIdentityProvider
 
         #endregion
         
+        #region  RespondToAuthChallenge
+
+
+        /// <summary>
+        /// Responds to the authentication challenge.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RespondToAuthChallenge service method.</param>
+        /// 
+        /// <returns>The response from the RespondToAuthChallenge service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.AliasExistsException">
+        /// This exception is thrown when a user tries to confirm the account with an email or
+        /// phone number that has already been supplied as an alias from a different account.
+        /// This exception tells user that an account with this email or phone already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.CodeMismatchException">
+        /// This exception is thrown if the provided code does not match what the server was expecting.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ExpiredCodeException">
+        /// This exception is thrown if a code has expired.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidLambdaResponseException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid AWS
+        /// Lambda response.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidPasswordException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid password.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleAccessPolicyException">
+        /// This exception is returned when the role provided for SMS configuration does not have
+        /// permission to publish using Amazon SNS.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleTrustRelationshipException">
+        /// This exception is thrown when the trust relationship is invalid for the role provided
+        /// for SMS configuration. This can happen if you do not trust <b>cognito-idp.amazonaws.com</b>
+        /// or the external ID provided in the role does not match what is provided in the SMS
+        /// configuration for the user pool.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidUserPoolConfigurationException">
+        /// This exception is thrown when the user pool configuration is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.MFAMethodNotFoundException">
+        /// This exception is thrown when Amazon Cognito cannot find a multi-factor authentication
+        /// (MFA) method.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception gets thrown when a user is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
+        /// This exception is thrown when a password reset is required.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service cannot find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UnexpectedLambdaException">
+        /// This exception gets thrown when the Amazon Cognito service encounters an unexpected
+        /// exception with the AWS Lambda service.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserLambdaValidationException">
+        /// This exception gets thrown when the Amazon Cognito service encounters a user validation
+        /// exception with the AWS Lambda service.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotConfirmedException">
+        /// This exception is thrown when a user is not confirmed successfully.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
+        /// This exception is thrown when a user is not found.
+        /// </exception>
+        RespondToAuthChallengeResponse RespondToAuthChallenge(RespondToAuthChallengeRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RespondToAuthChallenge operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RespondToAuthChallenge operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<RespondToAuthChallengeResponse> RespondToAuthChallengeAsync(RespondToAuthChallengeRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  SetUserSettings
 
 
@@ -1307,15 +2631,27 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="request">Container for the necessary parameters to execute the SetUserSettings service method.</param>
         /// 
         /// <returns>The response from the SetUserSettings service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception gets thrown when a user is not authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
+        /// This exception is thrown when a password reset is required.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service cannot find the requested
         /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotConfirmedException">
+        /// This exception is thrown when a user is not confirmed successfully.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
+        /// This exception is thrown when a user is not found.
         /// </exception>
         SetUserSettingsResponse SetUserSettings(SetUserSettingsRequest request);
 
@@ -1343,8 +2679,15 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="request">Container for the necessary parameters to execute the SignUp service method.</param>
         /// 
         /// <returns>The response from the SignUp service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.CodeDeliveryFailureException">
+        /// This exception is thrown when a verification code fails to deliver successfully.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidEmailRoleAccessPolicyException">
+        /// This exception is thrown when Amazon Cognito is not allowed to use your email identity.
+        /// HTTP status code: 400.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidLambdaResponseException">
         /// This exception is thrown when the Amazon Cognito service encounters an invalid AWS
@@ -1355,6 +2698,16 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidPasswordException">
         /// This exception is thrown when the Amazon Cognito service encounters an invalid password.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleAccessPolicyException">
+        /// This exception is returned when the role provided for SMS configuration does not have
+        /// permission to publish using Amazon SNS.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleTrustRelationshipException">
+        /// This exception is thrown when the trust relationship is invalid for the role provided
+        /// for SMS configuration. This can happen if you do not trust <b>cognito-idp.amazonaws.com</b>
+        /// or the external ID provided in the role does not match what is provided in the SMS
+        /// configuration for the user pool.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception gets thrown when a user is not authorized.
@@ -1394,6 +2747,147 @@ namespace Amazon.CognitoIdentityProvider
 
         #endregion
         
+        #region  StartUserImportJob
+
+
+        /// <summary>
+        /// Starts the user import.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartUserImportJob service method.</param>
+        /// 
+        /// <returns>The response from the StartUserImportJob service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception gets thrown when a user is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.PreconditionNotMetException">
+        /// This exception is thrown when a precondition is not met.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service cannot find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        StartUserImportJobResponse StartUserImportJob(StartUserImportJobRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartUserImportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartUserImportJob operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<StartUserImportJobResponse> StartUserImportJobAsync(StartUserImportJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  StopUserImportJob
+
+
+        /// <summary>
+        /// Stops the user import job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopUserImportJob service method.</param>
+        /// 
+        /// <returns>The response from the StopUserImportJob service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception gets thrown when a user is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.PreconditionNotMetException">
+        /// This exception is thrown when a precondition is not met.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service cannot find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        StopUserImportJobResponse StopUserImportJob(StopUserImportJobRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopUserImportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopUserImportJob operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<StopUserImportJobResponse> StopUserImportJobAsync(StopUserImportJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateDeviceStatus
+
+
+        /// <summary>
+        /// Updates the device status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDeviceStatus service method.</param>
+        /// 
+        /// <returns>The response from the UpdateDeviceStatus service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidUserPoolConfigurationException">
+        /// This exception is thrown when the user pool configuration is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception gets thrown when a user is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
+        /// This exception is thrown when a password reset is required.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service cannot find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotConfirmedException">
+        /// This exception is thrown when a user is not confirmed successfully.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
+        /// This exception is thrown when a user is not found.
+        /// </exception>
+        UpdateDeviceStatusResponse UpdateDeviceStatus(UpdateDeviceStatusRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateDeviceStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDeviceStatus operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<UpdateDeviceStatusResponse> UpdateDeviceStatusAsync(UpdateDeviceStatusRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  UpdateUserAttributes
 
 
@@ -1408,6 +2902,9 @@ namespace Amazon.CognitoIdentityProvider
         /// phone number that has already been supplied as an alias from a different account.
         /// This exception tells user that an account with this email or phone already exists.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.CodeDeliveryFailureException">
+        /// This exception is thrown when a verification code fails to deliver successfully.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.CodeMismatchException">
         /// This exception is thrown if the provided code does not match what the server was expecting.
         /// </exception>
@@ -1417,6 +2914,10 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidEmailRoleAccessPolicyException">
+        /// This exception is thrown when Amazon Cognito is not allowed to use your email identity.
+        /// HTTP status code: 400.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidLambdaResponseException">
         /// This exception is thrown when the Amazon Cognito service encounters an invalid AWS
         /// Lambda response.
@@ -1424,8 +2925,21 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleAccessPolicyException">
+        /// This exception is returned when the role provided for SMS configuration does not have
+        /// permission to publish using Amazon SNS.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleTrustRelationshipException">
+        /// This exception is thrown when the trust relationship is invalid for the role provided
+        /// for SMS configuration. This can happen if you do not trust <b>cognito-idp.amazonaws.com</b>
+        /// or the external ID provided in the role does not match what is provided in the SMS
+        /// configuration for the user pool.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception gets thrown when a user is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
+        /// This exception is thrown when a password reset is required.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service cannot find the requested
@@ -1441,6 +2955,12 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserLambdaValidationException">
         /// This exception gets thrown when the Amazon Cognito service encounters a user validation
         /// exception with the AWS Lambda service.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotConfirmedException">
+        /// This exception is thrown when a user is not confirmed successfully.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
+        /// This exception is thrown when a user is not found.
         /// </exception>
         UpdateUserAttributesResponse UpdateUserAttributes(UpdateUserAttributesRequest request);
 
@@ -1473,8 +2993,25 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidEmailRoleAccessPolicyException">
+        /// This exception is thrown when Amazon Cognito is not allowed to use your email identity.
+        /// HTTP status code: 400.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleAccessPolicyException">
+        /// This exception is returned when the role provided for SMS configuration does not have
+        /// permission to publish using Amazon SNS.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleTrustRelationshipException">
+        /// This exception is thrown when the trust relationship is invalid for the role provided
+        /// for SMS configuration. This can happen if you do not trust <b>cognito-idp.amazonaws.com</b>
+        /// or the external ID provided in the role does not match what is provided in the SMS
+        /// configuration for the user pool.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception gets thrown when a user is not authorized.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service cannot find the requested
@@ -1482,6 +3019,10 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
         /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserImportInProgressException">
+        /// This exception is thrown when you are trying to modify a user pool while a user import
+        /// job is in progress for that pool.
         /// </exception>
         UpdateUserPoolResponse UpdateUserPool(UpdateUserPoolRequest request);
 
@@ -1513,6 +3054,9 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception gets thrown when a user is not authorized.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service cannot find the requested
@@ -1558,8 +3102,14 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.LimitExceededException">
+        /// This exception is thrown when a user exceeds the limit for a requested AWS resource.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception gets thrown when a user is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
+        /// This exception is thrown when a password reset is required.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service cannot find the requested
@@ -1567,6 +3117,12 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
         /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotConfirmedException">
+        /// This exception is thrown when a user is not confirmed successfully.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
+        /// This exception is thrown when a user is not found.
         /// </exception>
         VerifyUserAttributeResponse VerifyUserAttribute(VerifyUserAttributeRequest request);
 

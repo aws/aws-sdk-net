@@ -39,6 +39,7 @@ namespace Amazon.S3.Model
         private List<PartDetail> parts = new List<PartDetail>();
         private DateTime? abortDate;
         private string abortRuleId;
+        private RequestCharged requestCharged;
 
         /// <summary>
         /// Name of the bucketName to which the multipart upload was initiated.
@@ -247,6 +248,24 @@ namespace Amazon.S3.Model
         internal bool IsSetAbortRuleId()
         {
             return this.abortRuleId != null;
+        }
+
+        /// <summary>
+        /// If present, indicates that the requester was successfully charged for the request.
+        /// </summary>
+        public RequestCharged RequestCharged
+        {
+            get { return this.requestCharged; }
+            set { this.requestCharged = value; }
+        }
+
+        /// <summary>
+        /// Checks to see if RequestCharged is set.
+        /// </summary>
+        /// <returns>true, if RequestCharged property is set.</returns>
+        internal bool IsSetRequestCharged()
+        {
+            return requestCharged != null;
         }
     }
 }

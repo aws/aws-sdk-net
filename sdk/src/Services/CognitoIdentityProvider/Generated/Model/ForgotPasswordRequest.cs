@@ -77,8 +77,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Username. 
         /// <para>
-        /// The user name of the user for whom you want to enter a code to retrieve a forgotten
-        /// password.
+        /// The user name of the user for whom you want to enter a code to reset a forgotten password.
         /// </para>
         /// </summary>
         public string Username

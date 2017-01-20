@@ -21,6 +21,7 @@
 using System;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.AWSMarketplaceMetering.Model;
 
 namespace Amazon.AWSMarketplaceMetering
@@ -31,7 +32,7 @@ namespace Amazon.AWSMarketplaceMetering
     /// AWS Marketplace Metering Service 
     /// <para>
     /// This reference provides descriptions of the low-level AWS Marketplace Metering Service
-    /// API. 
+    /// API.
     /// </para>
     ///  
     /// <para>
@@ -39,17 +40,73 @@ namespace Amazon.AWSMarketplaceMetering
     /// </para>
     ///  
     /// <para>
-    /// <b>Submitting Metering Records</b>
+    ///  <b>Submitting Metering Records</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// <i>MeterUsage</i>- Submits the metering record for a Marketplace product.
+    ///  <i>MeterUsage</i>- Submits the metering record for a Marketplace product. 
     /// </para>
     ///  </li> </ul>
     /// </summary>
-    public partial interface IAmazonAWSMarketplaceMetering : IDisposable
+    public partial interface IAmazonAWSMarketplaceMetering : IAmazonService, IDisposable
     {
 
+        
+        #region  BatchMeterUsage
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchMeterUsage service method.</param>
+        /// 
+        /// <returns>The response from the BatchMeterUsage service method, as returned by AWSMarketplaceMetering.</returns>
+        /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InternalServiceErrorException">
+        /// An internal error has occurred. Retry your request. If the problem persists, post
+        /// a message with details on the AWS forums.
+        /// </exception>
+        /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InvalidCustomerIdentifierException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InvalidProductCodeException">
+        /// The product code passed does not match the product code used for publishing the product.
+        /// </exception>
+        /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InvalidUsageDimensionException">
+        /// The usage dimension does not match one of the UsageDimensions associated with products.
+        /// </exception>
+        /// <exception cref="Amazon.AWSMarketplaceMetering.Model.ThrottlingException">
+        /// The calls to the MeterUsage API are throttled.
+        /// </exception>
+        /// <exception cref="Amazon.AWSMarketplaceMetering.Model.TimestampOutOfBoundsException">
+        /// The timestamp value passed in the meterUsage() is out of allowed range.
+        /// </exception>
+        BatchMeterUsageResponse BatchMeterUsage(BatchMeterUsageRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchMeterUsage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchMeterUsage operation on AmazonAWSMarketplaceMeteringClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchMeterUsage
+        ///         operation.</returns>
+        IAsyncResult BeginBatchMeterUsage(BatchMeterUsageRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchMeterUsage operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchMeterUsage.</param>
+        /// 
+        /// <returns>Returns a  BatchMeterUsageResult from AWSMarketplaceMetering.</returns>
+        BatchMeterUsageResponse EndBatchMeterUsage(IAsyncResult asyncResult);
+
+        #endregion
         
         #region  MeterUsage
 
@@ -110,6 +167,56 @@ namespace Amazon.AWSMarketplaceMetering
         /// 
         /// <returns>Returns a  MeterUsageResult from AWSMarketplaceMetering.</returns>
         MeterUsageResponse EndMeterUsage(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ResolveCustomer
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ResolveCustomer service method.</param>
+        /// 
+        /// <returns>The response from the ResolveCustomer service method, as returned by AWSMarketplaceMetering.</returns>
+        /// <exception cref="Amazon.AWSMarketplaceMetering.Model.ExpiredTokenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InternalServiceErrorException">
+        /// An internal error has occurred. Retry your request. If the problem persists, post
+        /// a message with details on the AWS forums.
+        /// </exception>
+        /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InvalidTokenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.AWSMarketplaceMetering.Model.ThrottlingException">
+        /// The calls to the MeterUsage API are throttled.
+        /// </exception>
+        ResolveCustomerResponse ResolveCustomer(ResolveCustomerRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ResolveCustomer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ResolveCustomer operation on AmazonAWSMarketplaceMeteringClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndResolveCustomer
+        ///         operation.</returns>
+        IAsyncResult BeginResolveCustomer(ResolveCustomerRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ResolveCustomer operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginResolveCustomer.</param>
+        /// 
+        /// <returns>Returns a  ResolveCustomerResult from AWSMarketplaceMetering.</returns>
+        ResolveCustomerResponse EndResolveCustomer(IAsyncResult asyncResult);
 
         #endregion
         

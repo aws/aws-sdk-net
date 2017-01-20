@@ -41,6 +41,7 @@ namespace Amazon.CloudFormation.Model
         private OnFailure _onFailure;
         private List<Parameter> _parameters = new List<Parameter>();
         private List<string> _resourceTypes = new List<string>();
+        private string _roleARN;
         private string _stackName;
         private string _stackPolicyBody;
         private string _stackPolicyURL;
@@ -52,16 +53,16 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Capabilities. 
         /// <para>
-        /// A list of capabilities that you must specify before AWS CloudFormation can create
-        /// certain stacks. Some stack templates might include resources that can affect permissions
-        /// in your AWS account, for example, by creating new AWS Identity and Access Management
+        /// A list of values that you must specify before AWS CloudFormation can create certain
+        /// stacks. Some stack templates might include resources that can affect permissions in
+        /// your AWS account, for example, by creating new AWS Identity and Access Management
         /// (IAM) users. For those stacks, you must explicitly acknowledge their capabilities
         /// by specifying this parameter.
         /// </para>
         ///  
         /// <para>
-        /// Currently, the only valid value is <code>CAPABILITY_IAM</code>, which is required
-        /// for the following resources: <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
+        /// The only valid values are <code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code>.
+        /// The following resources require you to specify this parameter: <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
         /// AWS::IAM::AccessKey</a>, <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
         /// AWS::IAM::Group</a>, <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
         /// AWS::IAM::InstanceProfile</a>, <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
@@ -70,9 +71,19 @@ namespace Amazon.CloudFormation.Model
         /// AWS::IAM::User</a>, and <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
         /// AWS::IAM::UserToGroupAddition</a>. If your stack template contains these resources,
         /// we recommend that you review all permissions associated with them and edit their permissions
-        /// if necessary. If your template contains any of the listed resources and you don't
+        /// if necessary.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you have IAM resources, you can specify either capability. If you have IAM resources
+        /// with custom names, you must specify <code>CAPABILITY_NAMED_IAM</code>. If you don't
         /// specify this parameter, this action returns an <code>InsufficientCapabilities</code>
         /// error.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
+        /// IAM Resources in AWS CloudFormation Templates</a>.
         /// </para>
         /// </summary>
         public List<string> Capabilities
@@ -209,6 +220,35 @@ namespace Amazon.CloudFormation.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RoleARN. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role
+        /// that AWS CloudFormation assumes to create the stack. AWS CloudFormation uses the role's
+        /// credentials to make calls on your behalf. AWS CloudFormation always uses this role
+        /// for all future operations on the stack. As long as users have permission to operate
+        /// on the stack, AWS CloudFormation uses this role even if the users don't have permission
+        /// to pass it. Ensure that the role grants least privilege.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you don't specify a value, AWS CloudFormation uses the role that was previously
+        /// associated with the stack. If no role is available, AWS CloudFormation uses a temporary
+        /// session that is generated from your user credentials.
+        /// </para>
+        /// </summary>
+        public string RoleARN
+        {
+            get { return this._roleARN; }
+            set { this._roleARN = value; }
+        }
+
+        // Check to see if RoleARN property is set
+        internal bool IsSetRoleARN()
+        {
+            return this._roleARN != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property StackName. 
         /// <para>
         /// The name that is associated with the stack. The name must be unique in the region
@@ -237,8 +277,8 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property StackPolicyBody. 
         /// <para>
         /// Structure containing the stack policy body. For more information, go to <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html">
-        /// Prevent Updates to Stack Resources</a> in the AWS CloudFormation User Guide. You can
-        /// specify either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code>
+        /// Prevent Updates to Stack Resources</a> in the <i>AWS CloudFormation User Guide</i>.
+        /// You can specify either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code>
         /// parameter, but not both.
         /// </para>
         /// </summary>
@@ -257,8 +297,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property StackPolicyURL. 
         /// <para>
-        /// Location of a file containing the stack policy. The URL must point to a policy (max
-        /// size: 16KB) located in an S3 bucket in the same region as the stack. You can specify
+        /// Location of a file containing the stack policy. The URL must point to a policy (maximum
+        /// size: 16 KB) located in an S3 bucket in the same region as the stack. You can specify
         /// either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter,
         /// but not both.
         /// </para>

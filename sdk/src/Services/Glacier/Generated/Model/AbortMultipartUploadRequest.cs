@@ -53,7 +53,7 @@ namespace Amazon.Glacier.Model
     /// </para>
     ///  
     /// <para>
-    ///  For conceptual information and underlying REST API, go to <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html">Working
+    ///  For conceptual information and underlying REST API, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html">Working
     /// with Archives in Amazon Glacier</a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-abort-upload.html">Abort
     /// Multipart Upload</a> in the <i>Amazon Glacier Developer Guide</i>. 
     /// </para>
@@ -83,7 +83,7 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Instantiates AbortMultipartUploadRequest with the parameterized properties
         /// </summary>
-        /// <param name="accountId">The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens (apos-apos) in the ID.</param>
+        /// <param name="accountId">The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</param>
         /// <param name="vaultName">The name of the vault.</param>
         /// <param name="uploadId">The upload ID of the multipart upload to delete.</param>
         public AbortMultipartUploadRequest(string accountId, string vaultName, string uploadId)
@@ -97,10 +97,10 @@ namespace Amazon.Glacier.Model
         /// Gets and sets the property AccountId. 
         /// <para>
         /// The <code>AccountId</code> value is the AWS account ID of the account that owns the
-        /// vault. You can either specify an AWS account ID or optionally a single apos<code>-</code>apos
+        /// vault. You can either specify an AWS account ID or optionally a single '<code>-</code>'
         /// (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the
         /// credentials used to sign the request. If you use an account ID, do not include any
-        /// hyphens (apos-apos) in the ID.
+        /// hyphens ('-') in the ID.
         /// </para>
         /// </summary>
         public string AccountId

@@ -54,9 +54,15 @@ namespace Amazon.CognitoSync.SyncManager.Internal
             SetupDatabase();
         }
 #endif
-        #endregion
+#if PCL
+        static SQLiteLocalStorage()
+        {
+            SQLitePCL.Batteries.Init();
+        }
+#endif
+#endregion
 
-        #region dispose methods
+#region dispose methods
         /// <summary>
         /// Releases the resources consumed by this object
         /// </summary>
@@ -65,9 +71,9 @@ namespace Amazon.CognitoSync.SyncManager.Internal
             Dispose(true);
             GC.SuppressFinalize(this);
         }
-        #endregion
+#endregion
 
-        #region table datastructure
+#region table datastructure
 
         internal const string TABLE_DATASETS = "datasets";
         internal const string TABLE_RECORDS = "records";
@@ -250,18 +256,18 @@ namespace Amazon.CognitoSync.SyncManager.Internal
             }
         }
 
-        #endregion
+#endregion
 
-        #region helper class
+#region helper class
         internal class Statement
         {
             public string Query { get; set; }
             public object[] Parameters { get; set; }
         }
 
-        #endregion
+#endregion
 
-        #region helper methods
+#region helper methods
 
         internal static byte[] ToUtf8(string sText)
         {
@@ -273,9 +279,9 @@ namespace Amazon.CognitoSync.SyncManager.Internal
             return byteArray;
         }
 
-        #endregion
+#endregion
 
-        #region public api's
+#region public api's
         /// <summary>
         /// Create a dataset 
         /// </summary>
@@ -513,9 +519,8 @@ namespace Amazon.CognitoSync.SyncManager.Internal
              * Grab an instance of the record from the local store with the remote change's 
              * key and the snapshot version.
              * 1) If both are null the remote change is new and we should save. 
-             * 2) If both exist but the values and sync counts have changed, 
-             *    it has changed locally and we shouldn't overwrite with the remote changes, 
-             *    which will still exist in remote. 
+             * 2) If both exist but the value has changed locally we shouldn't overwrite with the remote changes, 
+             *    which will still exist in remote, but should update the sync count to avoid a false-conflict later. 
              * 3) If both exist and the values have not changed, we should save the remote change.	
              * 4) If the current check exists but it wasn't in the snapshot, we should save.	
              */
@@ -531,16 +536,54 @@ namespace Amazon.CognitoSync.SyncManager.Internal
             {
                 Record databaseRecord = this.GetRecord(identityId, datasetName, record.Key);
                 Record oldDatabaseRecord = localRecordMap.ContainsKey(record.Key) ? localRecordMap[record.Key] : null;
-                if (databaseRecord != null && oldDatabaseRecord != null
-                        && (!StringUtils.Equals(databaseRecord.Value, oldDatabaseRecord.Value)
-                        || databaseRecord.SyncCount != oldDatabaseRecord.SyncCount
-                        || !StringUtils.Equals(databaseRecord.LastModifiedBy, oldDatabaseRecord.LastModifiedBy)))
+
+                if (databaseRecord != null && oldDatabaseRecord != null)
+                {
+                    // The record exists both before and after the update locally, but has it changed?
+
+                    if (databaseRecord.SyncCount != oldDatabaseRecord.SyncCount
+                        || !StringUtils.Equals(databaseRecord.LastModifiedBy, oldDatabaseRecord.LastModifiedBy))
+                    {
+                        continue;
+                    }
+
+                    if (!StringUtils.Equals(databaseRecord.Value, oldDatabaseRecord.Value))
+                    {
+                        if (StringUtils.Equals(record.Value, oldDatabaseRecord.Value))
+                        {
+                            // The value has changed, so this is a local change during the push record operation.
+                            // Avoid a future conflict by updating the metadata so that it looks like the modifications that 
+                            // occurred during the put record operation happened after the put operation completed.
+                            Record resolvedRecord =
+                                new Record(
+                                    record.Key,
+                                    databaseRecord.Value,
+                                    record.SyncCount,
+                                    record.LastModifiedDate,
+                                    record.LastModifiedBy,
+                                    databaseRecord.DeviceLastModifiedDate,
+                                    true
+                                    );
+
+                            UpdateOrInsertRecord(identityId, datasetName, resolvedRecord);
+                        }
+                        else
                         {
                             continue;
                         }
+                        
+                    }
+                    else
+                    {
                         UpdateOrInsertRecord(identityId, datasetName, record);
                     }
                 }
+                else
+                {
+                    UpdateOrInsertRecord(identityId, datasetName, record);
+                }
+            }
+        }
 
         /// <summary>
         /// Deletes a dataset. All the records associated with dataset are cleared and 
@@ -918,9 +961,9 @@ namespace Amazon.CognitoSync.SyncManager.Internal
             }
         }
 
-        #endregion
+#endregion
 
-        #region private methods
+#region private methods
 
 #if BCL
         [System.Security.SecuritySafeCritical]
@@ -1029,7 +1072,7 @@ namespace Amazon.CognitoSync.SyncManager.Internal
             }
             return oldNameSet;
         }
-        #endregion
+#endregion
     }
 }
 

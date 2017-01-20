@@ -34,6 +34,66 @@ namespace <#=this.Config.Namespace#>
 #>
         #region Constructors
 
+#if CORECLR
+	
+        /// <summary>
+        /// Constructs Amazon<#=this.Config.BaseName#>Client with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
+        public Amazon<#=this.Config.BaseName#>Client()
+            : base(FallbackCredentialsFactory.GetCredentials(), new Amazon<#=this.Config.BaseName#>Config()) { }
+
+        /// <summary>
+        /// Constructs Amazon<#=this.Config.BaseName#>Client with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
+        /// <param name="region">The region to connect.</param>
+        public Amazon<#=this.Config.BaseName#>Client(RegionEndpoint region)
+            : base(FallbackCredentialsFactory.GetCredentials(), new Amazon<#=this.Config.BaseName#>Config{RegionEndpoint = region}) { }
+
+        /// <summary>
+        /// Constructs Amazon<#=this.Config.BaseName#>Client with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
+        /// <param name="config">The Amazon<#=this.Config.BaseName#>Client Configuration Object</param>
+        public Amazon<#=this.Config.BaseName#>Client(Amazon<#=this.Config.BaseName#>Config config)
+            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+
+#endif
+
         /// <summary>
         /// Constructs Amazon<#=this.Config.BaseName#>Client with AWS Credentials
         /// </summary>
@@ -261,7 +321,7 @@ namespace <#=this.Config.Namespace#>
 #>
 
 <#
-		AddAsyncDocumentation(operation.Name);
+		AddAsyncDocumentation(operation);
 		if(operation.IsDeprecated)
 		{
 #>

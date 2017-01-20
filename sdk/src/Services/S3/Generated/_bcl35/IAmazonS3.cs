@@ -21,6 +21,7 @@
 using System;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.S3.Model;
 
 namespace Amazon.S3
@@ -30,7 +31,7 @@ namespace Amazon.S3
     ///
     /// 
     /// </summary>
-    public partial interface IAmazonS3 : IDisposable
+    public partial interface IAmazonS3 : IAmazonService, IDisposable
     {
 
         
@@ -296,6 +297,119 @@ namespace Amazon.S3
         /// 
         /// <returns>Returns a  DeleteBucketResult from S3.</returns>
         DeleteBucketResponse EndDeleteBucket(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteBucketAnalyticsConfiguration
+
+
+        /// <summary>
+        /// Deletes an analytics configuration for the bucket (specified by the analytics configuration
+        /// ID).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBucketAnalyticsConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteBucketAnalyticsConfiguration service method, as returned by S3.</returns>
+        DeleteBucketAnalyticsConfigurationResponse DeleteBucketAnalyticsConfiguration(DeleteBucketAnalyticsConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteBucketAnalyticsConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBucketAnalyticsConfiguration operation on AmazonS3Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteBucketAnalyticsConfiguration
+        ///         operation.</returns>
+        IAsyncResult BeginDeleteBucketAnalyticsConfiguration(DeleteBucketAnalyticsConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteBucketAnalyticsConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteBucketAnalyticsConfiguration.</param>
+        /// 
+        /// <returns>Returns a  DeleteBucketAnalyticsConfigurationResult from S3.</returns>
+        DeleteBucketAnalyticsConfigurationResponse EndDeleteBucketAnalyticsConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteBucketInventoryConfiguration
+
+
+        /// <summary>
+        /// Deletes an inventory configuration (identified by the inventory ID) from the bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBucketInventoryConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteBucketInventoryConfiguration service method, as returned by S3.</returns>
+        DeleteBucketInventoryConfigurationResponse DeleteBucketInventoryConfiguration(DeleteBucketInventoryConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteBucketInventoryConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBucketInventoryConfiguration operation on AmazonS3Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteBucketInventoryConfiguration
+        ///         operation.</returns>
+        IAsyncResult BeginDeleteBucketInventoryConfiguration(DeleteBucketInventoryConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteBucketInventoryConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteBucketInventoryConfiguration.</param>
+        /// 
+        /// <returns>Returns a  DeleteBucketInventoryConfigurationResult from S3.</returns>
+        DeleteBucketInventoryConfigurationResponse EndDeleteBucketInventoryConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteBucketMetricsConfiguration
+
+
+        /// <summary>
+        /// Deletes a metrics configuration (specified by the metrics configuration ID) from the
+        /// bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBucketMetricsConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteBucketMetricsConfiguration service method, as returned by S3.</returns>
+        DeleteBucketMetricsConfigurationResponse DeleteBucketMetricsConfiguration(DeleteBucketMetricsConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteBucketMetricsConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBucketMetricsConfiguration operation on AmazonS3Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteBucketMetricsConfiguration
+        ///         operation.</returns>
+        IAsyncResult BeginDeleteBucketMetricsConfiguration(DeleteBucketMetricsConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteBucketMetricsConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteBucketMetricsConfiguration.</param>
+        /// 
+        /// <returns>Returns a  DeleteBucketMetricsConfigurationResult from S3.</returns>
+        DeleteBucketMetricsConfigurationResponse EndDeleteBucketMetricsConfiguration(IAsyncResult asyncResult);
 
         #endregion
         
@@ -661,6 +775,43 @@ namespace Amazon.S3
 
         #endregion
         
+        #region  DeleteObjectTagging
+
+
+        /// <summary>
+        /// Removes the tag-set from an existing object.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteObjectTagging service method.</param>
+        /// 
+        /// <returns>The response from the DeleteObjectTagging service method, as returned by S3.</returns>
+        DeleteObjectTaggingResponse DeleteObjectTagging(DeleteObjectTaggingRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteObjectTagging operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteObjectTagging operation on AmazonS3Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteObjectTagging
+        ///         operation.</returns>
+        IAsyncResult BeginDeleteObjectTagging(DeleteObjectTaggingRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteObjectTagging operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteObjectTagging.</param>
+        /// 
+        /// <returns>Returns a  DeleteObjectTaggingResult from S3.</returns>
+        DeleteObjectTaggingResponse EndDeleteObjectTagging(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetACL
 
 
@@ -748,6 +899,81 @@ namespace Amazon.S3
         /// 
         /// <returns>Returns a  GetBucketAccelerateConfigurationResult from S3.</returns>
         GetBucketAccelerateConfigurationResponse EndGetBucketAccelerateConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetBucketAnalyticsConfiguration
+
+
+        /// <summary>
+        /// Gets an analytics configuration for the bucket (specified by the analytics configuration
+        /// ID).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketAnalyticsConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetBucketAnalyticsConfiguration service method, as returned by S3.</returns>
+        GetBucketAnalyticsConfigurationResponse GetBucketAnalyticsConfiguration(GetBucketAnalyticsConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetBucketAnalyticsConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketAnalyticsConfiguration operation on AmazonS3Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBucketAnalyticsConfiguration
+        ///         operation.</returns>
+        IAsyncResult BeginGetBucketAnalyticsConfiguration(GetBucketAnalyticsConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetBucketAnalyticsConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBucketAnalyticsConfiguration.</param>
+        /// 
+        /// <returns>Returns a  GetBucketAnalyticsConfigurationResult from S3.</returns>
+        GetBucketAnalyticsConfigurationResponse EndGetBucketAnalyticsConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetBucketInventoryConfiguration
+
+
+        /// <summary>
+        /// Returns an inventory configuration (identified by the inventory ID) from the bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketInventoryConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetBucketInventoryConfiguration service method, as returned by S3.</returns>
+        GetBucketInventoryConfigurationResponse GetBucketInventoryConfiguration(GetBucketInventoryConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetBucketInventoryConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketInventoryConfiguration operation on AmazonS3Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBucketInventoryConfiguration
+        ///         operation.</returns>
+        IAsyncResult BeginGetBucketInventoryConfiguration(GetBucketInventoryConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetBucketInventoryConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBucketInventoryConfiguration.</param>
+        /// 
+        /// <returns>Returns a  GetBucketInventoryConfigurationResult from S3.</returns>
+        GetBucketInventoryConfigurationResponse EndGetBucketInventoryConfiguration(IAsyncResult asyncResult);
 
         #endregion
         
@@ -840,6 +1066,44 @@ namespace Amazon.S3
         /// 
         /// <returns>Returns a  GetBucketLoggingResult from S3.</returns>
         GetBucketLoggingResponse EndGetBucketLogging(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetBucketMetricsConfiguration
+
+
+        /// <summary>
+        /// Gets a metrics configuration (specified by the metrics configuration ID) from the
+        /// bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketMetricsConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetBucketMetricsConfiguration service method, as returned by S3.</returns>
+        GetBucketMetricsConfigurationResponse GetBucketMetricsConfiguration(GetBucketMetricsConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetBucketMetricsConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketMetricsConfiguration operation on AmazonS3Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBucketMetricsConfiguration
+        ///         operation.</returns>
+        IAsyncResult BeginGetBucketMetricsConfiguration(GetBucketMetricsConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetBucketMetricsConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBucketMetricsConfiguration.</param>
+        /// 
+        /// <returns>Returns a  GetBucketMetricsConfigurationResult from S3.</returns>
+        GetBucketMetricsConfigurationResponse EndGetBucketMetricsConfiguration(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1350,6 +1614,43 @@ namespace Amazon.S3
 
         #endregion
         
+        #region  GetObjectTagging
+
+
+        /// <summary>
+        /// Returns the tag-set of an object.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetObjectTagging service method.</param>
+        /// 
+        /// <returns>The response from the GetObjectTagging service method, as returned by S3.</returns>
+        GetObjectTaggingResponse GetObjectTagging(GetObjectTaggingRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetObjectTagging operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetObjectTagging operation on AmazonS3Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetObjectTagging
+        ///         operation.</returns>
+        IAsyncResult BeginGetObjectTagging(GetObjectTaggingRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetObjectTagging operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetObjectTagging.</param>
+        /// 
+        /// <returns>Returns a  GetObjectTaggingResult from S3.</returns>
+        GetObjectTaggingResponse EndGetObjectTagging(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetObjectTorrent
 
 
@@ -1455,6 +1756,117 @@ namespace Amazon.S3
         /// 
         /// <returns>Returns a  InitiateMultipartUploadResult from S3.</returns>
         InitiateMultipartUploadResponse EndInitiateMultipartUpload(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListBucketAnalyticsConfigurations
+
+
+        /// <summary>
+        /// Lists the analytics configurations for the bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListBucketAnalyticsConfigurations service method.</param>
+        /// 
+        /// <returns>The response from the ListBucketAnalyticsConfigurations service method, as returned by S3.</returns>
+        ListBucketAnalyticsConfigurationsResponse ListBucketAnalyticsConfigurations(ListBucketAnalyticsConfigurationsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListBucketAnalyticsConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListBucketAnalyticsConfigurations operation on AmazonS3Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListBucketAnalyticsConfigurations
+        ///         operation.</returns>
+        IAsyncResult BeginListBucketAnalyticsConfigurations(ListBucketAnalyticsConfigurationsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListBucketAnalyticsConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListBucketAnalyticsConfigurations.</param>
+        /// 
+        /// <returns>Returns a  ListBucketAnalyticsConfigurationsResult from S3.</returns>
+        ListBucketAnalyticsConfigurationsResponse EndListBucketAnalyticsConfigurations(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListBucketInventoryConfigurations
+
+
+        /// <summary>
+        /// Returns a list of inventory configurations for the bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListBucketInventoryConfigurations service method.</param>
+        /// 
+        /// <returns>The response from the ListBucketInventoryConfigurations service method, as returned by S3.</returns>
+        ListBucketInventoryConfigurationsResponse ListBucketInventoryConfigurations(ListBucketInventoryConfigurationsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListBucketInventoryConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListBucketInventoryConfigurations operation on AmazonS3Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListBucketInventoryConfigurations
+        ///         operation.</returns>
+        IAsyncResult BeginListBucketInventoryConfigurations(ListBucketInventoryConfigurationsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListBucketInventoryConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListBucketInventoryConfigurations.</param>
+        /// 
+        /// <returns>Returns a  ListBucketInventoryConfigurationsResult from S3.</returns>
+        ListBucketInventoryConfigurationsResponse EndListBucketInventoryConfigurations(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListBucketMetricsConfigurations
+
+
+        /// <summary>
+        /// Lists the metrics configurations for the bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListBucketMetricsConfigurations service method.</param>
+        /// 
+        /// <returns>The response from the ListBucketMetricsConfigurations service method, as returned by S3.</returns>
+        ListBucketMetricsConfigurationsResponse ListBucketMetricsConfigurations(ListBucketMetricsConfigurationsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListBucketMetricsConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListBucketMetricsConfigurations operation on AmazonS3Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListBucketMetricsConfigurations
+        ///         operation.</returns>
+        IAsyncResult BeginListBucketMetricsConfigurations(ListBucketMetricsConfigurationsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListBucketMetricsConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListBucketMetricsConfigurations.</param>
+        /// 
+        /// <returns>Returns a  ListBucketMetricsConfigurationsResult from S3.</returns>
+        ListBucketMetricsConfigurationsResponse EndListBucketMetricsConfigurations(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1873,6 +2285,81 @@ namespace Amazon.S3
 
         #endregion
         
+        #region  PutBucketAnalyticsConfiguration
+
+
+        /// <summary>
+        /// Sets an analytics configuration for the bucket (specified by the analytics configuration
+        /// ID).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutBucketAnalyticsConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the PutBucketAnalyticsConfiguration service method, as returned by S3.</returns>
+        PutBucketAnalyticsConfigurationResponse PutBucketAnalyticsConfiguration(PutBucketAnalyticsConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutBucketAnalyticsConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutBucketAnalyticsConfiguration operation on AmazonS3Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutBucketAnalyticsConfiguration
+        ///         operation.</returns>
+        IAsyncResult BeginPutBucketAnalyticsConfiguration(PutBucketAnalyticsConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutBucketAnalyticsConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutBucketAnalyticsConfiguration.</param>
+        /// 
+        /// <returns>Returns a  PutBucketAnalyticsConfigurationResult from S3.</returns>
+        PutBucketAnalyticsConfigurationResponse EndPutBucketAnalyticsConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  PutBucketInventoryConfiguration
+
+
+        /// <summary>
+        /// Adds an inventory configuration (identified by the inventory ID) from the bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutBucketInventoryConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the PutBucketInventoryConfiguration service method, as returned by S3.</returns>
+        PutBucketInventoryConfigurationResponse PutBucketInventoryConfiguration(PutBucketInventoryConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutBucketInventoryConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutBucketInventoryConfiguration operation on AmazonS3Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutBucketInventoryConfiguration
+        ///         operation.</returns>
+        IAsyncResult BeginPutBucketInventoryConfiguration(PutBucketInventoryConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutBucketInventoryConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutBucketInventoryConfiguration.</param>
+        /// 
+        /// <returns>Returns a  PutBucketInventoryConfigurationResult from S3.</returns>
+        PutBucketInventoryConfigurationResponse EndPutBucketInventoryConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  PutBucketLogging
 
 
@@ -1909,6 +2396,43 @@ namespace Amazon.S3
         /// 
         /// <returns>Returns a  PutBucketLoggingResult from S3.</returns>
         PutBucketLoggingResponse EndPutBucketLogging(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  PutBucketMetricsConfiguration
+
+
+        /// <summary>
+        /// Sets a metrics configuration (specified by the metrics configuration ID) for the bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutBucketMetricsConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the PutBucketMetricsConfiguration service method, as returned by S3.</returns>
+        PutBucketMetricsConfigurationResponse PutBucketMetricsConfiguration(PutBucketMetricsConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutBucketMetricsConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutBucketMetricsConfiguration operation on AmazonS3Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutBucketMetricsConfiguration
+        ///         operation.</returns>
+        IAsyncResult BeginPutBucketMetricsConfiguration(PutBucketMetricsConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutBucketMetricsConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutBucketMetricsConfiguration.</param>
+        /// 
+        /// <returns>Returns a  PutBucketMetricsConfigurationResult from S3.</returns>
+        PutBucketMetricsConfigurationResponse EndPutBucketMetricsConfiguration(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2355,6 +2879,43 @@ namespace Amazon.S3
         /// 
         /// <returns>Returns a  PutObjectResult from S3.</returns>
         PutObjectResponse EndPutObject(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  PutObjectTagging
+
+
+        /// <summary>
+        /// Sets the supplied tag-set to an object that already exists in a bucket
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutObjectTagging service method.</param>
+        /// 
+        /// <returns>The response from the PutObjectTagging service method, as returned by S3.</returns>
+        PutObjectTaggingResponse PutObjectTagging(PutObjectTaggingRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutObjectTagging operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutObjectTagging operation on AmazonS3Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutObjectTagging
+        ///         operation.</returns>
+        IAsyncResult BeginPutObjectTagging(PutObjectTaggingRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutObjectTagging operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutObjectTagging.</param>
+        /// 
+        /// <returns>Returns a  PutObjectTaggingResult from S3.</returns>
+        PutObjectTaggingResponse EndPutObjectTagging(IAsyncResult asyncResult);
 
         #endregion
         

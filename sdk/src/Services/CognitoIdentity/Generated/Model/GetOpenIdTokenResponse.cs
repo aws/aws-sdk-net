@@ -36,8 +36,11 @@ namespace Amazon.CognitoIdentity.Model
         private string _token;
 
         /// <summary>
-        /// Gets and sets the property IdentityId. A unique identifier in the format REGION:GUID.
-        /// Note that the IdentityId returned may not match the one passed on input.
+        /// Gets and sets the property IdentityId. 
+        /// <para>
+        /// A unique identifier in the format REGION:GUID. Note that the IdentityId returned may
+        /// not match the one passed on input.
+        /// </para>
         /// </summary>
         public string IdentityId
         {
@@ -52,7 +55,10 @@ namespace Amazon.CognitoIdentity.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Token. An OpenID token, valid for 15 minutes.
+        /// Gets and sets the property Token. 
+        /// <para>
+        /// An OpenID token, valid for 15 minutes.
+        /// </para>
         /// </summary>
         public string Token
         {

@@ -45,6 +45,13 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// items by using logical operators. Allowed filters include <code>tagKey</code>, <code>tagValue</code>,
         /// and <code>configurationId</code>. 
         /// </para>
+        ///  
+        /// <para>
+        /// For a complete list of filter options and guidance about using them with this action,
+        /// see <a href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/managing-agents.html">Managing
+        /// AWS Application Discovery Service Agents and the AWS Application Discovery Connector
+        /// </a>.
+        /// </para>
         /// </summary>
         public List<TagFilter> Filters
         {
@@ -61,7 +68,8 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The total number of items to return. The maximum value is 100.
+        /// The total number of items to return in a single page of output. The maximum value
+        /// is 100.
         /// </para>
         /// </summary>
         public int MaxResults

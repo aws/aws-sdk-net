@@ -39,7 +39,7 @@ namespace Amazon.ConfigService.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// Currently, you can specify only one configuration recorder per account.
+    /// Currently, you can specify only one configuration recorder per region in your account.
     /// </para>
     ///  
     /// <para>

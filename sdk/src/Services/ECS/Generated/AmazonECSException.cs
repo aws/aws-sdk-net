@@ -28,7 +28,7 @@ namespace Amazon.ECS
     ///<summary>
     /// Common exception for the ECS service.
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class AmazonECSException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.ECS
         {
         }
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the AmazonECSException class with serialized data.
         /// </summary>

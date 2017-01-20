@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2016-01-28.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-11-25.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -42,11 +42,10 @@ namespace Amazon.CloudFront.Model
         public ListStreamingDistributionsRequest() { }
 
         /// <summary>
-        /// Gets and sets the property Marker. Use this when paginating results to indicate where
-        /// to begin in your list of streaming distributions. The results include distributions
-        /// in the list that occur after the marker. To get the next page of results, set the
-        /// Marker to the value of the NextMarker from the current page's response (which is also
-        /// the ID of the last distribution on that page).
+        /// Gets and sets the property Marker. 
+        /// <para>
+        /// The value that you provided for the <code>Marker</code> request parameter.
+        /// </para>
         /// </summary>
         public string Marker
         {
@@ -61,8 +60,10 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaxItems. The maximum number of streaming distributions
-        /// you want in the response body.
+        /// Gets and sets the property MaxItems. 
+        /// <para>
+        /// The value that you provided for the <code>MaxItems</code> request parameter.
+        /// </para>
         /// </summary>
         public string MaxItems
         {

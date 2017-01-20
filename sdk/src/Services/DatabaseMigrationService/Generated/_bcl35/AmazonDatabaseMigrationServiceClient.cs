@@ -35,11 +35,12 @@ namespace Amazon.DatabaseMigrationService
     ///
     /// AWS Database Migration Service 
     /// <para>
-    ///  AWS Database Migration Service (AWS DMS) can migrate your data to and from the most
+    /// AWS Database Migration Service (AWS DMS) can migrate your data to and from the most
     /// widely used commercial and open-source databases such as Oracle, PostgreSQL, Microsoft
-    /// SQL Server, MariaDB, Amazon Aurora, and MySQL. The service supports homogeneous migrations
-    /// such as Oracle to Oracle, as well as heterogeneous migrations between different database
-    /// platforms, such as Oracle to MySQL or SQL Server to PostgreSQL. 
+    /// SQL Server, Amazon Redshift, MariaDB, Amazon Aurora, MySQL, and SAP Adaptive Server
+    /// Enterprise (ASE). The service supports homogeneous migrations such as Oracle to Oracle,
+    /// as well as heterogeneous migrations between different database platforms, such as
+    /// Oracle to MySQL or SQL Server to PostgreSQL.
     /// </para>
     /// </summary>
     public partial class AmazonDatabaseMigrationServiceClient : AmazonServiceClient, IAmazonDatabaseMigrationService
@@ -237,8 +238,6 @@ namespace Amazon.DatabaseMigrationService
         /// group, and migration task. These tags can also be used with cost allocation reporting
         /// to track cost associated with DMS resources, or used in a Condition statement in an
         /// IAM policy for DMS.
-        /// 
-        ///  <note/>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddTagsToResource service method.</param>
         /// 
@@ -246,6 +245,7 @@ namespace Amazon.DatabaseMigrationService
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/AddTagsToResource">REST API Reference for AddTagsToResource Operation</seealso>
         public AddTagsToResourceResponse AddTagsToResource(AddTagsToResourceRequest request)
         {
             var marshaller = new AddTagsToResourceRequestMarshaller();
@@ -265,6 +265,7 @@ namespace Amazon.DatabaseMigrationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAddTagsToResource
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/AddTagsToResource">REST API Reference for AddTagsToResource Operation</seealso>
         public IAsyncResult BeginAddTagsToResource(AddTagsToResourceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AddTagsToResourceRequestMarshaller();
@@ -281,6 +282,7 @@ namespace Amazon.DatabaseMigrationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAddTagsToResource.</param>
         /// 
         /// <returns>Returns a  AddTagsToResourceResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/AddTagsToResource">REST API Reference for AddTagsToResource Operation</seealso>
         public  AddTagsToResourceResponse EndAddTagsToResource(IAsyncResult asyncResult)
         {
             return EndInvoke<AddTagsToResourceResponse>(asyncResult);
@@ -292,21 +294,29 @@ namespace Amazon.DatabaseMigrationService
 
         /// <summary>
         /// Creates an endpoint using the provided settings.
-        /// 
-        ///  <note/>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEndpoint service method.</param>
         /// 
         /// <returns>The response from the CreateEndpoint service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
+        /// AWS DMS was denied access to the endpoint.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSKeyNotAccessibleException">
         /// AWS DMS cannot access the KMS key.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceAlreadyExistsException">
         /// The resource you are attempting to create already exists.
         /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceQuotaExceededException">
         /// The quota for this resource quota has been exceeded.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateEndpoint">REST API Reference for CreateEndpoint Operation</seealso>
         public CreateEndpointResponse CreateEndpoint(CreateEndpointRequest request)
         {
             var marshaller = new CreateEndpointRequestMarshaller();
@@ -326,6 +336,7 @@ namespace Amazon.DatabaseMigrationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateEndpoint
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateEndpoint">REST API Reference for CreateEndpoint Operation</seealso>
         public IAsyncResult BeginCreateEndpoint(CreateEndpointRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateEndpointRequestMarshaller();
@@ -342,6 +353,7 @@ namespace Amazon.DatabaseMigrationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateEndpoint.</param>
         /// 
         /// <returns>Returns a  CreateEndpointResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateEndpoint">REST API Reference for CreateEndpoint Operation</seealso>
         public  CreateEndpointResponse EndCreateEndpoint(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateEndpointResponse>(asyncResult);
@@ -353,8 +365,6 @@ namespace Amazon.DatabaseMigrationService
 
         /// <summary>
         /// Creates the replication instance using the specified parameters.
-        /// 
-        ///  <note/>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateReplicationInstance service method.</param>
         /// 
@@ -390,6 +400,7 @@ namespace Amazon.DatabaseMigrationService
         /// <exception cref="Amazon.DatabaseMigrationService.Model.StorageQuotaExceededException">
         /// The storage quota has been exceeded.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateReplicationInstance">REST API Reference for CreateReplicationInstance Operation</seealso>
         public CreateReplicationInstanceResponse CreateReplicationInstance(CreateReplicationInstanceRequest request)
         {
             var marshaller = new CreateReplicationInstanceRequestMarshaller();
@@ -409,6 +420,7 @@ namespace Amazon.DatabaseMigrationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateReplicationInstance
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateReplicationInstance">REST API Reference for CreateReplicationInstance Operation</seealso>
         public IAsyncResult BeginCreateReplicationInstance(CreateReplicationInstanceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateReplicationInstanceRequestMarshaller();
@@ -425,6 +437,7 @@ namespace Amazon.DatabaseMigrationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateReplicationInstance.</param>
         /// 
         /// <returns>Returns a  CreateReplicationInstanceResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateReplicationInstance">REST API Reference for CreateReplicationInstance Operation</seealso>
         public  CreateReplicationInstanceResponse EndCreateReplicationInstance(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateReplicationInstanceResponse>(asyncResult);
@@ -436,8 +449,6 @@ namespace Amazon.DatabaseMigrationService
 
         /// <summary>
         /// Creates a replication subnet group given a list of the subnet IDs in a VPC.
-        /// 
-        ///  <note/>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateReplicationSubnetGroup service method.</param>
         /// 
@@ -461,6 +472,7 @@ namespace Amazon.DatabaseMigrationService
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceQuotaExceededException">
         /// The quota for this resource quota has been exceeded.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateReplicationSubnetGroup">REST API Reference for CreateReplicationSubnetGroup Operation</seealso>
         public CreateReplicationSubnetGroupResponse CreateReplicationSubnetGroup(CreateReplicationSubnetGroupRequest request)
         {
             var marshaller = new CreateReplicationSubnetGroupRequestMarshaller();
@@ -480,6 +492,7 @@ namespace Amazon.DatabaseMigrationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateReplicationSubnetGroup
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateReplicationSubnetGroup">REST API Reference for CreateReplicationSubnetGroup Operation</seealso>
         public IAsyncResult BeginCreateReplicationSubnetGroup(CreateReplicationSubnetGroupRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateReplicationSubnetGroupRequestMarshaller();
@@ -496,6 +509,7 @@ namespace Amazon.DatabaseMigrationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateReplicationSubnetGroup.</param>
         /// 
         /// <returns>Returns a  CreateReplicationSubnetGroupResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateReplicationSubnetGroup">REST API Reference for CreateReplicationSubnetGroup Operation</seealso>
         public  CreateReplicationSubnetGroupResponse EndCreateReplicationSubnetGroup(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateReplicationSubnetGroupResponse>(asyncResult);
@@ -507,8 +521,6 @@ namespace Amazon.DatabaseMigrationService
 
         /// <summary>
         /// Creates a replication task using the specified parameters.
-        /// 
-        ///  <note/>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateReplicationTask service method.</param>
         /// 
@@ -528,6 +540,7 @@ namespace Amazon.DatabaseMigrationService
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceQuotaExceededException">
         /// The quota for this resource quota has been exceeded.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateReplicationTask">REST API Reference for CreateReplicationTask Operation</seealso>
         public CreateReplicationTaskResponse CreateReplicationTask(CreateReplicationTaskRequest request)
         {
             var marshaller = new CreateReplicationTaskRequestMarshaller();
@@ -547,6 +560,7 @@ namespace Amazon.DatabaseMigrationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateReplicationTask
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateReplicationTask">REST API Reference for CreateReplicationTask Operation</seealso>
         public IAsyncResult BeginCreateReplicationTask(CreateReplicationTaskRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateReplicationTaskRequestMarshaller();
@@ -563,6 +577,7 @@ namespace Amazon.DatabaseMigrationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateReplicationTask.</param>
         /// 
         /// <returns>Returns a  CreateReplicationTaskResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateReplicationTask">REST API Reference for CreateReplicationTask Operation</seealso>
         public  CreateReplicationTaskResponse EndCreateReplicationTask(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateReplicationTaskResponse>(asyncResult);
@@ -570,13 +585,75 @@ namespace Amazon.DatabaseMigrationService
 
         #endregion
         
+        #region  DeleteCertificate
+
+        /// <summary>
+        /// Deletes the specified certificate.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCertificate service method.</param>
+        /// 
+        /// <returns>The response from the DeleteCertificate service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteCertificate">REST API Reference for DeleteCertificate Operation</seealso>
+        public DeleteCertificateResponse DeleteCertificate(DeleteCertificateRequest request)
+        {
+            var marshaller = new DeleteCertificateRequestMarshaller();
+            var unmarshaller = DeleteCertificateResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteCertificateRequest,DeleteCertificateResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteCertificate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCertificate operation on AmazonDatabaseMigrationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteCertificate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteCertificate">REST API Reference for DeleteCertificate Operation</seealso>
+        public IAsyncResult BeginDeleteCertificate(DeleteCertificateRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DeleteCertificateRequestMarshaller();
+            var unmarshaller = DeleteCertificateResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteCertificateRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteCertificate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteCertificate.</param>
+        /// 
+        /// <returns>Returns a  DeleteCertificateResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteCertificate">REST API Reference for DeleteCertificate Operation</seealso>
+        public  DeleteCertificateResponse EndDeleteCertificate(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteCertificateResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteEndpoint
 
         /// <summary>
-        /// Deletes the specified endpoint. 
+        /// Deletes the specified endpoint.
         /// 
-        ///  <note>All tasks associated with the endpoint must be deleted before you can delete
-        /// the endpoint.</note>
+        ///  <note> 
+        /// <para>
+        /// All tasks associated with the endpoint must be deleted before you can delete the endpoint.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteEndpoint service method.</param>
         /// 
@@ -587,6 +664,7 @@ namespace Amazon.DatabaseMigrationService
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteEndpoint">REST API Reference for DeleteEndpoint Operation</seealso>
         public DeleteEndpointResponse DeleteEndpoint(DeleteEndpointRequest request)
         {
             var marshaller = new DeleteEndpointRequestMarshaller();
@@ -606,6 +684,7 @@ namespace Amazon.DatabaseMigrationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteEndpoint
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteEndpoint">REST API Reference for DeleteEndpoint Operation</seealso>
         public IAsyncResult BeginDeleteEndpoint(DeleteEndpointRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteEndpointRequestMarshaller();
@@ -622,6 +701,7 @@ namespace Amazon.DatabaseMigrationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteEndpoint.</param>
         /// 
         /// <returns>Returns a  DeleteEndpointResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteEndpoint">REST API Reference for DeleteEndpoint Operation</seealso>
         public  DeleteEndpointResponse EndDeleteEndpoint(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteEndpointResponse>(asyncResult);
@@ -632,10 +712,14 @@ namespace Amazon.DatabaseMigrationService
         #region  DeleteReplicationInstance
 
         /// <summary>
-        /// Deletes the specified replication instance. 
+        /// Deletes the specified replication instance.
         /// 
-        ///  <note>You must delete any migration tasks that are associated with the replication
-        /// instance before you can delete it.</note>
+        ///  <note> 
+        /// <para>
+        /// You must delete any migration tasks that are associated with the replication instance
+        /// before you can delete it.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteReplicationInstance service method.</param>
         /// 
@@ -646,6 +730,7 @@ namespace Amazon.DatabaseMigrationService
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteReplicationInstance">REST API Reference for DeleteReplicationInstance Operation</seealso>
         public DeleteReplicationInstanceResponse DeleteReplicationInstance(DeleteReplicationInstanceRequest request)
         {
             var marshaller = new DeleteReplicationInstanceRequestMarshaller();
@@ -665,6 +750,7 @@ namespace Amazon.DatabaseMigrationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteReplicationInstance
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteReplicationInstance">REST API Reference for DeleteReplicationInstance Operation</seealso>
         public IAsyncResult BeginDeleteReplicationInstance(DeleteReplicationInstanceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteReplicationInstanceRequestMarshaller();
@@ -681,6 +767,7 @@ namespace Amazon.DatabaseMigrationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteReplicationInstance.</param>
         /// 
         /// <returns>Returns a  DeleteReplicationInstanceResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteReplicationInstance">REST API Reference for DeleteReplicationInstance Operation</seealso>
         public  DeleteReplicationInstanceResponse EndDeleteReplicationInstance(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteReplicationInstanceResponse>(asyncResult);
@@ -692,8 +779,6 @@ namespace Amazon.DatabaseMigrationService
 
         /// <summary>
         /// Deletes a subnet group.
-        /// 
-        ///  <note/>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteReplicationSubnetGroup service method.</param>
         /// 
@@ -704,6 +789,7 @@ namespace Amazon.DatabaseMigrationService
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteReplicationSubnetGroup">REST API Reference for DeleteReplicationSubnetGroup Operation</seealso>
         public DeleteReplicationSubnetGroupResponse DeleteReplicationSubnetGroup(DeleteReplicationSubnetGroupRequest request)
         {
             var marshaller = new DeleteReplicationSubnetGroupRequestMarshaller();
@@ -723,6 +809,7 @@ namespace Amazon.DatabaseMigrationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteReplicationSubnetGroup
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteReplicationSubnetGroup">REST API Reference for DeleteReplicationSubnetGroup Operation</seealso>
         public IAsyncResult BeginDeleteReplicationSubnetGroup(DeleteReplicationSubnetGroupRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteReplicationSubnetGroupRequestMarshaller();
@@ -739,6 +826,7 @@ namespace Amazon.DatabaseMigrationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteReplicationSubnetGroup.</param>
         /// 
         /// <returns>Returns a  DeleteReplicationSubnetGroupResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteReplicationSubnetGroup">REST API Reference for DeleteReplicationSubnetGroup Operation</seealso>
         public  DeleteReplicationSubnetGroupResponse EndDeleteReplicationSubnetGroup(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteReplicationSubnetGroupResponse>(asyncResult);
@@ -750,8 +838,6 @@ namespace Amazon.DatabaseMigrationService
 
         /// <summary>
         /// Deletes the specified replication task.
-        /// 
-        ///  <note/>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteReplicationTask service method.</param>
         /// 
@@ -762,6 +848,7 @@ namespace Amazon.DatabaseMigrationService
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteReplicationTask">REST API Reference for DeleteReplicationTask Operation</seealso>
         public DeleteReplicationTaskResponse DeleteReplicationTask(DeleteReplicationTaskRequest request)
         {
             var marshaller = new DeleteReplicationTaskRequestMarshaller();
@@ -781,6 +868,7 @@ namespace Amazon.DatabaseMigrationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteReplicationTask
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteReplicationTask">REST API Reference for DeleteReplicationTask Operation</seealso>
         public IAsyncResult BeginDeleteReplicationTask(DeleteReplicationTaskRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteReplicationTaskRequestMarshaller();
@@ -797,6 +885,7 @@ namespace Amazon.DatabaseMigrationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteReplicationTask.</param>
         /// 
         /// <returns>Returns a  DeleteReplicationTaskResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteReplicationTask">REST API Reference for DeleteReplicationTask Operation</seealso>
         public  DeleteReplicationTaskResponse EndDeleteReplicationTask(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteReplicationTaskResponse>(asyncResult);
@@ -810,17 +899,17 @@ namespace Amazon.DatabaseMigrationService
         /// Lists all of the AWS DMS attributes for a customer account. The attributes include
         /// AWS DMS quotas for the account, such as the number of replication instances allowed.
         /// The description for a quota includes the quota name, current usage toward that quota,
-        /// and the quota's maximum value. 
+        /// and the quota's maximum value.
         /// 
         ///  
         /// <para>
         /// This command does not take any parameters.
         /// </para>
-        ///  <note/>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAccountAttributes service method.</param>
         /// 
         /// <returns>The response from the DescribeAccountAttributes service method, as returned by DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeAccountAttributes">REST API Reference for DescribeAccountAttributes Operation</seealso>
         public DescribeAccountAttributesResponse DescribeAccountAttributes(DescribeAccountAttributesRequest request)
         {
             var marshaller = new DescribeAccountAttributesRequestMarshaller();
@@ -840,6 +929,7 @@ namespace Amazon.DatabaseMigrationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAccountAttributes
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeAccountAttributes">REST API Reference for DescribeAccountAttributes Operation</seealso>
         public IAsyncResult BeginDescribeAccountAttributes(DescribeAccountAttributesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeAccountAttributesRequestMarshaller();
@@ -856,9 +946,66 @@ namespace Amazon.DatabaseMigrationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAccountAttributes.</param>
         /// 
         /// <returns>Returns a  DescribeAccountAttributesResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeAccountAttributes">REST API Reference for DescribeAccountAttributes Operation</seealso>
         public  DescribeAccountAttributesResponse EndDescribeAccountAttributes(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeAccountAttributesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeCertificates
+
+        /// <summary>
+        /// Provides a description of the certificate.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCertificates service method.</param>
+        /// 
+        /// <returns>The response from the DescribeCertificates service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeCertificates">REST API Reference for DescribeCertificates Operation</seealso>
+        public DescribeCertificatesResponse DescribeCertificates(DescribeCertificatesRequest request)
+        {
+            var marshaller = new DescribeCertificatesRequestMarshaller();
+            var unmarshaller = DescribeCertificatesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeCertificatesRequest,DescribeCertificatesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeCertificates operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCertificates operation on AmazonDatabaseMigrationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeCertificates
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeCertificates">REST API Reference for DescribeCertificates Operation</seealso>
+        public IAsyncResult BeginDescribeCertificates(DescribeCertificatesRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DescribeCertificatesRequestMarshaller();
+            var unmarshaller = DescribeCertificatesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeCertificatesRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeCertificates operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeCertificates.</param>
+        /// 
+        /// <returns>Returns a  DescribeCertificatesResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeCertificates">REST API Reference for DescribeCertificates Operation</seealso>
+        public  DescribeCertificatesResponse EndDescribeCertificates(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeCertificatesResponse>(asyncResult);
         }
 
         #endregion
@@ -868,8 +1015,6 @@ namespace Amazon.DatabaseMigrationService
         /// <summary>
         /// Describes the status of the connections that have been made between the replication
         /// instance and an endpoint. Connections are created when you test an endpoint.
-        /// 
-        ///  <note/>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeConnections service method.</param>
         /// 
@@ -877,6 +1022,7 @@ namespace Amazon.DatabaseMigrationService
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeConnections">REST API Reference for DescribeConnections Operation</seealso>
         public DescribeConnectionsResponse DescribeConnections(DescribeConnectionsRequest request)
         {
             var marshaller = new DescribeConnectionsRequestMarshaller();
@@ -896,6 +1042,7 @@ namespace Amazon.DatabaseMigrationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeConnections
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeConnections">REST API Reference for DescribeConnections Operation</seealso>
         public IAsyncResult BeginDescribeConnections(DescribeConnectionsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeConnectionsRequestMarshaller();
@@ -912,6 +1059,7 @@ namespace Amazon.DatabaseMigrationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeConnections.</param>
         /// 
         /// <returns>Returns a  DescribeConnectionsResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeConnections">REST API Reference for DescribeConnections Operation</seealso>
         public  DescribeConnectionsResponse EndDescribeConnections(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeConnectionsResponse>(asyncResult);
@@ -923,8 +1071,6 @@ namespace Amazon.DatabaseMigrationService
 
         /// <summary>
         /// Returns information about the endpoints for your account in the current region.
-        /// 
-        ///  <note/>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEndpoints service method.</param>
         /// 
@@ -932,6 +1078,7 @@ namespace Amazon.DatabaseMigrationService
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeEndpoints">REST API Reference for DescribeEndpoints Operation</seealso>
         public DescribeEndpointsResponse DescribeEndpoints(DescribeEndpointsRequest request)
         {
             var marshaller = new DescribeEndpointsRequestMarshaller();
@@ -951,6 +1098,7 @@ namespace Amazon.DatabaseMigrationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeEndpoints
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeEndpoints">REST API Reference for DescribeEndpoints Operation</seealso>
         public IAsyncResult BeginDescribeEndpoints(DescribeEndpointsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeEndpointsRequestMarshaller();
@@ -967,6 +1115,7 @@ namespace Amazon.DatabaseMigrationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeEndpoints.</param>
         /// 
         /// <returns>Returns a  DescribeEndpointsResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeEndpoints">REST API Reference for DescribeEndpoints Operation</seealso>
         public  DescribeEndpointsResponse EndDescribeEndpoints(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeEndpointsResponse>(asyncResult);
@@ -978,12 +1127,11 @@ namespace Amazon.DatabaseMigrationService
 
         /// <summary>
         /// Returns information about the type of endpoints available.
-        /// 
-        ///  <note/>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEndpointTypes service method.</param>
         /// 
         /// <returns>The response from the DescribeEndpointTypes service method, as returned by DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeEndpointTypes">REST API Reference for DescribeEndpointTypes Operation</seealso>
         public DescribeEndpointTypesResponse DescribeEndpointTypes(DescribeEndpointTypesRequest request)
         {
             var marshaller = new DescribeEndpointTypesRequestMarshaller();
@@ -1003,6 +1151,7 @@ namespace Amazon.DatabaseMigrationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeEndpointTypes
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeEndpointTypes">REST API Reference for DescribeEndpointTypes Operation</seealso>
         public IAsyncResult BeginDescribeEndpointTypes(DescribeEndpointTypesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeEndpointTypesRequestMarshaller();
@@ -1019,6 +1168,7 @@ namespace Amazon.DatabaseMigrationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeEndpointTypes.</param>
         /// 
         /// <returns>Returns a  DescribeEndpointTypesResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeEndpointTypes">REST API Reference for DescribeEndpointTypes Operation</seealso>
         public  DescribeEndpointTypesResponse EndDescribeEndpointTypes(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeEndpointTypesResponse>(asyncResult);
@@ -1031,12 +1181,11 @@ namespace Amazon.DatabaseMigrationService
         /// <summary>
         /// Returns information about the replication instance types that can be created in the
         /// specified region.
-        /// 
-        ///  <note/>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeOrderableReplicationInstances service method.</param>
         /// 
         /// <returns>The response from the DescribeOrderableReplicationInstances service method, as returned by DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeOrderableReplicationInstances">REST API Reference for DescribeOrderableReplicationInstances Operation</seealso>
         public DescribeOrderableReplicationInstancesResponse DescribeOrderableReplicationInstances(DescribeOrderableReplicationInstancesRequest request)
         {
             var marshaller = new DescribeOrderableReplicationInstancesRequestMarshaller();
@@ -1056,6 +1205,7 @@ namespace Amazon.DatabaseMigrationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeOrderableReplicationInstances
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeOrderableReplicationInstances">REST API Reference for DescribeOrderableReplicationInstances Operation</seealso>
         public IAsyncResult BeginDescribeOrderableReplicationInstances(DescribeOrderableReplicationInstancesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeOrderableReplicationInstancesRequestMarshaller();
@@ -1072,6 +1222,7 @@ namespace Amazon.DatabaseMigrationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeOrderableReplicationInstances.</param>
         /// 
         /// <returns>Returns a  DescribeOrderableReplicationInstancesResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeOrderableReplicationInstances">REST API Reference for DescribeOrderableReplicationInstances Operation</seealso>
         public  DescribeOrderableReplicationInstancesResponse EndDescribeOrderableReplicationInstances(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeOrderableReplicationInstancesResponse>(asyncResult);
@@ -1083,8 +1234,6 @@ namespace Amazon.DatabaseMigrationService
 
         /// <summary>
         /// Returns the status of the RefreshSchemas operation.
-        /// 
-        ///  <note/>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeRefreshSchemasStatus service method.</param>
         /// 
@@ -1095,6 +1244,7 @@ namespace Amazon.DatabaseMigrationService
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeRefreshSchemasStatus">REST API Reference for DescribeRefreshSchemasStatus Operation</seealso>
         public DescribeRefreshSchemasStatusResponse DescribeRefreshSchemasStatus(DescribeRefreshSchemasStatusRequest request)
         {
             var marshaller = new DescribeRefreshSchemasStatusRequestMarshaller();
@@ -1114,6 +1264,7 @@ namespace Amazon.DatabaseMigrationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeRefreshSchemasStatus
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeRefreshSchemasStatus">REST API Reference for DescribeRefreshSchemasStatus Operation</seealso>
         public IAsyncResult BeginDescribeRefreshSchemasStatus(DescribeRefreshSchemasStatusRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeRefreshSchemasStatusRequestMarshaller();
@@ -1130,6 +1281,7 @@ namespace Amazon.DatabaseMigrationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeRefreshSchemasStatus.</param>
         /// 
         /// <returns>Returns a  DescribeRefreshSchemasStatusResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeRefreshSchemasStatus">REST API Reference for DescribeRefreshSchemasStatus Operation</seealso>
         public  DescribeRefreshSchemasStatusResponse EndDescribeRefreshSchemasStatus(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeRefreshSchemasStatusResponse>(asyncResult);
@@ -1141,8 +1293,6 @@ namespace Amazon.DatabaseMigrationService
 
         /// <summary>
         /// Returns information about replication instances for your account in the current region.
-        /// 
-        ///  <note/>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeReplicationInstances service method.</param>
         /// 
@@ -1150,6 +1300,7 @@ namespace Amazon.DatabaseMigrationService
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationInstances">REST API Reference for DescribeReplicationInstances Operation</seealso>
         public DescribeReplicationInstancesResponse DescribeReplicationInstances(DescribeReplicationInstancesRequest request)
         {
             var marshaller = new DescribeReplicationInstancesRequestMarshaller();
@@ -1169,6 +1320,7 @@ namespace Amazon.DatabaseMigrationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeReplicationInstances
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationInstances">REST API Reference for DescribeReplicationInstances Operation</seealso>
         public IAsyncResult BeginDescribeReplicationInstances(DescribeReplicationInstancesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeReplicationInstancesRequestMarshaller();
@@ -1185,6 +1337,7 @@ namespace Amazon.DatabaseMigrationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeReplicationInstances.</param>
         /// 
         /// <returns>Returns a  DescribeReplicationInstancesResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationInstances">REST API Reference for DescribeReplicationInstances Operation</seealso>
         public  DescribeReplicationInstancesResponse EndDescribeReplicationInstances(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeReplicationInstancesResponse>(asyncResult);
@@ -1196,8 +1349,6 @@ namespace Amazon.DatabaseMigrationService
 
         /// <summary>
         /// Returns information about the replication subnet groups.
-        /// 
-        ///  <note/>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeReplicationSubnetGroups service method.</param>
         /// 
@@ -1205,6 +1356,7 @@ namespace Amazon.DatabaseMigrationService
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationSubnetGroups">REST API Reference for DescribeReplicationSubnetGroups Operation</seealso>
         public DescribeReplicationSubnetGroupsResponse DescribeReplicationSubnetGroups(DescribeReplicationSubnetGroupsRequest request)
         {
             var marshaller = new DescribeReplicationSubnetGroupsRequestMarshaller();
@@ -1224,6 +1376,7 @@ namespace Amazon.DatabaseMigrationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeReplicationSubnetGroups
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationSubnetGroups">REST API Reference for DescribeReplicationSubnetGroups Operation</seealso>
         public IAsyncResult BeginDescribeReplicationSubnetGroups(DescribeReplicationSubnetGroupsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeReplicationSubnetGroupsRequestMarshaller();
@@ -1240,6 +1393,7 @@ namespace Amazon.DatabaseMigrationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeReplicationSubnetGroups.</param>
         /// 
         /// <returns>Returns a  DescribeReplicationSubnetGroupsResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationSubnetGroups">REST API Reference for DescribeReplicationSubnetGroups Operation</seealso>
         public  DescribeReplicationSubnetGroupsResponse EndDescribeReplicationSubnetGroups(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeReplicationSubnetGroupsResponse>(asyncResult);
@@ -1251,8 +1405,6 @@ namespace Amazon.DatabaseMigrationService
 
         /// <summary>
         /// Returns information about replication tasks for your account in the current region.
-        /// 
-        ///  <note/>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeReplicationTasks service method.</param>
         /// 
@@ -1260,6 +1412,7 @@ namespace Amazon.DatabaseMigrationService
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationTasks">REST API Reference for DescribeReplicationTasks Operation</seealso>
         public DescribeReplicationTasksResponse DescribeReplicationTasks(DescribeReplicationTasksRequest request)
         {
             var marshaller = new DescribeReplicationTasksRequestMarshaller();
@@ -1279,6 +1432,7 @@ namespace Amazon.DatabaseMigrationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeReplicationTasks
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationTasks">REST API Reference for DescribeReplicationTasks Operation</seealso>
         public IAsyncResult BeginDescribeReplicationTasks(DescribeReplicationTasksRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeReplicationTasksRequestMarshaller();
@@ -1295,6 +1449,7 @@ namespace Amazon.DatabaseMigrationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeReplicationTasks.</param>
         /// 
         /// <returns>Returns a  DescribeReplicationTasksResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationTasks">REST API Reference for DescribeReplicationTasks Operation</seealso>
         public  DescribeReplicationTasksResponse EndDescribeReplicationTasks(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeReplicationTasksResponse>(asyncResult);
@@ -1306,8 +1461,6 @@ namespace Amazon.DatabaseMigrationService
 
         /// <summary>
         /// Returns information about the schema for the specified endpoint.
-        /// 
-        ///  <note/>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSchemas service method.</param>
         /// 
@@ -1318,6 +1471,7 @@ namespace Amazon.DatabaseMigrationService
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeSchemas">REST API Reference for DescribeSchemas Operation</seealso>
         public DescribeSchemasResponse DescribeSchemas(DescribeSchemasRequest request)
         {
             var marshaller = new DescribeSchemasRequestMarshaller();
@@ -1337,6 +1491,7 @@ namespace Amazon.DatabaseMigrationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeSchemas
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeSchemas">REST API Reference for DescribeSchemas Operation</seealso>
         public IAsyncResult BeginDescribeSchemas(DescribeSchemasRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeSchemasRequestMarshaller();
@@ -1353,6 +1508,7 @@ namespace Amazon.DatabaseMigrationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeSchemas.</param>
         /// 
         /// <returns>Returns a  DescribeSchemasResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeSchemas">REST API Reference for DescribeSchemas Operation</seealso>
         public  DescribeSchemasResponse EndDescribeSchemas(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeSchemasResponse>(asyncResult);
@@ -1365,8 +1521,6 @@ namespace Amazon.DatabaseMigrationService
         /// <summary>
         /// Returns table statistics on the database migration task, including table name, rows
         /// inserted, rows updated, and rows deleted.
-        /// 
-        ///  <note/>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeTableStatistics service method.</param>
         /// 
@@ -1377,6 +1531,7 @@ namespace Amazon.DatabaseMigrationService
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeTableStatistics">REST API Reference for DescribeTableStatistics Operation</seealso>
         public DescribeTableStatisticsResponse DescribeTableStatistics(DescribeTableStatisticsRequest request)
         {
             var marshaller = new DescribeTableStatisticsRequestMarshaller();
@@ -1396,6 +1551,7 @@ namespace Amazon.DatabaseMigrationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeTableStatistics
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeTableStatistics">REST API Reference for DescribeTableStatistics Operation</seealso>
         public IAsyncResult BeginDescribeTableStatistics(DescribeTableStatisticsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeTableStatisticsRequestMarshaller();
@@ -1412,9 +1568,69 @@ namespace Amazon.DatabaseMigrationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeTableStatistics.</param>
         /// 
         /// <returns>Returns a  DescribeTableStatisticsResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeTableStatistics">REST API Reference for DescribeTableStatistics Operation</seealso>
         public  DescribeTableStatisticsResponse EndDescribeTableStatistics(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeTableStatisticsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ImportCertificate
+
+        /// <summary>
+        /// Uploads the specified certificate.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ImportCertificate service method.</param>
+        /// 
+        /// <returns>The response from the ImportCertificate service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidCertificateException">
+        /// The certificate was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceAlreadyExistsException">
+        /// The resource you are attempting to create already exists.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ImportCertificate">REST API Reference for ImportCertificate Operation</seealso>
+        public ImportCertificateResponse ImportCertificate(ImportCertificateRequest request)
+        {
+            var marshaller = new ImportCertificateRequestMarshaller();
+            var unmarshaller = ImportCertificateResponseUnmarshaller.Instance;
+
+            return Invoke<ImportCertificateRequest,ImportCertificateResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ImportCertificate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ImportCertificate operation on AmazonDatabaseMigrationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndImportCertificate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ImportCertificate">REST API Reference for ImportCertificate Operation</seealso>
+        public IAsyncResult BeginImportCertificate(ImportCertificateRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new ImportCertificateRequestMarshaller();
+            var unmarshaller = ImportCertificateResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ImportCertificateRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ImportCertificate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginImportCertificate.</param>
+        /// 
+        /// <returns>Returns a  ImportCertificateResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ImportCertificate">REST API Reference for ImportCertificate Operation</seealso>
+        public  ImportCertificateResponse EndImportCertificate(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ImportCertificateResponse>(asyncResult);
         }
 
         #endregion
@@ -1423,8 +1639,6 @@ namespace Amazon.DatabaseMigrationService
 
         /// <summary>
         /// Lists all tags for an AWS DMS resource.
-        /// 
-        ///  <note/>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
@@ -1432,6 +1646,7 @@ namespace Amazon.DatabaseMigrationService
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
             var marshaller = new ListTagsForResourceRequestMarshaller();
@@ -1451,6 +1666,7 @@ namespace Amazon.DatabaseMigrationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTagsForResource
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListTagsForResourceRequestMarshaller();
@@ -1467,6 +1683,7 @@ namespace Amazon.DatabaseMigrationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTagsForResource.</param>
         /// 
         /// <returns>Returns a  ListTagsForResourceResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public  ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult)
         {
             return EndInvoke<ListTagsForResourceResponse>(asyncResult);
@@ -1478,8 +1695,6 @@ namespace Amazon.DatabaseMigrationService
 
         /// <summary>
         /// Modifies the specified endpoint.
-        /// 
-        ///  <note/>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyEndpoint service method.</param>
         /// 
@@ -1496,6 +1711,7 @@ namespace Amazon.DatabaseMigrationService
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyEndpoint">REST API Reference for ModifyEndpoint Operation</seealso>
         public ModifyEndpointResponse ModifyEndpoint(ModifyEndpointRequest request)
         {
             var marshaller = new ModifyEndpointRequestMarshaller();
@@ -1515,6 +1731,7 @@ namespace Amazon.DatabaseMigrationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyEndpoint
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyEndpoint">REST API Reference for ModifyEndpoint Operation</seealso>
         public IAsyncResult BeginModifyEndpoint(ModifyEndpointRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ModifyEndpointRequestMarshaller();
@@ -1531,6 +1748,7 @@ namespace Amazon.DatabaseMigrationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyEndpoint.</param>
         /// 
         /// <returns>Returns a  ModifyEndpointResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyEndpoint">REST API Reference for ModifyEndpoint Operation</seealso>
         public  ModifyEndpointResponse EndModifyEndpoint(IAsyncResult asyncResult)
         {
             return EndInvoke<ModifyEndpointResponse>(asyncResult);
@@ -1544,7 +1762,10 @@ namespace Amazon.DatabaseMigrationService
         /// Modifies the replication instance to apply new settings. You can change one or more
         /// parameters by specifying these parameters and the new values in the request.
         /// 
-        ///  <note>Some settings are applied during the maintenance window.</note>
+        ///  
+        /// <para>
+        /// Some settings are applied during the maintenance window.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyReplicationInstance service method.</param>
         /// 
@@ -1567,6 +1788,7 @@ namespace Amazon.DatabaseMigrationService
         /// <exception cref="Amazon.DatabaseMigrationService.Model.UpgradeDependencyFailureException">
         /// An upgrade dependency is preventing the database migration.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyReplicationInstance">REST API Reference for ModifyReplicationInstance Operation</seealso>
         public ModifyReplicationInstanceResponse ModifyReplicationInstance(ModifyReplicationInstanceRequest request)
         {
             var marshaller = new ModifyReplicationInstanceRequestMarshaller();
@@ -1586,6 +1808,7 @@ namespace Amazon.DatabaseMigrationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyReplicationInstance
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyReplicationInstance">REST API Reference for ModifyReplicationInstance Operation</seealso>
         public IAsyncResult BeginModifyReplicationInstance(ModifyReplicationInstanceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ModifyReplicationInstanceRequestMarshaller();
@@ -1602,6 +1825,7 @@ namespace Amazon.DatabaseMigrationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyReplicationInstance.</param>
         /// 
         /// <returns>Returns a  ModifyReplicationInstanceResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyReplicationInstance">REST API Reference for ModifyReplicationInstance Operation</seealso>
         public  ModifyReplicationInstanceResponse EndModifyReplicationInstance(IAsyncResult asyncResult)
         {
             return EndInvoke<ModifyReplicationInstanceResponse>(asyncResult);
@@ -1613,12 +1837,13 @@ namespace Amazon.DatabaseMigrationService
 
         /// <summary>
         /// Modifies the settings for the specified replication subnet group.
-        /// 
-        ///  <note/>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyReplicationSubnetGroup service method.</param>
         /// 
         /// <returns>The response from the ModifyReplicationSubnetGroup service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
+        /// AWS DMS was denied access to the endpoint.
+        /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidSubnetException">
         /// The subnet provided is invalid.
         /// </exception>
@@ -1635,6 +1860,7 @@ namespace Amazon.DatabaseMigrationService
         /// <exception cref="Amazon.DatabaseMigrationService.Model.SubnetAlreadyInUseException">
         /// The specified subnet is already in use.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyReplicationSubnetGroup">REST API Reference for ModifyReplicationSubnetGroup Operation</seealso>
         public ModifyReplicationSubnetGroupResponse ModifyReplicationSubnetGroup(ModifyReplicationSubnetGroupRequest request)
         {
             var marshaller = new ModifyReplicationSubnetGroupRequestMarshaller();
@@ -1654,6 +1880,7 @@ namespace Amazon.DatabaseMigrationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyReplicationSubnetGroup
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyReplicationSubnetGroup">REST API Reference for ModifyReplicationSubnetGroup Operation</seealso>
         public IAsyncResult BeginModifyReplicationSubnetGroup(ModifyReplicationSubnetGroupRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ModifyReplicationSubnetGroupRequestMarshaller();
@@ -1670,9 +1897,81 @@ namespace Amazon.DatabaseMigrationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyReplicationSubnetGroup.</param>
         /// 
         /// <returns>Returns a  ModifyReplicationSubnetGroupResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyReplicationSubnetGroup">REST API Reference for ModifyReplicationSubnetGroup Operation</seealso>
         public  ModifyReplicationSubnetGroupResponse EndModifyReplicationSubnetGroup(IAsyncResult asyncResult)
         {
             return EndInvoke<ModifyReplicationSubnetGroupResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ModifyReplicationTask
+
+        /// <summary>
+        /// Modifies the specified replication task.
+        /// 
+        ///  
+        /// <para>
+        /// You can't modify the task endpoints. The task must be stopped before you can modify
+        /// it. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyReplicationTask service method.</param>
+        /// 
+        /// <returns>The response from the ModifyReplicationTask service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.KMSKeyNotAccessibleException">
+        /// AWS DMS cannot access the KMS key.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceAlreadyExistsException">
+        /// The resource you are attempting to create already exists.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyReplicationTask">REST API Reference for ModifyReplicationTask Operation</seealso>
+        public ModifyReplicationTaskResponse ModifyReplicationTask(ModifyReplicationTaskRequest request)
+        {
+            var marshaller = new ModifyReplicationTaskRequestMarshaller();
+            var unmarshaller = ModifyReplicationTaskResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyReplicationTaskRequest,ModifyReplicationTaskResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyReplicationTask operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyReplicationTask operation on AmazonDatabaseMigrationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyReplicationTask
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyReplicationTask">REST API Reference for ModifyReplicationTask Operation</seealso>
+        public IAsyncResult BeginModifyReplicationTask(ModifyReplicationTaskRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new ModifyReplicationTaskRequestMarshaller();
+            var unmarshaller = ModifyReplicationTaskResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ModifyReplicationTaskRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyReplicationTask operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyReplicationTask.</param>
+        /// 
+        /// <returns>Returns a  ModifyReplicationTaskResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyReplicationTask">REST API Reference for ModifyReplicationTask Operation</seealso>
+        public  ModifyReplicationTaskResponse EndModifyReplicationTask(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ModifyReplicationTaskResponse>(asyncResult);
         }
 
         #endregion
@@ -1683,8 +1982,6 @@ namespace Amazon.DatabaseMigrationService
         /// Populates the schema for the specified endpoint. This is an asynchronous operation
         /// and can take several minutes. You can check the status of this operation by calling
         /// the DescribeRefreshSchemasStatus operation.
-        /// 
-        ///  <note/>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RefreshSchemas service method.</param>
         /// 
@@ -1701,6 +1998,7 @@ namespace Amazon.DatabaseMigrationService
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceQuotaExceededException">
         /// The quota for this resource quota has been exceeded.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/RefreshSchemas">REST API Reference for RefreshSchemas Operation</seealso>
         public RefreshSchemasResponse RefreshSchemas(RefreshSchemasRequest request)
         {
             var marshaller = new RefreshSchemasRequestMarshaller();
@@ -1720,6 +2018,7 @@ namespace Amazon.DatabaseMigrationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRefreshSchemas
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/RefreshSchemas">REST API Reference for RefreshSchemas Operation</seealso>
         public IAsyncResult BeginRefreshSchemas(RefreshSchemasRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RefreshSchemasRequestMarshaller();
@@ -1736,6 +2035,7 @@ namespace Amazon.DatabaseMigrationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRefreshSchemas.</param>
         /// 
         /// <returns>Returns a  RefreshSchemasResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/RefreshSchemas">REST API Reference for RefreshSchemas Operation</seealso>
         public  RefreshSchemasResponse EndRefreshSchemas(IAsyncResult asyncResult)
         {
             return EndInvoke<RefreshSchemasResponse>(asyncResult);
@@ -1747,8 +2047,6 @@ namespace Amazon.DatabaseMigrationService
 
         /// <summary>
         /// Removes metadata tags from a DMS resource.
-        /// 
-        ///  <note/>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemoveTagsFromResource service method.</param>
         /// 
@@ -1756,6 +2054,7 @@ namespace Amazon.DatabaseMigrationService
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/RemoveTagsFromResource">REST API Reference for RemoveTagsFromResource Operation</seealso>
         public RemoveTagsFromResourceResponse RemoveTagsFromResource(RemoveTagsFromResourceRequest request)
         {
             var marshaller = new RemoveTagsFromResourceRequestMarshaller();
@@ -1775,6 +2074,7 @@ namespace Amazon.DatabaseMigrationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRemoveTagsFromResource
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/RemoveTagsFromResource">REST API Reference for RemoveTagsFromResource Operation</seealso>
         public IAsyncResult BeginRemoveTagsFromResource(RemoveTagsFromResourceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RemoveTagsFromResourceRequestMarshaller();
@@ -1791,6 +2091,7 @@ namespace Amazon.DatabaseMigrationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRemoveTagsFromResource.</param>
         /// 
         /// <returns>Returns a  RemoveTagsFromResourceResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/RemoveTagsFromResource">REST API Reference for RemoveTagsFromResource Operation</seealso>
         public  RemoveTagsFromResourceResponse EndRemoveTagsFromResource(IAsyncResult asyncResult)
         {
             return EndInvoke<RemoveTagsFromResourceResponse>(asyncResult);
@@ -1802,8 +2103,6 @@ namespace Amazon.DatabaseMigrationService
 
         /// <summary>
         /// Starts the replication task.
-        /// 
-        ///  <note/>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartReplicationTask service method.</param>
         /// 
@@ -1814,6 +2113,7 @@ namespace Amazon.DatabaseMigrationService
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartReplicationTask">REST API Reference for StartReplicationTask Operation</seealso>
         public StartReplicationTaskResponse StartReplicationTask(StartReplicationTaskRequest request)
         {
             var marshaller = new StartReplicationTaskRequestMarshaller();
@@ -1833,6 +2133,7 @@ namespace Amazon.DatabaseMigrationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartReplicationTask
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartReplicationTask">REST API Reference for StartReplicationTask Operation</seealso>
         public IAsyncResult BeginStartReplicationTask(StartReplicationTaskRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new StartReplicationTaskRequestMarshaller();
@@ -1849,6 +2150,7 @@ namespace Amazon.DatabaseMigrationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartReplicationTask.</param>
         /// 
         /// <returns>Returns a  StartReplicationTaskResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartReplicationTask">REST API Reference for StartReplicationTask Operation</seealso>
         public  StartReplicationTaskResponse EndStartReplicationTask(IAsyncResult asyncResult)
         {
             return EndInvoke<StartReplicationTaskResponse>(asyncResult);
@@ -1860,8 +2162,6 @@ namespace Amazon.DatabaseMigrationService
 
         /// <summary>
         /// Stops the replication task.
-        /// 
-        ///  <note/>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopReplicationTask service method.</param>
         /// 
@@ -1872,6 +2172,7 @@ namespace Amazon.DatabaseMigrationService
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StopReplicationTask">REST API Reference for StopReplicationTask Operation</seealso>
         public StopReplicationTaskResponse StopReplicationTask(StopReplicationTaskRequest request)
         {
             var marshaller = new StopReplicationTaskRequestMarshaller();
@@ -1891,6 +2192,7 @@ namespace Amazon.DatabaseMigrationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopReplicationTask
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StopReplicationTask">REST API Reference for StopReplicationTask Operation</seealso>
         public IAsyncResult BeginStopReplicationTask(StopReplicationTaskRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new StopReplicationTaskRequestMarshaller();
@@ -1907,6 +2209,7 @@ namespace Amazon.DatabaseMigrationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopReplicationTask.</param>
         /// 
         /// <returns>Returns a  StopReplicationTaskResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StopReplicationTask">REST API Reference for StopReplicationTask Operation</seealso>
         public  StopReplicationTaskResponse EndStopReplicationTask(IAsyncResult asyncResult)
         {
             return EndInvoke<StopReplicationTaskResponse>(asyncResult);
@@ -1917,9 +2220,7 @@ namespace Amazon.DatabaseMigrationService
         #region  TestConnection
 
         /// <summary>
-        /// Tests the connection between the replication instance and the endpoint. 
-        /// 
-        ///  <note/>
+        /// Tests the connection between the replication instance and the endpoint.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TestConnection service method.</param>
         /// 
@@ -1936,6 +2237,7 @@ namespace Amazon.DatabaseMigrationService
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceQuotaExceededException">
         /// The quota for this resource quota has been exceeded.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/TestConnection">REST API Reference for TestConnection Operation</seealso>
         public TestConnectionResponse TestConnection(TestConnectionRequest request)
         {
             var marshaller = new TestConnectionRequestMarshaller();
@@ -1955,6 +2257,7 @@ namespace Amazon.DatabaseMigrationService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTestConnection
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/TestConnection">REST API Reference for TestConnection Operation</seealso>
         public IAsyncResult BeginTestConnection(TestConnectionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new TestConnectionRequestMarshaller();
@@ -1971,6 +2274,7 @@ namespace Amazon.DatabaseMigrationService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTestConnection.</param>
         /// 
         /// <returns>Returns a  TestConnectionResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/TestConnection">REST API Reference for TestConnection Operation</seealso>
         public  TestConnectionResponse EndTestConnection(IAsyncResult asyncResult)
         {
             return EndInvoke<TestConnectionResponse>(asyncResult);

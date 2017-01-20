@@ -52,7 +52,7 @@ namespace Amazon.Glacier.Model
     /// <para>
     /// Additionally, Amazon Glacier also checks for any missing content ranges when assembling
     /// the archive, if missing content ranges are found, Amazon Glacier returns an error
-    /// and the operation fails. 
+    /// and the operation fails.
     /// </para>
     ///  
     /// <para>
@@ -76,7 +76,7 @@ namespace Amazon.Glacier.Model
     /// </para>
     ///  
     /// <para>
-    ///  For conceptual information and underlying REST API, go to <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/uploading-archive-mpu.html">Uploading
+    ///  For conceptual information and underlying REST API, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/uploading-archive-mpu.html">Uploading
     /// Large Archives in Parts (Multipart Upload)</a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-complete-upload.html">Complete
     /// Multipart Upload</a> in the <i>Amazon Glacier Developer Guide</i>. 
     /// </para>
@@ -112,7 +112,7 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Instantiates CompleteMultipartUploadRequest with the parameterized properties
         /// </summary>
-        /// <param name="accountId">The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens (apos-apos) in the ID.</param>
+        /// <param name="accountId">The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</param>
         /// <param name="vaultName">The name of the vault.</param>
         /// <param name="uploadId">The upload ID of the multipart upload.</param>
         /// <param name="archiveSize">The total size, in bytes, of the entire archive. This value should be the sum of all the sizes of the individual parts that you uploaded.</param>
@@ -130,10 +130,10 @@ namespace Amazon.Glacier.Model
         /// Gets and sets the property AccountId. 
         /// <para>
         /// The <code>AccountId</code> value is the AWS account ID of the account that owns the
-        /// vault. You can either specify an AWS account ID or optionally a single apos<code>-</code>apos
+        /// vault. You can either specify an AWS account ID or optionally a single '<code>-</code>'
         /// (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the
         /// credentials used to sign the request. If you use an account ID, do not include any
-        /// hyphens (apos-apos) in the ID.
+        /// hyphens ('-') in the ID.
         /// </para>
         /// </summary>
         public string AccountId

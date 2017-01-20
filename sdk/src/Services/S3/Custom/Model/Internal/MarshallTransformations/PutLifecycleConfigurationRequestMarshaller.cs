@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -155,10 +155,26 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                                 {
                                     xmlWriter.WriteElementString("ID", "", S3Transforms.ToXmlStringValue(lifecycleConfigurationLifecycleConfigurationrulesListValue.Id));
                                 }
+
+                                if (lifecycleConfigurationLifecycleConfigurationrulesListValue.IsSetPrefix() &&
+                                    lifecycleConfigurationLifecycleConfigurationrulesListValue.IsSetFilter())
+                                {
+                                    throw new AmazonClientException("LifecycleRule.Prefix is deprecated.  Please only use LifecycleRule.Filter.");
+                                }
+
                                 if (lifecycleConfigurationLifecycleConfigurationrulesListValue.IsSetPrefix())
                                 {
                                     xmlWriter.WriteElementString("Prefix", "", S3Transforms.ToXmlStringValue(lifecycleConfigurationLifecycleConfigurationrulesListValue.Prefix));
                                 }
+
+                                if (lifecycleConfigurationLifecycleConfigurationrulesListValue.IsSetFilter())
+                                {
+                                    xmlWriter.WriteStartElement("Filter", "");
+                                    if (lifecycleConfigurationLifecycleConfigurationrulesListValue.Filter.IsSetLifecycleFilterPredicate())
+                                        lifecycleConfigurationLifecycleConfigurationrulesListValue.Filter.LifecycleFilterPredicate.Accept(new LifecycleFilterPredicateMarshallVisitor(xmlWriter));
+                                    xmlWriter.WriteEndElement();
+                                }
+
                                 if (lifecycleConfigurationLifecycleConfigurationrulesListValue.IsSetStatus())
                                 {
                                     xmlWriter.WriteElementString("Status", "", S3Transforms.ToXmlStringValue(lifecycleConfigurationLifecycleConfigurationrulesListValue.Status));

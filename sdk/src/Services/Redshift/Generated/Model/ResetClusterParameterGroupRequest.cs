@@ -43,7 +43,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ParameterGroupName. 
         /// <para>
-        ///  The name of the cluster parameter group to be reset. 
+        /// The name of the cluster parameter group to be reset.
         /// </para>
         /// </summary>
         public string ParameterGroupName
@@ -61,8 +61,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property Parameters. 
         /// <para>
-        ///  An array of names of parameters to be reset. If <i>ResetAllParameters</i> option
-        /// is not used, then at least one parameter name must be supplied. 
+        /// An array of names of parameters to be reset. If <i>ResetAllParameters</i> option is
+        /// not used, then at least one parameter name must be supplied. 
         /// </para>
         ///  
         /// <para>
@@ -84,12 +84,12 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ResetAllParameters. 
         /// <para>
-        ///  If <code>true</code>, all parameters in the specified parameter group will be reset
+        /// If <code>true</code>, all parameters in the specified parameter group will be reset
         /// to their default values. 
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>true</code>
+        /// Default: <code>true</code> 
         /// </para>
         /// </summary>
         public bool ResetAllParameters

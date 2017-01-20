@@ -365,7 +365,7 @@ namespace Amazon.CognitoIdentity
         /// </summary>
         public async System.Threading.Tasks.Task<string> GetIdentityIdAsync()
         {
-            return await GetIdentityIdAsync(RefreshIdentityOptions.None);
+            return await GetIdentityIdAsync(RefreshIdentityOptions.None).ConfigureAwait(false);
         }
 
         private async System.Threading.Tasks.Task<string> GetIdentityIdAsync(RefreshIdentityOptions options)
@@ -531,7 +531,7 @@ namespace Amazon.CognitoIdentity
             {
                 UpdateIdentity(cachedIdentity);
                 //update the credentials from cache
-                _currentState = GetCachedCredentials();
+                currentState = GetCachedCredentials();
             }
 
         }
@@ -558,9 +558,9 @@ namespace Amazon.CognitoIdentity
 
             // Get credentials from determined role or from identity pool
             if (roleSpecified)
-                credentialsState = await GetCredentialsForRoleAsync(roleArn);
+                credentialsState = await GetCredentialsForRoleAsync(roleArn).ConfigureAwait(false);
             else
-                credentialsState = await GetPoolCredentialsAsync();
+                credentialsState = await GetPoolCredentialsAsync().ConfigureAwait(false);
 
             CacheCredentials(credentialsState);
 
@@ -594,7 +594,7 @@ namespace Amazon.CognitoIdentity
 
             if (retry)
             {
-                return await GetCredentialsForRoleAsync(roleArn);
+                return await GetCredentialsForRoleAsync(roleArn).ConfigureAwait(false);
             }
 
             string token = getTokenResult.Token;
@@ -649,7 +649,7 @@ namespace Amazon.CognitoIdentity
 
             if (retry)
             {
-                return await GetPoolCredentialsAsync();
+                return await GetPoolCredentialsAsync().ConfigureAwait(false);
             }
 
 

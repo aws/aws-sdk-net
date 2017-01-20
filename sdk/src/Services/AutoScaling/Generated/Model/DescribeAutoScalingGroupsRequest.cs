@@ -29,8 +29,7 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeAutoScalingGroups operation.
-    /// Describes one or more Auto Scaling groups. If a list of names is not provided, the
-    /// call describes all Auto Scaling groups.
+    /// Describes one or more Auto Scaling groups.
     /// </summary>
     public partial class DescribeAutoScalingGroupsRequest : AmazonAutoScalingRequest
     {
@@ -41,7 +40,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property AutoScalingGroupNames. 
         /// <para>
-        /// The group names.
+        /// The group names. If you omit this parameter, all Auto Scaling groups are described.
         /// </para>
         /// </summary>
         public List<string> AutoScalingGroupNames

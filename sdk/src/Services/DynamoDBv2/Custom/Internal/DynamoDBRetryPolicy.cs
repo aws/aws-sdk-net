@@ -31,11 +31,11 @@ namespace Amazon.DynamoDBv2.Internal
     public class DynamoDBRetryPolicy : DefaultRetryPolicy
     {
         /// <summary>
-        /// Construct instance of DynamoDBRetryPolicy.
+        /// Constructor for DynamoDBRRetryPolicy.
         /// </summary>
-        /// <param name="maxRetries"></param>
-        public DynamoDBRetryPolicy(int maxRetries)
-            : base(maxRetries)
+        /// <param name="config">The IClientConfig object</param>
+        public DynamoDBRetryPolicy(IClientConfig config) :
+            base(config)
         { }
 
         /// <summary>
@@ -53,7 +53,12 @@ namespace Amazon.DynamoDBv2.Internal
         /// <param name="retries">Current number of retries.</param>
         private void pauseExponentially(int retries)
         {
-            int delay = (retries == 0) ? 0 : 50 * (int)Math.Pow(2, retries - 1);
+            int delay;
+               
+            if (retries <= 0)       delay = 0;
+            else if (retries < 20)  delay = Convert.ToInt32(Math.Pow(2, retries - 1) * 50.0);
+            else                    delay = Int32.MaxValue;
+
             if (retries > 0 && (delay > MaxBackoffInMilliseconds || delay <= 0))
                 delay = MaxBackoffInMilliseconds;
             Amazon.Util.AWSSDKUtils.Sleep(delay);

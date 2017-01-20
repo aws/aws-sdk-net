@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectoryService.Model
 {
     /// <summary>
-    /// This is the response object from the DescribeEventTopics operation.
+    /// The result of a DescribeEventTopic request.
     /// </summary>
     public partial class DescribeEventTopicsResponse : AmazonWebServiceResponse
     {

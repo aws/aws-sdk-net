@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2016-01-28.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-11-25.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -28,18 +28,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// A summary of the information for an Amazon CloudFront distribution.
+    /// A summary of the information about a CloudFront distribution.
     /// </summary>
     public partial class DistributionSummary
     {
         private Aliases _aliases;
+        private string _arn;
         private CacheBehaviors _cacheBehaviors;
         private string _comment;
         private CustomErrorResponses _customErrorResponses;
         private DefaultCacheBehavior _defaultCacheBehavior;
         private string _domainName;
         private bool? _enabled;
+        private HttpVersion _httpVersion;
         private string _id;
+        private bool? _isIPV6Enabled;
         private DateTime? _lastModifiedTime;
         private Origins _origins;
         private PriceClass _priceClass;
@@ -54,8 +57,11 @@ namespace Amazon.CloudFront.Model
         public DistributionSummary() { }
 
         /// <summary>
-        /// Gets and sets the property Aliases. A complex type that contains information about
-        /// CNAMEs (alternate domain names), if any, for this distribution.
+        /// Gets and sets the property Aliases. 
+        /// <para>
+        /// A complex type that contains information about CNAMEs (alternate domain names), if
+        /// any, for this distribution.
+        /// </para>
         /// </summary>
         public Aliases Aliases
         {
@@ -70,8 +76,29 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CacheBehaviors. A complex type that contains zero or more
-        /// CacheBehavior elements.
+        /// Gets and sets the property ARN. 
+        /// <para>
+        /// The ARN (Amazon Resource Name) for the distribution. For example: <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>,
+        /// where <code>123456789012</code> is your AWS account ID.
+        /// </para>
+        /// </summary>
+        public string ARN
+        {
+            get { return this._arn; }
+            set { this._arn = value; }
+        }
+
+        // Check to see if ARN property is set
+        internal bool IsSetARN()
+        {
+            return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CacheBehaviors. 
+        /// <para>
+        /// A complex type that contains zero or more <code>CacheBehavior</code> elements.
+        /// </para>
         /// </summary>
         public CacheBehaviors CacheBehaviors
         {
@@ -86,8 +113,10 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Comment. The comment originally specified when this distribution
-        /// was created.
+        /// Gets and sets the property Comment. 
+        /// <para>
+        /// The comment originally specified when this distribution was created.
+        /// </para>
         /// </summary>
         public string Comment
         {
@@ -102,8 +131,10 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CustomErrorResponses. A complex type that contains zero
-        /// or more CustomErrorResponses elements.
+        /// Gets and sets the property CustomErrorResponses. 
+        /// <para>
+        /// A complex type that contains zero or more <code>CustomErrorResponses</code> elements.
+        /// </para>
         /// </summary>
         public CustomErrorResponses CustomErrorResponses
         {
@@ -118,10 +149,12 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DefaultCacheBehavior. A complex type that describes the
-        /// default cache behavior if you do not specify a CacheBehavior element or if files don't
-        /// match any of the values of PathPattern in CacheBehavior elements.You must create exactly
-        /// one default cache behavior.
+        /// Gets and sets the property DefaultCacheBehavior. 
+        /// <para>
+        /// A complex type that describes the default cache behavior if you do not specify a <code>CacheBehavior</code>
+        /// element or if files don't match any of the values of <code>PathPattern</code> in <code>CacheBehavior</code>
+        /// elements. You must create exactly one default cache behavior.
+        /// </para>
         /// </summary>
         public DefaultCacheBehavior DefaultCacheBehavior
         {
@@ -136,8 +169,10 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DomainName. The domain name corresponding to the distribution.
-        /// For example: d604721fxaaqy9.cloudfront.net.
+        /// Gets and sets the property DomainName. 
+        /// <para>
+        /// The domain name that corresponds to the distribution. For example: <code>d604721fxaaqy9.cloudfront.net</code>.
+        /// </para>
         /// </summary>
         public string DomainName
         {
@@ -152,8 +187,10 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Enabled. Whether the distribution is enabled to accept
-        /// end user requests for content.
+        /// Gets and sets the property Enabled. 
+        /// <para>
+        /// Whether the distribution is enabled to accept user requests for content.
+        /// </para>
         /// </summary>
         public bool Enabled
         {
@@ -168,7 +205,30 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Id. The identifier for the distribution. For example: EDFDVBD632BHDS5.
+        /// Gets and sets the property HttpVersion. 
+        /// <para>
+        ///  Specify the maximum HTTP version that you want viewers to use to communicate with
+        /// CloudFront. The default value for new web distributions is <code>http2</code>. Viewers
+        /// that don't support <code>HTTP/2</code> will automatically use an earlier version.
+        /// </para>
+        /// </summary>
+        public HttpVersion HttpVersion
+        {
+            get { return this._httpVersion; }
+            set { this._httpVersion = value; }
+        }
+
+        // Check to see if HttpVersion property is set
+        internal bool IsSetHttpVersion()
+        {
+            return this._httpVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Id. 
+        /// <para>
+        /// The identifier for the distribution. For example: <code>EDFDVBD632BHDS5</code>.
+        /// </para>
         /// </summary>
         public string Id
         {
@@ -183,8 +243,28 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LastModifiedTime. The date and time the distribution was
-        /// last modified.
+        /// Gets and sets the property IsIPV6Enabled. 
+        /// <para>
+        /// Whether CloudFront responds to IPv6 DNS requests with an IPv6 address for your distribution.
+        /// </para>
+        /// </summary>
+        public bool IsIPV6Enabled
+        {
+            get { return this._isIPV6Enabled.GetValueOrDefault(); }
+            set { this._isIPV6Enabled = value; }
+        }
+
+        // Check to see if IsIPV6Enabled property is set
+        internal bool IsSetIsIPV6Enabled()
+        {
+            return this._isIPV6Enabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastModifiedTime. 
+        /// <para>
+        /// The date and time the distribution was last modified.
+        /// </para>
         /// </summary>
         public DateTime LastModifiedTime
         {
@@ -199,8 +279,10 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Origins. A complex type that contains information about
-        /// origins for this distribution.
+        /// Gets and sets the property Origins. 
+        /// <para>
+        /// A complex type that contains information about origins for this distribution.
+        /// </para>
         /// </summary>
         public Origins Origins
         {
@@ -245,9 +327,11 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Status. This response element indicates the current status
-        /// of the distribution. When the status is Deployed, the distribution's information is
-        /// fully propagated throughout the Amazon CloudFront system.
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The current status of the distribution. When the status is <code>Deployed</code>,
+        /// the distribution's information is propagated to all CloudFront edge locations.
+        /// </para>
         /// </summary>
         public string Status
         {
@@ -277,7 +361,10 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property WebACLId. The Web ACL Id (if any) associated with the distribution.
+        /// Gets and sets the property WebACLId. 
+        /// <para>
+        /// The Web ACL Id (if any) associated with the distribution.
+        /// </para>
         /// </summary>
         public string WebACLId
         {

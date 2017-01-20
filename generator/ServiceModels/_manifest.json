@@ -7,7 +7,7 @@
             "defineConstants": ";BCL;BCL35;AWS_APM_API;CODE_ANALYSIS;LOCAL_FILE",
             "binSubFolder": "net35",
             "template": "BclProjectFile",
-            "platformCodeFolders": [ "_bcl", "_bcl35", "_bcl+sl", "_bcl+unity", "_bcl+pcl" ],
+            "platformCodeFolders": [ "_bcl", "_bcl35", "_bcl+sl", "_bcl+unity", "_bcl+pcl", "_bcl+coreclr", "_bcl+coreclr+pcl","_bcl+coreclr+unity","_bcl35+unity" ],
             "nugetTargetPlatform": "net35"
         },
         {
@@ -17,18 +17,18 @@
             "defineConstants": ";BCL;BCL45;AWS_ASYNC_API;CODE_ANALYSIS;LOCAL_FILE",
             "binSubFolder": "net45",
             "template": "BclProjectFile",
-            "platformCodeFolders": [ "_bcl", "_bcl45", "_async", "_bcl+sl", "_bcl+unity", "_bcl+pcl", "_bcl45+pcl" ],
+            "platformCodeFolders": [ "_bcl", "_bcl45", "_async", "_bcl+sl", "_bcl+unity", "_bcl+pcl", "_bcl45+pcl", "_bcl45+coreclr", "_bcl+coreclr", "_bcl+coreclr+pcl","_bcl+coreclr+unity" ],
             "nugetTargetPlatform": "net45"
         },
         {
             "name": "PCL",
             "configurations": [ "Debug|Any CPU", "Release|Any CPU" ],
             "targetFramework": "v4.5",
-            "defineConstants": ";PCL;AWS_ASYNC_API;LOCAL_FILE",
+            "defineConstants": ";PCL;AWS_ASYNC_API;LOCAL_FILE;ADD_SUPPORT_ICLONEABLE",
             "binSubFolder": "pcl",
             "template": "PCLProjectFile",
-            "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_pclReference", "_pcl-sl", "_bcl+pcl", "_bcl45+pcl"  ],
-            "nugetTargetPlatform": "portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10",
+            "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_pclReference", "_pcl-sl", "_bcl+pcl", "_bcl45+pcl", "_bcl+coreclr+pcl"  ],
+            "nugetTargetPlatform": "portable-net45+win8+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10",
 
             "extraTestProjects": [
                 "test\\CrossPlatformTests\\CommonTests\\CommonTests.csproj",
@@ -49,10 +49,10 @@
             "name": "Android",
             "configurations": [ "Debug|Any CPU", "Release|Any CPU" ],
             "targetFramework": "v4.5",
-            "defineConstants": ";PCL;AWS_ASYNC_API;LOCAL_FILE",
+            "defineConstants": ";PCL;AWS_ASYNC_API;LOCAL_FILE;ADD_SUPPORT_ICLONEABLE",
             "binSubFolder": "monoandroid",
             "template": "AndroidProjectFile",
-            "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_android", "_pcl-sl", "_bcl+pcl", "_bcl45+pcl"  ],
+            "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_android", "_pcl-sl", "_bcl+pcl", "_bcl45+pcl", "_bcl+coreclr+pcl"  ],
             "parentProfile": "PCL",
             "nugetTargetPlatform": "MonoAndroid10"
         },
@@ -60,10 +60,10 @@
             "name": "iOS",
             "configurations": [ "Debug|Any CPU", "Release|Any CPU" ],
             "targetFramework": "v4.5",
-            "defineConstants": ";PCL;AWS_ASYNC_API;LOCAL_FILE",
+            "defineConstants": ";PCL;AWS_ASYNC_API;LOCAL_FILE;ADD_SUPPORT_ICLONEABLE",
             "binSubFolder": "Xamarin.iOS10",
             "template": "IOSProjectFile",
-            "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_ios", "_pcl-sl", "_bcl+pcl", "_bcl45+pcl"  ],
+            "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_ios", "_pcl-sl", "_bcl+pcl", "_bcl45+pcl", "_bcl+coreclr+pcl"  ],
             "parentProfile": "PCL",
             "nugetTargetPlatform": "xamarinios10"
         },
@@ -71,21 +71,21 @@
             "name": "Win8",
             "configurations": [ "Debug|Any CPU", "Release|Any CPU" ],
             "targetFramework": "v4.5",
-            "defineConstants": ";PCL;AWS_ASYNC_API;LOCAL_FILE",
+            "defineConstants": ";PCL;AWS_ASYNC_API;LOCAL_FILE;ADD_SUPPORT_ICLONEABLE",
             "binSubFolder": "windows8",
             "template": "Win8ProjectFile",
-            "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_win8", "_pcl-sl", "_bcl+pcl", "_bcl45+pcl"  ],
+            "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_win8", "_pcl-sl", "_bcl+pcl", "_bcl45+pcl", "_bcl+coreclr+pcl"  ],
             "parentProfile": "PCL",
-            "nugetTargetPlatform": "netcore45"
+            "nugetTargetPlatform": "win8"
         },
         {
             "name": "WinPhone81",
             "configurations": [ "Debug|Any CPU", "Release|Any CPU" ],
             "targetFramework": "v4.5",
-            "defineConstants": ";PCL;AWS_ASYNC_API;LOCAL_FILE",
+            "defineConstants": ";PCL;AWS_ASYNC_API;LOCAL_FILE;ADD_SUPPORT_ICLONEABLE",
             "binSubFolder": "wpa81",
             "template": "WinPhone81ProjectFile",
-            "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_winPhone81", "_pcl-sl", "_bcl+pcl", "_bcl45+pcl" ],
+            "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_winPhone81", "_pcl-sl", "_bcl+pcl", "_bcl45+pcl", "_bcl+coreclr+pcl" ],
             "parentProfile": "PCL",
             "nugetTargetPlatform": "wpa81"
         },
@@ -93,10 +93,10 @@
             "name": "WinPhoneSilverlight8",
             "configurations": [ "Debug|Any CPU", "Release|Any CPU" ],
             "targetFramework": "v4.5",
-            "defineConstants": ";PCL;AWS_ASYNC_API;LOCAL_FILE;WP_SL",
+            "defineConstants": ";PCL;AWS_ASYNC_API;LOCAL_FILE;WP_SL;ADD_SUPPORT_ICLONEABLE",
             "binSubFolder": "wp8",
             "template": "WinPhoneSilverlight8ProjectFile",
-            "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_winPhoneSilverlight8", "_bcl+sl", "_bcl+pcl", "_bcl45+pcl" ],
+            "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_winPhoneSilverlight8", "_bcl+sl", "_bcl+pcl", "_bcl45+pcl", "_bcl+coreclr+pcl" ],
             "parentProfile": "PCL",
             "nugetTargetPlatform": "wp8"
         },
@@ -137,6 +137,34 @@
             "region-lookup-name": "autoscaling",
             "authentication-service-name": "application-autoscaling",
             "synopsis": "Application Auto Scaling is a general purpose Auto Scaling service for supported elastic AWS resources. With Application Auto Scaling, you can automatically scale your AWS resources, with an experience similar to that of Amazon EC2 Auto Scaling."
+        },
+        {
+            "active": true,
+
+            "model": "appstream",
+            "base-name": "AppStream",
+            "region-lookup-name": "appstream2",
+            "authentication-service-name": "appstream",
+            "synopsis": "Amazon AppStream is a fully managed, secure application streaming service that allows you to stream desktop applications from AWS to a web browser."
+        },
+        {
+            "active": true,
+
+            "model": "batch",
+            "base-name": "Batch",
+            "region-lookup-name": "batch",
+            "authentication-service-name": "batch",
+            "service-url": "https://batch.us-east-1.amazonaws.com",
+            "synopsis" : "AWS Batch enables developers, scientists, and engineers to easily and efficiently run hundreds of thousands of batch computing jobs on AWS. "
+        },
+        {
+            "active": true,
+
+            "model": "budgets",
+            "base-name": "Budgets",
+            "region-lookup-name": "budgets",
+            "authentication-service-name": "budgets",
+            "synopsis" : "AWS Budget service will provide create/get/list/update/delete budgets for cost management. "
         },
         {
             "active": true,
@@ -283,6 +311,16 @@
         {
             "active": true,
 
+            "model": "codebuild",
+            "base-name": "CodeBuild",
+            "region-lookup-name": "codebuild",
+            "authentication-service-name": "codebuild",
+            "service-url": "http://codebuild.us-east-1.amazonaws.com",
+            "synopsis": "AWS CodeBuild is a fully-managed build service in the cloud. AWS CodeBuild compiles your source code, runs unit tests, and produces artifacts that are ready to deploy."
+        },
+        {
+            "active": true,
+
             "model": "codecommit",
             "base-name": "CodeCommit",
             "region-lookup-name": "codecommit",
@@ -343,7 +381,6 @@
             "service-url": "http://cognito-sync.us-east-1.amazonaws.com",
             "synopsis": "Amazon Cognito is a service that makes it easy to save user data, such as app preferences or game state, in the AWS Cloud without writing any backend code or managing any infrastructure. With Amazon Cognito, you can focus on creating great app experiences instead of having to worry about building and managing a backend solution to handle identity management, network state, storage, and sync.",
             "dependencies": [ "CognitoIdentity" ],
-            "pcl-variants": [ "iOS" ],
             "use-pcl-project-dependencies": true,
             "license-url": "http://aws.amazon.com/asl/",
             "reference-dependencies": {
@@ -355,24 +392,44 @@
                     { "name": "System.Data.SQLite.Core", "version": "1.0.97.0", "hint-path": "System.Data.SQLite.Core.1.0.97.0\\lib\\net45\\System.Data.SQLite.dll" },
                     { "name": "System.Data.SQLite.EF6", "version": "1.0.97.0", "hint-path": "System.Data.SQLite.EF6.1.0.97.0\\lib\\net45\\System.Data.SQLite.EF6.dll" }
                 ],
-                "PCL": [ { "name": "SQLitePCL", "version": "3.8.7.2", "hint-path": "SQLitePCL.3.8.7.2\\lib\\Xamarin.iOS10\\SQLitePCL.dll" } ],
-                "iOS": [
-                    { "name": "SQLitePCL", "version": "3.8.7.2", "hint-path": "SQLitePCL.3.8.7.2\\lib\\Xamarin.iOS10\\SQLitePCL.dll" },
-                    { "name": "SQLitePCL.Ext", "version": "3.8.7.2", "hint-path": "SQLitePCL.3.8.7.2\\lib\\Xamarin.iOS10\\SQLitePCL.Ext.dll" }
-                ],
-                "Unity": [
-                    { "name": "System.Data", "hint-path": "Editor\\Data\\Mono\\lib\\mono\\2.0\\System.Data.dll" },
-                    { "name": "Mono.Data.SQLite", "hint-path": "Editor\\Data\\Mono\\lib\\mono\\2.0\\Mono.Data.SQLite.dll"}
-                ]
+              "PCL": [
+                {
+                  "name": "SQLitePCLRaw.core",
+                  "version": "1.0.1",
+                  "hint-path": "SQLitePCLRaw.core.1.0.1\\lib\\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\\SQLitePCLRaw.core.dll"
+                },
+                {
+                  "name": "SQLitePCLRaw.batteries_green",
+                  "version": "1.0.1",
+                  "hint-path": "SQLitePCLRaw.bundle_green.1.0.1\\lib\\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\\SQLitePCLRaw.batteries_green.dll"
+                }
+              ],
+              "Unity": [
+                {
+                  "name": "System.Data",
+                  "hint-path": "Editor\\Data\\Mono\\lib\\mono\\2.0\\System.Data.dll"
+                },
+                {
+                  "name": "Mono.Data.SQLite",
+                  "hint-path": "Editor\\Data\\Mono\\lib\\mono\\2.0\\Mono.Data.SQLite.dll"
+                }
+              ]
             },
             "nuget-dependencies": {
                 "Net35": [ { "name": "System.Data.SQLite", "version": "1.0.97.0" } ],
                 "Net45": [ { "name": "System.Data.SQLite", "version": "1.0.97.0" } ],
-                "PCL": [ { "name": "SQLitePCL", "version": "3.8.7.2" } ],
-                "iOS": [ { "name": "SQLitePCL", "version": "3.8.7.2" } ]
+                "PCL": [ { "name": "SQLitePCLRaw.bundle_green", "version": "1.0.1" } ]
             },
           "platforms": [ "Unity" ],
           "enable-xamarin-component": true
+        },
+        {
+            "active": true,
+            "model": "cur",
+            "base-name": "CostAndUsageReport",
+            "region-lookup-name": "cur",
+            "authentication-service-name": "cur",
+            "synopsis": "The AWS Cost and Usage Report Service API allows you to enable and disable the Cost and Usage report, as well as modify the report name, the data granularity, and the delivery preferences."
         },
         {
             "active": true,
@@ -522,8 +579,18 @@
         {
             "active": true,
 
-            "model": "elasticloadbalancing",
+            "model": "elasticloadbalancing-",
             "base-name": "ElasticLoadBalancing",
+            "region-lookup-name": "elasticloadbalancing",
+            "authentication-service-name": "elasticloadbalancing",
+            "service-url": "https://elasticloadbalancing.us-east-1.amazonaws.com",
+            "synopsis": "Elastic Load Balancing automatically distributes incoming application traffic across multiple compute instances in the cloud."
+        },
+        {
+            "active": true,
+
+            "model": "elasticloadbalancingv2-",
+            "base-name": "ElasticLoadBalancingV2",
             "region-lookup-name": "elasticloadbalancing",
             "authentication-service-name": "elasticloadbalancing",
             "service-url": "https://elasticloadbalancing.us-east-1.amazonaws.com",
@@ -571,6 +638,33 @@
             "synopsis": "Amazon Kinesis Firehose is a fully managed service for ingesting data streams directly into AWS data services such as Amazon S3 and Amazon Redshift.",
             "platforms": [ "Unity" ]
         },
+        {
+            "active" : true,
+            "model" : "health",
+            "base-name": "AWSHealth",
+            "region-lookup-name": "health",
+            "authentication-service-name" : "health",
+            "synopsis": "The AWS Health API serves as the primary source for you to receive personalized information related to your AWS infrastructure, guiding your through scheduled changes, and accelerating the troubleshooting of issues impacting your AWS resources and accounts."
+        },
+		{
+            "active": true,
+
+            "model": "kinesisanalytics",
+            "base-name": "KinesisAnalytics",
+            "region-lookup-name": "kinesisanalytics",
+            "authentication-service-name": "kinesisanalytics",
+            "service-url": "https://kinesisanalytics.us-east-1.amazonaws.com/",
+            "synopsis": "Amazon Kinesis Analytics is a fully managed service for continuously querying streaming data using standard SQL."
+		},
+		{
+            "active": true,
+
+            "model": "lightsail",
+            "base-name": "Lightsail",
+            "region-lookup-name": "lightsail",
+            "authentication-service-name": "lightsail",
+            "synopsis": "An extremely simplified VM creation and management service."
+		},
         {
             "active": true,
 
@@ -638,6 +732,35 @@
             "service-url": "https://iot.us-east-1.amazonaws.com/",
             "synopsis": "AWS IoT allows you to leverage AWS to build your Internet of Things."
         },
+		{
+            "active": true,
+
+            "model": "lightsail",
+            "base-name": "Lightsail",
+            "region-lookup-name": "lightsail",
+            "authentication-service-name": "lightsail",
+            "synopsis": "An extremely simplified VM creation and management service."
+		},
+        {
+            "active": true,
+
+            "model": "shield",
+            "base-name": "Shield",
+            "region-lookup-name": "shield",
+            "authentication-service-name": "shield",
+            "service-url": "https://shield.us-east-1.amazonaws.com",
+            "synopsis": "AWS Shield protects web applications from large and sophisticated DDoS attacks at Layer 3, 4 and 7. In addition AWS Shield provides visibility in attacks, and access to 24X7 DDoS Response Team."
+        },
+        {
+            "active": true,
+
+            "model": "snowball",
+            "base-name": "Snowball",
+            "region-lookup-name": "snowball",
+            "authentication-service-name": "snowball",
+            "service-url": "https://snowball.us-east-1.amazonaws.com",
+            "synopsis": "Amazon Snowball is a petabyte-scale data transport solution that uses secure appliances to transfer large amounts of data into and out of the AWS cloud"
+        },
         {
             "active": true,
 
@@ -650,7 +773,7 @@
         {
             "active": true,
 
-            "model": "kinesis",
+            "model": "kinesis-",
             "base-name": "Kinesis",
             "region-lookup-name": "kinesis",
             "authentication-service-name": "kinesis",
@@ -689,13 +812,13 @@
         {
             "active": true,
             "enable-xamarin-component": true,
+            "coreclr-support" :  false,
             "model": "mobileanalytics",
             "base-name": "MobileAnalytics",
             "service-url": "https://mobileanalytics.us-east-1.amazonaws.com",
             "authentication-service-name": "mobileanalytics",
             "region-lookup-name": "mobileanalytics",
             "synopsis": "Amazon Mobile Analytics is a service that lets you simply and cost effectively collect and analyze your application usage data. In addition to providing usage summary charts that are available for quick reference, Amazon Mobile Analytics enables you to set up automatic export of your data to Amazon S3 for use with other data analytics tools such as Amazon Redshift, Amazon Elastic MapReduce (EMR), Extract, Transform and Load (ETL) software, or your own data warehouse.",
-            "pcl-variants": [ "iOS" ],
             "reference-dependencies": {
                 "Net35": [
                     { "name": "System.Data.SQLite.Core", "version": "1.0.97.0", "hint-path": "System.Data.SQLite.Core.1.0.97.0\\lib\\net20\\System.Data.SQLite.dll" },
@@ -705,11 +828,18 @@
                     { "name": "System.Data.SQLite.Core", "version": "1.0.97.0", "hint-path": "System.Data.SQLite.Core.1.0.97.0\\lib\\net45\\System.Data.SQLite.dll" },
                     { "name": "System.Data.SQLite.EF6", "version": "1.0.97.0", "hint-path": "System.Data.SQLite.EF6.1.0.97.0\\lib\\net45\\System.Data.SQLite.EF6.dll" }
                 ],
-                "PCL": [ { "name": "SQLitePCL", "version": "3.8.7.2", "hint-path": "SQLitePCL.3.8.7.2\\lib\\Xamarin.iOS10\\SQLitePCL.dll" } ],
-                "iOS": [
-                    { "name": "SQLitePCL", "version": "3.8.7.2", "hint-path": "SQLitePCL.3.8.7.2\\lib\\Xamarin.iOS10\\SQLitePCL.dll" },
-                    { "name": "SQLitePCL.Ext", "version": "3.8.7.2", "hint-path": "SQLitePCL.3.8.7.2\\lib\\Xamarin.iOS10\\SQLitePCL.Ext.dll" }
-                ],
+              "PCL": [
+                {
+                  "name": "SQLitePCLRaw.core",
+                  "version": "1.0.1",
+                  "hint-path": "SQLitePCLRaw.core.1.0.1\\lib\\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\\SQLitePCLRaw.core.dll"
+                },
+                {
+                  "name": "SQLitePCLRaw.batteries_green",
+                  "version": "1.0.1",
+                  "hint-path": "SQLitePCLRaw.bundle_green.1.0.1\\lib\\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\\SQLitePCLRaw.batteries_green.dll"
+                }
+              ],
                 "Unity": [
                     { "name": "System.Data", "hint-path": "Editor\\Data\\Mono\\lib\\mono\\2.0\\System.Data.dll" },
                     { "name": "Mono.Data.SQLite", "hint-path": "Editor\\Data\\Mono\\lib\\mono\\2.0\\Mono.Data.SQLite.dll"}
@@ -718,20 +848,58 @@
             "nuget-dependencies": {
                 "Net35": [ { "name": "System.Data.SQLite", "version": "1.0.97.0" } ],
                 "Net45": [ { "name": "System.Data.SQLite", "version": "1.0.97.0" } ],
-                "PCL": [ { "name": "SQLitePCL", "version": "3.8.7.2" } ],
-                "iOS": [ { "name": "SQLitePCL", "version": "3.8.7.2" } ]
+                "PCL": [ { "name": "SQLitePCLRaw.bundle_green", "version": "1.0.1" } ]
             },
             "platforms": [ "Unity" ]
         },
         {
             "active": true,
 
-            "model": "opsworks",
+            "model": "opsworks-",
             "base-name": "OpsWorks",
             "region-lookup-name": "opsworks",
             "authentication-service-name": "opsworks",
             "service-url": "https://opsworks.us-east-1.amazonaws.com/",
             "synopsis": "AWS OpsWorks is an application management service that makes it easy to deploy and operate applications of all shapes and sizes. You can define the application's architecture and the specification of each component including package installation, software configuration and resources such as storage."
+        },
+        {
+            "active": true,
+
+            "model": "pinpoint",
+            "base-name": "Pinpoint",
+            "region-lookup-name": "pinpoint",
+            "authentication-service-name": "mobiletargeting",
+            "service-url": "https://pinpoint.us-east-1.amazonaws.com",
+            "synopsis": "Amazon Pinpoint makes it easy to run targeted campaigns to improve user engagement. Pinpoint helps you understand your users behavior, define who to target, what messages to send, when to deliver them, and tracks the results of the campaign."
+        },
+		{
+          "active": true,
+
+          "model": "polly",
+          "base-name": "Polly",
+          "region-lookup-name": "polly",
+          "authentication-service-name": "polly",
+          "service-url": "https://polly.us-east-1.amazonaws.com/",
+          "synopsis": "Amazon Polly is a service that turns text into lifelike speech, making it easy to develop applications that use high-quality speech to increase engagement and accessibility."
+        },
+        {
+          "active": true,
+
+          "model": "polly",
+          "base-name": "Polly",
+          "region-lookup-name": "polly",
+          "authentication-service-name": "polly",
+          "service-url": "https://polly.us-east-1.amazonaws.com/",
+          "synopsis": "Amazon Polly is a service that turns text into lifelike speech, making it easy to develop applications that use high-quality speech to increase engagement and accessibility."
+        },
+        {
+            "active": true,
+
+            "model": "opsworkscm",
+            "base-name": "OpsWorksCM",
+            "region-lookup-name": "opsworks-cm",
+            "authentication-service-name": "opsworks-cm",
+            "synopsis": "AWS OpsWorks for Chef Automate gives customers a single tenant Chef Automate server. The Chef Automate server is fully managed by AWS and supports automatic backup, restore and upgrade operations."
         },
         {
             "active": true,
@@ -752,6 +920,15 @@
             "authentication-service-name": "redshift",
             "service-url": "https://redshift.us-east-1.amazonaws.com/",
             "synopsis": "Amazon Redshift is a fast, fully managed, petabyte-scale data warehouse solution that makes it simple and cost-effective to efficiently analyze all your data using your existing business intelligence tools."
+        },
+        {
+            "active": true,
+
+            "model": "rekognition",
+            "base-name": "Rekognition",
+            "region-lookup-name": "rekognition",
+            "authentication-service-name": "rekognition",
+            "synopsis": "AWS Rekognition service does image processing and concept recognition, face detection and identification, face verification, similar face search and face clustering."
         },
         {
             "active": true,
@@ -784,6 +961,16 @@
         },
         {
             "active": true,
+
+            "model": "sms",
+            "base-name": "ServerMigrationService",
+            "region-lookup-name": "sms",
+            "authentication-service-name": "sms",
+            "service-url": "https://sms.amazonaws.com/",
+            "synopsis": "AWS Server Migration Service (SMS) is an agentless service which makes it easier and faster for you to migrate thousands of on-premises workloads to AWS."
+        },
+        {
+            "active": true,
             "model": "sts",
             "namespace": "Amazon.SecurityToken",
             "base-name": "SecurityTokenService",
@@ -794,6 +981,15 @@
             "synopsis": "The AWS Security Token Service (AWS STS) enables you to provide trusted users with temporary credentials that provide controlled access to your AWS resources.",
             "tags": [ "STS" ],
             "platforms": [ "Unity" ]
+        },
+        {
+            "active": true,
+
+            "model": "servicecatalog",
+            "base-name": "ServiceCatalog",
+            "region-lookup-name": "servicecatalog",
+            "authentication-service-name": "servicecatalog",
+            "synopsis": "AWS Service Catalog allows organizations to create and manage catalogs of IT services that are approved for use on AWS."
         },
         {
             "active": true,
@@ -858,6 +1054,14 @@
         {
             "active": true,
 
+            "model": "states",
+            "base-name": "StepFunctions",
+            "region-lookup-name": "states",
+            "synopsis": "AWS Step Functions is a web service that enables you to coordinate a network of computing resources across distributed components using state machines."
+        },		
+        {
+            "active": true,
+
             "model": "storagegateway",
             "base-name": "StorageGateway",
             "region-lookup-name": "storagegateway",
@@ -867,7 +1071,7 @@
         {
             "active": true,
 
-            "model": "waf",
+            "model": "waf-2015-08-24",
             "base-name": "WAF",
             "region-lookup-name": "waf",
             "authentication-service-name": "waf",
@@ -877,11 +1081,30 @@
         {
             "active": true,
 
+            "model": "waf-regional",
+            "base-name": "WAFRegional",
+            "namespace": "Amazon.WAFRegional",
+            "region-lookup-name": "waf-regional",
+            "authentication-service-name": "waf-regional",
+            "synopsis": "AWS WAF (Web Application Firewall) Regional protects web applications from attack via ALB load balancer and provides API to associate it with a WAF WebACL."
+        },
+        {
+            "active": true,
+
             "model": "workspaces",
             "base-name": "WorkSpaces",
             "region-lookup-name": "workspaces",
             "service-url": "https://workspaces.us-east-1.amazonaws.com",
             "synopsis": "Amazon WorkSpaces is a managed desktop computing service in the cloud."
+        },
+        {
+            "active": true,
+
+            "model": "xray",
+            "base-name": "XRay",
+            "authentication-service-name": "xray",
+            "region-lookup-name": "xray",
+            "synopsis": "AWS X-Ray helps developers analyze and debug distributed applications. With X-Ray, you can understand how your application and its underlying services are performing to identify and troubleshoot the root cause of performance issues and errors."
         }
     ]
 }

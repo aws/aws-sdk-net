@@ -116,11 +116,31 @@ namespace Amazon.CodeDeploy.Model
         /// <para>
         /// The deployment lifecycle event status:
         /// </para>
-        ///  <ul> <li>Pending: The deployment lifecycle event is pending.</li> <li>InProgress:
-        /// The deployment lifecycle event is in progress.</li> <li>Succeeded: The deployment
-        /// lifecycle event ran successfully.</li> <li>Failed: The deployment lifecycle event
-        /// has failed.</li> <li>Skipped: The deployment lifecycle event has been skipped.</li>
-        /// <li>Unknown: The deployment lifecycle event is unknown.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// Pending: The deployment lifecycle event is pending.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// InProgress: The deployment lifecycle event is in progress.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Succeeded: The deployment lifecycle event ran successfully.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Failed: The deployment lifecycle event has failed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Skipped: The deployment lifecycle event has been skipped.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Unknown: The deployment lifecycle event is unknown.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public LifecycleEventStatus Status
         {

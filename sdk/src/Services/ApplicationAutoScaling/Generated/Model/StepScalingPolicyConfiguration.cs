@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ApplicationAutoScaling.Model
 {
     /// <summary>
-    /// An object representing a step scaling policy configuration.
+    /// Represents a step scaling policy configuration.
     /// </summary>
     public partial class StepScalingPolicyConfiguration
     {

@@ -18,6 +18,7 @@ using Amazon.Runtime.Internal.Util;
 using Amazon.Util;
 using System;
 using System.Globalization;
+using System.Net;
 using System.Reflection;
 using System.Text;
 
@@ -103,7 +104,22 @@ namespace Amazon.Runtime.Internal
                 {
                     response = httpRequest.GetResponse();
                 }
-                catch { }
+                catch (WebException webException)
+                {
+                    if (webException.Response != null)
+                    {
+#if BCL35 || UNITY
+                        webException.Response.Close();
+#else
+                        webException.Response.Dispose();
+#endif
+                    }
+                }
+                catch (HttpErrorResponseException httpErrorResponse)
+                {
+                    if (httpErrorResponse.Response != null && httpErrorResponse.Response.ResponseBody != null)
+                        httpErrorResponse.Response.ResponseBody.Dispose();
+                }
                 finally
                 {
                     if (response != null && response.ResponseBody != null)
@@ -361,7 +377,10 @@ namespace Amazon.Runtime.Internal
         {
             IRequest wrappedRequest = requestContext.Request;
 
-            if (wrappedRequest.ContentStream == null)
+            // This code path ends up using a ByteArrayContent for System.Net.HttpClient used by .NET Core.
+            // HttpClient can't seem to handle ByteArrayContent with 0 length so in that case use
+            // the StreamContent code path.
+            if (wrappedRequest.Content != null && wrappedRequest.Content.Length > 0)
             {
                 byte[] requestData = wrappedRequest.Content;
                 requestContext.Metrics.AddProperty(Metric.RequestSize, requestData.Length);
@@ -369,7 +388,18 @@ namespace Amazon.Runtime.Internal
             }
             else
             {
-                var originalStream = wrappedRequest.ContentStream;
+                System.IO.Stream originalStream;
+                if (wrappedRequest.ContentStream == null)
+                {
+                    originalStream = new System.IO.MemoryStream();
+                    originalStream.Write(wrappedRequest.Content, 0, wrappedRequest.Content.Length);
+                    originalStream.Position = 0;
+                }
+                else
+                {
+                    originalStream = wrappedRequest.ContentStream;
+                }
+
                 var callback = ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)wrappedRequest.OriginalRequest).StreamUploadProgressCallback;
                 if (callback != null)
                     originalStream = httpRequest.SetupProgressListeners(originalStream, requestContext.ClientConfig.ProgressUpdateInterval, this.CallbackSender, callback);

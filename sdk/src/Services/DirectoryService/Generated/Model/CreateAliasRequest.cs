@@ -30,7 +30,7 @@ namespace Amazon.DirectoryService.Model
     /// <summary>
     /// Container for the parameters to the CreateAlias operation.
     /// Creates an alias for a directory and assigns the alias to the directory. The alias
-    /// is used to construct the access URL for the directory, such as <code>http://<![CDATA[&#x3C;]]>alias<![CDATA[&#x3E;]]>.awsapps.com</code>.
+    /// is used to construct the access URL for the directory, such as <code>http://&lt;alias&gt;.awsapps.com</code>.
     /// 
     ///  <important> 
     /// <para>

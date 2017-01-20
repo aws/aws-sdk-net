@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-11-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes properties of a Dedicated host.
+    /// Describes properties of a Dedicated Host.
     /// </summary>
     public partial class HostProperties
     {
@@ -40,7 +40,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Cores. 
         /// <para>
-        /// The number of cores on the Dedicated host.
+        /// The number of cores on the Dedicated Host.
         /// </para>
         /// </summary>
         public int Cores
@@ -58,7 +58,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
-        /// The instance type size that the Dedicated host supports (for example, m3.medium).
+        /// The instance type size that the Dedicated Host supports (for example, <code>m3.medium</code>).
         /// </para>
         /// </summary>
         public string InstanceType
@@ -76,7 +76,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Sockets. 
         /// <para>
-        /// The number of sockets on the Dedicated host.
+        /// The number of sockets on the Dedicated Host.
         /// </para>
         /// </summary>
         public int Sockets
@@ -94,7 +94,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property TotalVCpus. 
         /// <para>
-        /// The number of vCPUs on the Dedicated host.
+        /// The number of vCPUs on the Dedicated Host.
         /// </para>
         /// </summary>
         public int TotalVCpus

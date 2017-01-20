@@ -37,7 +37,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        ///  The identifier of an AWS customer account authorized to restore a snapshot. 
+        /// The identifier of an AWS customer account authorized to restore a snapshot.
         /// </para>
         /// </summary>
         public string AccountId

@@ -29,8 +29,22 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeEC2InstanceLimits operation.
-    /// Retrieves the maximum number of instances allowed, per AWS account, for each specified
-    /// EC2 instance type. The current usage level for the AWS account is also retrieved.
+    /// Retrieves the following information for the specified EC2 instance type:
+    /// 
+    ///  <ul> <li> 
+    /// <para>
+    /// maximum number of instances allowed per AWS account (service limit)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// current usage level for the AWS account
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// Service limits vary depending on region. Available regions for GameLift can be found
+    /// in the AWS Management Console for GameLift (see the drop-down list in the upper right
+    /// corner).
+    /// </para>
     /// </summary>
     public partial class DescribeEC2InstanceLimitsRequest : AmazonGameLiftRequest
     {
@@ -39,11 +53,12 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property EC2InstanceType. 
         /// <para>
-        /// Type of EC2 instances used in the fleet. EC2 instance types define the CPU, memory,
-        /// storage, and networking capacity of the fleetaposs hosts. Amazon GameLift supports
-        /// the EC2 instance types listed below. See <a href="https://aws.amazon.com/ec2/instance-types/">Amazon
-        /// EC2 Instance Types</a> for detailed descriptions of each. Leave this parameter blank
-        /// to retrieve limits for all types.
+        /// Name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance
+        /// type determines the computing resources of each instance in the fleet, including CPU,
+        /// memory, storage, and networking capacity. GameLift supports the following EC2 instance
+        /// types. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance
+        /// Types</a> for detailed descriptions. Leave this parameter blank to retrieve limits
+        /// for all types.
         /// </para>
         /// </summary>
         public EC2InstanceType EC2InstanceType

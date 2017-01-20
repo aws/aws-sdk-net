@@ -43,6 +43,66 @@ namespace Amazon.S3
         
         #region Constructors
 
+#if CORECLR
+    
+        /// <summary>
+        /// Constructs AmazonS3Client with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
+        public AmazonS3Client()
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonS3Config()) { }
+
+        /// <summary>
+        /// Constructs AmazonS3Client with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
+        /// <param name="region">The region to connect.</param>
+        public AmazonS3Client(RegionEndpoint region)
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonS3Config{RegionEndpoint = region}) { }
+
+        /// <summary>
+        /// Constructs AmazonS3Client with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
+        /// <param name="config">The AmazonS3Client Configuration Object</param>
+        public AmazonS3Client(AmazonS3Config config)
+            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+
+#endif
+
         /// <summary>
         /// Constructs AmazonS3Client with AWS Credentials
         /// </summary>
@@ -166,7 +226,7 @@ namespace Amazon.S3
             pipeline.AddHandlerBefore<Amazon.Runtime.Internal.Unmarshaller>(new Amazon.S3.Internal.AmazonS3ResponseHandler());
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.ErrorCallbackHandler>(new Amazon.S3.Internal.AmazonS3ExceptionHandler());
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Unmarshaller>(new Amazon.S3.Internal.AmazonS3RedirectHandler());
-            pipeline.ReplaceHandler<Amazon.Runtime.Internal.RetryHandler>(new Amazon.Runtime.Internal.RetryHandler(new Amazon.S3.Internal.AmazonS3RetryPolicy(this.Config.MaxErrorRetry)));
+            pipeline.ReplaceHandler<Amazon.Runtime.Internal.RetryHandler>(new Amazon.Runtime.Internal.RetryHandler(new Amazon.S3.Internal.AmazonS3RetryPolicy(this.Config)));
         }
 
         #endregion
@@ -479,6 +539,99 @@ namespace Amazon.S3
             var unmarshaller = DeleteBucketResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteBucketRequest,DeleteBucketResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteBucketAnalyticsConfiguration
+
+        internal DeleteBucketAnalyticsConfigurationResponse DeleteBucketAnalyticsConfiguration(DeleteBucketAnalyticsConfigurationRequest request)
+        {
+            var marshaller = new DeleteBucketAnalyticsConfigurationRequestMarshaller();
+            var unmarshaller = DeleteBucketAnalyticsConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteBucketAnalyticsConfigurationRequest,DeleteBucketAnalyticsConfigurationResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteBucketAnalyticsConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBucketAnalyticsConfiguration operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteBucketAnalyticsConfigurationResponse> DeleteBucketAnalyticsConfigurationAsync(DeleteBucketAnalyticsConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteBucketAnalyticsConfigurationRequestMarshaller();
+            var unmarshaller = DeleteBucketAnalyticsConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteBucketAnalyticsConfigurationRequest,DeleteBucketAnalyticsConfigurationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteBucketInventoryConfiguration
+
+        internal DeleteBucketInventoryConfigurationResponse DeleteBucketInventoryConfiguration(DeleteBucketInventoryConfigurationRequest request)
+        {
+            var marshaller = new DeleteBucketInventoryConfigurationRequestMarshaller();
+            var unmarshaller = DeleteBucketInventoryConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteBucketInventoryConfigurationRequest,DeleteBucketInventoryConfigurationResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteBucketInventoryConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBucketInventoryConfiguration operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteBucketInventoryConfigurationResponse> DeleteBucketInventoryConfigurationAsync(DeleteBucketInventoryConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteBucketInventoryConfigurationRequestMarshaller();
+            var unmarshaller = DeleteBucketInventoryConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteBucketInventoryConfigurationRequest,DeleteBucketInventoryConfigurationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteBucketMetricsConfiguration
+
+        internal DeleteBucketMetricsConfigurationResponse DeleteBucketMetricsConfiguration(DeleteBucketMetricsConfigurationRequest request)
+        {
+            var marshaller = new DeleteBucketMetricsConfigurationRequestMarshaller();
+            var unmarshaller = DeleteBucketMetricsConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteBucketMetricsConfigurationRequest,DeleteBucketMetricsConfigurationResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteBucketMetricsConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBucketMetricsConfiguration operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteBucketMetricsConfigurationResponse> DeleteBucketMetricsConfigurationAsync(DeleteBucketMetricsConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteBucketMetricsConfigurationRequestMarshaller();
+            var unmarshaller = DeleteBucketMetricsConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteBucketMetricsConfigurationRequest,DeleteBucketMetricsConfigurationResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -861,6 +1014,37 @@ namespace Amazon.S3
 
         #endregion
         
+        #region  DeleteObjectTagging
+
+        internal DeleteObjectTaggingResponse DeleteObjectTagging(DeleteObjectTaggingRequest request)
+        {
+            var marshaller = new DeleteObjectTaggingRequestMarshaller();
+            var unmarshaller = DeleteObjectTaggingResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteObjectTaggingRequest,DeleteObjectTaggingResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteObjectTagging operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteObjectTagging operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteObjectTaggingResponse> DeleteObjectTaggingAsync(DeleteObjectTaggingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteObjectTaggingRequestMarshaller();
+            var unmarshaller = DeleteObjectTaggingResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteObjectTaggingRequest,DeleteObjectTaggingResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetACL
 
         internal GetACLResponse GetACL(GetACLRequest request)
@@ -952,6 +1136,68 @@ namespace Amazon.S3
             var unmarshaller = GetBucketAccelerateConfigurationResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetBucketAccelerateConfigurationRequest,GetBucketAccelerateConfigurationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetBucketAnalyticsConfiguration
+
+        internal GetBucketAnalyticsConfigurationResponse GetBucketAnalyticsConfiguration(GetBucketAnalyticsConfigurationRequest request)
+        {
+            var marshaller = new GetBucketAnalyticsConfigurationRequestMarshaller();
+            var unmarshaller = GetBucketAnalyticsConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<GetBucketAnalyticsConfigurationRequest,GetBucketAnalyticsConfigurationResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetBucketAnalyticsConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketAnalyticsConfiguration operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetBucketAnalyticsConfigurationResponse> GetBucketAnalyticsConfigurationAsync(GetBucketAnalyticsConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetBucketAnalyticsConfigurationRequestMarshaller();
+            var unmarshaller = GetBucketAnalyticsConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetBucketAnalyticsConfigurationRequest,GetBucketAnalyticsConfigurationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetBucketInventoryConfiguration
+
+        internal GetBucketInventoryConfigurationResponse GetBucketInventoryConfiguration(GetBucketInventoryConfigurationRequest request)
+        {
+            var marshaller = new GetBucketInventoryConfigurationRequestMarshaller();
+            var unmarshaller = GetBucketInventoryConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<GetBucketInventoryConfigurationRequest,GetBucketInventoryConfigurationResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetBucketInventoryConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketInventoryConfiguration operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetBucketInventoryConfigurationResponse> GetBucketInventoryConfigurationAsync(GetBucketInventoryConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetBucketInventoryConfigurationRequestMarshaller();
+            var unmarshaller = GetBucketInventoryConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetBucketInventoryConfigurationRequest,GetBucketInventoryConfigurationResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1049,6 +1295,37 @@ namespace Amazon.S3
             var unmarshaller = GetBucketLoggingResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetBucketLoggingRequest,GetBucketLoggingResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetBucketMetricsConfiguration
+
+        internal GetBucketMetricsConfigurationResponse GetBucketMetricsConfiguration(GetBucketMetricsConfigurationRequest request)
+        {
+            var marshaller = new GetBucketMetricsConfigurationRequestMarshaller();
+            var unmarshaller = GetBucketMetricsConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<GetBucketMetricsConfigurationRequest,GetBucketMetricsConfigurationResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetBucketMetricsConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketMetricsConfiguration operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetBucketMetricsConfigurationResponse> GetBucketMetricsConfigurationAsync(GetBucketMetricsConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetBucketMetricsConfigurationRequestMarshaller();
+            var unmarshaller = GetBucketMetricsConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetBucketMetricsConfigurationRequest,GetBucketMetricsConfigurationResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1598,6 +1875,37 @@ namespace Amazon.S3
 
         #endregion
         
+        #region  GetObjectTagging
+
+        internal GetObjectTaggingResponse GetObjectTagging(GetObjectTaggingRequest request)
+        {
+            var marshaller = new GetObjectTaggingRequestMarshaller();
+            var unmarshaller = GetObjectTaggingResponseUnmarshaller.Instance;
+
+            return Invoke<GetObjectTaggingRequest,GetObjectTaggingResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetObjectTagging operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetObjectTagging operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetObjectTaggingResponse> GetObjectTaggingAsync(GetObjectTaggingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetObjectTaggingRequestMarshaller();
+            var unmarshaller = GetObjectTaggingResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetObjectTaggingRequest,GetObjectTaggingResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetObjectTorrent
 
         internal GetObjectTorrentResponse GetObjectTorrent(GetObjectTorrentRequest request)
@@ -1732,6 +2040,99 @@ namespace Amazon.S3
             var unmarshaller = InitiateMultipartUploadResponseUnmarshaller.Instance;
 
             return InvokeAsync<InitiateMultipartUploadRequest,InitiateMultipartUploadResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListBucketAnalyticsConfigurations
+
+        internal ListBucketAnalyticsConfigurationsResponse ListBucketAnalyticsConfigurations(ListBucketAnalyticsConfigurationsRequest request)
+        {
+            var marshaller = new ListBucketAnalyticsConfigurationsRequestMarshaller();
+            var unmarshaller = ListBucketAnalyticsConfigurationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListBucketAnalyticsConfigurationsRequest,ListBucketAnalyticsConfigurationsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListBucketAnalyticsConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListBucketAnalyticsConfigurations operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListBucketAnalyticsConfigurationsResponse> ListBucketAnalyticsConfigurationsAsync(ListBucketAnalyticsConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListBucketAnalyticsConfigurationsRequestMarshaller();
+            var unmarshaller = ListBucketAnalyticsConfigurationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListBucketAnalyticsConfigurationsRequest,ListBucketAnalyticsConfigurationsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListBucketInventoryConfigurations
+
+        internal ListBucketInventoryConfigurationsResponse ListBucketInventoryConfigurations(ListBucketInventoryConfigurationsRequest request)
+        {
+            var marshaller = new ListBucketInventoryConfigurationsRequestMarshaller();
+            var unmarshaller = ListBucketInventoryConfigurationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListBucketInventoryConfigurationsRequest,ListBucketInventoryConfigurationsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListBucketInventoryConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListBucketInventoryConfigurations operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListBucketInventoryConfigurationsResponse> ListBucketInventoryConfigurationsAsync(ListBucketInventoryConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListBucketInventoryConfigurationsRequestMarshaller();
+            var unmarshaller = ListBucketInventoryConfigurationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListBucketInventoryConfigurationsRequest,ListBucketInventoryConfigurationsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListBucketMetricsConfigurations
+
+        internal ListBucketMetricsConfigurationsResponse ListBucketMetricsConfigurations(ListBucketMetricsConfigurationsRequest request)
+        {
+            var marshaller = new ListBucketMetricsConfigurationsRequestMarshaller();
+            var unmarshaller = ListBucketMetricsConfigurationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListBucketMetricsConfigurationsRequest,ListBucketMetricsConfigurationsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListBucketMetricsConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListBucketMetricsConfigurations operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListBucketMetricsConfigurationsResponse> ListBucketMetricsConfigurationsAsync(ListBucketMetricsConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListBucketMetricsConfigurationsRequestMarshaller();
+            var unmarshaller = ListBucketMetricsConfigurationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListBucketMetricsConfigurationsRequest,ListBucketMetricsConfigurationsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -2182,6 +2583,68 @@ namespace Amazon.S3
 
         #endregion
         
+        #region  PutBucketAnalyticsConfiguration
+
+        internal PutBucketAnalyticsConfigurationResponse PutBucketAnalyticsConfiguration(PutBucketAnalyticsConfigurationRequest request)
+        {
+            var marshaller = new PutBucketAnalyticsConfigurationRequestMarshaller();
+            var unmarshaller = PutBucketAnalyticsConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<PutBucketAnalyticsConfigurationRequest,PutBucketAnalyticsConfigurationResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutBucketAnalyticsConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutBucketAnalyticsConfiguration operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<PutBucketAnalyticsConfigurationResponse> PutBucketAnalyticsConfigurationAsync(PutBucketAnalyticsConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new PutBucketAnalyticsConfigurationRequestMarshaller();
+            var unmarshaller = PutBucketAnalyticsConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutBucketAnalyticsConfigurationRequest,PutBucketAnalyticsConfigurationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutBucketInventoryConfiguration
+
+        internal PutBucketInventoryConfigurationResponse PutBucketInventoryConfiguration(PutBucketInventoryConfigurationRequest request)
+        {
+            var marshaller = new PutBucketInventoryConfigurationRequestMarshaller();
+            var unmarshaller = PutBucketInventoryConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<PutBucketInventoryConfigurationRequest,PutBucketInventoryConfigurationResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutBucketInventoryConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutBucketInventoryConfiguration operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<PutBucketInventoryConfigurationResponse> PutBucketInventoryConfigurationAsync(PutBucketInventoryConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new PutBucketInventoryConfigurationRequestMarshaller();
+            var unmarshaller = PutBucketInventoryConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutBucketInventoryConfigurationRequest,PutBucketInventoryConfigurationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  PutBucketLogging
 
         internal PutBucketLoggingResponse PutBucketLogging(PutBucketLoggingRequest request)
@@ -2208,6 +2671,37 @@ namespace Amazon.S3
             var unmarshaller = PutBucketLoggingResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutBucketLoggingRequest,PutBucketLoggingResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutBucketMetricsConfiguration
+
+        internal PutBucketMetricsConfigurationResponse PutBucketMetricsConfiguration(PutBucketMetricsConfigurationRequest request)
+        {
+            var marshaller = new PutBucketMetricsConfigurationRequestMarshaller();
+            var unmarshaller = PutBucketMetricsConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<PutBucketMetricsConfigurationRequest,PutBucketMetricsConfigurationResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutBucketMetricsConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutBucketMetricsConfiguration operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<PutBucketMetricsConfigurationResponse> PutBucketMetricsConfigurationAsync(PutBucketMetricsConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new PutBucketMetricsConfigurationRequestMarshaller();
+            var unmarshaller = PutBucketMetricsConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutBucketMetricsConfigurationRequest,PutBucketMetricsConfigurationResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -2659,6 +3153,37 @@ namespace Amazon.S3
             var unmarshaller = PutObjectResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutObjectRequest,PutObjectResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutObjectTagging
+
+        internal PutObjectTaggingResponse PutObjectTagging(PutObjectTaggingRequest request)
+        {
+            var marshaller = new PutObjectTaggingRequestMarshaller();
+            var unmarshaller = PutObjectTaggingResponseUnmarshaller.Instance;
+
+            return Invoke<PutObjectTaggingRequest,PutObjectTaggingResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutObjectTagging operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutObjectTagging operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<PutObjectTaggingResponse> PutObjectTaggingAsync(PutObjectTaggingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new PutObjectTaggingRequestMarshaller();
+            var unmarshaller = PutObjectTaggingResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutObjectTaggingRequest,PutObjectTaggingResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

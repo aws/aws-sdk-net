@@ -11,5 +11,12 @@
     "noArgOverloads": [
         "ListPresets",
         "ListPipelines"
-    ]
+    ],
+    "deprecatedOverrides": {
+        "operation": {
+            "TestRole": {
+                "message": "This API is deprecated and will be removed in a future release."
+            }
+        }
+    }
 }

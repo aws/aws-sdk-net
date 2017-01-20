@@ -37,6 +37,8 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
         {
             string requestJson, responseJson;
             Generate(DYNAMODB_MODEL, "ListTables", out requestJson, out responseJson);
+            Assert.IsNotNull(requestJson);
+            Assert.IsNotNull(responseJson);
 
             JsonData rootdata = JsonMapper.ToObject(requestJson);
 
@@ -55,6 +57,8 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
         {
             string requestJson, responseJson;
             Generate(DYNAMODB_MODEL, "GetItem", out requestJson, out responseJson);
+            Assert.IsNotNull(requestJson);
+            Assert.IsNotNull(responseJson);
 
             JsonData rootdata = JsonMapper.ToObject(requestJson);
 
@@ -121,11 +125,23 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
         void Generate(ServiceModel model, string operationName, out string requestJson, out string responseJson)
         {
             var operation = model.Operations.First(x => x.Name == operationName);
-            JsonSampleGenerator generator = new JsonSampleGenerator(model, operation.RequestStructure);
-            requestJson = generator.Execute();
 
-            generator = new JsonSampleGenerator(model, operation.ResponseStructure);
-            responseJson = generator.Execute();
+            if (operation.RequestStructure == null)
+                requestJson = null;
+            else
+            {
+                var requestGenerator = new JsonSampleGenerator(model, operation.RequestStructure);
+                requestJson = requestGenerator.Execute();
+            }
+
+            if (operation.ResponseStructure == null)
+                responseJson = null;
+            else
+            {
+                var responseGenerator = new JsonSampleGenerator(model, operation.ResponseStructure);
+                responseJson = responseGenerator.Execute();
+            }
+           
         }
     }
 }

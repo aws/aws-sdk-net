@@ -110,6 +110,14 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("MessageBody", StringUtils.FromString(publicRequest.MessageBody));
                 }
+                if(publicRequest.IsSetMessageDeduplicationId())
+                {
+                    request.Parameters.Add("MessageDeduplicationId", StringUtils.FromString(publicRequest.MessageDeduplicationId));
+                }
+                if(publicRequest.IsSetMessageGroupId())
+                {
+                    request.Parameters.Add("MessageGroupId", StringUtils.FromString(publicRequest.MessageGroupId));
+                }
                 if(publicRequest.IsSetQueueUrl())
                 {
                     request.Parameters.Add("QueueUrl", StringUtils.FromString(publicRequest.QueueUrl));

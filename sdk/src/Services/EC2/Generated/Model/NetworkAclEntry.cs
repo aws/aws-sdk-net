@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-11-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -35,6 +35,7 @@ namespace Amazon.EC2.Model
         private string _cidrBlock;
         private bool? _egress;
         private IcmpTypeCode _icmpTypeCode;
+        private string _ipv6CidrBlock;
         private PortRange _portRange;
         private string _protocol;
         private RuleAction _ruleAction;
@@ -43,7 +44,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property CidrBlock. 
         /// <para>
-        /// The network range to allow or deny, in CIDR notation.
+        /// The IPv4 network range to allow or deny, in CIDR notation.
         /// </para>
         /// </summary>
         public string CidrBlock
@@ -92,6 +93,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetIcmpTypeCode()
         {
             return this._icmpTypeCode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Ipv6CidrBlock. 
+        /// <para>
+        /// The IPv6 network range to allow or deny, in CIDR notation.
+        /// </para>
+        /// </summary>
+        public string Ipv6CidrBlock
+        {
+            get { return this._ipv6CidrBlock; }
+            set { this._ipv6CidrBlock = value; }
+        }
+
+        // Check to see if Ipv6CidrBlock property is set
+        internal bool IsSetIpv6CidrBlock()
+        {
+            return this._ipv6CidrBlock != null;
         }
 
         /// <summary>

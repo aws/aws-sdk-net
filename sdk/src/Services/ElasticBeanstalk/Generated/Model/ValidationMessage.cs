@@ -45,7 +45,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property Message. 
         /// <para>
-        ///  A message describing the error or warning. 
+        /// A message describing the error or warning.
         /// </para>
         /// </summary>
         public string Message
@@ -61,7 +61,10 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Namespace.
+        /// Gets and sets the property Namespace. 
+        /// <para>
+        /// The namespace to which the option belongs.
+        /// </para>
         /// </summary>
         public string Namespace
         {
@@ -76,7 +79,10 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OptionName.
+        /// Gets and sets the property OptionName. 
+        /// <para>
+        /// The name of the option.
+        /// </para>
         /// </summary>
         public string OptionName
         {
@@ -93,11 +99,19 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property Severity. 
         /// <para>
-        ///  An indication of the severity of this message: 
+        /// An indication of the severity of this message:
         /// </para>
-        ///  <ul> <li> <code>error</code>: This message indicates that this is not a valid setting
-        /// for an option. </li> <li> <code>warning</code>: This message is providing information
-        /// you should take into account. </li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>error</code>: This message indicates that this is not a valid setting for an
+        /// option.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>warning</code>: This message is providing information you should take into
+        /// account.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public ValidationSeverity Severity
         {

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-11-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -37,7 +37,7 @@ namespace Amazon.EC2.Model
     /// 
     ///  
     /// <para>
-    /// Currently, only endpoints to Amazon S3 are supported.
+    /// Use <a>DescribeVpcEndpointServices</a> to get a list of supported AWS services.
     /// </para>
     /// </summary>
     public partial class CreateVpcEndpointRequest : AmazonEC2Request

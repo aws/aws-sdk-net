@@ -33,13 +33,18 @@ namespace Amazon.SimpleSystemsManagement.Model
     public partial class DocumentDescription
     {
         private DateTime? _createdDate;
+        private string _defaultVersion;
         private string _description;
+        private DocumentType _documentType;
+        private string _documentVersion;
         private string _hash;
         private DocumentHashType _hashType;
+        private string _latestVersion;
         private string _name;
         private string _owner;
         private List<DocumentParameter> _parameters = new List<DocumentParameter>();
         private List<string> _platformTypes = new List<string>();
+        private string _schemaVersion;
         private string _sha1;
         private DocumentStatus _status;
 
@@ -62,6 +67,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DefaultVersion. 
+        /// <para>
+        /// The default version.
+        /// </para>
+        /// </summary>
+        public string DefaultVersion
+        {
+            get { return this._defaultVersion; }
+            set { this._defaultVersion = value; }
+        }
+
+        // Check to see if DefaultVersion property is set
+        internal bool IsSetDefaultVersion()
+        {
+            return this._defaultVersion != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
         ///  A description of the document. 
@@ -77,6 +100,42 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DocumentType. 
+        /// <para>
+        /// The type of document. 
+        /// </para>
+        /// </summary>
+        public DocumentType DocumentType
+        {
+            get { return this._documentType; }
+            set { this._documentType = value; }
+        }
+
+        // Check to see if DocumentType property is set
+        internal bool IsSetDocumentType()
+        {
+            return this._documentType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DocumentVersion. 
+        /// <para>
+        /// The document version.
+        /// </para>
+        /// </summary>
+        public string DocumentVersion
+        {
+            get { return this._documentVersion; }
+            set { this._documentVersion = value; }
+        }
+
+        // Check to see if DocumentVersion property is set
+        internal bool IsSetDocumentVersion()
+        {
+            return this._documentVersion != null;
         }
 
         /// <summary>
@@ -123,6 +182,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetHashType()
         {
             return this._hashType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LatestVersion. 
+        /// <para>
+        /// The latest version of the document.
+        /// </para>
+        /// </summary>
+        public string LatestVersion
+        {
+            get { return this._latestVersion; }
+            set { this._latestVersion = value; }
+        }
+
+        // Check to see if LatestVersion property is set
+        internal bool IsSetLatestVersion()
+        {
+            return this._latestVersion != null;
         }
 
         /// <summary>
@@ -195,6 +272,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetPlatformTypes()
         {
             return this._platformTypes != null && this._platformTypes.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SchemaVersion. 
+        /// <para>
+        /// The schema version.
+        /// </para>
+        /// </summary>
+        public string SchemaVersion
+        {
+            get { return this._schemaVersion; }
+            set { this._schemaVersion = value; }
+        }
+
+        // Check to see if SchemaVersion property is set
+        internal bool IsSetSchemaVersion()
+        {
+            return this._schemaVersion != null;
         }
 
         /// <summary>

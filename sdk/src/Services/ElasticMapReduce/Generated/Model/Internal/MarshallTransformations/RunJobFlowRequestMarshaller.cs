@@ -95,6 +95,12 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetAutoScalingRole())
+                {
+                    context.Writer.WritePropertyName("AutoScalingRole");
+                    context.Writer.Write(publicRequest.AutoScalingRole);
+                }
+
                 if(publicRequest.IsSetBootstrapActions())
                 {
                     context.Writer.WritePropertyName("BootstrapActions");
@@ -176,6 +182,18 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("ReleaseLabel");
                     context.Writer.Write(publicRequest.ReleaseLabel);
+                }
+
+                if(publicRequest.IsSetScaleDownBehavior())
+                {
+                    context.Writer.WritePropertyName("ScaleDownBehavior");
+                    context.Writer.Write(publicRequest.ScaleDownBehavior);
+                }
+
+                if(publicRequest.IsSetSecurityConfiguration())
+                {
+                    context.Writer.WritePropertyName("SecurityConfiguration");
+                    context.Writer.Write(publicRequest.SecurityConfiguration);
                 }
 
                 if(publicRequest.IsSetServiceRole())

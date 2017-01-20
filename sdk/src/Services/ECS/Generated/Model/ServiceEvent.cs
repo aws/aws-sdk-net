@@ -39,7 +39,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The Unix time in seconds and milliseconds when the event was triggered.
+        /// The Unix timestamp for when the event was triggered.
         /// </para>
         /// </summary>
         public DateTime CreatedAt

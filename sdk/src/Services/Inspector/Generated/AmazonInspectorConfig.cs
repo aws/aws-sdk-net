@@ -32,7 +32,7 @@ namespace Amazon.Inspector
     public partial class AmazonInspectorConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.1.2.3");
+            InternalSDKUtils.BuildUserAgentString("3.3.0.8");
 
         private string _userAgent = UserAgentString;
 

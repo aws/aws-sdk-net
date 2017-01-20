@@ -88,6 +88,18 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
                     unmarshalledObject.DomainValidationOptions = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("FailureReason", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FailureReason = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ImportedAt", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.ImportedAt = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("InUseBy", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
@@ -164,6 +176,12 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.SubjectAlternativeNames = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Type", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

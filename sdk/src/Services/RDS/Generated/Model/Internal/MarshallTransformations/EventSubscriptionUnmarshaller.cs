@@ -79,6 +79,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.EventCategoriesList.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("EventSubscriptionArn", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.EventSubscriptionArn = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("SnsTopicArn", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

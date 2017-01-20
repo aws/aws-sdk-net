@@ -21,6 +21,7 @@
 using System;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.ECR.Model;
 
 namespace Amazon.ECR
@@ -35,7 +36,7 @@ namespace Amazon.ECR
     /// users or Amazon EC2 instances can access repositories and images. Developers can use
     /// the Docker CLI to author and manage images.
     /// </summary>
-    public partial interface IAmazonECR : IDisposable
+    public partial interface IAmazonECR : IAmazonService, IDisposable
     {
 
         
@@ -48,7 +49,8 @@ namespace Amazon.ECR
         ///  <note> 
         /// <para>
         /// This operation is used by the Amazon ECR proxy, and it is not intended for general
-        /// use by customers. Use the <code>docker</code> CLI to pull, tag, and push images.
+        /// use by customers for pulling and pushing images. In most cases, you should use the
+        /// <code>docker</code> CLI to pull, tag, and push images.
         /// </para>
         ///  </note>
         /// </summary>
@@ -65,6 +67,7 @@ namespace Amazon.ECR
         /// <exception cref="Amazon.ECR.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/BatchCheckLayerAvailability">REST API Reference for BatchCheckLayerAvailability Operation</seealso>
         BatchCheckLayerAvailabilityResponse BatchCheckLayerAvailability(BatchCheckLayerAvailabilityRequest request);
 
         /// <summary>
@@ -78,6 +81,7 @@ namespace Amazon.ECR
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchCheckLayerAvailability
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/BatchCheckLayerAvailability">REST API Reference for BatchCheckLayerAvailability Operation</seealso>
         IAsyncResult BeginBatchCheckLayerAvailability(BatchCheckLayerAvailabilityRequest request, AsyncCallback callback, object state);
 
 
@@ -89,6 +93,7 @@ namespace Amazon.ECR
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchCheckLayerAvailability.</param>
         /// 
         /// <returns>Returns a  BatchCheckLayerAvailabilityResult from ECR.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/BatchCheckLayerAvailability">REST API Reference for BatchCheckLayerAvailability Operation</seealso>
         BatchCheckLayerAvailabilityResponse EndBatchCheckLayerAvailability(IAsyncResult asyncResult);
 
         #endregion
@@ -99,6 +104,17 @@ namespace Amazon.ECR
         /// <summary>
         /// Deletes a list of specified images within a specified repository. Images are specified
         /// with either <code>imageTag</code> or <code>imageDigest</code>.
+        /// 
+        ///  
+        /// <para>
+        /// You can remove a tag from an image by specifying the image's tag in your request.
+        /// When you remove the last tag from an image, the image is deleted from your repository.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can completely delete an image (and all of its tags) by specifying the image's
+        /// digest in your request.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchDeleteImage service method.</param>
         /// 
@@ -113,6 +129,7 @@ namespace Amazon.ECR
         /// <exception cref="Amazon.ECR.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/BatchDeleteImage">REST API Reference for BatchDeleteImage Operation</seealso>
         BatchDeleteImageResponse BatchDeleteImage(BatchDeleteImageRequest request);
 
         /// <summary>
@@ -126,6 +143,7 @@ namespace Amazon.ECR
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchDeleteImage
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/BatchDeleteImage">REST API Reference for BatchDeleteImage Operation</seealso>
         IAsyncResult BeginBatchDeleteImage(BatchDeleteImageRequest request, AsyncCallback callback, object state);
 
 
@@ -137,6 +155,7 @@ namespace Amazon.ECR
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchDeleteImage.</param>
         /// 
         /// <returns>Returns a  BatchDeleteImageResult from ECR.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/BatchDeleteImage">REST API Reference for BatchDeleteImage Operation</seealso>
         BatchDeleteImageResponse EndBatchDeleteImage(IAsyncResult asyncResult);
 
         #endregion
@@ -161,6 +180,7 @@ namespace Amazon.ECR
         /// <exception cref="Amazon.ECR.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/BatchGetImage">REST API Reference for BatchGetImage Operation</seealso>
         BatchGetImageResponse BatchGetImage(BatchGetImageRequest request);
 
         /// <summary>
@@ -174,6 +194,7 @@ namespace Amazon.ECR
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchGetImage
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/BatchGetImage">REST API Reference for BatchGetImage Operation</seealso>
         IAsyncResult BeginBatchGetImage(BatchGetImageRequest request, AsyncCallback callback, object state);
 
 
@@ -185,6 +206,7 @@ namespace Amazon.ECR
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchGetImage.</param>
         /// 
         /// <returns>Returns a  BatchGetImageResult from ECR.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/BatchGetImage">REST API Reference for BatchGetImage Operation</seealso>
         BatchGetImageResponse EndBatchGetImage(IAsyncResult asyncResult);
 
         #endregion
@@ -200,7 +222,8 @@ namespace Amazon.ECR
         ///  <note> 
         /// <para>
         /// This operation is used by the Amazon ECR proxy, and it is not intended for general
-        /// use by customers. Use the <code>docker</code> CLI to pull, tag, and push images.
+        /// use by customers for pulling and pushing images. In most cases, you should use the
+        /// <code>docker</code> CLI to pull, tag, and push images.
         /// </para>
         ///  </note>
         /// </summary>
@@ -233,6 +256,7 @@ namespace Amazon.ECR
         /// <exception cref="Amazon.ECR.Model.UploadNotFoundException">
         /// The upload could not be found, or the specified upload id is not valid for this repository.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/CompleteLayerUpload">REST API Reference for CompleteLayerUpload Operation</seealso>
         CompleteLayerUploadResponse CompleteLayerUpload(CompleteLayerUploadRequest request);
 
         /// <summary>
@@ -246,6 +270,7 @@ namespace Amazon.ECR
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCompleteLayerUpload
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/CompleteLayerUpload">REST API Reference for CompleteLayerUpload Operation</seealso>
         IAsyncResult BeginCompleteLayerUpload(CompleteLayerUploadRequest request, AsyncCallback callback, object state);
 
 
@@ -257,6 +282,7 @@ namespace Amazon.ECR
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCompleteLayerUpload.</param>
         /// 
         /// <returns>Returns a  CompleteLayerUploadResult from ECR.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/CompleteLayerUpload">REST API Reference for CompleteLayerUpload Operation</seealso>
         CompleteLayerUploadResponse EndCompleteLayerUpload(IAsyncResult asyncResult);
 
         #endregion
@@ -284,6 +310,7 @@ namespace Amazon.ECR
         /// <exception cref="Amazon.ECR.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/CreateRepository">REST API Reference for CreateRepository Operation</seealso>
         CreateRepositoryResponse CreateRepository(CreateRepositoryRequest request);
 
         /// <summary>
@@ -297,6 +324,7 @@ namespace Amazon.ECR
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateRepository
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/CreateRepository">REST API Reference for CreateRepository Operation</seealso>
         IAsyncResult BeginCreateRepository(CreateRepositoryRequest request, AsyncCallback callback, object state);
 
 
@@ -308,6 +336,7 @@ namespace Amazon.ECR
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateRepository.</param>
         /// 
         /// <returns>Returns a  CreateRepositoryResult from ECR.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/CreateRepository">REST API Reference for CreateRepository Operation</seealso>
         CreateRepositoryResponse EndCreateRepository(IAsyncResult asyncResult);
 
         #endregion
@@ -336,6 +365,7 @@ namespace Amazon.ECR
         /// <exception cref="Amazon.ECR.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeleteRepository">REST API Reference for DeleteRepository Operation</seealso>
         DeleteRepositoryResponse DeleteRepository(DeleteRepositoryRequest request);
 
         /// <summary>
@@ -349,6 +379,7 @@ namespace Amazon.ECR
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteRepository
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeleteRepository">REST API Reference for DeleteRepository Operation</seealso>
         IAsyncResult BeginDeleteRepository(DeleteRepositoryRequest request, AsyncCallback callback, object state);
 
 
@@ -360,6 +391,7 @@ namespace Amazon.ECR
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteRepository.</param>
         /// 
         /// <returns>Returns a  DeleteRepositoryResult from ECR.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeleteRepository">REST API Reference for DeleteRepository Operation</seealso>
         DeleteRepositoryResponse EndDeleteRepository(IAsyncResult asyncResult);
 
         #endregion
@@ -387,6 +419,7 @@ namespace Amazon.ECR
         /// <exception cref="Amazon.ECR.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeleteRepositoryPolicy">REST API Reference for DeleteRepositoryPolicy Operation</seealso>
         DeleteRepositoryPolicyResponse DeleteRepositoryPolicy(DeleteRepositoryPolicyRequest request);
 
         /// <summary>
@@ -400,6 +433,7 @@ namespace Amazon.ECR
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteRepositoryPolicy
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeleteRepositoryPolicy">REST API Reference for DeleteRepositoryPolicy Operation</seealso>
         IAsyncResult BeginDeleteRepositoryPolicy(DeleteRepositoryPolicyRequest request, AsyncCallback callback, object state);
 
 
@@ -411,7 +445,71 @@ namespace Amazon.ECR
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteRepositoryPolicy.</param>
         /// 
         /// <returns>Returns a  DeleteRepositoryPolicyResult from ECR.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeleteRepositoryPolicy">REST API Reference for DeleteRepositoryPolicy Operation</seealso>
         DeleteRepositoryPolicyResponse EndDeleteRepositoryPolicy(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeImages
+
+
+        /// <summary>
+        /// Returns metadata about the images in a repository, including image size, image tags,
+        /// and creation date.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Beginning with Docker version 1.9, the Docker client compresses image layers before
+        /// pushing them to a V2 Docker registry. The output of the <code>docker images</code>
+        /// command shows the uncompressed image size, so it may return a larger image size than
+        /// the image sizes returned by <a>DescribeImages</a>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeImages service method.</param>
+        /// 
+        /// <returns>The response from the DescribeImages service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.ImageNotFoundException">
+        /// The image requested does not exist in the specified repository.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.RepositoryNotFoundException">
+        /// The specified repository could not be found. Check the spelling of the specified repository
+        /// and ensure that you are performing operations on the correct registry.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeImages">REST API Reference for DescribeImages Operation</seealso>
+        DescribeImagesResponse DescribeImages(DescribeImagesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeImages operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeImages operation on AmazonECRClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeImages
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeImages">REST API Reference for DescribeImages Operation</seealso>
+        IAsyncResult BeginDescribeImages(DescribeImagesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeImages operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeImages.</param>
+        /// 
+        /// <returns>Returns a  DescribeImagesResult from ECR.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeImages">REST API Reference for DescribeImages Operation</seealso>
+        DescribeImagesResponse EndDescribeImages(IAsyncResult asyncResult);
 
         #endregion
         
@@ -434,6 +532,7 @@ namespace Amazon.ECR
         /// <exception cref="Amazon.ECR.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeRepositories">REST API Reference for DescribeRepositories Operation</seealso>
         DescribeRepositoriesResponse DescribeRepositories(DescribeRepositoriesRequest request);
 
         /// <summary>
@@ -447,6 +546,7 @@ namespace Amazon.ECR
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeRepositories
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeRepositories">REST API Reference for DescribeRepositories Operation</seealso>
         IAsyncResult BeginDescribeRepositories(DescribeRepositoriesRequest request, AsyncCallback callback, object state);
 
 
@@ -458,6 +558,7 @@ namespace Amazon.ECR
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeRepositories.</param>
         /// 
         /// <returns>Returns a  DescribeRepositoriesResult from ECR.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeRepositories">REST API Reference for DescribeRepositories Operation</seealso>
         DescribeRepositoriesResponse EndDescribeRepositories(IAsyncResult asyncResult);
 
         #endregion
@@ -487,6 +588,7 @@ namespace Amazon.ECR
         /// <exception cref="Amazon.ECR.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetAuthorizationToken">REST API Reference for GetAuthorizationToken Operation</seealso>
         GetAuthorizationTokenResponse GetAuthorizationToken(GetAuthorizationTokenRequest request);
 
         /// <summary>
@@ -500,6 +602,7 @@ namespace Amazon.ECR
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAuthorizationToken
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetAuthorizationToken">REST API Reference for GetAuthorizationToken Operation</seealso>
         IAsyncResult BeginGetAuthorizationToken(GetAuthorizationTokenRequest request, AsyncCallback callback, object state);
 
 
@@ -511,6 +614,7 @@ namespace Amazon.ECR
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAuthorizationToken.</param>
         /// 
         /// <returns>Returns a  GetAuthorizationTokenResult from ECR.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetAuthorizationToken">REST API Reference for GetAuthorizationToken Operation</seealso>
         GetAuthorizationTokenResponse EndGetAuthorizationToken(IAsyncResult asyncResult);
 
         #endregion
@@ -525,7 +629,8 @@ namespace Amazon.ECR
         ///  <note> 
         /// <para>
         /// This operation is used by the Amazon ECR proxy, and it is not intended for general
-        /// use by customers. Use the <code>docker</code> CLI to pull, tag, and push images.
+        /// use by customers for pulling and pushing images. In most cases, you should use the
+        /// <code>docker</code> CLI to pull, tag, and push images.
         /// </para>
         ///  </note>
         /// </summary>
@@ -550,6 +655,7 @@ namespace Amazon.ECR
         /// <exception cref="Amazon.ECR.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetDownloadUrlForLayer">REST API Reference for GetDownloadUrlForLayer Operation</seealso>
         GetDownloadUrlForLayerResponse GetDownloadUrlForLayer(GetDownloadUrlForLayerRequest request);
 
         /// <summary>
@@ -563,6 +669,7 @@ namespace Amazon.ECR
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDownloadUrlForLayer
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetDownloadUrlForLayer">REST API Reference for GetDownloadUrlForLayer Operation</seealso>
         IAsyncResult BeginGetDownloadUrlForLayer(GetDownloadUrlForLayerRequest request, AsyncCallback callback, object state);
 
 
@@ -574,6 +681,7 @@ namespace Amazon.ECR
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDownloadUrlForLayer.</param>
         /// 
         /// <returns>Returns a  GetDownloadUrlForLayerResult from ECR.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetDownloadUrlForLayer">REST API Reference for GetDownloadUrlForLayer Operation</seealso>
         GetDownloadUrlForLayerResponse EndGetDownloadUrlForLayer(IAsyncResult asyncResult);
 
         #endregion
@@ -601,6 +709,7 @@ namespace Amazon.ECR
         /// <exception cref="Amazon.ECR.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetRepositoryPolicy">REST API Reference for GetRepositoryPolicy Operation</seealso>
         GetRepositoryPolicyResponse GetRepositoryPolicy(GetRepositoryPolicyRequest request);
 
         /// <summary>
@@ -614,6 +723,7 @@ namespace Amazon.ECR
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetRepositoryPolicy
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetRepositoryPolicy">REST API Reference for GetRepositoryPolicy Operation</seealso>
         IAsyncResult BeginGetRepositoryPolicy(GetRepositoryPolicyRequest request, AsyncCallback callback, object state);
 
 
@@ -625,6 +735,7 @@ namespace Amazon.ECR
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetRepositoryPolicy.</param>
         /// 
         /// <returns>Returns a  GetRepositoryPolicyResult from ECR.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetRepositoryPolicy">REST API Reference for GetRepositoryPolicy Operation</seealso>
         GetRepositoryPolicyResponse EndGetRepositoryPolicy(IAsyncResult asyncResult);
 
         #endregion
@@ -638,7 +749,8 @@ namespace Amazon.ECR
         ///  <note> 
         /// <para>
         /// This operation is used by the Amazon ECR proxy, and it is not intended for general
-        /// use by customers. Use the <code>docker</code> CLI to pull, tag, and push images.
+        /// use by customers for pulling and pushing images. In most cases, you should use the
+        /// <code>docker</code> CLI to pull, tag, and push images.
         /// </para>
         ///  </note>
         /// </summary>
@@ -655,6 +767,7 @@ namespace Amazon.ECR
         /// <exception cref="Amazon.ECR.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/InitiateLayerUpload">REST API Reference for InitiateLayerUpload Operation</seealso>
         InitiateLayerUploadResponse InitiateLayerUpload(InitiateLayerUploadRequest request);
 
         /// <summary>
@@ -668,6 +781,7 @@ namespace Amazon.ECR
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndInitiateLayerUpload
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/InitiateLayerUpload">REST API Reference for InitiateLayerUpload Operation</seealso>
         IAsyncResult BeginInitiateLayerUpload(InitiateLayerUploadRequest request, AsyncCallback callback, object state);
 
 
@@ -679,6 +793,7 @@ namespace Amazon.ECR
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginInitiateLayerUpload.</param>
         /// 
         /// <returns>Returns a  InitiateLayerUploadResult from ECR.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/InitiateLayerUpload">REST API Reference for InitiateLayerUpload Operation</seealso>
         InitiateLayerUploadResponse EndInitiateLayerUpload(IAsyncResult asyncResult);
 
         #endregion
@@ -688,6 +803,15 @@ namespace Amazon.ECR
 
         /// <summary>
         /// Lists all the image IDs for a given repository.
+        /// 
+        ///  
+        /// <para>
+        /// You can filter images based on whether or not they are tagged by setting the <code>tagStatus</code>
+        /// parameter to <code>TAGGED</code> or <code>UNTAGGED</code>. For example, you can filter
+        /// your results to return only <code>UNTAGGED</code> images and then pipe that result
+        /// to a <a>BatchDeleteImage</a> operation to delete them. Or, you can filter your results
+        /// to return only <code>TAGGED</code> images to list all of the tags in your repository.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListImages service method.</param>
         /// 
@@ -702,6 +826,7 @@ namespace Amazon.ECR
         /// <exception cref="Amazon.ECR.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/ListImages">REST API Reference for ListImages Operation</seealso>
         ListImagesResponse ListImages(ListImagesRequest request);
 
         /// <summary>
@@ -715,6 +840,7 @@ namespace Amazon.ECR
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListImages
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/ListImages">REST API Reference for ListImages Operation</seealso>
         IAsyncResult BeginListImages(ListImagesRequest request, AsyncCallback callback, object state);
 
 
@@ -726,6 +852,7 @@ namespace Amazon.ECR
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListImages.</param>
         /// 
         /// <returns>Returns a  ListImagesResult from ECR.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/ListImages">REST API Reference for ListImages Operation</seealso>
         ListImagesResponse EndListImages(IAsyncResult asyncResult);
 
         #endregion
@@ -734,12 +861,13 @@ namespace Amazon.ECR
 
 
         /// <summary>
-        /// Creates or updates the image manifest associated with an image.
+        /// Creates or updates the image manifest and tags associated with an image.
         /// 
         ///  <note> 
         /// <para>
         /// This operation is used by the Amazon ECR proxy, and it is not intended for general
-        /// use by customers. Use the <code>docker</code> CLI to pull, tag, and push images.
+        /// use by customers for pulling and pushing images. In most cases, you should use the
+        /// <code>docker</code> CLI to pull, tag, and push images.
         /// </para>
         ///  </note>
         /// </summary>
@@ -769,6 +897,7 @@ namespace Amazon.ECR
         /// <exception cref="Amazon.ECR.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutImage">REST API Reference for PutImage Operation</seealso>
         PutImageResponse PutImage(PutImageRequest request);
 
         /// <summary>
@@ -782,6 +911,7 @@ namespace Amazon.ECR
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutImage
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutImage">REST API Reference for PutImage Operation</seealso>
         IAsyncResult BeginPutImage(PutImageRequest request, AsyncCallback callback, object state);
 
 
@@ -793,6 +923,7 @@ namespace Amazon.ECR
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutImage.</param>
         /// 
         /// <returns>Returns a  PutImageResult from ECR.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutImage">REST API Reference for PutImage Operation</seealso>
         PutImageResponse EndPutImage(IAsyncResult asyncResult);
 
         #endregion
@@ -816,6 +947,7 @@ namespace Amazon.ECR
         /// <exception cref="Amazon.ECR.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/SetRepositoryPolicy">REST API Reference for SetRepositoryPolicy Operation</seealso>
         SetRepositoryPolicyResponse SetRepositoryPolicy(SetRepositoryPolicyRequest request);
 
         /// <summary>
@@ -829,6 +961,7 @@ namespace Amazon.ECR
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSetRepositoryPolicy
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/SetRepositoryPolicy">REST API Reference for SetRepositoryPolicy Operation</seealso>
         IAsyncResult BeginSetRepositoryPolicy(SetRepositoryPolicyRequest request, AsyncCallback callback, object state);
 
 
@@ -840,6 +973,7 @@ namespace Amazon.ECR
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetRepositoryPolicy.</param>
         /// 
         /// <returns>Returns a  SetRepositoryPolicyResult from ECR.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/SetRepositoryPolicy">REST API Reference for SetRepositoryPolicy Operation</seealso>
         SetRepositoryPolicyResponse EndSetRepositoryPolicy(IAsyncResult asyncResult);
 
         #endregion
@@ -853,7 +987,8 @@ namespace Amazon.ECR
         ///  <note> 
         /// <para>
         /// This operation is used by the Amazon ECR proxy, and it is not intended for general
-        /// use by customers. Use the <code>docker</code> CLI to pull, tag, and push images.
+        /// use by customers for pulling and pushing images. In most cases, you should use the
+        /// <code>docker</code> CLI to pull, tag, and push images.
         /// </para>
         ///  </note>
         /// </summary>
@@ -882,6 +1017,7 @@ namespace Amazon.ECR
         /// <exception cref="Amazon.ECR.Model.UploadNotFoundException">
         /// The upload could not be found, or the specified upload id is not valid for this repository.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/UploadLayerPart">REST API Reference for UploadLayerPart Operation</seealso>
         UploadLayerPartResponse UploadLayerPart(UploadLayerPartRequest request);
 
         /// <summary>
@@ -895,6 +1031,7 @@ namespace Amazon.ECR
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUploadLayerPart
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/UploadLayerPart">REST API Reference for UploadLayerPart Operation</seealso>
         IAsyncResult BeginUploadLayerPart(UploadLayerPartRequest request, AsyncCallback callback, object state);
 
 
@@ -906,6 +1043,7 @@ namespace Amazon.ECR
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUploadLayerPart.</param>
         /// 
         /// <returns>Returns a  UploadLayerPartResult from ECR.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/UploadLayerPart">REST API Reference for UploadLayerPart Operation</seealso>
         UploadLayerPartResponse EndUploadLayerPart(IAsyncResult asyncResult);
 
         #endregion

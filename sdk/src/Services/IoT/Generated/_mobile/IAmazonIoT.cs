@@ -23,6 +23,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.IoT.Model;
 
 namespace Amazon.IoT
@@ -45,7 +46,7 @@ namespace Amazon.IoT
     /// Guide</a>.
     /// </para>
     /// </summary>
-    public partial interface IAmazonIoT : IDisposable
+    public partial interface IAmazonIoT : IAmazonService, IDisposable
     {
                 
         #region  AcceptCertificateTransfer
@@ -120,7 +121,7 @@ namespace Amazon.IoT
         /// Attaches the specified principal to the specified thing.
         /// </summary>
         /// <param name="thingName">The name of the thing.</param>
-        /// <param name="principal">The principal (certificate or other credential).</param>
+        /// <param name="principal">The principal, such as a certificate or other credential.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -675,6 +676,22 @@ namespace Amazon.IoT
 
         #endregion
                 
+        #region  CreateThingType
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateThingType operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateThingType operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<CreateThingTypeResponse> CreateThingTypeAsync(CreateThingTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateTopicRule
 
 
@@ -902,9 +919,9 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Deletes the specified thing from the Thing Registry.
+        /// Deletes the specified thing.
         /// </summary>
-        /// <param name="thingName">The thing name.</param>
+        /// <param name="thingName">The name of the thing to delete.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -928,6 +945,10 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <exception cref="Amazon.IoT.Model.VersionConflictException">
+        /// An exception thrown when the version of a thing passed to a command is different than
+        /// the version specified with the --version parameter.
+        /// </exception>
         Task<DeleteThingResponse> DeleteThingAsync(string thingName, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
@@ -940,6 +961,22 @@ namespace Amazon.IoT
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<DeleteThingResponse> DeleteThingAsync(DeleteThingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteThingType
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteThingType operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteThingType operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DeleteThingTypeResponse> DeleteThingTypeAsync(DeleteThingTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -979,6 +1016,22 @@ namespace Amazon.IoT
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<DeleteTopicRuleResponse> DeleteTopicRuleAsync(DeleteTopicRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeprecateThingType
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeprecateThingType operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeprecateThingType operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DeprecateThingTypeResponse> DeprecateThingTypeAsync(DeprecateThingTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -1123,6 +1176,22 @@ namespace Amazon.IoT
 
         #endregion
                 
+        #region  DescribeThingType
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeThingType operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeThingType operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DescribeThingTypeResponse> DescribeThingTypeAsync(DescribeThingTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DetachPrincipalPolicy
 
 
@@ -1176,7 +1245,7 @@ namespace Amazon.IoT
         /// Detaches the specified principal from the specified thing.
         /// </summary>
         /// <param name="thingName">The name of the thing.</param>
-        /// <param name="principal">The principal. If the principal is a certificate, specify the certificate ARN. If the principal is an Amazon Cognito identity, specify the identity ID.</param>
+        /// <param name="principal">If the principal is a certificate, this value must be ARN of the certificate. If the principal is an Amazon Cognito identity, this value must be the ID of the Amazon Cognito identity.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -1489,6 +1558,22 @@ namespace Amazon.IoT
 
         #endregion
                 
+        #region  ListOutgoingCertificates
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListOutgoingCertificates operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListOutgoingCertificates operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ListOutgoingCertificatesResponse> ListOutgoingCertificatesAsync(ListOutgoingCertificatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListPolicies
 
 
@@ -1656,6 +1741,9 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
         /// The request is not valid.
         /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
         /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
         /// The service is temporarily unavailable.
         /// </exception>
@@ -1698,6 +1786,9 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
         /// The request is not valid.
         /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
         /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
         /// The service is temporarily unavailable.
         /// </exception>
@@ -1726,8 +1817,10 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Lists your things. You can pass an AttributeName or AttributeValue to filter your
-        /// things (for example, "ListThings where AttributeName=Color and AttributeValue=Red").
+        /// Lists your things. Use the <b>attributeName</b> and <b>attributeValue</b> parameters
+        /// to filter your things. For example, calling <code>ListThings</code> with attributeName=Color
+        /// and attributeValue=Red retrieves all things in the registry that contain an attribute
+        /// <b>Color</b> with the value <b>Red</b>.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -1761,6 +1854,22 @@ namespace Amazon.IoT
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<ListThingsResponse> ListThingsAsync(ListThingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListThingTypes
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListThingTypes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListThingTypes operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ListThingTypesResponse> ListThingTypesAsync(ListThingTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

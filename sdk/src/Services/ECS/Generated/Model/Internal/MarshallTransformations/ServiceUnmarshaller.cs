@@ -112,6 +112,18 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.PendingCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("placementConstraints", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<PlacementConstraint, PlacementConstraintUnmarshaller>(PlacementConstraintUnmarshaller.Instance);
+                    unmarshalledObject.PlacementConstraints = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("placementStrategy", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<PlacementStrategy, PlacementStrategyUnmarshaller>(PlacementStrategyUnmarshaller.Instance);
+                    unmarshalledObject.PlacementStrategy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("roleArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

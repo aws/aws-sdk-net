@@ -103,35 +103,35 @@ namespace Amazon.DeviceFarm.Model
         /// <para>
         /// Allowed values include:
         /// </para>
-        ///  <ul> <li>
-        /// <para>
-        /// ERRORED: An error condition.
-        /// </para>
-        /// </li> <li>
-        /// <para>
-        /// FAILED: A failed condition.
-        /// </para>
-        /// </li> <li>
-        /// <para>
-        /// SKIPPED: A skipped condition.
-        /// </para>
-        /// </li> <li>
-        /// <para>
-        /// STOPPED: A stopped condition.
-        /// </para>
-        /// </li> <li>
-        /// <para>
-        /// PASSED: A passing condition.
-        /// </para>
-        /// </li> <li>
+        ///  <ul> <li> 
         /// <para>
         /// PENDING: A pending condition.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
+        /// <para>
+        /// PASSED: A passing condition.
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         /// WARNED: A warning condition.
         /// </para>
-        /// </li> </ul>
+        ///  </li> <li> 
+        /// <para>
+        /// FAILED: A failed condition.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// SKIPPED: A skipped condition.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ERRORED: An error condition.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// STOPPED: A stopped condition.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public ExecutionResult Result
         {

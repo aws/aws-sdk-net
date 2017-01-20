@@ -34,7 +34,7 @@ namespace Amazon.ConfigService.Model
     /// 
     ///  
     /// <para>
-    /// This action does not return status information about customer managed Config rules.
+    /// This action does not return status information about custom Config rules.
     /// </para>
     /// </summary>
     public partial class ConfigRuleEvaluationStatus
@@ -129,9 +129,17 @@ namespace Amazon.ConfigService.Model
         /// Indicates whether AWS Config has evaluated your resources against the rule at least
         /// once.
         /// </para>
-        ///  <ul> <li><code>true</code> - AWS Config has evaluated your AWS resources against
-        /// the rule at least once.</li> <li><code>false</code> - AWS Config has not once finished
-        /// evaluating your AWS resources against the rule.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>true</code> - AWS Config has evaluated your AWS resources against the rule
+        /// at least once.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>false</code> - AWS Config has not once finished evaluating your AWS resources
+        /// against the rule.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public bool FirstEvaluationStarted
         {

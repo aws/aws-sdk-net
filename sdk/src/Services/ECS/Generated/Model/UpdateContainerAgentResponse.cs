@@ -35,7 +35,10 @@ namespace Amazon.ECS.Model
         private ContainerInstance _containerInstance;
 
         /// <summary>
-        /// Gets and sets the property ContainerInstance.
+        /// Gets and sets the property ContainerInstance. 
+        /// <para>
+        /// The container instance for which the container agent was updated.
+        /// </para>
         /// </summary>
         public ContainerInstance ContainerInstance
         {

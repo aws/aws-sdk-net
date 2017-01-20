@@ -70,6 +70,18 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("targetId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TargetId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("targetType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TargetType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("value", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

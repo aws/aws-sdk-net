@@ -29,13 +29,6 @@ namespace Amazon.ConfigService.Model
 {
     /// <summary>
     /// A list that contains detailed configurations of a specified resource.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// Currently, the list does not contain information about non-AWS components (for example,
-    /// applications on your Amazon EC2 instances).
-    /// </para>
-    ///  </note>
     /// </summary>
     public partial class ConfigurationItem
     {
@@ -54,6 +47,7 @@ namespace Amazon.ConfigService.Model
         private string _resourceId;
         private string _resourceName;
         private ResourceType _resourceType;
+        private Dictionary<string, string> _supplementaryConfiguration = new Dictionary<string, string>();
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private string _version;
 
@@ -168,7 +162,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ConfigurationItemMD5Hash. 
         /// <para>
-        /// Unique MD5 hash that represents the configuration item&apos;s state.
+        /// Unique MD5 hash that represents the configuration item's state.
         /// </para>
         ///  
         /// <para>
@@ -273,7 +267,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ResourceCreationTime. 
         /// <para>
-        /// The time stamp when the resource was created. 
+        /// The time stamp when the resource was created.
         /// </para>
         /// </summary>
         public DateTime ResourceCreationTime
@@ -340,6 +334,25 @@ namespace Amazon.ConfigService.Model
         internal bool IsSetResourceType()
         {
             return this._resourceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupplementaryConfiguration. 
+        /// <para>
+        /// Configuration attributes that AWS Config returns for certain resource types to supplement
+        /// the information returned for the <code>configuration</code> parameter.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> SupplementaryConfiguration
+        {
+            get { return this._supplementaryConfiguration; }
+            set { this._supplementaryConfiguration = value; }
+        }
+
+        // Check to see if SupplementaryConfiguration property is set
+        internal bool IsSetSupplementaryConfiguration()
+        {
+            return this._supplementaryConfiguration != null && this._supplementaryConfiguration.Count > 0; 
         }
 
         /// <summary>

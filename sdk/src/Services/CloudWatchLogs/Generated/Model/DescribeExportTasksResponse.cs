@@ -36,7 +36,10 @@ namespace Amazon.CloudWatchLogs.Model
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property ExportTasks.
+        /// Gets and sets the property ExportTasks. 
+        /// <para>
+        /// The export tasks.
+        /// </para>
         /// </summary>
         public List<ExportTask> ExportTasks
         {

@@ -69,8 +69,8 @@ namespace Amazon.ElasticTranscoder.Model
         /// <summary>
         /// Gets and sets the property OutputBucket. 
         /// <para>
-        /// The Amazon S3 bucket that Elastic Transcoder will write transcoded media files to.
-        /// The action attempts to read from this bucket.
+        /// The Amazon S3 bucket that Elastic Transcoder writes transcoded media files to. The
+        /// action attempts to read from this bucket.
         /// </para>
         /// </summary>
         public string OutputBucket

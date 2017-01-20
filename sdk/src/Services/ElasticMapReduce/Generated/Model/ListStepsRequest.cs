@@ -29,7 +29,8 @@ namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
     /// Container for the parameters to the ListSteps operation.
-    /// Provides a list of steps for the cluster.
+    /// Provides a list of steps for the cluster in reverse order unless you specify stepIds
+    /// with the request.
     /// </summary>
     public partial class ListStepsRequest : AmazonElasticMapReduceRequest
     {

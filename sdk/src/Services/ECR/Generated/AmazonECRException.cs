@@ -28,7 +28,7 @@ namespace Amazon.ECR
     ///<summary>
     /// Common exception for the ECR service.
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class AmazonECRException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.ECR
         {
         }
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the AmazonECRException class with serialized data.
         /// </summary>

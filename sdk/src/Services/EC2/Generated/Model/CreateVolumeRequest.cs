@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-11-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -138,7 +138,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property Iops. 
         /// <para>
         /// Only valid for Provisioned IOPS SSD volumes. The number of I/O operations per second
-        /// (IOPS) to provision for the volume, with a maximum ratio of 30 IOPS/GiB.
+        /// (IOPS) to provision for the volume, with a maximum ratio of 50 IOPS/GiB.
         /// </para>
         ///  
         /// <para>

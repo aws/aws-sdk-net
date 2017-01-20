@@ -13,6 +13,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
     public class ECR : TestBase<AmazonECRClient>
     {
         [TestMethod]
+        [TestCategory("ECR")]
         public void TestRepos()
         {
             var repoName = Utils.UtilityMethods.GenerateName("ecs-repo-");

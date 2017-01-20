@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodePipeline.Model
 {
     /// <summary>
-    /// Represents the output of a retry stage execution operation.
+    /// Represents the output of a retry stage execution action.
     /// </summary>
     public partial class RetryStageExecutionResponse : AmazonWebServiceResponse
     {

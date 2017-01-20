@@ -242,9 +242,13 @@ namespace Amazon.ElasticTranscoder
         /// <summary>
         /// The CancelJob operation cancels an unfinished job.
         /// 
-        ///  <note>You can only cancel a job that has a status of <code>Submitted</code>. To prevent
+        ///  <note> 
+        /// <para>
+        /// You can only cancel a job that has a status of <code>Submitted</code>. To prevent
         /// a pipeline from starting to process a job while you're getting the job identifier,
-        /// use <a>UpdatePipelineStatus</a> to temporarily pause the pipeline.</note>
+        /// use <a>UpdatePipelineStatus</a> to temporarily pause the pipeline.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelJob service method.</param>
         /// 
@@ -303,7 +307,7 @@ namespace Amazon.ElasticTranscoder
 
         /// <summary>
         /// When you create a job, Elastic Transcoder returns JSON data that includes the values
-        /// that you specified plus information about the job that is created. 
+        /// that you specified plus information about the job that is created.
         /// 
         ///  
         /// <para>
@@ -428,15 +432,19 @@ namespace Amazon.ElasticTranscoder
         /// <summary>
         /// The CreatePreset operation creates a preset with settings that you specify.
         /// 
-        ///  <important>Elastic Transcoder checks the CreatePreset settings to ensure that they
-        /// meet Elastic Transcoder requirements and to determine whether they comply with H.264
-        /// standards. If your settings are not valid for Elastic Transcoder, Elastic Transcoder
-        /// returns an HTTP 400 response (<code>ValidationException</code>) and does not create
-        /// the preset. If the settings are valid for Elastic Transcoder but aren't strictly compliant
-        /// with the H.264 standard, Elastic Transcoder creates the preset and returns a warning
-        /// message in the response. This helps you determine whether your settings comply with
-        /// the H.264 standard while giving you greater flexibility with respect to the video
-        /// that Elastic Transcoder produces.</important> 
+        ///  <important> 
+        /// <para>
+        /// Elastic Transcoder checks the CreatePreset settings to ensure that they meet Elastic
+        /// Transcoder requirements and to determine whether they comply with H.264 standards.
+        /// If your settings are not valid for Elastic Transcoder, Elastic Transcoder returns
+        /// an HTTP 400 response (<code>ValidationException</code>) and does not create the preset.
+        /// If the settings are valid for Elastic Transcoder but aren't strictly compliant with
+        /// the H.264 standard, Elastic Transcoder creates the preset and returns a warning message
+        /// in the response. This helps you determine whether your settings comply with the H.264
+        /// standard while giving you greater flexibility with respect to the video that Elastic
+        /// Transcoder produces.
+        /// </para>
+        ///  </important> 
         /// <para>
         /// Elastic Transcoder uses the H.264 video-compression format. For more information,
         /// see the International Telecommunication Union publication <i>Recommendation ITU-T
@@ -1134,6 +1142,7 @@ namespace Amazon.ElasticTranscoder
         /// <exception cref="Amazon.ElasticTranscoder.Model.ValidationException">
         /// One or more required parameter values were not provided in the request.
         /// </exception>
+        [Obsolete("This API is deprecated and will be removed in a future release.")]
         public TestRoleResponse TestRole(TestRoleRequest request)
         {
             var marshaller = new TestRoleRequestMarshaller();
@@ -1151,6 +1160,7 @@ namespace Amazon.ElasticTranscoder
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        [Obsolete("This API is deprecated and will be removed in a future release.")]
         public Task<TestRoleResponse> TestRoleAsync(TestRoleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new TestRoleRequestMarshaller();
@@ -1167,10 +1177,14 @@ namespace Amazon.ElasticTranscoder
 
         /// <summary>
         /// Use the <code>UpdatePipeline</code> operation to update settings for a pipeline.
-        /// <important>When you change pipeline settings, your changes take effect immediately.
-        /// Jobs that you have already submitted and that Elastic Transcoder has not started to
-        /// process are affected in addition to jobs that you submit after you change settings.
-        /// </important>
+        /// 
+        ///  <important> 
+        /// <para>
+        /// When you change pipeline settings, your changes take effect immediately. Jobs that
+        /// you have already submitted and that Elastic Transcoder has not started to process
+        /// are affected in addition to jobs that you submit after you change settings. 
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdatePipeline service method.</param>
         /// 

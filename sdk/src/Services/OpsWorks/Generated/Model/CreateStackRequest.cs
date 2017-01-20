@@ -181,7 +181,7 @@ namespace Amazon.OpsWorks.Model
         /// <para>
         /// A string that contains user-defined, custom JSON. It can be used to override the corresponding
         /// default stack configuration attribute values or to pass data to recipes. The string
-        /// should be in the following escape characters such as '"':
+        /// should be in the following format:
         /// </para>
         ///  
         /// <para>
@@ -263,6 +263,10 @@ namespace Amazon.OpsWorks.Model
         /// <para>
         /// A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu
         /// 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>CentOS 7</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -460,7 +464,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
-        /// The stack's AWS region, such as "us-east-1". For more information about Amazon regions,
+        /// The stack's AWS region, such as "ap-south-1". For more information about Amazon regions,
         /// see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
         /// Endpoints</a>.
         /// </para>

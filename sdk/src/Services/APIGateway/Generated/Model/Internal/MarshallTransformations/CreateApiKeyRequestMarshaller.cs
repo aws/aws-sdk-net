@@ -65,6 +65,12 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetCustomerId())
+                {
+                    context.Writer.WritePropertyName("customerId");
+                    context.Writer.Write(publicRequest.CustomerId);
+                }
+
                 if(publicRequest.IsSetDescription())
                 {
                     context.Writer.WritePropertyName("description");
@@ -75,6 +81,12 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("enabled");
                     context.Writer.Write(publicRequest.Enabled);
+                }
+
+                if(publicRequest.IsSetGenerateDistinctId())
+                {
+                    context.Writer.WritePropertyName("generateDistinctId");
+                    context.Writer.Write(publicRequest.GenerateDistinctId);
                 }
 
                 if(publicRequest.IsSetName())
@@ -97,6 +109,12 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                         context.Writer.WriteObjectEnd();
                     }
                     context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetValue())
+                {
+                    context.Writer.WritePropertyName("value");
+                    context.Writer.Write(publicRequest.Value);
                 }
 
         

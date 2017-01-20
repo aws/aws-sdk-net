@@ -37,7 +37,7 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Gets and sets the property Attributes. 
         /// <para>
-        /// A map of attributes to the respective values.
+        /// A map of attributes to their respective values.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Attributes

@@ -45,7 +45,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property ClusterStates. 
         /// <para>
-        /// The cluster state filters to apply when listing clusters. 
+        /// The cluster state filters to apply when listing clusters.
         /// </para>
         /// </summary>
         public List<string> ClusterStates
@@ -63,7 +63,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property CreatedAfter. 
         /// <para>
-        /// The creation date and time beginning value filter for listing clusters .
+        /// The creation date and time beginning value filter for listing clusters.
         /// </para>
         /// </summary>
         public DateTime CreatedAfter
@@ -81,7 +81,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property CreatedBefore. 
         /// <para>
-        /// The creation date and time end value filter for listing clusters .
+        /// The creation date and time end value filter for listing clusters.
         /// </para>
         /// </summary>
         public DateTime CreatedBefore
@@ -99,7 +99,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        /// The pagination token that indicates the next set of results to retrieve. 
+        /// The pagination token that indicates the next set of results to retrieve.
         /// </para>
         /// </summary>
         public string Marker

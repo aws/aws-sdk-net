@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-11-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the AllocateHosts operation.
-    /// Allocates a Dedicated host to your account. At minimum you need to specify the instance
+    /// Allocates a Dedicated Host to your account. At minimum you need to specify the instance
     /// size type, Availability Zone, and quantity of hosts you want to allocate.
     /// </summary>
     public partial class AllocateHostsRequest : AmazonEC2Request
@@ -44,7 +44,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property AutoPlacement. 
         /// <para>
         /// This is enabled by default. This property allows instances to be automatically placed
-        /// onto available Dedicated hosts, when you are launching instances without specifying
+        /// onto available Dedicated Hosts, when you are launching instances without specifying
         /// a host ID.
         /// </para>
         ///  
@@ -67,7 +67,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
         /// <para>
-        /// The Availability Zone for the Dedicated hosts.
+        /// The Availability Zone for the Dedicated Hosts.
         /// </para>
         /// </summary>
         public string AvailabilityZone
@@ -105,7 +105,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
-        /// Specify the instance type that you want your Dedicated hosts to be configured for.
+        /// Specify the instance type that you want your Dedicated Hosts to be configured for.
         /// When you specify the instance type, that is the only instance type that you can launch
         /// onto that host.
         /// </para>
@@ -125,7 +125,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Quantity. 
         /// <para>
-        /// The number of Dedicated hosts you want to allocate to your account with these parameters.
+        /// The number of Dedicated Hosts you want to allocate to your account with these parameters.
         /// </para>
         /// </summary>
         public int Quantity

@@ -76,6 +76,12 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                     unmarshalledObject.CloudWatchLogsRoleArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("HasCustomEventSelectors", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.HasCustomEventSelectors = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("HomeRegion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

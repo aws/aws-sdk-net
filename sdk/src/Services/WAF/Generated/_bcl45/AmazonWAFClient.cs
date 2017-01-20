@@ -243,14 +243,27 @@ namespace Amazon.WAF
         /// <para>
         /// To create and configure a <code>ByteMatchSet</code>, perform the following steps:
         /// </para>
-        ///  <ol> <li>Use <a>GetChangeToken</a> to get the change token that you provide in the
-        /// <code>ChangeToken</code> parameter of a <code>CreateByteMatchSet</code> request.</li>
-        /// <li>Submit a <code>CreateByteMatchSet</code> request.</li> <li>Use <code>GetChangeToken</code>
-        /// to get the change token that you provide in the <code>ChangeToken</code> parameter
-        /// of an <code>UpdateByteMatchSet</code> request.</li> <li>Submit an <a>UpdateByteMatchSet</a>
-        /// request to specify the part of the request that you want AWS WAF to inspect (for example,
-        /// the header or the URI) and the value that you want AWS WAF to watch for.</li> </ol>
-        /// 
+        ///  <ol> <li> 
+        /// <para>
+        /// Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code>
+        /// parameter of a <code>CreateByteMatchSet</code> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit a <code>CreateByteMatchSet</code> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code>
+        /// parameter of an <code>UpdateByteMatchSet</code> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit an <a>UpdateByteMatchSet</a> request to specify the part of the request that
+        /// you want AWS WAF to inspect (for example, the header or the URI) and the value that
+        /// you want AWS WAF to watch for.
+        /// </para>
+        ///  </li> </ol> 
         /// <para>
         /// For more information about how to use the AWS WAF API to allow or block HTTP requests,
         /// see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
@@ -276,17 +289,40 @@ namespace Amazon.WAF
         /// The operation failed because AWS WAF didn't recognize a parameter in the request.
         /// For example:
         /// 
-        ///  <ul> <li>You specified an invalid parameter name.</li> <li>You specified an invalid
-        /// value.</li> <li>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>,
-        /// <code>Rule</code>, or <code>WebACL</code>) using an action other than <code>INSERT</code>
-        /// or <code>DELETE</code>.</li> <li>You tried to create a <code>WebACL</code> with a
-        /// <code>DefaultAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>,
-        /// or <code>COUNT</code>.</li> <li>You tried to update a <code>WebACL</code> with a <code>WafAction</code>
-        /// <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</li>
-        /// <li>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code>
-        /// <code>Type</code> other than HEADER, QUERY_STRING, or URI.</li> <li>You tried to update
-        /// a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code> but no
-        /// value for <code>Data</code>.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an invalid parameter name.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You specified an invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>,
+        /// or <code>WebACL</code>) using an action other than <code>INSERT</code> or <code>DELETE</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code>
+        /// other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code>
+        /// other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code>
+        /// other than HEADER, QUERY_STRING, or URI.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code>
+        /// but no value for <code>Data</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFLimitsExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
@@ -318,14 +354,27 @@ namespace Amazon.WAF
         /// <para>
         /// To create and configure a <code>ByteMatchSet</code>, perform the following steps:
         /// </para>
-        ///  <ol> <li>Use <a>GetChangeToken</a> to get the change token that you provide in the
-        /// <code>ChangeToken</code> parameter of a <code>CreateByteMatchSet</code> request.</li>
-        /// <li>Submit a <code>CreateByteMatchSet</code> request.</li> <li>Use <code>GetChangeToken</code>
-        /// to get the change token that you provide in the <code>ChangeToken</code> parameter
-        /// of an <code>UpdateByteMatchSet</code> request.</li> <li>Submit an <a>UpdateByteMatchSet</a>
-        /// request to specify the part of the request that you want AWS WAF to inspect (for example,
-        /// the header or the URI) and the value that you want AWS WAF to watch for.</li> </ol>
-        /// 
+        ///  <ol> <li> 
+        /// <para>
+        /// Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code>
+        /// parameter of a <code>CreateByteMatchSet</code> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit a <code>CreateByteMatchSet</code> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code>
+        /// parameter of an <code>UpdateByteMatchSet</code> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit an <a>UpdateByteMatchSet</a> request to specify the part of the request that
+        /// you want AWS WAF to inspect (for example, the header or the URI) and the value that
+        /// you want AWS WAF to watch for.
+        /// </para>
+        ///  </li> </ol> 
         /// <para>
         /// For more information about how to use the AWS WAF API to allow or block HTTP requests,
         /// see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
@@ -350,17 +399,40 @@ namespace Amazon.WAF
         /// The operation failed because AWS WAF didn't recognize a parameter in the request.
         /// For example:
         /// 
-        ///  <ul> <li>You specified an invalid parameter name.</li> <li>You specified an invalid
-        /// value.</li> <li>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>,
-        /// <code>Rule</code>, or <code>WebACL</code>) using an action other than <code>INSERT</code>
-        /// or <code>DELETE</code>.</li> <li>You tried to create a <code>WebACL</code> with a
-        /// <code>DefaultAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>,
-        /// or <code>COUNT</code>.</li> <li>You tried to update a <code>WebACL</code> with a <code>WafAction</code>
-        /// <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</li>
-        /// <li>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code>
-        /// <code>Type</code> other than HEADER, QUERY_STRING, or URI.</li> <li>You tried to update
-        /// a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code> but no
-        /// value for <code>Data</code>.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an invalid parameter name.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You specified an invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>,
+        /// or <code>WebACL</code>) using an action other than <code>INSERT</code> or <code>DELETE</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code>
+        /// other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code>
+        /// other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code>
+        /// other than HEADER, QUERY_STRING, or URI.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code>
+        /// but no value for <code>Data</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFLimitsExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
@@ -392,14 +464,27 @@ namespace Amazon.WAF
         /// <para>
         /// To create and configure a <code>ByteMatchSet</code>, perform the following steps:
         /// </para>
-        ///  <ol> <li>Use <a>GetChangeToken</a> to get the change token that you provide in the
-        /// <code>ChangeToken</code> parameter of a <code>CreateByteMatchSet</code> request.</li>
-        /// <li>Submit a <code>CreateByteMatchSet</code> request.</li> <li>Use <code>GetChangeToken</code>
-        /// to get the change token that you provide in the <code>ChangeToken</code> parameter
-        /// of an <code>UpdateByteMatchSet</code> request.</li> <li>Submit an <a>UpdateByteMatchSet</a>
-        /// request to specify the part of the request that you want AWS WAF to inspect (for example,
-        /// the header or the URI) and the value that you want AWS WAF to watch for.</li> </ol>
-        /// 
+        ///  <ol> <li> 
+        /// <para>
+        /// Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code>
+        /// parameter of a <code>CreateByteMatchSet</code> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit a <code>CreateByteMatchSet</code> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code>
+        /// parameter of an <code>UpdateByteMatchSet</code> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit an <a>UpdateByteMatchSet</a> request to specify the part of the request that
+        /// you want AWS WAF to inspect (for example, the header or the URI) and the value that
+        /// you want AWS WAF to watch for.
+        /// </para>
+        ///  </li> </ol> 
         /// <para>
         /// For more information about how to use the AWS WAF API to allow or block HTTP requests,
         /// see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
@@ -428,17 +513,40 @@ namespace Amazon.WAF
         /// The operation failed because AWS WAF didn't recognize a parameter in the request.
         /// For example:
         /// 
-        ///  <ul> <li>You specified an invalid parameter name.</li> <li>You specified an invalid
-        /// value.</li> <li>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>,
-        /// <code>Rule</code>, or <code>WebACL</code>) using an action other than <code>INSERT</code>
-        /// or <code>DELETE</code>.</li> <li>You tried to create a <code>WebACL</code> with a
-        /// <code>DefaultAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>,
-        /// or <code>COUNT</code>.</li> <li>You tried to update a <code>WebACL</code> with a <code>WafAction</code>
-        /// <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</li>
-        /// <li>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code>
-        /// <code>Type</code> other than HEADER, QUERY_STRING, or URI.</li> <li>You tried to update
-        /// a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code> but no
-        /// value for <code>Data</code>.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an invalid parameter name.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You specified an invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>,
+        /// or <code>WebACL</code>) using an action other than <code>INSERT</code> or <code>DELETE</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code>
+        /// other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code>
+        /// other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code>
+        /// other than HEADER, QUERY_STRING, or URI.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code>
+        /// but no value for <code>Data</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFLimitsExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
@@ -492,12 +600,26 @@ namespace Amazon.WAF
         /// <para>
         /// To create and configure an <code>IPSet</code>, perform the following steps:
         /// </para>
-        ///  <ol> <li>Use <a>GetChangeToken</a> to get the change token that you provide in the
-        /// <code>ChangeToken</code> parameter of a <code>CreateIPSet</code> request.</li> <li>Submit
-        /// a <code>CreateIPSet</code> request.</li> <li>Use <code>GetChangeToken</code> to get
-        /// the change token that you provide in the <code>ChangeToken</code> parameter of an
-        /// <a>UpdateIPSet</a> request.</li> <li>Submit an <code>UpdateIPSet</code> request to
-        /// specify the IP addresses that you want AWS WAF to watch for.</li> </ol> 
+        ///  <ol> <li> 
+        /// <para>
+        /// Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code>
+        /// parameter of a <code>CreateIPSet</code> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit a <code>CreateIPSet</code> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code>
+        /// parameter of an <a>UpdateIPSet</a> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit an <code>UpdateIPSet</code> request to specify the IP addresses that you want
+        /// AWS WAF to watch for.
+        /// </para>
+        ///  </li> </ol> 
         /// <para>
         /// For more information about how to use the AWS WAF API to allow or block HTTP requests,
         /// see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
@@ -523,17 +645,40 @@ namespace Amazon.WAF
         /// The operation failed because AWS WAF didn't recognize a parameter in the request.
         /// For example:
         /// 
-        ///  <ul> <li>You specified an invalid parameter name.</li> <li>You specified an invalid
-        /// value.</li> <li>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>,
-        /// <code>Rule</code>, or <code>WebACL</code>) using an action other than <code>INSERT</code>
-        /// or <code>DELETE</code>.</li> <li>You tried to create a <code>WebACL</code> with a
-        /// <code>DefaultAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>,
-        /// or <code>COUNT</code>.</li> <li>You tried to update a <code>WebACL</code> with a <code>WafAction</code>
-        /// <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</li>
-        /// <li>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code>
-        /// <code>Type</code> other than HEADER, QUERY_STRING, or URI.</li> <li>You tried to update
-        /// a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code> but no
-        /// value for <code>Data</code>.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an invalid parameter name.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You specified an invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>,
+        /// or <code>WebACL</code>) using an action other than <code>INSERT</code> or <code>DELETE</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code>
+        /// other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code>
+        /// other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code>
+        /// other than HEADER, QUERY_STRING, or URI.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code>
+        /// but no value for <code>Data</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFLimitsExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
@@ -565,12 +710,26 @@ namespace Amazon.WAF
         /// <para>
         /// To create and configure an <code>IPSet</code>, perform the following steps:
         /// </para>
-        ///  <ol> <li>Use <a>GetChangeToken</a> to get the change token that you provide in the
-        /// <code>ChangeToken</code> parameter of a <code>CreateIPSet</code> request.</li> <li>Submit
-        /// a <code>CreateIPSet</code> request.</li> <li>Use <code>GetChangeToken</code> to get
-        /// the change token that you provide in the <code>ChangeToken</code> parameter of an
-        /// <a>UpdateIPSet</a> request.</li> <li>Submit an <code>UpdateIPSet</code> request to
-        /// specify the IP addresses that you want AWS WAF to watch for.</li> </ol> 
+        ///  <ol> <li> 
+        /// <para>
+        /// Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code>
+        /// parameter of a <code>CreateIPSet</code> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit a <code>CreateIPSet</code> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code>
+        /// parameter of an <a>UpdateIPSet</a> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit an <code>UpdateIPSet</code> request to specify the IP addresses that you want
+        /// AWS WAF to watch for.
+        /// </para>
+        ///  </li> </ol> 
         /// <para>
         /// For more information about how to use the AWS WAF API to allow or block HTTP requests,
         /// see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
@@ -595,17 +754,40 @@ namespace Amazon.WAF
         /// The operation failed because AWS WAF didn't recognize a parameter in the request.
         /// For example:
         /// 
-        ///  <ul> <li>You specified an invalid parameter name.</li> <li>You specified an invalid
-        /// value.</li> <li>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>,
-        /// <code>Rule</code>, or <code>WebACL</code>) using an action other than <code>INSERT</code>
-        /// or <code>DELETE</code>.</li> <li>You tried to create a <code>WebACL</code> with a
-        /// <code>DefaultAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>,
-        /// or <code>COUNT</code>.</li> <li>You tried to update a <code>WebACL</code> with a <code>WafAction</code>
-        /// <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</li>
-        /// <li>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code>
-        /// <code>Type</code> other than HEADER, QUERY_STRING, or URI.</li> <li>You tried to update
-        /// a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code> but no
-        /// value for <code>Data</code>.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an invalid parameter name.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You specified an invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>,
+        /// or <code>WebACL</code>) using an action other than <code>INSERT</code> or <code>DELETE</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code>
+        /// other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code>
+        /// other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code>
+        /// other than HEADER, QUERY_STRING, or URI.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code>
+        /// but no value for <code>Data</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFLimitsExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
@@ -637,12 +819,26 @@ namespace Amazon.WAF
         /// <para>
         /// To create and configure an <code>IPSet</code>, perform the following steps:
         /// </para>
-        ///  <ol> <li>Use <a>GetChangeToken</a> to get the change token that you provide in the
-        /// <code>ChangeToken</code> parameter of a <code>CreateIPSet</code> request.</li> <li>Submit
-        /// a <code>CreateIPSet</code> request.</li> <li>Use <code>GetChangeToken</code> to get
-        /// the change token that you provide in the <code>ChangeToken</code> parameter of an
-        /// <a>UpdateIPSet</a> request.</li> <li>Submit an <code>UpdateIPSet</code> request to
-        /// specify the IP addresses that you want AWS WAF to watch for.</li> </ol> 
+        ///  <ol> <li> 
+        /// <para>
+        /// Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code>
+        /// parameter of a <code>CreateIPSet</code> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit a <code>CreateIPSet</code> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code>
+        /// parameter of an <a>UpdateIPSet</a> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit an <code>UpdateIPSet</code> request to specify the IP addresses that you want
+        /// AWS WAF to watch for.
+        /// </para>
+        ///  </li> </ol> 
         /// <para>
         /// For more information about how to use the AWS WAF API to allow or block HTTP requests,
         /// see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
@@ -671,17 +867,40 @@ namespace Amazon.WAF
         /// The operation failed because AWS WAF didn't recognize a parameter in the request.
         /// For example:
         /// 
-        ///  <ul> <li>You specified an invalid parameter name.</li> <li>You specified an invalid
-        /// value.</li> <li>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>,
-        /// <code>Rule</code>, or <code>WebACL</code>) using an action other than <code>INSERT</code>
-        /// or <code>DELETE</code>.</li> <li>You tried to create a <code>WebACL</code> with a
-        /// <code>DefaultAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>,
-        /// or <code>COUNT</code>.</li> <li>You tried to update a <code>WebACL</code> with a <code>WafAction</code>
-        /// <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</li>
-        /// <li>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code>
-        /// <code>Type</code> other than HEADER, QUERY_STRING, or URI.</li> <li>You tried to update
-        /// a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code> but no
-        /// value for <code>Data</code>.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an invalid parameter name.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You specified an invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>,
+        /// or <code>WebACL</code>) using an action other than <code>INSERT</code> or <code>DELETE</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code>
+        /// other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code>
+        /// other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code>
+        /// other than HEADER, QUERY_STRING, or URI.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code>
+        /// but no value for <code>Data</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFLimitsExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
@@ -730,9 +949,16 @@ namespace Amazon.WAF
         /// the specifications to be allowed or blocked. For example, suppose you add the following
         /// to a <code>Rule</code>:
         /// 
-        ///  <ul> <li>An <code>IPSet</code> that matches the IP address <code>192.0.2.44/32</code></li>
-        /// <li>A <code>ByteMatchSet</code> that matches <code>BadBot</code> in the <code>User-Agent</code>
-        /// header</li> </ul> 
+        ///  <ul> <li> 
+        /// <para>
+        /// An <code>IPSet</code> that matches the IP address <code>192.0.2.44/32</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A <code>ByteMatchSet</code> that matches <code>BadBot</code> in the <code>User-Agent</code>
+        /// header
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// You then add the <code>Rule</code> to a <code>WebACL</code> and specify that you want
         /// to blocks requests that satisfy the <code>Rule</code>. For a request to be blocked,
@@ -743,16 +969,36 @@ namespace Amazon.WAF
         /// <para>
         /// To create and configure a <code>Rule</code>, perform the following steps:
         /// </para>
-        ///  <ol> <li>Create and update the predicates that you want to include in the <code>Rule</code>.
-        /// For more information, see <a>CreateByteMatchSet</a>, <a>CreateIPSet</a>, and <a>CreateSqlInjectionMatchSet</a>.</li>
-        /// <li>Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code>
-        /// parameter of a <code>CreateRule</code> request.</li> <li>Submit a <code>CreateRule</code>
-        /// request.</li> <li>Use <code>GetChangeToken</code> to get the change token that you
-        /// provide in the <code>ChangeToken</code> parameter of an <a>UpdateRule</a> request.</li>
-        /// <li>Submit an <code>UpdateRule</code> request to specify the predicates that you want
-        /// to include in the <code>Rule</code>.</li> <li>Create and update a <code>WebACL</code>
-        /// that contains the <code>Rule</code>. For more information, see <a>CreateWebACL</a>.</li>
-        /// </ol> 
+        ///  <ol> <li> 
+        /// <para>
+        /// Create and update the predicates that you want to include in the <code>Rule</code>.
+        /// For more information, see <a>CreateByteMatchSet</a>, <a>CreateIPSet</a>, and <a>CreateSqlInjectionMatchSet</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code>
+        /// parameter of a <code>CreateRule</code> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit a <code>CreateRule</code> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code>
+        /// parameter of an <a>UpdateRule</a> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit an <code>UpdateRule</code> request to specify the predicates that you want
+        /// to include in the <code>Rule</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Create and update a <code>WebACL</code> that contains the <code>Rule</code>. For more
+        /// information, see <a>CreateWebACL</a>.
+        /// </para>
+        ///  </li> </ol> 
         /// <para>
         /// For more information about how to use the AWS WAF API to allow or block HTTP requests,
         /// see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
@@ -775,17 +1021,40 @@ namespace Amazon.WAF
         /// The operation failed because AWS WAF didn't recognize a parameter in the request.
         /// For example:
         /// 
-        ///  <ul> <li>You specified an invalid parameter name.</li> <li>You specified an invalid
-        /// value.</li> <li>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>,
-        /// <code>Rule</code>, or <code>WebACL</code>) using an action other than <code>INSERT</code>
-        /// or <code>DELETE</code>.</li> <li>You tried to create a <code>WebACL</code> with a
-        /// <code>DefaultAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>,
-        /// or <code>COUNT</code>.</li> <li>You tried to update a <code>WebACL</code> with a <code>WafAction</code>
-        /// <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</li>
-        /// <li>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code>
-        /// <code>Type</code> other than HEADER, QUERY_STRING, or URI.</li> <li>You tried to update
-        /// a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code> but no
-        /// value for <code>Data</code>.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an invalid parameter name.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You specified an invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>,
+        /// or <code>WebACL</code>) using an action other than <code>INSERT</code> or <code>DELETE</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code>
+        /// other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code>
+        /// other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code>
+        /// other than HEADER, QUERY_STRING, or URI.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code>
+        /// but no value for <code>Data</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFLimitsExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
@@ -813,9 +1082,16 @@ namespace Amazon.WAF
         /// the specifications to be allowed or blocked. For example, suppose you add the following
         /// to a <code>Rule</code>:
         /// 
-        ///  <ul> <li>An <code>IPSet</code> that matches the IP address <code>192.0.2.44/32</code></li>
-        /// <li>A <code>ByteMatchSet</code> that matches <code>BadBot</code> in the <code>User-Agent</code>
-        /// header</li> </ul> 
+        ///  <ul> <li> 
+        /// <para>
+        /// An <code>IPSet</code> that matches the IP address <code>192.0.2.44/32</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A <code>ByteMatchSet</code> that matches <code>BadBot</code> in the <code>User-Agent</code>
+        /// header
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// You then add the <code>Rule</code> to a <code>WebACL</code> and specify that you want
         /// to blocks requests that satisfy the <code>Rule</code>. For a request to be blocked,
@@ -826,16 +1102,36 @@ namespace Amazon.WAF
         /// <para>
         /// To create and configure a <code>Rule</code>, perform the following steps:
         /// </para>
-        ///  <ol> <li>Create and update the predicates that you want to include in the <code>Rule</code>.
-        /// For more information, see <a>CreateByteMatchSet</a>, <a>CreateIPSet</a>, and <a>CreateSqlInjectionMatchSet</a>.</li>
-        /// <li>Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code>
-        /// parameter of a <code>CreateRule</code> request.</li> <li>Submit a <code>CreateRule</code>
-        /// request.</li> <li>Use <code>GetChangeToken</code> to get the change token that you
-        /// provide in the <code>ChangeToken</code> parameter of an <a>UpdateRule</a> request.</li>
-        /// <li>Submit an <code>UpdateRule</code> request to specify the predicates that you want
-        /// to include in the <code>Rule</code>.</li> <li>Create and update a <code>WebACL</code>
-        /// that contains the <code>Rule</code>. For more information, see <a>CreateWebACL</a>.</li>
-        /// </ol> 
+        ///  <ol> <li> 
+        /// <para>
+        /// Create and update the predicates that you want to include in the <code>Rule</code>.
+        /// For more information, see <a>CreateByteMatchSet</a>, <a>CreateIPSet</a>, and <a>CreateSqlInjectionMatchSet</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code>
+        /// parameter of a <code>CreateRule</code> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit a <code>CreateRule</code> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code>
+        /// parameter of an <a>UpdateRule</a> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit an <code>UpdateRule</code> request to specify the predicates that you want
+        /// to include in the <code>Rule</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Create and update a <code>WebACL</code> that contains the <code>Rule</code>. For more
+        /// information, see <a>CreateWebACL</a>.
+        /// </para>
+        ///  </li> </ol> 
         /// <para>
         /// For more information about how to use the AWS WAF API to allow or block HTTP requests,
         /// see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
@@ -856,17 +1152,40 @@ namespace Amazon.WAF
         /// The operation failed because AWS WAF didn't recognize a parameter in the request.
         /// For example:
         /// 
-        ///  <ul> <li>You specified an invalid parameter name.</li> <li>You specified an invalid
-        /// value.</li> <li>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>,
-        /// <code>Rule</code>, or <code>WebACL</code>) using an action other than <code>INSERT</code>
-        /// or <code>DELETE</code>.</li> <li>You tried to create a <code>WebACL</code> with a
-        /// <code>DefaultAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>,
-        /// or <code>COUNT</code>.</li> <li>You tried to update a <code>WebACL</code> with a <code>WafAction</code>
-        /// <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</li>
-        /// <li>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code>
-        /// <code>Type</code> other than HEADER, QUERY_STRING, or URI.</li> <li>You tried to update
-        /// a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code> but no
-        /// value for <code>Data</code>.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an invalid parameter name.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You specified an invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>,
+        /// or <code>WebACL</code>) using an action other than <code>INSERT</code> or <code>DELETE</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code>
+        /// other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code>
+        /// other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code>
+        /// other than HEADER, QUERY_STRING, or URI.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code>
+        /// but no value for <code>Data</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFLimitsExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
@@ -893,9 +1212,16 @@ namespace Amazon.WAF
         /// the specifications to be allowed or blocked. For example, suppose you add the following
         /// to a <code>Rule</code>:
         /// 
-        ///  <ul> <li>An <code>IPSet</code> that matches the IP address <code>192.0.2.44/32</code></li>
-        /// <li>A <code>ByteMatchSet</code> that matches <code>BadBot</code> in the <code>User-Agent</code>
-        /// header</li> </ul> 
+        ///  <ul> <li> 
+        /// <para>
+        /// An <code>IPSet</code> that matches the IP address <code>192.0.2.44/32</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A <code>ByteMatchSet</code> that matches <code>BadBot</code> in the <code>User-Agent</code>
+        /// header
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// You then add the <code>Rule</code> to a <code>WebACL</code> and specify that you want
         /// to blocks requests that satisfy the <code>Rule</code>. For a request to be blocked,
@@ -906,16 +1232,36 @@ namespace Amazon.WAF
         /// <para>
         /// To create and configure a <code>Rule</code>, perform the following steps:
         /// </para>
-        ///  <ol> <li>Create and update the predicates that you want to include in the <code>Rule</code>.
-        /// For more information, see <a>CreateByteMatchSet</a>, <a>CreateIPSet</a>, and <a>CreateSqlInjectionMatchSet</a>.</li>
-        /// <li>Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code>
-        /// parameter of a <code>CreateRule</code> request.</li> <li>Submit a <code>CreateRule</code>
-        /// request.</li> <li>Use <code>GetChangeToken</code> to get the change token that you
-        /// provide in the <code>ChangeToken</code> parameter of an <a>UpdateRule</a> request.</li>
-        /// <li>Submit an <code>UpdateRule</code> request to specify the predicates that you want
-        /// to include in the <code>Rule</code>.</li> <li>Create and update a <code>WebACL</code>
-        /// that contains the <code>Rule</code>. For more information, see <a>CreateWebACL</a>.</li>
-        /// </ol> 
+        ///  <ol> <li> 
+        /// <para>
+        /// Create and update the predicates that you want to include in the <code>Rule</code>.
+        /// For more information, see <a>CreateByteMatchSet</a>, <a>CreateIPSet</a>, and <a>CreateSqlInjectionMatchSet</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code>
+        /// parameter of a <code>CreateRule</code> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit a <code>CreateRule</code> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code>
+        /// parameter of an <a>UpdateRule</a> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit an <code>UpdateRule</code> request to specify the predicates that you want
+        /// to include in the <code>Rule</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Create and update a <code>WebACL</code> that contains the <code>Rule</code>. For more
+        /// information, see <a>CreateWebACL</a>.
+        /// </para>
+        ///  </li> </ol> 
         /// <para>
         /// For more information about how to use the AWS WAF API to allow or block HTTP requests,
         /// see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
@@ -941,17 +1287,40 @@ namespace Amazon.WAF
         /// The operation failed because AWS WAF didn't recognize a parameter in the request.
         /// For example:
         /// 
-        ///  <ul> <li>You specified an invalid parameter name.</li> <li>You specified an invalid
-        /// value.</li> <li>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>,
-        /// <code>Rule</code>, or <code>WebACL</code>) using an action other than <code>INSERT</code>
-        /// or <code>DELETE</code>.</li> <li>You tried to create a <code>WebACL</code> with a
-        /// <code>DefaultAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>,
-        /// or <code>COUNT</code>.</li> <li>You tried to update a <code>WebACL</code> with a <code>WafAction</code>
-        /// <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</li>
-        /// <li>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code>
-        /// <code>Type</code> other than HEADER, QUERY_STRING, or URI.</li> <li>You tried to update
-        /// a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code> but no
-        /// value for <code>Data</code>.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an invalid parameter name.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You specified an invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>,
+        /// or <code>WebACL</code>) using an action other than <code>INSERT</code> or <code>DELETE</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code>
+        /// other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code>
+        /// other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code>
+        /// other than HEADER, QUERY_STRING, or URI.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code>
+        /// but no value for <code>Data</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFLimitsExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
@@ -1006,14 +1375,27 @@ namespace Amazon.WAF
         /// <para>
         /// To create and configure a <code>SizeConstraintSet</code>, perform the following steps:
         /// </para>
-        ///  <ol> <li>Use <a>GetChangeToken</a> to get the change token that you provide in the
-        /// <code>ChangeToken</code> parameter of a <code>CreateSizeConstraintSet</code> request.</li>
-        /// <li>Submit a <code>CreateSizeConstraintSet</code> request.</li> <li>Use <code>GetChangeToken</code>
-        /// to get the change token that you provide in the <code>ChangeToken</code> parameter
-        /// of an <code>UpdateSizeConstraintSet</code> request.</li> <li>Submit an <a>UpdateSizeConstraintSet</a>
-        /// request to specify the part of the request that you want AWS WAF to inspect (for example,
-        /// the header or the URI) and the value that you want AWS WAF to watch for.</li> </ol>
-        /// 
+        ///  <ol> <li> 
+        /// <para>
+        /// Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code>
+        /// parameter of a <code>CreateSizeConstraintSet</code> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit a <code>CreateSizeConstraintSet</code> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code>
+        /// parameter of an <code>UpdateSizeConstraintSet</code> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit an <a>UpdateSizeConstraintSet</a> request to specify the part of the request
+        /// that you want AWS WAF to inspect (for example, the header or the URI) and the value
+        /// that you want AWS WAF to watch for.
+        /// </para>
+        ///  </li> </ol> 
         /// <para>
         /// For more information about how to use the AWS WAF API to allow or block HTTP requests,
         /// see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
@@ -1038,17 +1420,40 @@ namespace Amazon.WAF
         /// The operation failed because AWS WAF didn't recognize a parameter in the request.
         /// For example:
         /// 
-        ///  <ul> <li>You specified an invalid parameter name.</li> <li>You specified an invalid
-        /// value.</li> <li>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>,
-        /// <code>Rule</code>, or <code>WebACL</code>) using an action other than <code>INSERT</code>
-        /// or <code>DELETE</code>.</li> <li>You tried to create a <code>WebACL</code> with a
-        /// <code>DefaultAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>,
-        /// or <code>COUNT</code>.</li> <li>You tried to update a <code>WebACL</code> with a <code>WafAction</code>
-        /// <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</li>
-        /// <li>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code>
-        /// <code>Type</code> other than HEADER, QUERY_STRING, or URI.</li> <li>You tried to update
-        /// a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code> but no
-        /// value for <code>Data</code>.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an invalid parameter name.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You specified an invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>,
+        /// or <code>WebACL</code>) using an action other than <code>INSERT</code> or <code>DELETE</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code>
+        /// other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code>
+        /// other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code>
+        /// other than HEADER, QUERY_STRING, or URI.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code>
+        /// but no value for <code>Data</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFLimitsExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
@@ -1100,13 +1505,26 @@ namespace Amazon.WAF
         /// To create and configure a <code>SqlInjectionMatchSet</code>, perform the following
         /// steps:
         /// </para>
-        ///  <ol> <li>Use <a>GetChangeToken</a> to get the change token that you provide in the
-        /// <code>ChangeToken</code> parameter of a <code>CreateSqlInjectionMatchSet</code> request.</li>
-        /// <li>Submit a <code>CreateSqlInjectionMatchSet</code> request.</li> <li>Use <code>GetChangeToken</code>
-        /// to get the change token that you provide in the <code>ChangeToken</code> parameter
-        /// of an <a>UpdateSqlInjectionMatchSet</a> request.</li> <li>Submit an <a>UpdateSqlInjectionMatchSet</a>
-        /// request to specify the parts of web requests in which you want to allow, block, or
-        /// count malicious SQL code.</li> </ol> 
+        ///  <ol> <li> 
+        /// <para>
+        /// Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code>
+        /// parameter of a <code>CreateSqlInjectionMatchSet</code> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit a <code>CreateSqlInjectionMatchSet</code> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code>
+        /// parameter of an <a>UpdateSqlInjectionMatchSet</a> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit an <a>UpdateSqlInjectionMatchSet</a> request to specify the parts of web requests
+        /// in which you want to allow, block, or count malicious SQL code.
+        /// </para>
+        ///  </li> </ol> 
         /// <para>
         /// For more information about how to use the AWS WAF API to allow or block HTTP requests,
         /// see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
@@ -1132,17 +1550,40 @@ namespace Amazon.WAF
         /// The operation failed because AWS WAF didn't recognize a parameter in the request.
         /// For example:
         /// 
-        ///  <ul> <li>You specified an invalid parameter name.</li> <li>You specified an invalid
-        /// value.</li> <li>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>,
-        /// <code>Rule</code>, or <code>WebACL</code>) using an action other than <code>INSERT</code>
-        /// or <code>DELETE</code>.</li> <li>You tried to create a <code>WebACL</code> with a
-        /// <code>DefaultAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>,
-        /// or <code>COUNT</code>.</li> <li>You tried to update a <code>WebACL</code> with a <code>WafAction</code>
-        /// <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</li>
-        /// <li>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code>
-        /// <code>Type</code> other than HEADER, QUERY_STRING, or URI.</li> <li>You tried to update
-        /// a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code> but no
-        /// value for <code>Data</code>.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an invalid parameter name.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You specified an invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>,
+        /// or <code>WebACL</code>) using an action other than <code>INSERT</code> or <code>DELETE</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code>
+        /// other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code>
+        /// other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code>
+        /// other than HEADER, QUERY_STRING, or URI.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code>
+        /// but no value for <code>Data</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFLimitsExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
@@ -1172,13 +1613,26 @@ namespace Amazon.WAF
         /// To create and configure a <code>SqlInjectionMatchSet</code>, perform the following
         /// steps:
         /// </para>
-        ///  <ol> <li>Use <a>GetChangeToken</a> to get the change token that you provide in the
-        /// <code>ChangeToken</code> parameter of a <code>CreateSqlInjectionMatchSet</code> request.</li>
-        /// <li>Submit a <code>CreateSqlInjectionMatchSet</code> request.</li> <li>Use <code>GetChangeToken</code>
-        /// to get the change token that you provide in the <code>ChangeToken</code> parameter
-        /// of an <a>UpdateSqlInjectionMatchSet</a> request.</li> <li>Submit an <a>UpdateSqlInjectionMatchSet</a>
-        /// request to specify the parts of web requests in which you want to allow, block, or
-        /// count malicious SQL code.</li> </ol> 
+        ///  <ol> <li> 
+        /// <para>
+        /// Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code>
+        /// parameter of a <code>CreateSqlInjectionMatchSet</code> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit a <code>CreateSqlInjectionMatchSet</code> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code>
+        /// parameter of an <a>UpdateSqlInjectionMatchSet</a> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit an <a>UpdateSqlInjectionMatchSet</a> request to specify the parts of web requests
+        /// in which you want to allow, block, or count malicious SQL code.
+        /// </para>
+        ///  </li> </ol> 
         /// <para>
         /// For more information about how to use the AWS WAF API to allow or block HTTP requests,
         /// see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
@@ -1203,17 +1657,40 @@ namespace Amazon.WAF
         /// The operation failed because AWS WAF didn't recognize a parameter in the request.
         /// For example:
         /// 
-        ///  <ul> <li>You specified an invalid parameter name.</li> <li>You specified an invalid
-        /// value.</li> <li>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>,
-        /// <code>Rule</code>, or <code>WebACL</code>) using an action other than <code>INSERT</code>
-        /// or <code>DELETE</code>.</li> <li>You tried to create a <code>WebACL</code> with a
-        /// <code>DefaultAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>,
-        /// or <code>COUNT</code>.</li> <li>You tried to update a <code>WebACL</code> with a <code>WafAction</code>
-        /// <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</li>
-        /// <li>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code>
-        /// <code>Type</code> other than HEADER, QUERY_STRING, or URI.</li> <li>You tried to update
-        /// a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code> but no
-        /// value for <code>Data</code>.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an invalid parameter name.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You specified an invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>,
+        /// or <code>WebACL</code>) using an action other than <code>INSERT</code> or <code>DELETE</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code>
+        /// other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code>
+        /// other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code>
+        /// other than HEADER, QUERY_STRING, or URI.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code>
+        /// but no value for <code>Data</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFLimitsExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
@@ -1243,13 +1720,26 @@ namespace Amazon.WAF
         /// To create and configure a <code>SqlInjectionMatchSet</code>, perform the following
         /// steps:
         /// </para>
-        ///  <ol> <li>Use <a>GetChangeToken</a> to get the change token that you provide in the
-        /// <code>ChangeToken</code> parameter of a <code>CreateSqlInjectionMatchSet</code> request.</li>
-        /// <li>Submit a <code>CreateSqlInjectionMatchSet</code> request.</li> <li>Use <code>GetChangeToken</code>
-        /// to get the change token that you provide in the <code>ChangeToken</code> parameter
-        /// of an <a>UpdateSqlInjectionMatchSet</a> request.</li> <li>Submit an <a>UpdateSqlInjectionMatchSet</a>
-        /// request to specify the parts of web requests in which you want to allow, block, or
-        /// count malicious SQL code.</li> </ol> 
+        ///  <ol> <li> 
+        /// <para>
+        /// Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code>
+        /// parameter of a <code>CreateSqlInjectionMatchSet</code> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit a <code>CreateSqlInjectionMatchSet</code> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code>
+        /// parameter of an <a>UpdateSqlInjectionMatchSet</a> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit an <a>UpdateSqlInjectionMatchSet</a> request to specify the parts of web requests
+        /// in which you want to allow, block, or count malicious SQL code.
+        /// </para>
+        ///  </li> </ol> 
         /// <para>
         /// For more information about how to use the AWS WAF API to allow or block HTTP requests,
         /// see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
@@ -1278,17 +1768,40 @@ namespace Amazon.WAF
         /// The operation failed because AWS WAF didn't recognize a parameter in the request.
         /// For example:
         /// 
-        ///  <ul> <li>You specified an invalid parameter name.</li> <li>You specified an invalid
-        /// value.</li> <li>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>,
-        /// <code>Rule</code>, or <code>WebACL</code>) using an action other than <code>INSERT</code>
-        /// or <code>DELETE</code>.</li> <li>You tried to create a <code>WebACL</code> with a
-        /// <code>DefaultAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>,
-        /// or <code>COUNT</code>.</li> <li>You tried to update a <code>WebACL</code> with a <code>WafAction</code>
-        /// <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</li>
-        /// <li>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code>
-        /// <code>Type</code> other than HEADER, QUERY_STRING, or URI.</li> <li>You tried to update
-        /// a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code> but no
-        /// value for <code>Data</code>.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an invalid parameter name.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You specified an invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>,
+        /// or <code>WebACL</code>) using an action other than <code>INSERT</code> or <code>DELETE</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code>
+        /// other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code>
+        /// other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code>
+        /// other than HEADER, QUERY_STRING, or URI.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code>
+        /// but no value for <code>Data</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFLimitsExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
@@ -1345,19 +1858,39 @@ namespace Amazon.WAF
         /// <para>
         /// To create and configure a <code>WebACL</code>, perform the following steps:
         /// </para>
-        ///  <ol> <li>Create and update the <code>ByteMatchSet</code> objects and other predicates
-        /// that you want to include in <code>Rules</code>. For more information, see <a>CreateByteMatchSet</a>,
+        ///  <ol> <li> 
+        /// <para>
+        /// Create and update the <code>ByteMatchSet</code> objects and other predicates that
+        /// you want to include in <code>Rules</code>. For more information, see <a>CreateByteMatchSet</a>,
         /// <a>UpdateByteMatchSet</a>, <a>CreateIPSet</a>, <a>UpdateIPSet</a>, <a>CreateSqlInjectionMatchSet</a>,
-        /// and <a>UpdateSqlInjectionMatchSet</a>.</li> <li>Create and update the <code>Rules</code>
-        /// that you want to include in the <code>WebACL</code>. For more information, see <a>CreateRule</a>
-        /// and <a>UpdateRule</a>.</li> <li>Use <a>GetChangeToken</a> to get the change token
-        /// that you provide in the <code>ChangeToken</code> parameter of a <code>CreateWebACL</code>
-        /// request.</li> <li>Submit a <code>CreateWebACL</code> request.</li> <li>Use <code>GetChangeToken</code>
-        /// to get the change token that you provide in the <code>ChangeToken</code> parameter
-        /// of an <a>UpdateWebACL</a> request.</li> <li>Submit an <a>UpdateWebACL</a> request
-        /// to specify the <code>Rules</code> that you want to include in the <code>WebACL</code>,
-        /// to specify the default action, and to associate the <code>WebACL</code> with a CloudFront
-        /// distribution.</li> </ol> 
+        /// and <a>UpdateSqlInjectionMatchSet</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Create and update the <code>Rules</code> that you want to include in the <code>WebACL</code>.
+        /// For more information, see <a>CreateRule</a> and <a>UpdateRule</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code>
+        /// parameter of a <code>CreateWebACL</code> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit a <code>CreateWebACL</code> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code>
+        /// parameter of an <a>UpdateWebACL</a> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit an <a>UpdateWebACL</a> request to specify the <code>Rules</code> that you want
+        /// to include in the <code>WebACL</code>, to specify the default action, and to associate
+        /// the <code>WebACL</code> with a CloudFront distribution.
+        /// </para>
+        ///  </li> </ol> 
         /// <para>
         /// For more information about how to use the AWS WAF API, see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS
         /// WAF Developer Guide</a>.
@@ -1381,17 +1914,40 @@ namespace Amazon.WAF
         /// The operation failed because AWS WAF didn't recognize a parameter in the request.
         /// For example:
         /// 
-        ///  <ul> <li>You specified an invalid parameter name.</li> <li>You specified an invalid
-        /// value.</li> <li>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>,
-        /// <code>Rule</code>, or <code>WebACL</code>) using an action other than <code>INSERT</code>
-        /// or <code>DELETE</code>.</li> <li>You tried to create a <code>WebACL</code> with a
-        /// <code>DefaultAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>,
-        /// or <code>COUNT</code>.</li> <li>You tried to update a <code>WebACL</code> with a <code>WafAction</code>
-        /// <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</li>
-        /// <li>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code>
-        /// <code>Type</code> other than HEADER, QUERY_STRING, or URI.</li> <li>You tried to update
-        /// a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code> but no
-        /// value for <code>Data</code>.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an invalid parameter name.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You specified an invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>,
+        /// or <code>WebACL</code>) using an action other than <code>INSERT</code> or <code>DELETE</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code>
+        /// other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code>
+        /// other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code>
+        /// other than HEADER, QUERY_STRING, or URI.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code>
+        /// but no value for <code>Data</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFLimitsExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
@@ -1442,13 +1998,26 @@ namespace Amazon.WAF
         /// <para>
         /// To create and configure an <code>XssMatchSet</code>, perform the following steps:
         /// </para>
-        ///  <ol> <li>Use <a>GetChangeToken</a> to get the change token that you provide in the
-        /// <code>ChangeToken</code> parameter of a <code>CreateXssMatchSet</code> request.</li>
-        /// <li>Submit a <code>CreateXssMatchSet</code> request.</li> <li>Use <code>GetChangeToken</code>
-        /// to get the change token that you provide in the <code>ChangeToken</code> parameter
-        /// of an <a>UpdateXssMatchSet</a> request.</li> <li>Submit an <a>UpdateXssMatchSet</a>
-        /// request to specify the parts of web requests in which you want to allow, block, or
-        /// count cross-site scripting attacks.</li> </ol> 
+        ///  <ol> <li> 
+        /// <para>
+        /// Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code>
+        /// parameter of a <code>CreateXssMatchSet</code> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit a <code>CreateXssMatchSet</code> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code>
+        /// parameter of an <a>UpdateXssMatchSet</a> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit an <a>UpdateXssMatchSet</a> request to specify the parts of web requests in
+        /// which you want to allow, block, or count cross-site scripting attacks.
+        /// </para>
+        ///  </li> </ol> 
         /// <para>
         /// For more information about how to use the AWS WAF API to allow or block HTTP requests,
         /// see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
@@ -1473,17 +2042,40 @@ namespace Amazon.WAF
         /// The operation failed because AWS WAF didn't recognize a parameter in the request.
         /// For example:
         /// 
-        ///  <ul> <li>You specified an invalid parameter name.</li> <li>You specified an invalid
-        /// value.</li> <li>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>,
-        /// <code>Rule</code>, or <code>WebACL</code>) using an action other than <code>INSERT</code>
-        /// or <code>DELETE</code>.</li> <li>You tried to create a <code>WebACL</code> with a
-        /// <code>DefaultAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>,
-        /// or <code>COUNT</code>.</li> <li>You tried to update a <code>WebACL</code> with a <code>WafAction</code>
-        /// <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</li>
-        /// <li>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code>
-        /// <code>Type</code> other than HEADER, QUERY_STRING, or URI.</li> <li>You tried to update
-        /// a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code> but no
-        /// value for <code>Data</code>.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an invalid parameter name.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You specified an invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>,
+        /// or <code>WebACL</code>) using an action other than <code>INSERT</code> or <code>DELETE</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code>
+        /// other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code>
+        /// other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code>
+        /// other than HEADER, QUERY_STRING, or URI.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code>
+        /// but no value for <code>Data</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFLimitsExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
@@ -1539,11 +2131,21 @@ namespace Amazon.WAF
         /// <para>
         /// To permanently delete a <code>ByteMatchSet</code>, perform the following steps:
         /// </para>
-        ///  <ol> <li>Update the <code>ByteMatchSet</code> to remove filters, if any. For more
-        /// information, see <a>UpdateByteMatchSet</a>.</li> <li>Use <a>GetChangeToken</a> to
-        /// get the change token that you provide in the <code>ChangeToken</code> parameter of
-        /// a <code>DeleteByteMatchSet</code> request.</li> <li>Submit a <code>DeleteByteMatchSet</code>
-        /// request.</li> </ol>
+        ///  <ol> <li> 
+        /// <para>
+        /// Update the <code>ByteMatchSet</code> to remove filters, if any. For more information,
+        /// see <a>UpdateByteMatchSet</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code>
+        /// parameter of a <code>DeleteByteMatchSet</code> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit a <code>DeleteByteMatchSet</code> request.
+        /// </para>
+        ///  </li> </ol>
         /// </summary>
         /// <param name="byteMatchSetId">The <code>ByteMatchSetId</code> of the <a>ByteMatchSet</a> that you want to delete. <code>ByteMatchSetId</code> is returned by <a>CreateByteMatchSet</a> and by <a>ListByteMatchSets</a>.</param>
         /// <param name="changeToken">The value returned by the most recent call to <a>GetChangeToken</a>.</param>
@@ -1560,21 +2162,43 @@ namespace Amazon.WAF
         /// <exception cref="Amazon.WAF.Model.WAFNonEmptyEntityException">
         /// The operation failed because you tried to delete an object that isn't empty. For example:
         /// 
-        ///  <ul> <li>You tried to delete a <code>WebACL</code> that still contains one or more
-        /// <code>Rule</code> objects.</li> <li>You tried to delete a <code>Rule</code> that still
-        /// contains one or more <code>ByteMatchSet</code> objects or other predicates.</li> <li>You
-        /// tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code>
-        /// objects.</li> <li>You tried to delete an <code>IPSet</code> that references one or
-        /// more IP addresses.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to delete a <code>WebACL</code> that still contains one or more <code>Rule</code>
+        /// objects.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a <code>Rule</code> that still contains one or more <code>ByteMatchSet</code>
+        /// objects or other predicates.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code>
+        /// objects.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete an <code>IPSet</code> that references one or more IP addresses.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFNonexistentItemException">
         /// The operation failed because the referenced object doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFReferencedItemException">
         /// The operation failed because you tried to delete an object that is still in use. For
-        /// example: <ul> <li>You tried to delete a <code>ByteMatchSet</code> that is still referenced
-        /// by a <code>Rule</code>.</li> <li>You tried to delete a <code>Rule</code> that is still
-        /// referenced by a <code>WebACL</code>.</li> </ul>
+        /// example:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to delete a <code>ByteMatchSet</code> that is still referenced by a <code>Rule</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a <code>Rule</code> that is still referenced by a <code>WebACL</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFStaleDataException">
         /// The operation failed because you tried to create, update, or delete an object by using
@@ -1603,11 +2227,21 @@ namespace Amazon.WAF
         /// <para>
         /// To permanently delete a <code>ByteMatchSet</code>, perform the following steps:
         /// </para>
-        ///  <ol> <li>Update the <code>ByteMatchSet</code> to remove filters, if any. For more
-        /// information, see <a>UpdateByteMatchSet</a>.</li> <li>Use <a>GetChangeToken</a> to
-        /// get the change token that you provide in the <code>ChangeToken</code> parameter of
-        /// a <code>DeleteByteMatchSet</code> request.</li> <li>Submit a <code>DeleteByteMatchSet</code>
-        /// request.</li> </ol>
+        ///  <ol> <li> 
+        /// <para>
+        /// Update the <code>ByteMatchSet</code> to remove filters, if any. For more information,
+        /// see <a>UpdateByteMatchSet</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code>
+        /// parameter of a <code>DeleteByteMatchSet</code> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit a <code>DeleteByteMatchSet</code> request.
+        /// </para>
+        ///  </li> </ol>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteByteMatchSet service method.</param>
         /// 
@@ -1623,21 +2257,43 @@ namespace Amazon.WAF
         /// <exception cref="Amazon.WAF.Model.WAFNonEmptyEntityException">
         /// The operation failed because you tried to delete an object that isn't empty. For example:
         /// 
-        ///  <ul> <li>You tried to delete a <code>WebACL</code> that still contains one or more
-        /// <code>Rule</code> objects.</li> <li>You tried to delete a <code>Rule</code> that still
-        /// contains one or more <code>ByteMatchSet</code> objects or other predicates.</li> <li>You
-        /// tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code>
-        /// objects.</li> <li>You tried to delete an <code>IPSet</code> that references one or
-        /// more IP addresses.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to delete a <code>WebACL</code> that still contains one or more <code>Rule</code>
+        /// objects.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a <code>Rule</code> that still contains one or more <code>ByteMatchSet</code>
+        /// objects or other predicates.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code>
+        /// objects.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete an <code>IPSet</code> that references one or more IP addresses.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFNonexistentItemException">
         /// The operation failed because the referenced object doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFReferencedItemException">
         /// The operation failed because you tried to delete an object that is still in use. For
-        /// example: <ul> <li>You tried to delete a <code>ByteMatchSet</code> that is still referenced
-        /// by a <code>Rule</code>.</li> <li>You tried to delete a <code>Rule</code> that is still
-        /// referenced by a <code>WebACL</code>.</li> </ul>
+        /// example:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to delete a <code>ByteMatchSet</code> that is still referenced by a <code>Rule</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a <code>Rule</code> that is still referenced by a <code>WebACL</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFStaleDataException">
         /// The operation failed because you tried to create, update, or delete an object by using
@@ -1666,11 +2322,21 @@ namespace Amazon.WAF
         /// <para>
         /// To permanently delete a <code>ByteMatchSet</code>, perform the following steps:
         /// </para>
-        ///  <ol> <li>Update the <code>ByteMatchSet</code> to remove filters, if any. For more
-        /// information, see <a>UpdateByteMatchSet</a>.</li> <li>Use <a>GetChangeToken</a> to
-        /// get the change token that you provide in the <code>ChangeToken</code> parameter of
-        /// a <code>DeleteByteMatchSet</code> request.</li> <li>Submit a <code>DeleteByteMatchSet</code>
-        /// request.</li> </ol>
+        ///  <ol> <li> 
+        /// <para>
+        /// Update the <code>ByteMatchSet</code> to remove filters, if any. For more information,
+        /// see <a>UpdateByteMatchSet</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code>
+        /// parameter of a <code>DeleteByteMatchSet</code> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit a <code>DeleteByteMatchSet</code> request.
+        /// </para>
+        ///  </li> </ol>
         /// </summary>
         /// <param name="byteMatchSetId">The <code>ByteMatchSetId</code> of the <a>ByteMatchSet</a> that you want to delete. <code>ByteMatchSetId</code> is returned by <a>CreateByteMatchSet</a> and by <a>ListByteMatchSets</a>.</param>
         /// <param name="changeToken">The value returned by the most recent call to <a>GetChangeToken</a>.</param>
@@ -1690,21 +2356,43 @@ namespace Amazon.WAF
         /// <exception cref="Amazon.WAF.Model.WAFNonEmptyEntityException">
         /// The operation failed because you tried to delete an object that isn't empty. For example:
         /// 
-        ///  <ul> <li>You tried to delete a <code>WebACL</code> that still contains one or more
-        /// <code>Rule</code> objects.</li> <li>You tried to delete a <code>Rule</code> that still
-        /// contains one or more <code>ByteMatchSet</code> objects or other predicates.</li> <li>You
-        /// tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code>
-        /// objects.</li> <li>You tried to delete an <code>IPSet</code> that references one or
-        /// more IP addresses.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to delete a <code>WebACL</code> that still contains one or more <code>Rule</code>
+        /// objects.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a <code>Rule</code> that still contains one or more <code>ByteMatchSet</code>
+        /// objects or other predicates.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code>
+        /// objects.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete an <code>IPSet</code> that references one or more IP addresses.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFNonexistentItemException">
         /// The operation failed because the referenced object doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFReferencedItemException">
         /// The operation failed because you tried to delete an object that is still in use. For
-        /// example: <ul> <li>You tried to delete a <code>ByteMatchSet</code> that is still referenced
-        /// by a <code>Rule</code>.</li> <li>You tried to delete a <code>Rule</code> that is still
-        /// referenced by a <code>WebACL</code>.</li> </ul>
+        /// example:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to delete a <code>ByteMatchSet</code> that is still referenced by a <code>Rule</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a <code>Rule</code> that is still referenced by a <code>WebACL</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFStaleDataException">
         /// The operation failed because you tried to create, update, or delete an object by using
@@ -1753,10 +2441,21 @@ namespace Amazon.WAF
         /// <para>
         /// To permanently delete an <code>IPSet</code> from AWS WAF, perform the following steps:
         /// </para>
-        ///  <ol> <li>Update the <code>IPSet</code> to remove IP address ranges, if any. For more
-        /// information, see <a>UpdateIPSet</a>.</li> <li>Use <a>GetChangeToken</a> to get the
-        /// change token that you provide in the <code>ChangeToken</code> parameter of a <code>DeleteIPSet</code>
-        /// request.</li> <li>Submit a <code>DeleteIPSet</code> request.</li> </ol>
+        ///  <ol> <li> 
+        /// <para>
+        /// Update the <code>IPSet</code> to remove IP address ranges, if any. For more information,
+        /// see <a>UpdateIPSet</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code>
+        /// parameter of a <code>DeleteIPSet</code> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit a <code>DeleteIPSet</code> request.
+        /// </para>
+        ///  </li> </ol>
         /// </summary>
         /// <param name="ipSetId">The <code>IPSetId</code> of the <a>IPSet</a> that you want to delete. <code>IPSetId</code> is returned by <a>CreateIPSet</a> and by <a>ListIPSets</a>.</param>
         /// <param name="changeToken">The value returned by the most recent call to <a>GetChangeToken</a>.</param>
@@ -1773,21 +2472,43 @@ namespace Amazon.WAF
         /// <exception cref="Amazon.WAF.Model.WAFNonEmptyEntityException">
         /// The operation failed because you tried to delete an object that isn't empty. For example:
         /// 
-        ///  <ul> <li>You tried to delete a <code>WebACL</code> that still contains one or more
-        /// <code>Rule</code> objects.</li> <li>You tried to delete a <code>Rule</code> that still
-        /// contains one or more <code>ByteMatchSet</code> objects or other predicates.</li> <li>You
-        /// tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code>
-        /// objects.</li> <li>You tried to delete an <code>IPSet</code> that references one or
-        /// more IP addresses.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to delete a <code>WebACL</code> that still contains one or more <code>Rule</code>
+        /// objects.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a <code>Rule</code> that still contains one or more <code>ByteMatchSet</code>
+        /// objects or other predicates.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code>
+        /// objects.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete an <code>IPSet</code> that references one or more IP addresses.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFNonexistentItemException">
         /// The operation failed because the referenced object doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFReferencedItemException">
         /// The operation failed because you tried to delete an object that is still in use. For
-        /// example: <ul> <li>You tried to delete a <code>ByteMatchSet</code> that is still referenced
-        /// by a <code>Rule</code>.</li> <li>You tried to delete a <code>Rule</code> that is still
-        /// referenced by a <code>WebACL</code>.</li> </ul>
+        /// example:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to delete a <code>ByteMatchSet</code> that is still referenced by a <code>Rule</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a <code>Rule</code> that is still referenced by a <code>WebACL</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFStaleDataException">
         /// The operation failed because you tried to create, update, or delete an object by using
@@ -1814,10 +2535,21 @@ namespace Amazon.WAF
         /// <para>
         /// To permanently delete an <code>IPSet</code> from AWS WAF, perform the following steps:
         /// </para>
-        ///  <ol> <li>Update the <code>IPSet</code> to remove IP address ranges, if any. For more
-        /// information, see <a>UpdateIPSet</a>.</li> <li>Use <a>GetChangeToken</a> to get the
-        /// change token that you provide in the <code>ChangeToken</code> parameter of a <code>DeleteIPSet</code>
-        /// request.</li> <li>Submit a <code>DeleteIPSet</code> request.</li> </ol>
+        ///  <ol> <li> 
+        /// <para>
+        /// Update the <code>IPSet</code> to remove IP address ranges, if any. For more information,
+        /// see <a>UpdateIPSet</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code>
+        /// parameter of a <code>DeleteIPSet</code> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit a <code>DeleteIPSet</code> request.
+        /// </para>
+        ///  </li> </ol>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteIPSet service method.</param>
         /// 
@@ -1833,21 +2565,43 @@ namespace Amazon.WAF
         /// <exception cref="Amazon.WAF.Model.WAFNonEmptyEntityException">
         /// The operation failed because you tried to delete an object that isn't empty. For example:
         /// 
-        ///  <ul> <li>You tried to delete a <code>WebACL</code> that still contains one or more
-        /// <code>Rule</code> objects.</li> <li>You tried to delete a <code>Rule</code> that still
-        /// contains one or more <code>ByteMatchSet</code> objects or other predicates.</li> <li>You
-        /// tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code>
-        /// objects.</li> <li>You tried to delete an <code>IPSet</code> that references one or
-        /// more IP addresses.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to delete a <code>WebACL</code> that still contains one or more <code>Rule</code>
+        /// objects.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a <code>Rule</code> that still contains one or more <code>ByteMatchSet</code>
+        /// objects or other predicates.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code>
+        /// objects.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete an <code>IPSet</code> that references one or more IP addresses.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFNonexistentItemException">
         /// The operation failed because the referenced object doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFReferencedItemException">
         /// The operation failed because you tried to delete an object that is still in use. For
-        /// example: <ul> <li>You tried to delete a <code>ByteMatchSet</code> that is still referenced
-        /// by a <code>Rule</code>.</li> <li>You tried to delete a <code>Rule</code> that is still
-        /// referenced by a <code>WebACL</code>.</li> </ul>
+        /// example:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to delete a <code>ByteMatchSet</code> that is still referenced by a <code>Rule</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a <code>Rule</code> that is still referenced by a <code>WebACL</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFStaleDataException">
         /// The operation failed because you tried to create, update, or delete an object by using
@@ -1874,10 +2628,21 @@ namespace Amazon.WAF
         /// <para>
         /// To permanently delete an <code>IPSet</code> from AWS WAF, perform the following steps:
         /// </para>
-        ///  <ol> <li>Update the <code>IPSet</code> to remove IP address ranges, if any. For more
-        /// information, see <a>UpdateIPSet</a>.</li> <li>Use <a>GetChangeToken</a> to get the
-        /// change token that you provide in the <code>ChangeToken</code> parameter of a <code>DeleteIPSet</code>
-        /// request.</li> <li>Submit a <code>DeleteIPSet</code> request.</li> </ol>
+        ///  <ol> <li> 
+        /// <para>
+        /// Update the <code>IPSet</code> to remove IP address ranges, if any. For more information,
+        /// see <a>UpdateIPSet</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code>
+        /// parameter of a <code>DeleteIPSet</code> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit a <code>DeleteIPSet</code> request.
+        /// </para>
+        ///  </li> </ol>
         /// </summary>
         /// <param name="ipSetId">The <code>IPSetId</code> of the <a>IPSet</a> that you want to delete. <code>IPSetId</code> is returned by <a>CreateIPSet</a> and by <a>ListIPSets</a>.</param>
         /// <param name="changeToken">The value returned by the most recent call to <a>GetChangeToken</a>.</param>
@@ -1897,21 +2662,43 @@ namespace Amazon.WAF
         /// <exception cref="Amazon.WAF.Model.WAFNonEmptyEntityException">
         /// The operation failed because you tried to delete an object that isn't empty. For example:
         /// 
-        ///  <ul> <li>You tried to delete a <code>WebACL</code> that still contains one or more
-        /// <code>Rule</code> objects.</li> <li>You tried to delete a <code>Rule</code> that still
-        /// contains one or more <code>ByteMatchSet</code> objects or other predicates.</li> <li>You
-        /// tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code>
-        /// objects.</li> <li>You tried to delete an <code>IPSet</code> that references one or
-        /// more IP addresses.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to delete a <code>WebACL</code> that still contains one or more <code>Rule</code>
+        /// objects.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a <code>Rule</code> that still contains one or more <code>ByteMatchSet</code>
+        /// objects or other predicates.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code>
+        /// objects.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete an <code>IPSet</code> that references one or more IP addresses.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFNonexistentItemException">
         /// The operation failed because the referenced object doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFReferencedItemException">
         /// The operation failed because you tried to delete an object that is still in use. For
-        /// example: <ul> <li>You tried to delete a <code>ByteMatchSet</code> that is still referenced
-        /// by a <code>Rule</code>.</li> <li>You tried to delete a <code>Rule</code> that is still
-        /// referenced by a <code>WebACL</code>.</li> </ul>
+        /// example:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to delete a <code>ByteMatchSet</code> that is still referenced by a <code>Rule</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a <code>Rule</code> that is still referenced by a <code>WebACL</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFStaleDataException">
         /// The operation failed because you tried to create, update, or delete an object by using
@@ -1961,10 +2748,21 @@ namespace Amazon.WAF
         /// <para>
         /// To permanently delete a <code>Rule</code> from AWS WAF, perform the following steps:
         /// </para>
-        ///  <ol> <li>Update the <code>Rule</code> to remove predicates, if any. For more information,
-        /// see <a>UpdateRule</a>.</li> <li>Use <a>GetChangeToken</a> to get the change token
-        /// that you provide in the <code>ChangeToken</code> parameter of a <code>DeleteRule</code>
-        /// request.</li> <li>Submit a <code>DeleteRule</code> request.</li> </ol>
+        ///  <ol> <li> 
+        /// <para>
+        /// Update the <code>Rule</code> to remove predicates, if any. For more information, see
+        /// <a>UpdateRule</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code>
+        /// parameter of a <code>DeleteRule</code> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit a <code>DeleteRule</code> request.
+        /// </para>
+        ///  </li> </ol>
         /// </summary>
         /// <param name="ruleId">The <code>RuleId</code> of the <a>Rule</a> that you want to delete. <code>RuleId</code> is returned by <a>CreateRule</a> and by <a>ListRules</a>.</param>
         /// <param name="changeToken">The value returned by the most recent call to <a>GetChangeToken</a>.</param>
@@ -1981,21 +2779,43 @@ namespace Amazon.WAF
         /// <exception cref="Amazon.WAF.Model.WAFNonEmptyEntityException">
         /// The operation failed because you tried to delete an object that isn't empty. For example:
         /// 
-        ///  <ul> <li>You tried to delete a <code>WebACL</code> that still contains one or more
-        /// <code>Rule</code> objects.</li> <li>You tried to delete a <code>Rule</code> that still
-        /// contains one or more <code>ByteMatchSet</code> objects or other predicates.</li> <li>You
-        /// tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code>
-        /// objects.</li> <li>You tried to delete an <code>IPSet</code> that references one or
-        /// more IP addresses.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to delete a <code>WebACL</code> that still contains one or more <code>Rule</code>
+        /// objects.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a <code>Rule</code> that still contains one or more <code>ByteMatchSet</code>
+        /// objects or other predicates.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code>
+        /// objects.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete an <code>IPSet</code> that references one or more IP addresses.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFNonexistentItemException">
         /// The operation failed because the referenced object doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFReferencedItemException">
         /// The operation failed because you tried to delete an object that is still in use. For
-        /// example: <ul> <li>You tried to delete a <code>ByteMatchSet</code> that is still referenced
-        /// by a <code>Rule</code>.</li> <li>You tried to delete a <code>Rule</code> that is still
-        /// referenced by a <code>WebACL</code>.</li> </ul>
+        /// example:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to delete a <code>ByteMatchSet</code> that is still referenced by a <code>Rule</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a <code>Rule</code> that is still referenced by a <code>WebACL</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFStaleDataException">
         /// The operation failed because you tried to create, update, or delete an object by using
@@ -2023,10 +2843,21 @@ namespace Amazon.WAF
         /// <para>
         /// To permanently delete a <code>Rule</code> from AWS WAF, perform the following steps:
         /// </para>
-        ///  <ol> <li>Update the <code>Rule</code> to remove predicates, if any. For more information,
-        /// see <a>UpdateRule</a>.</li> <li>Use <a>GetChangeToken</a> to get the change token
-        /// that you provide in the <code>ChangeToken</code> parameter of a <code>DeleteRule</code>
-        /// request.</li> <li>Submit a <code>DeleteRule</code> request.</li> </ol>
+        ///  <ol> <li> 
+        /// <para>
+        /// Update the <code>Rule</code> to remove predicates, if any. For more information, see
+        /// <a>UpdateRule</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code>
+        /// parameter of a <code>DeleteRule</code> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit a <code>DeleteRule</code> request.
+        /// </para>
+        ///  </li> </ol>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteRule service method.</param>
         /// 
@@ -2042,21 +2873,43 @@ namespace Amazon.WAF
         /// <exception cref="Amazon.WAF.Model.WAFNonEmptyEntityException">
         /// The operation failed because you tried to delete an object that isn't empty. For example:
         /// 
-        ///  <ul> <li>You tried to delete a <code>WebACL</code> that still contains one or more
-        /// <code>Rule</code> objects.</li> <li>You tried to delete a <code>Rule</code> that still
-        /// contains one or more <code>ByteMatchSet</code> objects or other predicates.</li> <li>You
-        /// tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code>
-        /// objects.</li> <li>You tried to delete an <code>IPSet</code> that references one or
-        /// more IP addresses.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to delete a <code>WebACL</code> that still contains one or more <code>Rule</code>
+        /// objects.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a <code>Rule</code> that still contains one or more <code>ByteMatchSet</code>
+        /// objects or other predicates.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code>
+        /// objects.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete an <code>IPSet</code> that references one or more IP addresses.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFNonexistentItemException">
         /// The operation failed because the referenced object doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFReferencedItemException">
         /// The operation failed because you tried to delete an object that is still in use. For
-        /// example: <ul> <li>You tried to delete a <code>ByteMatchSet</code> that is still referenced
-        /// by a <code>Rule</code>.</li> <li>You tried to delete a <code>Rule</code> that is still
-        /// referenced by a <code>WebACL</code>.</li> </ul>
+        /// example:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to delete a <code>ByteMatchSet</code> that is still referenced by a <code>Rule</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a <code>Rule</code> that is still referenced by a <code>WebACL</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFStaleDataException">
         /// The operation failed because you tried to create, update, or delete an object by using
@@ -2084,10 +2937,21 @@ namespace Amazon.WAF
         /// <para>
         /// To permanently delete a <code>Rule</code> from AWS WAF, perform the following steps:
         /// </para>
-        ///  <ol> <li>Update the <code>Rule</code> to remove predicates, if any. For more information,
-        /// see <a>UpdateRule</a>.</li> <li>Use <a>GetChangeToken</a> to get the change token
-        /// that you provide in the <code>ChangeToken</code> parameter of a <code>DeleteRule</code>
-        /// request.</li> <li>Submit a <code>DeleteRule</code> request.</li> </ol>
+        ///  <ol> <li> 
+        /// <para>
+        /// Update the <code>Rule</code> to remove predicates, if any. For more information, see
+        /// <a>UpdateRule</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code>
+        /// parameter of a <code>DeleteRule</code> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit a <code>DeleteRule</code> request.
+        /// </para>
+        ///  </li> </ol>
         /// </summary>
         /// <param name="ruleId">The <code>RuleId</code> of the <a>Rule</a> that you want to delete. <code>RuleId</code> is returned by <a>CreateRule</a> and by <a>ListRules</a>.</param>
         /// <param name="changeToken">The value returned by the most recent call to <a>GetChangeToken</a>.</param>
@@ -2107,21 +2971,43 @@ namespace Amazon.WAF
         /// <exception cref="Amazon.WAF.Model.WAFNonEmptyEntityException">
         /// The operation failed because you tried to delete an object that isn't empty. For example:
         /// 
-        ///  <ul> <li>You tried to delete a <code>WebACL</code> that still contains one or more
-        /// <code>Rule</code> objects.</li> <li>You tried to delete a <code>Rule</code> that still
-        /// contains one or more <code>ByteMatchSet</code> objects or other predicates.</li> <li>You
-        /// tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code>
-        /// objects.</li> <li>You tried to delete an <code>IPSet</code> that references one or
-        /// more IP addresses.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to delete a <code>WebACL</code> that still contains one or more <code>Rule</code>
+        /// objects.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a <code>Rule</code> that still contains one or more <code>ByteMatchSet</code>
+        /// objects or other predicates.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code>
+        /// objects.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete an <code>IPSet</code> that references one or more IP addresses.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFNonexistentItemException">
         /// The operation failed because the referenced object doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFReferencedItemException">
         /// The operation failed because you tried to delete an object that is still in use. For
-        /// example: <ul> <li>You tried to delete a <code>ByteMatchSet</code> that is still referenced
-        /// by a <code>Rule</code>.</li> <li>You tried to delete a <code>Rule</code> that is still
-        /// referenced by a <code>WebACL</code>.</li> </ul>
+        /// example:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to delete a <code>ByteMatchSet</code> that is still referenced by a <code>Rule</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a <code>Rule</code> that is still referenced by a <code>WebACL</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFStaleDataException">
         /// The operation failed because you tried to create, update, or delete an object by using
@@ -2172,11 +3058,21 @@ namespace Amazon.WAF
         /// <para>
         /// To permanently delete a <code>SizeConstraintSet</code>, perform the following steps:
         /// </para>
-        ///  <ol> <li>Update the <code>SizeConstraintSet</code> to remove filters, if any. For
-        /// more information, see <a>UpdateSizeConstraintSet</a>.</li> <li>Use <a>GetChangeToken</a>
-        /// to get the change token that you provide in the <code>ChangeToken</code> parameter
-        /// of a <code>DeleteSizeConstraintSet</code> request.</li> <li>Submit a <code>DeleteSizeConstraintSet</code>
-        /// request.</li> </ol>
+        ///  <ol> <li> 
+        /// <para>
+        /// Update the <code>SizeConstraintSet</code> to remove filters, if any. For more information,
+        /// see <a>UpdateSizeConstraintSet</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code>
+        /// parameter of a <code>DeleteSizeConstraintSet</code> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit a <code>DeleteSizeConstraintSet</code> request.
+        /// </para>
+        ///  </li> </ol>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteSizeConstraintSet service method.</param>
         /// 
@@ -2192,21 +3088,43 @@ namespace Amazon.WAF
         /// <exception cref="Amazon.WAF.Model.WAFNonEmptyEntityException">
         /// The operation failed because you tried to delete an object that isn't empty. For example:
         /// 
-        ///  <ul> <li>You tried to delete a <code>WebACL</code> that still contains one or more
-        /// <code>Rule</code> objects.</li> <li>You tried to delete a <code>Rule</code> that still
-        /// contains one or more <code>ByteMatchSet</code> objects or other predicates.</li> <li>You
-        /// tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code>
-        /// objects.</li> <li>You tried to delete an <code>IPSet</code> that references one or
-        /// more IP addresses.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to delete a <code>WebACL</code> that still contains one or more <code>Rule</code>
+        /// objects.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a <code>Rule</code> that still contains one or more <code>ByteMatchSet</code>
+        /// objects or other predicates.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code>
+        /// objects.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete an <code>IPSet</code> that references one or more IP addresses.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFNonexistentItemException">
         /// The operation failed because the referenced object doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFReferencedItemException">
         /// The operation failed because you tried to delete an object that is still in use. For
-        /// example: <ul> <li>You tried to delete a <code>ByteMatchSet</code> that is still referenced
-        /// by a <code>Rule</code>.</li> <li>You tried to delete a <code>Rule</code> that is still
-        /// referenced by a <code>WebACL</code>.</li> </ul>
+        /// example:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to delete a <code>ByteMatchSet</code> that is still referenced by a <code>Rule</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a <code>Rule</code> that is still referenced by a <code>WebACL</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFStaleDataException">
         /// The operation failed because you tried to create, update, or delete an object by using
@@ -2258,11 +3176,21 @@ namespace Amazon.WAF
         /// To permanently delete a <code>SqlInjectionMatchSet</code> from AWS WAF, perform the
         /// following steps:
         /// </para>
-        ///  <ol> <li>Update the <code>SqlInjectionMatchSet</code> to remove filters, if any.
-        /// For more information, see <a>UpdateSqlInjectionMatchSet</a>.</li> <li>Use <a>GetChangeToken</a>
-        /// to get the change token that you provide in the <code>ChangeToken</code> parameter
-        /// of a <code>DeleteSqlInjectionMatchSet</code> request.</li> <li>Submit a <code>DeleteSqlInjectionMatchSet</code>
-        /// request.</li> </ol>
+        ///  <ol> <li> 
+        /// <para>
+        /// Update the <code>SqlInjectionMatchSet</code> to remove filters, if any. For more information,
+        /// see <a>UpdateSqlInjectionMatchSet</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code>
+        /// parameter of a <code>DeleteSqlInjectionMatchSet</code> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit a <code>DeleteSqlInjectionMatchSet</code> request.
+        /// </para>
+        ///  </li> </ol>
         /// </summary>
         /// <param name="sqlInjectionMatchSetId">The <code>SqlInjectionMatchSetId</code> of the <a>SqlInjectionMatchSet</a> that you want to delete. <code>SqlInjectionMatchSetId</code> is returned by <a>CreateSqlInjectionMatchSet</a> and by <a>ListSqlInjectionMatchSets</a>.</param>
         /// <param name="changeToken">The value returned by the most recent call to <a>GetChangeToken</a>.</param>
@@ -2279,21 +3207,43 @@ namespace Amazon.WAF
         /// <exception cref="Amazon.WAF.Model.WAFNonEmptyEntityException">
         /// The operation failed because you tried to delete an object that isn't empty. For example:
         /// 
-        ///  <ul> <li>You tried to delete a <code>WebACL</code> that still contains one or more
-        /// <code>Rule</code> objects.</li> <li>You tried to delete a <code>Rule</code> that still
-        /// contains one or more <code>ByteMatchSet</code> objects or other predicates.</li> <li>You
-        /// tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code>
-        /// objects.</li> <li>You tried to delete an <code>IPSet</code> that references one or
-        /// more IP addresses.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to delete a <code>WebACL</code> that still contains one or more <code>Rule</code>
+        /// objects.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a <code>Rule</code> that still contains one or more <code>ByteMatchSet</code>
+        /// objects or other predicates.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code>
+        /// objects.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete an <code>IPSet</code> that references one or more IP addresses.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFNonexistentItemException">
         /// The operation failed because the referenced object doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFReferencedItemException">
         /// The operation failed because you tried to delete an object that is still in use. For
-        /// example: <ul> <li>You tried to delete a <code>ByteMatchSet</code> that is still referenced
-        /// by a <code>Rule</code>.</li> <li>You tried to delete a <code>Rule</code> that is still
-        /// referenced by a <code>WebACL</code>.</li> </ul>
+        /// example:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to delete a <code>ByteMatchSet</code> that is still referenced by a <code>Rule</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a <code>Rule</code> that is still referenced by a <code>WebACL</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFStaleDataException">
         /// The operation failed because you tried to create, update, or delete an object by using
@@ -2323,11 +3273,21 @@ namespace Amazon.WAF
         /// To permanently delete a <code>SqlInjectionMatchSet</code> from AWS WAF, perform the
         /// following steps:
         /// </para>
-        ///  <ol> <li>Update the <code>SqlInjectionMatchSet</code> to remove filters, if any.
-        /// For more information, see <a>UpdateSqlInjectionMatchSet</a>.</li> <li>Use <a>GetChangeToken</a>
-        /// to get the change token that you provide in the <code>ChangeToken</code> parameter
-        /// of a <code>DeleteSqlInjectionMatchSet</code> request.</li> <li>Submit a <code>DeleteSqlInjectionMatchSet</code>
-        /// request.</li> </ol>
+        ///  <ol> <li> 
+        /// <para>
+        /// Update the <code>SqlInjectionMatchSet</code> to remove filters, if any. For more information,
+        /// see <a>UpdateSqlInjectionMatchSet</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code>
+        /// parameter of a <code>DeleteSqlInjectionMatchSet</code> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit a <code>DeleteSqlInjectionMatchSet</code> request.
+        /// </para>
+        ///  </li> </ol>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteSqlInjectionMatchSet service method.</param>
         /// 
@@ -2343,21 +3303,43 @@ namespace Amazon.WAF
         /// <exception cref="Amazon.WAF.Model.WAFNonEmptyEntityException">
         /// The operation failed because you tried to delete an object that isn't empty. For example:
         /// 
-        ///  <ul> <li>You tried to delete a <code>WebACL</code> that still contains one or more
-        /// <code>Rule</code> objects.</li> <li>You tried to delete a <code>Rule</code> that still
-        /// contains one or more <code>ByteMatchSet</code> objects or other predicates.</li> <li>You
-        /// tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code>
-        /// objects.</li> <li>You tried to delete an <code>IPSet</code> that references one or
-        /// more IP addresses.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to delete a <code>WebACL</code> that still contains one or more <code>Rule</code>
+        /// objects.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a <code>Rule</code> that still contains one or more <code>ByteMatchSet</code>
+        /// objects or other predicates.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code>
+        /// objects.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete an <code>IPSet</code> that references one or more IP addresses.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFNonexistentItemException">
         /// The operation failed because the referenced object doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFReferencedItemException">
         /// The operation failed because you tried to delete an object that is still in use. For
-        /// example: <ul> <li>You tried to delete a <code>ByteMatchSet</code> that is still referenced
-        /// by a <code>Rule</code>.</li> <li>You tried to delete a <code>Rule</code> that is still
-        /// referenced by a <code>WebACL</code>.</li> </ul>
+        /// example:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to delete a <code>ByteMatchSet</code> that is still referenced by a <code>Rule</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a <code>Rule</code> that is still referenced by a <code>WebACL</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFStaleDataException">
         /// The operation failed because you tried to create, update, or delete an object by using
@@ -2387,11 +3369,21 @@ namespace Amazon.WAF
         /// To permanently delete a <code>SqlInjectionMatchSet</code> from AWS WAF, perform the
         /// following steps:
         /// </para>
-        ///  <ol> <li>Update the <code>SqlInjectionMatchSet</code> to remove filters, if any.
-        /// For more information, see <a>UpdateSqlInjectionMatchSet</a>.</li> <li>Use <a>GetChangeToken</a>
-        /// to get the change token that you provide in the <code>ChangeToken</code> parameter
-        /// of a <code>DeleteSqlInjectionMatchSet</code> request.</li> <li>Submit a <code>DeleteSqlInjectionMatchSet</code>
-        /// request.</li> </ol>
+        ///  <ol> <li> 
+        /// <para>
+        /// Update the <code>SqlInjectionMatchSet</code> to remove filters, if any. For more information,
+        /// see <a>UpdateSqlInjectionMatchSet</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code>
+        /// parameter of a <code>DeleteSqlInjectionMatchSet</code> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit a <code>DeleteSqlInjectionMatchSet</code> request.
+        /// </para>
+        ///  </li> </ol>
         /// </summary>
         /// <param name="sqlInjectionMatchSetId">The <code>SqlInjectionMatchSetId</code> of the <a>SqlInjectionMatchSet</a> that you want to delete. <code>SqlInjectionMatchSetId</code> is returned by <a>CreateSqlInjectionMatchSet</a> and by <a>ListSqlInjectionMatchSets</a>.</param>
         /// <param name="changeToken">The value returned by the most recent call to <a>GetChangeToken</a>.</param>
@@ -2411,21 +3403,43 @@ namespace Amazon.WAF
         /// <exception cref="Amazon.WAF.Model.WAFNonEmptyEntityException">
         /// The operation failed because you tried to delete an object that isn't empty. For example:
         /// 
-        ///  <ul> <li>You tried to delete a <code>WebACL</code> that still contains one or more
-        /// <code>Rule</code> objects.</li> <li>You tried to delete a <code>Rule</code> that still
-        /// contains one or more <code>ByteMatchSet</code> objects or other predicates.</li> <li>You
-        /// tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code>
-        /// objects.</li> <li>You tried to delete an <code>IPSet</code> that references one or
-        /// more IP addresses.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to delete a <code>WebACL</code> that still contains one or more <code>Rule</code>
+        /// objects.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a <code>Rule</code> that still contains one or more <code>ByteMatchSet</code>
+        /// objects or other predicates.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code>
+        /// objects.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete an <code>IPSet</code> that references one or more IP addresses.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFNonexistentItemException">
         /// The operation failed because the referenced object doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFReferencedItemException">
         /// The operation failed because you tried to delete an object that is still in use. For
-        /// example: <ul> <li>You tried to delete a <code>ByteMatchSet</code> that is still referenced
-        /// by a <code>Rule</code>.</li> <li>You tried to delete a <code>Rule</code> that is still
-        /// referenced by a <code>WebACL</code>.</li> </ul>
+        /// example:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to delete a <code>ByteMatchSet</code> that is still referenced by a <code>Rule</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a <code>Rule</code> that is still referenced by a <code>WebACL</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFStaleDataException">
         /// The operation failed because you tried to create, update, or delete an object by using
@@ -2470,10 +3484,21 @@ namespace Amazon.WAF
         /// <para>
         /// To delete a <code>WebACL</code>, perform the following steps:
         /// </para>
-        ///  <ol> <li>Update the <code>WebACL</code> to remove <code>Rules</code>, if any. For
-        /// more information, see <a>UpdateWebACL</a>.</li> <li>Use <a>GetChangeToken</a> to get
-        /// the change token that you provide in the <code>ChangeToken</code> parameter of a <code>DeleteWebACL</code>
-        /// request.</li> <li>Submit a <code>DeleteWebACL</code> request.</li> </ol>
+        ///  <ol> <li> 
+        /// <para>
+        /// Update the <code>WebACL</code> to remove <code>Rules</code>, if any. For more information,
+        /// see <a>UpdateWebACL</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code>
+        /// parameter of a <code>DeleteWebACL</code> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit a <code>DeleteWebACL</code> request.
+        /// </para>
+        ///  </li> </ol>
         /// </summary>
         /// <param name="webACLId">The <code>WebACLId</code> of the <a>WebACL</a> that you want to delete. <code>WebACLId</code> is returned by <a>CreateWebACL</a> and by <a>ListWebACLs</a>.</param>
         /// <param name="changeToken">The value returned by the most recent call to <a>GetChangeToken</a>.</param>
@@ -2490,21 +3515,43 @@ namespace Amazon.WAF
         /// <exception cref="Amazon.WAF.Model.WAFNonEmptyEntityException">
         /// The operation failed because you tried to delete an object that isn't empty. For example:
         /// 
-        ///  <ul> <li>You tried to delete a <code>WebACL</code> that still contains one or more
-        /// <code>Rule</code> objects.</li> <li>You tried to delete a <code>Rule</code> that still
-        /// contains one or more <code>ByteMatchSet</code> objects or other predicates.</li> <li>You
-        /// tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code>
-        /// objects.</li> <li>You tried to delete an <code>IPSet</code> that references one or
-        /// more IP addresses.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to delete a <code>WebACL</code> that still contains one or more <code>Rule</code>
+        /// objects.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a <code>Rule</code> that still contains one or more <code>ByteMatchSet</code>
+        /// objects or other predicates.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code>
+        /// objects.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete an <code>IPSet</code> that references one or more IP addresses.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFNonexistentItemException">
         /// The operation failed because the referenced object doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFReferencedItemException">
         /// The operation failed because you tried to delete an object that is still in use. For
-        /// example: <ul> <li>You tried to delete a <code>ByteMatchSet</code> that is still referenced
-        /// by a <code>Rule</code>.</li> <li>You tried to delete a <code>Rule</code> that is still
-        /// referenced by a <code>WebACL</code>.</li> </ul>
+        /// example:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to delete a <code>ByteMatchSet</code> that is still referenced by a <code>Rule</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a <code>Rule</code> that is still referenced by a <code>WebACL</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFStaleDataException">
         /// The operation failed because you tried to create, update, or delete an object by using
@@ -2527,10 +3574,21 @@ namespace Amazon.WAF
         /// <para>
         /// To delete a <code>WebACL</code>, perform the following steps:
         /// </para>
-        ///  <ol> <li>Update the <code>WebACL</code> to remove <code>Rules</code>, if any. For
-        /// more information, see <a>UpdateWebACL</a>.</li> <li>Use <a>GetChangeToken</a> to get
-        /// the change token that you provide in the <code>ChangeToken</code> parameter of a <code>DeleteWebACL</code>
-        /// request.</li> <li>Submit a <code>DeleteWebACL</code> request.</li> </ol>
+        ///  <ol> <li> 
+        /// <para>
+        /// Update the <code>WebACL</code> to remove <code>Rules</code>, if any. For more information,
+        /// see <a>UpdateWebACL</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code>
+        /// parameter of a <code>DeleteWebACL</code> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit a <code>DeleteWebACL</code> request.
+        /// </para>
+        ///  </li> </ol>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteWebACL service method.</param>
         /// 
@@ -2546,21 +3604,43 @@ namespace Amazon.WAF
         /// <exception cref="Amazon.WAF.Model.WAFNonEmptyEntityException">
         /// The operation failed because you tried to delete an object that isn't empty. For example:
         /// 
-        ///  <ul> <li>You tried to delete a <code>WebACL</code> that still contains one or more
-        /// <code>Rule</code> objects.</li> <li>You tried to delete a <code>Rule</code> that still
-        /// contains one or more <code>ByteMatchSet</code> objects or other predicates.</li> <li>You
-        /// tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code>
-        /// objects.</li> <li>You tried to delete an <code>IPSet</code> that references one or
-        /// more IP addresses.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to delete a <code>WebACL</code> that still contains one or more <code>Rule</code>
+        /// objects.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a <code>Rule</code> that still contains one or more <code>ByteMatchSet</code>
+        /// objects or other predicates.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code>
+        /// objects.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete an <code>IPSet</code> that references one or more IP addresses.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFNonexistentItemException">
         /// The operation failed because the referenced object doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFReferencedItemException">
         /// The operation failed because you tried to delete an object that is still in use. For
-        /// example: <ul> <li>You tried to delete a <code>ByteMatchSet</code> that is still referenced
-        /// by a <code>Rule</code>.</li> <li>You tried to delete a <code>Rule</code> that is still
-        /// referenced by a <code>WebACL</code>.</li> </ul>
+        /// example:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to delete a <code>ByteMatchSet</code> that is still referenced by a <code>Rule</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a <code>Rule</code> that is still referenced by a <code>WebACL</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFStaleDataException">
         /// The operation failed because you tried to create, update, or delete an object by using
@@ -2583,10 +3663,21 @@ namespace Amazon.WAF
         /// <para>
         /// To delete a <code>WebACL</code>, perform the following steps:
         /// </para>
-        ///  <ol> <li>Update the <code>WebACL</code> to remove <code>Rules</code>, if any. For
-        /// more information, see <a>UpdateWebACL</a>.</li> <li>Use <a>GetChangeToken</a> to get
-        /// the change token that you provide in the <code>ChangeToken</code> parameter of a <code>DeleteWebACL</code>
-        /// request.</li> <li>Submit a <code>DeleteWebACL</code> request.</li> </ol>
+        ///  <ol> <li> 
+        /// <para>
+        /// Update the <code>WebACL</code> to remove <code>Rules</code>, if any. For more information,
+        /// see <a>UpdateWebACL</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code>
+        /// parameter of a <code>DeleteWebACL</code> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit a <code>DeleteWebACL</code> request.
+        /// </para>
+        ///  </li> </ol>
         /// </summary>
         /// <param name="webACLId">The <code>WebACLId</code> of the <a>WebACL</a> that you want to delete. <code>WebACLId</code> is returned by <a>CreateWebACL</a> and by <a>ListWebACLs</a>.</param>
         /// <param name="changeToken">The value returned by the most recent call to <a>GetChangeToken</a>.</param>
@@ -2606,21 +3697,43 @@ namespace Amazon.WAF
         /// <exception cref="Amazon.WAF.Model.WAFNonEmptyEntityException">
         /// The operation failed because you tried to delete an object that isn't empty. For example:
         /// 
-        ///  <ul> <li>You tried to delete a <code>WebACL</code> that still contains one or more
-        /// <code>Rule</code> objects.</li> <li>You tried to delete a <code>Rule</code> that still
-        /// contains one or more <code>ByteMatchSet</code> objects or other predicates.</li> <li>You
-        /// tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code>
-        /// objects.</li> <li>You tried to delete an <code>IPSet</code> that references one or
-        /// more IP addresses.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to delete a <code>WebACL</code> that still contains one or more <code>Rule</code>
+        /// objects.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a <code>Rule</code> that still contains one or more <code>ByteMatchSet</code>
+        /// objects or other predicates.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code>
+        /// objects.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete an <code>IPSet</code> that references one or more IP addresses.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFNonexistentItemException">
         /// The operation failed because the referenced object doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFReferencedItemException">
         /// The operation failed because you tried to delete an object that is still in use. For
-        /// example: <ul> <li>You tried to delete a <code>ByteMatchSet</code> that is still referenced
-        /// by a <code>Rule</code>.</li> <li>You tried to delete a <code>Rule</code> that is still
-        /// referenced by a <code>WebACL</code>.</li> </ul>
+        /// example:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to delete a <code>ByteMatchSet</code> that is still referenced by a <code>Rule</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a <code>Rule</code> that is still referenced by a <code>WebACL</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFStaleDataException">
         /// The operation failed because you tried to create, update, or delete an object by using
@@ -2672,10 +3785,21 @@ namespace Amazon.WAF
         /// To permanently delete an <code>XssMatchSet</code> from AWS WAF, perform the following
         /// steps:
         /// </para>
-        ///  <ol> <li>Update the <code>XssMatchSet</code> to remove filters, if any. For more
-        /// information, see <a>UpdateXssMatchSet</a>.</li> <li>Use <a>GetChangeToken</a> to get
-        /// the change token that you provide in the <code>ChangeToken</code> parameter of a <code>DeleteXssMatchSet</code>
-        /// request.</li> <li>Submit a <code>DeleteXssMatchSet</code> request.</li> </ol>
+        ///  <ol> <li> 
+        /// <para>
+        /// Update the <code>XssMatchSet</code> to remove filters, if any. For more information,
+        /// see <a>UpdateXssMatchSet</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code>
+        /// parameter of a <code>DeleteXssMatchSet</code> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit a <code>DeleteXssMatchSet</code> request.
+        /// </para>
+        ///  </li> </ol>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteXssMatchSet service method.</param>
         /// 
@@ -2691,21 +3815,43 @@ namespace Amazon.WAF
         /// <exception cref="Amazon.WAF.Model.WAFNonEmptyEntityException">
         /// The operation failed because you tried to delete an object that isn't empty. For example:
         /// 
-        ///  <ul> <li>You tried to delete a <code>WebACL</code> that still contains one or more
-        /// <code>Rule</code> objects.</li> <li>You tried to delete a <code>Rule</code> that still
-        /// contains one or more <code>ByteMatchSet</code> objects or other predicates.</li> <li>You
-        /// tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code>
-        /// objects.</li> <li>You tried to delete an <code>IPSet</code> that references one or
-        /// more IP addresses.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to delete a <code>WebACL</code> that still contains one or more <code>Rule</code>
+        /// objects.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a <code>Rule</code> that still contains one or more <code>ByteMatchSet</code>
+        /// objects or other predicates.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code>
+        /// objects.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete an <code>IPSet</code> that references one or more IP addresses.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFNonexistentItemException">
         /// The operation failed because the referenced object doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFReferencedItemException">
         /// The operation failed because you tried to delete an object that is still in use. For
-        /// example: <ul> <li>You tried to delete a <code>ByteMatchSet</code> that is still referenced
-        /// by a <code>Rule</code>.</li> <li>You tried to delete a <code>Rule</code> that is still
-        /// referenced by a <code>WebACL</code>.</li> </ul>
+        /// example:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to delete a <code>ByteMatchSet</code> that is still referenced by a <code>Rule</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a <code>Rule</code> that is still referenced by a <code>WebACL</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFStaleDataException">
         /// The operation failed because you tried to create, update, or delete an object by using
@@ -2971,11 +4117,21 @@ namespace Amazon.WAF
         /// Returns the status of a <code>ChangeToken</code> that you got by calling <a>GetChangeToken</a>.
         /// <code>ChangeTokenStatus</code> is one of the following values:
         /// 
-        ///  <ul> <li><code>PROVISIONED</code>: You requested the change token by calling <code>GetChangeToken</code>,
-        /// but you haven't used it yet in a call to create, update, or delete an AWS WAF object.</li>
-        /// <li><code>PENDING</code>: AWS WAF is propagating the create, update, or delete request
-        /// to all AWS WAF servers.</li> <li><code>IN_SYNC</code>: Propagation is complete.</li>
-        /// </ul>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>PROVISIONED</code>: You requested the change token by calling <code>GetChangeToken</code>,
+        /// but you haven't used it yet in a call to create, update, or delete an AWS WAF object.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>PENDING</code>: AWS WAF is propagating the create, update, or delete request
+        /// to all AWS WAF servers.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>IN_SYNC</code>: Propagation is complete.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="changeToken">The change token for which you want to get the status. This change token was previously returned in the <code>GetChangeToken</code> response.</param>
         /// 
@@ -2999,11 +4155,21 @@ namespace Amazon.WAF
         /// Returns the status of a <code>ChangeToken</code> that you got by calling <a>GetChangeToken</a>.
         /// <code>ChangeTokenStatus</code> is one of the following values:
         /// 
-        ///  <ul> <li><code>PROVISIONED</code>: You requested the change token by calling <code>GetChangeToken</code>,
-        /// but you haven't used it yet in a call to create, update, or delete an AWS WAF object.</li>
-        /// <li><code>PENDING</code>: AWS WAF is propagating the create, update, or delete request
-        /// to all AWS WAF servers.</li> <li><code>IN_SYNC</code>: Propagation is complete.</li>
-        /// </ul>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>PROVISIONED</code>: You requested the change token by calling <code>GetChangeToken</code>,
+        /// but you haven't used it yet in a call to create, update, or delete an AWS WAF object.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>PENDING</code>: AWS WAF is propagating the create, update, or delete request
+        /// to all AWS WAF servers.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>IN_SYNC</code>: Propagation is complete.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetChangeTokenStatus service method.</param>
         /// 
@@ -3028,11 +4194,21 @@ namespace Amazon.WAF
         /// Returns the status of a <code>ChangeToken</code> that you got by calling <a>GetChangeToken</a>.
         /// <code>ChangeTokenStatus</code> is one of the following values:
         /// 
-        ///  <ul> <li><code>PROVISIONED</code>: You requested the change token by calling <code>GetChangeToken</code>,
-        /// but you haven't used it yet in a call to create, update, or delete an AWS WAF object.</li>
-        /// <li><code>PENDING</code>: AWS WAF is propagating the create, update, or delete request
-        /// to all AWS WAF servers.</li> <li><code>IN_SYNC</code>: Propagation is complete.</li>
-        /// </ul>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>PROVISIONED</code>: You requested the change token by calling <code>GetChangeToken</code>,
+        /// but you haven't used it yet in a call to create, update, or delete an AWS WAF object.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>PENDING</code>: AWS WAF is propagating the create, update, or delete request
+        /// to all AWS WAF servers.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>IN_SYNC</code>: Propagation is complete.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="changeToken">The change token for which you want to get the status. This change token was previously returned in the <code>GetChangeToken</code> response.</param>
         /// <param name="cancellationToken">
@@ -3290,7 +4466,7 @@ namespace Amazon.WAF
         /// 
         ///  
         /// <para>
-        /// <code>GetSampledRequests</code> returns a time range, which is usually the time range
+        ///  <code>GetSampledRequests</code> returns a time range, which is usually the time range
         /// that you specified. However, if your resource (such as a CloudFront distribution)
         /// received 5,000 requests before the specified time range elapsed, <code>GetSampledRequests</code>
         /// returns an updated time range. This new time range indicates the actual period during
@@ -3955,16 +5131,33 @@ namespace Amazon.WAF
         /// Inserts or deletes <a>ByteMatchTuple</a> objects (filters) in a <a>ByteMatchSet</a>.
         /// For each <code>ByteMatchTuple</code> object, you specify the following values: 
         /// 
-        ///  <ul> <li>Whether to insert or delete the object from the array. If you want to change
-        /// a <code>ByteMatchSetUpdate</code> object, you delete the existing object and add a
-        /// new one.</li> <li>The part of a web request that you want AWS WAF to inspect, such
-        /// as a query string or the value of the <code>User-Agent</code> header. </li> <li>The
-        /// bytes (typically a string that corresponds with ASCII characters) that you want AWS
-        /// WAF to look for. For more information, including how you specify the values for the
-        /// AWS WAF API and the AWS CLI or SDKs, see <code>TargetString</code> in the <a>ByteMatchTuple</a>
-        /// data type. </li> <li>Where to look, such as at the beginning or the end of a query
-        /// string.</li> <li>Whether to perform any conversions on the request, such as converting
-        /// it to lowercase, before inspecting it for the specified string.</li> </ul> 
+        ///  <ul> <li> 
+        /// <para>
+        /// Whether to insert or delete the object from the array. If you want to change a <code>ByteMatchSetUpdate</code>
+        /// object, you delete the existing object and add a new one.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The part of a web request that you want AWS WAF to inspect, such as a query string
+        /// or the value of the <code>User-Agent</code> header. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The bytes (typically a string that corresponds with ASCII characters) that you want
+        /// AWS WAF to look for. For more information, including how you specify the values for
+        /// the AWS WAF API and the AWS CLI or SDKs, see <code>TargetString</code> in the <a>ByteMatchTuple</a>
+        /// data type. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Where to look, such as at the beginning or the end of a query string.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Whether to perform any conversions on the request, such as converting it to lowercase,
+        /// before inspecting it for the specified string.
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// For example, you can add a <code>ByteMatchSetUpdate</code> object that matches web
         /// requests in which <code>User-Agent</code> headers contain the string <code>BadBot</code>.
@@ -3974,12 +5167,22 @@ namespace Amazon.WAF
         /// <para>
         /// To create and configure a <code>ByteMatchSet</code>, perform the following steps:
         /// </para>
-        ///  <ol> <li>Create a <code>ByteMatchSet.</code> For more information, see <a>CreateByteMatchSet</a>.</li>
-        /// <li>Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code>
-        /// parameter of an <code>UpdateByteMatchSet</code> request.</li> <li>Submit an <code>UpdateByteMatchSet</code>
-        /// request to specify the part of the request that you want AWS WAF to inspect (for example,
-        /// the header or the URI) and the value that you want AWS WAF to watch for.</li> </ol>
-        /// 
+        ///  <ol> <li> 
+        /// <para>
+        /// Create a <code>ByteMatchSet.</code> For more information, see <a>CreateByteMatchSet</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code>
+        /// parameter of an <code>UpdateByteMatchSet</code> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit an <code>UpdateByteMatchSet</code> request to specify the part of the request
+        /// that you want AWS WAF to inspect (for example, the header or the URI) and the value
+        /// that you want AWS WAF to watch for.
+        /// </para>
+        ///  </li> </ol> 
         /// <para>
         /// For more information about how to use the AWS WAF API to allow or block HTTP requests,
         /// see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
@@ -3987,7 +5190,7 @@ namespace Amazon.WAF
         /// </para>
         /// </summary>
         /// <param name="byteMatchSetId">The <code>ByteMatchSetId</code> of the <a>ByteMatchSet</a> that you want to update. <code>ByteMatchSetId</code> is returned by <a>CreateByteMatchSet</a> and by <a>ListByteMatchSets</a>.</param>
-        /// <param name="updates">An array of <code>ByteMatchSetUpdate</code> objects that you want to insert into or delete from a <a>ByteMatchSet</a>. For more information, see the applicable data types: <ul> <li><a>ByteMatchSetUpdate</a>: Contains <code>Action</code> and <code>ByteMatchTuple</code></li> <li><a>ByteMatchTuple</a>: Contains <code>FieldToMatch</code>, <code>PositionalConstraint</code>, <code>TargetString</code>, and <code>TextTransformation</code></li> <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code></li> </ul></param>
+        /// <param name="updates">An array of <code>ByteMatchSetUpdate</code> objects that you want to insert into or delete from a <a>ByteMatchSet</a>. For more information, see the applicable data types: <ul> <li>  <a>ByteMatchSetUpdate</a>: Contains <code>Action</code> and <code>ByteMatchTuple</code>  </li> <li>  <a>ByteMatchTuple</a>: Contains <code>FieldToMatch</code>, <code>PositionalConstraint</code>, <code>TargetString</code>, and <code>TextTransformation</code>  </li> <li>  <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>  </li> </ul></param>
         /// <param name="changeToken">The value returned by the most recent call to <a>GetChangeToken</a>.</param>
         /// 
         /// <returns>The response from the UpdateByteMatchSet service method, as returned by WAF.</returns>
@@ -4002,33 +5205,76 @@ namespace Amazon.WAF
         /// <exception cref="Amazon.WAF.Model.WAFInvalidOperationException">
         /// The operation failed because there was nothing to do. For example:
         /// 
-        ///  <ul> <li>You tried to remove a <code>Rule</code> from a <code>WebACL</code>, but
-        /// the <code>Rule</code> isn't in the specified <code>WebACL</code>.</li> <li>You tried
-        /// to remove an IP address from an <code>IPSet</code>, but the IP address isn't in the
-        /// specified <code>IPSet</code>.</li> <li>You tried to remove a <code>ByteMatchTuple</code>
-        /// from a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code> isn't in the
-        /// specified <code>WebACL</code>.</li> <li>You tried to add a <code>Rule</code> to a
-        /// <code>WebACL</code>, but the <code>Rule</code> already exists in the specified <code>WebACL</code>.</li>
-        /// <li>You tried to add an IP address to an <code>IPSet</code>, but the IP address already
-        /// exists in the specified <code>IPSet</code>.</li> <li>You tried to add a <code>ByteMatchTuple</code>
-        /// to a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code> already exists
-        /// in the specified <code>WebACL</code>.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to remove a <code>Rule</code> from a <code>WebACL</code>, but the <code>Rule</code>
+        /// isn't in the specified <code>WebACL</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to remove an IP address from an <code>IPSet</code>, but the IP address isn't
+        /// in the specified <code>IPSet</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to remove a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code>,
+        /// but the <code>ByteMatchTuple</code> isn't in the specified <code>WebACL</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code>
+        /// already exists in the specified <code>WebACL</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add an IP address to an <code>IPSet</code>, but the IP address already
+        /// exists in the specified <code>IPSet</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add a <code>ByteMatchTuple</code> to a <code>ByteMatchSet</code>, but
+        /// the <code>ByteMatchTuple</code> already exists in the specified <code>WebACL</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFInvalidParameterException">
         /// The operation failed because AWS WAF didn't recognize a parameter in the request.
         /// For example:
         /// 
-        ///  <ul> <li>You specified an invalid parameter name.</li> <li>You specified an invalid
-        /// value.</li> <li>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>,
-        /// <code>Rule</code>, or <code>WebACL</code>) using an action other than <code>INSERT</code>
-        /// or <code>DELETE</code>.</li> <li>You tried to create a <code>WebACL</code> with a
-        /// <code>DefaultAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>,
-        /// or <code>COUNT</code>.</li> <li>You tried to update a <code>WebACL</code> with a <code>WafAction</code>
-        /// <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</li>
-        /// <li>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code>
-        /// <code>Type</code> other than HEADER, QUERY_STRING, or URI.</li> <li>You tried to update
-        /// a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code> but no
-        /// value for <code>Data</code>.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an invalid parameter name.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You specified an invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>,
+        /// or <code>WebACL</code>) using an action other than <code>INSERT</code> or <code>DELETE</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code>
+        /// other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code>
+        /// other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code>
+        /// other than HEADER, QUERY_STRING, or URI.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code>
+        /// but no value for <code>Data</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFLimitsExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
@@ -4039,13 +5285,27 @@ namespace Amazon.WAF
         /// The operation failed because you tried to add an object to or delete an object from
         /// another object that doesn't exist. For example:
         /// 
-        ///  <ul> <li>You tried to add a <code>Rule</code> to or delete a <code>Rule</code> from
-        /// a <code>WebACL</code> that doesn't exist.</li> <li>You tried to add a <code>ByteMatchSet</code>
-        /// to or delete a <code>ByteMatchSet</code> from a <code>Rule</code> that doesn't exist.</li>
-        /// <li>You tried to add an IP address to or delete an IP address from an <code>IPSet</code>
-        /// that doesn't exist.</li> <li>You tried to add a <code>ByteMatchTuple</code> to or
-        /// delete a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code> that doesn't
-        /// exist.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to add a <code>Rule</code> to or delete a <code>Rule</code> from a <code>WebACL</code>
+        /// that doesn't exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add a <code>ByteMatchSet</code> to or delete a <code>ByteMatchSet</code>
+        /// from a <code>Rule</code> that doesn't exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add an IP address to or delete an IP address from an <code>IPSet</code>
+        /// that doesn't exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add a <code>ByteMatchTuple</code> to or delete a <code>ByteMatchTuple</code>
+        /// from a <code>ByteMatchSet</code> that doesn't exist.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFNonexistentItemException">
         /// The operation failed because the referenced object doesn't exist.
@@ -4068,16 +5328,33 @@ namespace Amazon.WAF
         /// Inserts or deletes <a>ByteMatchTuple</a> objects (filters) in a <a>ByteMatchSet</a>.
         /// For each <code>ByteMatchTuple</code> object, you specify the following values: 
         /// 
-        ///  <ul> <li>Whether to insert or delete the object from the array. If you want to change
-        /// a <code>ByteMatchSetUpdate</code> object, you delete the existing object and add a
-        /// new one.</li> <li>The part of a web request that you want AWS WAF to inspect, such
-        /// as a query string or the value of the <code>User-Agent</code> header. </li> <li>The
-        /// bytes (typically a string that corresponds with ASCII characters) that you want AWS
-        /// WAF to look for. For more information, including how you specify the values for the
-        /// AWS WAF API and the AWS CLI or SDKs, see <code>TargetString</code> in the <a>ByteMatchTuple</a>
-        /// data type. </li> <li>Where to look, such as at the beginning or the end of a query
-        /// string.</li> <li>Whether to perform any conversions on the request, such as converting
-        /// it to lowercase, before inspecting it for the specified string.</li> </ul> 
+        ///  <ul> <li> 
+        /// <para>
+        /// Whether to insert or delete the object from the array. If you want to change a <code>ByteMatchSetUpdate</code>
+        /// object, you delete the existing object and add a new one.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The part of a web request that you want AWS WAF to inspect, such as a query string
+        /// or the value of the <code>User-Agent</code> header. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The bytes (typically a string that corresponds with ASCII characters) that you want
+        /// AWS WAF to look for. For more information, including how you specify the values for
+        /// the AWS WAF API and the AWS CLI or SDKs, see <code>TargetString</code> in the <a>ByteMatchTuple</a>
+        /// data type. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Where to look, such as at the beginning or the end of a query string.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Whether to perform any conversions on the request, such as converting it to lowercase,
+        /// before inspecting it for the specified string.
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// For example, you can add a <code>ByteMatchSetUpdate</code> object that matches web
         /// requests in which <code>User-Agent</code> headers contain the string <code>BadBot</code>.
@@ -4087,12 +5364,22 @@ namespace Amazon.WAF
         /// <para>
         /// To create and configure a <code>ByteMatchSet</code>, perform the following steps:
         /// </para>
-        ///  <ol> <li>Create a <code>ByteMatchSet.</code> For more information, see <a>CreateByteMatchSet</a>.</li>
-        /// <li>Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code>
-        /// parameter of an <code>UpdateByteMatchSet</code> request.</li> <li>Submit an <code>UpdateByteMatchSet</code>
-        /// request to specify the part of the request that you want AWS WAF to inspect (for example,
-        /// the header or the URI) and the value that you want AWS WAF to watch for.</li> </ol>
-        /// 
+        ///  <ol> <li> 
+        /// <para>
+        /// Create a <code>ByteMatchSet.</code> For more information, see <a>CreateByteMatchSet</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code>
+        /// parameter of an <code>UpdateByteMatchSet</code> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit an <code>UpdateByteMatchSet</code> request to specify the part of the request
+        /// that you want AWS WAF to inspect (for example, the header or the URI) and the value
+        /// that you want AWS WAF to watch for.
+        /// </para>
+        ///  </li> </ol> 
         /// <para>
         /// For more information about how to use the AWS WAF API to allow or block HTTP requests,
         /// see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
@@ -4113,33 +5400,76 @@ namespace Amazon.WAF
         /// <exception cref="Amazon.WAF.Model.WAFInvalidOperationException">
         /// The operation failed because there was nothing to do. For example:
         /// 
-        ///  <ul> <li>You tried to remove a <code>Rule</code> from a <code>WebACL</code>, but
-        /// the <code>Rule</code> isn't in the specified <code>WebACL</code>.</li> <li>You tried
-        /// to remove an IP address from an <code>IPSet</code>, but the IP address isn't in the
-        /// specified <code>IPSet</code>.</li> <li>You tried to remove a <code>ByteMatchTuple</code>
-        /// from a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code> isn't in the
-        /// specified <code>WebACL</code>.</li> <li>You tried to add a <code>Rule</code> to a
-        /// <code>WebACL</code>, but the <code>Rule</code> already exists in the specified <code>WebACL</code>.</li>
-        /// <li>You tried to add an IP address to an <code>IPSet</code>, but the IP address already
-        /// exists in the specified <code>IPSet</code>.</li> <li>You tried to add a <code>ByteMatchTuple</code>
-        /// to a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code> already exists
-        /// in the specified <code>WebACL</code>.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to remove a <code>Rule</code> from a <code>WebACL</code>, but the <code>Rule</code>
+        /// isn't in the specified <code>WebACL</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to remove an IP address from an <code>IPSet</code>, but the IP address isn't
+        /// in the specified <code>IPSet</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to remove a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code>,
+        /// but the <code>ByteMatchTuple</code> isn't in the specified <code>WebACL</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code>
+        /// already exists in the specified <code>WebACL</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add an IP address to an <code>IPSet</code>, but the IP address already
+        /// exists in the specified <code>IPSet</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add a <code>ByteMatchTuple</code> to a <code>ByteMatchSet</code>, but
+        /// the <code>ByteMatchTuple</code> already exists in the specified <code>WebACL</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFInvalidParameterException">
         /// The operation failed because AWS WAF didn't recognize a parameter in the request.
         /// For example:
         /// 
-        ///  <ul> <li>You specified an invalid parameter name.</li> <li>You specified an invalid
-        /// value.</li> <li>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>,
-        /// <code>Rule</code>, or <code>WebACL</code>) using an action other than <code>INSERT</code>
-        /// or <code>DELETE</code>.</li> <li>You tried to create a <code>WebACL</code> with a
-        /// <code>DefaultAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>,
-        /// or <code>COUNT</code>.</li> <li>You tried to update a <code>WebACL</code> with a <code>WafAction</code>
-        /// <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</li>
-        /// <li>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code>
-        /// <code>Type</code> other than HEADER, QUERY_STRING, or URI.</li> <li>You tried to update
-        /// a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code> but no
-        /// value for <code>Data</code>.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an invalid parameter name.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You specified an invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>,
+        /// or <code>WebACL</code>) using an action other than <code>INSERT</code> or <code>DELETE</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code>
+        /// other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code>
+        /// other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code>
+        /// other than HEADER, QUERY_STRING, or URI.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code>
+        /// but no value for <code>Data</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFLimitsExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
@@ -4150,13 +5480,27 @@ namespace Amazon.WAF
         /// The operation failed because you tried to add an object to or delete an object from
         /// another object that doesn't exist. For example:
         /// 
-        ///  <ul> <li>You tried to add a <code>Rule</code> to or delete a <code>Rule</code> from
-        /// a <code>WebACL</code> that doesn't exist.</li> <li>You tried to add a <code>ByteMatchSet</code>
-        /// to or delete a <code>ByteMatchSet</code> from a <code>Rule</code> that doesn't exist.</li>
-        /// <li>You tried to add an IP address to or delete an IP address from an <code>IPSet</code>
-        /// that doesn't exist.</li> <li>You tried to add a <code>ByteMatchTuple</code> to or
-        /// delete a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code> that doesn't
-        /// exist.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to add a <code>Rule</code> to or delete a <code>Rule</code> from a <code>WebACL</code>
+        /// that doesn't exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add a <code>ByteMatchSet</code> to or delete a <code>ByteMatchSet</code>
+        /// from a <code>Rule</code> that doesn't exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add an IP address to or delete an IP address from an <code>IPSet</code>
+        /// that doesn't exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add a <code>ByteMatchTuple</code> to or delete a <code>ByteMatchTuple</code>
+        /// from a <code>ByteMatchSet</code> that doesn't exist.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFNonexistentItemException">
         /// The operation failed because the referenced object doesn't exist.
@@ -4178,16 +5522,33 @@ namespace Amazon.WAF
         /// Inserts or deletes <a>ByteMatchTuple</a> objects (filters) in a <a>ByteMatchSet</a>.
         /// For each <code>ByteMatchTuple</code> object, you specify the following values: 
         /// 
-        ///  <ul> <li>Whether to insert or delete the object from the array. If you want to change
-        /// a <code>ByteMatchSetUpdate</code> object, you delete the existing object and add a
-        /// new one.</li> <li>The part of a web request that you want AWS WAF to inspect, such
-        /// as a query string or the value of the <code>User-Agent</code> header. </li> <li>The
-        /// bytes (typically a string that corresponds with ASCII characters) that you want AWS
-        /// WAF to look for. For more information, including how you specify the values for the
-        /// AWS WAF API and the AWS CLI or SDKs, see <code>TargetString</code> in the <a>ByteMatchTuple</a>
-        /// data type. </li> <li>Where to look, such as at the beginning or the end of a query
-        /// string.</li> <li>Whether to perform any conversions on the request, such as converting
-        /// it to lowercase, before inspecting it for the specified string.</li> </ul> 
+        ///  <ul> <li> 
+        /// <para>
+        /// Whether to insert or delete the object from the array. If you want to change a <code>ByteMatchSetUpdate</code>
+        /// object, you delete the existing object and add a new one.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The part of a web request that you want AWS WAF to inspect, such as a query string
+        /// or the value of the <code>User-Agent</code> header. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The bytes (typically a string that corresponds with ASCII characters) that you want
+        /// AWS WAF to look for. For more information, including how you specify the values for
+        /// the AWS WAF API and the AWS CLI or SDKs, see <code>TargetString</code> in the <a>ByteMatchTuple</a>
+        /// data type. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Where to look, such as at the beginning or the end of a query string.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Whether to perform any conversions on the request, such as converting it to lowercase,
+        /// before inspecting it for the specified string.
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// For example, you can add a <code>ByteMatchSetUpdate</code> object that matches web
         /// requests in which <code>User-Agent</code> headers contain the string <code>BadBot</code>.
@@ -4197,12 +5558,22 @@ namespace Amazon.WAF
         /// <para>
         /// To create and configure a <code>ByteMatchSet</code>, perform the following steps:
         /// </para>
-        ///  <ol> <li>Create a <code>ByteMatchSet.</code> For more information, see <a>CreateByteMatchSet</a>.</li>
-        /// <li>Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code>
-        /// parameter of an <code>UpdateByteMatchSet</code> request.</li> <li>Submit an <code>UpdateByteMatchSet</code>
-        /// request to specify the part of the request that you want AWS WAF to inspect (for example,
-        /// the header or the URI) and the value that you want AWS WAF to watch for.</li> </ol>
-        /// 
+        ///  <ol> <li> 
+        /// <para>
+        /// Create a <code>ByteMatchSet.</code> For more information, see <a>CreateByteMatchSet</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code>
+        /// parameter of an <code>UpdateByteMatchSet</code> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit an <code>UpdateByteMatchSet</code> request to specify the part of the request
+        /// that you want AWS WAF to inspect (for example, the header or the URI) and the value
+        /// that you want AWS WAF to watch for.
+        /// </para>
+        ///  </li> </ol> 
         /// <para>
         /// For more information about how to use the AWS WAF API to allow or block HTTP requests,
         /// see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
@@ -4210,7 +5581,7 @@ namespace Amazon.WAF
         /// </para>
         /// </summary>
         /// <param name="byteMatchSetId">The <code>ByteMatchSetId</code> of the <a>ByteMatchSet</a> that you want to update. <code>ByteMatchSetId</code> is returned by <a>CreateByteMatchSet</a> and by <a>ListByteMatchSets</a>.</param>
-        /// <param name="updates">An array of <code>ByteMatchSetUpdate</code> objects that you want to insert into or delete from a <a>ByteMatchSet</a>. For more information, see the applicable data types: <ul> <li><a>ByteMatchSetUpdate</a>: Contains <code>Action</code> and <code>ByteMatchTuple</code></li> <li><a>ByteMatchTuple</a>: Contains <code>FieldToMatch</code>, <code>PositionalConstraint</code>, <code>TargetString</code>, and <code>TextTransformation</code></li> <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code></li> </ul></param>
+        /// <param name="updates">An array of <code>ByteMatchSetUpdate</code> objects that you want to insert into or delete from a <a>ByteMatchSet</a>. For more information, see the applicable data types: <ul> <li>  <a>ByteMatchSetUpdate</a>: Contains <code>Action</code> and <code>ByteMatchTuple</code>  </li> <li>  <a>ByteMatchTuple</a>: Contains <code>FieldToMatch</code>, <code>PositionalConstraint</code>, <code>TargetString</code>, and <code>TextTransformation</code>  </li> <li>  <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>  </li> </ul></param>
         /// <param name="changeToken">The value returned by the most recent call to <a>GetChangeToken</a>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -4228,33 +5599,76 @@ namespace Amazon.WAF
         /// <exception cref="Amazon.WAF.Model.WAFInvalidOperationException">
         /// The operation failed because there was nothing to do. For example:
         /// 
-        ///  <ul> <li>You tried to remove a <code>Rule</code> from a <code>WebACL</code>, but
-        /// the <code>Rule</code> isn't in the specified <code>WebACL</code>.</li> <li>You tried
-        /// to remove an IP address from an <code>IPSet</code>, but the IP address isn't in the
-        /// specified <code>IPSet</code>.</li> <li>You tried to remove a <code>ByteMatchTuple</code>
-        /// from a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code> isn't in the
-        /// specified <code>WebACL</code>.</li> <li>You tried to add a <code>Rule</code> to a
-        /// <code>WebACL</code>, but the <code>Rule</code> already exists in the specified <code>WebACL</code>.</li>
-        /// <li>You tried to add an IP address to an <code>IPSet</code>, but the IP address already
-        /// exists in the specified <code>IPSet</code>.</li> <li>You tried to add a <code>ByteMatchTuple</code>
-        /// to a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code> already exists
-        /// in the specified <code>WebACL</code>.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to remove a <code>Rule</code> from a <code>WebACL</code>, but the <code>Rule</code>
+        /// isn't in the specified <code>WebACL</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to remove an IP address from an <code>IPSet</code>, but the IP address isn't
+        /// in the specified <code>IPSet</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to remove a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code>,
+        /// but the <code>ByteMatchTuple</code> isn't in the specified <code>WebACL</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code>
+        /// already exists in the specified <code>WebACL</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add an IP address to an <code>IPSet</code>, but the IP address already
+        /// exists in the specified <code>IPSet</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add a <code>ByteMatchTuple</code> to a <code>ByteMatchSet</code>, but
+        /// the <code>ByteMatchTuple</code> already exists in the specified <code>WebACL</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFInvalidParameterException">
         /// The operation failed because AWS WAF didn't recognize a parameter in the request.
         /// For example:
         /// 
-        ///  <ul> <li>You specified an invalid parameter name.</li> <li>You specified an invalid
-        /// value.</li> <li>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>,
-        /// <code>Rule</code>, or <code>WebACL</code>) using an action other than <code>INSERT</code>
-        /// or <code>DELETE</code>.</li> <li>You tried to create a <code>WebACL</code> with a
-        /// <code>DefaultAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>,
-        /// or <code>COUNT</code>.</li> <li>You tried to update a <code>WebACL</code> with a <code>WafAction</code>
-        /// <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</li>
-        /// <li>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code>
-        /// <code>Type</code> other than HEADER, QUERY_STRING, or URI.</li> <li>You tried to update
-        /// a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code> but no
-        /// value for <code>Data</code>.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an invalid parameter name.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You specified an invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>,
+        /// or <code>WebACL</code>) using an action other than <code>INSERT</code> or <code>DELETE</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code>
+        /// other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code>
+        /// other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code>
+        /// other than HEADER, QUERY_STRING, or URI.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code>
+        /// but no value for <code>Data</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFLimitsExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
@@ -4265,13 +5679,27 @@ namespace Amazon.WAF
         /// The operation failed because you tried to add an object to or delete an object from
         /// another object that doesn't exist. For example:
         /// 
-        ///  <ul> <li>You tried to add a <code>Rule</code> to or delete a <code>Rule</code> from
-        /// a <code>WebACL</code> that doesn't exist.</li> <li>You tried to add a <code>ByteMatchSet</code>
-        /// to or delete a <code>ByteMatchSet</code> from a <code>Rule</code> that doesn't exist.</li>
-        /// <li>You tried to add an IP address to or delete an IP address from an <code>IPSet</code>
-        /// that doesn't exist.</li> <li>You tried to add a <code>ByteMatchTuple</code> to or
-        /// delete a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code> that doesn't
-        /// exist.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to add a <code>Rule</code> to or delete a <code>Rule</code> from a <code>WebACL</code>
+        /// that doesn't exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add a <code>ByteMatchSet</code> to or delete a <code>ByteMatchSet</code>
+        /// from a <code>Rule</code> that doesn't exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add an IP address to or delete an IP address from an <code>IPSet</code>
+        /// that doesn't exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add a <code>ByteMatchTuple</code> to or delete a <code>ByteMatchTuple</code>
+        /// from a <code>ByteMatchSet</code> that doesn't exist.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFNonexistentItemException">
         /// The operation failed because the referenced object doesn't exist.
@@ -4316,12 +5744,22 @@ namespace Amazon.WAF
         /// Inserts or deletes <a>IPSetDescriptor</a> objects in an <code>IPSet</code>. For each
         /// <code>IPSetDescriptor</code> object, you specify the following values: 
         /// 
-        ///  <ul> <li>Whether to insert or delete the object from the array. If you want to change
-        /// an <code>IPSetDescriptor</code> object, you delete the existing object and add a new
-        /// one.</li> <li>The IP address version, <code>IPv4</code>. </li> <li>The IP address
-        /// in CIDR notation, for example, <code>192.0.2.0/24</code> (for the range of IP addresses
-        /// from <code>192.0.2.0</code> to <code>192.0.2.255</code>) or <code>192.0.2.44/32</code>
-        /// (for the individual IP address <code>192.0.2.44</code>). </li> </ul> 
+        ///  <ul> <li> 
+        /// <para>
+        /// Whether to insert or delete the object from the array. If you want to change an <code>IPSetDescriptor</code>
+        /// object, you delete the existing object and add a new one.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The IP address version, <code>IPv4</code>. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The IP address in CIDR notation, for example, <code>192.0.2.0/24</code> (for the range
+        /// of IP addresses from <code>192.0.2.0</code> to <code>192.0.2.255</code>) or <code>192.0.2.44/32</code>
+        /// (for the individual IP address <code>192.0.2.44</code>). 
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// AWS WAF supports /8, /16, /24, and /32 IP address ranges. For more information about
         /// CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless
@@ -4339,10 +5777,21 @@ namespace Amazon.WAF
         /// <para>
         /// To create and configure an <code>IPSet</code>, perform the following steps:
         /// </para>
-        ///  <ol> <li>Submit a <a>CreateIPSet</a> request.</li> <li>Use <a>GetChangeToken</a>
-        /// to get the change token that you provide in the <code>ChangeToken</code> parameter
-        /// of an <a>UpdateIPSet</a> request.</li> <li>Submit an <code>UpdateIPSet</code> request
-        /// to specify the IP addresses that you want AWS WAF to watch for.</li> </ol> 
+        ///  <ol> <li> 
+        /// <para>
+        /// Submit a <a>CreateIPSet</a> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code>
+        /// parameter of an <a>UpdateIPSet</a> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit an <code>UpdateIPSet</code> request to specify the IP addresses that you want
+        /// AWS WAF to watch for.
+        /// </para>
+        ///  </li> </ol> 
         /// <para>
         /// When you update an <code>IPSet</code>, you specify the IP addresses that you want
         /// to add and/or the IP addresses that you want to delete. If you want to change an IP
@@ -4356,7 +5805,7 @@ namespace Amazon.WAF
         /// </para>
         /// </summary>
         /// <param name="ipSetId">The <code>IPSetId</code> of the <a>IPSet</a> that you want to update. <code>IPSetId</code> is returned by <a>CreateIPSet</a> and by <a>ListIPSets</a>.</param>
-        /// <param name="updates">An array of <code>IPSetUpdate</code> objects that you want to insert into or delete from an <a>IPSet</a>. For more information, see the applicable data types: <ul> <li><a>IPSetUpdate</a>: Contains <code>Action</code> and <code>IPSetDescriptor</code></li> <li><a>IPSetDescriptor</a>: Contains <code>Type</code> and <code>Value</code></li> </ul></param>
+        /// <param name="updates">An array of <code>IPSetUpdate</code> objects that you want to insert into or delete from an <a>IPSet</a>. For more information, see the applicable data types: <ul> <li>  <a>IPSetUpdate</a>: Contains <code>Action</code> and <code>IPSetDescriptor</code>  </li> <li>  <a>IPSetDescriptor</a>: Contains <code>Type</code> and <code>Value</code>  </li> </ul></param>
         /// <param name="changeToken">The value returned by the most recent call to <a>GetChangeToken</a>.</param>
         /// 
         /// <returns>The response from the UpdateIPSet service method, as returned by WAF.</returns>
@@ -4371,33 +5820,76 @@ namespace Amazon.WAF
         /// <exception cref="Amazon.WAF.Model.WAFInvalidOperationException">
         /// The operation failed because there was nothing to do. For example:
         /// 
-        ///  <ul> <li>You tried to remove a <code>Rule</code> from a <code>WebACL</code>, but
-        /// the <code>Rule</code> isn't in the specified <code>WebACL</code>.</li> <li>You tried
-        /// to remove an IP address from an <code>IPSet</code>, but the IP address isn't in the
-        /// specified <code>IPSet</code>.</li> <li>You tried to remove a <code>ByteMatchTuple</code>
-        /// from a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code> isn't in the
-        /// specified <code>WebACL</code>.</li> <li>You tried to add a <code>Rule</code> to a
-        /// <code>WebACL</code>, but the <code>Rule</code> already exists in the specified <code>WebACL</code>.</li>
-        /// <li>You tried to add an IP address to an <code>IPSet</code>, but the IP address already
-        /// exists in the specified <code>IPSet</code>.</li> <li>You tried to add a <code>ByteMatchTuple</code>
-        /// to a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code> already exists
-        /// in the specified <code>WebACL</code>.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to remove a <code>Rule</code> from a <code>WebACL</code>, but the <code>Rule</code>
+        /// isn't in the specified <code>WebACL</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to remove an IP address from an <code>IPSet</code>, but the IP address isn't
+        /// in the specified <code>IPSet</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to remove a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code>,
+        /// but the <code>ByteMatchTuple</code> isn't in the specified <code>WebACL</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code>
+        /// already exists in the specified <code>WebACL</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add an IP address to an <code>IPSet</code>, but the IP address already
+        /// exists in the specified <code>IPSet</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add a <code>ByteMatchTuple</code> to a <code>ByteMatchSet</code>, but
+        /// the <code>ByteMatchTuple</code> already exists in the specified <code>WebACL</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFInvalidParameterException">
         /// The operation failed because AWS WAF didn't recognize a parameter in the request.
         /// For example:
         /// 
-        ///  <ul> <li>You specified an invalid parameter name.</li> <li>You specified an invalid
-        /// value.</li> <li>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>,
-        /// <code>Rule</code>, or <code>WebACL</code>) using an action other than <code>INSERT</code>
-        /// or <code>DELETE</code>.</li> <li>You tried to create a <code>WebACL</code> with a
-        /// <code>DefaultAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>,
-        /// or <code>COUNT</code>.</li> <li>You tried to update a <code>WebACL</code> with a <code>WafAction</code>
-        /// <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</li>
-        /// <li>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code>
-        /// <code>Type</code> other than HEADER, QUERY_STRING, or URI.</li> <li>You tried to update
-        /// a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code> but no
-        /// value for <code>Data</code>.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an invalid parameter name.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You specified an invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>,
+        /// or <code>WebACL</code>) using an action other than <code>INSERT</code> or <code>DELETE</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code>
+        /// other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code>
+        /// other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code>
+        /// other than HEADER, QUERY_STRING, or URI.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code>
+        /// but no value for <code>Data</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFLimitsExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
@@ -4408,22 +5900,44 @@ namespace Amazon.WAF
         /// The operation failed because you tried to add an object to or delete an object from
         /// another object that doesn't exist. For example:
         /// 
-        ///  <ul> <li>You tried to add a <code>Rule</code> to or delete a <code>Rule</code> from
-        /// a <code>WebACL</code> that doesn't exist.</li> <li>You tried to add a <code>ByteMatchSet</code>
-        /// to or delete a <code>ByteMatchSet</code> from a <code>Rule</code> that doesn't exist.</li>
-        /// <li>You tried to add an IP address to or delete an IP address from an <code>IPSet</code>
-        /// that doesn't exist.</li> <li>You tried to add a <code>ByteMatchTuple</code> to or
-        /// delete a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code> that doesn't
-        /// exist.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to add a <code>Rule</code> to or delete a <code>Rule</code> from a <code>WebACL</code>
+        /// that doesn't exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add a <code>ByteMatchSet</code> to or delete a <code>ByteMatchSet</code>
+        /// from a <code>Rule</code> that doesn't exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add an IP address to or delete an IP address from an <code>IPSet</code>
+        /// that doesn't exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add a <code>ByteMatchTuple</code> to or delete a <code>ByteMatchTuple</code>
+        /// from a <code>ByteMatchSet</code> that doesn't exist.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFNonexistentItemException">
         /// The operation failed because the referenced object doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFReferencedItemException">
         /// The operation failed because you tried to delete an object that is still in use. For
-        /// example: <ul> <li>You tried to delete a <code>ByteMatchSet</code> that is still referenced
-        /// by a <code>Rule</code>.</li> <li>You tried to delete a <code>Rule</code> that is still
-        /// referenced by a <code>WebACL</code>.</li> </ul>
+        /// example:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to delete a <code>ByteMatchSet</code> that is still referenced by a <code>Rule</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a <code>Rule</code> that is still referenced by a <code>WebACL</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFStaleDataException">
         /// The operation failed because you tried to create, update, or delete an object by using
@@ -4443,12 +5957,22 @@ namespace Amazon.WAF
         /// Inserts or deletes <a>IPSetDescriptor</a> objects in an <code>IPSet</code>. For each
         /// <code>IPSetDescriptor</code> object, you specify the following values: 
         /// 
-        ///  <ul> <li>Whether to insert or delete the object from the array. If you want to change
-        /// an <code>IPSetDescriptor</code> object, you delete the existing object and add a new
-        /// one.</li> <li>The IP address version, <code>IPv4</code>. </li> <li>The IP address
-        /// in CIDR notation, for example, <code>192.0.2.0/24</code> (for the range of IP addresses
-        /// from <code>192.0.2.0</code> to <code>192.0.2.255</code>) or <code>192.0.2.44/32</code>
-        /// (for the individual IP address <code>192.0.2.44</code>). </li> </ul> 
+        ///  <ul> <li> 
+        /// <para>
+        /// Whether to insert or delete the object from the array. If you want to change an <code>IPSetDescriptor</code>
+        /// object, you delete the existing object and add a new one.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The IP address version, <code>IPv4</code>. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The IP address in CIDR notation, for example, <code>192.0.2.0/24</code> (for the range
+        /// of IP addresses from <code>192.0.2.0</code> to <code>192.0.2.255</code>) or <code>192.0.2.44/32</code>
+        /// (for the individual IP address <code>192.0.2.44</code>). 
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// AWS WAF supports /8, /16, /24, and /32 IP address ranges. For more information about
         /// CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless
@@ -4466,10 +5990,21 @@ namespace Amazon.WAF
         /// <para>
         /// To create and configure an <code>IPSet</code>, perform the following steps:
         /// </para>
-        ///  <ol> <li>Submit a <a>CreateIPSet</a> request.</li> <li>Use <a>GetChangeToken</a>
-        /// to get the change token that you provide in the <code>ChangeToken</code> parameter
-        /// of an <a>UpdateIPSet</a> request.</li> <li>Submit an <code>UpdateIPSet</code> request
-        /// to specify the IP addresses that you want AWS WAF to watch for.</li> </ol> 
+        ///  <ol> <li> 
+        /// <para>
+        /// Submit a <a>CreateIPSet</a> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code>
+        /// parameter of an <a>UpdateIPSet</a> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit an <code>UpdateIPSet</code> request to specify the IP addresses that you want
+        /// AWS WAF to watch for.
+        /// </para>
+        ///  </li> </ol> 
         /// <para>
         /// When you update an <code>IPSet</code>, you specify the IP addresses that you want
         /// to add and/or the IP addresses that you want to delete. If you want to change an IP
@@ -4496,33 +6031,76 @@ namespace Amazon.WAF
         /// <exception cref="Amazon.WAF.Model.WAFInvalidOperationException">
         /// The operation failed because there was nothing to do. For example:
         /// 
-        ///  <ul> <li>You tried to remove a <code>Rule</code> from a <code>WebACL</code>, but
-        /// the <code>Rule</code> isn't in the specified <code>WebACL</code>.</li> <li>You tried
-        /// to remove an IP address from an <code>IPSet</code>, but the IP address isn't in the
-        /// specified <code>IPSet</code>.</li> <li>You tried to remove a <code>ByteMatchTuple</code>
-        /// from a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code> isn't in the
-        /// specified <code>WebACL</code>.</li> <li>You tried to add a <code>Rule</code> to a
-        /// <code>WebACL</code>, but the <code>Rule</code> already exists in the specified <code>WebACL</code>.</li>
-        /// <li>You tried to add an IP address to an <code>IPSet</code>, but the IP address already
-        /// exists in the specified <code>IPSet</code>.</li> <li>You tried to add a <code>ByteMatchTuple</code>
-        /// to a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code> already exists
-        /// in the specified <code>WebACL</code>.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to remove a <code>Rule</code> from a <code>WebACL</code>, but the <code>Rule</code>
+        /// isn't in the specified <code>WebACL</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to remove an IP address from an <code>IPSet</code>, but the IP address isn't
+        /// in the specified <code>IPSet</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to remove a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code>,
+        /// but the <code>ByteMatchTuple</code> isn't in the specified <code>WebACL</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code>
+        /// already exists in the specified <code>WebACL</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add an IP address to an <code>IPSet</code>, but the IP address already
+        /// exists in the specified <code>IPSet</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add a <code>ByteMatchTuple</code> to a <code>ByteMatchSet</code>, but
+        /// the <code>ByteMatchTuple</code> already exists in the specified <code>WebACL</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFInvalidParameterException">
         /// The operation failed because AWS WAF didn't recognize a parameter in the request.
         /// For example:
         /// 
-        ///  <ul> <li>You specified an invalid parameter name.</li> <li>You specified an invalid
-        /// value.</li> <li>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>,
-        /// <code>Rule</code>, or <code>WebACL</code>) using an action other than <code>INSERT</code>
-        /// or <code>DELETE</code>.</li> <li>You tried to create a <code>WebACL</code> with a
-        /// <code>DefaultAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>,
-        /// or <code>COUNT</code>.</li> <li>You tried to update a <code>WebACL</code> with a <code>WafAction</code>
-        /// <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</li>
-        /// <li>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code>
-        /// <code>Type</code> other than HEADER, QUERY_STRING, or URI.</li> <li>You tried to update
-        /// a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code> but no
-        /// value for <code>Data</code>.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an invalid parameter name.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You specified an invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>,
+        /// or <code>WebACL</code>) using an action other than <code>INSERT</code> or <code>DELETE</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code>
+        /// other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code>
+        /// other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code>
+        /// other than HEADER, QUERY_STRING, or URI.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code>
+        /// but no value for <code>Data</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFLimitsExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
@@ -4533,22 +6111,44 @@ namespace Amazon.WAF
         /// The operation failed because you tried to add an object to or delete an object from
         /// another object that doesn't exist. For example:
         /// 
-        ///  <ul> <li>You tried to add a <code>Rule</code> to or delete a <code>Rule</code> from
-        /// a <code>WebACL</code> that doesn't exist.</li> <li>You tried to add a <code>ByteMatchSet</code>
-        /// to or delete a <code>ByteMatchSet</code> from a <code>Rule</code> that doesn't exist.</li>
-        /// <li>You tried to add an IP address to or delete an IP address from an <code>IPSet</code>
-        /// that doesn't exist.</li> <li>You tried to add a <code>ByteMatchTuple</code> to or
-        /// delete a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code> that doesn't
-        /// exist.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to add a <code>Rule</code> to or delete a <code>Rule</code> from a <code>WebACL</code>
+        /// that doesn't exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add a <code>ByteMatchSet</code> to or delete a <code>ByteMatchSet</code>
+        /// from a <code>Rule</code> that doesn't exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add an IP address to or delete an IP address from an <code>IPSet</code>
+        /// that doesn't exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add a <code>ByteMatchTuple</code> to or delete a <code>ByteMatchTuple</code>
+        /// from a <code>ByteMatchSet</code> that doesn't exist.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFNonexistentItemException">
         /// The operation failed because the referenced object doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFReferencedItemException">
         /// The operation failed because you tried to delete an object that is still in use. For
-        /// example: <ul> <li>You tried to delete a <code>ByteMatchSet</code> that is still referenced
-        /// by a <code>Rule</code>.</li> <li>You tried to delete a <code>Rule</code> that is still
-        /// referenced by a <code>WebACL</code>.</li> </ul>
+        /// example:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to delete a <code>ByteMatchSet</code> that is still referenced by a <code>Rule</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a <code>Rule</code> that is still referenced by a <code>WebACL</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFStaleDataException">
         /// The operation failed because you tried to create, update, or delete an object by using
@@ -4567,12 +6167,22 @@ namespace Amazon.WAF
         /// Inserts or deletes <a>IPSetDescriptor</a> objects in an <code>IPSet</code>. For each
         /// <code>IPSetDescriptor</code> object, you specify the following values: 
         /// 
-        ///  <ul> <li>Whether to insert or delete the object from the array. If you want to change
-        /// an <code>IPSetDescriptor</code> object, you delete the existing object and add a new
-        /// one.</li> <li>The IP address version, <code>IPv4</code>. </li> <li>The IP address
-        /// in CIDR notation, for example, <code>192.0.2.0/24</code> (for the range of IP addresses
-        /// from <code>192.0.2.0</code> to <code>192.0.2.255</code>) or <code>192.0.2.44/32</code>
-        /// (for the individual IP address <code>192.0.2.44</code>). </li> </ul> 
+        ///  <ul> <li> 
+        /// <para>
+        /// Whether to insert or delete the object from the array. If you want to change an <code>IPSetDescriptor</code>
+        /// object, you delete the existing object and add a new one.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The IP address version, <code>IPv4</code>. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The IP address in CIDR notation, for example, <code>192.0.2.0/24</code> (for the range
+        /// of IP addresses from <code>192.0.2.0</code> to <code>192.0.2.255</code>) or <code>192.0.2.44/32</code>
+        /// (for the individual IP address <code>192.0.2.44</code>). 
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// AWS WAF supports /8, /16, /24, and /32 IP address ranges. For more information about
         /// CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless
@@ -4590,10 +6200,21 @@ namespace Amazon.WAF
         /// <para>
         /// To create and configure an <code>IPSet</code>, perform the following steps:
         /// </para>
-        ///  <ol> <li>Submit a <a>CreateIPSet</a> request.</li> <li>Use <a>GetChangeToken</a>
-        /// to get the change token that you provide in the <code>ChangeToken</code> parameter
-        /// of an <a>UpdateIPSet</a> request.</li> <li>Submit an <code>UpdateIPSet</code> request
-        /// to specify the IP addresses that you want AWS WAF to watch for.</li> </ol> 
+        ///  <ol> <li> 
+        /// <para>
+        /// Submit a <a>CreateIPSet</a> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code>
+        /// parameter of an <a>UpdateIPSet</a> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit an <code>UpdateIPSet</code> request to specify the IP addresses that you want
+        /// AWS WAF to watch for.
+        /// </para>
+        ///  </li> </ol> 
         /// <para>
         /// When you update an <code>IPSet</code>, you specify the IP addresses that you want
         /// to add and/or the IP addresses that you want to delete. If you want to change an IP
@@ -4607,7 +6228,7 @@ namespace Amazon.WAF
         /// </para>
         /// </summary>
         /// <param name="ipSetId">The <code>IPSetId</code> of the <a>IPSet</a> that you want to update. <code>IPSetId</code> is returned by <a>CreateIPSet</a> and by <a>ListIPSets</a>.</param>
-        /// <param name="updates">An array of <code>IPSetUpdate</code> objects that you want to insert into or delete from an <a>IPSet</a>. For more information, see the applicable data types: <ul> <li><a>IPSetUpdate</a>: Contains <code>Action</code> and <code>IPSetDescriptor</code></li> <li><a>IPSetDescriptor</a>: Contains <code>Type</code> and <code>Value</code></li> </ul></param>
+        /// <param name="updates">An array of <code>IPSetUpdate</code> objects that you want to insert into or delete from an <a>IPSet</a>. For more information, see the applicable data types: <ul> <li>  <a>IPSetUpdate</a>: Contains <code>Action</code> and <code>IPSetDescriptor</code>  </li> <li>  <a>IPSetDescriptor</a>: Contains <code>Type</code> and <code>Value</code>  </li> </ul></param>
         /// <param name="changeToken">The value returned by the most recent call to <a>GetChangeToken</a>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -4625,33 +6246,76 @@ namespace Amazon.WAF
         /// <exception cref="Amazon.WAF.Model.WAFInvalidOperationException">
         /// The operation failed because there was nothing to do. For example:
         /// 
-        ///  <ul> <li>You tried to remove a <code>Rule</code> from a <code>WebACL</code>, but
-        /// the <code>Rule</code> isn't in the specified <code>WebACL</code>.</li> <li>You tried
-        /// to remove an IP address from an <code>IPSet</code>, but the IP address isn't in the
-        /// specified <code>IPSet</code>.</li> <li>You tried to remove a <code>ByteMatchTuple</code>
-        /// from a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code> isn't in the
-        /// specified <code>WebACL</code>.</li> <li>You tried to add a <code>Rule</code> to a
-        /// <code>WebACL</code>, but the <code>Rule</code> already exists in the specified <code>WebACL</code>.</li>
-        /// <li>You tried to add an IP address to an <code>IPSet</code>, but the IP address already
-        /// exists in the specified <code>IPSet</code>.</li> <li>You tried to add a <code>ByteMatchTuple</code>
-        /// to a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code> already exists
-        /// in the specified <code>WebACL</code>.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to remove a <code>Rule</code> from a <code>WebACL</code>, but the <code>Rule</code>
+        /// isn't in the specified <code>WebACL</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to remove an IP address from an <code>IPSet</code>, but the IP address isn't
+        /// in the specified <code>IPSet</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to remove a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code>,
+        /// but the <code>ByteMatchTuple</code> isn't in the specified <code>WebACL</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code>
+        /// already exists in the specified <code>WebACL</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add an IP address to an <code>IPSet</code>, but the IP address already
+        /// exists in the specified <code>IPSet</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add a <code>ByteMatchTuple</code> to a <code>ByteMatchSet</code>, but
+        /// the <code>ByteMatchTuple</code> already exists in the specified <code>WebACL</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFInvalidParameterException">
         /// The operation failed because AWS WAF didn't recognize a parameter in the request.
         /// For example:
         /// 
-        ///  <ul> <li>You specified an invalid parameter name.</li> <li>You specified an invalid
-        /// value.</li> <li>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>,
-        /// <code>Rule</code>, or <code>WebACL</code>) using an action other than <code>INSERT</code>
-        /// or <code>DELETE</code>.</li> <li>You tried to create a <code>WebACL</code> with a
-        /// <code>DefaultAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>,
-        /// or <code>COUNT</code>.</li> <li>You tried to update a <code>WebACL</code> with a <code>WafAction</code>
-        /// <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</li>
-        /// <li>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code>
-        /// <code>Type</code> other than HEADER, QUERY_STRING, or URI.</li> <li>You tried to update
-        /// a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code> but no
-        /// value for <code>Data</code>.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an invalid parameter name.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You specified an invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>,
+        /// or <code>WebACL</code>) using an action other than <code>INSERT</code> or <code>DELETE</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code>
+        /// other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code>
+        /// other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code>
+        /// other than HEADER, QUERY_STRING, or URI.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code>
+        /// but no value for <code>Data</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFLimitsExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
@@ -4662,22 +6326,44 @@ namespace Amazon.WAF
         /// The operation failed because you tried to add an object to or delete an object from
         /// another object that doesn't exist. For example:
         /// 
-        ///  <ul> <li>You tried to add a <code>Rule</code> to or delete a <code>Rule</code> from
-        /// a <code>WebACL</code> that doesn't exist.</li> <li>You tried to add a <code>ByteMatchSet</code>
-        /// to or delete a <code>ByteMatchSet</code> from a <code>Rule</code> that doesn't exist.</li>
-        /// <li>You tried to add an IP address to or delete an IP address from an <code>IPSet</code>
-        /// that doesn't exist.</li> <li>You tried to add a <code>ByteMatchTuple</code> to or
-        /// delete a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code> that doesn't
-        /// exist.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to add a <code>Rule</code> to or delete a <code>Rule</code> from a <code>WebACL</code>
+        /// that doesn't exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add a <code>ByteMatchSet</code> to or delete a <code>ByteMatchSet</code>
+        /// from a <code>Rule</code> that doesn't exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add an IP address to or delete an IP address from an <code>IPSet</code>
+        /// that doesn't exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add a <code>ByteMatchTuple</code> to or delete a <code>ByteMatchTuple</code>
+        /// from a <code>ByteMatchSet</code> that doesn't exist.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFNonexistentItemException">
         /// The operation failed because the referenced object doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFReferencedItemException">
         /// The operation failed because you tried to delete an object that is still in use. For
-        /// example: <ul> <li>You tried to delete a <code>ByteMatchSet</code> that is still referenced
-        /// by a <code>Rule</code>.</li> <li>You tried to delete a <code>Rule</code> that is still
-        /// referenced by a <code>WebACL</code>.</li> </ul>
+        /// example:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to delete a <code>ByteMatchSet</code> that is still referenced by a <code>Rule</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a <code>Rule</code> that is still referenced by a <code>WebACL</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFStaleDataException">
         /// The operation failed because you tried to create, update, or delete an object by using
@@ -4723,9 +6409,16 @@ namespace Amazon.WAF
         /// to be allowed, blocked, or counted. For example, suppose you add the following to
         /// a <code>Rule</code>: 
         /// 
-        ///  <ul> <li>A <code>ByteMatchSet</code> that matches the value <code>BadBot</code> in
-        /// the <code>User-Agent</code> header</li> <li>An <code>IPSet</code> that matches the
-        /// IP address <code>192.0.2.44</code></li> </ul> 
+        ///  <ul> <li> 
+        /// <para>
+        /// A <code>ByteMatchSet</code> that matches the value <code>BadBot</code> in the <code>User-Agent</code>
+        /// header
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// An <code>IPSet</code> that matches the IP address <code>192.0.2.44</code> 
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// You then add the <code>Rule</code> to a <code>WebACL</code> and specify that you want
         /// to block requests that satisfy the <code>Rule</code>. For a request to be blocked,
@@ -4736,12 +6429,28 @@ namespace Amazon.WAF
         /// <para>
         /// To create and configure a <code>Rule</code>, perform the following steps:
         /// </para>
-        ///  <ol> <li>Create and update the predicates that you want to include in the <code>Rule</code>.</li>
-        /// <li>Create the <code>Rule</code>. See <a>CreateRule</a>.</li> <li>Use <code>GetChangeToken</code>
-        /// to get the change token that you provide in the <code>ChangeToken</code> parameter
-        /// of an <a>UpdateRule</a> request.</li> <li>Submit an <code>UpdateRule</code> request
-        /// to add predicates to the <code>Rule</code>.</li> <li>Create and update a <code>WebACL</code>
-        /// that contains the <code>Rule</code>. See <a>CreateWebACL</a>.</li> </ol> 
+        ///  <ol> <li> 
+        /// <para>
+        /// Create and update the predicates that you want to include in the <code>Rule</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Create the <code>Rule</code>. See <a>CreateRule</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code>
+        /// parameter of an <a>UpdateRule</a> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit an <code>UpdateRule</code> request to add predicates to the <code>Rule</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Create and update a <code>WebACL</code> that contains the <code>Rule</code>. See <a>CreateWebACL</a>.
+        /// </para>
+        ///  </li> </ol> 
         /// <para>
         /// If you want to replace one <code>ByteMatchSet</code> or <code>IPSet</code> with another,
         /// you delete the existing one and add the new one.
@@ -4754,7 +6463,7 @@ namespace Amazon.WAF
         /// </para>
         /// </summary>
         /// <param name="ruleId">The <code>RuleId</code> of the <code>Rule</code> that you want to update. <code>RuleId</code> is returned by <code>CreateRule</code> and by <a>ListRules</a>.</param>
-        /// <param name="updates">An array of <code>RuleUpdate</code> objects that you want to insert into or delete from a <a>Rule</a>. For more information, see the applicable data types: <ul> <li><a>RuleUpdate</a>: Contains <code>Action</code> and <code>Predicate</code></li> <li><a>Predicate</a>: Contains <code>DataId</code>, <code>Negated</code>, and <code>Type</code></li> <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code></li> </ul></param>
+        /// <param name="updates">An array of <code>RuleUpdate</code> objects that you want to insert into or delete from a <a>Rule</a>. For more information, see the applicable data types: <ul> <li>  <a>RuleUpdate</a>: Contains <code>Action</code> and <code>Predicate</code>  </li> <li>  <a>Predicate</a>: Contains <code>DataId</code>, <code>Negated</code>, and <code>Type</code>  </li> <li>  <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>  </li> </ul></param>
         /// <param name="changeToken">The value returned by the most recent call to <a>GetChangeToken</a>.</param>
         /// 
         /// <returns>The response from the UpdateRule service method, as returned by WAF.</returns>
@@ -4769,33 +6478,76 @@ namespace Amazon.WAF
         /// <exception cref="Amazon.WAF.Model.WAFInvalidOperationException">
         /// The operation failed because there was nothing to do. For example:
         /// 
-        ///  <ul> <li>You tried to remove a <code>Rule</code> from a <code>WebACL</code>, but
-        /// the <code>Rule</code> isn't in the specified <code>WebACL</code>.</li> <li>You tried
-        /// to remove an IP address from an <code>IPSet</code>, but the IP address isn't in the
-        /// specified <code>IPSet</code>.</li> <li>You tried to remove a <code>ByteMatchTuple</code>
-        /// from a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code> isn't in the
-        /// specified <code>WebACL</code>.</li> <li>You tried to add a <code>Rule</code> to a
-        /// <code>WebACL</code>, but the <code>Rule</code> already exists in the specified <code>WebACL</code>.</li>
-        /// <li>You tried to add an IP address to an <code>IPSet</code>, but the IP address already
-        /// exists in the specified <code>IPSet</code>.</li> <li>You tried to add a <code>ByteMatchTuple</code>
-        /// to a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code> already exists
-        /// in the specified <code>WebACL</code>.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to remove a <code>Rule</code> from a <code>WebACL</code>, but the <code>Rule</code>
+        /// isn't in the specified <code>WebACL</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to remove an IP address from an <code>IPSet</code>, but the IP address isn't
+        /// in the specified <code>IPSet</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to remove a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code>,
+        /// but the <code>ByteMatchTuple</code> isn't in the specified <code>WebACL</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code>
+        /// already exists in the specified <code>WebACL</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add an IP address to an <code>IPSet</code>, but the IP address already
+        /// exists in the specified <code>IPSet</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add a <code>ByteMatchTuple</code> to a <code>ByteMatchSet</code>, but
+        /// the <code>ByteMatchTuple</code> already exists in the specified <code>WebACL</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFInvalidParameterException">
         /// The operation failed because AWS WAF didn't recognize a parameter in the request.
         /// For example:
         /// 
-        ///  <ul> <li>You specified an invalid parameter name.</li> <li>You specified an invalid
-        /// value.</li> <li>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>,
-        /// <code>Rule</code>, or <code>WebACL</code>) using an action other than <code>INSERT</code>
-        /// or <code>DELETE</code>.</li> <li>You tried to create a <code>WebACL</code> with a
-        /// <code>DefaultAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>,
-        /// or <code>COUNT</code>.</li> <li>You tried to update a <code>WebACL</code> with a <code>WafAction</code>
-        /// <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</li>
-        /// <li>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code>
-        /// <code>Type</code> other than HEADER, QUERY_STRING, or URI.</li> <li>You tried to update
-        /// a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code> but no
-        /// value for <code>Data</code>.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an invalid parameter name.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You specified an invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>,
+        /// or <code>WebACL</code>) using an action other than <code>INSERT</code> or <code>DELETE</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code>
+        /// other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code>
+        /// other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code>
+        /// other than HEADER, QUERY_STRING, or URI.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code>
+        /// but no value for <code>Data</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFLimitsExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
@@ -4806,22 +6558,44 @@ namespace Amazon.WAF
         /// The operation failed because you tried to add an object to or delete an object from
         /// another object that doesn't exist. For example:
         /// 
-        ///  <ul> <li>You tried to add a <code>Rule</code> to or delete a <code>Rule</code> from
-        /// a <code>WebACL</code> that doesn't exist.</li> <li>You tried to add a <code>ByteMatchSet</code>
-        /// to or delete a <code>ByteMatchSet</code> from a <code>Rule</code> that doesn't exist.</li>
-        /// <li>You tried to add an IP address to or delete an IP address from an <code>IPSet</code>
-        /// that doesn't exist.</li> <li>You tried to add a <code>ByteMatchTuple</code> to or
-        /// delete a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code> that doesn't
-        /// exist.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to add a <code>Rule</code> to or delete a <code>Rule</code> from a <code>WebACL</code>
+        /// that doesn't exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add a <code>ByteMatchSet</code> to or delete a <code>ByteMatchSet</code>
+        /// from a <code>Rule</code> that doesn't exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add an IP address to or delete an IP address from an <code>IPSet</code>
+        /// that doesn't exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add a <code>ByteMatchTuple</code> to or delete a <code>ByteMatchTuple</code>
+        /// from a <code>ByteMatchSet</code> that doesn't exist.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFNonexistentItemException">
         /// The operation failed because the referenced object doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFReferencedItemException">
         /// The operation failed because you tried to delete an object that is still in use. For
-        /// example: <ul> <li>You tried to delete a <code>ByteMatchSet</code> that is still referenced
-        /// by a <code>Rule</code>.</li> <li>You tried to delete a <code>Rule</code> that is still
-        /// referenced by a <code>WebACL</code>.</li> </ul>
+        /// example:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to delete a <code>ByteMatchSet</code> that is still referenced by a <code>Rule</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a <code>Rule</code> that is still referenced by a <code>WebACL</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFStaleDataException">
         /// The operation failed because you tried to create, update, or delete an object by using
@@ -4845,9 +6619,16 @@ namespace Amazon.WAF
         /// to be allowed, blocked, or counted. For example, suppose you add the following to
         /// a <code>Rule</code>: 
         /// 
-        ///  <ul> <li>A <code>ByteMatchSet</code> that matches the value <code>BadBot</code> in
-        /// the <code>User-Agent</code> header</li> <li>An <code>IPSet</code> that matches the
-        /// IP address <code>192.0.2.44</code></li> </ul> 
+        ///  <ul> <li> 
+        /// <para>
+        /// A <code>ByteMatchSet</code> that matches the value <code>BadBot</code> in the <code>User-Agent</code>
+        /// header
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// An <code>IPSet</code> that matches the IP address <code>192.0.2.44</code> 
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// You then add the <code>Rule</code> to a <code>WebACL</code> and specify that you want
         /// to block requests that satisfy the <code>Rule</code>. For a request to be blocked,
@@ -4858,12 +6639,28 @@ namespace Amazon.WAF
         /// <para>
         /// To create and configure a <code>Rule</code>, perform the following steps:
         /// </para>
-        ///  <ol> <li>Create and update the predicates that you want to include in the <code>Rule</code>.</li>
-        /// <li>Create the <code>Rule</code>. See <a>CreateRule</a>.</li> <li>Use <code>GetChangeToken</code>
-        /// to get the change token that you provide in the <code>ChangeToken</code> parameter
-        /// of an <a>UpdateRule</a> request.</li> <li>Submit an <code>UpdateRule</code> request
-        /// to add predicates to the <code>Rule</code>.</li> <li>Create and update a <code>WebACL</code>
-        /// that contains the <code>Rule</code>. See <a>CreateWebACL</a>.</li> </ol> 
+        ///  <ol> <li> 
+        /// <para>
+        /// Create and update the predicates that you want to include in the <code>Rule</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Create the <code>Rule</code>. See <a>CreateRule</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code>
+        /// parameter of an <a>UpdateRule</a> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit an <code>UpdateRule</code> request to add predicates to the <code>Rule</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Create and update a <code>WebACL</code> that contains the <code>Rule</code>. See <a>CreateWebACL</a>.
+        /// </para>
+        ///  </li> </ol> 
         /// <para>
         /// If you want to replace one <code>ByteMatchSet</code> or <code>IPSet</code> with another,
         /// you delete the existing one and add the new one.
@@ -4889,33 +6686,76 @@ namespace Amazon.WAF
         /// <exception cref="Amazon.WAF.Model.WAFInvalidOperationException">
         /// The operation failed because there was nothing to do. For example:
         /// 
-        ///  <ul> <li>You tried to remove a <code>Rule</code> from a <code>WebACL</code>, but
-        /// the <code>Rule</code> isn't in the specified <code>WebACL</code>.</li> <li>You tried
-        /// to remove an IP address from an <code>IPSet</code>, but the IP address isn't in the
-        /// specified <code>IPSet</code>.</li> <li>You tried to remove a <code>ByteMatchTuple</code>
-        /// from a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code> isn't in the
-        /// specified <code>WebACL</code>.</li> <li>You tried to add a <code>Rule</code> to a
-        /// <code>WebACL</code>, but the <code>Rule</code> already exists in the specified <code>WebACL</code>.</li>
-        /// <li>You tried to add an IP address to an <code>IPSet</code>, but the IP address already
-        /// exists in the specified <code>IPSet</code>.</li> <li>You tried to add a <code>ByteMatchTuple</code>
-        /// to a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code> already exists
-        /// in the specified <code>WebACL</code>.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to remove a <code>Rule</code> from a <code>WebACL</code>, but the <code>Rule</code>
+        /// isn't in the specified <code>WebACL</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to remove an IP address from an <code>IPSet</code>, but the IP address isn't
+        /// in the specified <code>IPSet</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to remove a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code>,
+        /// but the <code>ByteMatchTuple</code> isn't in the specified <code>WebACL</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code>
+        /// already exists in the specified <code>WebACL</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add an IP address to an <code>IPSet</code>, but the IP address already
+        /// exists in the specified <code>IPSet</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add a <code>ByteMatchTuple</code> to a <code>ByteMatchSet</code>, but
+        /// the <code>ByteMatchTuple</code> already exists in the specified <code>WebACL</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFInvalidParameterException">
         /// The operation failed because AWS WAF didn't recognize a parameter in the request.
         /// For example:
         /// 
-        ///  <ul> <li>You specified an invalid parameter name.</li> <li>You specified an invalid
-        /// value.</li> <li>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>,
-        /// <code>Rule</code>, or <code>WebACL</code>) using an action other than <code>INSERT</code>
-        /// or <code>DELETE</code>.</li> <li>You tried to create a <code>WebACL</code> with a
-        /// <code>DefaultAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>,
-        /// or <code>COUNT</code>.</li> <li>You tried to update a <code>WebACL</code> with a <code>WafAction</code>
-        /// <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</li>
-        /// <li>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code>
-        /// <code>Type</code> other than HEADER, QUERY_STRING, or URI.</li> <li>You tried to update
-        /// a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code> but no
-        /// value for <code>Data</code>.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an invalid parameter name.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You specified an invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>,
+        /// or <code>WebACL</code>) using an action other than <code>INSERT</code> or <code>DELETE</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code>
+        /// other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code>
+        /// other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code>
+        /// other than HEADER, QUERY_STRING, or URI.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code>
+        /// but no value for <code>Data</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFLimitsExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
@@ -4926,22 +6766,44 @@ namespace Amazon.WAF
         /// The operation failed because you tried to add an object to or delete an object from
         /// another object that doesn't exist. For example:
         /// 
-        ///  <ul> <li>You tried to add a <code>Rule</code> to or delete a <code>Rule</code> from
-        /// a <code>WebACL</code> that doesn't exist.</li> <li>You tried to add a <code>ByteMatchSet</code>
-        /// to or delete a <code>ByteMatchSet</code> from a <code>Rule</code> that doesn't exist.</li>
-        /// <li>You tried to add an IP address to or delete an IP address from an <code>IPSet</code>
-        /// that doesn't exist.</li> <li>You tried to add a <code>ByteMatchTuple</code> to or
-        /// delete a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code> that doesn't
-        /// exist.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to add a <code>Rule</code> to or delete a <code>Rule</code> from a <code>WebACL</code>
+        /// that doesn't exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add a <code>ByteMatchSet</code> to or delete a <code>ByteMatchSet</code>
+        /// from a <code>Rule</code> that doesn't exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add an IP address to or delete an IP address from an <code>IPSet</code>
+        /// that doesn't exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add a <code>ByteMatchTuple</code> to or delete a <code>ByteMatchTuple</code>
+        /// from a <code>ByteMatchSet</code> that doesn't exist.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFNonexistentItemException">
         /// The operation failed because the referenced object doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFReferencedItemException">
         /// The operation failed because you tried to delete an object that is still in use. For
-        /// example: <ul> <li>You tried to delete a <code>ByteMatchSet</code> that is still referenced
-        /// by a <code>Rule</code>.</li> <li>You tried to delete a <code>Rule</code> that is still
-        /// referenced by a <code>WebACL</code>.</li> </ul>
+        /// example:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to delete a <code>ByteMatchSet</code> that is still referenced by a <code>Rule</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a <code>Rule</code> that is still referenced by a <code>WebACL</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFStaleDataException">
         /// The operation failed because you tried to create, update, or delete an object by using
@@ -4964,9 +6826,16 @@ namespace Amazon.WAF
         /// to be allowed, blocked, or counted. For example, suppose you add the following to
         /// a <code>Rule</code>: 
         /// 
-        ///  <ul> <li>A <code>ByteMatchSet</code> that matches the value <code>BadBot</code> in
-        /// the <code>User-Agent</code> header</li> <li>An <code>IPSet</code> that matches the
-        /// IP address <code>192.0.2.44</code></li> </ul> 
+        ///  <ul> <li> 
+        /// <para>
+        /// A <code>ByteMatchSet</code> that matches the value <code>BadBot</code> in the <code>User-Agent</code>
+        /// header
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// An <code>IPSet</code> that matches the IP address <code>192.0.2.44</code> 
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// You then add the <code>Rule</code> to a <code>WebACL</code> and specify that you want
         /// to block requests that satisfy the <code>Rule</code>. For a request to be blocked,
@@ -4977,12 +6846,28 @@ namespace Amazon.WAF
         /// <para>
         /// To create and configure a <code>Rule</code>, perform the following steps:
         /// </para>
-        ///  <ol> <li>Create and update the predicates that you want to include in the <code>Rule</code>.</li>
-        /// <li>Create the <code>Rule</code>. See <a>CreateRule</a>.</li> <li>Use <code>GetChangeToken</code>
-        /// to get the change token that you provide in the <code>ChangeToken</code> parameter
-        /// of an <a>UpdateRule</a> request.</li> <li>Submit an <code>UpdateRule</code> request
-        /// to add predicates to the <code>Rule</code>.</li> <li>Create and update a <code>WebACL</code>
-        /// that contains the <code>Rule</code>. See <a>CreateWebACL</a>.</li> </ol> 
+        ///  <ol> <li> 
+        /// <para>
+        /// Create and update the predicates that you want to include in the <code>Rule</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Create the <code>Rule</code>. See <a>CreateRule</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code>
+        /// parameter of an <a>UpdateRule</a> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit an <code>UpdateRule</code> request to add predicates to the <code>Rule</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Create and update a <code>WebACL</code> that contains the <code>Rule</code>. See <a>CreateWebACL</a>.
+        /// </para>
+        ///  </li> </ol> 
         /// <para>
         /// If you want to replace one <code>ByteMatchSet</code> or <code>IPSet</code> with another,
         /// you delete the existing one and add the new one.
@@ -4995,7 +6880,7 @@ namespace Amazon.WAF
         /// </para>
         /// </summary>
         /// <param name="ruleId">The <code>RuleId</code> of the <code>Rule</code> that you want to update. <code>RuleId</code> is returned by <code>CreateRule</code> and by <a>ListRules</a>.</param>
-        /// <param name="updates">An array of <code>RuleUpdate</code> objects that you want to insert into or delete from a <a>Rule</a>. For more information, see the applicable data types: <ul> <li><a>RuleUpdate</a>: Contains <code>Action</code> and <code>Predicate</code></li> <li><a>Predicate</a>: Contains <code>DataId</code>, <code>Negated</code>, and <code>Type</code></li> <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code></li> </ul></param>
+        /// <param name="updates">An array of <code>RuleUpdate</code> objects that you want to insert into or delete from a <a>Rule</a>. For more information, see the applicable data types: <ul> <li>  <a>RuleUpdate</a>: Contains <code>Action</code> and <code>Predicate</code>  </li> <li>  <a>Predicate</a>: Contains <code>DataId</code>, <code>Negated</code>, and <code>Type</code>  </li> <li>  <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>  </li> </ul></param>
         /// <param name="changeToken">The value returned by the most recent call to <a>GetChangeToken</a>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -5013,33 +6898,76 @@ namespace Amazon.WAF
         /// <exception cref="Amazon.WAF.Model.WAFInvalidOperationException">
         /// The operation failed because there was nothing to do. For example:
         /// 
-        ///  <ul> <li>You tried to remove a <code>Rule</code> from a <code>WebACL</code>, but
-        /// the <code>Rule</code> isn't in the specified <code>WebACL</code>.</li> <li>You tried
-        /// to remove an IP address from an <code>IPSet</code>, but the IP address isn't in the
-        /// specified <code>IPSet</code>.</li> <li>You tried to remove a <code>ByteMatchTuple</code>
-        /// from a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code> isn't in the
-        /// specified <code>WebACL</code>.</li> <li>You tried to add a <code>Rule</code> to a
-        /// <code>WebACL</code>, but the <code>Rule</code> already exists in the specified <code>WebACL</code>.</li>
-        /// <li>You tried to add an IP address to an <code>IPSet</code>, but the IP address already
-        /// exists in the specified <code>IPSet</code>.</li> <li>You tried to add a <code>ByteMatchTuple</code>
-        /// to a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code> already exists
-        /// in the specified <code>WebACL</code>.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to remove a <code>Rule</code> from a <code>WebACL</code>, but the <code>Rule</code>
+        /// isn't in the specified <code>WebACL</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to remove an IP address from an <code>IPSet</code>, but the IP address isn't
+        /// in the specified <code>IPSet</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to remove a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code>,
+        /// but the <code>ByteMatchTuple</code> isn't in the specified <code>WebACL</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code>
+        /// already exists in the specified <code>WebACL</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add an IP address to an <code>IPSet</code>, but the IP address already
+        /// exists in the specified <code>IPSet</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add a <code>ByteMatchTuple</code> to a <code>ByteMatchSet</code>, but
+        /// the <code>ByteMatchTuple</code> already exists in the specified <code>WebACL</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFInvalidParameterException">
         /// The operation failed because AWS WAF didn't recognize a parameter in the request.
         /// For example:
         /// 
-        ///  <ul> <li>You specified an invalid parameter name.</li> <li>You specified an invalid
-        /// value.</li> <li>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>,
-        /// <code>Rule</code>, or <code>WebACL</code>) using an action other than <code>INSERT</code>
-        /// or <code>DELETE</code>.</li> <li>You tried to create a <code>WebACL</code> with a
-        /// <code>DefaultAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>,
-        /// or <code>COUNT</code>.</li> <li>You tried to update a <code>WebACL</code> with a <code>WafAction</code>
-        /// <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</li>
-        /// <li>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code>
-        /// <code>Type</code> other than HEADER, QUERY_STRING, or URI.</li> <li>You tried to update
-        /// a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code> but no
-        /// value for <code>Data</code>.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an invalid parameter name.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You specified an invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>,
+        /// or <code>WebACL</code>) using an action other than <code>INSERT</code> or <code>DELETE</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code>
+        /// other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code>
+        /// other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code>
+        /// other than HEADER, QUERY_STRING, or URI.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code>
+        /// but no value for <code>Data</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFLimitsExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
@@ -5050,22 +6978,44 @@ namespace Amazon.WAF
         /// The operation failed because you tried to add an object to or delete an object from
         /// another object that doesn't exist. For example:
         /// 
-        ///  <ul> <li>You tried to add a <code>Rule</code> to or delete a <code>Rule</code> from
-        /// a <code>WebACL</code> that doesn't exist.</li> <li>You tried to add a <code>ByteMatchSet</code>
-        /// to or delete a <code>ByteMatchSet</code> from a <code>Rule</code> that doesn't exist.</li>
-        /// <li>You tried to add an IP address to or delete an IP address from an <code>IPSet</code>
-        /// that doesn't exist.</li> <li>You tried to add a <code>ByteMatchTuple</code> to or
-        /// delete a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code> that doesn't
-        /// exist.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to add a <code>Rule</code> to or delete a <code>Rule</code> from a <code>WebACL</code>
+        /// that doesn't exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add a <code>ByteMatchSet</code> to or delete a <code>ByteMatchSet</code>
+        /// from a <code>Rule</code> that doesn't exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add an IP address to or delete an IP address from an <code>IPSet</code>
+        /// that doesn't exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add a <code>ByteMatchTuple</code> to or delete a <code>ByteMatchTuple</code>
+        /// from a <code>ByteMatchSet</code> that doesn't exist.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFNonexistentItemException">
         /// The operation failed because the referenced object doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFReferencedItemException">
         /// The operation failed because you tried to delete an object that is still in use. For
-        /// example: <ul> <li>You tried to delete a <code>ByteMatchSet</code> that is still referenced
-        /// by a <code>Rule</code>.</li> <li>You tried to delete a <code>Rule</code> that is still
-        /// referenced by a <code>WebACL</code>.</li> </ul>
+        /// example:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to delete a <code>ByteMatchSet</code> that is still referenced by a <code>Rule</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a <code>Rule</code> that is still referenced by a <code>WebACL</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFStaleDataException">
         /// The operation failed because you tried to create, update, or delete an object by using
@@ -5107,18 +7057,35 @@ namespace Amazon.WAF
         /// Inserts or deletes <a>SizeConstraint</a> objects (filters) in a <a>SizeConstraintSet</a>.
         /// For each <code>SizeConstraint</code> object, you specify the following values: 
         /// 
-        ///  <ul> <li>Whether to insert or delete the object from the array. If you want to change
-        /// a <code>SizeConstraintSetUpdate</code> object, you delete the existing object and
-        /// add a new one.</li> <li>The part of a web request that you want AWS WAF to evaluate,
-        /// such as the length of a query string or the length of the <code>User-Agent</code>
-        /// header.</li> <li>Whether to perform any transformations on the request, such as converting
-        /// it to lowercase, before checking its length. Note that transformations of the request
-        /// body are not supported because the AWS resource forwards only the first <code>8192</code>
-        /// bytes of your request to AWS WAF.</li> <li>A <code>ComparisonOperator</code> used
-        /// for evaluating the selected part of the request against the specified <code>Size</code>,
-        /// such as equals, greater than, less than, and so on.</li> <li>The length, in bytes,
-        /// that you want AWS WAF to watch for in selected part of the request. The length is
-        /// computed after applying the transformation.</li> </ul> 
+        ///  <ul> <li> 
+        /// <para>
+        /// Whether to insert or delete the object from the array. If you want to change a <code>SizeConstraintSetUpdate</code>
+        /// object, you delete the existing object and add a new one.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The part of a web request that you want AWS WAF to evaluate, such as the length of
+        /// a query string or the length of the <code>User-Agent</code> header.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Whether to perform any transformations on the request, such as converting it to lowercase,
+        /// before checking its length. Note that transformations of the request body are not
+        /// supported because the AWS resource forwards only the first <code>8192</code> bytes
+        /// of your request to AWS WAF.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A <code>ComparisonOperator</code> used for evaluating the selected part of the request
+        /// against the specified <code>Size</code>, such as equals, greater than, less than,
+        /// and so on.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The length, in bytes, that you want AWS WAF to watch for in selected part of the request.
+        /// The length is computed after applying the transformation.
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// For example, you can add a <code>SizeConstraintSetUpdate</code> object that matches
         /// web requests in which the length of the <code>User-Agent</code> header is greater
@@ -5128,12 +7095,22 @@ namespace Amazon.WAF
         /// <para>
         /// To create and configure a <code>SizeConstraintSet</code>, perform the following steps:
         /// </para>
-        ///  <ol> <li>Create a <code>SizeConstraintSet.</code> For more information, see <a>CreateSizeConstraintSet</a>.</li>
-        /// <li>Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code>
-        /// parameter of an <code>UpdateSizeConstraintSet</code> request.</li> <li>Submit an <code>UpdateSizeConstraintSet</code>
-        /// request to specify the part of the request that you want AWS WAF to inspect (for example,
-        /// the header or the URI) and the value that you want AWS WAF to watch for.</li> </ol>
-        /// 
+        ///  <ol> <li> 
+        /// <para>
+        /// Create a <code>SizeConstraintSet.</code> For more information, see <a>CreateSizeConstraintSet</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code>
+        /// parameter of an <code>UpdateSizeConstraintSet</code> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit an <code>UpdateSizeConstraintSet</code> request to specify the part of the
+        /// request that you want AWS WAF to inspect (for example, the header or the URI) and
+        /// the value that you want AWS WAF to watch for.
+        /// </para>
+        ///  </li> </ol> 
         /// <para>
         /// For more information about how to use the AWS WAF API to allow or block HTTP requests,
         /// see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
@@ -5154,33 +7131,76 @@ namespace Amazon.WAF
         /// <exception cref="Amazon.WAF.Model.WAFInvalidOperationException">
         /// The operation failed because there was nothing to do. For example:
         /// 
-        ///  <ul> <li>You tried to remove a <code>Rule</code> from a <code>WebACL</code>, but
-        /// the <code>Rule</code> isn't in the specified <code>WebACL</code>.</li> <li>You tried
-        /// to remove an IP address from an <code>IPSet</code>, but the IP address isn't in the
-        /// specified <code>IPSet</code>.</li> <li>You tried to remove a <code>ByteMatchTuple</code>
-        /// from a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code> isn't in the
-        /// specified <code>WebACL</code>.</li> <li>You tried to add a <code>Rule</code> to a
-        /// <code>WebACL</code>, but the <code>Rule</code> already exists in the specified <code>WebACL</code>.</li>
-        /// <li>You tried to add an IP address to an <code>IPSet</code>, but the IP address already
-        /// exists in the specified <code>IPSet</code>.</li> <li>You tried to add a <code>ByteMatchTuple</code>
-        /// to a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code> already exists
-        /// in the specified <code>WebACL</code>.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to remove a <code>Rule</code> from a <code>WebACL</code>, but the <code>Rule</code>
+        /// isn't in the specified <code>WebACL</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to remove an IP address from an <code>IPSet</code>, but the IP address isn't
+        /// in the specified <code>IPSet</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to remove a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code>,
+        /// but the <code>ByteMatchTuple</code> isn't in the specified <code>WebACL</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code>
+        /// already exists in the specified <code>WebACL</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add an IP address to an <code>IPSet</code>, but the IP address already
+        /// exists in the specified <code>IPSet</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add a <code>ByteMatchTuple</code> to a <code>ByteMatchSet</code>, but
+        /// the <code>ByteMatchTuple</code> already exists in the specified <code>WebACL</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFInvalidParameterException">
         /// The operation failed because AWS WAF didn't recognize a parameter in the request.
         /// For example:
         /// 
-        ///  <ul> <li>You specified an invalid parameter name.</li> <li>You specified an invalid
-        /// value.</li> <li>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>,
-        /// <code>Rule</code>, or <code>WebACL</code>) using an action other than <code>INSERT</code>
-        /// or <code>DELETE</code>.</li> <li>You tried to create a <code>WebACL</code> with a
-        /// <code>DefaultAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>,
-        /// or <code>COUNT</code>.</li> <li>You tried to update a <code>WebACL</code> with a <code>WafAction</code>
-        /// <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</li>
-        /// <li>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code>
-        /// <code>Type</code> other than HEADER, QUERY_STRING, or URI.</li> <li>You tried to update
-        /// a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code> but no
-        /// value for <code>Data</code>.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an invalid parameter name.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You specified an invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>,
+        /// or <code>WebACL</code>) using an action other than <code>INSERT</code> or <code>DELETE</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code>
+        /// other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code>
+        /// other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code>
+        /// other than HEADER, QUERY_STRING, or URI.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code>
+        /// but no value for <code>Data</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFLimitsExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
@@ -5191,22 +7211,44 @@ namespace Amazon.WAF
         /// The operation failed because you tried to add an object to or delete an object from
         /// another object that doesn't exist. For example:
         /// 
-        ///  <ul> <li>You tried to add a <code>Rule</code> to or delete a <code>Rule</code> from
-        /// a <code>WebACL</code> that doesn't exist.</li> <li>You tried to add a <code>ByteMatchSet</code>
-        /// to or delete a <code>ByteMatchSet</code> from a <code>Rule</code> that doesn't exist.</li>
-        /// <li>You tried to add an IP address to or delete an IP address from an <code>IPSet</code>
-        /// that doesn't exist.</li> <li>You tried to add a <code>ByteMatchTuple</code> to or
-        /// delete a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code> that doesn't
-        /// exist.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to add a <code>Rule</code> to or delete a <code>Rule</code> from a <code>WebACL</code>
+        /// that doesn't exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add a <code>ByteMatchSet</code> to or delete a <code>ByteMatchSet</code>
+        /// from a <code>Rule</code> that doesn't exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add an IP address to or delete an IP address from an <code>IPSet</code>
+        /// that doesn't exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add a <code>ByteMatchTuple</code> to or delete a <code>ByteMatchTuple</code>
+        /// from a <code>ByteMatchSet</code> that doesn't exist.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFNonexistentItemException">
         /// The operation failed because the referenced object doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFReferencedItemException">
         /// The operation failed because you tried to delete an object that is still in use. For
-        /// example: <ul> <li>You tried to delete a <code>ByteMatchSet</code> that is still referenced
-        /// by a <code>Rule</code>.</li> <li>You tried to delete a <code>Rule</code> that is still
-        /// referenced by a <code>WebACL</code>.</li> </ul>
+        /// example:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to delete a <code>ByteMatchSet</code> that is still referenced by a <code>Rule</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a <code>Rule</code> that is still referenced by a <code>WebACL</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFStaleDataException">
         /// The operation failed because you tried to create, update, or delete an object by using
@@ -5247,13 +7289,23 @@ namespace Amazon.WAF
         /// Inserts or deletes <a>SqlInjectionMatchTuple</a> objects (filters) in a <a>SqlInjectionMatchSet</a>.
         /// For each <code>SqlInjectionMatchTuple</code> object, you specify the following values:
         /// 
-        ///  <ul> <li><code>Action</code>: Whether to insert the object into or delete the object
-        /// from the array. To change a <code>SqlInjectionMatchTuple</code>, you delete the existing
-        /// object and add a new one.</li> <li><code>FieldToMatch</code>: The part of web requests
-        /// that you want AWS WAF to inspect and, if you want AWS WAF to inspect a header, the
-        /// name of the header.</li> <li><code>TextTransformation</code>: Which text transformation,
-        /// if any, to perform on the web request before inspecting the request for snippets of
-        /// malicious SQL code.</li> </ul> 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>Action</code>: Whether to insert the object into or delete the object from
+        /// the array. To change a <code>SqlInjectionMatchTuple</code>, you delete the existing
+        /// object and add a new one.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>FieldToMatch</code>: The part of web requests that you want AWS WAF to inspect
+        /// and, if you want AWS WAF to inspect a header, the name of the header.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>TextTransformation</code>: Which text transformation, if any, to perform on
+        /// the web request before inspecting the request for snippets of malicious SQL code.
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// You use <code>SqlInjectionMatchSet</code> objects to specify which CloudFront requests
         /// you want to allow, block, or count. For example, if you're receiving requests that
@@ -5266,11 +7318,21 @@ namespace Amazon.WAF
         /// To create and configure a <code>SqlInjectionMatchSet</code>, perform the following
         /// steps:
         /// </para>
-        ///  <ol> <li>Submit a <a>CreateSqlInjectionMatchSet</a> request.</li> <li>Use <a>GetChangeToken</a>
-        /// to get the change token that you provide in the <code>ChangeToken</code> parameter
-        /// of an <a>UpdateIPSet</a> request.</li> <li>Submit an <code>UpdateSqlInjectionMatchSet</code>
-        /// request to specify the parts of web requests that you want AWS WAF to inspect for
-        /// snippets of SQL code.</li> </ol> 
+        ///  <ol> <li> 
+        /// <para>
+        /// Submit a <a>CreateSqlInjectionMatchSet</a> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code>
+        /// parameter of an <a>UpdateIPSet</a> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit an <code>UpdateSqlInjectionMatchSet</code> request to specify the parts of
+        /// web requests that you want AWS WAF to inspect for snippets of SQL code.
+        /// </para>
+        ///  </li> </ol> 
         /// <para>
         /// For more information about how to use the AWS WAF API to allow or block HTTP requests,
         /// see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
@@ -5278,7 +7340,7 @@ namespace Amazon.WAF
         /// </para>
         /// </summary>
         /// <param name="sqlInjectionMatchSetId">The <code>SqlInjectionMatchSetId</code> of the <code>SqlInjectionMatchSet</code> that you want to update. <code>SqlInjectionMatchSetId</code> is returned by <a>CreateSqlInjectionMatchSet</a> and by <a>ListSqlInjectionMatchSets</a>.</param>
-        /// <param name="updates">An array of <code>SqlInjectionMatchSetUpdate</code> objects that you want to insert into or delete from a <a>SqlInjectionMatchSet</a>. For more information, see the applicable data types: <ul> <li><a>SqlInjectionMatchSetUpdate</a>: Contains <code>Action</code> and <code>SqlInjectionMatchTuple</code></li> <li><a>SqlInjectionMatchTuple</a>: Contains <code>FieldToMatch</code> and <code>TextTransformation</code></li> <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code></li> </ul></param>
+        /// <param name="updates">An array of <code>SqlInjectionMatchSetUpdate</code> objects that you want to insert into or delete from a <a>SqlInjectionMatchSet</a>. For more information, see the applicable data types: <ul> <li>  <a>SqlInjectionMatchSetUpdate</a>: Contains <code>Action</code> and <code>SqlInjectionMatchTuple</code>  </li> <li>  <a>SqlInjectionMatchTuple</a>: Contains <code>FieldToMatch</code> and <code>TextTransformation</code>  </li> <li>  <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>  </li> </ul></param>
         /// <param name="changeToken">The value returned by the most recent call to <a>GetChangeToken</a>.</param>
         /// 
         /// <returns>The response from the UpdateSqlInjectionMatchSet service method, as returned by WAF.</returns>
@@ -5293,33 +7355,76 @@ namespace Amazon.WAF
         /// <exception cref="Amazon.WAF.Model.WAFInvalidOperationException">
         /// The operation failed because there was nothing to do. For example:
         /// 
-        ///  <ul> <li>You tried to remove a <code>Rule</code> from a <code>WebACL</code>, but
-        /// the <code>Rule</code> isn't in the specified <code>WebACL</code>.</li> <li>You tried
-        /// to remove an IP address from an <code>IPSet</code>, but the IP address isn't in the
-        /// specified <code>IPSet</code>.</li> <li>You tried to remove a <code>ByteMatchTuple</code>
-        /// from a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code> isn't in the
-        /// specified <code>WebACL</code>.</li> <li>You tried to add a <code>Rule</code> to a
-        /// <code>WebACL</code>, but the <code>Rule</code> already exists in the specified <code>WebACL</code>.</li>
-        /// <li>You tried to add an IP address to an <code>IPSet</code>, but the IP address already
-        /// exists in the specified <code>IPSet</code>.</li> <li>You tried to add a <code>ByteMatchTuple</code>
-        /// to a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code> already exists
-        /// in the specified <code>WebACL</code>.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to remove a <code>Rule</code> from a <code>WebACL</code>, but the <code>Rule</code>
+        /// isn't in the specified <code>WebACL</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to remove an IP address from an <code>IPSet</code>, but the IP address isn't
+        /// in the specified <code>IPSet</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to remove a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code>,
+        /// but the <code>ByteMatchTuple</code> isn't in the specified <code>WebACL</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code>
+        /// already exists in the specified <code>WebACL</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add an IP address to an <code>IPSet</code>, but the IP address already
+        /// exists in the specified <code>IPSet</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add a <code>ByteMatchTuple</code> to a <code>ByteMatchSet</code>, but
+        /// the <code>ByteMatchTuple</code> already exists in the specified <code>WebACL</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFInvalidParameterException">
         /// The operation failed because AWS WAF didn't recognize a parameter in the request.
         /// For example:
         /// 
-        ///  <ul> <li>You specified an invalid parameter name.</li> <li>You specified an invalid
-        /// value.</li> <li>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>,
-        /// <code>Rule</code>, or <code>WebACL</code>) using an action other than <code>INSERT</code>
-        /// or <code>DELETE</code>.</li> <li>You tried to create a <code>WebACL</code> with a
-        /// <code>DefaultAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>,
-        /// or <code>COUNT</code>.</li> <li>You tried to update a <code>WebACL</code> with a <code>WafAction</code>
-        /// <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</li>
-        /// <li>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code>
-        /// <code>Type</code> other than HEADER, QUERY_STRING, or URI.</li> <li>You tried to update
-        /// a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code> but no
-        /// value for <code>Data</code>.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an invalid parameter name.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You specified an invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>,
+        /// or <code>WebACL</code>) using an action other than <code>INSERT</code> or <code>DELETE</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code>
+        /// other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code>
+        /// other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code>
+        /// other than HEADER, QUERY_STRING, or URI.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code>
+        /// but no value for <code>Data</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFLimitsExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
@@ -5330,13 +7435,27 @@ namespace Amazon.WAF
         /// The operation failed because you tried to add an object to or delete an object from
         /// another object that doesn't exist. For example:
         /// 
-        ///  <ul> <li>You tried to add a <code>Rule</code> to or delete a <code>Rule</code> from
-        /// a <code>WebACL</code> that doesn't exist.</li> <li>You tried to add a <code>ByteMatchSet</code>
-        /// to or delete a <code>ByteMatchSet</code> from a <code>Rule</code> that doesn't exist.</li>
-        /// <li>You tried to add an IP address to or delete an IP address from an <code>IPSet</code>
-        /// that doesn't exist.</li> <li>You tried to add a <code>ByteMatchTuple</code> to or
-        /// delete a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code> that doesn't
-        /// exist.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to add a <code>Rule</code> to or delete a <code>Rule</code> from a <code>WebACL</code>
+        /// that doesn't exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add a <code>ByteMatchSet</code> to or delete a <code>ByteMatchSet</code>
+        /// from a <code>Rule</code> that doesn't exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add an IP address to or delete an IP address from an <code>IPSet</code>
+        /// that doesn't exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add a <code>ByteMatchTuple</code> to or delete a <code>ByteMatchTuple</code>
+        /// from a <code>ByteMatchSet</code> that doesn't exist.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFNonexistentItemException">
         /// The operation failed because the referenced object doesn't exist.
@@ -5359,13 +7478,23 @@ namespace Amazon.WAF
         /// Inserts or deletes <a>SqlInjectionMatchTuple</a> objects (filters) in a <a>SqlInjectionMatchSet</a>.
         /// For each <code>SqlInjectionMatchTuple</code> object, you specify the following values:
         /// 
-        ///  <ul> <li><code>Action</code>: Whether to insert the object into or delete the object
-        /// from the array. To change a <code>SqlInjectionMatchTuple</code>, you delete the existing
-        /// object and add a new one.</li> <li><code>FieldToMatch</code>: The part of web requests
-        /// that you want AWS WAF to inspect and, if you want AWS WAF to inspect a header, the
-        /// name of the header.</li> <li><code>TextTransformation</code>: Which text transformation,
-        /// if any, to perform on the web request before inspecting the request for snippets of
-        /// malicious SQL code.</li> </ul> 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>Action</code>: Whether to insert the object into or delete the object from
+        /// the array. To change a <code>SqlInjectionMatchTuple</code>, you delete the existing
+        /// object and add a new one.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>FieldToMatch</code>: The part of web requests that you want AWS WAF to inspect
+        /// and, if you want AWS WAF to inspect a header, the name of the header.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>TextTransformation</code>: Which text transformation, if any, to perform on
+        /// the web request before inspecting the request for snippets of malicious SQL code.
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// You use <code>SqlInjectionMatchSet</code> objects to specify which CloudFront requests
         /// you want to allow, block, or count. For example, if you're receiving requests that
@@ -5378,11 +7507,21 @@ namespace Amazon.WAF
         /// To create and configure a <code>SqlInjectionMatchSet</code>, perform the following
         /// steps:
         /// </para>
-        ///  <ol> <li>Submit a <a>CreateSqlInjectionMatchSet</a> request.</li> <li>Use <a>GetChangeToken</a>
-        /// to get the change token that you provide in the <code>ChangeToken</code> parameter
-        /// of an <a>UpdateIPSet</a> request.</li> <li>Submit an <code>UpdateSqlInjectionMatchSet</code>
-        /// request to specify the parts of web requests that you want AWS WAF to inspect for
-        /// snippets of SQL code.</li> </ol> 
+        ///  <ol> <li> 
+        /// <para>
+        /// Submit a <a>CreateSqlInjectionMatchSet</a> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code>
+        /// parameter of an <a>UpdateIPSet</a> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit an <code>UpdateSqlInjectionMatchSet</code> request to specify the parts of
+        /// web requests that you want AWS WAF to inspect for snippets of SQL code.
+        /// </para>
+        ///  </li> </ol> 
         /// <para>
         /// For more information about how to use the AWS WAF API to allow or block HTTP requests,
         /// see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
@@ -5403,33 +7542,76 @@ namespace Amazon.WAF
         /// <exception cref="Amazon.WAF.Model.WAFInvalidOperationException">
         /// The operation failed because there was nothing to do. For example:
         /// 
-        ///  <ul> <li>You tried to remove a <code>Rule</code> from a <code>WebACL</code>, but
-        /// the <code>Rule</code> isn't in the specified <code>WebACL</code>.</li> <li>You tried
-        /// to remove an IP address from an <code>IPSet</code>, but the IP address isn't in the
-        /// specified <code>IPSet</code>.</li> <li>You tried to remove a <code>ByteMatchTuple</code>
-        /// from a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code> isn't in the
-        /// specified <code>WebACL</code>.</li> <li>You tried to add a <code>Rule</code> to a
-        /// <code>WebACL</code>, but the <code>Rule</code> already exists in the specified <code>WebACL</code>.</li>
-        /// <li>You tried to add an IP address to an <code>IPSet</code>, but the IP address already
-        /// exists in the specified <code>IPSet</code>.</li> <li>You tried to add a <code>ByteMatchTuple</code>
-        /// to a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code> already exists
-        /// in the specified <code>WebACL</code>.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to remove a <code>Rule</code> from a <code>WebACL</code>, but the <code>Rule</code>
+        /// isn't in the specified <code>WebACL</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to remove an IP address from an <code>IPSet</code>, but the IP address isn't
+        /// in the specified <code>IPSet</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to remove a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code>,
+        /// but the <code>ByteMatchTuple</code> isn't in the specified <code>WebACL</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code>
+        /// already exists in the specified <code>WebACL</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add an IP address to an <code>IPSet</code>, but the IP address already
+        /// exists in the specified <code>IPSet</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add a <code>ByteMatchTuple</code> to a <code>ByteMatchSet</code>, but
+        /// the <code>ByteMatchTuple</code> already exists in the specified <code>WebACL</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFInvalidParameterException">
         /// The operation failed because AWS WAF didn't recognize a parameter in the request.
         /// For example:
         /// 
-        ///  <ul> <li>You specified an invalid parameter name.</li> <li>You specified an invalid
-        /// value.</li> <li>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>,
-        /// <code>Rule</code>, or <code>WebACL</code>) using an action other than <code>INSERT</code>
-        /// or <code>DELETE</code>.</li> <li>You tried to create a <code>WebACL</code> with a
-        /// <code>DefaultAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>,
-        /// or <code>COUNT</code>.</li> <li>You tried to update a <code>WebACL</code> with a <code>WafAction</code>
-        /// <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</li>
-        /// <li>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code>
-        /// <code>Type</code> other than HEADER, QUERY_STRING, or URI.</li> <li>You tried to update
-        /// a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code> but no
-        /// value for <code>Data</code>.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an invalid parameter name.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You specified an invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>,
+        /// or <code>WebACL</code>) using an action other than <code>INSERT</code> or <code>DELETE</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code>
+        /// other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code>
+        /// other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code>
+        /// other than HEADER, QUERY_STRING, or URI.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code>
+        /// but no value for <code>Data</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFLimitsExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
@@ -5440,13 +7622,27 @@ namespace Amazon.WAF
         /// The operation failed because you tried to add an object to or delete an object from
         /// another object that doesn't exist. For example:
         /// 
-        ///  <ul> <li>You tried to add a <code>Rule</code> to or delete a <code>Rule</code> from
-        /// a <code>WebACL</code> that doesn't exist.</li> <li>You tried to add a <code>ByteMatchSet</code>
-        /// to or delete a <code>ByteMatchSet</code> from a <code>Rule</code> that doesn't exist.</li>
-        /// <li>You tried to add an IP address to or delete an IP address from an <code>IPSet</code>
-        /// that doesn't exist.</li> <li>You tried to add a <code>ByteMatchTuple</code> to or
-        /// delete a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code> that doesn't
-        /// exist.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to add a <code>Rule</code> to or delete a <code>Rule</code> from a <code>WebACL</code>
+        /// that doesn't exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add a <code>ByteMatchSet</code> to or delete a <code>ByteMatchSet</code>
+        /// from a <code>Rule</code> that doesn't exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add an IP address to or delete an IP address from an <code>IPSet</code>
+        /// that doesn't exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add a <code>ByteMatchTuple</code> to or delete a <code>ByteMatchTuple</code>
+        /// from a <code>ByteMatchSet</code> that doesn't exist.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFNonexistentItemException">
         /// The operation failed because the referenced object doesn't exist.
@@ -5468,13 +7664,23 @@ namespace Amazon.WAF
         /// Inserts or deletes <a>SqlInjectionMatchTuple</a> objects (filters) in a <a>SqlInjectionMatchSet</a>.
         /// For each <code>SqlInjectionMatchTuple</code> object, you specify the following values:
         /// 
-        ///  <ul> <li><code>Action</code>: Whether to insert the object into or delete the object
-        /// from the array. To change a <code>SqlInjectionMatchTuple</code>, you delete the existing
-        /// object and add a new one.</li> <li><code>FieldToMatch</code>: The part of web requests
-        /// that you want AWS WAF to inspect and, if you want AWS WAF to inspect a header, the
-        /// name of the header.</li> <li><code>TextTransformation</code>: Which text transformation,
-        /// if any, to perform on the web request before inspecting the request for snippets of
-        /// malicious SQL code.</li> </ul> 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>Action</code>: Whether to insert the object into or delete the object from
+        /// the array. To change a <code>SqlInjectionMatchTuple</code>, you delete the existing
+        /// object and add a new one.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>FieldToMatch</code>: The part of web requests that you want AWS WAF to inspect
+        /// and, if you want AWS WAF to inspect a header, the name of the header.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>TextTransformation</code>: Which text transformation, if any, to perform on
+        /// the web request before inspecting the request for snippets of malicious SQL code.
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// You use <code>SqlInjectionMatchSet</code> objects to specify which CloudFront requests
         /// you want to allow, block, or count. For example, if you're receiving requests that
@@ -5487,11 +7693,21 @@ namespace Amazon.WAF
         /// To create and configure a <code>SqlInjectionMatchSet</code>, perform the following
         /// steps:
         /// </para>
-        ///  <ol> <li>Submit a <a>CreateSqlInjectionMatchSet</a> request.</li> <li>Use <a>GetChangeToken</a>
-        /// to get the change token that you provide in the <code>ChangeToken</code> parameter
-        /// of an <a>UpdateIPSet</a> request.</li> <li>Submit an <code>UpdateSqlInjectionMatchSet</code>
-        /// request to specify the parts of web requests that you want AWS WAF to inspect for
-        /// snippets of SQL code.</li> </ol> 
+        ///  <ol> <li> 
+        /// <para>
+        /// Submit a <a>CreateSqlInjectionMatchSet</a> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code>
+        /// parameter of an <a>UpdateIPSet</a> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit an <code>UpdateSqlInjectionMatchSet</code> request to specify the parts of
+        /// web requests that you want AWS WAF to inspect for snippets of SQL code.
+        /// </para>
+        ///  </li> </ol> 
         /// <para>
         /// For more information about how to use the AWS WAF API to allow or block HTTP requests,
         /// see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
@@ -5499,7 +7715,7 @@ namespace Amazon.WAF
         /// </para>
         /// </summary>
         /// <param name="sqlInjectionMatchSetId">The <code>SqlInjectionMatchSetId</code> of the <code>SqlInjectionMatchSet</code> that you want to update. <code>SqlInjectionMatchSetId</code> is returned by <a>CreateSqlInjectionMatchSet</a> and by <a>ListSqlInjectionMatchSets</a>.</param>
-        /// <param name="updates">An array of <code>SqlInjectionMatchSetUpdate</code> objects that you want to insert into or delete from a <a>SqlInjectionMatchSet</a>. For more information, see the applicable data types: <ul> <li><a>SqlInjectionMatchSetUpdate</a>: Contains <code>Action</code> and <code>SqlInjectionMatchTuple</code></li> <li><a>SqlInjectionMatchTuple</a>: Contains <code>FieldToMatch</code> and <code>TextTransformation</code></li> <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code></li> </ul></param>
+        /// <param name="updates">An array of <code>SqlInjectionMatchSetUpdate</code> objects that you want to insert into or delete from a <a>SqlInjectionMatchSet</a>. For more information, see the applicable data types: <ul> <li>  <a>SqlInjectionMatchSetUpdate</a>: Contains <code>Action</code> and <code>SqlInjectionMatchTuple</code>  </li> <li>  <a>SqlInjectionMatchTuple</a>: Contains <code>FieldToMatch</code> and <code>TextTransformation</code>  </li> <li>  <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code>  </li> </ul></param>
         /// <param name="changeToken">The value returned by the most recent call to <a>GetChangeToken</a>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -5517,33 +7733,76 @@ namespace Amazon.WAF
         /// <exception cref="Amazon.WAF.Model.WAFInvalidOperationException">
         /// The operation failed because there was nothing to do. For example:
         /// 
-        ///  <ul> <li>You tried to remove a <code>Rule</code> from a <code>WebACL</code>, but
-        /// the <code>Rule</code> isn't in the specified <code>WebACL</code>.</li> <li>You tried
-        /// to remove an IP address from an <code>IPSet</code>, but the IP address isn't in the
-        /// specified <code>IPSet</code>.</li> <li>You tried to remove a <code>ByteMatchTuple</code>
-        /// from a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code> isn't in the
-        /// specified <code>WebACL</code>.</li> <li>You tried to add a <code>Rule</code> to a
-        /// <code>WebACL</code>, but the <code>Rule</code> already exists in the specified <code>WebACL</code>.</li>
-        /// <li>You tried to add an IP address to an <code>IPSet</code>, but the IP address already
-        /// exists in the specified <code>IPSet</code>.</li> <li>You tried to add a <code>ByteMatchTuple</code>
-        /// to a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code> already exists
-        /// in the specified <code>WebACL</code>.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to remove a <code>Rule</code> from a <code>WebACL</code>, but the <code>Rule</code>
+        /// isn't in the specified <code>WebACL</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to remove an IP address from an <code>IPSet</code>, but the IP address isn't
+        /// in the specified <code>IPSet</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to remove a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code>,
+        /// but the <code>ByteMatchTuple</code> isn't in the specified <code>WebACL</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code>
+        /// already exists in the specified <code>WebACL</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add an IP address to an <code>IPSet</code>, but the IP address already
+        /// exists in the specified <code>IPSet</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add a <code>ByteMatchTuple</code> to a <code>ByteMatchSet</code>, but
+        /// the <code>ByteMatchTuple</code> already exists in the specified <code>WebACL</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFInvalidParameterException">
         /// The operation failed because AWS WAF didn't recognize a parameter in the request.
         /// For example:
         /// 
-        ///  <ul> <li>You specified an invalid parameter name.</li> <li>You specified an invalid
-        /// value.</li> <li>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>,
-        /// <code>Rule</code>, or <code>WebACL</code>) using an action other than <code>INSERT</code>
-        /// or <code>DELETE</code>.</li> <li>You tried to create a <code>WebACL</code> with a
-        /// <code>DefaultAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>,
-        /// or <code>COUNT</code>.</li> <li>You tried to update a <code>WebACL</code> with a <code>WafAction</code>
-        /// <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</li>
-        /// <li>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code>
-        /// <code>Type</code> other than HEADER, QUERY_STRING, or URI.</li> <li>You tried to update
-        /// a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code> but no
-        /// value for <code>Data</code>.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an invalid parameter name.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You specified an invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>,
+        /// or <code>WebACL</code>) using an action other than <code>INSERT</code> or <code>DELETE</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code>
+        /// other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code>
+        /// other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code>
+        /// other than HEADER, QUERY_STRING, or URI.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code>
+        /// but no value for <code>Data</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFLimitsExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
@@ -5554,13 +7813,27 @@ namespace Amazon.WAF
         /// The operation failed because you tried to add an object to or delete an object from
         /// another object that doesn't exist. For example:
         /// 
-        ///  <ul> <li>You tried to add a <code>Rule</code> to or delete a <code>Rule</code> from
-        /// a <code>WebACL</code> that doesn't exist.</li> <li>You tried to add a <code>ByteMatchSet</code>
-        /// to or delete a <code>ByteMatchSet</code> from a <code>Rule</code> that doesn't exist.</li>
-        /// <li>You tried to add an IP address to or delete an IP address from an <code>IPSet</code>
-        /// that doesn't exist.</li> <li>You tried to add a <code>ByteMatchTuple</code> to or
-        /// delete a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code> that doesn't
-        /// exist.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to add a <code>Rule</code> to or delete a <code>Rule</code> from a <code>WebACL</code>
+        /// that doesn't exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add a <code>ByteMatchSet</code> to or delete a <code>ByteMatchSet</code>
+        /// from a <code>Rule</code> that doesn't exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add an IP address to or delete an IP address from an <code>IPSet</code>
+        /// that doesn't exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add a <code>ByteMatchTuple</code> to or delete a <code>ByteMatchTuple</code>
+        /// from a <code>ByteMatchSet</code> that doesn't exist.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFNonexistentItemException">
         /// The operation failed because the referenced object doesn't exist.
@@ -5606,36 +7879,69 @@ namespace Amazon.WAF
         /// identifies web requests that you want to allow, block, or count. When you update a
         /// <code>WebACL</code>, you specify the following values:
         /// 
-        ///  <ul> <li>A default action for the <code>WebACL</code>, either <code>ALLOW</code>
-        /// or <code>BLOCK</code>. AWS WAF performs the default action if a request doesn't match
-        /// the criteria in any of the <code>Rules</code> in a <code>WebACL</code>.</li> <li>The
-        /// <code>Rules</code> that you want to add and/or delete. If you want to replace one
-        /// <code>Rule</code> with another, you delete the existing <code>Rule</code> and add
-        /// the new one.</li> <li>For each <code>Rule</code>, whether you want AWS WAF to allow
-        /// requests, block requests, or count requests that match the conditions in the <code>Rule</code>.</li>
-        /// <li>The order in which you want AWS WAF to evaluate the <code>Rules</code> in a <code>WebACL</code>.
+        ///  <ul> <li> 
+        /// <para>
+        /// A default action for the <code>WebACL</code>, either <code>ALLOW</code> or <code>BLOCK</code>.
+        /// AWS WAF performs the default action if a request doesn't match the criteria in any
+        /// of the <code>Rules</code> in a <code>WebACL</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <code>Rules</code> that you want to add and/or delete. If you want to replace
+        /// one <code>Rule</code> with another, you delete the existing <code>Rule</code> and
+        /// add the new one.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For each <code>Rule</code>, whether you want AWS WAF to allow requests, block requests,
+        /// or count requests that match the conditions in the <code>Rule</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The order in which you want AWS WAF to evaluate the <code>Rules</code> in a <code>WebACL</code>.
         /// If you add more than one <code>Rule</code> to a <code>WebACL</code>, AWS WAF evaluates
         /// each request against the <code>Rules</code> in order based on the value of <code>Priority</code>.
         /// (The <code>Rule</code> that has the lowest value for <code>Priority</code> is evaluated
         /// first.) When a web request matches all of the predicates (such as <code>ByteMatchSets</code>
         /// and <code>IPSets</code>) in a <code>Rule</code>, AWS WAF immediately takes the corresponding
         /// action, allow or block, and doesn't evaluate the request against the remaining <code>Rules</code>
-        /// in the <code>WebACL</code>, if any. </li> <li>The CloudFront distribution that you
-        /// want to associate with the <code>WebACL</code>.</li> </ul> 
+        /// in the <code>WebACL</code>, if any. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The CloudFront distribution that you want to associate with the <code>WebACL</code>.
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// To create and configure a <code>WebACL</code>, perform the following steps:
         /// </para>
-        ///  <ol> <li>Create and update the predicates that you want to include in <code>Rules</code>.
-        /// For more information, see <a>CreateByteMatchSet</a>, <a>UpdateByteMatchSet</a>, <a>CreateIPSet</a>,
-        /// <a>UpdateIPSet</a>, <a>CreateSqlInjectionMatchSet</a>, and <a>UpdateSqlInjectionMatchSet</a>.</li>
-        /// <li>Create and update the <code>Rules</code> that you want to include in the <code>WebACL</code>.
-        /// For more information, see <a>CreateRule</a> and <a>UpdateRule</a>.</li> <li>Create
-        /// a <code>WebACL</code>. See <a>CreateWebACL</a>.</li> <li>Use <code>GetChangeToken</code>
-        /// to get the change token that you provide in the <code>ChangeToken</code> parameter
-        /// of an <a>UpdateWebACL</a> request.</li> <li>Submit an <code>UpdateWebACL</code> request
-        /// to specify the <code>Rules</code> that you want to include in the <code>WebACL</code>,
-        /// to specify the default action, and to associate the <code>WebACL</code> with a CloudFront
-        /// distribution. </li> </ol> 
+        ///  <ol> <li> 
+        /// <para>
+        /// Create and update the predicates that you want to include in <code>Rules</code>. For
+        /// more information, see <a>CreateByteMatchSet</a>, <a>UpdateByteMatchSet</a>, <a>CreateIPSet</a>,
+        /// <a>UpdateIPSet</a>, <a>CreateSqlInjectionMatchSet</a>, and <a>UpdateSqlInjectionMatchSet</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Create and update the <code>Rules</code> that you want to include in the <code>WebACL</code>.
+        /// For more information, see <a>CreateRule</a> and <a>UpdateRule</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Create a <code>WebACL</code>. See <a>CreateWebACL</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code>
+        /// parameter of an <a>UpdateWebACL</a> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit an <code>UpdateWebACL</code> request to specify the <code>Rules</code> that
+        /// you want to include in the <code>WebACL</code>, to specify the default action, and
+        /// to associate the <code>WebACL</code> with a CloudFront distribution. 
+        /// </para>
+        ///  </li> </ol> 
         /// <para>
         /// For more information about how to use the AWS WAF API to allow or block HTTP requests,
         /// see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
@@ -5656,33 +7962,76 @@ namespace Amazon.WAF
         /// <exception cref="Amazon.WAF.Model.WAFInvalidOperationException">
         /// The operation failed because there was nothing to do. For example:
         /// 
-        ///  <ul> <li>You tried to remove a <code>Rule</code> from a <code>WebACL</code>, but
-        /// the <code>Rule</code> isn't in the specified <code>WebACL</code>.</li> <li>You tried
-        /// to remove an IP address from an <code>IPSet</code>, but the IP address isn't in the
-        /// specified <code>IPSet</code>.</li> <li>You tried to remove a <code>ByteMatchTuple</code>
-        /// from a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code> isn't in the
-        /// specified <code>WebACL</code>.</li> <li>You tried to add a <code>Rule</code> to a
-        /// <code>WebACL</code>, but the <code>Rule</code> already exists in the specified <code>WebACL</code>.</li>
-        /// <li>You tried to add an IP address to an <code>IPSet</code>, but the IP address already
-        /// exists in the specified <code>IPSet</code>.</li> <li>You tried to add a <code>ByteMatchTuple</code>
-        /// to a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code> already exists
-        /// in the specified <code>WebACL</code>.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to remove a <code>Rule</code> from a <code>WebACL</code>, but the <code>Rule</code>
+        /// isn't in the specified <code>WebACL</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to remove an IP address from an <code>IPSet</code>, but the IP address isn't
+        /// in the specified <code>IPSet</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to remove a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code>,
+        /// but the <code>ByteMatchTuple</code> isn't in the specified <code>WebACL</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code>
+        /// already exists in the specified <code>WebACL</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add an IP address to an <code>IPSet</code>, but the IP address already
+        /// exists in the specified <code>IPSet</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add a <code>ByteMatchTuple</code> to a <code>ByteMatchSet</code>, but
+        /// the <code>ByteMatchTuple</code> already exists in the specified <code>WebACL</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFInvalidParameterException">
         /// The operation failed because AWS WAF didn't recognize a parameter in the request.
         /// For example:
         /// 
-        ///  <ul> <li>You specified an invalid parameter name.</li> <li>You specified an invalid
-        /// value.</li> <li>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>,
-        /// <code>Rule</code>, or <code>WebACL</code>) using an action other than <code>INSERT</code>
-        /// or <code>DELETE</code>.</li> <li>You tried to create a <code>WebACL</code> with a
-        /// <code>DefaultAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>,
-        /// or <code>COUNT</code>.</li> <li>You tried to update a <code>WebACL</code> with a <code>WafAction</code>
-        /// <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</li>
-        /// <li>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code>
-        /// <code>Type</code> other than HEADER, QUERY_STRING, or URI.</li> <li>You tried to update
-        /// a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code> but no
-        /// value for <code>Data</code>.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an invalid parameter name.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You specified an invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>,
+        /// or <code>WebACL</code>) using an action other than <code>INSERT</code> or <code>DELETE</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code>
+        /// other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code>
+        /// other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code>
+        /// other than HEADER, QUERY_STRING, or URI.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code>
+        /// but no value for <code>Data</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFLimitsExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
@@ -5693,22 +8042,44 @@ namespace Amazon.WAF
         /// The operation failed because you tried to add an object to or delete an object from
         /// another object that doesn't exist. For example:
         /// 
-        ///  <ul> <li>You tried to add a <code>Rule</code> to or delete a <code>Rule</code> from
-        /// a <code>WebACL</code> that doesn't exist.</li> <li>You tried to add a <code>ByteMatchSet</code>
-        /// to or delete a <code>ByteMatchSet</code> from a <code>Rule</code> that doesn't exist.</li>
-        /// <li>You tried to add an IP address to or delete an IP address from an <code>IPSet</code>
-        /// that doesn't exist.</li> <li>You tried to add a <code>ByteMatchTuple</code> to or
-        /// delete a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code> that doesn't
-        /// exist.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to add a <code>Rule</code> to or delete a <code>Rule</code> from a <code>WebACL</code>
+        /// that doesn't exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add a <code>ByteMatchSet</code> to or delete a <code>ByteMatchSet</code>
+        /// from a <code>Rule</code> that doesn't exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add an IP address to or delete an IP address from an <code>IPSet</code>
+        /// that doesn't exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add a <code>ByteMatchTuple</code> to or delete a <code>ByteMatchTuple</code>
+        /// from a <code>ByteMatchSet</code> that doesn't exist.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFNonexistentItemException">
         /// The operation failed because the referenced object doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFReferencedItemException">
         /// The operation failed because you tried to delete an object that is still in use. For
-        /// example: <ul> <li>You tried to delete a <code>ByteMatchSet</code> that is still referenced
-        /// by a <code>Rule</code>.</li> <li>You tried to delete a <code>Rule</code> that is still
-        /// referenced by a <code>WebACL</code>.</li> </ul>
+        /// example:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to delete a <code>ByteMatchSet</code> that is still referenced by a <code>Rule</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to delete a <code>Rule</code> that is still referenced by a <code>WebACL</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFStaleDataException">
         /// The operation failed because you tried to create, update, or delete an object by using
@@ -5749,13 +8120,23 @@ namespace Amazon.WAF
         /// Inserts or deletes <a>XssMatchTuple</a> objects (filters) in an <a>XssMatchSet</a>.
         /// For each <code>XssMatchTuple</code> object, you specify the following values:
         /// 
-        ///  <ul> <li><code>Action</code>: Whether to insert the object into or delete the object
-        /// from the array. To change a <code>XssMatchTuple</code>, you delete the existing object
-        /// and add a new one.</li> <li><code>FieldToMatch</code>: The part of web requests that
-        /// you want AWS WAF to inspect and, if you want AWS WAF to inspect a header, the name
-        /// of the header.</li> <li><code>TextTransformation</code>: Which text transformation,
-        /// if any, to perform on the web request before inspecting the request for cross-site
-        /// scripting attacks.</li> </ul> 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>Action</code>: Whether to insert the object into or delete the object from
+        /// the array. To change a <code>XssMatchTuple</code>, you delete the existing object
+        /// and add a new one.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>FieldToMatch</code>: The part of web requests that you want AWS WAF to inspect
+        /// and, if you want AWS WAF to inspect a header, the name of the header.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>TextTransformation</code>: Which text transformation, if any, to perform on
+        /// the web request before inspecting the request for cross-site scripting attacks.
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// You use <code>XssMatchSet</code> objects to specify which CloudFront requests you
         /// want to allow, block, or count. For example, if you're receiving requests that contain
@@ -5767,11 +8148,21 @@ namespace Amazon.WAF
         /// <para>
         /// To create and configure an <code>XssMatchSet</code>, perform the following steps:
         /// </para>
-        ///  <ol> <li>Submit a <a>CreateXssMatchSet</a> request.</li> <li>Use <a>GetChangeToken</a>
-        /// to get the change token that you provide in the <code>ChangeToken</code> parameter
-        /// of an <a>UpdateIPSet</a> request.</li> <li>Submit an <code>UpdateXssMatchSet</code>
-        /// request to specify the parts of web requests that you want AWS WAF to inspect for
-        /// cross-site scripting attacks.</li> </ol> 
+        ///  <ol> <li> 
+        /// <para>
+        /// Submit a <a>CreateXssMatchSet</a> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code>
+        /// parameter of an <a>UpdateIPSet</a> request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit an <code>UpdateXssMatchSet</code> request to specify the parts of web requests
+        /// that you want AWS WAF to inspect for cross-site scripting attacks.
+        /// </para>
+        ///  </li> </ol> 
         /// <para>
         /// For more information about how to use the AWS WAF API to allow or block HTTP requests,
         /// see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
@@ -5792,33 +8183,76 @@ namespace Amazon.WAF
         /// <exception cref="Amazon.WAF.Model.WAFInvalidOperationException">
         /// The operation failed because there was nothing to do. For example:
         /// 
-        ///  <ul> <li>You tried to remove a <code>Rule</code> from a <code>WebACL</code>, but
-        /// the <code>Rule</code> isn't in the specified <code>WebACL</code>.</li> <li>You tried
-        /// to remove an IP address from an <code>IPSet</code>, but the IP address isn't in the
-        /// specified <code>IPSet</code>.</li> <li>You tried to remove a <code>ByteMatchTuple</code>
-        /// from a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code> isn't in the
-        /// specified <code>WebACL</code>.</li> <li>You tried to add a <code>Rule</code> to a
-        /// <code>WebACL</code>, but the <code>Rule</code> already exists in the specified <code>WebACL</code>.</li>
-        /// <li>You tried to add an IP address to an <code>IPSet</code>, but the IP address already
-        /// exists in the specified <code>IPSet</code>.</li> <li>You tried to add a <code>ByteMatchTuple</code>
-        /// to a <code>ByteMatchSet</code>, but the <code>ByteMatchTuple</code> already exists
-        /// in the specified <code>WebACL</code>.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to remove a <code>Rule</code> from a <code>WebACL</code>, but the <code>Rule</code>
+        /// isn't in the specified <code>WebACL</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to remove an IP address from an <code>IPSet</code>, but the IP address isn't
+        /// in the specified <code>IPSet</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to remove a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code>,
+        /// but the <code>ByteMatchTuple</code> isn't in the specified <code>WebACL</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code>
+        /// already exists in the specified <code>WebACL</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add an IP address to an <code>IPSet</code>, but the IP address already
+        /// exists in the specified <code>IPSet</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add a <code>ByteMatchTuple</code> to a <code>ByteMatchSet</code>, but
+        /// the <code>ByteMatchTuple</code> already exists in the specified <code>WebACL</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFInvalidParameterException">
         /// The operation failed because AWS WAF didn't recognize a parameter in the request.
         /// For example:
         /// 
-        ///  <ul> <li>You specified an invalid parameter name.</li> <li>You specified an invalid
-        /// value.</li> <li>You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>,
-        /// <code>Rule</code>, or <code>WebACL</code>) using an action other than <code>INSERT</code>
-        /// or <code>DELETE</code>.</li> <li>You tried to create a <code>WebACL</code> with a
-        /// <code>DefaultAction</code> <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>,
-        /// or <code>COUNT</code>.</li> <li>You tried to update a <code>WebACL</code> with a <code>WafAction</code>
-        /// <code>Type</code> other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</li>
-        /// <li>You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code>
-        /// <code>Type</code> other than HEADER, QUERY_STRING, or URI.</li> <li>You tried to update
-        /// a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code> but no
-        /// value for <code>Data</code>.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an invalid parameter name.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You specified an invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>,
+        /// or <code>WebACL</code>) using an action other than <code>INSERT</code> or <code>DELETE</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code>
+        /// other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code>
+        /// other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code>
+        /// other than HEADER, QUERY_STRING, or URI.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code>
+        /// but no value for <code>Data</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFLimitsExceededException">
         /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
@@ -5829,13 +8263,27 @@ namespace Amazon.WAF
         /// The operation failed because you tried to add an object to or delete an object from
         /// another object that doesn't exist. For example:
         /// 
-        ///  <ul> <li>You tried to add a <code>Rule</code> to or delete a <code>Rule</code> from
-        /// a <code>WebACL</code> that doesn't exist.</li> <li>You tried to add a <code>ByteMatchSet</code>
-        /// to or delete a <code>ByteMatchSet</code> from a <code>Rule</code> that doesn't exist.</li>
-        /// <li>You tried to add an IP address to or delete an IP address from an <code>IPSet</code>
-        /// that doesn't exist.</li> <li>You tried to add a <code>ByteMatchTuple</code> to or
-        /// delete a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code> that doesn't
-        /// exist.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// You tried to add a <code>Rule</code> to or delete a <code>Rule</code> from a <code>WebACL</code>
+        /// that doesn't exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add a <code>ByteMatchSet</code> to or delete a <code>ByteMatchSet</code>
+        /// from a <code>Rule</code> that doesn't exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add an IP address to or delete an IP address from an <code>IPSet</code>
+        /// that doesn't exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to add a <code>ByteMatchTuple</code> to or delete a <code>ByteMatchTuple</code>
+        /// from a <code>ByteMatchSet</code> that doesn't exist.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFNonexistentItemException">
         /// The operation failed because the referenced object doesn't exist.

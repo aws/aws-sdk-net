@@ -28,11 +28,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// This is the response object from the DescribeConfigRuleEvaluationStatus operation.
+    /// 
     /// </summary>
     public partial class DescribeConfigRuleEvaluationStatusResponse : AmazonWebServiceResponse
     {
         private List<ConfigRuleEvaluationStatus> _configRulesEvaluationStatus = new List<ConfigRuleEvaluationStatus>();
+        private string _nextToken;
 
         /// <summary>
         /// Gets and sets the property ConfigRulesEvaluationStatus. 
@@ -50,6 +51,25 @@ namespace Amazon.ConfigService.Model
         internal bool IsSetConfigRulesEvaluationStatus()
         {
             return this._configRulesEvaluationStatus != null && this._configRulesEvaluationStatus.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The string that you use in a subsequent request to get the next page of results in
+        /// a paginated response.
+        /// </para>
+        /// </summary>
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
         }
 
     }

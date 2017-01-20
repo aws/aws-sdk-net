@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// A complex type that contains information about a <code>GeoLocation</code>.
+    /// A complex type that contains the codes and full continent, country, and subdivision
+    /// names for the specified <code>geolocation</code> code.
     /// </summary>
     public partial class GeoLocationDetails
     {
@@ -42,8 +43,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property ContinentCode. 
         /// <para>
-        /// The code for a continent geo location. Note: only continent locations have a continent
-        /// code.
+        /// The two-letter code for the continent.
         /// </para>
         /// </summary>
         public string ContinentCode
@@ -61,8 +61,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property ContinentName. 
         /// <para>
-        /// The name of the continent. This element is only present if <code>ContinentCode</code>
-        /// is also present.
+        /// The full name of the continent.
         /// </para>
         /// </summary>
         public string ContinentName
@@ -80,13 +79,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property CountryCode. 
         /// <para>
-        /// The code for a country geo location. The default location uses '*' for the country
-        /// code and will match all locations that are not matched by a geo location.
-        /// </para>
-        ///  
-        /// <para>
-        /// The default geo location uses a <code>*</code> for the country code. All other country
-        /// codes follow the ISO 3166 two-character code.
+        /// The two-letter code for the country.
         /// </para>
         /// </summary>
         public string CountryCode
@@ -104,8 +97,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property CountryName. 
         /// <para>
-        /// The name of the country. This element is only present if <code>CountryCode</code>
-        /// is also present.
+        /// The name of the country.
         /// </para>
         /// </summary>
         public string CountryName
@@ -123,8 +115,8 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property SubdivisionCode. 
         /// <para>
-        /// The code for a country's subdivision (e.g., a province of Canada). A subdivision code
-        /// is only valid with the appropriate country code.
+        /// The code for the subdivision, for example, a state in the United States or a province
+        /// in Canada.
         /// </para>
         /// </summary>
         public string SubdivisionCode
@@ -142,8 +134,8 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property SubdivisionName. 
         /// <para>
-        /// The name of the subdivision. This element is only present if <code>SubdivisionCode</code>
-        /// is also present.
+        /// The full name of the subdivision, for example, a state in the United States or a province
+        /// in Canada.
         /// </para>
         /// </summary>
         public string SubdivisionName

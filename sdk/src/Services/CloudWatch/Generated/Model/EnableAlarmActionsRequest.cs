@@ -29,7 +29,7 @@ namespace Amazon.CloudWatch.Model
 {
     /// <summary>
     /// Container for the parameters to the EnableAlarmActions operation.
-    /// Enables actions for the specified alarms.
+    /// Enables the actions for the specified alarms.
     /// </summary>
     public partial class EnableAlarmActionsRequest : AmazonCloudWatchRequest
     {
@@ -38,7 +38,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property AlarmNames. 
         /// <para>
-        ///  The names of the alarms to enable actions for. 
+        /// The names of the alarms.
         /// </para>
         /// </summary>
         public List<string> AlarmNames

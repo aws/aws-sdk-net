@@ -29,18 +29,19 @@ namespace Amazon.ApplicationAutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeScalingActivities operation.
-    /// Provides descriptive information for scaling activities with a specified service namespace.
+    /// Provides descriptive information about the scaling activities in the specified namespace
+    /// from the previous six weeks.
     /// 
     ///  
     /// <para>
-    /// You can filter the results in a service namespace with the <code>ResourceId</code>
-    /// and <code>ScalableDimension</code> parameters.
+    /// You can filter the results using the <code>ResourceId</code> and <code>ScalableDimension</code>
+    /// parameters.
     /// </para>
     ///  
     /// <para>
     /// Scaling activities are triggered by CloudWatch alarms that are associated with scaling
-    /// policies. To view the existing scaling policies for a service namespace, see <a>DescribeScalingPolicies</a>.
-    /// To create a new scaling policy or update an existing one, see <a>PutScalingPolicy</a>.
+    /// policies. To view the scaling policies for a service namespace, see <a>DescribeScalingPolicies</a>.
+    /// To create a scaling policy or update an existing one, see <a>PutScalingPolicy</a>.
     /// </para>
     /// </summary>
     public partial class DescribeScalingActivitiesRequest : AmazonApplicationAutoScalingRequest
@@ -54,13 +55,16 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of scaling activity results returned by <code>DescribeScalingActivities</code>
-        /// in paginated output. When this parameter is used, <code>DescribeScalingActivities</code>
-        /// returns up to <code>MaxResults</code> results in a single page along with a <code>NextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>DescribeScalingActivities</code> request with the returned <code>NextToken</code>
-        /// value. This value can be between 1 and 50. If this parameter is not used, then <code>DescribeScalingActivities</code>
-        /// returns up to 50 results and a <code>NextToken</code> value, if applicable.
+        /// The maximum number of scalable target results. This value can be between 1 and 50.
+        /// The default value is 50.
+        /// </para>
+        ///  
+        /// <para>
+        /// If this parameter is used, the operation returns up to <code>MaxResults</code> results
+        /// at a time, along with a <code>NextToken</code> value. To get the next set of results,
+        /// include the <code>NextToken</code> value in a subsequent call. If this parameter is
+        /// not used, the operation returns up to 50 results and a <code>NextToken</code> value,
+        /// if applicable.
         /// </para>
         /// </summary>
         public int MaxResults
@@ -78,10 +82,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The <code>NextToken</code> value returned from a previous paginated <code>DescribeScalingActivities</code>
-        /// request. Pagination continues from the end of the previous results that returned the
-        /// <code>NextToken</code> value. This value is <code>null</code> when there are no more
-        /// results to return.
+        /// The token for the next set of results.
         /// </para>
         /// </summary>
         public string NextToken
@@ -99,11 +100,26 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
-        /// The unique identifier string for the resource associated with the scaling activity.
-        /// For Amazon ECS services, this value is the resource type, followed by the cluster
-        /// name and service name, such as <code>service/default/sample-webapp</code>. If you
-        /// specify a scalable dimension, you must also specify a resource ID.
+        /// The identifier of the resource associated with the scaling activity. This string consists
+        /// of the resource type and unique identifier. If you specify a scalable dimension, you
+        /// must also specify a resource ID.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// ECS service - The resource type is <code>service</code> and the unique identifier
+        /// is the cluster name and service name. Example: <code>service/default/sample-webapp</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Spot fleet request - The resource type is <code>spot-fleet-request</code> and the
+        /// unique identifier is the Spot fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// EMR cluster - The resource type is <code>instancegroup</code> and the unique identifier
+        /// is the cluster ID and instance group ID. Example: <code>instancegroup/j-2EEZNYKUA1NTV/ig-1791Y4E1L8YI0</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string ResourceId
         {
@@ -120,11 +136,25 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <summary>
         /// Gets and sets the property ScalableDimension. 
         /// <para>
-        /// The scalable dimension associated with the scaling activity. The scalable dimension
-        /// contains the service namespace, resource type, and scaling property, such as <code>ecs:service:DesiredCount</code>
-        /// for the desired task count of an Amazon ECS service. If you specify a scalable dimension,
-        /// you must also specify a resource ID.
+        /// The scalable dimension. This string consists of the service namespace, resource type,
+        /// and scaling property. If you specify a scalable dimension, you must also specify a
+        /// resource ID.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>ecs:service:DesiredCount</code> - The desired task count of an ECS service.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot
+        /// fleet request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count of
+        /// an EMR Instance Group.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public ScalableDimension ScalableDimension
         {
@@ -141,9 +171,8 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <summary>
         /// Gets and sets the property ServiceNamespace. 
         /// <para>
-        /// The namespace for the AWS service that the scaling activity is associated with. For
-        /// more information, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
-        /// Service Namespaces</a> in the Amazon Web Services General Reference.
+        /// The namespace of the AWS service. For more information, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
+        /// Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </summary>
         public ServiceNamespace ServiceNamespace

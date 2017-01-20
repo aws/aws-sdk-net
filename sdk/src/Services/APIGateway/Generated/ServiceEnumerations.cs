@@ -25,11 +25,61 @@ namespace Amazon.APIGateway
 {
 
     /// <summary>
+    /// Constants used for properties of type ApiKeysFormat.
+    /// </summary>
+    public class ApiKeysFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Csv for ApiKeysFormat
+        /// </summary>
+        public static readonly ApiKeysFormat Csv = new ApiKeysFormat("csv");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ApiKeysFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ApiKeysFormat FindValue(string value)
+        {
+            return FindValue<ApiKeysFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ApiKeysFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AuthorizerType.
     /// </summary>
     public class AuthorizerType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant COGNITO_USER_POOLS for AuthorizerType
+        /// </summary>
+        public static readonly AuthorizerType COGNITO_USER_POOLS = new AuthorizerType("COGNITO_USER_POOLS");
         /// <summary>
         /// Constant TOKEN for AuthorizerType
         /// </summary>
@@ -207,6 +257,146 @@ namespace Amazon.APIGateway
 
 
     /// <summary>
+    /// Constants used for properties of type ContentHandlingStrategy.
+    /// </summary>
+    public class ContentHandlingStrategy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CONVERT_TO_BINARY for ContentHandlingStrategy
+        /// </summary>
+        public static readonly ContentHandlingStrategy CONVERT_TO_BINARY = new ContentHandlingStrategy("CONVERT_TO_BINARY");
+        /// <summary>
+        /// Constant CONVERT_TO_TEXT for ContentHandlingStrategy
+        /// </summary>
+        public static readonly ContentHandlingStrategy CONVERT_TO_TEXT = new ContentHandlingStrategy("CONVERT_TO_TEXT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ContentHandlingStrategy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContentHandlingStrategy FindValue(string value)
+        {
+            return FindValue<ContentHandlingStrategy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContentHandlingStrategy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DocumentationPartType.
+    /// </summary>
+    public class DocumentationPartType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant API for DocumentationPartType
+        /// </summary>
+        public static readonly DocumentationPartType API = new DocumentationPartType("API");
+        /// <summary>
+        /// Constant AUTHORIZER for DocumentationPartType
+        /// </summary>
+        public static readonly DocumentationPartType AUTHORIZER = new DocumentationPartType("AUTHORIZER");
+        /// <summary>
+        /// Constant METHOD for DocumentationPartType
+        /// </summary>
+        public static readonly DocumentationPartType METHOD = new DocumentationPartType("METHOD");
+        /// <summary>
+        /// Constant MODEL for DocumentationPartType
+        /// </summary>
+        public static readonly DocumentationPartType MODEL = new DocumentationPartType("MODEL");
+        /// <summary>
+        /// Constant PATH_PARAMETER for DocumentationPartType
+        /// </summary>
+        public static readonly DocumentationPartType PATH_PARAMETER = new DocumentationPartType("PATH_PARAMETER");
+        /// <summary>
+        /// Constant QUERY_PARAMETER for DocumentationPartType
+        /// </summary>
+        public static readonly DocumentationPartType QUERY_PARAMETER = new DocumentationPartType("QUERY_PARAMETER");
+        /// <summary>
+        /// Constant REQUEST_BODY for DocumentationPartType
+        /// </summary>
+        public static readonly DocumentationPartType REQUEST_BODY = new DocumentationPartType("REQUEST_BODY");
+        /// <summary>
+        /// Constant REQUEST_HEADER for DocumentationPartType
+        /// </summary>
+        public static readonly DocumentationPartType REQUEST_HEADER = new DocumentationPartType("REQUEST_HEADER");
+        /// <summary>
+        /// Constant RESOURCE for DocumentationPartType
+        /// </summary>
+        public static readonly DocumentationPartType RESOURCE = new DocumentationPartType("RESOURCE");
+        /// <summary>
+        /// Constant RESPONSE for DocumentationPartType
+        /// </summary>
+        public static readonly DocumentationPartType RESPONSE = new DocumentationPartType("RESPONSE");
+        /// <summary>
+        /// Constant RESPONSE_BODY for DocumentationPartType
+        /// </summary>
+        public static readonly DocumentationPartType RESPONSE_BODY = new DocumentationPartType("RESPONSE_BODY");
+        /// <summary>
+        /// Constant RESPONSE_HEADER for DocumentationPartType
+        /// </summary>
+        public static readonly DocumentationPartType RESPONSE_HEADER = new DocumentationPartType("RESPONSE_HEADER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DocumentationPartType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DocumentationPartType FindValue(string value)
+        {
+            return FindValue<DocumentationPartType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DocumentationPartType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type IntegrationType.
     /// </summary>
     public class IntegrationType : ConstantClass
@@ -217,9 +407,17 @@ namespace Amazon.APIGateway
         /// </summary>
         public static readonly IntegrationType AWS = new IntegrationType("AWS");
         /// <summary>
+        /// Constant AWS_PROXY for IntegrationType
+        /// </summary>
+        public static readonly IntegrationType AWS_PROXY = new IntegrationType("AWS_PROXY");
+        /// <summary>
         /// Constant HTTP for IntegrationType
         /// </summary>
         public static readonly IntegrationType HTTP = new IntegrationType("HTTP");
+        /// <summary>
+        /// Constant HTTP_PROXY for IntegrationType
+        /// </summary>
+        public static readonly IntegrationType HTTP_PROXY = new IntegrationType("HTTP_PROXY");
         /// <summary>
         /// Constant MOCK for IntegrationType
         /// </summary>
@@ -370,6 +568,60 @@ namespace Amazon.APIGateway
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator PutMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type QuotaPeriodType.
+    /// </summary>
+    public class QuotaPeriodType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DAY for QuotaPeriodType
+        /// </summary>
+        public static readonly QuotaPeriodType DAY = new QuotaPeriodType("DAY");
+        /// <summary>
+        /// Constant MONTH for QuotaPeriodType
+        /// </summary>
+        public static readonly QuotaPeriodType MONTH = new QuotaPeriodType("MONTH");
+        /// <summary>
+        /// Constant WEEK for QuotaPeriodType
+        /// </summary>
+        public static readonly QuotaPeriodType WEEK = new QuotaPeriodType("WEEK");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public QuotaPeriodType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static QuotaPeriodType FindValue(string value)
+        {
+            return FindValue<QuotaPeriodType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator QuotaPeriodType(string value)
         {
             return FindValue(value);
         }

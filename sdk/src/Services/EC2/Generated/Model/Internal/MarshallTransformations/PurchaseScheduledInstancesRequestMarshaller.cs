@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-11-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -54,13 +54,17 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
             request.Parameters.Add("Action", "PurchaseScheduledInstances");
-            request.Parameters.Add("Version", "2016-04-01");
+            request.Parameters.Add("Version", "2016-11-15");
 
             if(publicRequest != null)
             {
                 if(publicRequest.IsSetClientToken())
                 {
                     request.Parameters.Add("ClientToken", StringUtils.FromString(publicRequest.ClientToken));
+                }
+                else if(!(publicRequest.IsSetClientToken()))
+                {
+                    request.Parameters.Add("ClientToken", StringUtils.FromString(Guid.NewGuid().ToString()));
                 }
                 if(publicRequest.IsSetPurchaseRequests())
                 {

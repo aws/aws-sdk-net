@@ -25,7 +25,7 @@ namespace Amazon.DynamoDBv2.Model
     ///<summary>
     /// DynamoDBStreams exception
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class TrimmedDataAccessException : AmazonDynamoDBException 
@@ -79,7 +79,7 @@ namespace Amazon.DynamoDBv2.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the TrimmedDataAccessException class with serialized data.
         /// </summary>

@@ -35,7 +35,8 @@ namespace Amazon.GameLift.Model
     ///  
     /// <para>
     /// To delete a build, specify its ID. Deleting a build does not affect the status of
-    /// any active fleets, but you can no longer create new fleets for the deleted build.
+    /// any active fleets using the build, but you can no longer create new fleets with the
+    /// deleted build.
     /// </para>
     /// </summary>
     public partial class DeleteBuildRequest : AmazonGameLiftRequest
@@ -45,7 +46,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property BuildId. 
         /// <para>
-        /// Unique identifier for the build you want to delete. 
+        /// Unique identifier for the build you want to delete.
         /// </para>
         /// </summary>
         public string BuildId

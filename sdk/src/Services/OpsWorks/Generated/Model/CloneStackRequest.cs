@@ -220,8 +220,7 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property CustomJson. 
         /// <para>
         /// A string that contains user-defined, custom JSON. It is used to override the corresponding
-        /// default stack configuration JSON values. The string should be in the following format
-        /// and must escape characters such as '"':
+        /// default stack configuration JSON values. The string should be in the following format:
         /// </para>
         ///  
         /// <para>
@@ -301,6 +300,10 @@ namespace Amazon.OpsWorks.Model
         /// <para>
         /// A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu
         /// 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>CentOS 7</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -505,9 +508,9 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
-        /// The cloned stack AWS region, such as "us-east-1". For more information about AWS regions,
-        /// see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
-        /// Endpoints</a>.
+        /// The cloned stack AWS region, such as "ap-northeast-2". For more information about
+        /// AWS regions, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
+        /// and Endpoints</a>.
         /// </para>
         /// </summary>
         public string Region

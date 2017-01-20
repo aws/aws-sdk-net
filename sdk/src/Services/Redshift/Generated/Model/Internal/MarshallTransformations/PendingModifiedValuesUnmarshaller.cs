@@ -78,6 +78,12 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                         unmarshalledObject.ClusterVersion = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("EnhancedVpcRouting", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.EnhancedVpcRouting = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("MasterUserPassword", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

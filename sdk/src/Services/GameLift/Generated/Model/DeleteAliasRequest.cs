@@ -30,8 +30,8 @@ namespace Amazon.GameLift.Model
     /// <summary>
     /// Container for the parameters to the DeleteAlias operation.
     /// Deletes an alias. This action removes all record of the alias; game clients attempting
-    /// to access a game server using the deleted alias receive an error. To delete an alias,
-    /// specify the alias ID to be deleted.
+    /// to access a server process using the deleted alias receive an error. To delete an
+    /// alias, specify the alias ID to be deleted.
     /// </summary>
     public partial class DeleteAliasRequest : AmazonGameLiftRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property AliasId. 
         /// <para>
-        /// Unique identifier for a fleet alias. Specify the alias you want to delete. 
+        /// Unique identifier for a fleet alias. Specify the alias you want to delete.
         /// </para>
         /// </summary>
         public string AliasId

@@ -63,6 +63,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.LoadBalancerName);
             }
 
+            if(requestObject.IsSetTargetGroupArn())
+            {
+                context.Writer.WritePropertyName("targetGroupArn");
+                context.Writer.Write(requestObject.TargetGroupArn);
+            }
+
         }
 
         /// <summary>

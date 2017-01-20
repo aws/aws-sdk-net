@@ -33,7 +33,9 @@ namespace Amazon.CodeDeploy.Model
     /// </summary>
     public partial class UpdateDeploymentGroupRequest : AmazonCodeDeployRequest
     {
+        private AlarmConfiguration _alarmConfiguration;
         private string _applicationName;
+        private AutoRollbackConfiguration _autoRollbackConfiguration;
         private List<string> _autoScalingGroups = new List<string>();
         private string _currentDeploymentGroupName;
         private string _deploymentConfigName;
@@ -42,6 +44,25 @@ namespace Amazon.CodeDeploy.Model
         private List<TagFilter> _onPremisesInstanceTagFilters = new List<TagFilter>();
         private string _serviceRoleArn;
         private List<TriggerConfig> _triggerConfigurations = new List<TriggerConfig>();
+
+        /// <summary>
+        /// Gets and sets the property AlarmConfiguration. 
+        /// <para>
+        /// Information to add or change about Amazon CloudWatch alarms when the deployment group
+        /// is updated. 
+        /// </para>
+        /// </summary>
+        public AlarmConfiguration AlarmConfiguration
+        {
+            get { return this._alarmConfiguration; }
+            set { this._alarmConfiguration = value; }
+        }
+
+        // Check to see if AlarmConfiguration property is set
+        internal bool IsSetAlarmConfiguration()
+        {
+            return this._alarmConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ApplicationName. 
@@ -59,6 +80,25 @@ namespace Amazon.CodeDeploy.Model
         internal bool IsSetApplicationName()
         {
             return this._applicationName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AutoRollbackConfiguration. 
+        /// <para>
+        /// Information for an automatic rollback configuration that is added or changed when
+        /// a deployment group is updated.
+        /// </para>
+        /// </summary>
+        public AutoRollbackConfiguration AutoRollbackConfiguration
+        {
+            get { return this._autoRollbackConfiguration; }
+            set { this._autoRollbackConfiguration = value; }
+        }
+
+        // Check to see if AutoRollbackConfiguration property is set
+        internal bool IsSetAutoRollbackConfiguration()
+        {
+            return this._autoRollbackConfiguration != null;
         }
 
         /// <summary>
@@ -196,7 +236,9 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property TriggerConfigurations. 
         /// <para>
-        /// Information about triggers to change when the deployment group is updated.
+        /// Information about triggers to change when the deployment group is updated. For examples,
+        /// see <a href="http://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Modify
+        /// Triggers in an AWS CodeDeploy Deployment Group</a> in the AWS CodeDeploy User Guide.
         /// </para>
         /// </summary>
         public List<TriggerConfig> TriggerConfigurations

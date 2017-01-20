@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-11-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -81,6 +81,7 @@ namespace Amazon.EC2.Model
         private ArchitectureValues _architecture;
         private List<BlockDeviceMapping> _blockDeviceMappings = new List<BlockDeviceMapping>();
         private string _description;
+        private bool? _enaSupport;
         private string _imageLocation;
         private string _kernelId;
         private string _name;
@@ -160,6 +161,30 @@ namespace Amazon.EC2.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnaSupport. 
+        /// <para>
+        /// Set to <code>true</code> to enable enhanced networking with ENA for the AMI and any
+        /// instances that you launch from the AMI.
+        /// </para>
+        ///  
+        /// <para>
+        /// This option is supported only for HVM AMIs. Specifying this option with a PV AMI can
+        /// make instances launched from the AMI unreachable.
+        /// </para>
+        /// </summary>
+        public bool EnaSupport
+        {
+            get { return this._enaSupport.GetValueOrDefault(); }
+            set { this._enaSupport = value; }
+        }
+
+        // Check to see if EnaSupport property is set
+        internal bool IsSetEnaSupport()
+        {
+            return this._enaSupport.HasValue; 
         }
 
         /// <summary>
@@ -261,8 +286,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SriovNetSupport. 
         /// <para>
-        /// Set to <code>simple</code> to enable enhanced networking for the AMI and any instances
-        /// that you launch from the AMI.
+        /// Set to <code>simple</code> to enable enhanced networking with the Intel 82599 Virtual
+        /// Function interface for the AMI and any instances that you launch from the AMI.
         /// </para>
         ///  
         /// <para>

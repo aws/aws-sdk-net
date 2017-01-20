@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2016-01-28.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-11-25.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -28,8 +28,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// A complex type that specifies the whitelisted cookies, if any, that you want CloudFront
-    /// to forward to your origin that is associated with this cache behavior.
+    /// A complex type that specifies whether you want CloudFront to forward cookies to the
+    /// origin and, if so, which ones. For more information about forwarding cookies to the
+    /// origin, see <a href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Cookies.html">How
+    /// CloudFront Forwards, Caches, and Logs Cookies</a> in the <i>Amazon CloudFront Developer
+    /// Guide</i>.
     /// </summary>
     public partial class CookieNames
     {
@@ -37,8 +40,11 @@ namespace Amazon.CloudFront.Model
         private int? _quantity;
 
         /// <summary>
-        /// Gets and sets the property Items. Optional: A complex type that contains whitelisted
-        /// cookies for this cache behavior. If Quantity is 0, you can omit Items.
+        /// Gets and sets the property Items. 
+        /// <para>
+        /// A complex type that contains one <code>Name</code> element for each cookie that you
+        /// want CloudFront to forward to the origin for this cache behavior.
+        /// </para>
         /// </summary>
         public List<string> Items
         {
@@ -53,8 +59,11 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Quantity. The number of whitelisted cookies for this cache
-        /// behavior.
+        /// Gets and sets the property Quantity. 
+        /// <para>
+        /// The number of different cookies that you want CloudFront to forward to the origin
+        /// for this cache behavior.
+        /// </para>
         /// </summary>
         public int Quantity
         {

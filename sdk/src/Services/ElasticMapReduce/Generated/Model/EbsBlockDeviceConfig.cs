@@ -39,7 +39,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property VolumeSpecification. 
         /// <para>
-        /// EBS volume specifications such as volume type, IOPS, and size(GiB) that will be requested
+        /// EBS volume specifications such as volume type, IOPS, and size (GiB) that will be requested
         /// for the EBS volume attached to an EC2 instance in the cluster.
         /// </para>
         /// </summary>
@@ -58,8 +58,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property VolumesPerInstance. 
         /// <para>
-        /// Number of EBS volumes with specific volume configuration, that will be associated
-        /// with every instance in the instance group 
+        /// Number of EBS volumes with a specific volume configuration that will be associated
+        /// with every instance in the instance group
         /// </para>
         /// </summary>
         public int VolumesPerInstance

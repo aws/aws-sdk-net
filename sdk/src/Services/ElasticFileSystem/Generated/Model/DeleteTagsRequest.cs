@@ -30,13 +30,13 @@ namespace Amazon.ElasticFileSystem.Model
     /// <summary>
     /// Container for the parameters to the DeleteTags operation.
     /// Deletes the specified tags from a file system. If the <code>DeleteTags</code> request
-    /// includes a tag key that does not exist, Amazon EFS ignores it; it is not an error.
-    /// For more information about tags and related restrictions, go to <a href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Tag
+    /// includes a tag key that does not exist, Amazon EFS ignores it and doesn't cause an
+    /// error. For more information about tags and related restrictions, see <a href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Tag
     /// Restrictions</a> in the <i>AWS Billing and Cost Management User Guide</i>.
     /// 
     ///  
     /// <para>
-    /// This operation requires permission for the <code>elasticfilesystem:DeleteTags</code>
+    /// This operation requires permissions for the <code>elasticfilesystem:DeleteTags</code>
     /// action.
     /// </para>
     /// </summary>
@@ -48,7 +48,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property FileSystemId. 
         /// <para>
-        /// String. The ID of the file system whose tags you want to delete.
+        /// ID of the file system whose tags you want to delete (String).
         /// </para>
         /// </summary>
         public string FileSystemId
@@ -66,7 +66,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property TagKeys. 
         /// <para>
-        /// A list of tag keys to delete.
+        /// List of tag keys to delete.
         /// </para>
         /// </summary>
         public List<string> TagKeys

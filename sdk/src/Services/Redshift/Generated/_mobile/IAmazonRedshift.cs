@@ -23,6 +23,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.Redshift.Model;
 
 namespace Amazon.Redshift
@@ -30,9 +31,13 @@ namespace Amazon.Redshift
     /// <summary>
     /// Interface for accessing Redshift
     ///
-    /// Amazon Redshift <b>Overview</b> 
+    /// Amazon Redshift 
     /// <para>
-    ///  This is an interface reference for Amazon Redshift. It contains documentation for
+    ///  <b>Overview</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// This is an interface reference for Amazon Redshift. It contains documentation for
     /// one of the programming or command line interfaces you can use to manage Amazon Redshift
     /// clusters. Note that Amazon Redshift is asynchronous, which means that some interfaces
     /// may require techniques, such as polling or asynchronous callback handlers, to determine
@@ -40,20 +45,20 @@ namespace Amazon.Redshift
     /// whether a change is applied immediately, on the next instance reboot, or during the
     /// next maintenance window. For a summary of the Amazon Redshift cluster management interfaces,
     /// go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/using-aws-sdk.html">Using
-    /// the Amazon Redshift Management Interfaces </a>.
+    /// the Amazon Redshift Management Interfaces</a>.
     /// </para>
     ///  
     /// <para>
-    ///  Amazon Redshift manages all the work of setting up, operating, and scaling a data
+    /// Amazon Redshift manages all the work of setting up, operating, and scaling a data
     /// warehouse: provisioning capacity, monitoring and backing up the cluster, and applying
     /// patches and upgrades to the Amazon Redshift engine. You can focus on using your data
-    /// to acquire new insights for your business and customers. 
+    /// to acquire new insights for your business and customers.
     /// </para>
     ///  
     /// <para>
     /// If you are a first-time user of Amazon Redshift, we recommend that you begin by reading
-    /// the The <a href="http://docs.aws.amazon.com/redshift/latest/gsg/getting-started.html">Amazon
-    /// Redshift Getting Started Guide</a>
+    /// the <a href="http://docs.aws.amazon.com/redshift/latest/gsg/getting-started.html">Amazon
+    /// Redshift Getting Started Guide</a>.
     /// </para>
     ///  
     /// <para>
@@ -62,7 +67,7 @@ namespace Amazon.Redshift
     /// the databases that make up your data warehouse. 
     /// </para>
     /// </summary>
-    public partial interface IAmazonRedshift : IDisposable
+    public partial interface IAmazonRedshift : IAmazonService, IDisposable
     {
                 
         #region  AuthorizeClusterSecurityGroupIngress
@@ -440,13 +445,12 @@ namespace Amazon.Redshift
         /// Returns a list of Amazon Redshift parameter groups, including parameter groups you
         /// created and the default parameter group. For each parameter group, the response includes
         /// the parameter group name, description, and parameter group family name. You can optionally
-        /// specify a name to retrieve the description of a specific parameter group. 
+        /// specify a name to retrieve the description of a specific parameter group.
         /// 
         ///  
         /// <para>
         ///  For more information about parameters and parameter groups, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
         /// Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
-        /// 
         /// </para>
         ///  
         /// <para>
@@ -509,11 +513,11 @@ namespace Amazon.Redshift
 
 
         /// <summary>
-        /// Returns properties of provisioned clusters including general cluster properties,
-        /// cluster database properties, maintenance and backup properties, and security and access
-        /// properties. This operation supports pagination. For more information about managing
-        /// clusters, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
-        /// Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i> . 
+        /// Returns properties of provisioned clusters including general cluster properties, cluster
+        /// database properties, maintenance and backup properties, and security and access properties.
+        /// This operation supports pagination. For more information about managing clusters,
+        /// go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
+        /// Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
         /// 
         ///  
         /// <para>
@@ -562,13 +566,13 @@ namespace Amazon.Redshift
         /// <summary>
         /// Returns information about Amazon Redshift security groups. If the name of a security
         /// group is specified, the response will contain only information about only that security
-        /// group. 
+        /// group.
         /// 
         ///  
         /// <para>
         ///  For information about managing security groups, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Amazon
         /// Redshift Cluster Security Groups</a> in the <i>Amazon Redshift Cluster Management
-        /// Guide</i>. 
+        /// Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -618,7 +622,7 @@ namespace Amazon.Redshift
         /// Returns one or more snapshot objects, which contain metadata about your cluster snapshots.
         /// By default, this operation returns information about all snapshots of all clusters
         /// that are owned by you AWS customer account. No information is returned for snapshots
-        /// owned by inactive AWS customer accounts. 
+        /// owned by inactive AWS customer accounts.
         /// 
         ///  
         /// <para>
@@ -668,7 +672,7 @@ namespace Amazon.Redshift
         /// <summary>
         /// Returns one or more cluster subnet group objects, which contain metadata about your
         /// cluster subnet groups. By default, this operation returns information about all cluster
-        /// subnet groups that are defined in you AWS account. 
+        /// subnet groups that are defined in you AWS account.
         /// 
         ///  
         /// <para>
@@ -718,7 +722,7 @@ namespace Amazon.Redshift
         /// Returns descriptions of the available Amazon Redshift cluster versions. You can call
         /// this operation even before creating any clusters to learn more about the Amazon Redshift
         /// versions. For more information about managing clusters, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
-        /// Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>
+        /// Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -967,14 +971,14 @@ namespace Amazon.Redshift
 
 
         /// <summary>
-        /// Returns a list of orderable cluster options. Before you create a new cluster you
-        /// can use this operation to find what options are available, such as the EC2 Availability
+        /// Returns a list of orderable cluster options. Before you create a new cluster you can
+        /// use this operation to find what options are available, such as the EC2 Availability
         /// Zones (AZ) in the specific AWS region that you can specify, and the node types you
         /// can request. The node types differ by available storage, memory, CPU and price. With
         /// the cost involved you might want to obtain a list of cluster options in the specific
         /// region and specify values when creating a cluster. For more information about managing
         /// clusters, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
-        /// Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>
+        /// Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -1011,7 +1015,7 @@ namespace Amazon.Redshift
         ///  
         /// <para>
         ///  For more information about reserved node offerings, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/purchase-reserved-node-instance.html">Purchasing
-        /// Reserved Nodes</a> in the <i>Amazon Redshift Cluster Management Guide</i>. 
+        /// Reserved Nodes</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">

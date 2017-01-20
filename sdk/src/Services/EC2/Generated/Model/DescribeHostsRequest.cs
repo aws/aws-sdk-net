@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-11-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -29,12 +29,12 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeHosts operation.
-    /// Describes one or more of your Dedicated hosts.
+    /// Describes one or more of your Dedicated Hosts.
     /// 
     ///  
     /// <para>
-    /// The results describe only the Dedicated hosts in the region you're currently using.
-    /// All listed instances consume capacity on your Dedicated host. Dedicated hosts that
+    /// The results describe only the Dedicated Hosts in the region you're currently using.
+    /// All listed instances consume capacity on your Dedicated Host. Dedicated Hosts that
     /// have recently been released will be listed with the state <code>released</code>.
     /// </para>
     /// </summary>
@@ -52,7 +52,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>instance-type</code> - The instance type size that the Dedicated host is configured
+        ///  <code>instance-type</code> - The instance type size that the Dedicated Host is configured
         /// to support.
         /// </para>
         ///  </li> <li> 
@@ -62,8 +62,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>host-reservation-id</code> - The ID of the reservation associated with this
-        /// host.
+        ///  <code>host-reservation-id</code> - The ID of the reservation assigned to this host.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -72,7 +71,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>state</code>- The allocation state of the Dedicated host (<code>available</code>
+        ///  <code>state</code>- The allocation state of the Dedicated Host (<code>available</code>
         /// | <code>under-assessment</code> | <code>permanent-failure</code> | <code>released</code>
         /// | <code>released-permanent-failure</code>).
         /// </para>
@@ -97,7 +96,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property HostIds. 
         /// <para>
-        /// The IDs of the Dedicated hosts. The IDs are used for targeted instance launches.
+        /// The IDs of the Dedicated Hosts. The IDs are used for targeted instance launches.
         /// </para>
         /// </summary>
         public List<string> HostIds

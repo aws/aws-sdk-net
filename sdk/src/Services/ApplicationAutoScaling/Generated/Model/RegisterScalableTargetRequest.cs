@@ -29,21 +29,17 @@ namespace Amazon.ApplicationAutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the RegisterScalableTarget operation.
-    /// Registers or updates a scalable target. A scalable target is a resource that can be
-    /// scaled up or down with Application Auto Scaling. After you have registered a scalable
-    /// target, you can use this command to update the minimum and maximum values for your
-    /// scalable dimension.
+    /// Registers or updates a scalable target. A scalable target is a resource that Application
+    /// Auto Scaling can scale out or scale in. After you have registered a scalable target,
+    /// you can use this operation to update the minimum and maximum values for your scalable
+    /// dimension.
     /// 
-    ///  <note> 
+    ///  
     /// <para>
-    /// At this time, Application Auto Scaling only supports scaling Amazon ECS services.
-    /// </para>
-    ///  </note> 
-    /// <para>
-    /// After you register a scalable target with Application Auto Scaling, you can create
-    /// and apply scaling policies to it with <a>PutScalingPolicy</a>. You can view the existing
-    /// scaling policies for a service namespace with <a>DescribeScalableTargets</a>. If you
-    /// are no longer using a scalable target, you can deregister it with <a>DeregisterScalableTarget</a>.
+    /// After you register a scalable target, you can create and apply scaling policies using
+    /// <a>PutScalingPolicy</a>. You can view the scaling policies for a service namespace
+    /// using <a>DescribeScalableTargets</a>. If you are no longer using a scalable target,
+    /// you can deregister it using <a>DeregisterScalableTarget</a>.
     /// </para>
     /// </summary>
     public partial class RegisterScalableTargetRequest : AmazonApplicationAutoScalingRequest
@@ -58,9 +54,9 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <summary>
         /// Gets and sets the property MaxCapacity. 
         /// <para>
-        /// The maximum value for this scalable target to scale out to in response to scaling
-        /// activities. This parameter is required if you are registering a new scalable target,
-        /// and it is optional if you are updating an existing one.
+        /// The maximum value to scale to in response to a scale out event. This parameter is
+        /// required if you are registering a scalable target and optional if you are updating
+        /// one.
         /// </para>
         /// </summary>
         public int MaxCapacity
@@ -78,9 +74,8 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <summary>
         /// Gets and sets the property MinCapacity. 
         /// <para>
-        /// The minimum value for this scalable target to scale in to in response to scaling activities.
-        /// This parameter is required if you are registering a new scalable target, and it is
-        /// optional if you are updating an existing one.
+        /// The minimum value to scale to in response to a scale in event. This parameter is required
+        /// if you are registering a scalable target and optional if you are updating one.
         /// </para>
         /// </summary>
         public int MinCapacity
@@ -98,10 +93,25 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
-        /// The unique identifier string for the resource to associate with the scalable target.
-        /// For Amazon ECS services, this value is the resource type, followed by the cluster
-        /// name and service name, such as <code>service/default/sample-webapp</code>.
+        /// The identifier of the resource associated with the scalable target. This string consists
+        /// of the resource type and unique identifier.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// ECS service - The resource type is <code>service</code> and the unique identifier
+        /// is the cluster name and service name. Example: <code>service/default/sample-webapp</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Spot fleet request - The resource type is <code>spot-fleet-request</code> and the
+        /// unique identifier is the Spot fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// EMR cluster - The resource type is <code>instancegroup</code> and the unique identifier
+        /// is the cluster ID and instance group ID. Example: <code>instancegroup/j-2EEZNYKUA1NTV/ig-1791Y4E1L8YI0</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string ResourceId
         {
@@ -118,9 +128,9 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <summary>
         /// Gets and sets the property RoleARN. 
         /// <para>
-        /// The ARN of the IAM role that allows Application Auto Scaling to modify your scalable
-        /// target on your behalf. This parameter is required if you are registering a new scalable
-        /// target, and it is optional if you are updating an existing one.
+        /// The ARN of an IAM role that allows Application Auto Scaling to modify the scalable
+        /// target on your behalf. This parameter is required when you register a scalable target
+        /// and optional when you update one.
         /// </para>
         /// </summary>
         public string RoleARN
@@ -138,10 +148,24 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <summary>
         /// Gets and sets the property ScalableDimension. 
         /// <para>
-        /// The scalable dimension associated with the scalable target. The scalable dimension
-        /// contains the service namespace, resource type, and scaling property, such as <code>ecs:service:DesiredCount</code>
-        /// for the desired task count of an Amazon ECS service.
+        /// The scalable dimension associated with the scalable target. This string consists of
+        /// the service namespace, resource type, and scaling property.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>ecs:service:DesiredCount</code> - The desired task count of an ECS service.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot
+        /// fleet request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count of
+        /// an EMR Instance Group.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public ScalableDimension ScalableDimension
         {
@@ -158,10 +182,8 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <summary>
         /// Gets and sets the property ServiceNamespace. 
         /// <para>
-        /// The namespace for the AWS service that the scalable target is associated with. For
-        /// Amazon ECS services, the namespace value is <code>ecs</code>. For more information,
-        /// see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
-        /// Service Namespaces</a> in the Amazon Web Services General Reference.
+        /// The namespace of the AWS service. For more information, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
+        /// Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </summary>
         public ServiceNamespace ServiceNamespace

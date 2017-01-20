@@ -25,7 +25,7 @@ namespace Amazon.ElasticTranscoder.Model
     ///<summary>
     /// ElasticTranscoder exception
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class AccessDeniedException : AmazonElasticTranscoderException 
@@ -79,7 +79,7 @@ namespace Amazon.ElasticTranscoder.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the AccessDeniedException class with serialized data.
         /// </summary>

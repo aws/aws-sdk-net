@@ -1,9 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿/*
+ * Copyright 2015-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Xml;
 using System.Xml.Linq;
 
@@ -11,7 +20,6 @@ using System.Xml.Linq;
 using System.Configuration;
 #endif
 
-using Amazon.Util;
 using Amazon.Util.Internal;
 
 namespace Amazon
@@ -40,9 +48,19 @@ namespace Amazon
         /// </summary>
         public const string S3UseSignatureVersion4Key = "AWS.S3.UseSignatureVersion4";
 
+        private static bool _useSignatureVersion4;
+
         static AWSConfigsS3()
         {
-#if BCL||UNITY
+#if BCL || CORECLR
+            _useSignatureVersion4 = true;
+#else
+            _useSignatureVersion4 = false;
+#endif
+            UseSigV4SetExplicitly = false;
+
+#if BCL || UNITY
+
             var appSettingValue = AWSConfigs.GetConfig(S3UseSignatureVersion4Key);
             if (!string.IsNullOrEmpty(appSettingValue))
                 UseSignatureVersion4 = bool.Parse(appSettingValue);
@@ -56,28 +74,49 @@ namespace Amazon
 
             var rootSection = new V4ClientSectionRoot(section);
             if (rootSection.S3 != null)
-                AWSConfigsS3.Configure(rootSection.S3);
+            {
+                var s3Section = rootSection.S3;
+                if (s3Section.ElementInformation.IsPresent)
+                {
+                    if (s3Section.UseSignatureVersion4.HasValue)
+                    {
+                        UseSignatureVersion4 = s3Section.UseSignatureVersion4.Value;
+                    }
+                }
+            }
+
 #endif
+
         }
 
         /// <summary>
         /// Configures if the S3 client should use Signature Version 4 signing with requests.
-        /// By default, this setting is false, though Signature Version 4 may be used by default
-        /// in some cases or with some regions. When the setting is true, Signature Version 4
-        /// will be used for all requests.
+        /// By default, this setting is true.
+        /// When the setting is true, Signature Version 4 will be used for all requests.
+        /// When it is false, Signature Version 2 will be used.
+        /// Note that when the setting is false, Signature Version 4 may still be used by
+        /// default in some cases or with some regions.
         /// </summary>
-        public static bool UseSignatureVersion4 { get; set; }
-
-#if BCL || UNITY
-        internal static void Configure(V4ClientSection section)
-        {
-            if (section.ElementInformation.IsPresent)
+        public static bool UseSignatureVersion4 {
+            get
             {
-                UseSignatureVersion4 = section.UseSignatureVersion4.GetValueOrDefault();
+                return _useSignatureVersion4;
+            }
+            set
+            {
+                UseSigV4SetExplicitly = true;
+                _useSignatureVersion4 = value;
             }
         }
-#endif
 
+        /// <summary>
+        /// Was the value of the UseSignatureVersion4 property set explicitly?
+        /// This can be done via configuration or by directly setting the property.
+        ///
+        /// This is used to determine if the user set UseSignatureVersion4 to true,
+        /// or if it's true because the default was changed to true in the SDK.
+        /// </summary>
+        internal static bool UseSigV4SetExplicitly { get; private set; }
     }
 
 #if UNITY

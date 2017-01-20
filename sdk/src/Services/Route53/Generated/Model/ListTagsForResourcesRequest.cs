@@ -29,7 +29,13 @@ namespace Amazon.Route53.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForResources operation.
+    /// Lists tags for up to 10 health checks or hosted zones.
     /// 
+    ///  
+    /// <para>
+    /// For information about using tags for cost allocation, see <a href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
+    /// Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class ListTagsForResourcesRequest : AmazonRoute53Request
     {
@@ -41,14 +47,15 @@ namespace Amazon.Route53.Model
         /// <para>
         /// The type of the resources.
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// - The resource type for health checks is <code>healthcheck</code>.
+        /// The resource type for health checks is <code>healthcheck</code>.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// - The resource type for hosted zones is <code>hostedzone</code>.
+        /// The resource type for hosted zones is <code>hostedzone</code>.
         /// </para>
+        ///  </li> </ul>
         /// </summary>
         public TagResourceType ResourceType
         {

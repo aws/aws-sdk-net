@@ -76,6 +76,12 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
                     unmarshalledObject.ElasticsearchDestinationDescription = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ExtendedS3DestinationDescription", targetDepth))
+                {
+                    var unmarshaller = ExtendedS3DestinationDescriptionUnmarshaller.Instance;
+                    unmarshalledObject.ExtendedS3DestinationDescription = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RedshiftDestinationDescription", targetDepth))
                 {
                     var unmarshaller = RedshiftDestinationDescriptionUnmarshaller.Instance;

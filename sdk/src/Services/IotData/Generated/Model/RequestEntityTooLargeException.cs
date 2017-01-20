@@ -25,7 +25,7 @@ namespace Amazon.IotData.Model
     ///<summary>
     /// IotData exception
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class RequestEntityTooLargeException : AmazonIotDataException 
@@ -79,7 +79,7 @@ namespace Amazon.IotData.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the RequestEntityTooLargeException class with serialized data.
         /// </summary>

@@ -31,7 +31,7 @@ namespace Amazon.ConfigService.Model
     /// Container for the parameters to the DescribeComplianceByResource operation.
     /// Indicates whether the specified AWS resources are compliant. If a resource is noncompliant,
     /// this action returns the number of AWS Config rules that the resource does not comply
-    /// with. 
+    /// with.
     /// 
     ///  
     /// <para>
@@ -42,17 +42,28 @@ namespace Amazon.ConfigService.Model
     /// <para>
     /// If AWS Config has no current evaluation results for the resource, it returns <code>INSUFFICIENT_DATA</code>.
     /// This result might indicate one of the following conditions about the rules that evaluate
-    /// the resource: <ul> <li>AWS Config has never invoked an evaluation for the rule. To
-    /// check whether it has, use the <code>DescribeConfigRuleEvaluationStatus</code> action
-    /// to get the <code>LastSuccessfulInvocationTime</code> and <code>LastFailedInvocationTime</code>.</li>
-    /// <li>The rule's AWS Lambda function is failing to send evaluation results to AWS Config.
-    /// Verify that the role that you assigned to your configuration recorder includes the
-    /// <code>config:PutEvaluations</code> permission. If the rule is a customer managed rule,
-    /// verify that the AWS Lambda execution role includes the <code>config:PutEvaluations</code>
-    /// permission.</li> <li>The rule's AWS Lambda function has returned <code>NOT_APPLICABLE</code>
-    /// for all evaluation results. This can occur if the resources were deleted or removed
-    /// from the rule's scope.</li></ul>
+    /// the resource:
     /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// AWS Config has never invoked an evaluation for the rule. To check whether it has,
+    /// use the <code>DescribeConfigRuleEvaluationStatus</code> action to get the <code>LastSuccessfulInvocationTime</code>
+    /// and <code>LastFailedInvocationTime</code>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The rule's AWS Lambda function is failing to send evaluation results to AWS Config.
+    /// Verify that the role that you assigned to your configuration recorder includes the
+    /// <code>config:PutEvaluations</code> permission. If the rule is a custom rule, verify
+    /// that the AWS Lambda execution role includes the <code>config:PutEvaluations</code>
+    /// permission.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The rule's AWS Lambda function has returned <code>NOT_APPLICABLE</code> for all evaluation
+    /// results. This can occur if the resources were deleted or removed from the rule's scope.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class DescribeComplianceByResourceRequest : AmazonConfigServiceRequest
     {
@@ -107,7 +118,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The <code>nextToken</code> string returned on a previous page that you use to get
+        /// The <code>NextToken</code> string returned on a previous page that you use to get
         /// the next page of results in a paginated response.
         /// </para>
         /// </summary>

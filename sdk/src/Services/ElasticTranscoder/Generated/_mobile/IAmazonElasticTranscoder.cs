@@ -23,6 +23,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.ElasticTranscoder.Model;
 
 namespace Amazon.ElasticTranscoder
@@ -35,7 +36,7 @@ namespace Amazon.ElasticTranscoder
     /// The AWS Elastic Transcoder Service.
     /// </para>
     /// </summary>
-    public partial interface IAmazonElasticTranscoder : IDisposable
+    public partial interface IAmazonElasticTranscoder : IAmazonService, IDisposable
     {
                 
         #region  CancelJob
@@ -308,6 +309,7 @@ namespace Amazon.ElasticTranscoder
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        [Obsolete("This API is deprecated and will be removed in a future release.")]
         Task<TestRoleResponse> TestRoleAsync(TestRoleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion

@@ -18,6 +18,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.EC2
     {
         private const string tagName = "DotNetNullTestTag";
         [TestMethod]
+        [TestCategory("EC2")]
         public void TestNullTags()
         {
             var vpcId = Client.CreateVpc(new CreateVpcRequest

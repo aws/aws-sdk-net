@@ -30,17 +30,36 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// <summary>
     /// Container for the parameters to the DescribeInstanceInformation operation.
     /// Describes one or more of your instances. You can use this to get information about
-    /// instances like the operating system platform, the SSM agent version, status etc. If
-    /// you specify one or more instance IDs, it returns information for those instances.
+    /// instances like the operating system platform, the SSM agent version (Linux), status
+    /// etc. If you specify one or more instance IDs, it returns information for those instances.
     /// If you do not specify instance IDs, it returns information for all your instances.
     /// If you specify an instance ID that is not valid or an instance that you do not own,
     /// you receive an error.
     /// </summary>
     public partial class DescribeInstanceInformationRequest : AmazonSimpleSystemsManagementRequest
     {
+        private List<InstanceInformationStringFilter> _filters = new List<InstanceInformationStringFilter>();
         private List<InstanceInformationFilter> _instanceInformationFilterList = new List<InstanceInformationFilter>();
         private int? _maxResults;
         private string _nextToken;
+
+        /// <summary>
+        /// Gets and sets the property Filters. 
+        /// <para>
+        /// One or more filters. Use a filter to return a more specific list of instances.
+        /// </para>
+        /// </summary>
+        public List<InstanceInformationStringFilter> Filters
+        {
+            get { return this._filters; }
+            set { this._filters = value; }
+        }
+
+        // Check to see if Filters property is set
+        internal bool IsSetFilters()
+        {
+            return this._filters != null && this._filters.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property InstanceInformationFilterList. 

@@ -30,7 +30,7 @@ namespace Amazon.SimpleNotificationService.Model
     /// <summary>
     /// Container for the parameters to the DeletePlatformApplication operation.
     /// Deletes a platform application object for one of the supported push notification services,
-    ///       such as APNS and GCM.      For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using
+    /// such as APNS and GCM. For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using
     /// Amazon SNS Mobile Push Notifications</a>.
     /// </summary>
     public partial class DeletePlatformApplicationRequest : AmazonSimpleNotificationServiceRequest

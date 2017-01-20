@@ -28,15 +28,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectoryService.Model
 {
     /// <summary>
-    /// This is the response object from the VerifyTrust operation.
+    /// Result of a VerifyTrust request.
     /// </summary>
     public partial class VerifyTrustResponse : AmazonWebServiceResponse
     {
         private string _trustId;
 
         /// <summary>
-        /// Gets and sets the property TrustId. The unique Trust ID of the trust relationship
-        /// that was verified.
+        /// Gets and sets the property TrustId. 
+        /// <para>
+        /// The unique Trust ID of the trust relationship that was verified.
+        /// </para>
         /// </summary>
         public string TrustId
         {

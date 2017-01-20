@@ -38,8 +38,8 @@ namespace Amazon.APIGateway
     ///
     /// Amazon API Gateway 
     /// <para>
-    /// Amazon API Gateway helps developers deliver robust, secure and scalable mobile and
-    /// web application backends. Amazon API Gateway allows developers to securely connect
+    /// Amazon API Gateway helps developers deliver robust, secure, and scalable mobile and
+    /// web application back ends. Amazon API Gateway allows developers to securely connect
     /// mobile and web applications to APIs that run on AWS Lambda, Amazon EC2, or other publicly
     /// addressable web services that are hosted outside of AWS.
     /// </para>
@@ -235,12 +235,18 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// Create an <a>ApiKey</a> resource.
+        /// Create an <a>ApiKey</a> resource. 
+        /// 
+        ///  <div class="seeAlso"><a href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/create-api-key.html">AWS
+        /// CLI</a></div>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateApiKey service method.</param>
         /// 
         /// <returns>The response from the CreateApiKey service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
         /// 
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
@@ -288,6 +294,9 @@ namespace Amazon.APIGateway
 
         /// <summary>
         /// Adds a new <a>Authorizer</a> resource to an existing <a>RestApi</a> resource.
+        /// 
+        ///  <div class="seeAlso"><a href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/create-authorizer.html">AWS
+        /// CLI</a></div>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAuthorizer service method.</param>
         /// 
@@ -441,6 +450,116 @@ namespace Amazon.APIGateway
             var unmarshaller = CreateDeploymentResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateDeploymentRequest,CreateDeploymentResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateDocumentationPart
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDocumentationPart service method.</param>
+        /// 
+        /// <returns>The response from the CreateDocumentationPart service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        public CreateDocumentationPartResponse CreateDocumentationPart(CreateDocumentationPartRequest request)
+        {
+            var marshaller = new CreateDocumentationPartRequestMarshaller();
+            var unmarshaller = CreateDocumentationPartResponseUnmarshaller.Instance;
+
+            return Invoke<CreateDocumentationPartRequest,CreateDocumentationPartResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateDocumentationPart operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateDocumentationPart operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<CreateDocumentationPartResponse> CreateDocumentationPartAsync(CreateDocumentationPartRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateDocumentationPartRequestMarshaller();
+            var unmarshaller = CreateDocumentationPartResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateDocumentationPartRequest,CreateDocumentationPartResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateDocumentationVersion
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDocumentationVersion service method.</param>
+        /// 
+        /// <returns>The response from the CreateDocumentationVersion service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        public CreateDocumentationVersionResponse CreateDocumentationVersion(CreateDocumentationVersionRequest request)
+        {
+            var marshaller = new CreateDocumentationVersionRequestMarshaller();
+            var unmarshaller = CreateDocumentationVersionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateDocumentationVersionRequest,CreateDocumentationVersionResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateDocumentationVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateDocumentationVersion operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<CreateDocumentationVersionResponse> CreateDocumentationVersionAsync(CreateDocumentationVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateDocumentationVersionRequestMarshaller();
+            var unmarshaller = CreateDocumentationVersionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateDocumentationVersionRequest,CreateDocumentationVersionResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -710,6 +829,114 @@ namespace Amazon.APIGateway
 
         #endregion
         
+        #region  CreateUsagePlan
+
+
+        /// <summary>
+        /// Creates a usage plan with the throttle and quota limits, as well as the associated
+        /// API stages, specified in the payload.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateUsagePlan service method.</param>
+        /// 
+        /// <returns>The response from the CreateUsagePlan service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        public CreateUsagePlanResponse CreateUsagePlan(CreateUsagePlanRequest request)
+        {
+            var marshaller = new CreateUsagePlanRequestMarshaller();
+            var unmarshaller = CreateUsagePlanResponseUnmarshaller.Instance;
+
+            return Invoke<CreateUsagePlanRequest,CreateUsagePlanResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateUsagePlan operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateUsagePlan operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<CreateUsagePlanResponse> CreateUsagePlanAsync(CreateUsagePlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateUsagePlanRequestMarshaller();
+            var unmarshaller = CreateUsagePlanResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateUsagePlanRequest,CreateUsagePlanResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateUsagePlanKey
+
+
+        /// <summary>
+        /// Creates a usage plan key for adding an existing API key to a usage plan.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateUsagePlanKey service method.</param>
+        /// 
+        /// <returns>The response from the CreateUsagePlanKey service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        public CreateUsagePlanKeyResponse CreateUsagePlanKey(CreateUsagePlanKeyRequest request)
+        {
+            var marshaller = new CreateUsagePlanKeyRequestMarshaller();
+            var unmarshaller = CreateUsagePlanKeyResponseUnmarshaller.Instance;
+
+            return Invoke<CreateUsagePlanKeyRequest,CreateUsagePlanKeyResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateUsagePlanKey operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateUsagePlanKey operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<CreateUsagePlanKeyResponse> CreateUsagePlanKeyAsync(CreateUsagePlanKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateUsagePlanKeyRequestMarshaller();
+            var unmarshaller = CreateUsagePlanKeyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateUsagePlanKeyRequest,CreateUsagePlanKeyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteApiKey
 
 
@@ -761,6 +988,9 @@ namespace Amazon.APIGateway
 
         /// <summary>
         /// Deletes an existing <a>Authorizer</a> resource.
+        /// 
+        ///  <div class="seeAlso"><a href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/delete-authorizer.html">AWS
+        /// CLI</a></div>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAuthorizer service method.</param>
         /// 
@@ -953,6 +1183,110 @@ namespace Amazon.APIGateway
 
         #endregion
         
+        #region  DeleteDocumentationPart
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDocumentationPart service method.</param>
+        /// 
+        /// <returns>The response from the DeleteDocumentationPart service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        public DeleteDocumentationPartResponse DeleteDocumentationPart(DeleteDocumentationPartRequest request)
+        {
+            var marshaller = new DeleteDocumentationPartRequestMarshaller();
+            var unmarshaller = DeleteDocumentationPartResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDocumentationPartRequest,DeleteDocumentationPartResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteDocumentationPart operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDocumentationPart operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteDocumentationPartResponse> DeleteDocumentationPartAsync(DeleteDocumentationPartRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteDocumentationPartRequestMarshaller();
+            var unmarshaller = DeleteDocumentationPartResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteDocumentationPartRequest,DeleteDocumentationPartResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteDocumentationVersion
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDocumentationVersion service method.</param>
+        /// 
+        /// <returns>The response from the DeleteDocumentationVersion service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        public DeleteDocumentationVersionResponse DeleteDocumentationVersion(DeleteDocumentationVersionRequest request)
+        {
+            var marshaller = new DeleteDocumentationVersionRequestMarshaller();
+            var unmarshaller = DeleteDocumentationVersionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDocumentationVersionRequest,DeleteDocumentationVersionResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteDocumentationVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDocumentationVersion operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteDocumentationVersionResponse> DeleteDocumentationVersionAsync(DeleteDocumentationVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteDocumentationVersionRequestMarshaller();
+            var unmarshaller = DeleteDocumentationVersionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteDocumentationVersionRequest,DeleteDocumentationVersionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteDomainName
 
 
@@ -1008,6 +1342,9 @@ namespace Amazon.APIGateway
         /// <param name="request">Container for the necessary parameters to execute the DeleteIntegration service method.</param>
         /// 
         /// <returns>The response from the DeleteIntegration service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// 
         /// </exception>
@@ -1054,6 +1391,12 @@ namespace Amazon.APIGateway
         /// <param name="request">Container for the necessary parameters to execute the DeleteIntegrationResponse service method.</param>
         /// 
         /// <returns>The response from the DeleteIntegrationResponse service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// 
         /// </exception>
@@ -1100,6 +1443,9 @@ namespace Amazon.APIGateway
         /// <param name="request">Container for the necessary parameters to execute the DeleteMethod service method.</param>
         /// 
         /// <returns>The response from the DeleteMethod service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// 
         /// </exception>
@@ -1146,6 +1492,12 @@ namespace Amazon.APIGateway
         /// <param name="request">Container for the necessary parameters to execute the DeleteMethodResponse service method.</param>
         /// 
         /// <returns>The response from the DeleteMethodResponse service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// 
         /// </exception>
@@ -1380,6 +1732,108 @@ namespace Amazon.APIGateway
             var unmarshaller = DeleteStageResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteStageRequest,DeleteStageResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteUsagePlan
+
+
+        /// <summary>
+        /// Deletes a usage plan of a given plan Id.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteUsagePlan service method.</param>
+        /// 
+        /// <returns>The response from the DeleteUsagePlan service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        public DeleteUsagePlanResponse DeleteUsagePlan(DeleteUsagePlanRequest request)
+        {
+            var marshaller = new DeleteUsagePlanRequestMarshaller();
+            var unmarshaller = DeleteUsagePlanResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteUsagePlanRequest,DeleteUsagePlanResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteUsagePlan operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteUsagePlan operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteUsagePlanResponse> DeleteUsagePlanAsync(DeleteUsagePlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteUsagePlanRequestMarshaller();
+            var unmarshaller = DeleteUsagePlanResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteUsagePlanRequest,DeleteUsagePlanResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteUsagePlanKey
+
+
+        /// <summary>
+        /// Deletes a usage plan key and remove the underlying API key from the associated usage
+        /// plan.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteUsagePlanKey service method.</param>
+        /// 
+        /// <returns>The response from the DeleteUsagePlanKey service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        public DeleteUsagePlanKeyResponse DeleteUsagePlanKey(DeleteUsagePlanKeyRequest request)
+        {
+            var marshaller = new DeleteUsagePlanKeyRequestMarshaller();
+            var unmarshaller = DeleteUsagePlanKeyResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteUsagePlanKeyRequest,DeleteUsagePlanKeyResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteUsagePlanKey operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteUsagePlanKey operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteUsagePlanKeyResponse> DeleteUsagePlanKeyAsync(DeleteUsagePlanKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteUsagePlanKeyRequestMarshaller();
+            var unmarshaller = DeleteUsagePlanKeyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteUsagePlanKeyRequest,DeleteUsagePlanKeyResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1672,6 +2126,9 @@ namespace Amazon.APIGateway
 
         /// <summary>
         /// Describe an existing <a>Authorizer</a> resource.
+        /// 
+        ///  <div class="seeAlso"><a href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/get-authorizer.html">AWS
+        /// CLI</a></div>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAuthorizer service method.</param>
         /// 
@@ -1718,6 +2175,9 @@ namespace Amazon.APIGateway
 
         /// <summary>
         /// Describe an existing <a>Authorizers</a> resource.
+        /// 
+        ///  <div class="seeAlso"><a href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/get-authorizers.html">AWS
+        /// CLI</a></div>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAuthorizers service method.</param>
         /// 
@@ -2039,6 +2499,196 @@ namespace Amazon.APIGateway
             var unmarshaller = GetDeploymentsResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetDeploymentsRequest,GetDeploymentsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetDocumentationPart
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDocumentationPart service method.</param>
+        /// 
+        /// <returns>The response from the GetDocumentationPart service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        public GetDocumentationPartResponse GetDocumentationPart(GetDocumentationPartRequest request)
+        {
+            var marshaller = new GetDocumentationPartRequestMarshaller();
+            var unmarshaller = GetDocumentationPartResponseUnmarshaller.Instance;
+
+            return Invoke<GetDocumentationPartRequest,GetDocumentationPartResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDocumentationPart operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDocumentationPart operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetDocumentationPartResponse> GetDocumentationPartAsync(GetDocumentationPartRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetDocumentationPartRequestMarshaller();
+            var unmarshaller = GetDocumentationPartResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetDocumentationPartRequest,GetDocumentationPartResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetDocumentationParts
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDocumentationParts service method.</param>
+        /// 
+        /// <returns>The response from the GetDocumentationParts service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        public GetDocumentationPartsResponse GetDocumentationParts(GetDocumentationPartsRequest request)
+        {
+            var marshaller = new GetDocumentationPartsRequestMarshaller();
+            var unmarshaller = GetDocumentationPartsResponseUnmarshaller.Instance;
+
+            return Invoke<GetDocumentationPartsRequest,GetDocumentationPartsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDocumentationParts operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDocumentationParts operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetDocumentationPartsResponse> GetDocumentationPartsAsync(GetDocumentationPartsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetDocumentationPartsRequestMarshaller();
+            var unmarshaller = GetDocumentationPartsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetDocumentationPartsRequest,GetDocumentationPartsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetDocumentationVersion
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDocumentationVersion service method.</param>
+        /// 
+        /// <returns>The response from the GetDocumentationVersion service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        public GetDocumentationVersionResponse GetDocumentationVersion(GetDocumentationVersionRequest request)
+        {
+            var marshaller = new GetDocumentationVersionRequestMarshaller();
+            var unmarshaller = GetDocumentationVersionResponseUnmarshaller.Instance;
+
+            return Invoke<GetDocumentationVersionRequest,GetDocumentationVersionResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDocumentationVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDocumentationVersion operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetDocumentationVersionResponse> GetDocumentationVersionAsync(GetDocumentationVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetDocumentationVersionRequestMarshaller();
+            var unmarshaller = GetDocumentationVersionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetDocumentationVersionRequest,GetDocumentationVersionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetDocumentationVersions
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDocumentationVersions service method.</param>
+        /// 
+        /// <returns>The response from the GetDocumentationVersions service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        public GetDocumentationVersionsResponse GetDocumentationVersions(GetDocumentationVersionsRequest request)
+        {
+            var marshaller = new GetDocumentationVersionsRequestMarshaller();
+            var unmarshaller = GetDocumentationVersionsResponseUnmarshaller.Instance;
+
+            return Invoke<GetDocumentationVersionsRequest,GetDocumentationVersionsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDocumentationVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDocumentationVersions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetDocumentationVersionsResponse> GetDocumentationVersionsAsync(GetDocumentationVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetDocumentationVersionsRequestMarshaller();
+            var unmarshaller = GetDocumentationVersionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetDocumentationVersionsRequest,GetDocumentationVersionsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -2754,6 +3404,95 @@ namespace Amazon.APIGateway
 
         #endregion
         
+        #region  GetSdkType
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSdkType service method.</param>
+        /// 
+        /// <returns>The response from the GetSdkType service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        public GetSdkTypeResponse GetSdkType(GetSdkTypeRequest request)
+        {
+            var marshaller = new GetSdkTypeRequestMarshaller();
+            var unmarshaller = GetSdkTypeResponseUnmarshaller.Instance;
+
+            return Invoke<GetSdkTypeRequest,GetSdkTypeResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSdkType operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetSdkType operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetSdkTypeResponse> GetSdkTypeAsync(GetSdkTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetSdkTypeRequestMarshaller();
+            var unmarshaller = GetSdkTypeResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetSdkTypeRequest,GetSdkTypeResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetSdkTypes
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSdkTypes service method.</param>
+        /// 
+        /// <returns>The response from the GetSdkTypes service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        public GetSdkTypesResponse GetSdkTypes(GetSdkTypesRequest request)
+        {
+            var marshaller = new GetSdkTypesRequestMarshaller();
+            var unmarshaller = GetSdkTypesResponseUnmarshaller.Instance;
+
+            return Invoke<GetSdkTypesRequest,GetSdkTypesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSdkTypes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetSdkTypes operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetSdkTypesResponse> GetSdkTypesAsync(GetSdkTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetSdkTypesRequestMarshaller();
+            var unmarshaller = GetSdkTypesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetSdkTypesRequest,GetSdkTypesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetStage
 
 
@@ -2846,6 +3585,362 @@ namespace Amazon.APIGateway
 
         #endregion
         
+        #region  GetUsage
+
+
+        /// <summary>
+        /// Gets the usage data of a usage plan in a specified time interval.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetUsage service method.</param>
+        /// 
+        /// <returns>The response from the GetUsage service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        public GetUsageResponse GetUsage(GetUsageRequest request)
+        {
+            var marshaller = new GetUsageRequestMarshaller();
+            var unmarshaller = GetUsageResponseUnmarshaller.Instance;
+
+            return Invoke<GetUsageRequest,GetUsageResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetUsage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetUsage operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetUsageResponse> GetUsageAsync(GetUsageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetUsageRequestMarshaller();
+            var unmarshaller = GetUsageResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetUsageRequest,GetUsageResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetUsagePlan
+
+
+        /// <summary>
+        /// Gets a usage plan of a given plan identifier.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetUsagePlan service method.</param>
+        /// 
+        /// <returns>The response from the GetUsagePlan service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        public GetUsagePlanResponse GetUsagePlan(GetUsagePlanRequest request)
+        {
+            var marshaller = new GetUsagePlanRequestMarshaller();
+            var unmarshaller = GetUsagePlanResponseUnmarshaller.Instance;
+
+            return Invoke<GetUsagePlanRequest,GetUsagePlanResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetUsagePlan operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetUsagePlan operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetUsagePlanResponse> GetUsagePlanAsync(GetUsagePlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetUsagePlanRequestMarshaller();
+            var unmarshaller = GetUsagePlanResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetUsagePlanRequest,GetUsagePlanResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetUsagePlanKey
+
+
+        /// <summary>
+        /// Gets a usage plan key of a given key identifier.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetUsagePlanKey service method.</param>
+        /// 
+        /// <returns>The response from the GetUsagePlanKey service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        public GetUsagePlanKeyResponse GetUsagePlanKey(GetUsagePlanKeyRequest request)
+        {
+            var marshaller = new GetUsagePlanKeyRequestMarshaller();
+            var unmarshaller = GetUsagePlanKeyResponseUnmarshaller.Instance;
+
+            return Invoke<GetUsagePlanKeyRequest,GetUsagePlanKeyResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetUsagePlanKey operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetUsagePlanKey operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetUsagePlanKeyResponse> GetUsagePlanKeyAsync(GetUsagePlanKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetUsagePlanKeyRequestMarshaller();
+            var unmarshaller = GetUsagePlanKeyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetUsagePlanKeyRequest,GetUsagePlanKeyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetUsagePlanKeys
+
+
+        /// <summary>
+        /// Gets all the usage plan keys representing the API keys added to a specified usage
+        /// plan.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetUsagePlanKeys service method.</param>
+        /// 
+        /// <returns>The response from the GetUsagePlanKeys service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        public GetUsagePlanKeysResponse GetUsagePlanKeys(GetUsagePlanKeysRequest request)
+        {
+            var marshaller = new GetUsagePlanKeysRequestMarshaller();
+            var unmarshaller = GetUsagePlanKeysResponseUnmarshaller.Instance;
+
+            return Invoke<GetUsagePlanKeysRequest,GetUsagePlanKeysResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetUsagePlanKeys operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetUsagePlanKeys operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetUsagePlanKeysResponse> GetUsagePlanKeysAsync(GetUsagePlanKeysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetUsagePlanKeysRequestMarshaller();
+            var unmarshaller = GetUsagePlanKeysResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetUsagePlanKeysRequest,GetUsagePlanKeysResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetUsagePlans
+
+
+        /// <summary>
+        /// Gets all the usage plans of the caller's account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetUsagePlans service method.</param>
+        /// 
+        /// <returns>The response from the GetUsagePlans service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        public GetUsagePlansResponse GetUsagePlans(GetUsagePlansRequest request)
+        {
+            var marshaller = new GetUsagePlansRequestMarshaller();
+            var unmarshaller = GetUsagePlansResponseUnmarshaller.Instance;
+
+            return Invoke<GetUsagePlansRequest,GetUsagePlansResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetUsagePlans operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetUsagePlans operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetUsagePlansResponse> GetUsagePlansAsync(GetUsagePlansRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetUsagePlansRequestMarshaller();
+            var unmarshaller = GetUsagePlansResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetUsagePlansRequest,GetUsagePlansResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ImportApiKeys
+
+
+        /// <summary>
+        /// Import API keys from an external source, such as a CSV-formatted file.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ImportApiKeys service method.</param>
+        /// 
+        /// <returns>The response from the ImportApiKeys service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        public ImportApiKeysResponse ImportApiKeys(ImportApiKeysRequest request)
+        {
+            var marshaller = new ImportApiKeysRequestMarshaller();
+            var unmarshaller = ImportApiKeysResponseUnmarshaller.Instance;
+
+            return Invoke<ImportApiKeysRequest,ImportApiKeysResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ImportApiKeys operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ImportApiKeys operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ImportApiKeysResponse> ImportApiKeysAsync(ImportApiKeysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ImportApiKeysRequestMarshaller();
+            var unmarshaller = ImportApiKeysResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ImportApiKeysRequest,ImportApiKeysResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ImportDocumentationParts
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ImportDocumentationParts service method.</param>
+        /// 
+        /// <returns>The response from the ImportDocumentationParts service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        public ImportDocumentationPartsResponse ImportDocumentationParts(ImportDocumentationPartsRequest request)
+        {
+            var marshaller = new ImportDocumentationPartsRequestMarshaller();
+            var unmarshaller = ImportDocumentationPartsResponseUnmarshaller.Instance;
+
+            return Invoke<ImportDocumentationPartsRequest,ImportDocumentationPartsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ImportDocumentationParts operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ImportDocumentationParts operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ImportDocumentationPartsResponse> ImportDocumentationPartsAsync(ImportDocumentationPartsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ImportDocumentationPartsRequestMarshaller();
+            var unmarshaller = ImportDocumentationPartsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ImportDocumentationPartsRequest,ImportDocumentationPartsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ImportRestApi
 
 
@@ -2857,6 +3952,9 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the ImportRestApi service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
         /// 
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
@@ -3127,6 +4225,9 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
         /// 
         /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
         /// 
         /// </exception>
@@ -3173,6 +4274,9 @@ namespace Amazon.APIGateway
         /// <summary>
         /// Simulate the execution of an <a>Authorizer</a> in your <a>RestApi</a> with headers,
         /// parameters, and an incoming request body.
+        /// 
+        ///  <div class="seeAlso"> <a href="http://docs.aws.amazon.com/apigateway/latest/developerguide/use-custom-authorizer.html">Enable
+        /// custom authorizers</a> </div>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TestInvokeAuthorizer service method.</param>
         /// 
@@ -3328,6 +4432,9 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
         /// 
         /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// 
         /// </exception>
@@ -3370,6 +4477,9 @@ namespace Amazon.APIGateway
 
         /// <summary>
         /// Updates an existing <a>Authorizer</a> resource.
+        /// 
+        ///  <div class="seeAlso"><a href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/update-authorizer.html">AWS
+        /// CLI</a></div>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAuthorizer service method.</param>
         /// 
@@ -3562,6 +4672,113 @@ namespace Amazon.APIGateway
             var unmarshaller = UpdateDeploymentResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateDeploymentRequest,UpdateDeploymentResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateDocumentationPart
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDocumentationPart service method.</param>
+        /// 
+        /// <returns>The response from the UpdateDocumentationPart service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        public UpdateDocumentationPartResponse UpdateDocumentationPart(UpdateDocumentationPartRequest request)
+        {
+            var marshaller = new UpdateDocumentationPartRequestMarshaller();
+            var unmarshaller = UpdateDocumentationPartResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateDocumentationPartRequest,UpdateDocumentationPartResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateDocumentationPart operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDocumentationPart operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<UpdateDocumentationPartResponse> UpdateDocumentationPartAsync(UpdateDocumentationPartRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateDocumentationPartRequestMarshaller();
+            var unmarshaller = UpdateDocumentationPartResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateDocumentationPartRequest,UpdateDocumentationPartResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateDocumentationVersion
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDocumentationVersion service method.</param>
+        /// 
+        /// <returns>The response from the UpdateDocumentationVersion service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        public UpdateDocumentationVersionResponse UpdateDocumentationVersion(UpdateDocumentationVersionRequest request)
+        {
+            var marshaller = new UpdateDocumentationVersionRequestMarshaller();
+            var unmarshaller = UpdateDocumentationVersionResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateDocumentationVersionRequest,UpdateDocumentationVersionResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateDocumentationVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDocumentationVersion operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<UpdateDocumentationVersionResponse> UpdateDocumentationVersionAsync(UpdateDocumentationVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateDocumentationVersionRequestMarshaller();
+            var unmarshaller = UpdateDocumentationVersionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateDocumentationVersionRequest,UpdateDocumentationVersionResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -4033,6 +5250,108 @@ namespace Amazon.APIGateway
             var unmarshaller = UpdateStageResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateStageRequest,UpdateStageResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateUsage
+
+
+        /// <summary>
+        /// Grants a temporary extension to the reamining quota of a usage plan associated with
+        /// a specified API key.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateUsage service method.</param>
+        /// 
+        /// <returns>The response from the UpdateUsage service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        public UpdateUsageResponse UpdateUsage(UpdateUsageRequest request)
+        {
+            var marshaller = new UpdateUsageRequestMarshaller();
+            var unmarshaller = UpdateUsageResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateUsageRequest,UpdateUsageResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateUsage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateUsage operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<UpdateUsageResponse> UpdateUsageAsync(UpdateUsageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateUsageRequestMarshaller();
+            var unmarshaller = UpdateUsageResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateUsageRequest,UpdateUsageResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateUsagePlan
+
+
+        /// <summary>
+        /// Updates a usage plan of a given plan Id.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateUsagePlan service method.</param>
+        /// 
+        /// <returns>The response from the UpdateUsagePlan service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        public UpdateUsagePlanResponse UpdateUsagePlan(UpdateUsagePlanRequest request)
+        {
+            var marshaller = new UpdateUsagePlanRequestMarshaller();
+            var unmarshaller = UpdateUsagePlanResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateUsagePlanRequest,UpdateUsagePlanResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateUsagePlan operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateUsagePlan operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<UpdateUsagePlanResponse> UpdateUsagePlanAsync(UpdateUsagePlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateUsagePlanRequestMarshaller();
+            var unmarshaller = UpdateUsagePlanResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateUsagePlanRequest,UpdateUsagePlanResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

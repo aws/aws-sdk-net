@@ -103,7 +103,7 @@ namespace Amazon.S3.Internal
             if (request.Headers.TryGetValue(HeaderKeys.XAmzServerSideEncryptionHeader, out sseHeaderValue) &&
                 string.Equals(sseHeaderValue, ServerSideEncryptionMethod.AWSKMS.Value, StringComparison.Ordinal))
             {
-                    request.UseSigV4 = true;
+                request.UseSigV4 = true;
             }
 
             var bucketName = GetBucketName(request.ResourcePath);
@@ -141,7 +141,7 @@ namespace Amazon.S3.Internal
                     request.CanonicalResourcePrefix = canonicalBucketName;
                 }
             }
-                        
+
             if (s3Config.UseAccelerateEndpoint)
             {
                 // Validate if bucket name is accelerate compatible and enable acceleration by using
@@ -158,10 +158,10 @@ namespace Amazon.S3.Internal
                 var originalRequest = request.OriginalRequest;
                 bool accelerateSupportedApi = !UnsupportedAccelerateRequestTypes.Contains(originalRequest.GetType());
 
-                // Skip requests which are not supported                 
+                // Skip requests which are not supported
                 if (accelerateSupportedApi)
                 {
-                    request.Endpoint = GetAccelerateEndpoint(bucketName, config.UseHttp);
+                    request.Endpoint = GetAccelerateEndpoint(bucketName, s3Config);
 
                     if (request.UseSigV4 && s3Config.RegionEndpoint != null)
                     {
@@ -177,12 +177,12 @@ namespace Amazon.S3.Internal
             }
         }
 
-        private static Uri GetAccelerateEndpoint(string bucketName, bool useHttp)
+        private static Uri GetAccelerateEndpoint(string bucketName, AmazonS3Config config)
         {
             var url = new Uri(string.Format(CultureInfo.InvariantCulture, "{0}{1}.{2}", 
-                useHttp ? "http://" : "https://", 
+                config.UseHttp ? "http://" : "https://", 
                 bucketName,
-                AmazonS3Config.AccelerateEndpoint));
+                config.AccelerateEndpoint));
             return url;
         }
 

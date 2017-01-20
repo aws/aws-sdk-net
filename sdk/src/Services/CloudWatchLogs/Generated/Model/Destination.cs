@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
-    /// A cross account destination that is the recipient of subscription log events.
+    /// Represents a cross-account destination that receives subscription log events.
     /// </summary>
     public partial class Destination
     {
@@ -61,7 +61,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// ARN of this destination.
+        /// The ARN of this destination.
         /// </para>
         /// </summary>
         public string Arn
@@ -79,8 +79,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00
-        /// UTC specifying when this destination was created.
+        /// The creation time of the destination.
         /// </para>
         /// </summary>
         public long CreationTime
@@ -98,7 +97,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property DestinationName. 
         /// <para>
-        /// Name of the destination.
+        /// The name of the destination.
         /// </para>
         /// </summary>
         public string DestinationName
@@ -116,7 +115,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// A role for impersonation for delivering log events to the target.
+        /// A role for impersonation, used when delivering log events to the target.
         /// </para>
         /// </summary>
         public string RoleArn
@@ -134,8 +133,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property TargetArn. 
         /// <para>
-        /// ARN of the physical target where the log events will be delivered (eg. ARN of a Kinesis
-        /// stream).
+        /// The Amazon Resource Name (ARN) of the physical target where the log events will be
+        /// delivered (for example, a Kinesis stream).
         /// </para>
         /// </summary>
         public string TargetArn

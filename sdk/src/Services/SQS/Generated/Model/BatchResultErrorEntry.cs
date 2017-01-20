@@ -59,7 +59,7 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The id of an entry in a batch request.
+        /// The <code>Id</code> of an entry in a batch request.
         /// </para>
         /// </summary>
         public string Id
@@ -95,7 +95,7 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Gets and sets the property SenderFault. 
         /// <para>
-        /// Whether the error happened due to the sender's fault.
+        /// Specifies whether the error happened due to the sender's fault.
         /// </para>
         /// </summary>
         public bool SenderFault

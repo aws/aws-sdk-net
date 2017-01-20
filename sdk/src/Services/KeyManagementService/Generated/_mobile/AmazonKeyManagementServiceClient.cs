@@ -154,6 +154,66 @@ namespace Amazon.KeyManagementService
         
         #region Constructors
 
+#if CORECLR
+    
+        /// <summary>
+        /// Constructs AmazonKeyManagementServiceClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
+        public AmazonKeyManagementServiceClient()
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonKeyManagementServiceConfig()) { }
+
+        /// <summary>
+        /// Constructs AmazonKeyManagementServiceClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
+        /// <param name="region">The region to connect.</param>
+        public AmazonKeyManagementServiceClient(RegionEndpoint region)
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonKeyManagementServiceConfig{RegionEndpoint = region}) { }
+
+        /// <summary>
+        /// Constructs AmazonKeyManagementServiceClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
+        /// <param name="config">The AmazonKeyManagementServiceClient Configuration Object</param>
+        public AmazonKeyManagementServiceClient(AmazonKeyManagementServiceConfig config)
+            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+
+#endif
+
         /// <summary>
         /// Constructs AmazonKeyManagementServiceClient with AWS Credentials
         /// </summary>
@@ -302,7 +362,7 @@ namespace Amazon.KeyManagementService
         /// Customer Master Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
         /// </para>
         /// </summary>
-        /// <param name="keyId">The unique identifier for the customer master key (CMK) for which to cancel deletion. To specify this value, use the unique key ID or the Amazon Resource Name (ARN) of the CMK. Examples: <ul> <li> Unique key ID: 1234abcd-12ab-34cd-56ef-1234567890ab </li> <li> Key ARN: arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab </li> </ul> To obtain the unique key ID and key ARN for a given CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
+        /// <param name="keyId">The unique identifier for the customer master key (CMK) for which to cancel deletion. To specify this value, use the unique key ID or the Amazon Resource Name (ARN) of the CMK. Examples: <ul> <li> Unique key ID: 1234abcd-12ab-34cd-56ef-1234567890ab </li> <li> Key ARN: arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab </li> </ul> To obtain the unique key ID and key ARN for a given CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -324,15 +384,15 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a customer master key
-        /// (CMK), see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
-        /// Service Developer Guide</i>.
+        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/CancelKeyDeletion">REST API Reference for CancelKeyDeletion Operation</seealso>
         public Task<CancelKeyDeletionResponse> CancelKeyDeletionAsync(string keyId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new CancelKeyDeletionRequest();
@@ -350,6 +410,7 @@ namespace Amazon.KeyManagementService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/CancelKeyDeletion">REST API Reference for CancelKeyDeletion Operation</seealso>
         public Task<CancelKeyDeletionResponse> CancelKeyDeletionAsync(CancelKeyDeletionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CancelKeyDeletionRequestMarshaller();
@@ -416,10 +477,9 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a customer master key
-        /// (CMK), see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
-        /// Service Developer Guide</i>.
+        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.LimitExceededException">
@@ -430,6 +490,7 @@ namespace Amazon.KeyManagementService
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/CreateAlias">REST API Reference for CreateAlias Operation</seealso>
         public Task<CreateAliasResponse> CreateAliasAsync(string aliasName, string targetKeyId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new CreateAliasRequest();
@@ -448,6 +509,7 @@ namespace Amazon.KeyManagementService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/CreateAlias">REST API Reference for CreateAlias Operation</seealso>
         public Task<CreateAliasResponse> CreateAliasAsync(CreateAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateAliasRequestMarshaller();
@@ -479,6 +541,7 @@ namespace Amazon.KeyManagementService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/CreateGrant">REST API Reference for CreateGrant Operation</seealso>
         public Task<CreateGrantResponse> CreateGrantAsync(CreateGrantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateGrantRequestMarshaller();
@@ -510,6 +573,7 @@ namespace Amazon.KeyManagementService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/CreateKey">REST API Reference for CreateKey Operation</seealso>
         public Task<CreateKeyResponse> CreateKeyAsync(CreateKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateKeyRequestMarshaller();
@@ -541,6 +605,7 @@ namespace Amazon.KeyManagementService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/Decrypt">REST API Reference for Decrypt Operation</seealso>
         public Task<DecryptResponse> DecryptAsync(DecryptRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DecryptRequestMarshaller();
@@ -585,15 +650,15 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a customer master key
-        /// (CMK), see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
-        /// Service Developer Guide</i>.
+        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DeleteAlias">REST API Reference for DeleteAlias Operation</seealso>
         public Task<DeleteAliasResponse> DeleteAliasAsync(string aliasName, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new DeleteAliasRequest();
@@ -611,12 +676,45 @@ namespace Amazon.KeyManagementService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DeleteAlias">REST API Reference for DeleteAlias Operation</seealso>
         public Task<DeleteAliasResponse> DeleteAliasAsync(DeleteAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteAliasRequestMarshaller();
             var unmarshaller = DeleteAliasResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteAliasRequest,DeleteAliasResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteImportedKeyMaterial
+
+        internal DeleteImportedKeyMaterialResponse DeleteImportedKeyMaterial(DeleteImportedKeyMaterialRequest request)
+        {
+            var marshaller = new DeleteImportedKeyMaterialRequestMarshaller();
+            var unmarshaller = DeleteImportedKeyMaterialResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteImportedKeyMaterialRequest,DeleteImportedKeyMaterialResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteImportedKeyMaterial operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteImportedKeyMaterial operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DeleteImportedKeyMaterial">REST API Reference for DeleteImportedKeyMaterial Operation</seealso>
+        public Task<DeleteImportedKeyMaterialResponse> DeleteImportedKeyMaterialAsync(DeleteImportedKeyMaterialRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteImportedKeyMaterialRequestMarshaller();
+            var unmarshaller = DeleteImportedKeyMaterialResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteImportedKeyMaterialRequest,DeleteImportedKeyMaterialResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -655,6 +753,7 @@ namespace Amazon.KeyManagementService
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DescribeKey">REST API Reference for DescribeKey Operation</seealso>
         public Task<DescribeKeyResponse> DescribeKeyAsync(string keyId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new DescribeKeyRequest();
@@ -672,6 +771,7 @@ namespace Amazon.KeyManagementService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DescribeKey">REST API Reference for DescribeKey Operation</seealso>
         public Task<DescribeKeyResponse> DescribeKeyAsync(DescribeKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeKeyRequestMarshaller();
@@ -701,7 +801,7 @@ namespace Amazon.KeyManagementService
         /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
         /// Service Developer Guide</i>.
         /// </summary>
-        /// <param name="keyId">A unique identifier for the CMK. Use the CMK's unique identifier or its Amazon Resource Name (ARN). For example: <ul> <li> Unique ID: 1234abcd-12ab-34cd-56ef-1234567890ab </li> <li> ARN: arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab </li> </ul></param>
+        /// <param name="keyId">A unique identifier for the CMK. Use the CMK's unique identifier or its Amazon Resource Name (ARN). For example: <ul> <li> Unique ID: 1234abcd-12ab-34cd-56ef-1234567890ab </li> <li> ARN: arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab </li> </ul></param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -723,15 +823,15 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a customer master key
-        /// (CMK), see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
-        /// Service Developer Guide</i>.
+        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DisableKey">REST API Reference for DisableKey Operation</seealso>
         public Task<DisableKeyResponse> DisableKeyAsync(string keyId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new DisableKeyRequest();
@@ -749,6 +849,7 @@ namespace Amazon.KeyManagementService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DisableKey">REST API Reference for DisableKey Operation</seealso>
         public Task<DisableKeyResponse> DisableKeyAsync(DisableKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DisableKeyRequestMarshaller();
@@ -784,7 +885,7 @@ namespace Amazon.KeyManagementService
         /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.DisabledException">
-        /// The request was rejected because the specified key was marked as disabled.
+        /// The request was rejected because the specified CMK is not enabled.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
         /// The request was rejected because a specified ARN was not valid.
@@ -799,15 +900,19 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a customer master key
-        /// (CMK), see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
-        /// Service Developer Guide</i>.
+        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.UnsupportedOperationException">
+        /// The request was rejected because a specified parameter is not supported or a specified
+        /// resource is not valid for this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DisableKeyRotation">REST API Reference for DisableKeyRotation Operation</seealso>
         public Task<DisableKeyRotationResponse> DisableKeyRotationAsync(string keyId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new DisableKeyRotationRequest();
@@ -825,6 +930,7 @@ namespace Amazon.KeyManagementService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DisableKeyRotation">REST API Reference for DisableKeyRotation Operation</seealso>
         public Task<DisableKeyRotationResponse> DisableKeyRotationAsync(DisableKeyRotationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DisableKeyRotationRequestMarshaller();
@@ -872,10 +978,9 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a customer master key
-        /// (CMK), see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
-        /// Service Developer Guide</i>.
+        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.LimitExceededException">
@@ -886,6 +991,7 @@ namespace Amazon.KeyManagementService
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/EnableKey">REST API Reference for EnableKey Operation</seealso>
         public Task<EnableKeyResponse> EnableKeyAsync(string keyId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new EnableKeyRequest();
@@ -903,6 +1009,7 @@ namespace Amazon.KeyManagementService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/EnableKey">REST API Reference for EnableKey Operation</seealso>
         public Task<EnableKeyResponse> EnableKeyAsync(EnableKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new EnableKeyRequestMarshaller();
@@ -938,7 +1045,7 @@ namespace Amazon.KeyManagementService
         /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.DisabledException">
-        /// The request was rejected because the specified key was marked as disabled.
+        /// The request was rejected because the specified CMK is not enabled.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
         /// The request was rejected because a specified ARN was not valid.
@@ -953,15 +1060,19 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a customer master key
-        /// (CMK), see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
-        /// Service Developer Guide</i>.
+        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.UnsupportedOperationException">
+        /// The request was rejected because a specified parameter is not supported or a specified
+        /// resource is not valid for this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/EnableKeyRotation">REST API Reference for EnableKeyRotation Operation</seealso>
         public Task<EnableKeyRotationResponse> EnableKeyRotationAsync(string keyId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new EnableKeyRotationRequest();
@@ -979,6 +1090,7 @@ namespace Amazon.KeyManagementService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/EnableKeyRotation">REST API Reference for EnableKeyRotation Operation</seealso>
         public Task<EnableKeyRotationResponse> EnableKeyRotationAsync(EnableKeyRotationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new EnableKeyRotationRequestMarshaller();
@@ -1010,6 +1122,7 @@ namespace Amazon.KeyManagementService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/Encrypt">REST API Reference for Encrypt Operation</seealso>
         public Task<EncryptResponse> EncryptAsync(EncryptRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new EncryptRequestMarshaller();
@@ -1041,6 +1154,7 @@ namespace Amazon.KeyManagementService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GenerateDataKey">REST API Reference for GenerateDataKey Operation</seealso>
         public Task<GenerateDataKeyResponse> GenerateDataKeyAsync(GenerateDataKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GenerateDataKeyRequestMarshaller();
@@ -1072,6 +1186,7 @@ namespace Amazon.KeyManagementService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GenerateDataKeyWithoutPlaintext">REST API Reference for GenerateDataKeyWithoutPlaintext Operation</seealso>
         public Task<GenerateDataKeyWithoutPlaintextResponse> GenerateDataKeyWithoutPlaintextAsync(GenerateDataKeyWithoutPlaintextRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GenerateDataKeyWithoutPlaintextRequestMarshaller();
@@ -1097,7 +1212,7 @@ namespace Amazon.KeyManagementService
         /// <summary>
         /// Generates an unpredictable byte string.
         /// </summary>
-        /// <param name="numberOfBytes">Integer that contains the number of bytes to generate. Common values are 128, 256, 512, 1024 and so on. The current limit is 1024 bytes.</param>
+        /// <param name="numberOfBytes">The length of the byte string.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -1110,6 +1225,7 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because an internal exception occurred. The request can be
         /// retried.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GenerateRandom">REST API Reference for GenerateRandom Operation</seealso>
         public Task<GenerateRandomResponse> GenerateRandomAsync(int numberOfBytes, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new GenerateRandomRequest();
@@ -1127,6 +1243,7 @@ namespace Amazon.KeyManagementService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GenerateRandom">REST API Reference for GenerateRandom Operation</seealso>
         public Task<GenerateRandomResponse> GenerateRandomAsync(GenerateRandomRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GenerateRandomRequestMarshaller();
@@ -1175,15 +1292,15 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a customer master key
-        /// (CMK), see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
-        /// Service Developer Guide</i>.
+        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GetKeyPolicy">REST API Reference for GetKeyPolicy Operation</seealso>
         public Task<GetKeyPolicyResponse> GetKeyPolicyAsync(string keyId, string policyName, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new GetKeyPolicyRequest();
@@ -1202,6 +1319,7 @@ namespace Amazon.KeyManagementService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GetKeyPolicy">REST API Reference for GetKeyPolicy Operation</seealso>
         public Task<GetKeyPolicyResponse> GetKeyPolicyAsync(GetKeyPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetKeyPolicyRequestMarshaller();
@@ -1250,15 +1368,19 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a customer master key
-        /// (CMK), see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
-        /// Service Developer Guide</i>.
+        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.UnsupportedOperationException">
+        /// The request was rejected because a specified parameter is not supported or a specified
+        /// resource is not valid for this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GetKeyRotationStatus">REST API Reference for GetKeyRotationStatus Operation</seealso>
         public Task<GetKeyRotationStatusResponse> GetKeyRotationStatusAsync(string keyId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new GetKeyRotationStatusRequest();
@@ -1276,12 +1398,77 @@ namespace Amazon.KeyManagementService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GetKeyRotationStatus">REST API Reference for GetKeyRotationStatus Operation</seealso>
         public Task<GetKeyRotationStatusResponse> GetKeyRotationStatusAsync(GetKeyRotationStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetKeyRotationStatusRequestMarshaller();
             var unmarshaller = GetKeyRotationStatusResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetKeyRotationStatusRequest,GetKeyRotationStatusResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetParametersForImport
+
+        internal GetParametersForImportResponse GetParametersForImport(GetParametersForImportRequest request)
+        {
+            var marshaller = new GetParametersForImportRequestMarshaller();
+            var unmarshaller = GetParametersForImportResponseUnmarshaller.Instance;
+
+            return Invoke<GetParametersForImportRequest,GetParametersForImportResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetParametersForImport operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetParametersForImport operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GetParametersForImport">REST API Reference for GetParametersForImport Operation</seealso>
+        public Task<GetParametersForImportResponse> GetParametersForImportAsync(GetParametersForImportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetParametersForImportRequestMarshaller();
+            var unmarshaller = GetParametersForImportResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetParametersForImportRequest,GetParametersForImportResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ImportKeyMaterial
+
+        internal ImportKeyMaterialResponse ImportKeyMaterial(ImportKeyMaterialRequest request)
+        {
+            var marshaller = new ImportKeyMaterialRequestMarshaller();
+            var unmarshaller = ImportKeyMaterialResponseUnmarshaller.Instance;
+
+            return Invoke<ImportKeyMaterialRequest,ImportKeyMaterialResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ImportKeyMaterial operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ImportKeyMaterial operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ImportKeyMaterial">REST API Reference for ImportKeyMaterial Operation</seealso>
+        public Task<ImportKeyMaterialResponse> ImportKeyMaterialAsync(ImportKeyMaterialRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ImportKeyMaterialRequestMarshaller();
+            var unmarshaller = ImportKeyMaterialResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ImportKeyMaterialRequest,ImportKeyMaterialResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1307,6 +1494,7 @@ namespace Amazon.KeyManagementService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListAliases">REST API Reference for ListAliases Operation</seealso>
         public Task<ListAliasesResponse> ListAliasesAsync(ListAliasesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListAliasesRequestMarshaller();
@@ -1338,6 +1526,7 @@ namespace Amazon.KeyManagementService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListGrants">REST API Reference for ListGrants Operation</seealso>
         public Task<ListGrantsResponse> ListGrantsAsync(ListGrantsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListGrantsRequestMarshaller();
@@ -1369,6 +1558,7 @@ namespace Amazon.KeyManagementService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListKeyPolicies">REST API Reference for ListKeyPolicies Operation</seealso>
         public Task<ListKeyPoliciesResponse> ListKeyPoliciesAsync(ListKeyPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListKeyPoliciesRequestMarshaller();
@@ -1400,6 +1590,7 @@ namespace Amazon.KeyManagementService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListKeys">REST API Reference for ListKeys Operation</seealso>
         public Task<ListKeysResponse> ListKeysAsync(ListKeysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListKeysRequestMarshaller();
@@ -1455,6 +1646,7 @@ namespace Amazon.KeyManagementService
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListRetirableGrants">REST API Reference for ListRetirableGrants Operation</seealso>
         public Task<ListRetirableGrantsResponse> ListRetirableGrantsAsync(string retiringPrincipal, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new ListRetirableGrantsRequest();
@@ -1495,6 +1687,7 @@ namespace Amazon.KeyManagementService
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListRetirableGrants">REST API Reference for ListRetirableGrants Operation</seealso>
         public Task<ListRetirableGrantsResponse> ListRetirableGrantsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new ListRetirableGrantsRequest();
@@ -1511,6 +1704,7 @@ namespace Amazon.KeyManagementService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListRetirableGrants">REST API Reference for ListRetirableGrants Operation</seealso>
         public Task<ListRetirableGrantsResponse> ListRetirableGrantsAsync(ListRetirableGrantsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListRetirableGrantsRequestMarshaller();
@@ -1542,8 +1736,8 @@ namespace Amazon.KeyManagementService
         /// Policies</a> in the <i>AWS Key Management Service Developer Guide</i>.
         /// </para>
         /// </summary>
-        /// <param name="keyId">A unique identifier for the CMK. Use the CMK's unique identifier or its Amazon Resource Name (ARN). For example: <ul> <li> Unique ID: 1234abcd-12ab-34cd-56ef-1234567890ab </li> <li> ARN: arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab </li> </ul></param>
-        /// <param name="policy">The key policy to attach to the CMK. The key policy must meet the following criteria: <ul> <li> It must allow the principal making the <code>PutKeyPolicy</code> request to make a subsequent <code>PutKeyPolicy</code> request on the CMK. This reduces the likelihood that the CMK becomes unmanageable. For more information, refer to the scenario in the <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default Key Policy</a> section in the <i>AWS Key Management Service Developer Guide</i>. </li> <li> The principal(s) specified in the key policy must exist and be visible to AWS KMS. When you create a new AWS principal (for example, an IAM user or role), you might need to enforce a delay before specifying the new principal in a key policy because the new principal might not immediately be visible to AWS KMS. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes that I make are not always immediately visible</a> in the <i>IAM User Guide</i>. </li> </ul> The policy size limit is 32 KiB (32768 bytes).</param>
+        /// <param name="keyId">A unique identifier for the CMK. Use the CMK's unique identifier or its Amazon Resource Name (ARN). For example: <ul> <li> Unique ID: 1234abcd-12ab-34cd-56ef-1234567890ab </li> <li> ARN: arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab </li> </ul></param>
+        /// <param name="policy">The key policy to attach to the CMK. If you do not set <code>BypassPolicyLockoutSafetyCheck</code> to true, the policy must meet the following criteria: <ul> <li> It must allow the principal making the <code>PutKeyPolicy</code> request to make a subsequent <code>PutKeyPolicy</code> request on the CMK. This reduces the likelihood that the CMK becomes unmanageable. For more information, refer to the scenario in the <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default Key Policy</a> section in the <i>AWS Key Management Service Developer Guide</i>. </li> <li> The principal(s) specified in the key policy must exist and be visible to AWS KMS. When you create a new AWS principal (for example, an IAM user or role), you might need to enforce a delay before specifying the new principal in a key policy because the new principal might not immediately be visible to AWS KMS. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes that I make are not always immediately visible</a> in the <i>IAM User Guide</i>. </li> </ul> The policy size limit is 32 KiB (32768 bytes).</param>
         /// <param name="policyName">The name of the key policy. This value must be <code>default</code>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -1566,10 +1760,9 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a customer master key
-        /// (CMK), see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
-        /// Service Developer Guide</i>.
+        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.LimitExceededException">
@@ -1585,8 +1778,10 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.UnsupportedOperationException">
-        /// The request was rejected because a specified parameter is not supported.
+        /// The request was rejected because a specified parameter is not supported or a specified
+        /// resource is not valid for this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/PutKeyPolicy">REST API Reference for PutKeyPolicy Operation</seealso>
         public Task<PutKeyPolicyResponse> PutKeyPolicyAsync(string keyId, string policy, string policyName, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new PutKeyPolicyRequest();
@@ -1606,6 +1801,7 @@ namespace Amazon.KeyManagementService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/PutKeyPolicy">REST API Reference for PutKeyPolicy Operation</seealso>
         public Task<PutKeyPolicyResponse> PutKeyPolicyAsync(PutKeyPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutKeyPolicyRequestMarshaller();
@@ -1637,6 +1833,7 @@ namespace Amazon.KeyManagementService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ReEncrypt">REST API Reference for ReEncrypt Operation</seealso>
         public Task<ReEncryptResponse> ReEncryptAsync(ReEncryptRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ReEncryptRequestMarshaller();
@@ -1660,28 +1857,29 @@ namespace Amazon.KeyManagementService
 
 
         /// <summary>
-        /// Retires a grant. You can retire a grant when you're done using it to clean up. You
+        /// Retires a grant. To clean up, you can retire a grant when you're done using it. You
         /// should revoke a grant when you intend to actively deny operations that depend on it.
         /// The following are permitted to call this API:
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// The account that created the grant
+        /// The AWS account (root user) under which the grant was created
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The <code>RetiringPrincipal</code>, if present
+        /// The <code>RetiringPrincipal</code>, if present in the grant
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The <code>GranteePrincipal</code>, if <code>RetireGrant</code> is a grantee operation
+        /// The <code>GranteePrincipal</code>, if <code>RetireGrant</code> is an operation specified
+        /// in the grant
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The grant to retire must be identified by its grant token or by a combination of the
-        /// key ARN and the grant ID. A grant token is a unique variable-length base64-encoded
-        /// string. A grant ID is a 64 character unique identifier of a grant. Both are returned
-        /// by the <code>CreateGrant</code> function.
+        /// You must identify the grant to retire by its grant token or by a combination of the
+        /// grant ID and the Amazon Resource Name (ARN) of the customer master key (CMK). A grant
+        /// token is a unique variable-length base64-encoded string. A grant ID is a 64 character
+        /// unique identifier of a grant. The <a>CreateGrant</a> operation returns both.
         /// </para>
         /// </summary>
         /// <param name="grantToken">Token that identifies the grant to be retired.</param>
@@ -1697,8 +1895,7 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because the specified <code>GrantId</code> is not valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidGrantTokenException">
-        /// The request was rejected because a grant token provided as part of the request is
-        /// invalid.
+        /// The request was rejected because the specified grant token is not valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
         /// The request was rejected because an internal exception occurred. The request can be
@@ -1710,15 +1907,15 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a customer master key
-        /// (CMK), see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
-        /// Service Developer Guide</i>.
+        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/RetireGrant">REST API Reference for RetireGrant Operation</seealso>
         public Task<RetireGrantResponse> RetireGrantAsync(string grantToken, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new RetireGrantRequest();
@@ -1736,6 +1933,7 @@ namespace Amazon.KeyManagementService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/RetireGrant">REST API Reference for RetireGrant Operation</seealso>
         public Task<RetireGrantResponse> RetireGrantAsync(RetireGrantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RetireGrantRequestMarshaller();
@@ -1788,15 +1986,15 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a customer master key
-        /// (CMK), see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
-        /// Service Developer Guide</i>.
+        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/RevokeGrant">REST API Reference for RevokeGrant Operation</seealso>
         public Task<RevokeGrantResponse> RevokeGrantAsync(string grantId, string keyId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new RevokeGrantRequest();
@@ -1815,6 +2013,7 @@ namespace Amazon.KeyManagementService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/RevokeGrant">REST API Reference for RevokeGrant Operation</seealso>
         public Task<RevokeGrantResponse> RevokeGrantAsync(RevokeGrantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RevokeGrantRequestMarshaller();
@@ -1844,7 +2043,7 @@ namespace Amazon.KeyManagementService
         /// of the CMK changes to <code>PendingDeletion</code>. Before the waiting period ends,
         /// you can use <a>CancelKeyDeletion</a> to cancel the deletion of the CMK. After the
         /// waiting period ends, AWS KMS deletes the CMK and all AWS KMS data associated with
-        /// it, including all aliases that point to it.
+        /// it, including all aliases that refer to it.
         /// 
         ///  <important> 
         /// <para>
@@ -1858,7 +2057,7 @@ namespace Amazon.KeyManagementService
         /// Customer Master Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
         /// </para>
         /// </summary>
-        /// <param name="keyId">The unique identifier for the customer master key (CMK) to delete. To specify this value, use the unique key ID or the Amazon Resource Name (ARN) of the CMK. Examples: <ul> <li> Unique key ID: 1234abcd-12ab-34cd-56ef-1234567890ab </li> <li> Key ARN: arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab </li> </ul> To obtain the unique key ID and key ARN for a given CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
+        /// <param name="keyId">The unique identifier for the customer master key (CMK) to delete. To specify this value, use the unique key ID or the Amazon Resource Name (ARN) of the CMK. Examples: <ul> <li> Unique key ID: 1234abcd-12ab-34cd-56ef-1234567890ab </li> <li> Key ARN: arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab </li> </ul> To obtain the unique key ID and key ARN for a given CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -1880,15 +2079,15 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a customer master key
-        /// (CMK), see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
-        /// Service Developer Guide</i>.
+        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ScheduleKeyDeletion">REST API Reference for ScheduleKeyDeletion Operation</seealso>
         public Task<ScheduleKeyDeletionResponse> ScheduleKeyDeletionAsync(string keyId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new ScheduleKeyDeletionRequest();
@@ -1904,7 +2103,7 @@ namespace Amazon.KeyManagementService
         /// of the CMK changes to <code>PendingDeletion</code>. Before the waiting period ends,
         /// you can use <a>CancelKeyDeletion</a> to cancel the deletion of the CMK. After the
         /// waiting period ends, AWS KMS deletes the CMK and all AWS KMS data associated with
-        /// it, including all aliases that point to it.
+        /// it, including all aliases that refer to it.
         /// 
         ///  <important> 
         /// <para>
@@ -1918,7 +2117,7 @@ namespace Amazon.KeyManagementService
         /// Customer Master Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
         /// </para>
         /// </summary>
-        /// <param name="keyId">The unique identifier for the customer master key (CMK) to delete. To specify this value, use the unique key ID or the Amazon Resource Name (ARN) of the CMK. Examples: <ul> <li> Unique key ID: 1234abcd-12ab-34cd-56ef-1234567890ab </li> <li> Key ARN: arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab </li> </ul> To obtain the unique key ID and key ARN for a given CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
+        /// <param name="keyId">The unique identifier for the customer master key (CMK) to delete. To specify this value, use the unique key ID or the Amazon Resource Name (ARN) of the CMK. Examples: <ul> <li> Unique key ID: 1234abcd-12ab-34cd-56ef-1234567890ab </li> <li> Key ARN: arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab </li> </ul> To obtain the unique key ID and key ARN for a given CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
         /// <param name="pendingWindowInDays">The waiting period, specified in number of days. After the waiting period ends, AWS KMS deletes the customer master key (CMK). This value is optional. If you include a value, it must be between 7 and 30, inclusive. If you do not include a value, it defaults to 30.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -1941,15 +2140,15 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a customer master key
-        /// (CMK), see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
-        /// Service Developer Guide</i>.
+        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ScheduleKeyDeletion">REST API Reference for ScheduleKeyDeletion Operation</seealso>
         public Task<ScheduleKeyDeletionResponse> ScheduleKeyDeletionAsync(string keyId, int pendingWindowInDays, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new ScheduleKeyDeletionRequest();
@@ -1968,6 +2167,7 @@ namespace Amazon.KeyManagementService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ScheduleKeyDeletion">REST API Reference for ScheduleKeyDeletion Operation</seealso>
         public Task<ScheduleKeyDeletionResponse> ScheduleKeyDeletionAsync(ScheduleKeyDeletionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ScheduleKeyDeletionRequestMarshaller();
@@ -2031,15 +2231,15 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a customer master key
-        /// (CMK), see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
-        /// Service Developer Guide</i>.
+        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/UpdateAlias">REST API Reference for UpdateAlias Operation</seealso>
         public Task<UpdateAliasResponse> UpdateAliasAsync(string aliasName, string targetKeyId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new UpdateAliasRequest();
@@ -2058,6 +2258,7 @@ namespace Amazon.KeyManagementService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/UpdateAlias">REST API Reference for UpdateAlias Operation</seealso>
         public Task<UpdateAliasResponse> UpdateAliasAsync(UpdateAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateAliasRequestMarshaller();
@@ -2081,10 +2282,10 @@ namespace Amazon.KeyManagementService
 
 
         /// <summary>
-        /// Updates the description of a key.
+        /// Updates the description of a customer master key (CMK).
         /// </summary>
-        /// <param name="keyId">A unique identifier for the customer master key. This value can be a globally unique identifier or the fully specified ARN to a key. <ul> <li> Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012 </li> <li> Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012 </li> </ul></param>
-        /// <param name="description">New description for the key.</param>
+        /// <param name="keyId">A unique identifier for the CMK. This value can be a globally unique identifier or the fully specified ARN to a key. <ul> <li> Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012 </li> <li> Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012 </li> </ul></param>
+        /// <param name="description">New description for the CMK.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -2106,15 +2307,15 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a customer master key
-        /// (CMK), see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
-        /// Service Developer Guide</i>.
+        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/UpdateKeyDescription">REST API Reference for UpdateKeyDescription Operation</seealso>
         public Task<UpdateKeyDescriptionResponse> UpdateKeyDescriptionAsync(string keyId, string description, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new UpdateKeyDescriptionRequest();
@@ -2133,6 +2334,7 @@ namespace Amazon.KeyManagementService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/UpdateKeyDescription">REST API Reference for UpdateKeyDescription Operation</seealso>
         public Task<UpdateKeyDescriptionResponse> UpdateKeyDescriptionAsync(UpdateKeyDescriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateKeyDescriptionRequestMarshaller();

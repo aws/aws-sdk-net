@@ -28,7 +28,7 @@ namespace Amazon.DirectoryService
     ///<summary>
     /// Common exception for the DirectoryService service.
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class AmazonDirectoryServiceException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.DirectoryService
         {
         }
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the AmazonDirectoryServiceException class with serialized data.
         /// </summary>

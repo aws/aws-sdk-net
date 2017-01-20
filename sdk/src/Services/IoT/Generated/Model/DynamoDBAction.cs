@@ -65,6 +65,7 @@ namespace Amazon.IoT.Model
         private string _hashKeyField;
         private DynamoKeyType _hashKeyType;
         private string _hashKeyValue;
+        private string _operation;
         private string _payloadField;
         private string _rangeKeyField;
         private DynamoKeyType _rangeKeyType;
@@ -124,6 +125,26 @@ namespace Amazon.IoT.Model
         internal bool IsSetHashKeyValue()
         {
             return this._hashKeyValue != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Operation. 
+        /// <para>
+        /// The type of operation to be performed. This follows the substitution template, so
+        /// it can be <code>${operation}</code>, but the substitution must result in one of the
+        /// following: <code>INSERT</code>, <code>UPDATE</code>, or <code>DELETE</code>.
+        /// </para>
+        /// </summary>
+        public string Operation
+        {
+            get { return this._operation; }
+            set { this._operation = value; }
+        }
+
+        // Check to see if Operation property is set
+        internal bool IsSetOperation()
+        {
+            return this._operation != null;
         }
 
         /// <summary>

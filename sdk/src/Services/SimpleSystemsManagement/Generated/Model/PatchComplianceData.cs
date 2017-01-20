@@ -1,0 +1,153 @@
+/*
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the ssm-2014-11-06.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+namespace Amazon.SimpleSystemsManagement.Model
+{
+    /// <summary>
+    /// Information about the state of a patch on a particular instance as it relates to the
+    /// patch baseline used to patch the instance.
+    /// </summary>
+    public partial class PatchComplianceData
+    {
+        private string _classification;
+        private DateTime? _installedTime;
+        private string _kbId;
+        private string _severity;
+        private PatchComplianceDataState _state;
+        private string _title;
+
+        /// <summary>
+        /// Gets and sets the property Classification. 
+        /// <para>
+        /// The classification of the patch (for example, SecurityUpdates, Updates, CriticalUpdates).
+        /// </para>
+        /// </summary>
+        public string Classification
+        {
+            get { return this._classification; }
+            set { this._classification = value; }
+        }
+
+        // Check to see if Classification property is set
+        internal bool IsSetClassification()
+        {
+            return this._classification != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstalledTime. 
+        /// <para>
+        /// The date/time the patch was installed on the instance.
+        /// </para>
+        /// </summary>
+        public DateTime InstalledTime
+        {
+            get { return this._installedTime.GetValueOrDefault(); }
+            set { this._installedTime = value; }
+        }
+
+        // Check to see if InstalledTime property is set
+        internal bool IsSetInstalledTime()
+        {
+            return this._installedTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property KBId. 
+        /// <para>
+        /// The Microsoft Knowledge Base ID of the patch.
+        /// </para>
+        /// </summary>
+        public string KBId
+        {
+            get { return this._kbId; }
+            set { this._kbId = value; }
+        }
+
+        // Check to see if KBId property is set
+        internal bool IsSetKBId()
+        {
+            return this._kbId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Severity. 
+        /// <para>
+        /// The severity of the patch (for example, Critical, Important, Moderate).
+        /// </para>
+        /// </summary>
+        public string Severity
+        {
+            get { return this._severity; }
+            set { this._severity = value; }
+        }
+
+        // Check to see if Severity property is set
+        internal bool IsSetSeverity()
+        {
+            return this._severity != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property State. 
+        /// <para>
+        /// The state of the patch on the instance (INSTALLED, INSTALLED_OTHER, MISSING, NOT_APPLICABLE
+        /// or FAILED).
+        /// </para>
+        /// </summary>
+        public PatchComplianceDataState State
+        {
+            get { return this._state; }
+            set { this._state = value; }
+        }
+
+        // Check to see if State property is set
+        internal bool IsSetState()
+        {
+            return this._state != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Title. 
+        /// <para>
+        /// The title of the patch.
+        /// </para>
+        /// </summary>
+        public string Title
+        {
+            get { return this._title; }
+            set { this._title = value; }
+        }
+
+        // Check to see if Title property is set
+        internal bool IsSetTitle()
+        {
+            return this._title != null;
+        }
+
+    }
+}

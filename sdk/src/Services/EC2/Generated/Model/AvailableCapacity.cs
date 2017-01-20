@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-11-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// The capacity information for instances launched onto the Dedicated host.
+    /// The capacity information for instances launched onto the Dedicated Host.
     /// </summary>
     public partial class AvailableCapacity
     {
@@ -38,7 +38,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AvailableInstanceCapacity. 
         /// <para>
-        /// The total number of instances that the Dedicated host supports.
+        /// The total number of instances that the Dedicated Host supports.
         /// </para>
         /// </summary>
         public List<InstanceCapacity> AvailableInstanceCapacity
@@ -56,7 +56,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AvailableVCpus. 
         /// <para>
-        /// The number of vCPUs available on the Dedicated host.
+        /// The number of vCPUs available on the Dedicated Host.
         /// </para>
         /// </summary>
         public int AvailableVCpus

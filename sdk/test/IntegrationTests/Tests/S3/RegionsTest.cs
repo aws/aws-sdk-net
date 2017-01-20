@@ -12,6 +12,7 @@ using Amazon.Runtime;
 using AWSSDK_DotNet.IntegrationTests.Utils;
 using Amazon.Util;
 using System.Globalization;
+using System.Threading;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
@@ -19,9 +20,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
     public class RegionsTest
     {
         [TestMethod]
+        [TestCategory("S3")]
         public void TestLocation()
         {
-            foreach (var location in new S3Region[] { S3Region.USW1, S3Region.EUC1 })
+            // Disable EUW2 for now until we figure out why we are hitting the bucket number limit.
+            foreach (var location in new S3Region[] { S3Region.USW1, S3Region.EUC1, S3Region.EUW1/*, S3Region.EUW2*/})
             {
                 string bucketName = null;
                 var region = RegionEndpoint.GetBySystemName(location.Value);
@@ -30,20 +33,23 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 {
                     try
                     {
-                        bucketName = UtilityMethods.SDK_TEST_PREFIX + DateTime.Now.Ticks;
-
-                        client.PutBucket(new PutBucketRequest
-                        {
-                            BucketName = bucketName,
-                            BucketRegion = location
-                        });
-
+                        bucketName = S3TestUtils.CreateBucketWithWait(client);
                         var returnedLocation = client.GetBucketLocation(new GetBucketLocationRequest
                         {
                             BucketName = bucketName
                         }).Location;
 
-                        Assert.AreEqual(location, returnedLocation);
+                        //Map S3Region.EUW1 to S3Region.EU
+                        //S3 considers this as the same region.
+                        if (location == S3Region.EUW1)
+                        {
+                            Assert.AreEqual(S3Region.EU, returnedLocation);
+                        }
+                        else
+                        {
+                            Assert.AreEqual(location, returnedLocation);
+                        }
+                        
                     }
                     finally
                     {
@@ -55,6 +61,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         [TestMethod]
+        [TestCategory("S3")]
         public void TestPostUpload()
         {
             var region = RegionEndpoint.USWest1;
@@ -90,6 +97,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         /// to us-east-1.
         /// </summary>
         [TestMethod]
+        [TestCategory("S3")]
         public void TestAWS2ToAWS4RedirectBeforeDNSPropagation()
         {
             var useast1Client = new AmazonS3Client(RegionEndpoint.USEast1);
@@ -121,6 +129,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         /// a bucket in a region such as us-west-2. 
         /// </summary>
         [TestMethod]
+        [TestCategory("S3")]
         [ExpectedException(typeof(AmazonS3Exception), 
             "The bucket you are attempting to access must be addressed using the specified endpoint. Please send all future requests to this endpoint.")]
         public void Test301RedirectTriggersException()

@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// 
+    /// A complex type that contains information about an Amazon VPC that is associated with
+    /// a private hosted zone.
     /// </summary>
     public partial class VPC
     {
@@ -36,7 +37,11 @@ namespace Amazon.Route53.Model
         private string _vpcId;
 
         /// <summary>
-        /// Gets and sets the property VPCRegion.
+        /// Gets and sets the property VPCRegion. 
+        /// <para>
+        /// The region in which you created the VPC that you want to associate with the specified
+        /// Amazon Route 53 hosted zone.
+        /// </para>
         /// </summary>
         public VPCRegion VPCRegion
         {

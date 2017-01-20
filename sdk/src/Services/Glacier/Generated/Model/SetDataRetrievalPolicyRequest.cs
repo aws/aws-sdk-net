@@ -31,7 +31,7 @@ namespace Amazon.Glacier.Model
     /// Container for the parameters to the SetDataRetrievalPolicy operation.
     /// This operation sets and then enacts a data retrieval policy in the region specified
     /// in the PUT request. You can set one policy per region for an AWS account. The policy
-    /// is enacted within a few minutes of a successful PUT operation. 
+    /// is enacted within a few minutes of a successful PUT operation.
     /// 
     ///  
     /// <para>
@@ -51,10 +51,10 @@ namespace Amazon.Glacier.Model
         /// <para>
         /// The <code>AccountId</code> value is the AWS account ID. This value must match the
         /// AWS account ID associated with the credentials used to sign the request. You can either
-        /// specify an AWS account ID or optionally a single apos<code>-</code>apos (hyphen),
-        /// in which case Amazon Glacier uses the AWS account ID associated with the credentials
-        /// used to sign the request. If you specify your account ID, do not include any hyphens
-        /// (apos-apos) in the ID.
+        /// specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which
+        /// case Amazon Glacier uses the AWS account ID associated with the credentials used to
+        /// sign the request. If you specify your account ID, do not include any hyphens ('-')
+        /// in the ID.
         /// </para>
         /// </summary>
         public string AccountId

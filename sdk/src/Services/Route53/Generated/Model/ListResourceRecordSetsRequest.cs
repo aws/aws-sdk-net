@@ -29,51 +29,64 @@ namespace Amazon.Route53.Model
 {
     /// <summary>
     /// Container for the parameters to the ListResourceRecordSets operation.
-    /// Imagine all the resource record sets in a zone listed out in front of you. Imagine
-    /// them sorted lexicographically first by DNS name (with the labels reversed, like "com.amazon.www"
-    /// for example), and secondarily, lexicographically by record type. This operation retrieves
-    /// at most MaxItems resource record sets from this list, in order, starting at a position
-    /// specified by the Name and Type arguments:
+    /// Lists the resource record sets in a specified hosted zone.
     /// 
-    ///  <ul> <li>If both Name and Type are omitted, this means start the results at the first
-    /// RRSET in the HostedZone.</li> <li>If Name is specified but Type is omitted, this means
-    /// start the results at the first RRSET in the list whose name is greater than or equal
-    /// to Name. </li> <li>If both Name and Type are specified, this means start the results
-    /// at the first RRSET in the list whose name is greater than or equal to Name and whose
-    /// type is greater than or equal to Type.</li> <li>It is an error to specify the Type
-    /// but not the Name.</li> </ul> 
+    ///  
     /// <para>
-    /// Use ListResourceRecordSets to retrieve a single known record set by specifying the
-    /// record set's name and type, and setting MaxItems = 1
+    ///  <code>ListResourceRecordSets</code> returns up to 100 resource record sets at a time
+    /// in ASCII order, beginning at a position specified by the <code>name</code> and <code>type</code>
+    /// elements. The action sorts results first by DNS name with the labels reversed, for
+    /// example:
     /// </para>
     ///  
     /// <para>
-    /// To retrieve all the records in a HostedZone, first pause any processes making calls
-    /// to ChangeResourceRecordSets. Initially call ListResourceRecordSets without a Name
-    /// and Type to get the first page of record sets. For subsequent calls, set Name and
-    /// Type to the NextName and NextType values returned by the previous response. 
+    ///  <code>com.example.www.</code> 
     /// </para>
     ///  
     /// <para>
-    /// In the presence of concurrent ChangeResourceRecordSets calls, there is no consistency
-    /// of results across calls to ListResourceRecordSets. The only way to get a consistent
-    /// multi-page snapshot of all RRSETs in a zone is to stop making changes while pagination
-    /// is in progress.
+    /// Note the trailing dot, which can change the sort order in some circumstances.
     /// </para>
     ///  
     /// <para>
-    /// However, the results from ListResourceRecordSets are consistent within a page. If
-    /// MakeChange calls are taking place concurrently, the result of each one will either
-    /// be completely visible in your results or not at all. You will not see partial changes,
-    /// or changes that do not ultimately succeed. (This follows from the fact that MakeChange
-    /// is atomic) 
+    /// When multiple records have the same DNS name, the action sorts results by the record
+    /// type.
     /// </para>
     ///  
     /// <para>
-    /// The results from ListResourceRecordSets are strongly consistent with ChangeResourceRecordSets.
-    /// To be precise, if a single process makes a call to ChangeResourceRecordSets and receives
-    /// a successful response, the effects of that change will be visible in a subsequent
-    /// call to ListResourceRecordSets by that process.
+    /// You can use the name and type elements to adjust the beginning position of the list
+    /// of resource record sets returned:
+    /// </para>
+    ///  <dl> <dt>If you do not specify Name or Type</dt> <dd> 
+    /// <para>
+    /// The results begin with the first resource record set that the hosted zone contains.
+    /// </para>
+    ///  </dd> <dt>If you specify Name but not Type</dt> <dd> 
+    /// <para>
+    /// The results begin with the first resource record set in the list whose name is greater
+    /// than or equal to <code>Name</code>.
+    /// </para>
+    ///  </dd> <dt>If you specify Type but not Name</dt> <dd> 
+    /// <para>
+    /// Amazon Route 53 returns the <code>InvalidInput</code> error.
+    /// </para>
+    ///  </dd> <dt>If you specify both Name and Type</dt> <dd> 
+    /// <para>
+    /// The results begin with the first resource record set in the list whose name is greater
+    /// than or equal to <code>Name</code>, and whose type is greater than or equal to <code>Type</code>.
+    /// </para>
+    ///  </dd> </dl> 
+    /// <para>
+    /// This action returns the most current version of the records. This includes records
+    /// that are <code>PENDING</code>, and that are not yet available on all Amazon Route
+    /// 53 DNS servers.
+    /// </para>
+    ///  
+    /// <para>
+    /// To ensure that you get an accurate listing of the resource record sets for a hosted
+    /// zone at a point in time, do not submit a <code>ChangeResourceRecordSets</code> request
+    /// while you're paging through the results of a <code>ListResourceRecordSets</code> request.
+    /// If you do, some pages may display results without the latest changes while other pages
+    /// display results with the latest changes.
     /// </para>
     /// </summary>
     public partial class ListResourceRecordSetsRequest : AmazonRoute53Request
@@ -139,32 +152,44 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property StartRecordType. 
         /// <para>
-        /// The DNS type at which to begin the listing of resource record sets. 
+        /// The type of resource record set to begin the record listing from.
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>A</code> | <code>AAAA</code> | <code>CNAME</code> | <code>MX</code>
-        /// | <code>NS</code> | <code>PTR</code> | <code>SOA</code> | <code>SPF</code> | <code>SRV</code>
-        /// | <code>TXT</code>
+        /// Valid values for basic resource record sets: <code>A</code> | <code>AAAA</code> |
+        /// <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>NS</code> | <code>PTR</code>
+        /// | <code>SOA</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code> 
         /// </para>
         ///  
         /// <para>
-        /// Values for Weighted Resource Record Sets: <code>A</code> | <code>AAAA</code> | <code>CNAME</code>
-        /// | <code>TXT</code>
+        /// Values for weighted, latency, geo, and failover resource record sets: <code>A</code>
+        /// | <code>AAAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> |
+        /// <code>PTR</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code> 
         /// </para>
         ///  
         /// <para>
-        /// Values for Regional Resource Record Sets: <code>A</code> | <code>AAAA</code> | <code>CNAME</code>
-        /// | <code>TXT</code>
+        /// Values for alias resource record sets: 
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// Values for Alias Resource Record Sets: <code>A</code> | <code>AAAA</code>
+        ///  <b>CloudFront distribution</b>: A or AAAA
         /// </para>
-        ///  
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Elastic Beanstalk environment that has a regionalized subdomain</b>: A
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>ELB load balancer</b>: A | AAAA
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Amazon S3 bucket</b>: A
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// Constraint: Specifying <code>type</code> without specifying <code>name</code> returns
-        /// an <a>InvalidInput</a> error.
+        /// an <code>InvalidInput</code> error.
         /// </para>
         /// </summary>
         public RRType StartRecordType
@@ -182,10 +207,10 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property StartRecordIdentifier. 
         /// <para>
-        /// <i>Weighted resource record sets only:</i> If results were truncated for a given DNS
-        /// name and type, specify the value of <code>ListResourceRecordSetsResponse$NextRecordIdentifier</code>
-        /// from the previous response to get the next resource record set that has the current
-        /// DNS name and type.
+        ///  <i>Weighted resource record sets only:</i> If results were truncated for a given
+        /// DNS name and type, specify the value of <code>NextRecordIdentifier</code> from the
+        /// previous response to get the next resource record set that has the current DNS name
+        /// and type.
         /// </para>
         /// </summary>
         public string StartRecordIdentifier
@@ -203,7 +228,12 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property MaxItems. 
         /// <para>
-        /// The maximum number of records you want in the response body.
+        /// (Optional) The maximum number of resource records sets to include in the response
+        /// body for this request. If the response includes more than <code>maxitems</code> resource
+        /// record sets, the value of the <code>IsTruncated</code> element in the response is
+        /// <code>true</code>, and the values of the <code>NextRecordName</code> and <code>NextRecordType</code>
+        /// elements in the response identify the first resource record set in the next group
+        /// of <code>maxitems</code> resource record sets.
         /// </para>
         /// </summary>
         public string MaxItems

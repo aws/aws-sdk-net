@@ -33,7 +33,7 @@ namespace Amazon.AutoScaling.Model
     ///  
     /// <para>
     /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-scale-based-on-demand.html">Dynamic
-    /// Scaling</a> in the <i>Auto Scaling Developer Guide</i>.
+    /// Scaling</a> in the <i>Auto Scaling User Guide</i>.
     /// </para>
     /// </summary>
     public partial class AdjustmentType

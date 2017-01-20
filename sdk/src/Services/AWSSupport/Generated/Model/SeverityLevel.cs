@@ -40,7 +40,7 @@ namespace Amazon.AWSSupport.Model
         /// Gets and sets the property Code. 
         /// <para>
         /// One of four values: "low," "medium," "high," and "urgent". These values correspond
-        /// to response times returned to the caller in <code>SeverityLevel.name</code>. 
+        /// to response times returned to the caller in <code>severityLevel.name</code>. 
         /// </para>
         /// </summary>
         public string Code

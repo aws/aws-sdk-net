@@ -28,7 +28,7 @@ namespace Amazon.SimpleDB
     ///<summary>
     /// Common exception for the SimpleDB service.
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class AmazonSimpleDBException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.SimpleDB
         {
         }
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the AmazonSimpleDBException class with serialized data.
         /// </summary>

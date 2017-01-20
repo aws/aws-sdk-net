@@ -82,6 +82,12 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                     unmarshalledObject.EventName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EventSource", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EventSource = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("EventTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

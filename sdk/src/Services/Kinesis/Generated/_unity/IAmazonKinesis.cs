@@ -19,6 +19,7 @@
 
 using System;
 using System.Collections.Generic;
+
 using Amazon.Runtime;
 using Amazon.Kinesis.Model;
 
@@ -33,7 +34,7 @@ namespace Amazon.Kinesis
     /// processing of streaming big data.
     /// </para>
     /// </summary>
-    public partial interface IAmazonKinesis : IDisposable
+    public partial interface IAmazonKinesis : IAmazonService, IDisposable
     {
 
         
@@ -97,17 +98,12 @@ namespace Amazon.Kinesis
         /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
         /// For more information, see the returned message.
         /// </exception>
-        /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
-        /// The requested resource exceeds the maximum number allowed, or the number of concurrent
-        /// stream requests exceeds the maximum number allowed (5).
-        /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
         /// The resource is not available for this operation. For successful operation, the resource
         /// needs to be in the <code>ACTIVE</code> state.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
-        /// The requested resource could not be found. The stream might not be specified correctly,
-        /// or it might not be in the <code>ACTIVE</code> state if the operation requires it.
+        /// The requested resource could not be found. The stream might not be specified correctly.
         /// </exception>
         void DecreaseStreamRetentionPeriodAsync(string streamName, int retentionPeriodHours,  AmazonServiceCallback<DecreaseStreamRetentionPeriodRequest, DecreaseStreamRetentionPeriodResponse> callback, AsyncOptions options = null);
 
@@ -136,6 +132,22 @@ namespace Amazon.Kinesis
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         void DeleteStreamAsync(DeleteStreamRequest request, AmazonServiceCallback<DeleteStreamRequest, DeleteStreamResponse> callback, AsyncOptions options = null);
+
+
+        #endregion
+        
+        #region  DescribeLimits
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeLimits operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLimits operation on AmazonKinesisClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        void DescribeLimitsAsync(DescribeLimitsRequest request, AmazonServiceCallback<DescribeLimitsRequest, DescribeLimitsResponse> callback, AsyncOptions options = null);
 
 
         #endregion
@@ -251,17 +263,12 @@ namespace Amazon.Kinesis
         /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
         /// For more information, see the returned message.
         /// </exception>
-        /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
-        /// The requested resource exceeds the maximum number allowed, or the number of concurrent
-        /// stream requests exceeds the maximum number allowed (5).
-        /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
         /// The resource is not available for this operation. For successful operation, the resource
         /// needs to be in the <code>ACTIVE</code> state.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
-        /// The requested resource could not be found. The stream might not be specified correctly,
-        /// or it might not be in the <code>ACTIVE</code> state if the operation requires it.
+        /// The requested resource could not be found. The stream might not be specified correctly.
         /// </exception>
         void IncreaseStreamRetentionPeriodAsync(string streamName, int retentionPeriodHours,  AmazonServiceCallback<IncreaseStreamRetentionPeriodRequest, IncreaseStreamRetentionPeriodResponse> callback, AsyncOptions options = null);
 
@@ -386,6 +393,22 @@ namespace Amazon.Kinesis
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         void SplitShardAsync(SplitShardRequest request, AmazonServiceCallback<SplitShardRequest, SplitShardResponse> callback, AsyncOptions options = null);
+
+
+        #endregion
+        
+        #region  UpdateShardCount
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateShardCount operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateShardCount operation on AmazonKinesisClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        void UpdateShardCountAsync(UpdateShardCountRequest request, AmazonServiceCallback<UpdateShardCountRequest, UpdateShardCountResponse> callback, AsyncOptions options = null);
 
 
         #endregion

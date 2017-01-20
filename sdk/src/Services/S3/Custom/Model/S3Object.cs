@@ -33,6 +33,7 @@ namespace Amazon.S3.Model
         private Owner owner;
         private long? size;
         private S3StorageClass storageClass;
+        private string bucketName;
 
         /// <summary>
         /// Any ETag set on the object.
@@ -47,6 +48,21 @@ namespace Amazon.S3.Model
         internal bool IsSetETag()
         {
             return this.eTag != null;
+        }
+
+        /// <summary>
+        /// The name of the bucket containing this object.
+        /// </summary>
+        public string BucketName
+        {
+            get { return this.bucketName; }
+            set { this.bucketName = value; }
+        }
+
+        // check to see if the BucketName property is set
+        internal bool IsSetBucketName()
+        {
+            return this.bucketName != null;
         }
 
         /// <summary>

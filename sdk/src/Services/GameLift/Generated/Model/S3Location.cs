@@ -37,6 +37,7 @@ namespace Amazon.GameLift.Model
     {
         private string _bucket;
         private string _key;
+        private string _roleArn;
 
         /// <summary>
         /// Gets and sets the property Bucket. 
@@ -72,6 +73,25 @@ namespace Amazon.GameLift.Model
         internal bool IsSetKey()
         {
             return this._key != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RoleArn. 
+        /// <para>
+        /// Amazon resource number for the cross-account access role that allows GameLift access
+        /// to the S3 bucket.
+        /// </para>
+        /// </summary>
+        public string RoleArn
+        {
+            get { return this._roleArn; }
+            set { this._roleArn = value; }
+        }
+
+        // Check to see if RoleArn property is set
+        internal bool IsSetRoleArn()
+        {
+            return this._roleArn != null;
         }
 
     }

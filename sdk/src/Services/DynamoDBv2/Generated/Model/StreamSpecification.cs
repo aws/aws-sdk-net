@@ -56,40 +56,31 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property StreamViewType. 
         /// <para>
-        /// The DynamoDB Streams settings for the table. These settings consist of:
+        ///  When an item in the table is modified, <code>StreamViewType</code> determines what
+        /// information is written to the stream for this table. Valid values for <code>StreamViewType</code>
+        /// are:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <i>StreamEnabled</i> - Indicates whether DynamoDB Streams is enabled (true) or disabled
-        /// (false) on the table.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>StreamViewType</i> - When an item in the table is modified, <i>StreamViewType</i>
-        /// determines what information is written to the stream for this table. Valid values
-        /// for <i>StreamViewType</i> are:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <i>KEYS_ONLY</i> - Only the key attributes of the modified item are written to the
-        /// stream.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>NEW_IMAGE</i> - The entire item, as it appears after it was modified, is written
+        ///  <code>KEYS_ONLY</code> - Only the key attributes of the modified item are written
         /// to the stream.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i>OLD_IMAGE</i> - The entire item, as it appeared before it was modified, is written
-        /// to the stream.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>NEW_AND_OLD_IMAGES</i> - Both the new and the old item images of the item are
+        ///  <code>NEW_IMAGE</code> - The entire item, as it appears after it was modified, is
         /// written to the stream.
         /// </para>
-        ///  </li> </ul> </li> </ul>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>OLD_IMAGE</code> - The entire item, as it appeared before it was modified,
+        /// is written to the stream.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>NEW_AND_OLD_IMAGES</code> - Both the new and the old item images of the item
+        /// are written to the stream.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public StreamViewType StreamViewType
         {

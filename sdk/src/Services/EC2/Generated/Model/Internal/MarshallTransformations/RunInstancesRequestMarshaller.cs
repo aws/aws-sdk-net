@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-11-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -54,7 +54,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
             request.Parameters.Add("Action", "RunInstances");
-            request.Parameters.Add("Version", "2016-04-01");
+            request.Parameters.Add("Version", "2016-11-15");
 
             if(publicRequest != null)
             {
@@ -144,6 +144,22 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("InstanceType", StringUtils.FromString(publicRequest.InstanceType));
                 }
+                if(publicRequest.IsSetIpv6AddressCount())
+                {
+                    request.Parameters.Add("Ipv6AddressCount", StringUtils.FromInt(publicRequest.Ipv6AddressCount));
+                }
+                if(publicRequest.IsSetIpv6Addresses())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.Ipv6Addresses)
+                    {
+                        if(publicRequestlistValue.IsSetIpv6Address())
+                        {
+                            request.Parameters.Add("Ipv6Address" + "." + publicRequestlistValueIndex + "." + "Ipv6Address", StringUtils.FromString(publicRequestlistValue.Ipv6Address));
+                        }
+                        publicRequestlistValueIndex++;
+                    }
+                }
                 if(publicRequest.IsSetKernelId())
                 {
                     request.Parameters.Add("KernelId", StringUtils.FromString(publicRequest.KernelId));
@@ -191,6 +207,22 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             foreach(var publicRequestlistValuelistValue in publicRequestlistValue.Groups)
                             {
                                 request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "SecurityGroupId" + "." + publicRequestlistValuelistValueIndex, StringUtils.FromString(publicRequestlistValuelistValue));
+                                publicRequestlistValuelistValueIndex++;
+                            }
+                        }
+                        if(publicRequestlistValue.IsSetIpv6AddressCount())
+                        {
+                            request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "Ipv6AddressCount", StringUtils.FromInt(publicRequestlistValue.Ipv6AddressCount));
+                        }
+                        if(publicRequestlistValue.IsSetIpv6Addresses())
+                        {
+                            int publicRequestlistValuelistValueIndex = 1;
+                            foreach(var publicRequestlistValuelistValue in publicRequestlistValue.Ipv6Addresses)
+                            {
+                                if(publicRequestlistValuelistValue.IsSetIpv6Address())
+                                {
+                                    request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "Ipv6AddressesSet" + "." + publicRequestlistValuelistValueIndex + "." + "Ipv6Address", StringUtils.FromString(publicRequestlistValuelistValue.Ipv6Address));
+                                }
                                 publicRequestlistValuelistValueIndex++;
                             }
                         }

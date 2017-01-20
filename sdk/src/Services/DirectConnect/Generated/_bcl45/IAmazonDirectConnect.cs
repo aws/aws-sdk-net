@@ -23,6 +23,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.DirectConnect.Model;
 
 namespace Amazon.DirectConnect
@@ -42,7 +43,7 @@ namespace Amazon.DirectConnect
     /// in the US and use it to access public AWS services in all US Regions and AWS GovCloud
     /// (US).
     /// </summary>
-    public partial interface IAmazonDirectConnect : IDisposable
+    public partial interface IAmazonDirectConnect : IAmazonService, IDisposable
     {
 
         
@@ -153,6 +154,12 @@ namespace Amazon.DirectConnect
         /// owner by calling ConfirmPublicVirtualInterface. Until this step has been completed,
         /// the virtual interface will be in 'Confirming' state, and will not be available for
         /// handling traffic.
+        /// </para>
+        ///  
+        /// <para>
+        /// When creating an IPv6 public virtual interface (addressFamily is 'ipv6'), the customer
+        /// and amazon address fields should be left blank to use auto-assigned IPv6 space. Custom
+        /// IPv6 Addresses are currently not supported.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AllocatePublicVirtualInterface service method.</param>
@@ -301,6 +308,57 @@ namespace Amazon.DirectConnect
 
         #endregion
         
+        #region  CreateBGPPeer
+
+
+        /// <summary>
+        /// Creates a new BGP peer on a specified virtual interface. The BGP peer cannot be in
+        /// the same address family (IPv4/IPv6) of an existing BGP peer on the virtual interface.
+        /// 
+        ///  
+        /// <para>
+        /// You must create a BGP peer for the corresponding address family in order to access
+        /// AWS resources that also use that address family.
+        /// </para>
+        ///  
+        /// <para>
+        /// When creating a IPv6 BGP peer, the Amazon address and customer address fields must
+        /// be left blank. IPv6 addresses are automatically assigned from Amazon's pool of IPv6
+        /// addresses; you cannot specify custom IPv6 addresses.
+        /// </para>
+        ///  
+        /// <para>
+        /// For a public virtual interface, the Autonomous System Number (ASN) must be private
+        /// or already whitelisted for the virtual interface.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateBGPPeer service method.</param>
+        /// 
+        /// <returns>The response from the CreateBGPPeer service method, as returned by DirectConnect.</returns>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
+        /// The API was called with invalid parameters. The error message will contain additional
+        /// details about the cause.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
+        /// A server-side error occurred during the API call. The error message will contain additional
+        /// details about the cause.
+        /// </exception>
+        CreateBGPPeerResponse CreateBGPPeer(CreateBGPPeerRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateBGPPeer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateBGPPeer operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<CreateBGPPeerResponse> CreateBGPPeerAsync(CreateBGPPeerRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateConnection
 
 
@@ -444,6 +502,13 @@ namespace Amazon.DirectConnect
         /// Creates a new public virtual interface. A virtual interface is the VLAN that transports
         /// AWS Direct Connect traffic. A public virtual interface supports sending traffic to
         /// public services of AWS such as Amazon Simple Storage Service (Amazon S3).
+        /// 
+        ///  
+        /// <para>
+        /// When creating an IPv6 public virtual interface (addressFamily is 'ipv6'), the customer
+        /// and amazon address fields should be left blank to use auto-assigned IPv6 space. Custom
+        /// IPv6 Addresses are currently not supported.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePublicVirtualInterface service method.</param>
         /// 
@@ -469,6 +534,40 @@ namespace Amazon.DirectConnect
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<CreatePublicVirtualInterfaceResponse> CreatePublicVirtualInterfaceAsync(CreatePublicVirtualInterfaceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteBGPPeer
+
+
+        /// <summary>
+        /// Deletes a BGP peer on the specified virtual interface that matches the specified customer
+        /// address and ASN. You cannot delete the last BGP peer from a virtual interface.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBGPPeer service method.</param>
+        /// 
+        /// <returns>The response from the DeleteBGPPeer service method, as returned by DirectConnect.</returns>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
+        /// The API was called with invalid parameters. The error message will contain additional
+        /// details about the cause.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
+        /// A server-side error occurred during the API call. The error message will contain additional
+        /// details about the cause.
+        /// </exception>
+        DeleteBGPPeerResponse DeleteBGPPeer(DeleteBGPPeerRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteBGPPeer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBGPPeer operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DeleteBGPPeerResponse> DeleteBGPPeerAsync(DeleteBGPPeerRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -945,6 +1044,39 @@ namespace Amazon.DirectConnect
 
         #endregion
         
+        #region  DescribeTags
+
+
+        /// <summary>
+        /// Describes the tags associated with the specified Direct Connect resources.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTags service method.</param>
+        /// 
+        /// <returns>The response from the DescribeTags service method, as returned by DirectConnect.</returns>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
+        /// The API was called with invalid parameters. The error message will contain additional
+        /// details about the cause.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
+        /// A server-side error occurred during the API call. The error message will contain additional
+        /// details about the cause.
+        /// </exception>
+        DescribeTagsResponse DescribeTags(DescribeTagsRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeTags operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTags operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DescribeTagsResponse> DescribeTagsAsync(DescribeTagsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeVirtualGateways
 
 
@@ -1150,6 +1282,86 @@ namespace Amazon.DirectConnect
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<DescribeVirtualInterfacesResponse> DescribeVirtualInterfacesAsync(DescribeVirtualInterfacesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  TagResource
+
+
+        /// <summary>
+        /// Adds the specified tags to the specified Direct Connect resource. Each Direct Connect
+        /// resource can have a maximum of 50 tags.
+        /// 
+        ///  
+        /// <para>
+        /// Each tag consists of a key and an optional value. If a tag with the same key is already
+        /// associated with the Direct Connect resource, this action updates its value.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by DirectConnect.</returns>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
+        /// The API was called with invalid parameters. The error message will contain additional
+        /// details about the cause.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
+        /// A server-side error occurred during the API call. The error message will contain additional
+        /// details about the cause.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.DuplicateTagKeysException">
+        /// A tag key was specified more than once.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.TooManyTagsException">
+        /// You have reached the limit on the number of tags that can be assigned to a Direct
+        /// Connect resource.
+        /// </exception>
+        TagResourceResponse TagResource(TagResourceRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TagResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UntagResource
+
+
+        /// <summary>
+        /// Removes one or more tags from the specified Direct Connect resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by DirectConnect.</returns>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
+        /// The API was called with invalid parameters. The error message will contain additional
+        /// details about the cause.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
+        /// A server-side error occurred during the API call. The error message will contain additional
+        /// details about the cause.
+        /// </exception>
+        UntagResourceResponse UntagResource(UntagResourceRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

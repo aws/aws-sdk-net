@@ -67,6 +67,12 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetClusterId())
+                {
+                    context.Writer.WritePropertyName("ClusterId");
+                    context.Writer.Write(publicRequest.ClusterId);
+                }
+
                 if(publicRequest.IsSetInstanceGroups())
                 {
                     context.Writer.WritePropertyName("InstanceGroups");

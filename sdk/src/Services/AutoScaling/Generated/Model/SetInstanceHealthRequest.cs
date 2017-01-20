@@ -33,8 +33,8 @@ namespace Amazon.AutoScaling.Model
     /// 
     ///  
     /// <para>
-    /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/healthcheck.html">Health
-    /// Checks</a> in the <i>Auto Scaling Developer Guide</i>.
+    /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/healthcheck.html">Health
+    /// Checks</a> in the <i>Auto Scaling User Guide</i>.
     /// </para>
     /// </summary>
     public partial class SetInstanceHealthRequest : AmazonAutoScalingRequest
@@ -46,9 +46,9 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property HealthStatus. 
         /// <para>
-        ///  The health status of the instance. Set to <code>Healthy</code> if you want the instance
+        /// The health status of the instance. Set to <code>Healthy</code> if you want the instance
         /// to remain in service. Set to <code>Unhealthy</code> if you want the instance to be
-        /// out of service. Auto Scaling will terminate and replace the unhealthy instance. 
+        /// out of service. Auto Scaling will terminate and replace the unhealthy instance.
         /// </para>
         /// </summary>
         public string HealthStatus

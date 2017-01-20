@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-11-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -36,9 +36,9 @@ namespace Amazon.EC2.Model
     /// 
     ///  
     /// <para>
-    /// Each rule consists of the protocol and the CIDR range or source security group. For
-    /// the TCP and UDP protocols, you must also specify the destination port or range of
-    /// ports. For the ICMP protocol, you must also specify the ICMP type and code.
+    /// Each rule consists of the protocol and the IPv4 or IPv6 CIDR range or source security
+    /// group. For the TCP and UDP protocols, you must also specify the destination port or
+    /// range of ports. For the ICMP protocol, you must also specify the ICMP type and code.
     /// </para>
     ///  
     /// <para>

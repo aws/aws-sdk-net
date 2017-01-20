@@ -29,26 +29,48 @@ namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
     /// Container for the parameters to the PutLogEvents operation.
-    /// Uploads a batch of log events to the specified log stream. 
+    /// Uploads a batch of log events to the specified log stream.
     /// 
     ///  
     /// <para>
-    ///  Every PutLogEvents request must include the <code class="code">sequenceToken</code>
-    /// obtained from the response of the previous request. An upload in a newly created log
-    /// stream does not require a <code class="code">sequenceToken</code>. 
+    /// You must include the sequence token obtained from the response of the previous call.
+    /// An upload in a newly created log stream does not require a sequence token. You can
+    /// also get the sequence token using <a>DescribeLogStreams</a>.
     /// </para>
     ///  
     /// <para>
-    ///  The batch of events must satisfy the following constraints: <ul> <li>The maximum
-    /// batch size is 1,048,576 bytes, and this size is calculated as the sum of all event
-    /// messages in UTF-8, plus 26 bytes for each log event.</li> <li>None of the log events
-    /// in the batch can be more than 2 hours in the future.</li> <li>None of the log events
-    /// in the batch can be older than 14 days or the retention period of the log group.</li>
-    /// <li>The log events in the batch must be in chronological ordered by their <code class="code">timestamp</code>.</li>
-    /// <li>The maximum number of log events in a batch is 10,000.</li> <li>A batch of log
-    /// events in a single PutLogEvents request cannot span more than 24 hours. Otherwise,
-    /// the PutLogEvents operation will fail.</li> </ul> 
+    /// The batch of events must satisfy the following constraints:
     /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// The maximum batch size is 1,048,576 bytes, and this size is calculated as the sum
+    /// of all event messages in UTF-8, plus 26 bytes for each log event.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// None of the log events in the batch can be more than 2 hours in the future.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// None of the log events in the batch can be older than 14 days or the retention period
+    /// of the log group.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The log events in the batch must be in chronological ordered by their timestamp (the
+    /// time the event occurred, expressed as the number of milliseconds since Jan 1, 1970
+    /// 00:00:00 UTC).
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The maximum number of log events in a batch is 10,000.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// A batch of log events in a single request cannot span more than 24 hours. Otherwise,
+    /// the operation fails.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class PutLogEventsRequest : AmazonCloudWatchLogsRequest
     {
@@ -65,9 +87,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Instantiates PutLogEventsRequest with the parameterized properties
         /// </summary>
-        /// <param name="logGroupName">The name of the log group to put log events to.</param>
-        /// <param name="logStreamName">The name of the log stream to put log events to.</param>
-        /// <param name="logEvents">Sets the PutLogEventsRequest LogEvents property</param>
+        /// <param name="logGroupName">The name of the log group.</param>
+        /// <param name="logStreamName">The name of the log stream.</param>
+        /// <param name="logEvents">The log events.</param>
         public PutLogEventsRequest(string logGroupName, string logStreamName, List<InputLogEvent> logEvents)
         {
             _logGroupName = logGroupName;
@@ -76,7 +98,10 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LogEvents.
+        /// Gets and sets the property LogEvents. 
+        /// <para>
+        /// The log events.
+        /// </para>
         /// </summary>
         public List<InputLogEvent> LogEvents
         {
@@ -93,7 +118,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property LogGroupName. 
         /// <para>
-        /// The name of the log group to put log events to.
+        /// The name of the log group.
         /// </para>
         /// </summary>
         public string LogGroupName
@@ -111,7 +136,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property LogStreamName. 
         /// <para>
-        /// The name of the log stream to put log events to.
+        /// The name of the log stream.
         /// </para>
         /// </summary>
         public string LogStreamName
@@ -129,8 +154,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property SequenceToken. 
         /// <para>
-        ///  A string token that must be obtained from the response of the previous <code class="code">PutLogEvents</code>
-        /// request. 
+        /// The sequence token.
         /// </para>
         /// </summary>
         public string SequenceToken

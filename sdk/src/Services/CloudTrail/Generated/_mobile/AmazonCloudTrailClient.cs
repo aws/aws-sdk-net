@@ -60,14 +60,75 @@ namespace Amazon.CloudTrail
     /// </para>
     ///  </note> 
     /// <para>
-    /// See the CloudTrail User Guide for information about the data that is included with
-    /// each AWS API call listed in the log files.
+    /// See the <a href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-user-guide.html">AWS
+    /// CloudTrail User Guide</a> for information about the data that is included with each
+    /// AWS API call listed in the log files.
     /// </para>
     /// </summary>
     public partial class AmazonCloudTrailClient : AmazonServiceClient, IAmazonCloudTrail
     {
         
         #region Constructors
+
+#if CORECLR
+    
+        /// <summary>
+        /// Constructs AmazonCloudTrailClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
+        public AmazonCloudTrailClient()
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCloudTrailConfig()) { }
+
+        /// <summary>
+        /// Constructs AmazonCloudTrailClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
+        /// <param name="region">The region to connect.</param>
+        public AmazonCloudTrailClient(RegionEndpoint region)
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCloudTrailConfig{RegionEndpoint = region}) { }
+
+        /// <summary>
+        /// Constructs AmazonCloudTrailClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
+        /// <param name="config">The AmazonCloudTrailClient Configuration Object</param>
+        public AmazonCloudTrailClient(AmazonCloudTrailConfig config)
+            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+
+#endif
 
         /// <summary>
         /// Constructs AmazonCloudTrailClient with AWS Credentials
@@ -344,6 +405,37 @@ namespace Amazon.CloudTrail
 
         #endregion
         
+        #region  GetEventSelectors
+
+        internal GetEventSelectorsResponse GetEventSelectors(GetEventSelectorsRequest request)
+        {
+            var marshaller = new GetEventSelectorsRequestMarshaller();
+            var unmarshaller = GetEventSelectorsResponseUnmarshaller.Instance;
+
+            return Invoke<GetEventSelectorsRequest,GetEventSelectorsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetEventSelectors operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetEventSelectors operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetEventSelectorsResponse> GetEventSelectorsAsync(GetEventSelectorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetEventSelectorsRequestMarshaller();
+            var unmarshaller = GetEventSelectorsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetEventSelectorsRequest,GetEventSelectorsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetTrailStatus
 
         internal GetTrailStatusResponse GetTrailStatus(GetTrailStatusRequest request)
@@ -463,6 +555,37 @@ namespace Amazon.CloudTrail
             var unmarshaller = LookupEventsResponseUnmarshaller.Instance;
 
             return InvokeAsync<LookupEventsRequest,LookupEventsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutEventSelectors
+
+        internal PutEventSelectorsResponse PutEventSelectors(PutEventSelectorsRequest request)
+        {
+            var marshaller = new PutEventSelectorsRequestMarshaller();
+            var unmarshaller = PutEventSelectorsResponseUnmarshaller.Instance;
+
+            return Invoke<PutEventSelectorsRequest,PutEventSelectorsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutEventSelectors operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutEventSelectors operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<PutEventSelectorsResponse> PutEventSelectorsAsync(PutEventSelectorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new PutEventSelectorsRequestMarshaller();
+            var unmarshaller = PutEventSelectorsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutEventSelectorsRequest,PutEventSelectorsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

@@ -29,12 +29,13 @@ namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeApplicationVersions operation.
-    /// Retrieve a list of application versions stored in your AWS Elastic Beanstalk storage
-    /// bucket.
+    /// Retrieve a list of application versions.
     /// </summary>
     public partial class DescribeApplicationVersionsRequest : AmazonElasticBeanstalkRequest
     {
         private string _applicationName;
+        private int? _maxRecords;
+        private string _nextToken;
         private List<string> _versionLabels = new List<string>();
 
         /// <summary>
@@ -45,8 +46,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property ApplicationName. 
         /// <para>
-        /// If specified, AWS Elastic Beanstalk restricts the returned descriptions to only include
-        /// ones that are associated with the specified application.
+        /// Specify an application name to show only application versions for that application.
         /// </para>
         /// </summary>
         public string ApplicationName
@@ -62,10 +62,45 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MaxRecords. 
+        /// <para>
+        /// Specify a maximum number of application versions to paginate in the request.
+        /// </para>
+        /// </summary>
+        public int MaxRecords
+        {
+            get { return this._maxRecords.GetValueOrDefault(); }
+            set { this._maxRecords = value; }
+        }
+
+        // Check to see if MaxRecords property is set
+        internal bool IsSetMaxRecords()
+        {
+            return this._maxRecords.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// Specify a next token to retrieve the next page in a paginated request.
+        /// </para>
+        /// </summary>
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property VersionLabels. 
         /// <para>
-        /// If specified, restricts the returned descriptions to only include ones that have the
-        /// specified version labels.
+        /// Specify a version label to show a specific application version.
         /// </para>
         /// </summary>
         public List<string> VersionLabels

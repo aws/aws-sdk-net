@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-11-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -54,7 +54,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
             request.Parameters.Add("Action", "RequestSpotFleet");
-            request.Parameters.Add("Version", "2016-04-01");
+            request.Parameters.Add("Version", "2016-11-15");
 
             if(publicRequest != null)
             {
@@ -204,6 +204,22 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                             publicRequestSpotFleetRequestConfiglistValuelistValuelistValueIndex++;
                                         }
                                     }
+                                    if(publicRequestSpotFleetRequestConfiglistValuelistValue.IsSetIpv6AddressCount())
+                                    {
+                                        request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "NetworkInterfaceSet" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "Ipv6AddressCount", StringUtils.FromInt(publicRequestSpotFleetRequestConfiglistValuelistValue.Ipv6AddressCount));
+                                    }
+                                    if(publicRequestSpotFleetRequestConfiglistValuelistValue.IsSetIpv6Addresses())
+                                    {
+                                        int publicRequestSpotFleetRequestConfiglistValuelistValuelistValueIndex = 1;
+                                        foreach(var publicRequestSpotFleetRequestConfiglistValuelistValuelistValue in publicRequestSpotFleetRequestConfiglistValuelistValue.Ipv6Addresses)
+                                        {
+                                            if(publicRequestSpotFleetRequestConfiglistValuelistValuelistValue.IsSetIpv6Address())
+                                            {
+                                                request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "NetworkInterfaceSet" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "Ipv6AddressesSet" + "." + publicRequestSpotFleetRequestConfiglistValuelistValuelistValueIndex + "." + "Ipv6Address", StringUtils.FromString(publicRequestSpotFleetRequestConfiglistValuelistValuelistValue.Ipv6Address));
+                                            }
+                                            publicRequestSpotFleetRequestConfiglistValuelistValuelistValueIndex++;
+                                        }
+                                    }
                                     if(publicRequestSpotFleetRequestConfiglistValuelistValue.IsSetNetworkInterfaceId())
                                     {
                                         request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "NetworkInterfaceSet" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "NetworkInterfaceId", StringUtils.FromString(publicRequestSpotFleetRequestConfiglistValuelistValue.NetworkInterfaceId));
@@ -248,6 +264,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                 if(publicRequestSpotFleetRequestConfiglistValue.Placement.IsSetGroupName())
                                 {
                                     request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "Placement" + "." + "GroupName", StringUtils.FromString(publicRequestSpotFleetRequestConfiglistValue.Placement.GroupName));
+                                }
+                                if(publicRequestSpotFleetRequestConfiglistValue.Placement.IsSetTenancy())
+                                {
+                                    request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "Placement" + "." + "Tenancy", StringUtils.FromString(publicRequestSpotFleetRequestConfiglistValue.Placement.Tenancy));
                                 }
                             }
                             if(publicRequestSpotFleetRequestConfiglistValue.IsSetRamdiskId())

@@ -35,7 +35,10 @@ namespace Amazon.IdentityManagement.Model
         private PasswordPolicy _passwordPolicy;
 
         /// <summary>
-        /// Gets and sets the property PasswordPolicy.
+        /// Gets and sets the property PasswordPolicy. 
+        /// <para>
+        /// Contains information about the account password policy.
+        /// </para>
         /// </summary>
         public PasswordPolicy PasswordPolicy
         {

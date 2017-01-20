@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2016-01-28.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-11-25.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -28,9 +28,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// A complex type that describes the default cache behavior if you do not specify a CacheBehavior
-    /// element or if files don't match any of the values of PathPattern in CacheBehavior
-    /// elements.You must create exactly one default cache behavior.
+    /// A complex type that describes the default cache behavior if you do not specify a <code>CacheBehavior</code>
+    /// element or if files don't match any of the values of <code>PathPattern</code> in <code>CacheBehavior</code>
+    /// elements. You must create exactly one default cache behavior.
     /// </summary>
     public partial class DefaultCacheBehavior
     {
@@ -38,6 +38,7 @@ namespace Amazon.CloudFront.Model
         private bool? _compress;
         private long? _defaultTTL;
         private ForwardedValues _forwardedValues;
+        private LambdaFunctionAssociations _lambdaFunctionAssociations;
         private long? _maxTTL;
         private long? _minTTL;
         private bool? _smoothStreaming;
@@ -61,20 +62,13 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Compress. Whether you want CloudFront to automatically
-        /// compress content for web requests that include Accept-Encoding: gzip in the request
-        /// header. If so, specify true; if not, specify false. CloudFront compresses files larger
-        /// than 1000 bytes and less than 1 megabyte for both Amazon S3 and custom origins. When
-        /// a CloudFront edge location is unusually busy, some files might not be compressed.
-        /// The value of the Content-Type header must be on the list of file types that CloudFront
-        /// will compress. For the current list, see <a href="http://docs.aws.amazon.com/console/cloudfront/compressed-content">Serving
-        /// Compressed Content</a> in the Amazon CloudFront Developer Guide. If you configure
-        /// CloudFront to compress content, CloudFront removes the ETag response header from the
-        /// objects that it compresses. The ETag header indicates that the version in a CloudFront
-        /// edge cache is identical to the version on the origin server, but after compression
-        /// the two versions are no longer identical. As a result, for compressed objects, CloudFront
-        /// can't use the ETag header to determine whether an expired object in the CloudFront
-        /// edge cache is still the latest version.
+        /// Gets and sets the property Compress. 
+        /// <para>
+        /// Whether you want CloudFront to automatically compress certain files for this cache
+        /// behavior. If so, specify <code>true</code>; if not, specify <code>false</code>. For
+        /// more information, see <a href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/ServingCompressedFiles.html">Serving
+        /// Compressed Files</a> in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
         /// </summary>
         public bool Compress
         {
@@ -89,13 +83,16 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DefaultTTL. If you don't configure your origin to add a
-        /// Cache-Control max-age directive or an Expires header, DefaultTTL is the default amount
-        /// of time (in seconds) that an object is in a CloudFront cache before CloudFront forwards
-        /// another request to your origin to determine whether the object has been updated. The
-        /// value that you specify applies only when your origin does not add HTTP headers such
-        /// as Cache-Control max-age, Cache-Control s-maxage, and Expires to objects. You can
-        /// specify a value from 0 to 3,153,600,000 seconds (100 years).
+        /// Gets and sets the property DefaultTTL. 
+        /// <para>
+        /// The default amount of time that you want objects to stay in CloudFront caches before
+        /// CloudFront forwards another request to your origin to determine whether the object
+        /// has been updated. The value that you specify applies only when your origin does not
+        /// add HTTP headers such as <code>Cache-Control max-age</code>, <code>Cache-Control s-maxage</code>,
+        /// and <code>Expires</code> to objects. For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Specifying
+        /// How Long Objects and Errors Stay in a CloudFront Edge Cache (Expiration)</a> in the
+        /// <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
         /// </summary>
         public long DefaultTTL
         {
@@ -110,8 +107,10 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ForwardedValues. A complex type that specifies how CloudFront
-        /// handles query strings, cookies and headers.
+        /// Gets and sets the property ForwardedValues. 
+        /// <para>
+        /// A complex type that specifies how CloudFront handles query strings and cookies.
+        /// </para>
         /// </summary>
         public ForwardedValues ForwardedValues
         {
@@ -126,12 +125,26 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaxTTL. The maximum amount of time (in seconds) that an
-        /// object is in a CloudFront cache before CloudFront forwards another request to your
-        /// origin to determine whether the object has been updated. The value that you specify
-        /// applies only when your origin adds HTTP headers such as Cache-Control max-age, Cache-Control
-        /// s-maxage, and Expires to objects. You can specify a value from 0 to 3,153,600,000
-        /// seconds (100 years).
+        /// Gets and sets the property LambdaFunctionAssociations. 
+        /// <para>
+        /// A complex type that contains zero or more Lambda function associations for a cache
+        /// behavior.
+        /// </para>
+        /// </summary>
+        public LambdaFunctionAssociations LambdaFunctionAssociations
+        {
+            get { return this._lambdaFunctionAssociations; }
+            set { this._lambdaFunctionAssociations = value; }
+        }
+
+        // Check to see if LambdaFunctionAssociations property is set
+        internal bool IsSetLambdaFunctionAssociations()
+        {
+            return this._lambdaFunctionAssociations != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxTTL.
         /// </summary>
         public long MaxTTL
         {
@@ -146,10 +159,20 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MinTTL. The minimum amount of time that you want objects
-        /// to stay in CloudFront caches before CloudFront queries your origin to see whether
-        /// the object has been updated.You can specify a value from 0 to 3,153,600,000 seconds
-        /// (100 years).
+        /// Gets and sets the property MinTTL. 
+        /// <para>
+        /// The minimum amount of time that you want objects to stay in CloudFront caches before
+        /// CloudFront forwards another request to your origin to determine whether the object
+        /// has been updated. For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Specifying
+        /// How Long Objects and Errors Stay in a CloudFront Edge Cache (Expiration)</a> in the
+        /// <i>Amazon Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You must specify <code>0</code> for <code>MinTTL</code> if you configure CloudFront
+        /// to forward all headers to your origin (under <code>Headers</code>, if you specify
+        /// <code>1</code> for <code>Quantity</code> and <code>*</code> for <code>Name</code>).
+        /// </para>
         /// </summary>
         public long MinTTL
         {
@@ -164,9 +187,14 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SmoothStreaming. Indicates whether you want to distribute
-        /// media files in Microsoft Smooth Streaming format using the origin that is associated
-        /// with this cache behavior. If so, specify true; if not, specify false.
+        /// Gets and sets the property SmoothStreaming. 
+        /// <para>
+        /// Indicates whether you want to distribute media files in the Microsoft Smooth Streaming
+        /// format using the origin that is associated with this cache behavior. If so, specify
+        /// <code>true</code>; if not, specify <code>false</code>. If you specify <code>true</code>
+        /// for <code>SmoothStreaming</code>, you can still distribute other content using this
+        /// cache behavior if the content matches the value of <code>PathPattern</code>. 
+        /// </para>
         /// </summary>
         public bool SmoothStreaming
         {
@@ -181,9 +209,12 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TargetOriginId. The value of ID for the origin that you
-        /// want CloudFront to route requests to when a request matches the path pattern either
-        /// for a cache behavior or for the default cache behavior.
+        /// Gets and sets the property TargetOriginId. 
+        /// <para>
+        /// The value of <code>ID</code> for the origin that you want CloudFront to route requests
+        /// to when a request matches the path pattern either for a cache behavior or for the
+        /// default cache behavior.
+        /// </para>
         /// </summary>
         public string TargetOriginId
         {
@@ -198,16 +229,33 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TrustedSigners. A complex type that specifies the AWS accounts,
-        /// if any, that you want to allow to create signed URLs for private content. If you want
-        /// to require signed URLs in requests for objects in the target origin that match the
-        /// PathPattern for this cache behavior, specify true for Enabled, and specify the applicable
-        /// values for Quantity and Items. For more information, go to Using a Signed URL to Serve
-        /// Private Content in the Amazon CloudFront Developer Guide. If you don't want to require
-        /// signed URLs in requests for objects that match PathPattern, specify false for Enabled
-        /// and 0 for Quantity. Omit Items. To add, change, or remove one or more trusted signers,
-        /// change Enabled to true (if it's currently false), change Quantity as applicable, and
-        /// specify all of the trusted signers that you want to include in the updated distribution.
+        /// Gets and sets the property TrustedSigners. 
+        /// <para>
+        /// A complex type that specifies the AWS accounts, if any, that you want to allow to
+        /// create signed URLs for private content.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you want to require signed URLs in requests for objects in the target origin that
+        /// match the <code>PathPattern</code> for this cache behavior, specify <code>true</code>
+        /// for <code>Enabled</code>, and specify the applicable values for <code>Quantity</code>
+        /// and <code>Items</code>. For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
+        /// Private Content through CloudFront</a> in the <i>Amazon Amazon CloudFront Developer
+        /// Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you don't want to require signed URLs in requests for objects that match <code>PathPattern</code>,
+        /// specify <code>false</code> for <code>Enabled</code> and <code>0</code> for <code>Quantity</code>.
+        /// Omit <code>Items</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To add, change, or remove one or more trusted signers, change <code>Enabled</code>
+        /// to <code>true</code> (if it's currently <code>false</code>), change <code>Quantity</code>
+        /// as applicable, and specify all of the trusted signers that you want to include in
+        /// the updated distribution.
+        /// </para>
         /// </summary>
         public TrustedSigners TrustedSigners
         {
@@ -222,13 +270,45 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ViewerProtocolPolicy. Use this element to specify the protocol
-        /// that users can use to access the files in the origin specified by TargetOriginId when
-        /// a request matches the path pattern in PathPattern. If you want CloudFront to allow
-        /// end users to use any available protocol, specify allow-all. If you want CloudFront
-        /// to require HTTPS, specify https. If you want CloudFront to respond to an HTTP request
-        /// with an HTTP status code of 301 (Moved Permanently) and the HTTPS URL, specify redirect-to-https.
-        /// The viewer then resubmits the request using the HTTPS URL.
+        /// Gets and sets the property ViewerProtocolPolicy. 
+        /// <para>
+        /// The protocol that viewers can use to access the files in the origin specified by <code>TargetOriginId</code>
+        /// when a request matches the path pattern in <code>PathPattern</code>. You can specify
+        /// the following options:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>allow-all</code>: Viewers can use HTTP or HTTPS.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>redirect-to-https</code>: If a viewer submits an HTTP request, CloudFront returns
+        /// an HTTP status code of 301 (Moved Permanently) to the viewer along with the HTTPS
+        /// URL. The viewer then resubmits the request using the new URL.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>https-only</code>: If a viewer sends an HTTP request, CloudFront returns an
+        /// HTTP status code of 403 (Forbidden).
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information about requiring the HTTPS protocol, see <a href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/SecureConnections.html">Using
+        /// an HTTPS Connection to Access Your Objects</a> in the <i>Amazon CloudFront Developer
+        /// Guide</i>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The only way to guarantee that viewers retrieve an object that was fetched from the
+        /// origin using HTTPS is never to use any other protocol to fetch the object. If you
+        /// have recently changed from HTTP to HTTPS, we recommend that you clear your objects'
+        /// cache because cached objects are protocol agnostic. That means that an edge location
+        /// will return an object from the cache regardless of whether the current request protocol
+        /// matches the protocol used previously. For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Specifying
+        /// How Long Objects and Errors Stay in a CloudFront Edge Cache (Expiration)</a> in the
+        /// <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         public ViewerProtocolPolicy ViewerProtocolPolicy
         {

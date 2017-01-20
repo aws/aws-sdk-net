@@ -37,6 +37,7 @@ namespace Amazon.APIGateway.Model
         private string _authorizationType;
         private string _authorizerId;
         private string _httpMethod;
+        private string _operationName;
         private Dictionary<string, string> _requestModels = new Dictionary<string, string>();
         private Dictionary<string, bool> _requestParameters = new Dictionary<string, bool>();
         private string _resourceId;
@@ -100,7 +101,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property HttpMethod. 
         /// <para>
-        /// Specifies the put method request's HTTP method type.
+        /// Specifies the method request's HTTP method type.
         /// </para>
         /// </summary>
         public string HttpMethod
@@ -113,6 +114,27 @@ namespace Amazon.APIGateway.Model
         internal bool IsSetHttpMethod()
         {
             return this._httpMethod != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OperationName. 
+        /// <para>
+        /// A human-friendly operation identifier for the method. For example, you can assign
+        /// the <code>operationName</code> of <code>ListPets</code> for the <code>GET /pets</code>
+        /// method in <a href="http://petstore-demo-endpoint.execute-api.com/petstore/pets">PetStore</a>
+        /// example.
+        /// </para>
+        /// </summary>
+        public string OperationName
+        {
+            get { return this._operationName; }
+            set { this._operationName = value; }
+        }
+
+        // Check to see if OperationName property is set
+        internal bool IsSetOperationName()
+        {
+            return this._operationName != null;
         }
 
         /// <summary>
@@ -138,13 +160,15 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property RequestParameters. 
         /// <para>
-        /// Represents requests parameters that are sent with the backend request. Request parameters
-        /// are represented as a key/value map, with a destination as the key and a source as
-        /// the value. A source must match an existing method request parameter, or a static value.
-        /// Static values must be enclosed with single quotes, and be pre-encoded based on their
-        /// destination in the request. The destination must match the pattern <code>integration.request.{location}.{name}</code>,
-        /// where <code>location</code> is either querystring, path, or header. <code>name</code>
-        /// must be a valid, unique parameter name.
+        /// A key-value map defining required or optional method request parameters that can be
+        /// accepted by Amazon API Gateway. A key defines a method request parameter name matching
+        /// the pattern of <code>method.request.{location}.{name}</code>, where <code>location</code>
+        /// is <code>querystring</code>, <code>path</code>, or <code>header</code> and <code>name</code>
+        /// is a valid and unique parameter name. The value associated with the key is a Boolean
+        /// flag indicating whether the parameter is required (<code>true</code>) or optional
+        /// (<code>false</code>). The method request parameter names defined here are available
+        /// in <a>Integration</a> to be mapped to integration request parameters or body-mapping
+        /// templates.
         /// </para>
         /// </summary>
         public Dictionary<string, bool> RequestParameters

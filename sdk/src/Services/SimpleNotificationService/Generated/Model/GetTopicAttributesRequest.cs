@@ -29,8 +29,8 @@ namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
     /// Container for the parameters to the GetTopicAttributes operation.
-    /// Returns all of the properties of a topic.     Topic properties returned might differ
-    /// based on the authorization of the user.
+    /// Returns all of the properties of a topic. Topic properties returned might differ based
+    /// on the authorization of the user.
     /// </summary>
     public partial class GetTopicAttributesRequest : AmazonSimpleNotificationServiceRequest
     {

@@ -31,7 +31,7 @@ namespace Amazon.Glacier.Model
     /// Container for the parameters to the UploadArchive operation.
     /// This operation adds an archive to a vault. This is a synchronous operation, and for
     /// a successful upload, your data is durably persisted. Amazon Glacier returns the archive
-    /// ID in the <code class="code">x-amz-archive-id</code> header of the response. 
+    /// ID in the <code>x-amz-archive-id</code> header of the response. 
     /// 
     ///  
     /// <para>
@@ -61,7 +61,7 @@ namespace Amazon.Glacier.Model
     ///  
     /// <para>
     /// Archives are immutable. After you upload an archive, you cannot edit the archive or
-    /// its description. 
+    /// its description.
     /// </para>
     ///  
     /// <para>
@@ -73,7 +73,7 @@ namespace Amazon.Glacier.Model
     /// </para>
     ///  
     /// <para>
-    ///  For conceptual information and underlying REST API, go to <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/uploading-an-archive.html">Uploading
+    ///  For conceptual information and underlying REST API, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/uploading-an-archive.html">Uploading
     /// an Archive in Amazon Glacier</a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-post.html">Upload
     /// Archive</a> in the <i>Amazon Glacier Developer Guide</i>. 
     /// </para>
@@ -95,7 +95,7 @@ namespace Amazon.Glacier.Model
         /// Instantiates UploadArchiveRequest with the parameterized properties
         /// </summary>
         /// <param name="vaultName">The name of the vault.</param>
-        /// <param name="archiveDescription">The optional description of the archive you are uploading. </param>
+        /// <param name="archiveDescription">The optional description of the archive you are uploading.</param>
         /// <param name="checksum">The SHA256 tree hash of the data being uploaded.</param>
         /// <param name="body">The data to upload.</param>
         public UploadArchiveRequest(string vaultName, string archiveDescription, string checksum, Stream body)
@@ -109,9 +109,9 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Instantiates UploadArchiveRequest with the parameterized properties
         /// </summary>
-        /// <param name="accountId">The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens (apos-apos) in the ID. </param>
+        /// <param name="accountId">The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </param>
         /// <param name="vaultName">The name of the vault.</param>
-        /// <param name="archiveDescription">The optional description of the archive you are uploading. </param>
+        /// <param name="archiveDescription">The optional description of the archive you are uploading.</param>
         /// <param name="checksum">The SHA256 tree hash of the data being uploaded.</param>
         /// <param name="body">The data to upload.</param>
         public UploadArchiveRequest(string accountId, string vaultName, string archiveDescription, string checksum, Stream body)
@@ -127,10 +127,10 @@ namespace Amazon.Glacier.Model
         /// Gets and sets the property AccountId. 
         /// <para>
         /// The <code>AccountId</code> value is the AWS account ID of the account that owns the
-        /// vault. You can either specify an AWS account ID or optionally a single apos<code>-</code>apos
+        /// vault. You can either specify an AWS account ID or optionally a single '<code>-</code>'
         /// (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the
         /// credentials used to sign the request. If you use an account ID, do not include any
-        /// hyphens (apos-apos) in the ID. 
+        /// hyphens ('-') in the ID. 
         /// </para>
         /// </summary>
         public string AccountId
@@ -148,7 +148,7 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Gets and sets the property ArchiveDescription. 
         /// <para>
-        /// The optional description of the archive you are uploading. 
+        /// The optional description of the archive you are uploading.
         /// </para>
         /// </summary>
         public string ArchiveDescription

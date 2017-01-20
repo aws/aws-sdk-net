@@ -41,9 +41,8 @@ namespace Amazon.Inspector.Model
         /// <summary>
         /// Gets and sets the property AssessmentRunName. 
         /// <para>
-        /// You can specify the name for the assessment run, or you can use the auto-generated
-        /// name that is based on the assessment template name. The name must be unique for the
-        /// assessment template.
+        /// You can specify the name for the assessment run. The name must be unique for the assessment
+        /// template whose ARN is used to start the assessment run.
         /// </para>
         /// </summary>
         public string AssessmentRunName

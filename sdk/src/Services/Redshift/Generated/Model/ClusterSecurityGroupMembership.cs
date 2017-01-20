@@ -38,7 +38,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ClusterSecurityGroupName. 
         /// <para>
-        ///  The name of the cluster security group. 
+        /// The name of the cluster security group.
         /// </para>
         /// </summary>
         public string ClusterSecurityGroupName
@@ -56,7 +56,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        ///  The status of the cluster security group. 
+        /// The status of the cluster security group.
         /// </para>
         /// </summary>
         public string Status

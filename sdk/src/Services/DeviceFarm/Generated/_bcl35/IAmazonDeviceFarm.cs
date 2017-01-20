@@ -21,6 +21,7 @@
 using System;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.DeviceFarm.Model;
 
 namespace Amazon.DeviceFarm
@@ -31,7 +32,7 @@ namespace Amazon.DeviceFarm
     /// AWS Device Farm is a service that enables mobile app developers to test Android, iOS,
     /// and Fire OS apps on physical phones, tablets, and other devices in the cloud.
     /// </summary>
-    public partial interface IAmazonDeviceFarm : IDisposable
+    public partial interface IAmazonDeviceFarm : IAmazonService, IDisposable
     {
 
         
@@ -153,6 +154,55 @@ namespace Amazon.DeviceFarm
 
         #endregion
         
+        #region  CreateRemoteAccessSession
+
+
+        /// <summary>
+        /// Specifies and starts a remote access session.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRemoteAccessSession service method.</param>
+        /// 
+        /// <returns>The response from the CreateRemoteAccessSession service method, as returned by DeviceFarm.</returns>
+        /// <exception cref="Amazon.DeviceFarm.Model.ArgumentException">
+        /// An invalid argument was specified.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.LimitExceededException">
+        /// A limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.NotFoundException">
+        /// The specified entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.ServiceAccountException">
+        /// There was a problem with the service account.
+        /// </exception>
+        CreateRemoteAccessSessionResponse CreateRemoteAccessSession(CreateRemoteAccessSessionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateRemoteAccessSession operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateRemoteAccessSession operation on AmazonDeviceFarmClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateRemoteAccessSession
+        ///         operation.</returns>
+        IAsyncResult BeginCreateRemoteAccessSession(CreateRemoteAccessSessionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateRemoteAccessSession operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateRemoteAccessSession.</param>
+        /// 
+        /// <returns>Returns a  CreateRemoteAccessSessionResult from DeviceFarm.</returns>
+        CreateRemoteAccessSessionResponse EndCreateRemoteAccessSession(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateUpload
 
 
@@ -260,7 +310,7 @@ namespace Amazon.DeviceFarm
         /// 
         ///  
         /// <para>
-        /// <b>Note</b> Deleting this resource does not stop an in-progress run.
+        ///  <b>Note</b> Deleting this resource does not stop an in-progress run.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteProject service method.</param>
@@ -306,6 +356,55 @@ namespace Amazon.DeviceFarm
 
         #endregion
         
+        #region  DeleteRemoteAccessSession
+
+
+        /// <summary>
+        /// Deletes a completed remote access session and its results.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRemoteAccessSession service method.</param>
+        /// 
+        /// <returns>The response from the DeleteRemoteAccessSession service method, as returned by DeviceFarm.</returns>
+        /// <exception cref="Amazon.DeviceFarm.Model.ArgumentException">
+        /// An invalid argument was specified.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.LimitExceededException">
+        /// A limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.NotFoundException">
+        /// The specified entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.ServiceAccountException">
+        /// There was a problem with the service account.
+        /// </exception>
+        DeleteRemoteAccessSessionResponse DeleteRemoteAccessSession(DeleteRemoteAccessSessionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteRemoteAccessSession operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRemoteAccessSession operation on AmazonDeviceFarmClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteRemoteAccessSession
+        ///         operation.</returns>
+        IAsyncResult BeginDeleteRemoteAccessSession(DeleteRemoteAccessSessionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteRemoteAccessSession operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteRemoteAccessSession.</param>
+        /// 
+        /// <returns>Returns a  DeleteRemoteAccessSessionResult from DeviceFarm.</returns>
+        DeleteRemoteAccessSessionResponse EndDeleteRemoteAccessSession(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteRun
 
 
@@ -314,7 +413,7 @@ namespace Amazon.DeviceFarm
         /// 
         ///  
         /// <para>
-        /// <b>Note</b> Deleting this resource does not stop an in-progress run.
+        ///  <b>Note</b> Deleting this resource does not stop an in-progress run.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteRun service method.</param>
@@ -860,6 +959,55 @@ namespace Amazon.DeviceFarm
 
         #endregion
         
+        #region  GetRemoteAccessSession
+
+
+        /// <summary>
+        /// Returns a link to a currently running remote access session.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRemoteAccessSession service method.</param>
+        /// 
+        /// <returns>The response from the GetRemoteAccessSession service method, as returned by DeviceFarm.</returns>
+        /// <exception cref="Amazon.DeviceFarm.Model.ArgumentException">
+        /// An invalid argument was specified.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.LimitExceededException">
+        /// A limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.NotFoundException">
+        /// The specified entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.ServiceAccountException">
+        /// There was a problem with the service account.
+        /// </exception>
+        GetRemoteAccessSessionResponse GetRemoteAccessSession(GetRemoteAccessSessionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetRemoteAccessSession operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetRemoteAccessSession operation on AmazonDeviceFarmClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetRemoteAccessSession
+        ///         operation.</returns>
+        IAsyncResult BeginGetRemoteAccessSession(GetRemoteAccessSessionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetRemoteAccessSession operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetRemoteAccessSession.</param>
+        /// 
+        /// <returns>Returns a  GetRemoteAccessSessionResult from DeviceFarm.</returns>
+        GetRemoteAccessSessionResponse EndGetRemoteAccessSession(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetRun
 
 
@@ -1133,6 +1281,56 @@ namespace Amazon.DeviceFarm
         /// 
         /// <returns>Returns a  GetUploadResult from DeviceFarm.</returns>
         GetUploadResponse EndGetUpload(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  InstallToRemoteAccessSession
+
+
+        /// <summary>
+        /// Installs an application to the device in a remote access session. For Android applications,
+        /// the file must be in .apk format. For iOS applications, the file must be in .ipa format.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the InstallToRemoteAccessSession service method.</param>
+        /// 
+        /// <returns>The response from the InstallToRemoteAccessSession service method, as returned by DeviceFarm.</returns>
+        /// <exception cref="Amazon.DeviceFarm.Model.ArgumentException">
+        /// An invalid argument was specified.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.LimitExceededException">
+        /// A limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.NotFoundException">
+        /// The specified entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.ServiceAccountException">
+        /// There was a problem with the service account.
+        /// </exception>
+        InstallToRemoteAccessSessionResponse InstallToRemoteAccessSession(InstallToRemoteAccessSessionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the InstallToRemoteAccessSession operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the InstallToRemoteAccessSession operation on AmazonDeviceFarmClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndInstallToRemoteAccessSession
+        ///         operation.</returns>
+        IAsyncResult BeginInstallToRemoteAccessSession(InstallToRemoteAccessSessionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  InstallToRemoteAccessSession operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginInstallToRemoteAccessSession.</param>
+        /// 
+        /// <returns>Returns a  InstallToRemoteAccessSessionResult from DeviceFarm.</returns>
+        InstallToRemoteAccessSessionResponse EndInstallToRemoteAccessSession(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1493,11 +1691,60 @@ namespace Amazon.DeviceFarm
 
         #endregion
         
+        #region  ListRemoteAccessSessions
+
+
+        /// <summary>
+        /// Returns a list of all currently running remote access sessions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRemoteAccessSessions service method.</param>
+        /// 
+        /// <returns>The response from the ListRemoteAccessSessions service method, as returned by DeviceFarm.</returns>
+        /// <exception cref="Amazon.DeviceFarm.Model.ArgumentException">
+        /// An invalid argument was specified.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.LimitExceededException">
+        /// A limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.NotFoundException">
+        /// The specified entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.ServiceAccountException">
+        /// There was a problem with the service account.
+        /// </exception>
+        ListRemoteAccessSessionsResponse ListRemoteAccessSessions(ListRemoteAccessSessionsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListRemoteAccessSessions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListRemoteAccessSessions operation on AmazonDeviceFarmClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListRemoteAccessSessions
+        ///         operation.</returns>
+        IAsyncResult BeginListRemoteAccessSessions(ListRemoteAccessSessionsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListRemoteAccessSessions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListRemoteAccessSessions.</param>
+        /// 
+        /// <returns>Returns a  ListRemoteAccessSessionsResult from DeviceFarm.</returns>
+        ListRemoteAccessSessionsResponse EndListRemoteAccessSessions(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListRuns
 
 
         /// <summary>
-        /// Gets information about runs.
+        /// Gets information about runs, given an AWS Device Farm project ARN.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRuns service method.</param>
         /// 
@@ -1546,7 +1793,7 @@ namespace Amazon.DeviceFarm
 
 
         /// <summary>
-        /// Gets information about samples.
+        /// Gets information about samples, given an AWS Device Farm project ARN
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSamples service method.</param>
         /// 
@@ -1742,7 +1989,7 @@ namespace Amazon.DeviceFarm
 
 
         /// <summary>
-        /// Gets information about uploads.
+        /// Gets information about uploads, given an AWS Device Farm project ARN.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListUploads service method.</param>
         /// 
@@ -1947,6 +2194,55 @@ namespace Amazon.DeviceFarm
         /// 
         /// <returns>Returns a  ScheduleRunResult from DeviceFarm.</returns>
         ScheduleRunResponse EndScheduleRun(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  StopRemoteAccessSession
+
+
+        /// <summary>
+        /// Ends a specified remote access session.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopRemoteAccessSession service method.</param>
+        /// 
+        /// <returns>The response from the StopRemoteAccessSession service method, as returned by DeviceFarm.</returns>
+        /// <exception cref="Amazon.DeviceFarm.Model.ArgumentException">
+        /// An invalid argument was specified.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.LimitExceededException">
+        /// A limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.NotFoundException">
+        /// The specified entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.ServiceAccountException">
+        /// There was a problem with the service account.
+        /// </exception>
+        StopRemoteAccessSessionResponse StopRemoteAccessSession(StopRemoteAccessSessionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopRemoteAccessSession operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopRemoteAccessSession operation on AmazonDeviceFarmClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopRemoteAccessSession
+        ///         operation.</returns>
+        IAsyncResult BeginStopRemoteAccessSession(StopRemoteAccessSessionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StopRemoteAccessSession operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopRemoteAccessSession.</param>
+        /// 
+        /// <returns>Returns a  StopRemoteAccessSessionResult from DeviceFarm.</returns>
+        StopRemoteAccessSessionResponse EndStopRemoteAccessSession(IAsyncResult asyncResult);
 
         #endregion
         

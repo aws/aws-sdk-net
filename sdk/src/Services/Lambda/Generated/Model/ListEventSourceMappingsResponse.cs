@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// Contains a list of event sources (see <a>API_EventSourceMappingConfiguration</a>)
+    /// Contains a list of event sources (see <a>EventSourceMappingConfiguration</a>)
     /// </summary>
     public partial class ListEventSourceMappingsResponse : AmazonWebServiceResponse
     {

@@ -19,6 +19,7 @@
 
 
 using System;
+using System.Globalization;
 using System.IO;
 using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -163,6 +164,70 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = CreateDeploymentResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as CreateDeploymentResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("APIGateway")]
+        public void CreateDocumentationPartMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateDocumentationPart");
+
+            var request = InstantiateClassGenerator.Execute<CreateDocumentationPartRequest>();
+            var marshaller = new CreateDocumentationPartRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            RequestValidator.Validate("CreateDocumentationPart", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString());
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = CreateDocumentationPartResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as CreateDocumentationPartResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("APIGateway")]
+        public void CreateDocumentationVersionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateDocumentationVersion");
+
+            var request = InstantiateClassGenerator.Execute<CreateDocumentationVersionRequest>();
+            var marshaller = new CreateDocumentationVersionRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            RequestValidator.Validate("CreateDocumentationVersion", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString());
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = CreateDocumentationVersionResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as CreateDocumentationVersionResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 
@@ -331,6 +396,70 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("APIGateway")]
+        public void CreateUsagePlanMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateUsagePlan");
+
+            var request = InstantiateClassGenerator.Execute<CreateUsagePlanRequest>();
+            var marshaller = new CreateUsagePlanRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            RequestValidator.Validate("CreateUsagePlan", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString());
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = CreateUsagePlanResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as CreateUsagePlanResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("APIGateway")]
+        public void CreateUsagePlanKeyMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateUsagePlanKey");
+
+            var request = InstantiateClassGenerator.Execute<CreateUsagePlanKeyRequest>();
+            var marshaller = new CreateUsagePlanKeyRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            RequestValidator.Validate("CreateUsagePlanKey", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString());
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = CreateUsagePlanKeyResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as CreateUsagePlanKeyResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("APIGateway")]
         public void DeleteApiKeyMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteApiKey");
@@ -408,6 +537,40 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
             var internalRequest = marshaller.Marshall(request);
             RequestValidator.Validate("DeleteDeployment", request, internalRequest, service_model);            
+
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("APIGateway")]
+        public void DeleteDocumentationPartMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteDocumentationPart");
+
+            var request = InstantiateClassGenerator.Execute<DeleteDocumentationPartRequest>();
+            var marshaller = new DeleteDocumentationPartRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            RequestValidator.Validate("DeleteDocumentationPart", request, internalRequest, service_model);            
+
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("APIGateway")]
+        public void DeleteDocumentationVersionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteDocumentationVersion");
+
+            var request = InstantiateClassGenerator.Execute<DeleteDocumentationVersionRequest>();
+            var marshaller = new DeleteDocumentationVersionRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            RequestValidator.Validate("DeleteDocumentationVersion", request, internalRequest, service_model);            
 
         }
 
@@ -561,6 +724,40 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
             var internalRequest = marshaller.Marshall(request);
             RequestValidator.Validate("DeleteStage", request, internalRequest, service_model);            
+
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("APIGateway")]
+        public void DeleteUsagePlanMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteUsagePlan");
+
+            var request = InstantiateClassGenerator.Execute<DeleteUsagePlanRequest>();
+            var marshaller = new DeleteUsagePlanRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            RequestValidator.Validate("DeleteUsagePlan", request, internalRequest, service_model);            
+
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("APIGateway")]
+        public void DeleteUsagePlanKeyMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteUsagePlanKey");
+
+            var request = InstantiateClassGenerator.Execute<DeleteUsagePlanKeyRequest>();
+            var marshaller = new DeleteUsagePlanKeyRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            RequestValidator.Validate("DeleteUsagePlanKey", request, internalRequest, service_model);            
 
         }
 
@@ -979,6 +1176,134 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = GetDeploymentsResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as GetDeploymentsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("APIGateway")]
+        public void GetDocumentationPartMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetDocumentationPart");
+
+            var request = InstantiateClassGenerator.Execute<GetDocumentationPartRequest>();
+            var marshaller = new GetDocumentationPartRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            RequestValidator.Validate("GetDocumentationPart", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString());
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetDocumentationPartResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetDocumentationPartResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("APIGateway")]
+        public void GetDocumentationPartsMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetDocumentationParts");
+
+            var request = InstantiateClassGenerator.Execute<GetDocumentationPartsRequest>();
+            var marshaller = new GetDocumentationPartsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            RequestValidator.Validate("GetDocumentationParts", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString());
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetDocumentationPartsResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetDocumentationPartsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("APIGateway")]
+        public void GetDocumentationVersionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetDocumentationVersion");
+
+            var request = InstantiateClassGenerator.Execute<GetDocumentationVersionRequest>();
+            var marshaller = new GetDocumentationVersionRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            RequestValidator.Validate("GetDocumentationVersion", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString());
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetDocumentationVersionResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetDocumentationVersionResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("APIGateway")]
+        public void GetDocumentationVersionsMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetDocumentationVersions");
+
+            var request = InstantiateClassGenerator.Execute<GetDocumentationVersionsRequest>();
+            var marshaller = new GetDocumentationVersionsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            RequestValidator.Validate("GetDocumentationVersions", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString());
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetDocumentationVersionsResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetDocumentationVersionsResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 
@@ -1471,6 +1796,70 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("APIGateway")]
+        public void GetSdkTypeMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetSdkType");
+
+            var request = InstantiateClassGenerator.Execute<GetSdkTypeRequest>();
+            var marshaller = new GetSdkTypeRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            RequestValidator.Validate("GetSdkType", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString());
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetSdkTypeResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetSdkTypeResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("APIGateway")]
+        public void GetSdkTypesMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetSdkTypes");
+
+            var request = InstantiateClassGenerator.Execute<GetSdkTypesRequest>();
+            var marshaller = new GetSdkTypesRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            RequestValidator.Validate("GetSdkTypes", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString());
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetSdkTypesResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetSdkTypesResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("APIGateway")]
         public void GetStageMarshallTest()
         {
             var operation = service_model.FindOperation("GetStage");
@@ -1527,6 +1916,230 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = GetStagesResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as GetStagesResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("APIGateway")]
+        public void GetUsageMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetUsage");
+
+            var request = InstantiateClassGenerator.Execute<GetUsageRequest>();
+            var marshaller = new GetUsageRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            RequestValidator.Validate("GetUsage", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString());
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetUsageResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetUsageResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("APIGateway")]
+        public void GetUsagePlanMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetUsagePlan");
+
+            var request = InstantiateClassGenerator.Execute<GetUsagePlanRequest>();
+            var marshaller = new GetUsagePlanRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            RequestValidator.Validate("GetUsagePlan", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString());
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetUsagePlanResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetUsagePlanResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("APIGateway")]
+        public void GetUsagePlanKeyMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetUsagePlanKey");
+
+            var request = InstantiateClassGenerator.Execute<GetUsagePlanKeyRequest>();
+            var marshaller = new GetUsagePlanKeyRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            RequestValidator.Validate("GetUsagePlanKey", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString());
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetUsagePlanKeyResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetUsagePlanKeyResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("APIGateway")]
+        public void GetUsagePlanKeysMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetUsagePlanKeys");
+
+            var request = InstantiateClassGenerator.Execute<GetUsagePlanKeysRequest>();
+            var marshaller = new GetUsagePlanKeysRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            RequestValidator.Validate("GetUsagePlanKeys", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString());
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetUsagePlanKeysResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetUsagePlanKeysResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("APIGateway")]
+        public void GetUsagePlansMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetUsagePlans");
+
+            var request = InstantiateClassGenerator.Execute<GetUsagePlansRequest>();
+            var marshaller = new GetUsagePlansRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            RequestValidator.Validate("GetUsagePlans", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString());
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetUsagePlansResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetUsagePlansResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("APIGateway")]
+        public void ImportApiKeysMarshallTest()
+        {
+            var operation = service_model.FindOperation("ImportApiKeys");
+
+            var request = InstantiateClassGenerator.Execute<ImportApiKeysRequest>();
+            var marshaller = new ImportApiKeysRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            RequestValidator.Validate("ImportApiKeys", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString());
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = ImportApiKeysResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as ImportApiKeysResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("APIGateway")]
+        public void ImportDocumentationPartsMarshallTest()
+        {
+            var operation = service_model.FindOperation("ImportDocumentationParts");
+
+            var request = InstantiateClassGenerator.Execute<ImportDocumentationPartsRequest>();
+            var marshaller = new ImportDocumentationPartsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            RequestValidator.Validate("ImportDocumentationParts", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString());
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = ImportDocumentationPartsResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as ImportDocumentationPartsResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 
@@ -1983,6 +2596,70 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("APIGateway")]
+        public void UpdateDocumentationPartMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateDocumentationPart");
+
+            var request = InstantiateClassGenerator.Execute<UpdateDocumentationPartRequest>();
+            var marshaller = new UpdateDocumentationPartRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            RequestValidator.Validate("UpdateDocumentationPart", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString());
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = UpdateDocumentationPartResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as UpdateDocumentationPartResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("APIGateway")]
+        public void UpdateDocumentationVersionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateDocumentationVersion");
+
+            var request = InstantiateClassGenerator.Execute<UpdateDocumentationVersionRequest>();
+            var marshaller = new UpdateDocumentationVersionRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            RequestValidator.Validate("UpdateDocumentationVersion", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString());
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = UpdateDocumentationVersionResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as UpdateDocumentationVersionResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("APIGateway")]
         public void UpdateDomainNameMarshallTest()
         {
             var operation = service_model.FindOperation("UpdateDomainName");
@@ -2263,6 +2940,70 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = UpdateStageResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as UpdateStageResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("APIGateway")]
+        public void UpdateUsageMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateUsage");
+
+            var request = InstantiateClassGenerator.Execute<UpdateUsageRequest>();
+            var marshaller = new UpdateUsageRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            RequestValidator.Validate("UpdateUsage", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString());
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = UpdateUsageResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as UpdateUsageResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("APIGateway")]
+        public void UpdateUsagePlanMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateUsagePlan");
+
+            var request = InstantiateClassGenerator.Execute<UpdateUsagePlanRequest>();
+            var marshaller = new UpdateUsagePlanRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            RequestValidator.Validate("UpdateUsagePlan", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString());
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = UpdateUsagePlanResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as UpdateUsagePlanResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 

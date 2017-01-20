@@ -20,6 +20,19 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DeviceFarm.Model.CreateRemoteAccessSessionRequest.DeviceArn</property>
+    <min>32</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DeviceFarm.Model.CreateRemoteAccessSessionRequest.Name</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DeviceFarm.Model.CreateRemoteAccessSessionRequest.ProjectArn</property>
+    <min>32</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DeviceFarm.Model.CreateUploadRequest.ContentType</property>
     <min>0</min>
     <max>64</max>
@@ -39,6 +52,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.DeleteProjectRequest.Arn</property>
+    <min>32</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DeviceFarm.Model.DeleteRemoteAccessSessionRequest.Arn</property>
     <min>32</min>
   </property-value-rule>
   <property-value-rule>
@@ -84,6 +101,10 @@
     <min>32</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DeviceFarm.Model.GetRemoteAccessSessionRequest.Arn</property>
+    <min>32</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DeviceFarm.Model.GetRunRequest.Arn</property>
     <min>32</min>
   </property-value-rule>
@@ -97,6 +118,14 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.GetUploadRequest.Arn</property>
+    <min>32</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DeviceFarm.Model.InstallToRemoteAccessSessionRequest.AppArn</property>
+    <min>32</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DeviceFarm.Model.InstallToRemoteAccessSessionRequest.RemoteAccessSessionArn</property>
     <min>32</min>
   </property-value-rule>
   <property-value-rule>
@@ -186,6 +215,20 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.ListProjectsResponse.NextToken</property>
+    <min>4</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DeviceFarm.Model.ListRemoteAccessSessionsRequest.Arn</property>
+    <min>32</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DeviceFarm.Model.ListRemoteAccessSessionsRequest.NextToken</property>
+    <min>4</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DeviceFarm.Model.ListRemoteAccessSessionsResponse.NextToken</property>
     <min>4</min>
     <max>1024</max>
   </property-value-rule>
@@ -296,6 +339,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.ScheduleRunRequest.ProjectArn</property>
+    <min>32</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DeviceFarm.Model.StopRemoteAccessSessionRequest.Arn</property>
     <min>32</min>
   </property-value-rule>
   <property-value-rule>
@@ -444,6 +491,20 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.Project.Name</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DeviceFarm.Model.RemoteAccessSession.Arn</property>
+    <min>32</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DeviceFarm.Model.RemoteAccessSession.Message</property>
+    <min>0</min>
+    <max>16384</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DeviceFarm.Model.RemoteAccessSession.Name</property>
     <min>0</min>
     <max>256</max>
   </property-value-rule>

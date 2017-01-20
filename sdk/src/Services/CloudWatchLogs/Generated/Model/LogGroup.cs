@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
-    /// 
+    /// Represents a log group.
     /// </summary>
     public partial class LogGroup
     {
@@ -40,7 +40,10 @@ namespace Amazon.CloudWatchLogs.Model
         private long? _storedBytes;
 
         /// <summary>
-        /// Gets and sets the property Arn.
+        /// Gets and sets the property Arn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the log group.
+        /// </para>
         /// </summary>
         public string Arn
         {
@@ -55,7 +58,10 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CreationTime.
+        /// Gets and sets the property CreationTime. 
+        /// <para>
+        /// The creation time of the log group.
+        /// </para>
         /// </summary>
         public DateTime CreationTime
         {
@@ -70,7 +76,10 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LogGroupName.
+        /// Gets and sets the property LogGroupName. 
+        /// <para>
+        /// The name of the log group.
+        /// </para>
         /// </summary>
         public string LogGroupName
         {
@@ -85,7 +94,10 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MetricFilterCount.
+        /// Gets and sets the property MetricFilterCount. 
+        /// <para>
+        /// The number of metric filters.
+        /// </para>
         /// </summary>
         public int MetricFilterCount
         {
@@ -115,7 +127,10 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StoredBytes.
+        /// Gets and sets the property StoredBytes. 
+        /// <para>
+        /// The number of bytes stored.
+        /// </para>
         /// </summary>
         public long StoredBytes
         {

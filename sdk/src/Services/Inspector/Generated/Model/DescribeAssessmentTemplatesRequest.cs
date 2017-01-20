@@ -37,10 +37,7 @@ namespace Amazon.Inspector.Model
         private List<string> _assessmentTemplateArns = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property AssessmentTemplateArns. 
-        /// <para>
-        /// The ARN that specifiesthe assessment templates that you want to describe.
-        /// </para>
+        /// Gets and sets the property AssessmentTemplateArns.
         /// </summary>
         public List<string> AssessmentTemplateArns
         {

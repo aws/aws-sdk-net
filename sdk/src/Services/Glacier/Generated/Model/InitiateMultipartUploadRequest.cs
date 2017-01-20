@@ -48,12 +48,12 @@ namespace Amazon.Glacier.Model
     /// upload with a part size of 4 MB, you will upload four parts of 4 MB each and one part
     /// of 0.2 MB. 
     /// </para>
-    ///  <note>
+    ///  <note> 
     /// <para>
     /// You don't need to know the size of the archive when you start a multipart upload because
     /// Amazon Glacier does not require you to specify the overall archive size.
     /// </para>
-    /// </note> 
+    ///  </note> 
     /// <para>
     /// After you complete the multipart upload, Amazon Glacier removes the multipart upload
     /// resource referenced by the ID. Amazon Glacier also removes the multipart upload resource
@@ -70,7 +70,7 @@ namespace Amazon.Glacier.Model
     /// </para>
     ///  
     /// <para>
-    /// For conceptual information and underlying REST API, go to <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/uploading-archive-mpu.html">Uploading
+    /// For conceptual information and underlying REST API, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/uploading-archive-mpu.html">Uploading
     /// Large Archives in Parts (Multipart Upload)</a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-initiate-upload.html">Initiate
     /// Multipart Upload</a> in the <i>Amazon Glacier Developer Guide</i>.
     /// </para>
@@ -103,7 +103,7 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Instantiates InitiateMultipartUploadRequest with the parameterized properties
         /// </summary>
-        /// <param name="accountId">The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens (apos-apos) in the ID. </param>
+        /// <param name="accountId">The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </param>
         /// <param name="vaultName">The name of the vault.</param>
         /// <param name="archiveDescription">The archive description that you are uploading in parts. The part size must be a megabyte (1024 KB) multiplied by a power of 2, for example 1048576 (1 MB), 2097152 (2 MB), 4194304 (4 MB), 8388608 (8 MB), and so on. The minimum allowable part size is 1 MB, and the maximum is 4 GB (4096 MB).</param>
         /// <param name="partSize">The size of each part except the last, in bytes. The last part can be smaller than this part size.</param>
@@ -119,10 +119,10 @@ namespace Amazon.Glacier.Model
         /// Gets and sets the property AccountId. 
         /// <para>
         /// The <code>AccountId</code> value is the AWS account ID of the account that owns the
-        /// vault. You can either specify an AWS account ID or optionally a single apos<code>-</code>apos
+        /// vault. You can either specify an AWS account ID or optionally a single '<code>-</code>'
         /// (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the
         /// credentials used to sign the request. If you use an account ID, do not include any
-        /// hyphens (apos-apos) in the ID. 
+        /// hyphens ('-') in the ID. 
         /// </para>
         /// </summary>
         public string AccountId

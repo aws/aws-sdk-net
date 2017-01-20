@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisFirehose.Model
 {
     /// <summary>
-    /// Contains the output of <a>UpdateDestination</a>.
+    /// This is the response object from the UpdateDestination operation.
     /// </summary>
     public partial class UpdateDestinationResponse : AmazonWebServiceResponse
     {

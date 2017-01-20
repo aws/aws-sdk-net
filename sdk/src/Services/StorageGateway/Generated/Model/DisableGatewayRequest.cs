@@ -36,7 +36,7 @@ namespace Amazon.StorageGateway.Model
     /// <para>
     /// Use this operation for a gateway-VTL that is not reachable or not functioning.
     /// </para>
-    ///  <important>
+    ///  <important> 
     /// <para>
     /// Once a gateway is disabled it cannot be enabled.
     /// </para>

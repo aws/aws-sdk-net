@@ -33,15 +33,37 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// </summary>
     public partial class UpdateUserPoolRequest : AmazonCognitoIdentityProviderRequest
     {
+        private AdminCreateUserConfigType _adminCreateUserConfig;
         private List<string> _autoVerifiedAttributes = new List<string>();
+        private DeviceConfigurationType _deviceConfiguration;
+        private EmailConfigurationType _emailConfiguration;
         private string _emailVerificationMessage;
         private string _emailVerificationSubject;
         private LambdaConfigType _lambdaConfig;
         private UserPoolMfaType _mfaConfiguration;
         private UserPoolPolicyType _policies;
         private string _smsAuthenticationMessage;
+        private SmsConfigurationType _smsConfiguration;
         private string _smsVerificationMessage;
         private string _userPoolId;
+
+        /// <summary>
+        /// Gets and sets the property AdminCreateUserConfig. 
+        /// <para>
+        /// The configuration for AdminCreateUser requests.
+        /// </para>
+        /// </summary>
+        public AdminCreateUserConfigType AdminCreateUserConfig
+        {
+            get { return this._adminCreateUserConfig; }
+            set { this._adminCreateUserConfig = value; }
+        }
+
+        // Check to see if AdminCreateUserConfig property is set
+        internal bool IsSetAdminCreateUserConfig()
+        {
+            return this._adminCreateUserConfig != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AutoVerifiedAttributes. 
@@ -60,6 +82,42 @@ namespace Amazon.CognitoIdentityProvider.Model
         internal bool IsSetAutoVerifiedAttributes()
         {
             return this._autoVerifiedAttributes != null && this._autoVerifiedAttributes.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeviceConfiguration. 
+        /// <para>
+        /// Device configuration.
+        /// </para>
+        /// </summary>
+        public DeviceConfigurationType DeviceConfiguration
+        {
+            get { return this._deviceConfiguration; }
+            set { this._deviceConfiguration = value; }
+        }
+
+        // Check to see if DeviceConfiguration property is set
+        internal bool IsSetDeviceConfiguration()
+        {
+            return this._deviceConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EmailConfiguration. 
+        /// <para>
+        /// Email configuration.
+        /// </para>
+        /// </summary>
+        public EmailConfigurationType EmailConfiguration
+        {
+            get { return this._emailConfiguration; }
+            set { this._emailConfiguration = value; }
+        }
+
+        // Check to see if EmailConfiguration property is set
+        internal bool IsSetEmailConfiguration()
+        {
+            return this._emailConfiguration != null;
         }
 
         /// <summary>
@@ -83,7 +141,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property EmailVerificationSubject. 
         /// <para>
-        /// The subject of the email verfication message
+        /// The subject of the email verfication message.
         /// </para>
         /// </summary>
         public string EmailVerificationSubject
@@ -121,11 +179,21 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <para>
         /// Can be one of the following values:
         /// </para>
-        ///  <ul> <li><code>OFF</code> - MFA tokens are not required and cannot be specified during
-        /// user registration.</li> <li><code>ON</code> - MFA tokens are required for all user
-        /// registrations. You can only specify required when you are initially creating a user
-        /// pool.</li> <li><code>OPTIONAL</code> - Users have the option when registering to create
-        /// an MFA token.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>OFF</code> - MFA tokens are not required and cannot be specified during user
+        /// registration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ON</code> - MFA tokens are required for all user registrations. You can only
+        /// specify required when you are initially creating a user pool.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>OPTIONAL</code> - Users have the option when registering to create an MFA token.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public UserPoolMfaType MfaConfiguration
         {
@@ -173,6 +241,24 @@ namespace Amazon.CognitoIdentityProvider.Model
         internal bool IsSetSmsAuthenticationMessage()
         {
             return this._smsAuthenticationMessage != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SmsConfiguration. 
+        /// <para>
+        /// SMS configuration.
+        /// </para>
+        /// </summary>
+        public SmsConfigurationType SmsConfiguration
+        {
+            get { return this._smsConfiguration; }
+            set { this._smsConfiguration = value; }
+        }
+
+        // Check to see if SmsConfiguration property is set
+        internal bool IsSetSmsConfiguration()
+        {
+            return this._smsConfiguration != null;
         }
 
         /// <summary>

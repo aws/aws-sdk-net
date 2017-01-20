@@ -37,6 +37,7 @@ namespace Amazon.ECS.Model
         private List<Container> _containers = new List<Container>();
         private DateTime? _createdAt;
         private string _desiredStatus;
+        private string _group;
         private string _lastStatus;
         private TaskOverride _overrides;
         private DateTime? _startedAt;
@@ -45,6 +46,7 @@ namespace Amazon.ECS.Model
         private string _stoppedReason;
         private string _taskArn;
         private string _taskDefinitionArn;
+        private long? _version;
 
         /// <summary>
         /// Gets and sets the property ClusterArn. 
@@ -103,8 +105,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The Unix time in seconds and milliseconds when the task was created (the task entered
-        /// the <code>PENDING</code> state).
+        /// The Unix timestamp for when the task was created (the task entered the <code>PENDING</code>
+        /// state).
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -135,6 +137,24 @@ namespace Amazon.ECS.Model
         internal bool IsSetDesiredStatus()
         {
             return this._desiredStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Group. 
+        /// <para>
+        /// The task group associated with the task.
+        /// </para>
+        /// </summary>
+        public string Group
+        {
+            get { return this._group; }
+            set { this._group = value; }
+        }
+
+        // Check to see if Group property is set
+        internal bool IsSetGroup()
+        {
+            return this._group != null;
         }
 
         /// <summary>
@@ -176,8 +196,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property StartedAt. 
         /// <para>
-        /// The Unix time in seconds and milliseconds when the task was started (the task transitioned
-        /// from the <code>PENDING</code> state to the <code>RUNNING</code> state).
+        /// The Unix timestamp for when the task was started (the task transitioned from the <code>PENDING</code>
+        /// state to the <code>RUNNING</code> state).
         /// </para>
         /// </summary>
         public DateTime StartedAt
@@ -215,8 +235,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property StoppedAt. 
         /// <para>
-        /// The Unix time in seconds and milliseconds when the task was stopped (the task transitioned
-        /// from the <code>RUNNING</code> state to the <code>STOPPED</code> state).
+        /// The Unix timestamp for when the task was stopped (the task transitioned from the <code>RUNNING</code>
+        /// state to the <code>STOPPED</code> state).
         /// </para>
         /// </summary>
         public DateTime StoppedAt
@@ -283,6 +303,29 @@ namespace Amazon.ECS.Model
         internal bool IsSetTaskDefinitionArn()
         {
             return this._taskDefinitionArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Version. 
+        /// <para>
+        /// The version counter for the task. Every time a task experiences a change that triggers
+        /// a CloudWatch event, the version counter is incremented. If you are replicating your
+        /// Amazon ECS task state with CloudWatch events, you can compare the version of a task
+        /// reported by the Amazon ECS APIs with the version reported in CloudWatch events for
+        /// the task (inside the <code>detail</code> object) to verify that the version in your
+        /// event stream is current.
+        /// </para>
+        /// </summary>
+        public long Version
+        {
+            get { return this._version.GetValueOrDefault(); }
+            set { this._version = value; }
+        }
+
+        // Check to see if Version property is set
+        internal bool IsSetVersion()
+        {
+            return this._version.HasValue; 
         }
 
     }

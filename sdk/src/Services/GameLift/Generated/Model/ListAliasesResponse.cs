@@ -38,7 +38,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Aliases. 
         /// <para>
-        /// Collection of alias records that match the list request. 
+        /// Collection of alias records that match the list request.
         /// </para>
         /// </summary>
         public List<Alias> Aliases
@@ -59,12 +59,6 @@ namespace Amazon.GameLift.Model
         /// Token indicating where to resume retrieving results on the next call to this action.
         /// If no token is returned, these results represent the end of the list.
         /// </para>
-        ///  <note>
-        /// <para>
-        /// If a request has a limit that exactly matches the number of remaining results, a token
-        /// is returned even though there are no more results to retrieve.
-        /// </para>
-        /// </note>
         /// </summary>
         public string NextToken
         {

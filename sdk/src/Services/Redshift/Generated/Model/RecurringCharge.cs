@@ -39,7 +39,6 @@ namespace Amazon.Redshift.Model
         /// Gets and sets the property RecurringChargeAmount. 
         /// <para>
         /// The amount charged per the period of time specified by the recurring charge frequency.
-        /// 
         /// </para>
         /// </summary>
         public double RecurringChargeAmount

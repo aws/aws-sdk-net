@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2016-01-28.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-11-25.normal.json service model.
  */
 using System;
 using System.Net;
@@ -25,7 +25,7 @@ namespace Amazon.CloudFront.Model
     ///<summary>
     /// CloudFront exception
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class CNAMEAlreadyExistsException : AmazonCloudFrontException 
@@ -79,7 +79,7 @@ namespace Amazon.CloudFront.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the CNAMEAlreadyExistsException class with serialized data.
         /// </summary>

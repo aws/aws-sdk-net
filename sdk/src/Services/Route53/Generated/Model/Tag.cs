@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// A single tag containing a key and value.
+    /// A complex type that contains information about a tag that you want to add or edit
+    /// for the specified health check or hosted zone.
     /// </summary>
     public partial class Tag
     {
@@ -38,8 +39,29 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// The key for a <code>Tag</code>.
+        /// The value of <code>Key</code> depends on the operation that you want to perform:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>Add a tag to a health check or hosted zone</b>: <code>Key</code> is the name that
+        /// you want to give the new tag.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Edit a tag</b>: <code>Key</code> is the name of the tag whose <code>Value</code>
+        /// element you want to remove.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b> Delete a key</b>: <code>Key</code> is the name of the tag you want to remove.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Give a name to a health check</b>: Edit the default <code>Name</code> tag. In
+        /// the Amazon Route 53 console, the list of your health checks includes a <b>Name</b>
+        /// column that lets you see the name that you've given to each health check.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string Key
         {
@@ -56,8 +78,19 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The value for a <code>Tag</code>.
+        /// The value of <code>Value</code> depends on the operation that you want to perform:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>Add a tag to a health check or hosted zone</b>: <code>Value</code> is the value
+        /// that you want to give the new tag.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Edit a tag</b>: <code>Value</code> is the new value that you want to assign the
+        /// tag.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string Value
         {

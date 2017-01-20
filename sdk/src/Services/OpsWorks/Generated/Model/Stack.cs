@@ -187,7 +187,7 @@ namespace Amazon.OpsWorks.Model
         /// A JSON object that contains user-defined attributes to be added to the stack configuration
         /// and deployment attributes. You can use custom JSON to override the corresponding default
         /// stack configuration attribute values or to pass data to recipes. The string should
-        /// be in the following format and must escape characters such as '"':
+        /// be in the following format:
         /// </para>
         ///  
         /// <para>
@@ -365,7 +365,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
-        /// The stack AWS region, such as "us-east-1". For more information about AWS regions,
+        /// The stack AWS region, such as "ap-northeast-2". For more information about AWS regions,
         /// see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
         /// Endpoints</a>.
         /// </para>

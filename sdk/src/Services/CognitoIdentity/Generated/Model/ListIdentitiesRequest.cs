@@ -31,7 +31,7 @@ namespace Amazon.CognitoIdentity.Model
     /// Container for the parameters to the ListIdentities operation.
     /// Lists the identities in a pool.
     /// 
-    /// 
+    ///  
     /// <para>
     /// You must use AWS Developer credentials to call this API.
     /// </para>
@@ -63,7 +63,10 @@ namespace Amazon.CognitoIdentity.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IdentityPoolId. An identity pool ID in the format REGION:GUID.
+        /// Gets and sets the property IdentityPoolId. 
+        /// <para>
+        /// An identity pool ID in the format REGION:GUID.
+        /// </para>
         /// </summary>
         public string IdentityPoolId
         {
@@ -78,7 +81,10 @@ namespace Amazon.CognitoIdentity.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaxResults. The maximum number of identities to return.
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The maximum number of identities to return.
+        /// </para>
         /// </summary>
         public int MaxResults
         {
@@ -93,7 +99,10 @@ namespace Amazon.CognitoIdentity.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken. A pagination token.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// A pagination token.
+        /// </para>
         /// </summary>
         public string NextToken
         {

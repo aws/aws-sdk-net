@@ -28,8 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// A complex type that contains information about the geo locations that are returned
-    /// by the request and information about the response.
+    /// A complex type containing the response information for the request.
     /// </summary>
     public partial class ListGeoLocationsResponse : AmazonWebServiceResponse
     {
@@ -43,8 +42,8 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property GeoLocationDetailsList. 
         /// <para>
-        /// A complex type that contains information about the geo locations that are returned
-        /// by the request.
+        /// A complex type that contains one <code>GeoLocationDetails</code> element for each
+        /// location that Amazon Route 53 supports for geolocation.
         /// </para>
         /// </summary>
         public List<GeoLocationDetails> GeoLocationDetailsList
@@ -62,14 +61,11 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property IsTruncated. 
         /// <para>
-        /// A flag that indicates whether there are more geo locations to be listed. If your results
-        /// were truncated, you can make a follow-up request for the next page of results by using
-        /// the values included in the <a>ListGeoLocationsResponse$NextContinentCode</a>, <a>ListGeoLocationsResponse$NextCountryCode</a>
-        /// and <a>ListGeoLocationsResponse$NextSubdivisionCode</a> elements.
-        /// </para>
-        ///  
-        /// <para>
-        /// Valid Values: <code>true</code> | <code>false</code>
+        /// A value that indicates whether more locations remain to be listed after the last location
+        /// in this response. If so, the value of <code>IsTruncated</code> is <code>true</code>.
+        /// To get more values, submit another request and include the values of <code>NextContinentCode</code>,
+        /// <code>NextCountryCode</code>, and <code>NextSubdivisionCode</code> in the <code>StartContinentCode</code>,
+        /// <code>StartCountryCode</code>, and <code>StartSubdivisionCode</code>, as applicable.
         /// </para>
         /// </summary>
         public bool IsTruncated
@@ -87,9 +83,10 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property NextContinentCode. 
         /// <para>
-        /// If the results were truncated, the continent code of the next geo location in the
-        /// list. This element is present only if <a>ListGeoLocationsResponse$IsTruncated</a>
-        /// is true and the next geo location to list is a continent location. 
+        /// If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request
+        /// to display more locations. Enter the value of <code>NextContinentCode</code> in the
+        /// <code>StartContinentCode</code> parameter in another <code>GET</code> <code>ListGeoLocations</code>
+        /// request.
         /// </para>
         /// </summary>
         public string NextContinentCode
@@ -107,9 +104,10 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property NextCountryCode. 
         /// <para>
-        /// If the results were truncated, the country code of the next geo location in the list.
-        /// This element is present only if <a>ListGeoLocationsResponse$IsTruncated</a> is true
-        /// and the next geo location to list is not a continent location. 
+        /// If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request
+        /// to display more locations. Enter the value of <code>NextCountryCode</code> in the
+        /// <code>StartCountryCode</code> parameter in another <code>GET</code> <code>ListGeoLocations</code>
+        /// request.
         /// </para>
         /// </summary>
         public string NextCountryCode
@@ -127,9 +125,10 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property NextSubdivisionCode. 
         /// <para>
-        /// If the results were truncated, the subdivision code of the next geo location in the
-        /// list. This element is present only if <a>ListGeoLocationsResponse$IsTruncated</a>
-        /// is true and the next geo location has a subdivision. 
+        /// If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request
+        /// to display more locations. Enter the value of <code>NextSubdivisionCode</code> in
+        /// the <code>StartSubdivisionCode</code> parameter in another <code>GET</code> <code>ListGeoLocations</code>
+        /// request.
         /// </para>
         /// </summary>
         public string NextSubdivisionCode
@@ -147,8 +146,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property MaxItems. 
         /// <para>
-        /// The maximum number of records you requested. The maximum value of <code>MaxItems</code>
-        /// is 100.
+        /// The value that you specified for <code>MaxItems</code> in the request.
         /// </para>
         /// </summary>
         public string MaxItems

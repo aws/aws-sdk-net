@@ -45,7 +45,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property ApplicationName. 
         /// <para>
-        ///  The name of the application associated with this configuration set. 
+        /// The name of the application associated with this configuration set.
         /// </para>
         /// </summary>
         public string ApplicationName
@@ -63,7 +63,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property DateCreated. 
         /// <para>
-        ///  The date (in UTC time) when this configuration set was created. 
+        /// The date (in UTC time) when this configuration set was created.
         /// </para>
         /// </summary>
         public DateTime DateCreated
@@ -81,7 +81,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property DateUpdated. 
         /// <para>
-        ///  The date (in UTC time) when this configuration set was last modified. 
+        /// The date (in UTC time) when this configuration set was last modified.
         /// </para>
         /// </summary>
         public DateTime DateUpdated
@@ -102,12 +102,25 @@ namespace Amazon.ElasticBeanstalk.Model
         ///  If this configuration set is associated with an environment, the <code>DeploymentStatus</code>
         /// parameter indicates the deployment status of this configuration set: 
         /// </para>
-        ///  <ul> <li> <code>null</code>: This configuration is not associated with a running
-        /// environment. </li> <li> <code>pending</code>: This is a draft configuration that is
-        /// not deployed to the associated environment but is in the process of deploying. </li>
-        /// <li> <code>deployed</code>: This is the configuration that is currently deployed to
-        /// the associated running environment. </li> <li> <code>failed</code>: This is a draft
-        /// configuration that failed to successfully deploy. </li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>null</code>: This configuration is not associated with a running environment.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>pending</code>: This is a draft configuration that is not deployed to the associated
+        /// environment but is in the process of deploying.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>deployed</code>: This is the configuration that is currently deployed to the
+        /// associated running environment.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>failed</code>: This is a draft configuration that failed to successfully deploy.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public ConfigurationDeploymentStatus DeploymentStatus
         {
@@ -124,7 +137,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        ///  Describes this configuration set. 
+        /// Describes this configuration set.
         /// </para>
         /// </summary>
         public string Description
@@ -161,7 +174,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property OptionSettings. 
         /// <para>
-        ///  A list of the configuration options and their values in this configuration set. 
+        /// A list of the configuration options and their values in this configuration set.
         /// </para>
         /// </summary>
         public List<ConfigurationOptionSetting> OptionSettings
@@ -179,7 +192,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property SolutionStackName. 
         /// <para>
-        ///  The name of the solution stack this configuration set uses. 
+        /// The name of the solution stack this configuration set uses.
         /// </para>
         /// </summary>
         public string SolutionStackName

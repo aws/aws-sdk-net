@@ -28,8 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
-    /// An object indicating the search status of a log stream in a <code class="code">FilterLogEvents</code>
-    /// request.
+    /// Represents the search status of a log stream.
     /// </summary>
     public partial class SearchedLogStream
     {
@@ -57,8 +56,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property SearchedCompletely. 
         /// <para>
-        /// Indicates whether all the events in this log stream were searched or more data exists
-        /// to search by paginating further.
+        /// Indicates whether all the events in this log stream were searched.
         /// </para>
         /// </summary>
         public bool SearchedCompletely

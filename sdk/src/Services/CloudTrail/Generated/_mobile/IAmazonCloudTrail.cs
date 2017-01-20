@@ -23,6 +23,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.CloudTrail.Model;
 
 namespace Amazon.CloudTrail
@@ -54,11 +55,12 @@ namespace Amazon.CloudTrail
     /// </para>
     ///  </note> 
     /// <para>
-    /// See the CloudTrail User Guide for information about the data that is included with
-    /// each AWS API call listed in the log files.
+    /// See the <a href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-user-guide.html">AWS
+    /// CloudTrail User Guide</a> for information about the data that is included with each
+    /// AWS API call listed in the log files.
     /// </para>
     /// </summary>
-    public partial interface IAmazonCloudTrail : IDisposable
+    public partial interface IAmazonCloudTrail : IAmazonService, IDisposable
     {
                 
         #region  AddTags
@@ -142,6 +144,22 @@ namespace Amazon.CloudTrail
 
         #endregion
                 
+        #region  GetEventSelectors
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetEventSelectors operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetEventSelectors operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetEventSelectorsResponse> GetEventSelectorsAsync(GetEventSelectorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetTrailStatus
 
 
@@ -203,6 +221,22 @@ namespace Amazon.CloudTrail
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<LookupEventsResponse> LookupEventsAsync(LookupEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  PutEventSelectors
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutEventSelectors operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutEventSelectors operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<PutEventSelectorsResponse> PutEventSelectorsAsync(PutEventSelectorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

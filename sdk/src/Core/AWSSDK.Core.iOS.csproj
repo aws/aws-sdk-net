@@ -20,7 +20,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\Xamarin.iOS10</OutputPath>
-    <DefineConstants>DEBUG;TRACE;;PCL;AWS_ASYNC_API;LOCAL_FILE</DefineConstants>
+    <DefineConstants>DEBUG;TRACE;;PCL;AWS_ASYNC_API;LOCAL_FILE;ADD_SUPPORT_ICLONEABLE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
@@ -29,6 +29,9 @@
     <NoWarn>419,1570,1591</NoWarn>
     <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
     <DocumentationFile>bin\Debug\Xamarin.iOS10\AWSSDK.Core.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <OutputPath>bin\Debug\Xamarin.iOS10</OutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -43,7 +46,11 @@
     <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
     <DocumentationFile>bin\Release\Xamarin.iOS10\AWSSDK.Core.XML</DocumentationFile>
   </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <OutputPath>bin\Release\Xamarin.iOS10</OutputPath>
+  </PropertyGroup>
   <PropertyGroup>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <Choose>
@@ -128,7 +135,16 @@
     <Compile Include="Amazon.Runtime\Pipeline\RetryHandler\*.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.Runtime\Pipeline\RetryHandler\_async\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.Runtime\SharedInterfaces\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Runtime\SharedInterfaces\_async\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Runtime\_mobile\*.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.Runtime\_pcl\*.cs">
@@ -152,6 +168,15 @@
     <Compile Include="Amazon.Util\_pcl\*.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Library\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\UnityAssemblies\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RegionEndpoint\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="ThirdParty\*.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -170,9 +195,6 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="endpoints.json">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="endpoints.customizations.json">
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>

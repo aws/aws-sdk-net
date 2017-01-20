@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// A group of settings that will be applied to the cache cluster in the future, or that
-    /// are currently being applied.
+    /// A group of settings that are applied to the cache cluster in the future, or that are
+    /// currently being applied.
     /// </summary>
     public partial class PendingModifiedValues
     {
@@ -65,7 +65,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property CacheNodeType. 
         /// <para>
-        /// The cache node type that this cache cluster or replication group will be scaled to.
+        /// The cache node type that this cache cluster or replication group is scaled to.
         /// </para>
         /// </summary>
         public string CacheNodeType
@@ -83,7 +83,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
-        /// The new cache engine version that the cache cluster will run.
+        /// The new cache engine version that the cache cluster runs.
         /// </para>
         /// </summary>
         public string EngineVersion

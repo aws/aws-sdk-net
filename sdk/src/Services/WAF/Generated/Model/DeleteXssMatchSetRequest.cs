@@ -43,10 +43,21 @@ namespace Amazon.WAF.Model
     /// To permanently delete an <code>XssMatchSet</code> from AWS WAF, perform the following
     /// steps:
     /// </para>
-    ///  <ol> <li>Update the <code>XssMatchSet</code> to remove filters, if any. For more
-    /// information, see <a>UpdateXssMatchSet</a>.</li> <li>Use <a>GetChangeToken</a> to get
-    /// the change token that you provide in the <code>ChangeToken</code> parameter of a <code>DeleteXssMatchSet</code>
-    /// request.</li> <li>Submit a <code>DeleteXssMatchSet</code> request.</li> </ol>
+    ///  <ol> <li> 
+    /// <para>
+    /// Update the <code>XssMatchSet</code> to remove filters, if any. For more information,
+    /// see <a>UpdateXssMatchSet</a>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code>
+    /// parameter of a <code>DeleteXssMatchSet</code> request.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Submit a <code>DeleteXssMatchSet</code> request.
+    /// </para>
+    ///  </li> </ol>
     /// </summary>
     public partial class DeleteXssMatchSetRequest : AmazonWAFRequest
     {

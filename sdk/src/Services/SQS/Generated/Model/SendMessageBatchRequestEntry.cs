@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// Contains the details of a single Amazon SQS message along with a <code>Id</code>.
+    /// Contains the details of a single Amazon SQS message along with an <code>Id</code>.
     /// </summary>
     public partial class SendMessageBatchRequestEntry
     {
@@ -36,6 +36,8 @@ namespace Amazon.SQS.Model
         private string _id;
         private Dictionary<string, MessageAttributeValue> _messageAttributes = new Dictionary<string, MessageAttributeValue>();
         private string _messageBody;
+        private string _messageDeduplicationId;
+        private string _messageGroupId;
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -45,8 +47,8 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Instantiates SendMessageBatchRequestEntry with the parameterized properties
         /// </summary>
-        /// <param name="id">An identifier for the message in this batch. This is used to communicate the result. Note that the <code>Id</code>s of a batch request need to be unique within the request.</param>
-        /// <param name="messageBody">Body of the message.</param>
+        /// <param name="id">An identifier for a message in this batch used to communicate the result. <note> The <code>Id</code>s of a batch request need to be unique within a request </note></param>
+        /// <param name="messageBody">The body of the message.</param>
         public SendMessageBatchRequestEntry(string id, string messageBody)
         {
             _id = id;
@@ -56,8 +58,17 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Gets and sets the property DelaySeconds. 
         /// <para>
-        /// The number of seconds for which the message has to be delayed.
+        /// The number of seconds for which a specific message is delayed. Valid values: 0 to
+        /// 900. Maximum: 15 minutes. Messages with a positive <code>DelaySeconds</code> value
+        /// become available for processing after the delay period is finished. If you don't specify
+        /// a value, the default value for the queue is applied. 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// When you set <code>FifoQueue</code>, you can't set <code>DelaySeconds</code> per message.
+        /// You can set this parameter only on a queue level.
+        /// </para>
+        ///  </note>
         /// </summary>
         public int DelaySeconds
         {
@@ -74,9 +85,13 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// An identifier for the message in this batch. This is used to communicate the result.
-        /// Note that the <code>Id</code>s of a batch request need to be unique within the request.
+        /// An identifier for a message in this batch used to communicate the result.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <code>Id</code>s of a batch request need to be unique within a request
+        /// </para>
+        ///  </note>
         /// </summary>
         public string Id
         {
@@ -93,9 +108,9 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Gets and sets the property MessageAttributes. 
         /// <para>
-        /// Each message attribute consists of a Name, Type, and Value. For more information,
-        /// see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributesNTV">Message
-        /// Attribute Items</a>.
+        /// Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation">Message
+        /// Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.
         /// </para>
         /// </summary>
         public Dictionary<string, MessageAttributeValue> MessageAttributes
@@ -113,7 +128,7 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Gets and sets the property MessageBody. 
         /// <para>
-        /// Body of the message.
+        /// The body of the message.
         /// </para>
         /// </summary>
         public string MessageBody
@@ -126,6 +141,146 @@ namespace Amazon.SQS.Model
         internal bool IsSetMessageBody()
         {
             return this._messageBody != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MessageDeduplicationId. 
+        /// <para>
+        /// This parameter applies only to FIFO (first-in-first-out) queues.
+        /// </para>
+        ///  
+        /// <para>
+        /// The token used for deduplication of messages within a 5-minute minimum deduplication
+        /// interval. If a message with a particular <code>MessageDeduplicationId</code> is sent
+        /// successfully, subsequent messages with the same <code>MessageDeduplicationId</code>
+        /// are accepted successfully but aren't delivered. For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">
+        /// Exactly-Once Processing</a> in the <i>Amazon SQS Developer Guide</i>.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Every message must have a unique <code>MessageDeduplicationId</code>,
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You may provide a <code>MessageDeduplicationId</code> explicitly.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you aren't able to provide a <code>MessageDeduplicationId</code> and you enable
+        /// <code>ContentBasedDeduplication</code> for your queue, Amazon SQS uses a SHA-256 hash
+        /// to generate the <code>MessageDeduplicationId</code> using the body of the message
+        /// (but not the attributes of the message). 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you don't provide a <code>MessageDeduplicationId</code> and the queue doesn't have
+        /// <code>ContentBasedDeduplication</code> set, the action fails with an error.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the queue has <code>ContentBasedDeduplication</code> set, your <code>MessageDeduplicationId</code>
+        /// overrides the generated one.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// When <code>ContentBasedDeduplication</code> is in effect, messages with identical
+        /// content sent within the deduplication interval are treated as duplicates and only
+        /// one copy of the message is delivered.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can also use <code>ContentBasedDeduplication</code> for messages with identical
+        /// content to be treated as duplicates.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you send one message with <code>ContentBasedDeduplication</code> enabled and then
+        /// another message with a <code>MessageDeduplicationId</code> that is the same as the
+        /// one generated for the first <code>MessageDeduplicationId</code>, the two messages
+        /// are treated as duplicates and only one copy of the message is delivered. 
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// The <code>MessageDeduplicationId</code> is available to the recipient of the message
+        /// (this can be useful for troubleshooting delivery issues).
+        /// </para>
+        ///  
+        /// <para>
+        /// If a message is sent successfully but the acknowledgement is lost and the message
+        /// is resent with the same <code>MessageDeduplicationId</code> after the deduplication
+        /// interval, Amazon SQS can't detect duplicate messages.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// The length of <code>MessageDeduplicationId</code> is 128 characters. <code>MessageDeduplicationId</code>
+        /// can contain alphanumeric characters (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>)
+        /// and punctuation (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).
+        /// </para>
+        ///  
+        /// <para>
+        /// For best practices of using <code>MessageDeduplicationId</code>, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queue-recommendations.html#using-messagededuplicationid-property">Using
+        /// the MessageDeduplicationId Property</a> in the <i>Amazon Simple Queue Service Developer
+        /// Guide</i>.
+        /// </para>
+        /// </summary>
+        public string MessageDeduplicationId
+        {
+            get { return this._messageDeduplicationId; }
+            set { this._messageDeduplicationId = value; }
+        }
+
+        // Check to see if MessageDeduplicationId property is set
+        internal bool IsSetMessageDeduplicationId()
+        {
+            return this._messageDeduplicationId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MessageGroupId. 
+        /// <para>
+        /// This parameter applies only to FIFO (first-in-first-out) queues.
+        /// </para>
+        ///  
+        /// <para>
+        /// The tag that specifies that a message belongs to a specific message group. Messages
+        /// that belong to the same message group are processed in a FIFO manner (however, messages
+        /// in different message groups might be processed out of order). To interleave multiple
+        /// ordered streams within a single queue, use <code>MessageGroupId</code> values (for
+        /// example, session data for multiple users). In this scenario, multiple readers can
+        /// process the queue, but the session data of each user is processed in a FIFO fashion.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You must associate a non-empty <code>MessageGroupId</code> with a message. If you
+        /// don't provide a <code>MessageGroupId</code>, the action fails.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ReceiveMessage</code> might return messages with multiple <code>MessageGroupId</code>
+        /// values. For each <code>MessageGroupId</code>, the messages are sorted by time sent.
+        /// The caller can't specify a <code>MessageGroupId</code>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The length of <code>MessageGroupId</code> is 128 characters. Valid values are alphanumeric
+        /// characters and punctuation <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For best practices of using <code>MessageGroupId</code>, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queue-recommendations.html#using-messagegroupid-property">Using
+        /// the MessageGroupId Property</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        public string MessageGroupId
+        {
+            get { return this._messageGroupId; }
+            set { this._messageGroupId = value; }
+        }
+
+        // Check to see if MessageGroupId property is set
+        internal bool IsSetMessageGroupId()
+        {
+            return this._messageGroupId != null;
         }
 
     }

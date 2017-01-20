@@ -1,0 +1,7 @@
+﻿{
+  "AWS": {
+    "Profile": "myProfile",
+    "ProfilesLocation": "myProfileLocation",
+    "Region": "us-west-2"
+  }
+}

@@ -37,6 +37,7 @@
     <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
   </PropertyGroup>
   <PropertyGroup>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <Choose>
@@ -76,7 +77,7 @@
     <Compile Include="Custom\DataModel\_bcl\*.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Custom\DataModel\_bcl+pcl\*.cs">
+    <Compile Include="Custom\DataModel\_bcl+coreclr+pcl\*.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Custom\DataModel\_bcl45\*.cs">

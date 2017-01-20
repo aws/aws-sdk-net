@@ -23,6 +23,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.Kinesis.Model;
 
 namespace Amazon.Kinesis
@@ -36,7 +37,7 @@ namespace Amazon.Kinesis
     /// processing of streaming big data.
     /// </para>
     /// </summary>
-    public partial interface IAmazonKinesis : IDisposable
+    public partial interface IAmazonKinesis : IAmazonService, IDisposable
     {
                 
         #region  AddTagsToStream
@@ -97,17 +98,12 @@ namespace Amazon.Kinesis
         /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
         /// For more information, see the returned message.
         /// </exception>
-        /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
-        /// The requested resource exceeds the maximum number allowed, or the number of concurrent
-        /// stream requests exceeds the maximum number allowed (5).
-        /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
         /// The resource is not available for this operation. For successful operation, the resource
         /// needs to be in the <code>ACTIVE</code> state.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
-        /// The requested resource could not be found. The stream might not be specified correctly,
-        /// or it might not be in the <code>ACTIVE</code> state if the operation requires it.
+        /// The requested resource could not be found. The stream might not be specified correctly.
         /// </exception>
         Task<DecreaseStreamRetentionPeriodResponse> DecreaseStreamRetentionPeriodAsync(string streamName, int retentionPeriodHours, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -137,6 +133,22 @@ namespace Amazon.Kinesis
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<DeleteStreamResponse> DeleteStreamAsync(DeleteStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeLimits
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeLimits operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLimits operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DescribeLimitsResponse> DescribeLimitsAsync(DescribeLimitsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -249,17 +261,12 @@ namespace Amazon.Kinesis
         /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
         /// For more information, see the returned message.
         /// </exception>
-        /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
-        /// The requested resource exceeds the maximum number allowed, or the number of concurrent
-        /// stream requests exceeds the maximum number allowed (5).
-        /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
         /// The resource is not available for this operation. For successful operation, the resource
         /// needs to be in the <code>ACTIVE</code> state.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
-        /// The requested resource could not be found. The stream might not be specified correctly,
-        /// or it might not be in the <code>ACTIVE</code> state if the operation requires it.
+        /// The requested resource could not be found. The stream might not be specified correctly.
         /// </exception>
         Task<IncreaseStreamRetentionPeriodResponse> IncreaseStreamRetentionPeriodAsync(string streamName, int retentionPeriodHours, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -301,7 +308,7 @@ namespace Amazon.Kinesis
         /// </para>
         ///  
         /// <para>
-        /// <a>ListStreams</a> has a limit of 5 transactions per second per account.
+        ///  <a>ListStreams</a> has a limit of 5 transactions per second per account.
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">
@@ -422,6 +429,22 @@ namespace Amazon.Kinesis
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<SplitShardResponse> SplitShardAsync(SplitShardRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateShardCount
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateShardCount operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateShardCount operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<UpdateShardCountResponse> UpdateShardCountAsync(UpdateShardCountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

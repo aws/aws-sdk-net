@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-11-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -54,12 +54,16 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
             request.Parameters.Add("Action", "ModifyVpcPeeringConnectionOptions");
-            request.Parameters.Add("Version", "2016-04-01");
+            request.Parameters.Add("Version", "2016-11-15");
 
             if(publicRequest != null)
             {
                 if(publicRequest.IsSetAccepterPeeringConnectionOptions())
                 {
+                    if(publicRequest.AccepterPeeringConnectionOptions.IsSetAllowDnsResolutionFromRemoteVpc())
+                    {
+                        request.Parameters.Add("AccepterPeeringConnectionOptions" + "." + "AllowDnsResolutionFromRemoteVpc", StringUtils.FromBool(publicRequest.AccepterPeeringConnectionOptions.AllowDnsResolutionFromRemoteVpc));
+                    }
                     if(publicRequest.AccepterPeeringConnectionOptions.IsSetAllowEgressFromLocalClassicLinkToRemoteVpc())
                     {
                         request.Parameters.Add("AccepterPeeringConnectionOptions" + "." + "AllowEgressFromLocalClassicLinkToRemoteVpc", StringUtils.FromBool(publicRequest.AccepterPeeringConnectionOptions.AllowEgressFromLocalClassicLinkToRemoteVpc));
@@ -71,6 +75,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetRequesterPeeringConnectionOptions())
                 {
+                    if(publicRequest.RequesterPeeringConnectionOptions.IsSetAllowDnsResolutionFromRemoteVpc())
+                    {
+                        request.Parameters.Add("RequesterPeeringConnectionOptions" + "." + "AllowDnsResolutionFromRemoteVpc", StringUtils.FromBool(publicRequest.RequesterPeeringConnectionOptions.AllowDnsResolutionFromRemoteVpc));
+                    }
                     if(publicRequest.RequesterPeeringConnectionOptions.IsSetAllowEgressFromLocalClassicLinkToRemoteVpc())
                     {
                         request.Parameters.Add("RequesterPeeringConnectionOptions" + "." + "AllowEgressFromLocalClassicLinkToRemoteVpc", StringUtils.FromBool(publicRequest.RequesterPeeringConnectionOptions.AllowEgressFromLocalClassicLinkToRemoteVpc));

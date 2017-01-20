@@ -21,6 +21,7 @@
 using System;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.DynamoDBv2.Model;
 
 namespace Amazon.DynamoDBv2
@@ -58,7 +59,7 @@ namespace Amazon.DynamoDBv2
     /// </para>
     ///  </li> </ul>
     /// </summary>
-    public partial interface IAmazonDynamoDBStreams : IDisposable
+    public partial interface IAmazonDynamoDBStreams : IAmazonService, IDisposable
     {
 
         
@@ -92,6 +93,7 @@ namespace Amazon.DynamoDBv2
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent stream.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/DescribeStream">REST API Reference for DescribeStream Operation</seealso>
         DescribeStreamResponse DescribeStream(string streamArn);
 
         /// <summary>
@@ -121,6 +123,7 @@ namespace Amazon.DynamoDBv2
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent stream.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/DescribeStream">REST API Reference for DescribeStream Operation</seealso>
         DescribeStreamResponse DescribeStream(DescribeStreamRequest request);
 
         /// <summary>
@@ -134,6 +137,7 @@ namespace Amazon.DynamoDBv2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeStream
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/DescribeStream">REST API Reference for DescribeStream Operation</seealso>
         IAsyncResult BeginDescribeStream(DescribeStreamRequest request, AsyncCallback callback, object state);
 
 
@@ -145,6 +149,7 @@ namespace Amazon.DynamoDBv2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeStream.</param>
         /// 
         /// <returns>Returns a  DescribeStreamResult from DynamoDBStreams.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/DescribeStream">REST API Reference for DescribeStream Operation</seealso>
         DescribeStreamResponse EndDescribeStream(IAsyncResult asyncResult);
 
         #endregion
@@ -214,6 +219,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  </li> </ul>
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/GetRecords">REST API Reference for GetRecords Operation</seealso>
         GetRecordsResponse GetRecords(string shardIterator);
 
         /// <summary>
@@ -278,6 +284,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  </li> </ul>
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/GetRecords">REST API Reference for GetRecords Operation</seealso>
         GetRecordsResponse GetRecords(GetRecordsRequest request);
 
         /// <summary>
@@ -291,6 +298,7 @@ namespace Amazon.DynamoDBv2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetRecords
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/GetRecords">REST API Reference for GetRecords Operation</seealso>
         IAsyncResult BeginGetRecords(GetRecordsRequest request, AsyncCallback callback, object state);
 
 
@@ -302,6 +310,7 @@ namespace Amazon.DynamoDBv2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetRecords.</param>
         /// 
         /// <returns>Returns a  GetRecordsResult from DynamoDBStreams.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/GetRecords">REST API Reference for GetRecords Operation</seealso>
         GetRecordsResponse EndGetRecords(IAsyncResult asyncResult);
 
         #endregion
@@ -351,6 +360,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  </li> </ul>
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/GetShardIterator">REST API Reference for GetShardIterator Operation</seealso>
         GetShardIteratorResponse GetShardIterator(GetShardIteratorRequest request);
 
         /// <summary>
@@ -364,6 +374,7 @@ namespace Amazon.DynamoDBv2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetShardIterator
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/GetShardIterator">REST API Reference for GetShardIterator Operation</seealso>
         IAsyncResult BeginGetShardIterator(GetShardIteratorRequest request, AsyncCallback callback, object state);
 
 
@@ -375,6 +386,7 @@ namespace Amazon.DynamoDBv2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetShardIterator.</param>
         /// 
         /// <returns>Returns a  GetShardIteratorResult from DynamoDBStreams.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/GetShardIterator">REST API Reference for GetShardIterator Operation</seealso>
         GetShardIteratorResponse EndGetShardIterator(IAsyncResult asyncResult);
 
         #endregion
@@ -401,6 +413,7 @@ namespace Amazon.DynamoDBv2
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent stream.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/ListStreams">REST API Reference for ListStreams Operation</seealso>
         ListStreamsResponse ListStreams();
 
         /// <summary>
@@ -423,6 +436,7 @@ namespace Amazon.DynamoDBv2
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent stream.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/ListStreams">REST API Reference for ListStreams Operation</seealso>
         ListStreamsResponse ListStreams(ListStreamsRequest request);
 
         /// <summary>
@@ -436,6 +450,7 @@ namespace Amazon.DynamoDBv2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListStreams
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/ListStreams">REST API Reference for ListStreams Operation</seealso>
         IAsyncResult BeginListStreams(ListStreamsRequest request, AsyncCallback callback, object state);
 
 
@@ -447,6 +462,7 @@ namespace Amazon.DynamoDBv2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListStreams.</param>
         /// 
         /// <returns>Returns a  ListStreamsResult from DynamoDBStreams.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/ListStreams">REST API Reference for ListStreams Operation</seealso>
         ListStreamsResponse EndListStreams(IAsyncResult asyncResult);
 
         #endregion

@@ -34,11 +34,30 @@ namespace Amazon.ECS.Model
     /// parameter. For more information about task definition parameters and defaults, see
     /// <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon
     /// ECS Task Definitions</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+    /// 
+    ///  
+    /// <para>
+    /// You can specify an IAM role for your task with the <code>taskRoleArn</code> parameter.
+    /// When you specify an IAM role for a task, its containers can then use the latest versions
+    /// of the AWS CLI or SDKs to make API requests to the AWS services that are specified
+    /// in the IAM policy associated with the role. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
+    /// Roles for Tasks</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+    /// </para>
+    ///  
+    /// <para>
+    /// You can specify a Docker networking mode for the containers in your task definition
+    /// with the <code>networkMode</code> parameter. The available network modes correspond
+    /// to those described in <a href="https://docs.docker.com/engine/reference/run/#/network-settings">Network
+    /// settings</a> in the Docker run reference.
+    /// </para>
     /// </summary>
     public partial class RegisterTaskDefinitionRequest : AmazonECSRequest
     {
         private List<ContainerDefinition> _containerDefinitions = new List<ContainerDefinition>();
         private string _family;
+        private NetworkMode _networkMode;
+        private List<TaskDefinitionPlacementConstraint> _placementConstraints = new List<TaskDefinitionPlacementConstraint>();
+        private string _taskRoleArn;
         private List<Volume> _volumes = new List<Volume>();
 
         /// <summary>
@@ -79,6 +98,83 @@ namespace Amazon.ECS.Model
         internal bool IsSetFamily()
         {
             return this._family != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkMode. 
+        /// <para>
+        /// The Docker networking mode to use for the containers in the task. The valid values
+        /// are <code>none</code>, <code>bridge</code>, and <code>host</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The default Docker network mode is <code>bridge</code>. If the network mode is set
+        /// to <code>none</code>, you cannot specify port mappings in your container definitions,
+        /// and the task's containers do not have external connectivity. The <code>host</code>
+        /// network mode offers the highest networking performance for containers because they
+        /// use the host network stack instead of the virtualized network stack provided by the
+        /// <code>bridge</code> mode; however, exposed container ports are mapped directly to
+        /// the corresponding host port, so you cannot take advantage of dynamic host port mappings
+        /// or run multiple instantiations of the same task on a single container instance if
+        /// port mappings are used.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.docker.com/engine/reference/run/#network-settings">Network
+        /// settings</a> in the <i>Docker run reference</i>.
+        /// </para>
+        /// </summary>
+        public NetworkMode NetworkMode
+        {
+            get { return this._networkMode; }
+            set { this._networkMode = value; }
+        }
+
+        // Check to see if NetworkMode property is set
+        internal bool IsSetNetworkMode()
+        {
+            return this._networkMode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PlacementConstraints. 
+        /// <para>
+        /// An array of placement constraint objects to use for the task. You can specify a maximum
+        /// of 10 constraints per task (this limit includes constraints in the task definition
+        /// and those specified at run time).
+        /// </para>
+        /// </summary>
+        public List<TaskDefinitionPlacementConstraint> PlacementConstraints
+        {
+            get { return this._placementConstraints; }
+            set { this._placementConstraints = value; }
+        }
+
+        // Check to see if PlacementConstraints property is set
+        internal bool IsSetPlacementConstraints()
+        {
+            return this._placementConstraints != null && this._placementConstraints.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TaskRoleArn. 
+        /// <para>
+        /// The short name or full Amazon Resource Name (ARN) of the IAM role that containers
+        /// in this task can assume. All containers in this task are granted the permissions that
+        /// are specified in this role. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
+        /// Roles for Tasks</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        public string TaskRoleArn
+        {
+            get { return this._taskRoleArn; }
+            set { this._taskRoleArn = value; }
+        }
+
+        // Check to see if TaskRoleArn property is set
+        internal bool IsSetTaskRoleArn()
+        {
+            return this._taskRoleArn != null;
         }
 
         /// <summary>

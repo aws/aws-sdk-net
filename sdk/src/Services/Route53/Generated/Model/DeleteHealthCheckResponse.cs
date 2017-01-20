@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// Empty response for the request.
+    /// An empty element.
     /// </summary>
     public partial class DeleteHealthCheckResponse : AmazonWebServiceResponse
     {

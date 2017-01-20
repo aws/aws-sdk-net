@@ -45,7 +45,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property EnvironmentId. 
         /// <para>
-        ///  The ID of the environment to rebuild. 
+        /// The ID of the environment to rebuild.
         /// </para>
         ///  
         /// <para>
@@ -69,7 +69,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property EnvironmentName. 
         /// <para>
-        ///  The name of the environment to rebuild. 
+        /// The name of the environment to rebuild.
         /// </para>
         ///  
         /// <para>

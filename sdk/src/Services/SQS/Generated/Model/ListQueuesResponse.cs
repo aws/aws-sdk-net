@@ -37,7 +37,7 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Gets and sets the property QueueUrls. 
         /// <para>
-        /// A list of queue URLs, up to 1000 entries.
+        /// A list of queue URLs, up to 1,000 entries.
         /// </para>
         /// </summary>
         public List<string> QueueUrls

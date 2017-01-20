@@ -25,7 +25,7 @@ namespace Amazon.Lambda.Model
     ///<summary>
     /// Lambda exception
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class EC2UnexpectedException : AmazonLambdaException 
@@ -79,7 +79,7 @@ namespace Amazon.Lambda.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the EC2UnexpectedException class with serialized data.
         /// </summary>

@@ -23,6 +23,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.ECR.Model;
 
 namespace Amazon.ECR
@@ -37,7 +38,7 @@ namespace Amazon.ECR
     /// users or Amazon EC2 instances can access repositories and images. Developers can use
     /// the Docker CLI to author and manage images.
     /// </summary>
-    public partial interface IAmazonECR : IDisposable
+    public partial interface IAmazonECR : IAmazonService, IDisposable
     {
 
         
@@ -50,7 +51,8 @@ namespace Amazon.ECR
         ///  <note> 
         /// <para>
         /// This operation is used by the Amazon ECR proxy, and it is not intended for general
-        /// use by customers. Use the <code>docker</code> CLI to pull, tag, and push images.
+        /// use by customers for pulling and pushing images. In most cases, you should use the
+        /// <code>docker</code> CLI to pull, tag, and push images.
         /// </para>
         ///  </note>
         /// </summary>
@@ -67,6 +69,7 @@ namespace Amazon.ECR
         /// <exception cref="Amazon.ECR.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/BatchCheckLayerAvailability">REST API Reference for BatchCheckLayerAvailability Operation</seealso>
         BatchCheckLayerAvailabilityResponse BatchCheckLayerAvailability(BatchCheckLayerAvailabilityRequest request);
 
 
@@ -79,6 +82,7 @@ namespace Amazon.ECR
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/BatchCheckLayerAvailability">REST API Reference for BatchCheckLayerAvailability Operation</seealso>
         Task<BatchCheckLayerAvailabilityResponse> BatchCheckLayerAvailabilityAsync(BatchCheckLayerAvailabilityRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -89,6 +93,17 @@ namespace Amazon.ECR
         /// <summary>
         /// Deletes a list of specified images within a specified repository. Images are specified
         /// with either <code>imageTag</code> or <code>imageDigest</code>.
+        /// 
+        ///  
+        /// <para>
+        /// You can remove a tag from an image by specifying the image's tag in your request.
+        /// When you remove the last tag from an image, the image is deleted from your repository.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can completely delete an image (and all of its tags) by specifying the image's
+        /// digest in your request.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchDeleteImage service method.</param>
         /// 
@@ -103,6 +118,7 @@ namespace Amazon.ECR
         /// <exception cref="Amazon.ECR.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/BatchDeleteImage">REST API Reference for BatchDeleteImage Operation</seealso>
         BatchDeleteImageResponse BatchDeleteImage(BatchDeleteImageRequest request);
 
 
@@ -115,6 +131,7 @@ namespace Amazon.ECR
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/BatchDeleteImage">REST API Reference for BatchDeleteImage Operation</seealso>
         Task<BatchDeleteImageResponse> BatchDeleteImageAsync(BatchDeleteImageRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -139,6 +156,7 @@ namespace Amazon.ECR
         /// <exception cref="Amazon.ECR.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/BatchGetImage">REST API Reference for BatchGetImage Operation</seealso>
         BatchGetImageResponse BatchGetImage(BatchGetImageRequest request);
 
 
@@ -151,6 +169,7 @@ namespace Amazon.ECR
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/BatchGetImage">REST API Reference for BatchGetImage Operation</seealso>
         Task<BatchGetImageResponse> BatchGetImageAsync(BatchGetImageRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -166,7 +185,8 @@ namespace Amazon.ECR
         ///  <note> 
         /// <para>
         /// This operation is used by the Amazon ECR proxy, and it is not intended for general
-        /// use by customers. Use the <code>docker</code> CLI to pull, tag, and push images.
+        /// use by customers for pulling and pushing images. In most cases, you should use the
+        /// <code>docker</code> CLI to pull, tag, and push images.
         /// </para>
         ///  </note>
         /// </summary>
@@ -199,6 +219,7 @@ namespace Amazon.ECR
         /// <exception cref="Amazon.ECR.Model.UploadNotFoundException">
         /// The upload could not be found, or the specified upload id is not valid for this repository.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/CompleteLayerUpload">REST API Reference for CompleteLayerUpload Operation</seealso>
         CompleteLayerUploadResponse CompleteLayerUpload(CompleteLayerUploadRequest request);
 
 
@@ -211,6 +232,7 @@ namespace Amazon.ECR
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/CompleteLayerUpload">REST API Reference for CompleteLayerUpload Operation</seealso>
         Task<CompleteLayerUploadResponse> CompleteLayerUploadAsync(CompleteLayerUploadRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -238,6 +260,7 @@ namespace Amazon.ECR
         /// <exception cref="Amazon.ECR.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/CreateRepository">REST API Reference for CreateRepository Operation</seealso>
         CreateRepositoryResponse CreateRepository(CreateRepositoryRequest request);
 
 
@@ -250,6 +273,7 @@ namespace Amazon.ECR
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/CreateRepository">REST API Reference for CreateRepository Operation</seealso>
         Task<CreateRepositoryResponse> CreateRepositoryAsync(CreateRepositoryRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -278,6 +302,7 @@ namespace Amazon.ECR
         /// <exception cref="Amazon.ECR.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeleteRepository">REST API Reference for DeleteRepository Operation</seealso>
         DeleteRepositoryResponse DeleteRepository(DeleteRepositoryRequest request);
 
 
@@ -290,6 +315,7 @@ namespace Amazon.ECR
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeleteRepository">REST API Reference for DeleteRepository Operation</seealso>
         Task<DeleteRepositoryResponse> DeleteRepositoryAsync(DeleteRepositoryRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -317,6 +343,7 @@ namespace Amazon.ECR
         /// <exception cref="Amazon.ECR.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeleteRepositoryPolicy">REST API Reference for DeleteRepositoryPolicy Operation</seealso>
         DeleteRepositoryPolicyResponse DeleteRepositoryPolicy(DeleteRepositoryPolicyRequest request);
 
 
@@ -329,7 +356,58 @@ namespace Amazon.ECR
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeleteRepositoryPolicy">REST API Reference for DeleteRepositoryPolicy Operation</seealso>
         Task<DeleteRepositoryPolicyResponse> DeleteRepositoryPolicyAsync(DeleteRepositoryPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeImages
+
+
+        /// <summary>
+        /// Returns metadata about the images in a repository, including image size, image tags,
+        /// and creation date.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Beginning with Docker version 1.9, the Docker client compresses image layers before
+        /// pushing them to a V2 Docker registry. The output of the <code>docker images</code>
+        /// command shows the uncompressed image size, so it may return a larger image size than
+        /// the image sizes returned by <a>DescribeImages</a>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeImages service method.</param>
+        /// 
+        /// <returns>The response from the DescribeImages service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.ImageNotFoundException">
+        /// The image requested does not exist in the specified repository.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.RepositoryNotFoundException">
+        /// The specified repository could not be found. Check the spelling of the specified repository
+        /// and ensure that you are performing operations on the correct registry.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeImages">REST API Reference for DescribeImages Operation</seealso>
+        DescribeImagesResponse DescribeImages(DescribeImagesRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeImages operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeImages operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeImages">REST API Reference for DescribeImages Operation</seealso>
+        Task<DescribeImagesResponse> DescribeImagesAsync(DescribeImagesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -352,6 +430,7 @@ namespace Amazon.ECR
         /// <exception cref="Amazon.ECR.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeRepositories">REST API Reference for DescribeRepositories Operation</seealso>
         DescribeRepositoriesResponse DescribeRepositories(DescribeRepositoriesRequest request);
 
 
@@ -364,6 +443,7 @@ namespace Amazon.ECR
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeRepositories">REST API Reference for DescribeRepositories Operation</seealso>
         Task<DescribeRepositoriesResponse> DescribeRepositoriesAsync(DescribeRepositoriesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -393,6 +473,7 @@ namespace Amazon.ECR
         /// <exception cref="Amazon.ECR.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetAuthorizationToken">REST API Reference for GetAuthorizationToken Operation</seealso>
         GetAuthorizationTokenResponse GetAuthorizationToken(GetAuthorizationTokenRequest request);
 
 
@@ -405,6 +486,7 @@ namespace Amazon.ECR
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetAuthorizationToken">REST API Reference for GetAuthorizationToken Operation</seealso>
         Task<GetAuthorizationTokenResponse> GetAuthorizationTokenAsync(GetAuthorizationTokenRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -419,7 +501,8 @@ namespace Amazon.ECR
         ///  <note> 
         /// <para>
         /// This operation is used by the Amazon ECR proxy, and it is not intended for general
-        /// use by customers. Use the <code>docker</code> CLI to pull, tag, and push images.
+        /// use by customers for pulling and pushing images. In most cases, you should use the
+        /// <code>docker</code> CLI to pull, tag, and push images.
         /// </para>
         ///  </note>
         /// </summary>
@@ -444,6 +527,7 @@ namespace Amazon.ECR
         /// <exception cref="Amazon.ECR.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetDownloadUrlForLayer">REST API Reference for GetDownloadUrlForLayer Operation</seealso>
         GetDownloadUrlForLayerResponse GetDownloadUrlForLayer(GetDownloadUrlForLayerRequest request);
 
 
@@ -456,6 +540,7 @@ namespace Amazon.ECR
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetDownloadUrlForLayer">REST API Reference for GetDownloadUrlForLayer Operation</seealso>
         Task<GetDownloadUrlForLayerResponse> GetDownloadUrlForLayerAsync(GetDownloadUrlForLayerRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -483,6 +568,7 @@ namespace Amazon.ECR
         /// <exception cref="Amazon.ECR.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetRepositoryPolicy">REST API Reference for GetRepositoryPolicy Operation</seealso>
         GetRepositoryPolicyResponse GetRepositoryPolicy(GetRepositoryPolicyRequest request);
 
 
@@ -495,6 +581,7 @@ namespace Amazon.ECR
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetRepositoryPolicy">REST API Reference for GetRepositoryPolicy Operation</seealso>
         Task<GetRepositoryPolicyResponse> GetRepositoryPolicyAsync(GetRepositoryPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -508,7 +595,8 @@ namespace Amazon.ECR
         ///  <note> 
         /// <para>
         /// This operation is used by the Amazon ECR proxy, and it is not intended for general
-        /// use by customers. Use the <code>docker</code> CLI to pull, tag, and push images.
+        /// use by customers for pulling and pushing images. In most cases, you should use the
+        /// <code>docker</code> CLI to pull, tag, and push images.
         /// </para>
         ///  </note>
         /// </summary>
@@ -525,6 +613,7 @@ namespace Amazon.ECR
         /// <exception cref="Amazon.ECR.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/InitiateLayerUpload">REST API Reference for InitiateLayerUpload Operation</seealso>
         InitiateLayerUploadResponse InitiateLayerUpload(InitiateLayerUploadRequest request);
 
 
@@ -537,6 +626,7 @@ namespace Amazon.ECR
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/InitiateLayerUpload">REST API Reference for InitiateLayerUpload Operation</seealso>
         Task<InitiateLayerUploadResponse> InitiateLayerUploadAsync(InitiateLayerUploadRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -546,6 +636,15 @@ namespace Amazon.ECR
 
         /// <summary>
         /// Lists all the image IDs for a given repository.
+        /// 
+        ///  
+        /// <para>
+        /// You can filter images based on whether or not they are tagged by setting the <code>tagStatus</code>
+        /// parameter to <code>TAGGED</code> or <code>UNTAGGED</code>. For example, you can filter
+        /// your results to return only <code>UNTAGGED</code> images and then pipe that result
+        /// to a <a>BatchDeleteImage</a> operation to delete them. Or, you can filter your results
+        /// to return only <code>TAGGED</code> images to list all of the tags in your repository.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListImages service method.</param>
         /// 
@@ -560,6 +659,7 @@ namespace Amazon.ECR
         /// <exception cref="Amazon.ECR.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/ListImages">REST API Reference for ListImages Operation</seealso>
         ListImagesResponse ListImages(ListImagesRequest request);
 
 
@@ -572,6 +672,7 @@ namespace Amazon.ECR
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/ListImages">REST API Reference for ListImages Operation</seealso>
         Task<ListImagesResponse> ListImagesAsync(ListImagesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -580,12 +681,13 @@ namespace Amazon.ECR
 
 
         /// <summary>
-        /// Creates or updates the image manifest associated with an image.
+        /// Creates or updates the image manifest and tags associated with an image.
         /// 
         ///  <note> 
         /// <para>
         /// This operation is used by the Amazon ECR proxy, and it is not intended for general
-        /// use by customers. Use the <code>docker</code> CLI to pull, tag, and push images.
+        /// use by customers for pulling and pushing images. In most cases, you should use the
+        /// <code>docker</code> CLI to pull, tag, and push images.
         /// </para>
         ///  </note>
         /// </summary>
@@ -615,6 +717,7 @@ namespace Amazon.ECR
         /// <exception cref="Amazon.ECR.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutImage">REST API Reference for PutImage Operation</seealso>
         PutImageResponse PutImage(PutImageRequest request);
 
 
@@ -627,6 +730,7 @@ namespace Amazon.ECR
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutImage">REST API Reference for PutImage Operation</seealso>
         Task<PutImageResponse> PutImageAsync(PutImageRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -650,6 +754,7 @@ namespace Amazon.ECR
         /// <exception cref="Amazon.ECR.Model.ServerException">
         /// These errors are usually caused by a server-side issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/SetRepositoryPolicy">REST API Reference for SetRepositoryPolicy Operation</seealso>
         SetRepositoryPolicyResponse SetRepositoryPolicy(SetRepositoryPolicyRequest request);
 
 
@@ -662,6 +767,7 @@ namespace Amazon.ECR
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/SetRepositoryPolicy">REST API Reference for SetRepositoryPolicy Operation</seealso>
         Task<SetRepositoryPolicyResponse> SetRepositoryPolicyAsync(SetRepositoryPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -675,7 +781,8 @@ namespace Amazon.ECR
         ///  <note> 
         /// <para>
         /// This operation is used by the Amazon ECR proxy, and it is not intended for general
-        /// use by customers. Use the <code>docker</code> CLI to pull, tag, and push images.
+        /// use by customers for pulling and pushing images. In most cases, you should use the
+        /// <code>docker</code> CLI to pull, tag, and push images.
         /// </para>
         ///  </note>
         /// </summary>
@@ -704,6 +811,7 @@ namespace Amazon.ECR
         /// <exception cref="Amazon.ECR.Model.UploadNotFoundException">
         /// The upload could not be found, or the specified upload id is not valid for this repository.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/UploadLayerPart">REST API Reference for UploadLayerPart Operation</seealso>
         UploadLayerPartResponse UploadLayerPart(UploadLayerPartRequest request);
 
 
@@ -716,6 +824,7 @@ namespace Amazon.ECR
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/UploadLayerPart">REST API Reference for UploadLayerPart Operation</seealso>
         Task<UploadLayerPartResponse> UploadLayerPartAsync(UploadLayerPartRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion

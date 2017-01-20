@@ -67,6 +67,12 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAutoRollbackEnabled())
+                {
+                    context.Writer.WritePropertyName("autoRollbackEnabled");
+                    context.Writer.Write(publicRequest.AutoRollbackEnabled);
+                }
+
                 if(publicRequest.IsSetDeploymentId())
                 {
                     context.Writer.WritePropertyName("deploymentId");

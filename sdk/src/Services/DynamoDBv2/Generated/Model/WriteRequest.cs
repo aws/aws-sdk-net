@@ -28,10 +28,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
-    /// Represents an operation to perform - either <i>DeleteItem</i> or <i>PutItem</i>. You
-    /// can only request one of these operations, not both, in a single <i>WriteRequest</i>.
+    /// Represents an operation to perform - either <code>DeleteItem</code> or <code>PutItem</code>.
+    /// You can only request one of these operations, not both, in a single <code>WriteRequest</code>.
     /// If you do need to perform both of these operations, you will need to provide two separate
-    /// <i>WriteRequest</i> objects.
+    /// <code>WriteRequest</code> objects.
     /// </summary>
     public partial class WriteRequest
     {
@@ -46,7 +46,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Instantiates WriteRequest with the parameterized properties
         /// </summary>
-        /// <param name="putRequest">A request to perform a <i>PutItem</i> operation.</param>
+        /// <param name="putRequest">A request to perform a <code>PutItem</code> operation.</param>
         public WriteRequest(PutRequest putRequest)
         {
             _putRequest = putRequest;
@@ -55,7 +55,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Instantiates WriteRequest with the parameterized properties
         /// </summary>
-        /// <param name="deleteRequest">A request to perform a <i>DeleteItem</i> operation.</param>
+        /// <param name="deleteRequest">A request to perform a <code>DeleteItem</code> operation.</param>
         public WriteRequest(DeleteRequest deleteRequest)
         {
             _deleteRequest = deleteRequest;
@@ -64,7 +64,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property DeleteRequest. 
         /// <para>
-        /// A request to perform a <i>DeleteItem</i> operation.
+        /// A request to perform a <code>DeleteItem</code> operation.
         /// </para>
         /// </summary>
         public DeleteRequest DeleteRequest
@@ -82,7 +82,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property PutRequest. 
         /// <para>
-        /// A request to perform a <i>PutItem</i> operation.
+        /// A request to perform a <code>PutItem</code> operation.
         /// </para>
         /// </summary>
         public PutRequest PutRequest

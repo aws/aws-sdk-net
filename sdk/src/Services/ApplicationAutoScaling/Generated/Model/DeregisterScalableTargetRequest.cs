@@ -29,14 +29,16 @@ namespace Amazon.ApplicationAutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the DeregisterScalableTarget operation.
-    /// Deregisters a scalable target that was previously registered. If you are no longer
-    /// using a scalable target, you can delete it with this operation. When you deregister
-    /// a scalable target, all of the scaling policies that are associated with that scalable
-    /// target are deleted.
+    /// Deregisters a scalable target.
     /// 
     ///  
     /// <para>
-    /// To create a new scalable target or update an existing one, see <a>RegisterScalableTarget</a>.
+    /// Deregistering a scalable target deletes the scaling policies that are associated with
+    /// it.
+    /// </para>
+    ///  
+    /// <para>
+    /// To create a scalable target or update an existing one, see <a>RegisterScalableTarget</a>.
     /// </para>
     /// </summary>
     public partial class DeregisterScalableTargetRequest : AmazonApplicationAutoScalingRequest
@@ -48,10 +50,25 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
-        /// The unique identifier string for the resource associated with the scalable target.
-        /// For Amazon ECS services, this value is the resource type, followed by the cluster
-        /// name and service name, such as <code>service/default/sample-webapp</code>.
+        /// The identifier of the resource associated with the scalable target. This string consists
+        /// of the resource type and unique identifier.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// ECS service - The resource type is <code>service</code> and the unique identifier
+        /// is the cluster name and service name. Example: <code>service/default/sample-webapp</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Spot fleet request - The resource type is <code>spot-fleet-request</code> and the
+        /// unique identifier is the Spot fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// EMR cluster - The resource type is <code>instancegroup</code> and the unique identifier
+        /// is the cluster ID and instance group ID. Example: <code>instancegroup/j-2EEZNYKUA1NTV/ig-1791Y4E1L8YI0</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string ResourceId
         {
@@ -68,10 +85,24 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <summary>
         /// Gets and sets the property ScalableDimension. 
         /// <para>
-        /// The scalable dimension associated with the scalable target. The scalable dimension
-        /// contains the service namespace, resource type, and scaling property, such as <code>ecs:service:DesiredCount</code>
-        /// for the desired task count of an Amazon ECS service.
+        /// The scalable dimension associated with the scalable target. This string consists of
+        /// the service namespace, resource type, and scaling property.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>ecs:service:DesiredCount</code> - The desired task count of an ECS service.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot
+        /// fleet request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count of
+        /// an EMR Instance Group.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public ScalableDimension ScalableDimension
         {
@@ -88,9 +119,8 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <summary>
         /// Gets and sets the property ServiceNamespace. 
         /// <para>
-        /// The namespace for the AWS service that the scalable target is associated with. For
-        /// more information, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
-        /// Service Namespaces</a> in the Amazon Web Services General Reference.
+        /// The namespace of the AWS service. For more information, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
+        /// Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </summary>
         public ServiceNamespace ServiceNamespace

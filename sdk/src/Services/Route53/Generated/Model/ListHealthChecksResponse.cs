@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// A complex type that contains the response for the request.
+    /// A complex type that contains the response to a <code>ListHealthChecks</code> request.
     /// </summary>
     public partial class ListHealthChecksResponse : AmazonWebServiceResponse
     {
@@ -41,8 +41,8 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property HealthChecks. 
         /// <para>
-        /// A complex type that contains information about the health checks associated with the
-        /// current AWS account.
+        /// A complex type that contains one <code>HealthCheck</code> element for each health
+        /// check that is associated with the current AWS account.
         /// </para>
         /// </summary>
         public List<HealthCheck> HealthChecks
@@ -60,9 +60,8 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        /// If the request returned more than one page of results, submit another request and
-        /// specify the value of <code>NextMarker</code> from the last response in the <code>marker</code>
-        /// parameter to get the next page of results.
+        /// For the second and subsequent calls to <code>ListHealthChecks</code>, <code>Marker</code>
+        /// is the value that you specified for the marker parameter in the previous request.
         /// </para>
         /// </summary>
         public string Marker
@@ -80,13 +79,14 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property IsTruncated. 
         /// <para>
-        /// A flag indicating whether there are more health checks to be listed. If your results
-        /// were truncated, you can make a follow-up request for the next page of results by using
-        /// the <code>Marker</code> element.
+        /// A flag that indicates whether there are more health checks to be listed. If the response
+        /// was truncated, you can get the next group of <code>maxitems</code> health checks by
+        /// calling <code>ListHealthChecks</code> again and specifying the value of the <code>NextMarker</code>
+        /// element in the marker parameter.
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>true</code> | <code>false</code>
+        /// Valid Values: <code>true</code> | <code>false</code> 
         /// </para>
         /// </summary>
         public bool IsTruncated
@@ -104,10 +104,10 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property NextMarker. 
         /// <para>
-        /// Indicates where to continue listing health checks. If <a>ListHealthChecksResponse$IsTruncated</a>
-        /// is <code>true</code>, make another request to <code>ListHealthChecks</code> and include
-        /// the value of the <code>NextMarker</code> element in the <code>Marker</code> element
-        /// to get the next page of results.
+        /// If <code>IsTruncated</code> is <code>true</code>, the value of <code>NextMarker</code>
+        /// identifies the first health check in the next group of <code>maxitems</code> health
+        /// checks. Call <code>ListHealthChecks</code> again and specify the value of <code>NextMarker</code>
+        /// in the marker parameter.
         /// </para>
         /// </summary>
         public string NextMarker
@@ -125,11 +125,8 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property MaxItems. 
         /// <para>
-        /// The maximum number of health checks to be included in the response body. If the number
-        /// of health checks associated with this AWS account exceeds <code>MaxItems</code>, the
-        /// value of <a>ListHealthChecksResponse$IsTruncated</a> in the response is <code>true</code>.
-        /// Call <code>ListHealthChecks</code> again and specify the value of <a>ListHealthChecksResponse$NextMarker</a>
-        /// in the <a>ListHostedZonesRequest$Marker</a> element to get the next page of results.
+        /// The value that you specified for the <code>maxitems</code> parameter in the call to
+        /// <code>ListHealthChecks</code> that produced the current response.
         /// </para>
         /// </summary>
         public string MaxItems

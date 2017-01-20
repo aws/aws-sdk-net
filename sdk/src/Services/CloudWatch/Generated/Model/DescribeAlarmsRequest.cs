@@ -29,9 +29,9 @@ namespace Amazon.CloudWatch.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeAlarms operation.
-    /// Retrieves alarms with the specified names. If no name is specified, all alarms for
-    /// the user are returned. Alarms can be retrieved by using only a prefix for the alarm
-    /// name, the alarm state, or a prefix for any action.
+    /// Retrieves the specified alarms. If no alarms are specified, all alarms are returned.
+    /// Alarms can be retrieved by using only a prefix for the alarm name, the alarm state,
+    /// or a prefix for any action.
     /// </summary>
     public partial class DescribeAlarmsRequest : AmazonCloudWatchRequest
     {
@@ -45,7 +45,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property ActionPrefix. 
         /// <para>
-        ///  The action name prefix. 
+        /// The action name prefix.
         /// </para>
         /// </summary>
         public string ActionPrefix
@@ -63,8 +63,8 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property AlarmNamePrefix. 
         /// <para>
-        ///  The alarm name prefix. <code>AlarmNames</code> cannot be specified if this parameter
-        /// is specified. 
+        /// The alarm name prefix. You cannot specify <code>AlarmNames</code> if this parameter
+        /// is specified.
         /// </para>
         /// </summary>
         public string AlarmNamePrefix
@@ -82,7 +82,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property AlarmNames. 
         /// <para>
-        ///  A list of alarm names to retrieve information for. 
+        /// The names of the alarms.
         /// </para>
         /// </summary>
         public List<string> AlarmNames
@@ -100,7 +100,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property MaxRecords. 
         /// <para>
-        ///  The maximum number of alarm descriptions to retrieve. 
+        /// The maximum number of alarm descriptions to retrieve.
         /// </para>
         /// </summary>
         public int MaxRecords
@@ -118,8 +118,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  The token returned by a previous call to indicate that there is more data available.
-        /// 
+        /// The token returned by a previous call to indicate that there is more data available.
         /// </para>
         /// </summary>
         public string NextToken
@@ -137,7 +136,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property StateValue. 
         /// <para>
-        ///  The state value to be used in matching alarms. 
+        /// The state value to be used in matching alarms.
         /// </para>
         /// </summary>
         public StateValue StateValue

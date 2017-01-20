@@ -28,7 +28,7 @@ namespace Amazon.CloudWatchLogs
     ///<summary>
     /// Common exception for the CloudWatchLogs service.
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class AmazonCloudWatchLogsException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.CloudWatchLogs
         {
         }
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the AmazonCloudWatchLogsException class with serialized data.
         /// </summary>

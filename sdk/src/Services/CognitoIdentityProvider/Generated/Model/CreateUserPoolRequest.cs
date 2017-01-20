@@ -33,16 +33,39 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// </summary>
     public partial class CreateUserPoolRequest : AmazonCognitoIdentityProviderRequest
     {
+        private AdminCreateUserConfigType _adminCreateUserConfig;
         private List<string> _aliasAttributes = new List<string>();
         private List<string> _autoVerifiedAttributes = new List<string>();
+        private DeviceConfigurationType _deviceConfiguration;
+        private EmailConfigurationType _emailConfiguration;
         private string _emailVerificationMessage;
         private string _emailVerificationSubject;
         private LambdaConfigType _lambdaConfig;
         private UserPoolMfaType _mfaConfiguration;
         private UserPoolPolicyType _policies;
         private string _poolName;
+        private List<SchemaAttributeType> _schema = new List<SchemaAttributeType>();
         private string _smsAuthenticationMessage;
+        private SmsConfigurationType _smsConfiguration;
         private string _smsVerificationMessage;
+
+        /// <summary>
+        /// Gets and sets the property AdminCreateUserConfig. 
+        /// <para>
+        /// The configuration for AdminCreateUser requests.
+        /// </para>
+        /// </summary>
+        public AdminCreateUserConfigType AdminCreateUserConfig
+        {
+            get { return this._adminCreateUserConfig; }
+            set { this._adminCreateUserConfig = value; }
+        }
+
+        // Check to see if AdminCreateUserConfig property is set
+        internal bool IsSetAdminCreateUserConfig()
+        {
+            return this._adminCreateUserConfig != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AliasAttributes. 
@@ -79,6 +102,42 @@ namespace Amazon.CognitoIdentityProvider.Model
         internal bool IsSetAutoVerifiedAttributes()
         {
             return this._autoVerifiedAttributes != null && this._autoVerifiedAttributes.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeviceConfiguration. 
+        /// <para>
+        /// The device configuration.
+        /// </para>
+        /// </summary>
+        public DeviceConfigurationType DeviceConfiguration
+        {
+            get { return this._deviceConfiguration; }
+            set { this._deviceConfiguration = value; }
+        }
+
+        // Check to see if DeviceConfiguration property is set
+        internal bool IsSetDeviceConfiguration()
+        {
+            return this._deviceConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EmailConfiguration. 
+        /// <para>
+        /// The email configuration.
+        /// </para>
+        /// </summary>
+        public EmailConfigurationType EmailConfiguration
+        {
+            get { return this._emailConfiguration; }
+            set { this._emailConfiguration = value; }
+        }
+
+        // Check to see if EmailConfiguration property is set
+        internal bool IsSetEmailConfiguration()
+        {
+            return this._emailConfiguration != null;
         }
 
         /// <summary>
@@ -190,6 +249,25 @@ namespace Amazon.CognitoIdentityProvider.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Schema. 
+        /// <para>
+        /// An array of schema attributes for the new user pool. These attributes can be standard
+        /// or custom attributes.
+        /// </para>
+        /// </summary>
+        public List<SchemaAttributeType> Schema
+        {
+            get { return this._schema; }
+            set { this._schema = value; }
+        }
+
+        // Check to see if Schema property is set
+        internal bool IsSetSchema()
+        {
+            return this._schema != null && this._schema.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property SmsAuthenticationMessage. 
         /// <para>
         /// A string representing the SMS authentication message.
@@ -205,6 +283,24 @@ namespace Amazon.CognitoIdentityProvider.Model
         internal bool IsSetSmsAuthenticationMessage()
         {
             return this._smsAuthenticationMessage != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SmsConfiguration. 
+        /// <para>
+        /// The SMS configuration.
+        /// </para>
+        /// </summary>
+        public SmsConfigurationType SmsConfiguration
+        {
+            get { return this._smsConfiguration; }
+            set { this._smsConfiguration = value; }
+        }
+
+        // Check to see if SmsConfiguration property is set
+        internal bool IsSetSmsConfiguration()
+        {
+            return this._smsConfiguration != null;
         }
 
         /// <summary>

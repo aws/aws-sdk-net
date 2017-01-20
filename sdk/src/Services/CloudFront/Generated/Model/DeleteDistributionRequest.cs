@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2016-01-28.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-11-25.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -44,8 +44,8 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Instantiates DeleteDistributionRequest with the parameterized properties
         /// </summary>
-        /// <param name="id">The distribution id.</param>
-        /// <param name="ifMatch">The value of the ETag header you received when you disabled the distribution. For example: E2QWRUHAPOMQZL.</param>
+        /// <param name="id">The distribution ID. </param>
+        /// <param name="ifMatch">The value of the <code>ETag</code> header that you received when you disabled the distribution. For example: <code>E2QWRUHAPOMQZL</code>. </param>
         public DeleteDistributionRequest(string id, string ifMatch)
         {
             _id = id;
@@ -53,7 +53,10 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Id. The distribution id.
+        /// Gets and sets the property Id. 
+        /// <para>
+        /// The distribution ID. 
+        /// </para>
         /// </summary>
         public string Id
         {
@@ -68,8 +71,11 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IfMatch. The value of the ETag header you received when
-        /// you disabled the distribution. For example: E2QWRUHAPOMQZL.
+        /// Gets and sets the property IfMatch. 
+        /// <para>
+        /// The value of the <code>ETag</code> header that you received when you disabled the
+        /// distribution. For example: <code>E2QWRUHAPOMQZL</code>. 
+        /// </para>
         /// </summary>
         public string IfMatch
         {

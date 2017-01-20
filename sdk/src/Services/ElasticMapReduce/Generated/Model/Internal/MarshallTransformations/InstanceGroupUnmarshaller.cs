@@ -64,6 +64,12 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AutoScalingPolicy", targetDepth))
+                {
+                    var unmarshaller = AutoScalingPolicyDescriptionUnmarshaller.Instance;
+                    unmarshalledObject.AutoScalingPolicy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("BidPrice", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

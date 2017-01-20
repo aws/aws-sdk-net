@@ -37,6 +37,7 @@ namespace Amazon.KinesisFirehose.Model
         private string _domainARN;
         private string _indexName;
         private ElasticsearchIndexRotationPeriod _indexRotationPeriod;
+        private ProcessingConfiguration _processingConfiguration;
         private ElasticsearchRetryOptions _retryOptions;
         private string _roleARN;
         private S3DestinationUpdate _s3Update;
@@ -45,8 +46,8 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property BufferingHints. 
         /// <para>
-        /// Buffering options. If no value is specified, <b>ElasticsearchBufferingHints</b> object
-        /// default values are used. 
+        /// The buffering options. If no value is specified, <b>ElasticsearchBufferingHints</b>
+        /// object default values are used. 
         /// </para>
         /// </summary>
         public ElasticsearchBufferingHints BufferingHints
@@ -64,7 +65,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property CloudWatchLoggingOptions. 
         /// <para>
-        /// Describes CloudWatch logging options for your delivery stream.
+        /// The CloudWatch logging options for your delivery stream.
         /// </para>
         /// </summary>
         public CloudWatchLoggingOptions CloudWatchLoggingOptions
@@ -82,9 +83,9 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property DomainARN. 
         /// <para>
-        /// The ARN of the Amazon ES domain. The IAM role must have permission for DescribeElasticsearchDomain,
-        /// DescribeElasticsearchDomains , and DescribeElasticsearchDomainConfig after assuming
-        /// <b>RoleARN</b>.
+        /// The ARN of the Amazon ES domain. The IAM role must have permissions for <code>DescribeElasticsearchDomain</code>,
+        /// <code>DescribeElasticsearchDomains</code>, and <code>DescribeElasticsearchDomainConfig</code> after
+        /// assuming the IAM role specified in <b>RoleARN</b>.
         /// </para>
         /// </summary>
         public string DomainARN
@@ -120,8 +121,8 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property IndexRotationPeriod. 
         /// <para>
-        /// The Elasticsearch index rotation period. Index rotation appends a timestamp to the
-        /// IndexName to facilitate the expiration of old data. For more information, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index
+        /// The Elasticsearch index rotation period. Index rotation appends a timestamp to IndexName
+        /// to facilitate the expiration of old data. For more information, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index
         /// Rotation for Amazon Elasticsearch Service Destination</a>. Default value is <code>OneDay</code>.
         /// </para>
         /// </summary>
@@ -138,10 +139,28 @@ namespace Amazon.KinesisFirehose.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ProcessingConfiguration. 
+        /// <para>
+        /// The data processing configuration.
+        /// </para>
+        /// </summary>
+        public ProcessingConfiguration ProcessingConfiguration
+        {
+            get { return this._processingConfiguration; }
+            set { this._processingConfiguration = value; }
+        }
+
+        // Check to see if ProcessingConfiguration property is set
+        internal bool IsSetProcessingConfiguration()
+        {
+            return this._processingConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RetryOptions. 
         /// <para>
-        /// Configures retry behavior in the event that Firehose is unable to deliver documents
-        /// to Amazon ES. Default value is 300 (5 minutes).
+        /// The retry behavior in the event that Firehose is unable to deliver documents to Amazon
+        /// ES. Default value is 300 (5 minutes).
         /// </para>
         /// </summary>
         public ElasticsearchRetryOptions RetryOptions
@@ -177,7 +196,10 @@ namespace Amazon.KinesisFirehose.Model
         }
 
         /// <summary>
-        /// Gets and sets the property S3Update.
+        /// Gets and sets the property S3Update. 
+        /// <para>
+        /// The Amazon S3 destination.
+        /// </para>
         /// </summary>
         public S3DestinationUpdate S3Update
         {

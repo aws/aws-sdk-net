@@ -38,20 +38,79 @@ namespace Amazon.CertificateManager
     ///
     /// AWS Certificate Manager 
     /// <para>
-    /// Welcome to the AWS Certificate Manager (ACM) Command Reference. This guide provides
-    /// descriptions, syntax, and usage examples for each ACM command. You can use AWS Certificate
-    /// Manager to request ACM Certificates for your AWS-based websites and applications.
-    /// For general information about using ACM and for more information about using the console,
-    /// see the <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html">AWS
-    /// Certificate Manager User Guide</a>. For more information about using the ACM API,
-    /// see the <a href="http://docs.aws.amazon.com/acm/latest/APIReference/Welcome.html">AWS
-    /// Certificate Manager API Reference</a>.
+    /// Welcome to the AWS Certificate Manager (ACM) API documentation.
+    /// </para>
+    ///  
+    /// <para>
+    /// You can use ACM to manage SSL/TLS certificates for your AWS-based websites and applications.
+    /// For general information about using ACM, see the <a href="http://docs.aws.amazon.com/acm/latest/userguide/">
+    /// <i>AWS Certificate Manager User Guide</i> </a>.
     /// </para>
     /// </summary>
     public partial class AmazonCertificateManagerClient : AmazonServiceClient, IAmazonCertificateManager
     {
         
         #region Constructors
+
+#if CORECLR
+    
+        /// <summary>
+        /// Constructs AmazonCertificateManagerClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
+        public AmazonCertificateManagerClient()
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCertificateManagerConfig()) { }
+
+        /// <summary>
+        /// Constructs AmazonCertificateManagerClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
+        /// <param name="region">The region to connect.</param>
+        public AmazonCertificateManagerClient(RegionEndpoint region)
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCertificateManagerConfig{RegionEndpoint = region}) { }
+
+        /// <summary>
+        /// Constructs AmazonCertificateManagerClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
+        /// <param name="config">The AmazonCertificateManagerClient Configuration Object</param>
+        public AmazonCertificateManagerClient(AmazonCertificateManagerConfig config)
+            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+
+#endif
 
         /// <summary>
         /// Constructs AmazonCertificateManagerClient with AWS Credentials
@@ -409,6 +468,37 @@ namespace Amazon.CertificateManager
 
         #endregion
         
+        #region  ImportCertificate
+
+        internal ImportCertificateResponse ImportCertificate(ImportCertificateRequest request)
+        {
+            var marshaller = new ImportCertificateRequestMarshaller();
+            var unmarshaller = ImportCertificateResponseUnmarshaller.Instance;
+
+            return Invoke<ImportCertificateRequest,ImportCertificateResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ImportCertificate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ImportCertificate operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ImportCertificateResponse> ImportCertificateAsync(ImportCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ImportCertificateRequestMarshaller();
+            var unmarshaller = ImportCertificateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ImportCertificateRequest,ImportCertificateResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListCertificates
 
         internal ListCertificatesResponse ListCertificates()
@@ -538,8 +628,8 @@ namespace Amazon.CertificateManager
         /// specify additional FQDNs if users can reach your site by using other names. For each
         /// domain name you specify, email is sent to the domain owner to request approval to
         /// issue the certificate. After receiving approval from the domain owner, the ACM Certificate
-        /// is issued. For more information, see the <a href="http://docs.aws.amazon.com/acm/latest/userguide/overview.html">AWS
-        /// Certificate Manager User Guide </a>.
+        /// is issued. For more information, see the <a href="http://docs.aws.amazon.com/acm/latest/userguide/">AWS
+        /// Certificate Manager User Guide</a>.
         /// </summary>
         /// <param name="domainName">Fully qualified domain name (FQDN), such as www.example.com, of the site you want to secure with an ACM Certificate. Use an asterisk (*) to create a wildcard certificate that protects several sites in the same domain. For example, *.example.com protects www.example.com, site.example.com, and images.example.com.</param>
         /// <param name="cancellationToken">

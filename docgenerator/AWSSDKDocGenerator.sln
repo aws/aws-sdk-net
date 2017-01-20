@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SDKDocGenerator", "SDKDocGenerator\SDKDocGenerator.csproj", "{5BFBCE41-80EA-4A59-8E04-57AC2AE8CA2A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SDKDocGeneratorLib", "SDKDocGeneratorLib\SDKDocGeneratorLib.csproj", "{700454B0-EA6F-498D-B01B-5F49B2E720AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SDKDocGenerator.UnitTests", "SDKDocGenerator.UnitTests\SDKDocGenerator.UnitTests.csproj", "{564BAE27-9BF3-480E-85F0-99AB0681956D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{700454B0-EA6F-498D-B01B-5F49B2E720AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{700454B0-EA6F-498D-B01B-5F49B2E720AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{700454B0-EA6F-498D-B01B-5F49B2E720AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{564BAE27-9BF3-480E-85F0-99AB0681956D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{564BAE27-9BF3-480E-85F0-99AB0681956D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{564BAE27-9BF3-480E-85F0-99AB0681956D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{564BAE27-9BF3-480E-85F0-99AB0681956D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2016-01-28.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-11-25.normal.json service model.
  */
 
 
@@ -32,7 +32,7 @@ namespace Amazon.CloudFront
     public partial class AmazonCloudFrontConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.1.4.3");
+            InternalSDKUtils.BuildUserAgentString("3.3.2.2");
 
         private string _userAgent = UserAgentString;
 
@@ -62,7 +62,7 @@ namespace Amazon.CloudFront
         {
             get
             {
-                return "2016-01-28";
+                return "2016-11-25";
             }
         }
 

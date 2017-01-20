@@ -28,7 +28,7 @@ namespace Amazon.CloudSearch
     ///<summary>
     /// Common exception for the CloudSearch service.
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class AmazonCloudSearchException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.CloudSearch
         {
         }
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the AmazonCloudSearchException class with serialized data.
         /// </summary>

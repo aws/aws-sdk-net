@@ -23,7 +23,7 @@ namespace Amazon.S3.Model
     /// <summary>
     /// Contains information about a failed delete operation against a specific S3 object.
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class DeleteError

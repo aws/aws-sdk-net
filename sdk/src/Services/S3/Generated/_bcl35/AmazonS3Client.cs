@@ -219,7 +219,7 @@ namespace Amazon.S3
             pipeline.AddHandlerBefore<Amazon.Runtime.Internal.Unmarshaller>(new Amazon.S3.Internal.AmazonS3ResponseHandler());
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.ErrorCallbackHandler>(new Amazon.S3.Internal.AmazonS3ExceptionHandler());
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Unmarshaller>(new Amazon.S3.Internal.AmazonS3RedirectHandler());
-            pipeline.ReplaceHandler<Amazon.Runtime.Internal.RetryHandler>(new Amazon.Runtime.Internal.RetryHandler(new Amazon.S3.Internal.AmazonS3RetryPolicy(this.Config.MaxErrorRetry)));
+            pipeline.ReplaceHandler<Amazon.Runtime.Internal.RetryHandler>(new Amazon.Runtime.Internal.RetryHandler(new Amazon.S3.Internal.AmazonS3RetryPolicy(this.Config)));
         }    
 
         #endregion
@@ -617,6 +617,158 @@ namespace Amazon.S3
         public  DeleteBucketResponse EndDeleteBucket(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteBucketResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteBucketAnalyticsConfiguration
+
+        /// <summary>
+        /// Deletes an analytics configuration for the bucket (specified by the analytics configuration
+        /// ID).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBucketAnalyticsConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteBucketAnalyticsConfiguration service method, as returned by S3.</returns>
+        public DeleteBucketAnalyticsConfigurationResponse DeleteBucketAnalyticsConfiguration(DeleteBucketAnalyticsConfigurationRequest request)
+        {
+            var marshaller = new DeleteBucketAnalyticsConfigurationRequestMarshaller();
+            var unmarshaller = DeleteBucketAnalyticsConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteBucketAnalyticsConfigurationRequest,DeleteBucketAnalyticsConfigurationResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteBucketAnalyticsConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBucketAnalyticsConfiguration operation on AmazonS3Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteBucketAnalyticsConfiguration
+        ///         operation.</returns>
+        public IAsyncResult BeginDeleteBucketAnalyticsConfiguration(DeleteBucketAnalyticsConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DeleteBucketAnalyticsConfigurationRequestMarshaller();
+            var unmarshaller = DeleteBucketAnalyticsConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteBucketAnalyticsConfigurationRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteBucketAnalyticsConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteBucketAnalyticsConfiguration.</param>
+        /// 
+        /// <returns>Returns a  DeleteBucketAnalyticsConfigurationResult from S3.</returns>
+        public  DeleteBucketAnalyticsConfigurationResponse EndDeleteBucketAnalyticsConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteBucketAnalyticsConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteBucketInventoryConfiguration
+
+        /// <summary>
+        /// Deletes an inventory configuration (identified by the inventory ID) from the bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBucketInventoryConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteBucketInventoryConfiguration service method, as returned by S3.</returns>
+        public DeleteBucketInventoryConfigurationResponse DeleteBucketInventoryConfiguration(DeleteBucketInventoryConfigurationRequest request)
+        {
+            var marshaller = new DeleteBucketInventoryConfigurationRequestMarshaller();
+            var unmarshaller = DeleteBucketInventoryConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteBucketInventoryConfigurationRequest,DeleteBucketInventoryConfigurationResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteBucketInventoryConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBucketInventoryConfiguration operation on AmazonS3Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteBucketInventoryConfiguration
+        ///         operation.</returns>
+        public IAsyncResult BeginDeleteBucketInventoryConfiguration(DeleteBucketInventoryConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DeleteBucketInventoryConfigurationRequestMarshaller();
+            var unmarshaller = DeleteBucketInventoryConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteBucketInventoryConfigurationRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteBucketInventoryConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteBucketInventoryConfiguration.</param>
+        /// 
+        /// <returns>Returns a  DeleteBucketInventoryConfigurationResult from S3.</returns>
+        public  DeleteBucketInventoryConfigurationResponse EndDeleteBucketInventoryConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteBucketInventoryConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteBucketMetricsConfiguration
+
+        /// <summary>
+        /// Deletes a metrics configuration (specified by the metrics configuration ID) from the
+        /// bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBucketMetricsConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteBucketMetricsConfiguration service method, as returned by S3.</returns>
+        public DeleteBucketMetricsConfigurationResponse DeleteBucketMetricsConfiguration(DeleteBucketMetricsConfigurationRequest request)
+        {
+            var marshaller = new DeleteBucketMetricsConfigurationRequestMarshaller();
+            var unmarshaller = DeleteBucketMetricsConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteBucketMetricsConfigurationRequest,DeleteBucketMetricsConfigurationResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteBucketMetricsConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBucketMetricsConfiguration operation on AmazonS3Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteBucketMetricsConfiguration
+        ///         operation.</returns>
+        public IAsyncResult BeginDeleteBucketMetricsConfiguration(DeleteBucketMetricsConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DeleteBucketMetricsConfigurationRequestMarshaller();
+            var unmarshaller = DeleteBucketMetricsConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteBucketMetricsConfigurationRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteBucketMetricsConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteBucketMetricsConfiguration.</param>
+        /// 
+        /// <returns>Returns a  DeleteBucketMetricsConfigurationResult from S3.</returns>
+        public  DeleteBucketMetricsConfigurationResponse EndDeleteBucketMetricsConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteBucketMetricsConfigurationResponse>(asyncResult);
         }
 
         #endregion
@@ -1132,6 +1284,56 @@ namespace Amazon.S3
 
         #endregion
         
+        #region  DeleteObjectTagging
+
+        /// <summary>
+        /// Removes the tag-set from an existing object.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteObjectTagging service method.</param>
+        /// 
+        /// <returns>The response from the DeleteObjectTagging service method, as returned by S3.</returns>
+        public DeleteObjectTaggingResponse DeleteObjectTagging(DeleteObjectTaggingRequest request)
+        {
+            var marshaller = new DeleteObjectTaggingRequestMarshaller();
+            var unmarshaller = DeleteObjectTaggingResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteObjectTaggingRequest,DeleteObjectTaggingResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteObjectTagging operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteObjectTagging operation on AmazonS3Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteObjectTagging
+        ///         operation.</returns>
+        public IAsyncResult BeginDeleteObjectTagging(DeleteObjectTaggingRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DeleteObjectTaggingRequestMarshaller();
+            var unmarshaller = DeleteObjectTaggingResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteObjectTaggingRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteObjectTagging operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteObjectTagging.</param>
+        /// 
+        /// <returns>Returns a  DeleteObjectTaggingResult from S3.</returns>
+        public  DeleteObjectTaggingResponse EndDeleteObjectTagging(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteObjectTaggingResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetACL
 
         /// <summary>
@@ -1256,6 +1458,107 @@ namespace Amazon.S3
         public  GetBucketAccelerateConfigurationResponse EndGetBucketAccelerateConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<GetBucketAccelerateConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetBucketAnalyticsConfiguration
+
+        /// <summary>
+        /// Gets an analytics configuration for the bucket (specified by the analytics configuration
+        /// ID).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketAnalyticsConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetBucketAnalyticsConfiguration service method, as returned by S3.</returns>
+        public GetBucketAnalyticsConfigurationResponse GetBucketAnalyticsConfiguration(GetBucketAnalyticsConfigurationRequest request)
+        {
+            var marshaller = new GetBucketAnalyticsConfigurationRequestMarshaller();
+            var unmarshaller = GetBucketAnalyticsConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<GetBucketAnalyticsConfigurationRequest,GetBucketAnalyticsConfigurationResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetBucketAnalyticsConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketAnalyticsConfiguration operation on AmazonS3Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBucketAnalyticsConfiguration
+        ///         operation.</returns>
+        public IAsyncResult BeginGetBucketAnalyticsConfiguration(GetBucketAnalyticsConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new GetBucketAnalyticsConfigurationRequestMarshaller();
+            var unmarshaller = GetBucketAnalyticsConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetBucketAnalyticsConfigurationRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetBucketAnalyticsConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBucketAnalyticsConfiguration.</param>
+        /// 
+        /// <returns>Returns a  GetBucketAnalyticsConfigurationResult from S3.</returns>
+        public  GetBucketAnalyticsConfigurationResponse EndGetBucketAnalyticsConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetBucketAnalyticsConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetBucketInventoryConfiguration
+
+        /// <summary>
+        /// Returns an inventory configuration (identified by the inventory ID) from the bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketInventoryConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetBucketInventoryConfiguration service method, as returned by S3.</returns>
+        public GetBucketInventoryConfigurationResponse GetBucketInventoryConfiguration(GetBucketInventoryConfigurationRequest request)
+        {
+            var marshaller = new GetBucketInventoryConfigurationRequestMarshaller();
+            var unmarshaller = GetBucketInventoryConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<GetBucketInventoryConfigurationRequest,GetBucketInventoryConfigurationResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetBucketInventoryConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketInventoryConfiguration operation on AmazonS3Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBucketInventoryConfiguration
+        ///         operation.</returns>
+        public IAsyncResult BeginGetBucketInventoryConfiguration(GetBucketInventoryConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new GetBucketInventoryConfigurationRequestMarshaller();
+            var unmarshaller = GetBucketInventoryConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetBucketInventoryConfigurationRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetBucketInventoryConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBucketInventoryConfiguration.</param>
+        /// 
+        /// <returns>Returns a  GetBucketInventoryConfigurationResult from S3.</returns>
+        public  GetBucketInventoryConfigurationResponse EndGetBucketInventoryConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetBucketInventoryConfigurationResponse>(asyncResult);
         }
 
         #endregion
@@ -1386,6 +1689,57 @@ namespace Amazon.S3
         public  GetBucketLoggingResponse EndGetBucketLogging(IAsyncResult asyncResult)
         {
             return EndInvoke<GetBucketLoggingResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetBucketMetricsConfiguration
+
+        /// <summary>
+        /// Gets a metrics configuration (specified by the metrics configuration ID) from the
+        /// bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketMetricsConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetBucketMetricsConfiguration service method, as returned by S3.</returns>
+        public GetBucketMetricsConfigurationResponse GetBucketMetricsConfiguration(GetBucketMetricsConfigurationRequest request)
+        {
+            var marshaller = new GetBucketMetricsConfigurationRequestMarshaller();
+            var unmarshaller = GetBucketMetricsConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<GetBucketMetricsConfigurationRequest,GetBucketMetricsConfigurationResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetBucketMetricsConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketMetricsConfiguration operation on AmazonS3Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBucketMetricsConfiguration
+        ///         operation.</returns>
+        public IAsyncResult BeginGetBucketMetricsConfiguration(GetBucketMetricsConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new GetBucketMetricsConfigurationRequestMarshaller();
+            var unmarshaller = GetBucketMetricsConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetBucketMetricsConfigurationRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetBucketMetricsConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBucketMetricsConfiguration.</param>
+        /// 
+        /// <returns>Returns a  GetBucketMetricsConfigurationResult from S3.</returns>
+        public  GetBucketMetricsConfigurationResponse EndGetBucketMetricsConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetBucketMetricsConfigurationResponse>(asyncResult);
         }
 
         #endregion
@@ -2112,6 +2466,56 @@ namespace Amazon.S3
 
         #endregion
         
+        #region  GetObjectTagging
+
+        /// <summary>
+        /// Returns the tag-set of an object.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetObjectTagging service method.</param>
+        /// 
+        /// <returns>The response from the GetObjectTagging service method, as returned by S3.</returns>
+        public GetObjectTaggingResponse GetObjectTagging(GetObjectTaggingRequest request)
+        {
+            var marshaller = new GetObjectTaggingRequestMarshaller();
+            var unmarshaller = GetObjectTaggingResponseUnmarshaller.Instance;
+
+            return Invoke<GetObjectTaggingRequest,GetObjectTaggingResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetObjectTagging operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetObjectTagging operation on AmazonS3Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetObjectTagging
+        ///         operation.</returns>
+        public IAsyncResult BeginGetObjectTagging(GetObjectTaggingRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new GetObjectTaggingRequestMarshaller();
+            var unmarshaller = GetObjectTaggingResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetObjectTaggingRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetObjectTagging operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetObjectTagging.</param>
+        /// 
+        /// <returns>Returns a  GetObjectTaggingResult from S3.</returns>
+        public  GetObjectTaggingResponse EndGetObjectTagging(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetObjectTaggingResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetObjectTorrent
 
         /// <summary>
@@ -2307,6 +2711,156 @@ namespace Amazon.S3
         public  InitiateMultipartUploadResponse EndInitiateMultipartUpload(IAsyncResult asyncResult)
         {
             return EndInvoke<InitiateMultipartUploadResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListBucketAnalyticsConfigurations
+
+        /// <summary>
+        /// Lists the analytics configurations for the bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListBucketAnalyticsConfigurations service method.</param>
+        /// 
+        /// <returns>The response from the ListBucketAnalyticsConfigurations service method, as returned by S3.</returns>
+        public ListBucketAnalyticsConfigurationsResponse ListBucketAnalyticsConfigurations(ListBucketAnalyticsConfigurationsRequest request)
+        {
+            var marshaller = new ListBucketAnalyticsConfigurationsRequestMarshaller();
+            var unmarshaller = ListBucketAnalyticsConfigurationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListBucketAnalyticsConfigurationsRequest,ListBucketAnalyticsConfigurationsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListBucketAnalyticsConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListBucketAnalyticsConfigurations operation on AmazonS3Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListBucketAnalyticsConfigurations
+        ///         operation.</returns>
+        public IAsyncResult BeginListBucketAnalyticsConfigurations(ListBucketAnalyticsConfigurationsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new ListBucketAnalyticsConfigurationsRequestMarshaller();
+            var unmarshaller = ListBucketAnalyticsConfigurationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListBucketAnalyticsConfigurationsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListBucketAnalyticsConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListBucketAnalyticsConfigurations.</param>
+        /// 
+        /// <returns>Returns a  ListBucketAnalyticsConfigurationsResult from S3.</returns>
+        public  ListBucketAnalyticsConfigurationsResponse EndListBucketAnalyticsConfigurations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListBucketAnalyticsConfigurationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListBucketInventoryConfigurations
+
+        /// <summary>
+        /// Returns a list of inventory configurations for the bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListBucketInventoryConfigurations service method.</param>
+        /// 
+        /// <returns>The response from the ListBucketInventoryConfigurations service method, as returned by S3.</returns>
+        public ListBucketInventoryConfigurationsResponse ListBucketInventoryConfigurations(ListBucketInventoryConfigurationsRequest request)
+        {
+            var marshaller = new ListBucketInventoryConfigurationsRequestMarshaller();
+            var unmarshaller = ListBucketInventoryConfigurationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListBucketInventoryConfigurationsRequest,ListBucketInventoryConfigurationsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListBucketInventoryConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListBucketInventoryConfigurations operation on AmazonS3Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListBucketInventoryConfigurations
+        ///         operation.</returns>
+        public IAsyncResult BeginListBucketInventoryConfigurations(ListBucketInventoryConfigurationsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new ListBucketInventoryConfigurationsRequestMarshaller();
+            var unmarshaller = ListBucketInventoryConfigurationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListBucketInventoryConfigurationsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListBucketInventoryConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListBucketInventoryConfigurations.</param>
+        /// 
+        /// <returns>Returns a  ListBucketInventoryConfigurationsResult from S3.</returns>
+        public  ListBucketInventoryConfigurationsResponse EndListBucketInventoryConfigurations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListBucketInventoryConfigurationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListBucketMetricsConfigurations
+
+        /// <summary>
+        /// Lists the metrics configurations for the bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListBucketMetricsConfigurations service method.</param>
+        /// 
+        /// <returns>The response from the ListBucketMetricsConfigurations service method, as returned by S3.</returns>
+        public ListBucketMetricsConfigurationsResponse ListBucketMetricsConfigurations(ListBucketMetricsConfigurationsRequest request)
+        {
+            var marshaller = new ListBucketMetricsConfigurationsRequestMarshaller();
+            var unmarshaller = ListBucketMetricsConfigurationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListBucketMetricsConfigurationsRequest,ListBucketMetricsConfigurationsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListBucketMetricsConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListBucketMetricsConfigurations operation on AmazonS3Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListBucketMetricsConfigurations
+        ///         operation.</returns>
+        public IAsyncResult BeginListBucketMetricsConfigurations(ListBucketMetricsConfigurationsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new ListBucketMetricsConfigurationsRequestMarshaller();
+            var unmarshaller = ListBucketMetricsConfigurationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListBucketMetricsConfigurationsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListBucketMetricsConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListBucketMetricsConfigurations.</param>
+        /// 
+        /// <returns>Returns a  ListBucketMetricsConfigurationsResult from S3.</returns>
+        public  ListBucketMetricsConfigurationsResponse EndListBucketMetricsConfigurations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListBucketMetricsConfigurationsResponse>(asyncResult);
         }
 
         #endregion
@@ -2899,6 +3453,107 @@ namespace Amazon.S3
 
         #endregion
         
+        #region  PutBucketAnalyticsConfiguration
+
+        /// <summary>
+        /// Sets an analytics configuration for the bucket (specified by the analytics configuration
+        /// ID).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutBucketAnalyticsConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the PutBucketAnalyticsConfiguration service method, as returned by S3.</returns>
+        public PutBucketAnalyticsConfigurationResponse PutBucketAnalyticsConfiguration(PutBucketAnalyticsConfigurationRequest request)
+        {
+            var marshaller = new PutBucketAnalyticsConfigurationRequestMarshaller();
+            var unmarshaller = PutBucketAnalyticsConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<PutBucketAnalyticsConfigurationRequest,PutBucketAnalyticsConfigurationResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutBucketAnalyticsConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutBucketAnalyticsConfiguration operation on AmazonS3Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutBucketAnalyticsConfiguration
+        ///         operation.</returns>
+        public IAsyncResult BeginPutBucketAnalyticsConfiguration(PutBucketAnalyticsConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new PutBucketAnalyticsConfigurationRequestMarshaller();
+            var unmarshaller = PutBucketAnalyticsConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke<PutBucketAnalyticsConfigurationRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutBucketAnalyticsConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutBucketAnalyticsConfiguration.</param>
+        /// 
+        /// <returns>Returns a  PutBucketAnalyticsConfigurationResult from S3.</returns>
+        public  PutBucketAnalyticsConfigurationResponse EndPutBucketAnalyticsConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutBucketAnalyticsConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  PutBucketInventoryConfiguration
+
+        /// <summary>
+        /// Adds an inventory configuration (identified by the inventory ID) from the bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutBucketInventoryConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the PutBucketInventoryConfiguration service method, as returned by S3.</returns>
+        public PutBucketInventoryConfigurationResponse PutBucketInventoryConfiguration(PutBucketInventoryConfigurationRequest request)
+        {
+            var marshaller = new PutBucketInventoryConfigurationRequestMarshaller();
+            var unmarshaller = PutBucketInventoryConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<PutBucketInventoryConfigurationRequest,PutBucketInventoryConfigurationResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutBucketInventoryConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutBucketInventoryConfiguration operation on AmazonS3Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutBucketInventoryConfiguration
+        ///         operation.</returns>
+        public IAsyncResult BeginPutBucketInventoryConfiguration(PutBucketInventoryConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new PutBucketInventoryConfigurationRequestMarshaller();
+            var unmarshaller = PutBucketInventoryConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke<PutBucketInventoryConfigurationRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutBucketInventoryConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutBucketInventoryConfiguration.</param>
+        /// 
+        /// <returns>Returns a  PutBucketInventoryConfigurationResult from S3.</returns>
+        public  PutBucketInventoryConfigurationResponse EndPutBucketInventoryConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutBucketInventoryConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  PutBucketLogging
 
         /// <summary>
@@ -2947,6 +3602,56 @@ namespace Amazon.S3
         public  PutBucketLoggingResponse EndPutBucketLogging(IAsyncResult asyncResult)
         {
             return EndInvoke<PutBucketLoggingResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  PutBucketMetricsConfiguration
+
+        /// <summary>
+        /// Sets a metrics configuration (specified by the metrics configuration ID) for the bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutBucketMetricsConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the PutBucketMetricsConfiguration service method, as returned by S3.</returns>
+        public PutBucketMetricsConfigurationResponse PutBucketMetricsConfiguration(PutBucketMetricsConfigurationRequest request)
+        {
+            var marshaller = new PutBucketMetricsConfigurationRequestMarshaller();
+            var unmarshaller = PutBucketMetricsConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<PutBucketMetricsConfigurationRequest,PutBucketMetricsConfigurationResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutBucketMetricsConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutBucketMetricsConfiguration operation on AmazonS3Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutBucketMetricsConfiguration
+        ///         operation.</returns>
+        public IAsyncResult BeginPutBucketMetricsConfiguration(PutBucketMetricsConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new PutBucketMetricsConfigurationRequestMarshaller();
+            var unmarshaller = PutBucketMetricsConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke<PutBucketMetricsConfigurationRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutBucketMetricsConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutBucketMetricsConfiguration.</param>
+        /// 
+        /// <returns>Returns a  PutBucketMetricsConfigurationResult from S3.</returns>
+        public  PutBucketMetricsConfigurationResponse EndPutBucketMetricsConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutBucketMetricsConfigurationResponse>(asyncResult);
         }
 
         #endregion
@@ -3573,6 +4278,56 @@ namespace Amazon.S3
         public  PutObjectResponse EndPutObject(IAsyncResult asyncResult)
         {
             return EndInvoke<PutObjectResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  PutObjectTagging
+
+        /// <summary>
+        /// Sets the supplied tag-set to an object that already exists in a bucket
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutObjectTagging service method.</param>
+        /// 
+        /// <returns>The response from the PutObjectTagging service method, as returned by S3.</returns>
+        public PutObjectTaggingResponse PutObjectTagging(PutObjectTaggingRequest request)
+        {
+            var marshaller = new PutObjectTaggingRequestMarshaller();
+            var unmarshaller = PutObjectTaggingResponseUnmarshaller.Instance;
+
+            return Invoke<PutObjectTaggingRequest,PutObjectTaggingResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutObjectTagging operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutObjectTagging operation on AmazonS3Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutObjectTagging
+        ///         operation.</returns>
+        public IAsyncResult BeginPutObjectTagging(PutObjectTaggingRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new PutObjectTaggingRequestMarshaller();
+            var unmarshaller = PutObjectTaggingResponseUnmarshaller.Instance;
+
+            return BeginInvoke<PutObjectTaggingRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutObjectTagging operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutObjectTagging.</param>
+        /// 
+        /// <returns>Returns a  PutObjectTaggingResult from S3.</returns>
+        public  PutObjectTaggingResponse EndPutObjectTagging(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutObjectTaggingResponse>(asyncResult);
         }
 
         #endregion

@@ -67,6 +67,17 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAdminCreateUserConfig())
+                {
+                    context.Writer.WritePropertyName("AdminCreateUserConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AdminCreateUserConfigTypeMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.AdminCreateUserConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetAliasAttributes())
                 {
                     context.Writer.WritePropertyName("AliasAttributes");
@@ -87,6 +98,28 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                             context.Writer.Write(publicRequestAutoVerifiedAttributesListValue);
                     }
                     context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetDeviceConfiguration())
+                {
+                    context.Writer.WritePropertyName("DeviceConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DeviceConfigurationTypeMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DeviceConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetEmailConfiguration())
+                {
+                    context.Writer.WritePropertyName("EmailConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = EmailConfigurationTypeMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.EmailConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetEmailVerificationMessage())
@@ -135,10 +168,37 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.PoolName);
                 }
 
+                if(publicRequest.IsSetSchema())
+                {
+                    context.Writer.WritePropertyName("Schema");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestSchemaListValue in publicRequest.Schema)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = SchemaAttributeTypeMarshaller.Instance;
+                        marshaller.Marshall(publicRequestSchemaListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetSmsAuthenticationMessage())
                 {
                     context.Writer.WritePropertyName("SmsAuthenticationMessage");
                     context.Writer.Write(publicRequest.SmsAuthenticationMessage);
+                }
+
+                if(publicRequest.IsSetSmsConfiguration())
+                {
+                    context.Writer.WritePropertyName("SmsConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = SmsConfigurationTypeMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.SmsConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetSmsVerificationMessage())

@@ -34,10 +34,13 @@ namespace Amazon.Lambda.Model
     {
         private string _codeSha256;
         private long? _codeSize;
+        private DeadLetterConfig _deadLetterConfig;
         private string _description;
+        private EnvironmentResponse _environment;
         private string _functionArn;
         private string _functionName;
         private string _handler;
+        private string _kmsKeyArn;
         private string _lastModified;
         private int? _memorySize;
         private string _role;
@@ -83,6 +86,25 @@ namespace Amazon.Lambda.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DeadLetterConfig. 
+        /// <para>
+        /// The parent object that contains the target Amazon Resource Name (ARN) of an Amazon
+        /// SQS queue or Amazon SNS topic.
+        /// </para>
+        /// </summary>
+        public DeadLetterConfig DeadLetterConfig
+        {
+            get { return this._deadLetterConfig; }
+            set { this._deadLetterConfig = value; }
+        }
+
+        // Check to see if DeadLetterConfig property is set
+        internal bool IsSetDeadLetterConfig()
+        {
+            return this._deadLetterConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
         /// The user-provided description.
@@ -98,6 +120,24 @@ namespace Amazon.Lambda.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Environment. 
+        /// <para>
+        /// The parent object that contains your environment's configuration settings.
+        /// </para>
+        /// </summary>
+        public EnvironmentResponse Environment
+        {
+            get { return this._environment; }
+            set { this._environment = value; }
+        }
+
+        // Check to see if Environment property is set
+        internal bool IsSetEnvironment()
+        {
+            return this._environment != null;
         }
 
         /// <summary>
@@ -155,6 +195,25 @@ namespace Amazon.Lambda.Model
         }
 
         /// <summary>
+        /// Gets and sets the property KMSKeyArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the KMS key used to encrypt your function's environment
+        /// variables. If empty, it means you are using the AWS Lambda default service key.
+        /// </para>
+        /// </summary>
+        public string KMSKeyArn
+        {
+            get { return this._kmsKeyArn; }
+            set { this._kmsKeyArn = value; }
+        }
+
+        // Check to see if KMSKeyArn property is set
+        internal bool IsSetKMSKeyArn()
+        {
+            return this._kmsKeyArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property LastModified. 
         /// <para>
         /// The time stamp of the last time you updated the function.
@@ -195,7 +254,7 @@ namespace Amazon.Lambda.Model
         /// Gets and sets the property Role. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the IAM role that Lambda assumes when it executes
-        /// your function to access any other Amazon Web Services (AWS) resources. 
+        /// your function to access any other Amazon Web Services (AWS) resources.
         /// </para>
         /// </summary>
         public string Role
@@ -215,6 +274,11 @@ namespace Amazon.Lambda.Model
         /// <para>
         /// The runtime environment for the Lambda function.
         /// </para>
+        ///  
+        /// <para>
+        /// To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime
+        /// (v0.10.42), set the value to "nodejs".
+        /// </para>
         /// </summary>
         public Runtime Runtime
         {
@@ -233,7 +297,7 @@ namespace Amazon.Lambda.Model
         /// <para>
         /// The function execution time at which Lambda should terminate the function. Because
         /// the execution time has cost implications, we recommend you set this value based on
-        /// your expected execution time. The default is 3 seconds. 
+        /// your expected execution time. The default is 3 seconds.
         /// </para>
         /// </summary>
         public int Timeout

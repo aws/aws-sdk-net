@@ -23,6 +23,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.ApplicationAutoScaling.Model;
 
 namespace Amazon.ApplicationAutoScaling
@@ -30,21 +31,13 @@ namespace Amazon.ApplicationAutoScaling
     /// <summary>
     /// Interface for accessing ApplicationAutoScaling
     ///
-    /// Application Auto Scaling is a general purpose Auto Scaling service for supported elastic
-    /// AWS resources. With Application Auto Scaling, you can automatically scale your AWS
-    /// resources, with an experience similar to that of Auto Scaling.
+    /// With Application Auto Scaling, you can automatically scale your AWS resources. The
+    /// experience similar to that of <a href="https://aws.amazon.com/autoscaling/">Auto Scaling</a>.
+    /// You can use Application Auto Scaling to accomplish the following tasks:
     /// 
-    ///  <note> 
-    /// <para>
-    /// At this time, Application Auto Scaling only supports scaling Amazon ECS services.
-    /// </para>
-    ///  </note> 
-    /// <para>
-    /// For example, you can use Application Auto Scaling to accomplish the following tasks:
-    /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Define scaling policies for automatically adjusting your application’s resources
+    /// Define scaling policies to automatically scale your AWS resources
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -52,27 +45,34 @@ namespace Amazon.ApplicationAutoScaling
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// View history of your scaling events 
+    /// View the history of your scaling events
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// Application Auto Scaling is available in the following regions:
+    /// Application Auto Scaling can scale the following AWS resources:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>us-east-1</code> 
+    /// Amazon ECS services. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-auto-scaling.html">Service
+    /// Auto Scaling</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>us-west-2</code> 
+    /// Amazon EC2 Spot fleets. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/fleet-auto-scaling.html">Automatic
+    /// Scaling for Spot Fleet</a> in the <i>Amazon EC2 User Guide</i>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>eu-west-1</code> 
+    /// Amazon EMR clusters. For more information, see <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/ManagementGuide/emr-automatic-scaling.html">Using
+    /// Automatic Scaling in Amazon EMR</a> in the <i>Amazon EMR Management Guide</i>.
     /// </para>
-    ///  </li> </ul>
+    ///  </li> </ul> 
+    /// <para>
+    /// For a list of supported regions, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#as-app_region">AWS
+    /// Regions and Endpoints: Application Auto Scaling</a> in the <i>AWS General Reference</i>.
+    /// </para>
     /// </summary>
-    public partial interface IAmazonApplicationAutoScaling : IDisposable
+    public partial interface IAmazonApplicationAutoScaling : IAmazonService, IDisposable
     {
 
         
@@ -80,17 +80,16 @@ namespace Amazon.ApplicationAutoScaling
 
 
         /// <summary>
-        /// Deletes an Application Auto Scaling scaling policy that was previously created. If
-        /// you are no longer using a scaling policy, you can delete it with this operation.
+        /// Deletes the specified Application Auto Scaling scaling policy.
         /// 
         ///  
         /// <para>
         /// Deleting a policy deletes the underlying alarm action, but does not delete the CloudWatch
-        /// alarm, even if it no longer has an associated action.
+        /// alarm associated with the scaling policy, even if it no longer has an associated action.
         /// </para>
         ///  
         /// <para>
-        /// To create a new scaling policy or update an existing one, see <a>PutScalingPolicy</a>.
+        /// To create a scaling policy or update an existing one, see <a>PutScalingPolicy</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteScalingPolicy service method.</param>
@@ -135,14 +134,16 @@ namespace Amazon.ApplicationAutoScaling
 
 
         /// <summary>
-        /// Deregisters a scalable target that was previously registered. If you are no longer
-        /// using a scalable target, you can delete it with this operation. When you deregister
-        /// a scalable target, all of the scaling policies that are associated with that scalable
-        /// target are deleted.
+        /// Deregisters a scalable target.
         /// 
         ///  
         /// <para>
-        /// To create a new scalable target or update an existing one, see <a>RegisterScalableTarget</a>.
+        /// Deregistering a scalable target deletes the scaling policies that are associated with
+        /// it.
+        /// </para>
+        ///  
+        /// <para>
+        /// To create a scalable target or update an existing one, see <a>RegisterScalableTarget</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeregisterScalableTarget service method.</param>
@@ -187,17 +188,17 @@ namespace Amazon.ApplicationAutoScaling
 
 
         /// <summary>
-        /// Provides descriptive information for scalable targets with a specified service namespace.
+        /// Provides descriptive information about the scalable targets in the specified namespace.
         /// 
         ///  
         /// <para>
-        /// You can filter the results in a service namespace with the <code>ResourceIds</code>
-        /// and <code>ScalableDimension</code> parameters.
+        /// You can filter the results using the <code>ResourceIds</code> and <code>ScalableDimension</code>
+        /// parameters.
         /// </para>
         ///  
         /// <para>
-        /// To create a new scalable target or update an existing one, see <a>RegisterScalableTarget</a>.
-        /// If you are no longer using a scalable target, you can deregister it with <a>DeregisterScalableTarget</a>.
+        /// To create a scalable target or update an existing one, see <a>RegisterScalableTarget</a>.
+        /// If you are no longer using a scalable target, you can deregister it using <a>DeregisterScalableTarget</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeScalableTargets service method.</param>
@@ -237,18 +238,19 @@ namespace Amazon.ApplicationAutoScaling
 
 
         /// <summary>
-        /// Provides descriptive information for scaling activities with a specified service namespace.
+        /// Provides descriptive information about the scaling activities in the specified namespace
+        /// from the previous six weeks.
         /// 
         ///  
         /// <para>
-        /// You can filter the results in a service namespace with the <code>ResourceId</code>
-        /// and <code>ScalableDimension</code> parameters.
+        /// You can filter the results using the <code>ResourceId</code> and <code>ScalableDimension</code>
+        /// parameters.
         /// </para>
         ///  
         /// <para>
         /// Scaling activities are triggered by CloudWatch alarms that are associated with scaling
-        /// policies. To view the existing scaling policies for a service namespace, see <a>DescribeScalingPolicies</a>.
-        /// To create a new scaling policy or update an existing one, see <a>PutScalingPolicy</a>.
+        /// policies. To view the scaling policies for a service namespace, see <a>DescribeScalingPolicies</a>.
+        /// To create a scaling policy or update an existing one, see <a>PutScalingPolicy</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeScalingActivities service method.</param>
@@ -288,17 +290,17 @@ namespace Amazon.ApplicationAutoScaling
 
 
         /// <summary>
-        /// Provides descriptive information for scaling policies with a specified service namespace.
+        /// Provides descriptive information about the scaling policies in the specified namespace.
         /// 
         ///  
         /// <para>
-        /// You can filter the results in a service namespace with the <code>ResourceId</code>,
-        /// <code>ScalableDimension</code>, and <code>PolicyNames</code> parameters.
+        /// You can filter the results using the <code>ResourceId</code>, <code>ScalableDimension</code>,
+        /// and <code>PolicyNames</code> parameters.
         /// </para>
         ///  
         /// <para>
-        /// To create a new scaling policy or update an existing one, see <a>PutScalingPolicy</a>.
-        /// If you are no longer using a scaling policy, you can delete it with <a>DeleteScalingPolicy</a>.
+        /// To create a scaling policy or update an existing one, see <a>PutScalingPolicy</a>.
+        /// If you are no longer using a scaling policy, you can delete it using <a>DeleteScalingPolicy</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeScalingPolicies service method.</param>
@@ -346,22 +348,24 @@ namespace Amazon.ApplicationAutoScaling
 
 
         /// <summary>
-        /// Creates or updates a policy for an existing Application Auto Scaling scalable target.
-        /// Each scalable target is identified by service namespace, a resource ID, and a scalable
-        /// dimension, and a scaling policy applies to a scalable target that is identified by
-        /// those three attributes. You cannot create a scaling policy without first registering
-        /// a scalable target with <a>RegisterScalableTarget</a>.
+        /// Creates or updates a policy for an Application Auto Scaling scalable target.
         /// 
         ///  
         /// <para>
-        /// To update an existing policy, use the existing policy name and set the parameters
-        /// you want to change. Any existing parameter not changed in an update to an existing
-        /// policy is not changed in this update request.
+        /// Each scalable target is identified by a service namespace, resource ID, and scalable
+        /// dimension. A scaling policy applies to the scalable target identified by those three
+        /// attributes. You cannot create a scaling policy without first registering a scalable
+        /// target using <a>RegisterScalableTarget</a>.
         /// </para>
         ///  
         /// <para>
-        /// You can view the existing scaling policies for a service namespace with <a>DescribeScalingPolicies</a>.
-        /// If you are no longer using a scaling policy, you can delete it with <a>DeleteScalingPolicy</a>.
+        /// To update a policy, specify its policy name and the parameters that you want to change.
+        /// Any parameters that you don't specify are not changed by this update request.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can view the scaling policies for a service namespace using <a>DescribeScalingPolicies</a>.
+        /// If you are no longer using a scaling policy, you can delete it using <a>DeleteScalingPolicy</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutScalingPolicy service method.</param>
@@ -376,9 +380,8 @@ namespace Amazon.ApplicationAutoScaling
         /// </exception>
         /// <exception cref="Amazon.ApplicationAutoScaling.Model.LimitExceededException">
         /// Your account exceeded a limit. This exception is thrown when a per-account resource
-        /// limit is exceeded. Application Auto Scaling has a limit of 40 scalable targets per
-        /// account for Amazon ECS services, 50 scaling policies per scalable target, and 20 step
-        /// adjustments per step scaling policy.
+        /// limit is exceeded. For more information, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_as-app">Application
+        /// Auto Scaling Limits</a>.
         /// </exception>
         /// <exception cref="Amazon.ApplicationAutoScaling.Model.ObjectNotFoundException">
         /// The specified object could not be found. For any <code>Put</code> or <code>Register</code>
@@ -412,21 +415,17 @@ namespace Amazon.ApplicationAutoScaling
 
 
         /// <summary>
-        /// Registers or updates a scalable target. A scalable target is a resource that can be
-        /// scaled up or down with Application Auto Scaling. After you have registered a scalable
-        /// target, you can use this command to update the minimum and maximum values for your
-        /// scalable dimension.
+        /// Registers or updates a scalable target. A scalable target is a resource that Application
+        /// Auto Scaling can scale out or scale in. After you have registered a scalable target,
+        /// you can use this operation to update the minimum and maximum values for your scalable
+        /// dimension.
         /// 
-        ///  <note> 
+        ///  
         /// <para>
-        /// At this time, Application Auto Scaling only supports scaling Amazon ECS services.
-        /// </para>
-        ///  </note> 
-        /// <para>
-        /// After you register a scalable target with Application Auto Scaling, you can create
-        /// and apply scaling policies to it with <a>PutScalingPolicy</a>. You can view the existing
-        /// scaling policies for a service namespace with <a>DescribeScalableTargets</a>. If you
-        /// are no longer using a scalable target, you can deregister it with <a>DeregisterScalableTarget</a>.
+        /// After you register a scalable target, you can create and apply scaling policies using
+        /// <a>PutScalingPolicy</a>. You can view the scaling policies for a service namespace
+        /// using <a>DescribeScalableTargets</a>. If you are no longer using a scalable target,
+        /// you can deregister it using <a>DeregisterScalableTarget</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterScalableTarget service method.</param>
@@ -441,9 +440,8 @@ namespace Amazon.ApplicationAutoScaling
         /// </exception>
         /// <exception cref="Amazon.ApplicationAutoScaling.Model.LimitExceededException">
         /// Your account exceeded a limit. This exception is thrown when a per-account resource
-        /// limit is exceeded. Application Auto Scaling has a limit of 40 scalable targets per
-        /// account for Amazon ECS services, 50 scaling policies per scalable target, and 20 step
-        /// adjustments per step scaling policy.
+        /// limit is exceeded. For more information, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_as-app">Application
+        /// Auto Scaling Limits</a>.
         /// </exception>
         /// <exception cref="Amazon.ApplicationAutoScaling.Model.ValidationException">
         /// An exception was thrown for a validation issue. Review the available parameters for

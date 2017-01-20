@@ -36,6 +36,7 @@ namespace Amazon.CloudTrail.Model
         private string _cloudTrailEvent;
         private string _eventId;
         private string _eventName;
+        private string _eventSource;
         private DateTime? _eventTime;
         private List<Resource> _resources = new List<Resource>();
         private string _username;
@@ -92,6 +93,24 @@ namespace Amazon.CloudTrail.Model
         internal bool IsSetEventName()
         {
             return this._eventName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EventSource. 
+        /// <para>
+        /// The AWS service that the request was made to.
+        /// </para>
+        /// </summary>
+        public string EventSource
+        {
+            get { return this._eventSource; }
+            set { this._eventSource = value; }
+        }
+
+        // Check to see if EventSource property is set
+        internal bool IsSetEventSource()
+        {
+            return this._eventSource != null;
         }
 
         /// <summary>

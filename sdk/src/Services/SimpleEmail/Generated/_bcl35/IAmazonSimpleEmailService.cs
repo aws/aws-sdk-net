@@ -21,6 +21,7 @@
 using System;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.SimpleEmail.Model;
 
 namespace Amazon.SimpleEmail
@@ -41,7 +42,7 @@ namespace Amazon.SimpleEmail
     /// </para>
     ///  </note>
     /// </summary>
-    public partial interface IAmazonSimpleEmailService : IDisposable
+    public partial interface IAmazonSimpleEmailService : IAmazonService, IDisposable
     {
 
         
@@ -67,11 +68,11 @@ namespace Amazon.SimpleEmail
         /// 
         /// <returns>The response from the CloneReceiptRuleSet service method, as returned by SimpleEmailService.</returns>
         /// <exception cref="Amazon.SimpleEmail.Model.AlreadyExistsException">
-        /// Indicates that a resource could not be created due to a naming conflict.
+        /// Indicates that a resource could not be created because of a naming conflict.
         /// </exception>
         /// <exception cref="Amazon.SimpleEmail.Model.LimitExceededException">
-        /// Indicates that a resource could not be created due to service limits. For a list of
-        /// Amazon SES limits, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon
+        /// Indicates that a resource could not be created because of service limits. For a list
+        /// of Amazon SES limits, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon
         /// SES Developer Guide</a>.
         /// </exception>
         /// <exception cref="Amazon.SimpleEmail.Model.RuleSetDoesNotExistException">
@@ -105,6 +106,138 @@ namespace Amazon.SimpleEmail
 
         #endregion
         
+        #region  CreateConfigurationSet
+
+
+        /// <summary>
+        /// Creates a configuration set.
+        /// 
+        ///  
+        /// <para>
+        /// Configuration sets enable you to publish email sending events. For information about
+        /// using configuration sets, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateConfigurationSet service method.</param>
+        /// 
+        /// <returns>The response from the CreateConfigurationSet service method, as returned by SimpleEmailService.</returns>
+        /// <exception cref="Amazon.SimpleEmail.Model.ConfigurationSetAlreadyExistsException">
+        /// Indicates that the configuration set could not be created because of a naming conflict.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.InvalidConfigurationSetException">
+        /// Indicates that the configuration set is invalid. See the error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.LimitExceededException">
+        /// Indicates that a resource could not be created because of service limits. For a list
+        /// of Amazon SES limits, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </exception>
+        CreateConfigurationSetResponse CreateConfigurationSet(CreateConfigurationSetRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateConfigurationSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateConfigurationSet operation on AmazonSimpleEmailServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateConfigurationSet
+        ///         operation.</returns>
+        IAsyncResult BeginCreateConfigurationSet(CreateConfigurationSetRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateConfigurationSet operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateConfigurationSet.</param>
+        /// 
+        /// <returns>Returns a  CreateConfigurationSetResult from SimpleEmailService.</returns>
+        CreateConfigurationSetResponse EndCreateConfigurationSet(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateConfigurationSetEventDestination
+
+
+        /// <summary>
+        /// Creates a configuration set event destination.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// When you create or update an event destination, you must provide one, and only one,
+        /// destination. The destination can be either Amazon CloudWatch or Amazon Kinesis Firehose.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// An event destination is the AWS service to which Amazon SES publishes the email sending
+        /// events associated with a configuration set. For information about using configuration
+        /// sets, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateConfigurationSetEventDestination service method.</param>
+        /// 
+        /// <returns>The response from the CreateConfigurationSetEventDestination service method, as returned by SimpleEmailService.</returns>
+        /// <exception cref="Amazon.SimpleEmail.Model.ConfigurationSetDoesNotExistException">
+        /// Indicates that the configuration set does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.EventDestinationAlreadyExistsException">
+        /// Indicates that the event destination could not be created because of a naming conflict.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.InvalidCloudWatchDestinationException">
+        /// Indicates that the Amazon CloudWatch destination is invalid. See the error message
+        /// for details.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.InvalidFirehoseDestinationException">
+        /// Indicates that the Amazon Kinesis Firehose destination is invalid. See the error message
+        /// for details.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.LimitExceededException">
+        /// Indicates that a resource could not be created because of service limits. For a list
+        /// of Amazon SES limits, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </exception>
+        CreateConfigurationSetEventDestinationResponse CreateConfigurationSetEventDestination(CreateConfigurationSetEventDestinationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateConfigurationSetEventDestination operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateConfigurationSetEventDestination operation on AmazonSimpleEmailServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateConfigurationSetEventDestination
+        ///         operation.</returns>
+        IAsyncResult BeginCreateConfigurationSetEventDestination(CreateConfigurationSetEventDestinationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateConfigurationSetEventDestination operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateConfigurationSetEventDestination.</param>
+        /// 
+        /// <returns>Returns a  CreateConfigurationSetEventDestinationResult from SimpleEmailService.</returns>
+        CreateConfigurationSetEventDestinationResponse EndCreateConfigurationSetEventDestination(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateReceiptFilter
 
 
@@ -125,11 +258,11 @@ namespace Amazon.SimpleEmail
         /// 
         /// <returns>The response from the CreateReceiptFilter service method, as returned by SimpleEmailService.</returns>
         /// <exception cref="Amazon.SimpleEmail.Model.AlreadyExistsException">
-        /// Indicates that a resource could not be created due to a naming conflict.
+        /// Indicates that a resource could not be created because of a naming conflict.
         /// </exception>
         /// <exception cref="Amazon.SimpleEmail.Model.LimitExceededException">
-        /// Indicates that a resource could not be created due to service limits. For a list of
-        /// Amazon SES limits, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon
+        /// Indicates that a resource could not be created because of service limits. For a list
+        /// of Amazon SES limits, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon
         /// SES Developer Guide</a>.
         /// </exception>
         CreateReceiptFilterResponse CreateReceiptFilter(CreateReceiptFilterRequest request);
@@ -180,7 +313,7 @@ namespace Amazon.SimpleEmail
         /// 
         /// <returns>The response from the CreateReceiptRule service method, as returned by SimpleEmailService.</returns>
         /// <exception cref="Amazon.SimpleEmail.Model.AlreadyExistsException">
-        /// Indicates that a resource could not be created due to a naming conflict.
+        /// Indicates that a resource could not be created because of a naming conflict.
         /// </exception>
         /// <exception cref="Amazon.SimpleEmail.Model.InvalidLambdaFunctionException">
         /// Indicates that the provided AWS Lambda function is invalid, or that Amazon SES could
@@ -201,8 +334,8 @@ namespace Amazon.SimpleEmail
         /// SES Developer Guide</a>.
         /// </exception>
         /// <exception cref="Amazon.SimpleEmail.Model.LimitExceededException">
-        /// Indicates that a resource could not be created due to service limits. For a list of
-        /// Amazon SES limits, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon
+        /// Indicates that a resource could not be created because of service limits. For a list
+        /// of Amazon SES limits, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon
         /// SES Developer Guide</a>.
         /// </exception>
         /// <exception cref="Amazon.SimpleEmail.Model.RuleDoesNotExistException">
@@ -259,11 +392,11 @@ namespace Amazon.SimpleEmail
         /// 
         /// <returns>The response from the CreateReceiptRuleSet service method, as returned by SimpleEmailService.</returns>
         /// <exception cref="Amazon.SimpleEmail.Model.AlreadyExistsException">
-        /// Indicates that a resource could not be created due to a naming conflict.
+        /// Indicates that a resource could not be created because of a naming conflict.
         /// </exception>
         /// <exception cref="Amazon.SimpleEmail.Model.LimitExceededException">
-        /// Indicates that a resource could not be created due to service limits. For a list of
-        /// Amazon SES limits, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon
+        /// Indicates that a resource could not be created because of service limits. For a list
+        /// of Amazon SES limits, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon
         /// SES Developer Guide</a>.
         /// </exception>
         CreateReceiptRuleSetResponse CreateReceiptRuleSet(CreateReceiptRuleSetRequest request);
@@ -291,6 +424,112 @@ namespace Amazon.SimpleEmail
         /// 
         /// <returns>Returns a  CreateReceiptRuleSetResult from SimpleEmailService.</returns>
         CreateReceiptRuleSetResponse EndCreateReceiptRuleSet(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteConfigurationSet
+
+
+        /// <summary>
+        /// Deletes a configuration set.
+        /// 
+        ///  
+        /// <para>
+        /// Configuration sets enable you to publish email sending events. For information about
+        /// using configuration sets, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConfigurationSet service method.</param>
+        /// 
+        /// <returns>The response from the DeleteConfigurationSet service method, as returned by SimpleEmailService.</returns>
+        /// <exception cref="Amazon.SimpleEmail.Model.ConfigurationSetDoesNotExistException">
+        /// Indicates that the configuration set does not exist.
+        /// </exception>
+        DeleteConfigurationSetResponse DeleteConfigurationSet(DeleteConfigurationSetRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteConfigurationSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConfigurationSet operation on AmazonSimpleEmailServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteConfigurationSet
+        ///         operation.</returns>
+        IAsyncResult BeginDeleteConfigurationSet(DeleteConfigurationSetRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteConfigurationSet operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteConfigurationSet.</param>
+        /// 
+        /// <returns>Returns a  DeleteConfigurationSetResult from SimpleEmailService.</returns>
+        DeleteConfigurationSetResponse EndDeleteConfigurationSet(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteConfigurationSetEventDestination
+
+
+        /// <summary>
+        /// Deletes a configuration set event destination.
+        /// 
+        ///  
+        /// <para>
+        /// Configuration set event destinations are associated with configuration sets, which
+        /// enable you to publish email sending events. For information about using configuration
+        /// sets, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConfigurationSetEventDestination service method.</param>
+        /// 
+        /// <returns>The response from the DeleteConfigurationSetEventDestination service method, as returned by SimpleEmailService.</returns>
+        /// <exception cref="Amazon.SimpleEmail.Model.ConfigurationSetDoesNotExistException">
+        /// Indicates that the configuration set does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.EventDestinationDoesNotExistException">
+        /// Indicates that the event destination does not exist.
+        /// </exception>
+        DeleteConfigurationSetEventDestinationResponse DeleteConfigurationSetEventDestination(DeleteConfigurationSetEventDestinationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteConfigurationSetEventDestination operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConfigurationSetEventDestination operation on AmazonSimpleEmailServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteConfigurationSetEventDestination
+        ///         operation.</returns>
+        IAsyncResult BeginDeleteConfigurationSetEventDestination(DeleteConfigurationSetEventDestinationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteConfigurationSetEventDestination operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteConfigurationSetEventDestination.</param>
+        /// 
+        /// <returns>Returns a  DeleteConfigurationSetEventDestinationResult from SimpleEmailService.</returns>
+        DeleteConfigurationSetEventDestinationResponse EndDeleteConfigurationSetEventDestination(IAsyncResult asyncResult);
 
         #endregion
         
@@ -636,6 +875,57 @@ namespace Amazon.SimpleEmail
         /// 
         /// <returns>Returns a  DescribeActiveReceiptRuleSetResult from SimpleEmailService.</returns>
         DescribeActiveReceiptRuleSetResponse EndDescribeActiveReceiptRuleSet(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeConfigurationSet
+
+
+        /// <summary>
+        /// Returns the details of the specified configuration set.
+        /// 
+        ///  
+        /// <para>
+        /// Configuration sets enable you to publish email sending events. For information about
+        /// using configuration sets, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConfigurationSet service method.</param>
+        /// 
+        /// <returns>The response from the DescribeConfigurationSet service method, as returned by SimpleEmailService.</returns>
+        /// <exception cref="Amazon.SimpleEmail.Model.ConfigurationSetDoesNotExistException">
+        /// Indicates that the configuration set does not exist.
+        /// </exception>
+        DescribeConfigurationSetResponse DescribeConfigurationSet(DescribeConfigurationSetRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeConfigurationSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConfigurationSet operation on AmazonSimpleEmailServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeConfigurationSet
+        ///         operation.</returns>
+        IAsyncResult BeginDescribeConfigurationSet(DescribeConfigurationSetRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeConfigurationSet operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeConfigurationSet.</param>
+        /// 
+        /// <returns>Returns a  DescribeConfigurationSetResult from SimpleEmailService.</returns>
+        DescribeConfigurationSetResponse EndDescribeConfigurationSet(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1119,6 +1409,55 @@ namespace Amazon.SimpleEmail
         /// 
         /// <returns>Returns a  GetSendStatisticsResult from SimpleEmailService.</returns>
         GetSendStatisticsResponse EndGetSendStatistics(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListConfigurationSets
+
+
+        /// <summary>
+        /// Lists the configuration sets associated with your AWS account.
+        /// 
+        ///  
+        /// <para>
+        /// Configuration sets enable you to publish email sending events. For information about
+        /// using configuration sets, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action is throttled at one request per second and can return up to 50 configuration
+        /// sets at a time.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListConfigurationSets service method.</param>
+        /// 
+        /// <returns>The response from the ListConfigurationSets service method, as returned by SimpleEmailService.</returns>
+        ListConfigurationSetsResponse ListConfigurationSets(ListConfigurationSetsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListConfigurationSets operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListConfigurationSets operation on AmazonSimpleEmailServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListConfigurationSets
+        ///         operation.</returns>
+        IAsyncResult BeginListConfigurationSets(ListConfigurationSetsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListConfigurationSets operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListConfigurationSets.</param>
+        /// 
+        /// <returns>Returns a  ListConfigurationSetsResult from SimpleEmailService.</returns>
+        ListConfigurationSetsResponse EndListConfigurationSets(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1614,6 +1953,9 @@ namespace Amazon.SimpleEmail
         /// <param name="request">Container for the necessary parameters to execute the SendEmail service method.</param>
         /// 
         /// <returns>The response from the SendEmail service method, as returned by SimpleEmailService.</returns>
+        /// <exception cref="Amazon.SimpleEmail.Model.ConfigurationSetDoesNotExistException">
+        /// Indicates that the configuration set does not exist.
+        /// </exception>
         /// <exception cref="Amazon.SimpleEmail.Model.MailFromDomainNotVerifiedException">
         /// Indicates that the message could not be sent because Amazon SES could not read the
         /// MX record required to use the specified MAIL FROM domain. For information about editing
@@ -1691,6 +2033,10 @@ namespace Amazon.SimpleEmail
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// Amazon SES overrides any Message-ID and Date headers you provide.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// For every message that you send, the total number of recipients (To:, CC: and BCC:)
         /// is counted against your sending quota - the maximum number of emails you can send
         /// in a 24-hour period. For information about your sending quota, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">Amazon
@@ -1737,6 +2083,9 @@ namespace Amazon.SimpleEmail
         /// <param name="request">Container for the necessary parameters to execute the SendRawEmail service method.</param>
         /// 
         /// <returns>The response from the SendRawEmail service method, as returned by SimpleEmailService.</returns>
+        /// <exception cref="Amazon.SimpleEmail.Model.ConfigurationSetDoesNotExistException">
+        /// Indicates that the configuration set does not exist.
+        /// </exception>
         /// <exception cref="Amazon.SimpleEmail.Model.MailFromDomainNotVerifiedException">
         /// Indicates that the message could not be sent because Amazon SES could not read the
         /// MX record required to use the specified MAIL FROM domain. For information about editing
@@ -2156,6 +2505,74 @@ namespace Amazon.SimpleEmail
 
         #endregion
         
+        #region  UpdateConfigurationSetEventDestination
+
+
+        /// <summary>
+        /// Updates the event destination of a configuration set.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// When you create or update an event destination, you must provide one, and only one,
+        /// destination. The destination can be either Amazon CloudWatch or Amazon Kinesis Firehose.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Event destinations are associated with configuration sets, which enable you to publish
+        /// email sending events to Amazon CloudWatch or Amazon Kinesis Firehose. For information
+        /// about using configuration sets, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon
+        /// SES Developer Guide</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action is throttled at one request per second.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConfigurationSetEventDestination service method.</param>
+        /// 
+        /// <returns>The response from the UpdateConfigurationSetEventDestination service method, as returned by SimpleEmailService.</returns>
+        /// <exception cref="Amazon.SimpleEmail.Model.ConfigurationSetDoesNotExistException">
+        /// Indicates that the configuration set does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.EventDestinationDoesNotExistException">
+        /// Indicates that the event destination does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.InvalidCloudWatchDestinationException">
+        /// Indicates that the Amazon CloudWatch destination is invalid. See the error message
+        /// for details.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmail.Model.InvalidFirehoseDestinationException">
+        /// Indicates that the Amazon Kinesis Firehose destination is invalid. See the error message
+        /// for details.
+        /// </exception>
+        UpdateConfigurationSetEventDestinationResponse UpdateConfigurationSetEventDestination(UpdateConfigurationSetEventDestinationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateConfigurationSetEventDestination operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConfigurationSetEventDestination operation on AmazonSimpleEmailServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateConfigurationSetEventDestination
+        ///         operation.</returns>
+        IAsyncResult BeginUpdateConfigurationSetEventDestination(UpdateConfigurationSetEventDestinationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateConfigurationSetEventDestination operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateConfigurationSetEventDestination.</param>
+        /// 
+        /// <returns>Returns a  UpdateConfigurationSetEventDestinationResult from SimpleEmailService.</returns>
+        UpdateConfigurationSetEventDestinationResponse EndUpdateConfigurationSetEventDestination(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  UpdateReceiptRule
 
 
@@ -2194,8 +2611,8 @@ namespace Amazon.SimpleEmail
         /// SES Developer Guide</a>.
         /// </exception>
         /// <exception cref="Amazon.SimpleEmail.Model.LimitExceededException">
-        /// Indicates that a resource could not be created due to service limits. For a list of
-        /// Amazon SES limits, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon
+        /// Indicates that a resource could not be created because of service limits. For a list
+        /// of Amazon SES limits, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon
         /// SES Developer Guide</a>.
         /// </exception>
         /// <exception cref="Amazon.SimpleEmail.Model.RuleDoesNotExistException">

@@ -15,7 +15,7 @@ using System;
 
 namespace ThirdParty.Json.LitJson
 {
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class JsonException : Exception

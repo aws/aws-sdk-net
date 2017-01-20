@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2016-01-28.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-11-25.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -29,10 +29,23 @@ namespace Amazon.CloudFront.Model
 {
     /// <summary>
     /// A complex type that controls whether CloudFront caches the response to requests using
-    /// the specified HTTP methods. There are two choices: - CloudFront caches responses to
-    /// GET and HEAD requests. - CloudFront caches responses to GET, HEAD, and OPTIONS requests.
-    /// If you pick the second choice for your S3 Origin, you may need to forward Access-Control-Request-Method,
-    /// Access-Control-Request-Headers and Origin headers for the responses to be cached correctly.
+    /// the specified HTTP methods. There are two choices:
+    /// 
+    ///  <ul> <li> 
+    /// <para>
+    /// CloudFront caches responses to <code>GET</code> and <code>HEAD</code> requests.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// CloudFront caches responses to <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code>
+    /// requests.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// If you pick the second choice for your Amazon S3 Origin, you may need to forward Access-Control-Request-Method,
+    /// Access-Control-Request-Headers, and Origin headers for the responses to be cached
+    /// correctly. 
+    /// </para>
     /// </summary>
     public partial class CachedMethods
     {
@@ -40,8 +53,11 @@ namespace Amazon.CloudFront.Model
         private int? _quantity;
 
         /// <summary>
-        /// Gets and sets the property Items. A complex type that contains the HTTP methods that
-        /// you want CloudFront to cache responses to.
+        /// Gets and sets the property Items. 
+        /// <para>
+        /// A complex type that contains the HTTP methods that you want CloudFront to cache responses
+        /// to.
+        /// </para>
         /// </summary>
         public List<string> Items
         {
@@ -56,9 +72,13 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Quantity. The number of HTTP methods for which you want
-        /// CloudFront to cache responses. Valid values are 2 (for caching responses to GET and
-        /// HEAD requests) and 3 (for caching responses to GET, HEAD, and OPTIONS requests).
+        /// Gets and sets the property Quantity. 
+        /// <para>
+        /// The number of HTTP methods for which you want CloudFront to cache responses. Valid
+        /// values are <code>2</code> (for caching responses to <code>GET</code> and <code>HEAD</code>
+        /// requests) and <code>3</code> (for caching responses to <code>GET</code>, <code>HEAD</code>,
+        /// and <code>OPTIONS</code> requests).
+        /// </para>
         /// </summary>
         public int Quantity
         {

@@ -31,9 +31,13 @@ namespace Amazon.ElasticTranscoder.Model
     /// Container for the parameters to the CancelJob operation.
     /// The CancelJob operation cancels an unfinished job.
     /// 
-    ///  <note>You can only cancel a job that has a status of <code>Submitted</code>. To prevent
+    ///  <note> 
+    /// <para>
+    /// You can only cancel a job that has a status of <code>Submitted</code>. To prevent
     /// a pipeline from starting to process a job while you're getting the job identifier,
-    /// use <a>UpdatePipelineStatus</a> to temporarily pause the pipeline.</note>
+    /// use <a>UpdatePipelineStatus</a> to temporarily pause the pipeline.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class CancelJobRequest : AmazonElasticTranscoderRequest
     {
@@ -42,7 +46,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The identifier of the job that you want to cancel. 
+        /// The identifier of the job that you want to cancel.
         /// </para>
         ///  
         /// <para>

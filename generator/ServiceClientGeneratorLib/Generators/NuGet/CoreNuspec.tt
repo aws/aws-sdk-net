@@ -18,20 +18,70 @@
     <tags>AWS Amazon cloud aws-sdk-v3</tags>
     <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</iconUrl>
     <dependencies>
+      <group targetFramework="net35">
+      </group>
       <group targetFramework="net45">
       </group>
 <#	
 	if(!Convert.ToBoolean(this.Session["DisablePCLSupport"]))
 	{
+		List<string> windowsPCLTargets = new List<string>{"portable-net45+win8+wpa81+wp8"};
+		List<string> xamarinPCLTargets = new List<string>{"MonoAndroid10", "Xamarin.iOS10", "MonoTouch10"};
+		List<string> pclTargets = new List<string>();
+
+		pclTargets.AddRange(windowsPCLTargets);
+		pclTargets.AddRange(xamarinPCLTargets);
+
+		foreach(var target in pclTargets)
+		{
 #>
-      <group targetFramework="portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10">
+
+      <group targetFramework="<#=target#>">
+<#	
+			if(windowsPCLTargets.Contains(target))
+			{
+#>
         <dependency id="Microsoft.Net.Http" version="2.2.29" />
+<#
+			}
+#>
+        <dependency id="PCLStorage" version="1.0.2" />
+        <dependency id="PCLCrypto" version="1.0.2.15130" />
+      </group>
+<#
+		}
+#>
+      <group targetFramework="uap">
+        <dependency id="Microsoft.NETCore.UniversalWindowsPlatform" version="5.2.2" />
         <dependency id="PCLStorage" version="1.0.2" />
         <dependency id="PCLCrypto" version="1.0.2.15130" />
       </group>
 <#
 	}
 #>
+      <group targetFramework="netstandard1.3">
+        <dependency id="System.Collections" version="4.0.11" />
+        <dependency id="System.Collections.NonGeneric" version="4.0.1" />
+        <dependency id="System.Console" version="4.0.0" />
+		<dependency id="System.Diagnostics.Debug" version="4.0.11" />
+        <dependency id="System.Diagnostics.Tools" version="4.0.1" />
+        <dependency id="System.IO.FileSystem" version="4.0.1" />
+        <dependency id="System.Linq" version="4.1.0" />
+        <dependency id="System.Net.Http" version="4.1.0" />
+        <dependency id="System.Net.Requests" version="4.0.11" />
+        <dependency id="System.Reflection.Extensions" version="4.0.1" />
+        <dependency id="System.Reflection.TypeExtensions" version="4.1.0" />
+        <dependency id="System.Runtime.Extensions" version="4.1.0" />
+        <dependency id="System.Runtime.InteropServices" version="4.1.0" />
+        <dependency id="System.Security.Cryptography.Algorithms" version="4.2.0" />
+        <dependency id="System.Security.Cryptography.Csp" version="4.0.0" />
+        <dependency id="System.Text.Encoding.Extensions" version="4.0.11" />
+        <dependency id="System.Text.RegularExpressions" version="4.1.0" />
+        <dependency id="System.Threading" version="4.0.11" />
+        <dependency id="System.Threading.Thread" version="4.0.0" />
+        <dependency id="System.Xml.XDocument" version="4.0.11" />
+        <dependency id="Microsoft.CSharp" version="4.0.1" />
+      </group>
     </dependencies>
   </metadata> 
   <files>
@@ -50,23 +100,30 @@
 	if(!Convert.ToBoolean(this.Session["DisablePCLSupport"]))
 	{
 #>
-    <file src=".\bin\Release\pcl\AWSSDK.Core.dll" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
-    <file src=".\bin\Release\pcl\AWSSDK.Core.xml" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
-    <file src=".\bin\Release\pcl\AWSSDK.Core.pdb" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
+    <file src=".\bin\Release\pcl\AWSSDK.Core.dll" target="lib\portable-net45+win8+wpa81+wp8" />
+    <file src=".\bin\Release\pcl\AWSSDK.Core.xml" target="lib\portable-net45+win8+wpa81+wp8" />
+    <file src=".\bin\Release\pcl\AWSSDK.Core.pdb" target="lib\portable-net45+win8+wpa81+wp8" />
     
+    <file src=".\bin\Release\pcl\AWSSDK.Core.dll" target="lib\uap" />
+    <file src=".\bin\Release\pcl\AWSSDK.Core.xml" target="lib\uap" />
+    <file src=".\bin\Release\pcl\AWSSDK.Core.pdb" target="lib\uap" />
+
     <file src=".\bin\Release\Xamarin.iOS10\AWSSDK.Core.dll" target="lib\Xamarin.iOS10" />
     <file src=".\bin\Release\Xamarin.iOS10\AWSSDK.Core.xml" target="lib\Xamarin.iOS10" />
 
     <file src=".\bin\Release\Xamarin.iOS10\AWSSDK.Core.dll" target="lib\Xamarin.Mac20" />
     <file src=".\bin\Release\Xamarin.iOS10\AWSSDK.Core.xml" target="lib\Xamarin.Mac20" />
 
-    <file src=".\bin\Release\monoandroid\AWSSDK.Core.dll" target="lib\monoandroid" />
-    <file src=".\bin\Release\monoandroid\AWSSDK.Core.xml" target="lib\monoandroid" />
-    <file src=".\bin\Release\monoandroid\AWSSDK.Core.pdb" target="lib\monoandroid" />
+    <file src=".\bin\Release\Xamarin.iOS10\AWSSDK.Core.dll" target="lib\MonoTouch10" />
+    <file src=".\bin\Release\Xamarin.iOS10\AWSSDK.Core.xml" target="lib\MonoTouch10" />
 
-    <file src=".\bin\Release\windows8\AWSSDK.Core.dll" target="lib\windows8" />
-    <file src=".\bin\Release\windows8\AWSSDK.Core.xml" target="lib\windows8" />
-    <file src=".\bin\Release\windows8\AWSSDK.Core.pdb" target="lib\windows8" />
+    <file src=".\bin\Release\monoandroid\AWSSDK.Core.dll" target="lib\MonoAndroid10" />
+    <file src=".\bin\Release\monoandroid\AWSSDK.Core.xml" target="lib\MonoAndroid10" />
+    <file src=".\bin\Release\monoandroid\AWSSDK.Core.pdb" target="lib\MonoAndroid10" />
+
+    <file src=".\bin\Release\windows8\AWSSDK.Core.dll" target="lib\win8" />
+    <file src=".\bin\Release\windows8\AWSSDK.Core.xml" target="lib\win8" />
+    <file src=".\bin\Release\windows8\AWSSDK.Core.pdb" target="lib\win8" />
 
     <file src=".\bin\Release\wpa81\AWSSDK.Core.dll" target="lib\wpa81" />
     <file src=".\bin\Release\wpa81\AWSSDK.Core.xml" target="lib\wpa81" />
@@ -75,8 +132,13 @@
     <file src=".\bin\Release\wp8\AWSSDK.Core.dll" target="lib\wp8" />
     <file src=".\bin\Release\wp8\AWSSDK.Core.xml" target="lib\wp8" />
     <file src=".\bin\Release\wp8\AWSSDK.Core.pdb" target="lib\wp8" />
-<#
+
+<#	
 	}
 #>
+	<file src=".\bin\Release\netstandard1.3\AWSSDK.Core.dll" target="lib\netstandard1.3"/>
+	<file src=".\bin\Release\netstandard1.3\AWSSDK.Core.xml" target="lib\netstandard1.3"/>
+	<file src=".\bin\Release\netstandard1.3\AWSSDK.Core.pdb" target="lib\netstandard1.3"/>
+
   </files>
 </package>

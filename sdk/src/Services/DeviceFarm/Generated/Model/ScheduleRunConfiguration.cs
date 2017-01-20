@@ -63,7 +63,7 @@ namespace Amazon.DeviceFarm.Model
         /// Gets and sets the property BillingMethod. 
         /// <para>
         /// Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>.
-        /// If the parameter is not specified, the default value is <code>unmetered</code>.
+        /// If the parameter is not specified, the default value is <code>metered</code>.
         /// </para>
         /// </summary>
         public BillingMethod BillingMethod

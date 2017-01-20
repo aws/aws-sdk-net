@@ -33,9 +33,10 @@ namespace Amazon.Lambda.Model
     /// see <a href="http://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">Introduction
     /// to AWS Lambda Aliases</a>.
     /// 
-    ///  Alias names are unique for a given function. 
+    ///  
     /// <para>
-    /// This requires permission for the lambda:CreateAlias action.
+    /// Alias names are unique for a given function. This requires permission for the lambda:CreateAlias
+    /// action.
     /// </para>
     /// </summary>
     public partial class CreateAliasRequest : AmazonLambdaRequest
@@ -66,7 +67,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property FunctionName. 
         /// <para>
-        /// Name of the Lambda function for which you want to create an alias. 
+        /// Name of the Lambda function for which you want to create an alias.
         /// </para>
         /// </summary>
         public string FunctionName

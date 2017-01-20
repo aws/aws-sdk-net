@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2016-01-28.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-11-25.normal.json service model.
  */
 
 using System;
@@ -79,6 +79,64 @@ namespace Amazon.CloudFront
 
 
     /// <summary>
+    /// Constants used for properties of type EventType.
+    /// </summary>
+    public class EventType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant OriginRequest for EventType
+        /// </summary>
+        public static readonly EventType OriginRequest = new EventType("origin-request");
+        /// <summary>
+        /// Constant OriginResponse for EventType
+        /// </summary>
+        public static readonly EventType OriginResponse = new EventType("origin-response");
+        /// <summary>
+        /// Constant ViewerRequest for EventType
+        /// </summary>
+        public static readonly EventType ViewerRequest = new EventType("viewer-request");
+        /// <summary>
+        /// Constant ViewerResponse for EventType
+        /// </summary>
+        public static readonly EventType ViewerResponse = new EventType("viewer-response");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EventType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EventType FindValue(string value)
+        {
+            return FindValue<EventType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EventType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type GeoRestrictionType.
     /// </summary>
     public class GeoRestrictionType : ConstantClass
@@ -126,6 +184,56 @@ namespace Amazon.CloudFront
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator GeoRestrictionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type HttpVersion.
+    /// </summary>
+    public class HttpVersion : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Http11 for HttpVersion
+        /// </summary>
+        public static readonly HttpVersion Http11 = new HttpVersion("http1.1");
+        /// <summary>
+        /// Constant Http2 for HttpVersion
+        /// </summary>
+        public static readonly HttpVersion Http2 = new HttpVersion("http2");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HttpVersion(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HttpVersion FindValue(string value)
+        {
+            return FindValue<HttpVersion>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HttpVersion(string value)
         {
             return FindValue(value);
         }

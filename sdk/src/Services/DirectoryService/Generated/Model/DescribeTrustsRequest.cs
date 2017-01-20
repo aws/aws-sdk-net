@@ -45,8 +45,10 @@ namespace Amazon.DirectoryService.Model
         private List<string> _trustIds = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property DirectoryId. The Directory ID of the AWS directory that
-        /// is a part of the requested trust relationship.
+        /// Gets and sets the property DirectoryId. 
+        /// <para>
+        /// The Directory ID of the AWS directory that is a part of the requested trust relationship.
+        /// </para>
         /// </summary>
         public string DirectoryId
         {
@@ -61,7 +63,10 @@ namespace Amazon.DirectoryService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Limit. The maximum number of objects to return.
+        /// Gets and sets the property Limit. 
+        /// <para>
+        /// The maximum number of objects to return.
+        /// </para>
         /// </summary>
         public int Limit
         {

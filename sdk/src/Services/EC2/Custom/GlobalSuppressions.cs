@@ -48,10 +48,6 @@ using System.Diagnostics.CodeAnalysis;
 [module: SuppressMessage("Microsoft.Design", "CA1056:UriPropertiesShouldNotBeStrings", Scope = "member", Target = "Amazon.EC2.Model.SnapshotDiskContainer.#Url")]
 [module: SuppressMessage("Microsoft.Design", "CA1056:UriPropertiesShouldNotBeStrings", Scope = "member", Target = "Amazon.EC2.Model.SnapshotTaskDetail.#Url")]
 [module: SuppressMessage("Microsoft.Design", "CA1056:UriPropertiesShouldNotBeStrings", Scope = "member", Target = "Amazon.EC2.Model.CopySnapshotRequest.#PresignedUrl")]
-// Initialize reference type static fields inline
-[module: SuppressMessage("Microsoft.Performance", "CA1810:InitializeReferenceTypeStaticFieldsInline", Scope = "member", Target = "Amazon.EC2.Util.ImageUtilities.#.cctor()")]
-// ISerializable attribute
-[module: SuppressMessage("Microsoft.Usage", "CA2237:MarkISerializableTypesWithSerializable", Scope = "type", Target = "Amazon.EC2.Import.DiskImageImporterException")]
 // Suppressions for various *url* params being strings.
 [module: SuppressMessage("Microsoft.Design", "CA1054:UriParametersShouldNotBeStrings", Scope = "member", Target = "Amazon.EC2.Import.ImportCleanup.#DeleteImageArtifacts(Amazon.RegionEndpoint,System.String,Amazon.EC2.Import.CleanupProgressCallback)", MessageId = "1#")]
 [module: SuppressMessage("Microsoft.Design", "CA1054:UriParametersShouldNotBeStrings", Scope = "member", Target = "Amazon.EC2.Import.ImportCleanup.#DeleteImageArtifacts(Amazon.Runtime.AWSCredentials,Amazon.RegionEndpoint,System.String,Amazon.EC2.Import.CleanupProgressCallback)", MessageId = "2#")]

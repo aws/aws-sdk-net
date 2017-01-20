@@ -50,7 +50,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         }
 
         [TestMethod]
-        [TestCategory("IAM")]
+        [TestCategory("IdentityManagement")]
         public void ListAccessKeys()
         {
             ListAccessKeysResponse response = Client.ListAccessKeys();
@@ -67,7 +67,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
 
 
         [TestMethod]
-        [TestCategory("IAM")]
+        [TestCategory("IdentityManagement")]
         public void CreateAccountAlias()
         {
             string alias = "dotnetalias" + DateTime.Now.Ticks;

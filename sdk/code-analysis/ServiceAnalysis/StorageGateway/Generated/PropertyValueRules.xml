@@ -90,11 +90,13 @@
     <property>Amazon.StorageGateway.Model.CancelArchivalRequest.TapeARN</property>
     <min>50</min>
     <max>500</max>
+    <pattern>^arn:(aws|aws-cn):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{7,16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.CancelArchivalResponse.TapeARN</property>
     <min>50</min>
     <max>500</max>
+    <pattern>^arn:(aws|aws-cn):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{7,16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.CancelRetrievalRequest.GatewayARN</property>
@@ -105,11 +107,13 @@
     <property>Amazon.StorageGateway.Model.CancelRetrievalRequest.TapeARN</property>
     <min>50</min>
     <max>500</max>
+    <pattern>^arn:(aws|aws-cn):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{7,16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.CancelRetrievalResponse.TapeARN</property>
     <min>50</min>
     <max>500</max>
+    <pattern>^arn:(aws|aws-cn):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{7,16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.CreateCachediSCSIVolumeRequest.ClientToken</property>
@@ -130,6 +134,11 @@
     <pattern>\Asnap-([0-9A-Fa-f]{8}|[0-9A-Fa-f]{17})\z</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StorageGateway.Model.CreateCachediSCSIVolumeRequest.SourceVolumeARN</property>
+    <min>50</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StorageGateway.Model.CreateCachediSCSIVolumeRequest.TargetName</property>
     <min>1</min>
     <max>200</max>
@@ -142,6 +151,41 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.CreateCachediSCSIVolumeResponse.VolumeARN</property>
+    <min>50</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.CreateNFSFileShareRequest.ClientToken</property>
+    <min>5</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.CreateNFSFileShareRequest.DefaultStorageClass</property>
+    <min>5</min>
+    <max>20</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.CreateNFSFileShareRequest.GatewayARN</property>
+    <min>50</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.CreateNFSFileShareRequest.KMSKey</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.CreateNFSFileShareRequest.LocationARN</property>
+    <min>16</min>
+    <max>310</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.CreateNFSFileShareRequest.Role</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.CreateNFSFileShareResponse.FileShareARN</property>
     <min>50</min>
     <max>500</max>
   </property-value-rule>
@@ -253,6 +297,7 @@
     <property>Amazon.StorageGateway.Model.CreateTapeWithBarcodeResponse.TapeARN</property>
     <min>50</min>
     <max>500</max>
+    <pattern>^arn:(aws|aws-cn):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{7,16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.DeleteBandwidthRateLimitRequest.BandwidthType</property>
@@ -292,6 +337,16 @@
     <max>800</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StorageGateway.Model.DeleteFileShareRequest.FileShareARN</property>
+    <min>50</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.DeleteFileShareResponse.FileShareARN</property>
+    <min>50</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StorageGateway.Model.DeleteGatewayRequest.GatewayARN</property>
     <min>50</min>
     <max>500</max>
@@ -320,21 +375,25 @@
     <property>Amazon.StorageGateway.Model.DeleteTapeRequest.TapeARN</property>
     <min>50</min>
     <max>500</max>
+    <pattern>^arn:(aws|aws-cn):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{7,16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.DeleteTapeResponse.TapeARN</property>
     <min>50</min>
     <max>500</max>
+    <pattern>^arn:(aws|aws-cn):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{7,16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.DeleteTapeArchiveRequest.TapeARN</property>
     <min>50</min>
     <max>500</max>
+    <pattern>^arn:(aws|aws-cn):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{7,16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.DeleteTapeArchiveResponse.TapeARN</property>
     <min>50</min>
     <max>500</max>
+    <pattern>^arn:(aws|aws-cn):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{7,16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.DeleteVolumeRequest.VolumeARN</property>
@@ -591,6 +650,30 @@
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StorageGateway.Model.ListFileSharesRequest.GatewayARN</property>
+    <min>50</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.ListFileSharesRequest.Limit</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.ListFileSharesRequest.Marker</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.ListFileSharesResponse.Marker</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.ListFileSharesResponse.NextMarker</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StorageGateway.Model.ListGatewaysRequest.Limit</property>
     <min>1</min>
   </property-value-rule>
@@ -720,11 +803,13 @@
     <property>Amazon.StorageGateway.Model.RetrieveTapeArchiveRequest.TapeARN</property>
     <min>50</min>
     <max>500</max>
+    <pattern>^arn:(aws|aws-cn):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{7,16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.RetrieveTapeArchiveResponse.TapeARN</property>
     <min>50</min>
     <max>500</max>
+    <pattern>^arn:(aws|aws-cn):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{7,16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.RetrieveTapeRecoveryPointRequest.GatewayARN</property>
@@ -735,11 +820,13 @@
     <property>Amazon.StorageGateway.Model.RetrieveTapeRecoveryPointRequest.TapeARN</property>
     <min>50</min>
     <max>500</max>
+    <pattern>^arn:(aws|aws-cn):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{7,16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.RetrieveTapeRecoveryPointResponse.TapeARN</property>
     <min>50</min>
     <max>500</max>
+    <pattern>^arn:(aws|aws-cn):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{7,16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.SetLocalConsolePasswordRequest.GatewayARN</property>
@@ -884,6 +971,26 @@
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StorageGateway.Model.UpdateNFSFileShareRequest.DefaultStorageClass</property>
+    <min>5</min>
+    <max>20</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.UpdateNFSFileShareRequest.FileShareARN</property>
+    <min>50</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.UpdateNFSFileShareRequest.KMSKey</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.UpdateNFSFileShareResponse.FileShareARN</property>
+    <min>50</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StorageGateway.Model.UpdateSnapshotScheduleRequest.Description</property>
     <min>1</min>
     <max>255</max>
@@ -988,6 +1095,26 @@
     <max>300</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StorageGateway.Model.FileShareInfo.FileShareARN</property>
+    <min>50</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.FileShareInfo.FileShareId</property>
+    <min>12</min>
+    <max>30</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.FileShareInfo.FileShareStatus</property>
+    <min>3</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.FileShareInfo.GatewayARN</property>
+    <min>50</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StorageGateway.Model.GatewayInfo.GatewayARN</property>
     <min>50</min>
     <max>500</max>
@@ -1006,6 +1133,68 @@
     <property>Amazon.StorageGateway.Model.GatewayInfo.GatewayType</property>
     <min>2</min>
     <max>20</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.NFSFileShareDefaults.DirectoryMode</property>
+    <min>1</min>
+    <max>4</max>
+    <pattern>^[0-7]{4}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.NFSFileShareDefaults.FileMode</property>
+    <min>1</min>
+    <max>4</max>
+    <pattern>^[0-7]{4}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.NFSFileShareDefaults.GroupId</property>
+    <min>0</min>
+    <max>4294967294</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.NFSFileShareDefaults.OwnerId</property>
+    <min>0</min>
+    <max>4294967294</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.NFSFileShareInfo.DefaultStorageClass</property>
+    <min>5</min>
+    <max>20</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.NFSFileShareInfo.FileShareARN</property>
+    <min>50</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.NFSFileShareInfo.FileShareId</property>
+    <min>12</min>
+    <max>30</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.NFSFileShareInfo.FileShareStatus</property>
+    <min>3</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.NFSFileShareInfo.GatewayARN</property>
+    <min>50</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.NFSFileShareInfo.KMSKey</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.NFSFileShareInfo.LocationARN</property>
+    <min>16</min>
+    <max>310</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.NFSFileShareInfo.Role</property>
+    <min>20</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.StorediSCSIVolume.SourceSnapshotId</property>
@@ -1050,6 +1239,7 @@
     <property>Amazon.StorageGateway.Model.Tape.TapeARN</property>
     <min>50</min>
     <max>500</max>
+    <pattern>^arn:(aws|aws-cn):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{7,16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.Tape.TapeBarcode</property>
@@ -1071,6 +1261,7 @@
     <property>Amazon.StorageGateway.Model.TapeArchive.TapeARN</property>
     <min>50</min>
     <max>500</max>
+    <pattern>^arn:(aws|aws-cn):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{7,16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.TapeArchive.TapeBarcode</property>
@@ -1087,6 +1278,7 @@
     <property>Amazon.StorageGateway.Model.TapeInfo.TapeARN</property>
     <min>50</min>
     <max>500</max>
+    <pattern>^arn:(aws|aws-cn):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{7,16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.TapeInfo.TapeBarcode</property>
@@ -1098,6 +1290,7 @@
     <property>Amazon.StorageGateway.Model.TapeRecoveryPointInfo.TapeARN</property>
     <min>50</min>
     <max>500</max>
+    <pattern>^arn:(aws|aws-cn):storagegateway:[a-z\-0-9]+:[0-9]+:tape\/[0-9A-Z]{7,16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.VolumeInfo.GatewayARN</property>

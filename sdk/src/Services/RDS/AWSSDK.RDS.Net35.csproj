@@ -37,6 +37,7 @@
     <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
   </PropertyGroup>
   <PropertyGroup>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <Choose>
@@ -62,6 +63,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Custom\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Custom\Internal\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Custom\Model\*.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Generated\*.cs">

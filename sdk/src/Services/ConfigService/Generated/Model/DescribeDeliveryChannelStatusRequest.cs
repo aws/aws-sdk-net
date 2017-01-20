@@ -31,9 +31,13 @@ namespace Amazon.ConfigService.Model
     /// Container for the parameters to the DescribeDeliveryChannelStatus operation.
     /// Returns the current status of the specified delivery channel. If a delivery channel
     /// is not specified, this action returns the current status of all delivery channels
-    /// associated with the account. 
+    /// associated with the account.
     /// 
-    ///  <note>Currently, you can specify only one delivery channel per account.</note>
+    ///  <note> 
+    /// <para>
+    /// Currently, you can specify only one delivery channel per region in your account.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DescribeDeliveryChannelStatusRequest : AmazonConfigServiceRequest
     {

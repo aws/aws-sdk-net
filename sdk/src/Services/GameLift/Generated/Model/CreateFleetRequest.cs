@@ -29,37 +29,79 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateFleet operation.
-    /// Creates a new fleet to host game servers. A fleet consists of a set of Amazon Elastic
-    /// Compute Cloud (Amazon EC2) instances of a certain type, which defines the CPU, memory,
-    /// storage, and networking capacity of each host in the fleet. See <a href="https://aws.amazon.com/ec2/instance-types/">Amazon
-    /// EC2 Instance Types</a> for more information. Each instance in the fleet hosts a game
-    /// server created from the specified game build. Once a fleet is in an ACTIVE state,
-    /// it can begin hosting game sessions.
+    /// Creates a new fleet to run your game servers. A fleet is a set of Amazon Elastic Compute
+    /// Cloud (Amazon EC2) instances, each of which can run multiple server processes to host
+    /// game sessions. You configure a fleet to create instances with certain hardware specifications
+    /// (see <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
+    /// for more information), and deploy a specified game build to each instance. A newly
+    /// created fleet passes through several statuses; once it reaches the <code>ACTIVE</code>
+    /// status, it can begin hosting game sessions.
     /// 
     ///  
     /// <para>
-    /// To create a new fleet, provide a name and the EC2 instance type for the new fleet,
-    /// and specify the build and server launch path. Builds must be in a READY state before
-    /// they can be used to build fleets. When configuring the new fleet, you can optionally
-    /// (1) provide a set of launch parameters to be passed to a game server when activated;
-    /// (2) limit incoming traffic to a specified range of IP addresses and port numbers;
-    /// and (3) configure Amazon GameLift to store game session logs by specifying the path
-    /// to the logs stored in your game server files. If the call is successful, Amazon GameLift
-    /// performs the following tasks:
+    /// To create a new fleet, provide a fleet name, an EC2 instance type, and a build ID
+    /// of the game build to deploy. You can also configure the new fleet with the following
+    /// settings: (1) a runtime configuration describing what server processes to run on each
+    /// instance in the fleet (required to create fleet), (2) access permissions for inbound
+    /// traffic, (3) fleet-wide game session protection, and (4) the location of default log
+    /// files for GameLift to upload and store.
     /// </para>
-    ///  <ul> <li>Creates a fleet record and sets the state to NEW.</li> <li>Sets the fleet's
-    /// capacity to 1 "desired" and 1 "active" EC2 instance count.</li> <li>Creates an EC2
-    /// instance and begins the process of initializing the fleet and activating a game server
-    /// on the instance.</li> <li>Begins writing events to the fleet event log, which can
-    /// be accessed in the GameLift console.</li> </ul> 
+    ///  
     /// <para>
-    /// Once a fleet is created, use the following actions to change certain fleet properties
-    /// (server launch parameters and log paths cannot be changed):
+    /// If the <code>CreateFleet</code> call is successful, Amazon GameLift performs the following
+    /// tasks:
     /// </para>
-    ///  <ul> <li> <a>UpdateFleetAttributes</a> -- Update fleet metadata, including name and
-    /// description.</li> <li> <a>UpdateFleetCapacity</a> -- Increase or decrease the number
-    /// of instances you want the fleet to maintain.</li> <li> <a>UpdateFleetPortSettings</a>
-    /// -- Change the IP addresses and ports that allow access to incoming traffic.</li> </ul>
+    ///  <ul> <li> 
+    /// <para>
+    /// Creates a fleet record and sets the status to <code>NEW</code> (followed by other
+    /// statuses as the fleet is activated).
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Sets the fleet's capacity to 1 "desired", which causes GameLift to start one new EC2
+    /// instance.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Starts launching server processes on the instance. If the fleet is configured to run
+    /// multiple server processes per instance, GameLift staggers each launch by a few seconds.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Begins writing events to the fleet event log, which can be accessed in the GameLift
+    /// console.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Sets the fleet's status to <code>ACTIVE</code> once one server process in the fleet
+    /// is ready to host a game session.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// After a fleet is created, use the following actions to change fleet properties and
+    /// configuration:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>UpdateFleetAttributes</a> -- Update fleet metadata, including name and description.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>UpdateFleetCapacity</a> -- Increase or decrease the number of instances you want
+    /// the fleet to maintain.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>UpdateFleetPortSettings</a> -- Change the IP address and port ranges that allow
+    /// access to incoming traffic.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>UpdateRuntimeConfiguration</a> -- Change how server processes are launched in
+    /// the fleet, including launch path, launch parameters, and the number of concurrent
+    /// processes.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class CreateFleetRequest : AmazonGameLiftRequest
     {
@@ -69,13 +111,18 @@ namespace Amazon.GameLift.Model
         private EC2InstanceType _ec2InstanceType;
         private List<string> _logPaths = new List<string>();
         private string _name;
+        private ProtectionPolicy _newGameSessionProtectionPolicy;
+        private ResourceCreationLimitPolicy _resourceCreationLimitPolicy;
+        private RuntimeConfiguration _runtimeConfiguration;
         private string _serverLaunchParameters;
         private string _serverLaunchPath;
 
         /// <summary>
         /// Gets and sets the property BuildId. 
         /// <para>
-        /// Unique identifier for the build you want the new fleet to use.
+        /// Unique identifier of the build to be deployed on the new fleet. The build must have
+        /// been successfully uploaded to GameLift and be in a <code>READY</code> status. This
+        /// fleet setting cannot be changed once the fleet is created.
         /// </para>
         /// </summary>
         public string BuildId
@@ -93,7 +140,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// Human-readable description of the fleet.
+        /// Human-readable description of a fleet.
         /// </para>
         /// </summary>
         public string Description
@@ -111,9 +158,10 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property EC2InboundPermissions. 
         /// <para>
-        /// Access limits for incoming traffic. Setting these values limits game server access
-        /// to incoming traffic using specified IP ranges and port numbers. Some ports in a range
-        /// may be restricted. You can provide one or more sets of permissions for the fleet.
+        /// Range of IP addresses and port settings that permit inbound traffic to access server
+        /// processes running on the fleet. If no inbound permissions are set, including both
+        /// IP address range and port range, the server processes in the fleet cannot accept connections.
+        /// You can specify one or more sets of permissions for a fleet.
         /// </para>
         /// </summary>
         public List<IpPermission> EC2InboundPermissions
@@ -131,10 +179,11 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property EC2InstanceType. 
         /// <para>
-        /// Type of EC2 instances used in the fleet. EC2 instance types define the CPU, memory,
-        /// storage, and networking capacity of the fleetaposs hosts. Amazon GameLift supports
-        /// the EC2 instance types listed below. See <a href="https://aws.amazon.com/ec2/instance-types/">Amazon
-        /// EC2 Instance Types</a> for detailed descriptions of each.
+        /// Name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance
+        /// type determines the computing resources of each instance in the fleet, including CPU,
+        /// memory, storage, and networking capacity. GameLift supports the following EC2 instance
+        /// types. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance
+        /// Types</a> for detailed descriptions.
         /// </para>
         /// </summary>
         public EC2InstanceType EC2InstanceType
@@ -152,9 +201,13 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property LogPaths. 
         /// <para>
-        /// Path to game-session log files generated by your game server. Once a game session
-        /// has been terminated, Amazon GameLift captures and stores the logs on Amazon S3. Use
-        /// the GameLift console to access the stored logs.
+        /// Location of default log files. When a server process is shut down, Amazon GameLift
+        /// captures and stores any log files in this location. These logs are in addition to
+        /// game session logs; see more on game session logs in the <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code">Amazon
+        /// GameLift Developer Guide</a>. If no default log path for a fleet is specified, GameLift
+        /// will automatically upload logs stored on each instance at <code>C:\game\logs</code>
+        /// (for Windows) or <code>/local/game/logs</code> (for Linux). Use the GameLift console
+        /// to access stored logs. 
         /// </para>
         /// </summary>
         public List<string> LogPaths
@@ -172,7 +225,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Descriptive label associated with this fleet. Fleet names do not need to be unique.
+        /// Descriptive label associated with a fleet. Fleet names do not need to be unique.
         /// </para>
         /// </summary>
         public string Name
@@ -188,10 +241,89 @@ namespace Amazon.GameLift.Model
         }
 
         /// <summary>
+        /// Gets and sets the property NewGameSessionProtectionPolicy. 
+        /// <para>
+        /// Game session protection policy to apply to all instances in this fleet. If this parameter
+        /// is not set, instances in this fleet default to no protection. You can change a fleet's
+        /// protection policy using UpdateFleetAttributes, but this change will only affect sessions
+        /// created after the policy change. You can also set protection for individual instances
+        /// using <a>UpdateGameSession</a>.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status,
+        /// it cannot be terminated during a scale-down event.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public ProtectionPolicy NewGameSessionProtectionPolicy
+        {
+            get { return this._newGameSessionProtectionPolicy; }
+            set { this._newGameSessionProtectionPolicy = value; }
+        }
+
+        // Check to see if NewGameSessionProtectionPolicy property is set
+        internal bool IsSetNewGameSessionProtectionPolicy()
+        {
+            return this._newGameSessionProtectionPolicy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceCreationLimitPolicy. 
+        /// <para>
+        /// Policy that limits the number of game sessions an individual player can create over
+        /// a span of time for this fleet.
+        /// </para>
+        /// </summary>
+        public ResourceCreationLimitPolicy ResourceCreationLimitPolicy
+        {
+            get { return this._resourceCreationLimitPolicy; }
+            set { this._resourceCreationLimitPolicy = value; }
+        }
+
+        // Check to see if ResourceCreationLimitPolicy property is set
+        internal bool IsSetResourceCreationLimitPolicy()
+        {
+            return this._resourceCreationLimitPolicy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RuntimeConfiguration. 
+        /// <para>
+        /// Instructions for launching server processes on each instance in the fleet. The runtime
+        /// configuration for a fleet has a collection of server process configurations, one for
+        /// each type of server process to run on an instance. A server process configuration
+        /// specifies the location of the server executable, launch parameters, and the number
+        /// of concurrent processes with that configuration to maintain on each instance. A <code>CreateFleet</code>
+        /// request must include a runtime configuration with at least one server process configuration;
+        /// otherwise the request will fail with an invalid request exception. (This parameter
+        /// replaces the parameters <code>ServerLaunchPath</code> and <code>ServerLaunchParameters</code>;
+        /// requests that contain values for these parameters instead of a runtime configuration
+        /// will continue to work.) 
+        /// </para>
+        /// </summary>
+        public RuntimeConfiguration RuntimeConfiguration
+        {
+            get { return this._runtimeConfiguration; }
+            set { this._runtimeConfiguration = value; }
+        }
+
+        // Check to see if RuntimeConfiguration property is set
+        internal bool IsSetRuntimeConfiguration()
+        {
+            return this._runtimeConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ServerLaunchParameters. 
         /// <para>
-        /// Parameters required to launch your game server. These parameters should be expressed
-        /// as a string of command-line parameters. Example: "+sv_port 33435 +start_lobby".
+        /// This parameter is no longer used. Instead, specify server launch parameters in the
+        /// <code>RuntimeConfiguration</code> parameter. (Requests that specify a server launch
+        /// path and launch parameters instead of a runtime configuration will continue to work.)
         /// </para>
         /// </summary>
         public string ServerLaunchParameters
@@ -209,10 +341,9 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property ServerLaunchPath. 
         /// <para>
-        /// Path to the launch executable for the game server. A game server is built into a <code>C:\game</code>
-        /// drive. This value must be expressed as <code>C:\game\[launchpath]</code>. Example:
-        /// If, when built, your game server files are in a folder called "MyGame", your log path
-        /// should be <code>C:\game\MyGame\server.exe</code>.
+        /// This parameter is no longer used. Instead, specify a server launch path using the
+        /// <code>RuntimeConfiguration</code> parameter. (Requests that specify a server launch
+        /// path and launch parameters instead of a runtime configuration will continue to work.)
         /// </para>
         /// </summary>
         public string ServerLaunchPath

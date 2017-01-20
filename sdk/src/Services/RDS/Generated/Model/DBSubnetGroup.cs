@@ -54,11 +54,30 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class DBSubnetGroup
     {
+        private string _dbSubnetGroupArn;
         private string _dbSubnetGroupDescription;
         private string _dbSubnetGroupName;
         private string _subnetGroupStatus;
         private List<Subnet> _subnets = new List<Subnet>();
         private string _vpcId;
+
+        /// <summary>
+        /// Gets and sets the property DBSubnetGroupArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) for the DB subnet group.
+        /// </para>
+        /// </summary>
+        public string DBSubnetGroupArn
+        {
+            get { return this._dbSubnetGroupArn; }
+            set { this._dbSubnetGroupArn = value; }
+        }
+
+        // Check to see if DBSubnetGroupArn property is set
+        internal bool IsSetDBSubnetGroupArn()
+        {
+            return this._dbSubnetGroupArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DBSubnetGroupDescription. 

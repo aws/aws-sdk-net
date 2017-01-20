@@ -25,7 +25,7 @@ namespace Amazon.AWSMarketplaceMetering.Model
     ///<summary>
     /// AWSMarketplaceMetering exception
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class InvalidEndpointRegionException : AmazonAWSMarketplaceMeteringException 
@@ -79,7 +79,7 @@ namespace Amazon.AWSMarketplaceMetering.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the InvalidEndpointRegionException class with serialized data.
         /// </summary>

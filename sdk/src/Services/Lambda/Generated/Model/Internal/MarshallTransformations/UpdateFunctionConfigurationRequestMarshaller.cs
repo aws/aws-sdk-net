@@ -68,16 +68,44 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetDeadLetterConfig())
+                {
+                    context.Writer.WritePropertyName("DeadLetterConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DeadLetterConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DeadLetterConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetDescription())
                 {
                     context.Writer.WritePropertyName("Description");
                     context.Writer.Write(publicRequest.Description);
                 }
 
+                if(publicRequest.IsSetEnvironment())
+                {
+                    context.Writer.WritePropertyName("Environment");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = EnvironmentMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Environment, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetHandler())
                 {
                     context.Writer.WritePropertyName("Handler");
                     context.Writer.Write(publicRequest.Handler);
+                }
+
+                if(publicRequest.IsSetKMSKeyArn())
+                {
+                    context.Writer.WritePropertyName("KMSKeyArn");
+                    context.Writer.Write(publicRequest.KMSKeyArn);
                 }
 
                 if(publicRequest.IsSetMemorySize())

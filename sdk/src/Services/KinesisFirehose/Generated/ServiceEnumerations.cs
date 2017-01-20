@@ -293,4 +293,200 @@ namespace Amazon.KinesisFirehose
         }
     }
 
+
+    /// <summary>
+    /// Constants used for properties of type ProcessorParameterName.
+    /// </summary>
+    public class ProcessorParameterName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant LambdaArn for ProcessorParameterName
+        /// </summary>
+        public static readonly ProcessorParameterName LambdaArn = new ProcessorParameterName("LambdaArn");
+        /// <summary>
+        /// Constant NumberOfRetries for ProcessorParameterName
+        /// </summary>
+        public static readonly ProcessorParameterName NumberOfRetries = new ProcessorParameterName("NumberOfRetries");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ProcessorParameterName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ProcessorParameterName FindValue(string value)
+        {
+            return FindValue<ProcessorParameterName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ProcessorParameterName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ProcessorType.
+    /// </summary>
+    public class ProcessorType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Lambda for ProcessorType
+        /// </summary>
+        public static readonly ProcessorType Lambda = new ProcessorType("Lambda");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ProcessorType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ProcessorType FindValue(string value)
+        {
+            return FindValue<ProcessorType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ProcessorType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RedshiftS3BackupMode.
+    /// </summary>
+    public class RedshiftS3BackupMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Disabled for RedshiftS3BackupMode
+        /// </summary>
+        public static readonly RedshiftS3BackupMode Disabled = new RedshiftS3BackupMode("Disabled");
+        /// <summary>
+        /// Constant Enabled for RedshiftS3BackupMode
+        /// </summary>
+        public static readonly RedshiftS3BackupMode Enabled = new RedshiftS3BackupMode("Enabled");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RedshiftS3BackupMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RedshiftS3BackupMode FindValue(string value)
+        {
+            return FindValue<RedshiftS3BackupMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RedshiftS3BackupMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type S3BackupMode.
+    /// </summary>
+    public class S3BackupMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Disabled for S3BackupMode
+        /// </summary>
+        public static readonly S3BackupMode Disabled = new S3BackupMode("Disabled");
+        /// <summary>
+        /// Constant Enabled for S3BackupMode
+        /// </summary>
+        public static readonly S3BackupMode Enabled = new S3BackupMode("Enabled");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public S3BackupMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static S3BackupMode FindValue(string value)
+        {
+            return FindValue<S3BackupMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator S3BackupMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
 }

@@ -40,7 +40,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property HttpMethod. 
         /// <para>
-        /// Specifies the put method request's HTTP method type.
+        /// Specifies the method request's HTTP method type.
         /// </para>
         /// </summary>
         public string HttpMethod

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AWSSupport.Model
 {
     /// <summary>
-    /// Returns an array of <a>CaseDetails</a> objects and a <code>NextToken</code> that defines
+    /// Returns an array of <a>CaseDetails</a> objects and a <code>nextToken</code> that defines
     /// a point for pagination in the result set.
     /// </summary>
     public partial class DescribeCasesResponse : AmazonWebServiceResponse

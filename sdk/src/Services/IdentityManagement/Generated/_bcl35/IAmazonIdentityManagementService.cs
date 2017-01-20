@@ -21,6 +21,7 @@
 using System;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.IdentityManagement.Model;
 
 namespace Amazon.IdentityManagement
@@ -105,7 +106,7 @@ namespace Amazon.IdentityManagement
     /// </para>
     ///  </li> </ul>
     /// </summary>
-    public partial interface IAmazonIdentityManagementService : IDisposable
+    public partial interface IAmazonIdentityManagementService : IAmazonService, IDisposable
     {
 
         
@@ -140,6 +141,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AddClientIDToOpenIDConnectProvider">REST API Reference for AddClientIDToOpenIDConnectProvider Operation</seealso>
         AddClientIDToOpenIDConnectProviderResponse AddClientIDToOpenIDConnectProvider(AddClientIDToOpenIDConnectProviderRequest request);
 
         /// <summary>
@@ -153,6 +155,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAddClientIDToOpenIDConnectProvider
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AddClientIDToOpenIDConnectProvider">REST API Reference for AddClientIDToOpenIDConnectProvider Operation</seealso>
         IAsyncResult BeginAddClientIDToOpenIDConnectProvider(AddClientIDToOpenIDConnectProviderRequest request, AsyncCallback callback, object state);
 
 
@@ -164,6 +167,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAddClientIDToOpenIDConnectProvider.</param>
         /// 
         /// <returns>Returns a  AddClientIDToOpenIDConnectProviderResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AddClientIDToOpenIDConnectProvider">REST API Reference for AddClientIDToOpenIDConnectProvider Operation</seealso>
         AddClientIDToOpenIDConnectProviderResponse EndAddClientIDToOpenIDConnectProvider(IAsyncResult asyncResult);
 
         #endregion
@@ -203,6 +207,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AddRoleToInstanceProfile">REST API Reference for AddRoleToInstanceProfile Operation</seealso>
         AddRoleToInstanceProfileResponse AddRoleToInstanceProfile(AddRoleToInstanceProfileRequest request);
 
         /// <summary>
@@ -216,6 +221,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAddRoleToInstanceProfile
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AddRoleToInstanceProfile">REST API Reference for AddRoleToInstanceProfile Operation</seealso>
         IAsyncResult BeginAddRoleToInstanceProfile(AddRoleToInstanceProfileRequest request, AsyncCallback callback, object state);
 
 
@@ -227,6 +233,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAddRoleToInstanceProfile.</param>
         /// 
         /// <returns>Returns a  AddRoleToInstanceProfileResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AddRoleToInstanceProfile">REST API Reference for AddRoleToInstanceProfile Operation</seealso>
         AddRoleToInstanceProfileResponse EndAddRoleToInstanceProfile(IAsyncResult asyncResult);
 
         #endregion
@@ -251,6 +258,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AddUserToGroup">REST API Reference for AddUserToGroup Operation</seealso>
         AddUserToGroupResponse AddUserToGroup(AddUserToGroupRequest request);
 
         /// <summary>
@@ -264,6 +272,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAddUserToGroup
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AddUserToGroup">REST API Reference for AddUserToGroup Operation</seealso>
         IAsyncResult BeginAddUserToGroup(AddUserToGroupRequest request, AsyncCallback callback, object state);
 
 
@@ -275,6 +284,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAddUserToGroup.</param>
         /// 
         /// <returns>Returns a  AddUserToGroupResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AddUserToGroup">REST API Reference for AddUserToGroup Operation</seealso>
         AddUserToGroupResponse EndAddUserToGroup(IAsyncResult asyncResult);
 
         #endregion
@@ -314,6 +324,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AttachGroupPolicy">REST API Reference for AttachGroupPolicy Operation</seealso>
         AttachGroupPolicyResponse AttachGroupPolicy(AttachGroupPolicyRequest request);
 
         /// <summary>
@@ -327,6 +338,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAttachGroupPolicy
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AttachGroupPolicy">REST API Reference for AttachGroupPolicy Operation</seealso>
         IAsyncResult BeginAttachGroupPolicy(AttachGroupPolicyRequest request, AsyncCallback callback, object state);
 
 
@@ -338,6 +350,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAttachGroupPolicy.</param>
         /// 
         /// <returns>Returns a  AttachGroupPolicyResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AttachGroupPolicy">REST API Reference for AttachGroupPolicy Operation</seealso>
         AttachGroupPolicyResponse EndAttachGroupPolicy(IAsyncResult asyncResult);
 
         #endregion
@@ -380,6 +393,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AttachRolePolicy">REST API Reference for AttachRolePolicy Operation</seealso>
         AttachRolePolicyResponse AttachRolePolicy(AttachRolePolicyRequest request);
 
         /// <summary>
@@ -393,6 +407,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAttachRolePolicy
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AttachRolePolicy">REST API Reference for AttachRolePolicy Operation</seealso>
         IAsyncResult BeginAttachRolePolicy(AttachRolePolicyRequest request, AsyncCallback callback, object state);
 
 
@@ -404,6 +419,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAttachRolePolicy.</param>
         /// 
         /// <returns>Returns a  AttachRolePolicyResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AttachRolePolicy">REST API Reference for AttachRolePolicy Operation</seealso>
         AttachRolePolicyResponse EndAttachRolePolicy(IAsyncResult asyncResult);
 
         #endregion
@@ -443,6 +459,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AttachUserPolicy">REST API Reference for AttachUserPolicy Operation</seealso>
         AttachUserPolicyResponse AttachUserPolicy(AttachUserPolicyRequest request);
 
         /// <summary>
@@ -456,6 +473,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAttachUserPolicy
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AttachUserPolicy">REST API Reference for AttachUserPolicy Operation</seealso>
         IAsyncResult BeginAttachUserPolicy(AttachUserPolicyRequest request, AsyncCallback callback, object state);
 
 
@@ -467,6 +485,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAttachUserPolicy.</param>
         /// 
         /// <returns>Returns a  AttachUserPolicyResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AttachUserPolicy">REST API Reference for AttachUserPolicy Operation</seealso>
         AttachUserPolicyResponse EndAttachUserPolicy(IAsyncResult asyncResult);
 
         #endregion
@@ -512,6 +531,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ChangePassword">REST API Reference for ChangePassword Operation</seealso>
         ChangePasswordResponse ChangePassword(ChangePasswordRequest request);
 
         /// <summary>
@@ -525,6 +545,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndChangePassword
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ChangePassword">REST API Reference for ChangePassword Operation</seealso>
         IAsyncResult BeginChangePassword(ChangePasswordRequest request, AsyncCallback callback, object state);
 
 
@@ -536,6 +557,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginChangePassword.</param>
         /// 
         /// <returns>Returns a  ChangePasswordResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ChangePassword">REST API Reference for ChangePassword Operation</seealso>
         ChangePasswordResponse EndChangePassword(IAsyncResult asyncResult);
 
         #endregion
@@ -581,6 +603,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateAccessKey">REST API Reference for CreateAccessKey Operation</seealso>
         CreateAccessKeyResponse CreateAccessKey();
 
         /// <summary>
@@ -622,6 +645,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateAccessKey">REST API Reference for CreateAccessKey Operation</seealso>
         CreateAccessKeyResponse CreateAccessKey(CreateAccessKeyRequest request);
 
         /// <summary>
@@ -635,6 +659,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateAccessKey
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateAccessKey">REST API Reference for CreateAccessKey Operation</seealso>
         IAsyncResult BeginCreateAccessKey(CreateAccessKeyRequest request, AsyncCallback callback, object state);
 
 
@@ -646,6 +671,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateAccessKey.</param>
         /// 
         /// <returns>Returns a  CreateAccessKeyResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateAccessKey">REST API Reference for CreateAccessKey Operation</seealso>
         CreateAccessKeyResponse EndCreateAccessKey(IAsyncResult asyncResult);
 
         #endregion
@@ -671,6 +697,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateAccountAlias">REST API Reference for CreateAccountAlias Operation</seealso>
         CreateAccountAliasResponse CreateAccountAlias(CreateAccountAliasRequest request);
 
         /// <summary>
@@ -684,6 +711,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateAccountAlias
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateAccountAlias">REST API Reference for CreateAccountAlias Operation</seealso>
         IAsyncResult BeginCreateAccountAlias(CreateAccountAliasRequest request, AsyncCallback callback, object state);
 
 
@@ -695,6 +723,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateAccountAlias.</param>
         /// 
         /// <returns>Returns a  CreateAccountAliasResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateAccountAlias">REST API Reference for CreateAccountAlias Operation</seealso>
         CreateAccountAliasResponse EndCreateAccountAlias(IAsyncResult asyncResult);
 
         #endregion
@@ -728,6 +757,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateGroup">REST API Reference for CreateGroup Operation</seealso>
         CreateGroupResponse CreateGroup(CreateGroupRequest request);
 
         /// <summary>
@@ -741,6 +771,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateGroup
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateGroup">REST API Reference for CreateGroup Operation</seealso>
         IAsyncResult BeginCreateGroup(CreateGroupRequest request, AsyncCallback callback, object state);
 
 
@@ -752,6 +783,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateGroup.</param>
         /// 
         /// <returns>Returns a  CreateGroupResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateGroup">REST API Reference for CreateGroup Operation</seealso>
         CreateGroupResponse EndCreateGroup(IAsyncResult asyncResult);
 
         #endregion
@@ -783,6 +815,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateInstanceProfile">REST API Reference for CreateInstanceProfile Operation</seealso>
         CreateInstanceProfileResponse CreateInstanceProfile(CreateInstanceProfileRequest request);
 
         /// <summary>
@@ -796,6 +829,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateInstanceProfile
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateInstanceProfile">REST API Reference for CreateInstanceProfile Operation</seealso>
         IAsyncResult BeginCreateInstanceProfile(CreateInstanceProfileRequest request, AsyncCallback callback, object state);
 
 
@@ -807,6 +841,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateInstanceProfile.</param>
         /// 
         /// <returns>Returns a  CreateInstanceProfileResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateInstanceProfile">REST API Reference for CreateInstanceProfile Operation</seealso>
         CreateInstanceProfileResponse EndCreateInstanceProfile(IAsyncResult asyncResult);
 
         #endregion
@@ -841,6 +876,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateLoginProfile">REST API Reference for CreateLoginProfile Operation</seealso>
         CreateLoginProfileResponse CreateLoginProfile(CreateLoginProfileRequest request);
 
         /// <summary>
@@ -854,6 +890,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateLoginProfile
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateLoginProfile">REST API Reference for CreateLoginProfile Operation</seealso>
         IAsyncResult BeginCreateLoginProfile(CreateLoginProfileRequest request, AsyncCallback callback, object state);
 
 
@@ -865,6 +902,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateLoginProfile.</param>
         /// 
         /// <returns>Returns a  CreateLoginProfileResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateLoginProfile">REST API Reference for CreateLoginProfile Operation</seealso>
         CreateLoginProfileResponse EndCreateLoginProfile(IAsyncResult asyncResult);
 
         #endregion
@@ -914,6 +952,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateOpenIDConnectProvider">REST API Reference for CreateOpenIDConnectProvider Operation</seealso>
         CreateOpenIDConnectProviderResponse CreateOpenIDConnectProvider(CreateOpenIDConnectProviderRequest request);
 
         /// <summary>
@@ -927,6 +966,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateOpenIDConnectProvider
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateOpenIDConnectProvider">REST API Reference for CreateOpenIDConnectProvider Operation</seealso>
         IAsyncResult BeginCreateOpenIDConnectProvider(CreateOpenIDConnectProviderRequest request, AsyncCallback callback, object state);
 
 
@@ -938,6 +978,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateOpenIDConnectProvider.</param>
         /// 
         /// <returns>Returns a  CreateOpenIDConnectProviderResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateOpenIDConnectProvider">REST API Reference for CreateOpenIDConnectProvider Operation</seealso>
         CreateOpenIDConnectProviderResponse EndCreateOpenIDConnectProvider(IAsyncResult asyncResult);
 
         #endregion
@@ -982,6 +1023,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreatePolicy">REST API Reference for CreatePolicy Operation</seealso>
         CreatePolicyResponse CreatePolicy(CreatePolicyRequest request);
 
         /// <summary>
@@ -995,6 +1037,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreatePolicy
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreatePolicy">REST API Reference for CreatePolicy Operation</seealso>
         IAsyncResult BeginCreatePolicy(CreatePolicyRequest request, AsyncCallback callback, object state);
 
 
@@ -1006,6 +1049,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreatePolicy.</param>
         /// 
         /// <returns>Returns a  CreatePolicyResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreatePolicy">REST API Reference for CreatePolicy Operation</seealso>
         CreatePolicyResponse EndCreatePolicy(IAsyncResult asyncResult);
 
         #endregion
@@ -1053,6 +1097,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreatePolicyVersion">REST API Reference for CreatePolicyVersion Operation</seealso>
         CreatePolicyVersionResponse CreatePolicyVersion(CreatePolicyVersionRequest request);
 
         /// <summary>
@@ -1066,6 +1111,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreatePolicyVersion
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreatePolicyVersion">REST API Reference for CreatePolicyVersion Operation</seealso>
         IAsyncResult BeginCreatePolicyVersion(CreatePolicyVersionRequest request, AsyncCallback callback, object state);
 
 
@@ -1077,6 +1123,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreatePolicyVersion.</param>
         /// 
         /// <returns>Returns a  CreatePolicyVersionResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreatePolicyVersion">REST API Reference for CreatePolicyVersion Operation</seealso>
         CreatePolicyVersionResponse EndCreatePolicyVersion(IAsyncResult asyncResult);
 
         #endregion
@@ -1108,6 +1155,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateRole">REST API Reference for CreateRole Operation</seealso>
         CreateRoleResponse CreateRole(CreateRoleRequest request);
 
         /// <summary>
@@ -1121,6 +1169,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateRole
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateRole">REST API Reference for CreateRole Operation</seealso>
         IAsyncResult BeginCreateRole(CreateRoleRequest request, AsyncCallback callback, object state);
 
 
@@ -1132,6 +1181,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateRole.</param>
         /// 
         /// <returns>Returns a  CreateRoleResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateRole">REST API Reference for CreateRole Operation</seealso>
         CreateRoleResponse EndCreateRole(IAsyncResult asyncResult);
 
         #endregion
@@ -1187,6 +1237,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateSAMLProvider">REST API Reference for CreateSAMLProvider Operation</seealso>
         CreateSAMLProviderResponse CreateSAMLProvider(CreateSAMLProviderRequest request);
 
         /// <summary>
@@ -1200,6 +1251,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateSAMLProvider
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateSAMLProvider">REST API Reference for CreateSAMLProvider Operation</seealso>
         IAsyncResult BeginCreateSAMLProvider(CreateSAMLProviderRequest request, AsyncCallback callback, object state);
 
 
@@ -1211,7 +1263,81 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateSAMLProvider.</param>
         /// 
         /// <returns>Returns a  CreateSAMLProviderResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateSAMLProvider">REST API Reference for CreateSAMLProvider Operation</seealso>
         CreateSAMLProviderResponse EndCreateSAMLProvider(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateServiceSpecificCredential
+
+
+        /// <summary>
+        /// Generates a set of credentials consisting of a user name and password that can be
+        /// used to access the service specified in the request. These credentials are generated
+        /// by IAM, and can be used only for the specified service. 
+        /// 
+        ///  
+        /// <para>
+        /// You can have a maximum of two sets of service-specific credentials for each supported
+        /// service per user.
+        /// </para>
+        ///  
+        /// <para>
+        /// The only supported service at this time is AWS CodeCommit.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can reset the password to a new service-generated value by calling <a>ResetServiceSpecificCredential</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about service-specific credentials, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_ssh-keys.html">Using
+        /// IAM with AWS CodeCommit: Git Credentials, SSH Keys, and AWS Access Keys</a> in the
+        /// <i>IAM User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateServiceSpecificCredential service method.</param>
+        /// 
+        /// <returns>The response from the CreateServiceSpecificCredential service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error message describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceNotSupportedException">
+        /// The specified service does not support service-specific credentials.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateServiceSpecificCredential">REST API Reference for CreateServiceSpecificCredential Operation</seealso>
+        CreateServiceSpecificCredentialResponse CreateServiceSpecificCredential(CreateServiceSpecificCredentialRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateServiceSpecificCredential operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateServiceSpecificCredential operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateServiceSpecificCredential
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateServiceSpecificCredential">REST API Reference for CreateServiceSpecificCredential Operation</seealso>
+        IAsyncResult BeginCreateServiceSpecificCredential(CreateServiceSpecificCredentialRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateServiceSpecificCredential operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateServiceSpecificCredential.</param>
+        /// 
+        /// <returns>Returns a  CreateServiceSpecificCredentialResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateServiceSpecificCredential">REST API Reference for CreateServiceSpecificCredential Operation</seealso>
+        CreateServiceSpecificCredentialResponse EndCreateServiceSpecificCredential(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1245,6 +1371,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateUser">REST API Reference for CreateUser Operation</seealso>
         CreateUserResponse CreateUser(CreateUserRequest request);
 
         /// <summary>
@@ -1258,6 +1385,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateUser
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateUser">REST API Reference for CreateUser Operation</seealso>
         IAsyncResult BeginCreateUser(CreateUserRequest request, AsyncCallback callback, object state);
 
 
@@ -1269,6 +1397,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateUser.</param>
         /// 
         /// <returns>Returns a  CreateUserResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateUser">REST API Reference for CreateUser Operation</seealso>
         CreateUserResponse EndCreateUser(IAsyncResult asyncResult);
 
         #endregion
@@ -1309,6 +1438,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateVirtualMFADevice">REST API Reference for CreateVirtualMFADevice Operation</seealso>
         CreateVirtualMFADeviceResponse CreateVirtualMFADevice(CreateVirtualMFADeviceRequest request);
 
         /// <summary>
@@ -1322,6 +1452,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateVirtualMFADevice
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateVirtualMFADevice">REST API Reference for CreateVirtualMFADevice Operation</seealso>
         IAsyncResult BeginCreateVirtualMFADevice(CreateVirtualMFADeviceRequest request, AsyncCallback callback, object state);
 
 
@@ -1333,6 +1464,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateVirtualMFADevice.</param>
         /// 
         /// <returns>Returns a  CreateVirtualMFADeviceResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateVirtualMFADevice">REST API Reference for CreateVirtualMFADevice Operation</seealso>
         CreateVirtualMFADeviceResponse EndCreateVirtualMFADevice(IAsyncResult asyncResult);
 
         #endregion
@@ -1371,6 +1503,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeactivateMFADevice">REST API Reference for DeactivateMFADevice Operation</seealso>
         DeactivateMFADeviceResponse DeactivateMFADevice(DeactivateMFADeviceRequest request);
 
         /// <summary>
@@ -1384,6 +1517,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeactivateMFADevice
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeactivateMFADevice">REST API Reference for DeactivateMFADevice Operation</seealso>
         IAsyncResult BeginDeactivateMFADevice(DeactivateMFADeviceRequest request, AsyncCallback callback, object state);
 
 
@@ -1395,6 +1529,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeactivateMFADevice.</param>
         /// 
         /// <returns>Returns a  DeactivateMFADeviceResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeactivateMFADevice">REST API Reference for DeactivateMFADevice Operation</seealso>
         DeactivateMFADeviceResponse EndDeactivateMFADevice(IAsyncResult asyncResult);
 
         #endregion
@@ -1427,6 +1562,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteAccessKey">REST API Reference for DeleteAccessKey Operation</seealso>
         DeleteAccessKeyResponse DeleteAccessKey(DeleteAccessKeyRequest request);
 
         /// <summary>
@@ -1440,6 +1576,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteAccessKey
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteAccessKey">REST API Reference for DeleteAccessKey Operation</seealso>
         IAsyncResult BeginDeleteAccessKey(DeleteAccessKeyRequest request, AsyncCallback callback, object state);
 
 
@@ -1451,6 +1588,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAccessKey.</param>
         /// 
         /// <returns>Returns a  DeleteAccessKeyResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteAccessKey">REST API Reference for DeleteAccessKey Operation</seealso>
         DeleteAccessKeyResponse EndDeleteAccessKey(IAsyncResult asyncResult);
 
         #endregion
@@ -1477,6 +1615,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteAccountAlias">REST API Reference for DeleteAccountAlias Operation</seealso>
         DeleteAccountAliasResponse DeleteAccountAlias(DeleteAccountAliasRequest request);
 
         /// <summary>
@@ -1490,6 +1629,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteAccountAlias
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteAccountAlias">REST API Reference for DeleteAccountAlias Operation</seealso>
         IAsyncResult BeginDeleteAccountAlias(DeleteAccountAliasRequest request, AsyncCallback callback, object state);
 
 
@@ -1501,6 +1641,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAccountAlias.</param>
         /// 
         /// <returns>Returns a  DeleteAccountAliasResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteAccountAlias">REST API Reference for DeleteAccountAlias Operation</seealso>
         DeleteAccountAliasResponse EndDeleteAccountAlias(IAsyncResult asyncResult);
 
         #endregion
@@ -1524,6 +1665,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteAccountPasswordPolicy">REST API Reference for DeleteAccountPasswordPolicy Operation</seealso>
         DeleteAccountPasswordPolicyResponse DeleteAccountPasswordPolicy();
 
         /// <summary>
@@ -1543,6 +1685,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteAccountPasswordPolicy">REST API Reference for DeleteAccountPasswordPolicy Operation</seealso>
         DeleteAccountPasswordPolicyResponse DeleteAccountPasswordPolicy(DeleteAccountPasswordPolicyRequest request);
 
         /// <summary>
@@ -1556,6 +1699,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteAccountPasswordPolicy
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteAccountPasswordPolicy">REST API Reference for DeleteAccountPasswordPolicy Operation</seealso>
         IAsyncResult BeginDeleteAccountPasswordPolicy(DeleteAccountPasswordPolicyRequest request, AsyncCallback callback, object state);
 
 
@@ -1567,6 +1711,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAccountPasswordPolicy.</param>
         /// 
         /// <returns>Returns a  DeleteAccountPasswordPolicyResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteAccountPasswordPolicy">REST API Reference for DeleteAccountPasswordPolicy Operation</seealso>
         DeleteAccountPasswordPolicyResponse EndDeleteAccountPasswordPolicy(IAsyncResult asyncResult);
 
         #endregion
@@ -1596,6 +1741,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteGroup">REST API Reference for DeleteGroup Operation</seealso>
         DeleteGroupResponse DeleteGroup(DeleteGroupRequest request);
 
         /// <summary>
@@ -1609,6 +1755,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteGroup
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteGroup">REST API Reference for DeleteGroup Operation</seealso>
         IAsyncResult BeginDeleteGroup(DeleteGroupRequest request, AsyncCallback callback, object state);
 
 
@@ -1620,6 +1767,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteGroup.</param>
         /// 
         /// <returns>Returns a  DeleteGroupResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteGroup">REST API Reference for DeleteGroup Operation</seealso>
         DeleteGroupResponse EndDeleteGroup(IAsyncResult asyncResult);
 
         #endregion
@@ -1652,6 +1800,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteGroupPolicy">REST API Reference for DeleteGroupPolicy Operation</seealso>
         DeleteGroupPolicyResponse DeleteGroupPolicy(DeleteGroupPolicyRequest request);
 
         /// <summary>
@@ -1665,6 +1814,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteGroupPolicy
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteGroupPolicy">REST API Reference for DeleteGroupPolicy Operation</seealso>
         IAsyncResult BeginDeleteGroupPolicy(DeleteGroupPolicyRequest request, AsyncCallback callback, object state);
 
 
@@ -1676,6 +1826,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteGroupPolicy.</param>
         /// 
         /// <returns>Returns a  DeleteGroupPolicyResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteGroupPolicy">REST API Reference for DeleteGroupPolicy Operation</seealso>
         DeleteGroupPolicyResponse EndDeleteGroupPolicy(IAsyncResult asyncResult);
 
         #endregion
@@ -1717,6 +1868,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteInstanceProfile">REST API Reference for DeleteInstanceProfile Operation</seealso>
         DeleteInstanceProfileResponse DeleteInstanceProfile(DeleteInstanceProfileRequest request);
 
         /// <summary>
@@ -1730,6 +1882,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteInstanceProfile
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteInstanceProfile">REST API Reference for DeleteInstanceProfile Operation</seealso>
         IAsyncResult BeginDeleteInstanceProfile(DeleteInstanceProfileRequest request, AsyncCallback callback, object state);
 
 
@@ -1741,6 +1894,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteInstanceProfile.</param>
         /// 
         /// <returns>Returns a  DeleteInstanceProfileResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteInstanceProfile">REST API Reference for DeleteInstanceProfile Operation</seealso>
         DeleteInstanceProfileResponse EndDeleteInstanceProfile(IAsyncResult asyncResult);
 
         #endregion
@@ -1782,6 +1936,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteLoginProfile">REST API Reference for DeleteLoginProfile Operation</seealso>
         DeleteLoginProfileResponse DeleteLoginProfile(DeleteLoginProfileRequest request);
 
         /// <summary>
@@ -1795,6 +1950,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteLoginProfile
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteLoginProfile">REST API Reference for DeleteLoginProfile Operation</seealso>
         IAsyncResult BeginDeleteLoginProfile(DeleteLoginProfileRequest request, AsyncCallback callback, object state);
 
 
@@ -1806,6 +1962,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteLoginProfile.</param>
         /// 
         /// <returns>Returns a  DeleteLoginProfileResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteLoginProfile">REST API Reference for DeleteLoginProfile Operation</seealso>
         DeleteLoginProfileResponse EndDeleteLoginProfile(IAsyncResult asyncResult);
 
         #endregion
@@ -1842,6 +1999,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteOpenIDConnectProvider">REST API Reference for DeleteOpenIDConnectProvider Operation</seealso>
         DeleteOpenIDConnectProviderResponse DeleteOpenIDConnectProvider(DeleteOpenIDConnectProviderRequest request);
 
         /// <summary>
@@ -1855,6 +2013,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteOpenIDConnectProvider
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteOpenIDConnectProvider">REST API Reference for DeleteOpenIDConnectProvider Operation</seealso>
         IAsyncResult BeginDeleteOpenIDConnectProvider(DeleteOpenIDConnectProviderRequest request, AsyncCallback callback, object state);
 
 
@@ -1866,6 +2025,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteOpenIDConnectProvider.</param>
         /// 
         /// <returns>Returns a  DeleteOpenIDConnectProviderResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteOpenIDConnectProvider">REST API Reference for DeleteOpenIDConnectProvider Operation</seealso>
         DeleteOpenIDConnectProviderResponse EndDeleteOpenIDConnectProvider(IAsyncResult asyncResult);
 
         #endregion
@@ -1928,6 +2088,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeletePolicy">REST API Reference for DeletePolicy Operation</seealso>
         DeletePolicyResponse DeletePolicy(DeletePolicyRequest request);
 
         /// <summary>
@@ -1941,6 +2102,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeletePolicy
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeletePolicy">REST API Reference for DeletePolicy Operation</seealso>
         IAsyncResult BeginDeletePolicy(DeletePolicyRequest request, AsyncCallback callback, object state);
 
 
@@ -1952,6 +2114,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeletePolicy.</param>
         /// 
         /// <returns>Returns a  DeletePolicyResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeletePolicy">REST API Reference for DeletePolicy Operation</seealso>
         DeletePolicyResponse EndDeletePolicy(IAsyncResult asyncResult);
 
         #endregion
@@ -1996,6 +2159,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeletePolicyVersion">REST API Reference for DeletePolicyVersion Operation</seealso>
         DeletePolicyVersionResponse DeletePolicyVersion(DeletePolicyVersionRequest request);
 
         /// <summary>
@@ -2009,6 +2173,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeletePolicyVersion
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeletePolicyVersion">REST API Reference for DeletePolicyVersion Operation</seealso>
         IAsyncResult BeginDeletePolicyVersion(DeletePolicyVersionRequest request, AsyncCallback callback, object state);
 
 
@@ -2020,6 +2185,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeletePolicyVersion.</param>
         /// 
         /// <returns>Returns a  DeletePolicyVersionResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeletePolicyVersion">REST API Reference for DeletePolicyVersion Operation</seealso>
         DeletePolicyVersionResponse EndDeletePolicyVersion(IAsyncResult asyncResult);
 
         #endregion
@@ -2058,6 +2224,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteRole">REST API Reference for DeleteRole Operation</seealso>
         DeleteRoleResponse DeleteRole(DeleteRoleRequest request);
 
         /// <summary>
@@ -2071,6 +2238,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteRole
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteRole">REST API Reference for DeleteRole Operation</seealso>
         IAsyncResult BeginDeleteRole(DeleteRoleRequest request, AsyncCallback callback, object state);
 
 
@@ -2082,6 +2250,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteRole.</param>
         /// 
         /// <returns>Returns a  DeleteRoleResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteRole">REST API Reference for DeleteRole Operation</seealso>
         DeleteRoleResponse EndDeleteRole(IAsyncResult asyncResult);
 
         #endregion
@@ -2114,6 +2283,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteRolePolicy">REST API Reference for DeleteRolePolicy Operation</seealso>
         DeleteRolePolicyResponse DeleteRolePolicy(DeleteRolePolicyRequest request);
 
         /// <summary>
@@ -2127,6 +2297,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteRolePolicy
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteRolePolicy">REST API Reference for DeleteRolePolicy Operation</seealso>
         IAsyncResult BeginDeleteRolePolicy(DeleteRolePolicyRequest request, AsyncCallback callback, object state);
 
 
@@ -2138,6 +2309,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteRolePolicy.</param>
         /// 
         /// <returns>Returns a  DeleteRolePolicyResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteRolePolicy">REST API Reference for DeleteRolePolicy Operation</seealso>
         DeleteRolePolicyResponse EndDeleteRolePolicy(IAsyncResult asyncResult);
 
         #endregion
@@ -2179,6 +2351,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteSAMLProvider">REST API Reference for DeleteSAMLProvider Operation</seealso>
         DeleteSAMLProviderResponse DeleteSAMLProvider(DeleteSAMLProviderRequest request);
 
         /// <summary>
@@ -2192,6 +2365,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteSAMLProvider
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteSAMLProvider">REST API Reference for DeleteSAMLProvider Operation</seealso>
         IAsyncResult BeginDeleteSAMLProvider(DeleteSAMLProviderRequest request, AsyncCallback callback, object state);
 
 
@@ -2203,6 +2377,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteSAMLProvider.</param>
         /// 
         /// <returns>Returns a  DeleteSAMLProviderResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteSAMLProvider">REST API Reference for DeleteSAMLProvider Operation</seealso>
         DeleteSAMLProviderResponse EndDeleteSAMLProvider(IAsyncResult asyncResult);
 
         #endregion
@@ -2249,6 +2424,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteServerCertificate">REST API Reference for DeleteServerCertificate Operation</seealso>
         DeleteServerCertificateResponse DeleteServerCertificate(DeleteServerCertificateRequest request);
 
         /// <summary>
@@ -2262,6 +2438,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteServerCertificate
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteServerCertificate">REST API Reference for DeleteServerCertificate Operation</seealso>
         IAsyncResult BeginDeleteServerCertificate(DeleteServerCertificateRequest request, AsyncCallback callback, object state);
 
 
@@ -2273,7 +2450,52 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteServerCertificate.</param>
         /// 
         /// <returns>Returns a  DeleteServerCertificateResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteServerCertificate">REST API Reference for DeleteServerCertificate Operation</seealso>
         DeleteServerCertificateResponse EndDeleteServerCertificate(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteServiceSpecificCredential
+
+
+        /// <summary>
+        /// Deletes the specified service-specific credential.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteServiceSpecificCredential service method.</param>
+        /// 
+        /// <returns>The response from the DeleteServiceSpecificCredential service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteServiceSpecificCredential">REST API Reference for DeleteServiceSpecificCredential Operation</seealso>
+        DeleteServiceSpecificCredentialResponse DeleteServiceSpecificCredential(DeleteServiceSpecificCredentialRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteServiceSpecificCredential operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteServiceSpecificCredential operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteServiceSpecificCredential
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteServiceSpecificCredential">REST API Reference for DeleteServiceSpecificCredential Operation</seealso>
+        IAsyncResult BeginDeleteServiceSpecificCredential(DeleteServiceSpecificCredentialRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteServiceSpecificCredential operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteServiceSpecificCredential.</param>
+        /// 
+        /// <returns>Returns a  DeleteServiceSpecificCredentialResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteServiceSpecificCredential">REST API Reference for DeleteServiceSpecificCredential Operation</seealso>
+        DeleteServiceSpecificCredentialResponse EndDeleteServiceSpecificCredential(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2305,6 +2527,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteSigningCertificate">REST API Reference for DeleteSigningCertificate Operation</seealso>
         DeleteSigningCertificateResponse DeleteSigningCertificate(DeleteSigningCertificateRequest request);
 
         /// <summary>
@@ -2318,6 +2541,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteSigningCertificate
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteSigningCertificate">REST API Reference for DeleteSigningCertificate Operation</seealso>
         IAsyncResult BeginDeleteSigningCertificate(DeleteSigningCertificateRequest request, AsyncCallback callback, object state);
 
 
@@ -2329,6 +2553,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteSigningCertificate.</param>
         /// 
         /// <returns>Returns a  DeleteSigningCertificateResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteSigningCertificate">REST API Reference for DeleteSigningCertificate Operation</seealso>
         DeleteSigningCertificateResponse EndDeleteSigningCertificate(IAsyncResult asyncResult);
 
         #endregion
@@ -2354,6 +2579,7 @@ namespace Amazon.IdentityManagement
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteSSHPublicKey">REST API Reference for DeleteSSHPublicKey Operation</seealso>
         DeleteSSHPublicKeyResponse DeleteSSHPublicKey(DeleteSSHPublicKeyRequest request);
 
         /// <summary>
@@ -2367,6 +2593,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteSSHPublicKey
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteSSHPublicKey">REST API Reference for DeleteSSHPublicKey Operation</seealso>
         IAsyncResult BeginDeleteSSHPublicKey(DeleteSSHPublicKeyRequest request, AsyncCallback callback, object state);
 
 
@@ -2378,6 +2605,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteSSHPublicKey.</param>
         /// 
         /// <returns>Returns a  DeleteSSHPublicKeyResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteSSHPublicKey">REST API Reference for DeleteSSHPublicKey Operation</seealso>
         DeleteSSHPublicKeyResponse EndDeleteSSHPublicKey(IAsyncResult asyncResult);
 
         #endregion
@@ -2407,6 +2635,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteUser">REST API Reference for DeleteUser Operation</seealso>
         DeleteUserResponse DeleteUser(DeleteUserRequest request);
 
         /// <summary>
@@ -2420,6 +2649,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteUser
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteUser">REST API Reference for DeleteUser Operation</seealso>
         IAsyncResult BeginDeleteUser(DeleteUserRequest request, AsyncCallback callback, object state);
 
 
@@ -2431,6 +2661,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteUser.</param>
         /// 
         /// <returns>Returns a  DeleteUserResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteUser">REST API Reference for DeleteUser Operation</seealso>
         DeleteUserResponse EndDeleteUser(IAsyncResult asyncResult);
 
         #endregion
@@ -2463,6 +2694,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteUserPolicy">REST API Reference for DeleteUserPolicy Operation</seealso>
         DeleteUserPolicyResponse DeleteUserPolicy(DeleteUserPolicyRequest request);
 
         /// <summary>
@@ -2476,6 +2708,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteUserPolicy
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteUserPolicy">REST API Reference for DeleteUserPolicy Operation</seealso>
         IAsyncResult BeginDeleteUserPolicy(DeleteUserPolicyRequest request, AsyncCallback callback, object state);
 
 
@@ -2487,6 +2720,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteUserPolicy.</param>
         /// 
         /// <returns>Returns a  DeleteUserPolicyResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteUserPolicy">REST API Reference for DeleteUserPolicy Operation</seealso>
         DeleteUserPolicyResponse EndDeleteUserPolicy(IAsyncResult asyncResult);
 
         #endregion
@@ -2522,6 +2756,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteVirtualMFADevice">REST API Reference for DeleteVirtualMFADevice Operation</seealso>
         DeleteVirtualMFADeviceResponse DeleteVirtualMFADevice(DeleteVirtualMFADeviceRequest request);
 
         /// <summary>
@@ -2535,6 +2770,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteVirtualMFADevice
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteVirtualMFADevice">REST API Reference for DeleteVirtualMFADevice Operation</seealso>
         IAsyncResult BeginDeleteVirtualMFADevice(DeleteVirtualMFADeviceRequest request, AsyncCallback callback, object state);
 
 
@@ -2546,6 +2782,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteVirtualMFADevice.</param>
         /// 
         /// <returns>Returns a  DeleteVirtualMFADeviceResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteVirtualMFADevice">REST API Reference for DeleteVirtualMFADevice Operation</seealso>
         DeleteVirtualMFADeviceResponse EndDeleteVirtualMFADevice(IAsyncResult asyncResult);
 
         #endregion
@@ -2581,6 +2818,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DetachGroupPolicy">REST API Reference for DetachGroupPolicy Operation</seealso>
         DetachGroupPolicyResponse DetachGroupPolicy(DetachGroupPolicyRequest request);
 
         /// <summary>
@@ -2594,6 +2832,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDetachGroupPolicy
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DetachGroupPolicy">REST API Reference for DetachGroupPolicy Operation</seealso>
         IAsyncResult BeginDetachGroupPolicy(DetachGroupPolicyRequest request, AsyncCallback callback, object state);
 
 
@@ -2605,6 +2844,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDetachGroupPolicy.</param>
         /// 
         /// <returns>Returns a  DetachGroupPolicyResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DetachGroupPolicy">REST API Reference for DetachGroupPolicy Operation</seealso>
         DetachGroupPolicyResponse EndDetachGroupPolicy(IAsyncResult asyncResult);
 
         #endregion
@@ -2640,6 +2880,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DetachRolePolicy">REST API Reference for DetachRolePolicy Operation</seealso>
         DetachRolePolicyResponse DetachRolePolicy(DetachRolePolicyRequest request);
 
         /// <summary>
@@ -2653,6 +2894,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDetachRolePolicy
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DetachRolePolicy">REST API Reference for DetachRolePolicy Operation</seealso>
         IAsyncResult BeginDetachRolePolicy(DetachRolePolicyRequest request, AsyncCallback callback, object state);
 
 
@@ -2664,6 +2906,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDetachRolePolicy.</param>
         /// 
         /// <returns>Returns a  DetachRolePolicyResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DetachRolePolicy">REST API Reference for DetachRolePolicy Operation</seealso>
         DetachRolePolicyResponse EndDetachRolePolicy(IAsyncResult asyncResult);
 
         #endregion
@@ -2699,6 +2942,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DetachUserPolicy">REST API Reference for DetachUserPolicy Operation</seealso>
         DetachUserPolicyResponse DetachUserPolicy(DetachUserPolicyRequest request);
 
         /// <summary>
@@ -2712,6 +2956,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDetachUserPolicy
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DetachUserPolicy">REST API Reference for DetachUserPolicy Operation</seealso>
         IAsyncResult BeginDetachUserPolicy(DetachUserPolicyRequest request, AsyncCallback callback, object state);
 
 
@@ -2723,6 +2968,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDetachUserPolicy.</param>
         /// 
         /// <returns>Returns a  DetachUserPolicyResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DetachUserPolicy">REST API Reference for DetachUserPolicy Operation</seealso>
         DetachUserPolicyResponse EndDetachUserPolicy(IAsyncResult asyncResult);
 
         #endregion
@@ -2762,6 +3008,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/EnableMFADevice">REST API Reference for EnableMFADevice Operation</seealso>
         EnableMFADeviceResponse EnableMFADevice(EnableMFADeviceRequest request);
 
         /// <summary>
@@ -2775,6 +3022,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndEnableMFADevice
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/EnableMFADevice">REST API Reference for EnableMFADevice Operation</seealso>
         IAsyncResult BeginEnableMFADevice(EnableMFADeviceRequest request, AsyncCallback callback, object state);
 
 
@@ -2786,6 +3034,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginEnableMFADevice.</param>
         /// 
         /// <returns>Returns a  EnableMFADeviceResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/EnableMFADevice">REST API Reference for EnableMFADevice Operation</seealso>
         EnableMFADeviceResponse EndEnableMFADevice(IAsyncResult asyncResult);
 
         #endregion
@@ -2807,6 +3056,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GenerateCredentialReport">REST API Reference for GenerateCredentialReport Operation</seealso>
         GenerateCredentialReportResponse GenerateCredentialReport();
 
         /// <summary>
@@ -2824,6 +3074,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GenerateCredentialReport">REST API Reference for GenerateCredentialReport Operation</seealso>
         GenerateCredentialReportResponse GenerateCredentialReport(GenerateCredentialReportRequest request);
 
         /// <summary>
@@ -2837,6 +3088,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGenerateCredentialReport
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GenerateCredentialReport">REST API Reference for GenerateCredentialReport Operation</seealso>
         IAsyncResult BeginGenerateCredentialReport(GenerateCredentialReportRequest request, AsyncCallback callback, object state);
 
 
@@ -2848,6 +3100,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGenerateCredentialReport.</param>
         /// 
         /// <returns>Returns a  GenerateCredentialReportResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GenerateCredentialReport">REST API Reference for GenerateCredentialReport Operation</seealso>
         GenerateCredentialReportResponse EndGenerateCredentialReport(IAsyncResult asyncResult);
 
         #endregion
@@ -2867,6 +3120,7 @@ namespace Amazon.IdentityManagement
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetAccessKeyLastUsed">REST API Reference for GetAccessKeyLastUsed Operation</seealso>
         GetAccessKeyLastUsedResponse GetAccessKeyLastUsed(GetAccessKeyLastUsedRequest request);
 
         /// <summary>
@@ -2880,6 +3134,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAccessKeyLastUsed
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetAccessKeyLastUsed">REST API Reference for GetAccessKeyLastUsed Operation</seealso>
         IAsyncResult BeginGetAccessKeyLastUsed(GetAccessKeyLastUsedRequest request, AsyncCallback callback, object state);
 
 
@@ -2891,6 +3146,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAccessKeyLastUsed.</param>
         /// 
         /// <returns>Returns a  GetAccessKeyLastUsedResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetAccessKeyLastUsed">REST API Reference for GetAccessKeyLastUsed Operation</seealso>
         GetAccessKeyLastUsedResponse EndGetAccessKeyLastUsed(IAsyncResult asyncResult);
 
         #endregion
@@ -2916,6 +3172,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetAccountAuthorizationDetails">REST API Reference for GetAccountAuthorizationDetails Operation</seealso>
         GetAccountAuthorizationDetailsResponse GetAccountAuthorizationDetails(GetAccountAuthorizationDetailsRequest request);
 
         /// <summary>
@@ -2929,6 +3186,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAccountAuthorizationDetails
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetAccountAuthorizationDetails">REST API Reference for GetAccountAuthorizationDetails Operation</seealso>
         IAsyncResult BeginGetAccountAuthorizationDetails(GetAccountAuthorizationDetailsRequest request, AsyncCallback callback, object state);
 
 
@@ -2940,6 +3198,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAccountAuthorizationDetails.</param>
         /// 
         /// <returns>Returns a  GetAccountAuthorizationDetailsResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetAccountAuthorizationDetails">REST API Reference for GetAccountAuthorizationDetails Operation</seealso>
         GetAccountAuthorizationDetailsResponse EndGetAccountAuthorizationDetails(IAsyncResult asyncResult);
 
         #endregion
@@ -2961,6 +3220,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetAccountPasswordPolicy">REST API Reference for GetAccountPasswordPolicy Operation</seealso>
         GetAccountPasswordPolicyResponse GetAccountPasswordPolicy();
 
         /// <summary>
@@ -2978,6 +3238,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetAccountPasswordPolicy">REST API Reference for GetAccountPasswordPolicy Operation</seealso>
         GetAccountPasswordPolicyResponse GetAccountPasswordPolicy(GetAccountPasswordPolicyRequest request);
 
         /// <summary>
@@ -2991,6 +3252,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAccountPasswordPolicy
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetAccountPasswordPolicy">REST API Reference for GetAccountPasswordPolicy Operation</seealso>
         IAsyncResult BeginGetAccountPasswordPolicy(GetAccountPasswordPolicyRequest request, AsyncCallback callback, object state);
 
 
@@ -3002,6 +3264,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAccountPasswordPolicy.</param>
         /// 
         /// <returns>Returns a  GetAccountPasswordPolicyResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetAccountPasswordPolicy">REST API Reference for GetAccountPasswordPolicy Operation</seealso>
         GetAccountPasswordPolicyResponse EndGetAccountPasswordPolicy(IAsyncResult asyncResult);
 
         #endregion
@@ -3023,6 +3286,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetAccountSummary">REST API Reference for GetAccountSummary Operation</seealso>
         GetAccountSummaryResponse GetAccountSummary();
 
         /// <summary>
@@ -3040,6 +3304,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetAccountSummary">REST API Reference for GetAccountSummary Operation</seealso>
         GetAccountSummaryResponse GetAccountSummary(GetAccountSummaryRequest request);
 
         /// <summary>
@@ -3053,6 +3318,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAccountSummary
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetAccountSummary">REST API Reference for GetAccountSummary Operation</seealso>
         IAsyncResult BeginGetAccountSummary(GetAccountSummaryRequest request, AsyncCallback callback, object state);
 
 
@@ -3064,6 +3330,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAccountSummary.</param>
         /// 
         /// <returns>Returns a  GetAccountSummaryResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetAccountSummary">REST API Reference for GetAccountSummary Operation</seealso>
         GetAccountSummaryResponse EndGetAccountSummary(IAsyncResult asyncResult);
 
         #endregion
@@ -3086,13 +3353,14 @@ namespace Amazon.IdentityManagement
         /// URL encoded to be included as a part of a real HTML request.
         /// </para>
         /// </summary>
-        /// <param name="policyInputList">A list of policies for which you want the list of context keys referenced in those policies. Each document is specified as a string containing the complete, valid JSON text of an IAM policy. The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters consisting of any printable ASCII character ranging from the space character (\u0020) through end of the ASCII character range (\u00FF). It also includes the special characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</param>
+        /// <param name="policyInputList">A list of policies for which you want the list of context keys referenced in those policies. Each document is specified as a string containing the complete, valid JSON text of an IAM policy. The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of characters consisting of any printable ASCII character ranging from the space character (\u0020) through end of the ASCII character range as well as the printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF). It also includes the special characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</param>
         /// 
         /// <returns>The response from the GetContextKeysForCustomPolicy service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
         /// The request was rejected because an invalid or out-of-range value was supplied for
         /// an input parameter.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetContextKeysForCustomPolicy">REST API Reference for GetContextKeysForCustomPolicy Operation</seealso>
         GetContextKeysForCustomPolicyResponse GetContextKeysForCustomPolicy(List<string> policyInputList);
 
         /// <summary>
@@ -3117,6 +3385,7 @@ namespace Amazon.IdentityManagement
         /// The request was rejected because an invalid or out-of-range value was supplied for
         /// an input parameter.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetContextKeysForCustomPolicy">REST API Reference for GetContextKeysForCustomPolicy Operation</seealso>
         GetContextKeysForCustomPolicyResponse GetContextKeysForCustomPolicy(GetContextKeysForCustomPolicyRequest request);
 
         /// <summary>
@@ -3130,6 +3399,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetContextKeysForCustomPolicy
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetContextKeysForCustomPolicy">REST API Reference for GetContextKeysForCustomPolicy Operation</seealso>
         IAsyncResult BeginGetContextKeysForCustomPolicy(GetContextKeysForCustomPolicyRequest request, AsyncCallback callback, object state);
 
 
@@ -3141,6 +3411,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetContextKeysForCustomPolicy.</param>
         /// 
         /// <returns>Returns a  GetContextKeysForCustomPolicyResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetContextKeysForCustomPolicy">REST API Reference for GetContextKeysForCustomPolicy Operation</seealso>
         GetContextKeysForCustomPolicyResponse EndGetContextKeysForCustomPolicy(IAsyncResult asyncResult);
 
         #endregion
@@ -3185,6 +3456,7 @@ namespace Amazon.IdentityManagement
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetContextKeysForPrincipalPolicy">REST API Reference for GetContextKeysForPrincipalPolicy Operation</seealso>
         GetContextKeysForPrincipalPolicyResponse GetContextKeysForPrincipalPolicy(string policySourceArn);
 
         /// <summary>
@@ -3214,7 +3486,7 @@ namespace Amazon.IdentityManagement
         /// </para>
         /// </summary>
         /// <param name="policySourceArn">The ARN of a user, group, or role whose policies contain the context keys that you want listed. If you specify a user, the list includes context keys that are found in all policies attached to the user as well as to all groups that the user is a member of. If you pick a group or a role, then it includes only those context keys that are found in policies attached to that entity. Note that all parameters are shown in unencoded form here for clarity, but must be URL encoded to be included as a part of a real HTML request. For more information about ARNs, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</param>
-        /// <param name="policyInputList">An optional list of additional policies for which you want the list of context keys that are referenced. The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters consisting of any printable ASCII character ranging from the space character (\u0020) through end of the ASCII character range (\u00FF). It also includes the special characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</param>
+        /// <param name="policyInputList">An optional list of additional policies for which you want the list of context keys that are referenced. The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of characters consisting of any printable ASCII character ranging from the space character (\u0020) through end of the ASCII character range as well as the printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF). It also includes the special characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</param>
         /// 
         /// <returns>The response from the GetContextKeysForPrincipalPolicy service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
@@ -3225,6 +3497,7 @@ namespace Amazon.IdentityManagement
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetContextKeysForPrincipalPolicy">REST API Reference for GetContextKeysForPrincipalPolicy Operation</seealso>
         GetContextKeysForPrincipalPolicyResponse GetContextKeysForPrincipalPolicy(string policySourceArn, List<string> policyInputList);
 
         /// <summary>
@@ -3264,6 +3537,7 @@ namespace Amazon.IdentityManagement
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetContextKeysForPrincipalPolicy">REST API Reference for GetContextKeysForPrincipalPolicy Operation</seealso>
         GetContextKeysForPrincipalPolicyResponse GetContextKeysForPrincipalPolicy(GetContextKeysForPrincipalPolicyRequest request);
 
         /// <summary>
@@ -3277,6 +3551,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetContextKeysForPrincipalPolicy
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetContextKeysForPrincipalPolicy">REST API Reference for GetContextKeysForPrincipalPolicy Operation</seealso>
         IAsyncResult BeginGetContextKeysForPrincipalPolicy(GetContextKeysForPrincipalPolicyRequest request, AsyncCallback callback, object state);
 
 
@@ -3288,6 +3563,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetContextKeysForPrincipalPolicy.</param>
         /// 
         /// <returns>Returns a  GetContextKeysForPrincipalPolicyResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetContextKeysForPrincipalPolicy">REST API Reference for GetContextKeysForPrincipalPolicy Operation</seealso>
         GetContextKeysForPrincipalPolicyResponse EndGetContextKeysForPrincipalPolicy(IAsyncResult asyncResult);
 
         #endregion
@@ -3318,6 +3594,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetCredentialReport">REST API Reference for GetCredentialReport Operation</seealso>
         GetCredentialReportResponse GetCredentialReport();
 
         /// <summary>
@@ -3344,6 +3621,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetCredentialReport">REST API Reference for GetCredentialReport Operation</seealso>
         GetCredentialReportResponse GetCredentialReport(GetCredentialReportRequest request);
 
         /// <summary>
@@ -3357,6 +3635,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetCredentialReport
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetCredentialReport">REST API Reference for GetCredentialReport Operation</seealso>
         IAsyncResult BeginGetCredentialReport(GetCredentialReportRequest request, AsyncCallback callback, object state);
 
 
@@ -3368,6 +3647,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetCredentialReport.</param>
         /// 
         /// <returns>Returns a  GetCredentialReportResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetCredentialReport">REST API Reference for GetCredentialReport Operation</seealso>
         GetCredentialReportResponse EndGetCredentialReport(IAsyncResult asyncResult);
 
         #endregion
@@ -3389,6 +3669,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetGroup">REST API Reference for GetGroup Operation</seealso>
         GetGroupResponse GetGroup(GetGroupRequest request);
 
         /// <summary>
@@ -3402,6 +3683,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetGroup
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetGroup">REST API Reference for GetGroup Operation</seealso>
         IAsyncResult BeginGetGroup(GetGroupRequest request, AsyncCallback callback, object state);
 
 
@@ -3413,6 +3695,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetGroup.</param>
         /// 
         /// <returns>Returns a  GetGroupResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetGroup">REST API Reference for GetGroup Operation</seealso>
         GetGroupResponse EndGetGroup(IAsyncResult asyncResult);
 
         #endregion
@@ -3424,7 +3707,15 @@ namespace Amazon.IdentityManagement
         /// Retrieves the specified inline policy document that is embedded in the specified IAM
         /// group.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// Policies returned by this API are URL-encoded compliant with <a href="https://tools.ietf.org/html/rfc3986">RFC
+        /// 3986</a>. You can use a URL decoding method to convert the policy back to plain JSON
+        /// text. For example, if you use Java, you can use the <code>decode</code> method of
+        /// the <code>java.net.URLDecoder</code> utility class in the Java SDK. Other languages
+        /// and SDKs provide similar functionality.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// An IAM group can also have managed policies attached to it. To retrieve a managed
         /// policy document that is attached to a group, use <a>GetPolicy</a> to determine the
@@ -3447,6 +3738,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetGroupPolicy">REST API Reference for GetGroupPolicy Operation</seealso>
         GetGroupPolicyResponse GetGroupPolicy(GetGroupPolicyRequest request);
 
         /// <summary>
@@ -3460,6 +3752,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetGroupPolicy
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetGroupPolicy">REST API Reference for GetGroupPolicy Operation</seealso>
         IAsyncResult BeginGetGroupPolicy(GetGroupPolicyRequest request, AsyncCallback callback, object state);
 
 
@@ -3471,6 +3764,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetGroupPolicy.</param>
         /// 
         /// <returns>Returns a  GetGroupPolicyResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetGroupPolicy">REST API Reference for GetGroupPolicy Operation</seealso>
         GetGroupPolicyResponse EndGetGroupPolicy(IAsyncResult asyncResult);
 
         #endregion
@@ -3494,6 +3788,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetInstanceProfile">REST API Reference for GetInstanceProfile Operation</seealso>
         GetInstanceProfileResponse GetInstanceProfile(GetInstanceProfileRequest request);
 
         /// <summary>
@@ -3507,6 +3802,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetInstanceProfile
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetInstanceProfile">REST API Reference for GetInstanceProfile Operation</seealso>
         IAsyncResult BeginGetInstanceProfile(GetInstanceProfileRequest request, AsyncCallback callback, object state);
 
 
@@ -3518,6 +3814,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetInstanceProfile.</param>
         /// 
         /// <returns>Returns a  GetInstanceProfileResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetInstanceProfile">REST API Reference for GetInstanceProfile Operation</seealso>
         GetInstanceProfileResponse EndGetInstanceProfile(IAsyncResult asyncResult);
 
         #endregion
@@ -3540,6 +3837,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetLoginProfile">REST API Reference for GetLoginProfile Operation</seealso>
         GetLoginProfileResponse GetLoginProfile(GetLoginProfileRequest request);
 
         /// <summary>
@@ -3553,6 +3851,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetLoginProfile
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetLoginProfile">REST API Reference for GetLoginProfile Operation</seealso>
         IAsyncResult BeginGetLoginProfile(GetLoginProfileRequest request, AsyncCallback callback, object state);
 
 
@@ -3564,6 +3863,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetLoginProfile.</param>
         /// 
         /// <returns>Returns a  GetLoginProfileResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetLoginProfile">REST API Reference for GetLoginProfile Operation</seealso>
         GetLoginProfileResponse EndGetLoginProfile(IAsyncResult asyncResult);
 
         #endregion
@@ -3589,6 +3889,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetOpenIDConnectProvider">REST API Reference for GetOpenIDConnectProvider Operation</seealso>
         GetOpenIDConnectProviderResponse GetOpenIDConnectProvider(GetOpenIDConnectProviderRequest request);
 
         /// <summary>
@@ -3602,6 +3903,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetOpenIDConnectProvider
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetOpenIDConnectProvider">REST API Reference for GetOpenIDConnectProvider Operation</seealso>
         IAsyncResult BeginGetOpenIDConnectProvider(GetOpenIDConnectProviderRequest request, AsyncCallback callback, object state);
 
 
@@ -3613,6 +3915,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetOpenIDConnectProvider.</param>
         /// 
         /// <returns>Returns a  GetOpenIDConnectProviderResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetOpenIDConnectProvider">REST API Reference for GetOpenIDConnectProvider Operation</seealso>
         GetOpenIDConnectProviderResponse EndGetOpenIDConnectProvider(IAsyncResult asyncResult);
 
         #endregion
@@ -3654,6 +3957,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetPolicy">REST API Reference for GetPolicy Operation</seealso>
         GetPolicyResponse GetPolicy(GetPolicyRequest request);
 
         /// <summary>
@@ -3667,6 +3971,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetPolicy
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetPolicy">REST API Reference for GetPolicy Operation</seealso>
         IAsyncResult BeginGetPolicy(GetPolicyRequest request, AsyncCallback callback, object state);
 
 
@@ -3678,6 +3983,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetPolicy.</param>
         /// 
         /// <returns>Returns a  GetPolicyResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetPolicy">REST API Reference for GetPolicy Operation</seealso>
         GetPolicyResponse EndGetPolicy(IAsyncResult asyncResult);
 
         #endregion
@@ -3689,7 +3995,15 @@ namespace Amazon.IdentityManagement
         /// Retrieves information about the specified version of the specified managed policy,
         /// including the policy document.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// Policies returned by this API are URL-encoded compliant with <a href="https://tools.ietf.org/html/rfc3986">RFC
+        /// 3986</a>. You can use a URL decoding method to convert the policy back to plain JSON
+        /// text. For example, if you use Java, you can use the <code>decode</code> method of
+        /// the <code>java.net.URLDecoder</code> utility class in the Java SDK. Other languages
+        /// and SDKs provide similar functionality.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// To list the available versions for a policy, use <a>ListPolicyVersions</a>.
         /// </para>
@@ -3724,6 +4038,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetPolicyVersion">REST API Reference for GetPolicyVersion Operation</seealso>
         GetPolicyVersionResponse GetPolicyVersion(GetPolicyVersionRequest request);
 
         /// <summary>
@@ -3737,6 +4052,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetPolicyVersion
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetPolicyVersion">REST API Reference for GetPolicyVersion Operation</seealso>
         IAsyncResult BeginGetPolicyVersion(GetPolicyVersionRequest request, AsyncCallback callback, object state);
 
 
@@ -3748,6 +4064,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetPolicyVersion.</param>
         /// 
         /// <returns>Returns a  GetPolicyVersionResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetPolicyVersion">REST API Reference for GetPolicyVersion Operation</seealso>
         GetPolicyVersionResponse EndGetPolicyVersion(IAsyncResult asyncResult);
 
         #endregion
@@ -3760,6 +4077,16 @@ namespace Amazon.IdentityManagement
         /// and the role's trust policy that grants permission to assume the role. For more information
         /// about roles, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
         /// with Roles</a>.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Policies returned by this API are URL-encoded compliant with <a href="https://tools.ietf.org/html/rfc3986">RFC
+        /// 3986</a>. You can use a URL decoding method to convert the policy back to plain JSON
+        /// text. For example, if you use Java, you can use the <code>decode</code> method of
+        /// the <code>java.net.URLDecoder</code> utility class in the Java SDK. Other languages
+        /// and SDKs provide similar functionality.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetRole service method.</param>
         /// 
@@ -3771,6 +4098,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetRole">REST API Reference for GetRole Operation</seealso>
         GetRoleResponse GetRole(GetRoleRequest request);
 
         /// <summary>
@@ -3784,6 +4112,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetRole
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetRole">REST API Reference for GetRole Operation</seealso>
         IAsyncResult BeginGetRole(GetRoleRequest request, AsyncCallback callback, object state);
 
 
@@ -3795,6 +4124,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetRole.</param>
         /// 
         /// <returns>Returns a  GetRoleResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetRole">REST API Reference for GetRole Operation</seealso>
         GetRoleResponse EndGetRole(IAsyncResult asyncResult);
 
         #endregion
@@ -3806,7 +4136,15 @@ namespace Amazon.IdentityManagement
         /// Retrieves the specified inline policy document that is embedded with the specified
         /// IAM role.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// Policies returned by this API are URL-encoded compliant with <a href="https://tools.ietf.org/html/rfc3986">RFC
+        /// 3986</a>. You can use a URL decoding method to convert the policy back to plain JSON
+        /// text. For example, if you use Java, you can use the <code>decode</code> method of
+        /// the <code>java.net.URLDecoder</code> utility class in the Java SDK. Other languages
+        /// and SDKs provide similar functionality.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// An IAM role can also have managed policies attached to it. To retrieve a managed policy
         /// document that is attached to a role, use <a>GetPolicy</a> to determine the policy's
@@ -3833,6 +4171,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetRolePolicy">REST API Reference for GetRolePolicy Operation</seealso>
         GetRolePolicyResponse GetRolePolicy(GetRolePolicyRequest request);
 
         /// <summary>
@@ -3846,6 +4185,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetRolePolicy
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetRolePolicy">REST API Reference for GetRolePolicy Operation</seealso>
         IAsyncResult BeginGetRolePolicy(GetRolePolicyRequest request, AsyncCallback callback, object state);
 
 
@@ -3857,6 +4197,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetRolePolicy.</param>
         /// 
         /// <returns>Returns a  GetRolePolicyResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetRolePolicy">REST API Reference for GetRolePolicy Operation</seealso>
         GetRolePolicyResponse EndGetRolePolicy(IAsyncResult asyncResult);
 
         #endregion
@@ -3889,6 +4230,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetSAMLProvider">REST API Reference for GetSAMLProvider Operation</seealso>
         GetSAMLProviderResponse GetSAMLProvider(GetSAMLProviderRequest request);
 
         /// <summary>
@@ -3902,6 +4244,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSAMLProvider
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetSAMLProvider">REST API Reference for GetSAMLProvider Operation</seealso>
         IAsyncResult BeginGetSAMLProvider(GetSAMLProviderRequest request, AsyncCallback callback, object state);
 
 
@@ -3913,6 +4256,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSAMLProvider.</param>
         /// 
         /// <returns>Returns a  GetSAMLProviderResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetSAMLProvider">REST API Reference for GetSAMLProvider Operation</seealso>
         GetSAMLProviderResponse EndGetSAMLProvider(IAsyncResult asyncResult);
 
         #endregion
@@ -3940,6 +4284,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetServerCertificate">REST API Reference for GetServerCertificate Operation</seealso>
         GetServerCertificateResponse GetServerCertificate(GetServerCertificateRequest request);
 
         /// <summary>
@@ -3953,6 +4298,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetServerCertificate
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetServerCertificate">REST API Reference for GetServerCertificate Operation</seealso>
         IAsyncResult BeginGetServerCertificate(GetServerCertificateRequest request, AsyncCallback callback, object state);
 
 
@@ -3964,6 +4310,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetServerCertificate.</param>
         /// 
         /// <returns>Returns a  GetServerCertificateResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetServerCertificate">REST API Reference for GetServerCertificate Operation</seealso>
         GetServerCertificateResponse EndGetServerCertificate(IAsyncResult asyncResult);
 
         #endregion
@@ -3993,6 +4340,7 @@ namespace Amazon.IdentityManagement
         /// The request was rejected because the public key encoding format is unsupported or
         /// unrecognized.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetSSHPublicKey">REST API Reference for GetSSHPublicKey Operation</seealso>
         GetSSHPublicKeyResponse GetSSHPublicKey(GetSSHPublicKeyRequest request);
 
         /// <summary>
@@ -4006,6 +4354,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSSHPublicKey
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetSSHPublicKey">REST API Reference for GetSSHPublicKey Operation</seealso>
         IAsyncResult BeginGetSSHPublicKey(GetSSHPublicKeyRequest request, AsyncCallback callback, object state);
 
 
@@ -4017,6 +4366,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSSHPublicKey.</param>
         /// 
         /// <returns>Returns a  GetSSHPublicKeyResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetSSHPublicKey">REST API Reference for GetSSHPublicKey Operation</seealso>
         GetSSHPublicKeyResponse EndGetSSHPublicKey(IAsyncResult asyncResult);
 
         #endregion
@@ -4043,6 +4393,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetUser">REST API Reference for GetUser Operation</seealso>
         GetUserResponse GetUser();
 
         /// <summary>
@@ -4065,6 +4416,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetUser">REST API Reference for GetUser Operation</seealso>
         GetUserResponse GetUser(GetUserRequest request);
 
         /// <summary>
@@ -4078,6 +4430,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetUser
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetUser">REST API Reference for GetUser Operation</seealso>
         IAsyncResult BeginGetUser(GetUserRequest request, AsyncCallback callback, object state);
 
 
@@ -4089,6 +4442,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetUser.</param>
         /// 
         /// <returns>Returns a  GetUserResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetUser">REST API Reference for GetUser Operation</seealso>
         GetUserResponse EndGetUser(IAsyncResult asyncResult);
 
         #endregion
@@ -4100,7 +4454,15 @@ namespace Amazon.IdentityManagement
         /// Retrieves the specified inline policy document that is embedded in the specified IAM
         /// user.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// Policies returned by this API are URL-encoded compliant with <a href="https://tools.ietf.org/html/rfc3986">RFC
+        /// 3986</a>. You can use a URL decoding method to convert the policy back to plain JSON
+        /// text. For example, if you use Java, you can use the <code>decode</code> method of
+        /// the <code>java.net.URLDecoder</code> utility class in the Java SDK. Other languages
+        /// and SDKs provide similar functionality.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// An IAM user can also have managed policies attached to it. To retrieve a managed policy
         /// document that is attached to a user, use <a>GetPolicy</a> to determine the policy's
@@ -4122,6 +4484,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetUserPolicy">REST API Reference for GetUserPolicy Operation</seealso>
         GetUserPolicyResponse GetUserPolicy(GetUserPolicyRequest request);
 
         /// <summary>
@@ -4135,6 +4498,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetUserPolicy
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetUserPolicy">REST API Reference for GetUserPolicy Operation</seealso>
         IAsyncResult BeginGetUserPolicy(GetUserPolicyRequest request, AsyncCallback callback, object state);
 
 
@@ -4146,6 +4510,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetUserPolicy.</param>
         /// 
         /// <returns>Returns a  GetUserPolicyResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetUserPolicy">REST API Reference for GetUserPolicy Operation</seealso>
         GetUserPolicyResponse EndGetUserPolicy(IAsyncResult asyncResult);
 
         #endregion
@@ -4185,6 +4550,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListAccessKeys">REST API Reference for ListAccessKeys Operation</seealso>
         ListAccessKeysResponse ListAccessKeys();
 
         /// <summary>
@@ -4220,6 +4586,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListAccessKeys">REST API Reference for ListAccessKeys Operation</seealso>
         ListAccessKeysResponse ListAccessKeys(ListAccessKeysRequest request);
 
         /// <summary>
@@ -4233,6 +4600,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAccessKeys
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListAccessKeys">REST API Reference for ListAccessKeys Operation</seealso>
         IAsyncResult BeginListAccessKeys(ListAccessKeysRequest request, AsyncCallback callback, object state);
 
 
@@ -4244,6 +4612,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAccessKeys.</param>
         /// 
         /// <returns>Returns a  ListAccessKeysResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListAccessKeys">REST API Reference for ListAccessKeys Operation</seealso>
         ListAccessKeysResponse EndListAccessKeys(IAsyncResult asyncResult);
 
         #endregion
@@ -4261,6 +4630,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListAccountAliases">REST API Reference for ListAccountAliases Operation</seealso>
         ListAccountAliasesResponse ListAccountAliases();
 
         /// <summary>
@@ -4274,6 +4644,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListAccountAliases">REST API Reference for ListAccountAliases Operation</seealso>
         ListAccountAliasesResponse ListAccountAliases(ListAccountAliasesRequest request);
 
         /// <summary>
@@ -4287,6 +4658,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAccountAliases
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListAccountAliases">REST API Reference for ListAccountAliases Operation</seealso>
         IAsyncResult BeginListAccountAliases(ListAccountAliasesRequest request, AsyncCallback callback, object state);
 
 
@@ -4298,6 +4670,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAccountAliases.</param>
         /// 
         /// <returns>Returns a  ListAccountAliasesResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListAccountAliases">REST API Reference for ListAccountAliases Operation</seealso>
         ListAccountAliasesResponse EndListAccountAliases(IAsyncResult asyncResult);
 
         #endregion
@@ -4338,6 +4711,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListAttachedGroupPolicies">REST API Reference for ListAttachedGroupPolicies Operation</seealso>
         ListAttachedGroupPoliciesResponse ListAttachedGroupPolicies(ListAttachedGroupPoliciesRequest request);
 
         /// <summary>
@@ -4351,6 +4725,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAttachedGroupPolicies
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListAttachedGroupPolicies">REST API Reference for ListAttachedGroupPolicies Operation</seealso>
         IAsyncResult BeginListAttachedGroupPolicies(ListAttachedGroupPoliciesRequest request, AsyncCallback callback, object state);
 
 
@@ -4362,6 +4737,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAttachedGroupPolicies.</param>
         /// 
         /// <returns>Returns a  ListAttachedGroupPoliciesResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListAttachedGroupPolicies">REST API Reference for ListAttachedGroupPolicies Operation</seealso>
         ListAttachedGroupPoliciesResponse EndListAttachedGroupPolicies(IAsyncResult asyncResult);
 
         #endregion
@@ -4402,6 +4778,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListAttachedRolePolicies">REST API Reference for ListAttachedRolePolicies Operation</seealso>
         ListAttachedRolePoliciesResponse ListAttachedRolePolicies(ListAttachedRolePoliciesRequest request);
 
         /// <summary>
@@ -4415,6 +4792,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAttachedRolePolicies
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListAttachedRolePolicies">REST API Reference for ListAttachedRolePolicies Operation</seealso>
         IAsyncResult BeginListAttachedRolePolicies(ListAttachedRolePoliciesRequest request, AsyncCallback callback, object state);
 
 
@@ -4426,6 +4804,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAttachedRolePolicies.</param>
         /// 
         /// <returns>Returns a  ListAttachedRolePoliciesResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListAttachedRolePolicies">REST API Reference for ListAttachedRolePolicies Operation</seealso>
         ListAttachedRolePoliciesResponse EndListAttachedRolePolicies(IAsyncResult asyncResult);
 
         #endregion
@@ -4466,6 +4845,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListAttachedUserPolicies">REST API Reference for ListAttachedUserPolicies Operation</seealso>
         ListAttachedUserPoliciesResponse ListAttachedUserPolicies(ListAttachedUserPoliciesRequest request);
 
         /// <summary>
@@ -4479,6 +4859,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAttachedUserPolicies
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListAttachedUserPolicies">REST API Reference for ListAttachedUserPolicies Operation</seealso>
         IAsyncResult BeginListAttachedUserPolicies(ListAttachedUserPoliciesRequest request, AsyncCallback callback, object state);
 
 
@@ -4490,6 +4871,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAttachedUserPolicies.</param>
         /// 
         /// <returns>Returns a  ListAttachedUserPoliciesResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListAttachedUserPolicies">REST API Reference for ListAttachedUserPolicies Operation</seealso>
         ListAttachedUserPoliciesResponse EndListAttachedUserPolicies(IAsyncResult asyncResult);
 
         #endregion
@@ -4528,6 +4910,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListEntitiesForPolicy">REST API Reference for ListEntitiesForPolicy Operation</seealso>
         ListEntitiesForPolicyResponse ListEntitiesForPolicy(ListEntitiesForPolicyRequest request);
 
         /// <summary>
@@ -4541,6 +4924,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListEntitiesForPolicy
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListEntitiesForPolicy">REST API Reference for ListEntitiesForPolicy Operation</seealso>
         IAsyncResult BeginListEntitiesForPolicy(ListEntitiesForPolicyRequest request, AsyncCallback callback, object state);
 
 
@@ -4552,6 +4936,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListEntitiesForPolicy.</param>
         /// 
         /// <returns>Returns a  ListEntitiesForPolicyResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListEntitiesForPolicy">REST API Reference for ListEntitiesForPolicy Operation</seealso>
         ListEntitiesForPolicyResponse EndListEntitiesForPolicy(IAsyncResult asyncResult);
 
         #endregion
@@ -4586,6 +4971,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListGroupPolicies">REST API Reference for ListGroupPolicies Operation</seealso>
         ListGroupPoliciesResponse ListGroupPolicies(ListGroupPoliciesRequest request);
 
         /// <summary>
@@ -4599,6 +4985,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListGroupPolicies
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListGroupPolicies">REST API Reference for ListGroupPolicies Operation</seealso>
         IAsyncResult BeginListGroupPolicies(ListGroupPoliciesRequest request, AsyncCallback callback, object state);
 
 
@@ -4610,6 +4997,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListGroupPolicies.</param>
         /// 
         /// <returns>Returns a  ListGroupPoliciesResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListGroupPolicies">REST API Reference for ListGroupPolicies Operation</seealso>
         ListGroupPoliciesResponse EndListGroupPolicies(IAsyncResult asyncResult);
 
         #endregion
@@ -4631,6 +5019,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListGroups">REST API Reference for ListGroups Operation</seealso>
         ListGroupsResponse ListGroups();
 
         /// <summary>
@@ -4648,6 +5037,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListGroups">REST API Reference for ListGroups Operation</seealso>
         ListGroupsResponse ListGroups(ListGroupsRequest request);
 
         /// <summary>
@@ -4661,6 +5051,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListGroups
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListGroups">REST API Reference for ListGroups Operation</seealso>
         IAsyncResult BeginListGroups(ListGroupsRequest request, AsyncCallback callback, object state);
 
 
@@ -4672,6 +5063,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListGroups.</param>
         /// 
         /// <returns>Returns a  ListGroupsResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListGroups">REST API Reference for ListGroups Operation</seealso>
         ListGroupsResponse EndListGroups(IAsyncResult asyncResult);
 
         #endregion
@@ -4698,6 +5090,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListGroupsForUser">REST API Reference for ListGroupsForUser Operation</seealso>
         ListGroupsForUserResponse ListGroupsForUser(ListGroupsForUserRequest request);
 
         /// <summary>
@@ -4711,6 +5104,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListGroupsForUser
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListGroupsForUser">REST API Reference for ListGroupsForUser Operation</seealso>
         IAsyncResult BeginListGroupsForUser(ListGroupsForUserRequest request, AsyncCallback callback, object state);
 
 
@@ -4722,6 +5116,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListGroupsForUser.</param>
         /// 
         /// <returns>Returns a  ListGroupsForUserResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListGroupsForUser">REST API Reference for ListGroupsForUser Operation</seealso>
         ListGroupsForUserResponse EndListGroupsForUser(IAsyncResult asyncResult);
 
         #endregion
@@ -4746,6 +5141,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListInstanceProfiles">REST API Reference for ListInstanceProfiles Operation</seealso>
         ListInstanceProfilesResponse ListInstanceProfiles();
 
         /// <summary>
@@ -4766,6 +5162,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListInstanceProfiles">REST API Reference for ListInstanceProfiles Operation</seealso>
         ListInstanceProfilesResponse ListInstanceProfiles(ListInstanceProfilesRequest request);
 
         /// <summary>
@@ -4779,6 +5176,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListInstanceProfiles
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListInstanceProfiles">REST API Reference for ListInstanceProfiles Operation</seealso>
         IAsyncResult BeginListInstanceProfiles(ListInstanceProfilesRequest request, AsyncCallback callback, object state);
 
 
@@ -4790,6 +5188,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListInstanceProfiles.</param>
         /// 
         /// <returns>Returns a  ListInstanceProfilesResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListInstanceProfiles">REST API Reference for ListInstanceProfiles Operation</seealso>
         ListInstanceProfilesResponse EndListInstanceProfiles(IAsyncResult asyncResult);
 
         #endregion
@@ -4819,6 +5218,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListInstanceProfilesForRole">REST API Reference for ListInstanceProfilesForRole Operation</seealso>
         ListInstanceProfilesForRoleResponse ListInstanceProfilesForRole(ListInstanceProfilesForRoleRequest request);
 
         /// <summary>
@@ -4832,6 +5232,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListInstanceProfilesForRole
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListInstanceProfilesForRole">REST API Reference for ListInstanceProfilesForRole Operation</seealso>
         IAsyncResult BeginListInstanceProfilesForRole(ListInstanceProfilesForRoleRequest request, AsyncCallback callback, object state);
 
 
@@ -4843,6 +5244,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListInstanceProfilesForRole.</param>
         /// 
         /// <returns>Returns a  ListInstanceProfilesForRoleResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListInstanceProfilesForRole">REST API Reference for ListInstanceProfilesForRole Operation</seealso>
         ListInstanceProfilesForRoleResponse EndListInstanceProfilesForRole(IAsyncResult asyncResult);
 
         #endregion
@@ -4871,6 +5273,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListMFADevices">REST API Reference for ListMFADevices Operation</seealso>
         ListMFADevicesResponse ListMFADevices();
 
         /// <summary>
@@ -4895,6 +5298,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListMFADevices">REST API Reference for ListMFADevices Operation</seealso>
         ListMFADevicesResponse ListMFADevices(ListMFADevicesRequest request);
 
         /// <summary>
@@ -4908,6 +5312,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListMFADevices
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListMFADevices">REST API Reference for ListMFADevices Operation</seealso>
         IAsyncResult BeginListMFADevices(ListMFADevicesRequest request, AsyncCallback callback, object state);
 
 
@@ -4919,6 +5324,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListMFADevices.</param>
         /// 
         /// <returns>Returns a  ListMFADevicesResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListMFADevices">REST API Reference for ListMFADevices Operation</seealso>
         ListMFADevicesResponse EndListMFADevices(IAsyncResult asyncResult);
 
         #endregion
@@ -4936,6 +5342,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListOpenIDConnectProviders">REST API Reference for ListOpenIDConnectProviders Operation</seealso>
         ListOpenIDConnectProvidersResponse ListOpenIDConnectProviders(ListOpenIDConnectProvidersRequest request);
 
         /// <summary>
@@ -4949,6 +5356,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListOpenIDConnectProviders
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListOpenIDConnectProviders">REST API Reference for ListOpenIDConnectProviders Operation</seealso>
         IAsyncResult BeginListOpenIDConnectProviders(ListOpenIDConnectProvidersRequest request, AsyncCallback callback, object state);
 
 
@@ -4960,6 +5368,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListOpenIDConnectProviders.</param>
         /// 
         /// <returns>Returns a  ListOpenIDConnectProvidersResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListOpenIDConnectProviders">REST API Reference for ListOpenIDConnectProviders Operation</seealso>
         ListOpenIDConnectProvidersResponse EndListOpenIDConnectProviders(IAsyncResult asyncResult);
 
         #endregion
@@ -4994,6 +5403,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListPolicies">REST API Reference for ListPolicies Operation</seealso>
         ListPoliciesResponse ListPolicies();
 
         /// <summary>
@@ -5024,6 +5434,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListPolicies">REST API Reference for ListPolicies Operation</seealso>
         ListPoliciesResponse ListPolicies(ListPoliciesRequest request);
 
         /// <summary>
@@ -5037,6 +5448,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListPolicies
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListPolicies">REST API Reference for ListPolicies Operation</seealso>
         IAsyncResult BeginListPolicies(ListPoliciesRequest request, AsyncCallback callback, object state);
 
 
@@ -5048,6 +5460,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListPolicies.</param>
         /// 
         /// <returns>Returns a  ListPoliciesResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListPolicies">REST API Reference for ListPolicies Operation</seealso>
         ListPoliciesResponse EndListPolicies(IAsyncResult asyncResult);
 
         #endregion
@@ -5079,6 +5492,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListPolicyVersions">REST API Reference for ListPolicyVersions Operation</seealso>
         ListPolicyVersionsResponse ListPolicyVersions(ListPolicyVersionsRequest request);
 
         /// <summary>
@@ -5092,6 +5506,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListPolicyVersions
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListPolicyVersions">REST API Reference for ListPolicyVersions Operation</seealso>
         IAsyncResult BeginListPolicyVersions(ListPolicyVersionsRequest request, AsyncCallback callback, object state);
 
 
@@ -5103,6 +5518,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListPolicyVersions.</param>
         /// 
         /// <returns>Returns a  ListPolicyVersionsResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListPolicyVersions">REST API Reference for ListPolicyVersions Operation</seealso>
         ListPolicyVersionsResponse EndListPolicyVersions(IAsyncResult asyncResult);
 
         #endregion
@@ -5137,6 +5553,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListRolePolicies">REST API Reference for ListRolePolicies Operation</seealso>
         ListRolePoliciesResponse ListRolePolicies(ListRolePoliciesRequest request);
 
         /// <summary>
@@ -5150,6 +5567,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListRolePolicies
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListRolePolicies">REST API Reference for ListRolePolicies Operation</seealso>
         IAsyncResult BeginListRolePolicies(ListRolePoliciesRequest request, AsyncCallback callback, object state);
 
 
@@ -5161,6 +5579,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListRolePolicies.</param>
         /// 
         /// <returns>Returns a  ListRolePoliciesResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListRolePolicies">REST API Reference for ListRolePolicies Operation</seealso>
         ListRolePoliciesResponse EndListRolePolicies(IAsyncResult asyncResult);
 
         #endregion
@@ -5184,6 +5603,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListRoles">REST API Reference for ListRoles Operation</seealso>
         ListRolesResponse ListRoles();
 
         /// <summary>
@@ -5203,6 +5623,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListRoles">REST API Reference for ListRoles Operation</seealso>
         ListRolesResponse ListRoles(ListRolesRequest request);
 
         /// <summary>
@@ -5216,6 +5637,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListRoles
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListRoles">REST API Reference for ListRoles Operation</seealso>
         IAsyncResult BeginListRoles(ListRolesRequest request, AsyncCallback callback, object state);
 
 
@@ -5227,6 +5649,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListRoles.</param>
         /// 
         /// <returns>Returns a  ListRolesResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListRoles">REST API Reference for ListRoles Operation</seealso>
         ListRolesResponse EndListRoles(IAsyncResult asyncResult);
 
         #endregion
@@ -5249,6 +5672,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListSAMLProviders">REST API Reference for ListSAMLProviders Operation</seealso>
         ListSAMLProvidersResponse ListSAMLProviders();
 
         /// <summary>
@@ -5267,6 +5691,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListSAMLProviders">REST API Reference for ListSAMLProviders Operation</seealso>
         ListSAMLProvidersResponse ListSAMLProviders(ListSAMLProvidersRequest request);
 
         /// <summary>
@@ -5280,6 +5705,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListSAMLProviders
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListSAMLProviders">REST API Reference for ListSAMLProviders Operation</seealso>
         IAsyncResult BeginListSAMLProviders(ListSAMLProvidersRequest request, AsyncCallback callback, object state);
 
 
@@ -5291,6 +5717,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListSAMLProviders.</param>
         /// 
         /// <returns>Returns a  ListSAMLProvidersResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListSAMLProviders">REST API Reference for ListSAMLProviders Operation</seealso>
         ListSAMLProvidersResponse EndListSAMLProviders(IAsyncResult asyncResult);
 
         #endregion
@@ -5319,6 +5746,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListServerCertificates">REST API Reference for ListServerCertificates Operation</seealso>
         ListServerCertificatesResponse ListServerCertificates();
 
         /// <summary>
@@ -5343,6 +5771,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListServerCertificates">REST API Reference for ListServerCertificates Operation</seealso>
         ListServerCertificatesResponse ListServerCertificates(ListServerCertificatesRequest request);
 
         /// <summary>
@@ -5356,6 +5785,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListServerCertificates
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListServerCertificates">REST API Reference for ListServerCertificates Operation</seealso>
         IAsyncResult BeginListServerCertificates(ListServerCertificatesRequest request, AsyncCallback callback, object state);
 
 
@@ -5367,7 +5797,60 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListServerCertificates.</param>
         /// 
         /// <returns>Returns a  ListServerCertificatesResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListServerCertificates">REST API Reference for ListServerCertificates Operation</seealso>
         ListServerCertificatesResponse EndListServerCertificates(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListServiceSpecificCredentials
+
+
+        /// <summary>
+        /// Returns information about the service-specific credentials associated with the specified
+        /// IAM user. If there are none, the action returns an empty list. The service-specific
+        /// credentials returned by this action are used only for authenticating the IAM user
+        /// to a specific service. For more information about using service-specific credentials
+        /// to authenticate to an AWS service, see <a href="http://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-gc.html">Set
+        /// Up service-specific credentials</a> in the AWS CodeCommit User Guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListServiceSpecificCredentials service method.</param>
+        /// 
+        /// <returns>The response from the ListServiceSpecificCredentials service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceNotSupportedException">
+        /// The specified service does not support service-specific credentials.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListServiceSpecificCredentials">REST API Reference for ListServiceSpecificCredentials Operation</seealso>
+        ListServiceSpecificCredentialsResponse ListServiceSpecificCredentials(ListServiceSpecificCredentialsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListServiceSpecificCredentials operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListServiceSpecificCredentials operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListServiceSpecificCredentials
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListServiceSpecificCredentials">REST API Reference for ListServiceSpecificCredentials Operation</seealso>
+        IAsyncResult BeginListServiceSpecificCredentials(ListServiceSpecificCredentialsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListServiceSpecificCredentials operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListServiceSpecificCredentials.</param>
+        /// 
+        /// <returns>Returns a  ListServiceSpecificCredentialsResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListServiceSpecificCredentials">REST API Reference for ListServiceSpecificCredentials Operation</seealso>
+        ListServiceSpecificCredentialsResponse EndListServiceSpecificCredentials(IAsyncResult asyncResult);
 
         #endregion
         
@@ -5400,6 +5883,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListSigningCertificates">REST API Reference for ListSigningCertificates Operation</seealso>
         ListSigningCertificatesResponse ListSigningCertificates();
 
         /// <summary>
@@ -5429,6 +5913,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListSigningCertificates">REST API Reference for ListSigningCertificates Operation</seealso>
         ListSigningCertificatesResponse ListSigningCertificates(ListSigningCertificatesRequest request);
 
         /// <summary>
@@ -5442,6 +5927,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListSigningCertificates
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListSigningCertificates">REST API Reference for ListSigningCertificates Operation</seealso>
         IAsyncResult BeginListSigningCertificates(ListSigningCertificatesRequest request, AsyncCallback callback, object state);
 
 
@@ -5453,6 +5939,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListSigningCertificates.</param>
         /// 
         /// <returns>Returns a  ListSigningCertificatesResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListSigningCertificates">REST API Reference for ListSigningCertificates Operation</seealso>
         ListSigningCertificatesResponse EndListSigningCertificates(IAsyncResult asyncResult);
 
         #endregion
@@ -5484,6 +5971,7 @@ namespace Amazon.IdentityManagement
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListSSHPublicKeys">REST API Reference for ListSSHPublicKeys Operation</seealso>
         ListSSHPublicKeysResponse ListSSHPublicKeys(ListSSHPublicKeysRequest request);
 
         /// <summary>
@@ -5497,6 +5985,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListSSHPublicKeys
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListSSHPublicKeys">REST API Reference for ListSSHPublicKeys Operation</seealso>
         IAsyncResult BeginListSSHPublicKeys(ListSSHPublicKeysRequest request, AsyncCallback callback, object state);
 
 
@@ -5508,6 +5997,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListSSHPublicKeys.</param>
         /// 
         /// <returns>Returns a  ListSSHPublicKeysResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListSSHPublicKeys">REST API Reference for ListSSHPublicKeys Operation</seealso>
         ListSSHPublicKeysResponse EndListSSHPublicKeys(IAsyncResult asyncResult);
 
         #endregion
@@ -5542,6 +6032,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListUserPolicies">REST API Reference for ListUserPolicies Operation</seealso>
         ListUserPoliciesResponse ListUserPolicies(ListUserPoliciesRequest request);
 
         /// <summary>
@@ -5555,6 +6046,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListUserPolicies
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListUserPolicies">REST API Reference for ListUserPolicies Operation</seealso>
         IAsyncResult BeginListUserPolicies(ListUserPoliciesRequest request, AsyncCallback callback, object state);
 
 
@@ -5566,6 +6058,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListUserPolicies.</param>
         /// 
         /// <returns>Returns a  ListUserPoliciesResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListUserPolicies">REST API Reference for ListUserPolicies Operation</seealso>
         ListUserPoliciesResponse EndListUserPolicies(IAsyncResult asyncResult);
 
         #endregion
@@ -5589,6 +6082,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListUsers">REST API Reference for ListUsers Operation</seealso>
         ListUsersResponse ListUsers();
 
         /// <summary>
@@ -5608,6 +6102,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListUsers">REST API Reference for ListUsers Operation</seealso>
         ListUsersResponse ListUsers(ListUsersRequest request);
 
         /// <summary>
@@ -5621,6 +6116,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListUsers
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListUsers">REST API Reference for ListUsers Operation</seealso>
         IAsyncResult BeginListUsers(ListUsersRequest request, AsyncCallback callback, object state);
 
 
@@ -5632,6 +6128,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListUsers.</param>
         /// 
         /// <returns>Returns a  ListUsersResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListUsers">REST API Reference for ListUsers Operation</seealso>
         ListUsersResponse EndListUsers(IAsyncResult asyncResult);
 
         #endregion
@@ -5653,6 +6150,7 @@ namespace Amazon.IdentityManagement
         /// </summary>
         /// 
         /// <returns>The response from the ListVirtualMFADevices service method, as returned by IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListVirtualMFADevices">REST API Reference for ListVirtualMFADevices Operation</seealso>
         ListVirtualMFADevicesResponse ListVirtualMFADevices();
 
         /// <summary>
@@ -5670,6 +6168,7 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the ListVirtualMFADevices service method.</param>
         /// 
         /// <returns>The response from the ListVirtualMFADevices service method, as returned by IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListVirtualMFADevices">REST API Reference for ListVirtualMFADevices Operation</seealso>
         ListVirtualMFADevicesResponse ListVirtualMFADevices(ListVirtualMFADevicesRequest request);
 
         /// <summary>
@@ -5683,6 +6182,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListVirtualMFADevices
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListVirtualMFADevices">REST API Reference for ListVirtualMFADevices Operation</seealso>
         IAsyncResult BeginListVirtualMFADevices(ListVirtualMFADevicesRequest request, AsyncCallback callback, object state);
 
 
@@ -5694,6 +6194,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListVirtualMFADevices.</param>
         /// 
         /// <returns>Returns a  ListVirtualMFADevicesResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListVirtualMFADevices">REST API Reference for ListVirtualMFADevices Operation</seealso>
         ListVirtualMFADevicesResponse EndListVirtualMFADevices(IAsyncResult asyncResult);
 
         #endregion
@@ -5744,6 +6245,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/PutGroupPolicy">REST API Reference for PutGroupPolicy Operation</seealso>
         PutGroupPolicyResponse PutGroupPolicy(PutGroupPolicyRequest request);
 
         /// <summary>
@@ -5757,6 +6259,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutGroupPolicy
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/PutGroupPolicy">REST API Reference for PutGroupPolicy Operation</seealso>
         IAsyncResult BeginPutGroupPolicy(PutGroupPolicyRequest request, AsyncCallback callback, object state);
 
 
@@ -5768,6 +6271,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutGroupPolicy.</param>
         /// 
         /// <returns>Returns a  PutGroupPolicyResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/PutGroupPolicy">REST API Reference for PutGroupPolicy Operation</seealso>
         PutGroupPolicyResponse EndPutGroupPolicy(IAsyncResult asyncResult);
 
         #endregion
@@ -5826,6 +6330,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/PutRolePolicy">REST API Reference for PutRolePolicy Operation</seealso>
         PutRolePolicyResponse PutRolePolicy(PutRolePolicyRequest request);
 
         /// <summary>
@@ -5839,6 +6344,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutRolePolicy
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/PutRolePolicy">REST API Reference for PutRolePolicy Operation</seealso>
         IAsyncResult BeginPutRolePolicy(PutRolePolicyRequest request, AsyncCallback callback, object state);
 
 
@@ -5850,6 +6356,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutRolePolicy.</param>
         /// 
         /// <returns>Returns a  PutRolePolicyResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/PutRolePolicy">REST API Reference for PutRolePolicy Operation</seealso>
         PutRolePolicyResponse EndPutRolePolicy(IAsyncResult asyncResult);
 
         #endregion
@@ -5900,6 +6407,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/PutUserPolicy">REST API Reference for PutUserPolicy Operation</seealso>
         PutUserPolicyResponse PutUserPolicy(PutUserPolicyRequest request);
 
         /// <summary>
@@ -5913,6 +6421,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutUserPolicy
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/PutUserPolicy">REST API Reference for PutUserPolicy Operation</seealso>
         IAsyncResult BeginPutUserPolicy(PutUserPolicyRequest request, AsyncCallback callback, object state);
 
 
@@ -5924,6 +6433,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutUserPolicy.</param>
         /// 
         /// <returns>Returns a  PutUserPolicyResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/PutUserPolicy">REST API Reference for PutUserPolicy Operation</seealso>
         PutUserPolicyResponse EndPutUserPolicy(IAsyncResult asyncResult);
 
         #endregion
@@ -5955,6 +6465,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/RemoveClientIDFromOpenIDConnectProvider">REST API Reference for RemoveClientIDFromOpenIDConnectProvider Operation</seealso>
         RemoveClientIDFromOpenIDConnectProviderResponse RemoveClientIDFromOpenIDConnectProvider(RemoveClientIDFromOpenIDConnectProviderRequest request);
 
         /// <summary>
@@ -5968,6 +6479,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRemoveClientIDFromOpenIDConnectProvider
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/RemoveClientIDFromOpenIDConnectProvider">REST API Reference for RemoveClientIDFromOpenIDConnectProvider Operation</seealso>
         IAsyncResult BeginRemoveClientIDFromOpenIDConnectProvider(RemoveClientIDFromOpenIDConnectProviderRequest request, AsyncCallback callback, object state);
 
 
@@ -5979,6 +6491,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRemoveClientIDFromOpenIDConnectProvider.</param>
         /// 
         /// <returns>Returns a  RemoveClientIDFromOpenIDConnectProviderResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/RemoveClientIDFromOpenIDConnectProvider">REST API Reference for RemoveClientIDFromOpenIDConnectProvider Operation</seealso>
         RemoveClientIDFromOpenIDConnectProviderResponse EndRemoveClientIDFromOpenIDConnectProvider(IAsyncResult asyncResult);
 
         #endregion
@@ -6016,6 +6529,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/RemoveRoleFromInstanceProfile">REST API Reference for RemoveRoleFromInstanceProfile Operation</seealso>
         RemoveRoleFromInstanceProfileResponse RemoveRoleFromInstanceProfile(RemoveRoleFromInstanceProfileRequest request);
 
         /// <summary>
@@ -6029,6 +6543,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRemoveRoleFromInstanceProfile
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/RemoveRoleFromInstanceProfile">REST API Reference for RemoveRoleFromInstanceProfile Operation</seealso>
         IAsyncResult BeginRemoveRoleFromInstanceProfile(RemoveRoleFromInstanceProfileRequest request, AsyncCallback callback, object state);
 
 
@@ -6040,6 +6555,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRemoveRoleFromInstanceProfile.</param>
         /// 
         /// <returns>Returns a  RemoveRoleFromInstanceProfileResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/RemoveRoleFromInstanceProfile">REST API Reference for RemoveRoleFromInstanceProfile Operation</seealso>
         RemoveRoleFromInstanceProfileResponse EndRemoveRoleFromInstanceProfile(IAsyncResult asyncResult);
 
         #endregion
@@ -6064,6 +6580,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/RemoveUserFromGroup">REST API Reference for RemoveUserFromGroup Operation</seealso>
         RemoveUserFromGroupResponse RemoveUserFromGroup(RemoveUserFromGroupRequest request);
 
         /// <summary>
@@ -6077,6 +6594,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRemoveUserFromGroup
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/RemoveUserFromGroup">REST API Reference for RemoveUserFromGroup Operation</seealso>
         IAsyncResult BeginRemoveUserFromGroup(RemoveUserFromGroupRequest request, AsyncCallback callback, object state);
 
 
@@ -6088,7 +6606,54 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRemoveUserFromGroup.</param>
         /// 
         /// <returns>Returns a  RemoveUserFromGroupResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/RemoveUserFromGroup">REST API Reference for RemoveUserFromGroup Operation</seealso>
         RemoveUserFromGroupResponse EndRemoveUserFromGroup(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ResetServiceSpecificCredential
+
+
+        /// <summary>
+        /// Resets the password for a service-specific credential. The new password is AWS generated
+        /// and cryptographically strong. It cannot be configured by the user. Resetting the password
+        /// immediately invalidates the previous password associated with this user.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ResetServiceSpecificCredential service method.</param>
+        /// 
+        /// <returns>The response from the ResetServiceSpecificCredential service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ResetServiceSpecificCredential">REST API Reference for ResetServiceSpecificCredential Operation</seealso>
+        ResetServiceSpecificCredentialResponse ResetServiceSpecificCredential(ResetServiceSpecificCredentialRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ResetServiceSpecificCredential operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ResetServiceSpecificCredential operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndResetServiceSpecificCredential
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ResetServiceSpecificCredential">REST API Reference for ResetServiceSpecificCredential Operation</seealso>
+        IAsyncResult BeginResetServiceSpecificCredential(ResetServiceSpecificCredentialRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ResetServiceSpecificCredential operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginResetServiceSpecificCredential.</param>
+        /// 
+        /// <returns>Returns a  ResetServiceSpecificCredentialResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ResetServiceSpecificCredential">REST API Reference for ResetServiceSpecificCredential Operation</seealso>
+        ResetServiceSpecificCredentialResponse EndResetServiceSpecificCredential(IAsyncResult asyncResult);
 
         #endregion
         
@@ -6123,6 +6688,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ResyncMFADevice">REST API Reference for ResyncMFADevice Operation</seealso>
         ResyncMFADeviceResponse ResyncMFADevice(ResyncMFADeviceRequest request);
 
         /// <summary>
@@ -6136,6 +6702,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndResyncMFADevice
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ResyncMFADevice">REST API Reference for ResyncMFADevice Operation</seealso>
         IAsyncResult BeginResyncMFADevice(ResyncMFADeviceRequest request, AsyncCallback callback, object state);
 
 
@@ -6147,6 +6714,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginResyncMFADevice.</param>
         /// 
         /// <returns>Returns a  ResyncMFADeviceResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ResyncMFADevice">REST API Reference for ResyncMFADevice Operation</seealso>
         ResyncMFADeviceResponse EndResyncMFADevice(IAsyncResult asyncResult);
 
         #endregion
@@ -6188,6 +6756,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/SetDefaultPolicyVersion">REST API Reference for SetDefaultPolicyVersion Operation</seealso>
         SetDefaultPolicyVersionResponse SetDefaultPolicyVersion(SetDefaultPolicyVersionRequest request);
 
         /// <summary>
@@ -6201,6 +6770,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSetDefaultPolicyVersion
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/SetDefaultPolicyVersion">REST API Reference for SetDefaultPolicyVersion Operation</seealso>
         IAsyncResult BeginSetDefaultPolicyVersion(SetDefaultPolicyVersionRequest request, AsyncCallback callback, object state);
 
 
@@ -6212,6 +6782,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetDefaultPolicyVersion.</param>
         /// 
         /// <returns>Returns a  SetDefaultPolicyVersionResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/SetDefaultPolicyVersion">REST API Reference for SetDefaultPolicyVersion Operation</seealso>
         SetDefaultPolicyVersionResponse EndSetDefaultPolicyVersion(IAsyncResult asyncResult);
 
         #endregion
@@ -6258,6 +6829,7 @@ namespace Amazon.IdentityManagement
         /// The request failed because a provided policy could not be successfully evaluated.
         /// An additional detail message indicates the source of the failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/SimulateCustomPolicy">REST API Reference for SimulateCustomPolicy Operation</seealso>
         SimulateCustomPolicyResponse SimulateCustomPolicy(SimulateCustomPolicyRequest request);
 
         /// <summary>
@@ -6271,6 +6843,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSimulateCustomPolicy
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/SimulateCustomPolicy">REST API Reference for SimulateCustomPolicy Operation</seealso>
         IAsyncResult BeginSimulateCustomPolicy(SimulateCustomPolicyRequest request, AsyncCallback callback, object state);
 
 
@@ -6282,6 +6855,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSimulateCustomPolicy.</param>
         /// 
         /// <returns>Returns a  SimulateCustomPolicyResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/SimulateCustomPolicy">REST API Reference for SimulateCustomPolicy Operation</seealso>
         SimulateCustomPolicyResponse EndSimulateCustomPolicy(IAsyncResult asyncResult);
 
         #endregion
@@ -6346,6 +6920,7 @@ namespace Amazon.IdentityManagement
         /// The request failed because a provided policy could not be successfully evaluated.
         /// An additional detail message indicates the source of the failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/SimulatePrincipalPolicy">REST API Reference for SimulatePrincipalPolicy Operation</seealso>
         SimulatePrincipalPolicyResponse SimulatePrincipalPolicy(SimulatePrincipalPolicyRequest request);
 
         /// <summary>
@@ -6359,6 +6934,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSimulatePrincipalPolicy
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/SimulatePrincipalPolicy">REST API Reference for SimulatePrincipalPolicy Operation</seealso>
         IAsyncResult BeginSimulatePrincipalPolicy(SimulatePrincipalPolicyRequest request, AsyncCallback callback, object state);
 
 
@@ -6370,6 +6946,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSimulatePrincipalPolicy.</param>
         /// 
         /// <returns>Returns a  SimulatePrincipalPolicyResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/SimulatePrincipalPolicy">REST API Reference for SimulatePrincipalPolicy Operation</seealso>
         SimulatePrincipalPolicyResponse EndSimulatePrincipalPolicy(IAsyncResult asyncResult);
 
         #endregion
@@ -6408,6 +6985,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateAccessKey">REST API Reference for UpdateAccessKey Operation</seealso>
         UpdateAccessKeyResponse UpdateAccessKey(UpdateAccessKeyRequest request);
 
         /// <summary>
@@ -6421,6 +6999,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateAccessKey
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateAccessKey">REST API Reference for UpdateAccessKey Operation</seealso>
         IAsyncResult BeginUpdateAccessKey(UpdateAccessKeyRequest request, AsyncCallback callback, object state);
 
 
@@ -6432,6 +7011,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateAccessKey.</param>
         /// 
         /// <returns>Returns a  UpdateAccessKeyResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateAccessKey">REST API Reference for UpdateAccessKey Operation</seealso>
         UpdateAccessKeyResponse EndUpdateAccessKey(IAsyncResult asyncResult);
 
         #endregion
@@ -6471,6 +7051,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateAccountPasswordPolicy">REST API Reference for UpdateAccountPasswordPolicy Operation</seealso>
         UpdateAccountPasswordPolicyResponse UpdateAccountPasswordPolicy();
 
         /// <summary>
@@ -6506,6 +7087,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateAccountPasswordPolicy">REST API Reference for UpdateAccountPasswordPolicy Operation</seealso>
         UpdateAccountPasswordPolicyResponse UpdateAccountPasswordPolicy(UpdateAccountPasswordPolicyRequest request);
 
         /// <summary>
@@ -6519,6 +7101,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateAccountPasswordPolicy
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateAccountPasswordPolicy">REST API Reference for UpdateAccountPasswordPolicy Operation</seealso>
         IAsyncResult BeginUpdateAccountPasswordPolicy(UpdateAccountPasswordPolicyRequest request, AsyncCallback callback, object state);
 
 
@@ -6530,6 +7113,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateAccountPasswordPolicy.</param>
         /// 
         /// <returns>Returns a  UpdateAccountPasswordPolicyResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateAccountPasswordPolicy">REST API Reference for UpdateAccountPasswordPolicy Operation</seealso>
         UpdateAccountPasswordPolicyResponse EndUpdateAccountPasswordPolicy(IAsyncResult asyncResult);
 
         #endregion
@@ -6561,6 +7145,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateAssumeRolePolicy">REST API Reference for UpdateAssumeRolePolicy Operation</seealso>
         UpdateAssumeRolePolicyResponse UpdateAssumeRolePolicy(UpdateAssumeRolePolicyRequest request);
 
         /// <summary>
@@ -6574,6 +7159,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateAssumeRolePolicy
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateAssumeRolePolicy">REST API Reference for UpdateAssumeRolePolicy Operation</seealso>
         IAsyncResult BeginUpdateAssumeRolePolicy(UpdateAssumeRolePolicyRequest request, AsyncCallback callback, object state);
 
 
@@ -6585,6 +7171,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateAssumeRolePolicy.</param>
         /// 
         /// <returns>Returns a  UpdateAssumeRolePolicyResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateAssumeRolePolicy">REST API Reference for UpdateAssumeRolePolicy Operation</seealso>
         UpdateAssumeRolePolicyResponse EndUpdateAssumeRolePolicy(IAsyncResult asyncResult);
 
         #endregion
@@ -6629,6 +7216,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateGroup">REST API Reference for UpdateGroup Operation</seealso>
         UpdateGroupResponse UpdateGroup(UpdateGroupRequest request);
 
         /// <summary>
@@ -6642,6 +7230,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateGroup
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateGroup">REST API Reference for UpdateGroup Operation</seealso>
         IAsyncResult BeginUpdateGroup(UpdateGroupRequest request, AsyncCallback callback, object state);
 
 
@@ -6653,6 +7242,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateGroup.</param>
         /// 
         /// <returns>Returns a  UpdateGroupResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateGroup">REST API Reference for UpdateGroup Operation</seealso>
         UpdateGroupResponse EndUpdateGroup(IAsyncResult asyncResult);
 
         #endregion
@@ -6694,6 +7284,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateLoginProfile">REST API Reference for UpdateLoginProfile Operation</seealso>
         UpdateLoginProfileResponse UpdateLoginProfile(UpdateLoginProfileRequest request);
 
         /// <summary>
@@ -6707,6 +7298,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateLoginProfile
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateLoginProfile">REST API Reference for UpdateLoginProfile Operation</seealso>
         IAsyncResult BeginUpdateLoginProfile(UpdateLoginProfileRequest request, AsyncCallback callback, object state);
 
 
@@ -6718,6 +7310,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateLoginProfile.</param>
         /// 
         /// <returns>Returns a  UpdateLoginProfileResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateLoginProfile">REST API Reference for UpdateLoginProfile Operation</seealso>
         UpdateLoginProfileResponse EndUpdateLoginProfile(IAsyncResult asyncResult);
 
         #endregion
@@ -6763,6 +7356,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateOpenIDConnectProviderThumbprint">REST API Reference for UpdateOpenIDConnectProviderThumbprint Operation</seealso>
         UpdateOpenIDConnectProviderThumbprintResponse UpdateOpenIDConnectProviderThumbprint(UpdateOpenIDConnectProviderThumbprintRequest request);
 
         /// <summary>
@@ -6776,6 +7370,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateOpenIDConnectProviderThumbprint
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateOpenIDConnectProviderThumbprint">REST API Reference for UpdateOpenIDConnectProviderThumbprint Operation</seealso>
         IAsyncResult BeginUpdateOpenIDConnectProviderThumbprint(UpdateOpenIDConnectProviderThumbprintRequest request, AsyncCallback callback, object state);
 
 
@@ -6787,6 +7382,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateOpenIDConnectProviderThumbprint.</param>
         /// 
         /// <returns>Returns a  UpdateOpenIDConnectProviderThumbprintResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateOpenIDConnectProviderThumbprint">REST API Reference for UpdateOpenIDConnectProviderThumbprint Operation</seealso>
         UpdateOpenIDConnectProviderThumbprintResponse EndUpdateOpenIDConnectProviderThumbprint(IAsyncResult asyncResult);
 
         #endregion
@@ -6822,6 +7418,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateSAMLProvider">REST API Reference for UpdateSAMLProvider Operation</seealso>
         UpdateSAMLProviderResponse UpdateSAMLProvider(UpdateSAMLProviderRequest request);
 
         /// <summary>
@@ -6835,6 +7432,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateSAMLProvider
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateSAMLProvider">REST API Reference for UpdateSAMLProvider Operation</seealso>
         IAsyncResult BeginUpdateSAMLProvider(UpdateSAMLProviderRequest request, AsyncCallback callback, object state);
 
 
@@ -6846,6 +7444,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateSAMLProvider.</param>
         /// 
         /// <returns>Returns a  UpdateSAMLProviderResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateSAMLProvider">REST API Reference for UpdateSAMLProvider Operation</seealso>
         UpdateSAMLProviderResponse EndUpdateSAMLProvider(IAsyncResult asyncResult);
 
         #endregion
@@ -6896,6 +7495,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateServerCertificate">REST API Reference for UpdateServerCertificate Operation</seealso>
         UpdateServerCertificateResponse UpdateServerCertificate(UpdateServerCertificateRequest request);
 
         /// <summary>
@@ -6909,6 +7509,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateServerCertificate
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateServerCertificate">REST API Reference for UpdateServerCertificate Operation</seealso>
         IAsyncResult BeginUpdateServerCertificate(UpdateServerCertificateRequest request, AsyncCallback callback, object state);
 
 
@@ -6920,7 +7521,55 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateServerCertificate.</param>
         /// 
         /// <returns>Returns a  UpdateServerCertificateResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateServerCertificate">REST API Reference for UpdateServerCertificate Operation</seealso>
         UpdateServerCertificateResponse EndUpdateServerCertificate(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateServiceSpecificCredential
+
+
+        /// <summary>
+        /// Sets the status of a service-specific credential to <code>Active</code> or <code>Inactive</code>.
+        /// Service-specific credentials that are inactive cannot be used for authentication to
+        /// the service. This action can be used to disable a user’s service-specific credential
+        /// as part of a credential rotation work flow.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateServiceSpecificCredential service method.</param>
+        /// 
+        /// <returns>The response from the UpdateServiceSpecificCredential service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateServiceSpecificCredential">REST API Reference for UpdateServiceSpecificCredential Operation</seealso>
+        UpdateServiceSpecificCredentialResponse UpdateServiceSpecificCredential(UpdateServiceSpecificCredentialRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateServiceSpecificCredential operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateServiceSpecificCredential operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateServiceSpecificCredential
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateServiceSpecificCredential">REST API Reference for UpdateServiceSpecificCredential Operation</seealso>
+        IAsyncResult BeginUpdateServiceSpecificCredential(UpdateServiceSpecificCredentialRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateServiceSpecificCredential operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateServiceSpecificCredential.</param>
+        /// 
+        /// <returns>Returns a  UpdateServiceSpecificCredentialResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateServiceSpecificCredential">REST API Reference for UpdateServiceSpecificCredential Operation</seealso>
+        UpdateServiceSpecificCredentialResponse EndUpdateServiceSpecificCredential(IAsyncResult asyncResult);
 
         #endregion
         
@@ -6954,6 +7603,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateSigningCertificate">REST API Reference for UpdateSigningCertificate Operation</seealso>
         UpdateSigningCertificateResponse UpdateSigningCertificate(UpdateSigningCertificateRequest request);
 
         /// <summary>
@@ -6967,6 +7617,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateSigningCertificate
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateSigningCertificate">REST API Reference for UpdateSigningCertificate Operation</seealso>
         IAsyncResult BeginUpdateSigningCertificate(UpdateSigningCertificateRequest request, AsyncCallback callback, object state);
 
 
@@ -6978,6 +7629,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateSigningCertificate.</param>
         /// 
         /// <returns>Returns a  UpdateSigningCertificateResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateSigningCertificate">REST API Reference for UpdateSigningCertificate Operation</seealso>
         UpdateSigningCertificateResponse EndUpdateSigningCertificate(IAsyncResult asyncResult);
 
         #endregion
@@ -7005,6 +7657,7 @@ namespace Amazon.IdentityManagement
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateSSHPublicKey">REST API Reference for UpdateSSHPublicKey Operation</seealso>
         UpdateSSHPublicKeyResponse UpdateSSHPublicKey(UpdateSSHPublicKeyRequest request);
 
         /// <summary>
@@ -7018,6 +7671,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateSSHPublicKey
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateSSHPublicKey">REST API Reference for UpdateSSHPublicKey Operation</seealso>
         IAsyncResult BeginUpdateSSHPublicKey(UpdateSSHPublicKeyRequest request, AsyncCallback callback, object state);
 
 
@@ -7029,6 +7683,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateSSHPublicKey.</param>
         /// 
         /// <returns>Returns a  UpdateSSHPublicKeyResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateSSHPublicKey">REST API Reference for UpdateSSHPublicKey Operation</seealso>
         UpdateSSHPublicKeyResponse EndUpdateSSHPublicKey(IAsyncResult asyncResult);
 
         #endregion
@@ -7079,6 +7734,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateUser">REST API Reference for UpdateUser Operation</seealso>
         UpdateUserResponse UpdateUser(UpdateUserRequest request);
 
         /// <summary>
@@ -7092,6 +7748,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateUser
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateUser">REST API Reference for UpdateUser Operation</seealso>
         IAsyncResult BeginUpdateUser(UpdateUserRequest request, AsyncCallback callback, object state);
 
 
@@ -7103,6 +7760,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateUser.</param>
         /// 
         /// <returns>Returns a  UpdateUserResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateUser">REST API Reference for UpdateUser Operation</seealso>
         UpdateUserResponse EndUpdateUser(IAsyncResult asyncResult);
 
         #endregion
@@ -7159,6 +7817,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UploadServerCertificate">REST API Reference for UploadServerCertificate Operation</seealso>
         UploadServerCertificateResponse UploadServerCertificate(UploadServerCertificateRequest request);
 
         /// <summary>
@@ -7172,6 +7831,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUploadServerCertificate
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UploadServerCertificate">REST API Reference for UploadServerCertificate Operation</seealso>
         IAsyncResult BeginUploadServerCertificate(UploadServerCertificateRequest request, AsyncCallback callback, object state);
 
 
@@ -7183,6 +7843,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUploadServerCertificate.</param>
         /// 
         /// <returns>Returns a  UploadServerCertificateResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UploadServerCertificate">REST API Reference for UploadServerCertificate Operation</seealso>
         UploadServerCertificateResponse EndUploadServerCertificate(IAsyncResult asyncResult);
 
         #endregion
@@ -7242,6 +7903,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UploadSigningCertificate">REST API Reference for UploadSigningCertificate Operation</seealso>
         UploadSigningCertificateResponse UploadSigningCertificate(UploadSigningCertificateRequest request);
 
         /// <summary>
@@ -7255,6 +7917,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUploadSigningCertificate
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UploadSigningCertificate">REST API Reference for UploadSigningCertificate Operation</seealso>
         IAsyncResult BeginUploadSigningCertificate(UploadSigningCertificateRequest request, AsyncCallback callback, object state);
 
 
@@ -7266,6 +7929,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUploadSigningCertificate.</param>
         /// 
         /// <returns>Returns a  UploadSigningCertificateResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UploadSigningCertificate">REST API Reference for UploadSigningCertificate Operation</seealso>
         UploadSigningCertificateResponse EndUploadSigningCertificate(IAsyncResult asyncResult);
 
         #endregion
@@ -7306,6 +7970,7 @@ namespace Amazon.IdentityManagement
         /// The request was rejected because the public key encoding format is unsupported or
         /// unrecognized.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UploadSSHPublicKey">REST API Reference for UploadSSHPublicKey Operation</seealso>
         UploadSSHPublicKeyResponse UploadSSHPublicKey(UploadSSHPublicKeyRequest request);
 
         /// <summary>
@@ -7319,6 +7984,7 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUploadSSHPublicKey
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UploadSSHPublicKey">REST API Reference for UploadSSHPublicKey Operation</seealso>
         IAsyncResult BeginUploadSSHPublicKey(UploadSSHPublicKeyRequest request, AsyncCallback callback, object state);
 
 
@@ -7330,6 +7996,7 @@ namespace Amazon.IdentityManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUploadSSHPublicKey.</param>
         /// 
         /// <returns>Returns a  UploadSSHPublicKeyResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UploadSSHPublicKey">REST API Reference for UploadSSHPublicKey Operation</seealso>
         UploadSSHPublicKeyResponse EndUploadSSHPublicKey(IAsyncResult asyncResult);
 
         #endregion

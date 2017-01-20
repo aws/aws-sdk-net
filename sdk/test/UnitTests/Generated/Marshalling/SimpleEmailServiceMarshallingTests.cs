@@ -68,6 +68,54 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("SimpleEmailService")]
+        public void CreateConfigurationSetMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateConfigurationSet");
+
+            var request = InstantiateClassGenerator.Execute<CreateConfigurationSetRequest>();
+            var marshaller = new CreateConfigurationSetRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = CreateConfigurationSetResponseUnmarshaller.Instance.Unmarshall(context)
+                as CreateConfigurationSetResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SimpleEmailService")]
+        public void CreateConfigurationSetEventDestinationMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateConfigurationSetEventDestination");
+
+            var request = InstantiateClassGenerator.Execute<CreateConfigurationSetEventDestinationRequest>();
+            var marshaller = new CreateConfigurationSetEventDestinationRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = CreateConfigurationSetEventDestinationResponseUnmarshaller.Instance.Unmarshall(context)
+                as CreateConfigurationSetEventDestinationResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SimpleEmailService")]
         public void CreateReceiptFilterMarshallTest()
         {
             var operation = service_model.FindOperation("CreateReceiptFilter");
@@ -131,6 +179,54 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
             var response = CreateReceiptRuleSetResponseUnmarshaller.Instance.Unmarshall(context)
                 as CreateReceiptRuleSetResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SimpleEmailService")]
+        public void DeleteConfigurationSetMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteConfigurationSet");
+
+            var request = InstantiateClassGenerator.Execute<DeleteConfigurationSetRequest>();
+            var marshaller = new DeleteConfigurationSetRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DeleteConfigurationSetResponseUnmarshaller.Instance.Unmarshall(context)
+                as DeleteConfigurationSetResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SimpleEmailService")]
+        public void DeleteConfigurationSetEventDestinationMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteConfigurationSetEventDestination");
+
+            var request = InstantiateClassGenerator.Execute<DeleteConfigurationSetEventDestinationRequest>();
+            var marshaller = new DeleteConfigurationSetEventDestinationRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DeleteConfigurationSetEventDestinationResponseUnmarshaller.Instance.Unmarshall(context)
+                as DeleteConfigurationSetEventDestinationResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
@@ -294,6 +390,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
             var response = DescribeActiveReceiptRuleSetResponseUnmarshaller.Instance.Unmarshall(context)
                 as DescribeActiveReceiptRuleSetResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SimpleEmailService")]
+        public void DescribeConfigurationSetMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeConfigurationSet");
+
+            var request = InstantiateClassGenerator.Execute<DescribeConfigurationSetRequest>();
+            var marshaller = new DescribeConfigurationSetRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DescribeConfigurationSetResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeConfigurationSetResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
@@ -510,6 +630,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
             var response = GetSendStatisticsResponseUnmarshaller.Instance.Unmarshall(context)
                 as GetSendStatisticsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SimpleEmailService")]
+        public void ListConfigurationSetsMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListConfigurationSets");
+
+            var request = InstantiateClassGenerator.Execute<ListConfigurationSetsRequest>();
+            var marshaller = new ListConfigurationSetsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = ListConfigurationSetsResponseUnmarshaller.Instance.Unmarshall(context)
+                as ListConfigurationSetsResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
@@ -918,6 +1062,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
             var response = SetReceiptRulePositionResponseUnmarshaller.Instance.Unmarshall(context)
                 as SetReceiptRulePositionResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SimpleEmailService")]
+        public void UpdateConfigurationSetEventDestinationMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateConfigurationSetEventDestination");
+
+            var request = InstantiateClassGenerator.Execute<UpdateConfigurationSetEventDestinationRequest>();
+            var marshaller = new UpdateConfigurationSetEventDestinationRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = UpdateConfigurationSetEventDestinationResponseUnmarshaller.Instance.Unmarshall(context)
+                as UpdateConfigurationSetEventDestinationResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 

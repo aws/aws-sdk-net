@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2016-01-28.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-11-25.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -44,8 +44,8 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Instantiates GetInvalidationRequest with the parameterized properties
         /// </summary>
-        /// <param name="distributionId">The distribution's id.</param>
-        /// <param name="id">The invalidation's id.</param>
+        /// <param name="distributionId">The distribution's ID.</param>
+        /// <param name="id">The identifier for the invalidation request, for example, <code>IDFDVBD632BHDS5</code>.</param>
         public GetInvalidationRequest(string distributionId, string id)
         {
             _distributionId = distributionId;
@@ -53,7 +53,10 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DistributionId. The distribution's id.
+        /// Gets and sets the property DistributionId. 
+        /// <para>
+        /// The distribution's ID.
+        /// </para>
         /// </summary>
         public string DistributionId
         {
@@ -68,7 +71,10 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Id. The invalidation's id.
+        /// Gets and sets the property Id. 
+        /// <para>
+        /// The identifier for the invalidation request, for example, <code>IDFDVBD632BHDS5</code>.
+        /// </para>
         /// </summary>
         public string Id
         {

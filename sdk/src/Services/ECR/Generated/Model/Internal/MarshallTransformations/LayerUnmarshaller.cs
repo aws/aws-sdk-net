@@ -82,6 +82,12 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
                     unmarshalledObject.LayerSize = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("mediaType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MediaType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

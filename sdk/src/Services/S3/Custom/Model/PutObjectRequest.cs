@@ -48,8 +48,10 @@ namespace Amazon.S3.Model
         private string contentBody;
         private bool autoCloseStream = true;
         private bool autoResetStreamPosition = true;
+        private RequestPayer requestPayer;
 
         private string md5Digest;
+        private List<Tag> tagset;
 
         /// <summary>
         /// A canned access control list (CACL) to apply to the object.
@@ -407,6 +409,43 @@ namespace Amazon.S3.Model
             {
                 return true;
             }
+        }
+
+        /// <summary>
+        /// Confirms that the requester knows that she or he will be charged for the list objects request.
+        /// Bucket owners need not specify this parameter in their requests.
+        /// </summary>
+        public RequestPayer RequestPayer
+        {
+            get { return this.requestPayer; }
+            set { this.requestPayer = value; }
+        }
+
+        /// <summary>
+        /// Checks to see if RequetsPayer is set.
+        /// </summary>
+        /// <returns>true, if RequestPayer property is set.</returns>
+        internal bool IsSetRequestPayer()
+        {
+            return requestPayer != null;
+        }
+
+        /// <summary>
+        /// The tag-set for the object. The tag-set must be encoded as URL Query parameters.
+        /// </summary>
+        public List<Tag> TagSet
+        {
+            get { return this.tagset; }
+            set { this.tagset = value; }
+        }
+
+        /// <summary>
+        /// Checks if Tagging property is set
+        /// </summary>
+        /// <returns>true if Tagging is set.</returns>
+        internal bool IsSetTagSet()
+        {
+            return this.tagset!= null;
         }
     }
 }

@@ -73,22 +73,19 @@ namespace Amazon.S3.Util
             PostFormDataXAmzDate = "x-amz-date",
             PostFormDataSecurityToken = "x-amz-security-token";
 
+        internal static string
+            AmzHeaderMultipartPartsCount    = "x-amz-mp-parts-count",
+            AmzHeaderRequestPayer           = "x-amz-request-payer",
+            AmzHeaderRequestCharged         = "x-amz-request-charged",
+            AmzHeaderTagging                = "x-amz-tagging",
+            AmzHeaderTaggingDirective       = "x-amz-tagging-directive",
+            AmzHeaderTaggingCount           = "x-amz-tagging-count";
+
         // Commonly used static strings
         //internal const string RequestParam = "request";
 
         // Bucket Version strings
         internal static readonly string[] BucketVersions = { "", "V1", "V2" };
-
-        // Location Constraint strings
-        // These strings need to be ordered like the S3Region enumeration
-        internal static readonly string[] LocationConstraints = {"",
-                                                "EU",
-                                                "us-west-1",
-                                                "us-west-2",
-                                                "ap-southeast-1",
-                                                "ap-southeast-2",
-                                                "ap-northeast-1",
-                                                "sa-east-1"};
 
         internal const string REGION_US_EAST_1 = "us-east-1";
         internal const string REGION_EU_WEST_1 = "eu-west-1";

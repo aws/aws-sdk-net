@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-11-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -37,7 +37,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property HostIds. 
         /// <para>
-        /// The ID of the allocated Dedicated host. This is used when you want to launch an instance
+        /// The ID of the allocated Dedicated Host. This is used when you want to launch an instance
         /// onto a specific host.
         /// </para>
         /// </summary>

@@ -61,6 +61,12 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         unmarshalledObject.Capabilities.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("ChangeSetId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ChangeSetId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("CreationTime", targetDepth))
                     {
                         var unmarshaller = DateTimeUnmarshaller.Instance;
@@ -104,6 +110,12 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         var unmarshaller = ParameterUnmarshaller.Instance;
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Parameters.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("RoleARN", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.RoleARN = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("StackId", targetDepth))

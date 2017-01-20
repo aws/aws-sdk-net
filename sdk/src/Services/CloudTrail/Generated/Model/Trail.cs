@@ -34,6 +34,7 @@ namespace Amazon.CloudTrail.Model
     {
         private string _cloudWatchLogsLogGroupArn;
         private string _cloudWatchLogsRoleArn;
+        private bool? _hasCustomEventSelectors;
         private string _homeRegion;
         private bool? _includeGlobalServiceEvents;
         private bool? _isMultiRegionTrail;
@@ -82,6 +83,24 @@ namespace Amazon.CloudTrail.Model
         internal bool IsSetCloudWatchLogsRoleArn()
         {
             return this._cloudWatchLogsRoleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HasCustomEventSelectors. 
+        /// <para>
+        /// Specifies if the trail has custom event selectors.
+        /// </para>
+        /// </summary>
+        public bool HasCustomEventSelectors
+        {
+            get { return this._hasCustomEventSelectors.GetValueOrDefault(); }
+            set { this._hasCustomEventSelectors = value; }
+        }
+
+        // Check to see if HasCustomEventSelectors property is set
+        internal bool IsSetHasCustomEventSelectors()
+        {
+            return this._hasCustomEventSelectors.HasValue; 
         }
 
         /// <summary>

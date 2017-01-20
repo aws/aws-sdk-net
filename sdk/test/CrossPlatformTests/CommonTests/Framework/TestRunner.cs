@@ -1,4 +1,4 @@
-﻿using Amazon;
+using Amazon;
 using Amazon.Runtime;
 using System;
 using System.Collections.Generic;
@@ -17,6 +17,7 @@ using Amazon.SimpleNotificationService.Model;
 using System.Collections;
 using System.Net;
 using System.Net.Http;
+using Amazon.Runtime.Internal.Util;
 
 namespace CommonTests.Framework
 {
@@ -156,7 +157,15 @@ namespace CommonTests.Framework
         {
             try
             {
-                var client = new HttpClient();
+                //This change has been done for the purpose of testing the S3 Xamarin Proxy.
+                //These proxy settings on the TestRunner will not be shipped.
+                var clientHandler = new System.Net.Http.HttpClientHandler
+                {
+                    UseProxy = true,
+                    Proxy = new WebProxy("http://localhost:8888/")
+                };
+                clientHandler.Proxy.Credentials = new NetworkCredential("1", "1");
+                var client = new HttpClient(clientHandler);
                 var content = client.GetStringAsync(internetTestAddress).Result;
                 if (string.IsNullOrEmpty(content))
                 {

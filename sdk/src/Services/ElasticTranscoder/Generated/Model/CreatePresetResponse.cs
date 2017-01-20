@@ -38,8 +38,8 @@ namespace Amazon.ElasticTranscoder.Model
         /// <summary>
         /// Gets and sets the property Preset. 
         /// <para>
-        ///  A section of the response body that provides information about the preset that is
-        /// created. 
+        /// A section of the response body that provides information about the preset that is
+        /// created.
         /// </para>
         /// </summary>
         public Preset Preset

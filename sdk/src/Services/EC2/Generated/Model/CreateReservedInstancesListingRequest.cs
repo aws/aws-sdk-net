@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-11-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -29,25 +29,33 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateReservedInstancesListing operation.
-    /// Creates a listing for Amazon EC2 Reserved Instances to be sold in the Reserved Instance
-    /// Marketplace. You can submit one Reserved Instance listing at a time. To get a list
-    /// of your Reserved Instances, you can use the <a>DescribeReservedInstances</a> operation.
+    /// Creates a listing for Amazon EC2 Standard Reserved Instances to be sold in the Reserved
+    /// Instance Marketplace. You can submit one Standard Reserved Instance listing at a time.
+    /// To get a list of your Standard Reserved Instances, you can use the <a>DescribeReservedInstances</a>
+    /// operation.
     /// 
-    ///  
+    ///  <note> 
     /// <para>
-    /// The Reserved Instance Marketplace matches sellers who want to resell Reserved Instance
-    /// capacity that they no longer need with buyers who want to purchase additional capacity.
-    /// Reserved Instances bought and sold through the Reserved Instance Marketplace work
-    /// like any other Reserved Instances.
+    /// Only Standard Reserved Instances with a capacity reservation can be sold in the Reserved
+    /// Instance Marketplace. Convertible Reserved Instances and Standard Reserved Instances
+    /// with a regional benefit cannot be sold.
+    /// </para>
+    ///  </note> 
+    /// <para>
+    /// The Reserved Instance Marketplace matches sellers who want to resell Standard Reserved
+    /// Instance capacity that they no longer need with buyers who want to purchase additional
+    /// capacity. Reserved Instances bought and sold through the Reserved Instance Marketplace
+    /// work like any other Reserved Instances.
     /// </para>
     ///  
     /// <para>
-    /// To sell your Reserved Instances, you must first register as a seller in the Reserved
-    /// Instance Marketplace. After completing the registration process, you can create a
-    /// Reserved Instance Marketplace listing of some or all of your Reserved Instances, and
-    /// specify the upfront price to receive for them. Your Reserved Instance listings then
-    /// become available for purchase. To view the details of your Reserved Instance listing,
-    /// you can use the <a>DescribeReservedInstancesListings</a> operation.
+    /// To sell your Standard Reserved Instances, you must first register as a seller in the
+    /// Reserved Instance Marketplace. After completing the registration process, you can
+    /// create a Reserved Instance Marketplace listing of some or all of your Standard Reserved
+    /// Instances, and specify the upfront price to receive for them. Your Standard Reserved
+    /// Instance listings then become available for purchase. To view the details of your
+    /// Standard Reserved Instance listing, you can use the <a>DescribeReservedInstancesListings</a>
+    /// operation.
     /// </para>
     ///  
     /// <para>
@@ -105,8 +113,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property PriceSchedules. 
         /// <para>
-        /// A list specifying the price of the Reserved Instance for each month remaining in the
-        /// Reserved Instance term.
+        /// A list specifying the price of the Standard Reserved Instance for each month remaining
+        /// in the Reserved Instance term.
         /// </para>
         /// </summary>
         public List<PriceScheduleSpecification> PriceSchedules
@@ -124,7 +132,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ReservedInstancesId. 
         /// <para>
-        /// The ID of the active Reserved Instance.
+        /// The ID of the active Standard Reserved Instance.
         /// </para>
         /// </summary>
         public string ReservedInstancesId

@@ -168,6 +168,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
         }
         public static void WaitUntilSuccess(Action action, int sleepSeconds = 5, int maxWaitSeconds = 300)
         {
+            if (sleepSeconds < 0) throw new ArgumentOutOfRangeException("sleepSeconds");
+            WaitUntilSuccess(action, new ListSleeper(sleepSeconds * 1000), maxWaitSeconds);
+        }
+
+        public static void WaitUntilSuccess(Action action, ListSleeper sleeper, int maxWaitSeconds = 300)
+        {
             WaitUntil(() =>
             {
                 try
@@ -179,14 +185,19 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
                 {
                     return false;
                 }
-            }, sleepSeconds, maxWaitSeconds);
+            }, sleeper, maxWaitSeconds);
         }
+
         public static void WaitUntil(Func<bool> matchFunction, int sleepSeconds = 5, int maxWaitSeconds = 300)
         {
             if (sleepSeconds < 0) throw new ArgumentOutOfRangeException("sleepSeconds");
+            WaitUntil(matchFunction, new ListSleeper(sleepSeconds * 1000), maxWaitSeconds);
+        }
+
+        public static void WaitUntil(Func<bool> matchFunction, ListSleeper sleeper, int maxWaitSeconds = 300)
+        {
             if (maxWaitSeconds < 0) throw new ArgumentOutOfRangeException("maxWaitSeconds");
 
-            var sleepTime = TimeSpan.FromSeconds(sleepSeconds);
             var maxTime = TimeSpan.FromSeconds(maxWaitSeconds);
             var endTime = DateTime.Now + maxTime;
 
@@ -194,7 +205,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
             {
                 if (matchFunction())
                     return;
-                Thread.Sleep(sleepTime);
+                sleeper.Sleep();
             }
 
             throw new TimeoutException(string.Format("Wait condition was not satisfied for {0} seconds", maxWaitSeconds));
@@ -232,6 +243,29 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
         public static string GenerateName(string name)
         {
             return name + new Random().Next();
+        }
+
+        public class ListSleeper
+        {
+            private int attempt;
+            private int[] millisecondsList;
+
+            public ListSleeper(params int[] millisecondsList)
+            {
+                if (millisecondsList.Length < 1)
+                    throw new ArgumentException("There must be at least one sleep period in millisecondsList.");
+
+                attempt = 0;
+                this.millisecondsList = millisecondsList;
+            }
+
+            public void Sleep()
+            {
+                // if there are more attempts than array elements just keep using the last one
+                var index = Math.Min(attempt, millisecondsList.Length - 1);
+                Thread.Sleep(millisecondsList[index]);
+                attempt++;
+            }
         }
     }
 }

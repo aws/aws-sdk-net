@@ -65,7 +65,7 @@ namespace Amazon.Runtime
         }
     }
 
-#if BCL
+#if BCL || CORECLR
     /// <summary>
     /// Determines region based on an environment variable. If the environment does not contain
     /// the region setting key an InvalidOperationException is thrown.
@@ -145,7 +145,7 @@ namespace Amazon.Runtime
             AllGenerators = new List<RegionGenerator>
             {
                 () => new AppConfigAWSRegion(),
-#if BCL
+#if BCL || CORECLR
                 () => new EnvironmentVariableAWSRegion(),
                 () => new InstanceProfileAWSRegion()
 #endif
@@ -154,7 +154,7 @@ namespace Amazon.Runtime
             NonMetadataGenerators = new List<RegionGenerator>
             {
                 () => new AppConfigAWSRegion(),
-#if BCL
+#if BCL || CORECLR
                 () => new EnvironmentVariableAWSRegion()
 #endif
             };

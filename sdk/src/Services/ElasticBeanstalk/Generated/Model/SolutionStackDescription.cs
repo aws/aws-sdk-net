@@ -38,7 +38,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property PermittedFileTypes. 
         /// <para>
-        ///  The permitted file types allowed for a solution stack. 
+        /// The permitted file types allowed for a solution stack.
         /// </para>
         /// </summary>
         public List<string> PermittedFileTypes
@@ -56,7 +56,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property SolutionStackName. 
         /// <para>
-        ///  The name of the solution stack. 
+        /// The name of the solution stack.
         /// </para>
         /// </summary>
         public string SolutionStackName

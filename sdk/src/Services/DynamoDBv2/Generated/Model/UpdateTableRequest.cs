@@ -51,14 +51,15 @@ namespace Amazon.DynamoDBv2.Model
     ///  </li> <li> 
     /// <para>
     /// Create a new global secondary index on the table. Once the index begins backfilling,
-    /// you can use <i>UpdateTable</i> to perform other operations.
+    /// you can use <code>UpdateTable</code> to perform other operations.
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    ///  <i>UpdateTable</i> is an asynchronous operation; while it is executing, the table
-    /// status changes from <code>ACTIVE</code> to <code>UPDATING</code>. While it is <code>UPDATING</code>,
-    /// you cannot issue another <i>UpdateTable</i> request. When the table returns to the
-    /// <code>ACTIVE</code> state, the <i>UpdateTable</i> operation is complete.
+    ///  <code>UpdateTable</code> is an asynchronous operation; while it is executing, the
+    /// table status changes from <code>ACTIVE</code> to <code>UPDATING</code>. While it is
+    /// <code>UPDATING</code>, you cannot issue another <code>UpdateTable</code> request.
+    /// When the table returns to the <code>ACTIVE</code> state, the <code>UpdateTable</code>
+    /// operation is complete.
     /// </para>
     /// </summary>
     public partial class UpdateTableRequest : AmazonDynamoDBRequest
@@ -78,7 +79,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Instantiates UpdateTableRequest with the parameterized properties
         /// </summary>
         /// <param name="tableName">The name of the table to be updated.</param>
-        /// <param name="provisionedThroughput">Sets the UpdateTableRequest ProvisionedThroughput property</param>
+        /// <param name="provisionedThroughput">The new provisioned throughput settings for the specified table or index.</param>
         public UpdateTableRequest(string tableName, ProvisionedThroughput provisionedThroughput)
         {
             _tableName = tableName;
@@ -89,7 +90,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Gets and sets the property AttributeDefinitions. 
         /// <para>
         /// An array of attributes that describe the key schema for the table and indexes. If
-        /// you are adding a new global secondary index to the table, <i>AttributeDefinitions</i>
+        /// you are adding a new global secondary index to the table, <code>AttributeDefinitions</code>
         /// must include the key element(s) of the new index.
         /// </para>
         /// </summary>
@@ -113,16 +114,16 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <i>Create</i> - add a new global secondary index to the table.
+        ///  <code>Create</code> - add a new global secondary index to the table.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i>Update</i> - modify the provisioned throughput settings of an existing global
+        ///  <code>Update</code> - modify the provisioned throughput settings of an existing global
         /// secondary index.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i>Delete</i> - remove a global secondary index from the table.
+        ///  <code>Delete</code> - remove a global secondary index from the table.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -143,7 +144,10 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ProvisionedThroughput.
+        /// Gets and sets the property ProvisionedThroughput. 
+        /// <para>
+        /// The new provisioned throughput settings for the specified table or index.
+        /// </para>
         /// </summary>
         public ProvisionedThroughput ProvisionedThroughput
         {
@@ -164,9 +168,9 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// You will receive a <i>ResourceInUseException</i> if you attempt to enable a stream
-        /// on a table that already has a stream, or if you attempt to disable a stream on a table
-        /// which does not have a stream.
+        /// You will receive a <code>ResourceInUseException</code> if you attempt to enable a
+        /// stream on a table that already has a stream, or if you attempt to disable a stream
+        /// on a table which does not have a stream.
         /// </para>
         ///  </note>
         /// </summary>

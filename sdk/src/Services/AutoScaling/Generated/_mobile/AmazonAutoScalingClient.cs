@@ -48,6 +48,66 @@ namespace Amazon.AutoScaling
         
         #region Constructors
 
+#if CORECLR
+    
+        /// <summary>
+        /// Constructs AmazonAutoScalingClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
+        public AmazonAutoScalingClient()
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonAutoScalingConfig()) { }
+
+        /// <summary>
+        /// Constructs AmazonAutoScalingClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
+        /// <param name="region">The region to connect.</param>
+        public AmazonAutoScalingClient(RegionEndpoint region)
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonAutoScalingConfig{RegionEndpoint = region}) { }
+
+        /// <summary>
+        /// Constructs AmazonAutoScalingClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
+        /// <param name="config">The AmazonAutoScalingClient Configuration Object</param>
+        public AmazonAutoScalingClient(AmazonAutoScalingConfig config)
+            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+
+#endif
+
         /// <summary>
         /// Constructs AmazonAutoScalingClient with AWS Credentials
         /// </summary>
@@ -232,6 +292,37 @@ namespace Amazon.AutoScaling
             var unmarshaller = AttachLoadBalancersResponseUnmarshaller.Instance;
 
             return InvokeAsync<AttachLoadBalancersRequest,AttachLoadBalancersResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  AttachLoadBalancerTargetGroups
+
+        internal AttachLoadBalancerTargetGroupsResponse AttachLoadBalancerTargetGroups(AttachLoadBalancerTargetGroupsRequest request)
+        {
+            var marshaller = new AttachLoadBalancerTargetGroupsRequestMarshaller();
+            var unmarshaller = AttachLoadBalancerTargetGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<AttachLoadBalancerTargetGroupsRequest,AttachLoadBalancerTargetGroupsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AttachLoadBalancerTargetGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AttachLoadBalancerTargetGroups operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<AttachLoadBalancerTargetGroupsResponse> AttachLoadBalancerTargetGroupsAsync(AttachLoadBalancerTargetGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new AttachLoadBalancerTargetGroupsRequestMarshaller();
+            var unmarshaller = AttachLoadBalancerTargetGroupsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AttachLoadBalancerTargetGroupsRequest,AttachLoadBalancerTargetGroupsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -706,8 +797,7 @@ namespace Amazon.AutoScaling
 
 
         /// <summary>
-        /// Describes one or more Auto Scaling groups. If a list of names is not provided, the
-        /// call describes all Auto Scaling groups.
+        /// Describes one or more Auto Scaling groups.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -763,8 +853,7 @@ namespace Amazon.AutoScaling
 
 
         /// <summary>
-        /// Describes one or more Auto Scaling instances. If a list is not provided, the call
-        /// describes all instances.
+        /// Describes one or more Auto Scaling instances.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -873,8 +962,7 @@ namespace Amazon.AutoScaling
 
 
         /// <summary>
-        /// Describes one or more launch configurations. If you omit the list of names, then the
-        /// call describes all launch configurations.
+        /// Describes one or more launch configurations.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -1002,6 +1090,37 @@ namespace Amazon.AutoScaling
             var unmarshaller = DescribeLoadBalancersResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeLoadBalancersRequest,DescribeLoadBalancersResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeLoadBalancerTargetGroups
+
+        internal DescribeLoadBalancerTargetGroupsResponse DescribeLoadBalancerTargetGroups(DescribeLoadBalancerTargetGroupsRequest request)
+        {
+            var marshaller = new DescribeLoadBalancerTargetGroupsRequestMarshaller();
+            var unmarshaller = DescribeLoadBalancerTargetGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeLoadBalancerTargetGroupsRequest,DescribeLoadBalancerTargetGroupsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeLoadBalancerTargetGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLoadBalancerTargetGroups operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeLoadBalancerTargetGroupsResponse> DescribeLoadBalancerTargetGroupsAsync(DescribeLoadBalancerTargetGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeLoadBalancerTargetGroupsRequestMarshaller();
+            var unmarshaller = DescribeLoadBalancerTargetGroupsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeLoadBalancerTargetGroupsRequest,DescribeLoadBalancerTargetGroupsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1194,10 +1313,7 @@ namespace Amazon.AutoScaling
 
 
         /// <summary>
-        /// Describes one or more scaling activities for the specified Auto Scaling group. If
-        /// you omit the <code>ActivityIds</code>, the call returns all activities from the past
-        /// six weeks. Activities are sorted by the start time. Activities still in progress appear
-        /// first on the list.
+        /// Describes one or more scaling activities for the specified Auto Scaling group.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -1526,6 +1642,37 @@ namespace Amazon.AutoScaling
             var unmarshaller = DetachLoadBalancersResponseUnmarshaller.Instance;
 
             return InvokeAsync<DetachLoadBalancersRequest,DetachLoadBalancersResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DetachLoadBalancerTargetGroups
+
+        internal DetachLoadBalancerTargetGroupsResponse DetachLoadBalancerTargetGroups(DetachLoadBalancerTargetGroupsRequest request)
+        {
+            var marshaller = new DetachLoadBalancerTargetGroupsRequestMarshaller();
+            var unmarshaller = DetachLoadBalancerTargetGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<DetachLoadBalancerTargetGroupsRequest,DetachLoadBalancerTargetGroupsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DetachLoadBalancerTargetGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DetachLoadBalancerTargetGroups operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DetachLoadBalancerTargetGroupsResponse> DetachLoadBalancerTargetGroupsAsync(DetachLoadBalancerTargetGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DetachLoadBalancerTargetGroupsRequestMarshaller();
+            var unmarshaller = DetachLoadBalancerTargetGroupsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DetachLoadBalancerTargetGroupsRequest,DetachLoadBalancerTargetGroupsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

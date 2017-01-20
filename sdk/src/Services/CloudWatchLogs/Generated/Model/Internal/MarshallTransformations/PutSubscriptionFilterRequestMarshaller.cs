@@ -73,6 +73,12 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DestinationArn);
                 }
 
+                if(publicRequest.IsSetDistribution())
+                {
+                    context.Writer.WritePropertyName("distribution");
+                    context.Writer.Write(publicRequest.Distribution);
+                }
+
                 if(publicRequest.IsSetFilterName())
                 {
                     context.Writer.WritePropertyName("filterName");

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-11-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes a secondary private IP address for a network interface.
+    /// Describes a secondary private IPv4 address for a network interface.
     /// </summary>
     public partial class PrivateIpAddressSpecification
     {
@@ -38,8 +38,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Primary. 
         /// <para>
-        /// Indicates whether the private IP address is the primary private IP address. Only one
-        /// IP address can be designated as primary.
+        /// Indicates whether the private IPv4 address is the primary private IPv4 address. Only
+        /// one IPv4 address can be designated as primary.
         /// </para>
         /// </summary>
         public bool Primary
@@ -57,7 +57,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property PrivateIpAddress. 
         /// <para>
-        /// The private IP addresses.
+        /// The private IPv4 addresses.
         /// </para>
         /// </summary>
         public string PrivateIpAddress

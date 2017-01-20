@@ -39,7 +39,7 @@ namespace Amazon.OpsWorks
     /// AWS OpsWorks 
     /// <para>
     /// Welcome to the <i>AWS OpsWorks API Reference</i>. This guide provides descriptions,
-    /// syntax, and usage examples about AWS OpsWorks actions and data types, including common
+    /// syntax, and usage examples for AWS OpsWorks actions and data types, including common
     /// parameters and error codes. 
     /// </para>
     ///  
@@ -99,11 +99,55 @@ namespace Amazon.OpsWorks
     /// </para>
     ///  
     /// <para>
-    /// AWS OpsWorks supports only one endpoint, opsworks.us-east-1.amazonaws.com (HTTPS),
-    /// so you must connect to that endpoint. You can then use the API to direct AWS OpsWorks
-    /// to create stacks in any AWS Region.
+    /// AWS OpsWorks supports the following endpoints, all HTTPS. You must connect to one
+    /// of the following endpoints. Stacks can only be accessed or managed within the endpoint
+    /// in which they are created.
     /// </para>
-    ///  
+    ///  <ul> <li> 
+    /// <para>
+    /// opsworks.us-east-1.amazonaws.com
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// opsworks.us-west-1.amazonaws.com
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// opsworks.us-west-2.amazonaws.com
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// opsworks.eu-west-1.amazonaws.com
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// opsworks.eu-central-1.amazonaws.com
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// opsworks.ap-northeast-1.amazonaws.com
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// opsworks.ap-northeast-2.amazonaws.com
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// opsworks.ap-south-1.amazonaws.com
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// opsworks.ap-southeast-1.amazonaws.com
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// opsworks.ap-southeast-2.amazonaws.com
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// opsworks.sa-east-1.amazonaws.com
+    /// </para>
+    ///  </li> </ul> 
     /// <para>
     ///  <b>Chef Versions</b> 
     /// </para>
@@ -126,6 +170,66 @@ namespace Amazon.OpsWorks
     {
         
         #region Constructors
+
+#if CORECLR
+    
+        /// <summary>
+        /// Constructs AmazonOpsWorksClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
+        public AmazonOpsWorksClient()
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonOpsWorksConfig()) { }
+
+        /// <summary>
+        /// Constructs AmazonOpsWorksClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
+        /// <param name="region">The region to connect.</param>
+        public AmazonOpsWorksClient(RegionEndpoint region)
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonOpsWorksConfig{RegionEndpoint = region}) { }
+
+        /// <summary>
+        /// Constructs AmazonOpsWorksClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
+        /// <param name="config">The AmazonOpsWorksClient Configuration Object</param>
+        public AmazonOpsWorksClient(AmazonOpsWorksConfig config)
+            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+
+#endif
 
         /// <summary>
         /// Constructs AmazonOpsWorksClient with AWS Credentials

@@ -45,7 +45,29 @@ namespace Amazon.CloudFormation.Model
     /// </summary>
     public partial class GetTemplateRequest : AmazonCloudFormationRequest
     {
+        private string _changeSetName;
         private string _stackName;
+        private TemplateStage _templateStage;
+
+        /// <summary>
+        /// Gets and sets the property ChangeSetName. 
+        /// <para>
+        /// The name or Amazon Resource Name (ARN) of a change set for which AWS CloudFormation
+        /// returns the associated template. If you specify a name, you must also specify the
+        /// <code>StackName</code>.
+        /// </para>
+        /// </summary>
+        public string ChangeSetName
+        {
+            get { return this._changeSetName; }
+            set { this._changeSetName = value; }
+        }
+
+        // Check to see if ChangeSetName property is set
+        internal bool IsSetChangeSetName()
+        {
+            return this._changeSetName != null;
+        }
 
         /// <summary>
         /// Gets and sets the property StackName. 
@@ -76,6 +98,33 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetStackName()
         {
             return this._stackName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TemplateStage. 
+        /// <para>
+        /// For templates that include transforms, the stage of the template that AWS CloudFormation
+        /// returns. To get the user-submitted template, specify <code>Original</code>. To get
+        /// the template after AWS CloudFormation has processed all transforms, specify <code>Processed</code>.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// If the template doesn't include transforms, <code>Original</code> and <code>Processed</code>
+        /// return the same template. By default, AWS CloudFormation specifies <code>Original</code>.
+        /// 
+        /// </para>
+        /// </summary>
+        public TemplateStage TemplateStage
+        {
+            get { return this._templateStage; }
+            set { this._templateStage = value; }
+        }
+
+        // Check to see if TemplateStage property is set
+        internal bool IsSetTemplateStage()
+        {
+            return this._templateStage != null;
         }
 
     }

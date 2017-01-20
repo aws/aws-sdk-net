@@ -30,6 +30,9 @@ namespace Amazon.APIGateway.Model
     /// <summary>
     /// Represents an authorization layer for methods. If enabled on a method, API Gateway
     /// will activate the authorizer when a client calls the method.
+    /// 
+    ///  <div class="seeAlso"> <a href="http://docs.aws.amazon.com/apigateway/latest/developerguide/use-custom-authorizer.html">Enable
+    /// custom authorization</a> </div>
     /// </summary>
     public partial class GetAuthorizerResponse : AmazonWebServiceResponse
     {
@@ -41,13 +44,14 @@ namespace Amazon.APIGateway.Model
         private string _identitySource;
         private string _identityValidationExpression;
         private string _name;
+        private List<string> _providerarNs = new List<string>();
         private AuthorizerType _type;
 
         /// <summary>
         /// Gets and sets the property AuthorizerCredentials. 
         /// <para>
         /// Specifies the credentials required for the authorizer, if any. Two options are available.
-        /// To specify an IAM Role for Amazon API Gateway to assume, use the role's Amazon Resource
+        /// To specify an IAM role for Amazon API Gateway to assume, use the role's Amazon Resource
         /// Name (ARN). To use resource-based permissions on the Lambda function, specify null.
         /// </para>
         /// </summary>
@@ -86,13 +90,13 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property AuthorizerUri. 
         /// <para>
-        /// [Required] Specifies the authorizer's Uniform Resource Identifier (URI). For TOKEN
-        /// authorizers, this must be a well-formed Lambda function URI. The URI should be of
-        /// the form <code>arn:aws:apigateway:{region}:lambda:path/{service_api}</code>. <code>Region</code>
-        /// is used to determine the right endpoint. In this case, <code>path</code> is used to
-        /// indicate that the remaining substring in the URI should be treated as the path to
-        /// the resource, including the initial <code>/</code>. For Lambda functions, this is
-        /// usually of the form /2015-03-31/functions/[FunctionARN]/invocations
+        /// [Required] Specifies the authorizer's Uniform Resource Identifier (URI). For <code>TOKEN</code>
+        /// authorizers, this must be a well-formed Lambda function URI, for example, <code>arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:{account_id}:function:{lambda_function_name}/invocations</code>.
+        /// In general, the URI has this form <code>arn:aws:apigateway:{region}:lambda:path/{service_api}</code>,
+        /// where <code>{region}</code> is the same as the region hosting the Lambda function,
+        /// <code>path</code> indicates that the remaining substring in the URI should be treated
+        /// as the path to the resource, including the initial <code>/</code>. For Lambda functions,
+        /// this is usually of the form /2015-03-31/functions/[FunctionARN]/invocations.
         /// </para>
         /// </summary>
         public string AuthorizerUri
@@ -147,10 +151,12 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property IdentitySource. 
         /// <para>
-        /// [Required] The source of the identity in an incoming request. For TOKEN authorizers,
-        /// this value is a mapping expression with the same syntax as integration parameter mappings.
-        /// The only valid source for tokens is 'header', so the expression should match 'method.request.header.[headerName]'.
-        /// The value of the header '[headerName]' will be interpreted as the incoming token.
+        /// [Required] The source of the identity in an incoming request. For a <code>TOKEN</code>
+        /// authorizer, this value is a mapping expression with the same syntax as integration
+        /// parameter mappings. The only valid source for tokens is 'header', so the expression
+        /// should match 'method.request.header.[headerName]'. The value of the header '[headerName]'
+        /// will be interpreted as the incoming token. For <code>COGNITO_USER_POOLS</code> authorizers,
+        /// this property is used.
         /// </para>
         /// </summary>
         public string IdentitySource
@@ -168,10 +174,10 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property IdentityValidationExpression. 
         /// <para>
-        /// A validation expression for the incoming identity. For TOKEN authorizers, this value
-        /// should be a regular expression. The incoming token from the client is matched against
-        /// this expression, and will proceed if the token matches. If the token doesn't match,
-        /// the client receives a 401 Unauthorized response.
+        /// A validation expression for the incoming identity. For <code>TOKEN</code> authorizers,
+        /// this value should be a regular expression. The incoming token from the client is matched
+        /// against this expression, and will proceed if the token matches. If the token doesn't
+        /// match, the client receives a 401 Unauthorized response.
         /// </para>
         /// </summary>
         public string IdentityValidationExpression
@@ -205,9 +211,32 @@ namespace Amazon.APIGateway.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ProviderARNs. 
+        /// <para>
+        /// A list of the provider ARNs of the authorizer. For an <code>TOKEN</code> authorizer,
+        /// this is not defined. For authorizers of the <code>COGNITO_USER_POOLS</code> type,
+        /// each element corresponds to a user pool ARN of this format: <code>arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}</code>.
+        /// 
+        /// </para>
+        /// </summary>
+        public List<string> ProviderARNs
+        {
+            get { return this._providerarNs; }
+            set { this._providerarNs = value; }
+        }
+
+        // Check to see if ProviderARNs property is set
+        internal bool IsSetProviderARNs()
+        {
+            return this._providerarNs != null && this._providerarNs.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// [Required] The type of the authorizer. Currently, the only valid type is TOKEN.
+        /// [Required] The type of the authorizer. Currently, the valid type is <code>TOKEN</code>
+        /// for a Lambda function or <code>COGNITO_USER_POOLS</code> for an Amazon Cognito user
+        /// pool.
         /// </para>
         /// </summary>
         public AuthorizerType Type

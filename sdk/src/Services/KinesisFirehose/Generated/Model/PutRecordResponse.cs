@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisFirehose.Model
 {
     /// <summary>
-    /// Contains the output of <a>PutRecord</a>.
+    /// This is the response object from the PutRecord operation.
     /// </summary>
     public partial class PutRecordResponse : AmazonWebServiceResponse
     {

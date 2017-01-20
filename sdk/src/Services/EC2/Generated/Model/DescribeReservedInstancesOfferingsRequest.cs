@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-11-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -58,6 +58,7 @@ namespace Amazon.EC2.Model
         private int? _maxResults;
         private long? _minDuration;
         private string _nextToken;
+        private OfferingClassType _offeringClass;
         private OfferingTypeValues _offeringType;
         private RIProductDescription _productDescription;
         private List<string> _reservedInstancesOfferingIds = new List<string>();
@@ -127,6 +128,11 @@ namespace Amazon.EC2.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>reserved-instances-offering-id</code> - The Reserved Instances offering ID.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>scope</code> - The scope of the Reserved Instance (<code>Availability Zone</code>
+        /// or <code>Region</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -315,6 +321,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OfferingClass. 
+        /// <para>
+        /// The offering class of the Reserved Instance. Can be <code>standard</code> or <code>convertible</code>.
+        /// </para>
+        /// </summary>
+        public OfferingClassType OfferingClass
+        {
+            get { return this._offeringClass; }
+            set { this._offeringClass = value; }
+        }
+
+        // Check to see if OfferingClass property is set
+        internal bool IsSetOfferingClass()
+        {
+            return this._offeringClass != null;
         }
 
         /// <summary>

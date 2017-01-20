@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2016-01-28.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-11-25.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -35,7 +35,10 @@ namespace Amazon.CloudFront.Model
         private InvalidationList _invalidationList;
 
         /// <summary>
-        /// Gets and sets the property InvalidationList. Information about invalidation batches.
+        /// Gets and sets the property InvalidationList. 
+        /// <para>
+        /// Information about invalidation batches. 
+        /// </para>
         /// </summary>
         public InvalidationList InvalidationList
         {

@@ -33,14 +33,35 @@ namespace Amazon.APIGateway.Model
     /// </summary>
     public partial class CreateRestApiRequest : AmazonAPIGatewayRequest
     {
+        private List<string> _binaryMediaTypes = new List<string>();
         private string _cloneFrom;
         private string _description;
         private string _name;
+        private string _version;
+
+        /// <summary>
+        /// Gets and sets the property BinaryMediaTypes. 
+        /// <para>
+        /// The list of binary media types supported by the <a>RestApi</a>. By default, the <a>RestApi</a>
+        /// supports only UTF-8-encoded text payloads.
+        /// </para>
+        /// </summary>
+        public List<string> BinaryMediaTypes
+        {
+            get { return this._binaryMediaTypes; }
+            set { this._binaryMediaTypes = value; }
+        }
+
+        // Check to see if BinaryMediaTypes property is set
+        internal bool IsSetBinaryMediaTypes()
+        {
+            return this._binaryMediaTypes != null && this._binaryMediaTypes.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property CloneFrom. 
         /// <para>
-        /// The Id of the <a>RestApi</a> that you want to clone from.
+        /// The ID of the <a>RestApi</a> that you want to clone from.
         /// </para>
         /// </summary>
         public string CloneFrom
@@ -89,6 +110,24 @@ namespace Amazon.APIGateway.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Version. 
+        /// <para>
+        /// A version identifier for the API.
+        /// </para>
+        /// </summary>
+        public string Version
+        {
+            get { return this._version; }
+            set { this._version = value; }
+        }
+
+        // Check to see if Version property is set
+        internal bool IsSetVersion()
+        {
+            return this._version != null;
         }
 
     }

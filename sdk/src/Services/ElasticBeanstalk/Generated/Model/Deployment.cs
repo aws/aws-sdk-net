@@ -83,9 +83,19 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <para>
         /// The status of the deployment:
         /// </para>
-        ///  <ul> <li> <code>In Progress</code> : The deployment is in progress.</li> <li> <code>Deployed</code>
-        /// : The deployment succeeded.</li> <li> <code>Failed</code> : The deployment failed.</li>
-        /// </ul>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>In Progress</code> : The deployment is in progress.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Deployed</code> : The deployment succeeded.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Failed</code> : The deployment failed.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string Status
         {

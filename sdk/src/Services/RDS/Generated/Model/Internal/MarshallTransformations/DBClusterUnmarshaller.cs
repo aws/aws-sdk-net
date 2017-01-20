@@ -60,6 +60,13 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.AllocatedStorage = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("AssociatedRoles/DBClusterRole", targetDepth))
+                    {
+                        var unmarshaller = DBClusterRoleUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.AssociatedRoles.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("AvailabilityZones/AvailabilityZone", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -79,10 +86,22 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.CharacterSetName = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ClusterCreateTime", targetDepth))
+                    {
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.ClusterCreateTime = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("DatabaseName", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.DatabaseName = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("DBClusterArn", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DBClusterArn = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("DBClusterIdentifier", targetDepth))
@@ -171,6 +190,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.MasterUsername = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("MultiAZ", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.MultiAZ = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("PercentProgress", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -193,6 +218,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.PreferredMaintenanceWindow = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ReaderEndpoint", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ReaderEndpoint = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("ReadReplicaIdentifiers/ReadReplicaIdentifier", targetDepth))

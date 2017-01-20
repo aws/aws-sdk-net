@@ -280,6 +280,14 @@ namespace Amazon.RDS
             return new AWS4Signer();
         }    
 
+        /// <summary>
+        /// Customize the pipeline
+        /// </summary>
+        /// <param name="pipeline"></param>
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
+        {
+            pipeline.AddHandlerBefore<Amazon.Runtime.Internal.Marshaller>(new Amazon.RDS.Internal.PreSignedUrlRequestHandler(this.Credentials));
+        }    
 
         #endregion
 
@@ -296,6 +304,61 @@ namespace Amazon.RDS
         #endregion
 
         
+        #region  AddRoleToDBCluster
+
+
+        /// <summary>
+        /// Associates an Identity and Access Management (IAM) role from an Aurora DB cluster.
+        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Authorizing.AWSServices.html">Authorizing
+        /// Amazon Aurora to Access Other AWS Services On Your Behalf</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AddRoleToDBCluster service method.</param>
+        /// 
+        /// <returns>The response from the AddRoleToDBCluster service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
+        /// <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBClusterRoleAlreadyExistsException">
+        /// The specified IAM role Amazon Resource Name (ARN) is already associated with the specified
+        /// DB cluster.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBClusterRoleQuotaExceededException">
+        /// You have exceeded the maximum number of IAM roles that can be associated with the
+        /// specified DB cluster.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
+        /// The DB cluster is not in a valid state.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AddRoleToDBCluster">REST API Reference for AddRoleToDBCluster Operation</seealso>
+        public AddRoleToDBClusterResponse AddRoleToDBCluster(AddRoleToDBClusterRequest request)
+        {
+            var marshaller = new AddRoleToDBClusterRequestMarshaller();
+            var unmarshaller = AddRoleToDBClusterResponseUnmarshaller.Instance;
+
+            return Invoke<AddRoleToDBClusterRequest,AddRoleToDBClusterResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AddRoleToDBCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AddRoleToDBCluster operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AddRoleToDBCluster">REST API Reference for AddRoleToDBCluster Operation</seealso>
+        public Task<AddRoleToDBClusterResponse> AddRoleToDBClusterAsync(AddRoleToDBClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new AddRoleToDBClusterRequestMarshaller();
+            var unmarshaller = AddRoleToDBClusterResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AddRoleToDBClusterRequest,AddRoleToDBClusterResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  AddSourceIdentifierToSubscription
 
 
@@ -311,6 +374,7 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.SubscriptionNotFoundException">
         /// The subscription name does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AddSourceIdentifierToSubscription">REST API Reference for AddSourceIdentifierToSubscription Operation</seealso>
         public AddSourceIdentifierToSubscriptionResponse AddSourceIdentifierToSubscription(AddSourceIdentifierToSubscriptionRequest request)
         {
             var marshaller = new AddSourceIdentifierToSubscriptionRequestMarshaller();
@@ -328,6 +392,7 @@ namespace Amazon.RDS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AddSourceIdentifierToSubscription">REST API Reference for AddSourceIdentifierToSubscription Operation</seealso>
         public Task<AddSourceIdentifierToSubscriptionResponse> AddSourceIdentifierToSubscriptionAsync(AddSourceIdentifierToSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AddSourceIdentifierToSubscriptionRequestMarshaller();
@@ -356,12 +421,16 @@ namespace Amazon.RDS
         /// <param name="request">Container for the necessary parameters to execute the AddTagsToResource service method.</param>
         /// 
         /// <returns>The response from the AddTagsToResource service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
+        /// <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
         /// <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSnapshotNotFoundException">
         /// <i>DBSnapshotIdentifier</i> does not refer to an existing DB snapshot.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AddTagsToResource">REST API Reference for AddTagsToResource Operation</seealso>
         public AddTagsToResourceResponse AddTagsToResource(AddTagsToResourceRequest request)
         {
             var marshaller = new AddTagsToResourceRequestMarshaller();
@@ -379,6 +448,7 @@ namespace Amazon.RDS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AddTagsToResource">REST API Reference for AddTagsToResource Operation</seealso>
         public Task<AddTagsToResourceResponse> AddTagsToResourceAsync(AddTagsToResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AddTagsToResourceRequestMarshaller();
@@ -402,6 +472,7 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.ResourceNotFoundException">
         /// The specified resource ID was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ApplyPendingMaintenanceAction">REST API Reference for ApplyPendingMaintenanceAction Operation</seealso>
         public ApplyPendingMaintenanceActionResponse ApplyPendingMaintenanceAction(ApplyPendingMaintenanceActionRequest request)
         {
             var marshaller = new ApplyPendingMaintenanceActionRequestMarshaller();
@@ -419,6 +490,7 @@ namespace Amazon.RDS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ApplyPendingMaintenanceAction">REST API Reference for ApplyPendingMaintenanceAction Operation</seealso>
         public Task<ApplyPendingMaintenanceActionResponse> ApplyPendingMaintenanceActionAsync(ApplyPendingMaintenanceActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ApplyPendingMaintenanceActionRequestMarshaller();
@@ -469,6 +541,7 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.InvalidDBSecurityGroupStateException">
         /// The state of the DB security group does not allow deletion.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AuthorizeDBSecurityGroupIngress">REST API Reference for AuthorizeDBSecurityGroupIngress Operation</seealso>
         public AuthorizeDBSecurityGroupIngressResponse AuthorizeDBSecurityGroupIngress(AuthorizeDBSecurityGroupIngressRequest request)
         {
             var marshaller = new AuthorizeDBSecurityGroupIngressRequestMarshaller();
@@ -486,12 +559,61 @@ namespace Amazon.RDS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AuthorizeDBSecurityGroupIngress">REST API Reference for AuthorizeDBSecurityGroupIngress Operation</seealso>
         public Task<AuthorizeDBSecurityGroupIngressResponse> AuthorizeDBSecurityGroupIngressAsync(AuthorizeDBSecurityGroupIngressRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AuthorizeDBSecurityGroupIngressRequestMarshaller();
             var unmarshaller = AuthorizeDBSecurityGroupIngressResponseUnmarshaller.Instance;
 
             return InvokeAsync<AuthorizeDBSecurityGroupIngressRequest,AuthorizeDBSecurityGroupIngressResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CopyDBClusterParameterGroup
+
+
+        /// <summary>
+        /// Copies the specified DB cluster parameter group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CopyDBClusterParameterGroup service method.</param>
+        /// 
+        /// <returns>The response from the CopyDBClusterParameterGroup service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBParameterGroupAlreadyExistsException">
+        /// A DB parameter group with the same name exists.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBParameterGroupNotFoundException">
+        /// <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBParameterGroupQuotaExceededException">
+        /// Request would result in user exceeding the allowed number of DB parameter groups.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CopyDBClusterParameterGroup">REST API Reference for CopyDBClusterParameterGroup Operation</seealso>
+        public CopyDBClusterParameterGroupResponse CopyDBClusterParameterGroup(CopyDBClusterParameterGroupRequest request)
+        {
+            var marshaller = new CopyDBClusterParameterGroupRequestMarshaller();
+            var unmarshaller = CopyDBClusterParameterGroupResponseUnmarshaller.Instance;
+
+            return Invoke<CopyDBClusterParameterGroupRequest,CopyDBClusterParameterGroupResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CopyDBClusterParameterGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CopyDBClusterParameterGroup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CopyDBClusterParameterGroup">REST API Reference for CopyDBClusterParameterGroup Operation</seealso>
+        public Task<CopyDBClusterParameterGroupResponse> CopyDBClusterParameterGroupAsync(CopyDBClusterParameterGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CopyDBClusterParameterGroupRequestMarshaller();
+            var unmarshaller = CopyDBClusterParameterGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CopyDBClusterParameterGroupRequest,CopyDBClusterParameterGroupResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -514,9 +636,19 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBClusterSnapshotNotFoundException">
         /// <i>DBClusterSnapshotIdentifier</i> does not refer to an existing DB cluster snapshot.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBClusterSnapshotStateException">
+        /// The supplied value is not a valid DB cluster snapshot state.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
         /// The DB cluster is not in a valid state.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
+        /// Error accessing KMS key.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.SnapshotQuotaExceededException">
+        /// Request would result in user exceeding the allowed number of DB snapshots.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CopyDBClusterSnapshot">REST API Reference for CopyDBClusterSnapshot Operation</seealso>
         public CopyDBClusterSnapshotResponse CopyDBClusterSnapshot(CopyDBClusterSnapshotRequest request)
         {
             var marshaller = new CopyDBClusterSnapshotRequestMarshaller();
@@ -534,6 +666,7 @@ namespace Amazon.RDS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CopyDBClusterSnapshot">REST API Reference for CopyDBClusterSnapshot Operation</seealso>
         public Task<CopyDBClusterSnapshotResponse> CopyDBClusterSnapshotAsync(CopyDBClusterSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CopyDBClusterSnapshotRequestMarshaller();
@@ -563,6 +696,7 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBParameterGroupQuotaExceededException">
         /// Request would result in user exceeding the allowed number of DB parameter groups.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CopyDBParameterGroup">REST API Reference for CopyDBParameterGroup Operation</seealso>
         public CopyDBParameterGroupResponse CopyDBParameterGroup(CopyDBParameterGroupRequest request)
         {
             var marshaller = new CopyDBParameterGroupRequestMarshaller();
@@ -580,6 +714,7 @@ namespace Amazon.RDS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CopyDBParameterGroup">REST API Reference for CopyDBParameterGroup Operation</seealso>
         public Task<CopyDBParameterGroupResponse> CopyDBParameterGroupAsync(CopyDBParameterGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CopyDBParameterGroupRequestMarshaller();
@@ -600,8 +735,86 @@ namespace Amazon.RDS
         /// 
         ///  
         /// <para>
-        /// If you are copying from a shared manual DB snapshot, the <code>SourceDBSnapshotIdentifier</code>
-        /// must be the ARN of the shared DB snapshot.
+        /// To copy a DB snapshot from a shared manual DB snapshot, <code>SourceDBSnapshotIdentifier</code>
+        /// must be the Amazon Resource Name (ARN) of the shared DB snapshot.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can copy an encrypted DB snapshot from another AWS Region. In that case, the region
+        /// where you call the <code>CopyDBSnapshot</code> action is the destination region for
+        /// the encrypted DB snapshot to be copied to. To copy an encrypted DB snapshot from another
+        /// region, you must provide the following values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>KmsKeyId</code> - The AWS Key Management System (KMS) key identifier for the
+        /// key to use to encrypt the copy of the DB snapshot in the destination region.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>PreSignedUrl</code> - A URL that contains a Signature Version 4 signed request
+        /// for the <code>CopyDBSnapshot</code> action to be called in the source region where
+        /// the DB snapshot will be copied from. The presigned URL must be a valid request for
+        /// the <code>CopyDBSnapshot</code> API action that can be executed in the source region
+        /// that contains the encrypted DB snapshot to be copied.
+        /// </para>
+        ///  
+        /// <para>
+        /// The presigned URL request must contain the following parameter values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>DestinationRegion</code> - The AWS Region that the encrypted DB snapshot will
+        /// be copied to. This region is the same one where the <code>CopyDBSnapshot</code> action
+        /// is called that contains this presigned URL. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, if you copy an encrypted DB snapshot from the us-west-2 region to the
+        /// us-east-1 region, then you will call the <code>CopyDBSnapshot</code> action in the
+        /// us-east-1 region and provide a presigned URL that contains a call to the <code>CopyDBSnapshot</code>
+        /// action in the us-west-2 region. For this example, the <code>DestinationRegion</code>
+        /// in the presigned URL must be set to the us-east-1 region.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>KmsKeyId</code> - The KMS key identifier for the key to use to encrypt the
+        /// copy of the DB snapshot in the destination region. This identifier is the same for
+        /// both the <code>CopyDBSnapshot</code> action that is called in the destination region,
+        /// and the action contained in the presigned URL.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>SourceDBSnapshotIdentifier</code> - The DB snapshot identifier for the encrypted
+        /// snapshot to be copied. This identifier must be in the Amazon Resource Name (ARN) format
+        /// for the source region. For example, if you copy an encrypted DB snapshot from the
+        /// us-west-2 region, then your <code>SourceDBSnapshotIdentifier</code> looks like this
+        /// example: <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20161115</code>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To learn how to generate a Signature Version 4 signed request, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">
+        /// Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a> and
+        /// <a href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html"> Signature
+        /// Version 4 Signing Process</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>TargetDBSnapshotIdentifier</code> - The identifier for the new copy of the
+        /// DB snapshot in the destination region.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>SourceDBSnapshotIdentifier</code> - The DB snapshot identifier for the encrypted
+        /// snapshot to be copied. This identifier must be in the ARN format for the source region
+        /// and is the same value as the <code>SourceDBSnapshotIdentifier</code> in the presigned
+        /// URL. 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information on copying encrypted snapshots from one region to another, see
+        /// <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopySnapshot.Encrypted.CrossRegion">
+        /// Copying an Encrypted DB Snapshot to Another Region</a> in the Amazon RDS User Guide.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CopyDBSnapshot service method.</param>
@@ -622,6 +835,7 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.SnapshotQuotaExceededException">
         /// Request would result in user exceeding the allowed number of DB snapshots.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CopyDBSnapshot">REST API Reference for CopyDBSnapshot Operation</seealso>
         public CopyDBSnapshotResponse CopyDBSnapshot(CopyDBSnapshotRequest request)
         {
             var marshaller = new CopyDBSnapshotRequestMarshaller();
@@ -639,6 +853,7 @@ namespace Amazon.RDS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CopyDBSnapshot">REST API Reference for CopyDBSnapshot Operation</seealso>
         public Task<CopyDBSnapshotResponse> CopyDBSnapshotAsync(CopyDBSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CopyDBSnapshotRequestMarshaller();
@@ -668,6 +883,7 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.OptionGroupQuotaExceededException">
         /// The quota of 20 option groups was exceeded for this AWS account.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CopyOptionGroup">REST API Reference for CopyOptionGroup Operation</seealso>
         public CopyOptionGroupResponse CopyOptionGroup(CopyOptionGroupRequest request)
         {
             var marshaller = new CopyOptionGroupRequestMarshaller();
@@ -685,6 +901,7 @@ namespace Amazon.RDS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CopyOptionGroup">REST API Reference for CopyOptionGroup Operation</seealso>
         public Task<CopyOptionGroupResponse> CopyOptionGroupAsync(CopyOptionGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CopyOptionGroupRequestMarshaller();
@@ -705,7 +922,7 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// You can use the <code>ReplicationSourceIdentifier</code> parameter to create the DB
-        /// cluster as a Read Replica of another DB cluster.
+        /// cluster as a Read Replica of another DB cluster or Amazon RDS MySQL DB instance.
         /// </para>
         ///  
         /// <para>
@@ -741,6 +958,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
         /// The DB cluster is not in a valid state.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
+        /// The specified DB instance is not in the <i>available</i> state.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBSubnetGroupStateException">
         /// The DB subnet group cannot be deleted because it is in use.
         /// </exception>
@@ -759,6 +979,7 @@ namespace Amazon.RDS
         /// Request would result in user exceeding the allowed amount of storage available across
         /// all DB instances.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBCluster">REST API Reference for CreateDBCluster Operation</seealso>
         public CreateDBClusterResponse CreateDBCluster(CreateDBClusterRequest request)
         {
             var marshaller = new CreateDBClusterRequestMarshaller();
@@ -776,6 +997,7 @@ namespace Amazon.RDS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBCluster">REST API Reference for CreateDBCluster Operation</seealso>
         public Task<CreateDBClusterResponse> CreateDBClusterAsync(CreateDBClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateDBClusterRequestMarshaller();
@@ -836,6 +1058,7 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBParameterGroupQuotaExceededException">
         /// Request would result in user exceeding the allowed number of DB parameter groups.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBClusterParameterGroup">REST API Reference for CreateDBClusterParameterGroup Operation</seealso>
         public CreateDBClusterParameterGroupResponse CreateDBClusterParameterGroup(CreateDBClusterParameterGroupRequest request)
         {
             var marshaller = new CreateDBClusterParameterGroupRequestMarshaller();
@@ -853,6 +1076,7 @@ namespace Amazon.RDS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBClusterParameterGroup">REST API Reference for CreateDBClusterParameterGroup Operation</seealso>
         public Task<CreateDBClusterParameterGroupResponse> CreateDBClusterParameterGroupAsync(CreateDBClusterParameterGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateDBClusterParameterGroupRequestMarshaller();
@@ -890,6 +1114,7 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.SnapshotQuotaExceededException">
         /// Request would result in user exceeding the allowed number of DB snapshots.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBClusterSnapshot">REST API Reference for CreateDBClusterSnapshot Operation</seealso>
         public CreateDBClusterSnapshotResponse CreateDBClusterSnapshot(CreateDBClusterSnapshotRequest request)
         {
             var marshaller = new CreateDBClusterSnapshotRequestMarshaller();
@@ -907,6 +1132,7 @@ namespace Amazon.RDS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBClusterSnapshot">REST API Reference for CreateDBClusterSnapshot Operation</seealso>
         public Task<CreateDBClusterSnapshotResponse> CreateDBClusterSnapshotAsync(CreateDBClusterSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateDBClusterSnapshotRequestMarshaller();
@@ -991,6 +1217,7 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.StorageTypeNotSupportedException">
         /// <i>StorageType</i> specified cannot be associated with the DB Instance.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBInstance">REST API Reference for CreateDBInstance Operation</seealso>
         public CreateDBInstanceResponse CreateDBInstance(CreateDBInstanceRequest request)
         {
             var marshaller = new CreateDBInstanceRequestMarshaller();
@@ -1008,6 +1235,7 @@ namespace Amazon.RDS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBInstance">REST API Reference for CreateDBInstance Operation</seealso>
         public Task<CreateDBInstanceResponse> CreateDBInstanceAsync(CreateDBInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateDBInstanceRequestMarshaller();
@@ -1101,6 +1329,7 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.StorageTypeNotSupportedException">
         /// <i>StorageType</i> specified cannot be associated with the DB Instance.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBInstanceReadReplica">REST API Reference for CreateDBInstanceReadReplica Operation</seealso>
         public CreateDBInstanceReadReplicaResponse CreateDBInstanceReadReplica(CreateDBInstanceReadReplicaRequest request)
         {
             var marshaller = new CreateDBInstanceReadReplicaRequestMarshaller();
@@ -1118,6 +1347,7 @@ namespace Amazon.RDS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBInstanceReadReplica">REST API Reference for CreateDBInstanceReadReplica Operation</seealso>
         public Task<CreateDBInstanceReadReplicaResponse> CreateDBInstanceReadReplicaAsync(CreateDBInstanceReadReplicaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateDBInstanceReadReplicaRequestMarshaller();
@@ -1168,6 +1398,7 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBParameterGroupQuotaExceededException">
         /// Request would result in user exceeding the allowed number of DB parameter groups.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBParameterGroup">REST API Reference for CreateDBParameterGroup Operation</seealso>
         public CreateDBParameterGroupResponse CreateDBParameterGroup(CreateDBParameterGroupRequest request)
         {
             var marshaller = new CreateDBParameterGroupRequestMarshaller();
@@ -1185,6 +1416,7 @@ namespace Amazon.RDS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBParameterGroup">REST API Reference for CreateDBParameterGroup Operation</seealso>
         public Task<CreateDBParameterGroupResponse> CreateDBParameterGroupAsync(CreateDBParameterGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateDBParameterGroupRequestMarshaller();
@@ -1215,6 +1447,7 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBSecurityGroupQuotaExceededException">
         /// Request would result in user exceeding the allowed number of DB security groups.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBSecurityGroup">REST API Reference for CreateDBSecurityGroup Operation</seealso>
         public CreateDBSecurityGroupResponse CreateDBSecurityGroup(CreateDBSecurityGroupRequest request)
         {
             var marshaller = new CreateDBSecurityGroupRequestMarshaller();
@@ -1232,6 +1465,7 @@ namespace Amazon.RDS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBSecurityGroup">REST API Reference for CreateDBSecurityGroup Operation</seealso>
         public Task<CreateDBSecurityGroupResponse> CreateDBSecurityGroupAsync(CreateDBSecurityGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateDBSecurityGroupRequestMarshaller();
@@ -1264,6 +1498,7 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.SnapshotQuotaExceededException">
         /// Request would result in user exceeding the allowed number of DB snapshots.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBSnapshot">REST API Reference for CreateDBSnapshot Operation</seealso>
         public CreateDBSnapshotResponse CreateDBSnapshot(CreateDBSnapshotRequest request)
         {
             var marshaller = new CreateDBSnapshotRequestMarshaller();
@@ -1281,6 +1516,7 @@ namespace Amazon.RDS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBSnapshot">REST API Reference for CreateDBSnapshot Operation</seealso>
         public Task<CreateDBSnapshotResponse> CreateDBSnapshotAsync(CreateDBSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateDBSnapshotRequestMarshaller();
@@ -1320,6 +1556,7 @@ namespace Amazon.RDS
         /// The requested subnet is invalid, or multiple subnets were requested that are not all
         /// in a common VPC.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBSubnetGroup">REST API Reference for CreateDBSubnetGroup Operation</seealso>
         public CreateDBSubnetGroupResponse CreateDBSubnetGroup(CreateDBSubnetGroupRequest request)
         {
             var marshaller = new CreateDBSubnetGroupRequestMarshaller();
@@ -1337,6 +1574,7 @@ namespace Amazon.RDS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBSubnetGroup">REST API Reference for CreateDBSubnetGroup Operation</seealso>
         public Task<CreateDBSubnetGroupResponse> CreateDBSubnetGroupAsync(CreateDBSubnetGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateDBSubnetGroupRequestMarshaller();
@@ -1400,6 +1638,7 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.SubscriptionCategoryNotFoundException">
         /// The supplied category does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateEventSubscription">REST API Reference for CreateEventSubscription Operation</seealso>
         public CreateEventSubscriptionResponse CreateEventSubscription(CreateEventSubscriptionRequest request)
         {
             var marshaller = new CreateEventSubscriptionRequestMarshaller();
@@ -1417,6 +1656,7 @@ namespace Amazon.RDS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateEventSubscription">REST API Reference for CreateEventSubscription Operation</seealso>
         public Task<CreateEventSubscriptionResponse> CreateEventSubscriptionAsync(CreateEventSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateEventSubscriptionRequestMarshaller();
@@ -1443,6 +1683,7 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.OptionGroupQuotaExceededException">
         /// The quota of 20 option groups was exceeded for this AWS account.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateOptionGroup">REST API Reference for CreateOptionGroup Operation</seealso>
         public CreateOptionGroupResponse CreateOptionGroup(CreateOptionGroupRequest request)
         {
             var marshaller = new CreateOptionGroupRequestMarshaller();
@@ -1460,6 +1701,7 @@ namespace Amazon.RDS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateOptionGroup">REST API Reference for CreateOptionGroup Operation</seealso>
         public Task<CreateOptionGroupResponse> CreateOptionGroupAsync(CreateOptionGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateOptionGroupRequestMarshaller();
@@ -1503,6 +1745,7 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.SnapshotQuotaExceededException">
         /// Request would result in user exceeding the allowed number of DB snapshots.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBCluster">REST API Reference for DeleteDBCluster Operation</seealso>
         public DeleteDBClusterResponse DeleteDBCluster(DeleteDBClusterRequest request)
         {
             var marshaller = new DeleteDBClusterRequestMarshaller();
@@ -1520,6 +1763,7 @@ namespace Amazon.RDS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBCluster">REST API Reference for DeleteDBCluster Operation</seealso>
         public Task<DeleteDBClusterResponse> DeleteDBClusterAsync(DeleteDBClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteDBClusterRequestMarshaller();
@@ -1553,6 +1797,7 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.InvalidDBParameterGroupStateException">
         /// The DB parameter group cannot be deleted because it is in use.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBClusterParameterGroup">REST API Reference for DeleteDBClusterParameterGroup Operation</seealso>
         public DeleteDBClusterParameterGroupResponse DeleteDBClusterParameterGroup(DeleteDBClusterParameterGroupRequest request)
         {
             var marshaller = new DeleteDBClusterParameterGroupRequestMarshaller();
@@ -1570,6 +1815,7 @@ namespace Amazon.RDS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBClusterParameterGroup">REST API Reference for DeleteDBClusterParameterGroup Operation</seealso>
         public Task<DeleteDBClusterParameterGroupResponse> DeleteDBClusterParameterGroupAsync(DeleteDBClusterParameterGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteDBClusterParameterGroupRequestMarshaller();
@@ -1607,6 +1853,7 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.InvalidDBClusterSnapshotStateException">
         /// The supplied value is not a valid DB cluster snapshot state.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBClusterSnapshot">REST API Reference for DeleteDBClusterSnapshot Operation</seealso>
         public DeleteDBClusterSnapshotResponse DeleteDBClusterSnapshot(DeleteDBClusterSnapshotRequest request)
         {
             var marshaller = new DeleteDBClusterSnapshotRequestMarshaller();
@@ -1624,6 +1871,7 @@ namespace Amazon.RDS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBClusterSnapshot">REST API Reference for DeleteDBClusterSnapshot Operation</seealso>
         public Task<DeleteDBClusterSnapshotResponse> DeleteDBClusterSnapshotAsync(DeleteDBClusterSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteDBClusterSnapshotRequestMarshaller();
@@ -1696,6 +1944,7 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.SnapshotQuotaExceededException">
         /// Request would result in user exceeding the allowed number of DB snapshots.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBInstance">REST API Reference for DeleteDBInstance Operation</seealso>
         public DeleteDBInstanceResponse DeleteDBInstance(DeleteDBInstanceRequest request)
         {
             var marshaller = new DeleteDBInstanceRequestMarshaller();
@@ -1713,6 +1962,7 @@ namespace Amazon.RDS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBInstance">REST API Reference for DeleteDBInstance Operation</seealso>
         public Task<DeleteDBInstanceResponse> DeleteDBInstanceAsync(DeleteDBInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteDBInstanceRequestMarshaller();
@@ -1740,6 +1990,7 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.InvalidDBParameterGroupStateException">
         /// The DB parameter group cannot be deleted because it is in use.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBParameterGroup">REST API Reference for DeleteDBParameterGroup Operation</seealso>
         public DeleteDBParameterGroupResponse DeleteDBParameterGroup(DeleteDBParameterGroupRequest request)
         {
             var marshaller = new DeleteDBParameterGroupRequestMarshaller();
@@ -1757,6 +2008,7 @@ namespace Amazon.RDS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBParameterGroup">REST API Reference for DeleteDBParameterGroup Operation</seealso>
         public Task<DeleteDBParameterGroupResponse> DeleteDBParameterGroupAsync(DeleteDBParameterGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteDBParameterGroupRequestMarshaller();
@@ -1789,6 +2041,7 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.InvalidDBSecurityGroupStateException">
         /// The state of the DB security group does not allow deletion.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBSecurityGroup">REST API Reference for DeleteDBSecurityGroup Operation</seealso>
         public DeleteDBSecurityGroupResponse DeleteDBSecurityGroup(DeleteDBSecurityGroupRequest request)
         {
             var marshaller = new DeleteDBSecurityGroupRequestMarshaller();
@@ -1806,6 +2059,7 @@ namespace Amazon.RDS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBSecurityGroup">REST API Reference for DeleteDBSecurityGroup Operation</seealso>
         public Task<DeleteDBSecurityGroupResponse> DeleteDBSecurityGroupAsync(DeleteDBSecurityGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteDBSecurityGroupRequestMarshaller();
@@ -1838,6 +2092,7 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.InvalidDBSnapshotStateException">
         /// The state of the DB snapshot does not allow deletion.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBSnapshot">REST API Reference for DeleteDBSnapshot Operation</seealso>
         public DeleteDBSnapshotResponse DeleteDBSnapshot(DeleteDBSnapshotRequest request)
         {
             var marshaller = new DeleteDBSnapshotRequestMarshaller();
@@ -1855,6 +2110,7 @@ namespace Amazon.RDS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBSnapshot">REST API Reference for DeleteDBSnapshot Operation</seealso>
         public Task<DeleteDBSnapshotResponse> DeleteDBSnapshotAsync(DeleteDBSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteDBSnapshotRequestMarshaller();
@@ -1890,6 +2146,7 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.InvalidDBSubnetStateException">
         /// The DB subnet is not in the <i>available</i> state.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBSubnetGroup">REST API Reference for DeleteDBSubnetGroup Operation</seealso>
         public DeleteDBSubnetGroupResponse DeleteDBSubnetGroup(DeleteDBSubnetGroupRequest request)
         {
             var marshaller = new DeleteDBSubnetGroupRequestMarshaller();
@@ -1907,6 +2164,7 @@ namespace Amazon.RDS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBSubnetGroup">REST API Reference for DeleteDBSubnetGroup Operation</seealso>
         public Task<DeleteDBSubnetGroupResponse> DeleteDBSubnetGroupAsync(DeleteDBSubnetGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteDBSubnetGroupRequestMarshaller();
@@ -1934,6 +2192,7 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.SubscriptionNotFoundException">
         /// The subscription name does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteEventSubscription">REST API Reference for DeleteEventSubscription Operation</seealso>
         public DeleteEventSubscriptionResponse DeleteEventSubscription(DeleteEventSubscriptionRequest request)
         {
             var marshaller = new DeleteEventSubscriptionRequestMarshaller();
@@ -1951,6 +2210,7 @@ namespace Amazon.RDS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteEventSubscription">REST API Reference for DeleteEventSubscription Operation</seealso>
         public Task<DeleteEventSubscriptionResponse> DeleteEventSubscriptionAsync(DeleteEventSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteEventSubscriptionRequestMarshaller();
@@ -1977,6 +2237,7 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.OptionGroupNotFoundException">
         /// The specified option group could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteOptionGroup">REST API Reference for DeleteOptionGroup Operation</seealso>
         public DeleteOptionGroupResponse DeleteOptionGroup(DeleteOptionGroupRequest request)
         {
             var marshaller = new DeleteOptionGroupRequestMarshaller();
@@ -1994,6 +2255,7 @@ namespace Amazon.RDS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteOptionGroup">REST API Reference for DeleteOptionGroup Operation</seealso>
         public Task<DeleteOptionGroupResponse> DeleteOptionGroupAsync(DeleteOptionGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteOptionGroupRequestMarshaller();
@@ -2021,6 +2283,7 @@ namespace Amazon.RDS
         /// </summary>
         /// 
         /// <returns>The response from the DescribeAccountAttributes service method, as returned by RDS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeAccountAttributes">REST API Reference for DescribeAccountAttributes Operation</seealso>
         public DescribeAccountAttributesResponse DescribeAccountAttributes()
         {
             return DescribeAccountAttributes(new DescribeAccountAttributesRequest());
@@ -2041,6 +2304,7 @@ namespace Amazon.RDS
         /// <param name="request">Container for the necessary parameters to execute the DescribeAccountAttributes service method.</param>
         /// 
         /// <returns>The response from the DescribeAccountAttributes service method, as returned by RDS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeAccountAttributes">REST API Reference for DescribeAccountAttributes Operation</seealso>
         public DescribeAccountAttributesResponse DescribeAccountAttributes(DescribeAccountAttributesRequest request)
         {
             var marshaller = new DescribeAccountAttributesRequestMarshaller();
@@ -2066,6 +2330,7 @@ namespace Amazon.RDS
         /// </param>
         /// 
         /// <returns>The response from the DescribeAccountAttributes service method, as returned by RDS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeAccountAttributes">REST API Reference for DescribeAccountAttributes Operation</seealso>
         public Task<DescribeAccountAttributesResponse> DescribeAccountAttributesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeAccountAttributesAsync(new DescribeAccountAttributesRequest(), cancellationToken);
@@ -2079,6 +2344,7 @@ namespace Amazon.RDS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeAccountAttributes">REST API Reference for DescribeAccountAttributes Operation</seealso>
         public Task<DescribeAccountAttributesResponse> DescribeAccountAttributesAsync(DescribeAccountAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeAccountAttributesRequestMarshaller();
@@ -2102,6 +2368,7 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.CertificateNotFoundException">
         /// <i>CertificateIdentifier</i> does not refer to an existing certificate.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeCertificates">REST API Reference for DescribeCertificates Operation</seealso>
         public DescribeCertificatesResponse DescribeCertificates(DescribeCertificatesRequest request)
         {
             var marshaller = new DescribeCertificatesRequestMarshaller();
@@ -2119,6 +2386,7 @@ namespace Amazon.RDS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeCertificates">REST API Reference for DescribeCertificates Operation</seealso>
         public Task<DescribeCertificatesResponse> DescribeCertificatesAsync(DescribeCertificatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeCertificatesRequestMarshaller();
@@ -2150,6 +2418,7 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBParameterGroupNotFoundException">
         /// <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterParameterGroups">REST API Reference for DescribeDBClusterParameterGroups Operation</seealso>
         public DescribeDBClusterParameterGroupsResponse DescribeDBClusterParameterGroups(DescribeDBClusterParameterGroupsRequest request)
         {
             var marshaller = new DescribeDBClusterParameterGroupsRequestMarshaller();
@@ -2167,6 +2436,7 @@ namespace Amazon.RDS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterParameterGroups">REST API Reference for DescribeDBClusterParameterGroups Operation</seealso>
         public Task<DescribeDBClusterParameterGroupsResponse> DescribeDBClusterParameterGroupsAsync(DescribeDBClusterParameterGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeDBClusterParameterGroupsRequestMarshaller();
@@ -2196,6 +2466,7 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBParameterGroupNotFoundException">
         /// <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterParameters">REST API Reference for DescribeDBClusterParameters Operation</seealso>
         public DescribeDBClusterParametersResponse DescribeDBClusterParameters(DescribeDBClusterParametersRequest request)
         {
             var marshaller = new DescribeDBClusterParametersRequestMarshaller();
@@ -2213,6 +2484,7 @@ namespace Amazon.RDS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterParameters">REST API Reference for DescribeDBClusterParameters Operation</seealso>
         public Task<DescribeDBClusterParametersResponse> DescribeDBClusterParametersAsync(DescribeDBClusterParametersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeDBClusterParametersRequestMarshaller();
@@ -2242,6 +2514,7 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
         /// <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusters">REST API Reference for DescribeDBClusters Operation</seealso>
         public DescribeDBClustersResponse DescribeDBClusters(DescribeDBClustersRequest request)
         {
             var marshaller = new DescribeDBClustersRequestMarshaller();
@@ -2259,6 +2532,7 @@ namespace Amazon.RDS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusters">REST API Reference for DescribeDBClusters Operation</seealso>
         public Task<DescribeDBClustersResponse> DescribeDBClustersAsync(DescribeDBClustersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeDBClustersRequestMarshaller();
@@ -2298,6 +2572,7 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBClusterSnapshotNotFoundException">
         /// <i>DBClusterSnapshotIdentifier</i> does not refer to an existing DB cluster snapshot.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterSnapshotAttributes">REST API Reference for DescribeDBClusterSnapshotAttributes Operation</seealso>
         public DescribeDBClusterSnapshotAttributesResponse DescribeDBClusterSnapshotAttributes(DescribeDBClusterSnapshotAttributesRequest request)
         {
             var marshaller = new DescribeDBClusterSnapshotAttributesRequestMarshaller();
@@ -2315,6 +2590,7 @@ namespace Amazon.RDS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterSnapshotAttributes">REST API Reference for DescribeDBClusterSnapshotAttributes Operation</seealso>
         public Task<DescribeDBClusterSnapshotAttributesResponse> DescribeDBClusterSnapshotAttributesAsync(DescribeDBClusterSnapshotAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeDBClusterSnapshotAttributesRequestMarshaller();
@@ -2344,6 +2620,7 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBClusterSnapshotNotFoundException">
         /// <i>DBClusterSnapshotIdentifier</i> does not refer to an existing DB cluster snapshot.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterSnapshots">REST API Reference for DescribeDBClusterSnapshots Operation</seealso>
         public DescribeDBClusterSnapshotsResponse DescribeDBClusterSnapshots(DescribeDBClusterSnapshotsRequest request)
         {
             var marshaller = new DescribeDBClusterSnapshotsRequestMarshaller();
@@ -2361,6 +2638,7 @@ namespace Amazon.RDS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterSnapshots">REST API Reference for DescribeDBClusterSnapshots Operation</seealso>
         public Task<DescribeDBClusterSnapshotsResponse> DescribeDBClusterSnapshotsAsync(DescribeDBClusterSnapshotsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeDBClusterSnapshotsRequestMarshaller();
@@ -2380,6 +2658,7 @@ namespace Amazon.RDS
         /// </summary>
         /// 
         /// <returns>The response from the DescribeDBEngineVersions service method, as returned by RDS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBEngineVersions">REST API Reference for DescribeDBEngineVersions Operation</seealso>
         public DescribeDBEngineVersionsResponse DescribeDBEngineVersions()
         {
             return DescribeDBEngineVersions(new DescribeDBEngineVersionsRequest());
@@ -2392,6 +2671,7 @@ namespace Amazon.RDS
         /// <param name="request">Container for the necessary parameters to execute the DescribeDBEngineVersions service method.</param>
         /// 
         /// <returns>The response from the DescribeDBEngineVersions service method, as returned by RDS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBEngineVersions">REST API Reference for DescribeDBEngineVersions Operation</seealso>
         public DescribeDBEngineVersionsResponse DescribeDBEngineVersions(DescribeDBEngineVersionsRequest request)
         {
             var marshaller = new DescribeDBEngineVersionsRequestMarshaller();
@@ -2409,6 +2689,7 @@ namespace Amazon.RDS
         /// </param>
         /// 
         /// <returns>The response from the DescribeDBEngineVersions service method, as returned by RDS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBEngineVersions">REST API Reference for DescribeDBEngineVersions Operation</seealso>
         public Task<DescribeDBEngineVersionsResponse> DescribeDBEngineVersionsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeDBEngineVersionsAsync(new DescribeDBEngineVersionsRequest(), cancellationToken);
@@ -2422,6 +2703,7 @@ namespace Amazon.RDS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBEngineVersions">REST API Reference for DescribeDBEngineVersions Operation</seealso>
         public Task<DescribeDBEngineVersionsResponse> DescribeDBEngineVersionsAsync(DescribeDBEngineVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeDBEngineVersionsRequestMarshaller();
@@ -2444,6 +2726,7 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
         /// <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBInstances">REST API Reference for DescribeDBInstances Operation</seealso>
         public DescribeDBInstancesResponse DescribeDBInstances()
         {
             return DescribeDBInstances(new DescribeDBInstancesRequest());
@@ -2459,6 +2742,7 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
         /// <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBInstances">REST API Reference for DescribeDBInstances Operation</seealso>
         public DescribeDBInstancesResponse DescribeDBInstances(DescribeDBInstancesRequest request)
         {
             var marshaller = new DescribeDBInstancesRequestMarshaller();
@@ -2479,6 +2763,7 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
         /// <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBInstances">REST API Reference for DescribeDBInstances Operation</seealso>
         public Task<DescribeDBInstancesResponse> DescribeDBInstancesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeDBInstancesAsync(new DescribeDBInstancesRequest(), cancellationToken);
@@ -2492,6 +2777,7 @@ namespace Amazon.RDS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBInstances">REST API Reference for DescribeDBInstances Operation</seealso>
         public Task<DescribeDBInstancesResponse> DescribeDBInstancesAsync(DescribeDBInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeDBInstancesRequestMarshaller();
@@ -2515,6 +2801,7 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
         /// <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBLogFiles">REST API Reference for DescribeDBLogFiles Operation</seealso>
         public DescribeDBLogFilesResponse DescribeDBLogFiles(DescribeDBLogFilesRequest request)
         {
             var marshaller = new DescribeDBLogFilesRequestMarshaller();
@@ -2532,6 +2819,7 @@ namespace Amazon.RDS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBLogFiles">REST API Reference for DescribeDBLogFiles Operation</seealso>
         public Task<DescribeDBLogFilesResponse> DescribeDBLogFilesAsync(DescribeDBLogFilesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeDBLogFilesRequestMarshaller();
@@ -2556,6 +2844,7 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBParameterGroupNotFoundException">
         /// <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBParameterGroups">REST API Reference for DescribeDBParameterGroups Operation</seealso>
         public DescribeDBParameterGroupsResponse DescribeDBParameterGroups()
         {
             return DescribeDBParameterGroups(new DescribeDBParameterGroupsRequest());
@@ -2573,6 +2862,7 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBParameterGroupNotFoundException">
         /// <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBParameterGroups">REST API Reference for DescribeDBParameterGroups Operation</seealso>
         public DescribeDBParameterGroupsResponse DescribeDBParameterGroups(DescribeDBParameterGroupsRequest request)
         {
             var marshaller = new DescribeDBParameterGroupsRequestMarshaller();
@@ -2595,6 +2885,7 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBParameterGroupNotFoundException">
         /// <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBParameterGroups">REST API Reference for DescribeDBParameterGroups Operation</seealso>
         public Task<DescribeDBParameterGroupsResponse> DescribeDBParameterGroupsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeDBParameterGroupsAsync(new DescribeDBParameterGroupsRequest(), cancellationToken);
@@ -2608,6 +2899,7 @@ namespace Amazon.RDS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBParameterGroups">REST API Reference for DescribeDBParameterGroups Operation</seealso>
         public Task<DescribeDBParameterGroupsResponse> DescribeDBParameterGroupsAsync(DescribeDBParameterGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeDBParameterGroupsRequestMarshaller();
@@ -2631,6 +2923,7 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBParameterGroupNotFoundException">
         /// <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBParameters">REST API Reference for DescribeDBParameters Operation</seealso>
         public DescribeDBParametersResponse DescribeDBParameters(DescribeDBParametersRequest request)
         {
             var marshaller = new DescribeDBParametersRequestMarshaller();
@@ -2648,6 +2941,7 @@ namespace Amazon.RDS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBParameters">REST API Reference for DescribeDBParameters Operation</seealso>
         public Task<DescribeDBParametersResponse> DescribeDBParametersAsync(DescribeDBParametersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeDBParametersRequestMarshaller();
@@ -2672,6 +2966,7 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBSecurityGroupNotFoundException">
         /// <i>DBSecurityGroupName</i> does not refer to an existing DB security group.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBSecurityGroups">REST API Reference for DescribeDBSecurityGroups Operation</seealso>
         public DescribeDBSecurityGroupsResponse DescribeDBSecurityGroups()
         {
             return DescribeDBSecurityGroups(new DescribeDBSecurityGroupsRequest());
@@ -2689,6 +2984,7 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBSecurityGroupNotFoundException">
         /// <i>DBSecurityGroupName</i> does not refer to an existing DB security group.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBSecurityGroups">REST API Reference for DescribeDBSecurityGroups Operation</seealso>
         public DescribeDBSecurityGroupsResponse DescribeDBSecurityGroups(DescribeDBSecurityGroupsRequest request)
         {
             var marshaller = new DescribeDBSecurityGroupsRequestMarshaller();
@@ -2711,6 +3007,7 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBSecurityGroupNotFoundException">
         /// <i>DBSecurityGroupName</i> does not refer to an existing DB security group.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBSecurityGroups">REST API Reference for DescribeDBSecurityGroups Operation</seealso>
         public Task<DescribeDBSecurityGroupsResponse> DescribeDBSecurityGroupsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeDBSecurityGroupsAsync(new DescribeDBSecurityGroupsRequest(), cancellationToken);
@@ -2724,6 +3021,7 @@ namespace Amazon.RDS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBSecurityGroups">REST API Reference for DescribeDBSecurityGroups Operation</seealso>
         public Task<DescribeDBSecurityGroupsResponse> DescribeDBSecurityGroupsAsync(DescribeDBSecurityGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeDBSecurityGroupsRequestMarshaller();
@@ -2762,6 +3060,7 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBSnapshotNotFoundException">
         /// <i>DBSnapshotIdentifier</i> does not refer to an existing DB snapshot.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBSnapshotAttributes">REST API Reference for DescribeDBSnapshotAttributes Operation</seealso>
         public DescribeDBSnapshotAttributesResponse DescribeDBSnapshotAttributes(DescribeDBSnapshotAttributesRequest request)
         {
             var marshaller = new DescribeDBSnapshotAttributesRequestMarshaller();
@@ -2779,6 +3078,7 @@ namespace Amazon.RDS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBSnapshotAttributes">REST API Reference for DescribeDBSnapshotAttributes Operation</seealso>
         public Task<DescribeDBSnapshotAttributesResponse> DescribeDBSnapshotAttributesAsync(DescribeDBSnapshotAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeDBSnapshotAttributesRequestMarshaller();
@@ -2801,6 +3101,7 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBSnapshotNotFoundException">
         /// <i>DBSnapshotIdentifier</i> does not refer to an existing DB snapshot.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBSnapshots">REST API Reference for DescribeDBSnapshots Operation</seealso>
         public DescribeDBSnapshotsResponse DescribeDBSnapshots()
         {
             return DescribeDBSnapshots(new DescribeDBSnapshotsRequest());
@@ -2816,6 +3117,7 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBSnapshotNotFoundException">
         /// <i>DBSnapshotIdentifier</i> does not refer to an existing DB snapshot.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBSnapshots">REST API Reference for DescribeDBSnapshots Operation</seealso>
         public DescribeDBSnapshotsResponse DescribeDBSnapshots(DescribeDBSnapshotsRequest request)
         {
             var marshaller = new DescribeDBSnapshotsRequestMarshaller();
@@ -2836,6 +3138,7 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBSnapshotNotFoundException">
         /// <i>DBSnapshotIdentifier</i> does not refer to an existing DB snapshot.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBSnapshots">REST API Reference for DescribeDBSnapshots Operation</seealso>
         public Task<DescribeDBSnapshotsResponse> DescribeDBSnapshotsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeDBSnapshotsAsync(new DescribeDBSnapshotsRequest(), cancellationToken);
@@ -2849,6 +3152,7 @@ namespace Amazon.RDS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBSnapshots">REST API Reference for DescribeDBSnapshots Operation</seealso>
         public Task<DescribeDBSnapshotsResponse> DescribeDBSnapshotsAsync(DescribeDBSnapshotsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeDBSnapshotsRequestMarshaller();
@@ -2878,6 +3182,7 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBSubnetGroupNotFoundException">
         /// <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBSubnetGroups">REST API Reference for DescribeDBSubnetGroups Operation</seealso>
         public DescribeDBSubnetGroupsResponse DescribeDBSubnetGroups()
         {
             return DescribeDBSubnetGroups(new DescribeDBSubnetGroupsRequest());
@@ -2900,6 +3205,7 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBSubnetGroupNotFoundException">
         /// <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBSubnetGroups">REST API Reference for DescribeDBSubnetGroups Operation</seealso>
         public DescribeDBSubnetGroupsResponse DescribeDBSubnetGroups(DescribeDBSubnetGroupsRequest request)
         {
             var marshaller = new DescribeDBSubnetGroupsRequestMarshaller();
@@ -2927,6 +3233,7 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBSubnetGroupNotFoundException">
         /// <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBSubnetGroups">REST API Reference for DescribeDBSubnetGroups Operation</seealso>
         public Task<DescribeDBSubnetGroupsResponse> DescribeDBSubnetGroupsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeDBSubnetGroupsAsync(new DescribeDBSubnetGroupsRequest(), cancellationToken);
@@ -2940,6 +3247,7 @@ namespace Amazon.RDS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBSubnetGroups">REST API Reference for DescribeDBSubnetGroups Operation</seealso>
         public Task<DescribeDBSubnetGroupsResponse> DescribeDBSubnetGroupsAsync(DescribeDBSubnetGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeDBSubnetGroupsRequestMarshaller();
@@ -2967,6 +3275,7 @@ namespace Amazon.RDS
         /// <param name="request">Container for the necessary parameters to execute the DescribeEngineDefaultClusterParameters service method.</param>
         /// 
         /// <returns>The response from the DescribeEngineDefaultClusterParameters service method, as returned by RDS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeEngineDefaultClusterParameters">REST API Reference for DescribeEngineDefaultClusterParameters Operation</seealso>
         public DescribeEngineDefaultClusterParametersResponse DescribeEngineDefaultClusterParameters(DescribeEngineDefaultClusterParametersRequest request)
         {
             var marshaller = new DescribeEngineDefaultClusterParametersRequestMarshaller();
@@ -2984,6 +3293,7 @@ namespace Amazon.RDS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeEngineDefaultClusterParameters">REST API Reference for DescribeEngineDefaultClusterParameters Operation</seealso>
         public Task<DescribeEngineDefaultClusterParametersResponse> DescribeEngineDefaultClusterParametersAsync(DescribeEngineDefaultClusterParametersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeEngineDefaultClusterParametersRequestMarshaller();
@@ -3005,6 +3315,7 @@ namespace Amazon.RDS
         /// <param name="request">Container for the necessary parameters to execute the DescribeEngineDefaultParameters service method.</param>
         /// 
         /// <returns>The response from the DescribeEngineDefaultParameters service method, as returned by RDS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeEngineDefaultParameters">REST API Reference for DescribeEngineDefaultParameters Operation</seealso>
         public DescribeEngineDefaultParametersResponse DescribeEngineDefaultParameters(DescribeEngineDefaultParametersRequest request)
         {
             var marshaller = new DescribeEngineDefaultParametersRequestMarshaller();
@@ -3022,6 +3333,7 @@ namespace Amazon.RDS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeEngineDefaultParameters">REST API Reference for DescribeEngineDefaultParameters Operation</seealso>
         public Task<DescribeEngineDefaultParametersResponse> DescribeEngineDefaultParametersAsync(DescribeEngineDefaultParametersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeEngineDefaultParametersRequestMarshaller();
@@ -3044,6 +3356,7 @@ namespace Amazon.RDS
         /// </summary>
         /// 
         /// <returns>The response from the DescribeEventCategories service method, as returned by RDS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeEventCategories">REST API Reference for DescribeEventCategories Operation</seealso>
         public DescribeEventCategoriesResponse DescribeEventCategories()
         {
             return DescribeEventCategories(new DescribeEventCategoriesRequest());
@@ -3059,6 +3372,7 @@ namespace Amazon.RDS
         /// <param name="request">Container for the necessary parameters to execute the DescribeEventCategories service method.</param>
         /// 
         /// <returns>The response from the DescribeEventCategories service method, as returned by RDS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeEventCategories">REST API Reference for DescribeEventCategories Operation</seealso>
         public DescribeEventCategoriesResponse DescribeEventCategories(DescribeEventCategoriesRequest request)
         {
             var marshaller = new DescribeEventCategoriesRequestMarshaller();
@@ -3079,6 +3393,7 @@ namespace Amazon.RDS
         /// </param>
         /// 
         /// <returns>The response from the DescribeEventCategories service method, as returned by RDS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeEventCategories">REST API Reference for DescribeEventCategories Operation</seealso>
         public Task<DescribeEventCategoriesResponse> DescribeEventCategoriesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeEventCategoriesAsync(new DescribeEventCategoriesRequest(), cancellationToken);
@@ -3092,6 +3407,7 @@ namespace Amazon.RDS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeEventCategories">REST API Reference for DescribeEventCategories Operation</seealso>
         public Task<DescribeEventCategoriesResponse> DescribeEventCategoriesAsync(DescribeEventCategoriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeEventCategoriesRequestMarshaller();
@@ -3114,6 +3430,7 @@ namespace Amazon.RDS
         /// </summary>
         /// 
         /// <returns>The response from the DescribeEvents service method, as returned by RDS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeEvents">REST API Reference for DescribeEvents Operation</seealso>
         public DescribeEventsResponse DescribeEvents()
         {
             return DescribeEvents(new DescribeEventsRequest());
@@ -3129,6 +3446,7 @@ namespace Amazon.RDS
         /// <param name="request">Container for the necessary parameters to execute the DescribeEvents service method.</param>
         /// 
         /// <returns>The response from the DescribeEvents service method, as returned by RDS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeEvents">REST API Reference for DescribeEvents Operation</seealso>
         public DescribeEventsResponse DescribeEvents(DescribeEventsRequest request)
         {
             var marshaller = new DescribeEventsRequestMarshaller();
@@ -3149,6 +3467,7 @@ namespace Amazon.RDS
         /// </param>
         /// 
         /// <returns>The response from the DescribeEvents service method, as returned by RDS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeEvents">REST API Reference for DescribeEvents Operation</seealso>
         public Task<DescribeEventsResponse> DescribeEventsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeEventsAsync(new DescribeEventsRequest(), cancellationToken);
@@ -3162,6 +3481,7 @@ namespace Amazon.RDS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeEvents">REST API Reference for DescribeEvents Operation</seealso>
         public Task<DescribeEventsResponse> DescribeEventsAsync(DescribeEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeEventsRequestMarshaller();
@@ -3191,6 +3511,7 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.SubscriptionNotFoundException">
         /// The subscription name does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeEventSubscriptions">REST API Reference for DescribeEventSubscriptions Operation</seealso>
         public DescribeEventSubscriptionsResponse DescribeEventSubscriptions()
         {
             return DescribeEventSubscriptions(new DescribeEventSubscriptionsRequest());
@@ -3213,6 +3534,7 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.SubscriptionNotFoundException">
         /// The subscription name does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeEventSubscriptions">REST API Reference for DescribeEventSubscriptions Operation</seealso>
         public DescribeEventSubscriptionsResponse DescribeEventSubscriptions(DescribeEventSubscriptionsRequest request)
         {
             var marshaller = new DescribeEventSubscriptionsRequestMarshaller();
@@ -3240,6 +3562,7 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.SubscriptionNotFoundException">
         /// The subscription name does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeEventSubscriptions">REST API Reference for DescribeEventSubscriptions Operation</seealso>
         public Task<DescribeEventSubscriptionsResponse> DescribeEventSubscriptionsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeEventSubscriptionsAsync(new DescribeEventSubscriptionsRequest(), cancellationToken);
@@ -3253,6 +3576,7 @@ namespace Amazon.RDS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeEventSubscriptions">REST API Reference for DescribeEventSubscriptions Operation</seealso>
         public Task<DescribeEventSubscriptionsResponse> DescribeEventSubscriptionsAsync(DescribeEventSubscriptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeEventSubscriptionsRequestMarshaller();
@@ -3273,6 +3597,7 @@ namespace Amazon.RDS
         /// <param name="request">Container for the necessary parameters to execute the DescribeOptionGroupOptions service method.</param>
         /// 
         /// <returns>The response from the DescribeOptionGroupOptions service method, as returned by RDS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeOptionGroupOptions">REST API Reference for DescribeOptionGroupOptions Operation</seealso>
         public DescribeOptionGroupOptionsResponse DescribeOptionGroupOptions(DescribeOptionGroupOptionsRequest request)
         {
             var marshaller = new DescribeOptionGroupOptionsRequestMarshaller();
@@ -3290,6 +3615,7 @@ namespace Amazon.RDS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeOptionGroupOptions">REST API Reference for DescribeOptionGroupOptions Operation</seealso>
         public Task<DescribeOptionGroupOptionsResponse> DescribeOptionGroupOptionsAsync(DescribeOptionGroupOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeOptionGroupOptionsRequestMarshaller();
@@ -3312,6 +3638,7 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.OptionGroupNotFoundException">
         /// The specified option group could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeOptionGroups">REST API Reference for DescribeOptionGroups Operation</seealso>
         public DescribeOptionGroupsResponse DescribeOptionGroups()
         {
             return DescribeOptionGroups(new DescribeOptionGroupsRequest());
@@ -3327,6 +3654,7 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.OptionGroupNotFoundException">
         /// The specified option group could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeOptionGroups">REST API Reference for DescribeOptionGroups Operation</seealso>
         public DescribeOptionGroupsResponse DescribeOptionGroups(DescribeOptionGroupsRequest request)
         {
             var marshaller = new DescribeOptionGroupsRequestMarshaller();
@@ -3347,6 +3675,7 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.OptionGroupNotFoundException">
         /// The specified option group could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeOptionGroups">REST API Reference for DescribeOptionGroups Operation</seealso>
         public Task<DescribeOptionGroupsResponse> DescribeOptionGroupsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeOptionGroupsAsync(new DescribeOptionGroupsRequest(), cancellationToken);
@@ -3360,6 +3689,7 @@ namespace Amazon.RDS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeOptionGroups">REST API Reference for DescribeOptionGroups Operation</seealso>
         public Task<DescribeOptionGroupsResponse> DescribeOptionGroupsAsync(DescribeOptionGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeOptionGroupsRequestMarshaller();
@@ -3380,6 +3710,7 @@ namespace Amazon.RDS
         /// <param name="request">Container for the necessary parameters to execute the DescribeOrderableDBInstanceOptions service method.</param>
         /// 
         /// <returns>The response from the DescribeOrderableDBInstanceOptions service method, as returned by RDS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeOrderableDBInstanceOptions">REST API Reference for DescribeOrderableDBInstanceOptions Operation</seealso>
         public DescribeOrderableDBInstanceOptionsResponse DescribeOrderableDBInstanceOptions(DescribeOrderableDBInstanceOptionsRequest request)
         {
             var marshaller = new DescribeOrderableDBInstanceOptionsRequestMarshaller();
@@ -3397,6 +3728,7 @@ namespace Amazon.RDS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeOrderableDBInstanceOptions">REST API Reference for DescribeOrderableDBInstanceOptions Operation</seealso>
         public Task<DescribeOrderableDBInstanceOptionsResponse> DescribeOrderableDBInstanceOptionsAsync(DescribeOrderableDBInstanceOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeOrderableDBInstanceOptionsRequestMarshaller();
@@ -3421,6 +3753,7 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.ResourceNotFoundException">
         /// The specified resource ID was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribePendingMaintenanceActions">REST API Reference for DescribePendingMaintenanceActions Operation</seealso>
         public DescribePendingMaintenanceActionsResponse DescribePendingMaintenanceActions(DescribePendingMaintenanceActionsRequest request)
         {
             var marshaller = new DescribePendingMaintenanceActionsRequestMarshaller();
@@ -3438,6 +3771,7 @@ namespace Amazon.RDS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribePendingMaintenanceActions">REST API Reference for DescribePendingMaintenanceActions Operation</seealso>
         public Task<DescribePendingMaintenanceActionsResponse> DescribePendingMaintenanceActionsAsync(DescribePendingMaintenanceActionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribePendingMaintenanceActionsRequestMarshaller();
@@ -3461,6 +3795,7 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.ReservedDBInstanceNotFoundException">
         /// The specified reserved DB Instance not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeReservedDBInstances">REST API Reference for DescribeReservedDBInstances Operation</seealso>
         public DescribeReservedDBInstancesResponse DescribeReservedDBInstances()
         {
             return DescribeReservedDBInstances(new DescribeReservedDBInstancesRequest());
@@ -3477,6 +3812,7 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.ReservedDBInstanceNotFoundException">
         /// The specified reserved DB Instance not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeReservedDBInstances">REST API Reference for DescribeReservedDBInstances Operation</seealso>
         public DescribeReservedDBInstancesResponse DescribeReservedDBInstances(DescribeReservedDBInstancesRequest request)
         {
             var marshaller = new DescribeReservedDBInstancesRequestMarshaller();
@@ -3498,6 +3834,7 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.ReservedDBInstanceNotFoundException">
         /// The specified reserved DB Instance not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeReservedDBInstances">REST API Reference for DescribeReservedDBInstances Operation</seealso>
         public Task<DescribeReservedDBInstancesResponse> DescribeReservedDBInstancesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeReservedDBInstancesAsync(new DescribeReservedDBInstancesRequest(), cancellationToken);
@@ -3511,6 +3848,7 @@ namespace Amazon.RDS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeReservedDBInstances">REST API Reference for DescribeReservedDBInstances Operation</seealso>
         public Task<DescribeReservedDBInstancesResponse> DescribeReservedDBInstancesAsync(DescribeReservedDBInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeReservedDBInstancesRequestMarshaller();
@@ -3533,6 +3871,7 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.ReservedDBInstancesOfferingNotFoundException">
         /// Specified offering does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeReservedDBInstancesOfferings">REST API Reference for DescribeReservedDBInstancesOfferings Operation</seealso>
         public DescribeReservedDBInstancesOfferingsResponse DescribeReservedDBInstancesOfferings()
         {
             return DescribeReservedDBInstancesOfferings(new DescribeReservedDBInstancesOfferingsRequest());
@@ -3548,6 +3887,7 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.ReservedDBInstancesOfferingNotFoundException">
         /// Specified offering does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeReservedDBInstancesOfferings">REST API Reference for DescribeReservedDBInstancesOfferings Operation</seealso>
         public DescribeReservedDBInstancesOfferingsResponse DescribeReservedDBInstancesOfferings(DescribeReservedDBInstancesOfferingsRequest request)
         {
             var marshaller = new DescribeReservedDBInstancesOfferingsRequestMarshaller();
@@ -3568,6 +3908,7 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.ReservedDBInstancesOfferingNotFoundException">
         /// Specified offering does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeReservedDBInstancesOfferings">REST API Reference for DescribeReservedDBInstancesOfferings Operation</seealso>
         public Task<DescribeReservedDBInstancesOfferingsResponse> DescribeReservedDBInstancesOfferingsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeReservedDBInstancesOfferingsAsync(new DescribeReservedDBInstancesOfferingsRequest(), cancellationToken);
@@ -3581,12 +3922,53 @@ namespace Amazon.RDS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeReservedDBInstancesOfferings">REST API Reference for DescribeReservedDBInstancesOfferings Operation</seealso>
         public Task<DescribeReservedDBInstancesOfferingsResponse> DescribeReservedDBInstancesOfferingsAsync(DescribeReservedDBInstancesOfferingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeReservedDBInstancesOfferingsRequestMarshaller();
             var unmarshaller = DescribeReservedDBInstancesOfferingsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeReservedDBInstancesOfferingsRequest,DescribeReservedDBInstancesOfferingsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeSourceRegions
+
+
+        /// <summary>
+        /// Returns a list of the source AWS regions where the current AWS region can create a
+        /// Read Replica or copy a DB snapshot from. This API action supports pagination.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSourceRegions service method.</param>
+        /// 
+        /// <returns>The response from the DescribeSourceRegions service method, as returned by RDS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeSourceRegions">REST API Reference for DescribeSourceRegions Operation</seealso>
+        public DescribeSourceRegionsResponse DescribeSourceRegions(DescribeSourceRegionsRequest request)
+        {
+            var marshaller = new DescribeSourceRegionsRequestMarshaller();
+            var unmarshaller = DescribeSourceRegionsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeSourceRegionsRequest,DescribeSourceRegionsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeSourceRegions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSourceRegions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeSourceRegions">REST API Reference for DescribeSourceRegions Operation</seealso>
+        public Task<DescribeSourceRegionsResponse> DescribeSourceRegionsAsync(DescribeSourceRegionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeSourceRegionsRequestMarshaller();
+            var unmarshaller = DescribeSourceRegionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeSourceRegionsRequest,DescribeSourceRegionsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -3607,6 +3989,7 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBLogFileNotFoundException">
         /// <i>LogFileName</i> does not refer to an existing DB log file.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DownloadDBLogFilePortion">REST API Reference for DownloadDBLogFilePortion Operation</seealso>
         public DownloadDBLogFilePortionResponse DownloadDBLogFilePortion(DownloadDBLogFilePortionRequest request)
         {
             var marshaller = new DownloadDBLogFilePortionRequestMarshaller();
@@ -3624,6 +4007,7 @@ namespace Amazon.RDS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DownloadDBLogFilePortion">REST API Reference for DownloadDBLogFilePortion Operation</seealso>
         public Task<DownloadDBLogFilePortionResponse> DownloadDBLogFilePortionAsync(DownloadDBLogFilePortionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DownloadDBLogFilePortionRequestMarshaller();
@@ -3643,16 +4027,16 @@ namespace Amazon.RDS
         /// 
         ///  
         /// <para>
-        /// A failover for a DB cluster promotes one of the read-only instances in the DB cluster
-        /// to the master DB instance (the cluster writer) and deletes the current primary instance.
+        /// A failover for a DB cluster promotes one of the Aurora Replicas (read-only instances)
+        /// in the DB cluster to be the primary instance (the cluster writer).
         /// </para>
         ///  
         /// <para>
-        /// Amazon Aurora will automatically fail over to a read-only instance, if one exists,
-        /// when the primary instance fails. You can force a failover when you want to simulate
-        /// a failure of a DB instance for testing. Because each instance in a DB cluster has
-        /// its own endpoint address, you will need to clean up and re-establish any existing
-        /// connections that use those endpoint addresses when the failover is complete.
+        /// Amazon Aurora will automatically fail over to an Aurora Replica, if one exists, when
+        /// the primary instance fails. You can force a failover when you want to simulate a failure
+        /// of a primary instance for testing. Because each instance in a DB cluster has its own
+        /// endpoint address, you will need to clean up and re-establish any existing connections
+        /// that use those endpoint addresses when the failover is complete.
         /// </para>
         ///  
         /// <para>
@@ -3669,6 +4053,10 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
         /// The DB cluster is not in a valid state.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
+        /// The specified DB instance is not in the <i>available</i> state.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/FailoverDBCluster">REST API Reference for FailoverDBCluster Operation</seealso>
         public FailoverDBClusterResponse FailoverDBCluster(FailoverDBClusterRequest request)
         {
             var marshaller = new FailoverDBClusterRequestMarshaller();
@@ -3686,6 +4074,7 @@ namespace Amazon.RDS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/FailoverDBCluster">REST API Reference for FailoverDBCluster Operation</seealso>
         public Task<FailoverDBClusterResponse> FailoverDBClusterAsync(FailoverDBClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new FailoverDBClusterRequestMarshaller();
@@ -3712,12 +4101,16 @@ namespace Amazon.RDS
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
+        /// <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
         /// <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSnapshotNotFoundException">
         /// <i>DBSnapshotIdentifier</i> does not refer to an existing DB snapshot.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
             var marshaller = new ListTagsForResourceRequestMarshaller();
@@ -3735,6 +4128,7 @@ namespace Amazon.RDS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListTagsForResourceRequestMarshaller();
@@ -3795,6 +4189,7 @@ namespace Amazon.RDS
         /// Request would result in user exceeding the allowed amount of storage available across
         /// all DB instances.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBCluster">REST API Reference for ModifyDBCluster Operation</seealso>
         public ModifyDBClusterResponse ModifyDBCluster(ModifyDBClusterRequest request)
         {
             var marshaller = new ModifyDBClusterRequestMarshaller();
@@ -3812,6 +4207,7 @@ namespace Amazon.RDS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBCluster">REST API Reference for ModifyDBCluster Operation</seealso>
         public Task<ModifyDBClusterResponse> ModifyDBClusterAsync(ModifyDBClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ModifyDBClusterRequestMarshaller();
@@ -3866,6 +4262,7 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.InvalidDBParameterGroupStateException">
         /// The DB parameter group cannot be deleted because it is in use.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBClusterParameterGroup">REST API Reference for ModifyDBClusterParameterGroup Operation</seealso>
         public ModifyDBClusterParameterGroupResponse ModifyDBClusterParameterGroup(ModifyDBClusterParameterGroupRequest request)
         {
             var marshaller = new ModifyDBClusterParameterGroupRequestMarshaller();
@@ -3883,6 +4280,7 @@ namespace Amazon.RDS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBClusterParameterGroup">REST API Reference for ModifyDBClusterParameterGroup Operation</seealso>
         public Task<ModifyDBClusterParameterGroupResponse> ModifyDBClusterParameterGroupAsync(ModifyDBClusterParameterGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ModifyDBClusterParameterGroupRequestMarshaller();
@@ -3935,6 +4333,7 @@ namespace Amazon.RDS
         /// You have exceeded the maximum number of accounts that you can share a manual DB snapshot
         /// with.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBClusterSnapshotAttribute">REST API Reference for ModifyDBClusterSnapshotAttribute Operation</seealso>
         public ModifyDBClusterSnapshotAttributeResponse ModifyDBClusterSnapshotAttribute(ModifyDBClusterSnapshotAttributeRequest request)
         {
             var marshaller = new ModifyDBClusterSnapshotAttributeRequestMarshaller();
@@ -3952,6 +4351,7 @@ namespace Amazon.RDS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBClusterSnapshotAttribute">REST API Reference for ModifyDBClusterSnapshotAttribute Operation</seealso>
         public Task<ModifyDBClusterSnapshotAttributeResponse> ModifyDBClusterSnapshotAttributeAsync(ModifyDBClusterSnapshotAttributeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ModifyDBClusterSnapshotAttributeRequestMarshaller();
@@ -3967,7 +4367,7 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Modify settings for a DB instance. You can change one or more database configuration
+        /// Modifies settings for a DB instance. You can change one or more database configuration
         /// parameters by specifying these parameters and the new values in the request.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyDBInstance service method.</param>
@@ -4029,6 +4429,7 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.StorageTypeNotSupportedException">
         /// <i>StorageType</i> specified cannot be associated with the DB Instance.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBInstance">REST API Reference for ModifyDBInstance Operation</seealso>
         public ModifyDBInstanceResponse ModifyDBInstance(ModifyDBInstanceRequest request)
         {
             var marshaller = new ModifyDBInstanceRequestMarshaller();
@@ -4046,6 +4447,7 @@ namespace Amazon.RDS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBInstance">REST API Reference for ModifyDBInstance Operation</seealso>
         public Task<ModifyDBInstanceResponse> ModifyDBInstanceAsync(ModifyDBInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ModifyDBInstanceRequestMarshaller();
@@ -4095,6 +4497,7 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.InvalidDBParameterGroupStateException">
         /// The DB parameter group cannot be deleted because it is in use.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBParameterGroup">REST API Reference for ModifyDBParameterGroup Operation</seealso>
         public ModifyDBParameterGroupResponse ModifyDBParameterGroup(ModifyDBParameterGroupRequest request)
         {
             var marshaller = new ModifyDBParameterGroupRequestMarshaller();
@@ -4112,6 +4515,7 @@ namespace Amazon.RDS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBParameterGroup">REST API Reference for ModifyDBParameterGroup Operation</seealso>
         public Task<ModifyDBParameterGroupResponse> ModifyDBParameterGroupAsync(ModifyDBParameterGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ModifyDBParameterGroupRequestMarshaller();
@@ -4164,6 +4568,7 @@ namespace Amazon.RDS
         /// You have exceeded the maximum number of accounts that you can share a manual DB snapshot
         /// with.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBSnapshotAttribute">REST API Reference for ModifyDBSnapshotAttribute Operation</seealso>
         public ModifyDBSnapshotAttributeResponse ModifyDBSnapshotAttribute(ModifyDBSnapshotAttributeRequest request)
         {
             var marshaller = new ModifyDBSnapshotAttributeRequestMarshaller();
@@ -4181,6 +4586,7 @@ namespace Amazon.RDS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBSnapshotAttribute">REST API Reference for ModifyDBSnapshotAttribute Operation</seealso>
         public Task<ModifyDBSnapshotAttributeResponse> ModifyDBSnapshotAttributeAsync(ModifyDBSnapshotAttributeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ModifyDBSnapshotAttributeRequestMarshaller();
@@ -4220,6 +4626,7 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.SubnetAlreadyInUseException">
         /// The DB subnet is already in use in the Availability Zone.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBSubnetGroup">REST API Reference for ModifyDBSubnetGroup Operation</seealso>
         public ModifyDBSubnetGroupResponse ModifyDBSubnetGroup(ModifyDBSubnetGroupRequest request)
         {
             var marshaller = new ModifyDBSubnetGroupRequestMarshaller();
@@ -4237,6 +4644,7 @@ namespace Amazon.RDS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBSubnetGroup">REST API Reference for ModifyDBSubnetGroup Operation</seealso>
         public Task<ModifyDBSubnetGroupResponse> ModifyDBSubnetGroupAsync(ModifyDBSubnetGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ModifyDBSubnetGroupRequestMarshaller();
@@ -4285,6 +4693,7 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.SubscriptionNotFoundException">
         /// The subscription name does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyEventSubscription">REST API Reference for ModifyEventSubscription Operation</seealso>
         public ModifyEventSubscriptionResponse ModifyEventSubscription(ModifyEventSubscriptionRequest request)
         {
             var marshaller = new ModifyEventSubscriptionRequestMarshaller();
@@ -4302,6 +4711,7 @@ namespace Amazon.RDS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyEventSubscription">REST API Reference for ModifyEventSubscription Operation</seealso>
         public Task<ModifyEventSubscriptionResponse> ModifyEventSubscriptionAsync(ModifyEventSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ModifyEventSubscriptionRequestMarshaller();
@@ -4328,6 +4738,7 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.OptionGroupNotFoundException">
         /// The specified option group could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyOptionGroup">REST API Reference for ModifyOptionGroup Operation</seealso>
         public ModifyOptionGroupResponse ModifyOptionGroup(ModifyOptionGroupRequest request)
         {
             var marshaller = new ModifyOptionGroupRequestMarshaller();
@@ -4345,6 +4756,7 @@ namespace Amazon.RDS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyOptionGroup">REST API Reference for ModifyOptionGroup Operation</seealso>
         public Task<ModifyOptionGroupResponse> ModifyOptionGroupAsync(ModifyOptionGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ModifyOptionGroupRequestMarshaller();
@@ -4380,6 +4792,7 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
         /// The specified DB instance is not in the <i>available</i> state.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/PromoteReadReplica">REST API Reference for PromoteReadReplica Operation</seealso>
         public PromoteReadReplicaResponse PromoteReadReplica(PromoteReadReplicaRequest request)
         {
             var marshaller = new PromoteReadReplicaRequestMarshaller();
@@ -4397,6 +4810,7 @@ namespace Amazon.RDS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/PromoteReadReplica">REST API Reference for PromoteReadReplica Operation</seealso>
         public Task<PromoteReadReplicaResponse> PromoteReadReplicaAsync(PromoteReadReplicaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PromoteReadReplicaRequestMarshaller();
@@ -4423,6 +4837,7 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
         /// The DB cluster is not in a valid state.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/PromoteReadReplicaDBCluster">REST API Reference for PromoteReadReplicaDBCluster Operation</seealso>
         public PromoteReadReplicaDBClusterResponse PromoteReadReplicaDBCluster(PromoteReadReplicaDBClusterRequest request)
         {
             var marshaller = new PromoteReadReplicaDBClusterRequestMarshaller();
@@ -4440,6 +4855,7 @@ namespace Amazon.RDS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/PromoteReadReplicaDBCluster">REST API Reference for PromoteReadReplicaDBCluster Operation</seealso>
         public Task<PromoteReadReplicaDBClusterResponse> PromoteReadReplicaDBClusterAsync(PromoteReadReplicaDBClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PromoteReadReplicaDBClusterRequestMarshaller();
@@ -4469,6 +4885,7 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.ReservedDBInstancesOfferingNotFoundException">
         /// Specified offering does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/PurchaseReservedDBInstancesOffering">REST API Reference for PurchaseReservedDBInstancesOffering Operation</seealso>
         public PurchaseReservedDBInstancesOfferingResponse PurchaseReservedDBInstancesOffering(PurchaseReservedDBInstancesOfferingRequest request)
         {
             var marshaller = new PurchaseReservedDBInstancesOfferingRequestMarshaller();
@@ -4486,6 +4903,7 @@ namespace Amazon.RDS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/PurchaseReservedDBInstancesOffering">REST API Reference for PurchaseReservedDBInstancesOffering Operation</seealso>
         public Task<PurchaseReservedDBInstancesOfferingResponse> PurchaseReservedDBInstancesOfferingAsync(PurchaseReservedDBInstancesOfferingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PurchaseReservedDBInstancesOfferingRequestMarshaller();
@@ -4532,6 +4950,7 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
         /// The specified DB instance is not in the <i>available</i> state.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RebootDBInstance">REST API Reference for RebootDBInstance Operation</seealso>
         public RebootDBInstanceResponse RebootDBInstance(RebootDBInstanceRequest request)
         {
             var marshaller = new RebootDBInstanceRequestMarshaller();
@@ -4549,12 +4968,64 @@ namespace Amazon.RDS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RebootDBInstance">REST API Reference for RebootDBInstance Operation</seealso>
         public Task<RebootDBInstanceResponse> RebootDBInstanceAsync(RebootDBInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RebootDBInstanceRequestMarshaller();
             var unmarshaller = RebootDBInstanceResponseUnmarshaller.Instance;
 
             return InvokeAsync<RebootDBInstanceRequest,RebootDBInstanceResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  RemoveRoleFromDBCluster
+
+
+        /// <summary>
+        /// Disassociates an Identity and Access Management (IAM) role from an Aurora DB cluster.
+        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Authorizing.AWSServices.html">Authorizing
+        /// Amazon Aurora to Access Other AWS Services On Your Behalf</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RemoveRoleFromDBCluster service method.</param>
+        /// 
+        /// <returns>The response from the RemoveRoleFromDBCluster service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
+        /// <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBClusterRoleNotFoundException">
+        /// The specified IAM role Amazon Resource Name (ARN) is not associated with the specified
+        /// DB cluster.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
+        /// The DB cluster is not in a valid state.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RemoveRoleFromDBCluster">REST API Reference for RemoveRoleFromDBCluster Operation</seealso>
+        public RemoveRoleFromDBClusterResponse RemoveRoleFromDBCluster(RemoveRoleFromDBClusterRequest request)
+        {
+            var marshaller = new RemoveRoleFromDBClusterRequestMarshaller();
+            var unmarshaller = RemoveRoleFromDBClusterResponseUnmarshaller.Instance;
+
+            return Invoke<RemoveRoleFromDBClusterRequest,RemoveRoleFromDBClusterResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RemoveRoleFromDBCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RemoveRoleFromDBCluster operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RemoveRoleFromDBCluster">REST API Reference for RemoveRoleFromDBCluster Operation</seealso>
+        public Task<RemoveRoleFromDBClusterResponse> RemoveRoleFromDBClusterAsync(RemoveRoleFromDBClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new RemoveRoleFromDBClusterRequestMarshaller();
+            var unmarshaller = RemoveRoleFromDBClusterResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RemoveRoleFromDBClusterRequest,RemoveRoleFromDBClusterResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -4575,6 +5046,7 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.SubscriptionNotFoundException">
         /// The subscription name does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RemoveSourceIdentifierFromSubscription">REST API Reference for RemoveSourceIdentifierFromSubscription Operation</seealso>
         public RemoveSourceIdentifierFromSubscriptionResponse RemoveSourceIdentifierFromSubscription(RemoveSourceIdentifierFromSubscriptionRequest request)
         {
             var marshaller = new RemoveSourceIdentifierFromSubscriptionRequestMarshaller();
@@ -4592,6 +5064,7 @@ namespace Amazon.RDS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RemoveSourceIdentifierFromSubscription">REST API Reference for RemoveSourceIdentifierFromSubscription Operation</seealso>
         public Task<RemoveSourceIdentifierFromSubscriptionResponse> RemoveSourceIdentifierFromSubscriptionAsync(RemoveSourceIdentifierFromSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RemoveSourceIdentifierFromSubscriptionRequestMarshaller();
@@ -4618,12 +5091,16 @@ namespace Amazon.RDS
         /// <param name="request">Container for the necessary parameters to execute the RemoveTagsFromResource service method.</param>
         /// 
         /// <returns>The response from the RemoveTagsFromResource service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
+        /// <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
         /// <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSnapshotNotFoundException">
         /// <i>DBSnapshotIdentifier</i> does not refer to an existing DB snapshot.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RemoveTagsFromResource">REST API Reference for RemoveTagsFromResource Operation</seealso>
         public RemoveTagsFromResourceResponse RemoveTagsFromResource(RemoveTagsFromResourceRequest request)
         {
             var marshaller = new RemoveTagsFromResourceRequestMarshaller();
@@ -4641,6 +5118,7 @@ namespace Amazon.RDS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RemoveTagsFromResource">REST API Reference for RemoveTagsFromResource Operation</seealso>
         public Task<RemoveTagsFromResourceResponse> RemoveTagsFromResourceAsync(RemoveTagsFromResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RemoveTagsFromResourceRequestMarshaller();
@@ -4685,6 +5163,7 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.InvalidDBParameterGroupStateException">
         /// The DB parameter group cannot be deleted because it is in use.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ResetDBClusterParameterGroup">REST API Reference for ResetDBClusterParameterGroup Operation</seealso>
         public ResetDBClusterParameterGroupResponse ResetDBClusterParameterGroup(ResetDBClusterParameterGroupRequest request)
         {
             var marshaller = new ResetDBClusterParameterGroupRequestMarshaller();
@@ -4702,6 +5181,7 @@ namespace Amazon.RDS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ResetDBClusterParameterGroup">REST API Reference for ResetDBClusterParameterGroup Operation</seealso>
         public Task<ResetDBClusterParameterGroupResponse> ResetDBClusterParameterGroupAsync(ResetDBClusterParameterGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ResetDBClusterParameterGroupRequestMarshaller();
@@ -4734,6 +5214,7 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.InvalidDBParameterGroupStateException">
         /// The DB parameter group cannot be deleted because it is in use.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ResetDBParameterGroup">REST API Reference for ResetDBParameterGroup Operation</seealso>
         public ResetDBParameterGroupResponse ResetDBParameterGroup(ResetDBParameterGroupRequest request)
         {
             var marshaller = new ResetDBParameterGroupRequestMarshaller();
@@ -4751,12 +5232,103 @@ namespace Amazon.RDS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ResetDBParameterGroup">REST API Reference for ResetDBParameterGroup Operation</seealso>
         public Task<ResetDBParameterGroupResponse> ResetDBParameterGroupAsync(ResetDBParameterGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ResetDBParameterGroupRequestMarshaller();
             var unmarshaller = ResetDBParameterGroupResponseUnmarshaller.Instance;
 
             return InvokeAsync<ResetDBParameterGroupRequest,ResetDBParameterGroupResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  RestoreDBClusterFromS3
+
+
+        /// <summary>
+        /// Creates an Amazon Aurora DB cluster from data stored in an Amazon S3 bucket. Amazon
+        /// RDS must be authorized to access the Amazon S3 bucket and the data must be created
+        /// using the Percona XtraBackup utility as described in <a href="AmazonRDS/latest/UserGuide/Aurora.Migrate.MySQL.html#Aurora.Migrate.MySQL.S3">Migrating
+        /// Data from MySQL by Using an Amazon S3 Bucket</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RestoreDBClusterFromS3 service method.</param>
+        /// 
+        /// <returns>The response from the RestoreDBClusterFromS3 service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBClusterAlreadyExistsException">
+        /// User already has a DB cluster with the given identifier.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
+        /// <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBClusterParameterGroupNotFoundException">
+        /// <i>DBClusterParameterGroupName</i> does not refer to an existing DB Cluster parameter
+        /// group.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBClusterQuotaExceededException">
+        /// User attempted to create a new DB cluster and the user has already reached the maximum
+        /// allowed DB cluster quota.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBSubnetGroupNotFoundException">
+        /// <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InsufficientStorageClusterCapacityException">
+        /// There is insufficient storage available for the current action. You may be able to
+        /// resolve this error by updating your subnet group to use different Availability Zones
+        /// that have more storage available.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
+        /// The DB cluster is not in a valid state.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBSubnetGroupStateException">
+        /// The DB subnet group cannot be deleted because it is in use.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidS3BucketException">
+        /// The specified Amazon S3 bucket name could not be found or Amazon RDS is not authorized
+        /// to access the specified Amazon S3 bucket. Verify the <b>SourceS3BucketName</b> and
+        /// <b>S3IngestionRoleArn</b> values and try again.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidSubnetException">
+        /// The requested subnet is invalid, or multiple subnets were requested that are not all
+        /// in a common VPC.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidVPCNetworkStateException">
+        /// DB subnet group does not cover all Availability Zones after it is created because
+        /// users' change.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
+        /// Error accessing KMS key.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.StorageQuotaExceededException">
+        /// Request would result in user exceeding the allowed amount of storage available across
+        /// all DB instances.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBClusterFromS3">REST API Reference for RestoreDBClusterFromS3 Operation</seealso>
+        public RestoreDBClusterFromS3Response RestoreDBClusterFromS3(RestoreDBClusterFromS3Request request)
+        {
+            var marshaller = new RestoreDBClusterFromS3RequestMarshaller();
+            var unmarshaller = RestoreDBClusterFromS3ResponseUnmarshaller.Instance;
+
+            return Invoke<RestoreDBClusterFromS3Request,RestoreDBClusterFromS3Response>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RestoreDBClusterFromS3 operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RestoreDBClusterFromS3 operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBClusterFromS3">REST API Reference for RestoreDBClusterFromS3 Operation</seealso>
+        public Task<RestoreDBClusterFromS3Response> RestoreDBClusterFromS3Async(RestoreDBClusterFromS3Request request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new RestoreDBClusterFromS3RequestMarshaller();
+            var unmarshaller = RestoreDBClusterFromS3ResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RestoreDBClusterFromS3Request,RestoreDBClusterFromS3Response>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -4838,6 +5410,7 @@ namespace Amazon.RDS
         /// Request would result in user exceeding the allowed amount of storage available across
         /// all DB instances.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBClusterFromSnapshot">REST API Reference for RestoreDBClusterFromSnapshot Operation</seealso>
         public RestoreDBClusterFromSnapshotResponse RestoreDBClusterFromSnapshot(RestoreDBClusterFromSnapshotRequest request)
         {
             var marshaller = new RestoreDBClusterFromSnapshotRequestMarshaller();
@@ -4855,6 +5428,7 @@ namespace Amazon.RDS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBClusterFromSnapshot">REST API Reference for RestoreDBClusterFromSnapshot Operation</seealso>
         public Task<RestoreDBClusterFromSnapshotResponse> RestoreDBClusterFromSnapshotAsync(RestoreDBClusterFromSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RestoreDBClusterFromSnapshotRequestMarshaller();
@@ -4907,6 +5481,11 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.InsufficientDBClusterCapacityException">
         /// The DB cluster does not have enough capacity for the current operation.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InsufficientStorageClusterCapacityException">
+        /// There is insufficient storage available for the current action. You may be able to
+        /// resolve this error by updating your subnet group to use different Availability Zones
+        /// that have more storage available.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBClusterSnapshotStateException">
         /// The supplied value is not a valid DB cluster snapshot state.
         /// </exception>
@@ -4938,6 +5517,7 @@ namespace Amazon.RDS
         /// Request would result in user exceeding the allowed amount of storage available across
         /// all DB instances.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBClusterToPointInTime">REST API Reference for RestoreDBClusterToPointInTime Operation</seealso>
         public RestoreDBClusterToPointInTimeResponse RestoreDBClusterToPointInTime(RestoreDBClusterToPointInTimeRequest request)
         {
             var marshaller = new RestoreDBClusterToPointInTimeRequestMarshaller();
@@ -4955,6 +5535,7 @@ namespace Amazon.RDS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBClusterToPointInTime">REST API Reference for RestoreDBClusterToPointInTime Operation</seealso>
         public Task<RestoreDBClusterToPointInTimeResponse> RestoreDBClusterToPointInTimeAsync(RestoreDBClusterToPointInTimeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RestoreDBClusterToPointInTimeRequestMarshaller();
@@ -5060,6 +5641,7 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.StorageTypeNotSupportedException">
         /// <i>StorageType</i> specified cannot be associated with the DB Instance.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceFromDBSnapshot">REST API Reference for RestoreDBInstanceFromDBSnapshot Operation</seealso>
         public RestoreDBInstanceFromDBSnapshotResponse RestoreDBInstanceFromDBSnapshot(RestoreDBInstanceFromDBSnapshotRequest request)
         {
             var marshaller = new RestoreDBInstanceFromDBSnapshotRequestMarshaller();
@@ -5077,6 +5659,7 @@ namespace Amazon.RDS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceFromDBSnapshot">REST API Reference for RestoreDBInstanceFromDBSnapshot Operation</seealso>
         public Task<RestoreDBInstanceFromDBSnapshotResponse> RestoreDBInstanceFromDBSnapshotAsync(RestoreDBInstanceFromDBSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RestoreDBInstanceFromDBSnapshotRequestMarshaller();
@@ -5177,6 +5760,7 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.StorageTypeNotSupportedException">
         /// <i>StorageType</i> specified cannot be associated with the DB Instance.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceToPointInTime">REST API Reference for RestoreDBInstanceToPointInTime Operation</seealso>
         public RestoreDBInstanceToPointInTimeResponse RestoreDBInstanceToPointInTime(RestoreDBInstanceToPointInTimeRequest request)
         {
             var marshaller = new RestoreDBInstanceToPointInTimeRequestMarshaller();
@@ -5194,6 +5778,7 @@ namespace Amazon.RDS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceToPointInTime">REST API Reference for RestoreDBInstanceToPointInTime Operation</seealso>
         public Task<RestoreDBInstanceToPointInTimeResponse> RestoreDBInstanceToPointInTimeAsync(RestoreDBInstanceToPointInTimeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RestoreDBInstanceToPointInTimeRequestMarshaller();
@@ -5231,6 +5816,7 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.InvalidDBSecurityGroupStateException">
         /// The state of the DB security group does not allow deletion.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RevokeDBSecurityGroupIngress">REST API Reference for RevokeDBSecurityGroupIngress Operation</seealso>
         public RevokeDBSecurityGroupIngressResponse RevokeDBSecurityGroupIngress(RevokeDBSecurityGroupIngressRequest request)
         {
             var marshaller = new RevokeDBSecurityGroupIngressRequestMarshaller();
@@ -5248,6 +5834,7 @@ namespace Amazon.RDS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RevokeDBSecurityGroupIngress">REST API Reference for RevokeDBSecurityGroupIngress Operation</seealso>
         public Task<RevokeDBSecurityGroupIngressResponse> RevokeDBSecurityGroupIngressAsync(RevokeDBSecurityGroupIngressRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RevokeDBSecurityGroupIngressRequestMarshaller();

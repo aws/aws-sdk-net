@@ -31,8 +31,12 @@ namespace Amazon.CodeDeploy.Model
     /// Container for the parameters to the DeleteDeploymentConfig operation.
     /// Deletes a deployment configuration.
     /// 
-    ///  <note>A deployment configuration cannot be deleted if it is currently in use. Predefined
-    /// configurations cannot be deleted.</note>
+    ///  <note> 
+    /// <para>
+    /// A deployment configuration cannot be deleted if it is currently in use. Predefined
+    /// configurations cannot be deleted.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DeleteDeploymentConfigRequest : AmazonCodeDeployRequest
     {

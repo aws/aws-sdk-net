@@ -37,18 +37,36 @@ namespace Amazon.AutoScaling.Model
     /// This step is a part of the procedure for adding a lifecycle hook to an Auto Scaling
     /// group:
     /// </para>
-    ///  <ol> <li>(Optional) Create a Lambda function and a rule that allows CloudWatch Events
-    /// to invoke your Lambda function when Auto Scaling launches or terminates instances.</li>
-    /// <li>(Optional) Create a notification target and an IAM role. The target can be either
-    /// an Amazon SQS queue or an Amazon SNS topic. The role allows Auto Scaling to publish
-    /// lifecycle notifications to the target.</li> <li>Create the lifecycle hook. Specify
-    /// whether the hook is used when the instances launch or terminate.</li> <li>If you need
-    /// more time, record the lifecycle action heartbeat to keep the instance in a pending
-    /// state.</li> <li><b>If you finish before the timeout period ends, complete the lifecycle
-    /// action.</b></li> </ol> 
+    ///  <ol> <li> 
     /// <para>
-    /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html">Auto
-    /// Scaling Lifecycle</a> in the <i>Auto Scaling Developer Guide</i>.
+    /// (Optional) Create a Lambda function and a rule that allows CloudWatch Events to invoke
+    /// your Lambda function when Auto Scaling launches or terminates instances.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// (Optional) Create a notification target and an IAM role. The target can be either
+    /// an Amazon SQS queue or an Amazon SNS topic. The role allows Auto Scaling to publish
+    /// lifecycle notifications to the target.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Create the lifecycle hook. Specify whether the hook is used when the instances launch
+    /// or terminate.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// If you need more time, record the lifecycle action heartbeat to keep the instance
+    /// in a pending state.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>If you finish before the timeout period ends, complete the lifecycle action.</b>
+    /// 
+    /// </para>
+    ///  </li> </ol> 
+    /// <para>
+    /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/AutoScalingGroupLifecycle.html">Auto
+    /// Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.
     /// </para>
     /// </summary>
     public partial class CompleteLifecycleActionRequest : AmazonAutoScalingRequest

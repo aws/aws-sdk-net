@@ -38,6 +38,7 @@ namespace Amazon.IoT.Model
         private string _caCertificatePem;
         private string _certificatePem;
         private bool? _setAsActive;
+        private CertificateStatus _status;
 
         /// <summary>
         /// Gets and sets the property CaCertificatePem. 
@@ -91,6 +92,21 @@ namespace Amazon.IoT.Model
         internal bool IsSetSetAsActive()
         {
             return this._setAsActive.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status.
+        /// </summary>
+        public CertificateStatus Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
         }
 
     }

@@ -62,10 +62,13 @@ namespace Amazon.RDS.Model
     public partial class DBCluster
     {
         private int? _allocatedStorage;
+        private List<DBClusterRole> _associatedRoles = new List<DBClusterRole>();
         private List<string> _availabilityZones = new List<string>();
         private int? _backupRetentionPeriod;
         private string _characterSetName;
+        private DateTime? _clusterCreateTime;
         private string _databaseName;
+        private string _dbClusterArn;
         private string _dbClusterIdentifier;
         private List<DBClusterMember> _dbClusterMembers = new List<DBClusterMember>();
         private List<DBClusterOptionGroupStatus> _dbClusterOptionGroupMemberships = new List<DBClusterOptionGroupStatus>();
@@ -80,10 +83,12 @@ namespace Amazon.RDS.Model
         private string _kmsKeyId;
         private DateTime? _latestRestorableTime;
         private string _masterUsername;
+        private bool? _multiAZ;
         private string _percentProgress;
         private int? _port;
         private string _preferredBackupWindow;
         private string _preferredMaintenanceWindow;
+        private string _readerEndpoint;
         private List<string> _readReplicaIdentifiers = new List<string>();
         private string _replicationSourceIdentifier;
         private string _status;
@@ -106,6 +111,26 @@ namespace Amazon.RDS.Model
         internal bool IsSetAllocatedStorage()
         {
             return this._allocatedStorage.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AssociatedRoles. 
+        /// <para>
+        /// Provides a list of the AWS Identity and Access Management (IAM) roles that are associated
+        /// with the DB cluster. IAM roles that are associated with a DB cluster grant permission
+        /// for the DB cluster to access other AWS services on your behalf.
+        /// </para>
+        /// </summary>
+        public List<DBClusterRole> AssociatedRoles
+        {
+            get { return this._associatedRoles; }
+            set { this._associatedRoles = value; }
+        }
+
+        // Check to see if AssociatedRoles property is set
+        internal bool IsSetAssociatedRoles()
+        {
+            return this._associatedRoles != null && this._associatedRoles.Count > 0; 
         }
 
         /// <summary>
@@ -165,6 +190,25 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ClusterCreateTime. 
+        /// <para>
+        /// Specifies the time when the DB cluster was created, in Universal Coordinated Time
+        /// (UTC).
+        /// </para>
+        /// </summary>
+        public DateTime ClusterCreateTime
+        {
+            get { return this._clusterCreateTime.GetValueOrDefault(); }
+            set { this._clusterCreateTime = value; }
+        }
+
+        // Check to see if ClusterCreateTime property is set
+        internal bool IsSetClusterCreateTime()
+        {
+            return this._clusterCreateTime.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property DatabaseName. 
         /// <para>
         /// Contains the name of the initial database of this DB cluster that was provided at
@@ -182,6 +226,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetDatabaseName()
         {
             return this._databaseName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DBClusterArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) for the DB cluster.
+        /// </para>
+        /// </summary>
+        public string DBClusterArn
+        {
+            get { return this._dbClusterArn; }
+            set { this._dbClusterArn = value; }
+        }
+
+        // Check to see if DBClusterArn property is set
+        internal bool IsSetDBClusterArn()
+        {
+            return this._dbClusterArn != null;
         }
 
         /// <summary>
@@ -442,6 +504,24 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MultiAZ. 
+        /// <para>
+        /// Specifies whether the DB cluster has instances in multiple Availability Zones.
+        /// </para>
+        /// </summary>
+        public bool MultiAZ
+        {
+            get { return this._multiAZ.GetValueOrDefault(); }
+            set { this._multiAZ = value; }
+        }
+
+        // Check to see if MultiAZ property is set
+        internal bool IsSetMultiAZ()
+        {
+            return this._multiAZ.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property PercentProgress. 
         /// <para>
         /// Specifies the progress of the operation as a percentage.
@@ -513,6 +593,35 @@ namespace Amazon.RDS.Model
         internal bool IsSetPreferredMaintenanceWindow()
         {
             return this._preferredMaintenanceWindow != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReaderEndpoint. 
+        /// <para>
+        /// The reader endpoint for the DB cluster. The reader endpoint for a DB cluster load-balances
+        /// connections across the Aurora Replicas that are available in a DB cluster. As clients
+        /// request new connections to the reader endpoint, Aurora distributes the connection
+        /// requests among the Aurora Replicas in the DB cluster. This functionality can help
+        /// balance your read workload across multiple Aurora Replicas in your DB cluster. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If a failover occurs, and the Aurora Replica that you are connected to is promoted
+        /// to be the primary instance, your connection will be dropped. To continue sending your
+        /// read workload to other Aurora Replicas in the cluster, you can then recoonect to the
+        /// reader endpoint.
+        /// </para>
+        /// </summary>
+        public string ReaderEndpoint
+        {
+            get { return this._readerEndpoint; }
+            set { this._readerEndpoint = value; }
+        }
+
+        // Check to see if ReaderEndpoint property is set
+        internal bool IsSetReaderEndpoint()
+        {
+            return this._readerEndpoint != null;
         }
 
         /// <summary>

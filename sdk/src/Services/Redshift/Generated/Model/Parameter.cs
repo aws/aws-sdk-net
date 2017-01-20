@@ -45,7 +45,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property AllowedValues. 
         /// <para>
-        ///  The valid range of values for the parameter. 
+        /// The valid range of values for the parameter.
         /// </para>
         /// </summary>
         public string AllowedValues
@@ -68,7 +68,6 @@ namespace Amazon.Redshift.Model
         /// for the configuration changes to be applied. For more information about parameters
         /// and parameter groups, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
         /// Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
-        /// 
         /// </para>
         /// </summary>
         public ParameterApplyType ApplyType
@@ -86,7 +85,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property DataType. 
         /// <para>
-        ///  The data type of the parameter. 
+        /// The data type of the parameter.
         /// </para>
         /// </summary>
         public string DataType
@@ -104,7 +103,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        ///  A description of the parameter. 
+        /// A description of the parameter.
         /// </para>
         /// </summary>
         public string Description
@@ -122,7 +121,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property IsModifiable. 
         /// <para>
-        ///  If <code>true</code>, the parameter can be modified. Some parameters have security
+        /// If <code>true</code>, the parameter can be modified. Some parameters have security
         /// or operational implications that prevent them from being changed. 
         /// </para>
         /// </summary>
@@ -141,7 +140,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property MinimumEngineVersion. 
         /// <para>
-        ///  The earliest engine version to which the parameter can apply. 
+        /// The earliest engine version to which the parameter can apply.
         /// </para>
         /// </summary>
         public string MinimumEngineVersion
@@ -159,7 +158,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ParameterName. 
         /// <para>
-        ///  The name of the parameter. 
+        /// The name of the parameter.
         /// </para>
         /// </summary>
         public string ParameterName
@@ -177,7 +176,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ParameterValue. 
         /// <para>
-        ///  The value of the parameter. 
+        /// The value of the parameter.
         /// </para>
         /// </summary>
         public string ParameterValue
@@ -195,7 +194,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property Source. 
         /// <para>
-        ///  The source of the parameter value, such as "engine-default" or "user". 
+        /// The source of the parameter value, such as "engine-default" or "user".
         /// </para>
         /// </summary>
         public string Source

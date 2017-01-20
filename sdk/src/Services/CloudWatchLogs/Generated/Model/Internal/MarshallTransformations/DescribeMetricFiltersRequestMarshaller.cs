@@ -85,6 +85,18 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.LogGroupName);
                 }
 
+                if(publicRequest.IsSetMetricName())
+                {
+                    context.Writer.WritePropertyName("metricName");
+                    context.Writer.Write(publicRequest.MetricName);
+                }
+
+                if(publicRequest.IsSetMetricNamespace())
+                {
+                    context.Writer.WritePropertyName("metricNamespace");
+                    context.Writer.Write(publicRequest.MetricNamespace);
+                }
+
                 if(publicRequest.IsSetNextToken())
                 {
                     context.Writer.WritePropertyName("nextToken");

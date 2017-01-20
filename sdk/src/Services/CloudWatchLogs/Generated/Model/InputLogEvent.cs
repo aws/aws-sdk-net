@@ -28,9 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
-    /// A log event is a record of some activity that was recorded by the application or resource
-    /// being monitored. The log event record that CloudWatch Logs understands contains two
-    /// properties: the timestamp of when the event occurred, and the raw event message.
+    /// Represents a log event, which is a record of activity that was recorded by the application
+    /// or resource being monitored.
     /// </summary>
     public partial class InputLogEvent
     {
@@ -38,7 +37,10 @@ namespace Amazon.CloudWatchLogs.Model
         private DateTime? _timestamp;
 
         /// <summary>
-        /// Gets and sets the property Message.
+        /// Gets and sets the property Message. 
+        /// <para>
+        /// The raw event message.
+        /// </para>
         /// </summary>
         public string Message
         {
@@ -53,7 +55,11 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Timestamp.
+        /// Gets and sets the property Timestamp. 
+        /// <para>
+        /// The time the event occurred, expressed as the number of milliseconds since Jan 1,
+        /// 1970 00:00:00 UTC.
+        /// </para>
         /// </summary>
         public DateTime Timestamp
         {

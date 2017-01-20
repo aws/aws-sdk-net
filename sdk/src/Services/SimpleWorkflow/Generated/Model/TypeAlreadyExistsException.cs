@@ -25,7 +25,7 @@ namespace Amazon.SimpleWorkflow.Model
     ///<summary>
     /// SimpleWorkflow exception
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class TypeAlreadyExistsException : AmazonSimpleWorkflowException 
@@ -79,7 +79,7 @@ namespace Amazon.SimpleWorkflow.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the TypeAlreadyExistsException class with serialized data.
         /// </summary>

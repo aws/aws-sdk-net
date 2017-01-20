@@ -43,6 +43,66 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics
         
         #region Constructors
 
+#if CORECLR
+    
+        /// <summary>
+        /// Constructs AmazonAWSMarketplaceCommerceAnalyticsClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
+        public AmazonAWSMarketplaceCommerceAnalyticsClient()
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonAWSMarketplaceCommerceAnalyticsConfig()) { }
+
+        /// <summary>
+        /// Constructs AmazonAWSMarketplaceCommerceAnalyticsClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
+        /// <param name="region">The region to connect.</param>
+        public AmazonAWSMarketplaceCommerceAnalyticsClient(RegionEndpoint region)
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonAWSMarketplaceCommerceAnalyticsConfig{RegionEndpoint = region}) { }
+
+        /// <summary>
+        /// Constructs AmazonAWSMarketplaceCommerceAnalyticsClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
+        /// <param name="config">The AmazonAWSMarketplaceCommerceAnalyticsClient Configuration Object</param>
+        public AmazonAWSMarketplaceCommerceAnalyticsClient(AmazonAWSMarketplaceCommerceAnalyticsConfig config)
+            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+
+#endif
+
         /// <summary>
         /// Constructs AmazonAWSMarketplaceCommerceAnalyticsClient with AWS Credentials
         /// </summary>
@@ -190,12 +250,45 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplacecommerceanalytics-2015-07-01/GenerateDataSet">REST API Reference for GenerateDataSet Operation</seealso>
         public Task<GenerateDataSetResponse> GenerateDataSetAsync(GenerateDataSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GenerateDataSetRequestMarshaller();
             var unmarshaller = GenerateDataSetResponseUnmarshaller.Instance;
 
             return InvokeAsync<GenerateDataSetRequest,GenerateDataSetResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartSupportDataExport
+
+        internal StartSupportDataExportResponse StartSupportDataExport(StartSupportDataExportRequest request)
+        {
+            var marshaller = new StartSupportDataExportRequestMarshaller();
+            var unmarshaller = StartSupportDataExportResponseUnmarshaller.Instance;
+
+            return Invoke<StartSupportDataExportRequest,StartSupportDataExportResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartSupportDataExport operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartSupportDataExport operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplacecommerceanalytics-2015-07-01/StartSupportDataExport">REST API Reference for StartSupportDataExport Operation</seealso>
+        public Task<StartSupportDataExportResponse> StartSupportDataExportAsync(StartSupportDataExportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new StartSupportDataExportRequestMarshaller();
+            var unmarshaller = StartSupportDataExportResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartSupportDataExportRequest,StartSupportDataExportResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

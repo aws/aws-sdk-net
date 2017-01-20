@@ -15,8 +15,6 @@
 
 using System.Diagnostics.CodeAnalysis;
 
-// Unused parameters
-[module: SuppressMessage("Microsoft.Usage", "CA1801:ReviewUnusedParameters", Scope = "member", Target = "Amazon.CloudSearchDomain.Internal.ProcessExceptionHandler.#HandleException(Amazon.Runtime.IExecutionContext,System.Exception)", MessageId = "exception")]
 // Suppressions for various *url* params being strings.
 [module: SuppressMessage("Microsoft.Design", "CA1054:UriParametersShouldNotBeStrings", Scope = "member", Target = "Amazon.CloudSearchDomain.AmazonCloudSearchDomainClient.#.ctor(System.String,Amazon.Runtime.AWSCredentials)", MessageId = "0#")]
 [module: SuppressMessage("Microsoft.Design", "CA1054:UriParametersShouldNotBeStrings", Scope = "member", Target = "Amazon.CloudSearchDomain.AmazonCloudSearchDomainClient.#.ctor(System.String,System.String,System.String,System.String)", MessageId = "3#")]

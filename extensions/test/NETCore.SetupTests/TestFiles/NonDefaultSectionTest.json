@@ -1,0 +1,6 @@
+﻿{
+  "AWSNonStandard": {
+    "Profile": "myProfile",
+    "Region": "eu-central-1"
+  }
+}

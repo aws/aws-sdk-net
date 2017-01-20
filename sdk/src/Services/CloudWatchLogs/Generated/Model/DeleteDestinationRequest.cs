@@ -29,8 +29,8 @@ namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteDestination operation.
-    /// Deletes the destination with the specified name and eventually disables all the subscription
-    /// filters that publish to it. This will not delete the physical resource encapsulated
+    /// Deletes the specified destination, and eventually disables all the subscription filters
+    /// that publish to it. This operation does not delete the physical resource encapsulated
     /// by the destination.
     /// </summary>
     public partial class DeleteDestinationRequest : AmazonCloudWatchLogsRequest
@@ -40,7 +40,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property DestinationName. 
         /// <para>
-        /// The name of destination to delete.
+        /// The name of the destination.
         /// </para>
         /// </summary>
         public string DestinationName

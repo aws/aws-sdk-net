@@ -39,7 +39,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property Clusters. 
         /// <para>
-        /// The list of clusters for the account based on the given filters. 
+        /// The list of clusters for the account based on the given filters.
         /// </para>
         /// </summary>
         public List<ClusterSummary> Clusters
@@ -57,7 +57,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        /// The pagination token that indicates the next set of results to retrieve. 
+        /// The pagination token that indicates the next set of results to retrieve.
         /// </para>
         /// </summary>
         public string Marker

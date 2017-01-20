@@ -33,9 +33,19 @@ namespace Amazon.ConfigService.Model
     /// delivery channel. After the delivery has started, AWS Config sends following notifications
     /// using an Amazon SNS topic that you have specified.
     /// 
-    ///  <ul> <li>Notification of starting the delivery.</li> <li>Notification of delivery
-    /// completed, if the delivery was successfully completed.</li> <li>Notification of delivery
-    /// failure, if the delivery failed to complete.</li> </ul>
+    ///  <ul> <li> 
+    /// <para>
+    /// Notification of starting the delivery.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Notification of delivery completed, if the delivery was successfully completed.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Notification of delivery failure, if the delivery failed to complete.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class DeliverConfigSnapshotRequest : AmazonConfigServiceRequest
     {

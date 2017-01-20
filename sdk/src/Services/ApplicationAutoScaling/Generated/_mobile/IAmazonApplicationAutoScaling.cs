@@ -23,6 +23,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.ApplicationAutoScaling.Model;
 
 namespace Amazon.ApplicationAutoScaling
@@ -30,21 +31,13 @@ namespace Amazon.ApplicationAutoScaling
     /// <summary>
     /// Interface for accessing ApplicationAutoScaling
     ///
-    /// Application Auto Scaling is a general purpose Auto Scaling service for supported elastic
-    /// AWS resources. With Application Auto Scaling, you can automatically scale your AWS
-    /// resources, with an experience similar to that of Auto Scaling.
+    /// With Application Auto Scaling, you can automatically scale your AWS resources. The
+    /// experience similar to that of <a href="https://aws.amazon.com/autoscaling/">Auto Scaling</a>.
+    /// You can use Application Auto Scaling to accomplish the following tasks:
     /// 
-    ///  <note> 
-    /// <para>
-    /// At this time, Application Auto Scaling only supports scaling Amazon ECS services.
-    /// </para>
-    ///  </note> 
-    /// <para>
-    /// For example, you can use Application Auto Scaling to accomplish the following tasks:
-    /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Define scaling policies for automatically adjusting your application’s resources
+    /// Define scaling policies to automatically scale your AWS resources
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -52,27 +45,34 @@ namespace Amazon.ApplicationAutoScaling
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// View history of your scaling events 
+    /// View the history of your scaling events
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// Application Auto Scaling is available in the following regions:
+    /// Application Auto Scaling can scale the following AWS resources:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>us-east-1</code> 
+    /// Amazon ECS services. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-auto-scaling.html">Service
+    /// Auto Scaling</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>us-west-2</code> 
+    /// Amazon EC2 Spot fleets. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/fleet-auto-scaling.html">Automatic
+    /// Scaling for Spot Fleet</a> in the <i>Amazon EC2 User Guide</i>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>eu-west-1</code> 
+    /// Amazon EMR clusters. For more information, see <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/ManagementGuide/emr-automatic-scaling.html">Using
+    /// Automatic Scaling in Amazon EMR</a> in the <i>Amazon EMR Management Guide</i>.
     /// </para>
-    ///  </li> </ul>
+    ///  </li> </ul> 
+    /// <para>
+    /// For a list of supported regions, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#as-app_region">AWS
+    /// Regions and Endpoints: Application Auto Scaling</a> in the <i>AWS General Reference</i>.
+    /// </para>
     /// </summary>
-    public partial interface IAmazonApplicationAutoScaling : IDisposable
+    public partial interface IAmazonApplicationAutoScaling : IAmazonService, IDisposable
     {
                 
         #region  DeleteScalingPolicy

@@ -88,6 +88,12 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                     unmarshalledObject.TapeBarcode = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("TapeCreatedDate", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.TapeCreatedDate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("TapeSizeInBytes", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatch.Model
 {
     /// <summary>
-    /// The output for the <a>DescribeAlarmsForMetric</a> action.
+    /// This is the response object from the DescribeAlarmsForMetric operation.
     /// </summary>
     public partial class DescribeAlarmsForMetricResponse : AmazonWebServiceResponse
     {
@@ -37,7 +37,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property MetricAlarms. 
         /// <para>
-        ///  A list of information for each alarm with the specified metric. 
+        /// The information for each alarm with the specified metric.
         /// </para>
         /// </summary>
         public List<MetricAlarm> MetricAlarms

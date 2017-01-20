@@ -24,7 +24,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\pcl</OutputPath>
-    <DefineConstants>DEBUG;TRACE;;PCL;AWS_ASYNC_API;LOCAL_FILE</DefineConstants>
+    <DefineConstants>DEBUG;TRACE;;PCL;AWS_ASYNC_API;LOCAL_FILE;ADD_SUPPORT_ICLONEABLE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\Debug\pcl\AWSSDK.S3.XML</DocumentationFile>
@@ -33,12 +33,13 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\pcl</OutputPath>
-    <DefineConstants>TRACE;;PCL;AWS_ASYNC_API;LOCAL_FILE</DefineConstants>
+    <DefineConstants>TRACE;;PCL;AWS_ASYNC_API;LOCAL_FILE;ADD_SUPPORT_ICLONEABLE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\Release\pcl\AWSSDK.S3.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <Choose>
@@ -60,6 +61,9 @@
     <Compile Include="Custom\Internal\*.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Custom\Internal\_async\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Custom\Model\*.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -75,19 +79,25 @@
     <Compile Include="Custom\Util\*.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Custom\_bcl+pcl\*.cs">
+    <Compile Include="Custom\Util\_async\*.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Custom\_bcl+pcl\Transfer\*.cs">
+    <Compile Include="Custom\_bcl+coreclr+pcl\*.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Custom\_bcl+pcl\Transfer\Internal\*.cs">
+    <Compile Include="Custom\_bcl+coreclr+pcl\Transfer\*.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Custom\_bcl+pcl\Transfer\Internal\_async\*.cs">
+    <Compile Include="Custom\_bcl+coreclr+pcl\Transfer\Internal\*.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Custom\_bcl+pcl\Transfer\_async\*.cs">
+    <Compile Include="Custom\_bcl+coreclr+pcl\Transfer\Internal\_async\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Custom\_bcl+coreclr+pcl\Transfer\_async\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Custom\_bcl+coreclr+pcl\_async\*.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Generated\*.cs">

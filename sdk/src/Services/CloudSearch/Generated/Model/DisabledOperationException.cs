@@ -25,7 +25,7 @@ namespace Amazon.CloudSearch.Model
     ///<summary>
     /// CloudSearch exception
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class DisabledOperationException : AmazonCloudSearchException 
@@ -79,7 +79,7 @@ namespace Amazon.CloudSearch.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the DisabledOperationException class with serialized data.
         /// </summary>

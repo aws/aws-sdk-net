@@ -37,7 +37,10 @@ namespace Amazon.CodeDeploy.Model
         private S3Location _s3Location;
 
         /// <summary>
-        /// Gets and sets the property GitHubLocation.
+        /// Gets and sets the property GitHubLocation. 
+        /// <para>
+        /// Information about the location of application artifacts stored in GitHub.
+        /// </para>
         /// </summary>
         public GitHubLocation GitHubLocation
         {
@@ -56,8 +59,15 @@ namespace Amazon.CodeDeploy.Model
         /// <para>
         /// The type of application revision:
         /// </para>
-        ///  <ul> <li>S3: An application revision stored in Amazon S3.</li> <li>GitHub: An application
-        /// revision stored in GitHub.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// S3: An application revision stored in Amazon S3.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// GitHub: An application revision stored in GitHub.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public RevisionLocationType RevisionType
         {
@@ -72,7 +82,10 @@ namespace Amazon.CodeDeploy.Model
         }
 
         /// <summary>
-        /// Gets and sets the property S3Location.
+        /// Gets and sets the property S3Location. 
+        /// <para>
+        /// Information about the location of application artifacts stored in Amazon S3. 
+        /// </para>
         /// </summary>
         public S3Location S3Location
         {

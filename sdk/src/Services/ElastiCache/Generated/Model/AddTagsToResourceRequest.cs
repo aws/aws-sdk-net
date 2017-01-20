@@ -29,10 +29,9 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the AddTagsToResource operation.
-    /// The <i>AddTagsToResource</i> action adds up to 10 cost allocation tags to the named
-    /// resource. A <i>cost allocation tag</i> is a key-value pair where the key and value
-    /// are case-sensitive. Cost allocation tags can be used to categorize and track your
-    /// AWS costs.
+    /// Adds up to 10 cost allocation tags to the named resource. A cost allocation tag is
+    /// a key-value pair where the key and value are case-sensitive. You can use cost allocation
+    /// tags to categorize and track your AWS costs.
     /// 
     ///  
     /// <para>
@@ -58,7 +57,7 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information on ARNs, go to <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// For more information about ARNs, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
         /// Resource Names (ARNs) and AWS Service Namespaces</a>.
         /// </para>
         /// </summary>

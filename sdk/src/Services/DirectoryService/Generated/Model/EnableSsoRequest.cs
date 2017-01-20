@@ -29,7 +29,7 @@ namespace Amazon.DirectoryService.Model
 {
     /// <summary>
     /// Container for the parameters to the EnableSso operation.
-    /// Enables single-sign on for a directory.
+    /// Enables single sign-on for a directory.
     /// </summary>
     public partial class EnableSsoRequest : AmazonDirectoryServiceRequest
     {
@@ -79,7 +79,7 @@ namespace Amazon.DirectoryService.Model
         /// <para>
         /// The username of an alternate account to use to enable single-sign on. This is only
         /// used for AD Connector directories. This account must have privileges to add a service
-        /// principal name. 
+        /// principal name.
         /// </para>
         ///  
         /// <para>

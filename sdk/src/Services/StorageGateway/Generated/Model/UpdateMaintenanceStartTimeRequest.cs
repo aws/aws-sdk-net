@@ -42,7 +42,8 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property DayOfWeek. 
         /// <para>
-        /// The maintenance start time day of the week.
+        /// The maintenance start time day of the week represented as an ordinal number from 0
+        /// to 6, where 0 represents Sunday and 6 Saturday.
         /// </para>
         /// </summary>
         public int DayOfWeek

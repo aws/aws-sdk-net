@@ -29,10 +29,14 @@ namespace Amazon.DatabaseMigrationService.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteReplicationInstance operation.
-    /// Deletes the specified replication instance. 
+    /// Deletes the specified replication instance.
     /// 
-    ///  <note>You must delete any migration tasks that are associated with the replication
-    /// instance before you can delete it.</note>
+    ///  <note> 
+    /// <para>
+    /// You must delete any migration tasks that are associated with the replication instance
+    /// before you can delete it.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DeleteReplicationInstanceRequest : AmazonDatabaseMigrationServiceRequest
     {

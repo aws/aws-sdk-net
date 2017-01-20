@@ -34,13 +34,13 @@ namespace Amazon.DatabaseMigrationService.Model
     {
         private int? _allocatedStorage;
         private string _engineVersion;
+        private bool? _multiAZ;
         private string _replicationInstanceClass;
 
         /// <summary>
         /// Gets and sets the property AllocatedStorage. 
         /// <para>
-        ///  The amount of storage (in gigabytes) that is allocated for the replication instance.
-        /// 
+        /// The amount of storage (in gigabytes) that is allocated for the replication instance.
         /// </para>
         /// </summary>
         public int AllocatedStorage
@@ -58,7 +58,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
-        ///  The engine version number of the replication instance. 
+        /// The engine version number of the replication instance.
         /// </para>
         /// </summary>
         public string EngineVersion
@@ -74,14 +74,34 @@ namespace Amazon.DatabaseMigrationService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MultiAZ. 
+        /// <para>
+        ///  Specifies if the replication instance is a Multi-AZ deployment. You cannot set the
+        /// <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.
+        /// 
+        /// </para>
+        /// </summary>
+        public bool MultiAZ
+        {
+            get { return this._multiAZ.GetValueOrDefault(); }
+            set { this._multiAZ = value; }
+        }
+
+        // Check to see if MultiAZ property is set
+        internal bool IsSetMultiAZ()
+        {
+            return this._multiAZ.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property ReplicationInstanceClass. 
         /// <para>
-        ///  The compute and memory capacity of the replication instance. 
+        /// The compute and memory capacity of the replication instance.
         /// </para>
         ///  
         /// <para>
         ///  Valid Values: <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large |
-        /// dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code>
+        /// dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code> 
         /// </para>
         /// </summary>
         public string ReplicationInstanceClass

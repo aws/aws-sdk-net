@@ -28,7 +28,7 @@ namespace Amazon.ConfigService
     ///<summary>
     /// Common exception for the ConfigService service.
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class AmazonConfigServiceException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.ConfigService
         {
         }
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the AmazonConfigServiceException class with serialized data.
         /// </summary>

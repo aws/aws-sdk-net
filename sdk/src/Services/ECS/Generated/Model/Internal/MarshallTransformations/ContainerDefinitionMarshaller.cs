@@ -204,6 +204,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Memory);
             }
 
+            if(requestObject.IsSetMemoryReservation())
+            {
+                context.Writer.WritePropertyName("memoryReservation");
+                context.Writer.Write(requestObject.MemoryReservation);
+            }
+
             if(requestObject.IsSetMountPoints())
             {
                 context.Writer.WritePropertyName("mountPoints");

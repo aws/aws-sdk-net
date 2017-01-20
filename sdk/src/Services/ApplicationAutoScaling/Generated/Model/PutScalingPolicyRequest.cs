@@ -29,22 +29,24 @@ namespace Amazon.ApplicationAutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the PutScalingPolicy operation.
-    /// Creates or updates a policy for an existing Application Auto Scaling scalable target.
-    /// Each scalable target is identified by service namespace, a resource ID, and a scalable
-    /// dimension, and a scaling policy applies to a scalable target that is identified by
-    /// those three attributes. You cannot create a scaling policy without first registering
-    /// a scalable target with <a>RegisterScalableTarget</a>.
+    /// Creates or updates a policy for an Application Auto Scaling scalable target.
     /// 
     ///  
     /// <para>
-    /// To update an existing policy, use the existing policy name and set the parameters
-    /// you want to change. Any existing parameter not changed in an update to an existing
-    /// policy is not changed in this update request.
+    /// Each scalable target is identified by a service namespace, resource ID, and scalable
+    /// dimension. A scaling policy applies to the scalable target identified by those three
+    /// attributes. You cannot create a scaling policy without first registering a scalable
+    /// target using <a>RegisterScalableTarget</a>.
     /// </para>
     ///  
     /// <para>
-    /// You can view the existing scaling policies for a service namespace with <a>DescribeScalingPolicies</a>.
-    /// If you are no longer using a scaling policy, you can delete it with <a>DeleteScalingPolicy</a>.
+    /// To update a policy, specify its policy name and the parameters that you want to change.
+    /// Any parameters that you don't specify are not changed by this update request.
+    /// </para>
+    ///  
+    /// <para>
+    /// You can view the scaling policies for a service namespace using <a>DescribeScalingPolicies</a>.
+    /// If you are no longer using a scaling policy, you can delete it using <a>DeleteScalingPolicy</a>.
     /// </para>
     /// </summary>
     public partial class PutScalingPolicyRequest : AmazonApplicationAutoScalingRequest
@@ -77,7 +79,8 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <summary>
         /// Gets and sets the property PolicyType. 
         /// <para>
-        /// The policy type. This parameter is required if you are creating a new policy.
+        /// The policy type. If you are creating a new policy, this parameter is required. If
+        /// you are updating a policy, this parameter is not required.
         /// </para>
         /// </summary>
         public PolicyType PolicyType
@@ -95,10 +98,25 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
-        /// The unique resource identifier string for the scalable target that this scaling policy
-        /// applies to. For Amazon ECS services, this value is the resource type, followed by
-        /// the cluster name and service name, such as <code>service/default/sample-webapp</code>.
+        /// The identifier of the resource associated with the scaling policy. This string consists
+        /// of the resource type and unique identifier.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// ECS service - The resource type is <code>service</code> and the unique identifier
+        /// is the cluster name and service name. Example: <code>service/default/sample-webapp</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Spot fleet request - The resource type is <code>spot-fleet-request</code> and the
+        /// unique identifier is the Spot fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// EMR cluster - The resource type is <code>instancegroup</code> and the unique identifier
+        /// is the cluster ID and instance group ID. Example: <code>instancegroup/j-2EEZNYKUA1NTV/ig-1791Y4E1L8YI0</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string ResourceId
         {
@@ -115,11 +133,24 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <summary>
         /// Gets and sets the property ScalableDimension. 
         /// <para>
-        /// The scalable dimension of the scalable target that this scaling policy applies to.
-        /// The scalable dimension contains the service namespace, resource type, and scaling
-        /// property, such as <code>ecs:service:DesiredCount</code> for the desired task count
-        /// of an Amazon ECS service.
+        /// The scalable dimension. This string consists of the service namespace, resource type,
+        /// and scaling property.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>ecs:service:DesiredCount</code> - The desired task count of an ECS service.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot
+        /// fleet request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count of
+        /// an EMR Instance Group.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public ScalableDimension ScalableDimension
         {
@@ -136,9 +167,8 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <summary>
         /// Gets and sets the property ServiceNamespace. 
         /// <para>
-        /// The AWS service namespace of the scalable target that this scaling policy applies
-        /// to. For more information, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
-        /// Service Namespaces</a> in the Amazon Web Services General Reference.
+        /// The namespace of the AWS service. For more information, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
+        /// Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </summary>
         public ServiceNamespace ServiceNamespace
@@ -156,9 +186,9 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <summary>
         /// Gets and sets the property StepScalingPolicyConfiguration. 
         /// <para>
-        /// The configuration for the step scaling policy. This parameter is required if you are
-        /// creating a new policy. For more information, see <a>StepScalingPolicyConfiguration</a>
-        /// and <a>StepAdjustment</a>.
+        /// The configuration for the step scaling policy. If you are creating a new policy, this
+        /// parameter is required. If you are updating a policy, this parameter is not required.
+        /// For more information, see <a>StepScalingPolicyConfiguration</a> and <a>StepAdjustment</a>.
         /// </para>
         /// </summary>
         public StepScalingPolicyConfiguration StepScalingPolicyConfiguration

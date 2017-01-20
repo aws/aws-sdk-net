@@ -131,6 +131,11 @@ namespace ThirdParty.Json.LitJson
 
         private static JsonWriter      static_writer;
         private static readonly object static_writer_lock = new Object ();
+
+        private static readonly HashSet<string> dictionary_properties_to_ignore = new HashSet<string>(StringComparer.Ordinal)
+        {
+            "Comparer", "Count", "Keys", "Values"
+        };
         #endregion
 
 
@@ -226,6 +231,9 @@ namespace ThirdParty.Json.LitJson
 
                     continue;
                 }
+
+                if (data.IsDictionary && dictionary_properties_to_ignore.Contains(p_info.Name))
+                    continue;
 
                 PropertyMetadata p_data = new PropertyMetadata ();
                 p_data.Info = p_info;
@@ -342,7 +350,9 @@ namespace ThirdParty.Json.LitJson
 
             if (reader.Token == JsonToken.Double ||
                 reader.Token == JsonToken.Int ||
+                reader.Token == JsonToken.UInt ||
                 reader.Token == JsonToken.Long ||
+                reader.Token == JsonToken.ULong ||
                 reader.Token == JsonToken.String ||
                 reader.Token == JsonToken.Boolean) {
 
@@ -509,8 +519,18 @@ namespace ThirdParty.Json.LitJson
                 return instance;
             }
 
+            if (reader.Token == JsonToken.UInt) {
+                instance.SetUInt((uint)reader.Value);
+                return instance;
+            }
+
             if (reader.Token == JsonToken.Long) {
                 instance.SetLong ((long) reader.Value);
+                return instance;
+            }
+
+            if (reader.Token == JsonToken.ULong) {
+                instance.SetULong((ulong)reader.Value);
                 return instance;
             }
 
@@ -751,6 +771,12 @@ namespace ThirdParty.Json.LitJson
                 return;
             }
 
+            if (obj is UInt32)
+            {
+                writer.Write((uint)obj);
+                return;
+            }
+
             if (obj is Boolean) {
                 writer.Write ((bool) obj);
                 return;
@@ -759,6 +785,11 @@ namespace ThirdParty.Json.LitJson
             if (obj is Int64) {
                 writer.Write ((long) obj);
                 return;
+            }
+
+            if (obj is UInt64)
+            {
+                writer.Write((ulong)obj);
             }
 
             if (obj is Array) {
@@ -843,10 +874,10 @@ namespace ThirdParty.Json.LitJson
                     if (p_info.CanRead)
                     {
                         writer.WritePropertyName(p_data.Info.Name);
-#if BCL||UNITY
+#if BCL || UNITY || CORECLR
                         WriteValue(p_info.GetGetMethod().Invoke(obj, null),
                                     writer, writer_is_private, depth + 1);
-#elif PCL
+#else
                         WriteValue(p_info.GetMethod.Invoke(obj, null),
                                     writer, writer_is_private, depth + 1);
 #endif

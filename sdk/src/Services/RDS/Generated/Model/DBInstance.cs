@@ -57,6 +57,7 @@ namespace Amazon.RDS.Model
         private string _characterSetName;
         private bool? _copyTagsToSnapshot;
         private string _dbClusterIdentifier;
+        private string _dbInstanceArn;
         private string _dbInstanceClass;
         private string _dbInstanceIdentifier;
         private int? _dbInstancePort;
@@ -86,6 +87,7 @@ namespace Amazon.RDS.Model
         private string _preferredMaintenanceWindow;
         private int? _promotionTier;
         private bool? _publiclyAccessible;
+        private List<string> _readReplicaDBClusterIdentifiers = new List<string>();
         private List<string> _readReplicaDBInstanceIdentifiers = new List<string>();
         private string _readReplicaSourceDBInstanceIdentifier;
         private string _secondaryAvailabilityZone;
@@ -93,6 +95,7 @@ namespace Amazon.RDS.Model
         private bool? _storageEncrypted;
         private string _storageType;
         private string _tdeCredentialArn;
+        private string _timezone;
         private List<VpcSecurityGroupMembership> _vpcSecurityGroups = new List<VpcSecurityGroupMembership>();
 
         /// <summary>
@@ -239,6 +242,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetDBClusterIdentifier()
         {
             return this._dbClusterIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DBInstanceArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) for the DB instance.
+        /// </para>
+        /// </summary>
+        public string DBInstanceArn
+        {
+            get { return this._dbInstanceArn; }
+            set { this._dbInstanceArn = value; }
+        }
+
+        // Check to see if DBInstanceArn property is set
+        internal bool IsSetDBInstanceArn()
+        {
+            return this._dbInstanceArn != null;
         }
 
         /// <summary>
@@ -828,6 +849,25 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ReadReplicaDBClusterIdentifiers. 
+        /// <para>
+        /// Contains one or more identifiers of Aurora DB clusters that are read replicas of this
+        /// DB instance.
+        /// </para>
+        /// </summary>
+        public List<string> ReadReplicaDBClusterIdentifiers
+        {
+            get { return this._readReplicaDBClusterIdentifiers; }
+            set { this._readReplicaDBClusterIdentifiers = value; }
+        }
+
+        // Check to see if ReadReplicaDBClusterIdentifiers property is set
+        internal bool IsSetReadReplicaDBClusterIdentifiers()
+        {
+            return this._readReplicaDBClusterIdentifiers != null && this._readReplicaDBClusterIdentifiers.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property ReadReplicaDBInstanceIdentifiers. 
         /// <para>
         /// Contains one or more identifiers of the Read Replicas associated with this DB instance.
@@ -940,7 +980,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property TdeCredentialArn. 
         /// <para>
-        /// The ARN from the Key Store with which the instance is associated for TDE encryption.
+        /// The ARN from the key store with which the instance is associated for TDE encryption.
         /// </para>
         /// </summary>
         public string TdeCredentialArn
@@ -956,9 +996,29 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Timezone. 
+        /// <para>
+        /// The time zone of the DB instance. In most cases, the <code>Timezone</code> element
+        /// is empty. <code>Timezone</code> content appears only for Microsoft SQL Server DB instances
+        /// that were created with a time zone specified. 
+        /// </para>
+        /// </summary>
+        public string Timezone
+        {
+            get { return this._timezone; }
+            set { this._timezone = value; }
+        }
+
+        // Check to see if Timezone property is set
+        internal bool IsSetTimezone()
+        {
+            return this._timezone != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property VpcSecurityGroups. 
         /// <para>
-        /// Provides List of VPC security group elements that the DB instance belongs to.
+        /// Provides a list of VPC security group elements that the DB instance belongs to.
         /// </para>
         /// </summary>
         public List<VpcSecurityGroupMembership> VpcSecurityGroups

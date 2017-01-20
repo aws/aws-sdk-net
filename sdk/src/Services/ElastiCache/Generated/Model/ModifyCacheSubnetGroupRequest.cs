@@ -29,7 +29,7 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyCacheSubnetGroup operation.
-    /// The <i>ModifyCacheSubnetGroup</i> action modifies an existing cache subnet group.
+    /// Modifies an existing cache subnet group.
     /// </summary>
     public partial class ModifyCacheSubnetGroupRequest : AmazonElastiCacheRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property CacheSubnetGroupDescription. 
         /// <para>
-        /// A description for the cache subnet group.
+        /// A description of the cache subnet group.
         /// </para>
         /// </summary>
         public string CacheSubnetGroupDescription

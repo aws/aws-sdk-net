@@ -60,8 +60,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// Time stamp indicating when this object was created. Format is an integer representing
-        /// the number of seconds since the Unix epoch (Unix time).
+        /// Time stamp indicating when this data object was created. Format is a number expressed
+        /// in Unix time as milliseconds (ex: "1469498468.057").
         /// </para>
         /// </summary>
         public DateTime CreationTime
@@ -79,7 +79,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// Human-readable description of the alias.
+        /// Human-readable description of an alias.
         /// </para>
         /// </summary>
         public string Description
@@ -97,8 +97,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property LastUpdatedTime. 
         /// <para>
-        /// Time stamp indicating when this object was last modified. Format is an integer representing
-        /// the number of seconds since the Unix epoch (Unix time).
+        /// Time stamp indicating when this data object was last modified. Format is a number
+        /// expressed in Unix time as milliseconds (ex: "1469498468.057").
         /// </para>
         /// </summary>
         public DateTime LastUpdatedTime
@@ -116,7 +116,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Descriptive label associated with this alias. Alias names do not need to be unique.
+        /// Descriptive label associated with an alias. Alias names do not need to be unique.
         /// </para>
         /// </summary>
         public string Name

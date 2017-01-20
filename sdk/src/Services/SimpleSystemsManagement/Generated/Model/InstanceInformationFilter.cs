@@ -56,7 +56,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ValueSet. 
         /// <para>
-        /// The filter values. 
+        /// The filter values.
         /// </para>
         /// </summary>
         public List<string> ValueSet

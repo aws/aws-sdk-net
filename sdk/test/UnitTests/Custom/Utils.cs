@@ -16,9 +16,9 @@ namespace AWSSDK_DotNet35.UnitTests
         public static ServiceModel LoadServiceModel(string modelName, string customizationsName)
         {
 #if BCL45
-            using (var stream = typeof(Utils).Assembly.GetManifestResourceStream("AWSSDK_DotNet45.UnitTests..........generator.ServiceModels." + modelName))
+            using (var stream = typeof(Utils).Assembly.GetManifestResourceStream("AWSSDK_DotNet45.UnitTests.ServiceModels." + modelName))
 #else
-            using (var stream = typeof(Utils).Assembly.GetManifestResourceStream("AWSSDK_DotNet35.UnitTests..........generator.ServiceModels." + modelName))
+            using (var stream = typeof(Utils).Assembly.GetManifestResourceStream("AWSSDK_DotNet35.UnitTests.ServiceModels." + modelName))
 #endif
 
             using (var streamReader = new StreamReader(stream))
@@ -29,9 +29,9 @@ namespace AWSSDK_DotNet35.UnitTests
                     if (!string.IsNullOrEmpty(customizationsName))
                     {
 #if BCL45
-                        var customizationsStream = typeof(Utils).Assembly.GetManifestResourceStream("AWSSDK_DotNet45.UnitTests..........generator.ServiceModels." + customizationsName);
+                        var customizationsStream = typeof(Utils).Assembly.GetManifestResourceStream("AWSSDK_DotNet45.UnitTests.ServiceModels." + customizationsName);
 #else
-                        var customizationsStream = typeof(Utils).Assembly.GetManifestResourceStream("AWSSDK_DotNet35.UnitTests..........generator.ServiceModels." + customizationsName);
+                        var customizationsStream = typeof(Utils).Assembly.GetManifestResourceStream("AWSSDK_DotNet35.UnitTests.ServiceModels." + customizationsName);
 #endif
                         if (customizationsStream != null)
                             customizationsReader = new StreamReader(customizationsStream);

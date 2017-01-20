@@ -37,6 +37,7 @@
     <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
   </PropertyGroup>
   <PropertyGroup>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <Choose>
@@ -67,6 +68,9 @@
     <Compile Include="Custom\Internal\*.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Custom\Internal\_bcl\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Custom\Model\*.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -85,37 +89,55 @@
     <Compile Include="Custom\Util\_bcl\*.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Custom\Util\_bcl+coreclr\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Custom\Util\_bcl+coreclr+unity\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Custom\Util\_bcl+unity\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Custom\Util\_bcl+unity\_bcl35+unity\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Custom\Util\_bcl\_bcl35\*.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Custom\_bcl\*.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Custom\_bcl+pcl\*.cs">
+    <Compile Include="Custom\_bcl+coreclr\*.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Custom\_bcl+pcl\Transfer\*.cs">
+    <Compile Include="Custom\_bcl+coreclr+pcl\*.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Custom\_bcl+pcl\Transfer\Internal\*.cs">
+    <Compile Include="Custom\_bcl+coreclr+pcl\Transfer\*.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Custom\_bcl+pcl\Transfer\Internal\_bcl\*.cs">
+    <Compile Include="Custom\_bcl+coreclr+pcl\Transfer\Internal\*.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Custom\_bcl+pcl\Transfer\Internal\_bcl35\*.cs">
+    <Compile Include="Custom\_bcl+coreclr+pcl\Transfer\Internal\_bcl+coreclr\*.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Custom\_bcl+pcl\Transfer\_bcl\*.cs">
+    <Compile Include="Custom\_bcl+coreclr+pcl\Transfer\Internal\_bcl35\*.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Custom\_bcl+pcl\Transfer\_bcl35\*.cs">
+    <Compile Include="Custom\_bcl+coreclr+pcl\Transfer\_bcl+coreclr\*.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Custom\_bcl\Encryption\*.cs">
+    <Compile Include="Custom\_bcl+coreclr+pcl\Transfer\_bcl35\*.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Custom\_bcl\Encryption\Internal\*.cs">
+    <Compile Include="Custom\_bcl+coreclr+pcl\_bcl\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Custom\_bcl+coreclr\Encryption\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Custom\_bcl+coreclr\Encryption\Internal\*.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Custom\_bcl\IO\*.cs">

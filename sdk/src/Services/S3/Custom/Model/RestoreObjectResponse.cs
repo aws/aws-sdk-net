@@ -27,6 +27,25 @@ namespace Amazon.S3.Model
     /// </summary>
     public partial class RestoreObjectResponse : AmazonWebServiceResponse
     {
+        private RequestCharged requestCharged;
+
+        /// <summary>
+        /// If present, indicates that the requester was successfully charged for the request.
+        /// </summary>
+        public RequestCharged RequestCharged
+        {
+            get { return this.requestCharged; }
+            set { this.requestCharged = value; }
+        }
+
+        /// <summary>
+        /// Checks to see if RequestCharged is set.
+        /// </summary>
+        /// <returns>true, if RequestCharged property is set.</returns>
+        internal bool IsSetRequestCharged()
+        {
+            return requestCharged != null;
+        }
     }
 }
     

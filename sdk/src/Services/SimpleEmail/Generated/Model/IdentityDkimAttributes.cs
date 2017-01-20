@@ -40,6 +40,7 @@ namespace Amazon.SimpleEmail.Model
         /// Gets and sets the property DkimEnabled. 
         /// <para>
         /// True if DKIM signing is enabled for email sent from the identity; false otherwise.
+        /// The default value is true.
         /// </para>
         /// </summary>
         public bool DkimEnabled

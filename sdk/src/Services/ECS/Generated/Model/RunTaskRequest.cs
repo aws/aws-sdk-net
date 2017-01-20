@@ -29,21 +29,29 @@ namespace Amazon.ECS.Model
 {
     /// <summary>
     /// Container for the parameters to the RunTask operation.
-    /// Start a task using random placement and the default Amazon ECS scheduler. To use your
-    /// own scheduler or place a task on a specific container instance, use <code>StartTask</code>
-    /// instead.
+    /// Starts a new task using the specified task definition.
     /// 
-    ///  <important> 
+    ///  
     /// <para>
-    /// The <code>count</code> parameter is limited to 10 tasks per call.
+    /// You can allow Amazon ECS to place tasks for you, or you can customize how Amazon ECS
+    /// places tasks using placement constraints and placement strategies. For more information,
+    /// see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html">Scheduling
+    /// Tasks</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
     /// </para>
-    ///  </important>
+    ///  
+    /// <para>
+    /// Alternatively, you can use <a>StartTask</a> to use your own scheduler or place tasks
+    /// manually on specific container instances.
+    /// </para>
     /// </summary>
     public partial class RunTaskRequest : AmazonECSRequest
     {
         private string _cluster;
         private int? _count;
+        private string _group;
         private TaskOverride _overrides;
+        private List<PlacementConstraint> _placementConstraints = new List<PlacementConstraint>();
+        private List<PlacementStrategy> _placementStrategy = new List<PlacementStrategy>();
         private string _startedBy;
         private string _taskDefinition;
 
@@ -51,7 +59,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Cluster. 
         /// <para>
         /// The short name or full Amazon Resource Name (ARN) of the cluster on which to run your
-        /// task. If you do not specify a cluster, the default cluster is assumed..
+        /// task. If you do not specify a cluster, the default cluster is assumed.
         /// </para>
         /// </summary>
         public string Cluster
@@ -69,13 +77,9 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Count. 
         /// <para>
-        /// The number of instantiations of the specified task to place on your cluster.
+        /// The number of instantiations of the specified task to place on your cluster. You can
+        /// specify up to 10 tasks per call.
         /// </para>
-        ///  <important> 
-        /// <para>
-        /// The <code>count</code> parameter is limited to 10 tasks per call.
-        /// </para>
-        ///  </important>
         /// </summary>
         public int Count
         {
@@ -87,6 +91,25 @@ namespace Amazon.ECS.Model
         internal bool IsSetCount()
         {
             return this._count.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Group. 
+        /// <para>
+        /// The task group to associate with the task. By default, if you do not specify a task
+        /// group, the group <code>family:TASKDEF-FAMILY</code> is applied. 
+        /// </para>
+        /// </summary>
+        public string Group
+        {
+            get { return this._group; }
+            set { this._group = value; }
+        }
+
+        // Check to see if Group property is set
+        internal bool IsSetGroup()
+        {
+            return this._group != null;
         }
 
         /// <summary>
@@ -116,6 +139,45 @@ namespace Amazon.ECS.Model
         internal bool IsSetOverrides()
         {
             return this._overrides != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PlacementConstraints. 
+        /// <para>
+        /// An array of placement constraint objects to use for the task. You can specify up to
+        /// 10 constraints per task (including constraints in the task definition and those specified
+        /// at run time).
+        /// </para>
+        /// </summary>
+        public List<PlacementConstraint> PlacementConstraints
+        {
+            get { return this._placementConstraints; }
+            set { this._placementConstraints = value; }
+        }
+
+        // Check to see if PlacementConstraints property is set
+        internal bool IsSetPlacementConstraints()
+        {
+            return this._placementConstraints != null && this._placementConstraints.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PlacementStrategy. 
+        /// <para>
+        /// The placement strategy objects to use for the task. You can specify a maximum of 5
+        /// strategy rules per task.
+        /// </para>
+        /// </summary>
+        public List<PlacementStrategy> PlacementStrategy
+        {
+            get { return this._placementStrategy; }
+            set { this._placementStrategy = value; }
+        }
+
+        // Check to see if PlacementStrategy property is set
+        internal bool IsSetPlacementStrategy()
+        {
+            return this._placementStrategy != null && this._placementStrategy.Count > 0; 
         }
 
         /// <summary>

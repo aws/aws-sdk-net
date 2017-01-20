@@ -100,7 +100,6 @@ namespace Amazon.DirectoryService.Model
         /// Gets and sets the property RadiusRetries. 
         /// <para>
         /// The maximum number of times that communication with the RADIUS server is attempted.
-        /// 
         /// </para>
         /// </summary>
         public int RadiusRetries
@@ -155,7 +154,7 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property SharedSecret. 
         /// <para>
-        /// The shared secret code that was specified when your RADIUS endpoints were created.
+        /// Not currently used.
         /// </para>
         /// </summary>
         public string SharedSecret

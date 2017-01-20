@@ -132,6 +132,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             {
                 return new InsufficientDBClusterCapacityException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InsufficientStorageClusterCapacity"))
+            {
+                return new InsufficientStorageClusterCapacityException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidDBClusterSnapshotStateFault"))
             {
                 return new InvalidDBClusterSnapshotStateException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);

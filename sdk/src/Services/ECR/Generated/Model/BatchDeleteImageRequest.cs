@@ -31,6 +31,17 @@ namespace Amazon.ECR.Model
     /// Container for the parameters to the BatchDeleteImage operation.
     /// Deletes a list of specified images within a specified repository. Images are specified
     /// with either <code>imageTag</code> or <code>imageDigest</code>.
+    /// 
+    ///  
+    /// <para>
+    /// You can remove a tag from an image by specifying the image's tag in your request.
+    /// When you remove the last tag from an image, the image is deleted from your repository.
+    /// </para>
+    ///  
+    /// <para>
+    /// You can completely delete an image (and all of its tags) by specifying the image's
+    /// digest in your request.
+    /// </para>
     /// </summary>
     public partial class BatchDeleteImageRequest : AmazonECRRequest
     {

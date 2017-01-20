@@ -144,6 +144,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
             {
                 return new InvalidVPCNetworkStateException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("NodeGroupsPerReplicationGroupQuotaExceeded"))
+            {
+                return new NodeGroupsPerReplicationGroupQuotaExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("NodeQuotaForClusterExceeded"))
             {
                 return new NodeQuotaForClusterExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);

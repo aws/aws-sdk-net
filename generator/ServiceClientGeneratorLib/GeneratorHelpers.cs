@@ -32,7 +32,8 @@ namespace ServiceClientGenerator
         private static readonly DateTime EPOCH_START = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
         public static int ConvertToUnixEpochSeconds(DateTime dateTime)
         {
-            return (int)ConvertToUnixEpochMilliSeconds(dateTime);
+            TimeSpan ts = new TimeSpan(dateTime.ToUniversalTime().Ticks - EPOCH_START.Ticks);
+            return Convert.ToInt32(ts.TotalSeconds);
         }
 
         public static double ConvertToUnixEpochMilliSeconds(DateTime dateTime)

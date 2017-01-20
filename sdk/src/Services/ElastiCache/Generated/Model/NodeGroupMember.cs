@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// Represents a single node within a node group.
+    /// Represents a single node within a node group (shard).
     /// </summary>
     public partial class NodeGroupMember
     {
@@ -78,7 +78,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property CurrentRole. 
         /// <para>
-        /// The role that is currently assigned to the node - <i>primary</i> or <i>replica</i>.
+        /// The role that is currently assigned to the node - <code>primary</code> or <code>replica</code>.
         /// </para>
         /// </summary>
         public string CurrentRole

@@ -36,7 +36,10 @@ namespace Amazon.CloudWatchLogs.Model
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property LogStreams.
+        /// Gets and sets the property LogStreams. 
+        /// <para>
+        /// The log streams.
+        /// </para>
         /// </summary>
         public List<LogStream> LogStreams
         {

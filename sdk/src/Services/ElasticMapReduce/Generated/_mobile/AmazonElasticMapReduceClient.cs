@@ -36,15 +36,75 @@ namespace Amazon.ElasticMapReduce
     /// <summary>
     /// Implementation for accessing ElasticMapReduce
     ///
-    /// Amazon Elastic MapReduce (Amazon EMR) is a web service that makes it easy to process
-    /// large amounts of data efficiently. Amazon EMR uses Hadoop processing combined with
-    /// several AWS products to do tasks such as web indexing, data mining, log file analysis,
-    /// machine learning, scientific simulation, and data warehousing.
+    /// Amazon EMR is a web service that makes it easy to process large amounts of data efficiently.
+    /// Amazon EMR uses Hadoop processing combined with several AWS products to do tasks such
+    /// as web indexing, data mining, log file analysis, machine learning, scientific simulation,
+    /// and data warehousing.
     /// </summary>
     public partial class AmazonElasticMapReduceClient : AmazonServiceClient, IAmazonElasticMapReduce
     {
         
         #region Constructors
+
+#if CORECLR
+    
+        /// <summary>
+        /// Constructs AmazonElasticMapReduceClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
+        public AmazonElasticMapReduceClient()
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonElasticMapReduceConfig()) { }
+
+        /// <summary>
+        /// Constructs AmazonElasticMapReduceClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
+        /// <param name="region">The region to connect.</param>
+        public AmazonElasticMapReduceClient(RegionEndpoint region)
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonElasticMapReduceConfig{RegionEndpoint = region}) { }
+
+        /// <summary>
+        /// Constructs AmazonElasticMapReduceClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
+        /// <param name="config">The AmazonElasticMapReduceClient Configuration Object</param>
+        public AmazonElasticMapReduceClient(AmazonElasticMapReduceConfig config)
+            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+
+#endif
 
         /// <summary>
         /// Constructs AmazonElasticMapReduceClient with AWS Credentials
@@ -266,6 +326,99 @@ namespace Amazon.ElasticMapReduce
 
         #endregion
         
+        #region  CancelSteps
+
+        internal CancelStepsResponse CancelSteps(CancelStepsRequest request)
+        {
+            var marshaller = new CancelStepsRequestMarshaller();
+            var unmarshaller = CancelStepsResponseUnmarshaller.Instance;
+
+            return Invoke<CancelStepsRequest,CancelStepsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CancelSteps operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CancelSteps operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<CancelStepsResponse> CancelStepsAsync(CancelStepsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CancelStepsRequestMarshaller();
+            var unmarshaller = CancelStepsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CancelStepsRequest,CancelStepsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateSecurityConfiguration
+
+        internal CreateSecurityConfigurationResponse CreateSecurityConfiguration(CreateSecurityConfigurationRequest request)
+        {
+            var marshaller = new CreateSecurityConfigurationRequestMarshaller();
+            var unmarshaller = CreateSecurityConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateSecurityConfigurationRequest,CreateSecurityConfigurationResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateSecurityConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateSecurityConfiguration operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<CreateSecurityConfigurationResponse> CreateSecurityConfigurationAsync(CreateSecurityConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateSecurityConfigurationRequestMarshaller();
+            var unmarshaller = CreateSecurityConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateSecurityConfigurationRequest,CreateSecurityConfigurationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteSecurityConfiguration
+
+        internal DeleteSecurityConfigurationResponse DeleteSecurityConfiguration(DeleteSecurityConfigurationRequest request)
+        {
+            var marshaller = new DeleteSecurityConfigurationRequestMarshaller();
+            var unmarshaller = DeleteSecurityConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteSecurityConfigurationRequest,DeleteSecurityConfigurationResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteSecurityConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSecurityConfiguration operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteSecurityConfigurationResponse> DeleteSecurityConfigurationAsync(DeleteSecurityConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteSecurityConfigurationRequestMarshaller();
+            var unmarshaller = DeleteSecurityConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteSecurityConfigurationRequest,DeleteSecurityConfigurationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeCluster
 
         internal DescribeClusterResponse DescribeCluster()
@@ -346,26 +499,33 @@ namespace Amazon.ElasticMapReduce
         /// 
         ///  
         /// <para>
-        ///  DescribeJobFlows returns a list of job flows that match all of the supplied parameters.
+        /// DescribeJobFlows returns a list of job flows that match all of the supplied parameters.
         /// The parameters can include a list of job flow IDs, job flow states, and restrictions
         /// on job flow creation date and time.
         /// </para>
         ///  
         /// <para>
-        ///  Regardless of supplied parameters, only job flows created within the last two months
+        /// Regardless of supplied parameters, only job flows created within the last two months
         /// are returned.
         /// </para>
         ///  
         /// <para>
-        ///  If no parameters are supplied, then job flows matching either of the following criteria
+        /// If no parameters are supplied, then job flows matching either of the following criteria
         /// are returned:
         /// </para>
-        ///  <ul> <li>Job flows created and completed in the last two weeks</li> <li> Job flows
-        /// created within the last two months that are in one of the following states: <code>RUNNING</code>,
-        /// <code>WAITING</code>, <code>SHUTTING_DOWN</code>, <code>STARTING</code> </li> </ul>
-        /// 
+        ///  <ul> <li> 
         /// <para>
-        ///  Amazon Elastic MapReduce can return a maximum of 512 job flow descriptions. 
+        /// Job flows created and completed in the last two weeks
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  Job flows created within the last two months that are in one of the following states:
+        /// <code>RUNNING</code>, <code>WAITING</code>, <code>SHUTTING_DOWN</code>, <code>STARTING</code>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Amazon EMR can return a maximum of 512 job flow descriptions.
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">
@@ -400,6 +560,37 @@ namespace Amazon.ElasticMapReduce
             var unmarshaller = DescribeJobFlowsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeJobFlowsRequest,DescribeJobFlowsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeSecurityConfiguration
+
+        internal DescribeSecurityConfigurationResponse DescribeSecurityConfiguration(DescribeSecurityConfigurationRequest request)
+        {
+            var marshaller = new DescribeSecurityConfigurationRequestMarshaller();
+            var unmarshaller = DescribeSecurityConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeSecurityConfigurationRequest,DescribeSecurityConfigurationResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeSecurityConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSecurityConfiguration operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeSecurityConfigurationResponse> DescribeSecurityConfigurationAsync(DescribeSecurityConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeSecurityConfigurationRequestMarshaller();
+            var unmarshaller = DescribeSecurityConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeSecurityConfigurationRequest,DescribeSecurityConfigurationResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -687,6 +878,37 @@ namespace Amazon.ElasticMapReduce
 
         #endregion
         
+        #region  ListSecurityConfigurations
+
+        internal ListSecurityConfigurationsResponse ListSecurityConfigurations(ListSecurityConfigurationsRequest request)
+        {
+            var marshaller = new ListSecurityConfigurationsRequestMarshaller();
+            var unmarshaller = ListSecurityConfigurationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListSecurityConfigurationsRequest,ListSecurityConfigurationsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListSecurityConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListSecurityConfigurations operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListSecurityConfigurationsResponse> ListSecurityConfigurationsAsync(ListSecurityConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListSecurityConfigurationsRequestMarshaller();
+            var unmarshaller = ListSecurityConfigurationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListSecurityConfigurationsRequest,ListSecurityConfigurationsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListSteps
 
         internal ListStepsResponse ListSteps()
@@ -703,7 +925,8 @@ namespace Amazon.ElasticMapReduce
 
 
         /// <summary>
-        /// Provides a list of steps for the cluster.
+        /// Provides a list of steps for the cluster in reverse order unless you specify stepIds
+        /// with the request.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -768,6 +991,68 @@ namespace Amazon.ElasticMapReduce
             var unmarshaller = ModifyInstanceGroupsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ModifyInstanceGroupsRequest,ModifyInstanceGroupsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutAutoScalingPolicy
+
+        internal PutAutoScalingPolicyResponse PutAutoScalingPolicy(PutAutoScalingPolicyRequest request)
+        {
+            var marshaller = new PutAutoScalingPolicyRequestMarshaller();
+            var unmarshaller = PutAutoScalingPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<PutAutoScalingPolicyRequest,PutAutoScalingPolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutAutoScalingPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutAutoScalingPolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<PutAutoScalingPolicyResponse> PutAutoScalingPolicyAsync(PutAutoScalingPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new PutAutoScalingPolicyRequestMarshaller();
+            var unmarshaller = PutAutoScalingPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutAutoScalingPolicyRequest,PutAutoScalingPolicyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  RemoveAutoScalingPolicy
+
+        internal RemoveAutoScalingPolicyResponse RemoveAutoScalingPolicy(RemoveAutoScalingPolicyRequest request)
+        {
+            var marshaller = new RemoveAutoScalingPolicyRequestMarshaller();
+            var unmarshaller = RemoveAutoScalingPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<RemoveAutoScalingPolicyRequest,RemoveAutoScalingPolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RemoveAutoScalingPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RemoveAutoScalingPolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<RemoveAutoScalingPolicyResponse> RemoveAutoScalingPolicyAsync(RemoveAutoScalingPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new RemoveAutoScalingPolicyRequestMarshaller();
+            var unmarshaller = RemoveAutoScalingPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RemoveAutoScalingPolicyRequest,RemoveAutoScalingPolicyResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

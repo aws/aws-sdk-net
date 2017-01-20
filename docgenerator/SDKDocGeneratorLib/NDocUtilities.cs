@@ -28,6 +28,72 @@ namespace SDKDocGenerator
         public const string innerCrefAttributeText = "cref=\"";
         public const string innerHrefAttributeText = "href=\"";
 
+
+        #region manage ndoc instances
+        // The reason we cache the doc data on the side instead of directly referencing doc instances from
+        // the type information is becasue we are loading the assemblies for reflection in a separate app domain.
+
+        private static IDictionary<string, IDictionary<string, XElement>> _ndocCache = new Dictionary<string, IDictionary<string, XElement>>();
+
+        public static string GenerateDocId(string serviceName, string platform)
+        {
+            // platform can be null; in which case we just use an empty string to construct the id.
+            return string.Format("{0}:{1}", serviceName, platform == null ? "" : platform);
+        }
+
+        public static void LoadDocumentation(string assemblyName, string serviceName, string platform, GeneratorOptions options)
+        {
+            string docId = null;
+            var ndocFilename = assemblyName + ".xml";
+            var platformSpecificNdocFile = Path.Combine(options.SDKAssembliesRoot, platform, ndocFilename);
+            if (File.Exists(platformSpecificNdocFile))
+            {
+                docId = GenerateDocId(serviceName, platform);
+                _ndocCache.Add(docId, CreateNDocTable(platformSpecificNdocFile, serviceName, options));
+            }
+        }
+
+        public static IDictionary<string, XElement> GetDocumentationInstance(string serviceName, string platform)
+        {
+            return GetDocumentationInstance(GenerateDocId(serviceName, platform));
+        }
+
+        public static IDictionary<string, XElement> GetDocumentationInstance(string docId)
+        {
+            IDictionary<string, XElement> doc = null;
+            if (_ndocCache.TryGetValue(docId, out doc))
+            {
+                return doc;
+            }
+            return null;
+        }
+        
+        private static IDictionary<string, XElement> CreateNDocTable(string filePath, string serviceName, GeneratorOptions options)
+        {
+            var dict = new Dictionary<string, XElement>();
+            var document = LoadAssemblyDocumentationWithSamples(filePath, options.CodeSamplesRootFolder, serviceName);
+            PreprocessCodeBlocksToPreTags(options, document);
+
+            foreach (var element in document.XPathSelectElements("//members/member"))
+            {
+                var xattribute = element.Attributes().FirstOrDefault(x => x.Name.LocalName == "name");
+                if (xattribute == null)
+                    continue;
+
+                dict[xattribute.Value] = element;
+            }
+
+            return dict;
+        }
+        #endregion
+
+
+        public static XElement FindDocumentation(AbstractWrapper wrapper)
+        {
+            var ndoc = GetDocumentationInstance(wrapper.DocId);
+            return FindDocumentation(ndoc, wrapper);
+        }
+
         public static XElement FindDocumentation(IDictionary<string, XElement> ndoc, AbstractWrapper wrapper)
         {
             if (ndoc == null)
@@ -55,6 +121,12 @@ namespace SDKDocGenerator
                 return null;
 
             return element;
+        }
+
+        public static XElement FindFieldDocumentation(TypeWrapper type, string fieldName)
+        {
+            var ndoc = GetDocumentationInstance(type.DocId);
+            return FindFieldDocumentation(ndoc, type, fieldName);
         }
 
         public static XElement FindFieldDocumentation(IDictionary<string, XElement> ndoc, TypeWrapper type, string fieldName)
@@ -99,7 +171,12 @@ namespace SDKDocGenerator
             return element;
         }
 
-        public static XElement FindDocumentation(IDictionary<string, XElement> ndoc, MethodInfoWrapper info)
+        public static string DetermineNDocNameLookupSignature(MethodInfo info, string docId)
+        {
+            return DetermineNDocNameLookupSignature(new MethodInfoWrapper(info, docId));
+        }
+
+        public static string DetermineNDocNameLookupSignature(MethodInfoWrapper info)
         {
             var type = info.DeclaringType;
             var parameters = new StringBuilder();
@@ -107,26 +184,56 @@ namespace SDKDocGenerator
             {
                 if (parameters.Length > 0)
                     parameters.Append(",");
-                if (param.ParameterType.IsGenericType)
+                DetermineParameterName(param.ParameterType, parameters);
+                if (param.IsOut)
                 {
-
-                    parameters
-                        .Append(param.ParameterType.GenericTypeName)
-                        .Append("{")
-                        .Append(string.Join(",", param.ParameterType.GenericTypeArguments().Select(a => a.FullName)))
-                        .Append("}");
-                }
-                else
-                {
-                    parameters.Append(param.ParameterType.FullName);
-                    if (param.IsOut)
-                        parameters.Append("@");
+                    parameters.Append("@");
                 }
             }
 
-            var signature = parameters.Length > 0 
-                ? string.Format("M:{0}.{1}({2})", type.FullName, info.Name, parameters) 
-                : string.Format("M:{0}.{1}", type.FullName, info.Name);
+            var genericTag = "";
+            if (info.IsGenericMethod)
+            {
+                genericTag = "``" + info.GetGenericArguments().Length;
+            }
+
+            var signature = parameters.Length > 0
+                ? string.Format("M:{0}.{1}{2}({3})", type.FullName, info.Name, genericTag, parameters)
+                : string.Format("M:{0}.{1}{2}", type.FullName, info.Name, genericTag);
+
+            return signature;
+        }
+
+        private static void DetermineParameterName(TypeWrapper parameterTypeInfo, StringBuilder parameters)
+        {
+
+            if (parameterTypeInfo.IsGenericType)
+            {
+                parameters
+                    .Append(parameterTypeInfo.GenericTypeName)
+                    .Append("{");
+                IList<TypeWrapper> args = parameterTypeInfo.GenericTypeArguments();
+
+                for (var i = 0; i < args.Count; i++)
+                {
+                    if (i != 0)
+                    {
+                        parameters.Append(",");
+                    }
+                    DetermineParameterName(args[i], parameters);
+                }
+                parameters.Append("}");
+
+            }
+            else
+            {
+                parameters.Append(parameterTypeInfo.FullName);
+            }
+        }
+
+        public static XElement FindDocumentation(IDictionary<string, XElement> ndoc, MethodInfoWrapper info)
+        {
+            var signature = DetermineNDocNameLookupSignature(info);
 
             XElement element;
             if (!ndoc.TryGetValue(signature, out element))
@@ -379,8 +486,8 @@ namespace SDKDocGenerator
                 parameters.Append(param.ParameterType.FullName);
             }
 
-            var formattedParmaters = parameters.Length > 0 
-                ? string.Format("({0})", parameters) 
+            var formattedParmaters = parameters.Length > 0
+                ? string.Format("({0})", parameters)
                 : parameters.ToString();
 
             var signature = string.Format("M:{0}.#ctor{1}", type.FullName, formattedParmaters);
@@ -416,85 +523,93 @@ namespace SDKDocGenerator
             return node.Value;
         }
 
-        public static string TransformDocumentationToHTML(XElement element, string rootNodeName, AssemblyWrapper assemblyWrapper, FrameworkVersion version)
+        public static string TransformDocumentationToHTML(XElement element, string rootNodeName, AbstractTypeProvider typeProvider, FrameworkVersion version)
         {
             if (element == null)
                 return string.Empty;
 
             var rootNode = element.XPathSelectElement(rootNodeName);
-            if (rootNode == null)
-                return string.Empty;
+            if (rootNode == null)       return string.Empty;
+            
+            if (rootNodeName.Equals("seealso", StringComparison.OrdinalIgnoreCase))
+                return SeeAlsoElementToHTML(rootNode, typeProvider, version);
+            else
+                return DocBlobToHTML(rootNode, typeProvider, version);
+        }
 
-            //var crossRefTags = new[] { "see", "seealso" };
-            //foreach (var crossRefTag in crossRefTags)
-            //{
-            //    var crossRefs = rootNode.Descendants(crossRefTag);
-            //    if (crossRefs.Any())
-            //    {
-            //        foreach (var crossRef in crossRefs)
-            //        {
-            //            var typeName = BaseWriter.GetCrossReferenceTypeName(crossRef);
+        private static string SeeAlsoElementToHTML(XElement rootNode, AbstractTypeProvider typeProvider, FrameworkVersion version)
+        {
+            var reader = rootNode.CreateReader();
+            reader.MoveToContent();
+            var innerXml = reader.ReadInnerXml();
+            string content = "";
 
-            //            string target;
-            //            var url = BaseWriter.CrossReferenceTypeToUrl(assemblyWrapper, typeName, version, out target);
+            var href = rootNode.Attribute("href");
+            if (href != null)
+            {
+                content += string.Format(@"<div><a href=""{0}"" target=""_blank"">{1}</a></div>", href.Value, innerXml);
+            }
 
-            //            var href = url != null ? string.Format("<a href=\"{0}\" {2}>{1}</a>", url, typeName, target) : typeName;
-            //            crossRef.ReplaceWith(href);
-            //        }
-            //    }
-            //}
+            var cref = rootNode.Attribute("cref");
+            if (cref != null)
+            {
+                content += BaseWriter.CreateCrossReferenceTagReplacement(typeProvider, cref.Value, version);
+            }
 
+            return content;
+        }
+
+        private static string DocBlobToHTML(XElement rootNode, AbstractTypeProvider typeProvider, FrameworkVersion version)
+        {
             var reader = rootNode.CreateReader();
             reader.MoveToContent();
             var innerXml = reader.ReadInnerXml();
 
-            var innerText = innerXml;
-            innerText = innerText.Replace("<summary>", "<p>");
-            innerText = innerText.Replace("</summary>", "</p>");
-            innerText = innerText.Replace("<para>", "<p>");
-            innerText = innerText.Replace("</para>", "</p>");
+            innerXml = innerXml.Replace("<summary>", "<p>");
+            innerXml = innerXml.Replace("</summary>", "</p>");
+            innerXml = innerXml.Replace("<para>", "<p>");
+            innerXml = innerXml.Replace("</para>", "</p>");
             //innerText = innerText.Replace("<code", "<pre class=\"code-sample\">");
             //innerText = innerText.Replace("</code>", "</pre>");
 
             // scan for <see> and <seealso> cross-reference tags and replace with <a> links with the
             // content - which // can be a cref indication to a typename, or a href.
-            var scanIndex = innerText.IndexOf(crossReferenceOpeningTagText, StringComparison.Ordinal);
+            var scanIndex = innerXml.IndexOf(crossReferenceOpeningTagText, StringComparison.Ordinal);
             while (scanIndex >= 0)
             {
-                var attrStart = innerText.IndexOf(innerCrefAttributeText, scanIndex, StringComparison.Ordinal);
+                var attrStart = innerXml.IndexOf(innerCrefAttributeText, scanIndex, StringComparison.Ordinal);
                 if (attrStart >= 0)
                 {
                     int crossRefTagEndIndex;
-                    var cref = ExtractCrefAttributeContent(innerText, attrStart, out crossRefTagEndIndex);
-                    var replacement = BaseWriter.CreateCrossReferenceTagReplacement(assemblyWrapper, cref, version);
+                    var cref = ExtractCrefAttributeContent(innerXml, attrStart, out crossRefTagEndIndex);
+                    var replacement = BaseWriter.CreateCrossReferenceTagReplacement(typeProvider, cref, version);
 
-                    var oldCrossRefTag = innerText.Substring(scanIndex, crossRefTagEndIndex - scanIndex);
-                    innerText = innerText.Replace(oldCrossRefTag, replacement);
+                    var oldCrossRefTag = innerXml.Substring(scanIndex, crossRefTagEndIndex - scanIndex);
+                    innerXml = innerXml.Replace(oldCrossRefTag, replacement);
 
                     scanIndex += replacement.Length;
                 }
                 else
                 {
-                    attrStart = innerText.IndexOf(innerHrefAttributeText, scanIndex, StringComparison.Ordinal);
+                    attrStart = innerXml.IndexOf(innerHrefAttributeText, scanIndex, StringComparison.Ordinal);
                     if (attrStart >= 0)
                     {
                         int crossRefTagEndIndex;
-                        var url = ExtractHrefAttributeContent(innerText, attrStart, out crossRefTagEndIndex);
+                        var url = ExtractHrefAttributeContent(innerXml, attrStart, out crossRefTagEndIndex);
                         var replacement = string.Format("<a href=\"{0}\">{0}</a>", url);
 
-                        var oldCrossRefTag = innerText.Substring(scanIndex, crossRefTagEndIndex - scanIndex);
-                        innerText = innerText.Replace(oldCrossRefTag, replacement);
-
+                        var oldCrossRefTag = innerXml.Substring(scanIndex, crossRefTagEndIndex - scanIndex);
+                        innerXml = innerXml.Replace(oldCrossRefTag, replacement);
                         scanIndex += replacement.Length;
                     }
                     else
                         scanIndex++;
                 }
 
-                scanIndex = innerText.IndexOf(crossReferenceOpeningTagText, scanIndex, StringComparison.Ordinal);                
+                scanIndex = innerXml.IndexOf(crossReferenceOpeningTagText, scanIndex, StringComparison.Ordinal);
             }
 
-            return innerText;
+            return innerXml;
         }
 
         static string ExtractCrefAttributeContent(string nodeText, int crefAttrStart, out int crossRefTagEndIndex)
@@ -502,7 +617,7 @@ namespace SDKDocGenerator
             var attrTargetStart = crefAttrStart + innerCrefAttributeText.Length;
 
             var crefTargetEnd = nodeText.IndexOf('"', attrTargetStart);
-            crossRefTagEndIndex = nodeText.IndexOf(crossReferenceClosingTagText, crefTargetEnd, StringComparison.Ordinal) 
+            crossRefTagEndIndex = nodeText.IndexOf(crossReferenceClosingTagText, crefTargetEnd, StringComparison.Ordinal)
                                     + crossReferenceClosingTagText.Length;
 
             var cref = nodeText.Substring(attrTargetStart, crefTargetEnd - attrTargetStart);
@@ -655,15 +770,15 @@ namespace SDKDocGenerator
         {
             if (!string.IsNullOrEmpty(samplesDir))
             {
-                var extraDocNodes = new List<XmlNode>(); 
-                foreach (var pattern in new [] {".extra.xml", ".GeneratedSamples.extra.xml"})
+                var extraDocNodes = new List<XmlNode>();
+                foreach (var pattern in new[] { ".extra.xml", ".GeneratedSamples.extra.xml" })
                 {
                     var extraFile = Path.Combine(samplesDir, DOC_SAMPLES_SUBFOLDER, serviceName + pattern);
                     if (File.Exists(extraFile))
                     {
                         var extraDoc = new XmlDocument();
                         extraDoc.Load(extraFile);
-                        foreach(XmlNode node in extraDoc.SelectNodes("docs/doc"))
+                        foreach (XmlNode node in extraDoc.SelectNodes("docs/doc"))
                         {
                             extraDocNodes.Add(node);
                         }
@@ -714,7 +829,7 @@ namespace SDKDocGenerator
 
             return map;
         }
-            
+
         private static void ProcessExtraDoc(XmlDocument sdkDocument, IDictionary<string, string> examplesMap)
         {
             foreach (var memberSpec in examplesMap.Keys)

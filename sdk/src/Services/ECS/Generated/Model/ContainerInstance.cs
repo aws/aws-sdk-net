@@ -43,6 +43,7 @@ namespace Amazon.ECS.Model
         private List<Resource> _remainingResources = new List<Resource>();
         private int? _runningTasksCount;
         private string _status;
+        private long? _version;
         private VersionInfo _versionInfo;
 
         /// <summary>
@@ -87,8 +88,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Attributes. 
         /// <para>
-        /// The attributes set for the container instance by the Amazon ECS container agent at
-        /// instance registration.
+        /// The attributes set for the container instance, either by the Amazon ECS container
+        /// agent at instance registration or manually with the <a>PutAttributes</a> operation.
         /// </para>
         /// </summary>
         public List<Attribute> Attributes
@@ -165,7 +166,10 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property RegisteredResources. 
         /// <para>
-        /// The registered resources on the container instance that are in use by current tasks.
+        /// For most resource types, this parameter describes the registered resources on the
+        /// container instance that are in use by current tasks. For port resource types, this
+        /// parameter describes the ports that were reserved by the Amazon ECS container agent
+        /// when it registered the container instance with Amazon ECS.
         /// </para>
         /// </summary>
         public List<Resource> RegisteredResources
@@ -183,7 +187,11 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property RemainingResources. 
         /// <para>
-        /// The remaining resources of the container instance that are available for new tasks.
+        /// For most resource types, this parameter describes the remaining resources of the container
+        /// instance that are available for new tasks. For port resource types, this parameter
+        /// describes the ports that are reserved by the Amazon ECS container agent and any containers
+        /// that have reserved port mappings; any port that is not specified here is available
+        /// for new tasks.
         /// </para>
         /// </summary>
         public List<Resource> RemainingResources
@@ -235,6 +243,30 @@ namespace Amazon.ECS.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Version. 
+        /// <para>
+        /// The version counter for the container instance. Every time a container instance experiences
+        /// a change that triggers a CloudWatch event, the version counter is incremented. If
+        /// you are replicating your Amazon ECS container instance state with CloudWatch events,
+        /// you can compare the version of a container instance reported by the Amazon ECS APIs
+        /// with the version reported in CloudWatch events for the container instance (inside
+        /// the <code>detail</code> object) to verify that the version in your event stream is
+        /// current.
+        /// </para>
+        /// </summary>
+        public long Version
+        {
+            get { return this._version.GetValueOrDefault(); }
+            set { this._version = value; }
+        }
+
+        // Check to see if Version property is set
+        internal bool IsSetVersion()
+        {
+            return this._version.HasValue; 
         }
 
         /// <summary>

@@ -24,7 +24,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\pcl</OutputPath>
-    <DefineConstants>DEBUG;TRACE;;PCL;AWS_ASYNC_API;LOCAL_FILE</DefineConstants>
+    <DefineConstants>DEBUG;TRACE;;PCL;AWS_ASYNC_API;LOCAL_FILE;ADD_SUPPORT_ICLONEABLE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\Debug\pcl\AWSSDK.DataPipeline.XML</DocumentationFile>
@@ -33,12 +33,13 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\pcl</OutputPath>
-    <DefineConstants>TRACE;;PCL;AWS_ASYNC_API;LOCAL_FILE</DefineConstants>
+    <DefineConstants>TRACE;;PCL;AWS_ASYNC_API;LOCAL_FILE;ADD_SUPPORT_ICLONEABLE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\Release\pcl\AWSSDK.DataPipeline.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <Choose>

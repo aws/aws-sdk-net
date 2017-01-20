@@ -32,7 +32,7 @@ namespace Amazon.CognitoIdentity.Model
     /// Gets details about a particular identity pool, including the pool name, ID description,
     /// creation date, and current number of users.
     /// 
-    /// 
+    ///  
     /// <para>
     /// You must use AWS Developer credentials to call this API.
     /// </para>
@@ -42,7 +42,10 @@ namespace Amazon.CognitoIdentity.Model
         private string _identityPoolId;
 
         /// <summary>
-        /// Gets and sets the property IdentityPoolId. An identity pool ID in the format REGION:GUID.
+        /// Gets and sets the property IdentityPoolId. 
+        /// <para>
+        /// An identity pool ID in the format REGION:GUID.
+        /// </para>
         /// </summary>
         public string IdentityPoolId
         {

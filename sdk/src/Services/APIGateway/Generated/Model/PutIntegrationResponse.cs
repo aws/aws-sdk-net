@@ -28,12 +28,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.APIGateway.Model
 {
     /// <summary>
-    /// Represents a HTTP, AWS, or Mock integration.
+    /// Represents an HTTP, HTTP_PROXY, AWS, AWS_PROXY, or Mock integration.
+    /// 
+    ///  <div class="remarks">In the API Gateway console, the built-in Lambda integration
+    /// is an AWS integration.</div> <div class="seeAlso"> <a href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Creating
+    /// an API</a> </div>
     /// </summary>
     public partial class PutIntegrationResponse : AmazonWebServiceResponse
     {
         private List<string> _cacheKeyParameters = new List<string>();
         private string _cacheNamespace;
+        private ContentHandlingStrategy _contentHandling;
         private string _credentials;
         private string _httpMethod;
         private Dictionary<string, IntegrationResponse> _integrationResponses = new Dictionary<string, IntegrationResponse>();
@@ -77,6 +82,42 @@ namespace Amazon.APIGateway.Model
         internal bool IsSetCacheNamespace()
         {
             return this._cacheNamespace != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ContentHandling. 
+        /// <para>
+        /// Specifies how to handle request payload content type conversions. Supported values
+        /// are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following
+        /// behaviors:
+        /// </para>
+        ///  <ul> <li>
+        /// <para>
+        /// <code>CONVERT_TO_BINARY</code>: Converts a request payload from a Base64-encoded string
+        /// to the corresponding binary blob.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// <code>CONVERT_TO_TEXT</code>: Converts a request payload from a binary blob to a Base64-encoded
+        /// string.
+        /// </para>
+        /// </li> </ul> 
+        /// <para>
+        /// If this property is not defined, the request payload will be passed through from the
+        /// method request to integration request without modification, provided that the <code>passthroughBehaviors</code>
+        /// is configured to support payload pass-through.
+        /// </para>
+        /// </summary>
+        public ContentHandlingStrategy ContentHandling
+        {
+            get { return this._contentHandling; }
+            set { this._contentHandling = value; }
+        }
+
+        // Check to see if ContentHandling property is set
+        internal bool IsSetContentHandling()
+        {
+            return this._contentHandling != null;
         }
 
         /// <summary>
@@ -124,6 +165,24 @@ namespace Amazon.APIGateway.Model
         /// <para>
         /// Specifies the integration's responses.
         /// </para>
+        ///  <div class="remarks">  <h4>Example: Get integration responses of a method</h4> <h5>Request</h5>
+        ///  <pre><code>GET /restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200
+        /// HTTP/1.1 Content-Type: application/json Host: apigateway.us-east-1.amazonaws.com X-Amz-Date:
+        /// 20160607T191449Z Authorization: AWS4-HMAC-SHA256 Credential={access_key_ID}/20160607/us-east-1/apigateway/aws4_request,
+        /// SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash} </code></pre> <h5>Response</h5>
+        /// 
+        /// <para>
+        /// The successful response returns <code>200 OK</code> status and a payload as follows:
+        /// </para>
+        ///  <pre><code>{ "_links": { "curies": { "href": "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html",
+        /// "name": "integrationresponse", "templated": true }, "self": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200",
+        /// "title": "200" }, "integrationresponse:delete": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200"
+        /// }, "integrationresponse:update": { "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200"
+        /// } }, "responseParameters": { "method.response.header.Content-Type": "'application/xml'"
+        /// }, "responseTemplates": { "application/json": "$util.urlDecode(\"%3CkinesisStreams%3E#foreach($stream
+        /// in $input.path('$.StreamNames'))%3Cstream%3E%3Cname%3E$stream%3C/name%3E%3C/stream%3E#end%3C/kinesisStreams%3E\")\n"
+        /// }, "statusCode": "200" }</code></pre>  </div> <div class="seeAlso"> <a href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Creating
+        /// an API</a> </div>
         /// </summary>
         public Dictionary<string, IntegrationResponse> IntegrationResponses
         {
@@ -138,29 +197,27 @@ namespace Amazon.APIGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PassthroughBehavior. 
+        /// Gets and sets the property PassthroughBehavior. <div> 
         /// <para>
-        /// Specifies the pass-through behavior for incoming requests based on the Content-Type
-        /// header in the request, and the available requestTemplates defined on the Integration.
+        ///  Specifies how the method request body of an unmapped content type will be passed
+        /// through the integration request to the back end without transformation. A content
+        /// type is unmapped if no mapping template is defined in the integration or the content
+        /// type does not match any of the mapped content types, as specified in <code>requestTemplates</code>.
         /// There are three valid values: <code>WHEN_NO_MATCH</code>, <code>WHEN_NO_TEMPLATES</code>,
-        /// and <code>NEVER</code>.
+        /// and <code>NEVER</code>. 
         /// </para>
-        ///   
-        /// <para>
-        /// <code>WHEN_NO_MATCH</code> passes the request body for unmapped content types through
-        /// to the Integration backend without transformation.
-        /// </para>
-        ///  
-        /// <para>
-        /// <code>NEVER</code> rejects unmapped content types with an HTTP 415 'Unsupported Media
-        /// Type' response.
-        /// </para>
-        ///  
-        /// <para>
-        /// <code>WHEN_NO_TEMPLATES</code> will allow pass-through when the Integration has NO
-        /// content types mapped to templates. However if there is at least one content type defined,
-        /// unmapped content types will be rejected with the same 415 response.
-        /// </para>
+        ///  <ul> <li> <code>WHEN_NO_MATCH</code> passes the method request body through the integration
+        /// request to the back end without transformation when the method request content type
+        /// does not match any content type associated with the mapping templates defined in the
+        /// integration request. </li> <li> <code>WHEN_NO_TEMPLATES</code> passes the method request
+        /// body through the integration request to the back end without transformation when no
+        /// mapping template is defined in the integration request. If a template is defined when
+        /// this option is selected, the method request of an unmapped content-type will be rejected
+        /// with an HTTP <code>415 Unsupported Media Type</code> response. </li> <li> <code>NEVER</code>
+        /// rejects the method request with an HTTP <code>415 Unsupported Media Type</code> response
+        /// when either the method request content type does not match any content type associated
+        /// with the mapping templates defined in the integration request or no mapping template
+        /// is defined in the integration request. </li> </ul> </div>
         /// </summary>
         public string PassthroughBehavior
         {
@@ -177,13 +234,13 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property RequestParameters. 
         /// <para>
-        /// Represents requests parameters that are sent with the backend request. Request parameters
-        /// are represented as a key/value map, with a destination as the key and a source as
-        /// the value. A source must match an existing method request parameter, or a static value.
-        /// Static values must be enclosed with single quotes, and be pre-encoded based on their
-        /// destination in the request. The destination must match the pattern <code>integration.request.{location}.{name}</code>,
-        /// where <code>location</code> is either querystring, path, or header. <code>name</code>
-        /// must be a valid, unique parameter name.
+        /// A key-value map specifying request parameters that are passed from the method request
+        /// to the back end. The key is an integration request parameter name and the associated
+        /// value is a method request parameter value or static value that must be enclosed within
+        /// single quotes and pre-encoded as required by the back end. The method request parameter
+        /// value must match the pattern of <code>method.request.{location}.{name}</code>, where
+        /// <code>location</code> is <code>querystring</code>, <code>path</code>, or <code>header</code>
+        /// and <code>name</code> must be a valid and unique method request parameter name.
         /// </para>
         /// </summary>
         public Dictionary<string, string> RequestParameters
@@ -221,8 +278,11 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// Specifies the integration's type. The valid value is <code>HTTP</code>, <code>AWS</code>,
-        /// or <code>MOCK</code>.
+        /// Specifies the integration's type. The valid value is <code>HTTP</code> for integrating
+        /// with an HTTP back end, <code>AWS</code> for any AWS service endpoints, <code>MOCK</code>
+        /// for testing without actually invoking the back end, <code>HTTP_PROXY</code> for integrating
+        /// with the HTTP proxy integration, or <code>AWS_PROXY</code> for integrating with the
+        /// Lambda proxy integration type.
         /// </para>
         /// </summary>
         public IntegrationType Type
@@ -241,7 +301,7 @@ namespace Amazon.APIGateway.Model
         /// Gets and sets the property Uri. 
         /// <para>
         /// Specifies the integration's Uniform Resource Identifier (URI). For HTTP integrations,
-        /// the URI must be a fully formed, encoded HTTP(S) URL according to the <a href="https://www.ietf.org/rfc/rfc3986.txt"
+        /// the URI must be a fully formed, encoded HTTP(S) URL according to the <a href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier"
         /// target="_blank">RFC-3986 specification</a>. For AWS integrations, the URI should be
         /// of the form <code>arn:aws:apigateway:{region}:{subdomain.service|service}:{path|action}/{service_api}</code>.
         /// <code>Region</code>, <code>subdomain</code> and <code>service</code> are used to determine

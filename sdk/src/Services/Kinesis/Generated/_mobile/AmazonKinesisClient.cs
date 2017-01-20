@@ -47,6 +47,66 @@ namespace Amazon.Kinesis
         
         #region Constructors
 
+#if CORECLR
+    
+        /// <summary>
+        /// Constructs AmazonKinesisClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
+        public AmazonKinesisClient()
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonKinesisConfig()) { }
+
+        /// <summary>
+        /// Constructs AmazonKinesisClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
+        /// <param name="region">The region to connect.</param>
+        public AmazonKinesisClient(RegionEndpoint region)
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonKinesisConfig{RegionEndpoint = region}) { }
+
+        /// <summary>
+        /// Constructs AmazonKinesisClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
+        /// <param name="config">The AmazonKinesisClient Configuration Object</param>
+        public AmazonKinesisClient(AmazonKinesisConfig config)
+            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+
+#endif
+
         /// <summary>
         /// Constructs AmazonKinesisClient with AWS Credentials
         /// </summary>
@@ -270,17 +330,12 @@ namespace Amazon.Kinesis
         /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
         /// For more information, see the returned message.
         /// </exception>
-        /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
-        /// The requested resource exceeds the maximum number allowed, or the number of concurrent
-        /// stream requests exceeds the maximum number allowed (5).
-        /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
         /// The resource is not available for this operation. For successful operation, the resource
         /// needs to be in the <code>ACTIVE</code> state.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
-        /// The requested resource could not be found. The stream might not be specified correctly,
-        /// or it might not be in the <code>ACTIVE</code> state if the operation requires it.
+        /// The requested resource could not be found. The stream might not be specified correctly.
         /// </exception>
         public Task<DecreaseStreamRetentionPeriodResponse> DecreaseStreamRetentionPeriodAsync(string streamName, int retentionPeriodHours, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -337,6 +392,37 @@ namespace Amazon.Kinesis
             var unmarshaller = DeleteStreamResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteStreamRequest,DeleteStreamResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeLimits
+
+        internal DescribeLimitsResponse DescribeLimits(DescribeLimitsRequest request)
+        {
+            var marshaller = new DescribeLimitsRequestMarshaller();
+            var unmarshaller = DescribeLimitsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeLimitsRequest,DescribeLimitsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeLimits operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLimits operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeLimitsResponse> DescribeLimitsAsync(DescribeLimitsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeLimitsRequestMarshaller();
+            var unmarshaller = DescribeLimitsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeLimitsRequest,DescribeLimitsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -534,17 +620,12 @@ namespace Amazon.Kinesis
         /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
         /// For more information, see the returned message.
         /// </exception>
-        /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
-        /// The requested resource exceeds the maximum number allowed, or the number of concurrent
-        /// stream requests exceeds the maximum number allowed (5).
-        /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
         /// The resource is not available for this operation. For successful operation, the resource
         /// needs to be in the <code>ACTIVE</code> state.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
-        /// The requested resource could not be found. The stream might not be specified correctly,
-        /// or it might not be in the <code>ACTIVE</code> state if the operation requires it.
+        /// The requested resource could not be found. The stream might not be specified correctly.
         /// </exception>
         public Task<IncreaseStreamRetentionPeriodResponse> IncreaseStreamRetentionPeriodAsync(string streamName, int retentionPeriodHours, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -612,7 +693,7 @@ namespace Amazon.Kinesis
         /// </para>
         ///  
         /// <para>
-        /// <a>ListStreams</a> has a limit of 5 transactions per second per account.
+        ///  <a>ListStreams</a> has a limit of 5 transactions per second per account.
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">
@@ -831,6 +912,37 @@ namespace Amazon.Kinesis
             var unmarshaller = SplitShardResponseUnmarshaller.Instance;
 
             return InvokeAsync<SplitShardRequest,SplitShardResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateShardCount
+
+        internal UpdateShardCountResponse UpdateShardCount(UpdateShardCountRequest request)
+        {
+            var marshaller = new UpdateShardCountRequestMarshaller();
+            var unmarshaller = UpdateShardCountResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateShardCountRequest,UpdateShardCountResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateShardCount operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateShardCount operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<UpdateShardCountResponse> UpdateShardCountAsync(UpdateShardCountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateShardCountRequestMarshaller();
+            var unmarshaller = UpdateShardCountResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateShardCountRequest,UpdateShardCountResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

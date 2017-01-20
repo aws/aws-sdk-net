@@ -15,6 +15,8 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL) -  Auto Scaling. Auto Scaling helps you maintain application availability and allows you to scale your capacity up or down automatically according to conditions you define.")]
 #elif UNITY
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Unity) - Auto Scaling. Auto Scaling helps you maintain application availability and allows you to scale your capacity up or down automatically according to conditions you define.")]
+#elif CORECLR
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (CoreCLR)- Auto Scaling. Auto Scaling helps you maintain application availability and allows you to scale your capacity up or down automatically according to conditions you define.")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif
@@ -22,7 +24,7 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyProduct("Amazon Web Services SDK for .NET")]
 [assembly: AssemblyCompany("Amazon.com, Inc")]
-[assembly: AssemblyCopyright("Copyright 2009-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.")]
+[assembly: AssemblyCopyright("Copyright 2009-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -41,8 +43,8 @@ using System.Runtime.CompilerServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("3.1")]
-[assembly: AssemblyFileVersion("3.1.3.2")]
+[assembly: AssemblyVersion("3.3")]
+[assembly: AssemblyFileVersion("3.3.0.7")]
 
 #if WINDOWS_PHONE || UNITY
 [assembly: System.CLSCompliant(false)]

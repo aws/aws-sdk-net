@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-11-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -43,6 +43,11 @@ namespace Amazon.EC2.Model
     /// the instance ID appears in the response and contains the identifier of the instance.
     /// Alternatively, you can use <a>DescribeInstances</a> with a filter to look for instances
     /// where the instance lifecycle is <code>spot</code>.
+    /// </para>
+    ///  
+    /// <para>
+    /// Spot instance requests are deleted 4 hours after they are canceled and their instances
+    /// are terminated.
     /// </para>
     /// </summary>
     public partial class DescribeSpotInstanceRequestsRequest : AmazonEC2Request
@@ -212,7 +217,9 @@ namespace Amazon.EC2.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned
-        /// to the resource.
+        /// to the resource. Specify the key of the tag in the filter name and the value of the
+        /// tag in the filter value. For example, for the tag Purpose=X, specify <code>tag:Purpose</code>
+        /// for the filter name and <code>X</code> for the filter value.
         /// </para>
         ///  </li> <li> 
         /// <para>

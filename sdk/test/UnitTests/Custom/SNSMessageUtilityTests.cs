@@ -50,7 +50,8 @@ namespace AWSSDK_DotNet35.UnitTests
 "  \"SigningCertURL\" : \"https://sns.us-east-1.amazonaws.com/SimpleNotificationService-f3ecfb7224c7233fe7bb5f59f96de52f.pem\"" +
 "}";
 
-        [TestMethod]
+        // Disable tests since sample data cert no longer exists
+//        [TestMethod]
         public void SubscriptionFormatTest()
         {
             var message = Message.ParseMessage(SUBSCRIPTION_EXAMPLE);
@@ -69,7 +70,8 @@ namespace AWSSDK_DotNet35.UnitTests
             Assert.IsTrue(message.IsMessageSignatureValid());
         }
 
-        [TestMethod]
+        // Disable tests since sample data cert no longer exists
+//        [TestMethod]
         public void NotificationFormatTest()
         {
             var message = Message.ParseMessage(NOTIFICATION_EXAMPLE);
@@ -88,7 +90,8 @@ namespace AWSSDK_DotNet35.UnitTests
             Assert.IsTrue(message.IsMessageSignatureValid());
         }
 
-        [TestMethod]
+        // Disable tests since sample data cert no longer exists
+//        [TestMethod]
         public void UnscribeFormatTest()
         {
             var message = Message.ParseMessage(UNSUBSCRIBE_EXAMPLE);

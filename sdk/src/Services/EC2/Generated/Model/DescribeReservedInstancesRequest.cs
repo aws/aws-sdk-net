@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-11-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -40,6 +40,7 @@ namespace Amazon.EC2.Model
     public partial class DescribeReservedInstancesRequest : AmazonEC2Request
     {
         private List<Filter> _filters = new List<Filter>();
+        private OfferingClassType _offeringClass;
         private OfferingTypeValues _offeringType;
         private List<string> _reservedInstancesIds = new List<string>();
 
@@ -73,6 +74,11 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>scope</code> - The scope of the Reserved Instance (<code>Region</code> or <code>Availability
+        /// Zone</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>product-description</code> - The Reserved Instance product platform description.
         /// Instances that include <code>(Amazon VPC)</code> in the product platform description
         /// will only be displayed to EC2-Classic account holders and are for use with Amazon
@@ -101,7 +107,9 @@ namespace Amazon.EC2.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned
-        /// to the resource.
+        /// to the resource. Specify the key of the tag in the filter name and the value of the
+        /// tag in the filter value. For example, for the tag Purpose=X, specify <code>tag:Purpose</code>
+        /// for the filter name and <code>X</code> for the filter value.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -137,11 +145,29 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OfferingClass. 
+        /// <para>
+        /// Describes whether the Reserved Instance is Standard or Convertible.
+        /// </para>
+        /// </summary>
+        public OfferingClassType OfferingClass
+        {
+            get { return this._offeringClass; }
+            set { this._offeringClass = value; }
+        }
+
+        // Check to see if OfferingClass property is set
+        internal bool IsSetOfferingClass()
+        {
+            return this._offeringClass != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property OfferingType. 
         /// <para>
         /// The Reserved Instance offering type. If you are using tools that predate the 2011-11-01
         /// API version, you only have access to the <code>Medium Utilization</code> Reserved
-        /// Instance offering type. 
+        /// Instance offering type.
         /// </para>
         /// </summary>
         public OfferingTypeValues OfferingType

@@ -38,10 +38,8 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The <code>NextToken</code> value to include in a future <code>DescribeScalableTargets</code>
-        /// request. When the results of a <code>DescribeScalableTargets</code> request exceed
-        /// <code>MaxResults</code>, this value can be used to retrieve the next page of results.
-        /// This value is <code>null</code> when there are no more results to return.
+        /// The token required to get the next set of results. This value is <code>null</code>
+        /// if there are no more results to return.
         /// </para>
         /// </summary>
         public string NextToken

@@ -36,7 +36,10 @@ namespace Amazon.CloudWatchLogs.Model
         private RejectedLogEventsInfo _rejectedLogEventsInfo;
 
         /// <summary>
-        /// Gets and sets the property NextSequenceToken.
+        /// Gets and sets the property NextSequenceToken. 
+        /// <para>
+        /// The next sequence token.
+        /// </para>
         /// </summary>
         public string NextSequenceToken
         {
@@ -51,7 +54,10 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RejectedLogEventsInfo.
+        /// Gets and sets the property RejectedLogEventsInfo. 
+        /// <para>
+        /// The rejected events.
+        /// </para>
         /// </summary>
         public RejectedLogEventsInfo RejectedLogEventsInfo
         {

@@ -38,7 +38,10 @@ namespace Amazon.DirectoryService.Model
         private string _trustId;
 
         /// <summary>
-        /// Gets and sets the property DeleteAssociatedConditionalForwarder.
+        /// Gets and sets the property DeleteAssociatedConditionalForwarder. 
+        /// <para>
+        /// Delete a conditional forwarder as part of a DeleteTrustRequest.
+        /// </para>
         /// </summary>
         public bool DeleteAssociatedConditionalForwarder
         {
@@ -53,7 +56,10 @@ namespace Amazon.DirectoryService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TrustId. The Trust ID of the trust relationship to be deleted.
+        /// Gets and sets the property TrustId. 
+        /// <para>
+        /// The Trust ID of the trust relationship to be deleted.
+        /// </para>
         /// </summary>
         public string TrustId
         {

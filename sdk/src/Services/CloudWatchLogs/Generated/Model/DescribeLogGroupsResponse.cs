@@ -36,7 +36,10 @@ namespace Amazon.CloudWatchLogs.Model
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property LogGroups.
+        /// Gets and sets the property LogGroups. 
+        /// <para>
+        /// The log groups.
+        /// </para>
         /// </summary>
         public List<LogGroup> LogGroups
         {

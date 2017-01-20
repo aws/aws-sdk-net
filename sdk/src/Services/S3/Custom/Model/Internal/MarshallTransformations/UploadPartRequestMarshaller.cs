@@ -55,7 +55,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 else
                     request.Headers.Add(HeaderKeys.XAmzSSECustomerKeyMD5Header, AmazonS3Util.ComputeEncodedMD5FromEncodedString(uploadPartRequest.ServerSideEncryptionCustomerProvidedKey));
             }
-
+            if (uploadPartRequest.IsSetRequestPayer())
+                request.Headers.Add(S3Constants.AmzHeaderRequestPayer, S3Transforms.ToStringValue(uploadPartRequest.RequestPayer.ToString()));
+            
             request.ResourcePath = string.Format(CultureInfo.InvariantCulture, "/{0}/{1}",
                                                  S3Transforms.ToStringValue(uploadPartRequest.BucketName),
                                                  S3Transforms.ToStringValue(uploadPartRequest.Key));

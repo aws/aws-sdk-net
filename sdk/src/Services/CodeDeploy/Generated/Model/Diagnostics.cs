@@ -42,12 +42,32 @@ namespace Amazon.CodeDeploy.Model
         /// <para>
         /// The associated error code:
         /// </para>
-        ///  <ul> <li>Success: The specified script ran.</li> <li>ScriptMissing: The specified
-        /// script was not found in the specified location.</li> <li>ScriptNotExecutable: The
-        /// specified script is not a recognized executable file type.</li> <li>ScriptTimedOut:
-        /// The specified script did not finish running in the specified time period.</li> <li>ScriptFailed:
-        /// The specified script failed to run as expected.</li> <li>UnknownError: The specified
-        /// script did not run for an unknown reason.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// Success: The specified script ran.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ScriptMissing: The specified script was not found in the specified location.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ScriptNotExecutable: The specified script is not a recognized executable file type.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ScriptTimedOut: The specified script did not finish running in the specified time
+        /// period.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ScriptFailed: The specified script failed to run as expected.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UnknownError: The specified script did not run for an unknown reason.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public LifecycleErrorCode ErrorCode
         {

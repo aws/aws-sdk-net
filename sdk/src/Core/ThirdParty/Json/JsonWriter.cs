@@ -345,20 +345,30 @@ namespace ThirdParty.Json.LitJson
 
         public void Write (int number)
         {
-            DoValidation (Condition.Value);
+            DoValidation(Condition.Value);
             PutNewline ();
 
-            Put (Convert.ToString (number, number_format));
+            Put(Convert.ToString(number, number_format));
 
             context.ExpectingValue = false;
         }
 
-        public void Write (long number)
+        public void Write(uint number)
         {
-            DoValidation (Condition.Value);
-            PutNewline ();
+            DoValidation(Condition.Value);
+            PutNewline();
 
-            Put (Convert.ToString (number));
+            Put(Convert.ToString(number, number_format));
+
+            context.ExpectingValue = false;
+        }
+
+        public void Write(long number)
+        {
+            DoValidation(Condition.Value);
+            PutNewline();
+
+            Put(Convert.ToString(number, number_format));
 
             context.ExpectingValue = false;
         }

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-11-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -150,7 +150,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
-        /// The instance type.
+        /// The instance type. Note that T2 and HS1 instance types are not supported.
         /// </para>
         /// </summary>
         public InstanceType InstanceType
@@ -222,7 +222,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property NetworkInterfaces. 
         /// <para>
-        /// One or more network interfaces.
+        /// One or more network interfaces. If you specify a network interface, you must specify
+        /// subnet IDs and security group IDs using the network interface.
         /// </para>
         /// </summary>
         public List<InstanceNetworkInterfaceSpecification> NetworkInterfaces

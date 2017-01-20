@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// A complex type containing the response information for the request.
+    /// A complex type that contains the response information for the <code>AssociateVPCWithHostedZone</code>
+    /// request.
     /// </summary>
     public partial class AssociateVPCWithHostedZoneResponse : AmazonWebServiceResponse
     {
@@ -37,7 +38,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property ChangeInfo. 
         /// <para>
-        /// A complex type that contains the ID, the status, and the date and time of your <code>AssociateVPCWithHostedZoneRequest</code>.
+        /// A complex type that describes the changes made to your hosted zone.
         /// </para>
         /// </summary>
         public ChangeInfo ChangeInfo

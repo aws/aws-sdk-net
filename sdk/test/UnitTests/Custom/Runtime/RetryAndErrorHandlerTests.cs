@@ -1,4 +1,4 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +13,7 @@ using Amazon.Runtime.Internal.Util;
 using System.Threading;
 using System.Net;
 using Amazon.Runtime.Internal;
+using Amazon.S3;
 
 namespace AWSSDK.UnitTests
 {
@@ -29,7 +30,12 @@ namespace AWSSDK.UnitTests
             var errorHandler = new ErrorHandler(logger);
             RuntimePipeline.AddHandler(errorHandler);
 
-            Handler = new RetryHandler(new DefaultRetryPolicy(MAX_RETRIES));
+            ClientConfig config = new AmazonS3Config
+            {
+                ServiceURL = @"https://s3.amazonaws.com",
+                MaxErrorRetry = MAX_RETRIES
+            };
+            Handler = new RetryHandler(new DefaultRetryPolicy(config));
             RuntimePipeline.AddHandler(Handler);
         }
 
@@ -72,7 +78,6 @@ namespace AWSSDK.UnitTests
         }
 
 #if BCL45
-
         [TestMethod][TestCategory("UnitTest")]
         [TestCategory("Runtime")]
         [TestCategory(@"Runtime\Async45")]

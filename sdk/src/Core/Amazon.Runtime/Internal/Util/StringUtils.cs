@@ -64,7 +64,7 @@ namespace Amazon.Runtime.Internal.Util
 
         public static string FromBool(bool value)
         {
-            return value.ToString(CultureInfo.InvariantCulture).ToLowerInvariant();
+            return value ? "true" : "false";
         }
 
         public static string FromDateTime(DateTime value)
@@ -73,6 +73,11 @@ namespace Amazon.Runtime.Internal.Util
         }
 
         public static string FromDouble(double value)
+        {
+            return value.ToString(CultureInfo.InvariantCulture);
+        }
+
+        public static string FromDecimal(decimal value)
         {
             return value.ToString(CultureInfo.InvariantCulture);
         }

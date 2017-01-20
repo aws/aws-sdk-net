@@ -76,6 +76,12 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                     unmarshalledObject.DestinationArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("distribution", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Distribution = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("filterName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-11-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -72,7 +72,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ip-permission.cidr</code> - A CIDR range that has been granted permission.
+        ///  <code>ip-permission.cidr</code> - An IPv4 CIDR range that has been granted permission
+        /// in a security group rule.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -88,6 +89,11 @@ namespace Amazon.EC2.Model
         /// <para>
         ///  <code>ip-permission.group-name</code> - The name of a security group that has been
         /// granted permission.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ip-permission.ipv6-cidr</code> - An IPv6 CIDR range that has been granted permission
+        /// in a security group rule.
         /// </para>
         ///  </li> <li> 
         /// <para>

@@ -29,8 +29,8 @@ namespace Amazon.ApplicationDiscoveryService.Model
 {
     /// <summary>
     /// Container for the parameters to the ListConfigurations operation.
-    /// Retrieves a list of configurations items according to the criteria you specify in
-    /// a filter. The filter criteria identify relationship requirements.
+    /// Retrieves a list of configuration items according to criteria you specify in a filter.
+    /// The filter criteria identify relationship requirements.
     /// </summary>
     public partial class ListConfigurationsRequest : AmazonApplicationDiscoveryServiceRequest
     {
@@ -38,6 +38,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         private List<Filter> _filters = new List<Filter>();
         private int? _maxResults;
         private string _nextToken;
+        private List<OrderByElement> _orderBy = new List<OrderByElement>();
 
         /// <summary>
         /// Gets and sets the property ConfigurationType. 
@@ -60,7 +61,8 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// You can filter the list using a <i>key</i>-<i>value</i> format. For example: 
+        /// You can filter the request using various logical operators and a <i>key</i>-<i>value</i>
+        /// format. For example: 
         /// </para>
         ///  
         /// <para>
@@ -68,7 +70,9 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// </para>
         ///  
         /// <para>
-        /// You can separate these items by using logical operators. 
+        /// For a complete list of filter options and guidance about using them with this action,
+        /// see <a href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/querying-configuration-items.html#ListConfigurations">Querying
+        /// Discovered Configuration Items</a>. 
         /// </para>
         /// </summary>
         public List<Filter> Filters
@@ -104,7 +108,10 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A token to start the list. Use this token to get the next set of results.
+        /// Token to retrieve the next set of results. For example, if a previous call to ListConfigurations
+        /// returned 100 items, but you set <code>ListConfigurationsRequest$maxResults</code>
+        /// to 10, you received a set of 10 results along with a token. Use that token in this
+        /// query to get the next set of 10.
         /// </para>
         /// </summary>
         public string NextToken
@@ -117,6 +124,26 @@ namespace Amazon.ApplicationDiscoveryService.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OrderBy. 
+        /// <para>
+        /// Certain filter criteria return output that can be sorted in ascending or descending
+        /// order. For a list of output characteristics for each filter, see <a href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/querying-configuration-items.html#ListConfigurations">Querying
+        /// Discovered Configuration Items</a>.
+        /// </para>
+        /// </summary>
+        public List<OrderByElement> OrderBy
+        {
+            get { return this._orderBy; }
+            set { this._orderBy = value; }
+        }
+
+        // Check to see if OrderBy property is set
+        internal bool IsSetOrderBy()
+        {
+            return this._orderBy != null && this._orderBy.Count > 0; 
         }
 
     }

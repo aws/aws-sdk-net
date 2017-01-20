@@ -91,6 +91,12 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.SnapshotId);
                 }
 
+                if(publicRequest.IsSetSourceVolumeARN())
+                {
+                    context.Writer.WritePropertyName("SourceVolumeARN");
+                    context.Writer.Write(publicRequest.SourceVolumeARN);
+                }
+
                 if(publicRequest.IsSetTargetName())
                 {
                     context.Writer.WritePropertyName("TargetName");

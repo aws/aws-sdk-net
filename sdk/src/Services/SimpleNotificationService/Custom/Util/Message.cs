@@ -16,7 +16,6 @@ using ThirdParty.Json.LitJson;
 using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 using ThirdParty.BouncyCastle.OpenSsl;
-using Amazon.Runtime;
 #endif
 
 

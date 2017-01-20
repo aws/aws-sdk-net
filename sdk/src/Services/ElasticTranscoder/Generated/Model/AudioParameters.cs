@@ -53,7 +53,8 @@ namespace Amazon.ElasticTranscoder.Model
         /// </para>
         ///  
         /// <para>
-        /// <code>SingleTrack</code>, <code>OneChannelPerTrack</code>, and <code>OneChannelPerTrackWithMosTo8Tracks</code>
+        ///  <code>SingleTrack</code>, <code>OneChannelPerTrack</code>, and <code>OneChannelPerTrackWithMosTo8Tracks</code>
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -66,18 +67,51 @@ namespace Amazon.ElasticTranscoder.Model
         /// The outputs of <code>SingleTrack</code> for a specific channel value and inputs are
         /// as follows:
         /// </para>
-        ///  <ul> <li> <code>0</code> <b> channels with any input:</b> Audio omitted from the
-        /// output</li> <li> <code>1, 2, or auto </code> <b>channels with no audio input:</b>
-        /// Audio omitted from the output</li> <li> <code>1 </code> <b>channel with any input
-        /// with audio:</b> One track with one channel, downmixed if necessary</li> <li> <code>2
-        /// </code> <b>channels with one track with one channel:</b> One track with two identical
-        /// channels</li> <li> <code>2 or auto </code> <b>channels with two tracks with one channel
-        /// each:</b> One track with two channels</li> <li> <code>2 or auto </code> <b>channels
-        /// with one track with two channels:</b> One track with two channels</li> <li> <code>2
-        /// </code> <b>channels with one track with multiple channels:</b> One track with two
-        /// channels</li> <li> <code>auto </code> <b>channels with one track with one channel:</b>
-        /// One track with one channel</li> <li> <code>auto </code> <b>channels with one track
-        /// with multiple channels:</b> One track with multiple channels</li> </ul> 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>0</code> <b> channels with any input:</b> Audio omitted from the output
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>1, 2, or auto </code> <b>channels with no audio input:</b> Audio omitted from
+        /// the output
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>1 </code> <b>channel with any input with audio:</b> One track with one channel,
+        /// downmixed if necessary
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>2 </code> <b>channels with one track with one channel:</b> One track with two
+        /// identical channels
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>2 or auto </code> <b>channels with two tracks with one channel each:</b> One
+        /// track with two channels
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>2 or auto </code> <b>channels with one track with two channels:</b> One track
+        /// with two channels
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>2 </code> <b>channels with one track with multiple channels:</b> One track
+        /// with two channels
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>auto </code> <b>channels with one track with one channel:</b> One track with
+        /// one channel
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>auto </code> <b>channels with one track with multiple channels:</b> One track
+        /// with multiple channels
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// When you specify <code>OneChannelPerTrack</code>, Elastic Transcoder creates a new
         /// track for every channel in your output. Your output can have up to eight single-channel
@@ -88,19 +122,51 @@ namespace Amazon.ElasticTranscoder.Model
         /// The outputs of <code>OneChannelPerTrack</code> for a specific channel value and inputs
         /// are as follows:
         /// </para>
-        ///  <ul> <li> <code>0 </code> <b>channels with any input:</b> Audio omitted from the
-        /// output</li> <li> <code>1, 2, or auto </code> <b>channels with no audio input:</b>
-        /// Audio omitted from the output</li> <li> <code>1 </code> <b>channel with any input
-        /// with audio:</b> One track with one channel, downmixed if necessary</li> <li> <code>2
-        /// </code> <b>channels with one track with one channel:</b> Two tracks with one identical
-        /// channel each</li> <li> <code>2 or auto </code> <b>channels with two tracks with one
-        /// channel each:</b> Two tracks with one channel each</li> <li> <code>2 or auto </code>
-        /// <b>channels with one track with two channels:</b> Two tracks with one channel each</li>
-        /// <li> <code>2 </code> <b>channels with one track with multiple channels:</b> Two tracks
-        /// with one channel each</li> <li> <code>auto </code> <b>channels with one track with
-        /// one channel:</b> One track with one channel</li> <li> <code>auto </code> <b>channels
-        /// with one track with multiple channels:</b> Up to eight tracks with one channel each</li>
-        /// </ul> 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>0 </code> <b>channels with any input:</b> Audio omitted from the output
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>1, 2, or auto </code> <b>channels with no audio input:</b> Audio omitted from
+        /// the output
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>1 </code> <b>channel with any input with audio:</b> One track with one channel,
+        /// downmixed if necessary
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>2 </code> <b>channels with one track with one channel:</b> Two tracks with
+        /// one identical channel each
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>2 or auto </code> <b>channels with two tracks with one channel each:</b> Two
+        /// tracks with one channel each
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>2 or auto </code> <b>channels with one track with two channels:</b> Two tracks
+        /// with one channel each
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>2 </code> <b>channels with one track with multiple channels:</b> Two tracks
+        /// with one channel each
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>auto </code> <b>channels with one track with one channel:</b> One track with
+        /// one channel
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>auto </code> <b>channels with one track with multiple channels:</b> Up to eight
+        /// tracks with one channel each
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// When you specify <code>OneChannelPerTrackWithMosTo8Tracks</code>, Elastic Transcoder
         /// creates eight single-channel tracks for your output. All tracks that do not contain
@@ -111,21 +177,51 @@ namespace Amazon.ElasticTranscoder.Model
         /// The outputs of <code>OneChannelPerTrackWithMosTo8Tracks</code> for a specific channel
         /// value and inputs are as follows:
         /// </para>
-        ///  <ul> <li> <code>0 </code> <b>channels with any input:</b> Audio omitted from the
-        /// output</li> <li> <code>1, 2, or auto </code> <b>channels with no audio input:</b>
-        /// Audio omitted from the output</li> <li> <code>1 </code> <b>channel with any input
-        /// with audio:</b> One track with one channel, downmixed if necessary, plus six MOS tracks</li>
-        /// <li> <code>2 </code> <b>channels with one track with one channel:</b> Two tracks with
-        /// one identical channel each, plus six MOS tracks</li> <li> <code>2 or auto </code>
-        /// <b>channels with two tracks with one channel each:</b> Two tracks with one channel
-        /// each, plus six MOS tracks</li> <li> <code>2 or auto </code> <b>channels with one track
-        /// with two channels:</b> Two tracks with one channel each, plus six MOS tracks</li>
-        /// <li> <code>2 </code> <b>channels with one track with multiple channels:</b> Two tracks
-        /// with one channel each, plus six MOS tracks</li> <li> <code>auto </code> <b>channels
-        /// with one track with one channel:</b> One track with one channel, plus seven MOS tracks</li>
-        /// <li> <code>auto </code> <b>channels with one track with multiple channels:</b> Up
-        /// to eight tracks with one channel each, plus MOS tracks until there are eight tracks
-        /// in all</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>0 </code> <b>channels with any input:</b> Audio omitted from the output
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>1, 2, or auto </code> <b>channels with no audio input:</b> Audio omitted from
+        /// the output
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>1 </code> <b>channel with any input with audio:</b> One track with one channel,
+        /// downmixed if necessary, plus six MOS tracks
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>2 </code> <b>channels with one track with one channel:</b> Two tracks with
+        /// one identical channel each, plus six MOS tracks
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>2 or auto </code> <b>channels with two tracks with one channel each:</b> Two
+        /// tracks with one channel each, plus six MOS tracks
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>2 or auto </code> <b>channels with one track with two channels:</b> Two tracks
+        /// with one channel each, plus six MOS tracks
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>2 </code> <b>channels with one track with multiple channels:</b> Two tracks
+        /// with one channel each, plus six MOS tracks
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>auto </code> <b>channels with one track with one channel:</b> One track with
+        /// one channel, plus seven MOS tracks
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>auto </code> <b>channels with one track with multiple channels:</b> Up to eight
+        /// tracks with one channel each, plus MOS tracks until there are eight tracks in all
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string AudioPackingMode
         {
@@ -165,7 +261,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </para>
         ///  
         /// <para>
-        /// <code>auto</code>, <code>0</code>, <code>1</code>, <code>2</code>
+        ///  <code>auto</code>, <code>0</code>, <code>1</code>, <code>2</code> 
         /// </para>
         ///  
         /// <para>
@@ -179,12 +275,27 @@ namespace Amazon.ElasticTranscoder.Model
         /// <para>
         /// The output of a specific channel value and inputs are as follows:
         /// </para>
-        ///  <ul> <li> <code>auto</code><b> channel specified, with any input:</b> Pass through
-        /// up to eight input channels.</li> <li> <code>0</code><b> channels specified, with any
-        /// input:</b> Audio omitted from the output.</li> <li> <code>1</code><b> channel specified,
-        /// with at least one input channel:</b> Mono sound.</li> <li> <code>2</code><b> channels
-        /// specified, with any input:</b> Two identical mono channels or stereo. For more information
-        /// about tracks, see <code>Audio:AudioPackingMode.</code> </li> </ul> 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>auto</code> <b> channel specified, with any input:</b> Pass through up to eight
+        /// input channels.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>0</code> <b> channels specified, with any input:</b> Audio omitted from the
+        /// output.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>1</code> <b> channel specified, with at least one input channel:</b> Mono sound.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>2</code> <b> channels specified, with any input:</b> Two identical mono channels
+        /// or stereo. For more information about tracks, see <code>Audio:AudioPackingMode.</code>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         ///  For more information about how Elastic Transcoder organizes channels and tracks,
         /// see <code>Audio:AudioPackingMode</code>.
@@ -229,7 +340,8 @@ namespace Amazon.ElasticTranscoder.Model
         /// </para>
         ///  
         /// <para>
-        /// <code>auto</code>, <code>AAC-LC</code>, <code>HE-AAC</code>, <code>HE-AACv2</code>
+        ///  <code>auto</code>, <code>AAC-LC</code>, <code>HE-AAC</code>, <code>HE-AACv2</code>
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -256,8 +368,8 @@ namespace Amazon.ElasticTranscoder.Model
         /// </para>
         ///  
         /// <para>
-        /// <code>auto</code>, <code>22050</code>, <code>32000</code>, <code>44100</code>, <code>48000</code>,
-        /// <code>96000</code>
+        ///  <code>auto</code>, <code>22050</code>, <code>32000</code>, <code>44100</code>, <code>48000</code>,
+        /// <code>96000</code> 
         /// </para>
         ///  
         /// <para>

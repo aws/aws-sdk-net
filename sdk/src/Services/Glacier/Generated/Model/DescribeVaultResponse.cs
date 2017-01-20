@@ -42,8 +42,8 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Gets and sets the property CreationDate. 
         /// <para>
-        /// The UTC date when the vault was created. A string representation of ISO 8601 date
-        /// format, for example, "2012-03-20T17:03:43.221Z".
+        /// The Universal Coordinated Time (UTC) date when the vault was created. This value should
+        /// be a string in the ISO 8601 date format, for example <code>2012-03-20T17:03:43.221Z</code>.
         /// </para>
         /// </summary>
         public DateTime CreationDate
@@ -61,8 +61,9 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Gets and sets the property LastInventoryDate. 
         /// <para>
-        /// The UTC date when Amazon Glacier completed the last vault inventory. A string representation
-        /// of ISO 8601 date format, for example, "2012-03-20T17:03:43.221Z".
+        /// The Universal Coordinated Time (UTC) date when Amazon Glacier completed the last vault
+        /// inventory. This value should be a string in the ISO 8601 date format, for example
+        /// <code>2012-03-20T17:03:43.221Z</code>.
         /// </para>
         /// </summary>
         public DateTime LastInventoryDate
@@ -81,7 +82,7 @@ namespace Amazon.Glacier.Model
         /// Gets and sets the property NumberOfArchives. 
         /// <para>
         /// The number of archives in the vault as of the last inventory date. This field will
-        /// return <code>null</code> if an inventory has not yet run on the vault, for example,
+        /// return <code>null</code> if an inventory has not yet run on the vault, for example
         /// if you just created the vault.
         /// </para>
         /// </summary>
@@ -101,7 +102,7 @@ namespace Amazon.Glacier.Model
         /// Gets and sets the property SizeInBytes. 
         /// <para>
         /// Total size, in bytes, of the archives in the vault as of the last inventory date.
-        /// This field will return null if an inventory has not yet run on the vault, for example,
+        /// This field will return null if an inventory has not yet run on the vault, for example
         /// if you just created the vault.
         /// </para>
         /// </summary>

@@ -36,7 +36,10 @@ namespace Amazon.CloudWatchLogs.Model
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property Destinations.
+        /// Gets and sets the property Destinations. 
+        /// <para>
+        /// The destinations.
+        /// </para>
         /// </summary>
         public List<Destination> Destinations
         {

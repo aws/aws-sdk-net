@@ -36,30 +36,30 @@ namespace Amazon.Lambda.Model
     ///  
     /// <para>
     /// This association between a stream source and a Lambda function is called the event
-    /// source mapping. 
+    /// source mapping.
     /// </para>
-    ///  <important>This event source mapping is relevant only in the AWS Lambda pull model,
-    /// where AWS Lambda invokes the function. For more information, go to <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">AWS
-    /// Lambda: How it Works</a> in the <i>AWS Lambda Developer Guide</i>.</important> 
+    ///  <important>
     /// <para>
-    ///  You provide mapping information (for example, which stream to read from and which
-    /// Lambda function to invoke) in the request body. 
+    /// This event source mapping is relevant only in the AWS Lambda pull model, where AWS
+    /// Lambda invokes the function. For more information, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">AWS
+    /// Lambda: How it Works</a> in the <i>AWS Lambda Developer Guide</i>.
+    /// </para>
+    ///  </important> 
+    /// <para>
+    /// You provide mapping information (for example, which stream to read from and which
+    /// Lambda function to invoke) in the request body.
     /// </para>
     ///  
     /// <para>
-    ///  Each event source, such as an Amazon Kinesis or a DynamoDB stream, can be associated
+    /// Each event source, such as an Amazon Kinesis or a DynamoDB stream, can be associated
     /// with multiple AWS Lambda function. A given Lambda function can be associated with
-    /// multiple AWS event sources. 
+    /// multiple AWS event sources.
     /// </para>
-    ///  
-    /// <para>
     ///  
     /// <para>
     /// If you are using versioning, you can specify a specific function version or an alias
     /// via the function name parameter. For more information about versioning, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
     /// Lambda Function Versioning and Aliases</a>. 
-    /// </para>
-    ///  
     /// </para>
     ///  
     /// <para>
@@ -74,6 +74,7 @@ namespace Amazon.Lambda.Model
         private string _eventSourceArn;
         private string _functionName;
         private EventSourcePosition _startingPosition;
+        private DateTime? _startingPositionTimestamp;
 
         /// <summary>
         /// Gets and sets the property BatchSize. 
@@ -160,8 +161,8 @@ namespace Amazon.Lambda.Model
         /// </para>
         ///  
         /// <para>
-        ///  Note that the length constraint applies only to the ARN. If you specify only the
-        /// function name, it is limited to 64 character in length. 
+        /// Note that the length constraint applies only to the ARN. If you specify only the function
+        /// name, it is limited to 64 character in length.
         /// </para>
         /// </summary>
         public string FunctionName
@@ -179,8 +180,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property StartingPosition. 
         /// <para>
-        /// The position in the stream where AWS Lambda should start reading. For more information,
-        /// go to <a href="http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType">ShardIteratorType</a>
+        /// The position in the stream where AWS Lambda should start reading. Valid only for Kinesis
+        /// streams. For more information, see <a href="http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType">ShardIteratorType</a>
         /// in the <i>Amazon Kinesis API Reference</i>. 
         /// </para>
         /// </summary>
@@ -194,6 +195,28 @@ namespace Amazon.Lambda.Model
         internal bool IsSetStartingPosition()
         {
             return this._startingPosition != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StartingPositionTimestamp. 
+        /// <para>
+        /// The timestamp of the data record from which to start reading. Used with <a href="http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType">shard
+        /// iterator type</a> AT_TIMESTAMP. If a record with this exact timestamp does not exist,
+        /// the iterator returned is for the next (later) record. If the timestamp is older than
+        /// the current trim horizon, the iterator returned is for the oldest untrimmed data record
+        /// (TRIM_HORIZON). Valid only for Kinesis streams. 
+        /// </para>
+        /// </summary>
+        public DateTime StartingPositionTimestamp
+        {
+            get { return this._startingPositionTimestamp.GetValueOrDefault(); }
+            set { this._startingPositionTimestamp = value; }
+        }
+
+        // Check to see if StartingPositionTimestamp property is set
+        internal bool IsSetStartingPositionTimestamp()
+        {
+            return this._startingPositionTimestamp.HasValue; 
         }
 
     }

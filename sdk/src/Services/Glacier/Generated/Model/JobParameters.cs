@@ -38,6 +38,7 @@ namespace Amazon.Glacier.Model
         private InventoryRetrievalJobInput _inventoryRetrievalParameters;
         private string _retrievalByteRange;
         private string _snsTopic;
+        private string _tier;
         private string _type;
 
         /// <summary>
@@ -48,7 +49,7 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Instantiates JobParameters with the parameterized properties
         /// </summary>
-        /// <param name="format">When initiating a job to retrieve a vault inventory, you can optionally add this parameter to your request to specify the output format. If you are initiating an inventory job and do not specify a Format field, JSON is the default format. Valid values are "CSV" and "JSON". </param>
+        /// <param name="format">When initiating a job to retrieve a vault inventory, you can optionally add this parameter to your request to specify the output format. If you are initiating an inventory job and do not specify a Format field, JSON is the default format. Valid values are "CSV" and "JSON".</param>
         /// <param name="type">The job type. You can initiate a job to retrieve an archive or get an inventory of a vault. Valid values are "archive-retrieval" and "inventory-retrieval".</param>
         /// <param name="archiveId">The ID of the archive that you want to retrieve. This field is required only if <code>Type</code> is set to archive-retrieval. An error occurs if you specify this request parameter for an inventory retrieval job request. </param>
         /// <param name="description">The optional description for the job. The description must be less than or equal to 1,024 bytes. The allowable characters are 7-bit ASCII without control codes-specifically, ASCII values 32-126 decimal or 0x20-0x7E hexadecimal.</param>
@@ -106,7 +107,7 @@ namespace Amazon.Glacier.Model
         /// When initiating a job to retrieve a vault inventory, you can optionally add this parameter
         /// to your request to specify the output format. If you are initiating an inventory job
         /// and do not specify a Format field, JSON is the default format. Valid values are "CSV"
-        /// and "JSON". 
+        /// and "JSON".
         /// </para>
         /// </summary>
         public string Format
@@ -152,7 +153,6 @@ namespace Amazon.Glacier.Model
         ///  
         /// <para>
         /// An error occurs if you specify this field for an inventory retrieval job request.
-        /// 
         /// </para>
         /// </summary>
         public string RetrievalByteRange
@@ -185,6 +185,25 @@ namespace Amazon.Glacier.Model
         internal bool IsSetSNSTopic()
         {
             return this._snsTopic != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tier. 
+        /// <para>
+        /// The retrieval option to use for the archive retrieval. Valid values are <code>Expedited</code>,
+        /// <code>Standard</code>, or <code>Bulk</code>. <code>Standard</code> is the default.
+        /// </para>
+        /// </summary>
+        public string Tier
+        {
+            get { return this._tier; }
+            set { this._tier = value; }
+        }
+
+        // Check to see if Tier property is set
+        internal bool IsSetTier()
+        {
+            return this._tier != null;
         }
 
         /// <summary>

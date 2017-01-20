@@ -28,7 +28,7 @@ namespace Amazon.ElasticBeanstalk
     ///<summary>
     /// Common exception for the ElasticBeanstalk service.
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class AmazonElasticBeanstalkException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.ElasticBeanstalk
         {
         }
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the AmazonElasticBeanstalkException class with serialized data.
         /// </summary>

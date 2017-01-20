@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2016-01-28.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-11-25.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -28,17 +28,24 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// A complex type that specifies how CloudFront handles query strings, cookies and headers.
+    /// A complex type that specifies how CloudFront handles query strings and cookies.
     /// </summary>
     public partial class ForwardedValues
     {
         private CookiePreference _cookies;
         private Headers _headers;
         private bool? _queryString;
+        private QueryStringCacheKeys _queryStringCacheKeys;
 
         /// <summary>
-        /// Gets and sets the property Cookies. A complex type that specifies how CloudFront handles
-        /// cookies.
+        /// Gets and sets the property Cookies. 
+        /// <para>
+        /// A complex type that specifies whether you want CloudFront to forward cookies to the
+        /// origin and, if so, which ones. For more information about forwarding cookies to the
+        /// origin, see <a href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Cookies.html">How
+        /// CloudFront Forwards, Caches, and Logs Cookies</a> in the <i>Amazon CloudFront Developer
+        /// Guide</i>.
+        /// </para>
         /// </summary>
         public CookiePreference Cookies
         {
@@ -53,8 +60,11 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Headers. A complex type that specifies the Headers, if
-        /// any, that you want CloudFront to vary upon for this cache behavior.
+        /// Gets and sets the property Headers. 
+        /// <para>
+        /// A complex type that specifies the <code>Headers</code>, if any, that you want CloudFront
+        /// to vary upon for this cache behavior. 
+        /// </para>
         /// </summary>
         public Headers Headers
         {
@@ -69,9 +79,38 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property QueryString. Indicates whether you want CloudFront to forward
-        /// query strings to the origin that is associated with this cache behavior. If so, specify
-        /// true; if not, specify false.
+        /// Gets and sets the property QueryString. 
+        /// <para>
+        /// Indicates whether you want CloudFront to forward query strings to the origin that
+        /// is associated with this cache behavior and cache based on the query string parameters.
+        /// CloudFront behavior depends on the value of <code>QueryString</code> and on the values
+        /// that you specify for <code>QueryStringCacheKeys</code>, if any:
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify true for <code>QueryString</code> and you don't specify any values
+        /// for <code>QueryStringCacheKeys</code>, CloudFront forwards all query string parameters
+        /// to the origin and caches based on all query string parameters. Depending on how many
+        /// query string parameters and values you have, this can adversely affect performance
+        /// because CloudFront must forward more requests to the origin.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify true for <code>QueryString</code> and you specify one or more values
+        /// for <code>QueryStringCacheKeys</code>, CloudFront forwards all query string parameters
+        /// to the origin, but it only caches based on the query string parameters that you specify.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify false for <code>QueryString</code>, CloudFront doesn't forward any
+        /// query string parameters to the origin, and doesn't cache based on query string parameters.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/QueryStringParameters.html">Configuring
+        /// CloudFront to Cache Based on Query String Parameters</a> in the <i>Amazon CloudFront
+        /// Developer Guide</i>.
+        /// </para>
         /// </summary>
         public bool QueryString
         {
@@ -83,6 +122,25 @@ namespace Amazon.CloudFront.Model
         internal bool IsSetQueryString()
         {
             return this._queryString.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property QueryStringCacheKeys. 
+        /// <para>
+        /// A complex type that contains information about the query string parameters that you
+        /// want CloudFront to use for caching for this cache behavior.
+        /// </para>
+        /// </summary>
+        public QueryStringCacheKeys QueryStringCacheKeys
+        {
+            get { return this._queryStringCacheKeys; }
+            set { this._queryStringCacheKeys = value; }
+        }
+
+        // Check to see if QueryStringCacheKeys property is set
+        internal bool IsSetQueryStringCacheKeys()
+        {
+            return this._queryStringCacheKeys != null;
         }
 
     }

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-11-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -29,9 +29,8 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeConversionTasks operation.
-    /// Describes one or more of your conversion tasks. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html">Using
-    /// the Command Line Tools to Import Your Virtual Machine to Amazon EC2</a> in the <i>Amazon
-    /// Elastic Compute Cloud User Guide</i>.
+    /// Describes one or more of your conversion tasks. For more information, see the <a href="http://docs.aws.amazon.com/vm-import/latest/userguide/">VM
+    /// Import/Export User Guide</a>.
     /// 
     ///  
     /// <para>
@@ -42,7 +41,6 @@ namespace Amazon.EC2.Model
     public partial class DescribeConversionTasksRequest : AmazonEC2Request
     {
         private List<string> _conversionTaskIds = new List<string>();
-        private List<Filter> _filters = new List<Filter>();
 
         /// <summary>
         /// Gets and sets the property ConversionTaskIds. 
@@ -60,24 +58,6 @@ namespace Amazon.EC2.Model
         internal bool IsSetConversionTaskIds()
         {
             return this._conversionTaskIds != null && this._conversionTaskIds.Count > 0; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property Filters. 
-        /// <para>
-        /// One or more filters.
-        /// </para>
-        /// </summary>
-        public List<Filter> Filters
-        {
-            get { return this._filters; }
-            set { this._filters = value; }
-        }
-
-        // Check to see if Filters property is set
-        internal bool IsSetFilters()
-        {
-            return this._filters != null && this._filters.Count > 0; 
         }
 
     }

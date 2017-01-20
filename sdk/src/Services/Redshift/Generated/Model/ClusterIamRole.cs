@@ -39,15 +39,27 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ApplyStatus. 
         /// <para>
-        /// Describes the status of the IAM role's association with an Amazon Redshift cluster.
+        /// A value that describes the status of the IAM role's association with an Amazon Redshift
+        /// cluster.
         /// </para>
         ///  
         /// <para>
-        /// The following are possible statuses and descriptions.<ul> <li><code>in-sync</code>:
-        /// The role is available for use by the cluster.</li> <li><code>adding</code>: The role
-        /// is in the process of being associated with the cluster.</li> <li><code>removing</code>:
-        /// The role is in the process of being disassociated with the cluster.</li> </ul> 
+        /// The following are possible statuses and descriptions.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>in-sync</code>: The role is available for use by the cluster.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>adding</code>: The role is in the process of being associated with the cluster.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>removing</code>: The role is in the process of being disassociated with the
+        /// cluster.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string ApplyStatus
         {
@@ -64,7 +76,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property IamRoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the IAM role. For example, <code>arn:aws:iam::123456789012:role/RedshiftCopyUnload</code>.
+        /// The Amazon Resource Name (ARN) of the IAM role, for example, <code>arn:aws:iam::123456789012:role/RedshiftCopyUnload</code>.
         /// 
         /// </para>
         /// </summary>

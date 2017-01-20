@@ -142,6 +142,12 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                     unmarshalledObject.WorkspaceId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("WorkspaceProperties", targetDepth))
+                {
+                    var unmarshaller = WorkspacePropertiesUnmarshaller.Instance;
+                    unmarshalledObject.WorkspaceProperties = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

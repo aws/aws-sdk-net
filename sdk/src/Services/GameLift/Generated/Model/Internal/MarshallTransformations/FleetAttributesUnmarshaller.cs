@@ -100,6 +100,24 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("NewGameSessionProtectionPolicy", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.NewGameSessionProtectionPolicy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("OperatingSystem", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.OperatingSystem = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ResourceCreationLimitPolicy", targetDepth))
+                {
+                    var unmarshaller = ResourceCreationLimitPolicyUnmarshaller.Instance;
+                    unmarshalledObject.ResourceCreationLimitPolicy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ServerLaunchParameters", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

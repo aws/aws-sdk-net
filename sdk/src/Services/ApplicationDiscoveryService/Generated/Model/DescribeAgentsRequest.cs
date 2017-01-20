@@ -29,20 +29,22 @@ namespace Amazon.ApplicationDiscoveryService.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeAgents operation.
-    /// Lists AWS agents by ID or lists all agents associated with your user account if you
-    /// did not specify an agent ID.
+    /// Lists agents or the Connector by ID or lists all agents/Connectors associated with
+    /// your user account if you did not specify an ID.
     /// </summary>
     public partial class DescribeAgentsRequest : AmazonApplicationDiscoveryServiceRequest
     {
         private List<string> _agentIds = new List<string>();
+        private List<Filter> _filters = new List<Filter>();
         private int? _maxResults;
         private string _nextToken;
 
         /// <summary>
         /// Gets and sets the property AgentIds. 
         /// <para>
-        /// The agent IDs for which you want information. If you specify no IDs, the system returns
-        /// information about all agents associated with your AWS user account.
+        /// The agent or the Connector IDs for which you want information. If you specify no IDs,
+        /// the system returns information about all agents/Connectors associated with your AWS
+        /// user account.
         /// </para>
         /// </summary>
         public List<string> AgentIds
@@ -58,9 +60,40 @@ namespace Amazon.ApplicationDiscoveryService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Filters. 
+        /// <para>
+        /// You can filter the request using various logical operators and a <i>key</i>-<i>value</i>
+        /// format. For example: 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>{"key": "collectionStatus", "value": "STARTED"}</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// For a complete list of filter options and guidance about using them with this action,
+        /// see <a href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/managing-agent.html">Managing
+        /// AWS Application Discovery Service Agents and the AWS Application Discovery Connector
+        /// </a>.
+        /// </para>
+        /// </summary>
+        public List<Filter> Filters
+        {
+            get { return this._filters; }
+            set { this._filters = value; }
+        }
+
+        // Check to see if Filters property is set
+        internal bool IsSetFilters()
+        {
+            return this._filters != null && this._filters.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The total number of agents to return. The maximum value is 100.
+        /// The total number of agents/Connectors to return in a single page of output. The maximum
+        /// value is 100.
         /// </para>
         /// </summary>
         public int MaxResults
@@ -78,7 +111,10 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A token to start the list. Use this token to get the next set of results.
+        /// Token to retrieve the next set of results. For example, if you previously specified
+        /// 100 IDs for <code>DescribeAgentsRequest$agentIds</code> but set <code>DescribeAgentsRequest$maxResults</code>
+        /// to 10, you received a set of 10 results along with a token. Use that token in this
+        /// query to get the next set of 10.
         /// </para>
         /// </summary>
         public string NextToken

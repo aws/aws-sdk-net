@@ -23,6 +23,7 @@ using Amazon.S3.Util;
 using Amazon.Util;
 using System.Globalization;
 using Amazon.S3.Model.Internal.MarshallTransformations;
+using Amazon.S3;
 
 namespace Amazon.S3.Model
 {
@@ -48,7 +49,10 @@ namespace Amazon.S3.Model
         private HeadersCollection headersCollection = new HeadersCollection();
         private MetadataCollection metadataCollection = new MetadataCollection();
         private ReplicationStatus replicationStatus;
+        private int? partsCount;
         private S3StorageClass storageClass;
+        private RequestCharged requestCharged;
+        private int? tagCount;
 
         private string bucketName;
         private string key;
@@ -356,6 +360,24 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
+        /// The number of parts this oject has.
+        /// </summary>
+        public int? PartsCount
+        {
+            get { return this.partsCount; }
+            set { this.partsCount = value; }
+        }
+
+        /// <summary>
+        /// Checks if PartsCount is set.
+        /// </summary>
+        /// <returns>true if PartsCount property is set.</returns>
+        internal bool IsSetPartsCount()
+        {
+            return this.partsCount.HasValue;
+        }
+
+        /// <summary>
         /// The Server-side encryption algorithm to be used with the customer provided key.
         ///  
         /// </summary>
@@ -371,6 +393,32 @@ namespace Amazon.S3.Model
             set { this.serverSideEncryptionCustomerMethod = value; }
         }
 
+        /// <summary>
+        /// If present, indicates that the requester was successfully charged for the request.
+        /// </summary>
+        public RequestCharged RequestCharged
+        {
+            get { return this.requestCharged; }
+            set { this.requestCharged = value; }
+        }
+
+        /// <summary>
+        /// Checks to see if RequestCharged is set.
+        /// </summary>
+        /// <returns>true, if RequestCharged property is set.</returns>
+        internal bool IsSetRequestCharged()
+        {
+            return requestCharged != null;
+        }
+
+        /// <summary>
+        /// The number of tags, if any, on the object.
+        /// </summary>
+        public int TagCount
+        {
+            get { return this.tagCount ?? 0; }
+            set { this.tagCount = value; }
+        }
 
 #if BCL
 
@@ -521,6 +569,63 @@ namespace Amazon.S3.Model
                 throw new StreamSizeMismatchException(message, this.ContentLength, bytesWritten, this.ResponseMetadata.RequestId, amzId2, amzCfId);
             }
         }
+
+#if BCL45 || CORECLR
+        /// <summary>
+        /// Writes the content of the ResponseStream a file indicated by the filePath argument.
+        /// </summary>
+        /// <param name="filePath">The location where to write the ResponseStream</param>
+        /// <param name="append">Whether or not to append to the file if it exists</param>
+        /// <param name="cancellationToken">Cancellation token which can be used to cancel this operation.</param>
+        public async System.Threading.Tasks.Task WriteResponseStreamToFileAsync(string filePath, bool append, System.Threading.CancellationToken cancellationToken)
+        {
+            // Make sure the directory exists to write too.
+            FileInfo fi = new FileInfo(filePath);
+            Directory.CreateDirectory(fi.DirectoryName);
+
+            Stream downloadStream;
+            if (append && File.Exists(filePath))
+                downloadStream = new FileStream(filePath, FileMode.Append, FileAccess.Write, FileShare.Read, S3Constants.DefaultBufferSize);
+            else
+                downloadStream = new FileStream(filePath, FileMode.Create, FileAccess.ReadWrite, FileShare.Read, S3Constants.DefaultBufferSize);
+
+            try
+            {
+                long current = 0;
+#if CORECLR
+                Stream stream = this.ResponseStream;
+#else
+                Stream stream = new BufferedStream(this.ResponseStream);
+#endif
+                byte[] buffer = new byte[S3Constants.DefaultBufferSize];
+                int bytesRead = 0;
+                long totalIncrementTransferred = 0;
+                while ((bytesRead = await stream.ReadAsync(buffer, 0, buffer.Length)
+                    .ConfigureAwait(continueOnCapturedContext: false)) > 0)
+                {
+                    cancellationToken.ThrowIfCancellationRequested();
+
+                    await downloadStream.WriteAsync(buffer, 0, bytesRead)
+                        .ConfigureAwait(continueOnCapturedContext: false);
+                    current += bytesRead;
+                    totalIncrementTransferred += bytesRead;
+
+                    if (totalIncrementTransferred >= AWSSDKUtils.DefaultProgressUpdateInterval ||
+                        current == this.ContentLength)
+                    {
+                        this.OnRaiseProgressEvent(filePath, totalIncrementTransferred, current, this.ContentLength);
+                        totalIncrementTransferred = 0;
+                    }
+                }
+
+                ValidateWrittenStreamSize(current);
+            }
+            finally
+            {
+                downloadStream.Dispose();
+            }
+        }
+#endif
 #endif
     }
 
@@ -591,6 +696,6 @@ namespace Amazon.S3.Model
         /// </summary>
         public string FilePath { get; private set; }
     }
-#endif
+#endif    
 }
     

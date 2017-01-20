@@ -37,7 +37,7 @@ namespace Amazon.CognitoIdentity.Model
     /// <para>
     /// The OpenId token is valid for 15 minutes.
     /// </para>
-    /// 
+    ///  
     /// <para>
     /// This is a public API. You do not need any credentials to call this API.
     /// </para>
@@ -48,7 +48,10 @@ namespace Amazon.CognitoIdentity.Model
         private Dictionary<string, string> _logins = new Dictionary<string, string>();
 
         /// <summary>
-        /// Gets and sets the property IdentityId. A unique identifier in the format REGION:GUID.
+        /// Gets and sets the property IdentityId. 
+        /// <para>
+        /// A unique identifier in the format REGION:GUID.
+        /// </para>
         /// </summary>
         public string IdentityId
         {
@@ -63,10 +66,13 @@ namespace Amazon.CognitoIdentity.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Logins. A set of optional name-value pairs that map provider
-        /// names to provider tokens. When using graph.facebook.com and www.amazon.com, supply
-        /// the access_token returned from the provider's authflow. For accounts.google.com or
-        /// any other OpenId Connect provider, always include the id_token.
+        /// Gets and sets the property Logins. 
+        /// <para>
+        /// A set of optional name-value pairs that map provider names to provider tokens. When
+        /// using graph.facebook.com and www.amazon.com, supply the access_token returned from
+        /// the provider's authflow. For accounts.google.com, an Amazon Cognito Identity Provider,
+        /// or any other OpenId Connect provider, always include the <code>id_token</code>.
+        /// </para>
         /// </summary>
         public Dictionary<string, string> Logins
         {

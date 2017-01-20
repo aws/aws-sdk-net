@@ -39,7 +39,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        ///  A value that indicates the starting point for the next set of response records in
+        /// A value that indicates the starting point for the next set of response records in
         /// a subsequent request. If a value is returned in a response, you can retrieve the next
         /// set of records by providing this returned marker value in the <code>Marker</code>
         /// parameter and retrying the command. If the <code>Marker</code> field is empty, all
@@ -61,8 +61,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ParameterGroupFamily. 
         /// <para>
-        ///  The name of the cluster parameter group family to which the engine default parameters
-        /// apply. 
+        /// The name of the cluster parameter group family to which the engine default parameters
+        /// apply.
         /// </para>
         /// </summary>
         public string ParameterGroupFamily
@@ -80,7 +80,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property Parameters. 
         /// <para>
-        ///  The list of cluster default parameters. 
+        /// The list of cluster default parameters.
         /// </para>
         /// </summary>
         public List<Parameter> Parameters

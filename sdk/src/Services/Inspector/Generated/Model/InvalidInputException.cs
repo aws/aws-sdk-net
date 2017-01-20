@@ -25,7 +25,7 @@ namespace Amazon.Inspector.Model
     ///<summary>
     /// Inspector exception
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class InvalidInputException : AmazonInspectorException 
@@ -79,7 +79,7 @@ namespace Amazon.Inspector.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the InvalidInputException class with serialized data.
         /// </summary>

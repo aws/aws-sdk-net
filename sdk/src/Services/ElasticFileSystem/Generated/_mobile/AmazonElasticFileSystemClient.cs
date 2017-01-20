@@ -36,12 +36,80 @@ namespace Amazon.ElasticFileSystem
     /// <summary>
     /// Implementation for accessing ElasticFileSystem
     ///
-    /// Amazon Elastic File System
+    /// Amazon Elastic File System 
+    /// <para>
+    /// Amazon Elastic File System (Amazon EFS) provides simple, scalable file storage for
+    /// use with Amazon EC2 instances in the AWS Cloud. With Amazon EFS, storage capacity
+    /// is elastic, growing and shrinking automatically as you add and remove files, so your
+    /// applications have the storage they need, when they need it. For more information,
+    /// see the <a href="http://docs.aws.amazon.com/efs/latest/ug/api-reference.html">User
+    /// Guide</a>.
+    /// </para>
     /// </summary>
     public partial class AmazonElasticFileSystemClient : AmazonServiceClient, IAmazonElasticFileSystem
     {
         
         #region Constructors
+
+#if CORECLR
+    
+        /// <summary>
+        /// Constructs AmazonElasticFileSystemClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
+        public AmazonElasticFileSystemClient()
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonElasticFileSystemConfig()) { }
+
+        /// <summary>
+        /// Constructs AmazonElasticFileSystemClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
+        /// <param name="region">The region to connect.</param>
+        public AmazonElasticFileSystemClient(RegionEndpoint region)
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonElasticFileSystemConfig{RegionEndpoint = region}) { }
+
+        /// <summary>
+        /// Constructs AmazonElasticFileSystemClient with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSProfileName" value="AWS Default"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
+        /// <param name="config">The AmazonElasticFileSystemClient Configuration Object</param>
+        public AmazonElasticFileSystemClient(AmazonElasticFileSystemConfig config)
+            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+
+#endif
 
         /// <summary>
         /// Constructs AmazonElasticFileSystemClient with AWS Credentials
@@ -190,21 +258,31 @@ namespace Amazon.ElasticFileSystem
 
 
         /// <summary>
-        /// Creates a new, empty file system. The operation requires a creation token in the
-        /// request that Amazon EFS uses to ensure idempotent creation (calling the operation
-        /// with same creation token has no effect). If a file system does not currently exist
-        /// that is owned by the caller's AWS account with the specified creation token, this
-        /// operation does the following: 
+        /// Creates a new, empty file system. The operation requires a creation token in the request
+        /// that Amazon EFS uses to ensure idempotent creation (calling the operation with same
+        /// creation token has no effect). If a file system does not currently exist that is owned
+        /// by the caller's AWS account with the specified creation token, this operation does
+        /// the following:
         /// 
-        ///  <ul> <li>Creates a new, empty file system. The file system will have an Amazon EFS
-        /// assigned ID, and an initial lifecycle state "creating". </li> <li> Returns with the
-        /// description of the created file system. </li> </ul> 
+        ///  <ul> <li> 
+        /// <para>
+        /// Creates a new, empty file system. The file system will have an Amazon EFS assigned
+        /// ID, and an initial lifecycle state <code>creating</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Returns with the description of the created file system.
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// Otherwise, this operation returns a <code>FileSystemAlreadyExists</code> error with
         /// the ID of the existing file system.
         /// </para>
-        ///  <note>For basic use cases, you can use a randomly generated UUID for the creation
-        /// token.</note> 
+        ///  <note> 
+        /// <para>
+        /// For basic use cases, you can use a randomly generated UUID for the creation token.
+        /// </para>
+        ///  </note> 
         /// <para>
         ///  The idempotent operation allows you to retry a <code>CreateFileSystem</code> call
         /// without risk of creating an extra file system. This can happen when an initial call
@@ -212,22 +290,38 @@ namespace Amazon.ElasticFileSystem
         /// created. An example might be that a transport level timeout occurred or your connection
         /// was reset. As long as you use the same creation token, if the initial call had succeeded
         /// in creating a file system, the client can learn of its existence from the <code>FileSystemAlreadyExists</code>
-        /// error. 
+        /// error.
         /// </para>
-        ///  <note>The <code>CreateFileSystem</code> call returns while the file system's lifecycle
-        /// state is still "creating". You can check the file system creation status by calling
-        /// the <a>DescribeFileSystems</a> API, which among other things returns the file system
-        /// state.</note> 
+        ///  <note> 
         /// <para>
-        ///  After the file system is fully created, Amazon EFS sets its lifecycle state to "available",
-        /// at which point you can create one or more mount targets for the file system (<a>CreateMountTarget</a>)
-        /// in your VPC. You mount your Amazon EFS file system on an EC2 instances in your VPC
-        /// via the mount target. For more information, see <a href="http://docs.aws.amazon.com/efs/latest/ug/how-it-works.html">Amazon
-        /// EFS: How it Works</a> 
+        /// The <code>CreateFileSystem</code> call returns while the file system's lifecycle state
+        /// is still <code>creating</code>. You can check the file system creation status by calling
+        /// the <a>DescribeFileSystems</a> operation, which among other things returns the file
+        /// system state.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// This operation also takes an optional <code>PerformanceMode</code> parameter that
+        /// you choose for your file system. We recommend <code>generalPurpose</code> performance
+        /// mode for most file systems. File systems using the <code>maxIO</code> performance
+        /// mode can scale to higher levels of aggregate throughput and operations per second
+        /// with a tradeoff of slightly higher latencies for most file operations. The performance
+        /// mode can't be changed after the file system has been created. For more information,
+        /// see <a href="http://docs.aws.amazon.com/efs/latest/ug/performance.html#performancemodes.html">Amazon
+        /// EFS: Performance Modes</a>.
         /// </para>
         ///  
         /// <para>
-        ///  This operation requires permission for the <code>elasticfilesystem:CreateFileSystem</code>
+        /// After the file system is fully created, Amazon EFS sets its lifecycle state to <code>available</code>,
+        /// at which point you can create one or more mount targets for the file system in your
+        /// VPC. For more information, see <a>CreateMountTarget</a>. You mount your Amazon EFS
+        /// file system on an EC2 instances in your VPC via the mount target. For more information,
+        /// see <a href="http://docs.aws.amazon.com/efs/latest/ug/how-it-works.html">Amazon EFS:
+        /// How it Works</a>. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  This operation requires permissions for the <code>elasticfilesystem:CreateFileSystem</code>
         /// action. 
         /// </para>
         /// </summary>
@@ -252,6 +346,7 @@ namespace Amazon.ElasticFileSystem
         /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
         /// Returned if an error occurred on the server side.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreateFileSystem">REST API Reference for CreateFileSystem Operation</seealso>
         public Task<CreateFileSystemResponse> CreateFileSystemAsync(string creationToken, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new CreateFileSystemRequest();
@@ -269,6 +364,7 @@ namespace Amazon.ElasticFileSystem
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreateFileSystem">REST API Reference for CreateFileSystem Operation</seealso>
         public Task<CreateFileSystemResponse> CreateFileSystemAsync(CreateFileSystemRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateFileSystemRequestMarshaller();
@@ -300,6 +396,7 @@ namespace Amazon.ElasticFileSystem
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreateMountTarget">REST API Reference for CreateMountTarget Operation</seealso>
         public Task<CreateMountTargetResponse> CreateMountTargetAsync(CreateMountTargetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateMountTargetRequestMarshaller();
@@ -331,6 +428,7 @@ namespace Amazon.ElasticFileSystem
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreateTags">REST API Reference for CreateTags Operation</seealso>
         public Task<CreateTagsResponse> CreateTagsAsync(CreateTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateTagsRequestMarshaller();
@@ -354,27 +452,31 @@ namespace Amazon.ElasticFileSystem
 
 
         /// <summary>
-        /// Deletes a file system, permanently severing access to its contents. Upon return,
-        /// the file system no longer exists and you will not be able to access any contents of
-        /// the deleted file system. 
+        /// Deletes a file system, permanently severing access to its contents. Upon return, the
+        /// file system no longer exists and you can't access any contents of the deleted file
+        /// system.
         /// 
         ///  
         /// <para>
-        ///  You cannot delete a file system that is in use. That is, if the file system has any
+        ///  You can't delete a file system that is in use. That is, if the file system has any
         /// mount targets, you must first delete them. For more information, see <a>DescribeMountTargets</a>
         /// and <a>DeleteMountTarget</a>. 
         /// </para>
-        ///  <note>The <code>DeleteFileSystem</code> call returns while the file system state
-        /// is still "deleting". You can check the file system deletion status by calling the
-        /// <a>DescribeFileSystems</a> API, which returns a list of file systems in your account.
-        /// If you pass file system ID or creation token for the deleted file system, the <a>DescribeFileSystems</a>
-        /// will return a 404 "FileSystemNotFound" error.</note> 
+        ///  <note> 
         /// <para>
-        /// This operation requires permission for the <code>elasticfilesystem:DeleteFileSystem</code>
+        /// The <code>DeleteFileSystem</code> call returns while the file system state is still
+        /// <code>deleting</code>. You can check the file system deletion status by calling the
+        /// <a>DescribeFileSystems</a> operation, which returns a list of file systems in your
+        /// account. If you pass file system ID or creation token for the deleted file system,
+        /// the <a>DescribeFileSystems</a> returns a <code>404 FileSystemNotFound</code> error.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// This operation requires permissions for the <code>elasticfilesystem:DeleteFileSystem</code>
         /// action.
         /// </para>
         /// </summary>
-        /// <param name="fileSystemId">The ID of the file system you want to delete.</param>
+        /// <param name="fileSystemId">ID of the file system you want to delete.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -394,6 +496,7 @@ namespace Amazon.ElasticFileSystem
         /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
         /// Returned if an error occurred on the server side.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DeleteFileSystem">REST API Reference for DeleteFileSystem Operation</seealso>
         public Task<DeleteFileSystemResponse> DeleteFileSystemAsync(string fileSystemId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new DeleteFileSystemRequest();
@@ -411,6 +514,7 @@ namespace Amazon.ElasticFileSystem
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DeleteFileSystem">REST API Reference for DeleteFileSystem Operation</seealso>
         public Task<DeleteFileSystemResponse> DeleteFileSystemAsync(DeleteFileSystemRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteFileSystemRequestMarshaller();
@@ -434,34 +538,45 @@ namespace Amazon.ElasticFileSystem
 
 
         /// <summary>
-        /// Deletes the specified mount target. 
+        /// Deletes the specified mount target.
         /// 
         ///  
         /// <para>
-        ///  This operation forcibly breaks any mounts of the file system via the mount target
-        /// being deleted, which might disrupt instances or applications using those mounts. To
-        /// avoid applications getting cut off abruptly, you might consider unmounting any mounts
-        /// of the mount target, if feasible. The operation also deletes the associated network
-        /// interface. Uncommitted writes may be lost, but breaking a mount target using this
-        /// operation does not corrupt the file system itself. The file system you created remains.
-        /// You can mount an EC2 instance in your VPC using another mount target. 
+        /// This operation forcibly breaks any mounts of the file system via the mount target
+        /// that is being deleted, which might disrupt instances or applications using those mounts.
+        /// To avoid applications getting cut off abruptly, you might consider unmounting any
+        /// mounts of the mount target, if feasible. The operation also deletes the associated
+        /// network interface. Uncommitted writes may be lost, but breaking a mount target using
+        /// this operation does not corrupt the file system itself. The file system you created
+        /// remains. You can mount an EC2 instance in your VPC via another mount target.
         /// </para>
         ///  
         /// <para>
-        ///  This operation requires permission for the following action on the file system: 
+        /// This operation requires permissions for the following action on the file system:
         /// </para>
-        ///  <ul> <li> <code>elasticfilesystem:DeleteMountTarget</code> </li> </ul> <note>The
-        /// <code>DeleteMountTarget</code> call returns while the mount target state is still
-        /// "deleting". You can check the mount target deletion by calling the <a>DescribeMountTargets</a>
-        /// API, which returns a list of mount target descriptions for the given file system.
-        /// </note> 
+        ///  <ul> <li> 
         /// <para>
-        /// The operation also requires permission for the following Amazon EC2 action on the
+        ///  <code>elasticfilesystem:DeleteMountTarget</code> 
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// The <code>DeleteMountTarget</code> call returns while the mount target state is still
+        /// <code>deleting</code>. You can check the mount target deletion by calling the <a>DescribeMountTargets</a>
+        /// operation, which returns a list of mount target descriptions for the given file system.
+        /// 
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// The operation also requires permissions for the following Amazon EC2 action on the
         /// mount target's network interface:
         /// </para>
-        ///  <ul> <li> <code>ec2:DeleteNetworkInterface</code> </li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>ec2:DeleteNetworkInterface</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
-        /// <param name="mountTargetId">String. The ID of the mount target to delete.</param>
+        /// <param name="mountTargetId">ID of the mount target to delete (String).</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -481,6 +596,7 @@ namespace Amazon.ElasticFileSystem
         /// <exception cref="Amazon.ElasticFileSystem.Model.MountTargetNotFoundException">
         /// Returned if there is no mount target with the specified ID found in the caller's account.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DeleteMountTarget">REST API Reference for DeleteMountTarget Operation</seealso>
         public Task<DeleteMountTargetResponse> DeleteMountTargetAsync(string mountTargetId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new DeleteMountTargetRequest();
@@ -498,6 +614,7 @@ namespace Amazon.ElasticFileSystem
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DeleteMountTarget">REST API Reference for DeleteMountTarget Operation</seealso>
         public Task<DeleteMountTargetResponse> DeleteMountTargetAsync(DeleteMountTargetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteMountTargetRequestMarshaller();
@@ -529,6 +646,7 @@ namespace Amazon.ElasticFileSystem
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DeleteTags">REST API Reference for DeleteTags Operation</seealso>
         public Task<DeleteTagsResponse> DeleteTagsAsync(DeleteTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteTagsRequestMarshaller();
@@ -560,6 +678,7 @@ namespace Amazon.ElasticFileSystem
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeFileSystems">REST API Reference for DescribeFileSystems Operation</seealso>
         public Task<DescribeFileSystemsResponse> DescribeFileSystemsAsync(DescribeFileSystemsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeFileSystemsRequestMarshaller();
@@ -589,12 +708,12 @@ namespace Amazon.ElasticFileSystem
         /// 
         ///  
         /// <para>
-        /// This operation requires permission for the <code>elasticfilesystem:DescribeMountTargets</code>
-        /// action, on either the file system id that you specify in <code>FileSystemId</code>,
+        /// This operation requires permissions for the <code>elasticfilesystem:DescribeMountTargets</code>
+        /// action, on either the file system ID that you specify in <code>FileSystemId</code>,
         /// or on the file system of the mount target that you specify in <code>MountTargetId</code>.
         /// </para>
         /// </summary>
-        /// <param name="fileSystemId">Optional. String. The ID of the file system whose mount targets you want to list. It must be included in your request if <code>MountTargetId</code> is not included.</param>
+        /// <param name="fileSystemId">(Optional) ID of the file system whose mount targets you want to list (String). It must be included in your request if <code>MountTargetId</code> is not included.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -614,6 +733,7 @@ namespace Amazon.ElasticFileSystem
         /// <exception cref="Amazon.ElasticFileSystem.Model.MountTargetNotFoundException">
         /// Returned if there is no mount target with the specified ID found in the caller's account.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeMountTargets">REST API Reference for DescribeMountTargets Operation</seealso>
         public Task<DescribeMountTargetsResponse> DescribeMountTargetsAsync(string fileSystemId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new DescribeMountTargetsRequest();
@@ -631,6 +751,7 @@ namespace Amazon.ElasticFileSystem
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeMountTargets">REST API Reference for DescribeMountTargets Operation</seealso>
         public Task<DescribeMountTargetsResponse> DescribeMountTargetsAsync(DescribeMountTargetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeMountTargetsRequestMarshaller();
@@ -655,18 +776,26 @@ namespace Amazon.ElasticFileSystem
 
         /// <summary>
         /// Returns the security groups currently in effect for a mount target. This operation
-        /// requires that the network interface of the mount target has been created and the life
-        /// cycle state of the mount target is not "deleted".
+        /// requires that the network interface of the mount target has been created and the lifecycle
+        /// state of the mount target is not <code>deleted</code>.
         /// 
         ///  
         /// <para>
         /// This operation requires permissions for the following actions:
         /// </para>
-        ///  <ul> <li> <code>elasticfilesystem:DescribeMountTargetSecurityGroups</code> action
-        /// on the mount target's file system. </li> <li> <code>ec2:DescribeNetworkInterfaceAttribute</code>
-        /// action on the mount target's network interface. </li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>elasticfilesystem:DescribeMountTargetSecurityGroups</code> action on the mount
+        /// target's file system. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ec2:DescribeNetworkInterfaceAttribute</code> action on the mount target's network
+        /// interface. 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
-        /// <param name="mountTargetId">The ID of the mount target whose security groups you want to retrieve.</param>
+        /// <param name="mountTargetId">ID of the mount target whose security groups you want to retrieve.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -685,6 +814,7 @@ namespace Amazon.ElasticFileSystem
         /// <exception cref="Amazon.ElasticFileSystem.Model.MountTargetNotFoundException">
         /// Returned if there is no mount target with the specified ID found in the caller's account.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeMountTargetSecurityGroups">REST API Reference for DescribeMountTargetSecurityGroups Operation</seealso>
         public Task<DescribeMountTargetSecurityGroupsResponse> DescribeMountTargetSecurityGroupsAsync(string mountTargetId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new DescribeMountTargetSecurityGroupsRequest();
@@ -702,6 +832,7 @@ namespace Amazon.ElasticFileSystem
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeMountTargetSecurityGroups">REST API Reference for DescribeMountTargetSecurityGroups Operation</seealso>
         public Task<DescribeMountTargetSecurityGroupsResponse> DescribeMountTargetSecurityGroupsAsync(DescribeMountTargetSecurityGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeMountTargetSecurityGroupsRequestMarshaller();
@@ -726,16 +857,16 @@ namespace Amazon.ElasticFileSystem
 
         /// <summary>
         /// Returns the tags associated with a file system. The order of tags returned in the
-        /// response of one <code>DescribeTags</code> call, and the order of tags returned across
-        /// the responses of a multi-call iteration (when using pagination), is unspecified. 
+        /// response of one <code>DescribeTags</code> call and the order of tags returned across
+        /// the responses of a multi-call iteration (when using pagination) is unspecified. 
         /// 
         ///  
         /// <para>
-        ///  This operation requires permission for the <code>elasticfilesystem:DescribeTags</code>
+        ///  This operation requires permissions for the <code>elasticfilesystem:DescribeTags</code>
         /// action. 
         /// </para>
         /// </summary>
-        /// <param name="fileSystemId">The ID of the file system whose tag set you want to retrieve.</param>
+        /// <param name="fileSystemId">ID of the file system whose tag set you want to retrieve.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -752,6 +883,7 @@ namespace Amazon.ElasticFileSystem
         /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
         /// Returned if an error occurred on the server side.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeTags">REST API Reference for DescribeTags Operation</seealso>
         public Task<DescribeTagsResponse> DescribeTagsAsync(string fileSystemId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new DescribeTagsRequest();
@@ -769,6 +901,7 @@ namespace Amazon.ElasticFileSystem
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeTags">REST API Reference for DescribeTags Operation</seealso>
         public Task<DescribeTagsResponse> DescribeTagsAsync(DescribeTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeTagsRequestMarshaller();
@@ -800,6 +933,7 @@ namespace Amazon.ElasticFileSystem
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/ModifyMountTargetSecurityGroups">REST API Reference for ModifyMountTargetSecurityGroups Operation</seealso>
         public Task<ModifyMountTargetSecurityGroupsResponse> ModifyMountTargetSecurityGroupsAsync(ModifyMountTargetSecurityGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ModifyMountTargetSecurityGroupsRequestMarshaller();

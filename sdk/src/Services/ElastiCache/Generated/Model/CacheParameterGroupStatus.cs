@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// The status of the cache parameter group.
+    /// Status of the cache parameter group.
     /// </summary>
     public partial class CacheParameterGroupStatus
     {

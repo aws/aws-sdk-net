@@ -43,6 +43,12 @@ namespace Amazon.DirectConnect.Model
     /// the virtual interface will be in 'Confirming' state, and will not be available for
     /// handling traffic.
     /// </para>
+    ///  
+    /// <para>
+    /// When creating an IPv6 public virtual interface (addressFamily is 'ipv6'), the customer
+    /// and amazon address fields should be left blank to use auto-assigned IPv6 space. Custom
+    /// IPv6 Addresses are currently not supported.
+    /// </para>
     /// </summary>
     public partial class AllocatePublicVirtualInterfaceRequest : AmazonDirectConnectRequest
     {

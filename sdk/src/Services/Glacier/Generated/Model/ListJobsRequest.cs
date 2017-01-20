@@ -30,9 +30,9 @@ namespace Amazon.Glacier.Model
     /// <summary>
     /// Container for the parameters to the ListJobs operation.
     /// This operation lists jobs for a vault, including jobs that are in-progress and jobs
-    /// that have recently finished. 
+    /// that have recently finished.
     /// 
-    ///  <note>
+    ///  <note> 
     /// <para>
     /// Amazon Glacier retains recently completed jobs for a period before deleting them;
     /// however, it eventually removes completed jobs. The output of completed jobs can be
@@ -41,46 +41,46 @@ namespace Amazon.Glacier.Model
     /// or your first attempt to download it fails. For example, suppose you start an archive
     /// retrieval job to download an archive. After the job completes, you start to download
     /// the archive but encounter a network error. In this scenario, you can retry and download
-    /// the archive while the job exists. 
+    /// the archive while the job exists.
     /// </para>
-    /// </note> 
+    ///  </note> 
     /// <para>
     /// To retrieve an archive or retrieve a vault inventory from Amazon Glacier, you first
     /// initiate a job, and after the job completes, you download the data. For an archive
-    /// retrieval, the output is the archive data, and for an inventory retrieval, it is the
-    /// inventory list. The List Job operation returns a list of these jobs sorted by job
-    /// initiation time.
+    /// retrieval, the output is the archive data. For an inventory retrieval, it is the inventory
+    /// list. The List Job operation returns a list of these jobs sorted by job initiation
+    /// time.
     /// </para>
     ///  
     /// <para>
-    /// This List Jobs operation supports pagination. By default, this operation returns up
-    /// to 1,000 jobs in the response. You should always check the response for a <code>marker</code>
-    /// at which to continue the list; if there are no more items the <code>marker</code>
-    /// is <code>null</code>. To return a list of jobs that begins at a specific job, set
-    /// the <code>marker</code> request parameter to the value you obtained from a previous
-    /// List Jobs request. You can also limit the number of jobs returned in the response
-    /// by specifying the <code>limit</code> parameter in the request.
+    /// The List Jobs operation supports pagination. You should always check the response
+    /// <code>Marker</code> field. If there are no more jobs to list, the <code>Marker</code>
+    /// field is set to <code>null</code>. If there are more jobs to list, the <code>Marker</code>
+    /// field is set to a non-null value, which you can use to continue the pagination of
+    /// the list. To return a list of jobs that begins at a specific job, set the marker request
+    /// parameter to the <code>Marker</code> value for that job that you obtained from a previous
+    /// List Jobs request.
     /// </para>
     ///  
     /// <para>
-    /// Additionally, you can filter the jobs list returned by specifying an optional <code>statuscode</code>
-    /// (InProgress, Succeeded, or Failed) and <code>completed</code> (true, false) parameter.
-    /// The <code>statuscode</code> allows you to specify that only jobs that match a specified
-    /// status are returned. The <code>completed</code> parameter allows you to specify that
-    /// only jobs in a specific completion state are returned.
+    /// You can set a maximum limit for the number of jobs returned in the response by specifying
+    /// the <code>limit</code> parameter in the request. The default limit is 1000. The number
+    /// of jobs returned might be fewer than the limit, but the number of returned jobs never
+    /// exceeds the limit.
     /// </para>
     ///  
     /// <para>
-    /// An AWS account has full permission to perform all operations (actions). However, AWS
-    /// Identity and Access Management (IAM) users don't have any permissions by default.
-    /// You must grant them explicit permission to perform specific actions. For more information,
-    /// see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">Access
-    /// Control Using AWS Identity and Access Management (IAM)</a>.
+    /// Additionally, you can filter the jobs list returned by specifying the optional <code>statuscode</code>
+    /// parameter or <code>completed</code> parameter, or both. Using the <code>statuscode</code>
+    /// parameter, you can specify to return only jobs that match either the <code>InProgress</code>,
+    /// <code>Succeeded</code>, or <code>Failed</code> status. Using the <code>completed</code>
+    /// parameter, you can specify to return only jobs that were completed (<code>true</code>)
+    /// or jobs that were not completed (<code>false</code>).
     /// </para>
     ///  
     /// <para>
-    /// For the underlying REST API, go to <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-jobs-get.html">List
-    /// Jobs </a> 
+    /// For the underlying REST API, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-jobs-get.html">List
+    /// Jobs</a>. 
     /// </para>
     /// </summary>
     public partial class ListJobsRequest : AmazonGlacierRequest
@@ -109,7 +109,7 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Instantiates ListJobsRequest with the parameterized properties
         /// </summary>
-        /// <param name="accountId">The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens (apos-apos) in the ID. </param>
+        /// <param name="accountId">The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </param>
         /// <param name="vaultName">The name of the vault.</param>
         public ListJobsRequest(string accountId, string vaultName)
         {
@@ -121,10 +121,10 @@ namespace Amazon.Glacier.Model
         /// Gets and sets the property AccountId. 
         /// <para>
         /// The <code>AccountId</code> value is the AWS account ID of the account that owns the
-        /// vault. You can either specify an AWS account ID or optionally a single apos<code>-</code>apos
+        /// vault. You can either specify an AWS account ID or optionally a single '<code>-</code>'
         /// (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the
         /// credentials used to sign the request. If you use an account ID, do not include any
-        /// hyphens (apos-apos) in the ID. 
+        /// hyphens ('-') in the ID. 
         /// </para>
         /// </summary>
         public string AccountId
@@ -142,7 +142,7 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Gets and sets the property Completed. 
         /// <para>
-        /// Specifies the state of the jobs to return. You can specify <code>true</code> or <code>false</code>.
+        /// The state of the jobs to return. You can specify <code>true</code> or <code>false</code>.
         /// </para>
         /// </summary>
         public bool Completed
@@ -160,8 +160,9 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
-        /// Specifies that the response be limited to the specified number of items or fewer.
-        /// If not specified, the List Jobs operation returns up to 1,000 jobs.
+        /// The maximum number of jobs to be returned. The default limit is 1000. The number of
+        /// jobs returned might be fewer than the specified limit, but the number of returned
+        /// jobs never exceeds the limit.
         /// </para>
         /// </summary>
         public int Limit
@@ -181,7 +182,7 @@ namespace Amazon.Glacier.Model
         /// <para>
         /// An opaque string used for pagination. This value specifies the job at which the listing
         /// of jobs should begin. Get the marker value from a previous List Jobs response. You
-        /// need only include the marker if you are continuing the pagination of results started
+        /// only need to include the marker if you are continuing the pagination of results started
         /// in a previous List Jobs request.
         /// </para>
         /// </summary>
@@ -200,8 +201,8 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Gets and sets the property Statuscode. 
         /// <para>
-        /// Specifies the type of job status to return. You can specify the following values:
-        /// "InProgress", "Succeeded", or "Failed".
+        /// The type of job status to return. You can specify the following values: <code>InProgress</code>,
+        /// <code>Succeeded</code>, or <code>Failed</code>.
         /// </para>
         /// </summary>
         public string Statuscode

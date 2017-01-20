@@ -33,6 +33,7 @@ namespace Amazon.ElasticMapReduce.Model
     public partial class Cluster
     {
         private List<Application> _applications = new List<Application>();
+        private string _autoScalingRole;
         private bool? _autoTerminate;
         private List<Configuration> _configurations = new List<Configuration>();
         private Ec2InstanceAttributes _ec2InstanceAttributes;
@@ -44,6 +45,8 @@ namespace Amazon.ElasticMapReduce.Model
         private string _releaseLabel;
         private string _requestedAmiVersion;
         private string _runningAmiVersion;
+        private ScaleDownBehavior _scaleDownBehavior;
+        private string _securityConfiguration;
         private string _serviceRole;
         private ClusterStatus _status;
         private List<Tag> _tags = new List<Tag>();
@@ -69,6 +72,26 @@ namespace Amazon.ElasticMapReduce.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AutoScalingRole. 
+        /// <para>
+        /// An IAM role for automatic scaling policies. The default role is <code>EMR_AutoScaling_DefaultRole</code>.
+        /// The IAM role provides permissions that the automatic scaling feature requires to launch
+        /// and terminate EC2 instances in an instance group.
+        /// </para>
+        /// </summary>
+        public string AutoScalingRole
+        {
+            get { return this._autoScalingRole; }
+            set { this._autoScalingRole = value; }
+        }
+
+        // Check to see if AutoScalingRole property is set
+        internal bool IsSetAutoScalingRole()
+        {
+            return this._autoScalingRole != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property AutoTerminate. 
         /// <para>
         /// Specifies whether the cluster should terminate after completing all steps.
@@ -87,11 +110,11 @@ namespace Amazon.ElasticMapReduce.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Configurations. <note>
+        /// Gets and sets the property Configurations. <note> 
         /// <para>
         /// Amazon EMR releases 4.x or later.
         /// </para>
-        /// </note> 
+        ///  </note> 
         /// <para>
         /// The list of Configurations supplied to the EMR cluster.
         /// </para>
@@ -109,7 +132,11 @@ namespace Amazon.ElasticMapReduce.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Ec2InstanceAttributes.
+        /// Gets and sets the property Ec2InstanceAttributes. 
+        /// <para>
+        /// Provides information about the EC2 instances in a cluster grouped by category. For
+        /// example, key name, subnet ID, IAM instance profile, and so on.
+        /// </para>
         /// </summary>
         public Ec2InstanceAttributes Ec2InstanceAttributes
         {
@@ -257,7 +284,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property RunningAmiVersion. 
         /// <para>
-        /// The AMI version running on this cluster. 
+        /// The AMI version running on this cluster.
         /// </para>
         /// </summary>
         public string RunningAmiVersion
@@ -270,6 +297,52 @@ namespace Amazon.ElasticMapReduce.Model
         internal bool IsSetRunningAmiVersion()
         {
             return this._runningAmiVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScaleDownBehavior. 
+        /// <para>
+        /// The way that individual Amazon EC2 instances terminate when an automatic scale-in
+        /// activity occurs or an instance group is resized. <code>TERMINATE_AT_INSTANCE_HOUR</code>
+        /// indicates that Amazon EMR terminates nodes at the instance-hour boundary, regardless
+        /// of when the request to terminate the instance was submitted. This option is only available
+        /// with Amazon EMR 5.1.0 and later and is the default for clusters created using that
+        /// version. <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR blacklists
+        /// and drains tasks from nodes before terminating the Amazon EC2 instances, regardless
+        /// of the instance-hour boundary. With either behavior, Amazon EMR removes the least
+        /// active nodes first and blocks instance termination if it could lead to HDFS corruption.
+        /// <code>TERMINATE_AT_TASK_COMPLETION</code> is available only in Amazon EMR version
+        /// 4.1.0 and later, and is the default for versions of Amazon EMR earlier than 5.1.0.
+        /// </para>
+        /// </summary>
+        public ScaleDownBehavior ScaleDownBehavior
+        {
+            get { return this._scaleDownBehavior; }
+            set { this._scaleDownBehavior = value; }
+        }
+
+        // Check to see if ScaleDownBehavior property is set
+        internal bool IsSetScaleDownBehavior()
+        {
+            return this._scaleDownBehavior != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecurityConfiguration. 
+        /// <para>
+        /// The name of the security configuration applied to the cluster.
+        /// </para>
+        /// </summary>
+        public string SecurityConfiguration
+        {
+            get { return this._securityConfiguration; }
+            set { this._securityConfiguration = value; }
+        }
+
+        // Check to see if SecurityConfiguration property is set
+        internal bool IsSetSecurityConfiguration()
+        {
+            return this._securityConfiguration != null;
         }
 
         /// <summary>

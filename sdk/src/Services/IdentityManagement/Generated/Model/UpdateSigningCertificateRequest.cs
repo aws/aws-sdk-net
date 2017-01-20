@@ -55,7 +55,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Instantiates UpdateSigningCertificateRequest with the parameterized properties
         /// </summary>
-        /// <param name="certificateId">The ID of the signing certificate you want to update. The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters that can consist of any upper or lowercased letter or digit.</param>
+        /// <param name="certificateId">The ID of the signing certificate you want to update. This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can consist of any upper or lowercased letter or digit.</param>
         /// <param name="status"> The status you want to assign to the certificate. <code>Active</code> means the certificate can be used for API calls to AWS, while <code>Inactive</code> means the certificate cannot be used.</param>
         public UpdateSigningCertificateRequest(string certificateId, StatusType status)
         {
@@ -70,8 +70,8 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
-        /// is a string of characters that can consist of any upper or lowercased letter or digit.
+        /// This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
+        /// a string of characters that can consist of any upper or lowercased letter or digit.
         /// </para>
         /// </summary>
         public string CertificateId
@@ -113,9 +113,9 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
-        /// is a string of characters consisting of upper and lowercase alphanumeric characters
-        /// with no spaces. You can also include any of the following characters: =,.@-
+        /// This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
+        /// a string of characters consisting of upper and lowercase alphanumeric characters with
+        /// no spaces. You can also include any of the following characters: =,.@-
         /// </para>
         /// </summary>
         public string UserName

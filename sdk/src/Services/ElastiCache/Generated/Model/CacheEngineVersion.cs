@@ -79,6 +79,11 @@ namespace Amazon.ElastiCache.Model
         /// <para>
         /// The name of the cache parameter group family associated with this cache engine.
         /// </para>
+        ///  
+        /// <para>
+        /// Valid values are: <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code>
+        /// | <code>redis3.2</code> 
+        /// </para>
         /// </summary>
         public string CacheParameterGroupFamily
         {

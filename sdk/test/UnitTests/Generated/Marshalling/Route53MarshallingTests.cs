@@ -19,6 +19,7 @@
 
 
 using System;
+using System.Globalization;
 using System.IO;
 using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -328,6 +329,37 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Xml")]
         [TestCategory("Route53")]
+        public void CreateVPCAssociationAuthorizationMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateVPCAssociationAuthorization");
+
+            var request = InstantiateClassGenerator.Execute<CreateVPCAssociationAuthorizationRequest>();
+            var marshaller = new CreateVPCAssociationAuthorizationRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            RequestValidator.Validate("CreateVPCAssociationAuthorization", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = CreateVPCAssociationAuthorizationResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as CreateVPCAssociationAuthorizationResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("Route53")]
         public void DeleteHealthCheckMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteHealthCheck");
@@ -483,6 +515,37 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Xml")]
         [TestCategory("Route53")]
+        public void DeleteVPCAssociationAuthorizationMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteVPCAssociationAuthorization");
+
+            var request = InstantiateClassGenerator.Execute<DeleteVPCAssociationAuthorizationRequest>();
+            var marshaller = new DeleteVPCAssociationAuthorizationRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            RequestValidator.Validate("DeleteVPCAssociationAuthorization", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = DeleteVPCAssociationAuthorizationResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as DeleteVPCAssociationAuthorizationResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("Route53")]
         public void DisassociateVPCFromHostedZoneMarshallTest()
         {
             var operation = service_model.FindOperation("DisassociateVPCFromHostedZone");
@@ -537,37 +600,6 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = GetChangeResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as GetChangeResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
-        }
-
-        
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Rest_Xml")]
-        [TestCategory("Route53")]
-        public void GetChangeDetailsMarshallTest()
-        {
-            var operation = service_model.FindOperation("GetChangeDetails");
-
-            var request = InstantiateClassGenerator.Execute<GetChangeDetailsRequest>();
-            var marshaller = new GetChangeDetailsRequestMarshaller();
-
-            var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("GetChangeDetails", request, internalRequest, service_model);            
-
-            var webResponse = new WebResponseData
-            {
-                Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
-                }
-            };
-            
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
-            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
-            ResponseUnmarshaller unmarshaller = GetChangeDetailsResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as GetChangeDetailsResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
@@ -940,68 +972,6 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = GetTrafficPolicyInstanceCountResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as GetTrafficPolicyInstanceCountResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
-        }
-
-        
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Rest_Xml")]
-        [TestCategory("Route53")]
-        public void ListChangeBatchesByHostedZoneMarshallTest()
-        {
-            var operation = service_model.FindOperation("ListChangeBatchesByHostedZone");
-
-            var request = InstantiateClassGenerator.Execute<ListChangeBatchesByHostedZoneRequest>();
-            var marshaller = new ListChangeBatchesByHostedZoneRequestMarshaller();
-
-            var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("ListChangeBatchesByHostedZone", request, internalRequest, service_model);            
-
-            var webResponse = new WebResponseData
-            {
-                Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
-                }
-            };
-            
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
-            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
-            ResponseUnmarshaller unmarshaller = ListChangeBatchesByHostedZoneResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as ListChangeBatchesByHostedZoneResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
-        }
-
-        
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Rest_Xml")]
-        [TestCategory("Route53")]
-        public void ListChangeBatchesByRRSetMarshallTest()
-        {
-            var operation = service_model.FindOperation("ListChangeBatchesByRRSet");
-
-            var request = InstantiateClassGenerator.Execute<ListChangeBatchesByRRSetRequest>();
-            var marshaller = new ListChangeBatchesByRRSetRequestMarshaller();
-
-            var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("ListChangeBatchesByRRSet", request, internalRequest, service_model);            
-
-            var webResponse = new WebResponseData
-            {
-                Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
-                }
-            };
-            
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
-            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
-            ResponseUnmarshaller unmarshaller = ListChangeBatchesByRRSetResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context)
-                as ListChangeBatchesByRRSetResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
@@ -1405,6 +1375,68 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = ListTrafficPolicyVersionsResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as ListTrafficPolicyVersionsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("Route53")]
+        public void ListVPCAssociationAuthorizationsMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListVPCAssociationAuthorizations");
+
+            var request = InstantiateClassGenerator.Execute<ListVPCAssociationAuthorizationsRequest>();
+            var marshaller = new ListVPCAssociationAuthorizationsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            RequestValidator.Validate("ListVPCAssociationAuthorizations", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = ListVPCAssociationAuthorizationsResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as ListVPCAssociationAuthorizationsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("Route53")]
+        public void TestDNSAnswerMarshallTest()
+        {
+            var operation = service_model.FindOperation("TestDNSAnswer");
+
+            var request = InstantiateClassGenerator.Execute<TestDNSAnswerRequest>();
+            var marshaller = new TestDNSAnswerRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            RequestValidator.Validate("TestDNSAnswer", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = TestDNSAnswerResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as TestDNSAnswerResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 

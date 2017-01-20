@@ -292,7 +292,7 @@ namespace <#=this.Config.Namespace#>
         }
 
 <#
-        AddBeginAsyncDocumentation(operation.Name);
+        AddBeginAsyncDocumentation(operation);
 		if(operation.IsDeprecated)
 		{
 #>
@@ -310,7 +310,7 @@ namespace <#=this.Config.Namespace#>
         }
 
 <#
-        AddEndAsyncDocumentation(operation.Name);		
+        AddEndAsyncDocumentation(operation);		
 		if(operation.IsDeprecated)
 		{
 #>

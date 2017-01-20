@@ -1,0 +1,49 @@
+{
+  "version": "1.0.0-*",
+  "description": "",
+  "authors": [ "" ],
+
+  "dependencies": {
+    "Core": "1.0.0-*"
+  },
+
+  "buildOptions": {
+    "outputName": "AWSSDK.Lightsail",
+    "define": [ "CORECLR", "AWS_ASYNC_API" ],
+    "compile": {
+      "exclude": [
+        "**/_pcl/*",
+        "**/_pcl-sl/*",
+        "**/_bcl35/*",
+        "**/_bcl45/*",
+        "**/_bcl/*",
+        "**/_bcl+sl/*",
+        "**/_bcl+unity/*",
+        "**/_unity/*",
+        "**/_android/*",
+        "**/_ios/*",
+        "**/_pclReference/*",
+        "**/_win8/*",
+        "**/_winPhone81/*",
+        "**/_winPhoneSilverlight8/*",
+        "**/_winstorage/*",
+        "**/Custom/SyncManager/*"
+      ]
+    },
+    "xmlDoc": true
+  },
+
+  "frameworks": {
+    "netstandard1.3": {
+      "buildOptions": {
+        "define": [ "ADD_SUPPORT_IORDERED_DICTIONARY", "ADD_SUPPORT_ICLONEABLE" ]
+      },
+      "dependencies": {
+        "System.Collections": "4.0.11",
+        "System.Linq": "4.1.0",
+        "System.Security.Cryptography.Csp": "4.0.0",
+        "Microsoft.CSharp": "4.0.1"
+      }
+    }
+  }
+}

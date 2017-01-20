@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// See the example below for a sample response.
+    /// Detailed health information about the Amazon EC2 instances in an AWS Elastic Beanstalk
+    /// environment.
     /// </summary>
     public partial class DescribeInstancesHealthResponse : AmazonWebServiceResponse
     {
@@ -39,7 +40,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property InstanceHealthList. 
         /// <para>
-        /// Contains the response body with information about the health of the instance.
+        /// Detailed health information about each instance.
         /// </para>
         /// </summary>
         public List<SingleInstanceHealth> InstanceHealthList
@@ -57,7 +58,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The next token.
+        /// Pagination token for the next page of results, if available.
         /// </para>
         /// </summary>
         public string NextToken
@@ -75,7 +76,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property RefreshedAt. 
         /// <para>
-        /// The date and time the information was last refreshed.
+        /// The date and time that the health information was retrieved.
         /// </para>
         /// </summary>
         public DateTime RefreshedAt

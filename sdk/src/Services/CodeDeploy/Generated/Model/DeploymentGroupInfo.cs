@@ -32,7 +32,9 @@ namespace Amazon.CodeDeploy.Model
     /// </summary>
     public partial class DeploymentGroupInfo
     {
+        private AlarmConfiguration _alarmConfiguration;
         private string _applicationName;
+        private AutoRollbackConfiguration _autoRollbackConfiguration;
         private List<AutoScalingGroup> _autoScalingGroups = new List<AutoScalingGroup>();
         private string _deploymentConfigName;
         private string _deploymentGroupId;
@@ -42,6 +44,24 @@ namespace Amazon.CodeDeploy.Model
         private string _serviceRoleArn;
         private RevisionLocation _targetRevision;
         private List<TriggerConfig> _triggerConfigurations = new List<TriggerConfig>();
+
+        /// <summary>
+        /// Gets and sets the property AlarmConfiguration. 
+        /// <para>
+        /// A list of alarms associated with the deployment group.
+        /// </para>
+        /// </summary>
+        public AlarmConfiguration AlarmConfiguration
+        {
+            get { return this._alarmConfiguration; }
+            set { this._alarmConfiguration = value; }
+        }
+
+        // Check to see if AlarmConfiguration property is set
+        internal bool IsSetAlarmConfiguration()
+        {
+            return this._alarmConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ApplicationName. 
@@ -59,6 +79,25 @@ namespace Amazon.CodeDeploy.Model
         internal bool IsSetApplicationName()
         {
             return this._applicationName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AutoRollbackConfiguration. 
+        /// <para>
+        /// Information about the automatic rollback configuration associated with the deployment
+        /// group.
+        /// </para>
+        /// </summary>
+        public AutoRollbackConfiguration AutoRollbackConfiguration
+        {
+            get { return this._autoRollbackConfiguration; }
+            set { this._autoRollbackConfiguration = value; }
+        }
+
+        // Check to see if AutoRollbackConfiguration property is set
+        internal bool IsSetAutoRollbackConfiguration()
+        {
+            return this._autoRollbackConfiguration != null;
         }
 
         /// <summary>
@@ -208,7 +247,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property TriggerConfigurations. 
         /// <para>
-        /// A list of associated triggers. 
+        /// Information about triggers associated with the deployment group.
         /// </para>
         /// </summary>
         public List<TriggerConfig> TriggerConfigurations

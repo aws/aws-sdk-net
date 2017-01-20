@@ -25,7 +25,7 @@ namespace Amazon.IdentityManagement.Model
     ///<summary>
     /// IdentityManagementService exception
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class LimitExceededException : AmazonIdentityManagementServiceException 
@@ -79,7 +79,7 @@ namespace Amazon.IdentityManagement.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the LimitExceededException class with serialized data.
         /// </summary>
