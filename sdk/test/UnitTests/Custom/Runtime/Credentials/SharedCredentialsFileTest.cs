@@ -141,7 +141,8 @@ namespace AWSSDK.UnitTests
             .AppendLine("[updated_profile]")
             .AppendLine("aws_access_key_id=session_aws_access_key_id")
             .AppendLine("aws_secret_access_key=session_aws_secret_access_key")
-            .Append("aws_session_token=session_aws_session_token")
+            .AppendLine("aws_session_token=session_aws_session_token")
+            .Append("property=value")
             .ToString();
 
         private static readonly CredentialProfileOptions UpdatedProfileTypeOptionsBefore = new CredentialProfileOptions()
@@ -151,10 +152,16 @@ namespace AWSSDK.UnitTests
             Token = "session_aws_session_token"
         };
 
+        private static readonly Dictionary<string, string> UpdatedProfileTypePropertiesBeforeAndAfter = new Dictionary<string, string>()
+        {
+            { "property", "value" }
+        };
+
         private static readonly string UpdatedProfileTypeTextAfter = new StringBuilder()
             .AppendLine("[updated_profile]")
             .AppendLine("aws_access_key_id=session_aws_access_key_id")
             .AppendLine("aws_secret_access_key=session_aws_secret_access_key")
+            .Append("property=value")
             .ToString();
 
         private static readonly CredentialProfileOptions UpdatedProfileTypeOptionsAfter = new CredentialProfileOptions()
@@ -187,6 +194,7 @@ namespace AWSSDK.UnitTests
 
         private static readonly string UpdatedProfileWithPropertiesTextAfter = new StringBuilder()
             .AppendLine("[basic_profile]")
+            .AppendLine("property1=value1")
             .AppendLine("aws_access_key_id=session_aws_access_key_id")
             .AppendLine("aws_secret_access_key=session_aws_secret_access_key")
             .AppendLine("property3=valueZ")
@@ -195,6 +203,8 @@ namespace AWSSDK.UnitTests
 
         private static readonly Dictionary<string, string> UpdatedProfileWithPropertiesAfter = new Dictionary<string, string>()
         {
+            { "property1", "value1" },
+            { "property2", null },
             { "property3", "valueZ" },
             { "property4", "value4" }
         };
@@ -337,8 +347,10 @@ namespace AWSSDK.UnitTests
         {
             using (var tester = new SharedCredentialsFileTestFixture())
             {
-                tester.AssertWriteProfile("updated_profile", UpdatedProfileTypeOptionsBefore, UpdatedProfileTypeTextBefore);
-                tester.AssertWriteProfile("updated_profile", UpdatedProfileTypeOptionsAfter, UpdatedProfileTypeTextAfter);
+                tester.AssertWriteProfile("updated_profile", UpdatedProfileTypeOptionsBefore,
+                    UpdatedProfileTypePropertiesBeforeAndAfter, UpdatedProfileTypeTextBefore);
+                tester.AssertWriteProfile("updated_profile", UpdatedProfileTypeOptionsAfter,
+                    UpdatedProfileTypePropertiesBeforeAndAfter, UpdatedProfileTypeTextAfter);
             }
         }
 

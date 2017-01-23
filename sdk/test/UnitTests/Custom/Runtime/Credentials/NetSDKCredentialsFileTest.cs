@@ -51,6 +51,28 @@ namespace AWSSDK.UnitTests
             .AppendLine("    }")
             .AppendLine("}").ToString();
 
+        private static readonly string SessionProfileText = new StringBuilder()
+            .AppendLine("{")
+            .AppendLine("    \"" + UniqueKey + "\" : {")
+            .AppendLine("        \"DisplayName\" : \"ProfileName1\",")
+            .AppendLine("        \"AWSAccessKey\" : \"access_key_id\",")
+            .AppendLine("        \"AWSSecretKey\" : \"secret_key_id\",")
+            .AppendLine("        \"SessionToken\" : \"session_token\",")
+            .AppendLine("        \"" + SomeOtherKey + "\" : \"" + SomeOtherValue + "\"")
+            .AppendLine("    }")
+            .AppendLine("}").ToString();
+
+        private static readonly string SessionProfileTextAfterUpdate = new StringBuilder()
+            .AppendLine("{")
+            .AppendLine("    \"" + UniqueKey + "\" : {")
+            .AppendLine("        \"DisplayName\" : \"ProfileName1\",")
+            .AppendLine("        \"AWSAccessKey\" : \"access_key_id\",")
+            .AppendLine("        \"AWSSecretKey\" : \"secret_key_id\",")
+            .AppendLine("        \"ProfileType\"  : \"AWS\",")
+            .AppendLine("        \"" + SomeOtherKey + "\" : \"" + SomeOtherValue + "\"")
+            .AppendLine("    }")
+            .Append("}").ToString();
+
         private static readonly string InvalidProfileText = new StringBuilder()
             .AppendLine("{")
             .AppendLine("    \"" + UniqueKey + "\" : {")
@@ -204,7 +226,6 @@ namespace AWSSDK.UnitTests
             }
         }
 
-
         [TestMethod]
         public void ListProfileNamesEmpty()
         {
@@ -279,6 +300,23 @@ namespace AWSSDK.UnitTests
                 var profiles = tester.ProfileStore.ListProfiles();
                 Assert.AreEqual(1, profiles.Count);
                 Assert.AreEqual("SessionProfile", profiles[0].Name);
+            }
+        }
+
+        [TestMethod]
+        public void UpdateProfileType()
+        {
+            using (var tester = new NetSDKCredentialsFileTestFixture(SessionProfileText))
+            {
+                var options = new CredentialProfileOptions
+                {
+                    AccessKey = "access_key_id",
+                    SecretKey = "secret_key_id"
+                };
+                var newProfile = new CredentialProfile("ProfileName1", options);
+                tester.ProfileStore.RegisterProfile(newProfile);
+
+                tester.AssertFileContents(SessionProfileTextAfterUpdate);
             }
         }
 

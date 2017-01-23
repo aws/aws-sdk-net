@@ -83,6 +83,16 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual(fileExists, File.Exists(Path.Combine(DirectoryPath, filename)));
         }
 
+        public void AssertFileContents(string fileContents)
+        {
+            AssertFileContents(MainFilename, fileContents);
+        }
+
+        public void AssertFileContents(string filename, string fileContents)
+        {
+            Assert.AreEqual(fileContents.Trim(), File.ReadAllText(Path.Combine(DirectoryPath, filename)).Trim());
+        }
+
         public void AssertObjectCount(int expectedCount)
         {
             AssertObjectCount(MainFilename, expectedCount);

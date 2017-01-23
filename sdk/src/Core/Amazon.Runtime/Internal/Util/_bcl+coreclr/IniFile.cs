@@ -158,7 +158,6 @@ namespace Amazon.Runtime.Internal.Util
         /// 2. A null value for a property denotes that it should be deleted from the section
         /// 3. If any properties don't exist they will be appended to the end of the section
         /// in the same order they appear in the SortedDictionary.
-        /// 4. Any existing properties not in the SortedDictionary will be deleted.
         /// </summary>
         /// <param name="sectionName">name of the section to operate on</param>
         /// <param name="properties">properties to add/update/delete</param>
@@ -200,12 +199,6 @@ namespace Amazon.Runtime.Internal.Util
                             }
                         }
                         propertiesLookup.Remove(propertyName);
-                    }
-                    else
-                    {
-                        // delete the line
-                        Lines.RemoveAt(lineNumber);
-                        propertyDeleted = true;
                     }
 
                     if (!propertyDeleted)

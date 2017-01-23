@@ -44,34 +44,6 @@ namespace Amazon.Runtime.Internal
             mappedNames = new HashSet<string>(nameMapping.Values.Where(v => !string.IsNullOrEmpty(v)), StringComparer.OrdinalIgnoreCase);
         }
 
-        public Dictionary<string, string> Convert(CredentialProfileOptions profileOptions)
-        {
-            var dictionary = new Dictionary<string, string>();
-            var properties = typeof(CredentialProfileOptions).GetProperties();
-
-            // ensure repeatable order
-            Array.Sort(properties.Select((p)=>p.Name).ToArray(), properties);
-
-            foreach (var property in properties)
-            {
-                var value = (string)property.GetValue(profileOptions, null);
-                if (!string.IsNullOrEmpty(value))
-                {
-                    if (nameMapping[property.Name] == null)
-                    {
-                        throw new ArgumentException(string.Format(CultureInfo.InvariantCulture,
-                              "The CredentialProfileOptions.{0} property is not populated in this CredentialProfilePropertyMapping.",
-                              property.Name));
-                    }
-                    else
-                    {
-                        dictionary.Add(nameMapping[property.Name], value);
-                    }
-                }
-            }
-            return dictionary;
-        }
-
         /// <summary>
         /// Separate the profileDictionary into its parts.
         /// profileDictionary = profileOptions + reservedProperties + userProperties
@@ -211,5 +183,29 @@ namespace Amazon.Runtime.Internal
                 }
             }
         }
+
+        private Dictionary<string, string> Convert(CredentialProfileOptions profileOptions)
+        {
+            var dictionary = new Dictionary<string, string>();
+            var properties = typeof(CredentialProfileOptions).GetProperties();
+
+            // ensure repeatable order
+            Array.Sort(properties.Select((p) => p.Name).ToArray(), properties);
+
+            foreach (var property in properties)
+            {
+                var value = (string)property.GetValue(profileOptions, null);
+                if (string.IsNullOrEmpty(value))
+                    value = null;
+
+                if (nameMapping[property.Name] != null)
+                {
+                    dictionary.Add(nameMapping[property.Name], value);
+                }
+            }
+            return dictionary;
+        }
+
+
     }
 }

@@ -98,12 +98,7 @@ namespace Amazon.Util
 
             var settings = GetSettings();
             SettingsCollection.ObjectSettings objectSettings;
-            if (TryGetObjectSettings(displayName, settings, out objectSettings))
-            {
-                // clear it out - this is an update
-                objectSettings.Clear();
-            }
-            else
+            if (!TryGetObjectSettings(displayName, settings, out objectSettings))
             {
                 string actualUniqueKey;
                 if (UseDisplayNameAsUniqueKey)
@@ -118,11 +113,14 @@ namespace Amazon.Util
 
             foreach (var pair in properties)
             {
-                objectSettings[pair.Key] = pair.Value;
+                if (pair.Value == null)
+                    objectSettings.Remove(pair.Key);
+                else
+                    objectSettings[pair.Key] = pair.Value;
             }
 
             // Set the display name after copying all the properties.
-            // If it's a copy, the new name will overwrite the old one.
+            // If this call is part of a copy operation, the new name will overwrite the old one.
             if (!UseDisplayNameAsUniqueKey)
             {
                 objectSettings[SettingsConstants.DisplayNameField] = displayName;
