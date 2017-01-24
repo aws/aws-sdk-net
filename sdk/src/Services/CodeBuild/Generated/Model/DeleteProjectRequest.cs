@@ -38,7 +38,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the build project to delete.
+        /// The name of the build project.
         /// </para>
         /// </summary>
         public string Name

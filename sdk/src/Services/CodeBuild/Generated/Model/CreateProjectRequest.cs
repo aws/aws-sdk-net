@@ -46,7 +46,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property Artifacts. 
         /// <para>
-        /// Information about the build project's build output artifacts.
+        /// Information about the build output artifacts for the build project.
         /// </para>
         /// </summary>
         public ProjectArtifacts Artifacts
@@ -64,7 +64,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A meaningful description of the build project.
+        /// A description that makes the build project easy to identify.
         /// </para>
         /// </summary>
         public string Description
@@ -83,7 +83,7 @@ namespace Amazon.CodeBuild.Model
         /// Gets and sets the property EncryptionKey. 
         /// <para>
         /// The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for
-        /// encrypting the build project's build output artifacts.
+        /// encrypting the build output artifacts.
         /// </para>
         ///  
         /// <para>
@@ -106,7 +106,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property Environment. 
         /// <para>
-        /// Information about the build project's build environment.
+        /// Information about the build environment for the build project.
         /// </para>
         /// </summary>
         public ProjectEnvironment Environment
@@ -124,7 +124,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The build project's name.
+        /// The name of the build project.
         /// </para>
         /// </summary>
         public string Name
@@ -142,9 +142,8 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property ServiceRole. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role
-        /// that enables AWS CodeBuild to interact with dependent AWS services on behalf of the
-        /// AWS account.
+        /// The ARN of the AWS Identity and Access Management (IAM) role that enables AWS CodeBuild
+        /// to interact with dependent AWS services on behalf of the AWS account.
         /// </para>
         /// </summary>
         public string ServiceRole
@@ -162,7 +161,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property Source. 
         /// <para>
-        /// Information about the build project's build input source code.
+        /// Information about the build input source code for the build project.
         /// </para>
         /// </summary>
         public ProjectSource Source
@@ -203,8 +202,8 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property TimeoutInMinutes. 
         /// <para>
-        /// How long in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait until timing
-        /// out any related build that does not get marked as completed. The default is 60 minutes.
+        /// How long, in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait until timing
+        /// out any build that has not been marked as completed. The default is 60 minutes.
         /// </para>
         /// </summary>
         public int TimeoutInMinutes

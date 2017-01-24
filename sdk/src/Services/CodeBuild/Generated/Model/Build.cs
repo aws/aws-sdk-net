@@ -52,7 +52,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The build's Amazon Resource Name (ARN).
+        /// The Amazon Resource Name (ARN) of the build.
         /// </para>
         /// </summary>
         public string Arn
@@ -70,7 +70,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property Artifacts. 
         /// <para>
-        /// Information about the build's output artifacts.
+        /// Information about the output artifacts for the build.
         /// </para>
         /// </summary>
         public BuildArtifacts Artifacts
@@ -88,8 +88,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property BuildComplete. 
         /// <para>
-        /// Whether the build has finished. Valid values include true if completed; otherwise,
-        /// false.
+        /// Whether the build has finished. True if completed; otherwise, false.
         /// </para>
         /// </summary>
         public bool BuildComplete
@@ -107,7 +106,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property BuildStatus. 
         /// <para>
-        /// The build's current status. Valid values include:
+        /// The current status of the build. Valid values include:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -150,7 +149,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property CurrentPhase. 
         /// <para>
-        /// The build's current build phase.
+        /// The current build phase.
         /// </para>
         /// </summary>
         public string CurrentPhase
@@ -204,7 +203,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The build's unique ID.
+        /// The unique ID for the build.
         /// </para>
         /// </summary>
         public string Id
@@ -226,12 +225,12 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If AWS CodePipeline started the build, the pipeline's name, for example <code>codepipeline/my-demo-pipeline</code>.
+        /// If AWS CodePipeline started the build, the pipeline's name (for example, <code>codepipeline/my-demo-pipeline</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// If an AWS Identity and Access Management (IAM) user started the build, the user's
-        /// name, for example <code>MyUserName</code>.
+        /// name (for example <code>MyUserName</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -272,8 +271,8 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property Phases. 
         /// <para>
-        /// Information about all previous build phases that have completed, and information about
-        /// any current build phase that has not yet completed.
+        /// Information about all previous build phases that are completed and information about
+        /// any current build phase that is not yet complete.
         /// </para>
         /// </summary>
         public List<BuildPhase> Phases
@@ -291,7 +290,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property ProjectName. 
         /// <para>
-        /// The build project's name.
+        /// The name of the build project.
         /// </para>
         /// </summary>
         public string ProjectName
@@ -363,8 +362,8 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property TimeoutInMinutes. 
         /// <para>
-        /// How long in minutes for AWS CodeBuild to wait to timeout this build if it does not
-        /// get marked as completed.
+        /// How long, in minutes, for AWS CodeBuild to wait before timing out this build if it
+        /// does not get marked as completed.
         /// </para>
         /// </summary>
         public int TimeoutInMinutes

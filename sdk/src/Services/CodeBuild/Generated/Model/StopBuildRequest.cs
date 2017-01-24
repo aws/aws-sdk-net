@@ -30,12 +30,6 @@ namespace Amazon.CodeBuild.Model
     /// <summary>
     /// Container for the parameters to the StopBuild operation.
     /// Attempts to stop running a build.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// Completed builds cannot be stopped.
-    /// </para>
-    ///  </note>
     /// </summary>
     public partial class StopBuildRequest : AmazonCodeBuildRequest
     {
@@ -44,7 +38,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The ID of the build to attempt to stop running.
+        /// The ID of the build.
         /// </para>
         /// </summary>
         public string Id

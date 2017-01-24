@@ -44,7 +44,7 @@ namespace Amazon.CodeBuild.Model
         /// Gets and sets the property ArtifactsOverride. 
         /// <para>
         /// Build output artifact settings that override, for this build only, the latest ones
-        /// already defined in the corresponding build project.
+        /// already defined in the build project.
         /// </para>
         /// </summary>
         public ProjectArtifacts ArtifactsOverride
@@ -63,7 +63,7 @@ namespace Amazon.CodeBuild.Model
         /// Gets and sets the property BuildspecOverride. 
         /// <para>
         /// A build spec declaration that overrides, for this build only, the latest one already
-        /// defined in the corresponding build project.
+        /// defined in the build project.
         /// </para>
         /// </summary>
         public string BuildspecOverride
@@ -82,7 +82,7 @@ namespace Amazon.CodeBuild.Model
         /// Gets and sets the property EnvironmentVariablesOverride. 
         /// <para>
         /// A set of environment variables that overrides, for this build only, the latest ones
-        /// already defined in the corresponding build project.
+        /// already defined in the build project.
         /// </para>
         /// </summary>
         public List<EnvironmentVariable> EnvironmentVariablesOverride
@@ -147,8 +147,8 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property TimeoutInMinutesOverride. 
         /// <para>
-        /// The number of build timeout minutes, from 5 to 480 (8 hours) that overrides, for this
-        /// build only, the latest setting already defined in the corresponding build project.
+        /// The number of build timeout minutes, from 5 to 480 (8 hours), that overrides, for
+        /// this build only, the latest setting already defined in the build project.
         /// </para>
         /// </summary>
         public int TimeoutInMinutesOverride

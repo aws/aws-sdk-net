@@ -61,7 +61,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property DurationInSeconds. 
         /// <para>
-        /// How long, in seconds, between the build's phase starting and ending times.
+        /// How long, in seconds, between the starting and ending times of the build's phase.
         /// </para>
         /// </summary>
         public long DurationInSeconds
@@ -97,7 +97,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property PhaseStatus. 
         /// <para>
-        /// The build phase's current status. Valid values include:
+        /// The current status of the build phase. Valid values include:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -140,7 +140,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property PhaseType. 
         /// <para>
-        /// The build phase's name. Valid values include:
+        /// The name of the build phase. Valid values include:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -148,7 +148,7 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>COMPLETED</code>: The build has completed.
+        ///  <code>COMPLETED</code>: The build has been completed.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -180,7 +180,7 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UPLOAD_ARTIFACTS</code>: Build output artifacts are being uploaded to output
+        ///  <code>UPLOAD_ARTIFACTS</code>: Build output artifacts are being uploaded to the output
         /// location.
         /// </para>
         ///  </li> </ul>

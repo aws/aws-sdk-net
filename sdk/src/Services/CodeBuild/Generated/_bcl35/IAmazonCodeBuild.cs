@@ -31,11 +31,11 @@ namespace Amazon.CodeBuild
     ///
     /// AWS CodeBuild 
     /// <para>
-    /// AWS CodeBuild is a fully-managed build service in the cloud. AWS CodeBuild compiles
+    /// AWS CodeBuild is a fully managed build service in the cloud. AWS CodeBuild compiles
     /// your source code, runs unit tests, and produces artifacts that are ready to deploy.
     /// AWS CodeBuild eliminates the need to provision, manage, and scale your own build servers.
     /// It provides prepackaged build environments for the most popular programming languages
-    /// and build tools such as Apach Maven, Gradle, and more. You can also fully customize
+    /// and build tools, such as Apach Maven, Gradle, and more. You can also fully customize
     /// build environments in AWS CodeBuild to use your own build tools. AWS CodeBuild scales
     /// automatically to meet peak build requests, and you pay only for the build time you
     /// consume. For more information about AWS CodeBuild, see the <i>AWS CodeBuild User Guide</i>.
@@ -108,7 +108,7 @@ namespace Amazon.CodeBuild
 
 
         /// <summary>
-        /// Gets information about one or more builds.
+        /// Gets information about builds.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchGetBuilds service method.</param>
         /// 
@@ -151,7 +151,7 @@ namespace Amazon.CodeBuild
 
 
         /// <summary>
-        /// Gets information about one or more build projects.
+        /// Gets information about build projects.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchGetProjects service method.</param>
         /// 
@@ -511,12 +511,6 @@ namespace Amazon.CodeBuild
 
         /// <summary>
         /// Attempts to stop running a build.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// Completed builds cannot be stopped.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopBuild service method.</param>
         /// 
@@ -562,7 +556,7 @@ namespace Amazon.CodeBuild
 
 
         /// <summary>
-        /// Changes the settings of an existing build project.
+        /// Changes the settings of a build project.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateProject service method.</param>
         /// 

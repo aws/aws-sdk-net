@@ -39,7 +39,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property Location. 
         /// <para>
-        /// Information about the build artifacts' location.
+        /// Information about the location of the build artifacts.
         /// </para>
         /// </summary>
         public string Location
@@ -66,8 +66,8 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This value is available only if the related build project's <code>packaging</code>
-        /// value is set to <code>zip</code>.
+        /// This value is available only if the build project's <code>packaging</code> value is
+        /// set to <code>ZIP</code>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -95,8 +95,8 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This value is available only if the related build project's <code>packaging</code>
-        /// value is set to <code>zip</code>.
+        /// This value is available only if the build project's <code>packaging</code> value is
+        /// set to <code>ZIP</code>.
         /// </para>
         ///  </note>
         /// </summary>

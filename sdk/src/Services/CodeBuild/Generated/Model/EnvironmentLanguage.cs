@@ -57,7 +57,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property Language. 
         /// <para>
-        /// The programming language for the related set of Docker images.
+        /// The programming language for the Docker images.
         /// </para>
         /// </summary>
         public LanguageType Language

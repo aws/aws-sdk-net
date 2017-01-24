@@ -33,8 +33,9 @@ namespace Amazon.CodeBuild.Model
     /// 
     ///  
     /// <para>
-    /// This information is only for the AWS CodeBuild console's use. Your code should not
-    /// get or set this information directly.
+    /// This information is for the AWS CodeBuild console's use only. Your code should not
+    /// get or set this information directly (unless the build project's source <code>type</code>
+    /// value is <code>GITHUB</code>).
     /// </para>
     /// </summary>
     public partial class SourceAuth
@@ -63,7 +64,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The authorization type to use. The only valid value is <code>oauth</code>, which represents
+        /// The authorization type to use. The only valid value is <code>OAUTH</code>, which represents
         /// the OAuth authorization type.
         /// </para>
         /// </summary>

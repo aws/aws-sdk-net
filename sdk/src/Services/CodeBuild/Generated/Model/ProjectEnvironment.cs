@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeBuild.Model
 {
     /// <summary>
-    /// Information about the build project's build environment.
+    /// Information about the build environment of the build project.
     /// </summary>
     public partial class ProjectEnvironment
     {
@@ -109,11 +109,6 @@ namespace Amazon.CodeBuild.Model
         /// Gets and sets the property Type. 
         /// <para>
         /// The type of build environment to use for related builds.
-        /// </para>
-        ///  
-        /// <para>
-        /// The only valid value is <code>LINUX_CONTAINER</code>, which represents a Linux-based
-        /// build environment.
         /// </para>
         /// </summary>
         public EnvironmentType Type

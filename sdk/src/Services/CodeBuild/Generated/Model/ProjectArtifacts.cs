@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeBuild.Model
 {
     /// <summary>
-    /// Information about the build project's build output artifacts.
+    /// Information about the build output artifacts for the build project.
     /// </summary>
     public partial class ProjectArtifacts
     {
@@ -58,8 +58,6 @@ namespace Amazon.CodeBuild.Model
         ///  </li> <li> 
         /// <para>
         /// If <code>type</code> is set to <code>S3</code>, this is the name of the output bucket.
-        /// If <code>path</code> is not also specified, then <code>location</code> can also specify
-        /// the path of the output artifact in the output bucket.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -253,11 +251,11 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The build output artifact's type. Valid values include:
+        /// The type of build output artifact. Valid values include:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CODEPIPELINE</code>: The build project with have build output generated through
+        ///  <code>CODEPIPELINE</code>: The build project will have build output generated through
         /// AWS CodePipeline.
         /// </para>
         ///  </li> <li> 

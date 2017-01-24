@@ -38,7 +38,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The Docker image's description.
+        /// The description of the Docker image.
         /// </para>
         /// </summary>
         public string Description
@@ -56,7 +56,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The Docker image's name.
+        /// The name of the Docker image.
         /// </para>
         /// </summary>
         public string Name

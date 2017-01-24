@@ -38,7 +38,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The environment variable's name or key.
+        /// The name or key of the environment variable.
         /// </para>
         /// </summary>
         public string Name
@@ -56,7 +56,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The environment variable's value.
+        /// The value of the environment variable.
         /// </para>
         /// </summary>
         public string Value

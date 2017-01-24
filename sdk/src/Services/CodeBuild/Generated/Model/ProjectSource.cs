@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeBuild.Model
 {
     /// <summary>
-    /// Information about the build project's build input source code.
+    /// Information about the build input source code for the build project.
     /// </summary>
     public partial class ProjectSource
     {
@@ -45,8 +45,9 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  
         /// <para>
-        /// This information is only for the AWS CodeBuild console's use. Your code should not
-        /// get or set this information directly.
+        /// This information is for the AWS CodeBuild console's use only. Your code should not
+        /// get or set this information directly (unless the build project's source <code>type</code>
+        /// value is <code>GITHUB</code>).
         /// </para>
         /// </summary>
         public SourceAuth Auth
@@ -64,7 +65,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property Buildspec. 
         /// <para>
-        /// The build spec declaration to use for this build project's related builds.
+        /// The build spec declaration to use for the builds in this build project.
         /// </para>
         ///  
         /// <para>
@@ -109,11 +110,13 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For source code in a GitHub repository, the HTTPS clone URL, including the user name
-        /// and personal access token, to the repository that contains the source code and the
-        /// build spec (for example, <code>https://<i>login-user-name</i>:<i>personal-access-token</i>@github.com/<i>repo-owner-name</i>/<i>repo-name</i>.git</code>).
-        /// For more information, see <a href="https://help.github.com/articles/creating-an-access-token-for-command-line-use/">Creating
-        /// an Access Token for Command-Line Use</a> on the GitHub Help website.
+        /// For source code in a GitHub repository, instead of specifying a value here, you connect
+        /// your AWS account to your GitHub account. To do this, use the AWS CodeBuild console
+        /// to begin creating a build project, and follow the on-screen instructions to complete
+        /// the connection. (After you have connected to your GitHub account, you do not need
+        /// to finish creating the build project, and you may then leave the AWS CodeBuild console.)
+        /// To instruct AWS CodeBuild to then use this connection, in the <code>source</code>
+        /// object, set the <code>auth</code> object's <code>type</code> value to <code>OAUTH</code>.
         /// </para>
         ///  </li> </ul>
         /// </summary>

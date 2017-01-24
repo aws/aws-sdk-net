@@ -37,7 +37,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property Build. 
         /// <para>
-        /// Information about the build that was attempted to be stopped.
+        /// Information about the build.
         /// </para>
         /// </summary>
         public Build Build

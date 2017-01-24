@@ -29,7 +29,7 @@ namespace Amazon.CodeBuild.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateProject operation.
-    /// Changes the settings of an existing build project.
+    /// Changes the settings of a build project.
     /// </summary>
     public partial class UpdateProjectRequest : AmazonCodeBuildRequest
     {
@@ -46,7 +46,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property Artifacts. 
         /// <para>
-        /// Information to be changed about the build project's build output artifacts.
+        /// Information to be changed about the build output artifacts for the build project.
         /// </para>
         /// </summary>
         public ProjectArtifacts Artifacts
@@ -83,7 +83,7 @@ namespace Amazon.CodeBuild.Model
         /// Gets and sets the property EncryptionKey. 
         /// <para>
         /// The replacement AWS Key Management Service (AWS KMS) customer master key (CMK) to
-        /// be used for encrypting the build project's build output artifacts.
+        /// be used for encrypting the build output artifacts.
         /// </para>
         ///  
         /// <para>
@@ -106,7 +106,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property Environment. 
         /// <para>
-        /// Information to be changed about the build project's build environment.
+        /// Information to be changed about the build environment for the build project.
         /// </para>
         /// </summary>
         public ProjectEnvironment Environment
@@ -124,11 +124,11 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the existing build project to change settings.
+        /// The name of the build project.
         /// </para>
         ///  <note> 
         /// <para>
-        /// You cannot change an existing build project's name.
+        /// You cannot change a build project's name.
         /// </para>
         ///  </note>
         /// </summary>
@@ -147,9 +147,8 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property ServiceRole. 
         /// <para>
-        /// The replacement Amazon Resource Name (ARN) of the AWS Identity and Access Management
-        /// (IAM) role that enables AWS CodeBuild to interact with dependent AWS services on behalf
-        /// of the AWS account.
+        /// The replacement ARN of the AWS Identity and Access Management (IAM) role that enables
+        /// AWS CodeBuild to interact with dependent AWS services on behalf of the AWS account.
         /// </para>
         /// </summary>
         public string ServiceRole
@@ -167,7 +166,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property Source. 
         /// <para>
-        /// Information to be changed about the build project's build input source code.
+        /// Information to be changed about the build input source code for the build project.
         /// </para>
         /// </summary>
         public ProjectSource Source
@@ -209,7 +208,7 @@ namespace Amazon.CodeBuild.Model
         /// Gets and sets the property TimeoutInMinutes. 
         /// <para>
         /// The replacement value in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait
-        /// to timeout any related build that did not get marked as completed.
+        /// before timing out any related build that did not get marked as completed.
         /// </para>
         /// </summary>
         public int TimeoutInMinutes

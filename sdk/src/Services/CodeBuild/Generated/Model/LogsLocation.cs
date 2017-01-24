@@ -57,7 +57,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property GroupName. 
         /// <para>
-        /// The name of the Amazon CloudWatch Logs group for the associated build logs.
+        /// The name of the Amazon CloudWatch Logs group for the build logs.
         /// </para>
         /// </summary>
         public string GroupName
@@ -75,7 +75,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property StreamName. 
         /// <para>
-        /// The name of the Amazon CloudWatch Logs stream for the associated build logs.
+        /// The name of the Amazon CloudWatch Logs stream for the build logs.
         /// </para>
         /// </summary>
         public string StreamName
