@@ -46,7 +46,7 @@ namespace Amazon.Runtime.Internal
             return value;
         }
 
-        public static Guid EnsureUniqueKey(CredentialProfile profile, ICredentialProfileStore profileStore)
+        public static Guid EnsureUniqueKeyAssigned(CredentialProfile profile, ICredentialProfileStore profileStore)
         {
             if (!profile.UniqueKey.HasValue)
             {

@@ -186,9 +186,9 @@ namespace Amazon.Runtime
                 () => new AppConfigAWSRegion(),
 #if BCL || CORECLR
                 () => new EnvironmentVariableAWSRegion(),
-                () => new InstanceProfileAWSRegion(),
                 () => new ProfileAWSRegion(netSDKCredentialsFile, NetSDKCredentialsFile.DefaultProfileName),
-                () => new ProfileAWSRegion(sharedCredentialsFile, SharedCredentialsFile.DefaultProfileName)
+                () => new ProfileAWSRegion(sharedCredentialsFile, SharedCredentialsFile.DefaultProfileName),
+                () => new InstanceProfileAWSRegion()
 #endif
             };
 

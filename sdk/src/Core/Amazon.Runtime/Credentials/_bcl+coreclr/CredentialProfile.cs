@@ -45,6 +45,7 @@ namespace Amazon.Runtime
 
         /// <summary>
         /// The unique key for this CredentialProfile.
+        /// This key is used by the Visual Studio Tooklit to associate external artifacts with this profile.
         /// </summary>
         internal Guid? UniqueKey { get; set; }
 

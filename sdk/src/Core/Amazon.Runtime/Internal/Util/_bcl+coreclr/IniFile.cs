@@ -87,9 +87,10 @@ namespace Amazon.Runtime.Internal.Util
             int sectionLineNumber = 0;
             if (TrySeekSection(oldSectionName, ref sectionLineNumber))
             {
-                int dummyLineNumber = 0;
-                if (TrySeekSection(newSectionName, ref dummyLineNumber))
-                    throw new ArgumentException("Cannot rename section. The destination section " + newSectionName + " already exists.");
+                int lineNumber = 0;
+                if (TrySeekSection(newSectionName, ref lineNumber))
+                    throw new ArgumentException("Cannot rename section. The destination section " + newSectionName +
+                        " already exists." + GetLineMessage(lineNumber));
                 else
                     Lines[sectionLineNumber] = sectionNamePrefix + newSectionName + sectionNameSuffix;
             }
@@ -109,9 +110,10 @@ namespace Amazon.Runtime.Internal.Util
             int currentLineNumber = 0;
             if (TrySeekSection(fromSectionName, ref currentLineNumber))
             {
-                int dummyLineNumber = 0;
-                if (TrySeekSection(toSectionName, ref dummyLineNumber))
-                    throw new ArgumentException("Cannot copy section. The destination section " + toSectionName + " already exists.");
+                int lineNumber = 0;
+                if (TrySeekSection(toSectionName, ref lineNumber))
+                    throw new ArgumentException("Cannot copy section. The destination section " + toSectionName +
+                        " already exists." + GetLineMessage(lineNumber));
                 else
                 {
                     // keep the first line number
@@ -493,7 +495,12 @@ namespace Amazon.Runtime.Internal.Util
 
         private static string GetPropertyLine(string propertyName, string propertyValue)
         {
-            return propertyName + keyValueSeparator + propertyValue;
+            return string.Concat(propertyName, keyValueSeparator, propertyValue);
+        }
+
+        private string GetLineMessage(int lineNumber)
+        {
+            return string.Concat("(", this.FilePath, ":line ", lineNumber + 1, ")");
         }
     }
 }

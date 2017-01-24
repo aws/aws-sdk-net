@@ -25,7 +25,8 @@ namespace Amazon.Util
     /// <summary>
     /// Manager to access an SDK encrypted store file.
     /// SDK encrypted store files are loacted under the current user's AppData\Local\AWSToolkit folder.
-    /// These files are encrypted on a per user, per machine basis using the Windows Data Protection API.
+    /// These files are encrypted on a per user, per machine basis using the Windows Data Protection API;
+    /// they cannot be used by any other user or on any other machine.
     ///
     /// This class is not threadsafe.
     /// </summary>
@@ -104,7 +105,7 @@ namespace Amazon.Util
                 if (UseDisplayNameAsUniqueKey)
                     actualUniqueKey = displayName;
                 else if (string.IsNullOrEmpty(uniqueKey))
-                    actualUniqueKey = Guid.NewGuid().ToString();
+                    actualUniqueKey = Guid.NewGuid().ToString("D");
                 else
                     actualUniqueKey = uniqueKey;
 

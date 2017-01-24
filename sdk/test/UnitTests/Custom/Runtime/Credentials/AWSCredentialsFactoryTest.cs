@@ -19,6 +19,7 @@ using Amazon.Util;
 using AWSSDK_DotNet.IntegrationTests.Utils;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using System.Collections.Generic;
 using System.IO;
 
 namespace AWSSDK.UnitTests
@@ -44,7 +45,7 @@ namespace AWSSDK.UnitTests
         private const string UserIdentityCallbackErrorAnonymous = "The credential options represent FederatedAWSCredentials that specify a user identity.  This is not allowed here.  " +
             "Please use credential options for FederatedAWSCredentials without an explicit user identity, or a different type of credentials.";
 
-        private static readonly MemoryCredentialProfileStore ProfileStore = new MemoryCredentialProfileStore();
+        private static readonly MemoryCredentialProfileSource ProfileStore = new MemoryCredentialProfileSource();
 
         private static readonly CredentialProfile InvalidProfile =
             new CredentialProfile("invalid_profile", new CredentialProfileOptions
@@ -458,6 +459,21 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual(expected.SAMLEndpoint.Name, actual.SAMLEndpoint.Name);
             Assert.AreEqual(expected.RoleArn, actual.RoleArn);
             Assert.AreEqual(expected.Options.UserIdentity, actual.Options.UserIdentity);
+        }
+
+        private class MemoryCredentialProfileSource : ICredentialProfileSource
+        {
+            public Dictionary<string, CredentialProfile> Profiles { get; private set; }
+
+            public MemoryCredentialProfileSource()
+            {
+                Profiles = new Dictionary<string, CredentialProfile>();
+            }
+
+            public bool TryGetProfile(string profileName, out CredentialProfile profile)
+            {
+                return Profiles.TryGetValue(profileName, out profile);
+            }
         }
     }
 }

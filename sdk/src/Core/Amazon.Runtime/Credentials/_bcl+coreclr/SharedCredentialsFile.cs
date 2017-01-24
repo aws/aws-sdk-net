@@ -35,7 +35,7 @@ namespace Amazon.Runtime
     {
         public const string DefaultProfileName = "default";
 
-        private const string UniqueKeyField = "vs_toolkit_artifact_guid";
+        private const string ToolkitArtifactGuidField = "toolkit_artifact_guid";
         private const string RegionField = "region";
         private const string ProfileMarker = "profile";
         private const string ConfigFileName = "config";
@@ -46,7 +46,7 @@ namespace Amazon.Runtime
 
         private static readonly HashSet<string> ReservedPropertyNames = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
         {
-            UniqueKeyField,
+            ToolkitArtifactGuidField,
             RegionField
         };
 
@@ -190,7 +190,7 @@ namespace Amazon.Runtime
             var reservedProperties = new Dictionary<string, string>();
 
             if (profile.UniqueKey != null)
-                reservedProperties[UniqueKeyField] = profile.UniqueKey.ToString();
+                reservedProperties[ToolkitArtifactGuidField] = profile.UniqueKey.Value.ToString("D");
 
             if (profile.Region != null)
             {
@@ -235,9 +235,9 @@ namespace Amazon.Runtime
         public void CopyProfile(string fromProfileName, string toProfileName)
         {
             Refresh();
-            // Do the copy but make sure to replace the uniqueKey with a new one, if it's there.
+            // Do the copy but make sure to replace the toolkitArtifactGuid with a new one, if it's there.
             credentialsFile.CopySection(fromProfileName, toProfileName,
-                new Dictionary<string, string> { {UniqueKeyField, Guid.NewGuid().ToString()} });
+                new Dictionary<string, string> { {ToolkitArtifactGuidField, Guid.NewGuid().ToString()} });
             credentialsFile.Persist();
         }
 
@@ -291,13 +291,13 @@ namespace Amazon.Runtime
                 PropertyMapping.ExtractProfileParts(profileDictionary, ReservedPropertyNames,
                     out profileOptions, out reservedProperties, out userProperties);
 
-                string uniqueKeyStr;
-                Guid? uniqueKey = null;
-                if (reservedProperties.TryGetValue(UniqueKeyField, out uniqueKeyStr))
+                string toolkitArtifactGuidStr;
+                Guid? toolkitArtifactGuid = null;
+                if (reservedProperties.TryGetValue(ToolkitArtifactGuidField, out toolkitArtifactGuidStr))
                 {
-                    if (!TryParseGuid(uniqueKeyStr, out uniqueKey))
+                    if (!GuidUtils.TryParseNullableGuid(toolkitArtifactGuidStr, out toolkitArtifactGuid))
                     {
-                        Logger.GetLogger(GetType()).InfoFormat("Invalid value {0} for {1} in profile {2}. GUID expected.", uniqueKeyStr, UniqueKeyField, profileName);
+                        Logger.GetLogger(GetType()).InfoFormat("Invalid value {0} for {1} in profile {2}. GUID expected.", toolkitArtifactGuidStr, ToolkitArtifactGuidField, profileName);
                         profile = null;
                         return false;
                     }
@@ -312,7 +312,7 @@ namespace Amazon.Runtime
 
                 profile = new CredentialProfile(profileName, profileOptions)
                 {
-                    UniqueKey = uniqueKey,
+                    UniqueKey = toolkitArtifactGuid,
                     Properties = userProperties,
                     Region = region
                 };
@@ -377,25 +377,6 @@ namespace Amazon.Runtime
         private static bool IsSupportedProfileType(CredentialProfileType? profileType)
         {
             return !profileType.HasValue || ProfileTypeWhitelist.Contains(profileType.Value);
-        }
-
-        private static bool TryParseGuid(string guidString, out Guid? guid)
-        {
-            try
-            {
-                guid = new Guid(guidString);
-                return true;
-            }
-            catch (FormatException)
-            {
-                guid = null;
-                return false;
-            }
-            catch (OverflowException)
-            {
-                guid = null;
-                return false;
-            }
         }
     }
 }

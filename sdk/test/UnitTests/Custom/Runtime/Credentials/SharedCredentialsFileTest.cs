@@ -80,7 +80,7 @@ namespace AWSSDK.UnitTests
             .AppendLine("aws_access_key_id=basic_aws_access_key_id")
             .AppendLine("aws_secret_access_key=basic_aws_secret_access_key")
             .AppendLine("region=ca-central-1")
-            .Append("vs_toolkit_artifact_guid=" + UniqueKey)
+            .Append("toolkit_artifact_guid=" + UniqueKey)
             .ToString();
 
         private static readonly string BasicProfileCredentialsText =
@@ -578,7 +578,7 @@ namespace AWSSDK.UnitTests
             var profileText = BasicProfileTextForCopyAndRename;
 
             if (addUniqueKey)
-                profileText += "vs_toolkit_artifact_guid=" + UniqueKey;
+                profileText += "toolkit_artifact_guid=" + UniqueKey;
 
             using (var tester = new SharedCredentialsFileTestFixture(profileText))
             {
@@ -634,7 +634,7 @@ namespace AWSSDK.UnitTests
                 AssertExtensions.ExpectException(() =>
                 {
                     tester.CredentialsFile.RenameProfile("basic_profile", "basic_profile");
-                }, typeof(ArgumentException), "Cannot rename section. The destination section basic_profile already exists.");
+                }, typeof(ArgumentException), new Regex("Cannot rename section. The destination section basic_profile already exists."));
             }
         }
 
@@ -661,7 +661,7 @@ namespace AWSSDK.UnitTests
             var profileText = BasicProfileTextForCopyAndRename;
 
             if (addUniqueKey)
-                profileText += "vs_toolkit_artifact_guid=" + UniqueKey + Environment.NewLine;
+                profileText += "toolkit_artifact_guid=" + UniqueKey + Environment.NewLine;
 
             var anotherSection = addAnotherSection ? "[another_section]" + Environment.NewLine + "propertyx=valuex" + Environment.NewLine: "";
 
@@ -745,7 +745,7 @@ namespace AWSSDK.UnitTests
                 AssertExtensions.ExpectException(() =>
                 {
                     tester.CredentialsFile.CopyProfile("basic_profile", "basic_profile");
-                }, typeof(ArgumentException), "Cannot copy section. The destination section basic_profile already exists.");
+                }, typeof(ArgumentException), new Regex("Cannot copy section. The destination section basic_profile already exists."));
             }
         }
 

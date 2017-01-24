@@ -123,7 +123,7 @@ namespace Amazon.Runtime
                     }
 
                     Guid? uniqueKey = null;
-                    if (!TryParseGuid(uniqueKeyStr, out uniqueKey))
+                    if (!GuidUtils.TryParseNullableGuid(uniqueKeyStr, out uniqueKey))
                     {
                         profile = null;
                         return false;
@@ -172,7 +172,7 @@ namespace Amazon.Runtime
                 // or if this is an update to an existing profile.
                 string newUniqueKeyStr = objectManager.RegisterObject(profile.UniqueKey.ToString(), profile.Name, profileDictionary);
                 Guid? newUniqueKey;
-                if (TryParseGuid(newUniqueKeyStr, out newUniqueKey))
+                if (GuidUtils.TryParseNullableGuid(newUniqueKeyStr, out newUniqueKey))
                     profile.UniqueKey = newUniqueKey;
             }
             else
@@ -233,25 +233,6 @@ namespace Amazon.Runtime
             else
             {
                 properties[SettingsConstants.ProfileTypeField] = profileType.ToString();
-            }
-        }
-
-        private static bool TryParseGuid(string guidString, out Guid? guid)
-        {
-            try
-            {
-                guid = new Guid(guidString);
-                return true;
-            }
-            catch (FormatException)
-            {
-                guid = null;
-                return false;
-            }
-            catch (OverflowException)
-            {
-                guid = null;
-                return false;
             }
         }
     }
