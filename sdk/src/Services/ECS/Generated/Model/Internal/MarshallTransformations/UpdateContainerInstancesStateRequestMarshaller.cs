@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ListContainerInstances Request Marshaller
+    /// UpdateContainerInstancesState Request Marshaller
     /// </summary>       
-    public class ListContainerInstancesRequestMarshaller : IMarshaller<IRequest, ListContainerInstancesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class UpdateContainerInstancesStateRequestMarshaller : IMarshaller<IRequest, UpdateContainerInstancesStateRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((ListContainerInstancesRequest)input);
+            return this.Marshall((UpdateContainerInstancesStateRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(ListContainerInstancesRequest publicRequest)
+        public IRequest Marshall(UpdateContainerInstancesStateRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ECS");
-            string target = "AmazonEC2ContainerServiceV20141113.ListContainerInstances";
+            string target = "AmazonEC2ContainerServiceV20141113.UpdateContainerInstancesState";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.HttpMethod = "POST";
@@ -73,22 +73,15 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Cluster);
                 }
 
-                if(publicRequest.IsSetFilter())
+                if(publicRequest.IsSetContainerInstances())
                 {
-                    context.Writer.WritePropertyName("filter");
-                    context.Writer.Write(publicRequest.Filter);
-                }
-
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("maxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("nextToken");
-                    context.Writer.Write(publicRequest.NextToken);
+                    context.Writer.WritePropertyName("containerInstances");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestContainerInstancesListValue in publicRequest.ContainerInstances)
+                    {
+                            context.Writer.Write(publicRequestContainerInstancesListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
                 if(publicRequest.IsSetStatus())

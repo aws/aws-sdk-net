@@ -130,14 +130,13 @@ namespace Amazon.ECS
         /// service's tasks that must remain in the <code>RUNNING</code> state during a deployment,
         /// as a percentage of the <code>desiredCount</code> (rounded up to the nearest integer).
         /// This parameter enables you to deploy without using additional cluster capacity. For
-        /// example, if your service has a <code>desiredCount</code> of four tasks and a <code>minimumHealthyPercent</code>
-        /// of 50%, the scheduler may stop two existing tasks to free up cluster capacity before
-        /// starting two new tasks. Tasks for services that <i>do not</i> use a load balancer
-        /// are considered healthy if they are in the <code>RUNNING</code> state; tasks for services
-        /// that <i>do</i> use a load balancer are considered healthy if they are in the <code>RUNNING</code>
-        /// state and the container instance it is hosted on is reported as healthy by the load
-        /// balancer. The default value for <code>minimumHealthyPercent</code> is 50% in the console
-        /// and 100% for the AWS CLI, the AWS SDKs, and the APIs.
+        /// example, if <code>desiredCount</code> is four tasks and the minimum is 50%, the scheduler
+        /// can stop two existing tasks to free up cluster capacity before starting two new tasks.
+        /// Tasks for services that do not use a load balancer are considered healthy if they
+        /// are in the <code>RUNNING</code> state. Tasks for services that use a load balancer
+        /// are considered healthy if they are in the <code>RUNNING</code> state and the container
+        /// instance they are hosted on is reported as healthy by the load balancer. The default
+        /// value is 50% in the console and 100% for the AWS CLI, the AWS SDKs, and the APIs.
         /// </para>
         ///  
         /// <para>
@@ -145,15 +144,15 @@ namespace Amazon.ECS
         /// of your service's tasks that are allowed in the <code>RUNNING</code> or <code>PENDING</code>
         /// state during a deployment, as a percentage of the <code>desiredCount</code> (rounded
         /// down to the nearest integer). This parameter enables you to define the deployment
-        /// batch size. For example, if your service has a <code>desiredCount</code> of four tasks
-        /// and a <code>maximumPercent</code> value of 200%, the scheduler may start four new
-        /// tasks before stopping the four older tasks (provided that the cluster resources required
-        /// to do this are available). The default value for <code>maximumPercent</code> is 200%.
+        /// batch size. For example, if <code>desiredCount</code> is four tasks and the maximum
+        /// is 200%, the scheduler can start four new tasks before stopping the four older tasks
+        /// (provided that the cluster resources required to do this are available). The default
+        /// value is 200%.
         /// </para>
         ///  
         /// <para>
         /// When the service scheduler launches new tasks, it determines task placement in your
-        /// cluster with the following logic:
+        /// cluster using the following logic:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -164,8 +163,7 @@ namespace Amazon.ECS
         ///  </li> <li> 
         /// <para>
         /// By default, the service scheduler attempts to balance tasks across Availability Zones
-        /// in this manner (although you can choose a different placement strategy with the <code>placementStrategy</code>
-        /// parameter):
+        /// in this manner (although you can choose a different placement strategy):
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -235,7 +233,7 @@ namespace Amazon.ECS
 
 
         /// <summary>
-        /// Deletes one or more attributes from an Amazon ECS resource.
+        /// Deletes one or more custom attributes from an Amazon ECS resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAttributes service method.</param>
         /// 
@@ -1244,8 +1242,10 @@ namespace Amazon.ECS
 
         /// <summary>
         /// Create or update an attribute on an Amazon ECS resource. If the attribute does not
-        /// already exist on the given target, it is created; if it does exist, it is replaced
-        /// with the new value.
+        /// exist, it is created. If the attribute exists, its value is replaced with the specified
+        /// value. To delete an attribute, use <a>DeleteAttributes</a>. For more information,
+        /// see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes">Attributes</a>
+        /// in the <i>Amazon EC2 Container Service Developer Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutAttributes service method.</param>
         /// 
@@ -1650,6 +1650,119 @@ namespace Amazon.ECS
 
         #endregion
         
+        #region  UpdateContainerInstancesState
+
+
+        /// <summary>
+        /// Modifies the status of an Amazon ECS container instance.
+        /// 
+        ///  
+        /// <para>
+        /// You can change the status of a container instance to <code>DRAINING</code> to manually
+        /// remove an instance from a cluster, for example to perform system updates, update the
+        /// Docker daemon, or scale down the cluster size. 
+        /// </para>
+        ///  
+        /// <para>
+        /// When you set a container instance to <code>DRAINING</code>, Amazon ECS prevents new
+        /// tasks from being scheduled for placement on the container instance and replacement
+        /// service tasks are started on other container instances in the cluster if the resources
+        /// are available. Service tasks on the container instance that are in the <code>PENDING</code>
+        /// state are stopped immediately.
+        /// </para>
+        ///  
+        /// <para>
+        /// Service tasks on the container instance that are in the <code>RUNNING</code> state
+        /// are stopped and replaced according the service's deployment configuration parameters,
+        /// <code>minimumHealthyPercent</code> and <code>maximumPercent</code>. Note that you
+        /// can change the deployment configuration of your service using <a>UpdateService</a>.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If <code>minimumHealthyPercent</code> is below 100%, the scheduler can ignore <code>desiredCount</code>
+        /// temporarily during task replacement. For example, <code>desiredCount</code> is four
+        /// tasks, a minimum of 50% allows the scheduler to stop two existing tasks before starting
+        /// two new tasks. If the minimum is 100%, the service scheduler can't remove existing
+        /// tasks until the replacement tasks are considered healthy. Tasks for services that
+        /// do not use a load balancer are considered healthy if they are in the <code>RUNNING</code>
+        /// state. Tasks for services that use a load balancer are considered healthy if they
+        /// are in the <code>RUNNING</code> state and the container instance they are hosted on
+        /// is reported as healthy by the load balancer.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <code>maximumPercent</code> parameter represents an upper limit on the number
+        /// of running tasks during task replacement, which enables you to define the replacement
+        /// batch size. For example, if <code>desiredCount</code> of four tasks, a maximum of
+        /// 200% starts four new tasks before stopping the four tasks to be drained (provided
+        /// that the cluster resources required to do this are available). If the maximum is 100%,
+        /// then replacement tasks can't start until the draining tasks have stopped.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Any <code>PENDING</code> or <code>RUNNING</code> tasks that do not belong to a service
+        /// are not affected; you must wait for them to finish or stop them manually.
+        /// </para>
+        ///  
+        /// <para>
+        /// A container instance has completed draining when it has no more <code>RUNNING</code>
+        /// tasks. You can verify this using <a>ListTasks</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you set a container instance to <code>ACTIVE</code>, the Amazon ECS scheduler
+        /// can begin scheduling tasks on the instance again.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateContainerInstancesState service method.</param>
+        /// 
+        /// <returns>The response from the UpdateContainerInstancesState service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action, such as using an action or resource
+        /// on behalf of a user that doesn't have permission to use the action or resource, or
+        /// specifying an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster could not be found. You can view your available clusters with
+        /// <a>ListClusters</a>. Amazon ECS clusters are region-specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateContainerInstancesState">REST API Reference for UpdateContainerInstancesState Operation</seealso>
+        UpdateContainerInstancesStateResponse UpdateContainerInstancesState(UpdateContainerInstancesStateRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateContainerInstancesState operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateContainerInstancesState operation on AmazonECSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateContainerInstancesState
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateContainerInstancesState">REST API Reference for UpdateContainerInstancesState Operation</seealso>
+        IAsyncResult BeginUpdateContainerInstancesState(UpdateContainerInstancesStateRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateContainerInstancesState operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateContainerInstancesState.</param>
+        /// 
+        /// <returns>Returns a  UpdateContainerInstancesStateResult from ECS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateContainerInstancesState">REST API Reference for UpdateContainerInstancesState Operation</seealso>
+        UpdateContainerInstancesStateResponse EndUpdateContainerInstancesState(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  UpdateService
 
 
@@ -1675,27 +1788,25 @@ namespace Amazon.ECS
         /// the deployment configuration parameters, <code>minimumHealthyPercent</code> and <code>maximumPercent</code>,
         /// to determine the deployment strategy.
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// If the <code>minimumHealthyPercent</code> is below 100%, the scheduler can ignore
-        /// the <code>desiredCount</code> temporarily during a deployment. For example, if your
-        /// service has a <code>desiredCount</code> of four tasks, a <code>minimumHealthyPercent</code>
-        /// of 50% allows the scheduler to stop two existing tasks before starting two new tasks.
-        /// Tasks for services that <i>do not</i> use a load balancer are considered healthy if
-        /// they are in the <code>RUNNING</code> state; tasks for services that <i>do</i> use
-        /// a load balancer are considered healthy if they are in the <code>RUNNING</code> state
-        /// and the container instance it is hosted on is reported as healthy by the load balancer.
+        /// If <code>minimumHealthyPercent</code> is below 100%, the scheduler can ignore <code>desiredCount</code>
+        /// temporarily during a deployment. For example, if <code>desiredCount</code> is four
+        /// tasks, a minimum of 50% allows the scheduler to stop two existing tasks before starting
+        /// two new tasks. Tasks for services that do not use a load balancer are considered healthy
+        /// if they are in the <code>RUNNING</code> state. Tasks for services that use a load
+        /// balancer are considered healthy if they are in the <code>RUNNING</code> state and
+        /// the container instance they are hosted on is reported as healthy by the load balancer.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
         /// The <code>maximumPercent</code> parameter represents an upper limit on the number
         /// of running tasks during a deployment, which enables you to define the deployment batch
-        /// size. For example, if your service has a <code>desiredCount</code> of four tasks,
-        /// a <code>maximumPercent</code> value of 200% starts four new tasks before stopping
-        /// the four older tasks (provided that the cluster resources required to do this are
-        /// available).
+        /// size. For example, if <code>desiredCount</code> is four tasks, a maximum of 200% starts
+        /// four new tasks before stopping the four older tasks (provided that the cluster resources
+        /// required to do this are available).
         /// </para>
-        ///  
+        ///  </li> </ul> 
         /// <para>
         /// When <a>UpdateService</a> stops a task during a deployment, the equivalent of <code>docker
         /// stop</code> is issued to the containers running in the task. This results in a <code>SIGTERM</code>
@@ -1717,8 +1828,7 @@ namespace Amazon.ECS
         ///  </li> <li> 
         /// <para>
         /// By default, the service scheduler attempts to balance tasks across Availability Zones
-        /// in this manner (although you can choose a different placement strategy with the <code>placementStrategy</code>
-        /// parameter):
+        /// in this manner (although you can choose a different placement strategy):
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1736,7 +1846,7 @@ namespace Amazon.ECS
         ///  </li> </ul> </li> </ul> 
         /// <para>
         /// When the service scheduler stops running tasks, it attempts to maintain balance across
-        /// the Availability Zones in your cluster with the following logic: 
+        /// the Availability Zones in your cluster using the following logic: 
         /// </para>
         ///  <ul> <li> 
         /// <para>

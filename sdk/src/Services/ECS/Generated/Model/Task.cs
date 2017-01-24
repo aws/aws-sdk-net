@@ -142,7 +142,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Group. 
         /// <para>
-        /// The task group associated with the task.
+        /// The name of the task group associated with the task.
         /// </para>
         /// </summary>
         public string Group

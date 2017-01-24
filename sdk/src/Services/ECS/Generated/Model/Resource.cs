@@ -99,7 +99,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the resource, such as <code>CPU</code>, <code>MEMORY</code>, <code>PORTS</code>,
+        /// The name of the resource, such as <code>cpu</code>, <code>memory</code>, <code>ports</code>,
         /// or a user-defined resource.
         /// </para>
         /// </summary>

@@ -50,27 +50,25 @@ namespace Amazon.ECS.Model
     /// the deployment configuration parameters, <code>minimumHealthyPercent</code> and <code>maximumPercent</code>,
     /// to determine the deployment strategy.
     /// </para>
-    ///  
+    ///  <ul> <li> 
     /// <para>
-    /// If the <code>minimumHealthyPercent</code> is below 100%, the scheduler can ignore
-    /// the <code>desiredCount</code> temporarily during a deployment. For example, if your
-    /// service has a <code>desiredCount</code> of four tasks, a <code>minimumHealthyPercent</code>
-    /// of 50% allows the scheduler to stop two existing tasks before starting two new tasks.
-    /// Tasks for services that <i>do not</i> use a load balancer are considered healthy if
-    /// they are in the <code>RUNNING</code> state; tasks for services that <i>do</i> use
-    /// a load balancer are considered healthy if they are in the <code>RUNNING</code> state
-    /// and the container instance it is hosted on is reported as healthy by the load balancer.
+    /// If <code>minimumHealthyPercent</code> is below 100%, the scheduler can ignore <code>desiredCount</code>
+    /// temporarily during a deployment. For example, if <code>desiredCount</code> is four
+    /// tasks, a minimum of 50% allows the scheduler to stop two existing tasks before starting
+    /// two new tasks. Tasks for services that do not use a load balancer are considered healthy
+    /// if they are in the <code>RUNNING</code> state. Tasks for services that use a load
+    /// balancer are considered healthy if they are in the <code>RUNNING</code> state and
+    /// the container instance they are hosted on is reported as healthy by the load balancer.
     /// </para>
-    ///  
+    ///  </li> <li> 
     /// <para>
     /// The <code>maximumPercent</code> parameter represents an upper limit on the number
     /// of running tasks during a deployment, which enables you to define the deployment batch
-    /// size. For example, if your service has a <code>desiredCount</code> of four tasks,
-    /// a <code>maximumPercent</code> value of 200% starts four new tasks before stopping
-    /// the four older tasks (provided that the cluster resources required to do this are
-    /// available).
+    /// size. For example, if <code>desiredCount</code> is four tasks, a maximum of 200% starts
+    /// four new tasks before stopping the four older tasks (provided that the cluster resources
+    /// required to do this are available).
     /// </para>
-    ///  
+    ///  </li> </ul> 
     /// <para>
     /// When <a>UpdateService</a> stops a task during a deployment, the equivalent of <code>docker
     /// stop</code> is issued to the containers running in the task. This results in a <code>SIGTERM</code>
@@ -92,8 +90,7 @@ namespace Amazon.ECS.Model
     ///  </li> <li> 
     /// <para>
     /// By default, the service scheduler attempts to balance tasks across Availability Zones
-    /// in this manner (although you can choose a different placement strategy with the <code>placementStrategy</code>
-    /// parameter):
+    /// in this manner (although you can choose a different placement strategy):
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -111,7 +108,7 @@ namespace Amazon.ECS.Model
     ///  </li> </ul> </li> </ul> 
     /// <para>
     /// When the service scheduler stops running tasks, it attempts to maintain balance across
-    /// the Availability Zones in your cluster with the following logic: 
+    /// the Availability Zones in your cluster using the following logic: 
     /// </para>
     ///  <ul> <li> 
     /// <para>

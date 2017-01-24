@@ -96,8 +96,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Group. 
         /// <para>
-        /// The task group to associate with the task. By default, if you do not specify a task
-        /// group, the group <code>family:TASKDEF-FAMILY</code> is applied. 
+        /// The name of the task group to associate with the task. The default value is the family
+        /// name of the task definition (for example, family:my-family-name).
         /// </para>
         /// </summary>
         public string Group

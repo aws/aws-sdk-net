@@ -43,7 +43,8 @@ namespace Amazon.ECS.Model
         /// strategy, valid values are <code>instanceId</code> (or <code>host</code>, which has
         /// the same effect), or any platform or custom attribute that is applied to a container
         /// instance, such as <code>attribute:ecs.availability-zone</code>. For the <code>binpack</code>
-        /// placement strategy, valid values are <code>CPU and MEMORY</code>.
+        /// placement strategy, valid values are <code>cpu</code> and <code>memory</code>. For
+        /// the <code>random</code> placement strategy, this field is not used.
         /// </para>
         /// </summary>
         public string Field

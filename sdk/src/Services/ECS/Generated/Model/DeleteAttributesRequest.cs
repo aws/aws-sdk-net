@@ -29,7 +29,7 @@ namespace Amazon.ECS.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteAttributes operation.
-    /// Deletes one or more attributes from an Amazon ECS resource.
+    /// Deletes one or more custom attributes from an Amazon ECS resource.
     /// </summary>
     public partial class DeleteAttributesRequest : AmazonECSRequest
     {

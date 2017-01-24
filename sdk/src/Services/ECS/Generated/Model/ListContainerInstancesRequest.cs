@@ -40,6 +40,7 @@ namespace Amazon.ECS.Model
         private string _filter;
         private int? _maxResults;
         private string _nextToken;
+        private ContainerInstanceStatus _status;
 
         /// <summary>
         /// Gets and sets the property Cluster. 
@@ -130,6 +131,27 @@ namespace Amazon.ECS.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The container instance status with which to filter the <code>ListContainerInstances</code>
+        /// results. Specifying a container instance status of <code>DRAINING</code> limits the
+        /// results to container instances that have been set to drain with the <a>UpdateContainerInstancesState</a>
+        /// operation.
+        /// </para>
+        /// </summary>
+        public ContainerInstanceStatus Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
         }
 
     }
