@@ -214,7 +214,7 @@ namespace Amazon.S3
     /// more information, refer to 
     /// <see href="http://docs.amazonwebservices.com/AmazonS3/latest/BucketConfiguration.html#LocationSelection"/>.
     /// </summary>
-    public sealed class S3Region : ConstantClass
+    public sealed partial class S3Region : ConstantClass
     {
         /// <summary>
         /// Specifies that the S3 Bucket should use US locality.
