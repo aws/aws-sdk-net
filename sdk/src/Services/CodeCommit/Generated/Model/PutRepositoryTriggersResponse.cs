@@ -37,7 +37,7 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property ConfigurationId. 
         /// <para>
-        /// The system-generated unique ID for the create or update operation. 
+        /// The system-generated unique ID for the create or update operation.
         /// </para>
         /// </summary>
         public string ConfigurationId

@@ -41,7 +41,7 @@ namespace Amazon.CodeCommit.Model
         /// <para>
         /// A comment or description about the new repository.
         /// </para>
-        ///  <note>
+        ///  <note> 
         /// <para>
         /// The description field for a repository accepts all HTML characters and all valid Unicode
         /// characters. Applications that do not HTML-encode the description and display it in
@@ -49,7 +49,7 @@ namespace Amazon.CodeCommit.Model
         /// the description field in any application that uses this API to display the repository
         /// description on a web page.
         /// </para>
-        /// </note>
+        ///  </note>
         /// </summary>
         public string RepositoryDescription
         {
@@ -68,7 +68,7 @@ namespace Amazon.CodeCommit.Model
         /// <para>
         /// The name of the new repository to be created.
         /// </para>
-        ///  <note>
+        ///  <note> 
         /// <para>
         /// The repository name must be unique across the calling AWS account. In addition, repository
         /// names are limited to 100 alphanumeric, dash, and underscore characters, and cannot
@@ -76,7 +76,7 @@ namespace Amazon.CodeCommit.Model
         /// see <a href="http://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Limits</a>
         /// in the AWS CodeCommit User Guide. The suffix ".git" is prohibited.
         /// </para>
-        /// </note>
+        ///  </note>
         /// </summary>
         public string RepositoryName
         {

@@ -31,12 +31,12 @@ namespace Amazon.CodeCommit.Model
     /// Container for the parameters to the CreateBranch operation.
     /// Creates a new branch in a repository and points the branch to a commit.
     /// 
-    ///  <note>
+    ///  <note> 
     /// <para>
     /// Calling the create branch operation does not set a repository's default branch. To
     /// do this, call the update default branch operation.
     /// </para>
-    /// </note>
+    ///  </note>
     /// </summary>
     public partial class CreateBranchRequest : AmazonCodeCommitRequest
     {

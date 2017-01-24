@@ -28,35 +28,37 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeCommit.Model
 {
     /// <summary>
-    /// Represents the output of a list branches operation.
+    /// This is the response object from the GetDifferences operation.
     /// </summary>
-    public partial class ListBranchesResponse : AmazonWebServiceResponse
+    public partial class GetDifferencesResponse : AmazonWebServiceResponse
     {
-        private List<string> _branches = new List<string>();
+        private List<Difference> _differences = new List<Difference>();
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property Branches. 
+        /// Gets and sets the property Differences. 
         /// <para>
-        /// The list of branch names.
+        /// A differences data type object that contains information about the differences, including
+        /// whether the difference is added, modified, or deleted (A, D, M).
         /// </para>
         /// </summary>
-        public List<string> Branches
+        public List<Difference> Differences
         {
-            get { return this._branches; }
-            set { this._branches = value; }
+            get { return this._differences; }
+            set { this._differences = value; }
         }
 
-        // Check to see if Branches property is set
-        internal bool IsSetBranches()
+        // Check to see if Differences property is set
+        internal bool IsSetDifferences()
         {
-            return this._branches != null && this._branches.Count > 0; 
+            return this._differences != null && this._differences.Count > 0; 
         }
 
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// An enumeration token that returns the batch of the results.
+        /// An enumeration token that can be used in a request to return the next batch of the
+        /// results.
         /// </para>
         /// </summary>
         public string NextToken

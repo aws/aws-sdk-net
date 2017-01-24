@@ -28,37 +28,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeCommit.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteRepository operation.
-    /// Deletes a repository. If a specified repository was already deleted, a null repository
-    /// ID will be returned.
-    /// 
-    ///  <important>
-    /// <para>
-    /// Deleting a repository also deletes all associated objects and metadata. After a repository
-    /// is deleted, all future push calls to the deleted repository will fail.
-    /// </para>
-    ///  </important>
+    /// Represents the output of a get blob operation.
     /// </summary>
-    public partial class DeleteRepositoryRequest : AmazonCodeCommitRequest
+    public partial class GetBlobResponse : AmazonWebServiceResponse
     {
-        private string _repositoryName;
+        private MemoryStream _content;
 
         /// <summary>
-        /// Gets and sets the property RepositoryName. 
+        /// Gets and sets the property Content. 
         /// <para>
-        /// The name of the repository to delete.
+        /// The content of the blob, usually a file.
         /// </para>
         /// </summary>
-        public string RepositoryName
+        public MemoryStream Content
         {
-            get { return this._repositoryName; }
-            set { this._repositoryName = value; }
+            get { return this._content; }
+            set { this._content = value; }
         }
 
-        // Check to see if RepositoryName property is set
-        internal bool IsSetRepositoryName()
+        // Check to see if Content property is set
+        internal bool IsSetContent()
         {
-            return this._repositoryName != null;
+            return this._content != null;
         }
 
     }

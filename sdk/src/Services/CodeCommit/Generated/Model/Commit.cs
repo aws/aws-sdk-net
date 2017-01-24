@@ -60,7 +60,9 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property Author. 
         /// <para>
-        /// Information about the author of the specified commit.
+        /// Information about the author of the specified commit. Information includes the date
+        /// in timestamp format with GMT offset, the name of the author, and the email address
+        /// for the author, as configured in Git.
         /// </para>
         /// </summary>
         public UserInfo Author
@@ -79,9 +81,14 @@ namespace Amazon.CodeCommit.Model
         /// Gets and sets the property Committer. 
         /// <para>
         /// Information about the person who committed the specified commit, also known as the
-        /// committer. For more information about the difference between an author and a committer
-        /// in Git, see <a href="http://git-scm.com/book/ch2-3.html">Viewing the Commit History</a>
-        /// in Pro Git by Scott Chacon and Ben Straub.
+        /// committer. Information includes the date in timestamp format with GMT offset, the
+        /// name of the committer, and the email address for the committer, as configured in Git.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about the difference between an author and a committer in Git,
+        /// see <a href="http://git-scm.com/book/ch2-3.html">Viewing the Commit History</a> in
+        /// Pro Git by Scott Chacon and Ben Straub.
         /// </para>
         /// </summary>
         public UserInfo Committer
@@ -99,7 +106,7 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property Message. 
         /// <para>
-        /// The message associated with the specified commit.
+        /// The commit message associated with the specified commit.
         /// </para>
         /// </summary>
         public string Message

@@ -31,7 +31,7 @@ namespace Amazon.CodeCommit.Model
     /// Container for the parameters to the UpdateRepositoryDescription operation.
     /// Sets or changes the comment or description for a repository.
     /// 
-    ///  <note>
+    ///  <note> 
     /// <para>
     /// The description field for a repository accepts all HTML characters and all valid Unicode
     /// characters. Applications that do not HTML-encode the description and display it in
@@ -39,7 +39,7 @@ namespace Amazon.CodeCommit.Model
     /// the description field in any application that uses this API to display the repository
     /// description on a web page.
     /// </para>
-    /// </note>
+    ///  </note>
     /// </summary>
     public partial class UpdateRepositoryDescriptionRequest : AmazonCodeCommitRequest
     {

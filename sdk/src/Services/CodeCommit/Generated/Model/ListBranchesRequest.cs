@@ -39,7 +39,7 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// An enumeration token that allows the operation to batch the results. 
+        /// An enumeration token that allows the operation to batch the results.
         /// </para>
         /// </summary>
         public string NextToken

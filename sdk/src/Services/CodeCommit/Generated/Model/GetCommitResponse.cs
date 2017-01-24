@@ -37,7 +37,7 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property Commit. 
         /// <para>
-        /// Information about the specified commit.
+        /// A commit data type object that contains information about the specified commit.
         /// </para>
         /// </summary>
         public Commit Commit

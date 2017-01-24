@@ -39,7 +39,7 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property RepositoryName. 
         /// <para>
-        /// The name of the repository where you want to create or update the trigger. 
+        /// The name of the repository where you want to create or update the trigger.
         /// </para>
         /// </summary>
         public string RepositoryName
@@ -57,7 +57,7 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property Triggers. 
         /// <para>
-        /// The JSON block of configuration information for each trigger. 
+        /// The JSON block of configuration information for each trigger.
         /// </para>
         /// </summary>
         public List<RepositoryTrigger> Triggers

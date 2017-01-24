@@ -39,34 +39,109 @@ namespace Amazon.CodeCommit
     /// AWS CodeCommit 
     /// <para>
     /// This is the <i>AWS CodeCommit API Reference</i>. This reference provides descriptions
-    /// of the operations and data types for AWS CodeCommit API.
+    /// of the operations and data types for AWS CodeCommit API along with usage examples.
     /// </para>
     ///  
     /// <para>
     /// You can use the AWS CodeCommit API to work with the following objects:
     /// </para>
-    ///  <ul> <li>Repositories, by calling the following: <ul> <li><a>BatchGetRepositories</a>,
-    /// which returns information about one or more repositories associated with your AWS
-    /// account</li> <li><a>CreateRepository</a>, which creates an AWS CodeCommit repository</li>
-    /// <li><a>DeleteRepository</a>, which deletes an AWS CodeCommit repository</li> <li><a>GetRepository</a>,
-    /// which returns information about a specified repository</li> <li><a>ListRepositories</a>,
-    /// which lists all AWS CodeCommit repositories associated with your AWS account</li>
-    /// <li><a>UpdateRepositoryDescription</a>, which sets or updates the description of the
-    /// repository</li> <li><a>UpdateRepositoryName</a>, which changes the name of the repository.
-    /// If you change the name of a repository, no other users of that repository will be
-    /// able to access it until you send them the new HTTPS or SSH URL to use.</li> </ul></li>
-    /// <li>Branches, by calling the following: <ul> <li><a>CreateBranch</a>, which creates
-    /// a new branch in a specified repository</li> <li><a>GetBranch</a>, which returns information
-    /// about a specified branch</li> <li><a>ListBranches</a>, which lists all branches for
-    /// a specified repository</li> <li><a>UpdateDefaultBranch</a>, which changes the default
-    /// branch for a repository</li> </ul></li> <li>Information about committed code in a
-    /// repository, by calling the following: <ul> <li><a>GetCommit</a>, which returns information
-    /// about a commit, including commit messages and committer information.</li> </ul></li>
-    /// <li>Triggers, by calling the following: <ul> <li><a>GetRepositoryTriggers</a>, which
-    /// returns information about triggers configured for a repository</li> <li><a>PutRepositoryTriggers</a>,
-    /// which replaces all triggers for a repository and can be used to create or delete triggers</li>
-    /// <li><a>TestRepositoryTriggers</a>, which tests the functionality of a repository trigger
-    /// by sending data to the trigger target</li> </ul> </li> </ul> 
+    ///  
+    /// <para>
+    /// Repositories, by calling the following:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>BatchGetRepositories</a>, which returns information about one or more repositories
+    /// associated with your AWS account
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>CreateRepository</a>, which creates an AWS CodeCommit repository
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DeleteRepository</a>, which deletes an AWS CodeCommit repository
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>GetRepository</a>, which returns information about a specified repository
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ListRepositories</a>, which lists all AWS CodeCommit repositories associated with
+    /// your AWS account
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>UpdateRepositoryDescription</a>, which sets or updates the description of the
+    /// repository
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>UpdateRepositoryName</a>, which changes the name of the repository. If you change
+    /// the name of a repository, no other users of that repository will be able to access
+    /// it until you send them the new HTTPS or SSH URL to use.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// Branches, by calling the following:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>CreateBranch</a>, which creates a new branch in a specified repository
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>GetBranch</a>, which returns information about a specified branch
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ListBranches</a>, which lists all branches for a specified repository
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>UpdateDefaultBranch</a>, which changes the default branch for a repository
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// Information about committed code in a repository, by calling the following:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>GetBlob</a>, which returns the base-64 encoded content of an individual Git blob
+    /// object within a repository
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>GetCommit</a>, which returns information about a commit, including commit messages
+    /// and author and committer information
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>GetDifferences</a>, which returns information about the differences in a valid
+    /// commit specifier (such as a branch, tag, HEAD, commit ID or other fully qualified
+    /// reference)
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// Triggers, by calling the following:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>GetRepositoryTriggers</a>, which returns information about triggers configured
+    /// for a repository
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>PutRepositoryTriggers</a>, which replaces all triggers for a repository and can
+    /// be used to create or delete triggers
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>TestRepositoryTriggers</a>, which tests the functionality of a repository trigger
+    /// by sending data to the trigger target
+    /// </para>
+    ///  </li> </ul> 
     /// <para>
     /// For information about how to use AWS CodeCommit, see the <a href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
     /// CodeCommit User Guide</a>.
@@ -284,6 +359,7 @@ namespace Amazon.CodeCommit
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/BatchGetRepositories">REST API Reference for BatchGetRepositories Operation</seealso>
         public Task<BatchGetRepositoriesResponse> BatchGetRepositoriesAsync(BatchGetRepositoriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new BatchGetRepositoriesRequestMarshaller();
@@ -315,6 +391,7 @@ namespace Amazon.CodeCommit
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreateBranch">REST API Reference for CreateBranch Operation</seealso>
         public Task<CreateBranchResponse> CreateBranchAsync(CreateBranchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateBranchRequestMarshaller();
@@ -346,6 +423,7 @@ namespace Amazon.CodeCommit
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreateRepository">REST API Reference for CreateRepository Operation</seealso>
         public Task<CreateRepositoryResponse> CreateRepositoryAsync(CreateRepositoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateRepositoryRequestMarshaller();
@@ -377,12 +455,45 @@ namespace Amazon.CodeCommit
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DeleteRepository">REST API Reference for DeleteRepository Operation</seealso>
         public Task<DeleteRepositoryResponse> DeleteRepositoryAsync(DeleteRepositoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteRepositoryRequestMarshaller();
             var unmarshaller = DeleteRepositoryResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteRepositoryRequest,DeleteRepositoryResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetBlob
+
+        internal GetBlobResponse GetBlob(GetBlobRequest request)
+        {
+            var marshaller = new GetBlobRequestMarshaller();
+            var unmarshaller = GetBlobResponseUnmarshaller.Instance;
+
+            return Invoke<GetBlobRequest,GetBlobResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetBlob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetBlob operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetBlob">REST API Reference for GetBlob Operation</seealso>
+        public Task<GetBlobResponse> GetBlobAsync(GetBlobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetBlobRequestMarshaller();
+            var unmarshaller = GetBlobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetBlobRequest,GetBlobResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -408,6 +519,7 @@ namespace Amazon.CodeCommit
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetBranch">REST API Reference for GetBranch Operation</seealso>
         public Task<GetBranchResponse> GetBranchAsync(GetBranchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetBranchRequestMarshaller();
@@ -439,12 +551,45 @@ namespace Amazon.CodeCommit
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetCommit">REST API Reference for GetCommit Operation</seealso>
         public Task<GetCommitResponse> GetCommitAsync(GetCommitRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetCommitRequestMarshaller();
             var unmarshaller = GetCommitResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetCommitRequest,GetCommitResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetDifferences
+
+        internal GetDifferencesResponse GetDifferences(GetDifferencesRequest request)
+        {
+            var marshaller = new GetDifferencesRequestMarshaller();
+            var unmarshaller = GetDifferencesResponseUnmarshaller.Instance;
+
+            return Invoke<GetDifferencesRequest,GetDifferencesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDifferences operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDifferences operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetDifferences">REST API Reference for GetDifferences Operation</seealso>
+        public Task<GetDifferencesResponse> GetDifferencesAsync(GetDifferencesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetDifferencesRequestMarshaller();
+            var unmarshaller = GetDifferencesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetDifferencesRequest,GetDifferencesResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -470,6 +615,7 @@ namespace Amazon.CodeCommit
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetRepository">REST API Reference for GetRepository Operation</seealso>
         public Task<GetRepositoryResponse> GetRepositoryAsync(GetRepositoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetRepositoryRequestMarshaller();
@@ -501,6 +647,7 @@ namespace Amazon.CodeCommit
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetRepositoryTriggers">REST API Reference for GetRepositoryTriggers Operation</seealso>
         public Task<GetRepositoryTriggersResponse> GetRepositoryTriggersAsync(GetRepositoryTriggersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetRepositoryTriggersRequestMarshaller();
@@ -532,6 +679,7 @@ namespace Amazon.CodeCommit
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ListBranches">REST API Reference for ListBranches Operation</seealso>
         public Task<ListBranchesResponse> ListBranchesAsync(ListBranchesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListBranchesRequestMarshaller();
@@ -563,6 +711,7 @@ namespace Amazon.CodeCommit
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ListRepositories">REST API Reference for ListRepositories Operation</seealso>
         public Task<ListRepositoriesResponse> ListRepositoriesAsync(ListRepositoriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListRepositoriesRequestMarshaller();
@@ -594,6 +743,7 @@ namespace Amazon.CodeCommit
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PutRepositoryTriggers">REST API Reference for PutRepositoryTriggers Operation</seealso>
         public Task<PutRepositoryTriggersResponse> PutRepositoryTriggersAsync(PutRepositoryTriggersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutRepositoryTriggersRequestMarshaller();
@@ -625,6 +775,7 @@ namespace Amazon.CodeCommit
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/TestRepositoryTriggers">REST API Reference for TestRepositoryTriggers Operation</seealso>
         public Task<TestRepositoryTriggersResponse> TestRepositoryTriggersAsync(TestRepositoryTriggersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new TestRepositoryTriggersRequestMarshaller();
@@ -656,6 +807,7 @@ namespace Amazon.CodeCommit
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateDefaultBranch">REST API Reference for UpdateDefaultBranch Operation</seealso>
         public Task<UpdateDefaultBranchResponse> UpdateDefaultBranchAsync(UpdateDefaultBranchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateDefaultBranchRequestMarshaller();
@@ -687,6 +839,7 @@ namespace Amazon.CodeCommit
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateRepositoryDescription">REST API Reference for UpdateRepositoryDescription Operation</seealso>
         public Task<UpdateRepositoryDescriptionResponse> UpdateRepositoryDescriptionAsync(UpdateRepositoryDescriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateRepositoryDescriptionRequestMarshaller();
@@ -718,6 +871,7 @@ namespace Amazon.CodeCommit
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateRepositoryName">REST API Reference for UpdateRepositoryName Operation</seealso>
         public Task<UpdateRepositoryNameResponse> UpdateRepositoryNameAsync(UpdateRepositoryNameRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateRepositoryNameRequestMarshaller();
