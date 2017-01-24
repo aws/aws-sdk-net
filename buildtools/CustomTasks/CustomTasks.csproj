@@ -53,6 +53,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="TimingTask.cs" />
     <Compile Include="UnityBuild.cs" />
     <Compile Include="UnityPackage.cs" />
     <Compile Include="XamarinComponent.cs" />

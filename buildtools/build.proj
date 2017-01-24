@@ -53,9 +53,11 @@
     <UsingTask TaskName="CustomTasks.XamarinComponent" AssemblyFile=".\CustomTasks\bin\Release\CustomTasks.dll"/>
     <UsingTask TaskName="CustomTasks.UnityPackage" AssemblyFile=".\CustomTasks\bin\Release\CustomTasks.dll"/>
 	<UsingTask TaskName="CustomTasks.UnityBuild" AssemblyFile=".\CustomTasks\bin\Release\CustomTasks.dll"/>
+	<UsingTask TaskName="CustomTasks.TimingTask" AssemblyFile=".\CustomTasks\bin\Release\CustomTasks.dll"/>
 
     <Target Name="init" DependsOnTargets="clean;build-custom-tasks">
         <Message Text="Running SDK generation and build for configuration: $(Configuration)" Importance="normal" />
+        <TimingTask />
     </Target>
 
     <Target Name="full-build" DependsOnTargets="test-sdk;copy-assemblies;copy-service-models;unity-pack;keyscan;consolidate-docartifacts;save-build"/>
