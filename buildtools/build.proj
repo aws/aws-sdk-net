@@ -55,7 +55,7 @@
 	<UsingTask TaskName="CustomTasks.UnityBuild" AssemblyFile=".\CustomTasks\bin\Release\CustomTasks.dll"/>
 	<UsingTask TaskName="CustomTasks.TimingTask" AssemblyFile=".\CustomTasks\bin\Release\CustomTasks.dll"/>
 
-    <Target Name="init" DependsOnTargets="clean;build-custom-tasks">
+    <Target Name="init" DependsOnTargets="clean-common;build-custom-tasks">
         <Message Text="Running SDK generation and build for configuration: $(Configuration)" Importance="normal" />
         <TimingTask />
     </Target>

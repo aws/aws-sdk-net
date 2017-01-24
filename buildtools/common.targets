@@ -45,7 +45,7 @@
 	
 	<!-- COMMON TARGETS -->
 	
-	<Target Name="clean" DependsOnTargets="build-custom-tasks">
+	<Target Name="clean-common" DependsOnTargets="build-custom-tasks">
 		<RemoveDir Directories="TestResults" />
 		<RemoveDir Directories="..\TestResults" />
 

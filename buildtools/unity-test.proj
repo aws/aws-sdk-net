@@ -15,7 +15,7 @@
 	<UsingTask TaskName="OnDeviceTestingTasks.SetupTestSettings" AssemblyFile=".\OnDeviceTestingTasks\bin\Release\OnDeviceTestingTasks.dll" />
 	<UsingTask TaskName="OnDeviceTestingTasks.TestAppWithCalibash" AssemblyFile=".\OnDeviceTestingTasks\bin\Release\OnDeviceTestingTasks.dll" />
  
-	<Target Name="test-unity-android" DependsOnTargets="clean;build-sdk-unity;update-unity-tests;build-on-device-testing">		
+	<Target Name="test-unity-android" DependsOnTargets="clean-common;build-sdk-unity;update-unity-tests;build-on-device-testing">		
 		<Message Text="Setting up Unity Test Settings" />
 
 		<SetupTestSettings
