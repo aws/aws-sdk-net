@@ -1,3 +1,11 @@
+### 3.3.43.0 (2017-01-24 22:15 UTC)
+* CodeBuild (3.3.0.6)
+	* Doc update.
+* CodeCommit (3.3.1.0)
+	* AWS CodeCommit now includes the option to view the differences between a commit and its parent commit from within the console. You can view the differences inline (Unified view) or side by side (Split view). To view information about the differences between a commit and something other than its parent, you can use the AWS CLI and the get-differences and get-blob commands, or you can use the GetDifferences and GetBlob APIs.
+* ECS (3.3.3.0)
+	* Amazon ECS now supports a state for container instances that can be used to drain a container instance in preparation for maintenance or cluster scale down.
+
 ### 3.3.42.0 (2017-01-20 18:18 UTC)
 * AWSHealth (3.3.0.5)
 	* Update for AWS Health: Pick up updated documentation
