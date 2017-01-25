@@ -851,7 +851,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property ReadReplicaDBClusterIdentifiers. 
         /// <para>
-        /// Contains one or more identifiers of Aurora DB clusters that are read replicas of this
+        /// Contains one or more identifiers of Aurora DB clusters that are Read Replicas of this
         /// DB instance.
         /// </para>
         /// </summary>

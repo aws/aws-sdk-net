@@ -12,21 +12,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.RDS
     {
         [TestMethod]
         [TestCategory("RDS")]
-        public void SourceRegion_CreateDBInstanceReadReplica()
-        {
-            var type = typeof(CreateDBInstanceReadReplicaRequest);
-            if (type.GetProperty("PreSignedUrl") != null)
-            {
-                Assert.IsTrue(false, "By removing this test I verify that I have manually tested CreateDBInstanceReadReplica, " +
-                    "cross-region, making sure the PreSignedUrl property was filled in correctly.");
-            }
-        }
-
-        [TestMethod]
-        [TestCategory("RDS")]
         public void SourceRegion_CopyDBClusterSnapshot()
         {
-            var type = typeof(Amazon.RDS.Model.CopyDBClusterSnapshotRequest);
+            var type = typeof(CopyDBClusterSnapshotRequest);
             if (type.GetProperty("PreSignedUrl") != null)
             {
                 Assert.IsTrue(false, "By removing this test I verify that I have manually tested CopyDBClusterSnapshot, " +

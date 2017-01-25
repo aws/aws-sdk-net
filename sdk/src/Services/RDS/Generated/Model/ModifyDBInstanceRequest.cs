@@ -383,7 +383,8 @@ namespace Amazon.RDS.Model
         /// <para>
         ///  The new compute and memory capacity of the DB instance. To determine the instance
         /// classes that are available for a particular DB engine, use the <a>DescribeOrderableDBInstanceOptions</a>
-        /// action. 
+        /// action. Note that not all instance classes are available in all regions for all DB
+        /// engines. 
         /// </para>
         ///  
         /// <para>
