@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticLoadBalancingV2.Model
 {
     /// <summary>
-    /// Contains the output of DeleteTargetGroup.
+    /// This is the response object from the DeleteTargetGroup operation.
     /// </summary>
     public partial class DeleteTargetGroupResponse : AmazonWebServiceResponse
     {

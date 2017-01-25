@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticLoadBalancingV2.Model
 {
     /// <summary>
-    /// Contains the output of ModifyTargetGroup.
+    /// This is the response object from the ModifyTargetGroup operation.
     /// </summary>
     public partial class ModifyTargetGroupResponse : AmazonWebServiceResponse
     {

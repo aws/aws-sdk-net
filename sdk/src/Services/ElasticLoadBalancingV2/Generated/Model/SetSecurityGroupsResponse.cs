@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticLoadBalancingV2.Model
 {
     /// <summary>
-    /// Contains the output of SetSecurityGroups.
+    /// This is the response object from the SetSecurityGroups operation.
     /// </summary>
     public partial class SetSecurityGroupsResponse : AmazonWebServiceResponse
     {

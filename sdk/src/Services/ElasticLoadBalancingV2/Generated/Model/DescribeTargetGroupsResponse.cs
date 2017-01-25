@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticLoadBalancingV2.Model
 {
     /// <summary>
-    /// Contains the output of DescribeTargetGroups.
+    /// This is the response object from the DescribeTargetGroups operation.
     /// </summary>
     public partial class DescribeTargetGroupsResponse : AmazonWebServiceResponse
     {

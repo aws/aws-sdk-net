@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticLoadBalancingV2.Model
 {
     /// <summary>
-    /// Contains the output of CreateListener.
+    /// This is the response object from the CreateListener operation.
     /// </summary>
     public partial class CreateListenerResponse : AmazonWebServiceResponse
     {

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticLoadBalancingV2.Model
 {
     /// <summary>
-    /// Contains the output of RegisterTargets.
+    /// This is the response object from the RegisterTargets operation.
     /// </summary>
     public partial class RegisterTargetsResponse : AmazonWebServiceResponse
     {

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticLoadBalancingV2.Model
 {
     /// <summary>
-    /// Contains the output of CreateRule.
+    /// This is the response object from the CreateRule operation.
     /// </summary>
     public partial class CreateRuleResponse : AmazonWebServiceResponse
     {

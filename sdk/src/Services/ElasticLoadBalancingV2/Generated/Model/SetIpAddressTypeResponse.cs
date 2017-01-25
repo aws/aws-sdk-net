@@ -28,28 +28,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticLoadBalancingV2.Model
 {
     /// <summary>
-    /// This is the response object from the DescribeLoadBalancerAttributes operation.
+    /// This is the response object from the SetIpAddressType operation.
     /// </summary>
-    public partial class DescribeLoadBalancerAttributesResponse : AmazonWebServiceResponse
+    public partial class SetIpAddressTypeResponse : AmazonWebServiceResponse
     {
-        private List<LoadBalancerAttribute> _attributes = new List<LoadBalancerAttribute>();
+        private IpAddressType _ipAddressType;
 
         /// <summary>
-        /// Gets and sets the property Attributes. 
+        /// Gets and sets the property IpAddressType. 
         /// <para>
-        /// Information about the load balancer attributes.
+        /// The IP address type.
         /// </para>
         /// </summary>
-        public List<LoadBalancerAttribute> Attributes
+        public IpAddressType IpAddressType
         {
-            get { return this._attributes; }
-            set { this._attributes = value; }
+            get { return this._ipAddressType; }
+            set { this._ipAddressType = value; }
         }
 
-        // Check to see if Attributes property is set
-        internal bool IsSetAttributes()
+        // Check to see if IpAddressType property is set
+        internal bool IsSetIpAddressType()
         {
-            return this._attributes != null && this._attributes.Count > 0; 
+            return this._ipAddressType != null;
         }
 
     }

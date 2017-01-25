@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticLoadBalancingV2.Model
 {
     /// <summary>
-    /// Contains the output of DeregisterTargets.
+    /// This is the response object from the DeregisterTargets operation.
     /// </summary>
     public partial class DeregisterTargetsResponse : AmazonWebServiceResponse
     {

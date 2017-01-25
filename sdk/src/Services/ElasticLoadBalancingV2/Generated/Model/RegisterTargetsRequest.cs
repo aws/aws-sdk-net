@@ -40,8 +40,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     ///  
     /// <para>
     /// The target must be in the virtual private cloud (VPC) that you specified for the target
-    /// group. If the target is an EC2 instance, it can't be in the <code>stopped</code> or
-    /// <code>running</code> state when you register it.
+    /// group. If the target is an EC2 instance, it must be in the <code>running</code> state
+    /// when you register it.
     /// </para>
     ///  
     /// <para>

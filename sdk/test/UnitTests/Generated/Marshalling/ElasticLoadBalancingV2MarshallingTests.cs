@@ -668,6 +668,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("ElasticLoadBalancingV2")]
+        public void SetIpAddressTypeMarshallTest()
+        {
+            var operation = service_model.FindOperation("SetIpAddressType");
+
+            var request = InstantiateClassGenerator.Execute<SetIpAddressTypeRequest>();
+            var marshaller = new SetIpAddressTypeRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = SetIpAddressTypeResponseUnmarshaller.Instance.Unmarshall(context)
+                as SetIpAddressTypeResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticLoadBalancingV2")]
         public void SetRulePrioritiesMarshallTest()
         {
             var operation = service_model.FindOperation("SetRulePriorities");

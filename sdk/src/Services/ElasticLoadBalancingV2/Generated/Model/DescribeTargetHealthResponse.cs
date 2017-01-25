@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticLoadBalancingV2.Model
 {
     /// <summary>
-    /// Contains the output of DescribeTargetHealth.
+    /// This is the response object from the DescribeTargetHealth operation.
     /// </summary>
     public partial class DescribeTargetHealthResponse : AmazonWebServiceResponse
     {

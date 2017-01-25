@@ -323,6 +323,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TooManyTagsException">
         /// You've reached the limit on the number of tags per load balancer.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/AddTags">REST API Reference for AddTags Operation</seealso>
         public AddTagsResponse AddTags(AddTagsRequest request)
         {
             var marshaller = new AddTagsRequestMarshaller();
@@ -342,6 +343,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAddTags
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/AddTags">REST API Reference for AddTags Operation</seealso>
         public IAsyncResult BeginAddTags(AddTagsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AddTagsRequestMarshaller();
@@ -358,6 +360,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAddTags.</param>
         /// 
         /// <returns>Returns a  AddTagsResult from ElasticLoadBalancingV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/AddTags">REST API Reference for AddTags Operation</seealso>
         public  AddTagsResponse EndAddTags(IAsyncResult asyncResult)
         {
             return EndInvoke<AddTagsResponse>(asyncResult);
@@ -426,6 +429,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.UnsupportedProtocolException">
         /// The specified protocol is not supported.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/CreateListener">REST API Reference for CreateListener Operation</seealso>
         public CreateListenerResponse CreateListener(CreateListenerRequest request)
         {
             var marshaller = new CreateListenerRequestMarshaller();
@@ -445,6 +449,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateListener
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/CreateListener">REST API Reference for CreateListener Operation</seealso>
         public IAsyncResult BeginCreateListener(CreateListenerRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateListenerRequestMarshaller();
@@ -461,6 +466,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateListener.</param>
         /// 
         /// <returns>Returns a  CreateListenerResult from ElasticLoadBalancingV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/CreateListener">REST API Reference for CreateListener Operation</seealso>
         public  CreateListenerResponse EndCreateListener(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateListenerResponse>(asyncResult);
@@ -475,14 +481,15 @@ namespace Amazon.ElasticLoadBalancingV2
         /// 
         ///  
         /// <para>
-        /// To create listeners for your load balancer, use <a>CreateListener</a>. You can add
-        /// security groups, subnets, and tags when you create your load balancer, or you can
-        /// add them later using <a>SetSecurityGroups</a>, <a>SetSubnets</a>, and <a>AddTags</a>.
+        /// When you create a load balancer, you can specify security groups, subnets, IP address
+        /// type, and tags. Otherwise, you could do so later using <a>SetSecurityGroups</a>, <a>SetSubnets</a>,
+        /// <a>SetIpAddressType</a>, and <a>AddTags</a>.
         /// </para>
         ///  
         /// <para>
-        /// To describe your current load balancers, see <a>DescribeLoadBalancers</a>. When you
-        /// are finished with a load balancer, you can delete it using <a>DeleteLoadBalancer</a>.
+        /// To create listeners for your load balancer, use <a>CreateListener</a>. To describe
+        /// your current load balancers, see <a>DescribeLoadBalancers</a>. When you are finished
+        /// with a load balancer, you can delete it using <a>DeleteLoadBalancer</a>.
         /// </para>
         ///  
         /// <para>
@@ -527,6 +534,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TooManyTagsException">
         /// You've reached the limit on the number of tags per load balancer.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/CreateLoadBalancer">REST API Reference for CreateLoadBalancer Operation</seealso>
         public CreateLoadBalancerResponse CreateLoadBalancer(CreateLoadBalancerRequest request)
         {
             var marshaller = new CreateLoadBalancerRequestMarshaller();
@@ -546,6 +554,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateLoadBalancer
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/CreateLoadBalancer">REST API Reference for CreateLoadBalancer Operation</seealso>
         public IAsyncResult BeginCreateLoadBalancer(CreateLoadBalancerRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateLoadBalancerRequestMarshaller();
@@ -562,6 +571,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateLoadBalancer.</param>
         /// 
         /// <returns>Returns a  CreateLoadBalancerResult from ElasticLoadBalancingV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/CreateLoadBalancer">REST API Reference for CreateLoadBalancer Operation</seealso>
         public  CreateLoadBalancerResponse EndCreateLoadBalancer(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateLoadBalancerResponse>(asyncResult);
@@ -617,6 +627,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TooManyTargetGroupsException">
         /// You've reached the limit on the number of target groups for your AWS account.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/CreateRule">REST API Reference for CreateRule Operation</seealso>
         public CreateRuleResponse CreateRule(CreateRuleRequest request)
         {
             var marshaller = new CreateRuleRequestMarshaller();
@@ -636,6 +647,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateRule
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/CreateRule">REST API Reference for CreateRule Operation</seealso>
         public IAsyncResult BeginCreateRule(CreateRuleRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateRuleRequestMarshaller();
@@ -652,6 +664,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateRule.</param>
         /// 
         /// <returns>Returns a  CreateRuleResult from ElasticLoadBalancingV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/CreateRule">REST API Reference for CreateRule Operation</seealso>
         public  CreateRuleResponse EndCreateRule(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateRuleResponse>(asyncResult);
@@ -695,6 +708,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TooManyTargetGroupsException">
         /// You've reached the limit on the number of target groups for your AWS account.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/CreateTargetGroup">REST API Reference for CreateTargetGroup Operation</seealso>
         public CreateTargetGroupResponse CreateTargetGroup(CreateTargetGroupRequest request)
         {
             var marshaller = new CreateTargetGroupRequestMarshaller();
@@ -714,6 +728,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateTargetGroup
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/CreateTargetGroup">REST API Reference for CreateTargetGroup Operation</seealso>
         public IAsyncResult BeginCreateTargetGroup(CreateTargetGroupRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateTargetGroupRequestMarshaller();
@@ -730,6 +745,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateTargetGroup.</param>
         /// 
         /// <returns>Returns a  CreateTargetGroupResult from ElasticLoadBalancingV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/CreateTargetGroup">REST API Reference for CreateTargetGroup Operation</seealso>
         public  CreateTargetGroupResponse EndCreateTargetGroup(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateTargetGroupResponse>(asyncResult);
@@ -754,6 +770,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.ListenerNotFoundException">
         /// The specified listener does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DeleteListener">REST API Reference for DeleteListener Operation</seealso>
         public DeleteListenerResponse DeleteListener(DeleteListenerRequest request)
         {
             var marshaller = new DeleteListenerRequestMarshaller();
@@ -773,6 +790,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteListener
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DeleteListener">REST API Reference for DeleteListener Operation</seealso>
         public IAsyncResult BeginDeleteListener(DeleteListenerRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteListenerRequestMarshaller();
@@ -789,6 +807,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteListener.</param>
         /// 
         /// <returns>Returns a  DeleteListenerResult from ElasticLoadBalancingV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DeleteListener">REST API Reference for DeleteListener Operation</seealso>
         public  DeleteListenerResponse EndDeleteListener(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteListenerResponse>(asyncResult);
@@ -822,6 +841,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.OperationNotPermittedException">
         /// This operation is not allowed.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DeleteLoadBalancer">REST API Reference for DeleteLoadBalancer Operation</seealso>
         public DeleteLoadBalancerResponse DeleteLoadBalancer(DeleteLoadBalancerRequest request)
         {
             var marshaller = new DeleteLoadBalancerRequestMarshaller();
@@ -841,6 +861,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteLoadBalancer
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DeleteLoadBalancer">REST API Reference for DeleteLoadBalancer Operation</seealso>
         public IAsyncResult BeginDeleteLoadBalancer(DeleteLoadBalancerRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteLoadBalancerRequestMarshaller();
@@ -857,6 +878,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteLoadBalancer.</param>
         /// 
         /// <returns>Returns a  DeleteLoadBalancerResult from ElasticLoadBalancingV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DeleteLoadBalancer">REST API Reference for DeleteLoadBalancer Operation</seealso>
         public  DeleteLoadBalancerResponse EndDeleteLoadBalancer(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteLoadBalancerResponse>(asyncResult);
@@ -878,6 +900,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.RuleNotFoundException">
         /// The specified rule does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DeleteRule">REST API Reference for DeleteRule Operation</seealso>
         public DeleteRuleResponse DeleteRule(DeleteRuleRequest request)
         {
             var marshaller = new DeleteRuleRequestMarshaller();
@@ -897,6 +920,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteRule
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DeleteRule">REST API Reference for DeleteRule Operation</seealso>
         public IAsyncResult BeginDeleteRule(DeleteRuleRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteRuleRequestMarshaller();
@@ -913,6 +937,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteRule.</param>
         /// 
         /// <returns>Returns a  DeleteRuleResult from ElasticLoadBalancingV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DeleteRule">REST API Reference for DeleteRule Operation</seealso>
         public  DeleteRuleResponse EndDeleteRule(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteRuleResponse>(asyncResult);
@@ -937,6 +962,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.ResourceInUseException">
         /// A specified resource is in use.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DeleteTargetGroup">REST API Reference for DeleteTargetGroup Operation</seealso>
         public DeleteTargetGroupResponse DeleteTargetGroup(DeleteTargetGroupRequest request)
         {
             var marshaller = new DeleteTargetGroupRequestMarshaller();
@@ -956,6 +982,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteTargetGroup
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DeleteTargetGroup">REST API Reference for DeleteTargetGroup Operation</seealso>
         public IAsyncResult BeginDeleteTargetGroup(DeleteTargetGroupRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteTargetGroupRequestMarshaller();
@@ -972,6 +999,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteTargetGroup.</param>
         /// 
         /// <returns>Returns a  DeleteTargetGroupResult from ElasticLoadBalancingV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DeleteTargetGroup">REST API Reference for DeleteTargetGroup Operation</seealso>
         public  DeleteTargetGroupResponse EndDeleteTargetGroup(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteTargetGroupResponse>(asyncResult);
@@ -994,6 +1022,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TargetGroupNotFoundException">
         /// The specified target group does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DeregisterTargets">REST API Reference for DeregisterTargets Operation</seealso>
         public DeregisterTargetsResponse DeregisterTargets(DeregisterTargetsRequest request)
         {
             var marshaller = new DeregisterTargetsRequestMarshaller();
@@ -1013,6 +1042,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeregisterTargets
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DeregisterTargets">REST API Reference for DeregisterTargets Operation</seealso>
         public IAsyncResult BeginDeregisterTargets(DeregisterTargetsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeregisterTargetsRequestMarshaller();
@@ -1029,6 +1059,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeregisterTargets.</param>
         /// 
         /// <returns>Returns a  DeregisterTargetsResult from ElasticLoadBalancingV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DeregisterTargets">REST API Reference for DeregisterTargets Operation</seealso>
         public  DeregisterTargetsResponse EndDeregisterTargets(IAsyncResult asyncResult)
         {
             return EndInvoke<DeregisterTargetsResponse>(asyncResult);
@@ -1051,6 +1082,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.LoadBalancerNotFoundException">
         /// The specified load balancer does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeListeners">REST API Reference for DescribeListeners Operation</seealso>
         public DescribeListenersResponse DescribeListeners(DescribeListenersRequest request)
         {
             var marshaller = new DescribeListenersRequestMarshaller();
@@ -1070,6 +1102,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeListeners
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeListeners">REST API Reference for DescribeListeners Operation</seealso>
         public IAsyncResult BeginDescribeListeners(DescribeListenersRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeListenersRequestMarshaller();
@@ -1086,6 +1119,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeListeners.</param>
         /// 
         /// <returns>Returns a  DescribeListenersResult from ElasticLoadBalancingV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeListeners">REST API Reference for DescribeListeners Operation</seealso>
         public  DescribeListenersResponse EndDescribeListeners(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeListenersResponse>(asyncResult);
@@ -1104,6 +1138,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.LoadBalancerNotFoundException">
         /// The specified load balancer does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeLoadBalancerAttributes">REST API Reference for DescribeLoadBalancerAttributes Operation</seealso>
         public DescribeLoadBalancerAttributesResponse DescribeLoadBalancerAttributes(DescribeLoadBalancerAttributesRequest request)
         {
             var marshaller = new DescribeLoadBalancerAttributesRequestMarshaller();
@@ -1123,6 +1158,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeLoadBalancerAttributes
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeLoadBalancerAttributes">REST API Reference for DescribeLoadBalancerAttributes Operation</seealso>
         public IAsyncResult BeginDescribeLoadBalancerAttributes(DescribeLoadBalancerAttributesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeLoadBalancerAttributesRequestMarshaller();
@@ -1139,6 +1175,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeLoadBalancerAttributes.</param>
         /// 
         /// <returns>Returns a  DescribeLoadBalancerAttributesResult from ElasticLoadBalancingV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeLoadBalancerAttributes">REST API Reference for DescribeLoadBalancerAttributes Operation</seealso>
         public  DescribeLoadBalancerAttributesResponse EndDescribeLoadBalancerAttributes(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeLoadBalancerAttributesResponse>(asyncResult);
@@ -1164,6 +1201,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.LoadBalancerNotFoundException">
         /// The specified load balancer does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeLoadBalancers">REST API Reference for DescribeLoadBalancers Operation</seealso>
         public DescribeLoadBalancersResponse DescribeLoadBalancers(DescribeLoadBalancersRequest request)
         {
             var marshaller = new DescribeLoadBalancersRequestMarshaller();
@@ -1183,6 +1221,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeLoadBalancers
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeLoadBalancers">REST API Reference for DescribeLoadBalancers Operation</seealso>
         public IAsyncResult BeginDescribeLoadBalancers(DescribeLoadBalancersRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeLoadBalancersRequestMarshaller();
@@ -1199,6 +1238,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeLoadBalancers.</param>
         /// 
         /// <returns>Returns a  DescribeLoadBalancersResult from ElasticLoadBalancingV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeLoadBalancers">REST API Reference for DescribeLoadBalancers Operation</seealso>
         public  DescribeLoadBalancersResponse EndDescribeLoadBalancers(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeLoadBalancersResponse>(asyncResult);
@@ -1221,6 +1261,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.RuleNotFoundException">
         /// The specified rule does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeRules">REST API Reference for DescribeRules Operation</seealso>
         public DescribeRulesResponse DescribeRules(DescribeRulesRequest request)
         {
             var marshaller = new DescribeRulesRequestMarshaller();
@@ -1240,6 +1281,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeRules
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeRules">REST API Reference for DescribeRules Operation</seealso>
         public IAsyncResult BeginDescribeRules(DescribeRulesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeRulesRequestMarshaller();
@@ -1256,6 +1298,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeRules.</param>
         /// 
         /// <returns>Returns a  DescribeRulesResult from ElasticLoadBalancingV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeRules">REST API Reference for DescribeRules Operation</seealso>
         public  DescribeRulesResponse EndDescribeRules(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeRulesResponse>(asyncResult);
@@ -1279,6 +1322,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.SSLPolicyNotFoundException">
         /// The specified SSL policy does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeSSLPolicies">REST API Reference for DescribeSSLPolicies Operation</seealso>
         public DescribeSSLPoliciesResponse DescribeSSLPolicies(DescribeSSLPoliciesRequest request)
         {
             var marshaller = new DescribeSSLPoliciesRequestMarshaller();
@@ -1298,6 +1342,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeSSLPolicies
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeSSLPolicies">REST API Reference for DescribeSSLPolicies Operation</seealso>
         public IAsyncResult BeginDescribeSSLPolicies(DescribeSSLPoliciesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeSSLPoliciesRequestMarshaller();
@@ -1314,6 +1359,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeSSLPolicies.</param>
         /// 
         /// <returns>Returns a  DescribeSSLPoliciesResult from ElasticLoadBalancingV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeSSLPolicies">REST API Reference for DescribeSSLPolicies Operation</seealso>
         public  DescribeSSLPoliciesResponse EndDescribeSSLPolicies(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeSSLPoliciesResponse>(asyncResult);
@@ -1341,6 +1387,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TargetGroupNotFoundException">
         /// The specified target group does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeTags">REST API Reference for DescribeTags Operation</seealso>
         public DescribeTagsResponse DescribeTags(DescribeTagsRequest request)
         {
             var marshaller = new DescribeTagsRequestMarshaller();
@@ -1360,6 +1407,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeTags
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeTags">REST API Reference for DescribeTags Operation</seealso>
         public IAsyncResult BeginDescribeTags(DescribeTagsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeTagsRequestMarshaller();
@@ -1376,6 +1424,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeTags.</param>
         /// 
         /// <returns>Returns a  DescribeTagsResult from ElasticLoadBalancingV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeTags">REST API Reference for DescribeTags Operation</seealso>
         public  DescribeTagsResponse EndDescribeTags(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeTagsResponse>(asyncResult);
@@ -1394,6 +1443,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TargetGroupNotFoundException">
         /// The specified target group does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeTargetGroupAttributes">REST API Reference for DescribeTargetGroupAttributes Operation</seealso>
         public DescribeTargetGroupAttributesResponse DescribeTargetGroupAttributes(DescribeTargetGroupAttributesRequest request)
         {
             var marshaller = new DescribeTargetGroupAttributesRequestMarshaller();
@@ -1413,6 +1463,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeTargetGroupAttributes
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeTargetGroupAttributes">REST API Reference for DescribeTargetGroupAttributes Operation</seealso>
         public IAsyncResult BeginDescribeTargetGroupAttributes(DescribeTargetGroupAttributesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeTargetGroupAttributesRequestMarshaller();
@@ -1429,6 +1480,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeTargetGroupAttributes.</param>
         /// 
         /// <returns>Returns a  DescribeTargetGroupAttributesResult from ElasticLoadBalancingV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeTargetGroupAttributes">REST API Reference for DescribeTargetGroupAttributes Operation</seealso>
         public  DescribeTargetGroupAttributesResponse EndDescribeTargetGroupAttributes(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeTargetGroupAttributesResponse>(asyncResult);
@@ -1459,6 +1511,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TargetGroupNotFoundException">
         /// The specified target group does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeTargetGroups">REST API Reference for DescribeTargetGroups Operation</seealso>
         public DescribeTargetGroupsResponse DescribeTargetGroups(DescribeTargetGroupsRequest request)
         {
             var marshaller = new DescribeTargetGroupsRequestMarshaller();
@@ -1478,6 +1531,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeTargetGroups
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeTargetGroups">REST API Reference for DescribeTargetGroups Operation</seealso>
         public IAsyncResult BeginDescribeTargetGroups(DescribeTargetGroupsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeTargetGroupsRequestMarshaller();
@@ -1494,6 +1548,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeTargetGroups.</param>
         /// 
         /// <returns>Returns a  DescribeTargetGroupsResult from ElasticLoadBalancingV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeTargetGroups">REST API Reference for DescribeTargetGroups Operation</seealso>
         public  DescribeTargetGroupsResponse EndDescribeTargetGroups(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeTargetGroupsResponse>(asyncResult);
@@ -1518,6 +1573,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TargetGroupNotFoundException">
         /// The specified target group does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeTargetHealth">REST API Reference for DescribeTargetHealth Operation</seealso>
         public DescribeTargetHealthResponse DescribeTargetHealth(DescribeTargetHealthRequest request)
         {
             var marshaller = new DescribeTargetHealthRequestMarshaller();
@@ -1537,6 +1593,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeTargetHealth
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeTargetHealth">REST API Reference for DescribeTargetHealth Operation</seealso>
         public IAsyncResult BeginDescribeTargetHealth(DescribeTargetHealthRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeTargetHealthRequestMarshaller();
@@ -1553,6 +1610,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeTargetHealth.</param>
         /// 
         /// <returns>Returns a  DescribeTargetHealthResult from ElasticLoadBalancingV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeTargetHealth">REST API Reference for DescribeTargetHealth Operation</seealso>
         public  DescribeTargetHealthResponse EndDescribeTargetHealth(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeTargetHealthResponse>(asyncResult);
@@ -1612,6 +1670,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.UnsupportedProtocolException">
         /// The specified protocol is not supported.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyListener">REST API Reference for ModifyListener Operation</seealso>
         public ModifyListenerResponse ModifyListener(ModifyListenerRequest request)
         {
             var marshaller = new ModifyListenerRequestMarshaller();
@@ -1631,6 +1690,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyListener
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyListener">REST API Reference for ModifyListener Operation</seealso>
         public IAsyncResult BeginModifyListener(ModifyListenerRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ModifyListenerRequestMarshaller();
@@ -1647,6 +1707,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyListener.</param>
         /// 
         /// <returns>Returns a  ModifyListenerResult from ElasticLoadBalancingV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyListener">REST API Reference for ModifyListener Operation</seealso>
         public  ModifyListenerResponse EndModifyListener(IAsyncResult asyncResult)
         {
             return EndInvoke<ModifyListenerResponse>(asyncResult);
@@ -1674,6 +1735,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.LoadBalancerNotFoundException">
         /// The specified load balancer does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyLoadBalancerAttributes">REST API Reference for ModifyLoadBalancerAttributes Operation</seealso>
         public ModifyLoadBalancerAttributesResponse ModifyLoadBalancerAttributes(ModifyLoadBalancerAttributesRequest request)
         {
             var marshaller = new ModifyLoadBalancerAttributesRequestMarshaller();
@@ -1693,6 +1755,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyLoadBalancerAttributes
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyLoadBalancerAttributes">REST API Reference for ModifyLoadBalancerAttributes Operation</seealso>
         public IAsyncResult BeginModifyLoadBalancerAttributes(ModifyLoadBalancerAttributesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ModifyLoadBalancerAttributesRequestMarshaller();
@@ -1709,6 +1772,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyLoadBalancerAttributes.</param>
         /// 
         /// <returns>Returns a  ModifyLoadBalancerAttributesResult from ElasticLoadBalancingV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyLoadBalancerAttributes">REST API Reference for ModifyLoadBalancerAttributes Operation</seealso>
         public  ModifyLoadBalancerAttributesResponse EndModifyLoadBalancerAttributes(IAsyncResult asyncResult)
         {
             return EndInvoke<ModifyLoadBalancerAttributesResponse>(asyncResult);
@@ -1746,6 +1810,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// You've reached the limit on the number of times a target can be registered with a
         /// load balancer.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyRule">REST API Reference for ModifyRule Operation</seealso>
         public ModifyRuleResponse ModifyRule(ModifyRuleRequest request)
         {
             var marshaller = new ModifyRuleRequestMarshaller();
@@ -1765,6 +1830,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyRule
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyRule">REST API Reference for ModifyRule Operation</seealso>
         public IAsyncResult BeginModifyRule(ModifyRuleRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ModifyRuleRequestMarshaller();
@@ -1781,6 +1847,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyRule.</param>
         /// 
         /// <returns>Returns a  ModifyRuleResult from ElasticLoadBalancingV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyRule">REST API Reference for ModifyRule Operation</seealso>
         public  ModifyRuleResponse EndModifyRule(IAsyncResult asyncResult)
         {
             return EndInvoke<ModifyRuleResponse>(asyncResult);
@@ -1805,6 +1872,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TargetGroupNotFoundException">
         /// The specified target group does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyTargetGroup">REST API Reference for ModifyTargetGroup Operation</seealso>
         public ModifyTargetGroupResponse ModifyTargetGroup(ModifyTargetGroupRequest request)
         {
             var marshaller = new ModifyTargetGroupRequestMarshaller();
@@ -1824,6 +1892,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyTargetGroup
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyTargetGroup">REST API Reference for ModifyTargetGroup Operation</seealso>
         public IAsyncResult BeginModifyTargetGroup(ModifyTargetGroupRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ModifyTargetGroupRequestMarshaller();
@@ -1840,6 +1909,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyTargetGroup.</param>
         /// 
         /// <returns>Returns a  ModifyTargetGroupResult from ElasticLoadBalancingV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyTargetGroup">REST API Reference for ModifyTargetGroup Operation</seealso>
         public  ModifyTargetGroupResponse EndModifyTargetGroup(IAsyncResult asyncResult)
         {
             return EndInvoke<ModifyTargetGroupResponse>(asyncResult);
@@ -1858,6 +1928,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TargetGroupNotFoundException">
         /// The specified target group does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyTargetGroupAttributes">REST API Reference for ModifyTargetGroupAttributes Operation</seealso>
         public ModifyTargetGroupAttributesResponse ModifyTargetGroupAttributes(ModifyTargetGroupAttributesRequest request)
         {
             var marshaller = new ModifyTargetGroupAttributesRequestMarshaller();
@@ -1877,6 +1948,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyTargetGroupAttributes
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyTargetGroupAttributes">REST API Reference for ModifyTargetGroupAttributes Operation</seealso>
         public IAsyncResult BeginModifyTargetGroupAttributes(ModifyTargetGroupAttributesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ModifyTargetGroupAttributesRequestMarshaller();
@@ -1893,6 +1965,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyTargetGroupAttributes.</param>
         /// 
         /// <returns>Returns a  ModifyTargetGroupAttributesResult from ElasticLoadBalancingV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyTargetGroupAttributes">REST API Reference for ModifyTargetGroupAttributes Operation</seealso>
         public  ModifyTargetGroupAttributesResponse EndModifyTargetGroupAttributes(IAsyncResult asyncResult)
         {
             return EndInvoke<ModifyTargetGroupAttributesResponse>(asyncResult);
@@ -1914,8 +1987,8 @@ namespace Amazon.ElasticLoadBalancingV2
         ///  
         /// <para>
         /// The target must be in the virtual private cloud (VPC) that you specified for the target
-        /// group. If the target is an EC2 instance, it can't be in the <code>stopped</code> or
-        /// <code>running</code> state when you register it.
+        /// group. If the target is an EC2 instance, it must be in the <code>running</code> state
+        /// when you register it.
         /// </para>
         ///  
         /// <para>
@@ -1938,6 +2011,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TooManyTargetsException">
         /// You've reached the limit on the number of targets.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/RegisterTargets">REST API Reference for RegisterTargets Operation</seealso>
         public RegisterTargetsResponse RegisterTargets(RegisterTargetsRequest request)
         {
             var marshaller = new RegisterTargetsRequestMarshaller();
@@ -1957,6 +2031,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRegisterTargets
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/RegisterTargets">REST API Reference for RegisterTargets Operation</seealso>
         public IAsyncResult BeginRegisterTargets(RegisterTargetsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RegisterTargetsRequestMarshaller();
@@ -1973,6 +2048,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRegisterTargets.</param>
         /// 
         /// <returns>Returns a  RegisterTargetsResult from ElasticLoadBalancingV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/RegisterTargets">REST API Reference for RegisterTargets Operation</seealso>
         public  RegisterTargetsResponse EndRegisterTargets(IAsyncResult asyncResult)
         {
             return EndInvoke<RegisterTargetsResponse>(asyncResult);
@@ -2008,6 +2084,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TooManyTagsException">
         /// You've reached the limit on the number of tags per load balancer.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/RemoveTags">REST API Reference for RemoveTags Operation</seealso>
         public RemoveTagsResponse RemoveTags(RemoveTagsRequest request)
         {
             var marshaller = new RemoveTagsRequestMarshaller();
@@ -2027,6 +2104,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRemoveTags
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/RemoveTags">REST API Reference for RemoveTags Operation</seealso>
         public IAsyncResult BeginRemoveTags(RemoveTagsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RemoveTagsRequestMarshaller();
@@ -2043,9 +2121,73 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRemoveTags.</param>
         /// 
         /// <returns>Returns a  RemoveTagsResult from ElasticLoadBalancingV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/RemoveTags">REST API Reference for RemoveTags Operation</seealso>
         public  RemoveTagsResponse EndRemoveTags(IAsyncResult asyncResult)
         {
             return EndInvoke<RemoveTagsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  SetIpAddressType
+
+        /// <summary>
+        /// Sets the type of IP addresses used by the subnets of the specified Application Load
+        /// Balancer.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SetIpAddressType service method.</param>
+        /// 
+        /// <returns>The response from the SetIpAddressType service method, as returned by ElasticLoadBalancingV2.</returns>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.InvalidConfigurationRequestException">
+        /// The requested configuration is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.InvalidSubnetException">
+        /// The specified subnet is out of available addresses.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.LoadBalancerNotFoundException">
+        /// The specified load balancer does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/SetIpAddressType">REST API Reference for SetIpAddressType Operation</seealso>
+        public SetIpAddressTypeResponse SetIpAddressType(SetIpAddressTypeRequest request)
+        {
+            var marshaller = new SetIpAddressTypeRequestMarshaller();
+            var unmarshaller = SetIpAddressTypeResponseUnmarshaller.Instance;
+
+            return Invoke<SetIpAddressTypeRequest,SetIpAddressTypeResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SetIpAddressType operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SetIpAddressType operation on AmazonElasticLoadBalancingV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSetIpAddressType
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/SetIpAddressType">REST API Reference for SetIpAddressType Operation</seealso>
+        public IAsyncResult BeginSetIpAddressType(SetIpAddressTypeRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new SetIpAddressTypeRequestMarshaller();
+            var unmarshaller = SetIpAddressTypeResponseUnmarshaller.Instance;
+
+            return BeginInvoke<SetIpAddressTypeRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SetIpAddressType operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetIpAddressType.</param>
+        /// 
+        /// <returns>Returns a  SetIpAddressTypeResult from ElasticLoadBalancingV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/SetIpAddressType">REST API Reference for SetIpAddressType Operation</seealso>
+        public  SetIpAddressTypeResponse EndSetIpAddressType(IAsyncResult asyncResult)
+        {
+            return EndInvoke<SetIpAddressTypeResponse>(asyncResult);
         }
 
         #endregion
@@ -2073,6 +2215,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.RuleNotFoundException">
         /// The specified rule does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/SetRulePriorities">REST API Reference for SetRulePriorities Operation</seealso>
         public SetRulePrioritiesResponse SetRulePriorities(SetRulePrioritiesRequest request)
         {
             var marshaller = new SetRulePrioritiesRequestMarshaller();
@@ -2092,6 +2235,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSetRulePriorities
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/SetRulePriorities">REST API Reference for SetRulePriorities Operation</seealso>
         public IAsyncResult BeginSetRulePriorities(SetRulePrioritiesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new SetRulePrioritiesRequestMarshaller();
@@ -2108,6 +2252,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetRulePriorities.</param>
         /// 
         /// <returns>Returns a  SetRulePrioritiesResult from ElasticLoadBalancingV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/SetRulePriorities">REST API Reference for SetRulePriorities Operation</seealso>
         public  SetRulePrioritiesResponse EndSetRulePriorities(IAsyncResult asyncResult)
         {
             return EndInvoke<SetRulePrioritiesResponse>(asyncResult);
@@ -2133,6 +2278,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.LoadBalancerNotFoundException">
         /// The specified load balancer does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/SetSecurityGroups">REST API Reference for SetSecurityGroups Operation</seealso>
         public SetSecurityGroupsResponse SetSecurityGroups(SetSecurityGroupsRequest request)
         {
             var marshaller = new SetSecurityGroupsRequestMarshaller();
@@ -2152,6 +2298,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSetSecurityGroups
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/SetSecurityGroups">REST API Reference for SetSecurityGroups Operation</seealso>
         public IAsyncResult BeginSetSecurityGroups(SetSecurityGroupsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new SetSecurityGroupsRequestMarshaller();
@@ -2168,6 +2315,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetSecurityGroups.</param>
         /// 
         /// <returns>Returns a  SetSecurityGroupsResult from ElasticLoadBalancingV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/SetSecurityGroups">REST API Reference for SetSecurityGroups Operation</seealso>
         public  SetSecurityGroupsResponse EndSetSecurityGroups(IAsyncResult asyncResult)
         {
             return EndInvoke<SetSecurityGroupsResponse>(asyncResult);
@@ -2196,6 +2344,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.SubnetNotFoundException">
         /// The specified subnet does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/SetSubnets">REST API Reference for SetSubnets Operation</seealso>
         public SetSubnetsResponse SetSubnets(SetSubnetsRequest request)
         {
             var marshaller = new SetSubnetsRequestMarshaller();
@@ -2215,6 +2364,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSetSubnets
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/SetSubnets">REST API Reference for SetSubnets Operation</seealso>
         public IAsyncResult BeginSetSubnets(SetSubnetsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new SetSubnetsRequestMarshaller();
@@ -2231,6 +2381,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetSubnets.</param>
         /// 
         /// <returns>Returns a  SetSubnetsResult from ElasticLoadBalancingV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/SetSubnets">REST API Reference for SetSubnets Operation</seealso>
         public  SetSubnetsResponse EndSetSubnets(IAsyncResult asyncResult)
         {
             return EndInvoke<SetSubnetsResponse>(asyncResult);

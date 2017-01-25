@@ -36,6 +36,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         private string _canonicalHostedZoneId;
         private DateTime? _createdTime;
         private string _dnsName;
+        private IpAddressType _ipAddressType;
         private string _loadBalancerArn;
         private string _loadBalancerName;
         private LoadBalancerSchemeEnum _scheme;
@@ -114,6 +115,26 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         internal bool IsSetDNSName()
         {
             return this._dnsName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IpAddressType. 
+        /// <para>
+        /// The type of IP addresses used by the subnets for your load balancer. The possible
+        /// values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for
+        /// IPv4 and IPv6 addresses).
+        /// </para>
+        /// </summary>
+        public IpAddressType IpAddressType
+        {
+            get { return this._ipAddressType; }
+            set { this._ipAddressType = value; }
+        }
+
+        // Check to see if IpAddressType property is set
+        internal bool IsSetIpAddressType()
+        {
+            return this._ipAddressType != null;
         }
 
         /// <summary>

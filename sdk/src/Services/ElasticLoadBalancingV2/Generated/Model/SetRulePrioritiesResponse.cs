@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticLoadBalancingV2.Model
 {
     /// <summary>
-    /// Contains the output of SetRulePriorities.
+    /// This is the response object from the SetRulePriorities operation.
     /// </summary>
     public partial class SetRulePrioritiesResponse : AmazonWebServiceResponse
     {

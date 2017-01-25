@@ -33,14 +33,15 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// 
     ///  
     /// <para>
-    /// To create listeners for your load balancer, use <a>CreateListener</a>. You can add
-    /// security groups, subnets, and tags when you create your load balancer, or you can
-    /// add them later using <a>SetSecurityGroups</a>, <a>SetSubnets</a>, and <a>AddTags</a>.
+    /// When you create a load balancer, you can specify security groups, subnets, IP address
+    /// type, and tags. Otherwise, you could do so later using <a>SetSecurityGroups</a>, <a>SetSubnets</a>,
+    /// <a>SetIpAddressType</a>, and <a>AddTags</a>.
     /// </para>
     ///  
     /// <para>
-    /// To describe your current load balancers, see <a>DescribeLoadBalancers</a>. When you
-    /// are finished with a load balancer, you can delete it using <a>DeleteLoadBalancer</a>.
+    /// To create listeners for your load balancer, use <a>CreateListener</a>. To describe
+    /// your current load balancers, see <a>DescribeLoadBalancers</a>. When you are finished
+    /// with a load balancer, you can delete it using <a>DeleteLoadBalancer</a>.
     /// </para>
     ///  
     /// <para>
@@ -57,11 +58,32 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// </summary>
     public partial class CreateLoadBalancerRequest : AmazonElasticLoadBalancingV2Request
     {
+        private IpAddressType _ipAddressType;
         private string _name;
         private LoadBalancerSchemeEnum _scheme;
         private List<string> _securityGroups = new List<string>();
         private List<string> _subnets = new List<string>();
         private List<Tag> _tags = new List<Tag>();
+
+        /// <summary>
+        /// Gets and sets the property IpAddressType. 
+        /// <para>
+        /// The type of IP addresses used by the subnets for your load balancer. The possible
+        /// values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for
+        /// IPv4 and IPv6 addresses). Internal load balancers must use <code>ipv4</code>.
+        /// </para>
+        /// </summary>
+        public IpAddressType IpAddressType
+        {
+            get { return this._ipAddressType; }
+            set { this._ipAddressType = value; }
+        }
+
+        // Check to see if IpAddressType property is set
+        internal bool IsSetIpAddressType()
+        {
+            return this._ipAddressType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Name. 

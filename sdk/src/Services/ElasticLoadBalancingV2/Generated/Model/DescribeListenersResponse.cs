@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticLoadBalancingV2.Model
 {
     /// <summary>
-    /// Contains the output of DescribeListeners.
+    /// This is the response object from the DescribeListeners operation.
     /// </summary>
     public partial class DescribeListenersResponse : AmazonWebServiceResponse
     {

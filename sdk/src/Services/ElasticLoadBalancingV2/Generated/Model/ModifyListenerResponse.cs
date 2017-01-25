@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticLoadBalancingV2.Model
 {
     /// <summary>
-    /// Contains the output of ModifyListener.
+    /// This is the response object from the ModifyListener operation.
     /// </summary>
     public partial class ModifyListenerResponse : AmazonWebServiceResponse
     {

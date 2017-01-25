@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticLoadBalancingV2.Model
 {
     /// <summary>
-    /// Contains the output of SetSubnets.
+    /// This is the response object from the SetSubnets operation.
     /// </summary>
     public partial class SetSubnetsResponse : AmazonWebServiceResponse
     {

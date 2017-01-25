@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticLoadBalancingV2.Model
 {
     /// <summary>
-    /// Contains the output of DescribeRules.
+    /// This is the response object from the DescribeRules operation.
     /// </summary>
     public partial class DescribeRulesResponse : AmazonWebServiceResponse
     {

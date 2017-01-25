@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticLoadBalancingV2.Model
 {
     /// <summary>
-    /// Contains the output of DescribeSSLPolicies.
+    /// This is the response object from the DescribeSSLPolicies operation.
     /// </summary>
     public partial class DescribeSSLPoliciesResponse : AmazonWebServiceResponse
     {

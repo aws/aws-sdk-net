@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticLoadBalancingV2.Model
 {
     /// <summary>
-    /// Contains the output of DescribeTargetGroupAttributes.
+    /// This is the response object from the DescribeTargetGroupAttributes operation.
     /// </summary>
     public partial class DescribeTargetGroupAttributesResponse : AmazonWebServiceResponse
     {

@@ -60,8 +60,9 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         ///  
         /// <para>
-        /// A path pattern is case sensitive, can be up to 255 characters in length, and can contain
-        /// any of the following characters:
+        /// A path pattern is case sensitive, can be up to 128 characters in length, and can contain
+        /// any of the following characters. Note that you can include up to three wildcard characters
+        /// in a path pattern.
         /// </para>
         ///  <ul> <li> 
         /// <para>

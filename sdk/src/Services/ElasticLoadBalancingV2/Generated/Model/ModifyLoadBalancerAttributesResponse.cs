@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticLoadBalancingV2.Model
 {
     /// <summary>
-    /// Contains the output of ModifyLoadBalancerAttributes.
+    /// This is the response object from the ModifyLoadBalancerAttributes operation.
     /// </summary>
     public partial class ModifyLoadBalancerAttributesResponse : AmazonWebServiceResponse
     {

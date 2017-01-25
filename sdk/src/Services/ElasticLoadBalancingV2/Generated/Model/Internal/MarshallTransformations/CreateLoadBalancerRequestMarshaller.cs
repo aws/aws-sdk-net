@@ -58,6 +58,10 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
 
             if(publicRequest != null)
             {
+                if(publicRequest.IsSetIpAddressType())
+                {
+                    request.Parameters.Add("IpAddressType", StringUtils.FromString(publicRequest.IpAddressType));
+                }
                 if(publicRequest.IsSetName())
                 {
                     request.Parameters.Add("Name", StringUtils.FromString(publicRequest.Name));
