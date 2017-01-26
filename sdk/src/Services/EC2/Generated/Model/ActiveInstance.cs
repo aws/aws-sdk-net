@@ -32,9 +32,30 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class ActiveInstance
     {
+        private InstanceHealthStatus _instanceHealth;
         private string _instanceId;
         private string _instanceType;
         private string _spotInstanceRequestId;
+
+        /// <summary>
+        /// Gets and sets the property InstanceHealth. 
+        /// <para>
+        /// The health status of the instance. If the status of both the instance status check
+        /// and the system status check is <code>impaired</code>, the health status of the instance
+        /// is <code>unhealthy</code>. Otherwise, the health status is <code>healthy</code>.
+        /// </para>
+        /// </summary>
+        public InstanceHealthStatus InstanceHealth
+        {
+            get { return this._instanceHealth; }
+            set { this._instanceHealth = value; }
+        }
+
+        // Check to see if InstanceHealth property is set
+        internal bool IsSetInstanceHealth()
+        {
+            return this._instanceHealth != null;
+        }
 
         /// <summary>
         /// Gets and sets the property InstanceId. 

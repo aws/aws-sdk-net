@@ -38,6 +38,7 @@ namespace Amazon.EC2.Model
         private double? _fulfilledCapacity;
         private string _iamFleetRole;
         private List<SpotFleetLaunchSpecification> _launchSpecifications = new List<SpotFleetLaunchSpecification>();
+        private bool? _replaceUnhealthyInstances;
         private string _spotPrice;
         private int? _targetCapacity;
         private bool? _terminateInstancesWithExpiration;
@@ -157,6 +158,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetLaunchSpecifications()
         {
             return this._launchSpecifications != null && this._launchSpecifications.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReplaceUnhealthyInstances. 
+        /// <para>
+        /// Indicates whether Spot fleet should replace unhealthy instances.
+        /// </para>
+        /// </summary>
+        public bool ReplaceUnhealthyInstances
+        {
+            get { return this._replaceUnhealthyInstances.GetValueOrDefault(); }
+            set { this._replaceUnhealthyInstances = value; }
+        }
+
+        // Check to see if ReplaceUnhealthyInstances property is set
+        internal bool IsSetReplaceUnhealthyInstances()
+        {
+            return this._replaceUnhealthyInstances.HasValue; 
         }
 
         /// <summary>

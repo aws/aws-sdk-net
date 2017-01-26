@@ -309,6 +309,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             publicRequestSpotFleetRequestConfiglistValueIndex++;
                         }
                     }
+                    if(publicRequest.SpotFleetRequestConfig.IsSetReplaceUnhealthyInstances())
+                    {
+                        request.Parameters.Add("SpotFleetRequestConfig" + "." + "ReplaceUnhealthyInstances", StringUtils.FromBool(publicRequest.SpotFleetRequestConfig.ReplaceUnhealthyInstances));
+                    }
                     if(publicRequest.SpotFleetRequestConfig.IsSetSpotPrice())
                     {
                         request.Parameters.Add("SpotFleetRequestConfig" + "." + "SpotPrice", StringUtils.FromString(publicRequest.SpotFleetRequestConfig.SpotPrice));
