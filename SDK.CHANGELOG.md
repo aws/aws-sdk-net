@@ -1,3 +1,9 @@
+### 3.3.44.0 (2017-01-25 23:00 UTC)
+* ElasticLoadBalancingV2 (3.3.1.0)
+	* Application Load Balancers now support native Internet Protocol version 6 (IPv6) in an Amazon Virtual Private Cloud (VPC). With this ability, clients can now connect to the Application Load Balancer in a dual-stack mode via either IPv4 or IPv6.
+* RDS (3.3.6.0)
+	* API Update for RDS : cross Region Read Replica Copying via CreateDBInstanceReadReplica operation
+
 ### 3.3.43.0 (2017-01-24 22:15 UTC)
 * CodeBuild (3.3.0.6)
 	* Doc update.
