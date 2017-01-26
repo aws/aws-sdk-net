@@ -32,8 +32,10 @@ namespace Amazon.CodeDeploy.Model
     /// </summary>
     public partial class DeploymentInfo
     {
+        private string _additionalDeploymentStatusInfo;
         private string _applicationName;
         private AutoRollbackConfiguration _autoRollbackConfiguration;
+        private BlueGreenDeploymentConfiguration _blueGreenDeploymentConfiguration;
         private DateTime? _completeTime;
         private DateTime? _createTime;
         private DeploymentCreator _creator;
@@ -41,14 +43,37 @@ namespace Amazon.CodeDeploy.Model
         private string _deploymentGroupName;
         private string _deploymentId;
         private DeploymentOverview _deploymentOverview;
+        private DeploymentStyle _deploymentStyle;
         private string _description;
         private ErrorInformation _errorInformation;
         private bool? _ignoreApplicationStopFailures;
+        private bool? _instanceTerminationWaitTimeStarted;
+        private LoadBalancerInfo _loadBalancerInfo;
         private RevisionLocation _revision;
         private RollbackInfo _rollbackInfo;
         private DateTime? _startTime;
         private DeploymentStatus _status;
+        private TargetInstances _targetInstances;
         private bool? _updateOutdatedInstancesOnly;
+
+        /// <summary>
+        /// Gets and sets the property AdditionalDeploymentStatusInfo. 
+        /// <para>
+        /// Provides information about the results of a deployment, such as whether instances
+        /// in the original environment in a blue/green deployment were not terminated.
+        /// </para>
+        /// </summary>
+        public string AdditionalDeploymentStatusInfo
+        {
+            get { return this._additionalDeploymentStatusInfo; }
+            set { this._additionalDeploymentStatusInfo = value; }
+        }
+
+        // Check to see if AdditionalDeploymentStatusInfo property is set
+        internal bool IsSetAdditionalDeploymentStatusInfo()
+        {
+            return this._additionalDeploymentStatusInfo != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ApplicationName. 
@@ -84,6 +109,24 @@ namespace Amazon.CodeDeploy.Model
         internal bool IsSetAutoRollbackConfiguration()
         {
             return this._autoRollbackConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BlueGreenDeploymentConfiguration. 
+        /// <para>
+        /// Information about blue/green deployment options for this deployment.
+        /// </para>
+        /// </summary>
+        public BlueGreenDeploymentConfiguration BlueGreenDeploymentConfiguration
+        {
+            get { return this._blueGreenDeploymentConfiguration; }
+            set { this._blueGreenDeploymentConfiguration = value; }
+        }
+
+        // Check to see if BlueGreenDeploymentConfiguration property is set
+        internal bool IsSetBlueGreenDeploymentConfiguration()
+        {
+            return this._blueGreenDeploymentConfiguration != null;
         }
 
         /// <summary>
@@ -226,6 +269,25 @@ namespace Amazon.CodeDeploy.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DeploymentStyle. 
+        /// <para>
+        /// Information about the type of deployment, either standard or blue/green, you want
+        /// to run and whether to route deployment traffic behind a load balancer.
+        /// </para>
+        /// </summary>
+        public DeploymentStyle DeploymentStyle
+        {
+            get { return this._deploymentStyle; }
+            set { this._deploymentStyle = value; }
+        }
+
+        // Check to see if DeploymentStyle property is set
+        internal bool IsSetDeploymentStyle()
+        {
+            return this._deploymentStyle != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
         /// A comment about the deployment.
@@ -286,6 +348,44 @@ namespace Amazon.CodeDeploy.Model
         internal bool IsSetIgnoreApplicationStopFailures()
         {
             return this._ignoreApplicationStopFailures.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceTerminationWaitTimeStarted. 
+        /// <para>
+        /// Indicates whether the wait period set for the termination of instances in the original
+        /// environment has started. Status is 'false' if the KEEP_ALIVE option is specified;
+        /// otherwise, 'true' as soon as the termination wait period starts.
+        /// </para>
+        /// </summary>
+        public bool InstanceTerminationWaitTimeStarted
+        {
+            get { return this._instanceTerminationWaitTimeStarted.GetValueOrDefault(); }
+            set { this._instanceTerminationWaitTimeStarted = value; }
+        }
+
+        // Check to see if InstanceTerminationWaitTimeStarted property is set
+        internal bool IsSetInstanceTerminationWaitTimeStarted()
+        {
+            return this._instanceTerminationWaitTimeStarted.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LoadBalancerInfo. 
+        /// <para>
+        /// Information about the load balancer used in this blue/green deployment.
+        /// </para>
+        /// </summary>
+        public LoadBalancerInfo LoadBalancerInfo
+        {
+            get { return this._loadBalancerInfo; }
+            set { this._loadBalancerInfo = value; }
+        }
+
+        // Check to see if LoadBalancerInfo property is set
+        internal bool IsSetLoadBalancerInfo()
+        {
+            return this._loadBalancerInfo != null;
         }
 
         /// <summary>
@@ -365,6 +465,25 @@ namespace Amazon.CodeDeploy.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetInstances. 
+        /// <para>
+        /// Information about the instances that belong to the replacement environment in a blue/green
+        /// deployment.
+        /// </para>
+        /// </summary>
+        public TargetInstances TargetInstances
+        {
+            get { return this._targetInstances; }
+            set { this._targetInstances = value; }
+        }
+
+        // Check to see if TargetInstances property is set
+        internal bool IsSetTargetInstances()
+        {
+            return this._targetInstances != null;
         }
 
         /// <summary>

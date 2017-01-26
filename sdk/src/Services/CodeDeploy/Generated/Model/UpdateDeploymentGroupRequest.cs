@@ -37,9 +37,12 @@ namespace Amazon.CodeDeploy.Model
         private string _applicationName;
         private AutoRollbackConfiguration _autoRollbackConfiguration;
         private List<string> _autoScalingGroups = new List<string>();
+        private BlueGreenDeploymentConfiguration _blueGreenDeploymentConfiguration;
         private string _currentDeploymentGroupName;
         private string _deploymentConfigName;
+        private DeploymentStyle _deploymentStyle;
         private List<EC2TagFilter> _ec2TagFilters = new List<EC2TagFilter>();
+        private LoadBalancerInfo _loadBalancerInfo;
         private string _newDeploymentGroupName;
         private List<TagFilter> _onPremisesInstanceTagFilters = new List<TagFilter>();
         private string _serviceRoleArn;
@@ -122,6 +125,24 @@ namespace Amazon.CodeDeploy.Model
         }
 
         /// <summary>
+        /// Gets and sets the property BlueGreenDeploymentConfiguration. 
+        /// <para>
+        /// Information about blue/green deployment options for a deployment group.
+        /// </para>
+        /// </summary>
+        public BlueGreenDeploymentConfiguration BlueGreenDeploymentConfiguration
+        {
+            get { return this._blueGreenDeploymentConfiguration; }
+            set { this._blueGreenDeploymentConfiguration = value; }
+        }
+
+        // Check to see if BlueGreenDeploymentConfiguration property is set
+        internal bool IsSetBlueGreenDeploymentConfiguration()
+        {
+            return this._blueGreenDeploymentConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property CurrentDeploymentGroupName. 
         /// <para>
         /// The current name of the deployment group.
@@ -158,6 +179,25 @@ namespace Amazon.CodeDeploy.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DeploymentStyle. 
+        /// <para>
+        /// Information about the type of deployment, either standard or blue/green, you want
+        /// to run and whether to route deployment traffic behind a load balancer.
+        /// </para>
+        /// </summary>
+        public DeploymentStyle DeploymentStyle
+        {
+            get { return this._deploymentStyle; }
+            set { this._deploymentStyle = value; }
+        }
+
+        // Check to see if DeploymentStyle property is set
+        internal bool IsSetDeploymentStyle()
+        {
+            return this._deploymentStyle != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Ec2TagFilters. 
         /// <para>
         /// The replacement set of Amazon EC2 tags on which to filter, if you want to change them.
@@ -175,6 +215,24 @@ namespace Amazon.CodeDeploy.Model
         internal bool IsSetEc2TagFilters()
         {
             return this._ec2TagFilters != null && this._ec2TagFilters.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LoadBalancerInfo. 
+        /// <para>
+        /// Information about the load balancer used in a blue/green deployment.
+        /// </para>
+        /// </summary>
+        public LoadBalancerInfo LoadBalancerInfo
+        {
+            get { return this._loadBalancerInfo; }
+            set { this._loadBalancerInfo = value; }
+        }
+
+        // Check to see if LoadBalancerInfo property is set
+        internal bool IsSetLoadBalancerInfo()
+        {
+            return this._loadBalancerInfo != null;
         }
 
         /// <summary>

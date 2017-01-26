@@ -36,6 +36,7 @@ namespace Amazon.CodeDeploy.Model
     {
         private string _deploymentId;
         private List<string> _instanceStatusFilter = new List<string>();
+        private List<string> _instanceTypeFilter = new List<string>();
         private string _nextToken;
 
         /// <summary>
@@ -97,6 +98,26 @@ namespace Amazon.CodeDeploy.Model
         internal bool IsSetInstanceStatusFilter()
         {
             return this._instanceStatusFilter != null && this._instanceStatusFilter.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceTypeFilter. 
+        /// <para>
+        /// The set of instances in a blue/green deployment, either those in the original environment
+        /// ("BLUE") or those in the replacement environment ("GREEN"), for which you want to
+        /// view instance information.
+        /// </para>
+        /// </summary>
+        public List<string> InstanceTypeFilter
+        {
+            get { return this._instanceTypeFilter; }
+            set { this._instanceTypeFilter = value; }
+        }
+
+        // Check to see if InstanceTypeFilter property is set
+        internal bool IsSetInstanceTypeFilter()
+        {
+            return this._instanceTypeFilter != null && this._instanceTypeFilter.Count > 0; 
         }
 
         /// <summary>

@@ -233,6 +233,22 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("CodeDeploy")]
+        public void ContinueDeploymentMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<ContinueDeploymentRequest>();
+            var marshaller = new ContinueDeploymentRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<ContinueDeploymentRequest>(request,jsonRequest);
+
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("CodeDeploy")]
         public void CreateApplicationMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<CreateApplicationRequest>();
@@ -872,6 +888,22 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
             Comparer.CompareObjectToJson<RemoveTagsFromOnPremisesInstancesRequest>(request,jsonRequest);
+
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("CodeDeploy")]
+        public void SkipWaitTimeForInstanceTerminationMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<SkipWaitTimeForInstanceTerminationRequest>();
+            var marshaller = new SkipWaitTimeForInstanceTerminationRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<SkipWaitTimeForInstanceTerminationRequest>(request,jsonRequest);
 
         }
 

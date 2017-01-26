@@ -241,6 +241,106 @@ namespace Amazon.CodeDeploy
 
 
     /// <summary>
+    /// Constants used for properties of type DeploymentOption.
+    /// </summary>
+    public class DeploymentOption : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant WITH_TRAFFIC_CONTROL for DeploymentOption
+        /// </summary>
+        public static readonly DeploymentOption WITH_TRAFFIC_CONTROL = new DeploymentOption("WITH_TRAFFIC_CONTROL");
+        /// <summary>
+        /// Constant WITHOUT_TRAFFIC_CONTROL for DeploymentOption
+        /// </summary>
+        public static readonly DeploymentOption WITHOUT_TRAFFIC_CONTROL = new DeploymentOption("WITHOUT_TRAFFIC_CONTROL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DeploymentOption(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DeploymentOption FindValue(string value)
+        {
+            return FindValue<DeploymentOption>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DeploymentOption(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DeploymentReadyAction.
+    /// </summary>
+    public class DeploymentReadyAction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CONTINUE_DEPLOYMENT for DeploymentReadyAction
+        /// </summary>
+        public static readonly DeploymentReadyAction CONTINUE_DEPLOYMENT = new DeploymentReadyAction("CONTINUE_DEPLOYMENT");
+        /// <summary>
+        /// Constant STOP_DEPLOYMENT for DeploymentReadyAction
+        /// </summary>
+        public static readonly DeploymentReadyAction STOP_DEPLOYMENT = new DeploymentReadyAction("STOP_DEPLOYMENT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DeploymentReadyAction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DeploymentReadyAction FindValue(string value)
+        {
+            return FindValue<DeploymentReadyAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DeploymentReadyAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DeploymentStatus.
     /// </summary>
     public class DeploymentStatus : ConstantClass
@@ -262,6 +362,10 @@ namespace Amazon.CodeDeploy
         /// Constant Queued for DeploymentStatus
         /// </summary>
         public static readonly DeploymentStatus Queued = new DeploymentStatus("Queued");
+        /// <summary>
+        /// Constant Ready for DeploymentStatus
+        /// </summary>
+        public static readonly DeploymentStatus Ready = new DeploymentStatus("Ready");
         /// <summary>
         /// Constant Stopped for DeploymentStatus
         /// </summary>
@@ -300,6 +404,56 @@ namespace Amazon.CodeDeploy
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DeploymentStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DeploymentType.
+    /// </summary>
+    public class DeploymentType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BLUE_GREEN for DeploymentType
+        /// </summary>
+        public static readonly DeploymentType BLUE_GREEN = new DeploymentType("BLUE_GREEN");
+        /// <summary>
+        /// Constant IN_PLACE for DeploymentType
+        /// </summary>
+        public static readonly DeploymentType IN_PLACE = new DeploymentType("IN_PLACE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DeploymentType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DeploymentType FindValue(string value)
+        {
+            return FindValue<DeploymentType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DeploymentType(string value)
         {
             return FindValue(value);
         }
@@ -475,6 +629,106 @@ namespace Amazon.CodeDeploy
 
 
     /// <summary>
+    /// Constants used for properties of type GreenFleetProvisioningAction.
+    /// </summary>
+    public class GreenFleetProvisioningAction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COPY_AUTO_SCALING_GROUP for GreenFleetProvisioningAction
+        /// </summary>
+        public static readonly GreenFleetProvisioningAction COPY_AUTO_SCALING_GROUP = new GreenFleetProvisioningAction("COPY_AUTO_SCALING_GROUP");
+        /// <summary>
+        /// Constant DISCOVER_EXISTING for GreenFleetProvisioningAction
+        /// </summary>
+        public static readonly GreenFleetProvisioningAction DISCOVER_EXISTING = new GreenFleetProvisioningAction("DISCOVER_EXISTING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GreenFleetProvisioningAction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GreenFleetProvisioningAction FindValue(string value)
+        {
+            return FindValue<GreenFleetProvisioningAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GreenFleetProvisioningAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InstanceAction.
+    /// </summary>
+    public class InstanceAction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant KEEP_ALIVE for InstanceAction
+        /// </summary>
+        public static readonly InstanceAction KEEP_ALIVE = new InstanceAction("KEEP_ALIVE");
+        /// <summary>
+        /// Constant TERMINATE for InstanceAction
+        /// </summary>
+        public static readonly InstanceAction TERMINATE = new InstanceAction("TERMINATE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InstanceAction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InstanceAction FindValue(string value)
+        {
+            return FindValue<InstanceAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InstanceAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type InstanceStatus.
     /// </summary>
     public class InstanceStatus : ConstantClass
@@ -492,6 +746,10 @@ namespace Amazon.CodeDeploy
         /// Constant Pending for InstanceStatus
         /// </summary>
         public static readonly InstanceStatus Pending = new InstanceStatus("Pending");
+        /// <summary>
+        /// Constant Ready for InstanceStatus
+        /// </summary>
+        public static readonly InstanceStatus Ready = new InstanceStatus("Ready");
         /// <summary>
         /// Constant Skipped for InstanceStatus
         /// </summary>
@@ -534,6 +792,56 @@ namespace Amazon.CodeDeploy
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator InstanceStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InstanceType.
+    /// </summary>
+    public class InstanceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Blue for InstanceType
+        /// </summary>
+        public static readonly InstanceType Blue = new InstanceType("Blue");
+        /// <summary>
+        /// Constant Green for InstanceType
+        /// </summary>
+        public static readonly InstanceType Green = new InstanceType("Green");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InstanceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InstanceType FindValue(string value)
+        {
+            return FindValue<InstanceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InstanceType(string value)
         {
             return FindValue(value);
         }
@@ -1041,6 +1349,10 @@ namespace Amazon.CodeDeploy
         /// </summary>
         public static readonly TriggerEventType DeploymentFailure = new TriggerEventType("DeploymentFailure");
         /// <summary>
+        /// Constant DeploymentReady for TriggerEventType
+        /// </summary>
+        public static readonly TriggerEventType DeploymentReady = new TriggerEventType("DeploymentReady");
+        /// <summary>
         /// Constant DeploymentRollback for TriggerEventType
         /// </summary>
         public static readonly TriggerEventType DeploymentRollback = new TriggerEventType("DeploymentRollback");
@@ -1060,6 +1372,10 @@ namespace Amazon.CodeDeploy
         /// Constant InstanceFailure for TriggerEventType
         /// </summary>
         public static readonly TriggerEventType InstanceFailure = new TriggerEventType("InstanceFailure");
+        /// <summary>
+        /// Constant InstanceReady for TriggerEventType
+        /// </summary>
+        public static readonly TriggerEventType InstanceReady = new TriggerEventType("InstanceReady");
         /// <summary>
         /// Constant InstanceStart for TriggerEventType
         /// </summary>

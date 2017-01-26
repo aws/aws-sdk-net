@@ -88,6 +88,12 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
                     unmarshalledObject.AutoScalingGroups = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("blueGreenDeploymentConfiguration", targetDepth))
+                {
+                    var unmarshaller = BlueGreenDeploymentConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.BlueGreenDeploymentConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("deploymentConfigName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -106,10 +112,22 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
                     unmarshalledObject.DeploymentGroupName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("deploymentStyle", targetDepth))
+                {
+                    var unmarshaller = DeploymentStyleUnmarshaller.Instance;
+                    unmarshalledObject.DeploymentStyle = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ec2TagFilters", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<EC2TagFilter, EC2TagFilterUnmarshaller>(EC2TagFilterUnmarshaller.Instance);
                     unmarshalledObject.Ec2TagFilters = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("loadBalancerInfo", targetDepth))
+                {
+                    var unmarshaller = LoadBalancerInfoUnmarshaller.Instance;
+                    unmarshalledObject.LoadBalancerInfo = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("onPremisesInstanceTagFilters", targetDepth))

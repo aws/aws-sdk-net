@@ -534,6 +534,38 @@ namespace Amazon.CodeDeploy
 
         #endregion
         
+        #region  ContinueDeployment
+
+        internal ContinueDeploymentResponse ContinueDeployment(ContinueDeploymentRequest request)
+        {
+            var marshaller = new ContinueDeploymentRequestMarshaller();
+            var unmarshaller = ContinueDeploymentResponseUnmarshaller.Instance;
+
+            return Invoke<ContinueDeploymentRequest,ContinueDeploymentResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ContinueDeployment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ContinueDeployment operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ContinueDeployment">REST API Reference for ContinueDeployment Operation</seealso>
+        public Task<ContinueDeploymentResponse> ContinueDeploymentAsync(ContinueDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ContinueDeploymentRequestMarshaller();
+            var unmarshaller = ContinueDeploymentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ContinueDeploymentRequest,ContinueDeploymentResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateApplication
 
         internal CreateApplicationResponse CreateApplication(CreateApplicationRequest request)
@@ -1373,6 +1405,38 @@ namespace Amazon.CodeDeploy
             var unmarshaller = RemoveTagsFromOnPremisesInstancesResponseUnmarshaller.Instance;
 
             return InvokeAsync<RemoveTagsFromOnPremisesInstancesRequest,RemoveTagsFromOnPremisesInstancesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  SkipWaitTimeForInstanceTermination
+
+        internal SkipWaitTimeForInstanceTerminationResponse SkipWaitTimeForInstanceTermination(SkipWaitTimeForInstanceTerminationRequest request)
+        {
+            var marshaller = new SkipWaitTimeForInstanceTerminationRequestMarshaller();
+            var unmarshaller = SkipWaitTimeForInstanceTerminationResponseUnmarshaller.Instance;
+
+            return Invoke<SkipWaitTimeForInstanceTerminationRequest,SkipWaitTimeForInstanceTerminationResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SkipWaitTimeForInstanceTermination operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SkipWaitTimeForInstanceTermination operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/SkipWaitTimeForInstanceTermination">REST API Reference for SkipWaitTimeForInstanceTermination Operation</seealso>
+        public Task<SkipWaitTimeForInstanceTerminationResponse> SkipWaitTimeForInstanceTerminationAsync(SkipWaitTimeForInstanceTerminationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new SkipWaitTimeForInstanceTerminationRequestMarshaller();
+            var unmarshaller = SkipWaitTimeForInstanceTerminationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SkipWaitTimeForInstanceTerminationRequest,SkipWaitTimeForInstanceTerminationResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

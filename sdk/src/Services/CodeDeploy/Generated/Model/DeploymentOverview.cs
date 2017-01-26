@@ -35,6 +35,7 @@ namespace Amazon.CodeDeploy.Model
         private long? _failed;
         private long? _inProgress;
         private long? _pending;
+        private long? _ready;
         private long? _skipped;
         private long? _succeeded;
 
@@ -90,6 +91,25 @@ namespace Amazon.CodeDeploy.Model
         internal bool IsSetPending()
         {
             return this._pending.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Ready. 
+        /// <para>
+        /// The number of instances in a replacement environment ready to receive traffic in a
+        /// blue/green deployment.
+        /// </para>
+        /// </summary>
+        public long Ready
+        {
+            get { return this._ready.GetValueOrDefault(); }
+            set { this._ready = value; }
+        }
+
+        // Check to see if Ready property is set
+        internal bool IsSetReady()
+        {
+            return this._ready.HasValue; 
         }
 
         /// <summary>

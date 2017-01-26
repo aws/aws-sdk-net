@@ -84,6 +84,17 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetInstanceTypeFilter())
+                {
+                    context.Writer.WritePropertyName("instanceTypeFilter");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestInstanceTypeFilterListValue in publicRequest.InstanceTypeFilter)
+                    {
+                            context.Writer.Write(publicRequestInstanceTypeFilterListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetNextToken())
                 {
                     context.Writer.WritePropertyName("nextToken");

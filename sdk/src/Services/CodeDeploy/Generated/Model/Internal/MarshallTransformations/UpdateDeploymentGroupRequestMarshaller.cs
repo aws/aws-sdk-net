@@ -106,6 +106,17 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetBlueGreenDeploymentConfiguration())
+                {
+                    context.Writer.WritePropertyName("blueGreenDeploymentConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = BlueGreenDeploymentConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.BlueGreenDeploymentConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetCurrentDeploymentGroupName())
                 {
                     context.Writer.WritePropertyName("currentDeploymentGroupName");
@@ -116,6 +127,17 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("deploymentConfigName");
                     context.Writer.Write(publicRequest.DeploymentConfigName);
+                }
+
+                if(publicRequest.IsSetDeploymentStyle())
+                {
+                    context.Writer.WritePropertyName("deploymentStyle");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DeploymentStyleMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DeploymentStyle, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetEc2TagFilters())
@@ -132,6 +154,17 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
                         context.Writer.WriteObjectEnd();
                     }
                     context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetLoadBalancerInfo())
+                {
+                    context.Writer.WritePropertyName("loadBalancerInfo");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = LoadBalancerInfoMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.LoadBalancerInfo, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetNewDeploymentGroupName())

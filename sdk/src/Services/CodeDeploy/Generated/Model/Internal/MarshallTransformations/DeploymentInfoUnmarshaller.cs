@@ -64,6 +64,12 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("additionalDeploymentStatusInfo", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AdditionalDeploymentStatusInfo = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("applicationName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -74,6 +80,12 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = AutoRollbackConfigurationUnmarshaller.Instance;
                     unmarshalledObject.AutoRollbackConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("blueGreenDeploymentConfiguration", targetDepth))
+                {
+                    var unmarshaller = BlueGreenDeploymentConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.BlueGreenDeploymentConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("completeTime", targetDepth))
@@ -118,6 +130,12 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
                     unmarshalledObject.DeploymentOverview = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("deploymentStyle", targetDepth))
+                {
+                    var unmarshaller = DeploymentStyleUnmarshaller.Instance;
+                    unmarshalledObject.DeploymentStyle = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("description", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -134,6 +152,18 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
                     unmarshalledObject.IgnoreApplicationStopFailures = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("instanceTerminationWaitTimeStarted", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.InstanceTerminationWaitTimeStarted = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("loadBalancerInfo", targetDepth))
+                {
+                    var unmarshaller = LoadBalancerInfoUnmarshaller.Instance;
+                    unmarshalledObject.LoadBalancerInfo = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("revision", targetDepth))
@@ -158,6 +188,12 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("targetInstances", targetDepth))
+                {
+                    var unmarshaller = TargetInstancesUnmarshaller.Instance;
+                    unmarshalledObject.TargetInstances = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("updateOutdatedInstancesOnly", targetDepth))

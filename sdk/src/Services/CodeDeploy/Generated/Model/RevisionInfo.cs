@@ -38,7 +38,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property GenericRevisionInfo. 
         /// <para>
-        /// Information about an application revision, including usage details and currently associated
+        /// Information about an application revision, including usage details and associated
         /// deployment groups.
         /// </para>
         /// </summary>

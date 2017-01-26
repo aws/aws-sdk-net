@@ -40,6 +40,7 @@ namespace Amazon.CodeDeploy.Model
         private string _description;
         private bool? _ignoreApplicationStopFailures;
         private RevisionLocation _revision;
+        private TargetInstances _targetInstances;
         private bool? _updateOutdatedInstancesOnly;
 
         /// <summary>
@@ -184,6 +185,25 @@ namespace Amazon.CodeDeploy.Model
         internal bool IsSetRevision()
         {
             return this._revision != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetInstances. 
+        /// <para>
+        /// Information about the instances that will belong to the replacement environment in
+        /// a blue/green deployment.
+        /// </para>
+        /// </summary>
+        public TargetInstances TargetInstances
+        {
+            get { return this._targetInstances; }
+            set { this._targetInstances = value; }
+        }
+
+        // Check to see if TargetInstances property is set
+        internal bool IsSetTargetInstances()
+        {
+            return this._targetInstances != null;
         }
 
         /// <summary>

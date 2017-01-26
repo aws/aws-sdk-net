@@ -82,6 +82,12 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
                     unmarshalledObject.Pending = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Ready", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.Ready = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Skipped", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;

@@ -680,6 +680,67 @@ namespace Amazon.CodeDeploy
 
         #endregion
         
+        #region  ContinueDeployment
+
+
+        /// <summary>
+        /// Starts the process of rerouting traffic from instances in the original environment
+        /// to instances in thereplacement environment without waiting for a specified wait time
+        /// to elapse. (Traffic rerouting, which is achieved by registering instances in the replacement
+        /// environment with the load balancer, can start as soon as all instances have a status
+        /// of Ready.)
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ContinueDeployment service method.</param>
+        /// 
+        /// <returns>The response from the ContinueDeployment service method, as returned by CodeDeploy.</returns>
+        /// <exception cref="Amazon.CodeDeploy.Model.DeploymentAlreadyCompletedException">
+        /// The deployment is already complete.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.DeploymentDoesNotExistException">
+        /// The deployment does not exist with the applicable IAM user or AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.DeploymentIdRequiredException">
+        /// At least one deployment ID must be specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.DeploymentIsNotInReadyStateException">
+        /// The deployment does not have a status of Ready and can't continue yet.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidDeploymentIdException">
+        /// At least one of the deployment IDs was specified in an invalid format.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.UnsupportedActionForDeploymentTypeException">
+        /// A call was submitted that is not supported for the specified deployment type.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ContinueDeployment">REST API Reference for ContinueDeployment Operation</seealso>
+        public ContinueDeploymentResponse ContinueDeployment(ContinueDeploymentRequest request)
+        {
+            var marshaller = new ContinueDeploymentRequestMarshaller();
+            var unmarshaller = ContinueDeploymentResponseUnmarshaller.Instance;
+
+            return Invoke<ContinueDeploymentRequest,ContinueDeploymentResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ContinueDeployment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ContinueDeployment operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ContinueDeployment">REST API Reference for ContinueDeployment Operation</seealso>
+        public Task<ContinueDeploymentResponse> ContinueDeploymentAsync(ContinueDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ContinueDeploymentRequestMarshaller();
+            var unmarshaller = ContinueDeploymentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ContinueDeploymentRequest,ContinueDeploymentResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateApplication
 
 
@@ -776,8 +837,32 @@ namespace Amazon.CodeDeploy
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidDeploymentGroupNameException">
         /// The deployment group name was specified in an invalid format.
         /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidLoadBalancerInfoException">
+        /// An invalid load balancer name, or no load balancer name, was specified.
+        /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidRevisionException">
         /// The revision was specified in an invalid format.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidTargetInstancesException">
+        /// The target instance configuration is invalid. Possible causes include:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Configuration data for target instances was entered for an in-place deployment.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The limit of 10 tags for a tag type was exceeded.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The combined length of the tag names exceeded the limit. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A specified tag is not currently applied to any instances.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.RevisionDoesNotExistException">
         /// The named revision does not exist with the applicable IAM user or AWS account.
@@ -937,14 +1022,26 @@ namespace Amazon.CodeDeploy
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidAutoScalingGroupException">
         /// The Auto Scaling group was specified in an invalid format or does not exist.
         /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidBlueGreenDeploymentConfigurationException">
+        /// The configuration for the blue/green deployment group was provided in an invalid format.
+        /// For information about deployment configuration format, see <a>CreateDeploymentConfig</a>.
+        /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidDeploymentConfigNameException">
         /// The deployment configuration name was specified in an invalid format.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidDeploymentGroupNameException">
         /// The deployment group name was specified in an invalid format.
         /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidDeploymentStyleException">
+        /// An invalid deployment style was specified. Valid deployment types include "IN_PLACE"
+        /// and "BLUE_GREEN". Valid deployment options for blue/green deployments include "WITH_TRAFFIC_CONTROL"
+        /// and "WITHOUT_TRAFFIC_CONTROL".
+        /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidEC2TagException">
         /// The tag was specified in an invalid format.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidLoadBalancerInfoException">
+        /// An invalid load balancer name, or no load balancer name, was specified.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidRoleException">
         /// The service role ARN was specified in an invalid format. Or, if an Auto Scaling group
@@ -1857,6 +1954,10 @@ namespace Amazon.CodeDeploy
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidInstanceStatusException">
         /// The specified instance status does not exist.
         /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidInstanceTypeException">
+        /// An invalid instance type was specified for instances in a blue/green deployment. Valid
+        /// values include "Blue" for an original environment and "Green" for a replacement environment.
+        /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidNextTokenException">
         /// The next token was specified in an invalid format.
         /// </exception>
@@ -2205,6 +2306,64 @@ namespace Amazon.CodeDeploy
 
         #endregion
         
+        #region  SkipWaitTimeForInstanceTermination
+
+
+        /// <summary>
+        /// In a blue/green deployment, overrides any specified wait time and starts terminating
+        /// instances immediately after the traffic routing is completed.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SkipWaitTimeForInstanceTermination service method.</param>
+        /// 
+        /// <returns>The response from the SkipWaitTimeForInstanceTermination service method, as returned by CodeDeploy.</returns>
+        /// <exception cref="Amazon.CodeDeploy.Model.DeploymentAlreadyCompletedException">
+        /// The deployment is already complete.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.DeploymentDoesNotExistException">
+        /// The deployment does not exist with the applicable IAM user or AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.DeploymentIdRequiredException">
+        /// At least one deployment ID must be specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.DeploymentNotStartedException">
+        /// The specified deployment has not started.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidDeploymentIdException">
+        /// At least one of the deployment IDs was specified in an invalid format.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.UnsupportedActionForDeploymentTypeException">
+        /// A call was submitted that is not supported for the specified deployment type.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/SkipWaitTimeForInstanceTermination">REST API Reference for SkipWaitTimeForInstanceTermination Operation</seealso>
+        public SkipWaitTimeForInstanceTerminationResponse SkipWaitTimeForInstanceTermination(SkipWaitTimeForInstanceTerminationRequest request)
+        {
+            var marshaller = new SkipWaitTimeForInstanceTerminationRequestMarshaller();
+            var unmarshaller = SkipWaitTimeForInstanceTerminationResponseUnmarshaller.Instance;
+
+            return Invoke<SkipWaitTimeForInstanceTerminationRequest,SkipWaitTimeForInstanceTerminationResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SkipWaitTimeForInstanceTermination operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SkipWaitTimeForInstanceTermination operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/SkipWaitTimeForInstanceTermination">REST API Reference for SkipWaitTimeForInstanceTermination Operation</seealso>
+        public Task<SkipWaitTimeForInstanceTerminationResponse> SkipWaitTimeForInstanceTerminationAsync(SkipWaitTimeForInstanceTerminationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new SkipWaitTimeForInstanceTerminationRequestMarshaller();
+            var unmarshaller = SkipWaitTimeForInstanceTerminationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SkipWaitTimeForInstanceTerminationRequest,SkipWaitTimeForInstanceTerminationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StopDeployment
 
 
@@ -2375,14 +2534,26 @@ namespace Amazon.CodeDeploy
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidAutoScalingGroupException">
         /// The Auto Scaling group was specified in an invalid format or does not exist.
         /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidBlueGreenDeploymentConfigurationException">
+        /// The configuration for the blue/green deployment group was provided in an invalid format.
+        /// For information about deployment configuration format, see <a>CreateDeploymentConfig</a>.
+        /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidDeploymentConfigNameException">
         /// The deployment configuration name was specified in an invalid format.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidDeploymentGroupNameException">
         /// The deployment group name was specified in an invalid format.
         /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidDeploymentStyleException">
+        /// An invalid deployment style was specified. Valid deployment types include "IN_PLACE"
+        /// and "BLUE_GREEN". Valid deployment options for blue/green deployments include "WITH_TRAFFIC_CONTROL"
+        /// and "WITHOUT_TRAFFIC_CONTROL".
+        /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidEC2TagException">
         /// The tag was specified in an invalid format.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidLoadBalancerInfoException">
+        /// An invalid load balancer name, or no load balancer name, was specified.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidRoleException">
         /// The service role ARN was specified in an invalid format. Or, if an Auto Scaling group

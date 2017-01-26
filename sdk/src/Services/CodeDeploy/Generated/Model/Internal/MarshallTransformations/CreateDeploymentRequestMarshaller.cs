@@ -119,6 +119,17 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetTargetInstances())
+                {
+                    context.Writer.WritePropertyName("targetInstances");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = TargetInstancesMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.TargetInstances, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetUpdateOutdatedInstancesOnly())
                 {
                     context.Writer.WritePropertyName("updateOutdatedInstancesOnly");

@@ -34,6 +34,7 @@ namespace Amazon.CodeDeploy.Model
     {
         private string _deploymentId;
         private string _instanceId;
+        private InstanceType _instanceType;
         private DateTime? _lastUpdatedAt;
         private List<LifecycleEvent> _lifecycleEvents = new List<LifecycleEvent>();
         private InstanceStatus _status;
@@ -72,6 +73,33 @@ namespace Amazon.CodeDeploy.Model
         internal bool IsSetInstanceId()
         {
             return this._instanceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceType. 
+        /// <para>
+        /// Information about which environment an instance belongs to in a blue/green deployment.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// BLUE: The instance is part of the original environment.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// GREEN: The instance is part of the replacement environment.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public InstanceType InstanceType
+        {
+            get { return this._instanceType; }
+            set { this._instanceType = value; }
+        }
+
+        // Check to see if InstanceType property is set
+        internal bool IsSetInstanceType()
+        {
+            return this._instanceType != null;
         }
 
         /// <summary>
