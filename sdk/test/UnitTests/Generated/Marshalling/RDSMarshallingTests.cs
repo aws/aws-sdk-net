@@ -1617,6 +1617,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("RDS")]
+        public void ModifyDBSnapshotMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyDBSnapshot");
+
+            var request = InstantiateClassGenerator.Execute<ModifyDBSnapshotRequest>();
+            var marshaller = new ModifyDBSnapshotRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = ModifyDBSnapshotResponseUnmarshaller.Instance.Unmarshall(context)
+                as ModifyDBSnapshotResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
         public void ModifyDBSnapshotAttributeMarshallTest()
         {
             var operation = service_model.FindOperation("ModifyDBSnapshotAttribute");

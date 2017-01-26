@@ -1084,6 +1084,13 @@ namespace Amazon.RDS
         /// User attempted to create a new DB cluster and the user has already reached the maximum
         /// allowed DB cluster quota.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
+        /// <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBSubnetGroupDoesNotCoverEnoughAZsException">
+        /// Subnets in the DB subnet group should cover at least two Availability Zones unless
+        /// there is only one Availability Zone.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSubnetGroupNotFoundException">
         /// <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.
         /// </exception>
@@ -1457,7 +1464,86 @@ namespace Amazon.RDS
         /// <para>
         /// The source DB instance must have backup retention enabled.
         /// </para>
-        ///  </important>
+        ///  </important> 
+        /// <para>
+        /// You can create an encrypted Read Replica in a different AWS Region than the source
+        /// DB instance. In that case, the region where you call the <code>CreateDBInstanceReadReplica</code>
+        /// action is the destination region of the encrypted Read Replica. The source DB instance
+        /// must be encrypted.
+        /// </para>
+        ///  
+        /// <para>
+        /// To create an encrypted Read Replica in another AWS Region, you must provide the following
+        /// values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>KmsKeyId</code> - The AWS Key Management System (KMS) key identifier for the
+        /// key to use to encrypt the Read Replica in the destination region.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>PreSignedUrl</code> - A URL that contains a Signature Version 4 signed request
+        /// for the <code> CreateDBInstanceReadReplica</code> API action in the AWS region that
+        /// contains the source DB instance. The <code>PreSignedUrl</code> parameter must be used
+        /// when encrypting a Read Replica from another AWS region.
+        /// </para>
+        ///  
+        /// <para>
+        /// The presigned URL must be a valid request for the <code>CreateDBInstanceReadReplica</code>
+        /// API action that can be executed in the source region that contains the encrypted DB
+        /// instance. The presigned URL request must contain the following parameter values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>DestinationRegion</code> - The AWS Region that the Read Replica is created
+        /// in. This region is the same one where the <code>CreateDBInstanceReadReplica</code>
+        /// action is called that contains this presigned URL. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  For example, if you create an encrypted Read Replica in the us-east-1 region, and
+        /// the source DB instance is in the west-2 region, then you call the <code>CreateDBInstanceReadReplica</code>
+        /// action in the us-east-1 region and provide a presigned URL that contains a call to
+        /// the <code>CreateDBInstanceReadReplica</code> action in the us-west-2 region. For this
+        /// example, the <code>DestinationRegion</code> in the presigned URL must be set to the
+        /// us-east-1 region.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>KmsKeyId</code> - The KMS key identifier for the key to use to encrypt the
+        /// Read Replica in the destination region. This is the same identifier for both the <code>CreateDBInstanceReadReplica</code>
+        /// action that is called in the destination region, and the action contained in the presigned
+        /// URL.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>SourceDBInstanceIdentifier</code> - The DB instance identifier for the encrypted
+        /// Read Replica to be created. This identifier must be in the Amazon Resource Name (ARN)
+        /// format for the source region. For example, if you create an encrypted Read Replica
+        /// from a DB instance in the us-west-2 region, then your <code>SourceDBInstanceIdentifier</code>
+        /// would look like this example: <code> arn:aws:rds:us-west-2:123456789012:instance:mysql-instance1-instance-20161115</code>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To learn how to generate a Signature Version 4 signed request, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">
+        /// Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a> and
+        /// <a href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html"> Signature
+        /// Version 4 Signing Process</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DBInstanceIdentifier</code> - The identifier for the encrypted Read Replica
+        /// in the destination region.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>SourceDBInstanceIdentifier</code> - The DB instance identifier for the encrypted
+        /// Read Replica. This identifier must be in the ARN format for the source region and
+        /// is the same value as the <code>SourceDBInstanceIdentifier</code> in the presigned
+        /// URL. 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDBInstanceReadReplica service method.</param>
         /// 
@@ -5204,6 +5290,69 @@ namespace Amazon.RDS
         public  ModifyDBParameterGroupResponse EndModifyDBParameterGroup(IAsyncResult asyncResult)
         {
             return EndInvoke<ModifyDBParameterGroupResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ModifyDBSnapshot
+
+        /// <summary>
+        /// Updates a manual DB snapshot, which can be encrypted or not encrypted, with a new
+        /// engine version. You can update the engine version to either a new major or minor engine
+        /// version. 
+        /// 
+        ///  
+        /// <para>
+        /// Amazon RDS supports upgrading a MySQL DB snapshot from MySQL 5.1 to MySQL 5.5.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyDBSnapshot service method.</param>
+        /// 
+        /// <returns>The response from the ModifyDBSnapshot service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBSnapshotNotFoundException">
+        /// <i>DBSnapshotIdentifier</i> does not refer to an existing DB snapshot.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBSnapshot">REST API Reference for ModifyDBSnapshot Operation</seealso>
+        public ModifyDBSnapshotResponse ModifyDBSnapshot(ModifyDBSnapshotRequest request)
+        {
+            var marshaller = new ModifyDBSnapshotRequestMarshaller();
+            var unmarshaller = ModifyDBSnapshotResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyDBSnapshotRequest,ModifyDBSnapshotResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyDBSnapshot operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyDBSnapshot operation on AmazonRDSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyDBSnapshot
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBSnapshot">REST API Reference for ModifyDBSnapshot Operation</seealso>
+        public IAsyncResult BeginModifyDBSnapshot(ModifyDBSnapshotRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new ModifyDBSnapshotRequestMarshaller();
+            var unmarshaller = ModifyDBSnapshotResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ModifyDBSnapshotRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyDBSnapshot operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyDBSnapshot.</param>
+        /// 
+        /// <returns>Returns a  ModifyDBSnapshotResult from RDS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBSnapshot">REST API Reference for ModifyDBSnapshot Operation</seealso>
+        public  ModifyDBSnapshotResponse EndModifyDBSnapshot(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ModifyDBSnapshotResponse>(asyncResult);
         }
 
         #endregion
