@@ -104,7 +104,8 @@
         "AWSHealth"                       : "1.0.0-*",
         "WAFRegional"                     : "1.0.0-*",
         "Batch"                           : "1.0.0-*",
-        "CostAndUsageReport"              : "1.0.0-*"
+        "CostAndUsageReport"              : "1.0.0-*",
+        "CloudDirectory"                  : "1.0.0-*"
     },
     "testRunner"   : "xunit",
     "frameworks"   : {

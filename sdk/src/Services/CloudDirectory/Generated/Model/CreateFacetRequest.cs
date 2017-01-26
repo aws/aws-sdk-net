@@ -1,0 +1,135 @@
+/*
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the clouddirectory-2016-05-10.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+namespace Amazon.CloudDirectory.Model
+{
+    /// <summary>
+    /// Container for the parameters to the CreateFacet operation.
+    /// Creates a new <a>Facet</a> in a schema. Facet creation is allowed only in development
+    /// or applied schemas.
+    /// </summary>
+    public partial class CreateFacetRequest : AmazonCloudDirectoryRequest
+    {
+        private List<FacetAttribute> _attributes = new List<FacetAttribute>();
+        private string _name;
+        private ObjectType _objectType;
+        private string _schemaArn;
+
+        /// <summary>
+        /// Gets and sets the property Attributes. 
+        /// <para>
+        /// Attributes associated with the <a>Facet</a>.e
+        /// </para>
+        /// </summary>
+        public List<FacetAttribute> Attributes
+        {
+            get { return this._attributes; }
+            set { this._attributes = value; }
+        }
+
+        // Check to see if Attributes property is set
+        internal bool IsSetAttributes()
+        {
+            return this._attributes != null && this._attributes.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// Name of the <a>Facet</a>, which is unique for a given schema.
+        /// </para>
+        /// </summary>
+        public string Name
+        {
+            get { return this._name; }
+            set { this._name = value; }
+        }
+
+        // Check to see if Name property is set
+        internal bool IsSetName()
+        {
+            return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ObjectType. 
+        /// <para>
+        /// Specifies whether a given object created from this facet is of type Node, Leaf Node,
+        /// Policy or Index.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Node: Can have multiple children but one parent.
+        /// </para>
+        ///  </li> </ul> <ul> <li> 
+        /// <para>
+        /// Leaf Node: Cannot have children but can have multiple parents.
+        /// </para>
+        ///  </li> </ul> <ul> <li> 
+        /// <para>
+        /// Policy: Allows you to store a policy document and policy type. For more information,
+        /// see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#policies">Policies</a>.
+        /// </para>
+        ///  </li> </ul> <ul> <li> 
+        /// <para>
+        /// Index: Can be created with the Index API.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public ObjectType ObjectType
+        {
+            get { return this._objectType; }
+            set { this._objectType = value; }
+        }
+
+        // Check to see if ObjectType property is set
+        internal bool IsSetObjectType()
+        {
+            return this._objectType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SchemaArn. 
+        /// <para>
+        /// Schema ARN in which the new <a>Facet</a> will be created. For more information, see
+        /// <a>arns</a>.
+        /// </para>
+        /// </summary>
+        public string SchemaArn
+        {
+            get { return this._schemaArn; }
+            set { this._schemaArn = value; }
+        }
+
+        // Check to see if SchemaArn property is set
+        internal bool IsSetSchemaArn()
+        {
+            return this._schemaArn != null;
+        }
+
+    }
+}

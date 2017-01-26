@@ -108,6 +108,10 @@
       <Project>{16A1EEDF-CD98-4844-B608-F3F120D7A542}</Project>
       <Name>AWSSDK.CertificateManager.Net35</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\CloudDirectory\AWSSDK.CloudDirectory.Net35.csproj">
+      <Project>{4CE40964-7D49-4111-AEED-E6178748FCFB}</Project>
+      <Name>AWSSDK.CloudDirectory.Net35</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\CloudFormation\AWSSDK.CloudFormation.Net35.csproj">
       <Project>{8311AA7C-5553-45E2-AA0D-11981F8F7DBE}</Project>
       <Name>AWSSDK.CloudFormation.Net35</Name>

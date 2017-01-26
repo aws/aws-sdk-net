@@ -74,6 +74,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* AWS Budget service will provide create/get/list/update/delete budgets for cost management. 
 * [AWSSDK.CertificateManager](https://www.nuget.org/packages/AWSSDK.CertificateManager/)
 	* AWS Certificate Manager (ACM) is an AWS service that makes it easier for you to deploy secure SSL based websites and applications on the AWS platform.
+* [AWSSDK.CloudDirectory](https://www.nuget.org/packages/AWSSDK.CloudDirectory/)
+	* Cloud Directory (CD) is a multi-tenant, hierarchical data store for use by other AWS services to store directory data for AWS resources, including both metadata about resources and policy data governing resources.
 * [AWSSDK.CloudFormation](https://www.nuget.org/packages/AWSSDK.CloudFormation/)
 	* AWS CloudFormation gives developers and systems administrators an easy way to create and manage a collection of related AWS resources, provisioning and updating them in an orderly and predictable fashion.
 * [AWSSDK.CloudFront](https://www.nuget.org/packages/AWSSDK.CloudFront/)
