@@ -49,6 +49,7 @@ namespace Amazon.Runtime.Internal.Settings
         public const string RoleArnField = "RoleArn";
         public const string UserIdentityField = "UserIdentity";
         public const string AuthenticationType = "AuthenticationType";
+        public const string Region = "Region";
 
         // present in endpoint definitions in SAMLEndpoints.json file
         public const string EndpointField = "Endpoint";

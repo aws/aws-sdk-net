@@ -1830,7 +1830,7 @@ namespace Amazon.Runtime
         {
             CredentialsRefreshState state;
 
-            var configuredRegion = AWSConfigs.AWSRegion;
+            var configuredRegion = !string.IsNullOrEmpty(ProfileData.Region) ? ProfileData.Region : AWSConfigs.AWSRegion;
             var region = string.IsNullOrEmpty(configuredRegion)
                                 ? DefaultSTSClientRegion
                                 : RegionEndpoint.GetBySystemName(configuredRegion);

@@ -105,7 +105,49 @@ namespace Amazon.Util
                                                    string roleArn,
                                                    string userIdentity)
         {
-            SAMLRoleProfile.Persist(profileName, endpointName, roleArn, userIdentity, null);
+            RegisterSAMLRoleProfile(profileName, endpointName, roleArn, userIdentity, null);
+        }
+        
+        /// <summary>
+        /// <para>
+        /// Registers a role-based profile to be used with SAML authentication. The profile contains
+        /// details of the role to be assumed when AWS credentials are requested based on the role and
+        /// a reference to a SAML endpoint profile containing details of the endpoint to be called to
+        /// authenticate the user.
+        /// </para>
+        /// <para>
+        /// If user identity information is not supplied then the identity of the logged-in user will 
+        /// be used when authenticaton is performed against the endpoint referenced in the SAML endpoint 
+        /// profile. If identity is provided, no password information is stored in the role profile and
+        /// the user must supply the password for the identity prior to authentication with the endpoint.
+        /// </para>
+        /// </summary>
+        /// <param name="profileName">Name to be assigned to the profile</param>
+        /// <param name="endpointName">
+        /// The name assigned to the endpoint settings, previously saved with RegisterSAMLEndpoint.
+        /// </param>
+        /// <param name="roleArn">
+        /// The arn of the role that the user wants to assume when using this profile. This 
+        /// must be one of the set returned by the saml endpoint when the user authenticates.
+        /// </param>
+        /// <param name="userIdentity">
+        /// Optional. By default the identity of the logged-in user will be used when authentication
+        /// is performed - the user will not be prompted to supply a password. By supplying a custom 
+        /// identity for this parameter, the user will be prompted to supply the password for the 
+        /// identity prior to authentication.
+        /// </param>
+        /// <param name="stsRegion">
+        /// Set for profiles intended to be used in regions where a region-specific STS endpoint
+        /// must be used (eg cn-north-1). If left empty/null, the global sts.amazonaws.com endpoint
+        /// will be used when credentials are obtained for this profile.
+        /// </param>
+        public static void RegisterSAMLRoleProfile(string profileName,
+                                                   string endpointName,
+                                                   string roleArn,
+                                                   string userIdentity,
+                                                   string stsRegion)
+        {
+            SAMLRoleProfile.Persist(profileName, endpointName, roleArn, userIdentity, null, stsRegion);
         }
 
         /// <summary>
@@ -814,6 +856,20 @@ namespace Amazon.Util
             }
         }
 
+        /// <summary>
+        /// <para>
+        /// For regions with a region-specific endpoint for STS (eg cn-north-1) this 
+        /// field can be set to ensure calls to obtain temporary credentials
+        /// after successful authentication are forwarded to the correct regional
+        /// endpoint.
+        /// </para>
+        /// <para>
+        /// This field does not need to be set when running in a region for 
+        /// which the sts.amazonaws.com endpoint is valid.
+        /// </para>
+        /// </summary>
+        public string Region { get; private set; }
+
         private SAMLImmutableCredentials _session = null;
 
         /// <summary>
@@ -949,10 +1005,11 @@ namespace Amazon.Util
             var profileName = os[SettingsConstants.DisplayNameField];
             var roleArn = os[SettingsConstants.RoleArnField];
             var userIdentity = os.GetValueOrDefault(SettingsConstants.UserIdentityField, null);
+            var region = os.GetValueOrDefault(SettingsConstants.Region, null);
 
             SAMLImmutableCredentials activeCredentials = LoadActiveSessionCredentials(profileName);
 
-            return new SAMLRoleProfile(profileName, endpointSettings, roleArn, userIdentity, activeCredentials);
+            return new SAMLRoleProfile(profileName, endpointSettings, roleArn, userIdentity, activeCredentials, region);
         }
 
         /// <summary>
@@ -991,12 +1048,12 @@ namespace Amazon.Util
         /// </summary>
         public override string Persist()
         {
-            return Persist(Name, EndpointSettings.Name, RoleArn, UserIdentity, null);
+            return Persist(Name, EndpointSettings.Name, RoleArn, UserIdentity, null, Region);
         }
 
         private string Persist(string session)
         {
-            return Persist(Name, EndpointSettings.Name, RoleArn, UserIdentity, session);
+            return Persist(Name, EndpointSettings.Name, RoleArn, UserIdentity, session, Region);
         }
 
         /// <summary>
@@ -1032,12 +1089,18 @@ namespace Amazon.Util
         /// to continually re-authenticate the user as they switch between tools. The active session,
         /// if any, is stored separately from the profile using the file RoleSessions.json.
         /// </param>
+        /// <param name="region">
+        /// Set for profiles intended to be used in regions where a region-specific STS endpoint
+        /// must be used (eg cn-north-1). If left empty/null, the global sts.amazonaws.com endpoint
+        /// will be used when credentials are obtained for this profile.
+        /// </param>
         /// <returns>The unique id assigned to the profile.</returns>
         public static string Persist(string profileName,
                                      string endpointSettingsName,
                                      string roleArn,
                                      string userIdentity,
-                                     string session)
+                                     string session,
+                                     string region)
         {
             if (string.IsNullOrEmpty(profileName) || string.IsNullOrEmpty(endpointSettingsName) || string.IsNullOrEmpty(roleArn))
                 throw new ArgumentException("Profile name, endpoint settings name and role ARN must be supplied.");
@@ -1059,6 +1122,8 @@ namespace Amazon.Util
             os[SettingsConstants.EndpointNameField] = endpointSettings.Name;
             os[SettingsConstants.RoleArnField] = roleArn;
             os[SettingsConstants.UserIdentityField] = userIdentity;
+            if (!string.IsNullOrEmpty(region))
+                os[SettingsConstants.Region] = region;
 
             PersistActiveSessionCredentials(profileName, session);
 
@@ -1122,17 +1187,24 @@ namespace Amazon.Util
         /// Deserialized credential data from the profile, if still valid. Null if the profile does not
         /// contain any active credentials, or the credentials it did hold are now invalid.
         /// </param>
+        /// <param name="region">
+        /// Set for profiles intended to be used in regions where a region-specific STS endpoint
+        /// must be used (eg cn-north-1). If left empty/null, the global sts.amazonaws.com endpoint
+        /// will be used when credentials are obtained for this profile.
+        /// </param>
         private SAMLRoleProfile(string profileName,
                                 SAMLEndpointSettings endpointSettings,
                                 string roleArn,
                                 string userIdentity,
-                                SAMLImmutableCredentials currentSession)
+                                SAMLImmutableCredentials currentSession,
+                                string region)
         {
             Name = profileName;
             EndpointSettings = endpointSettings;
             RoleArn = roleArn;
             UserIdentity = userIdentity;
             _session = currentSession;
+            Region = region;
         }
 
     }
