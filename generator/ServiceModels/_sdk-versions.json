@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.44.0",
+    "ProductVersion" : "3.3.45.0",
     "CoreVersion"    : "3.3.8.0",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -82,7 +82,7 @@
             "InPreview"    : false
         },
         "CodeDeploy"        : {
-            "Version" : "3.3.2.1",
+            "Version" : "3.3.3.0",
             "Dependencies" : {
                 "Core" : "3.3.8.0"
             },
@@ -133,7 +133,7 @@
             "InPreview"    : false
         },
         "EC2"               : {
-            "Version" : "3.3.5.1",
+            "Version" : "3.3.6.0",
             "Dependencies" : {
                 "Core" : "3.3.8.0"
             },
@@ -247,7 +247,7 @@
             "InPreview"    : false
         },
         "RDS"                  : {
-            "Version" : "3.3.6.0",
+            "Version" : "3.3.7.0",
             "Dependencies" : {
                 "Core" : "3.3.8.0"
             },
@@ -626,6 +626,13 @@
         },
         "CostAndUsageReport"              : {
             "Version" : "3.3.0.1",
+            "Dependencies" : {
+                "Core" : "3.3.8.0"
+            },
+            "InPreview"    : false
+        },
+        "CloudDirectory"                  : {
+            "Version" : "3.3.0.0",
             "Dependencies" : {
                 "Core" : "3.3.8.0"
             },

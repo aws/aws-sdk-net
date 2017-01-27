@@ -1,3 +1,13 @@
+### 3.3.45.0 (2017-01-26 23:49 UTC)
+* CloudDirectory (3.3.0.0)
+	* New service CloudDirectory: Amazon Cloud Directory is a highly scalable, high performance, multi-tenant directory service in the cloud. Its web-based directories make it easy for you to organize and manage application resources such as users, groups, locations, devices, policies, and the rich relationships between them.
+* CodeDeploy (3.3.3.0)
+	* API Update for CodeDeploy: This release of AWS CodeDeploy introduces support for blue/green deployments. In a blue/green deployment, the current set of instances in a deployment group is replaced by new instances that have the latest application revision installed on them. After traffic is rerouted behind a load balancer to the replacement instances, the original instances can be terminated automatically or kept running for other uses.
+* EC2 (3.3.6.0)
+	* API Update for EC2: Adds instance health check functionality to replace unhealthy EC2 Spot fleet instances with fresh ones.
+* RDS (3.3.7.0)
+	* API Update for RDS: Snapshot Engine Version Upgrade
+
 ### 3.3.44.0 (2017-01-25 23:00 UTC)
 * ElasticLoadBalancingV2 (3.3.1.0)
 	* Application Load Balancers now support native Internet Protocol version 6 (IPv6) in an Amazon Virtual Private Cloud (VPC). With this ability, clients can now connect to the Application Load Balancer in a dual-stack mode via either IPv4 or IPv6.
