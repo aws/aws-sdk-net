@@ -13,9 +13,9 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
     [TestClass]
     public class XmlSampleGeneratorTests
     {
-        static readonly ServiceModel CLOUDFORMATION_MODEL = Utils.LoadServiceModel("cloudformation-2010-05-15.normal.json", null);
-        static readonly ServiceModel SQS_MODEL = Utils.LoadServiceModel("sqs-2012-11-05.normal.json", null);
-        static readonly ServiceModel IAM_MODEL = Utils.LoadServiceModel("iam-2010-05-08.normal.json", null);
+        static readonly ServiceModel CLOUDFORMATION_MODEL = Utils.LoadServiceModel("cloudformation");
+        static readonly ServiceModel SQS_MODEL = Utils.LoadServiceModel("sqs");
+        static readonly ServiceModel IAM_MODEL = Utils.LoadServiceModel("iam");
 
         [TestMethod][TestCategory("UnitTest")]
         public void SanityGenerateForAllsOperations()

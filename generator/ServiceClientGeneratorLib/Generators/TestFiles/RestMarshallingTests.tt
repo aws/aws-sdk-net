@@ -29,7 +29,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
     [TestClass]
     public partial class <#=this.Config.BaseName#>MarshallingTests
     {
-        static readonly ServiceModel service_model = Utils.LoadServiceModel("<#= Path.GetFileName(this.Config.ModelPath)#>", "<#=this.Config.CustomizationsPath == null ? "" : Path.GetFileName(this.Config.CustomizationsPath) #>");
+        static readonly ServiceModel service_model = Utils.LoadServiceModel("<#= this.Config.ServiceDirectoryName #>");
 		<#
 		foreach(var operation in this.Config.ServiceModel.Operations)
 		{

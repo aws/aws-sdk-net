@@ -112,198 +112,73 @@ namespace ServiceClientGenerator
         /// new projects for services.
         /// </summary>
         /// <param name="manifestPath">Path to the manifest file to pull basic info from</param>
+        /// <param name="versionsPath">Path to _sdk-versions.json file</param>
         /// <param name="modelsFolder">Path to the service models to be parsed</param>
         public static GenerationManifest Load(string manifestPath, string versionsPath, string modelsFolder)
         {
             var generationManifest = new GenerationManifest();
-
             var manifest = LoadJsonFromFile(manifestPath);
             var versionsManifest = LoadJsonFromFile(versionsPath);
-            var coreVersionJson = versionsManifest["CoreVersion"];
-            generationManifest.CoreFileVersion = coreVersionJson.ToString();
-            var versions = versionsManifest["ServiceVersions"];
 
+            generationManifest.CoreFileVersion = versionsManifest["CoreVersion"].ToString();
             generationManifest.DefaultToPreview = (bool)versionsManifest["DefaultToPreview"];
-			if (generationManifest.DefaultToPreview)
-			{
-				generationManifest.PreviewLabel = (string)versionsManifest["PreviewLabel"];
-			}
+            if (generationManifest.DefaultToPreview)
+            {
+                generationManifest.PreviewLabel = (string)versionsManifest["PreviewLabel"];
+            }
             if (!string.IsNullOrEmpty(generationManifest.PreviewLabel))
                 generationManifest.PreviewLabel = "-" + generationManifest.PreviewLabel;
 
-            generationManifest.LoadServiceConfigurations(manifest, generationManifest.CoreFileVersion, versions, modelsFolder);
+            generationManifest.LoadServiceConfigurations(manifest, versionsManifest["ServiceVersions"], modelsFolder);
             generationManifest.LoadProjectConfigurations(manifest);
 
             return generationManifest;
         }
 
         /// <summary>
-        /// Parses the service configuration metadata from the supplied manifest document,
-        /// fixing up file references to the actual service model and customization files.
-        /// Sets the ServiceConfigurations member on exit with the collection of loaded
-        /// configurations.
+        /// Recursively walk thorugh the ServiceModels folder and load/parse the 
+        /// model files to generate ServiceConfiguration objects.
         /// </summary>
-        /// <param name="document"></param>
-        /// <param name="modelsFolder"></param>
-        void LoadServiceConfigurations(JsonData manifest, string coreVersion, JsonData versions, string modelsFolder)
+        /// <param name="manifest">loaded _manifest.json file</param>
+        /// <param name="serviceVersions">loaded _sdk-versions.json file</param>
+        /// <param name="serviceModelsFolder">path to ServiceModels directory folder</param>
+        void LoadServiceConfigurations(JsonData manifest, JsonData serviceVersions, string serviceModelsFolder)
         {
+            List<Tuple<JsonData, ServiceConfiguration>> modelConfigList = new List<Tuple<JsonData, ServiceConfiguration>>();
             var serviceConfigurations = new List<ServiceConfiguration>();
 
-            var modelsNode = manifest[ModelsSectionKeys.ModelsKey];
-            foreach (JsonData modelNode in modelsNode)
+            var serviceDirectories = Directory.GetDirectories(Path.Combine(serviceModelsFolder));
+            foreach (string serviceDirectory in serviceDirectories)
             {
-                var activeNode = modelNode[ModelsSectionKeys.ActiveKey];
-                if (activeNode != null && activeNode.IsBoolean && !(bool)activeNode) // skip models with active set to false
-                    continue;
-
-                // A new config that the api generates from
-                var modelName = modelNode[ModelsSectionKeys.ModelKey].ToString();
-                var config = new ServiceConfiguration
+                string metadataJsonFile = Path.Combine(serviceDirectory, "metadata.json");
+                if (File.Exists(metadataJsonFile))
                 {
-                    ModelName = modelName,
-                    ModelPath = DetermineModelPath(modelName, modelsFolder), // Path to the file servicename-*-.normal.json
-                    Namespace = modelNode[ModelsSectionKeys.NamespaceKey] != null ? modelNode[ModelsSectionKeys.NamespaceKey].ToString() : null, // Namespace of the service if it's different from basename
-                    LockedApiVersion = modelNode[ModelsSectionKeys.LockedApiVersionKey] != null ? modelNode[ModelsSectionKeys.LockedApiVersionKey].ToString() : null,
-                    BaseName = modelNode[ModelsSectionKeys.BaseNameKey].ToString(), // The name that is used as the client name and base request name
-                    RegionLookupName = modelNode[ModelsSectionKeys.RegionLookupNameKey].ToString(),
-                    AuthenticationServiceName = modelNode[ModelsSectionKeys.AuthenticationServiceNameKey] != null ? modelNode[ModelsSectionKeys.AuthenticationServiceNameKey].ToString() : null,
-                    ServiceUrl = modelNode[ModelsSectionKeys.ServiceUrlKey] != null ? modelNode[ModelsSectionKeys.ServiceUrlKey].ToString() : null,
-                    DefaultRegion = modelNode[ModelsSectionKeys.DefaultRegionKey] != null ? modelNode[ModelsSectionKeys.DefaultRegionKey].ToString() : null,
-                    GenerateConstructors = modelNode[ModelsSectionKeys.GenerateClientConstructorsKey] == null || (bool)modelNode[ModelsSectionKeys.GenerateClientConstructorsKey], // A way to prevent generating basic constructors
-                    SupportedMobilePlatforms = modelNode[ModelsSectionKeys.PlatformsKey] == null ? new List<string>() : (from object pcf in modelNode[ModelsSectionKeys.PlatformsKey]
-                                                                                                                         select pcf.ToString()).ToList(),
-                    EnableXamarinComponent = modelNode.PropertyNames.Contains(ModelsSectionKeys.EnableXamarinComponent) && (bool)modelNode[ModelsSectionKeys.EnableXamarinComponent]
-                };
+                    JsonData metadataNode = LoadJsonFromFile(metadataJsonFile);
 
-                if (modelNode[ModelsSectionKeys.PclVariantsKey] != null)
-                {
-                    config.PclVariants = (from object pcf in modelNode[ModelsSectionKeys.PclVariantsKey]
-                     select pcf.ToString()).ToList();
-                }
-
-                if (modelNode[ModelsSectionKeys.NugetPackageTitleSuffix] != null)
-                    config.NugetPackageTitleSuffix = modelNode[ModelsSectionKeys.NugetPackageTitleSuffix].ToString();
-
-
-                if (modelNode[ModelsSectionKeys.ReferenceDependenciesKey] != null)
-                {
-                    config.ReferenceDependencies = new Dictionary<string, List<Dependency>>();
-                    foreach (KeyValuePair<string, JsonData> kvp in modelNode[ModelsSectionKeys.ReferenceDependenciesKey])
+                    var activeNode = metadataNode[ModelsSectionKeys.ActiveKey];
+                    if (    activeNode != null
+                        &&  activeNode.IsBoolean
+                        && !(bool)activeNode )
                     {
-                        var platformDependencies = new List<Dependency>();
-                        foreach (JsonData item in kvp.Value)
-                        {
-                            var platformDependency = new Dependency
-                            {
-                                Name = item[ModelsSectionKeys.DependencyNameKey].ToString(),
-                                Version = item.PropertyNames.Contains(ModelsSectionKeys.DependencyVersionKey) ? item[ModelsSectionKeys.DependencyVersionKey].ToString() : "0.0.0.0",
-                                HintPath = item[ModelsSectionKeys.DependencyHintPathKey].ToString(),
-                            };
-                            platformDependencies.Add(platformDependency);
-                        }
-                        config.ReferenceDependencies.Add(kvp.Key, platformDependencies);
-                    }
-                }
-
-                if (modelNode[ModelsSectionKeys.NugetDependenciesKey] != null)
-                {
-                    config.NugetDependencies = new Dictionary<string, List<Dependency>>();
-                    foreach (KeyValuePair<string, JsonData> kvp in modelNode[ModelsSectionKeys.NugetDependenciesKey])
-                    {
-                        var nugetDependencies = new List<Dependency>();
-                        foreach (JsonData item in kvp.Value)
-                        {
-                            var nugetDependency = new Dependency
-                            {
-                                Name = item[ModelsSectionKeys.DependencyNameKey].ToString(),
-                                Version = item[ModelsSectionKeys.DependencyVersionKey].ToString(),
-                            };
-                            nugetDependencies.Add(nugetDependency);
-                        }
-                        config.NugetDependencies.Add(kvp.Key, nugetDependencies);
-                    }
-                }
-
-                config.Tags = new List<string>();
-                if (modelNode[ModelsSectionKeys.TagsKey] != null)
-                {
-                    foreach (JsonData tag in modelNode[ModelsSectionKeys.TagsKey])
-                    {
-                        config.Tags.Add(tag.ToString());
-                    }
-                }
-
-                // Provides a way to specify a customizations file rather than using a generated one
-                config.CustomizationsPath = modelNode[ModelsSectionKeys.CustomizationFileKey] == null
-                    ? DetermineCustomizationsPath(modelNode[ModelsSectionKeys.ModelKey].ToString())
-                    : Path.Combine(modelsFolder, modelNode[ModelsSectionKeys.CustomizationFileKey].ToString());
-
-                if (modelNode[ModelsSectionKeys.AppendServiceKey] != null && (bool)modelNode[ModelsSectionKeys.AppendServiceKey])
-                    config.BaseName += "Service";
-
-                if (modelNode[ModelsSectionKeys.MaxRetriesKey] != null && modelNode[ModelsSectionKeys.MaxRetriesKey].IsInt)
-                    config.OverrideMaxRetries = Convert.ToInt32(modelNode[ModelsSectionKeys.MaxRetriesKey].ToString());
-
-                if (modelNode[ModelsSectionKeys.SynopsisKey] != null)
-                    config.Synopsis = (string)modelNode[ModelsSectionKeys.SynopsisKey];
-
-                if (modelNode[ModelsSectionKeys.CoreCLRSupportKey] != null)
-                    config.CoreCLRSupport = (bool)modelNode[ModelsSectionKeys.CoreCLRSupportKey];
-                else
-                    config.CoreCLRSupport = true;
-
-                config.ServiceDependencies = new Dictionary<string, string>(StringComparer.Ordinal);
-                if (modelNode[ModelsSectionKeys.DependenciesKey] != null && modelNode[ModelsSectionKeys.DependenciesKey].IsArray)
-                {
-                    foreach (var d in modelNode[ModelsSectionKeys.DependenciesKey])
-                    {
-                        config.ServiceDependencies.Add(d.ToString(), null);
-                    }
-                }
-
-                if (modelNode[ModelsSectionKeys.UsePclProjectDependenciesKey] != null && modelNode[ModelsSectionKeys.UsePclProjectDependenciesKey].IsBoolean)
-                    config.UsePclProjectDependencies = bool.Parse(modelNode[ModelsSectionKeys.UsePclProjectDependenciesKey].ToString());
-                else
-                    config.UsePclProjectDependencies = false;
-
-                if (modelNode[ModelsSectionKeys.LicenseUrlKey] != null && modelNode[ModelsSectionKeys.LicenseUrlKey].IsString)
-                {
-                    config.LicenseUrl = modelNode[ModelsSectionKeys.LicenseUrlKey].ToString();
-                    config.RequireLicenseAcceptance = true;
-                }
-                else
-                    config.LicenseUrl = ApacheLicenseURL;
-
-                var serviceName = config.ServiceNameRoot;
-                var versionInfoJson = versions[serviceName];
-                if (versionInfoJson != null)
-                {
-                    var dependencies = versionInfoJson["Dependencies"];
-                    foreach (var name in dependencies.PropertyNames)
-                    {
-                        var version = dependencies[name].ToString();
-                        config.ServiceDependencies[name] = version;
+                        continue;                             
                     }
 
+                    var serviceModelFileName = GetLatestModel(serviceDirectory);
+                    var config = CreateServiceConfiguration(metadataNode, serviceVersions, serviceDirectory, serviceModelFileName);
+                    serviceConfigurations.Add(config);
 
-                    var versionText = versionInfoJson["Version"].ToString();
-                    config.ServiceFileVersion = versionText;
-
-                    if(versionInfoJson["InPreview"] != null && (bool)versionInfoJson["InPreview"])
-                        config.InPreview = true;
-                    else
-                        config.InPreview = this.DefaultToPreview;
+                    modelConfigList.Add(new Tuple<JsonData, ServiceConfiguration>(metadataNode, config));
                 }
-                else
-                {
-                    config.ServiceDependencies["Core"] = coreVersion;
-                    var versionTokens = coreVersion.Split('.');
-                    config.ServiceFileVersion = string.Format("{0}.{1}.0.0", versionTokens[0], versionTokens[1]);
-                    config.InPreview = this.DefaultToPreview;
-                }
+            }
 
-                // The parent model for current model, if set, the client will be generated
-                // in the same namespace and share common types.
+            // The parent model for current model, if set, the client will be generated
+            // in the same namespace and share common types.
+
+            foreach (var modelConfig in modelConfigList)
+            {
+                var modelNode = modelConfig.Item1;
+                var config = modelConfig.Item2;
+
                 var parentModelName = modelNode[ModelsSectionKeys.ParentBaseNameKey] != null ? modelNode[ModelsSectionKeys.ParentBaseNameKey].ToString() : null;
                 if (parentModelName != null)
                 {
@@ -319,14 +194,183 @@ namespace ServiceClientGenerator
                             exception); ;
                     }
                 }
-
-                serviceConfigurations.Add(config);
             }
 
             ServiceConfigurations = serviceConfigurations
                 .OrderBy(sc => sc.ServiceDependencies.Count)
                 .ToList();
-            //ServiceVersions = serviceVersions;
+        }
+
+        private static string GetLatestModel(string serviceDirectory)
+        {
+            string latestModelName="";
+            foreach (string modelName in Directory.GetFiles(serviceDirectory, "*.normal.json", SearchOption.TopDirectoryOnly))
+            {
+                if (string.Compare(latestModelName, modelName) < 0)
+                {
+                    latestModelName = modelName;
+                }
+            }
+
+            if (string.IsNullOrEmpty(latestModelName))
+            {
+                throw new FileNotFoundException("Failed to find a model file in " + serviceDirectory);
+            }
+
+            return Path.GetFileName(latestModelName);
+        }
+
+        private ServiceConfiguration CreateServiceConfiguration(JsonData modelNode, JsonData serviceVersions, string serviceDirectoryPath, string serviceModelFileName)
+        {
+            // A new config that the api generates from
+            var modelName = modelNode[ModelsSectionKeys.ModelKey].ToString();
+            var config = new ServiceConfiguration
+            {
+                ModelName = modelName,
+                ServiceDirectoryName = Path.GetFileName(serviceDirectoryPath),
+                ModelPath = Path.Combine(serviceDirectoryPath, serviceModelFileName),
+                DisplayModelPath = serviceModelFileName, 
+                Namespace = modelNode[ModelsSectionKeys.NamespaceKey] != null ? modelNode[ModelsSectionKeys.NamespaceKey].ToString() : null, // Namespace of the service if it's different from basename
+                LockedApiVersion = modelNode[ModelsSectionKeys.LockedApiVersionKey] != null ? modelNode[ModelsSectionKeys.LockedApiVersionKey].ToString() : null,
+                BaseName = modelNode[ModelsSectionKeys.BaseNameKey].ToString(), // The name that is used as the client name and base request name
+                RegionLookupName = modelNode[ModelsSectionKeys.RegionLookupNameKey].ToString(),
+                AuthenticationServiceName = modelNode[ModelsSectionKeys.AuthenticationServiceNameKey] != null ? modelNode[ModelsSectionKeys.AuthenticationServiceNameKey].ToString() : null,
+                ServiceUrl = modelNode[ModelsSectionKeys.ServiceUrlKey] != null ? modelNode[ModelsSectionKeys.ServiceUrlKey].ToString() : null,
+                DefaultRegion = modelNode[ModelsSectionKeys.DefaultRegionKey] != null ? modelNode[ModelsSectionKeys.DefaultRegionKey].ToString() : null,
+                GenerateConstructors = modelNode[ModelsSectionKeys.GenerateClientConstructorsKey] == null || (bool)modelNode[ModelsSectionKeys.GenerateClientConstructorsKey], // A way to prevent generating basic constructors
+                SupportedMobilePlatforms = modelNode[ModelsSectionKeys.PlatformsKey] == null ? new List<string>() : (from object pcf in modelNode[ModelsSectionKeys.PlatformsKey]
+                                                                                                                        select pcf.ToString()).ToList(),
+                EnableXamarinComponent = modelNode.PropertyNames.Contains(ModelsSectionKeys.EnableXamarinComponent) && (bool)modelNode[ModelsSectionKeys.EnableXamarinComponent]
+            };
+
+            if (modelNode[ModelsSectionKeys.PclVariantsKey] != null)
+            {
+                config.PclVariants = (from object pcf in modelNode[ModelsSectionKeys.PclVariantsKey]
+                    select pcf.ToString()).ToList();
+            }
+
+            if (modelNode[ModelsSectionKeys.NugetPackageTitleSuffix] != null)
+                config.NugetPackageTitleSuffix = modelNode[ModelsSectionKeys.NugetPackageTitleSuffix].ToString();
+
+
+            if (modelNode[ModelsSectionKeys.ReferenceDependenciesKey] != null)
+            {
+                config.ReferenceDependencies = new Dictionary<string, List<Dependency>>();
+                foreach (KeyValuePair<string, JsonData> kvp in modelNode[ModelsSectionKeys.ReferenceDependenciesKey])
+                {
+                    var platformDependencies = new List<Dependency>();
+                    foreach (JsonData item in kvp.Value)
+                    {
+                        var platformDependency = new Dependency
+                        {
+                            Name = item[ModelsSectionKeys.DependencyNameKey].ToString(),
+                            Version = item.PropertyNames.Contains(ModelsSectionKeys.DependencyVersionKey) ? item[ModelsSectionKeys.DependencyVersionKey].ToString() : "0.0.0.0",
+                            HintPath = item[ModelsSectionKeys.DependencyHintPathKey].ToString(),
+                        };
+                        platformDependencies.Add(platformDependency);
+                    }
+                    config.ReferenceDependencies.Add(kvp.Key, platformDependencies);
+                }
+            }
+
+            if (modelNode[ModelsSectionKeys.NugetDependenciesKey] != null)
+            {
+                config.NugetDependencies = new Dictionary<string, List<Dependency>>();
+                foreach (KeyValuePair<string, JsonData> kvp in modelNode[ModelsSectionKeys.NugetDependenciesKey])
+                {
+                    var nugetDependencies = new List<Dependency>();
+                    foreach (JsonData item in kvp.Value)
+                    {
+                        var nugetDependency = new Dependency
+                        {
+                            Name = item[ModelsSectionKeys.DependencyNameKey].ToString(),
+                            Version = item[ModelsSectionKeys.DependencyVersionKey].ToString(),
+                        };
+                        nugetDependencies.Add(nugetDependency);
+                    }
+                    config.NugetDependencies.Add(kvp.Key, nugetDependencies);
+                }
+            }
+
+            config.Tags = new List<string>();
+            if (modelNode[ModelsSectionKeys.TagsKey] != null)
+            {
+                foreach (JsonData tag in modelNode[ModelsSectionKeys.TagsKey])
+                {
+                    config.Tags.Add(tag.ToString());
+                }
+            }
+
+            // Provides a way to specify a customizations file rather than using a generated one
+            config.CustomizationsPath = modelNode[ModelsSectionKeys.CustomizationFileKey] == null
+                ? DetermineCustomizationsPath(config.ServiceDirectoryName)
+                : Path.Combine(serviceDirectoryPath, modelNode[ModelsSectionKeys.CustomizationFileKey].ToString());
+
+            if (modelNode[ModelsSectionKeys.AppendServiceKey] != null && (bool)modelNode[ModelsSectionKeys.AppendServiceKey])
+                config.BaseName += "Service";
+
+            if (modelNode[ModelsSectionKeys.MaxRetriesKey] != null && modelNode[ModelsSectionKeys.MaxRetriesKey].IsInt)
+                config.OverrideMaxRetries = Convert.ToInt32(modelNode[ModelsSectionKeys.MaxRetriesKey].ToString());
+
+            if (modelNode[ModelsSectionKeys.SynopsisKey] != null)
+                config.Synopsis = (string)modelNode[ModelsSectionKeys.SynopsisKey];
+
+            if (modelNode[ModelsSectionKeys.CoreCLRSupportKey] != null)
+                config.CoreCLRSupport = (bool)modelNode[ModelsSectionKeys.CoreCLRSupportKey];
+            else
+                config.CoreCLRSupport = true;
+
+            config.ServiceDependencies = new Dictionary<string, string>(StringComparer.Ordinal);
+            if (modelNode[ModelsSectionKeys.DependenciesKey] != null && modelNode[ModelsSectionKeys.DependenciesKey].IsArray)
+            {
+                foreach (var d in modelNode[ModelsSectionKeys.DependenciesKey])
+                {
+                    config.ServiceDependencies.Add(d.ToString(), null);
+                }
+            }
+
+            if (modelNode[ModelsSectionKeys.UsePclProjectDependenciesKey] != null && modelNode[ModelsSectionKeys.UsePclProjectDependenciesKey].IsBoolean)
+                config.UsePclProjectDependencies = bool.Parse(modelNode[ModelsSectionKeys.UsePclProjectDependenciesKey].ToString());
+            else
+                config.UsePclProjectDependencies = false;
+
+            if (modelNode[ModelsSectionKeys.LicenseUrlKey] != null && modelNode[ModelsSectionKeys.LicenseUrlKey].IsString)
+            {
+                config.LicenseUrl = modelNode[ModelsSectionKeys.LicenseUrlKey].ToString();
+                config.RequireLicenseAcceptance = true;
+            }
+            else
+                config.LicenseUrl = ApacheLicenseURL;
+
+            var serviceName = config.ServiceNameRoot;
+            var versionInfoJson = serviceVersions[serviceName];
+            if (versionInfoJson != null)
+            {
+                var dependencies = versionInfoJson["Dependencies"];
+                foreach (var name in dependencies.PropertyNames)
+                {
+                    var version = dependencies[name].ToString();
+                    config.ServiceDependencies[name] = version;
+                }
+
+
+                var versionText = versionInfoJson["Version"].ToString();
+                config.ServiceFileVersion = versionText;
+
+                if(versionInfoJson["InPreview"] != null && (bool)versionInfoJson["InPreview"])
+                    config.InPreview = true;
+                else
+                    config.InPreview = this.DefaultToPreview;
+            }
+            else
+            {
+                config.ServiceDependencies["Core"] = CoreFileVersion;
+                var versionTokens = CoreVersion.Split('.');
+                config.ServiceFileVersion = string.Format("{0}.{1}.0.0", versionTokens[0], versionTokens[1]);
+                config.InPreview = this.DefaultToPreview;
+            }
+
+            return config;
         }
 
         /// <summary>
@@ -395,28 +439,13 @@ namespace ServiceClientGenerator
         }
 
         /// <summary>
-        /// Finds the full path to the model*.normal.json file in order to parse the config
-        /// </summary>
-        /// <param name="model">The name of the model found in the manifest file</param>
-        /// <param name="modelsFolder">The folder that contains the model*.normal.json files</param>
-        /// <returns>Full path to model file as a string</returns>
-        private static string DetermineModelPath(string model, string modelsFolder)
-        {
-            var files = Directory.GetFiles(modelsFolder, model + "*.normal.json").OrderByDescending(x => x);
-            if (!files.Any())
-                throw new Exception("Failed to find model for service " + model);
-
-            return files.First();
-        }
-
-        /// <summary>
         /// Finds the customizations file in \customizations as model.customizations.json if it's there
         /// </summary>
         /// <param name="model">The name of the model as defined in the _manifest</param>
         /// <returns>Full path to the customization if it exists, null if it wasn't found</returns>
-        private static string DetermineCustomizationsPath(string model)
+        private static string DetermineCustomizationsPath(string serviceKey)
         {
-            var files = Directory.GetFiles("customizations", model + "*.customizations.json").OrderByDescending(x => x);
+            var files = Directory.GetFiles("customizations", serviceKey + ".customizations.json").OrderByDescending(x => x);
             return !files.Any() ? null : files.Single();
         }
 

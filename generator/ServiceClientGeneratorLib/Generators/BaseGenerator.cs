@@ -70,7 +70,7 @@ this.Write(@"/*
         #line hidden
         
         #line 33 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(Path.GetFileName(this.Config.ModelPath)));
+this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.DisplayModelPath));
 
         
         #line default

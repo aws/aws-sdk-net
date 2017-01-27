@@ -29,7 +29,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
     [TestClass]
     public class <#=this.Config.LockedApiVersion != null ? this.Config.BaseName + "_" + this.Config.LockedApiVersion.Replace('-', '_') + "_" : this.Config.BaseName#>MarshallingTests
     {
-        static readonly ServiceModel service_model = Utils.LoadServiceModel("<#= Path.GetFileName(this.Config.ModelPath)#>", "<#=this.Config.CustomizationsPath == null ? "" : Path.GetFileName(this.Config.CustomizationsPath) #>");
+        static readonly ServiceModel service_model = Utils.LoadServiceModel("<#= this.Config.ServiceDirectoryName #>");
 		<#
 		foreach(var operation in this.Config.ServiceModel.Operations)
 		{

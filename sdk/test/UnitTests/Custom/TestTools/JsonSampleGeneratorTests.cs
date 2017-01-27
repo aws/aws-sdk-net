@@ -13,7 +13,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
     [TestClass]
     public class JsonSampleGeneratorTests
     {
-        static readonly ServiceModel DYNAMODB_MODEL = Utils.LoadServiceModel("dynamodb-2012-08-10.normal.json", null);
+        static readonly ServiceModel DYNAMODB_MODEL = Utils.LoadServiceModel("dynamodb");
 
         [TestMethod][TestCategory("UnitTest")]
         public void SanityGenerateForAllDynamoDBOperations()

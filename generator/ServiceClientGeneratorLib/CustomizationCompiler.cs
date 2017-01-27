@@ -19,43 +19,31 @@ namespace ServiceClientGenerator
         /// <param name="modelsPath">The path the to customization models to be compiled</param>
         public static void CompileServiceCustomizations(string modelsPath)
         {
+            string compiledCustomizationsDirectory = "customizations";
             Console.WriteLine("Compiling service customizations from {0}", modelsPath);
 
-            if (Directory.Exists("customizations"))
+            if (Directory.Exists(compiledCustomizationsDirectory))
             {
                 Console.WriteLine("...cleaning previous compilation output");
-
-                // Cleanup any previous run customization.
-                foreach (var file in Directory.GetFiles("customizations"))
-                {
-                    File.Delete(file);
-                }
+                Directory.Delete(compiledCustomizationsDirectory, true);
             }
             else
             {
-                Directory.CreateDirectory("customizations");
+                Directory.CreateDirectory(compiledCustomizationsDirectory);
             }
 
-            var fileServices = Directory.GetFiles(modelsPath, "*.customizations*.json");
-
-            foreach (var file in fileServices)
+            foreach (string serviceDirectory in Directory.GetDirectories(modelsPath))
             {
-                // The name before the .customizations extension
-                // Used to get all files for that service
-				var baseName = file.Substring(file.IndexOf("ServiceModels"+Path.DirectorySeparatorChar , StringComparison.OrdinalIgnoreCase)
-					+ ("ServiceModels"+Path.DirectorySeparatorChar).Length, file.IndexOf(".customizations", StringComparison.OrdinalIgnoreCase)
-					- Convert.ToInt32(file.IndexOf("ServiceModels"+Path.DirectorySeparatorChar, StringComparison.OrdinalIgnoreCase) 
-						+ ("ServiceModels"+Path.DirectorySeparatorChar).Length));
+                var s = Path.GetFileName(serviceDirectory);
+                var compiledFilePath = Path.Combine(compiledCustomizationsDirectory, s + ".customizations.json");
+                var customizationFiles = Directory.GetFiles(serviceDirectory, "*.customizations*.json");
 
-                var filePath = Path.Combine("customizations", baseName + ".customizations.json");
-                var fileEntries = Directory.GetFiles(modelsPath, baseName + "*.customizations*.json");
-
-                var jsonWriter = new JsonWriter {PrettyPrint = true};
+                var jsonWriter = new JsonWriter { PrettyPrint = true };
 
                 JsonData outputJson = new JsonData();
                 outputJson.SetJsonType(JsonType.Object);
 
-                foreach (var entry in fileEntries)
+                foreach (var entry in customizationFiles)
                 {
                     var customJson = JsonMapper.ToObject(new StreamReader(entry));
                     foreach (var property in customJson.PropertyNames)
@@ -66,7 +54,7 @@ namespace ServiceClientGenerator
 
                 // Load examples into the customizations as well
 
-                var examples = Directory.GetFiles(modelsPath, baseName + ".examples.json").FirstOrDefault();
+                var examples = Directory.GetFiles(serviceDirectory, "*.examples.json").FirstOrDefault();
                 if (null != examples)
                 {
                     var exampleData = JsonMapper.ToObject(new StreamReader(examples));
@@ -80,13 +68,19 @@ namespace ServiceClientGenerator
 
                 // Fixes json being placed into the json mapper
                 var output = jsonWriter.ToString();
-                
+
                 // Empty json file
                 if (output.Length < 10)
                     continue;
 
-                File.WriteAllText(filePath, output);
-                Console.WriteLine("...updated {0}", Path.GetFullPath(filePath));
+                var compiledFileDirectory = Path.GetDirectoryName(compiledFilePath);
+                if (!Directory.Exists(compiledFileDirectory))
+                {
+                    Directory.CreateDirectory(compiledFileDirectory);
+                }
+
+                File.WriteAllText(compiledFilePath, output);
+                Console.WriteLine("...updated {0}", Path.GetFullPath(compiledFilePath));
             }
         }
     }

@@ -13,12 +13,15 @@ namespace ServiceClientGenerator
         private const string amazonDotPrefix = "Amazon.";
 
         string _modelPath;
+        string _displayModelPath;
 
         /// <summary>
         /// The name of the model, taken from the "model" entry in the service models 
         /// manifest.
         /// </summary>
         public string ModelName { get; set; }
+
+        public string ServiceDirectoryName { get; set; }
 
         /// <summary>
         /// Path to the model that is represented by these attributes
@@ -32,6 +35,8 @@ namespace ServiceClientGenerator
                 this._modelPath = value; 
             }
         }
+
+        public string DisplayModelPath { get; set; }
 
         ServiceModel _serviceModel;
 

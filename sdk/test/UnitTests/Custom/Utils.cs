@@ -13,38 +13,56 @@ namespace AWSSDK_DotNet35.UnitTests
 {
     public static class Utils
     {
-        public static ServiceModel LoadServiceModel(string modelName, string customizationsName)
+        public static ServiceModel LoadServiceModel(string service)
         {
-#if BCL45
-            using (var stream = typeof(Utils).Assembly.GetManifestResourceStream("AWSSDK_DotNet45.UnitTests.ServiceModels." + modelName))
-#else
-            using (var stream = typeof(Utils).Assembly.GetManifestResourceStream("AWSSDK_DotNet35.UnitTests.ServiceModels." + modelName))
-#endif
+            string repoRoot = Directory.GetCurrentDirectory();
+            do
+            {
+                if (Directory.Exists(Path.Combine(repoRoot, "generator")))
+                { 
+                    break;
+                }
 
-            using (var streamReader = new StreamReader(stream))
+                var directoryInfo = Directory.GetParent(repoRoot);
+                repoRoot = directoryInfo != null ? directoryInfo.FullName : null;
+            } while (repoRoot != null);
+
+            string serviceModelDirectory = Path.Combine(repoRoot, "generator", "ServiceModels", service);
+
+            string modelPath = GetLatestModelPath(serviceModelDirectory);
+            string customizationsPath = Path.Combine(serviceModelDirectory, service + ".customizations.json");
+
+            using (var streamReader = new StreamReader(modelPath))
             {
                 StreamReader customizationsReader = null;
-                try
+                if (File.Exists(customizationsPath))
                 {
-                    if (!string.IsNullOrEmpty(customizationsName))
+                    using (customizationsReader = new StreamReader(customizationsPath))
                     {
-#if BCL45
-                        var customizationsStream = typeof(Utils).Assembly.GetManifestResourceStream("AWSSDK_DotNet45.UnitTests.ServiceModels." + customizationsName);
-#else
-                        var customizationsStream = typeof(Utils).Assembly.GetManifestResourceStream("AWSSDK_DotNet35.UnitTests.ServiceModels." + customizationsName);
-#endif
-                        if (customizationsStream != null)
-                            customizationsReader = new StreamReader(customizationsStream);
+                        return new ServiceModel(streamReader, customizationsReader);
                     }
-
-                    return new ServiceModel(streamReader, customizationsReader);
                 }
-                finally
+                return new ServiceModel(streamReader, null);
+            }
+        }
+
+        private static string GetLatestModelPath(string serviceDirectory)
+        {
+            string latestModelPath = "";
+            foreach (string modelName in Directory.GetFiles(serviceDirectory, "*.normal.json", SearchOption.TopDirectoryOnly))
+            {
+                if (string.Compare(latestModelPath, modelName) < 0)
                 {
-                    if(customizationsReader != null)
-                        customizationsReader.Dispose();
+                    latestModelPath = modelName;
                 }
             }
+
+            if (string.IsNullOrEmpty(latestModelPath))
+            {
+                throw new FileNotFoundException("Failed to find a model file in " + serviceDirectory);
+            }
+
+            return latestModelPath;
         }
 
         public static Stream CreateStreamFromString(string s)
