@@ -65,5 +65,10 @@ namespace Amazon.Runtime.Internal
         {
             profile.UniqueKey = uniqueKey;
         }
+
+        public static CredentialProfileType? GetProfileType(CredentialProfile profile)
+        {
+            return profile.ProfileType;
+        }
     }
 }
