@@ -15,6 +15,7 @@
 using Amazon.Runtime.Internal.Settings;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Util;
+using Amazon.Util.Internal;
 using System;
 using System.Collections.Generic;
 
@@ -22,26 +23,26 @@ namespace Amazon.Runtime.Internal
 {
     public class SAMLRoleSessionManager
     {
-        private EncryptedStoreObjectManager objectManager;
+        private SettingsManager settingsManager;
 
         public static bool IsAvailable
         {
             get
             {
-                return EncryptedStoreObjectManager.IsAvailable;
+                return SettingsManager.IsAvailable;
             }
         }
 
         public SAMLRoleSessionManager()
         {
-            objectManager = new EncryptedStoreObjectManager(SettingsConstants.RegisteredRoleSessions, true);
+            settingsManager = new SettingsManager(SettingsConstants.RegisteredRoleSessions);
         }
 
         public void Clear()
         {
-            foreach (string roleSessionName in objectManager.ListObjectNames())
+            foreach (string roleSessionName in settingsManager.ListUniqueKeys())
             {
-                objectManager.UnregisterObject(roleSessionName);
+                settingsManager.UnregisterObject(roleSessionName);
             }
         }
 
@@ -56,7 +57,7 @@ namespace Amazon.Runtime.Internal
         {
             Dictionary<string, string> properties;
             credentials = null;
-            if (objectManager.TryGetObject(roleSessionName, out properties))
+            if (settingsManager.TryGetObject(roleSessionName, out properties))
             {
                 try
                 {
@@ -76,12 +77,12 @@ namespace Amazon.Runtime.Internal
             {
                 { SettingsConstants.RoleSession, credentials.ToJson() }
             };
-            objectManager.RegisterObject(roleSessionName, properties);
+            settingsManager.RegisterObject(roleSessionName, properties);
         }
 
         public void UnregisterRoleSession(string roleSessionName)
         {
-            objectManager.UnregisterObject(roleSessionName);
+            settingsManager.UnregisterObject(roleSessionName);
         }
     }
 }

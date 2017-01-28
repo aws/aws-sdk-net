@@ -16,6 +16,7 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Settings;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Util;
+using Amazon.Util.Internal;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -70,11 +71,11 @@ namespace Amazon.Runtime
                 }
             );
 
-        private EncryptedStoreObjectManager objectManager;
+        private NamedSettingsManager settingsManager;
 
         public NetSDKCredentialsFile()
         {
-            objectManager = new EncryptedStoreObjectManager(SettingsConstants.RegisteredProfiles);
+            settingsManager = new NamedSettingsManager(SettingsConstants.RegisteredProfiles);
         }
 
         public List<string> ListProfileNames()
@@ -85,7 +86,7 @@ namespace Amazon.Runtime
         public List<CredentialProfile> ListProfiles()
         {
             var profiles = new List<CredentialProfile>();
-            foreach (var profileName in objectManager.ListObjectNames())
+            foreach (var profileName in settingsManager.ListObjectNames())
             {
                 CredentialProfile profile = null;
                 if (TryGetProfile(profileName, out profile) && profile.CanCreateAWSCredentials)
@@ -106,7 +107,7 @@ namespace Amazon.Runtime
         {
             Dictionary<string, string> properties;
             string uniqueKeyStr;
-            if (objectManager.TryGetObject(profileName, out uniqueKeyStr, out properties))
+            if (settingsManager.TryGetObject(profileName, out uniqueKeyStr, out properties))
             {
                 try
                 {
@@ -170,7 +171,7 @@ namespace Amazon.Runtime
 
                 // Set the UniqueKey.  It might change if the unique key is set by the objectManger,
                 // or if this is an update to an existing profile.
-                string newUniqueKeyStr = objectManager.RegisterObject(profile.UniqueKey.ToString(), profile.Name, profileDictionary);
+                string newUniqueKeyStr = settingsManager.RegisterObject(profile.Name, profileDictionary);
                 Guid? newUniqueKey;
                 if (GuidUtils.TryParseNullableGuid(newUniqueKeyStr, out newUniqueKey))
                     profile.UniqueKey = newUniqueKey;
@@ -188,7 +189,7 @@ namespace Amazon.Runtime
         /// <param name="profileName">The name of the profile to delete.</param>
         public void UnregisterProfile(string profileName)
         {
-            objectManager.UnregisterObject(profileName);
+            settingsManager.UnregisterObject(profileName);
         }
 
         /// <summary>
@@ -198,7 +199,7 @@ namespace Amazon.Runtime
         /// <param name="newProfileName">The new name for the profile.</param>
         public void RenameProfile(string oldProfileName, string newProfileName)
         {
-            objectManager.RenameObject(oldProfileName, newProfileName);
+            settingsManager.RenameObject(oldProfileName, newProfileName);
         }
 
         /// <summary>
@@ -208,7 +209,7 @@ namespace Amazon.Runtime
         /// <param name="toProfileName">The name of the new profile.</param>
         public void CopyProfile(string fromProfileName, string toProfileName)
         {
-            objectManager.CopyObject(fromProfileName, toProfileName);
+            settingsManager.CopyObject(fromProfileName, toProfileName);
         }
 
         /// <summary>

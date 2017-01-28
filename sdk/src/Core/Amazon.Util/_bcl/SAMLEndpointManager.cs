@@ -15,6 +15,7 @@
 using Amazon.Runtime;
 using Amazon.Runtime.Internal.Settings;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Util.Internal;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -23,14 +24,14 @@ namespace Amazon.Util
 {
     public class SAMLEndpointManager
     {
-        private EncryptedStoreObjectManager objectManager;
+        private NamedSettingsManager settingsManager;
 
         /// <summary>
         /// Construct a SAMLEndpointManager.
         /// </summary>
         public SAMLEndpointManager()
         {
-            objectManager = new EncryptedStoreObjectManager(SettingsConstants.RegisteredSAMLEndpoints);
+            settingsManager = new NamedSettingsManager(SettingsConstants.RegisteredSAMLEndpoints);
         }
 
         /// <summary>
@@ -40,7 +41,7 @@ namespace Amazon.Util
         {
             get
             {
-                return EncryptedStoreObjectManager.IsAvailable;
+                return NamedSettingsManager.IsAvailable;
             }
         }
 
@@ -55,7 +56,7 @@ namespace Amazon.Util
                 { SettingsConstants.EndpointField, samlEndpoint.EndpointUri.ToString() },
                 { SettingsConstants.AuthenticationTypeField, samlEndpoint.AuthenticationType.ToString() }
             };
-            objectManager.RegisterObject(samlEndpoint.Name, properties);
+            settingsManager.RegisterObject(samlEndpoint.Name, properties);
         }
 
         /// <summary>
@@ -89,7 +90,7 @@ namespace Amazon.Util
         public SAMLEndpoint GetEndpoint(string endpointName)
         {
             Dictionary<string, string> properties;
-            if (objectManager.TryGetObject(endpointName, out properties))
+            if (settingsManager.TryGetObject(endpointName, out properties))
             {
                 try
                 {
@@ -120,7 +121,7 @@ namespace Amazon.Util
         /// <param name="endpointName">The name of the endpoint to delete.</param>
         public void UnregisterEndpoint(string endpointName)
         {
-            objectManager.UnregisterObject(endpointName);
+            settingsManager.UnregisterObject(endpointName);
         }
 
         /// <summary>
@@ -129,7 +130,7 @@ namespace Amazon.Util
         /// <returns></returns>
         public List<string> ListEndpointNames()
         {
-            return objectManager.ListObjectNames();
+            return settingsManager.ListObjectNames();
         }
 
         /// <summary>
@@ -139,7 +140,7 @@ namespace Amazon.Util
         public List<SAMLEndpoint> ListEndpoints()
         {
             var endpoints = new List<SAMLEndpoint>();
-            foreach (var endpointName in objectManager.ListObjectNames())
+            foreach (var endpointName in settingsManager.ListObjectNames())
             {
                 SAMLEndpoint endpoint;
                 if (TryGetEndpoint(endpointName, out endpoint))

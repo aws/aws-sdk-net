@@ -187,6 +187,9 @@
     <Compile Include="Amazon.Util\Internal\_bcl\*.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.Util\Internal\_bcl+coreclr\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.Util\_bcl\*.cs">
       <SubType>Code</SubType>
     </Compile>
