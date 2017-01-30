@@ -320,7 +320,6 @@
 		<XUnitWrapperTask
 			TestSuiteRunner="$(SDKToolingExe)"
 			TestContainer="..\extensions\test\NETCore.SetupTests\project.json"
-			ResultsOutputLocation="$(Deployment)"
 			Configuration="$(Configuration)"
 			/>
 			
