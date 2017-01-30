@@ -15,6 +15,10 @@
         <!-- perform a release build by default -->
         <Configuration Condition="'$(Configuration)'==''">Release</Configuration>
 
+        <TestWrapperAssembly>TestWrapper\TestRunners\bin\Debug\TestWrapper.dll</TestWrapperAssembly>
+        <CustomTasksAssembly>CustomTasks\bin\Release\CustomTasks.dll</CustomTasksAssembly>
+        <TestAnalyzerAssembly>..\sdk\test\TestAnalyzer\IntegrationTestsAnalyzer\bin\Debug\IntegrationTestsAnalyzer.dll</TestAnalyzerAssembly>
+        <RunIntegTests Condition="'$(RunIntegTests)'=='' And '$(IntegCategoriesToTest)' != ''">true</RunIntegTests>
     </PropertyGroup>
 
     <Import Project="$(InternalBuildTools)\references.targets" Condition="Exists('$(InternalBuildTools)\references.targets')" />
@@ -35,13 +39,26 @@
         <RunKeyScan Condition="'$(RunKeyScan)'==''">false</RunKeyScan>
     </PropertyGroup>
 
-    <Target Name="build-custom-tasks">
+    <Target Name="build-buildtools"
+            DependsOnTargets="build-custom-tasks;build-test-wrapper;build-test-analyzer" />
+
+    <Target Name="build-custom-tasks" Condition="!Exists($(CustomTasksAssembly))">
         <Exec Command="..\sdk\.nuget\NuGet.exe restore .\CustomTasks\CustomTasks.sln" />
 
         <MSBuild Projects=".\CustomTasks\CustomTasks.sln"
             Targets="Clean;Build"
             Properties="Configuration=Release" />
+    </Target>
 
+    <Target Name="build-test-wrapper" Condition="!Exists($(TestWrapperAssembly))">
+        <Exec Command="..\sdk\.nuget\NuGet.exe restore .\TestWrapper\TestWrapper.sln" />
+
+        <MSBuild Projects=".\TestWrapper\TestWrapper.sln"
+            Targets="Clean;Build"
+            Properties="Configuration=Debug"/>
+    </Target>
+
+    <Target Name="build-test-analyzer" Condition="!Exists($(TestAnalyzerAssembly))">
         <Exec Command="..\sdk\.nuget\NuGet.exe restore ..\sdk\test\TestAnalyzer\TestAnalyzer.sln" />
 
         <MSBuild Projects="..\sdk\test\TestAnalyzer\TestAnalyzer.sln"
@@ -49,15 +66,29 @@
             Properties="Configuration=Debug"/>
     </Target>
 
-    <UsingTask TaskName="CustomTasks.UpdateFxCopProject" AssemblyFile=".\CustomTasks\bin\Release\CustomTasks.dll"/>
-    <UsingTask TaskName="CustomTasks.XamarinComponent" AssemblyFile=".\CustomTasks\bin\Release\CustomTasks.dll"/>
-    <UsingTask TaskName="CustomTasks.UnityPackage" AssemblyFile=".\CustomTasks\bin\Release\CustomTasks.dll"/>
-	<UsingTask TaskName="CustomTasks.UnityBuild" AssemblyFile=".\CustomTasks\bin\Release\CustomTasks.dll"/>
-	<UsingTask TaskName="CustomTasks.TimingTask" AssemblyFile=".\CustomTasks\bin\Release\CustomTasks.dll"/>
 
-    <Target Name="init" DependsOnTargets="clean-common;build-custom-tasks">
+    <Target Name="clean-buildtools" DependsOnTargets="clean-common">
+        <Delete Files="$(TestWrapperAssembly)" />
+        <Delete Files="$(CustomTasksAssembly)" />
+        <Delete Files="$(TestAnalyzerAssembly)" />
+    </Target>
+
+    <UsingTask TaskName="CustomTasks.UpdateFxCopProject" AssemblyFile="$(CustomTasksAssembly)"/>
+    <UsingTask TaskName="CustomTasks.XamarinComponent" AssemblyFile="$(CustomTasksAssembly)"/>
+    <UsingTask TaskName="CustomTasks.UnityPackage" AssemblyFile="$(CustomTasksAssembly)"/>
+    <UsingTask TaskName="CustomTasks.UnityBuild" AssemblyFile="$(CustomTasksAssembly)"/>
+    <UsingTask TaskName="CustomTasks.TimingTask" AssemblyFile="$(CustomTasksAssembly)"/>
+    <UsingTask TaskName="TestWrapper.MsTestWrapperTask" AssemblyFile="$(TestWrapperAssembly)"/>
+    <UsingTask TaskName="TestWrapper.XUnitWrapperTask" AssemblyFile="$(TestWrapperAssembly)"/>
+
+    <Target Name="init" DependsOnTargets="clean-buildtools;build-buildtools">
         <Message Text="Running SDK generation and build for configuration: $(Configuration)" Importance="normal" />
+
         <TimingTask />
+
+        <Copy
+            SourceFiles="trx-transform.xsl"
+            DestinationFolder="$(Deployment)" />
     </Target>
 
     <Target Name="full-build" DependsOnTargets="test-sdk;copy-assemblies;copy-service-models;unity-pack;keyscan;consolidate-docartifacts;save-build"/>
@@ -141,31 +172,40 @@
 	
     <Target Name="test-sdk" DependsOnTargets="init;build-sdk;fxcop;run-unit-tests;run-integ-tests" />
 
-    <Target Name="run-unit-tests" DependsOnTargets="init;build-sdk">
-        <MSBuild
-            Projects="$(MSBuildProjectFile)"
-            Targets="run-ms-tests"
-            Properties="TestContainer=..\sdk\test\UnitTests\bin\$(Configuration)\net35\AWSSDK.UnitTests.Net35.dll;Configuration=$(Configuration)" />
-        <MSBuild
-            Projects="$(MSBuildProjectFile)"
-            Targets="run-ms-tests"
-            Properties="TestContainer=..\sdk\test\UnitTests\bin\$(Configuration)\net45\AWSSDK.UnitTests.Net45.dll;Configuration=$(Configuration)" />
-        <MSBuild
-            Projects="$(MSBuildProjectFile)"
-            Targets="run-xunit-tests"
-            Properties="ProjectJSON=..\sdk\test\CoreCLR\UnitTests\project.json;Configuration=$(Configuration)"/>
-    </Target>
+    <Target Name="run-unit-tests" DependsOnTargets="init;build-sdk;build-test-wrapper;GetSDKToolingInfoTarget" >
+        <MsTestWrapperTask
+            TestSuiteRunner="$(mstest2013exe)"
+            TestContainer="..\sdk\test\UnitTests\bin\$(Configuration)\net35\AWSSDK.UnitTests.Net35.dll"
+            ResultsOutputDir="$(Deployment)"
+            WaitForDebugger="false"
+            />
+        <MsTestWrapperTask
+            TestSuiteRunner="$(mstest2013exe)"
+            TestContainer="..\sdk\test\UnitTests\bin\$(Configuration)\net45\AWSSDK.UnitTests.Net45.dll"
+            ResultsOutputDir="$(Deployment)"
+            />
+        <XUnitWrapperTask
+            TestSuiteRunner="$(SDKToolingExe)"
+            TestContainer="..\sdk\test\CoreCLR\UnitTests\project.json"
+            Configuration="$(Configuration)"
+            />
+	</Target>
 
-    <Target Name="run-integ-tests" DependsOnTargets="init;build-sdk" Condition="'$(RunIntegTests)' != '' And '$(RunIntegTests)' != 'false'">
-        <MSBuild
-            Projects="$(MSBuildProjectFile)"
-            Targets="run-ms-tests"
-            Properties="TestContainer=..\sdk\test\IntegrationTests\bin\$(Configuration)\net45\AWSSDK.IntegrationTests.Net45.dll;Configuration=$(Configuration)" />
+    <Target Name="run-integ-tests" Condition="'$(RunIntegTests)' != '' And '$(RunIntegTests)' != 'false'" DependsOnTargets="init;build-sdk">
+        <MsTestWrapperTask
+            TestSuiteRunner="$(mstest2013exe)"
+            TestContainer="..\sdk\test\IntegrationTests\bin\$(Configuration)\net45\AWSSDK.IntegrationTests.Net45.dll"
+            ResultsOutputDir="$(Deployment)"
+            Categories="$(IntegCategoriesToTest)"
+            WaitForDebugger="false"
+            />
 
-        <MSBuild
-            Projects="$(MSBuildProjectFile)"
-            Targets="run-xunit-tests"
-            Properties="ProjectJSON=..\sdk\test\CoreCLR\IntegrationTests\project.json;Configuration=$(Configuration)"/>
+        <XUnitWrapperTask
+            TestSuiteRunner="$(SDKToolingExe)"
+            TestContainer="..\sdk\test\CoreCLR\IntegrationTests\project.json"
+            Configuration="$(Configuration)"
+            Categories="$(IntegCategoriesToTest)"
+            />
     </Target>
 
     <Target Name="nuget-pack" DependsOnTargets="build-sdk" Condition="'$(Configuration)' == 'Release'">
@@ -277,10 +317,12 @@
 			WorkingDirectory="..\extensions\test\NETCore.SetupTests"/>		
 			
 		<Message Text="Build and Test .NET Core Setup Extension"/>
-        <MSBuild
-            Projects="$(MSBuildProjectFile)"
-            Targets="run-xunit-tests"
-            Properties="ProjectJSON=..\extensions\test\NETCore.SetupTests\project.json;Configuration=$(Configuration)"/>
+		<XUnitWrapperTask
+			TestSuiteRunner="$(SDKToolingExe)"
+			TestContainer="..\extensions\test\NETCore.SetupTests\project.json"
+			ResultsOutputLocation="$(Deployment)"
+			Configuration="$(Configuration)"
+			/>
 			
 	</Target>	
 	
@@ -327,46 +369,6 @@
         <Error Condition="Exists('..\fxcop-report-3.5.xml') or Exists('..\fxcop-report-4.5.xml')" Text="There are FxCop violations!" />
     </Target>
 
-    <Target Name="build-test-wrapper">
-	    <Exec Command="..\sdk\.nuget\NuGet.exe restore .\TestWrapper\TestWrapper.sln" />
-		
-        <MSBuild Projects=".\TestWrapper\TestWrapper.sln"
-            Targets="Clean;Build"
-            Properties="Configuration=Debug"/>
-    </Target>
-
-    <Target Name="run-ms-tests" DependsOnTargets="build-test-wrapper">
-        <Message Text="TestContainer = $(TestContainer)" Condition="$(TestContainer.Length) > 0"/>
-
-        <PropertyGroup >
-            <Container>/testcontainer:&quot;$([System.IO.Path]::GetFullPath($(TestContainer)))&quot;</Container>
-        </PropertyGroup>
-
-        <Exec Command=".\TestWrapper\TestRunners\bin\Debug\TestWrapper.exe  mstest $(mstest2013) $(Container)" IgnoreStandardErrorWarningFormat="true"/>
-
-        <!-- Clear our properties -->
-        <PropertyGroup >
-            <TestContainer></TestContainer>
-        </PropertyGroup>
-        <CallTarget Targets="deploy-test-results" />
-        <OnError ExecuteTargets="deploy-test-results" />
-    </Target>
-
-    <Target Name="run-xunit-tests" DependsOnTargets="build-test-wrapper;GetSDKToolingInfoTarget">
-        <Message Text="TestContainer = $(TestContainer)" Condition="$(TestContainer.Length) > 0"/>
-
-        <PropertyGroup>
-            <Project>$([System.IO.Path]::GetFullPath($(ProjectJSON)))</Project>
-        </PropertyGroup>
-
-        <Exec Command=".\TestWrapper\TestRunners\bin\Debug\TestWrapper.exe xunit &quot;$(SDKToolingExe)&quot; test --no-build &quot;$(Project)&quot; -c $(Configuration)"/>
-
-         <!-- Clear our properties -->
-        <PropertyGroup >
-            <TestContainer></TestContainer>
-        </PropertyGroup>
-    </Target>
-
     <UsingTask TaskName="PrepareTestResults" TaskFactory="CodeTaskFactory" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.v4.0.dll">
         <ParameterGroup>
             <ResultFile ParameterType="System.String" Required="true" />
@@ -382,24 +384,6 @@
             </Code>
         </Task>
     </UsingTask>
-
-    <Target Name="deploy-test-results" >
-        <ItemGroup>
-            <TestResult Include="TestResults\*.trx" />
-        </ItemGroup>
-        <PrepareTestResults ResultFile="%(TestResult.FullPath)" />
-
-        <ItemGroup>
-            <FormattedTestResult Include="TestResults\*.trx.xml" />
-        </ItemGroup>
-        <Copy
-            SourceFiles="@(FormattedTestResult)"
-            DestinationFolder="$(Deployment)" />
-
-        <Copy
-            SourceFiles="trx-transform.xsl"
-            DestinationFolder="$(Deployment)" />
-    </Target>
 
     <Target Name="keyscan"
             Condition="Exists('$(InternalBuildTools)\references.targets') And $(RunKeyScan)"
