@@ -56,9 +56,9 @@ namespace Amazon.Runtime.Internal
             return profile.UniqueKey.Value;
         }
 
-        public static Guid? GetUniqueKey(CredentialProfile profile)
+        public static String GetUniqueKey(CredentialProfile profile)
         {
-            return profile.UniqueKey;
+            return profile.UniqueKey.HasValue ? profile.UniqueKey.Value.ToString("D") : null;
         }
 
         public static void SetUniqueKey(CredentialProfile profile, Guid? uniqueKey)

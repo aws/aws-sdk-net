@@ -202,7 +202,7 @@ namespace AWSSDK.UnitTests
             using (var tester = new NetSDKCredentialsFileTestFixture(LegacyCredentialsTypeProfileText))
             {
                 var profile = tester.TestTryGetProfile("LegacyCredentialsTypeProfile", true, false);
-                Assert.AreEqual(UniqueKey, CredentialProfileUtils.GetUniqueKey(profile));
+                Assert.AreEqual(UniqueKey.ToString("D"), CredentialProfileUtils.GetUniqueKey(profile));
             }
         }
 
@@ -401,7 +401,7 @@ namespace AWSSDK.UnitTests
                 Assert.AreNotEqual(CredentialProfileUtils.GetUniqueKey(profile1), CredentialProfileUtils.GetUniqueKey(profile2));
 
                 // make sure everything else on the copy is the same as the original
-                CredentialProfileUtils.SetUniqueKey(profile2, CredentialProfileUtils.GetUniqueKey(profile1));
+                CredentialProfileUtils.SetUniqueKey(profile2, new Guid(CredentialProfileUtils.GetUniqueKey(profile1)));
                 ReflectionHelpers.Invoke(profile2, "Name", profile1.Name);
                 Assert.AreEqual(profile1, profile2);
 
