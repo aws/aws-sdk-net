@@ -9,6 +9,20 @@ The **AWS SDK for .NET** enables .NET developers to easily work with [Amazon Web
 * [GitHub Issues][sdk-issues]
 * [SDK Samples](https://github.com/awslabs/aws-sdk-net-samples)
 
+## Getting Help
+
+Please use these community resources for getting help. We use the [GitHub issues][sdk-issues] for tracking bugs and feature requests and have limited bandwidth to address them.
+* Ask a question on [StackOverflow](http://stackoverflow.com/) and tag it with aws-sdk-net
+* Come join the AWS .NET community chat on [gitter](https://gitter.im/aws/aws-sdk-net)
+* Open a support ticket with [AWS Support](https://console.aws.amazon.com/support/home)
+* If it turns out that you may have found a bug, please open an [issue][sdk-issues]
+
+### Opening Issues
+
+If you encounter a bug with AWS SDK for .NET we would like to hear about it. Search the existing [issues](https://github.com/aws/aws-sdk-net/issues?q=is%3Aissue) and try to make sure your problem doesn’t already exist before opening a new issue. It’s helpful if you include the version of AWS SDK .NET and the OS you’re using. Please include a stack trace and reduced repro case when appropriate, too.
+
+The [GitHub issues][sdk-issues] are intended for bug reports and feature requests. For help and questions with using AWS SDK for .NET please make use of the resources listed in the Getting Help section. There are limited resources available for handling issues and by keeping the list of open issues lean we can respond in a timely manner.
+
 ## SDK Change Log
 
 The change log for the SDK can be found in the [SDK.CHANGELOG.md](https://github.com/aws/aws-sdk-net/blob/master/SDK.CHANGELOG.md) file.
