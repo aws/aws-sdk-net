@@ -14,7 +14,7 @@ namespace TestWrapper
     public abstract class TestWrapperTask : Task
     {
         public bool WaitForDebugger { get; set; }
-        public ITaskItem[] Categories { get; set; }
+        public ITaskItem Categories { get; set; }
         public ITaskItem TestSuiteRunner { get; set; }
         public ITaskItem TestContainer { get; set; }
 
@@ -25,10 +25,10 @@ namespace TestWrapper
             get
             {
                 string[] array = null;
-                if (Categories != null)
+                if (Categories != null && !string.IsNullOrEmpty(Categories.ItemSpec))
                 {
-                    array = Categories
-                        .Select(ti => ti.ItemSpec)
+                    array = Categories.ItemSpec
+                        .Split(new char[] { ','}, StringSplitOptions.RemoveEmptyEntries)
                         .Where(c => c != null && !string.IsNullOrEmpty(c.Trim()))
                         .ToArray();
                 }

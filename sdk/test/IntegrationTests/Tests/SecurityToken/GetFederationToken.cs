@@ -20,7 +20,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         }
 
         [TestMethod]
-        [TestCategory("SecurityTokenService")]
+        [TestCategory("SecurityToken")]
         public void TestGetFederationToken()
         {
             var gftRequest = new GetFederationTokenRequest
@@ -53,7 +53,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         }
 
         [TestMethod]
-        [TestCategory("SecurityTokenService")]
+        [TestCategory("SecurityToken")]
         public void TestGetFederationTokenAsync()
         {
             var gftRequest = new GetFederationTokenRequest

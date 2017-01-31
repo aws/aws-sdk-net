@@ -125,7 +125,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         }
 
         [TestMethod]
-        [TestCategory("SecurityTokenService")]
+        [TestCategory("SecurityToken")]
         public void TestAssumeRole()
         {
             var clientId = Guid.NewGuid();
@@ -157,7 +157,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         }
 
         [TestMethod]
-        [TestCategory("SecurityTokenService")]
+        [TestCategory("SecurityToken")]
         public void TestAssumeRoleCredentials()
         {
             var clientId = Guid.NewGuid();

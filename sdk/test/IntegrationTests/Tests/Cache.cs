@@ -59,7 +59,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
 
         [TestMethod]
-        [TestCategory("DynamoDB")]
+        [TestCategory("DynamoDBv2")]
         public void TestCache()
         {
             Func<string, TableDescription> creator = tn => client.DescribeTable(tn).Table;
@@ -94,7 +94,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         }
 
         [TestMethod]
-        [TestCategory("DynamoDB")]
+        [TestCategory("DynamoDBv2")]
         public void MultipleClientsTest()
         {
             Table.ClearTableCache();
@@ -111,7 +111,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         }
 
         [TestMethod]
-        [TestCategory("DynamoDB")]
+        [TestCategory("DynamoDBv2")]
         public void ChangingTableTest()
         {
             var item = new Document(new Dictionary<string, DynamoDBEntry>

@@ -14,7 +14,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
     public partial class DynamoDBTests : TestBase<AmazonDynamoDBClient>
     {
         [TestMethod]
-        [TestCategory("DynamoDB")]
+        [TestCategory("DynamoDBv2")]
         public void TestTableCalls()
         {
             // Only run these tests if we are not reusing tables
@@ -183,7 +183,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         }
 
         [TestMethod]
-        [TestCategory("DynamoDB")]
+        [TestCategory("DynamoDBv2")]
         public void TestDataCalls()
         {
             // Test hash-key table
@@ -1007,7 +1007,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         }
 
         [TestMethod]
-        [TestCategory("DynamoDB")]
+        [TestCategory("DynamoDBv2")]
         public void TestDynamoDBStreamWithServiceURL()
         {
             var config = new AmazonDynamoDBStreamsConfig();

@@ -21,7 +21,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         }
 
         [TestMethod]
-        [TestCategory("SecurityTokenService")]
+        [TestCategory("SecurityToken")]
         public void TestGetSessionToken()
         {
             var gstRequest = new GetSessionTokenRequest()
@@ -47,7 +47,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         }
 
         [TestMethod]
-        [TestCategory("SecurityTokenService")]
+        [TestCategory("SecurityToken")]
         public void TestGetSessionTokenRegional()
         {
             var uswest2Client = new AmazonSecurityTokenServiceClient(RegionEndpoint.USWest2);
@@ -74,7 +74,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         }
 
         [TestMethod]
-        [TestCategory("SecurityTokenService")]
+        [TestCategory("SecurityToken")]
         public void TestGetSessionTokenAsync()
         {
             var gstRequest = new GetSessionTokenRequest()

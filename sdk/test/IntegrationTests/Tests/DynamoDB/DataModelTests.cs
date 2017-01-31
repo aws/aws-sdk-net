@@ -17,7 +17,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
     public partial class DynamoDBTests : TestBase<AmazonDynamoDBClient>
     {
         [TestMethod]
-        [TestCategory("DynamoDB")]
+        [TestCategory("DynamoDBv2")]
         public void TestContext()
         {
             // It is a known bug that this test currently fails due to an AOT-compilation

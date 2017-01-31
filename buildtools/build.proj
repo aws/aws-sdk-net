@@ -16,7 +16,7 @@
         <Configuration Condition="'$(Configuration)'==''">Release</Configuration>
 
         <TestWrapperAssembly>TestWrapper\TestRunners\bin\Debug\TestWrapper.dll</TestWrapperAssembly>
-        <CustomTasksAssembly>CustomTasks\bin\Release\CustomTasks.dll</CustomTasksAssembly>
+        <CustomTasksAssembly>CustomTasks\bin\Debug\CustomTasks.dll</CustomTasksAssembly>
         <TestAnalyzerAssembly>..\sdk\test\TestAnalyzer\IntegrationTestsAnalyzer\bin\Debug\IntegrationTestsAnalyzer.dll</TestAnalyzerAssembly>
         <RunIntegTests Condition="'$(RunIntegTests)'=='' And '$(IntegCategoriesToTest)' != ''">true</RunIntegTests>
     </PropertyGroup>
@@ -47,7 +47,7 @@
 
         <MSBuild Projects=".\CustomTasks\CustomTasks.sln"
             Targets="Clean;Build"
-            Properties="Configuration=Release" />
+            Properties="Configuration=Debug" />
     </Target>
 
     <Target Name="build-test-wrapper" Condition="!Exists($(TestWrapperAssembly))">
@@ -66,7 +66,6 @@
             Properties="Configuration=Debug"/>
     </Target>
 
-
     <Target Name="clean-buildtools" DependsOnTargets="clean-common">
         <Delete Files="$(TestWrapperAssembly)" />
         <Delete Files="$(CustomTasksAssembly)" />
@@ -78,6 +77,7 @@
     <UsingTask TaskName="CustomTasks.UnityPackage" AssemblyFile="$(CustomTasksAssembly)"/>
     <UsingTask TaskName="CustomTasks.UnityBuild" AssemblyFile="$(CustomTasksAssembly)"/>
     <UsingTask TaskName="CustomTasks.TimingTask" AssemblyFile="$(CustomTasksAssembly)"/>
+    <UsingTask TaskName="CustomTasks.ValidateIntegTests" AssemblyFile="$(CustomTasksAssembly)"/>
     <UsingTask TaskName="TestWrapper.MsTestWrapperTask" AssemblyFile="$(TestWrapperAssembly)"/>
     <UsingTask TaskName="TestWrapper.XUnitWrapperTask" AssemblyFile="$(TestWrapperAssembly)"/>
 
@@ -172,6 +172,17 @@
 	
     <Target Name="test-sdk" DependsOnTargets="init;build-sdk;fxcop;run-unit-tests;run-integ-tests" />
 
+    <Target Name="validate-integ-tests" DependsOnTargets="build-custom-tasks">
+        <ValidateIntegTests
+            TestAssembly="..\sdk\test\IntegrationTests\bin\$(Configuration)\net35\AWSSDK.IntegrationTests.Net35.dll"
+            WaitForDebugger="false"
+            />
+        <ValidateIntegTests
+            TestAssembly="..\sdk\test\IntegrationTests\bin\$(Configuration)\net45\AWSSDK.IntegrationTests.Net45.dll"
+            WaitForDebugger="false"
+            />
+    </Target>
+
     <Target Name="run-unit-tests" DependsOnTargets="init;build-sdk;build-test-wrapper;GetSDKToolingInfoTarget" >
         <MsTestWrapperTask
             TestSuiteRunner="$(mstest2013exe)"
@@ -191,7 +202,7 @@
             />
 	</Target>
 
-    <Target Name="run-integ-tests" Condition="'$(RunIntegTests)' != '' And '$(RunIntegTests)' != 'false'" DependsOnTargets="init;build-sdk">
+    <Target Name="run-integ-tests" Condition="'$(RunIntegTests)' != '' And '$(RunIntegTests)' != 'false'" DependsOnTargets="init;build-sdk;validate-integ-tests">
         <MsTestWrapperTask
             TestSuiteRunner="$(mstest2013exe)"
             TestContainer="..\sdk\test\IntegrationTests\bin\$(Configuration)\net45\AWSSDK.IntegrationTests.Net45.dll"

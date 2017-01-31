@@ -19,7 +19,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
     public partial class DynamoDBTests : TestBase<AmazonDynamoDBClient>
     {
         [TestMethod]
-        [TestCategory("DynamoDB")]
+        [TestCategory("DynamoDBv2")]
         public void TestTableOperations()
         {
             foreach (var conversion in new DynamoDBEntryConversion[] { DynamoDBEntryConversion.V1, DynamoDBEntryConversion.V2 })

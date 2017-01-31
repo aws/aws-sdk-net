@@ -155,7 +155,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         [TestMethod]
-        [TestCategory("Core")]
+        [TestCategory("SecurityToken")]
+        [TestCategory("IdentityManagement")]
         public void TestExplicitlyDefinedEndpoint()
         {
             string hostname = RegionEndpoint.APNortheast2.GetEndpointForService("sts", true).Hostname;
