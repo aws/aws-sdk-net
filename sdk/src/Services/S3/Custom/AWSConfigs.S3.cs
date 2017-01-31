@@ -176,6 +176,9 @@ namespace Amazon
     {
         private const string useSignatureVersion4Key = "useSignatureVersion4";
 
+        // Zero-parameter constructor required to retrieve object from configuration
+        public V4ClientSection() { }
+
         public V4ClientSection(XElement section)
         {
             if (section != null)
