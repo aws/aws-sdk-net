@@ -47,7 +47,6 @@ namespace Amazon.Runtime.Internal.Settings
         public const string EndpointNameField = "EndpointName";
         public const string RoleArnField = "RoleArn";
         public const string UserIdentityField = "UserIdentity";
-        public const string AuthenticationType = "AuthenticationType";
         public const string Region = "Region";
         public const string AuthenticationTypeField = "AuthenticationType";
         public const string SourceProfileField = "SourceProfile";
