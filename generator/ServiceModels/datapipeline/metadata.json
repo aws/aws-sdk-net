@@ -1,0 +1,9 @@
+{
+    "base-name": "DataPipeline", 
+    "service-url": "https://datapipeline.us-east-1.amazonaws.com", 
+    "region-lookup-name": "datapipeline", 
+    "authentication-service-name": "datapipeline", 
+    "synopsis": "AWS Data Pipeline is a managed extract-transform-load (ETL) service that helps you reliably and cost-effectively move and process data across your on-premise data stores and AWS services.", 
+    "active": true, 
+    "model": "datapipeline"
+}

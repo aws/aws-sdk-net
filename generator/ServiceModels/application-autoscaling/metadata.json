@@ -1,0 +1,8 @@
+{
+    "base-name": "ApplicationAutoScaling", 
+    "region-lookup-name": "autoscaling", 
+    "authentication-service-name": "application-autoscaling", 
+    "synopsis": "Application Auto Scaling is a general purpose Auto Scaling service for supported elastic AWS resources. With Application Auto Scaling, you can automatically scale your AWS resources, with an experience similar to that of Amazon EC2 Auto Scaling.", 
+    "active": true, 
+    "model": "application-autoscaling"
+}

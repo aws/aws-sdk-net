@@ -1,0 +1,8 @@
+{
+    "base-name": "WorkSpaces", 
+    "service-url": "https://workspaces.us-east-1.amazonaws.com", 
+    "region-lookup-name": "workspaces", 
+    "synopsis": "Amazon WorkSpaces is a managed desktop computing service in the cloud.", 
+    "active": true, 
+    "model": "workspaces"
+}

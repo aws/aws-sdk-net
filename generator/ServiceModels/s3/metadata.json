@@ -1,0 +1,13 @@
+{
+    "base-name": "S3", 
+    "enable-xamarin-component": true, 
+    "service-url": "https://s3.amazonaws.com/", 
+    "region-lookup-name": "s3", 
+    "authentication-service-name": "s3", 
+    "platforms": [
+        "Unity"
+    ], 
+    "synopsis": "Amazon Simple Storage Service (Amazon S3), provides developers and IT teams with secure, durable, highly-scalable object storage.", 
+    "active": true, 
+    "model": "s3"
+}

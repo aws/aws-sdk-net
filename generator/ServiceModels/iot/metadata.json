@@ -1,0 +1,9 @@
+{
+    "base-name": "IoT", 
+    "service-url": "https://iot.us-east-1.amazonaws.com/", 
+    "region-lookup-name": "iot", 
+    "authentication-service-name": "execute-api", 
+    "synopsis": "AWS IoT allows you to leverage AWS to build your Internet of Things.", 
+    "active": true, 
+    "model": "iot-2015-"
+}

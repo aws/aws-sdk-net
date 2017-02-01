@@ -1,0 +1,9 @@
+{
+    "base-name": "KinesisAnalytics", 
+    "service-url": "https://kinesisanalytics.us-east-1.amazonaws.com/", 
+    "region-lookup-name": "kinesisanalytics", 
+    "authentication-service-name": "kinesisanalytics", 
+    "synopsis": "Amazon Kinesis Analytics is a fully managed service for continuously querying streaming data using standard SQL.", 
+    "active": true, 
+    "model": "kinesisanalytics"
+}

@@ -1,0 +1,12 @@
+{
+    "base-name": "Kinesis", 
+    "service-url": "https://kinesis.us-east-1.amazonaws.com/", 
+    "region-lookup-name": "kinesis", 
+    "authentication-service-name": "kinesis", 
+    "platforms": [
+        "Unity"
+    ], 
+    "synopsis": "Amazon Kinesis is a fully managed, cloud-based service for real-time processing of large, distributed data streams.", 
+    "active": true, 
+    "model": "kinesis-"
+}

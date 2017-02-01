@@ -1,0 +1,9 @@
+{
+    "base-name": "Pinpoint", 
+    "service-url": "https://pinpoint.us-east-1.amazonaws.com", 
+    "region-lookup-name": "pinpoint", 
+    "authentication-service-name": "mobiletargeting", 
+    "synopsis": "Amazon Pinpoint makes it easy to run targeted campaigns to improve user engagement. Pinpoint helps you understand your users behavior, define who to target, what messages to send, when to deliver them, and tracks the results of the campaign.", 
+    "active": true, 
+    "model": "pinpoint"
+}

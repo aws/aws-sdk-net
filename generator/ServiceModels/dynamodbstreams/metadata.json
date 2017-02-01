@@ -1,0 +1,11 @@
+{
+    "base-name": "DynamoDBStreams", 
+    "parent-base-name": "DynamoDB", 
+    "max-retries": 10, 
+    "service-url": "https://streams.dynamodb.us-east-1.amazonaws.com/", 
+    "region-lookup-name": "streams.dynamodb", 
+    "namespace": "Amazon.DynamoDBv2", 
+    "authentication-service-name": "dynamodb", 
+    "active": true, 
+    "model": "dynamodbstreams"
+}

@@ -1,0 +1,10 @@
+{
+    "comment": "This has the extra hyphen in the prefix to make sure we don't pick up cloudsearchdomain model", 
+    "base-name": "CloudSearch", 
+    "service-url": "https://cloudsearch.us-east-1.amazonaws.com/", 
+    "region-lookup-name": "cloudsearch", 
+    "authentication-service-name": "cloudsearch", 
+    "synopsis": "Amazon CloudSearch is a managed service in the AWS Cloud that makes it simple and cost-effective to set up, manage, and scale a search solution for your website or application.", 
+    "active": true, 
+    "model": "cloudsearch-"
+}

@@ -1,0 +1,15 @@
+{
+    "base-name": "SimpleNotificationService", 
+    "enable-xamarin-component": true, 
+    "tags": [
+        "SNS"
+    ], 
+    "region-lookup-name": "sns", 
+    "authentication-service-name": "sns", 
+    "platforms": [
+        "Unity"
+    ], 
+    "synopsis": "Amazon Simple Notification Service (Amazon SNS) is a fast, flexible, fully managed push messaging service. Amazon SNS makes it simple and cost-effective to push notifications to Apple, Google, Fire OS, and Windows devices, as well as Android devices in China with Baidu Cloud Push.  You can also use SNS to push notifications to internet connected smart devices, as well as other distributed services.", 
+    "active": true, 
+    "model": "sns"
+}

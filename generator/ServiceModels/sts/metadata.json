@@ -1,0 +1,17 @@
+{
+    "base-name": "SecurityTokenService", 
+    "default-region": "USEast1", 
+    "tags": [
+        "STS"
+    ], 
+    "service-url": "https://sts.amazonaws.com", 
+    "region-lookup-name": "sts", 
+    "namespace": "Amazon.SecurityToken", 
+    "authentication-service-name": "sts", 
+    "platforms": [
+        "Unity"
+    ], 
+    "synopsis": "The AWS Security Token Service (AWS STS) enables you to provide trusted users with temporary credentials that provide controlled access to your AWS resources.", 
+    "active": true, 
+    "model": "sts"
+}

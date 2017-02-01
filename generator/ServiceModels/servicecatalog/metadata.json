@@ -1,0 +1,8 @@
+{
+    "base-name": "ServiceCatalog", 
+    "region-lookup-name": "servicecatalog", 
+    "authentication-service-name": "servicecatalog", 
+    "synopsis": "AWS Service Catalog allows organizations to create and manage catalogs of IT services that are approved for use on AWS.", 
+    "active": true, 
+    "model": "servicecatalog"
+}

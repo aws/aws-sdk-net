@@ -1,0 +1,9 @@
+{
+    "base-name": "DatabaseMigrationService", 
+    "service-url": "https://dms.us-east-1.amazonaws.com", 
+    "region-lookup-name": "dms", 
+    "authentication-service-name": "dms", 
+    "synopsis": "AWS Database Migration Service (AWS DMS) can migrate your data to and from most widely used commercial and open-source databases such as Oracle, PostgreSQL, Microsoft SQL Server, Amazon Aurora, MariaDB, and MySQL. The service supports homogeneous migrations such as Oracle to Oracle, and also heterogeneous migrations between different database platforms, such as Oracle to MySQL or MySQL to Amazon Aurora.", 
+    "active": true, 
+    "model": "dms"
+}

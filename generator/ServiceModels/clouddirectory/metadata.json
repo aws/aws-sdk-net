@@ -1,0 +1,8 @@
+{
+    "base-name": "CloudDirectory", 
+    "service-url": "https://clouddirectory.amazonaws.com/", 
+    "region-lookup-name": "clouddirectory", 
+    "synopsis": "Cloud Directory (CD) is a multi-tenant, hierarchical data store for use by other AWS services to store directory data for AWS resources, including both metadata about resources and policy data governing resources.", 
+    "active": true, 
+    "model": "clouddirectory"
+}

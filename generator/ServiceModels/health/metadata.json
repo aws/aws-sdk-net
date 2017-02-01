@@ -1,0 +1,8 @@
+{
+    "base-name": "AWSHealth", 
+    "region-lookup-name": "health", 
+    "authentication-service-name": "health", 
+    "synopsis": "The AWS Health API serves as the primary source for you to receive personalized information related to your AWS infrastructure, guiding your through scheduled changes, and accelerating the troubleshooting of issues impacting your AWS resources and accounts.", 
+    "active": true, 
+    "model": "health"
+}

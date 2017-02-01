@@ -1,0 +1,9 @@
+{
+    "base-name": "Polly", 
+    "service-url": "https://polly.us-east-1.amazonaws.com/", 
+    "region-lookup-name": "polly", 
+    "authentication-service-name": "polly", 
+    "synopsis": "Amazon Polly is a service that turns text into lifelike speech, making it easy to develop applications that use high-quality speech to increase engagement and accessibility.", 
+    "active": true, 
+    "model": "polly"
+}

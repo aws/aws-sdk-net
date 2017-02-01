@@ -1,0 +1,9 @@
+{
+    "base-name": "WAFRegional", 
+    "region-lookup-name": "waf-regional", 
+    "namespace": "Amazon.WAFRegional", 
+    "authentication-service-name": "waf-regional", 
+    "synopsis": "AWS WAF (Web Application Firewall) Regional protects web applications from attack via ALB load balancer and provides API to associate it with a WAF WebACL.", 
+    "active": true, 
+    "model": "waf-regional"
+}

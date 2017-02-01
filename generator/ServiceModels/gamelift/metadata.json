@@ -1,0 +1,9 @@
+{
+    "base-name": "GameLift", 
+    "service-url": "https://gamelift.us-east-1.amazonaws.com", 
+    "region-lookup-name": "gamelift", 
+    "authentication-service-name": "gamelift", 
+    "synopsis": "Amazon GameLift Service is a managed AWS service for developers who need a scalable, server-based solution for multiplayer games.", 
+    "active": true, 
+    "model": "gamelift"
+}

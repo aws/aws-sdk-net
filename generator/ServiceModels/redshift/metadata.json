@@ -1,0 +1,9 @@
+{
+    "base-name": "Redshift", 
+    "service-url": "https://redshift.us-east-1.amazonaws.com/", 
+    "region-lookup-name": "redshift", 
+    "authentication-service-name": "redshift", 
+    "synopsis": "Amazon Redshift is a fast, fully managed, petabyte-scale data warehouse solution that makes it simple and cost-effective to efficiently analyze all your data using your existing business intelligence tools.", 
+    "active": true, 
+    "model": "redshift"
+}

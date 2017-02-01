@@ -1,0 +1,9 @@
+{
+    "base-name": "ApplicationDiscoveryService", 
+    "service-url": "https://directconnect.us-east-1.amazonaws.com", 
+    "region-lookup-name": "discovery", 
+    "authentication-service-name": "discovery", 
+    "synopsis": "AWS Application Discovery Service helps Systems Integrators quickly and reliably plan application migration projects by automatically identifying applications running in your data center, their associated dependencies, and their performance profile.", 
+    "active": true, 
+    "model": "discovery"
+}

@@ -1,0 +1,9 @@
+{
+    "base-name": "CloudFront", 
+    "service-url": "https://cloudfront.amazonaws.com", 
+    "region-lookup-name": "cloudfront", 
+    "authentication-service-name": "cloudfront", 
+    "synopsis": "Amazon CloudFront is a content delivery web service. It integrates with other Amazon Web Services products to give developers and businesses an easy way to distribute content to end users with low latency, high data transfer speeds, and no minimum usage commitments.", 
+    "active": true, 
+    "model": "cloudfront"
+}

@@ -1,0 +1,9 @@
+{
+    "base-name": "ServerMigrationService", 
+    "service-url": "https://sms.amazonaws.com/", 
+    "region-lookup-name": "sms", 
+    "authentication-service-name": "sms", 
+    "synopsis": "AWS Server Migration Service (SMS) is an agentless service which makes it easier and faster for you to migrate thousands of on-premises workloads to AWS.", 
+    "active": true, 
+    "model": "sms"
+}

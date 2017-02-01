@@ -1,0 +1,8 @@
+{
+    "base-name": "SimpleDB", 
+    "service-url": "https://sdb.amazonaws.com/", 
+    "region-lookup-name": "sdb", 
+    "synopsis": "Amazon SimpleDB is a highly available, scalable, and flexible non-relational data store that enables you to store and query data items using web services requests.", 
+    "active": true, 
+    "model": "sdb"
+}

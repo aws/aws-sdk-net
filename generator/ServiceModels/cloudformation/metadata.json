@@ -1,0 +1,10 @@
+{
+    "comment": "Turn off till we move to the latest version of the model.", 
+    "base-name": "CloudFormation", 
+    "service-url": "https://cloudformation.us-east-1.amazonaws.com", 
+    "region-lookup-name": "cloudformation", 
+    "authentication-service-name": "cloudformation", 
+    "synopsis": "AWS CloudFormation gives developers and systems administrators an easy way to create and manage a collection of related AWS resources, provisioning and updating them in an orderly and predictable fashion.", 
+    "active": true, 
+    "model": "cloudformation"
+}
