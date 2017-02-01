@@ -82,7 +82,7 @@ namespace TestWrapper
                 ResultsOutputDir.Create();
 
             var fileName = Path.GetFileName(source.FullName);
-            var newFileName = Path.GetFileNameWithoutExtension(fileName) + ".xml";
+            var newFileName = Path.GetFileNameWithoutExtension(fileName) + ".trx.xml";
             var destFilePath = Path.Combine(ResultsOutputDir.FullName, newFileName);
             source.CopyTo(destFilePath);
         }
