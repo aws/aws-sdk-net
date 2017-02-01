@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 using Amazon.Runtime;
+using Amazon.Runtime.CredentialManagement;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Settings;
 using Amazon.Util;

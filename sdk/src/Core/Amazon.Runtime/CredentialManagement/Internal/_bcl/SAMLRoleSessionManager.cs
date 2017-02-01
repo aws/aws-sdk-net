@@ -19,7 +19,7 @@ using Amazon.Util.Internal;
 using System;
 using System.Collections.Generic;
 
-namespace Amazon.Runtime.Internal
+namespace Amazon.Runtime.CredentialManagement.Internal
 {
     public class SAMLRoleSessionManager
     {

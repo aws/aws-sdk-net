@@ -12,10 +12,11 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using Amazon.Runtime.CredentialManagement;
 using System.Collections.Generic;
 using System.Reflection;
 
-namespace Amazon.Runtime.Internal
+namespace Amazon.Runtime.CredentialManagement.Internal
 {
     public enum CredentialProfileType
     {

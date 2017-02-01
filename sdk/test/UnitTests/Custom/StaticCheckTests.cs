@@ -13,7 +13,9 @@
  * permissions and limitations under the License.
  */
 using Amazon.Runtime;
+using Amazon.Runtime.CredentialManagement;
 using Amazon.Runtime.Internal;
+using Amazon.Runtime.CredentialManagement.Internal;
 using Amazon.SecurityToken.Model;
 using AWSSDK_DotNet.IntegrationTests.Utils;
 using Microsoft.VisualStudio.TestTools.UnitTesting;

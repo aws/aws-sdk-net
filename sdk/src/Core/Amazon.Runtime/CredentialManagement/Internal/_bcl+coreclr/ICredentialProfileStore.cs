@@ -12,9 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using Amazon.Runtime.CredentialManagement;
 using System.Collections.Generic;
 
-namespace Amazon.Runtime.Internal
+namespace Amazon.Runtime.CredentialManagement.Internal
 {
     /// <summary>
     /// Interface to define the necessary operations for a CredentialProfile storage mechanism.

@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 using Amazon.Runtime;
+using Amazon.Runtime.CredentialManagement;
 using Amazon.Runtime.Internal.Settings;
 using Amazon.Util;
 using AWSSDK_DotNet.IntegrationTests.Utils;

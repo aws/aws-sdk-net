@@ -15,7 +15,7 @@
 using Amazon.Util;
 using System;
 
-namespace Amazon.Runtime
+namespace Amazon.Runtime.CredentialManagement
 {
     /// <summary>
     /// Represents the different types of authentication available for SAML endpoints.

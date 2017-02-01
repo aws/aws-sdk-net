@@ -14,7 +14,7 @@
  */
 using System.Collections.Generic;
 
-namespace Amazon.Runtime
+namespace Amazon.Runtime.CredentialManagement
 {
     /// <summary>
     /// Interface to define the necessary operations for a CredentialProfile lookup mechanism.

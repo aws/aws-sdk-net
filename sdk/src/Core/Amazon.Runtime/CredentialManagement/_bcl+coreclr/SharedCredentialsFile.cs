@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 using Amazon.Runtime.Internal;
+using Amazon.Runtime.CredentialManagement.Internal;
 using Amazon.Runtime.Internal.Util;
 using System;
 using System.Collections.Generic;
@@ -21,7 +22,7 @@ using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 
-namespace Amazon.Runtime
+namespace Amazon.Runtime.CredentialManagement
 {
     /// <summary>
     /// Provides access to read and write to the shared credentials INI file.

@@ -14,7 +14,9 @@
  */
 using Amazon;
 using Amazon.Runtime;
+using Amazon.Runtime.CredentialManagement;
 using Amazon.Runtime.Internal;
+using Amazon.Runtime.CredentialManagement.Internal;
 using AWSSDK_DotNet.CommonTest.Utils;
 using System;
 using System.Collections.Generic;

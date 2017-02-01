@@ -18,6 +18,9 @@ using System.Globalization;
 using Amazon.Runtime.Internal.Util;
 using System.Collections.Generic;
 using Amazon.Util;
+#if BCL || CORECLR
+using Amazon.Runtime.CredentialManagement;
+#endif
 
 namespace Amazon.Runtime
 {

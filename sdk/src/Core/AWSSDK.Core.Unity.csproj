@@ -95,6 +95,12 @@
     <Compile Include="Amazon.Runtime\*.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.Runtime\CredentialManagement\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Amazon.Runtime\CredentialManagement\Internal\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.Runtime\Credentials\*.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -102,9 +108,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.Runtime\Internal\Auth\*.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.Runtime\Internal\Credentials\*.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.Runtime\Internal\Settings\*.cs">

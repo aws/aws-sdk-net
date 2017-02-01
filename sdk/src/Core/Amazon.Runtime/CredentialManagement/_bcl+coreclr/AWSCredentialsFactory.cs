@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 using Amazon.Runtime.Internal;
+using Amazon.Runtime.CredentialManagement.Internal;
 using Amazon.Util;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 
-namespace Amazon.Runtime
+namespace Amazon.Runtime.CredentialManagement
 {
     /// <summary>
     /// Factory to construct different types of AWSCredentials based on a profile.

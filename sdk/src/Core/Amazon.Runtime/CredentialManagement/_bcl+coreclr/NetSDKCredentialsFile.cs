@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 using Amazon.Runtime.Internal;
+using Amazon.Runtime.CredentialManagement.Internal;
 using Amazon.Runtime.Internal.Settings;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Util;
@@ -22,7 +23,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 
-namespace Amazon.Runtime
+namespace Amazon.Runtime.CredentialManagement
 {
     /// <summary>
     /// This class allows profiles supporting AWSCredentials to be registered with

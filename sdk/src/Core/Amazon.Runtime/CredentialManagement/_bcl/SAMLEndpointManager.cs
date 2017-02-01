@@ -20,7 +20,7 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 
-namespace Amazon.Util
+namespace Amazon.Runtime.CredentialManagement
 {
     public class SAMLEndpointManager
     {

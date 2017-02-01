@@ -15,7 +15,7 @@
 using Amazon.Runtime.Internal.Util;
 using Amazon.Util;
 
-namespace Amazon.Runtime
+namespace Amazon.Runtime.CredentialManagement
 {
     /// <summary>
     /// The options that are available for creating AWSCredentials with the AWSCredentialsFactory.

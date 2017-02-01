@@ -12,6 +12,7 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using Amazon.Runtime.CredentialManagement;
 using Amazon.Runtime.Internal.Settings;
 using Amazon.Util;
 using System;
@@ -19,7 +20,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 
-namespace Amazon.Runtime.Internal
+namespace Amazon.Runtime.CredentialManagement.Internal
 {
     /// <summary>
     /// This class is used internally and should not be accessed by SDK users.
