@@ -37,7 +37,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
     [TestClass]
     public class DeviceFarmMarshallingTests
     {
-        static readonly ServiceModel service_model = Utils.LoadServiceModel("devicefarm-2015-06-23.normal.json", "devicefarm.customizations.json");
+        static readonly ServiceModel service_model = Utils.LoadServiceModel("devicefarm");
         
         [TestMethod]
         [TestCategory("UnitTest")]

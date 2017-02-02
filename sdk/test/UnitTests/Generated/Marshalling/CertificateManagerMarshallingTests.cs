@@ -37,7 +37,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
     [TestClass]
     public class CertificateManagerMarshallingTests
     {
-        static readonly ServiceModel service_model = Utils.LoadServiceModel("acm-2015-12-08.normal.json", "acm.customizations.json");
+        static readonly ServiceModel service_model = Utils.LoadServiceModel("acm");
         
         [TestMethod]
         [TestCategory("UnitTest")]

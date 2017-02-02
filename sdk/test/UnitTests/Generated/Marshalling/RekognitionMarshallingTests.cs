@@ -37,7 +37,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
     [TestClass]
     public class RekognitionMarshallingTests
     {
-        static readonly ServiceModel service_model = Utils.LoadServiceModel("rekognition-2016-06-27.normal.json", "");
+        static readonly ServiceModel service_model = Utils.LoadServiceModel("rekognition");
         
         [TestMethod]
         [TestCategory("UnitTest")]

@@ -38,7 +38,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
     [TestClass]
     public partial class GlacierMarshallingTests
     {
-        static readonly ServiceModel service_model = Utils.LoadServiceModel("glacier-2012-06-01.normal.json", "glacier.customizations.json");
+        static readonly ServiceModel service_model = Utils.LoadServiceModel("glacier");
         
         [TestMethod]
         [TestCategory("UnitTest")]

@@ -37,7 +37,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
     [TestClass]
     public class ElastiCacheMarshallingTests
     {
-        static readonly ServiceModel service_model = Utils.LoadServiceModel("elasticache-2015-02-02.normal.json", "elasticache.customizations.json");
+        static readonly ServiceModel service_model = Utils.LoadServiceModel("elasticache");
         
 
         [TestMethod]

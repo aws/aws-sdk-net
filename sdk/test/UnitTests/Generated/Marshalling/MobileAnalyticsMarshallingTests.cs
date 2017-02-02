@@ -38,7 +38,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
     [TestClass]
     public partial class MobileAnalyticsMarshallingTests
     {
-        static readonly ServiceModel service_model = Utils.LoadServiceModel("mobileanalytics-2014-06-05.normal.json", "mobileanalytics.customizations.json");
+        static readonly ServiceModel service_model = Utils.LoadServiceModel("mobileanalytics");
         
         [TestMethod]
         [TestCategory("UnitTest")]

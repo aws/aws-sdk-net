@@ -37,7 +37,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
     [TestClass]
     public class SimpleEmailServiceMarshallingTests
     {
-        static readonly ServiceModel service_model = Utils.LoadServiceModel("email-2010-12-01.normal.json", "email.customizations.json");
+        static readonly ServiceModel service_model = Utils.LoadServiceModel("email");
         
 
         [TestMethod]

@@ -38,7 +38,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
     [TestClass]
     public partial class IoTMarshallingTests
     {
-        static readonly ServiceModel service_model = Utils.LoadServiceModel("iot-2015-05-28.normal.json", "iot-2015-.customizations.json");
+        static readonly ServiceModel service_model = Utils.LoadServiceModel("iot");
         
         [TestMethod]
         [TestCategory("UnitTest")]

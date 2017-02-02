@@ -38,7 +38,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
     [TestClass]
     public partial class ElasticTranscoderMarshallingTests
     {
-        static readonly ServiceModel service_model = Utils.LoadServiceModel("elastictranscoder-2012-09-25.normal.json", "elastictranscoder.customizations.json");
+        static readonly ServiceModel service_model = Utils.LoadServiceModel("elastictranscoder");
         
         [TestMethod]
         [TestCategory("UnitTest")]

@@ -38,7 +38,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
     [TestClass]
     public partial class CognitoSyncMarshallingTests
     {
-        static readonly ServiceModel service_model = Utils.LoadServiceModel("cognito-sync-2014-06-30.normal.json", "cognito-sync.customizations.json");
+        static readonly ServiceModel service_model = Utils.LoadServiceModel("cognito-sync");
         
         [TestMethod]
         [TestCategory("UnitTest")]

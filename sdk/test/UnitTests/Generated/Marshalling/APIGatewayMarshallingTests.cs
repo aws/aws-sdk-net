@@ -38,7 +38,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
     [TestClass]
     public partial class APIGatewayMarshallingTests
     {
-        static readonly ServiceModel service_model = Utils.LoadServiceModel("apigateway-2015-07-09.normal.json", "apigateway.customizations.json");
+        static readonly ServiceModel service_model = Utils.LoadServiceModel("apigateway");
         
         [TestMethod]
         [TestCategory("UnitTest")]

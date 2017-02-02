@@ -38,7 +38,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
     [TestClass]
     public partial class PollyMarshallingTests
     {
-        static readonly ServiceModel service_model = Utils.LoadServiceModel("polly-2016-06-10.normal.json", "");
+        static readonly ServiceModel service_model = Utils.LoadServiceModel("polly");
         
         [TestMethod]
         [TestCategory("UnitTest")]

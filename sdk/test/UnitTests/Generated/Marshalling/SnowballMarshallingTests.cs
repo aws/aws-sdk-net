@@ -37,7 +37,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
     [TestClass]
     public class SnowballMarshallingTests
     {
-        static readonly ServiceModel service_model = Utils.LoadServiceModel("snowball-2016-06-30.normal.json", "");
+        static readonly ServiceModel service_model = Utils.LoadServiceModel("snowball");
         
         [TestMethod]
         [TestCategory("UnitTest")]

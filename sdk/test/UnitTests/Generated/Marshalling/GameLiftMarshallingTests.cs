@@ -37,7 +37,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
     [TestClass]
     public class GameLiftMarshallingTests
     {
-        static readonly ServiceModel service_model = Utils.LoadServiceModel("gamelift-2015-10-01.normal.json", "gamelift.customizations.json");
+        static readonly ServiceModel service_model = Utils.LoadServiceModel("gamelift");
         
         [TestMethod]
         [TestCategory("UnitTest")]

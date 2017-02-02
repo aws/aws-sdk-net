@@ -37,7 +37,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
     [TestClass]
     public class CloudTrailMarshallingTests
     {
-        static readonly ServiceModel service_model = Utils.LoadServiceModel("cloudtrail-2013-11-01.normal.json", "cloudtrail.customizations.json");
+        static readonly ServiceModel service_model = Utils.LoadServiceModel("cloudtrail");
         
         [TestMethod]
         [TestCategory("UnitTest")]

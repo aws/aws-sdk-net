@@ -37,7 +37,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
     [TestClass]
     public class AWSHealthMarshallingTests
     {
-        static readonly ServiceModel service_model = Utils.LoadServiceModel("health-2016-08-04.normal.json", "health.customizations.json");
+        static readonly ServiceModel service_model = Utils.LoadServiceModel("health");
         
         [TestMethod]
         [TestCategory("UnitTest")]

@@ -38,7 +38,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
     [TestClass]
     public partial class ElasticFileSystemMarshallingTests
     {
-        static readonly ServiceModel service_model = Utils.LoadServiceModel("elasticfilesystem-2015-02-01.normal.json", "elasticfilesystem.customizations.json");
+        static readonly ServiceModel service_model = Utils.LoadServiceModel("elasticfilesystem");
         
         [TestMethod]
         [TestCategory("UnitTest")]

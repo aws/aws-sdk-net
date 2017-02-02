@@ -37,7 +37,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
     [TestClass]
     public class ECRMarshallingTests
     {
-        static readonly ServiceModel service_model = Utils.LoadServiceModel("ecr-2015-09-21.normal.json", "");
+        static readonly ServiceModel service_model = Utils.LoadServiceModel("ecr");
         
         [TestMethod]
         [TestCategory("UnitTest")]

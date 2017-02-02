@@ -37,7 +37,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
     [TestClass]
     public class DirectConnectMarshallingTests
     {
-        static readonly ServiceModel service_model = Utils.LoadServiceModel("directconnect-2012-10-25.normal.json", "directconnect.customizations.json");
+        static readonly ServiceModel service_model = Utils.LoadServiceModel("directconnect");
         
         [TestMethod]
         [TestCategory("UnitTest")]

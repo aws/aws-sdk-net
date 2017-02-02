@@ -37,7 +37,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
     [TestClass]
     public class DatabaseMigrationServiceMarshallingTests
     {
-        static readonly ServiceModel service_model = Utils.LoadServiceModel("dms-2016-01-01.normal.json", "dms.customizations.json");
+        static readonly ServiceModel service_model = Utils.LoadServiceModel("dms");
         
         [TestMethod]
         [TestCategory("UnitTest")]

@@ -37,7 +37,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
     [TestClass]
     public class CodeDeployMarshallingTests
     {
-        static readonly ServiceModel service_model = Utils.LoadServiceModel("codedeploy-2014-10-06.normal.json", "codedeploy.customizations.json");
+        static readonly ServiceModel service_model = Utils.LoadServiceModel("codedeploy");
         
         [TestMethod]
         [TestCategory("UnitTest")]

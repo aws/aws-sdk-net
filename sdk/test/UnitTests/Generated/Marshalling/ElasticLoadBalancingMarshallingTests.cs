@@ -37,7 +37,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
     [TestClass]
     public class ElasticLoadBalancingMarshallingTests
     {
-        static readonly ServiceModel service_model = Utils.LoadServiceModel("elasticloadbalancing-2012-06-01.normal.json", "elasticloadbalancing-.customizations.json");
+        static readonly ServiceModel service_model = Utils.LoadServiceModel("elasticloadbalancing");
         
 
         [TestMethod]

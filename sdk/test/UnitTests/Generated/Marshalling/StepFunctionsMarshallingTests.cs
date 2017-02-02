@@ -37,7 +37,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
     [TestClass]
     public class StepFunctionsMarshallingTests
     {
-        static readonly ServiceModel service_model = Utils.LoadServiceModel("states-2016-11-23.normal.json", "");
+        static readonly ServiceModel service_model = Utils.LoadServiceModel("states");
         
         [TestMethod]
         [TestCategory("UnitTest")]

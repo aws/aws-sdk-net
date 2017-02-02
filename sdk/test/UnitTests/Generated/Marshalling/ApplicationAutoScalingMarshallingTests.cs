@@ -37,7 +37,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
     [TestClass]
     public class ApplicationAutoScalingMarshallingTests
     {
-        static readonly ServiceModel service_model = Utils.LoadServiceModel("application-autoscaling-2016-02-06.normal.json", "");
+        static readonly ServiceModel service_model = Utils.LoadServiceModel("application-autoscaling");
         
         [TestMethod]
         [TestCategory("UnitTest")]

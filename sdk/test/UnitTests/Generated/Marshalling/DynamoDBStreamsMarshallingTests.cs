@@ -37,7 +37,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
     [TestClass]
     public class DynamoDBStreamsMarshallingTests
     {
-        static readonly ServiceModel service_model = Utils.LoadServiceModel("dynamodbstreams-2012-08-10.normal.json", "dynamodbstreams.customizations.json");
+        static readonly ServiceModel service_model = Utils.LoadServiceModel("dynamodbstreams");
         
         [TestMethod]
         [TestCategory("UnitTest")]

@@ -38,7 +38,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
     [TestClass]
     public class EC2MarshallingTests
     {
-        static readonly ServiceModel service_model = Utils.LoadServiceModel("ec2-2016-11-15.normal.json", "ec2.customizations.json");
+        static readonly ServiceModel service_model = Utils.LoadServiceModel("ec2");
         
 
         [TestMethod]

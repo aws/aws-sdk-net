@@ -37,7 +37,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
     [TestClass]
     public class MachineLearningMarshallingTests
     {
-        static readonly ServiceModel service_model = Utils.LoadServiceModel("machinelearning-2014-12-12.normal.json", "machinelearning.customizations.json");
+        static readonly ServiceModel service_model = Utils.LoadServiceModel("machinelearning");
         
         [TestMethod]
         [TestCategory("UnitTest")]

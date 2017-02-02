@@ -38,7 +38,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
     [TestClass]
     public partial class BatchMarshallingTests
     {
-        static readonly ServiceModel service_model = Utils.LoadServiceModel("batch-2016-08-10.normal.json", "");
+        static readonly ServiceModel service_model = Utils.LoadServiceModel("batch");
         
         [TestMethod]
         [TestCategory("UnitTest")]

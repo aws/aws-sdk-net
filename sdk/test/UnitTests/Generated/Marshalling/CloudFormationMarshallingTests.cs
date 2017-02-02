@@ -37,7 +37,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
     [TestClass]
     public class CloudFormationMarshallingTests
     {
-        static readonly ServiceModel service_model = Utils.LoadServiceModel("cloudformation-2010-05-15.normal.json", "cloudformation.customizations.json");
+        static readonly ServiceModel service_model = Utils.LoadServiceModel("cloudformation");
         
 
         [TestMethod]

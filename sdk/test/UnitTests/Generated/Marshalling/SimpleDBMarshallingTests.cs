@@ -37,7 +37,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
     [TestClass]
     public class SimpleDBMarshallingTests
     {
-        static readonly ServiceModel service_model = Utils.LoadServiceModel("sdb-2009-04-15.normal.json", "sdb.customizations.json");
+        static readonly ServiceModel service_model = Utils.LoadServiceModel("sdb");
         
 
         [TestMethod]

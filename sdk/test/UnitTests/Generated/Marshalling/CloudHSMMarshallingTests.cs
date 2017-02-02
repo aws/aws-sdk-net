@@ -37,7 +37,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
     [TestClass]
     public class CloudHSMMarshallingTests
     {
-        static readonly ServiceModel service_model = Utils.LoadServiceModel("cloudhsm-2014-05-30.normal.json", "cloudhsm.customizations.json");
+        static readonly ServiceModel service_model = Utils.LoadServiceModel("cloudhsm");
         
         [TestMethod]
         [TestCategory("UnitTest")]

@@ -37,7 +37,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
     [TestClass]
     public class IdentityManagementServiceMarshallingTests
     {
-        static readonly ServiceModel service_model = Utils.LoadServiceModel("iam-2010-05-08.normal.json", "iam.customizations.json");
+        static readonly ServiceModel service_model = Utils.LoadServiceModel("iam");
         
 
         [TestMethod]

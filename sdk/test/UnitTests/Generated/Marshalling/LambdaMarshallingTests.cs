@@ -38,7 +38,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
     [TestClass]
     public partial class LambdaMarshallingTests
     {
-        static readonly ServiceModel service_model = Utils.LoadServiceModel("lambda-2015-03-31.normal.json", "lambda.customizations.json");
+        static readonly ServiceModel service_model = Utils.LoadServiceModel("lambda");
         
         [TestMethod]
         [TestCategory("UnitTest")]

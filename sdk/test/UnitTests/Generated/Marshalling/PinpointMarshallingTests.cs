@@ -38,7 +38,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
     [TestClass]
     public partial class PinpointMarshallingTests
     {
-        static readonly ServiceModel service_model = Utils.LoadServiceModel("pinpoint-2016-12-01.normal.json", "");
+        static readonly ServiceModel service_model = Utils.LoadServiceModel("pinpoint");
         
         [TestMethod]
         [TestCategory("UnitTest")]

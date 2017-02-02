@@ -37,7 +37,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
     [TestClass]
     public class RDSMarshallingTests
     {
-        static readonly ServiceModel service_model = Utils.LoadServiceModel("rds-2014-10-31.normal.json", "rds.customizations.json");
+        static readonly ServiceModel service_model = Utils.LoadServiceModel("rds");
         
 
         [TestMethod]

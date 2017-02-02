@@ -37,7 +37,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
     [TestClass]
     public class CloudSearchMarshallingTests
     {
-        static readonly ServiceModel service_model = Utils.LoadServiceModel("cloudsearch-2013-01-01.normal.json", "cloudsearch-.customizations.json");
+        static readonly ServiceModel service_model = Utils.LoadServiceModel("cloudsearch");
         
 
         [TestMethod]

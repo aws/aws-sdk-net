@@ -37,7 +37,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
     [TestClass]
     public class AWSMarketplaceMeteringMarshallingTests
     {
-        static readonly ServiceModel service_model = Utils.LoadServiceModel("meteringmarketplace-2016-01-14.normal.json", "");
+        static readonly ServiceModel service_model = Utils.LoadServiceModel("meteringmarketplace");
         
         [TestMethod]
         [TestCategory("UnitTest")]

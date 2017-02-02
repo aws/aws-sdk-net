@@ -37,7 +37,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
     [TestClass]
     public class CognitoIdentityProviderMarshallingTests
     {
-        static readonly ServiceModel service_model = Utils.LoadServiceModel("cognito-idp-2016-04-18.normal.json", "");
+        static readonly ServiceModel service_model = Utils.LoadServiceModel("cognito-idp");
         
         [TestMethod]
         [TestCategory("UnitTest")]

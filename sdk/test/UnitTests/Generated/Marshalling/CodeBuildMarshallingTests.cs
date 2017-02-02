@@ -37,7 +37,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
     [TestClass]
     public class CodeBuildMarshallingTests
     {
-        static readonly ServiceModel service_model = Utils.LoadServiceModel("codebuild-2016-10-06.normal.json", "");
+        static readonly ServiceModel service_model = Utils.LoadServiceModel("codebuild");
         
         [TestMethod]
         [TestCategory("UnitTest")]

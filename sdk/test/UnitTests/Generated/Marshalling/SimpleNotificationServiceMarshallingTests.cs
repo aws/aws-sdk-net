@@ -37,7 +37,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
     [TestClass]
     public class SimpleNotificationServiceMarshallingTests
     {
-        static readonly ServiceModel service_model = Utils.LoadServiceModel("sns-2010-03-31.normal.json", "sns.customizations.json");
+        static readonly ServiceModel service_model = Utils.LoadServiceModel("sns");
         
 
         [TestMethod]

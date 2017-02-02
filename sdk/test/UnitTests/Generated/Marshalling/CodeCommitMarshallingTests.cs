@@ -37,7 +37,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
     [TestClass]
     public class CodeCommitMarshallingTests
     {
-        static readonly ServiceModel service_model = Utils.LoadServiceModel("codecommit-2015-04-13.normal.json", "");
+        static readonly ServiceModel service_model = Utils.LoadServiceModel("codecommit");
         
         [TestMethod]
         [TestCategory("UnitTest")]

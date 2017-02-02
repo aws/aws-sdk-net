@@ -37,7 +37,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
     [TestClass]
     public class ElasticBeanstalkMarshallingTests
     {
-        static readonly ServiceModel service_model = Utils.LoadServiceModel("elasticbeanstalk-2010-12-01.normal.json", "elasticbeanstalk.customizations.json");
+        static readonly ServiceModel service_model = Utils.LoadServiceModel("elasticbeanstalk");
         
 
         [TestMethod]

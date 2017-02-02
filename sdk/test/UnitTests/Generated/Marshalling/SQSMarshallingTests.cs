@@ -37,7 +37,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
     [TestClass]
     public class SQSMarshallingTests
     {
-        static readonly ServiceModel service_model = Utils.LoadServiceModel("sqs-2012-11-05.normal.json", "sqs.customizations.json");
+        static readonly ServiceModel service_model = Utils.LoadServiceModel("sqs");
         
 
         [TestMethod]

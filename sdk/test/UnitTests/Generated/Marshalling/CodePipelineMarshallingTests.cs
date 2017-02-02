@@ -37,7 +37,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
     [TestClass]
     public class CodePipelineMarshallingTests
     {
-        static readonly ServiceModel service_model = Utils.LoadServiceModel("codepipeline-2015-07-09.normal.json", "codepipeline.customizations.json");
+        static readonly ServiceModel service_model = Utils.LoadServiceModel("codepipeline");
         
         [TestMethod]
         [TestCategory("UnitTest")]

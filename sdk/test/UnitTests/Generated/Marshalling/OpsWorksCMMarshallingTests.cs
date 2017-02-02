@@ -37,7 +37,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
     [TestClass]
     public class OpsWorksCMMarshallingTests
     {
-        static readonly ServiceModel service_model = Utils.LoadServiceModel("opsworkscm-2016-11-01.normal.json", "opsworkscm.customizations.json");
+        static readonly ServiceModel service_model = Utils.LoadServiceModel("opsworkscm");
         
         [TestMethod]
         [TestCategory("UnitTest")]

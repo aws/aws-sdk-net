@@ -38,7 +38,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
     [TestClass]
     public partial class XRayMarshallingTests
     {
-        static readonly ServiceModel service_model = Utils.LoadServiceModel("xray-2016-04-12.normal.json", "");
+        static readonly ServiceModel service_model = Utils.LoadServiceModel("xray");
         
         [TestMethod]
         [TestCategory("UnitTest")]

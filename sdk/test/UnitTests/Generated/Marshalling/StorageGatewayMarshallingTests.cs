@@ -37,7 +37,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
     [TestClass]
     public class StorageGatewayMarshallingTests
     {
-        static readonly ServiceModel service_model = Utils.LoadServiceModel("storagegateway-2013-06-30.normal.json", "storagegateway.customizations.json");
+        static readonly ServiceModel service_model = Utils.LoadServiceModel("storagegateway");
         
         [TestMethod]
         [TestCategory("UnitTest")]

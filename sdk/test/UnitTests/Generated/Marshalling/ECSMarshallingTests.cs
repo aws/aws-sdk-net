@@ -37,7 +37,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
     [TestClass]
     public class ECSMarshallingTests
     {
-        static readonly ServiceModel service_model = Utils.LoadServiceModel("ecs-2014-11-13.normal.json", "ecs.customizations.json");
+        static readonly ServiceModel service_model = Utils.LoadServiceModel("ecs");
         
         [TestMethod]
         [TestCategory("UnitTest")]

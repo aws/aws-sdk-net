@@ -37,7 +37,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
     [TestClass]
     public class SecurityTokenServiceMarshallingTests
     {
-        static readonly ServiceModel service_model = Utils.LoadServiceModel("sts-2011-06-15.normal.json", "sts.customizations.json");
+        static readonly ServiceModel service_model = Utils.LoadServiceModel("sts");
         
 
         [TestMethod]

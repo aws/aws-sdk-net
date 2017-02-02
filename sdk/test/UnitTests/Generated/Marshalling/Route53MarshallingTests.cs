@@ -38,7 +38,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
     [TestClass]
     public partial class Route53MarshallingTests
     {
-        static readonly ServiceModel service_model = Utils.LoadServiceModel("route53-2013-04-01.normal.json", "route53-.customizations.json");
+        static readonly ServiceModel service_model = Utils.LoadServiceModel("route53");
         
         [TestMethod]
         [TestCategory("UnitTest")]

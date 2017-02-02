@@ -37,7 +37,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
     [TestClass]
     public class ElasticMapReduceMarshallingTests
     {
-        static readonly ServiceModel service_model = Utils.LoadServiceModel("elasticmapreduce-2009-03-31.normal.json", "elasticmapreduce.customizations.json");
+        static readonly ServiceModel service_model = Utils.LoadServiceModel("elasticmapreduce");
         
         [TestMethod]
         [TestCategory("UnitTest")]

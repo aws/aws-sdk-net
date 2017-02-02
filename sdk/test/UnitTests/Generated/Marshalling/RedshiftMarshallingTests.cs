@@ -37,7 +37,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
     [TestClass]
     public class RedshiftMarshallingTests
     {
-        static readonly ServiceModel service_model = Utils.LoadServiceModel("redshift-2012-12-01.normal.json", "redshift.customizations.json");
+        static readonly ServiceModel service_model = Utils.LoadServiceModel("redshift");
         
 
         [TestMethod]

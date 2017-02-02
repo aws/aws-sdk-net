@@ -37,7 +37,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
     [TestClass]
     public class AWSSupportMarshallingTests
     {
-        static readonly ServiceModel service_model = Utils.LoadServiceModel("support-2013-04-15.normal.json", "support.customizations.json");
+        static readonly ServiceModel service_model = Utils.LoadServiceModel("support");
         
         [TestMethod]
         [TestCategory("UnitTest")]

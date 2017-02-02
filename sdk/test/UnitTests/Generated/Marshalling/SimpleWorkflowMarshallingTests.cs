@@ -37,7 +37,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
     [TestClass]
     public class SimpleWorkflowMarshallingTests
     {
-        static readonly ServiceModel service_model = Utils.LoadServiceModel("swf-2012-01-25.normal.json", "swf.customizations.json");
+        static readonly ServiceModel service_model = Utils.LoadServiceModel("swf");
         
         [TestMethod]
         [TestCategory("UnitTest")]

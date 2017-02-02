@@ -37,7 +37,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
     [TestClass]
     public class LightsailMarshallingTests
     {
-        static readonly ServiceModel service_model = Utils.LoadServiceModel("lightsail-2016-11-28.normal.json", "");
+        static readonly ServiceModel service_model = Utils.LoadServiceModel("lightsail");
         
         [TestMethod]
         [TestCategory("UnitTest")]

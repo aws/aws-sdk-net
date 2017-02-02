@@ -37,7 +37,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
     [TestClass]
     public class ImportExportMarshallingTests
     {
-        static readonly ServiceModel service_model = Utils.LoadServiceModel("importexport-2010-06-01.normal.json", "importexport.customizations.json");
+        static readonly ServiceModel service_model = Utils.LoadServiceModel("importexport");
         
 
         [TestMethod]

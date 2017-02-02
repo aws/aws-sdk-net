@@ -37,7 +37,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
     [TestClass]
     public class KeyManagementServiceMarshallingTests
     {
-        static readonly ServiceModel service_model = Utils.LoadServiceModel("kms-2014-11-01.normal.json", "kms.customizations.json");
+        static readonly ServiceModel service_model = Utils.LoadServiceModel("kms");
         
         [TestMethod]
         [TestCategory("UnitTest")]
