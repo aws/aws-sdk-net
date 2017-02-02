@@ -129,7 +129,13 @@ namespace AWSSDK.UnitTests
 
         private static readonly string InvalidProfileText = new StringBuilder()
             .AppendLine("[invalid_profile]")
+            .AppendLine("aws_access_key_id=invalid_access_key")
             .AppendLine("invalid_key=invalid_value")
+            .ToString();
+
+        private static readonly string RegionOnlyProfileText = new StringBuilder()
+            .AppendLine("[region_only_profile]")
+            .AppendLine("region=us-east-1")
             .ToString();
 
         private static readonly CredentialProfileOptions SAMLRoleProfileOptions = new CredentialProfileOptions()
@@ -211,7 +217,12 @@ namespace AWSSDK.UnitTests
             { "property4", "value4" }
         };
 
-        private static readonly CredentialProfileOptions InvalidProfileOptions = new CredentialProfileOptions();
+        private static readonly CredentialProfileOptions InvalidProfileOptions = new CredentialProfileOptions
+        {
+            AccessKey = "invalid_access_key"
+        };
+
+        private static readonly CredentialProfileOptions RegionOnlyProfileOptions = new CredentialProfileOptions();
 
         private static readonly string BasicProfileTextForCopyAndRename = new StringBuilder()
             .AppendLine("[basic_profile]")
@@ -305,11 +316,58 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
+        public void ReadRegionOnlyProfile()
+        {
+            using (var tester = new SharedCredentialsFileTestFixture(RegionOnlyProfileText))
+            {
+                tester.TestTryGetProfile("region_only_profile", true, false);
+            }
+        }
+
+        [TestMethod]
+        public void WriteRegionOnlyProfile()
+        {
+            using (var tester = new SharedCredentialsFileTestFixture(RegionOnlyProfileText))
+            {
+                tester.AssertWriteProfile("region_only_profile", RegionOnlyProfileOptions, RegionOnlyProfileText);
+            }
+        }
+
+        [TestMethod]
         public void ReadInvalidProfile()
         {
             using (var tester = new SharedCredentialsFileTestFixture(InvalidProfileText))
             {
                 tester.TestTryGetProfile("invalid_profile", true, false);
+            }
+        }
+
+        [TestMethod]
+        public void WriteRegionCredentialsUntouched()
+        {
+            using (var tester = new SharedCredentialsFileTestFixture())
+            {
+                // write the whole profile - credentials options and region
+                var basicOptions = new CredentialProfileOptions
+                {
+                    AccessKey = "access_key",
+                    SecretKey = "secret_key"
+                };
+                var profile = new CredentialProfile("WriteRegionKeepOptionsProfile", basicOptions);
+                profile.Region = RegionEndpoint.USGovCloudWest1;
+                tester.CredentialsFile.RegisterProfile(profile);
+
+                // now write just the region
+                var emptyOptions = new CredentialProfileOptions();
+                var regionOnlyProfile = new CredentialProfile("WriteRegionKeepOptionsProfile", basicOptions);
+                profile.Region = RegionEndpoint.APSouth1;
+                tester.CredentialsFile.RegisterProfile(profile);
+
+                // Make sure it has the original options and the new region
+                var readProfile = tester.TestTryGetProfile("WriteRegionKeepOptionsProfile", true, true);
+                Assert.AreEqual("access_key", readProfile.Options.AccessKey);
+                Assert.AreEqual("secret_key", readProfile.Options.SecretKey);
+                Assert.AreEqual(RegionEndpoint.APSouth1, readProfile.Region);
             }
         }
 

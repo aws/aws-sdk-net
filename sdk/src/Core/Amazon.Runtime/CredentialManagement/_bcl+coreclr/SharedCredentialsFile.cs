@@ -163,7 +163,7 @@ namespace Amazon.Runtime.CredentialManagement
         public void RegisterProfile(CredentialProfile profile)
         {
             Refresh();
-            if (profile.CanCreateAWSCredentials)
+            if (profile.CanCreateAWSCredentials || profile.Options.IsEmpty)
             {
                 if (!IsSupportedProfileType(profile.ProfileType))
                 {
@@ -194,9 +194,7 @@ namespace Amazon.Runtime.CredentialManagement
                 reservedProperties[ToolkitArtifactGuidField] = profile.UniqueKey.Value.ToString("D");
 
             if (profile.Region != null)
-            {
                 reservedProperties[RegionField] = profile.Region.SystemName;
-            }
 
             var profileDictionary = PropertyMapping.CombineProfileParts(
                 profile.Options, ReservedPropertyNames, reservedProperties, profile.Properties);

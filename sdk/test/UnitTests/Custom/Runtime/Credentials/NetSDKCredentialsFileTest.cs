@@ -25,6 +25,7 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
+using Amazon;
 
 namespace AWSSDK.UnitTests
 {
@@ -74,6 +75,14 @@ namespace AWSSDK.UnitTests
             .AppendLine("        \"" + SomeOtherKey + "\" : \"" + SomeOtherValue + "\"")
             .AppendLine("    }")
             .Append("}").ToString();
+
+        private static readonly string RegionOnlyProfileText = new StringBuilder()
+            .AppendLine("{")
+            .AppendLine("    \"" + UniqueKey + "\" : {")
+            .AppendLine("        \"DisplayName\" : \"RegionOnlyProfile\",")
+            .AppendLine("        \"Region\" : \"us-east-1\",")
+            .AppendLine("    }")
+            .AppendLine("}").ToString();
 
         private static readonly string InvalidProfileText = new StringBuilder()
             .AppendLine("{")
@@ -175,6 +184,60 @@ namespace AWSSDK.UnitTests
             using (var tester = new NetSDKCredentialsFileTestFixture())
             {
                 tester.TestTryGetProfile("DoesNotExist", false, false);
+            }
+        }
+
+        [TestMethod]
+        public void ReadRegionOnlyProfile()
+        {
+            using (var tester = new NetSDKCredentialsFileTestFixture(RegionOnlyProfileText))
+            {
+                tester.TestTryGetProfile("RegionOnlyProfile", true, false);
+            }
+        }
+
+        [TestMethod]
+        public void WriteRegionOnlyProfile()
+        {
+            using (var tester = new NetSDKCredentialsFileTestFixture())
+            {
+                var emptyOptions = new CredentialProfileOptions();
+                var profile = new CredentialProfile("RegionOnlyProfile", emptyOptions);
+                profile.Region = RegionEndpoint.USGovCloudWest1;
+                tester.ProfileStore.RegisterProfile(profile);
+
+                var readProfile = tester.TestTryGetProfile("RegionOnlyProfile", true, false);
+                Assert.AreEqual(RegionEndpoint.USGovCloudWest1, readProfile.Region);
+                Assert.IsTrue((bool)ReflectionHelpers.Invoke(readProfile.Options, "IsEmpty"));
+            }
+        }
+
+        [TestMethod]
+        public void WriteRegionCredentialsUntouched()
+        {
+            using (var tester = new NetSDKCredentialsFileTestFixture())
+            {
+                // write the whole profile - credentials options and region
+                var basicOptions = new CredentialProfileOptions
+                {
+                    AccessKey = "access_key",
+                    SecretKey = "secret_key"
+                };
+                var profile = new CredentialProfile("WriteRegionKeepOptionsProfile", basicOptions);
+                profile.Region = RegionEndpoint.USGovCloudWest1;
+                tester.ProfileStore.RegisterProfile(profile);
+
+                // now write just the region
+                var emptyOptions = new CredentialProfileOptions();
+                var regionOnlyProfile = new CredentialProfile("WriteRegionKeepOptionsProfile", basicOptions);
+                profile.Region = RegionEndpoint.APSouth1;
+                tester.ProfileStore.RegisterProfile(profile);
+
+                // Make sure it has the original options and the new region
+                var readProfile = tester.TestTryGetProfile("WriteRegionKeepOptionsProfile", true, true);
+                Assert.AreEqual("access_key", readProfile.Options.AccessKey);
+                Assert.AreEqual("secret_key", readProfile.Options.SecretKey);
+                Assert.AreEqual(RegionEndpoint.APSouth1, readProfile.Region);
             }
         }
 

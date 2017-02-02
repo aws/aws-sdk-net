@@ -158,11 +158,14 @@ namespace Amazon.Runtime.CredentialManagement
         /// <param name="profile">The profile to add.</param>
         public void RegisterProfile(CredentialProfile profile)
         {
-            if (profile.CanCreateAWSCredentials)
+            if (profile.CanCreateAWSCredentials || profile.Options.IsEmpty)
             {
                 var reservedProperties = new Dictionary<string, string>();
-                // set profile type field for backward compatibility
-                SetProfileTypeField(reservedProperties, profile.ProfileType.Value);
+                if (profile.CanCreateAWSCredentials)
+                {
+                    // set profile type field for backward compatibility
+                    SetProfileTypeField(reservedProperties, profile.ProfileType.Value);
+                }
 
                 if (profile.Region != null)
                     reservedProperties[RegionField] = profile.Region.SystemName;

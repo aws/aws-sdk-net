@@ -188,20 +188,25 @@ namespace Amazon.Runtime.CredentialManagement.Internal
         private Dictionary<string, string> Convert(CredentialProfileOptions profileOptions)
         {
             var dictionary = new Dictionary<string, string>();
-            var properties = typeof(CredentialProfileOptions).GetProperties();
 
-            // ensure repeatable order
-            Array.Sort(properties.Select((p) => p.Name).ToArray(), properties);
-
-            foreach (var property in properties)
+            // if profileOptions.IsEmpty then leave all the credentials keys untouched
+            if (!profileOptions.IsEmpty)
             {
-                var value = (string)property.GetValue(profileOptions, null);
-                if (string.IsNullOrEmpty(value))
-                    value = null;
+                var properties = typeof(CredentialProfileOptions).GetProperties();
 
-                if (nameMapping[property.Name] != null)
+                // ensure repeatable order
+                Array.Sort(properties.Select((p) => p.Name).ToArray(), properties);
+
+                foreach (var property in properties)
                 {
-                    dictionary.Add(nameMapping[property.Name], value);
+                    var value = (string)property.GetValue(profileOptions, null);
+                    if (string.IsNullOrEmpty(value))
+                        value = null;
+
+                    if (nameMapping[property.Name] != null)
+                    {
+                        dictionary.Add(nameMapping[property.Name], value);
+                    }
                 }
             }
             return dictionary;

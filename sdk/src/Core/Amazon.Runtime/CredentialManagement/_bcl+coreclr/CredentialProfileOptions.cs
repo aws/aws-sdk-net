@@ -80,6 +80,28 @@ namespace Amazon.Runtime.CredentialManagement
         public string UserIdentity { get; set; }
 #endif
 
+        /// <summary>
+        /// Return true the properties are all null or empty, false otherwise.
+        /// </summary>
+        internal bool IsEmpty
+        {
+            get
+            {
+                return
+#if BCL
+                    string.IsNullOrEmpty(EndpointName) &&
+                    string.IsNullOrEmpty(UserIdentity) &&
+#endif
+                    string.IsNullOrEmpty(AccessKey) &&
+                    string.IsNullOrEmpty(ExternalID) &&
+                    string.IsNullOrEmpty(MfaSerial) &&
+                    string.IsNullOrEmpty(RoleArn) &&
+                    string.IsNullOrEmpty(SecretKey) &&
+                    string.IsNullOrEmpty(SourceProfile) &&
+                    string.IsNullOrEmpty(Token);
+;
+            }
+        }
         public override string ToString()
         {
             return
