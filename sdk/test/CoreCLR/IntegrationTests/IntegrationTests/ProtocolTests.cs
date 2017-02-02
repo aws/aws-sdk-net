@@ -87,7 +87,7 @@ namespace Amazon.DNXCore.IntegrationTests
                 Assert.NotNull(aete.Message);
                 Assert.True(aete.Message.IndexOf(fakeId, StringComparison.OrdinalIgnoreCase) >= 0);
                 //Assert.NotNull(aete.ErrorCode);
-                Assert.Equal(aete.ErrorType, ErrorType.Sender);
+                Assert.Equal(aete.ErrorType, ErrorType.Unknown);
             }
         }
 

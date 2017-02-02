@@ -26,12 +26,105 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.S3.Util;
 using Amazon.SecurityToken.SAML;
 using Amazon.DynamoDBv2;
+using Amazon.ElasticTranscoder;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests
 {
     [TestClass]
     public class General
     {
+        [TestMethod]
+        [TestCategory("General")]
+        // Test exception parsing with selected services
+        public void TestExceptions()
+        {
+            var fakeData = "obviously-super-duper-fake-data";
+
+            using (var client = new Amazon.Lightsail.AmazonLightsailClient())
+            {
+                var ex = AssertExtensions.ExpectException<Amazon.Lightsail.Model.NotFoundException>(() =>
+                {
+                    client.GetInstance(new Amazon.Lightsail.Model.GetInstanceRequest
+                    {
+                        InstanceName = fakeData
+                    });
+                });
+                Assert.AreEqual(ErrorType.Unknown, ex.ErrorType);
+            }
+
+            using (var client = new Amazon.ElasticTranscoder.AmazonElasticTranscoderClient())
+            {
+                var ex = AssertExtensions.ExpectException<Amazon.ElasticTranscoder.Model.ValidationException>(() =>
+                {
+                    client.DeletePipeline(new Amazon.ElasticTranscoder.Model.DeletePipelineRequest
+                    {
+                        Id = fakeData
+                    });
+                });
+                Assert.AreEqual(ErrorType.Unknown, ex.ErrorType);
+            }
+
+            using (var ddb = new Amazon.DynamoDBv2.AmazonDynamoDBClient())
+            {
+                var ex = AssertExtensions.ExpectException<Amazon.DynamoDBv2.Model.ResourceNotFoundException>(() => ddb.DescribeTable("fakey-mcfake-table"));
+                Assert.AreEqual(ErrorType.Unknown, ex.ErrorType);
+            }
+
+            using (var client = new Amazon.Pinpoint.AmazonPinpointClient())
+            {
+                var ex = AssertExtensions.ExpectException<Amazon.Pinpoint.Model.NotFoundException>(() =>
+                {
+                    client.DeleteCampaign(new Amazon.Pinpoint.Model.DeleteCampaignRequest
+                    {
+                        ApplicationId = fakeData,
+                        CampaignId = fakeData
+                    });
+                });
+                Assert.AreEqual(ErrorType.Unknown, ex.ErrorType);
+            }
+
+            using (var client = new Amazon.Batch.AmazonBatchClient())
+            {
+                var ex = AssertExtensions.ExpectException<Amazon.Batch.Model.ClientException>(() =>
+                {
+                    client.UpdateComputeEnvironment(new Amazon.Batch.Model.UpdateComputeEnvironmentRequest
+                    {
+                        ComputeEnvironment = fakeData
+                    });
+                });
+                Assert.AreEqual(ErrorType.Unknown, ex.ErrorType);
+            }
+
+            using(var client = new Amazon.Glacier.AmazonGlacierClient())
+            {
+                var ex = AssertExtensions.ExpectException<Amazon.Glacier.Model.ResourceNotFoundException>(() =>
+                {
+                    client.InitiateMultipartUpload(new Amazon.Glacier.Model.InitiateMultipartUploadRequest
+                    {
+                        AccountId = "-",
+                        ArchiveDescription = fakeData,
+                        VaultName = fakeData,
+                        PartSize = 123
+                    });
+                });
+                Assert.AreEqual(ErrorType.Unknown, ex.ErrorType);
+            }
+
+            using (var client = new Amazon.IdentityManagement.AmazonIdentityManagementServiceClient())
+            {
+                var ex = AssertExtensions.ExpectException<Amazon.IdentityManagement.Model.NoSuchEntityException>(() =>
+                {
+                    client.AttachGroupPolicy(new Amazon.IdentityManagement.Model.AttachGroupPolicyRequest
+                    {
+                        PolicyArn = fakeData,
+                        GroupName = fakeData
+                    });
+                });
+                Assert.AreEqual(ErrorType.Sender, ex.ErrorType);
+            }
+        }
+
+
         [TestMethod]
         [TestCategory("General")]
         public void TestSerializingExceptions()

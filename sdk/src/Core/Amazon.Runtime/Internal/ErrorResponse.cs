@@ -24,24 +24,38 @@ namespace Amazon.Runtime.Internal
         private string 
             code, message, requestId;
 
+        /// <summary>
+        /// Error type, one of Sender, Receiver, Unknown
+        /// Only applies to XML-based services.
+        /// </summary>
         public ErrorType Type
         {
             get { return type; }
             set { type = value; }
         }
 
+        /// <summary>
+        /// Name of the exception class to return
+        /// </summary>
         public string Code
         {
             get { return code; }
             set { code = value; }
         }
 
+        /// <summary>
+        /// Error message
+        /// </summary>
         public string Message
         {
             get { return message; }
             set { message = value; }
         }
 
+        /// <summary>
+        /// RequestId of the error.
+        /// Only applies to XML-based services.
+        /// </summary>
         public string RequestId
         {
             get { return requestId; }

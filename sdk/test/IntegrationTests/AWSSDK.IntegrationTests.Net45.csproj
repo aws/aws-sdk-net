@@ -108,6 +108,10 @@
       <Project>{7AFB6468-FE81-4A38-8446-3DFF539B2CFC}</Project>
       <Name>AWSSDK.AWSSupport.Net45</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\Batch\AWSSDK.Batch.Net45.csproj">
+      <Project>{76828732-e8e2-4362-8c1c-e05f95bc91a5}</Project>
+      <Name>AWSSDK.Batch.Net45</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\CertificateManager\AWSSDK.CertificateManager.Net45.csproj">
       <Project>{6f369c20-64c0-46f4-899b-b9a0c8b177cb}</Project>
       <Name>AWSSDK.CertificateManager.Net45</Name>
@@ -268,6 +272,10 @@
       <Project>{2BAD7146-8A64-4536-83CA-D4DDABD2E3B1}</Project>
       <Name>AWSSDK.Lambda.Net45</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\Lightsail\AWSSDK.Lightsail.Net45.csproj">
+      <Project>{d1319ea5-d8e2-486e-b08f-0b44a01d303f}</Project>
+      <Name>AWSSDK.Lightsail.Net45</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\MachineLearning\AWSSDK.MachineLearning.Net45.csproj">
       <Project>{39BC41FA-A4ED-4C24-AEA1-A3CD3556F21A}</Project>
       <Name>AWSSDK.MachineLearning.Net45</Name>
@@ -279,6 +287,10 @@
     <ProjectReference Include="..\..\src\Services\OpsWorks\AWSSDK.OpsWorks.Net45.csproj">
       <Project>{9123E499-47D5-4B7C-BAB4-155A96CA5E9C}</Project>
       <Name>AWSSDK.OpsWorks.Net45</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\Pinpoint\AWSSDK.Pinpoint.Net45.csproj">
+      <Project>{6f31539f-c39f-4a2e-84ae-da2434891d48}</Project>
+      <Name>AWSSDK.Pinpoint.Net45</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\src\Services\Polly\AWSSDK.Polly.Net45.csproj">
       <Project>{0DA4279F-8955-40E6-8A3C-42CFEC91262A}</Project>

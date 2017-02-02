@@ -34,7 +34,7 @@ namespace Amazon.Runtime.Internal.Transform
         /// <returns>An <c>ErrorResponse</c> object.</returns>
         public ErrorResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            ErrorResponse response = new ErrorResponse();
+            ErrorResponse response;
 
             if (context.Peek() == 60) //starts with '<' so assuming XML.
             {
@@ -44,37 +44,32 @@ namespace Amazon.Runtime.Internal.Transform
             }
             else
             {
+                string type = null;
+                string message = null;
+                string code = null;
+
                 while (context.Read())
                 {
                     if (context.TestExpression("__type"))
                     {
-                        string type = StringUnmarshaller.GetInstance().Unmarshall(context);
-                        response.Code = type.Substring(type.LastIndexOf("#", StringComparison.Ordinal) + 1);
-                        if (Enum.IsDefined(typeof(ErrorType), type))
-                        {
-                            response.Type = (ErrorType)Enum.Parse(typeof(ErrorType), type, true);
-                        }
-                        else
-                        {
-                            response.Type = ErrorType.Unknown;
-                        }
-                        continue;
-                    }
-                    if (context.TestExpression("code"))
-                    {
-                        response.Code = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        type = StringUnmarshaller.GetInstance().Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("message"))
                     {
-                        response.Message = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        message = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("code"))
+                    {
+                        code = StringUnmarshaller.GetInstance().Unmarshall(context);
                         continue;
                     }
                 }
                 
                 // If an error code was not found, check for the x-amzn-ErrorType header. 
                 // This header is returned by rest-json services.
-                if (string.IsNullOrEmpty(response.Code) &&
+                if (string.IsNullOrEmpty(type) &&
                     context.ResponseData.IsHeaderPresent(HeaderKeys.XAmzErrorType))
                 {
                     var errorType = context.ResponseData.GetHeaderValue(HeaderKeys.XAmzErrorType);
@@ -87,9 +82,28 @@ namespace Amazon.Runtime.Internal.Transform
                         {
                             errorType = errorType.Substring(0, index);
                         }
-                        response.Code = errorType;
+                        type = errorType;
                     }
                 }
+
+                // if both "__type" and HeaderKeys.XAmzErrorType were not specified, use "code" as type
+                // this impacts Glacier
+                if (string.IsNullOrEmpty(type) &&
+                    !string.IsNullOrEmpty(code))
+                {
+                    type = code;
+                }
+
+                // strip extra data from type, leaving only the exception type name
+                type = type.Substring(type.LastIndexOf("#", StringComparison.Ordinal) + 1);
+
+                response = new ErrorResponse
+                {
+                    Code = type,
+                    Message = message,
+                    // type is not applicable to JSON services, setting to Unknown
+                    Type = ErrorType.Unknown
+                };
             }
             
             return response;
