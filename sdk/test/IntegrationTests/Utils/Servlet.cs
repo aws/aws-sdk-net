@@ -27,7 +27,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
         // Properties
         public int Port { get; private set; }
-        public string Uri { get; private set; }
+        public string Path { get; private set; }
         public bool Debug { get; set; }
         public bool RethrowExceptions { get; set; }
         public TimeSpan StreamDelays { get; set; }
@@ -36,7 +36,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         {
             get
             {
-                return new Uri("http://localhost:" + Port + Uri);
+                return new Uri("http://localhost:" + Port + Path);
+            }
+        }
+        public string ServiceURL
+        {
+            get
+            {
+                return Url.AbsoluteUri;
             }
         }
 
@@ -63,15 +70,15 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         public Servlet(int port)
             : this(port, "/") { }
 
-        public Servlet(string uri)
-            : this(FindFreePort(), "/") { }
+        public Servlet(string path)
+            : this(FindFreePort(), path) { }
 
-        public Servlet(int port, string uri)
+        public Servlet(int port, string path)
         {
             if (_usedPorts.Contains(port))
                 throw new ArgumentException("Port already being used by servlet");
 
-            Uri = uri;
+            Path = path;
             Port = port;
             _usedPorts.Add(port);
 
@@ -287,10 +294,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
     public class ResponseTestServlet : Servlet
     {
         public ResponseTestServlet()
-            : base("/") {}
+            : this("/") {}
 
-        public ResponseTestServlet(string uri)
-            : base(uri)
+        public ResponseTestServlet(string path)
+            : base(path)
         {
             StatusCode = 200;
             Headers = new Dictionary<string, string>();

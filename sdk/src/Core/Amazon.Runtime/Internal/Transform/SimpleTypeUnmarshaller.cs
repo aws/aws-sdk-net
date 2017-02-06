@@ -410,6 +410,9 @@ namespace Amazon.Runtime.Internal.Transform
         public MemoryStream Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
+            if (context.CurrentTokenType == JsonToken.Null)
+                return null;
+
             byte[] bytes = Convert.FromBase64String(context.ReadText());
             MemoryStream stream = new MemoryStream(bytes);
             return stream;
