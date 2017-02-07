@@ -1,3 +1,15 @@
+### 3.3.45.1 (2017-02-06 22:49 UTC)
+* CloudDirectory (3.3.0.1)
+	* Updated to use new Core, version 3.3.8.1
+	* Fix unmarshalling issue.
+* Lightsail (3.3.0.6)
+	* Updated to use new Core, version 3.3.8.1
+	* Fixed issue with incorrect exceptions being thrown for Lightsail errors.
+* S3 (3.3.5.4)
+	* Fix issue with V4ClientSection not having a zero-parameter constructor, https://github.com/aws/aws-sdk-net/issues/538
+* Core 3.3.8.1
+	* Extension to saml role profile to allow a region override, to determine STS endpoint setting, to be stored and loaded from the profile and used when constructing the STS client in regions where a specific regional endpoint must be used. Fix issue unmarshalling null MemoryStream from JSON response. Fix issue with V4ClientSection not having a zero-parameter constructor, https://github.com/aws/aws-sdk-net/issues/538
+
 ### 3.3.45.0 (2017-01-26 23:49 UTC)
 * CloudDirectory (3.3.0.0)
 	* New service CloudDirectory: Amazon Cloud Directory is a highly scalable, high performance, multi-tenant directory service in the cloud. Its web-based directories make it easy for you to organize and manage application resources such as users, groups, locations, devices, policies, and the rich relationships between them.

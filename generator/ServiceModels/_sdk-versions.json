@@ -1,7 +1,7 @@
 
 {
-    "ProductVersion" : "3.3.45.0",
-    "CoreVersion"    : "3.3.8.0",
+    "ProductVersion" : "3.3.45.1",
+    "CoreVersion"    : "3.3.8.1",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
         "CloudHSM" : {
@@ -275,7 +275,7 @@
             "InPreview"    : false
         },
         "S3"                   : {
-            "Version" : "3.3.5.3",
+            "Version" : "3.3.5.4",
             "Dependencies" : {
                 "Core" : "3.3.8.0"
             },
@@ -541,9 +541,9 @@
             "InPreview"    : false
         },
         "Lightsail"                       : {
-            "Version" : "3.3.0.5",
+            "Version" : "3.3.0.6",
             "Dependencies" : {
-                "Core" : "3.3.8.0"
+                "Core" : "3.3.8.1"
             },
             "InPreview"    : false
         },
@@ -632,9 +632,9 @@
             "InPreview"    : false
         },
         "CloudDirectory"                  : {
-            "Version" : "3.3.0.0",
+            "Version" : "3.3.0.1",
             "Dependencies" : {
-                "Core" : "3.3.8.0"
+                "Core" : "3.3.8.1"
             },
             "InPreview"    : false
         }
