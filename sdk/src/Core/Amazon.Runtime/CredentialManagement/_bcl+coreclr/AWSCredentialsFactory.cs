@@ -122,11 +122,21 @@ namespace Amazon.Runtime.CredentialManagement
             return credentials != null;
         }
 
+        /// <summary>
+        /// Determine if the profileType will generate AWSCredentials that require a callback to be set on them.
+        /// </summary>
+        /// <param name="profileType"></param>
+        /// <returns></returns>
+        internal static bool IsCallbackRequired(CredentialProfileType? profileType)
+        {
+            return profileType.HasValue && CallbackProfileTypes.Contains(profileType.Value);
+        }
+
         private static AWSCredentials GetAWSCredentials(string profileName, ICredentialProfileSource profileSource,
             CredentialProfileOptions options, bool nonCallbackOnly)
         {
             var profileType = CredentialProfileTypeDetector.DetectProfileType(options);
-            if (nonCallbackOnly && profileType.HasValue && CallbackProfileTypes.Contains(profileType.Value))
+            if (nonCallbackOnly && profileType.HasValue && IsCallbackRequired(profileType.Value))
             {
                 if (profileType == CredentialProfileType.AssumeRoleExternalMFA ||
                     profileType == CredentialProfileType.AssumeRoleMFA)

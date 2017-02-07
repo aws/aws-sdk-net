@@ -104,6 +104,17 @@ namespace Amazon.Runtime.CredentialManagement
         }
 
         /// <summary>
+        /// Determine this CredentialProfile will generate AWSCredentials that require a callback to be set on them.
+        /// </summary>
+        internal bool IsCallbackRequired
+        {
+            get
+            {
+                return AWSCredentialsFactory.IsCallbackRequired(ProfileType);
+            }
+        }
+
+        /// <summary>
         /// Construct a new CredentialProfile.
         /// </summary>
         /// <param name="name"></param>

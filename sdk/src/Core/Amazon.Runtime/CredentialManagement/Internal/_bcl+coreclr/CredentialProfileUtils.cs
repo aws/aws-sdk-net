@@ -71,5 +71,10 @@ namespace Amazon.Runtime.CredentialManagement.Internal
         {
             return profile.ProfileType;
         }
+
+        public static bool IsCallbackRequired(CredentialProfile profile)
+        {
+            return profile.IsCallbackRequired;
+        }
     }
 }
