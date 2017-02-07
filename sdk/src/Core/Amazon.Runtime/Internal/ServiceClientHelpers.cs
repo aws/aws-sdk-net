@@ -119,11 +119,7 @@ namespace Amazon.Runtime.Internal
 
         private static ITypeInfo LoadServiceClientType(string assemblyName, string serviceClientClassName)
         {
-            var assembly = Assembly.Load(new AssemblyName(assemblyName));
-            if (assembly == null)
-                throw new AmazonClientException(
-                    string.Format(CultureInfo.InvariantCulture, "Failed to load assembly containing service client {0}. Be sure to include a reference to {1}.", serviceClientClassName, assemblyName)
-                    );
+            var assembly = GetSDKAssembly(assemblyName);
             var type = assembly.GetType(serviceClientClassName);
 
             return TypeFactory.GetTypeInfo(type);
@@ -131,14 +127,32 @@ namespace Amazon.Runtime.Internal
 
         private static ITypeInfo LoadServiceConfigType(string assemblyName, string serviceConfigClassName)
         {
-            var assembly = Assembly.Load(new AssemblyName(assemblyName));
-            if (assembly == null)
-                throw new AmazonClientException(
-                    string.Format(CultureInfo.InvariantCulture, "Failed to load assembly containing service config {0}. Be sure to include a reference to {1}.", serviceConfigClassName, assemblyName)
-                    );
+            var assembly = GetSDKAssembly(assemblyName);
             var type = assembly.GetType(serviceConfigClassName);
 
             return TypeFactory.GetTypeInfo(type);
+        }
+
+        private static Assembly GetSDKAssembly(string assemblyName)
+        {
+            Assembly assembly = null;
+#if BCL
+            assembly = AppDomain.CurrentDomain.GetAssemblies().FirstOrDefault(x => string.Equals(x.GetName().Name, assemblyName, StringComparison.Ordinal));
+#endif
+            if (assembly == null)
+            {
+                assembly = Assembly.Load(new AssemblyName(assemblyName));
+            }
+
+            if (assembly == null)
+            {
+                throw new AmazonClientException
+                    (
+                        string.Format(CultureInfo.InvariantCulture, "Failed to load assembly. Be sure to include a reference to {0}.", assemblyName)
+                    );
+            }
+
+            return assembly;
         }
     }
 }

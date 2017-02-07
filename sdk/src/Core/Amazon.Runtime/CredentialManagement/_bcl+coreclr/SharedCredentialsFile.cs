@@ -348,9 +348,13 @@ namespace Amazon.Runtime.CredentialManagement
 
             // INI sections in the config file must be prefixed with "profile " to be recognized as a profile.
             var configSectionNameRegex = new Regex(ProfileMarker + "[ \t]+" + Regex.Escape(sectionName));
-            var hasConfigProperties = configFile?.TryGetSection(configSectionNameRegex, out configProperties);
+            bool hasConfigProperties = false;
+            if (configFile != null)
+            {
+                hasConfigProperties = configFile.TryGetSection(configSectionNameRegex, out configProperties);
+            }
 
-            if (hasConfigProperties.GetValueOrDefault())
+            if (hasConfigProperties)
             {
                 iniProperties = configProperties;
                 if (hasCredentialsProperties)
