@@ -1,3 +1,7 @@
+### 3.3.46.0 (2017-02-08 01:11 UTC)
+* Lex (3.3.0.0)
+	* Amazon Lex is a service for building conversational interactions into any application using voice or text.
+
 ### 3.3.45.1 (2017-02-06 22:49 UTC)
 * CloudDirectory (3.3.0.1)
 	* Updated to use new Core, version 3.3.8.1
