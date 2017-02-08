@@ -1027,6 +1027,15 @@
     },
     {
       "active": true,
+
+      "model": "runtime.lex",
+      "base-name": "Lex",
+      "region-lookup-name": "runtime.lex",
+      "authentication-service-name": "lex",
+      "synopsis": "Amazon Lex is a service for building conversational interactions into any application using voice or text."
+    }, 
+    {
+      "active": true,
       "enable-xamarin-component": true,
       "model": "s3",
       "base-name": "S3",

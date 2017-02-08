@@ -302,6 +302,10 @@
       <Project>{2BAD7146-8A64-4536-83CA-D4DDABD2E3B1}</Project>
       <Name>AWSSDK.Lambda.Net45</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\Lex\AWSSDK.Lex.Net45.csproj">
+      <Project>{BFABC9DF-3256-49E0-A91E-A59D1AA7096A}</Project>
+      <Name>AWSSDK.Lex.Net45</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\Lightsail\AWSSDK.Lightsail.Net45.csproj">
       <Project>{D1319EA5-D8E2-486E-B08F-0B44A01D303F}</Project>
       <Name>AWSSDK.Lightsail.Net45</Name>
