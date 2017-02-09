@@ -61,8 +61,8 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Not all instance types support IPv6 addresses. For more information, see <a href="http://aws.amazon.com/ec2/instance-types/">Amazon
-    /// EC2 Instance Types</a>.
+    /// Not all instance types support IPv6 addresses. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+    /// Types</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>

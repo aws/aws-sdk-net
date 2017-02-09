@@ -60,8 +60,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Server.SpotInstanceTermination</code>: A Spot instance was terminated due to
-        /// an increase in the market price.
+        ///  <code>Server.InsufficientInstanceCapacity</code>: There was insufficient instance
+        /// capacity to satisfy the launch request.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -70,8 +70,12 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Server.InsufficientInstanceCapacity</code>: There was insufficient instance
-        /// capacity to satisfy the launch request.
+        ///  <code>Server.ScheduledStop</code>: The instance was stopped due to a scheduled retirement.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Server.SpotInstanceTermination</code>: A Spot instance was terminated due to
+        /// an increase in the market price.
         /// </para>
         ///  </li> <li> 
         /// <para>

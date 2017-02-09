@@ -665,6 +665,46 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  AssociateIamInstanceProfile
+
+
+        /// <summary>
+        /// Associates an IAM instance profile with a running or stopped instance. You cannot
+        /// associate more than one IAM instance profile with an instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateIamInstanceProfile service method.</param>
+        /// 
+        /// <returns>The response from the AssociateIamInstanceProfile service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateIamInstanceProfile">REST API Reference for AssociateIamInstanceProfile Operation</seealso>
+        public AssociateIamInstanceProfileResponse AssociateIamInstanceProfile(AssociateIamInstanceProfileRequest request)
+        {
+            var marshaller = new AssociateIamInstanceProfileRequestMarshaller();
+            var unmarshaller = AssociateIamInstanceProfileResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateIamInstanceProfileRequest,AssociateIamInstanceProfileResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateIamInstanceProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateIamInstanceProfile operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateIamInstanceProfile">REST API Reference for AssociateIamInstanceProfile Operation</seealso>
+        public Task<AssociateIamInstanceProfileResponse> AssociateIamInstanceProfileAsync(AssociateIamInstanceProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new AssociateIamInstanceProfileRequestMarshaller();
+            var unmarshaller = AssociateIamInstanceProfileResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AssociateIamInstanceProfileRequest,AssociateIamInstanceProfileResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  AssociateRouteTable
 
 
@@ -5466,6 +5506,45 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeIamInstanceProfileAssociations
+
+
+        /// <summary>
+        /// Describes your IAM instance profile associations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIamInstanceProfileAssociations service method.</param>
+        /// 
+        /// <returns>The response from the DescribeIamInstanceProfileAssociations service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIamInstanceProfileAssociations">REST API Reference for DescribeIamInstanceProfileAssociations Operation</seealso>
+        public DescribeIamInstanceProfileAssociationsResponse DescribeIamInstanceProfileAssociations(DescribeIamInstanceProfileAssociationsRequest request)
+        {
+            var marshaller = new DescribeIamInstanceProfileAssociationsRequestMarshaller();
+            var unmarshaller = DescribeIamInstanceProfileAssociationsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeIamInstanceProfileAssociationsRequest,DescribeIamInstanceProfileAssociationsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeIamInstanceProfileAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIamInstanceProfileAssociations operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIamInstanceProfileAssociations">REST API Reference for DescribeIamInstanceProfileAssociations Operation</seealso>
+        public Task<DescribeIamInstanceProfileAssociationsResponse> DescribeIamInstanceProfileAssociationsAsync(DescribeIamInstanceProfileAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeIamInstanceProfileAssociationsRequestMarshaller();
+            var unmarshaller = DescribeIamInstanceProfileAssociationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeIamInstanceProfileAssociationsRequest,DescribeIamInstanceProfileAssociationsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeIdentityIdFormat
 
 
@@ -9657,6 +9736,50 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DisassociateIamInstanceProfile
+
+
+        /// <summary>
+        /// Disassociates an IAM instance profile from a running or stopped instance.
+        /// 
+        ///  
+        /// <para>
+        /// Use <a>DescribeIamInstanceProfileAssociations</a> to get the association ID.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateIamInstanceProfile service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateIamInstanceProfile service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateIamInstanceProfile">REST API Reference for DisassociateIamInstanceProfile Operation</seealso>
+        public DisassociateIamInstanceProfileResponse DisassociateIamInstanceProfile(DisassociateIamInstanceProfileRequest request)
+        {
+            var marshaller = new DisassociateIamInstanceProfileRequestMarshaller();
+            var unmarshaller = DisassociateIamInstanceProfileResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateIamInstanceProfileRequest,DisassociateIamInstanceProfileResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateIamInstanceProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateIamInstanceProfile operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateIamInstanceProfile">REST API Reference for DisassociateIamInstanceProfile Operation</seealso>
+        public Task<DisassociateIamInstanceProfileResponse> DisassociateIamInstanceProfileAsync(DisassociateIamInstanceProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DisassociateIamInstanceProfileRequestMarshaller();
+            var unmarshaller = DisassociateIamInstanceProfileResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DisassociateIamInstanceProfileRequest,DisassociateIamInstanceProfileResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DisassociateRouteTable
 
 
@@ -11736,6 +11859,52 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  ReplaceIamInstanceProfileAssociation
+
+
+        /// <summary>
+        /// Replaces an IAM instance profile for the specified instance. You can use this action
+        /// to change the IAM instance profile that's associated with an instance without having
+        /// to disassociate the existing IAM instance profile first.
+        /// 
+        ///  
+        /// <para>
+        /// Use <a>DescribeIamInstanceProfileAssociations</a> to get the association ID.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ReplaceIamInstanceProfileAssociation service method.</param>
+        /// 
+        /// <returns>The response from the ReplaceIamInstanceProfileAssociation service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceIamInstanceProfileAssociation">REST API Reference for ReplaceIamInstanceProfileAssociation Operation</seealso>
+        public ReplaceIamInstanceProfileAssociationResponse ReplaceIamInstanceProfileAssociation(ReplaceIamInstanceProfileAssociationRequest request)
+        {
+            var marshaller = new ReplaceIamInstanceProfileAssociationRequestMarshaller();
+            var unmarshaller = ReplaceIamInstanceProfileAssociationResponseUnmarshaller.Instance;
+
+            return Invoke<ReplaceIamInstanceProfileAssociationRequest,ReplaceIamInstanceProfileAssociationResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ReplaceIamInstanceProfileAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ReplaceIamInstanceProfileAssociation operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceIamInstanceProfileAssociation">REST API Reference for ReplaceIamInstanceProfileAssociation Operation</seealso>
+        public Task<ReplaceIamInstanceProfileAssociationResponse> ReplaceIamInstanceProfileAssociationAsync(ReplaceIamInstanceProfileAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ReplaceIamInstanceProfileAssociationRequestMarshaller();
+            var unmarshaller = ReplaceIamInstanceProfileAssociationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ReplaceIamInstanceProfileAssociationRequest,ReplaceIamInstanceProfileAssociationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ReplaceNetworkAclAssociation
 
 
@@ -12433,8 +12602,8 @@ namespace Amazon.EC2
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Not all instance types support IPv6 addresses. For more information, see <a href="http://aws.amazon.com/ec2/instance-types/">Amazon
-        /// EC2 Instance Types</a>.
+        /// Not all instance types support IPv6 addresses. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+        /// Types</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>

@@ -753,6 +753,60 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  AssociateIamInstanceProfile
+
+        /// <summary>
+        /// Associates an IAM instance profile with a running or stopped instance. You cannot
+        /// associate more than one IAM instance profile with an instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateIamInstanceProfile service method.</param>
+        /// 
+        /// <returns>The response from the AssociateIamInstanceProfile service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateIamInstanceProfile">REST API Reference for AssociateIamInstanceProfile Operation</seealso>
+        public AssociateIamInstanceProfileResponse AssociateIamInstanceProfile(AssociateIamInstanceProfileRequest request)
+        {
+            var marshaller = new AssociateIamInstanceProfileRequestMarshaller();
+            var unmarshaller = AssociateIamInstanceProfileResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateIamInstanceProfileRequest,AssociateIamInstanceProfileResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateIamInstanceProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateIamInstanceProfile operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateIamInstanceProfile
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateIamInstanceProfile">REST API Reference for AssociateIamInstanceProfile Operation</seealso>
+        public IAsyncResult BeginAssociateIamInstanceProfile(AssociateIamInstanceProfileRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new AssociateIamInstanceProfileRequestMarshaller();
+            var unmarshaller = AssociateIamInstanceProfileResponseUnmarshaller.Instance;
+
+            return BeginInvoke<AssociateIamInstanceProfileRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateIamInstanceProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateIamInstanceProfile.</param>
+        /// 
+        /// <returns>Returns a  AssociateIamInstanceProfileResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateIamInstanceProfile">REST API Reference for AssociateIamInstanceProfile Operation</seealso>
+        public  AssociateIamInstanceProfileResponse EndAssociateIamInstanceProfile(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AssociateIamInstanceProfileResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  AssociateRouteTable
 
         /// <summary>
@@ -6566,6 +6620,59 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeIamInstanceProfileAssociations
+
+        /// <summary>
+        /// Describes your IAM instance profile associations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIamInstanceProfileAssociations service method.</param>
+        /// 
+        /// <returns>The response from the DescribeIamInstanceProfileAssociations service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIamInstanceProfileAssociations">REST API Reference for DescribeIamInstanceProfileAssociations Operation</seealso>
+        public DescribeIamInstanceProfileAssociationsResponse DescribeIamInstanceProfileAssociations(DescribeIamInstanceProfileAssociationsRequest request)
+        {
+            var marshaller = new DescribeIamInstanceProfileAssociationsRequestMarshaller();
+            var unmarshaller = DescribeIamInstanceProfileAssociationsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeIamInstanceProfileAssociationsRequest,DescribeIamInstanceProfileAssociationsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeIamInstanceProfileAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIamInstanceProfileAssociations operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeIamInstanceProfileAssociations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIamInstanceProfileAssociations">REST API Reference for DescribeIamInstanceProfileAssociations Operation</seealso>
+        public IAsyncResult BeginDescribeIamInstanceProfileAssociations(DescribeIamInstanceProfileAssociationsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DescribeIamInstanceProfileAssociationsRequestMarshaller();
+            var unmarshaller = DescribeIamInstanceProfileAssociationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeIamInstanceProfileAssociationsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeIamInstanceProfileAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeIamInstanceProfileAssociations.</param>
+        /// 
+        /// <returns>Returns a  DescribeIamInstanceProfileAssociationsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIamInstanceProfileAssociations">REST API Reference for DescribeIamInstanceProfileAssociations Operation</seealso>
+        public  DescribeIamInstanceProfileAssociationsResponse EndDescribeIamInstanceProfileAssociations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeIamInstanceProfileAssociationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeIdentityIdFormat
 
         /// <summary>
@@ -10856,6 +10963,64 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DisassociateIamInstanceProfile
+
+        /// <summary>
+        /// Disassociates an IAM instance profile from a running or stopped instance.
+        /// 
+        ///  
+        /// <para>
+        /// Use <a>DescribeIamInstanceProfileAssociations</a> to get the association ID.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateIamInstanceProfile service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateIamInstanceProfile service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateIamInstanceProfile">REST API Reference for DisassociateIamInstanceProfile Operation</seealso>
+        public DisassociateIamInstanceProfileResponse DisassociateIamInstanceProfile(DisassociateIamInstanceProfileRequest request)
+        {
+            var marshaller = new DisassociateIamInstanceProfileRequestMarshaller();
+            var unmarshaller = DisassociateIamInstanceProfileResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateIamInstanceProfileRequest,DisassociateIamInstanceProfileResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateIamInstanceProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateIamInstanceProfile operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateIamInstanceProfile
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateIamInstanceProfile">REST API Reference for DisassociateIamInstanceProfile Operation</seealso>
+        public IAsyncResult BeginDisassociateIamInstanceProfile(DisassociateIamInstanceProfileRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DisassociateIamInstanceProfileRequestMarshaller();
+            var unmarshaller = DisassociateIamInstanceProfileResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DisassociateIamInstanceProfileRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisassociateIamInstanceProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateIamInstanceProfile.</param>
+        /// 
+        /// <returns>Returns a  DisassociateIamInstanceProfileResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateIamInstanceProfile">REST API Reference for DisassociateIamInstanceProfile Operation</seealso>
+        public  DisassociateIamInstanceProfileResponse EndDisassociateIamInstanceProfile(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DisassociateIamInstanceProfileResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DisassociateRouteTable
 
         /// <summary>
@@ -13523,6 +13688,66 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  ReplaceIamInstanceProfileAssociation
+
+        /// <summary>
+        /// Replaces an IAM instance profile for the specified instance. You can use this action
+        /// to change the IAM instance profile that's associated with an instance without having
+        /// to disassociate the existing IAM instance profile first.
+        /// 
+        ///  
+        /// <para>
+        /// Use <a>DescribeIamInstanceProfileAssociations</a> to get the association ID.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ReplaceIamInstanceProfileAssociation service method.</param>
+        /// 
+        /// <returns>The response from the ReplaceIamInstanceProfileAssociation service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceIamInstanceProfileAssociation">REST API Reference for ReplaceIamInstanceProfileAssociation Operation</seealso>
+        public ReplaceIamInstanceProfileAssociationResponse ReplaceIamInstanceProfileAssociation(ReplaceIamInstanceProfileAssociationRequest request)
+        {
+            var marshaller = new ReplaceIamInstanceProfileAssociationRequestMarshaller();
+            var unmarshaller = ReplaceIamInstanceProfileAssociationResponseUnmarshaller.Instance;
+
+            return Invoke<ReplaceIamInstanceProfileAssociationRequest,ReplaceIamInstanceProfileAssociationResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ReplaceIamInstanceProfileAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ReplaceIamInstanceProfileAssociation operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndReplaceIamInstanceProfileAssociation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceIamInstanceProfileAssociation">REST API Reference for ReplaceIamInstanceProfileAssociation Operation</seealso>
+        public IAsyncResult BeginReplaceIamInstanceProfileAssociation(ReplaceIamInstanceProfileAssociationRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new ReplaceIamInstanceProfileAssociationRequestMarshaller();
+            var unmarshaller = ReplaceIamInstanceProfileAssociationResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ReplaceIamInstanceProfileAssociationRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ReplaceIamInstanceProfileAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginReplaceIamInstanceProfileAssociation.</param>
+        /// 
+        /// <returns>Returns a  ReplaceIamInstanceProfileAssociationResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceIamInstanceProfileAssociation">REST API Reference for ReplaceIamInstanceProfileAssociation Operation</seealso>
+        public  ReplaceIamInstanceProfileAssociationResponse EndReplaceIamInstanceProfileAssociation(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ReplaceIamInstanceProfileAssociationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ReplaceNetworkAclAssociation
 
         /// <summary>
@@ -14415,8 +14640,8 @@ namespace Amazon.EC2
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Not all instance types support IPv6 addresses. For more information, see <a href="http://aws.amazon.com/ec2/instance-types/">Amazon
-        /// EC2 Instance Types</a>.
+        /// Not all instance types support IPv6 addresses. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+        /// Types</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>

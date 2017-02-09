@@ -1653,6 +1653,64 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type IamInstanceProfileAssociationState.
+    /// </summary>
+    public class IamInstanceProfileAssociationState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Associated for IamInstanceProfileAssociationState
+        /// </summary>
+        public static readonly IamInstanceProfileAssociationState Associated = new IamInstanceProfileAssociationState("associated");
+        /// <summary>
+        /// Constant Associating for IamInstanceProfileAssociationState
+        /// </summary>
+        public static readonly IamInstanceProfileAssociationState Associating = new IamInstanceProfileAssociationState("associating");
+        /// <summary>
+        /// Constant Disassociated for IamInstanceProfileAssociationState
+        /// </summary>
+        public static readonly IamInstanceProfileAssociationState Disassociated = new IamInstanceProfileAssociationState("disassociated");
+        /// <summary>
+        /// Constant Disassociating for IamInstanceProfileAssociationState
+        /// </summary>
+        public static readonly IamInstanceProfileAssociationState Disassociating = new IamInstanceProfileAssociationState("disassociating");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IamInstanceProfileAssociationState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IamInstanceProfileAssociationState FindValue(string value)
+        {
+            return FindValue<IamInstanceProfileAssociationState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IamInstanceProfileAssociationState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ImageAttributeName.
     /// </summary>
     public class ImageAttributeName : ConstantClass

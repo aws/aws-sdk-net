@@ -227,6 +227,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void AssociateIamInstanceProfileMarshallTest()
+        {
+            var operation = service_model.FindOperation("AssociateIamInstanceProfile");
+
+            var request = InstantiateClassGenerator.Execute<AssociateIamInstanceProfileRequest>();
+            var marshaller = new AssociateIamInstanceProfileRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = AssociateIamInstanceProfileResponseUnmarshaller.Instance.Unmarshall(context)
+                as AssociateIamInstanceProfileResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void AssociateRouteTableMarshallTest()
         {
             var operation = service_model.FindOperation("AssociateRouteTable");
@@ -2213,6 +2237,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void DescribeIamInstanceProfileAssociationsMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeIamInstanceProfileAssociations");
+
+            var request = InstantiateClassGenerator.Execute<DescribeIamInstanceProfileAssociationsRequest>();
+            var marshaller = new DescribeIamInstanceProfileAssociationsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DescribeIamInstanceProfileAssociationsResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeIamInstanceProfileAssociationsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void DescribeIdentityIdFormatMarshallTest()
         {
             var operation = service_model.FindOperation("DescribeIdentityIdFormat");
@@ -3628,6 +3676,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void DisassociateIamInstanceProfileMarshallTest()
+        {
+            var operation = service_model.FindOperation("DisassociateIamInstanceProfile");
+
+            var request = InstantiateClassGenerator.Execute<DisassociateIamInstanceProfileRequest>();
+            var marshaller = new DisassociateIamInstanceProfileRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DisassociateIamInstanceProfileResponseUnmarshaller.Instance.Unmarshall(context)
+                as DisassociateIamInstanceProfileResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void DisassociateRouteTableMarshallTest()
         {
             var operation = service_model.FindOperation("DisassociateRouteTable");
@@ -4557,6 +4629,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
             var response = ReleaseHostsResponseUnmarshaller.Instance.Unmarshall(context)
                 as ReleaseHostsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void ReplaceIamInstanceProfileAssociationMarshallTest()
+        {
+            var operation = service_model.FindOperation("ReplaceIamInstanceProfileAssociation");
+
+            var request = InstantiateClassGenerator.Execute<ReplaceIamInstanceProfileAssociationRequest>();
+            var marshaller = new ReplaceIamInstanceProfileAssociationRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = ReplaceIamInstanceProfileAssociationResponseUnmarshaller.Instance.Unmarshall(context)
+                as ReplaceIamInstanceProfileAssociationResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
