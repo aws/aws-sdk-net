@@ -1,3 +1,11 @@
+### 3.3.47.0 (2017-02-09 07:39 UTC)
+* EC2 (3.3.7.0)
+	* This feature allows customers to associate an IAM profile to running instances that do not have any.
+* OpsWorksCM (3.3.1.0)
+	* OpsWorks for Chef Automate has added a new field "AssociatePublicIpAddress" to the CreateServer request, "CloudFormationStackArn" to the Server model and "TERMINATED" server state.
+* Rekognition (3.3.1.0)
+	* DetectFaces and IndexFaces operations now return an estimate of the age of the face as an age range.
+
 ### 3.3.46.0 (2017-02-08 01:11 UTC)
 * Lex (3.3.0.0)
 	* Amazon Lex is a service for building conversational interactions into any application using voice or text.
