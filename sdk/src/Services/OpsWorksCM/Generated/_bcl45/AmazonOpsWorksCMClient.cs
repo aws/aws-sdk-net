@@ -38,21 +38,21 @@ namespace Amazon.OpsWorksCM
     ///
     /// AWS OpsWorks for Chef Automate 
     /// <para>
-    ///  A service that runs and manages configuration management servers. 
+    ///  AWS OpsWorks for Chef Automate is a service that runs and manages configuration management
+    /// servers. 
     /// </para>
     ///  
     /// <para>
-    /// Glossary of terms
+    ///  <b>Glossary of terms</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <b>Server</b>: A server is a configuration management server, and can be highly-available.
-    /// The configuration manager runs on your instances by using various AWS services, such
-    /// as Amazon Elastic Compute Cloud (EC2), and potentially Amazon Relational Database
-    /// Service (RDS). A server is a generic abstraction over the configuration manager that
-    /// you want to use, much like Amazon RDS. In AWS OpsWorks for Chef Automate, you do not
-    /// start or stop servers. After you create servers, they continue to run until they are
-    /// deleted.
+    ///  <b>Server</b>: A configuration management server that can be highly-available. The
+    /// configuration manager runs on your instances by using various AWS services, such as
+    /// Amazon Elastic Compute Cloud (EC2), and potentially Amazon Relational Database Service
+    /// (RDS). A server is a generic abstraction over the configuration manager that you want
+    /// to use, much like Amazon RDS. In AWS OpsWorks for Chef Automate, you do not start
+    /// or stop servers. After you create servers, they continue to run until they are deleted.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -81,12 +81,34 @@ namespace Amazon.OpsWorksCM
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// Throttling limits
+    ///  <b>Endpoints</b> 
     /// </para>
     ///  
     /// <para>
-    /// All API operations allow for 5 requests per second with a burst of 10 requests per
-    /// second.
+    /// AWS OpsWorks for Chef Automate supports the following endpoints, all HTTPS. You must
+    /// connect to one of the following endpoints. Chef servers can only be accessed or managed
+    /// within the endpoint in which they are created.
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// opsworks-cm.us-east-1.amazonaws.com
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// opsworks-cm.us-west-2.amazonaws.com
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// opsworks-cm.eu-west-1.amazonaws.com
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    ///  <b>Throttling limits</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// All API operations allow for five requests per second with a burst of 10 requests
+    /// per second.
     /// </para>
     /// </summary>
     public partial class AmazonOpsWorksCMClient : AmazonServiceClient, IAmazonOpsWorksCM
@@ -280,7 +302,24 @@ namespace Amazon.OpsWorksCM
 
 
         /// <summary>
+        /// Associates a new node with the Chef server. This command is an alternative to <code>knife
+        /// bootstrap</code>. For more information about how to disassociate a node, see <a>DisassociateNode</a>.
         /// 
+        ///  
+        /// <para>
+        ///  A node can can only be associated with servers that are in a <code>HEALTHY</code>
+        /// state. Otherwise, an <code>InvalidStateException</code> is thrown. A <code>ResourceNotFoundException</code>
+        /// is thrown when the server does not exist. A <code>ValidationException</code> is raised
+        /// when parameters of the request are not valid. The AssociateNode API call can be integrated
+        /// into Auto Scaling configurations, AWS Cloudformation templates, or the user data of
+        /// a server's instance. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Example: <code>aws opsworks-cm associate-node --server-name <i>MyServer</i> --node-name
+        /// <i>MyManagedNode</i> --engine-attributes "Name=<i>MyOrganization</i>,Value=default"
+        /// "Name=<i>Chef_node_public_key</i>,Value=<i>Public_key_contents</i>"</code> 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateNode service method.</param>
         /// 
@@ -294,6 +333,7 @@ namespace Amazon.OpsWorksCM
         /// <exception cref="Amazon.OpsWorksCM.Model.ValidationException">
         /// One or more of the provided request parameters are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/AssociateNode">REST API Reference for AssociateNode Operation</seealso>
         public AssociateNodeResponse AssociateNode(AssociateNodeRequest request)
         {
             var marshaller = new AssociateNodeRequestMarshaller();
@@ -311,6 +351,7 @@ namespace Amazon.OpsWorksCM
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/AssociateNode">REST API Reference for AssociateNode Operation</seealso>
         public Task<AssociateNodeResponse> AssociateNodeAsync(AssociateNodeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AssociateNodeRequestMarshaller();
@@ -326,27 +367,24 @@ namespace Amazon.OpsWorksCM
 
 
         /// <summary>
-        /// Creates an application-level backup of a server. While the server is <code>BACKING_UP</code>,
-        /// the server can not be modified and no additional backup can be created. 
+        /// Creates an application-level backup of a server. While the server is in the <code>BACKING_UP</code>
+        /// state, the server cannot be changed, and no additional backup can be created. 
         /// 
         ///  
         /// <para>
-        ///  Backups can be created for <code>RUNNING</code>, <code>HEALTHY</code> and <code>UNHEALTHY</code>
-        /// servers. 
+        ///  Backups can be created for servers in <code>RUNNING</code>, <code>HEALTHY</code>,
+        /// and <code>UNHEALTHY</code> states. By default, you can create a maximum of 50 manual
+        /// backups. 
         /// </para>
         ///  
         /// <para>
-        ///  This operation is asnychronous. 
+        ///  This operation is asynchronous. 
         /// </para>
         ///  
         /// <para>
-        ///  By default 50 manual backups can be created. 
-        /// </para>
-        ///  
-        /// <para>
-        ///  A <code>LimitExceededException</code> is thrown then the maximum number of manual
-        /// backup is reached. A <code>InvalidStateException</code> is thrown when the server
-        /// is not in any of RUNNING, HEALTHY, UNHEALTHY. A <code>ResourceNotFoundException</code>
+        ///  A <code>LimitExceededException</code> is thrown when the maximum number of manual
+        /// backups is reached. An <code>InvalidStateException</code> is thrown when the server
+        /// is not in any of the following states: RUNNING, HEALTHY, or UNHEALTHY. A <code>ResourceNotFoundException</code>
         /// is thrown when the server is not found. A <code>ValidationException</code> is thrown
         /// when parameters of the request are not valid. 
         /// </para>
@@ -366,6 +404,7 @@ namespace Amazon.OpsWorksCM
         /// <exception cref="Amazon.OpsWorksCM.Model.ValidationException">
         /// One or more of the provided request parameters are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/CreateBackup">REST API Reference for CreateBackup Operation</seealso>
         public CreateBackupResponse CreateBackup(CreateBackupRequest request)
         {
             var marshaller = new CreateBackupRequestMarshaller();
@@ -383,6 +422,7 @@ namespace Amazon.OpsWorksCM
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/CreateBackup">REST API Reference for CreateBackup Operation</seealso>
         public Task<CreateBackupResponse> CreateBackupAsync(CreateBackupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateBackupRequestMarshaller();
@@ -398,32 +438,29 @@ namespace Amazon.OpsWorksCM
 
 
         /// <summary>
-        /// Creates and immedately starts a new Server. The server can be used once it has reached
-        /// the <code>HEALTHY</code> state. 
+        /// Creates and immedately starts a new server. The server is ready to use when it is
+        /// in the <code>HEALTHY</code> state. By default, you can create a maximum of 10 servers.
+        /// 
         /// 
         ///  
         /// <para>
-        ///  This operation is asnychronous. 
+        ///  This operation is asynchronous. 
         /// </para>
         ///  
         /// <para>
-        ///  A <code>LimitExceededException</code> is thrown then the maximum number of server
-        /// backup is reached. A <code>ResourceAlreadyExistsException</code> is raise when a server
-        /// with the same name already exists in the account. A <code>ResourceNotFoundException</code>
-        /// is thrown when a backupId is passed, but the backup does not exist. A <code>ValidationException</code>
-        /// is thrown when parameters of the request are not valid. 
+        ///  A <code>LimitExceededException</code> is thrown when you have created the maximum
+        /// number of servers (10). A <code>ResourceAlreadyExistsException</code> is thrown when
+        /// a server with the same name already exists in the account. A <code>ResourceNotFoundException</code>
+        /// is thrown when you specify a backup ID that is not valid or is for a backup that does
+        /// not exist. A <code>ValidationException</code> is thrown when parameters of the request
+        /// are not valid. 
         /// </para>
         ///  
         /// <para>
-        ///  By default 10 servers can be created. A <code>LimitExceededException</code> is raised
-        /// when the limit is exceeded. 
-        /// </para>
-        ///  
-        /// <para>
-        ///  When no security groups are provided by using <code>SecurityGroupIds</code>, AWS
-        /// OpsWorks creates a new security group. This security group opens the Chef server to
-        /// the world on TCP port 443. If a KeyName is present, SSH access is enabled. SSH is
-        /// also open to the world on TCP port 22. 
+        ///  If you do not specify a security group by adding the <code>SecurityGroupIds</code>
+        /// parameter, AWS OpsWorks creates a new security group. The default security group opens
+        /// the Chef server to the world on TCP port 443. If a KeyName is present, AWS OpsWorks
+        /// enables SSH access. SSH is also open to the world on TCP port 22. 
         /// </para>
         ///  
         /// <para>
@@ -448,6 +485,7 @@ namespace Amazon.OpsWorksCM
         /// <exception cref="Amazon.OpsWorksCM.Model.ValidationException">
         /// One or more of the provided request parameters are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/CreateServer">REST API Reference for CreateServer Operation</seealso>
         public CreateServerResponse CreateServer(CreateServerRequest request)
         {
             var marshaller = new CreateServerRequestMarshaller();
@@ -465,6 +503,7 @@ namespace Amazon.OpsWorksCM
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/CreateServer">REST API Reference for CreateServer Operation</seealso>
         public Task<CreateServerResponse> CreateServerAsync(CreateServerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateServerRequestMarshaller();
@@ -480,18 +519,15 @@ namespace Amazon.OpsWorksCM
 
 
         /// <summary>
-        /// Deletes a backup. You can delete both manual and automated backups. 
+        /// Deletes a backup. You can delete both manual and automated backups. This operation
+        /// is asynchronous. 
         /// 
         ///  
         /// <para>
-        ///  This operation is asynchronous. 
-        /// </para>
-        ///  
-        /// <para>
-        ///  A <code>InvalidStateException</code> is thrown then a backup is already deleting.
-        /// A <code>ResourceNotFoundException</code> is thrown when the backup does not exist.
-        /// A <code>ValidationException</code> is thrown when parameters of the request are not
-        /// valid. 
+        ///  An <code>InvalidStateException</code> is thrown when a backup deletion is already
+        /// in progress. A <code>ResourceNotFoundException</code> is thrown when the backup does
+        /// not exist. A <code>ValidationException</code> is thrown when parameters of the request
+        /// are not valid. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteBackup service method.</param>
@@ -506,6 +542,7 @@ namespace Amazon.OpsWorksCM
         /// <exception cref="Amazon.OpsWorksCM.Model.ValidationException">
         /// One or more of the provided request parameters are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/DeleteBackup">REST API Reference for DeleteBackup Operation</seealso>
         public DeleteBackupResponse DeleteBackup(DeleteBackupRequest request)
         {
             var marshaller = new DeleteBackupRequestMarshaller();
@@ -523,6 +560,7 @@ namespace Amazon.OpsWorksCM
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/DeleteBackup">REST API Reference for DeleteBackup Operation</seealso>
         public Task<DeleteBackupResponse> DeleteBackupAsync(DeleteBackupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteBackupRequestMarshaller();
@@ -539,8 +577,8 @@ namespace Amazon.OpsWorksCM
 
         /// <summary>
         /// Deletes the server and the underlying AWS CloudFormation stack (including the server's
-        /// EC2 instance). The server status updated to <code>DELETING</code>. Once the server
-        /// is successfully deleted, it will no longer be returned by <code>DescribeServer</code>
+        /// EC2 instance). When you run this command, the server state is updated to <code>DELETING</code>.
+        /// After the server is deleted, it is no longer returned by <code>DescribeServer</code>
         /// requests. If the AWS CloudFormation stack cannot be deleted, the server cannot be
         /// deleted. 
         /// 
@@ -550,10 +588,10 @@ namespace Amazon.OpsWorksCM
         /// </para>
         ///  
         /// <para>
-        ///  A <code>InvalidStateException</code> is thrown then a server is already deleting.
-        /// A <code>ResourceNotFoundException</code> is thrown when the server does not exist.
-        /// A <code>ValidationException</code> is raised when parameters of the request are invalid.
-        /// 
+        ///  An <code>InvalidStateException</code> is thrown when a server deletion is already
+        /// in progress. A <code>ResourceNotFoundException</code> is thrown when the server does
+        /// not exist. A <code>ValidationException</code> is raised when parameters of the request
+        /// are not valid. 
         /// </para>
         ///  
         /// <para>
@@ -572,6 +610,7 @@ namespace Amazon.OpsWorksCM
         /// <exception cref="Amazon.OpsWorksCM.Model.ValidationException">
         /// One or more of the provided request parameters are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/DeleteServer">REST API Reference for DeleteServer Operation</seealso>
         public DeleteServerResponse DeleteServer(DeleteServerRequest request)
         {
             var marshaller = new DeleteServerRequestMarshaller();
@@ -589,6 +628,7 @@ namespace Amazon.OpsWorksCM
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/DeleteServer">REST API Reference for DeleteServer Operation</seealso>
         public Task<DeleteServerResponse> DeleteServerAsync(DeleteServerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteServerRequestMarshaller();
@@ -615,6 +655,7 @@ namespace Amazon.OpsWorksCM
         /// <param name="request">Container for the necessary parameters to execute the DescribeAccountAttributes service method.</param>
         /// 
         /// <returns>The response from the DescribeAccountAttributes service method, as returned by OpsWorksCM.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/DescribeAccountAttributes">REST API Reference for DescribeAccountAttributes Operation</seealso>
         public DescribeAccountAttributesResponse DescribeAccountAttributes(DescribeAccountAttributesRequest request)
         {
             var marshaller = new DescribeAccountAttributesRequestMarshaller();
@@ -632,6 +673,7 @@ namespace Amazon.OpsWorksCM
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/DescribeAccountAttributes">REST API Reference for DescribeAccountAttributes Operation</seealso>
         public Task<DescribeAccountAttributesResponse> DescribeAccountAttributesAsync(DescribeAccountAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeAccountAttributesRequestMarshaller();
@@ -657,8 +699,8 @@ namespace Amazon.OpsWorksCM
         ///  
         /// <para>
         ///  A <code>ResourceNotFoundException</code> is thrown when the backup does not exist.
-        /// A <code>ValidationException</code> is raised when parameters of the request are invalid.
-        /// 
+        /// A <code>ValidationException</code> is raised when parameters of the request are not
+        /// valid. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeBackups service method.</param>
@@ -673,6 +715,7 @@ namespace Amazon.OpsWorksCM
         /// <exception cref="Amazon.OpsWorksCM.Model.ValidationException">
         /// One or more of the provided request parameters are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/DescribeBackups">REST API Reference for DescribeBackups Operation</seealso>
         public DescribeBackupsResponse DescribeBackups(DescribeBackupsRequest request)
         {
             var marshaller = new DescribeBackupsRequestMarshaller();
@@ -690,6 +733,7 @@ namespace Amazon.OpsWorksCM
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/DescribeBackups">REST API Reference for DescribeBackups Operation</seealso>
         public Task<DescribeBackupsResponse> DescribeBackupsAsync(DescribeBackupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeBackupsRequestMarshaller();
@@ -715,8 +759,8 @@ namespace Amazon.OpsWorksCM
         ///  
         /// <para>
         ///  A <code>ResourceNotFoundException</code> is thrown when the server does not exist.
-        /// A <code>ValidationException</code> is raised when parameters of the request are invalid.
-        /// 
+        /// A <code>ValidationException</code> is raised when parameters of the request are not
+        /// valid. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEvents service method.</param>
@@ -731,6 +775,7 @@ namespace Amazon.OpsWorksCM
         /// <exception cref="Amazon.OpsWorksCM.Model.ValidationException">
         /// One or more of the provided request parameters are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/DescribeEvents">REST API Reference for DescribeEvents Operation</seealso>
         public DescribeEventsResponse DescribeEvents(DescribeEventsRequest request)
         {
             var marshaller = new DescribeEventsRequestMarshaller();
@@ -748,6 +793,7 @@ namespace Amazon.OpsWorksCM
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/DescribeEvents">REST API Reference for DescribeEvents Operation</seealso>
         public Task<DescribeEventsResponse> DescribeEventsAsync(DescribeEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeEventsRequestMarshaller();
@@ -763,7 +809,16 @@ namespace Amazon.OpsWorksCM
 
 
         /// <summary>
+        /// Returns the current status of an existing association or disassociation request.
         /// 
+        /// 
+        ///  
+        /// <para>
+        ///  A <code>ResourceNotFoundException</code> is thrown when no recent association or
+        /// disassociation request with the specified token is found, or when the server does
+        /// not exist. A <code>ValidationException</code> is raised when parameters of the request
+        /// are not valid. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeNodeAssociationStatus service method.</param>
         /// 
@@ -774,6 +829,7 @@ namespace Amazon.OpsWorksCM
         /// <exception cref="Amazon.OpsWorksCM.Model.ValidationException">
         /// One or more of the provided request parameters are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/DescribeNodeAssociationStatus">REST API Reference for DescribeNodeAssociationStatus Operation</seealso>
         public DescribeNodeAssociationStatusResponse DescribeNodeAssociationStatus(DescribeNodeAssociationStatusRequest request)
         {
             var marshaller = new DescribeNodeAssociationStatusRequestMarshaller();
@@ -791,6 +847,7 @@ namespace Amazon.OpsWorksCM
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/DescribeNodeAssociationStatus">REST API Reference for DescribeNodeAssociationStatus Operation</seealso>
         public Task<DescribeNodeAssociationStatusResponse> DescribeNodeAssociationStatusAsync(DescribeNodeAssociationStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeNodeAssociationStatusRequestMarshaller();
@@ -817,8 +874,8 @@ namespace Amazon.OpsWorksCM
         ///  
         /// <para>
         ///  A <code>ResourceNotFoundException</code> is thrown when the server does not exist.
-        /// A <code>ValidationException</code> is raised when parameters of the request are invalid.
-        /// 
+        /// A <code>ValidationException</code> is raised when parameters of the request are not
+        /// valid. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeServers service method.</param>
@@ -833,6 +890,7 @@ namespace Amazon.OpsWorksCM
         /// <exception cref="Amazon.OpsWorksCM.Model.ValidationException">
         /// One or more of the provided request parameters are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/DescribeServers">REST API Reference for DescribeServers Operation</seealso>
         public DescribeServersResponse DescribeServers(DescribeServersRequest request)
         {
             var marshaller = new DescribeServersRequestMarshaller();
@@ -850,6 +908,7 @@ namespace Amazon.OpsWorksCM
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/DescribeServers">REST API Reference for DescribeServers Operation</seealso>
         public Task<DescribeServersResponse> DescribeServersAsync(DescribeServersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeServersRequestMarshaller();
@@ -865,7 +924,18 @@ namespace Amazon.OpsWorksCM
 
 
         /// <summary>
+        /// Disassociates a node from a Chef server, and removes the node from the Chef server's
+        /// managed nodes. After a node is disassociated, the node key pair is no longer valid
+        /// for accessing the Chef API. For more information about how to associate a node, see
+        /// <a>AssociateNode</a>. 
         /// 
+        ///  
+        /// <para>
+        /// A node can can only be disassociated from a server that is in a <code>HEALTHY</code>
+        /// state. Otherwise, an <code>InvalidStateException</code> is thrown. A <code>ResourceNotFoundException</code>
+        /// is thrown when the server does not exist. A <code>ValidationException</code> is raised
+        /// when parameters of the request are not valid. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateNode service method.</param>
         /// 
@@ -879,6 +949,7 @@ namespace Amazon.OpsWorksCM
         /// <exception cref="Amazon.OpsWorksCM.Model.ValidationException">
         /// One or more of the provided request parameters are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/DisassociateNode">REST API Reference for DisassociateNode Operation</seealso>
         public DisassociateNodeResponse DisassociateNode(DisassociateNodeRequest request)
         {
             var marshaller = new DisassociateNodeRequestMarshaller();
@@ -896,6 +967,7 @@ namespace Amazon.OpsWorksCM
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/DisassociateNode">REST API Reference for DisassociateNode Operation</seealso>
         public Task<DisassociateNodeResponse> DisassociateNodeAsync(DisassociateNodeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DisassociateNodeRequestMarshaller();
@@ -911,11 +983,11 @@ namespace Amazon.OpsWorksCM
 
 
         /// <summary>
-        /// Restores a backup to a server that is in a <code>RUNNING</code>, <code>FAILED</code>,
-        /// or <code>HEALTHY</code> state. When you run RestoreServer, the server's EC2 instance
-        /// is deleted, and a new EC2 instance is configured. RestoreServer maintains the existing
-        /// server endpoint, so configuration management of all of the server's client devices
-        /// should continue to work. 
+        /// Restores a backup to a server that is in a <code>CONNECTION_LOST</code>, <code>HEALTHY</code>,
+        /// <code>RUNNING</code>, <code>UNHEALTHY</code>, or <code>TERMINATED</code> state. When
+        /// you run RestoreServer, the server's EC2 instance is deleted, and a new EC2 instance
+        /// is configured. RestoreServer maintains the existing server endpoint, so configuration
+        /// management of the server's client devices (nodes) should continue to work. 
         /// 
         ///  
         /// <para>
@@ -923,10 +995,10 @@ namespace Amazon.OpsWorksCM
         /// </para>
         ///  
         /// <para>
-        ///  A <code>InvalidStateException</code> is thrown when the server is not in a valid
+        ///  An <code>InvalidStateException</code> is thrown when the server is not in a valid
         /// state. A <code>ResourceNotFoundException</code> is thrown when the server does not
         /// exist. A <code>ValidationException</code> is raised when parameters of the request
-        /// are invalid. 
+        /// are not valid. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RestoreServer service method.</param>
@@ -941,6 +1013,7 @@ namespace Amazon.OpsWorksCM
         /// <exception cref="Amazon.OpsWorksCM.Model.ValidationException">
         /// One or more of the provided request parameters are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/RestoreServer">REST API Reference for RestoreServer Operation</seealso>
         public RestoreServerResponse RestoreServer(RestoreServerRequest request)
         {
             var marshaller = new RestoreServerRequestMarshaller();
@@ -958,6 +1031,7 @@ namespace Amazon.OpsWorksCM
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/RestoreServer">REST API Reference for RestoreServer Operation</seealso>
         public Task<RestoreServerResponse> RestoreServerAsync(RestoreServerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RestoreServerRequestMarshaller();
@@ -975,15 +1049,15 @@ namespace Amazon.OpsWorksCM
         /// <summary>
         /// Manually starts server maintenance. This command can be useful if an earlier maintenance
         /// attempt failed, and the underlying cause of maintenance failure has been resolved.
-        /// The server will switch to <code>UNDER_MAINTENANCE</code> state, while maintenace is
-        /// in progress. 
+        /// The server is in an <code>UNDER_MAINTENANCE</code> state while maintenance is in progress.
+        /// 
         /// 
         ///  
         /// <para>
-        ///  Maintenace can only be started for <code>HEALTHY</code> and <code>UNHEALTHY</code>
-        /// servers. A <code>InvalidStateException</code> is thrown otherwise. A <code>ResourceNotFoundException</code>
+        ///  Maintenance can only be started on servers in <code>HEALTHY</code> and <code>UNHEALTHY</code>
+        /// states. Otherwise, an <code>InvalidStateException</code> is thrown. A <code>ResourceNotFoundException</code>
         /// is thrown when the server does not exist. A <code>ValidationException</code> is raised
-        /// when parameters of the request are invalid. 
+        /// when parameters of the request are not valid. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartMaintenance service method.</param>
@@ -998,6 +1072,7 @@ namespace Amazon.OpsWorksCM
         /// <exception cref="Amazon.OpsWorksCM.Model.ValidationException">
         /// One or more of the provided request parameters are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/StartMaintenance">REST API Reference for StartMaintenance Operation</seealso>
         public StartMaintenanceResponse StartMaintenance(StartMaintenanceRequest request)
         {
             var marshaller = new StartMaintenanceRequestMarshaller();
@@ -1015,6 +1090,7 @@ namespace Amazon.OpsWorksCM
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/StartMaintenance">REST API Reference for StartMaintenance Operation</seealso>
         public Task<StartMaintenanceResponse> StartMaintenanceAsync(StartMaintenanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new StartMaintenanceRequestMarshaller();
@@ -1049,6 +1125,7 @@ namespace Amazon.OpsWorksCM
         /// <exception cref="Amazon.OpsWorksCM.Model.ValidationException">
         /// One or more of the provided request parameters are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/UpdateServer">REST API Reference for UpdateServer Operation</seealso>
         public UpdateServerResponse UpdateServer(UpdateServerRequest request)
         {
             var marshaller = new UpdateServerRequestMarshaller();
@@ -1066,6 +1143,7 @@ namespace Amazon.OpsWorksCM
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/UpdateServer">REST API Reference for UpdateServer Operation</seealso>
         public Task<UpdateServerResponse> UpdateServerAsync(UpdateServerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateServerRequestMarshaller();
@@ -1081,29 +1159,21 @@ namespace Amazon.OpsWorksCM
 
 
         /// <summary>
-        /// Updates engine specific attributes on a specified server. Server will enter the <code>MODIFYING</code>
-        /// state when this operation is in progress. Only one update can take place at a time.
+        /// Updates engine-specific attributes on a specified server. The server enters the <code>MODIFYING</code>
+        /// state when this operation is in progress. Only one update can occur at a time. You
+        /// can use this command to reset the Chef server's private key (<code>CHEF_PIVOTAL_KEY</code>).
         /// 
         /// 
-        ///  
-        /// <para>
-        ///  This operation can be use to reset Chef Server main API key (<code>CHEF_PIVOTAL_KEY</code>).
-        /// 
-        /// </para>
         ///  
         /// <para>
         ///  This operation is asynchronous. 
         /// </para>
         ///  
         /// <para>
-        ///  
-        /// </para>
-        ///  
-        /// <para>
-        ///  This operation can only be called for <code>HEALTHY</code> and <code>UNHEALTHY</code>
-        /// servers. Otherwise a <code>InvalidStateException</code> is raised. A <code>ResourceNotFoundException</code>
+        ///  This operation can only be called for servers in <code>HEALTHY</code> or <code>UNHEALTHY</code>
+        /// states. Otherwise, an <code>InvalidStateException</code> is raised. A <code>ResourceNotFoundException</code>
         /// is thrown when the server does not exist. A <code>ValidationException</code> is raised
-        /// when parameters of the request are invalid. 
+        /// when parameters of the request are not valid. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateServerEngineAttributes service method.</param>
@@ -1118,6 +1188,7 @@ namespace Amazon.OpsWorksCM
         /// <exception cref="Amazon.OpsWorksCM.Model.ValidationException">
         /// One or more of the provided request parameters are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/UpdateServerEngineAttributes">REST API Reference for UpdateServerEngineAttributes Operation</seealso>
         public UpdateServerEngineAttributesResponse UpdateServerEngineAttributes(UpdateServerEngineAttributesRequest request)
         {
             var marshaller = new UpdateServerEngineAttributesRequestMarshaller();
@@ -1135,6 +1206,7 @@ namespace Amazon.OpsWorksCM
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/UpdateServerEngineAttributes">REST API Reference for UpdateServerEngineAttributes Operation</seealso>
         public Task<UpdateServerEngineAttributesResponse> UpdateServerEngineAttributesAsync(UpdateServerEngineAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateServerEngineAttributesRequestMarshaller();

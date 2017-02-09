@@ -37,7 +37,7 @@ namespace Amazon.OpsWorksCM.Model
         /// <summary>
         /// Gets and sets the property Backup. 
         /// <para>
-        /// Backup created by request. 
+        /// Backup created by request.
         /// </para>
         /// </summary>
         public Backup Backup

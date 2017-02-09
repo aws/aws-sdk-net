@@ -271,6 +271,10 @@ namespace Amazon.OpsWorksCM
         /// </summary>
         public static readonly ServerStatus MODIFYING = new ServerStatus("MODIFYING");
         /// <summary>
+        /// Constant RESTORING for ServerStatus
+        /// </summary>
+        public static readonly ServerStatus RESTORING = new ServerStatus("RESTORING");
+        /// <summary>
         /// Constant RUNNING for ServerStatus
         /// </summary>
         public static readonly ServerStatus RUNNING = new ServerStatus("RUNNING");
@@ -278,6 +282,10 @@ namespace Amazon.OpsWorksCM
         /// Constant SETUP for ServerStatus
         /// </summary>
         public static readonly ServerStatus SETUP = new ServerStatus("SETUP");
+        /// <summary>
+        /// Constant TERMINATED for ServerStatus
+        /// </summary>
+        public static readonly ServerStatus TERMINATED = new ServerStatus("TERMINATED");
         /// <summary>
         /// Constant UNDER_MAINTENANCE for ServerStatus
         /// </summary>

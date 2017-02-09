@@ -64,10 +64,22 @@ namespace Amazon.OpsWorksCM.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AssociatePublicIpAddress", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.AssociatePublicIpAddress = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("BackupRetentionCount", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
                     unmarshalledObject.BackupRetentionCount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("CloudFormationStackArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CloudFormationStackArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("CreatedAt", targetDepth))

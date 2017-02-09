@@ -142,18 +142,6 @@ namespace Amazon.OpsWorksCM.Model.Internal.MarshallTransformations
                     unmarshalledObject.PreferredMaintenanceWindow = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("S3DataSize", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.S3DataSize = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("S3DataUrl", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.S3DataUrl = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("S3LogUrl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

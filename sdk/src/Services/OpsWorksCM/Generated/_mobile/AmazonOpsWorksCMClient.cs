@@ -38,21 +38,21 @@ namespace Amazon.OpsWorksCM
     ///
     /// AWS OpsWorks for Chef Automate 
     /// <para>
-    ///  A service that runs and manages configuration management servers. 
+    ///  AWS OpsWorks for Chef Automate is a service that runs and manages configuration management
+    /// servers. 
     /// </para>
     ///  
     /// <para>
-    /// Glossary of terms
+    ///  <b>Glossary of terms</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <b>Server</b>: A server is a configuration management server, and can be highly-available.
-    /// The configuration manager runs on your instances by using various AWS services, such
-    /// as Amazon Elastic Compute Cloud (EC2), and potentially Amazon Relational Database
-    /// Service (RDS). A server is a generic abstraction over the configuration manager that
-    /// you want to use, much like Amazon RDS. In AWS OpsWorks for Chef Automate, you do not
-    /// start or stop servers. After you create servers, they continue to run until they are
-    /// deleted.
+    ///  <b>Server</b>: A configuration management server that can be highly-available. The
+    /// configuration manager runs on your instances by using various AWS services, such as
+    /// Amazon Elastic Compute Cloud (EC2), and potentially Amazon Relational Database Service
+    /// (RDS). A server is a generic abstraction over the configuration manager that you want
+    /// to use, much like Amazon RDS. In AWS OpsWorks for Chef Automate, you do not start
+    /// or stop servers. After you create servers, they continue to run until they are deleted.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -81,12 +81,34 @@ namespace Amazon.OpsWorksCM
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// Throttling limits
+    ///  <b>Endpoints</b> 
     /// </para>
     ///  
     /// <para>
-    /// All API operations allow for 5 requests per second with a burst of 10 requests per
-    /// second.
+    /// AWS OpsWorks for Chef Automate supports the following endpoints, all HTTPS. You must
+    /// connect to one of the following endpoints. Chef servers can only be accessed or managed
+    /// within the endpoint in which they are created.
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// opsworks-cm.us-east-1.amazonaws.com
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// opsworks-cm.us-west-2.amazonaws.com
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// opsworks-cm.eu-west-1.amazonaws.com
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    ///  <b>Throttling limits</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// All API operations allow for five requests per second with a burst of 10 requests
+    /// per second.
     /// </para>
     /// </summary>
     public partial class AmazonOpsWorksCMClient : AmazonServiceClient, IAmazonOpsWorksCM
@@ -301,6 +323,7 @@ namespace Amazon.OpsWorksCM
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/AssociateNode">REST API Reference for AssociateNode Operation</seealso>
         public Task<AssociateNodeResponse> AssociateNodeAsync(AssociateNodeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AssociateNodeRequestMarshaller();
@@ -332,6 +355,7 @@ namespace Amazon.OpsWorksCM
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/CreateBackup">REST API Reference for CreateBackup Operation</seealso>
         public Task<CreateBackupResponse> CreateBackupAsync(CreateBackupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateBackupRequestMarshaller();
@@ -363,6 +387,7 @@ namespace Amazon.OpsWorksCM
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/CreateServer">REST API Reference for CreateServer Operation</seealso>
         public Task<CreateServerResponse> CreateServerAsync(CreateServerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateServerRequestMarshaller();
@@ -394,6 +419,7 @@ namespace Amazon.OpsWorksCM
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/DeleteBackup">REST API Reference for DeleteBackup Operation</seealso>
         public Task<DeleteBackupResponse> DeleteBackupAsync(DeleteBackupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteBackupRequestMarshaller();
@@ -425,6 +451,7 @@ namespace Amazon.OpsWorksCM
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/DeleteServer">REST API Reference for DeleteServer Operation</seealso>
         public Task<DeleteServerResponse> DeleteServerAsync(DeleteServerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteServerRequestMarshaller();
@@ -456,6 +483,7 @@ namespace Amazon.OpsWorksCM
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/DescribeAccountAttributes">REST API Reference for DescribeAccountAttributes Operation</seealso>
         public Task<DescribeAccountAttributesResponse> DescribeAccountAttributesAsync(DescribeAccountAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeAccountAttributesRequestMarshaller();
@@ -487,6 +515,7 @@ namespace Amazon.OpsWorksCM
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/DescribeBackups">REST API Reference for DescribeBackups Operation</seealso>
         public Task<DescribeBackupsResponse> DescribeBackupsAsync(DescribeBackupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeBackupsRequestMarshaller();
@@ -518,6 +547,7 @@ namespace Amazon.OpsWorksCM
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/DescribeEvents">REST API Reference for DescribeEvents Operation</seealso>
         public Task<DescribeEventsResponse> DescribeEventsAsync(DescribeEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeEventsRequestMarshaller();
@@ -549,6 +579,7 @@ namespace Amazon.OpsWorksCM
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/DescribeNodeAssociationStatus">REST API Reference for DescribeNodeAssociationStatus Operation</seealso>
         public Task<DescribeNodeAssociationStatusResponse> DescribeNodeAssociationStatusAsync(DescribeNodeAssociationStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeNodeAssociationStatusRequestMarshaller();
@@ -580,6 +611,7 @@ namespace Amazon.OpsWorksCM
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/DescribeServers">REST API Reference for DescribeServers Operation</seealso>
         public Task<DescribeServersResponse> DescribeServersAsync(DescribeServersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeServersRequestMarshaller();
@@ -611,6 +643,7 @@ namespace Amazon.OpsWorksCM
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/DisassociateNode">REST API Reference for DisassociateNode Operation</seealso>
         public Task<DisassociateNodeResponse> DisassociateNodeAsync(DisassociateNodeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DisassociateNodeRequestMarshaller();
@@ -642,6 +675,7 @@ namespace Amazon.OpsWorksCM
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/RestoreServer">REST API Reference for RestoreServer Operation</seealso>
         public Task<RestoreServerResponse> RestoreServerAsync(RestoreServerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RestoreServerRequestMarshaller();
@@ -673,6 +707,7 @@ namespace Amazon.OpsWorksCM
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/StartMaintenance">REST API Reference for StartMaintenance Operation</seealso>
         public Task<StartMaintenanceResponse> StartMaintenanceAsync(StartMaintenanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new StartMaintenanceRequestMarshaller();
@@ -704,6 +739,7 @@ namespace Amazon.OpsWorksCM
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/UpdateServer">REST API Reference for UpdateServer Operation</seealso>
         public Task<UpdateServerResponse> UpdateServerAsync(UpdateServerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateServerRequestMarshaller();
@@ -735,6 +771,7 @@ namespace Amazon.OpsWorksCM
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/UpdateServerEngineAttributes">REST API Reference for UpdateServerEngineAttributes Operation</seealso>
         public Task<UpdateServerEngineAttributesResponse> UpdateServerEngineAttributesAsync(UpdateServerEngineAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateServerEngineAttributesRequestMarshaller();
