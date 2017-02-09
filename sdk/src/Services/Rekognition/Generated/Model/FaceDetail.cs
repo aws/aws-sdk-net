@@ -32,6 +32,7 @@ namespace Amazon.Rekognition.Model
     /// </summary>
     public partial class FaceDetail
     {
+        private AgeRange _ageRange;
         private Beard _beard;
         private BoundingBox _boundingBox;
         private float? _confidence;
@@ -46,6 +47,25 @@ namespace Amazon.Rekognition.Model
         private ImageQuality _quality;
         private Smile _smile;
         private Sunglasses _sunglasses;
+
+        /// <summary>
+        /// Gets and sets the property AgeRange. 
+        /// <para>
+        /// The estimated age range, in years, for the face. Low represents the lowest estimated
+        /// age and High represents the highest estimated age.
+        /// </para>
+        /// </summary>
+        public AgeRange AgeRange
+        {
+            get { return this._ageRange; }
+            set { this._ageRange = value; }
+        }
+
+        // Check to see if AgeRange property is set
+        internal bool IsSetAgeRange()
+        {
+            return this._ageRange != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Beard. 

@@ -64,6 +64,12 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AgeRange", targetDepth))
+                {
+                    var unmarshaller = AgeRangeUnmarshaller.Instance;
+                    unmarshalledObject.AgeRange = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Beard", targetDepth))
                 {
                     var unmarshaller = BeardUnmarshaller.Instance;
