@@ -88,7 +88,6 @@
       <Directory>$(ProjectDir)/src/Services/mobileanalytics/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/opsworks/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/opsworkscm/bin/Release/net45/</Directory>
-      <Directory>$(ProjectDir)/src/Services/organizations/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/pinpoint/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/polly/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/rds/bin/Release/net45/</Directory>
@@ -182,7 +181,6 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.MobileAnalytics.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.OpsWorks.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.OpsWorksCM.dll" Analyze="True" AnalyzeAllChildren="True" />
-    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Organizations.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Pinpoint.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Polly.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.RDS.dll" Analyze="True" AnalyzeAllChildren="True" />

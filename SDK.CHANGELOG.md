@@ -1,3 +1,7 @@
+### 3.3.48.0 (2017-02-10 04:29 UTC)
+* OpsWorksCM (3.3.2.0)
+	* Revert: OpsWorks for Chef Automate has added a new field "AssociatePublicIpAddress" to the CreateServer request, "CloudFormationStackArn" to the Server model and "TERMINATED" server state.
+
 ### 3.3.47.0 (2017-02-09 07:39 UTC)
 * EC2 (3.3.7.0)
 	* This feature allows customers to associate an IAM profile to running instances that do not have any.
