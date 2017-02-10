@@ -35,6 +35,7 @@ namespace Amazon.StorageGateway.Model
     /// </summary>
     public partial class CreateNFSFileShareRequest : AmazonStorageGatewayRequest
     {
+        private List<string> _clientList = new List<string>();
         private string _clientToken;
         private string _defaultStorageClass;
         private string _gatewayARN;
@@ -43,6 +44,25 @@ namespace Amazon.StorageGateway.Model
         private string _locationARN;
         private NFSFileShareDefaults _nfsFileShareDefaults;
         private string _role;
+
+        /// <summary>
+        /// Gets and sets the property ClientList. 
+        /// <para>
+        /// The list of clients that are allowed to access the file gateway. The list must contain
+        /// either valid IP addresses or valid CIDR blocks.
+        /// </para>
+        /// </summary>
+        public List<string> ClientList
+        {
+            get { return this._clientList; }
+            set { this._clientList = value; }
+        }
+
+        // Check to see if ClientList property is set
+        internal bool IsSetClientList()
+        {
+            return this._clientList != null && this._clientList.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property ClientToken. 

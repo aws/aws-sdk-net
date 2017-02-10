@@ -39,11 +39,31 @@ namespace Amazon.StorageGateway.Model
     /// </summary>
     public partial class UpdateNFSFileShareRequest : AmazonStorageGatewayRequest
     {
+        private List<string> _clientList = new List<string>();
         private string _defaultStorageClass;
         private string _fileShareARN;
         private bool? _kmsEncrypted;
         private string _kmsKey;
         private NFSFileShareDefaults _nfsFileShareDefaults;
+
+        /// <summary>
+        /// Gets and sets the property ClientList. 
+        /// <para>
+        /// The list of clients that are allowed to access the file gateway. The list must contain
+        /// either valid IP addresses or valid CIDR blocks.
+        /// </para>
+        /// </summary>
+        public List<string> ClientList
+        {
+            get { return this._clientList; }
+            set { this._clientList = value; }
+        }
+
+        // Check to see if ClientList property is set
+        internal bool IsSetClientList()
+        {
+            return this._clientList != null && this._clientList.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property DefaultStorageClass. 

@@ -64,6 +64,12 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("ClientList", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.ClientList = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DefaultStorageClass", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

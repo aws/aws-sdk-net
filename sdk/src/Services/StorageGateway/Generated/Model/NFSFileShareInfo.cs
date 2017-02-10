@@ -33,6 +33,7 @@ namespace Amazon.StorageGateway.Model
     /// </summary>
     public partial class NFSFileShareInfo
     {
+        private List<string> _clientList = new List<string>();
         private string _defaultStorageClass;
         private string _fileShareARN;
         private string _fileShareId;
@@ -44,6 +45,21 @@ namespace Amazon.StorageGateway.Model
         private NFSFileShareDefaults _nfsFileShareDefaults;
         private string _path;
         private string _role;
+
+        /// <summary>
+        /// Gets and sets the property ClientList.
+        /// </summary>
+        public List<string> ClientList
+        {
+            get { return this._clientList; }
+            set { this._clientList = value; }
+        }
+
+        // Check to see if ClientList property is set
+        internal bool IsSetClientList()
+        {
+            return this._clientList != null && this._clientList.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property DefaultStorageClass. 

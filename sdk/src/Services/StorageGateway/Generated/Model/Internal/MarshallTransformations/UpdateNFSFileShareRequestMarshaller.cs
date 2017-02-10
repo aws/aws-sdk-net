@@ -67,6 +67,17 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetClientList())
+                {
+                    context.Writer.WritePropertyName("ClientList");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestClientListListValue in publicRequest.ClientList)
+                    {
+                            context.Writer.Write(publicRequestClientListListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetDefaultStorageClass())
                 {
                     context.Writer.WritePropertyName("DefaultStorageClass");
