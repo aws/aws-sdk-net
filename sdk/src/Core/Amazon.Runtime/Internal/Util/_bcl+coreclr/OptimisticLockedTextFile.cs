@@ -140,6 +140,10 @@ namespace Amazon.Runtime.Internal.Util
             {
                 // This is OK.  The Persist() method will create it if necessary.
             }
+            catch (DirectoryNotFoundException)
+            {
+                // This is OK.  The Persist() method will create it if necessary.
+            }
 
             // Parse the lines ourselves since we need to preserve the line endings.
             // Parsing ourselves also avoids a race condition:
