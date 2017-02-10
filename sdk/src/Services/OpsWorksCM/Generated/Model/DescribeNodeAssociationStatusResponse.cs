@@ -35,26 +35,7 @@ namespace Amazon.OpsWorksCM.Model
         private NodeAssociationStatus _nodeAssociationStatus;
 
         /// <summary>
-        /// Gets and sets the property NodeAssociationStatus. 
-        /// <para>
-        /// The status of the association or disassociation request. 
-        /// </para>
-        ///  <p class="title"> <b>Possible values:</b> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>SUCCESS</code>: The association or disassociation succeeded. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>FAILED</code>: The association or disassociation failed. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>IN_PROGRESS</code>: The association or disassociation is still in progress.
-        /// 
-        /// </para>
-        ///  </li> </ul>
+        /// Gets and sets the property NodeAssociationStatus.
         /// </summary>
         public NodeAssociationStatus NodeAssociationStatus
         {

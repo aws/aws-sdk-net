@@ -45,6 +45,8 @@ namespace Amazon.OpsWorksCM.Model
         private string _keyPair;
         private string _preferredBackupWindow;
         private string _preferredMaintenanceWindow;
+        private int? _s3DataSize;
+        private string _s3DataUrl;
         private string _s3LogUrl;
         private List<string> _securityGroupIds = new List<string>();
         private string _serverName;
@@ -295,6 +297,43 @@ namespace Amazon.OpsWorksCM.Model
         internal bool IsSetPreferredMaintenanceWindow()
         {
             return this._preferredMaintenanceWindow != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3DataSize. 
+        /// <para>
+        ///  The size of the backup, in bytes. The size is returned by the instance in the command
+        /// results. 
+        /// </para>
+        /// </summary>
+        public int S3DataSize
+        {
+            get { return this._s3DataSize.GetValueOrDefault(); }
+            set { this._s3DataSize = value; }
+        }
+
+        // Check to see if S3DataSize property is set
+        internal bool IsSetS3DataSize()
+        {
+            return this._s3DataSize.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3DataUrl. 
+        /// <para>
+        ///  The Amazon S3 URL of the backup's tar.gz file. 
+        /// </para>
+        /// </summary>
+        public string S3DataUrl
+        {
+            get { return this._s3DataUrl; }
+            set { this._s3DataUrl = value; }
+        }
+
+        // Check to see if S3DataUrl property is set
+        internal bool IsSetS3DataUrl()
+        {
+            return this._s3DataUrl != null;
         }
 
         /// <summary>

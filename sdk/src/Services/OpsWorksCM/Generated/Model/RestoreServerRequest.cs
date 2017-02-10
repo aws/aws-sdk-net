@@ -29,11 +29,11 @@ namespace Amazon.OpsWorksCM.Model
 {
     /// <summary>
     /// Container for the parameters to the RestoreServer operation.
-    /// Restores a backup to a server that is in a <code>CONNECTION_LOST</code>, <code>HEALTHY</code>,
-    /// <code>RUNNING</code>, <code>UNHEALTHY</code>, or <code>TERMINATED</code> state. When
-    /// you run RestoreServer, the server's EC2 instance is deleted, and a new EC2 instance
-    /// is configured. RestoreServer maintains the existing server endpoint, so configuration
-    /// management of the server's client devices (nodes) should continue to work. 
+    /// Restores a backup to a server that is in a <code>RUNNING</code>, <code>FAILED</code>,
+    /// or <code>HEALTHY</code> state. When you run RestoreServer, the server's EC2 instance
+    /// is deleted, and a new EC2 instance is configured. RestoreServer maintains the existing
+    /// server endpoint, so configuration management of all of the server's client devices
+    /// should continue to work. 
     /// 
     ///  
     /// <para>
@@ -41,10 +41,10 @@ namespace Amazon.OpsWorksCM.Model
     /// </para>
     ///  
     /// <para>
-    ///  An <code>InvalidStateException</code> is thrown when the server is not in a valid
+    ///  A <code>InvalidStateException</code> is thrown when the server is not in a valid
     /// state. A <code>ResourceNotFoundException</code> is thrown when the server does not
     /// exist. A <code>ValidationException</code> is raised when parameters of the request
-    /// are not valid. 
+    /// are invalid. 
     /// </para>
     /// </summary>
     public partial class RestoreServerRequest : AmazonOpsWorksCMRequest
@@ -76,9 +76,8 @@ namespace Amazon.OpsWorksCM.Model
         /// Gets and sets the property InstanceType. 
         /// <para>
         ///  The type of the instance to create. Valid values must be specified in the following
-        /// format: <code>^([cm][34]|t2).*</code> For example, <code>m4.large</code>. Valid values
-        /// are <code>t2.medium</code>, <code>m4.large</code>, and <code>m4.2xlarge</code>. If
-        /// you do not specify this parameter, RestoreServer uses the instance type from the specified
+        /// format: <code>^([cm][34]|t2).*</code> For example, <code>c3.large</code>. If you do
+        /// not specify this parameter, RestoreServer uses the instance type from the specified
         /// backup. 
         /// </para>
         /// </summary>
@@ -97,8 +96,8 @@ namespace Amazon.OpsWorksCM.Model
         /// <summary>
         /// Gets and sets the property KeyPair. 
         /// <para>
-        ///  The name of the key pair to set on the new EC2 instance. This can be helpful if the
-        /// administrator no longer has the SSH key. 
+        ///  The name of the key pair to set on the new EC2 instance. This can be helpful if any
+        /// of the administrators who manage the server no longer have the SSH key. 
         /// </para>
         /// </summary>
         public string KeyPair

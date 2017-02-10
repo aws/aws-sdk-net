@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpsWorksCM.Model
 {
     /// <summary>
-    /// A name and value pair that is specific to the engine of the server.
+    /// A name/value pair that is specific to the engine of the server.
     /// </summary>
     public partial class EngineAttribute
     {

@@ -29,18 +29,7 @@ namespace Amazon.OpsWorksCM.Model
 {
     /// <summary>
     /// Container for the parameters to the DisassociateNode operation.
-    /// Disassociates a node from a Chef server, and removes the node from the Chef server's
-    /// managed nodes. After a node is disassociated, the node key pair is no longer valid
-    /// for accessing the Chef API. For more information about how to associate a node, see
-    /// <a>AssociateNode</a>. 
     /// 
-    ///  
-    /// <para>
-    /// A node can can only be disassociated from a server that is in a <code>HEALTHY</code>
-    /// state. Otherwise, an <code>InvalidStateException</code> is thrown. A <code>ResourceNotFoundException</code>
-    /// is thrown when the server does not exist. A <code>ValidationException</code> is raised
-    /// when parameters of the request are not valid. 
-    /// </para>
     /// </summary>
     public partial class DisassociateNodeRequest : AmazonOpsWorksCMRequest
     {
@@ -49,18 +38,7 @@ namespace Amazon.OpsWorksCM.Model
         private string _serverName;
 
         /// <summary>
-        /// Gets and sets the property EngineAttributes. 
-        /// <para>
-        /// Engine attributes used for disassociating the node. 
-        /// </para>
-        ///  <p class="title"> <b>Attributes accepted in a DisassociateNode request:</b> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>CHEF_ORGANIZATION</code>: The Chef organization with which the node was associated.
-        /// By default only one organization named <code>default</code> can exist. 
-        /// </para>
-        ///  </li> </ul>
+        /// Gets and sets the property EngineAttributes.
         /// </summary>
         public List<EngineAttribute> EngineAttributes
         {
@@ -75,10 +53,7 @@ namespace Amazon.OpsWorksCM.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NodeName. 
-        /// <para>
-        /// The name of the Chef client node. 
-        /// </para>
+        /// Gets and sets the property NodeName.
         /// </summary>
         public string NodeName
         {
@@ -93,10 +68,7 @@ namespace Amazon.OpsWorksCM.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ServerName. 
-        /// <para>
-        /// The name of the server from which to disassociate the node. 
-        /// </para>
+        /// Gets and sets the property ServerName.
         /// </summary>
         public string ServerName
         {

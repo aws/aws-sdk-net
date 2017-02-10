@@ -29,24 +29,7 @@ namespace Amazon.OpsWorksCM.Model
 {
     /// <summary>
     /// Container for the parameters to the AssociateNode operation.
-    /// Associates a new node with the Chef server. This command is an alternative to <code>knife
-    /// bootstrap</code>. For more information about how to disassociate a node, see <a>DisassociateNode</a>.
     /// 
-    ///  
-    /// <para>
-    ///  A node can can only be associated with servers that are in a <code>HEALTHY</code>
-    /// state. Otherwise, an <code>InvalidStateException</code> is thrown. A <code>ResourceNotFoundException</code>
-    /// is thrown when the server does not exist. A <code>ValidationException</code> is raised
-    /// when parameters of the request are not valid. The AssociateNode API call can be integrated
-    /// into Auto Scaling configurations, AWS Cloudformation templates, or the user data of
-    /// a server's instance. 
-    /// </para>
-    ///  
-    /// <para>
-    ///  Example: <code>aws opsworks-cm associate-node --server-name <i>MyServer</i> --node-name
-    /// <i>MyManagedNode</i> --engine-attributes "Name=<i>MyOrganization</i>,Value=default"
-    /// "Name=<i>Chef_node_public_key</i>,Value=<i>Public_key_contents</i>"</code> 
-    /// </para>
     /// </summary>
     public partial class AssociateNodeRequest : AmazonOpsWorksCMRequest
     {
@@ -55,23 +38,7 @@ namespace Amazon.OpsWorksCM.Model
         private string _serverName;
 
         /// <summary>
-        /// Gets and sets the property EngineAttributes. 
-        /// <para>
-        /// Engine attributes used for associating the node. 
-        /// </para>
-        ///  <p class="title"> <b>Attributes accepted in a AssociateNode request:</b> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>CHEF_ORGANIZATION</code>: The Chef organization with which the node is associated.
-        /// By default only one organization named <code>default</code> can exist. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>CHEF_NODE_PUBLIC_KEY</code>: A PEM-formatted public key. This key is required
-        /// for the <code>chef-client</code> agent to access the Chef API. 
-        /// </para>
-        ///  </li> </ul>
+        /// Gets and sets the property EngineAttributes.
         /// </summary>
         public List<EngineAttribute> EngineAttributes
         {
@@ -86,10 +53,7 @@ namespace Amazon.OpsWorksCM.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NodeName. 
-        /// <para>
-        /// The name of the Chef client node. 
-        /// </para>
+        /// Gets and sets the property NodeName.
         /// </summary>
         public string NodeName
         {
@@ -104,10 +68,7 @@ namespace Amazon.OpsWorksCM.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ServerName. 
-        /// <para>
-        /// The name of the server with which to associate the node. 
-        /// </para>
+        /// Gets and sets the property ServerName.
         /// </summary>
         public string ServerName
         {

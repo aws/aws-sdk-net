@@ -39,8 +39,8 @@ namespace Amazon.OpsWorksCM.Model
     ///  
     /// <para>
     ///  A <code>ResourceNotFoundException</code> is thrown when the server does not exist.
-    /// A <code>ValidationException</code> is raised when parameters of the request are not
-    /// valid. 
+    /// A <code>ValidationException</code> is raised when parameters of the request are invalid.
+    /// 
     /// </para>
     /// </summary>
     public partial class DescribeEventsRequest : AmazonOpsWorksCMRequest

@@ -29,29 +29,32 @@ namespace Amazon.OpsWorksCM.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateServer operation.
-    /// Creates and immedately starts a new server. The server is ready to use when it is
-    /// in the <code>HEALTHY</code> state. By default, you can create a maximum of 10 servers.
-    /// 
+    /// Creates and immedately starts a new Server. The server can be used once it has reached
+    /// the <code>HEALTHY</code> state. 
     /// 
     ///  
     /// <para>
-    ///  This operation is asynchronous. 
+    ///  This operation is asnychronous. 
     /// </para>
     ///  
     /// <para>
-    ///  A <code>LimitExceededException</code> is thrown when you have created the maximum
-    /// number of servers (10). A <code>ResourceAlreadyExistsException</code> is thrown when
-    /// a server with the same name already exists in the account. A <code>ResourceNotFoundException</code>
-    /// is thrown when you specify a backup ID that is not valid or is for a backup that does
-    /// not exist. A <code>ValidationException</code> is thrown when parameters of the request
-    /// are not valid. 
+    ///  A <code>LimitExceededException</code> is thrown then the maximum number of server
+    /// backup is reached. A <code>ResourceAlreadyExistsException</code> is raise when a server
+    /// with the same name already exists in the account. A <code>ResourceNotFoundException</code>
+    /// is thrown when a backupId is passed, but the backup does not exist. A <code>ValidationException</code>
+    /// is thrown when parameters of the request are not valid. 
     /// </para>
     ///  
     /// <para>
-    ///  If you do not specify a security group by adding the <code>SecurityGroupIds</code>
-    /// parameter, AWS OpsWorks creates a new security group. The default security group opens
-    /// the Chef server to the world on TCP port 443. If a KeyName is present, AWS OpsWorks
-    /// enables SSH access. SSH is also open to the world on TCP port 22. 
+    ///  By default 10 servers can be created. A <code>LimitExceededException</code> is raised
+    /// when the limit is exceeded. 
+    /// </para>
+    ///  
+    /// <para>
+    ///  When no security groups are provided by using <code>SecurityGroupIds</code>, AWS
+    /// OpsWorks creates a new security group. This security group opens the Chef server to
+    /// the world on TCP port 443. If a KeyName is present, SSH access is enabled. SSH is
+    /// also open to the world on TCP port 22. 
     /// </para>
     ///  
     /// <para>
@@ -63,7 +66,6 @@ namespace Amazon.OpsWorksCM.Model
     /// </summary>
     public partial class CreateServerRequest : AmazonOpsWorksCMRequest
     {
-        private bool? _associatePublicIpAddress;
         private string _backupId;
         private int? _backupRetentionCount;
         private bool? _disableAutomatedBackup;
@@ -80,26 +82,6 @@ namespace Amazon.OpsWorksCM.Model
         private string _serverName;
         private string _serviceRoleArn;
         private List<string> _subnetIds = new List<string>();
-
-        /// <summary>
-        /// Gets and sets the property AssociatePublicIpAddress. 
-        /// <para>
-        ///  Associate a public IP address with a server that you are launching. Valid values
-        /// are <code>true</code> or <code>false</code>. The default value is <code>true</code>.
-        /// 
-        /// </para>
-        /// </summary>
-        public bool AssociatePublicIpAddress
-        {
-            get { return this._associatePublicIpAddress.GetValueOrDefault(); }
-            set { this._associatePublicIpAddress = value; }
-        }
-
-        // Check to see if AssociatePublicIpAddress property is set
-        internal bool IsSetAssociatePublicIpAddress()
-        {
-            return this._associatePublicIpAddress.HasValue; 
-        }
 
         /// <summary>
         /// Gets and sets the property BackupId. 
@@ -181,24 +163,15 @@ namespace Amazon.OpsWorksCM.Model
         /// <summary>
         /// Gets and sets the property EngineAttributes. 
         /// <para>
-        /// Optional engine attributes on a specified server. 
+        /// Engine attributes on a specified server. 
         /// </para>
         ///  <p class="title"> <b>Attributes accepted in a createServer request:</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <code>CHEF_PIVOTAL_KEY</code>: A base64-encoded RSA private key that is not stored
-        /// by AWS OpsWorks for Chef. This private key is required to access the Chef API. When
-        /// no CHEF_PIVOTAL_KEY is set, one is generated and returned in the response. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>CHEF_DELIVERY_ADMIN_PASSWORD</code>: The password for the administrative user
-        /// in the Chef Automate GUI. The password length is a minimum of eight characters, and
-        /// a maximum of 32. The password can contain letters, numbers, and special characters
-        /// (!/@#$%^&amp;+=_). The password must contain at least one lower case letter, one upper
-        /// case letter, one number, and one special character. When no CHEF_DELIVERY_ADMIN_PASSWORD
-        /// is set, one is generated and returned in the response.
+        /// by AWS OpsWorks for Chef Automate. This private key is required to access the Chef
+        /// API.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -255,11 +228,10 @@ namespace Amazon.OpsWorksCM.Model
         /// Gets and sets the property InstanceProfileArn. 
         /// <para>
         ///  The ARN of the instance profile that your Amazon EC2 instances use. Although the
-        /// AWS OpsWorks console typically creates the instance profile for you, if you are using
-        /// API commands instead, run the service-role-creation.yaml AWS CloudFormation template,
-        /// located at https://s3.amazonaws.com/opsworks-stuff/latest/service-role-creation.yaml.
-        /// This template creates a CloudFormation stack that includes the instance profile you
-        /// need. 
+        /// AWS OpsWorks console typically creates the instance profile for you, in this release
+        /// of AWS OpsWorks for Chef Automate, run the service-role-creation.yaml AWS CloudFormation
+        /// template, located at https://s3.amazonaws.com/opsworks-stuff/latest/service-role-creation.yaml.
+        /// This template creates a stack that includes the instance profile you need. 
         /// </para>
         /// </summary>
         public string InstanceProfileArn
@@ -278,8 +250,7 @@ namespace Amazon.OpsWorksCM.Model
         /// Gets and sets the property InstanceType. 
         /// <para>
         ///  The Amazon EC2 instance type to use. Valid values must be specified in the following
-        /// format: <code>^([cm][34]|t2).*</code> For example, <code>m4.large</code>. Valid values
-        /// are <code>t2.medium</code>, <code>m4.large</code>, or <code>m4.2xlarge</code>. 
+        /// format: <code>^([cm][34]|t2).*</code> For example, <code>c3.large</code>. 
         /// </para>
         /// </summary>
         public string InstanceType
@@ -297,8 +268,8 @@ namespace Amazon.OpsWorksCM.Model
         /// <summary>
         /// Gets and sets the property KeyPair. 
         /// <para>
-        ///  The Amazon EC2 key pair to set for the instance. This parameter is optional; if desired,
-        /// you may specify this parameter to connect to your instances by using SSH. 
+        ///  The Amazon EC2 key pair to set for the instance. You may specify this parameter to
+        /// connect to your instances by using SSH. 
         /// </para>
         /// </summary>
         public string KeyPair
@@ -317,8 +288,8 @@ namespace Amazon.OpsWorksCM.Model
         /// Gets and sets the property PreferredBackupWindow. 
         /// <para>
         ///  The start time for a one-hour period during which AWS OpsWorks for Chef Automate
-        /// backs up application-level data on your server if automated backups are enabled. Valid
-        /// values must be specified in one of the following formats: 
+        /// backs up application-level data on your server if backups are enabled. Valid values
+        /// must be specified in one of the following formats: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -413,7 +384,7 @@ namespace Amazon.OpsWorksCM.Model
         /// <para>
         ///  The name of the server. The server name must be unique within your AWS account, within
         /// each region. Server names must start with a letter; then letters, numbers, or hyphens
-        /// (-) are allowed, up to a maximum of 40 characters. 
+        /// (-) are allowed, up to a maximum of 32 characters. 
         /// </para>
         /// </summary>
         public string ServerName
@@ -432,11 +403,10 @@ namespace Amazon.OpsWorksCM.Model
         /// Gets and sets the property ServiceRoleArn. 
         /// <para>
         ///  The service role that the AWS OpsWorks for Chef Automate service backend uses to
-        /// work with your account. Although the AWS OpsWorks management console typically creates
-        /// the service role for you, if you are using the AWS CLI or API commands, run the service-role-creation.yaml
+        /// work with your account. Although the AWS OpsWorks console typically creates the service
+        /// role for you, in this release of AWS OpsWorks for Chef Automate, run the service-role-creation.yaml
         /// AWS CloudFormation template, located at https://s3.amazonaws.com/opsworks-stuff/latest/service-role-creation.yaml.
-        /// This template creates a CloudFormation stack that includes the service role that you
-        /// need. 
+        /// This template creates a stack that includes the service role that you need. 
         /// </para>
         /// </summary>
         public string ServiceRoleArn

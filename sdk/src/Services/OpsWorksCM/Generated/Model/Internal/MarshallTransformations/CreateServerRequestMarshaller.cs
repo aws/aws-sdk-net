@@ -67,12 +67,6 @@ namespace Amazon.OpsWorksCM.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAssociatePublicIpAddress())
-                {
-                    context.Writer.WritePropertyName("AssociatePublicIpAddress");
-                    context.Writer.Write(publicRequest.AssociatePublicIpAddress);
-                }
-
                 if(publicRequest.IsSetBackupId())
                 {
                     context.Writer.WritePropertyName("BackupId");
