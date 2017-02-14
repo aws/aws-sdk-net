@@ -29,9 +29,9 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the ReplaceIamInstanceProfileAssociation operation.
-    /// Replaces an IAM instance profile for the specified instance. You can use this action
-    /// to change the IAM instance profile that's associated with an instance without having
-    /// to disassociate the existing IAM instance profile first.
+    /// Replaces an IAM instance profile for the specified running instance. You can use this
+    /// action to change the IAM instance profile that's associated with an instance without
+    /// having to disassociate the existing IAM instance profile first.
     /// 
     ///  
     /// <para>

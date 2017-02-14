@@ -7613,6 +7613,64 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeVolumesModifications
+
+
+        /// <summary>
+        /// Reports the current modification status of EBS volumes.
+        /// 
+        ///  
+        /// <para>
+        /// Current-generation EBS volumes support modification of attributes including type,
+        /// size, and (for <code>io1</code> volumes) IOPS provisioning while either attached to
+        /// or detached from an instance. Following an action from the API or the console to modify
+        /// a volume, the status of the modification may be <code>modifying</code>, <code>optimizing</code>,
+        /// <code>completed</code>, or <code>failed</code>. If a volume has never been modified,
+        /// then certain elements of the returned <code>VolumeModification</code> objects are
+        /// null. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  You can also use CloudWatch Events to check the status of a modification to an EBS
+        /// volume. For information about CloudWatch Events, see the <a href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonCloudWatch/latest/events/WhatIsCloudWatchEvents.html">Amazon
+        /// CloudWatch Events User Guide</a>. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#monitoring_mods">Monitoring
+        /// Volume Modifications"</a>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVolumesModifications service method.</param>
+        /// 
+        /// <returns>The response from the DescribeVolumesModifications service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVolumesModifications">REST API Reference for DescribeVolumesModifications Operation</seealso>
+        DescribeVolumesModificationsResponse DescribeVolumesModifications(DescribeVolumesModificationsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeVolumesModifications operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVolumesModifications operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeVolumesModifications
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVolumesModifications">REST API Reference for DescribeVolumesModifications Operation</seealso>
+        IAsyncResult BeginDescribeVolumesModifications(DescribeVolumesModificationsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeVolumesModifications operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeVolumesModifications.</param>
+        /// 
+        /// <returns>Returns a  DescribeVolumesModificationsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVolumesModifications">REST API Reference for DescribeVolumesModifications Operation</seealso>
+        DescribeVolumesModificationsResponse EndDescribeVolumesModifications(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeVolumeStatus
 
 
@@ -10007,6 +10065,89 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  ModifyVolume
+
+
+        /// <summary>
+        /// You can modify several parameters of an existing EBS volume, including volume size,
+        /// volume type, and IOPS capacity. If your EBS volume is attached to a current-generation
+        /// EC2 instance type, you may be able to apply these changes without stopping the instance
+        /// or detaching the volume from it. For more information about modifying an EBS volume
+        /// running Linux, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html">Modifying
+        /// the Size, IOPS, or Type of an EBS Volume on Linux</a>. For more information about
+        /// modifying an EBS volume running Windows, see <a href="http://docs.aws.amazon.com/docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html">Expanding
+        /// the Storage Space of an EBS Volume on Windows</a>. 
+        /// 
+        ///  
+        /// <para>
+        ///  When you complete a resize operation on your volume, you need to extend the volume's
+        /// file-system size to take advantage of the new storage capacity. For information about
+        /// extending a Linux file system, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#recognize-expanded-volume-linux">Extending
+        /// a Linux File System</a>. For information about extending a Windows file system, see
+        /// <a href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html#recognize-expanded-volume-windows">Extending
+        /// a Windows File System</a>. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  You can use CloudWatch Events to check the status of a modification to an EBS volume.
+        /// For information about CloudWatch Events, see the <a href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonCloudWatch/latest/events/WhatIsCloudWatchEvents.html">Amazon
+        /// CloudWatch Events User Guide</a>. You can also track the status of a modification
+        /// using the <a href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVolumesModifications.html">
+        /// <code>DescribeVolumesModifications</code> API</a>. For information about tracking
+        /// status changes using either method, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#monitoring_mods">Monitoring
+        /// Volume Modifications"</a>. 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// With previous-generation volumes and instance types, resizing an EBS volume may require
+        /// detaching and reattaching the volume or stopping and restarting the instance. For
+        /// more information about modifying an EBS volume running Linux, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html">Modifying
+        /// the Size, IOPS, or Type of an EBS Volume on Linux</a>. For more information about
+        /// modifying an EBS volume running Windows, see <a href="http://docs.aws.amazon.com/docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html">Modifying
+        /// the Size, IOPS, or Type of an EBS Volume on Windows</a>.
+        /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// If you reach the maximum volume modification rate per volume limit, you will need
+        /// to wait at least six hours before applying further modifications to the affected EBS
+        /// volume.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVolume service method.</param>
+        /// 
+        /// <returns>The response from the ModifyVolume service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVolume">REST API Reference for ModifyVolume Operation</seealso>
+        ModifyVolumeResponse ModifyVolume(ModifyVolumeRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyVolume operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVolume operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyVolume
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVolume">REST API Reference for ModifyVolume Operation</seealso>
+        IAsyncResult BeginModifyVolume(ModifyVolumeRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyVolume operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyVolume.</param>
+        /// 
+        /// <returns>Returns a  ModifyVolumeResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVolume">REST API Reference for ModifyVolume Operation</seealso>
+        ModifyVolumeResponse EndModifyVolume(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ModifyVolumeAttribute
 
 
@@ -10754,9 +10895,9 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Replaces an IAM instance profile for the specified instance. You can use this action
-        /// to change the IAM instance profile that's associated with an instance without having
-        /// to disassociate the existing IAM instance profile first.
+        /// Replaces an IAM instance profile for the specified running instance. You can use this
+        /// action to change the IAM instance profile that's associated with an instance without
+        /// having to disassociate the existing IAM instance profile first.
         /// 
         ///  
         /// <para>

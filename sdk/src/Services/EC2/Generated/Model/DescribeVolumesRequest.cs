@@ -175,10 +175,10 @@ namespace Amazon.EC2.Model
         /// results in a single page along with a <code>NextToken</code> response element. The
         /// remaining results of the initial request can be seen by sending another <code>DescribeVolumes</code>
         /// request with the returned <code>NextToken</code> value. This value can be between
-        /// 5 and 1000; if <code>MaxResults</code> is given a value larger than 1000, only 1000
-        /// results are returned. If this parameter is not used, then <code>DescribeVolumes</code>
-        /// returns all results. You cannot specify this parameter and the volume IDs parameter
-        /// in the same request.
+        /// 5 and 500; if <code>MaxResults</code> is given a value larger than 500, only 500 results
+        /// are returned. If this parameter is not used, then <code>DescribeVolumes</code> returns
+        /// all results. You cannot specify this parameter and the volume IDs parameter in the
+        /// same request.
         /// </para>
         /// </summary>
         public int MaxResults

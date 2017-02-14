@@ -3245,6 +3245,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void DescribeVolumesModificationsMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeVolumesModifications");
+
+            var request = InstantiateClassGenerator.Execute<DescribeVolumesModificationsRequest>();
+            var marshaller = new DescribeVolumesModificationsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DescribeVolumesModificationsResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeVolumesModificationsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void DescribeVolumeStatusMarshallTest()
         {
             var operation = service_model.FindOperation("DescribeVolumeStatus");
@@ -4314,6 +4338,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             validator.Validate();
 
 
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void ModifyVolumeMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyVolume");
+
+            var request = InstantiateClassGenerator.Execute<ModifyVolumeRequest>();
+            var marshaller = new ModifyVolumeRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = ModifyVolumeResponseUnmarshaller.Instance.Unmarshall(context)
+                as ModifyVolumeResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
         

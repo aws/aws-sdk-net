@@ -5720,6 +5720,38 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeVolumesModifications
+
+        internal DescribeVolumesModificationsResponse DescribeVolumesModifications(DescribeVolumesModificationsRequest request)
+        {
+            var marshaller = new DescribeVolumesModificationsRequestMarshaller();
+            var unmarshaller = DescribeVolumesModificationsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeVolumesModificationsRequest,DescribeVolumesModificationsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeVolumesModifications operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVolumesModifications operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVolumesModifications">REST API Reference for DescribeVolumesModifications Operation</seealso>
+        public Task<DescribeVolumesModificationsResponse> DescribeVolumesModificationsAsync(DescribeVolumesModificationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeVolumesModificationsRequestMarshaller();
+            var unmarshaller = DescribeVolumesModificationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeVolumesModificationsRequest,DescribeVolumesModificationsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeVolumeStatus
 
         internal DescribeVolumeStatusResponse DescribeVolumeStatus()
@@ -7405,6 +7437,38 @@ namespace Amazon.EC2
             var unmarshaller = ModifySubnetAttributeResponseUnmarshaller.Instance;
 
             return InvokeAsync<ModifySubnetAttributeRequest,ModifySubnetAttributeResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ModifyVolume
+
+        internal ModifyVolumeResponse ModifyVolume(ModifyVolumeRequest request)
+        {
+            var marshaller = new ModifyVolumeRequestMarshaller();
+            var unmarshaller = ModifyVolumeResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyVolumeRequest,ModifyVolumeResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyVolume operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVolume operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVolume">REST API Reference for ModifyVolume Operation</seealso>
+        public Task<ModifyVolumeResponse> ModifyVolumeAsync(ModifyVolumeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ModifyVolumeRequestMarshaller();
+            var unmarshaller = ModifyVolumeResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ModifyVolumeRequest,ModifyVolumeResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
