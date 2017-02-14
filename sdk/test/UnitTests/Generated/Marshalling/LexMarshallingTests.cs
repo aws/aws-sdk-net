@@ -38,7 +38,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
     [TestClass]
     public partial class LexMarshallingTests
     {
-        static readonly ServiceModel service_model = Utils.LoadServiceModel("runtime.lex-2016-11-28.normal.json", "");
+        static readonly ServiceModel service_model = Utils.LoadServiceModel("runtime.lex");
         
         [TestMethod]
         [TestCategory("UnitTest")]
