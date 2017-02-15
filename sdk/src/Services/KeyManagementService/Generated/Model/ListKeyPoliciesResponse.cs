@@ -39,8 +39,8 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property NextMarker. 
         /// <para>
-        /// When <code>Truncated</code> is true, this value is present and contains the value
-        /// to use for the <code>Marker</code> parameter in a subsequent pagination request.
+        /// When <code>Truncated</code> is true, this element is present and contains the value
+        /// to use for the <code>Marker</code> parameter in a subsequent request.
         /// </para>
         /// </summary>
         public string NextMarker
@@ -76,9 +76,10 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property Truncated. 
         /// <para>
-        /// A flag that indicates whether there are more items in the list. If your results were
-        /// truncated, you can use the <code>Marker</code> parameter to make a subsequent pagination
-        /// request to retrieve more items in the list.
+        /// A flag that indicates whether there are more items in the list. When this value is
+        /// true, the list in this response is truncated. To retrieve more items, pass the value
+        /// of the <code>NextMarker</code> element in this response to the <code>Marker</code>
+        /// parameter in a subsequent request.
         /// </para>
         /// </summary>
         public bool Truncated

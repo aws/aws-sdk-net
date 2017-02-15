@@ -57,6 +57,7 @@ namespace Amazon.KeyManagementService.Model
         private KeyUsageType _keyUsage;
         private OriginType _origin;
         private string _policy;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property BypassPolicyLockoutSafetyCheck. 
@@ -76,7 +77,7 @@ namespace Amazon.KeyManagementService.Model
         ///  </important> 
         /// <para>
         /// Use this parameter only when you include a policy in the request and you intend to
-        /// prevent the principal making the request from making a subsequent <a>PutKeyPolicy</a>
+        /// prevent the principal that is making the request from making a subsequent <a>PutKeyPolicy</a>
         /// request on the CMK.
         /// </para>
         ///  
@@ -183,15 +184,16 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// It must allow the principal making the <code>CreateKey</code> request to make a subsequent
-        /// <a>PutKeyPolicy</a> request on the CMK. This reduces the likelihood that the CMK becomes
-        /// unmanageable. For more information, refer to the scenario in the <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default
+        /// It must allow the principal that is making the <code>CreateKey</code> request to make
+        /// a subsequent <a>PutKeyPolicy</a> request on the CMK. This reduces the likelihood that
+        /// the CMK becomes unmanageable. For more information, refer to the scenario in the <a
+        /// href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default
         /// Key Policy</a> section in the <i>AWS Key Management Service Developer Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The principal(s) specified in the key policy must exist and be visible to AWS KMS.
-        /// When you create a new AWS principal (for example, an IAM user or role), you might
+        /// The principals that are specified in the key policy must exist and be visible to AWS
+        /// KMS. When you create a new AWS principal (for example, an IAM user or role), you might
         /// need to enforce a delay before specifying the new principal in a key policy because
         /// the new principal might not immediately be visible to AWS KMS. For more information,
         /// see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes
@@ -218,6 +220,30 @@ namespace Amazon.KeyManagementService.Model
         internal bool IsSetPolicy()
         {
             return this._policy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// One or more tags. Each tag consists of a tag key and a tag value. Tag keys and tag
+        /// values are both required, but tag values can be empty (null) strings.
+        /// </para>
+        ///  
+        /// <para>
+        /// Use this parameter to tag the CMK when it is created. Alternately, you can omit this
+        /// parameter and instead tag the CMK after it is created using <a>TagResource</a>.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

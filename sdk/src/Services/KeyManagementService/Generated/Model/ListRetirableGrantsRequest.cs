@@ -47,9 +47,9 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
-        /// When paginating results, specify the maximum number of items to return in the response.
-        /// If additional items exist beyond the number you specify, the <code>Truncated</code>
-        /// element in the response is set to true.
+        /// Use this parameter to specify the maximum number of items to return. When this value
+        /// is present, AWS KMS does not return more than the specified number of items, but it
+        /// might return fewer.
         /// </para>
         ///  
         /// <para>
@@ -72,9 +72,9 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        /// Use this parameter only when paginating results and only in a subsequent request after
-        /// you receive a response with truncated results. Set it to the value of <code>NextMarker</code>
-        /// from the response you just received.
+        /// Use this parameter in a subsequent request after you receive a response with truncated
+        /// results. Set it to the value of <code>NextMarker</code> from the truncated response
+        /// you just received.
         /// </para>
         /// </summary>
         public string Marker

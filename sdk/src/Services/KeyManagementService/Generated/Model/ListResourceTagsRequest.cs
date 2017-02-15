@@ -28,10 +28,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListKeyPolicies operation.
-    /// Retrieves a list of policies attached to a key.
+    /// Container for the parameters to the ListResourceTags operation.
+    /// Returns a list of all tags for the specified customer master key (CMK).
     /// </summary>
-    public partial class ListKeyPoliciesRequest : AmazonKeyManagementServiceRequest
+    public partial class ListResourceTagsRequest : AmazonKeyManagementServiceRequest
     {
         private string _keyId;
         private int? _limit;
@@ -40,8 +40,8 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property KeyId. 
         /// <para>
-        /// A unique identifier for the customer master key (CMK). You can use the unique key
-        /// ID or the Amazon Resource Name (ARN) of the CMK. Examples:
+        /// A unique identifier for the CMK whose tags you are listing. You can use the unique
+        /// key ID or the Amazon Resource Name (ARN) of the CMK. Examples:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -75,12 +75,8 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  
         /// <para>
-        /// This value is optional. If you include a value, it must be between 1 and 1000, inclusive.
-        /// If you do not include a value, it defaults to 100.
-        /// </para>
-        ///  
-        /// <para>
-        /// Currently only 1 policy can be attached to a key.
+        /// This value is optional. If you include a value, it must be between 1 and 50, inclusive.
+        /// If you do not include a value, it defaults to 50.
         /// </para>
         /// </summary>
         public int Limit
@@ -101,6 +97,11 @@ namespace Amazon.KeyManagementService.Model
         /// Use this parameter in a subsequent request after you receive a response with truncated
         /// results. Set it to the value of <code>NextMarker</code> from the truncated response
         /// you just received.
+        /// </para>
+        ///  
+        /// <para>
+        /// Do not attempt to construct this value. Use only the value of <code>NextMarker</code>
+        /// from the truncated response you just received.
         /// </para>
         /// </summary>
         public string Marker

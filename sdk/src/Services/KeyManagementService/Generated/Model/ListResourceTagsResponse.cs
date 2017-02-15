@@ -28,37 +28,23 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
-    /// This is the response object from the ListGrants operation.
+    /// This is the response object from the ListResourceTags operation.
     /// </summary>
-    public partial class ListGrantsResponse : AmazonWebServiceResponse
+    public partial class ListResourceTagsResponse : AmazonWebServiceResponse
     {
-        private List<GrantListEntry> _grants = new List<GrantListEntry>();
         private string _nextMarker;
+        private List<Tag> _tags = new List<Tag>();
         private bool? _truncated;
-
-        /// <summary>
-        /// Gets and sets the property Grants. 
-        /// <para>
-        /// A list of grants.
-        /// </para>
-        /// </summary>
-        public List<GrantListEntry> Grants
-        {
-            get { return this._grants; }
-            set { this._grants = value; }
-        }
-
-        // Check to see if Grants property is set
-        internal bool IsSetGrants()
-        {
-            return this._grants != null && this._grants.Count > 0; 
-        }
 
         /// <summary>
         /// Gets and sets the property NextMarker. 
         /// <para>
         /// When <code>Truncated</code> is true, this element is present and contains the value
         /// to use for the <code>Marker</code> parameter in a subsequent request.
+        /// </para>
+        ///  
+        /// <para>
+        /// Do not assume or infer any information from this value.
         /// </para>
         /// </summary>
         public string NextMarker
@@ -71,6 +57,24 @@ namespace Amazon.KeyManagementService.Model
         internal bool IsSetNextMarker()
         {
             return this._nextMarker != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A list of tags. Each tag consists of a tag key and a tag value.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

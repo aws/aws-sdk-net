@@ -3,12 +3,12 @@
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.CancelKeyDeletionRequest.KeyId</property>
     <min>1</min>
-    <max>256</max>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.CancelKeyDeletionResponse.KeyId</property>
     <min>1</min>
-    <max>256</max>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.CreateAliasRequest.AliasName</property>
@@ -19,7 +19,7 @@
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.CreateAliasRequest.TargetKeyId</property>
     <min>1</min>
-    <max>256</max>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.CreateGrantRequest.GranteePrincipal</property>
@@ -29,7 +29,7 @@
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.CreateGrantRequest.KeyId</property>
     <min>1</min>
-    <max>256</max>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.CreateGrantRequest.Name</property>
@@ -71,7 +71,7 @@
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.DecryptResponse.KeyId</property>
     <min>1</min>
-    <max>256</max>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.DecryptResponse.Plaintext</property>
@@ -87,37 +87,37 @@
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.DeleteImportedKeyMaterialRequest.KeyId</property>
     <min>1</min>
-    <max>256</max>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.DescribeKeyRequest.KeyId</property>
     <min>1</min>
-    <max>256</max>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.DisableKeyRequest.KeyId</property>
     <min>1</min>
-    <max>256</max>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.DisableKeyRotationRequest.KeyId</property>
     <min>1</min>
-    <max>256</max>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.EnableKeyRequest.KeyId</property>
     <min>1</min>
-    <max>256</max>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.EnableKeyRotationRequest.KeyId</property>
     <min>1</min>
-    <max>256</max>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.EncryptRequest.KeyId</property>
     <min>1</min>
-    <max>256</max>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.EncryptRequest.Plaintext</property>
@@ -132,12 +132,12 @@
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.EncryptResponse.KeyId</property>
     <min>1</min>
-    <max>256</max>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.GenerateDataKeyRequest.KeyId</property>
     <min>1</min>
-    <max>256</max>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.GenerateDataKeyRequest.NumberOfBytes</property>
@@ -152,7 +152,7 @@
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.GenerateDataKeyResponse.KeyId</property>
     <min>1</min>
-    <max>256</max>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.GenerateDataKeyResponse.Plaintext</property>
@@ -162,7 +162,7 @@
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.GenerateDataKeyWithoutPlaintextRequest.KeyId</property>
     <min>1</min>
-    <max>256</max>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.GenerateDataKeyWithoutPlaintextRequest.NumberOfBytes</property>
@@ -177,7 +177,7 @@
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.GenerateDataKeyWithoutPlaintextResponse.KeyId</property>
     <min>1</min>
-    <max>256</max>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.GenerateRandomRequest.NumberOfBytes</property>
@@ -192,7 +192,7 @@
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.GetKeyPolicyRequest.KeyId</property>
     <min>1</min>
-    <max>256</max>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.GetKeyPolicyRequest.PolicyName</property>
@@ -209,12 +209,12 @@
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.GetKeyRotationStatusRequest.KeyId</property>
     <min>1</min>
-    <max>256</max>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.GetParametersForImportRequest.KeyId</property>
     <min>1</min>
-    <max>256</max>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.GetParametersForImportResponse.ImportToken</property>
@@ -224,7 +224,7 @@
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.GetParametersForImportResponse.KeyId</property>
     <min>1</min>
-    <max>256</max>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.GetParametersForImportResponse.PublicKey</property>
@@ -244,7 +244,7 @@
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.ImportKeyMaterialRequest.KeyId</property>
     <min>1</min>
-    <max>256</max>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.ListAliasesRequest.Limit</property>
@@ -266,7 +266,7 @@
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.ListGrantsRequest.KeyId</property>
     <min>1</min>
-    <max>256</max>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.ListGrantsRequest.Limit</property>
@@ -288,7 +288,7 @@
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.ListKeyPoliciesRequest.KeyId</property>
     <min>1</min>
-    <max>256</max>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.ListKeyPoliciesRequest.Limit</property>
@@ -325,6 +325,28 @@
     <pattern>[\u0020-\u00FF]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.ListResourceTagsRequest.KeyId</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.ListResourceTagsRequest.Limit</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.ListResourceTagsRequest.Marker</property>
+    <min>1</min>
+    <max>320</max>
+    <pattern>[\u0020-\u00FF]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.ListResourceTagsResponse.NextMarker</property>
+    <min>1</min>
+    <max>320</max>
+    <pattern>[\u0020-\u00FF]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.KeyManagementService.Model.ListRetirableGrantsRequest.Limit</property>
     <min>1</min>
     <max>1000</max>
@@ -349,7 +371,7 @@
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.PutKeyPolicyRequest.KeyId</property>
     <min>1</min>
-    <max>256</max>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.PutKeyPolicyRequest.Policy</property>
@@ -371,7 +393,7 @@
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.ReEncryptRequest.DestinationKeyId</property>
     <min>1</min>
-    <max>256</max>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.ReEncryptResponse.CiphertextBlob</property>
@@ -381,12 +403,12 @@
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.ReEncryptResponse.KeyId</property>
     <min>1</min>
-    <max>256</max>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.ReEncryptResponse.SourceKeyId</property>
     <min>1</min>
-    <max>256</max>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.RetireGrantRequest.GrantId</property>
@@ -401,7 +423,7 @@
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.RetireGrantRequest.KeyId</property>
     <min>1</min>
-    <max>256</max>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.RevokeGrantRequest.GrantId</property>
@@ -411,12 +433,12 @@
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.RevokeGrantRequest.KeyId</property>
     <min>1</min>
-    <max>256</max>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.ScheduleKeyDeletionRequest.KeyId</property>
     <min>1</min>
-    <max>256</max>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.ScheduleKeyDeletionRequest.PendingWindowInDays</property>
@@ -426,7 +448,17 @@
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.ScheduleKeyDeletionResponse.KeyId</property>
     <min>1</min>
-    <max>256</max>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.TagResourceRequest.KeyId</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.UntagResourceRequest.KeyId</property>
+    <min>1</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.UpdateAliasRequest.AliasName</property>
@@ -437,7 +469,7 @@
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.UpdateAliasRequest.TargetKeyId</property>
     <min>1</min>
-    <max>256</max>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.UpdateKeyDescriptionRequest.Description</property>
@@ -447,7 +479,7 @@
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.UpdateKeyDescriptionRequest.KeyId</property>
     <min>1</min>
-    <max>256</max>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.AliasListEntry.AliasArn</property>
@@ -463,7 +495,7 @@
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.AliasListEntry.TargetKeyId</property>
     <min>1</min>
-    <max>256</max>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.GrantListEntry.GranteePrincipal</property>
@@ -483,7 +515,7 @@
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.GrantListEntry.KeyId</property>
     <min>1</min>
-    <max>256</max>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.GrantListEntry.Name</property>
@@ -504,7 +536,7 @@
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.KeyListEntry.KeyId</property>
     <min>1</min>
-    <max>256</max>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.KeyMetadata.Arn</property>
@@ -519,6 +551,16 @@
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.KeyMetadata.KeyId</property>
     <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.Tag.TagKey</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.Tag.TagValue</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
 </property-value-rules>
