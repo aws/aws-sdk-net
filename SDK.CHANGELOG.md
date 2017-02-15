@@ -1,6 +1,8 @@
 ### 3.3.50.0 (2017-02-14 22:45 UTC)
 * EC2 (3.3.8.0)
 	* Adds support for the new Modify Volumes apis
+* AWSSDK.Extensions.NETCore.Setup (3.3.0.3)
+	* Added ability to explicit set AWSCredentials object on the AWSOptions
 
 ### 3.3.49.0 (2017-02-10 18:21 UTC)
 * StorageGateway (3.3.2.0)
