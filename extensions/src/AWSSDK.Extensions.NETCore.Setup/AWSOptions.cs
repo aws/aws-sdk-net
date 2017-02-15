@@ -46,6 +46,10 @@ namespace Amazon.Extensions.NETCore.Setup
         /// </summary>
         public RegionEndpoint Region { get; set; }
 
+        /// <summary>
+        /// AWS Credentials used for creating service clients. If this is set it overrides the Profile property.
+        /// </summary>
+        public AWSCredentials Credentials { get; set; }
 
         private ClientConfig _defaultClientConfig;
 

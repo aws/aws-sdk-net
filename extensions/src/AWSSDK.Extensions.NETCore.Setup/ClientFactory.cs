@@ -104,11 +104,16 @@ namespace Amazon.Extensions.NETCore.Setup
         /// <returns></returns>
         private static AWSCredentials CreateCredentials(AWSOptions options)
         {
-            if (options != null &&
-                !string.IsNullOrEmpty(options.Profile) &&
-                StoredProfileAWSCredentials.IsProfileKnown(options.Profile, options.ProfilesLocation))
+            if (options != null)
             {
-                return new StoredProfileAWSCredentials(options.Profile, options.ProfilesLocation);
+                if(options.Credentials != null)
+                {
+                    return options.Credentials;
+                }
+                if(!string.IsNullOrEmpty(options.Profile) && StoredProfileAWSCredentials.IsProfileKnown(options.Profile, options.ProfilesLocation))
+                {
+                    return new StoredProfileAWSCredentials(options.Profile, options.ProfilesLocation);
+                }
             }
 
             return FallbackCredentialsFactory.GetCredentials();
