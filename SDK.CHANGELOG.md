@@ -1,3 +1,7 @@
+### 3.3.51.0 (2017-02-15 17:28 UTC)
+* KeyManagementService (3.3.2.0)
+	* Added tagging support
+
 ### 3.3.50.0 (2017-02-14 22:45 UTC)
 * EC2 (3.3.8.0)
 	* Adds support for the new Modify Volumes apis
