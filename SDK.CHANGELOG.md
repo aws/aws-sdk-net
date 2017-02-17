@@ -1,3 +1,11 @@
+### 3.3.52.0 (2017-02-17 02:26 UTC)
+* CognitoIdentity (3.3.2.0)
+	* Allow createIdentityPool and updateIdentityPool API to set server side token check value on identity pool
+* ConfigService (3.3.6.0)
+	* AWS Config now supports a new test mode for the PutEvaluations API. Set the TestMode parameter to true in your custom rule to verify whether your AWS Lambda function will deliver evaluation results to AWS Config. No updates occur to your existing evaluations, and evaluation results are not sent to AWS Config.
+* S3 (3.3.5.5)
+	* Fixed bug in TransferUtility.UploadDirectory
+
 ### 3.3.51.0 (2017-02-15 17:28 UTC)
 * KeyManagementService (3.3.2.0)
 	* Added tagging support
