@@ -36,6 +36,7 @@ namespace Amazon.ConfigService.Model
     {
         private List<Evaluation> _evaluations = new List<Evaluation>();
         private string _resultToken;
+        private bool? _testMode;
 
         /// <summary>
         /// Gets and sets the property Evaluations. 
@@ -74,6 +75,34 @@ namespace Amazon.ConfigService.Model
         internal bool IsSetResultToken()
         {
             return this._resultToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TestMode. 
+        /// <para>
+        /// Use this parameter to specify a test run for <code>PutEvaluations</code>. You can
+        /// verify whether your AWS Lambda function will deliver evaluation results to AWS Config.
+        /// No updates occur to your existing evaluations, and evaluation results are not sent
+        /// to AWS Config.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// When <code>TestMode</code> is <code>true</code>, <code>PutEvaluations</code> doesn't
+        /// require a valid value for the <code>ResultToken</code> parameter, but the value cannot
+        /// be null.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public bool TestMode
+        {
+            get { return this._testMode.GetValueOrDefault(); }
+            set { this._testMode = value; }
+        }
+
+        // Check to see if TestMode property is set
+        internal bool IsSetTestMode()
+        {
+            return this._testMode.HasValue; 
         }
 
     }

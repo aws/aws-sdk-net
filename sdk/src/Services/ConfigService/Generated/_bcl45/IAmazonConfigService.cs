@@ -1455,7 +1455,7 @@ namespace Amazon.ConfigService
         /// valid and try again.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidResultTokenException">
-        /// The speNexcified token is invalid.
+        /// The specified <code>ResultToken</code> is invalid.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigRuleException">
         /// One or more AWS Config rules in the request are invalid. Verify that the rule names

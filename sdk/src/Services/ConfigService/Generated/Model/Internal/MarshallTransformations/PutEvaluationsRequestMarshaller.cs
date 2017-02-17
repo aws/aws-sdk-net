@@ -89,6 +89,12 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ResultToken);
                 }
 
+                if(publicRequest.IsSetTestMode())
+                {
+                    context.Writer.WritePropertyName("TestMode");
+                    context.Writer.Write(publicRequest.TestMode);
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
