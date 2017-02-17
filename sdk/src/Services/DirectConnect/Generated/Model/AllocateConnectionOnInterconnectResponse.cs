@@ -33,16 +33,36 @@ namespace Amazon.DirectConnect.Model
     /// </summary>
     public partial class AllocateConnectionOnInterconnectResponse : AmazonWebServiceResponse
     {
+        private string _awsDevice;
         private string _bandwidth;
         private string _connectionId;
         private string _connectionName;
         private ConnectionState _connectionState;
+        private string _lagId;
         private DateTime? _loaIssueTime;
         private string _location;
         private string _ownerAccount;
         private string _partnerName;
         private string _region;
         private int? _vlan;
+
+        /// <summary>
+        /// Gets and sets the property AwsDevice. 
+        /// <para>
+        /// The Direct Connection endpoint which the physical connection terminates on.
+        /// </para>
+        /// </summary>
+        public string AwsDevice
+        {
+            get { return this._awsDevice; }
+            set { this._awsDevice = value; }
+        }
+
+        // Check to see if AwsDevice property is set
+        internal bool IsSetAwsDevice()
+        {
+            return this._awsDevice != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Bandwidth. 
@@ -116,9 +136,24 @@ namespace Amazon.DirectConnect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LagId.
+        /// </summary>
+        public string LagId
+        {
+            get { return this._lagId; }
+            set { this._lagId = value; }
+        }
+
+        // Check to see if LagId property is set
+        internal bool IsSetLagId()
+        {
+            return this._lagId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property LoaIssueTime. 
         /// <para>
-        /// The time of the most recent call to DescribeConnectionLoa for this Connection.
+        /// The time of the most recent call to <a>DescribeLoa</a> for this connection.
         /// </para>
         /// </summary>
         public DateTime LoaIssueTime

@@ -44,6 +44,14 @@ namespace Amazon.DirectConnect.Model
     /// </para>
     ///  
     /// <para>
+    /// You can automatically add the new interconnect to a link aggregation group (LAG) by
+    /// specifying a LAG ID in the request. This ensures that the new interconnect is allocated
+    /// on the same AWS Direct Connect endpoint that hosts the specified LAG. If there are
+    /// no available ports on the endpoint, the request fails and no interconnect will be
+    /// created.
+    /// </para>
+    ///  
+    /// <para>
     /// For each end customer, the AWS Direct Connect partner provisions a connection on their
     /// interconnect by calling AllocateConnectionOnInterconnect. The end customer can then
     /// connect to AWS resources by creating a virtual interface on their connection, using
@@ -59,6 +67,7 @@ namespace Amazon.DirectConnect.Model
     {
         private string _bandwidth;
         private string _interconnectName;
+        private string _lagId;
         private string _location;
 
         /// <summary>
@@ -115,6 +124,21 @@ namespace Amazon.DirectConnect.Model
         internal bool IsSetInterconnectName()
         {
             return this._interconnectName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LagId.
+        /// </summary>
+        public string LagId
+        {
+            get { return this._lagId; }
+            set { this._lagId = value; }
+        }
+
+        // Check to see if LagId property is set
+        internal bool IsSetLagId()
+        {
+            return this._lagId != null;
         }
 
         /// <summary>

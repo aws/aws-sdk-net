@@ -29,8 +29,12 @@ namespace Amazon.DirectConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeInterconnectLoa operation.
-    /// Returns the LOA-CFA for an Interconnect.
+    /// Deprecated in favor of <a>DescribeLoa</a>.
     /// 
+    ///  
+    /// <para>
+    /// Returns the LOA-CFA for an Interconnect.
+    /// </para>
     ///  
     /// <para>
     /// The Letter of Authorization - Connecting Facility Assignment (LOA-CFA) is a document

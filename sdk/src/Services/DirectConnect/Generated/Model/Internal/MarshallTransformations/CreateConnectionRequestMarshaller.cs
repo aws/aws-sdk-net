@@ -79,6 +79,12 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ConnectionName);
                 }
 
+                if(publicRequest.IsSetLagId())
+                {
+                    context.Writer.WritePropertyName("lagId");
+                    context.Writer.Write(publicRequest.LagId);
+                }
+
                 if(publicRequest.IsSetLocation())
                 {
                     context.Writer.WritePropertyName("location");

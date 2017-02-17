@@ -29,19 +29,13 @@ namespace Amazon.DirectConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the AllocatePrivateVirtualInterface operation.
-    /// Provisions a private virtual interface to be owned by a different customer.
+    /// Provisions a private virtual interface to be owned by another AWS customer.
     /// 
     ///  
     /// <para>
-    /// The owner of a connection calls this function to provision a private virtual interface
-    /// which will be owned by another AWS customer.
-    /// </para>
-    ///  
-    /// <para>
-    /// Virtual interfaces created using this function must be confirmed by the virtual interface
-    /// owner by calling ConfirmPrivateVirtualInterface. Until this step has been completed,
-    /// the virtual interface will be in 'Confirming' state, and will not be available for
-    /// handling traffic.
+    /// Virtual interfaces created using this action must be confirmed by the virtual interface
+    /// owner by using the <a>ConfirmPrivateVirtualInterface</a> action. Until then, the virtual
+    /// interface will be in 'Confirming' state, and will not be available for handling traffic.
     /// </para>
     /// </summary>
     public partial class AllocatePrivateVirtualInterfaceRequest : AmazonDirectConnectRequest

@@ -41,11 +41,19 @@ namespace Amazon.DirectConnect.Model
     /// with. You can establish connections with AWS Direct Connect locations in multiple
     /// regions, but a connection in one region does not provide connectivity to other regions.
     /// </para>
+    ///  
+    /// <para>
+    /// You can automatically add the new connection to a link aggregation group (LAG) by
+    /// specifying a LAG ID in the request. This ensures that the new connection is allocated
+    /// on the same AWS Direct Connect endpoint that hosts the specified LAG. If there are
+    /// no available ports on the endpoint, the request fails and no connection will be created.
+    /// </para>
     /// </summary>
     public partial class CreateConnectionRequest : AmazonDirectConnectRequest
     {
         private string _bandwidth;
         private string _connectionName;
+        private string _lagId;
         private string _location;
 
         /// <summary>
@@ -76,6 +84,21 @@ namespace Amazon.DirectConnect.Model
         internal bool IsSetConnectionName()
         {
             return this._connectionName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LagId.
+        /// </summary>
+        public string LagId
+        {
+            get { return this._lagId; }
+            set { this._lagId = value; }
+        }
+
+        // Check to see if LagId property is set
+        internal bool IsSetLagId()
+        {
+            return this._lagId != null;
         }
 
         /// <summary>

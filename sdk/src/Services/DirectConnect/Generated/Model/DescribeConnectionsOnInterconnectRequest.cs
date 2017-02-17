@@ -29,8 +29,12 @@ namespace Amazon.DirectConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeConnectionsOnInterconnect operation.
-    /// Return a list of connections that have been provisioned on the given interconnect.
+    /// Deprecated in favor of <a>DescribeHostedConnections</a>.
     /// 
+    ///  
+    /// <para>
+    /// Returns a list of connections that have been provisioned on the given interconnect.
+    /// </para>
     ///  <note> 
     /// <para>
     /// This is intended for use by AWS Direct Connect partners only.

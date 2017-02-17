@@ -29,8 +29,12 @@ namespace Amazon.DirectConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the AllocateConnectionOnInterconnect operation.
-    /// Creates a hosted connection on an interconnect.
+    /// Deprecated in favor of <a>AllocateHostedConnection</a>.
     /// 
+    ///  
+    /// <para>
+    /// Creates a hosted connection on an interconnect.
+    /// </para>
     ///  
     /// <para>
     /// Allocates a VLAN number and a specified amount of bandwidth for use by a hosted connection
@@ -65,7 +69,7 @@ namespace Amazon.DirectConnect.Model
         /// </para>
         ///  
         /// <para>
-        /// Values: 50M, 100M, 200M, 300M, 400M, or 500M
+        /// Values: 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, or 500Mbps
         /// </para>
         /// </summary>
         public string Bandwidth

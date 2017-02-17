@@ -327,6 +327,72 @@ namespace Amazon.DirectConnect
 
 
     /// <summary>
+    /// Constants used for properties of type LagState.
+    /// </summary>
+    public class LagState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Available for LagState
+        /// </summary>
+        public static readonly LagState Available = new LagState("available");
+        /// <summary>
+        /// Constant Deleted for LagState
+        /// </summary>
+        public static readonly LagState Deleted = new LagState("deleted");
+        /// <summary>
+        /// Constant Deleting for LagState
+        /// </summary>
+        public static readonly LagState Deleting = new LagState("deleting");
+        /// <summary>
+        /// Constant Down for LagState
+        /// </summary>
+        public static readonly LagState Down = new LagState("down");
+        /// <summary>
+        /// Constant Pending for LagState
+        /// </summary>
+        public static readonly LagState Pending = new LagState("pending");
+        /// <summary>
+        /// Constant Requested for LagState
+        /// </summary>
+        public static readonly LagState Requested = new LagState("requested");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LagState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LagState FindValue(string value)
+        {
+            return FindValue<LagState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LagState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type LoaContentType.
     /// </summary>
     public class LoaContentType : ConstantClass

@@ -51,6 +51,12 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("awsDevice", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.AwsDevice = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("bandwidth", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -73,6 +79,12 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.InterconnectState = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("lagId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.LagId = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("loaIssueTime", targetDepth))
