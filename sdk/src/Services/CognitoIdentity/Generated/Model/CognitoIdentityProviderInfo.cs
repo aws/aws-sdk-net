@@ -34,6 +34,7 @@ namespace Amazon.CognitoIdentity.Model
     {
         private string _clientId;
         private string _providerName;
+        private bool? _serverSideTokenCheck;
 
         /// <summary>
         /// Gets and sets the property ClientId. 
@@ -69,6 +70,24 @@ namespace Amazon.CognitoIdentity.Model
         internal bool IsSetProviderName()
         {
             return this._providerName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServerSideTokenCheck. 
+        /// <para>
+        /// TRUE if server-side token validation is enabled for the identity provider’s token.
+        /// </para>
+        /// </summary>
+        public bool ServerSideTokenCheck
+        {
+            get { return this._serverSideTokenCheck.GetValueOrDefault(); }
+            set { this._serverSideTokenCheck = value; }
+        }
+
+        // Check to see if ServerSideTokenCheck property is set
+        internal bool IsSetServerSideTokenCheck()
+        {
+            return this._serverSideTokenCheck.HasValue; 
         }
 
     }

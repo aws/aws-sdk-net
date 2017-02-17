@@ -57,6 +57,12 @@ namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ProviderName);
             }
 
+            if(requestObject.IsSetServerSideTokenCheck())
+            {
+                context.Writer.WritePropertyName("ServerSideTokenCheck");
+                context.Writer.Write(requestObject.ServerSideTokenCheck);
+            }
+
         }
 
         /// <summary>

@@ -76,6 +76,12 @@ namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
                     unmarshalledObject.ProviderName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ServerSideTokenCheck", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.ServerSideTokenCheck = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;
