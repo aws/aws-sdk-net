@@ -85,7 +85,8 @@ namespace Amazon.S3.Transfer.Internal
             {                
                 internalCts.Dispose();
                 loopThrottler.Dispose();
-                asyncThrottler.Dispose();
+                if (asyncThrottler != null)
+                    asyncThrottler.Dispose();
             }
         }
 

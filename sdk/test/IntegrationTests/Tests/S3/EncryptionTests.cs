@@ -62,6 +62,38 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             AmazonS3Util.DeleteS3BucketWithObjects(s3EncryptionClientMetadataMode, bucketName);
             s3EncryptionClientMetadataMode.Dispose();
             s3EncryptionClientFileMode.Dispose();
+            Directory.Delete(TransferUtilityTests.BasePath, true);
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void DirectoryTesting()
+        {
+            var directoryPath = TransferUtilityTests.CreateTestDirectory();
+            using (var transferUtility = new Amazon.S3.Transfer.TransferUtility(s3EncryptionClientMetadataMode))
+            {
+                var keyPrefix = "test-metadata-mode";
+                TransferUtilityUploadDirectoryRequest uploadRequest = CreateUploadDirRequest(directoryPath, keyPrefix);
+                transferUtility.UploadDirectory(uploadRequest);
+
+                var newDir = TransferUtilityTests.GenerateDirectoryPath();
+                transferUtility.DownloadDirectory(bucketName, keyPrefix, newDir);
+            }
+        }
+
+        private static TransferUtilityUploadDirectoryRequest CreateUploadDirRequest(string directoryPath, string keyPrefix)
+        {
+            TransferUtilityUploadDirectoryRequest uploadRequest =
+                new TransferUtilityUploadDirectoryRequest
+                {
+                    BucketName = bucketName,
+                    Directory = directoryPath,
+                    KeyPrefix = keyPrefix,
+                    ServerSideEncryptionMethod = ServerSideEncryptionMethod.AES256,
+                    SearchOption = SearchOption.AllDirectories,
+                    SearchPattern = "."
+                };
+            return uploadRequest;
         }
 
         [TestMethod]

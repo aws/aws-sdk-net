@@ -24,8 +24,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
     {
         public static readonly long MEG_SIZE = (int)Math.Pow(2, 20);
         public static readonly long KILO_SIZE = (int)Math.Pow(2, 10);
+        public static readonly string BasePath = @"c:\temp\test\transferutility\";
 
-        private static string basePath = @"c:\temp\test\transferutility\";
         private static string bucketName;
         private static string octetStreamContentType = "application/octet-stream";
         private static string fullPath;
@@ -45,7 +45,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         {
             AmazonS3Util.DeleteS3BucketWithObjects(Client, bucketName);
             BaseClean();
-            Directory.Delete(basePath, true);
+            Directory.Delete(BasePath, true);
         }
 
         [TestMethod]
@@ -66,7 +66,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             {
                 Validate = (p) =>
                 {
-                    Assert.AreEqual(p.FilePath, Path.Combine(basePath, fileName));
+                    Assert.AreEqual(p.FilePath, Path.Combine(BasePath, fileName));
                 }
             };
             Upload(fileName, 10 * MEG_SIZE, progressValidator);
@@ -128,7 +128,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     ValidateProgressInterval = false,
                     Validate = (p) =>
                     {
-                        Assert.AreEqual(p.FilePath, Path.Combine(basePath, fileName));
+                        Assert.AreEqual(p.FilePath, Path.Combine(BasePath, fileName));
                     }
                 };
                 Upload(fileName, 20 * MEG_SIZE, progressValidator);
@@ -189,7 +189,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 Key = key
             });
 
-            var path = Path.Combine(basePath, fileName);
+            var path = Path.Combine(BasePath, fileName);
             UtilityMethods.GenerateFile(path, size);
             var config = new TransferUtilityConfig
             {
@@ -228,25 +228,18 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         [TestCategory("S3")]
         public void UploadDirectoryWithProgressTracker()
         {
-            var directoryName = UtilityMethods.GenerateName("UploadDirectoryTest");
             var progressValidator = new DirectoryProgressValidator<UploadDirectoryProgressArgs>();
             ConfigureProgressValidator(progressValidator);
 
-            UploadDirectory(directoryName, 10 * MEG_SIZE, progressValidator, true, false);
+            UploadDirectory(10 * MEG_SIZE, progressValidator, true, false);
             progressValidator.AssertOnCompletion();
         }
 
-        void UploadDirectory(string directoryName, long size, 
+        string UploadDirectory(long size,
              DirectoryProgressValidator<UploadDirectoryProgressArgs> progressValidator, bool validate = true, bool concurrent = true)
         {
-            var directoryPath = Path.Combine(basePath, directoryName);
-
-            for (int i = 0; i < 5; i++)
-            {
-                var filePath = Path.Combine(Path.Combine(directoryPath, i.ToString()), "file.txt");
-                //MultipartUploadTests.UtilityMethods.GenerateFile(filePath, (i % 2 == 0) ? size : size / 2);
-                UtilityMethods.GenerateFile(filePath, size);
-            }
+            var directoryPath = CreateTestDirectory(size);
+            var directoryName = new DirectoryInfo(directoryPath).Name;
 
             var config = new TransferUtilityConfig
             {
@@ -259,7 +252,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 Directory = directoryPath,
                 KeyPrefix = directoryName,
                 SearchPattern = "*",
-                SearchOption = SearchOption.AllDirectories,                
+                SearchOption = SearchOption.AllDirectories,
             };
 
             //if (concurrent)
@@ -283,6 +276,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
             if (validate)
                 ValidateDirectoryContents(bucketName, directoryName, directoryPath);
+
+            return directoryPath;
         }
 
         [TestMethod]
@@ -292,21 +287,18 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             // disable clock skew testing, this is a multithreaded test
             using (RetryUtilities.DisableClockSkewCorrection())
             {
-                var directoryName = UtilityMethods.GenerateName(@"DownloadDirectoryTest");
                 var progressValidator = new DirectoryProgressValidator<DownloadDirectoryProgressArgs>();
                 ConfigureProgressValidator(progressValidator);
 
-                DownloadDirectory(directoryName, progressValidator);
+                DownloadDirectory(progressValidator);
                 progressValidator.AssertOnCompletion();
             }
         }
 
-        void DownloadDirectory(string directoryName, 
-            DirectoryProgressValidator<DownloadDirectoryProgressArgs> progressValidator, bool concurrent = true)
+        void DownloadDirectory(DirectoryProgressValidator<DownloadDirectoryProgressArgs> progressValidator, bool concurrent = true)
         {
-            var directoryPath = Path.Combine(basePath, directoryName);
-            UploadDirectory(directoryName,
-                20 * MEG_SIZE, null, false);
+            var directoryPath = UploadDirectory(20 * MEG_SIZE, null, false);
+            var directoryName = new DirectoryInfo(directoryPath).Name;
             Directory.Delete(directoryPath, true);
 
             var transferUtility = new TransferUtility(Client);
@@ -346,7 +338,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         void Download(string fileName, long size, TransferProgressValidator<WriteObjectProgressArgs> progressValidator)
         {
             var key = fileName;
-            var originalFilePath = Path.Combine(basePath, fileName);
+            var originalFilePath = Path.Combine(BasePath, fileName);
             UtilityMethods.GenerateFile(originalFilePath, size);
 
             Client.PutObject(new PutObjectRequest
@@ -380,7 +372,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         {
             var fileName = UtilityMethods.GenerateName(@"OpenStreamTest\File");
             var key = fileName;
-            var originalFilePath = Path.Combine(basePath, fileName);
+            var originalFilePath = Path.Combine(BasePath, fileName);
             UtilityMethods.GenerateFile(originalFilePath, 2 * MEG_SIZE);
             Client.PutObject(new PutObjectRequest
             {
@@ -418,7 +410,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             });
 
             var filename = UtilityMethods.GenerateName(objectKey.Replace('/', '\\'));
-            var filePath = Path.Combine(basePath, filename);
+            var filePath = Path.Combine(BasePath, filename);
             var transferUtility = new TransferUtility(Client);
             transferUtility.Download(new TransferUtilityDownloadRequest
             {
@@ -437,7 +429,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         public async System.Threading.Tasks.Task UploadAsyncCancellationTest()
         {
             var fileName = UtilityMethods.GenerateName(@"SimpleUploadTest\CancellationTest");
-            var path = Path.Combine(basePath, fileName);
+            var path = Path.Combine(BasePath, fileName);
             UtilityMethods.GenerateFile(path, 20 * MEG_SIZE);
 
             TransferUtilityUploadRequest uploadRequest = new TransferUtilityUploadRequest()
@@ -573,6 +565,28 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 var key = filePath.Substring(directoryPath.LastIndexOf("\\") + 1);
                 ValidateFileContents(bucketName, key.Replace("\\", "/"), filePath);
             }
+        }
+
+        public static string CreateTestDirectory(long size = 0)
+        {
+            if (size == 0)
+                size = 1 * MEG_SIZE;
+
+            var directoryPath = GenerateDirectoryPath();
+            for (int i = 0; i < 5; i++)
+            {
+                var filePath = Path.Combine(Path.Combine(directoryPath, i.ToString()), "file.txt");
+                UtilityMethods.GenerateFile(filePath, size);
+            }
+
+            return directoryPath;
+        }
+
+        public static string GenerateDirectoryPath(string baseName = "DirectoryTest")
+        {
+            var directoryName = UtilityMethods.GenerateName(baseName);
+            var directoryPath = Path.Combine(BasePath, directoryName);
+            return directoryPath;
         }
 
         public abstract class ProgressValidator<T>
