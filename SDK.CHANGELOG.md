@@ -1,3 +1,7 @@
+### 3.3.53.0 (2017-02-17 19:48 UTC)
+* DirectConnect (3.3.3.0)
+	* This update will introduce the ability for Direct Connect customers to take advantage of Link Aggregation (LAG). This allows you to bundle many individual physical interfaces into a single logical interface, referred to as a LAG. This makes administration much simpler as the majority of configuration is done on the LAG while you are free to add or remove physical interfaces from the bundle as bandwidth demand increases or decreases. A concrete example of the simplification added by LAG is that customers need only a single BGP session as opposed to one session per physical connection.
+
 ### 3.3.52.0 (2017-02-17 02:26 UTC)
 * CognitoIdentity (3.3.2.0)
 	* Allow createIdentityPool and updateIdentityPool API to set server side token check value on identity pool
