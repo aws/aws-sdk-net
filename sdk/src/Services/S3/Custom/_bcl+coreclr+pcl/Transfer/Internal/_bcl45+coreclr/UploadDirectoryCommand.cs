@@ -48,7 +48,7 @@ namespace Amazon.S3.Transfer.Internal
                     new SemaphoreSlim(this._config.ConcurrentServiceRequests) :
                     new SemaphoreSlim(1);
 
-                asyncThrottler = this._utility.S3Client is AmazonS3EncryptionClient ?
+                asyncThrottler = this._utility.S3Client is Amazon.S3.Internal.IAmazonS3Encryption ?
                     // If we are using AmazonS3EncryptionClient, don't set the async throttler.
                     // The loopThrottler will be used to control how many files are uploaded in parallel.
                     // Each upload (multipart) will upload parts serially.

@@ -44,13 +44,11 @@ namespace Amazon.S3.Transfer.Internal
                 ListObjectsResponse listResponse = this._s3Client.ListObjects(listRequest);
                 foreach (S3Object s3o in listResponse.S3Objects)
                 {
-                    if (this._request.IsSetModifiedSinceDate() && s3o.LastModified <= this._request.ModifiedSinceDate)
-                        continue;
-                    if (this._request.IsSetUnmodifiedSinceDate() && s3o.LastModified > this._request.UnmodifiedSinceDate)
-                        continue;
-
-                    this._totalBytes += s3o.Size;
-					objs.Add(s3o);
+                    if (ShouldDownload(s3o))
+                    {
+                        this._totalBytes += s3o.Size;
+                        objs.Add(s3o);
+                    }
                 }
                 listRequest.Marker = listResponse.NextMarker;
             } while (!string.IsNullOrEmpty(listRequest.Marker));
@@ -67,7 +65,7 @@ namespace Amazon.S3.Transfer.Internal
                 var downloadRequest = ConstructTransferUtilityDownloadRequest(s3o, listRequest.Prefix.Length);
                 DownloadCommand command = new DownloadCommand(this._s3Client, downloadRequest);
                 command.Execute();
-        }
+            }
         }
     }
 }

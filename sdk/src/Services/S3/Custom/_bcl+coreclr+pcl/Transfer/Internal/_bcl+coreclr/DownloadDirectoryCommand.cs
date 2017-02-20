@@ -27,13 +27,16 @@ using System.Text;
 using Amazon.S3;
 using Amazon.S3.Model;
 using System.Threading;
+using Amazon.S3.Util;
+using Amazon.Util.Internal;
 
 namespace Amazon.S3.Transfer.Internal
 {
     internal partial class DownloadDirectoryCommand : BaseCommand
     {
-        IAmazonS3 _s3Client;
-        TransferUtilityDownloadDirectoryRequest _request;
+        private readonly IAmazonS3 _s3Client;
+        private readonly TransferUtilityDownloadDirectoryRequest _request;
+        private readonly bool _skipEncryptionInstructionFiles;
         int _totalNumberOfFilesToDownload;
         int _numberOfFilesDownloaded;
         long _totalBytes;
@@ -42,9 +45,12 @@ namespace Amazon.S3.Transfer.Internal
 
         internal DownloadDirectoryCommand(IAmazonS3 s3Client, TransferUtilityDownloadDirectoryRequest request)
         {
+            if (s3Client == null)
+                throw new ArgumentNullException("s3Client");
+
             this._s3Client = s3Client;
             this._request = request;
-            //this._config = config;
+            this._skipEncryptionInstructionFiles = s3Client is Amazon.S3.Internal.IAmazonS3Encryption;
         }
 
         private void downloadedProgressEventCallback(object sender, WriteObjectProgressArgs e)
@@ -136,6 +142,26 @@ namespace Amazon.S3.Transfer.Internal
             {
                 throw new InvalidOperationException("A file already exists with the same name indicated by LocalDirectory!");
             }
+        }
+
+        private bool IsInstructionFile(string key)
+        {
+            return (this._skipEncryptionInstructionFiles && AmazonS3Util.IsInstructionFile(key));
+        }
+
+        private bool ShouldDownload(S3Object s3o)
+        {
+            // skip objects based on ModifiedSinceDate
+            if (this._request.IsSetModifiedSinceDate() && s3o.LastModified <= this._request.ModifiedSinceDate)
+                return false;
+            // skip objects based on UnmodifiedSinceDate
+            if (this._request.IsSetUnmodifiedSinceDate() && s3o.LastModified > this._request.UnmodifiedSinceDate)
+                return false;
+            // skip objects which are instruction files and we're using encryption client
+            if (IsInstructionFile(s3o.Key))
+                return false;
+
+            return true;
         }
     }
 }

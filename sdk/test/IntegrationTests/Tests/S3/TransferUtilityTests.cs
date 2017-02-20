@@ -221,7 +221,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             Console.WriteLine("Expected Size: {0} , Actual Size {1}", size, metadata.ContentLength);
             Assert.AreEqual(octetStreamContentType, metadata.Headers.ContentType);
             Assert.AreEqual(size, metadata.ContentLength);
-            ValidateFileContents(bucketName, key, path);
+            ValidateFileContents(Client, bucketName, key, path);
         }
 
         [TestMethod]
@@ -235,11 +235,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             progressValidator.AssertOnCompletion();
         }
 
-        string UploadDirectory(long size,
+        DirectoryInfo UploadDirectory(long size,
              DirectoryProgressValidator<UploadDirectoryProgressArgs> progressValidator, bool validate = true, bool concurrent = true)
         {
-            var directoryPath = CreateTestDirectory(size);
-            var directoryName = new DirectoryInfo(directoryPath).Name;
+            var directory = CreateTestDirectory(size);
+            var keyPrefix = directory.Name;
+            var directoryPath = directory.FullName;
 
             var config = new TransferUtilityConfig
             {
@@ -250,7 +251,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             {
                 BucketName = bucketName,
                 Directory = directoryPath,
-                KeyPrefix = directoryName,
+                KeyPrefix = keyPrefix,
                 SearchPattern = "*",
                 SearchOption = SearchOption.AllDirectories,
             };
@@ -275,9 +276,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             Assert.AreEqual(5, files.Count);
 
             if (validate)
-                ValidateDirectoryContents(bucketName, directoryName, directoryPath);
+                ValidateDirectoryContents(Client, bucketName, keyPrefix, directory);
 
-            return directoryPath;
+            return directory;
         }
 
         [TestMethod]
@@ -297,8 +298,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
         void DownloadDirectory(DirectoryProgressValidator<DownloadDirectoryProgressArgs> progressValidator, bool concurrent = true)
         {
-            var directoryPath = UploadDirectory(20 * MEG_SIZE, null, false);
-            var directoryName = new DirectoryInfo(directoryPath).Name;
+            var directory = UploadDirectory(20 * MEG_SIZE, null, false);
+            var directoryPath = directory.FullName;
+            var keyPrefix = directory.Name;
             Directory.Delete(directoryPath, true);
 
             var transferUtility = new TransferUtility(Client);
@@ -306,14 +308,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             {
                 BucketName = bucketName,
                 LocalDirectory = directoryPath,
-                S3Directory = directoryName
+                S3Directory = keyPrefix
             };
 
             if (progressValidator != null)
                 request.DownloadedDirectoryProgressEvent += progressValidator.OnProgressEvent;
 
             transferUtility.DownloadDirectory(request);
-            ValidateDirectoryContents(bucketName, directoryName, directoryPath);
+            ValidateDirectoryContents(Client, bucketName, keyPrefix, directory);
         }
 
         [TestMethod]
@@ -523,51 +525,48 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             };
         }
 
-        public static void ValidateFileContents(string bucketName, string key, string path)
+        public static void ValidateFileContents(IAmazonS3 s3client, string bucketName, string key, string path)
         {
             // test assumes we used a known extension and added it to the file key
             var ext = Path.GetExtension(key);
-            ValidateFileContents(bucketName, key, path, AmazonS3Util.MimeTypeFromExtension(ext));
+            ValidateFileContents(s3client, bucketName, key, path, AmazonS3Util.MimeTypeFromExtension(ext));
         }
 
-        public static void ValidateFileContents(string bucketName, string key, string path, string contentType)
+        public static void ValidateFileContents(IAmazonS3 s3client, string bucketName, string key, string path, string contentType)
         {
             var downloadPath = path + ".chk";
-            for (int retries = 0; retries < 5; retries++)
+            var request = new GetObjectRequest
             {
-                try
+                BucketName = bucketName,
+                Key = key,
+            };
+
+            UtilityMethods.WaitUntil(() =>
+            {
+                using (var response = s3client.GetObject(request))
                 {
-                    var request = new GetObjectRequest
-                    {
-                        BucketName = bucketName,
-                        Key = key,
-                    };
-                    using (var response = Client.GetObject(request))
-                    {
-                        //Assert.AreEqual(contentType, response.Headers.ContentType);
-                        response.WriteResponseStreamToFile(downloadPath);
-                    }
+                    //Assert.AreEqual(contentType, response.Headers.ContentType);
+                    response.WriteResponseStreamToFile(downloadPath);
                 }
-                catch(AmazonS3Exception e)
-                {
-                    if (e.StatusCode != HttpStatusCode.NotFound || retries == 5)
-                        throw;
-                }
-            }
+                return true;
+            }, sleepSeconds: 2, maxWaitSeconds: 10);
             UtilityMethods.CompareFiles(path, downloadPath);
         }
 
-        public static void ValidateDirectoryContents(string bucketName, string rootDirectoryName, string directoryPath)
+        public static void ValidateDirectoryContents(IAmazonS3 s3client, string bucketName, string keyPrefix, DirectoryInfo sourceDirectory)
         {
-            string[] filePaths = Directory.GetFiles(directoryPath, "*", SearchOption.AllDirectories);
-            foreach (var filePath in filePaths)
+            var directoryPath = sourceDirectory.FullName;
+            var files = sourceDirectory.GetFiles("*", SearchOption.AllDirectories);
+            foreach (var file in files)
             {
-                var key = filePath.Substring(directoryPath.LastIndexOf("\\") + 1);
-                ValidateFileContents(bucketName, key.Replace("\\", "/"), filePath);
+                var filePath = file.FullName;
+                var key = filePath.Substring(directoryPath.Length + 1);
+                key = keyPrefix + "/" + key.Replace("\\", "/");
+                ValidateFileContents(s3client, bucketName, key, filePath);
             }
         }
 
-        public static string CreateTestDirectory(long size = 0)
+        public static DirectoryInfo CreateTestDirectory(long size = 0)
         {
             if (size == 0)
                 size = 1 * MEG_SIZE;
@@ -579,7 +578,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 UtilityMethods.GenerateFile(filePath, size);
             }
 
-            return directoryPath;
+            return new DirectoryInfo(directoryPath);
         }
 
         public static string GenerateDirectoryPath(string baseName = "DirectoryTest")

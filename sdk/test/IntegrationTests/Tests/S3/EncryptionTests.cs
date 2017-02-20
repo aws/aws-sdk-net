@@ -69,15 +69,28 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         [TestCategory("S3")]
         public void DirectoryTesting()
         {
-            var directoryPath = TransferUtilityTests.CreateTestDirectory();
-            using (var transferUtility = new Amazon.S3.Transfer.TransferUtility(s3EncryptionClientMetadataMode))
+            var directory = TransferUtilityTests.CreateTestDirectory(10 * TransferUtilityTests.KILO_SIZE);
+            var keyPrefix = directory.Name;
+            var directoryPath = directory.FullName;
+
+            using (var transferUtility = new Amazon.S3.Transfer.TransferUtility(s3EncryptionClientFileMode))
             {
-                var keyPrefix = "test-metadata-mode";
                 TransferUtilityUploadDirectoryRequest uploadRequest = CreateUploadDirRequest(directoryPath, keyPrefix);
                 transferUtility.UploadDirectory(uploadRequest);
 
                 var newDir = TransferUtilityTests.GenerateDirectoryPath();
                 transferUtility.DownloadDirectory(bucketName, keyPrefix, newDir);
+                TransferUtilityTests.ValidateDirectoryContents(s3EncryptionClientFileMode, bucketName, keyPrefix, directory);
+            }
+
+            using (var transferUtility = new Amazon.S3.Transfer.TransferUtility(s3EncryptionClientMetadataMode))
+            {
+                TransferUtilityUploadDirectoryRequest uploadRequest = CreateUploadDirRequest(directoryPath, keyPrefix);
+                transferUtility.UploadDirectory(uploadRequest);
+
+                var newDir = TransferUtilityTests.GenerateDirectoryPath();
+                transferUtility.DownloadDirectory(bucketName, keyPrefix, newDir);
+                TransferUtilityTests.ValidateDirectoryContents(s3EncryptionClientMetadataMode, bucketName, keyPrefix, directory);
             }
         }
 
@@ -536,7 +549,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         private static string HashFile(string file)
         {
             var md5 = MD5.Create();
-            using(var stream = File.Open(file, FileMode.Open, FileAccess.Read, FileShare.None))
+            using (var stream = File.Open(file, FileMode.Open, FileAccess.Read, FileShare.None))
             {
                 var hashBytes = md5.ComputeHash(stream);
                 return Convert.ToBase64String(hashBytes);

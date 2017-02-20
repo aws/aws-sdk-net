@@ -22,6 +22,7 @@ using Amazon.Runtime;
 using ThirdParty.Json.LitJson;
 using System.Collections.Generic;
 using System.Globalization;
+using Amazon.S3.Util;
 
 namespace Amazon.S3.Encryption
 {
@@ -37,7 +38,6 @@ namespace Amazon.S3.Encryption
         /// and returns it in raw byte array form.
         /// </summary>
 
-        private const string instructionfileSuffix = "INSTRUCTION_SUFFIX";
         private const string keyInMetadata = "x-amz-key";
         private const string initVectorInMetadata = "x-amz-iv";
         private const string encryptionMaterialsDescription = "x-amz-matdesc";
@@ -220,7 +220,7 @@ namespace Amazon.S3.Encryption
             GetObjectRequest request = new GetObjectRequest
             {
                 BucketName = response.BucketName,
-                Key = response.Key + instructionfileSuffix
+                Key = response.Key + S3Constants.EncryptionInstructionfileSuffix
             };
             return request;
         }
@@ -347,7 +347,7 @@ namespace Amazon.S3.Encryption
                 PutObjectRequest requestforInstructionFile = new PutObjectRequest()
                 {
                     BucketName = putObjectRequest.BucketName,
-                    Key = putObjectRequest.Key + instructionfileSuffix,
+                    Key = putObjectRequest.Key + S3Constants.EncryptionInstructionfileSuffix,
                     ContentBody = credentials
                 };
                 requestforInstructionFile.Metadata.Add(instructionFileInfo, "");
@@ -360,7 +360,7 @@ namespace Amazon.S3.Encryption
                 PutObjectRequest requestforInstructionFile = new PutObjectRequest()
                 {
                     BucketName = completeMultiPartRequest.BucketName,
-                    Key = completeMultiPartRequest.Key + instructionfileSuffix,
+                    Key = completeMultiPartRequest.Key + S3Constants.EncryptionInstructionfileSuffix,
                     ContentBody = credentials
                 };
                 requestforInstructionFile.Metadata.Add(instructionFileInfo, "");
@@ -410,6 +410,7 @@ namespace Amazon.S3.Encryption
             else
                 return false;
         }
+
 #endregion
     }
 }

@@ -136,10 +136,7 @@ namespace Amazon.S3.Transfer.Internal
         {
             int threadCount;
             if (this._fileTransporterRequest.IsSetFilePath()
-#if BCL
- && !(_s3Client is Amazon.S3.Encryption.AmazonS3EncryptionClient)
-#endif
-)
+                && !(_s3Client is Amazon.S3.Internal.IAmazonS3Encryption))
             {
                 threadCount = this._config.ConcurrentServiceRequests;
             }
@@ -185,16 +182,12 @@ namespace Amazon.S3.Transfer.Internal
 #endif
             };
 
-#if BCL
             if ((filePosition + this._partSize >= this._contentLength)
-                && _s3Client is Amazon.S3.Encryption.AmazonS3EncryptionClient
-
-                )
+                && _s3Client is Amazon.S3.Internal.IAmazonS3Encryption)
             {
                 uploadRequest.IsLastPart = true;
                 uploadRequest.PartSize = 0;
             }
-#endif
 
             var progressHandler = new ProgressHandler(this.UploadPartProgressEventCallback);
             ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)uploadRequest).StreamUploadProgressCallback += progressHandler.OnTransferProgress;

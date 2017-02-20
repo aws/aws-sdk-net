@@ -16,6 +16,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.S3.Internal;
 using Amazon.S3.Model;
 using Amazon.Util;
 using System.Collections.Generic;
@@ -26,7 +27,7 @@ namespace Amazon.S3.Encryption
     /// <summary>
     /// This class extends the AmazonS3Client and provides client side encryption when reading or writing S3 objects.
     /// </summary>
-    public partial class AmazonS3EncryptionClient : AmazonS3Client
+    public partial class AmazonS3EncryptionClient : AmazonS3Client, IAmazonS3Encryption
     {
         internal EncryptionMaterials EncryptionMaterials
         {

@@ -112,28 +112,23 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         [TestCategory("S3")]
         public void TestDirectoryUploads()
         {
-            var directoryName = UtilityMethods.GenerateName("UploadDirectoryTest");
             var progressValidator = new TransferUtilityTests.DirectoryProgressValidator<UploadDirectoryProgressArgs>();
             TransferUtilityTests.ConfigureProgressValidator(progressValidator);
 
             keysToValidate.Clear();
-            UploadDirectory(directoryName, 10 * TransferUtilityTests.MEG_SIZE, progressValidator, validate: true);
+            UploadDirectory(10 * TransferUtilityTests.MEG_SIZE, progressValidator, validate: true);
             progressValidator.AssertOnCompletion();
 
             foreach (var key in keysToValidate)
                 ValidateObjectMetadataAndHeaders(key);
         }
 
-        void UploadDirectory(string directoryName, long size,
+        void UploadDirectory(long size,
             TransferUtilityTests.DirectoryProgressValidator<UploadDirectoryProgressArgs> progressValidator, bool validate = true)
         {
-            var directoryPath = Path.Combine(basePath, directoryName);
-
-            for (int i = 0; i < 5; i++)
-            {
-                var filePath = Path.Combine(Path.Combine(directoryPath, i.ToString()), "file.txt");
-                UtilityMethods.GenerateFile(filePath, size);
-            }
+            var directory = TransferUtilityTests.CreateTestDirectory(size);
+            var directoryPath = directory.FullName;
+            var keyPrefix = directory.Name;
 
             var config = new TransferUtilityConfig
             {
@@ -144,7 +139,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             {
                 BucketName = bucketName,
                 Directory = directoryPath,
-                KeyPrefix = directoryName,
+                KeyPrefix = keyPrefix,
                 SearchPattern = "*",
                 SearchOption = SearchOption.AllDirectories,
             };
@@ -173,7 +168,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             Assert.AreEqual(5, files.Count);
 
             if (validate)
-                TransferUtilityTests.ValidateDirectoryContents(bucketName, directoryName, directoryPath);
+                TransferUtilityTests.ValidateDirectoryContents(Client, bucketName, keyPrefix, directory);
         }
 
         private static void ValidateObjectMetadataAndHeaders(string key)

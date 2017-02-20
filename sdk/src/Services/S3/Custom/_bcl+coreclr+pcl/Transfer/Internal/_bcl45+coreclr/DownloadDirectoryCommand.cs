@@ -14,6 +14,7 @@
  */
 
 using Amazon.S3.Model;
+using Amazon.S3.Util;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -26,14 +27,14 @@ namespace Amazon.S3.Transfer.Internal
 {
     internal partial class DownloadDirectoryCommand : BaseCommand
     {
+
         TransferUtilityConfig _config;
 
         public bool DownloadFilesConcurrently { get; set; }
 
         internal DownloadDirectoryCommand(IAmazonS3 s3Client, TransferUtilityDownloadDirectoryRequest request, TransferUtilityConfig config)
+            : this(s3Client, request)
         {
-            this._s3Client = s3Client;
-            this._request = request;
             this._config = config;
         }
 
@@ -50,13 +51,11 @@ namespace Amazon.S3.Transfer.Internal
                     .ConfigureAwait(continueOnCapturedContext: false);
                 foreach (S3Object s3o in listResponse.S3Objects)
                 {
-                    if (this._request.IsSetModifiedSinceDate() && s3o.LastModified <= this._request.ModifiedSinceDate)
-                        continue;
-                    if (this._request.IsSetUnmodifiedSinceDate() && s3o.LastModified > this._request.UnmodifiedSinceDate)
-                        continue;
-
-                    this._totalBytes += s3o.Size;
-                    objs.Add(s3o);
+                    if (ShouldDownload(s3o))
+                    {
+                        this._totalBytes += s3o.Size;
+                        objs.Add(s3o);
+                    }
                 }
                 listRequest.Marker = listResponse.NextMarker;
             } while (!string.IsNullOrEmpty(listRequest.Marker));

@@ -534,6 +534,12 @@ namespace Amazon.S3.Util
             }
         }
 
+        internal static bool IsInstructionFile(string key)
+        {
+            return key.EndsWith(S3Constants.EncryptionInstructionfileSuffix, StringComparison.Ordinal);
+        }
+
+
 #if AWS_ASYNC_API
         /// <summary>
         /// Determines whether an S3 bucket exists or not.
