@@ -64,6 +64,7 @@ namespace ServiceClientGenerator
             public const string ExtraTestProjects = "extraTestProjects";
             public const string ParentProfile = "parentProfile";
             public const string NuGetTargetFrameworkKey = "nugetTargetPlatform";
+            public const string SharedNugetTargetFrameworksKey = "sharedNugetTargetFrameworks";
         }
 
         /// <summary>
@@ -350,13 +351,11 @@ namespace ServiceClientGenerator
                     CompilationConstants = projectNode[ProjectsSectionKeys.DefineConstantsKey].ToString(),
                     BinSubFolder = projectNode[ProjectsSectionKeys.BinSubFolderKey].ToString(),
                     Template = projectNode[ProjectsSectionKeys.TemplateKey].ToString(),
-                    NuGetTargetPlatform = projectNode[ProjectsSectionKeys.NuGetTargetFrameworkKey] == null ? string.Empty : projectNode[ProjectsSectionKeys.NuGetTargetFrameworkKey].ToString()
+                    NuGetTargetPlatform = projectNode[ProjectsSectionKeys.NuGetTargetFrameworkKey] == null ? string.Empty : projectNode[ProjectsSectionKeys.NuGetTargetFrameworkKey].ToString(),
+                    Configurations = (from object bc in projectNode[ProjectsSectionKeys.ConfigurationsKey] select bc.ToString()).ToList(),
+                    PlatformCodeFolders = (from object pcf in projectNode[ProjectsSectionKeys.PlatformCodeFoldersKey] select pcf.ToString()).ToList(),
                 };
 
-                config.Configurations = (from object bc in projectNode[ProjectsSectionKeys.ConfigurationsKey]
-                                         select bc.ToString()).ToList();
-                config.PlatformCodeFolders = (from object pcf in projectNode[ProjectsSectionKeys.PlatformCodeFoldersKey]
-                                              select pcf.ToString()).ToList();
                 var extraTestProjects = projectNode.SafeGet(ProjectsSectionKeys.ExtraTestProjects);
                 if (extraTestProjects == null)
                 {
@@ -367,6 +366,9 @@ namespace ServiceClientGenerator
                     config.ExtraTestProjects = (from object etp in extraTestProjects
                                                 select etp.ToString()).ToList();
                 }
+
+                var sharedNugetFrameworks = projectNode.SafeGet(ProjectsSectionKeys.SharedNugetTargetFrameworksKey);
+                config.SharedNugetTargetFrameworks = sharedNugetFrameworks == null ? new List<string>() : (from object bc in sharedNugetFrameworks select bc.ToString()).ToList();
 
                 // This code assumes that the parent profile (project configuration) is defined in the manifest
                 // before it's being referred by a sub profile.

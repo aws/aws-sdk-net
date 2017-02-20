@@ -78,6 +78,11 @@ namespace ServiceClientGenerator
         public string NuGetTargetPlatform { get; set; }
 
         /// <summary>
+        /// Some projects are tied to PCL.  Share dependencies for these target frameworks.
+        /// </summary>
+        public IEnumerable<string> SharedNugetTargetFrameworks { get; set; }
+
+        /// <summary>
         /// The set of projects that should be included in the solution test folder.
         /// </summary>
         public IEnumerable<string> ExtraTestProjects { get; set; }

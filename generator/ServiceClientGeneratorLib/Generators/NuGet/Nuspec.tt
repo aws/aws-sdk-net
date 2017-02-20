@@ -29,8 +29,8 @@
 <#
 	if(!Convert.ToBoolean(this.Session["DisablePCLSupport"]))
 	{
-		List<string> pclTargetFrameworks = new List<string>{"portable-net45+win8+wpa81+wp8", "MonoAndroid10", "Xamarin.iOS10", "MonoTouch10"};
-		foreach(var targetFramework in pclTargetFrameworks)
+		List<string> sharedPCLFrameworks = this.Session["SharedPCLNugetTargetFrameworks"] as List<string>;
+		foreach(var targetFramework in sharedPCLFrameworks)
 		{
 #>
       <group targetFramework="<#=targetFramework#>">
@@ -107,17 +107,6 @@
         <dependency id="<#=awsDependencyKVP.Key#>" version="<#=awsDependencyKVP.Value#>" />
 <#
     }
-#>
-      </group>
-      <group targetFramework="uap">
-        <dependency id="Microsoft.NETCore.UniversalWindowsPlatform" version="5.2.2"/>
-<#
-            foreach(var awsDependencyKVP in ((IDictionary<string, string>)this.Session["AWSDependencies"]))
-            {
-#>
-        <dependency id="<#=awsDependencyKVP.Key#>" version="<#=awsDependencyKVP.Value#>" />
-<#
-            }
 #>
       </group>
     </dependencies>

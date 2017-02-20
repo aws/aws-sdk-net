@@ -29,6 +29,7 @@
             "template": "PCLProjectFile",
             "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_pclReference", "_pcl-sl", "_bcl+pcl", "_bcl45+pcl", "_bcl+coreclr+pcl"  ],
             "nugetTargetPlatform": "portable-net45+win8+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10",
+            "sharedNugetTargetFrameworks": ["portable-net45+win8+wpa81+wp8", "MonoAndroid10", "Xamarin.iOS10", "MonoTouch10", "uap"],
 
             "extraTestProjects": [
                 "test\\CrossPlatformTests\\CommonTests\\CommonTests.csproj",

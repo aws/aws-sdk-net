@@ -1010,6 +1010,9 @@ namespace ServiceClientGenerator
                 androidPclVariant = Configuration.PclVariants.Contains("Android");
             }
 
+            
+            var pclTargetFrameworks = ProjectFileConfigurations.Where(pc => pc.Name.Equals("PCL")).First().SharedNugetTargetFrameworks;
+
             var session = new Dictionary<string, object>
             {
                 { "AssemblyName", assemblyName },
@@ -1026,7 +1029,8 @@ namespace ServiceClientGenerator
                 { "ExtraTags", Configuration.Tags == null || Configuration.Tags.Count == 0 ? string.Empty : " " + string.Join(" ", Configuration.Tags) },
                 { "licenseUrl", Configuration.LicenseUrl },
                 { "requireLicenseAcceptance",Configuration.RequireLicenseAcceptance?"true":"false" },
-                {"DisablePCLSupport", this.Options.DisablePCLSupport}
+                { "DisablePCLSupport", this.Options.DisablePCLSupport},
+                { "SharedPCLNugetTargetFrameworks", pclTargetFrameworks}
             };
 
             if (Configuration.NugetDependencies != null)
