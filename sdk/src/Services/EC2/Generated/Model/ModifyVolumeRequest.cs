@@ -35,8 +35,8 @@ namespace Amazon.EC2.Model
     /// or detaching the volume from it. For more information about modifying an EBS volume
     /// running Linux, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html">Modifying
     /// the Size, IOPS, or Type of an EBS Volume on Linux</a>. For more information about
-    /// modifying an EBS volume running Windows, see <a href="http://docs.aws.amazon.com/docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html">Expanding
-    /// the Storage Space of an EBS Volume on Windows</a>. 
+    /// modifying an EBS volume running Windows, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html">Modifying
+    /// the Size, IOPS, or Type of an EBS Volume on Windows</a>. 
     /// 
     ///  
     /// <para>
@@ -44,26 +44,25 @@ namespace Amazon.EC2.Model
     /// file-system size to take advantage of the new storage capacity. For information about
     /// extending a Linux file system, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#recognize-expanded-volume-linux">Extending
     /// a Linux File System</a>. For information about extending a Windows file system, see
-    /// <a href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html#recognize-expanded-volume-windows">Extending
+    /// <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html#recognize-expanded-volume-windows">Extending
     /// a Windows File System</a>. 
     /// </para>
     ///  
     /// <para>
     ///  You can use CloudWatch Events to check the status of a modification to an EBS volume.
-    /// For information about CloudWatch Events, see the <a href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonCloudWatch/latest/events/WhatIsCloudWatchEvents.html">Amazon
+    /// For information about CloudWatch Events, see the <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/">Amazon
     /// CloudWatch Events User Guide</a>. You can also track the status of a modification
-    /// using the <a href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVolumesModifications.html">
-    /// <code>DescribeVolumesModifications</code> API</a>. For information about tracking
+    /// using the <a>DescribeVolumesModifications</a> API. For information about tracking
     /// status changes using either method, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#monitoring_mods">Monitoring
-    /// Volume Modifications"</a>. 
+    /// Volume Modifications</a>. 
     /// </para>
     ///  <note> 
     /// <para>
-    /// With previous-generation volumes and instance types, resizing an EBS volume may require
-    /// detaching and reattaching the volume or stopping and restarting the instance. For
-    /// more information about modifying an EBS volume running Linux, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html">Modifying
+    /// With previous-generation instance types, resizing an EBS volume may require detaching
+    /// and reattaching the volume or stopping and restarting the instance. For more information
+    /// about modifying an EBS volume running Linux, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html">Modifying
     /// the Size, IOPS, or Type of an EBS Volume on Linux</a>. For more information about
-    /// modifying an EBS volume running Windows, see <a href="http://docs.aws.amazon.com/docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html">Modifying
+    /// modifying an EBS volume running Windows, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html">Modifying
     /// the Size, IOPS, or Type of an EBS Volume on Windows</a>.
     /// </para>
     ///  </note> <note> 
@@ -90,6 +89,10 @@ namespace Amazon.EC2.Model
         /// <para>
         /// Only valid for Provisioned IOPS SSD (<code>io1</code>) volumes. For more information
         /// about <code>io1</code> IOPS configuration, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html#EBSVolumeTypes_piops">http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html#EBSVolumeTypes_piops</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: If no IOPS value is specified, the existing value is retained. 
         /// </para>
         /// </summary>
         public int Iops
@@ -150,13 +153,12 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values are <code>io1</code> | <code>gp2</code> | <code>sc1</code> | <code>st1</code>
-        /// 
+        ///  The API does not support modifications for volume type <code>standard</code>. You
+        /// also cannot change the type of a volume to <code>standard</code>. 
         /// </para>
         ///  
         /// <para>
-        ///  The API does not support modifications for volume type <code>standard</code>. You
-        /// also cannot change the type of a volume to <code>standard</code>. 
+        /// Default: If no type is specified, the existing type is retained. 
         /// </para>
         /// </summary>
         public VolumeType VolumeType

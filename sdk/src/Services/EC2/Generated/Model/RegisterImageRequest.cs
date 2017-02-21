@@ -42,43 +42,35 @@ namespace Amazon.EC2.Model
     ///  </note> 
     /// <para>
     /// You can also use <code>RegisterImage</code> to create an Amazon EBS-backed Linux AMI
-    /// from a snapshot of a root device volume. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_LaunchingInstanceFromSnapshot.html">Launching
+    /// from a snapshot of a root device volume. You specify the snapshot using the block
+    /// device mapping. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_LaunchingInstanceFromSnapshot.html">Launching
     /// an Instance from a Snapshot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </para>
-    ///  <important> 
+    ///  
+    /// <para>
+    /// You can't register an image where a secondary (non-root) snapshot has AWS Marketplace
+    /// product codes.
+    /// </para>
+    ///  
     /// <para>
     /// Some Linux distributions, such as Red Hat Enterprise Linux (RHEL) and SUSE Linux Enterprise
-    /// Server (SLES), use the EC2 <code>billingProduct</code> code associated with an AMI
-    /// to verify subscription status for package updates. Creating an AMI from an EBS snapshot
-    /// does not maintain this billing code, and subsequent instances launched from such an
-    /// AMI will not be able to connect to package update infrastructure.
+    /// Server (SLES), use the EC2 billing product code associated with an AMI to verify the
+    /// subscription status for package updates. Creating an AMI from an EBS snapshot does
+    /// not maintain this billing code, and subsequent instances launched from such an AMI
+    /// will not be able to connect to package update infrastructure. To create an AMI that
+    /// must retain billing codes, see <a>CreateImage</a>.
     /// </para>
     ///  
-    /// <para>
-    /// Similarly, although you can create a Windows AMI from a snapshot, you can't successfully
-    /// launch an instance from the AMI.
-    /// </para>
-    ///  
-    /// <para>
-    /// To create Windows AMIs or to create AMIs for Linux operating systems that must retain
-    /// AMI billing codes to work properly, see <a>CreateImage</a>.
-    /// </para>
-    ///  </important> 
     /// <para>
     /// If needed, you can deregister an AMI at any time. Any modifications you make to an
     /// AMI backed by an instance store volume invalidates its registration. If you make changes
     /// to an image, deregister the previous image and register the new image.
     /// </para>
-    ///  <note> 
-    /// <para>
-    /// You can't register an image where a secondary (non-root) snapshot has AWS Marketplace
-    /// product codes.
-    /// </para>
-    ///  </note>
     /// </summary>
     public partial class RegisterImageRequest : AmazonEC2Request
     {
         private ArchitectureValues _architecture;
+        private List<string> _billingProducts = new List<string>();
         private List<BlockDeviceMapping> _blockDeviceMappings = new List<BlockDeviceMapping>();
         private string _description;
         private bool? _enaSupport;
@@ -125,6 +117,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetArchitecture()
         {
             return this._architecture != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BillingProducts. 
+        /// <para>
+        /// The billing product codes.
+        /// </para>
+        /// </summary>
+        public List<string> BillingProducts
+        {
+            get { return this._billingProducts; }
+            set { this._billingProducts = value; }
+        }
+
+        // Check to see if BillingProducts property is set
+        internal bool IsSetBillingProducts()
+        {
+            return this._billingProducts != null && this._billingProducts.Count > 0; 
         }
 
         /// <summary>

@@ -62,6 +62,15 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Architecture", StringUtils.FromString(publicRequest.Architecture));
                 }
+                if(publicRequest.IsSetBillingProducts())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.BillingProducts)
+                    {
+                        request.Parameters.Add("BillingProduct" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
+                }
                 if(publicRequest.IsSetBlockDeviceMappings())
                 {
                     int publicRequestlistValueIndex = 1;

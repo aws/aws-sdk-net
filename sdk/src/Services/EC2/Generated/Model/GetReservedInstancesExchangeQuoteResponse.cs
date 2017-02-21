@@ -116,7 +116,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ReservedInstanceValueRollup.
+        /// Gets and sets the property ReservedInstanceValueRollup. 
+        /// <para>
+        /// The cost associated with the Reserved Instance.
+        /// </para>
         /// </summary>
         public ReservationValue ReservedInstanceValueRollup
         {
@@ -149,7 +152,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TargetConfigurationValueRollup.
+        /// Gets and sets the property TargetConfigurationValueRollup. 
+        /// <para>
+        /// The cost associated with the Reserved Instance.
+        /// </para>
         /// </summary>
         public ReservationValue TargetConfigurationValueRollup
         {

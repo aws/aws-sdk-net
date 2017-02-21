@@ -71,9 +71,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ModificationState. 
         /// <para>
-        /// Current state of modification. Possible values are <code>modifying</code> | <code>optimizing</code>
-        /// | <code>complete</code> | <code>failed</code>. Modification state is null for unmodified
-        /// volumes. 
+        /// Current state of modification. Modification state is null for unmodified volumes.
+        /// 
         /// </para>
         /// </summary>
         public VolumeModificationState ModificationState
