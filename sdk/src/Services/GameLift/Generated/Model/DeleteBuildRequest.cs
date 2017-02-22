@@ -46,7 +46,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property BuildId. 
         /// <para>
-        /// Unique identifier for the build you want to delete.
+        /// Unique identifier for a build to delete.
         /// </para>
         /// </summary>
         public string BuildId

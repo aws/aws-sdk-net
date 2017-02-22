@@ -114,7 +114,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property FleetId. 
         /// <para>
-        /// Unique identity for the fleet to scale with this policy.
+        /// Unique identifier for a fleet to apply this policy to.
         /// </para>
         /// </summary>
         public string FleetId
@@ -182,8 +182,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Descriptive label associated with a scaling policy. Policy names do not need to be
-        /// unique. A fleet can have only one scaling policy with the same name.
+        /// Descriptive label that is associated with a scaling policy. Policy names do not need
+        /// to be unique. A fleet can have only one scaling policy with the same name.
         /// </para>
         /// </summary>
         public string Name

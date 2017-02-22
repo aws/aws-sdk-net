@@ -73,6 +73,20 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.GameSessionId);
                 }
 
+                if(publicRequest.IsSetPlayerDataMap())
+                {
+                    context.Writer.WritePropertyName("PlayerDataMap");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestPlayerDataMapKvp in publicRequest.PlayerDataMap)
+                    {
+                        context.Writer.WritePropertyName(publicRequestPlayerDataMapKvp.Key);
+                        var publicRequestPlayerDataMapValue = publicRequestPlayerDataMapKvp.Value;
+
+                            context.Writer.Write(publicRequestPlayerDataMapValue);
+                    }
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetPlayerIds())
                 {
                     context.Writer.WritePropertyName("PlayerIds");

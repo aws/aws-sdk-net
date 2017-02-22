@@ -28,9 +28,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// AWS access credentials required to upload game build files to Amazon GameLift. These
-    /// credentials are generated with <a>CreateBuild</a>, and are valid for a limited time.
-    /// If they expire before you upload your game build, get a new set by calling <a>RequestUploadCredentials</a>.
+    /// AWS access credentials sometimes used for uploading game build files to Amazon GameLift.
+    /// They are valid for a limited time. If they expire before you upload your game build,
+    /// get a new set by calling <a>RequestUploadCredentials</a>.
     /// </summary>
     public partial class Credentials
     {

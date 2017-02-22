@@ -53,8 +53,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property FleetIds. 
         /// <para>
-        /// Unique identifier for the fleet(s) you want to retrieve capacity information for.
-        /// To request capacity information for all fleets, leave this parameter empty.
+        /// Unique identifier for a fleet(s) to retrieve capacity information for. To request
+        /// capacity information for all fleets, leave this parameter empty.
         /// </para>
         /// </summary>
         public List<string> FleetIds
@@ -92,9 +92,9 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Token indicating the start of the next sequential page of results. Use the token that
-        /// is returned with a previous call to this action. To specify the start of the result
-        /// set, do not specify a value. This parameter is ignored when the request specifies
+        /// Token that indicates the start of the next sequential page of results. Use the token
+        /// that is returned with a previous call to this action. To specify the start of the
+        /// result set, do not specify a value. This parameter is ignored when the request specifies
         /// one or a list of fleet IDs.
         /// </para>
         /// </summary>

@@ -80,9 +80,9 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// Name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance
         /// type determines the computing resources of each instance in the fleet, including CPU,
-        /// memory, storage, and networking capacity. GameLift supports the following EC2 instance
-        /// types. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance
-        /// Types</a> for detailed descriptions.
+        /// memory, storage, and networking capacity. Amazon GameLift supports the following EC2
+        /// instance types. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2
+        /// Instance Types</a> for detailed descriptions.
         /// </para>
         /// </summary>
         public EC2InstanceType InstanceType

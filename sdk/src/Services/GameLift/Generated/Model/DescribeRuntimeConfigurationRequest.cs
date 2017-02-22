@@ -30,7 +30,7 @@ namespace Amazon.GameLift.Model
     /// <summary>
     /// Container for the parameters to the DescribeRuntimeConfiguration operation.
     /// Retrieves the current runtime configuration for the specified fleet. The runtime configuration
-    /// tells GameLift how to launch server processes on instances in the fleet.
+    /// tells Amazon GameLift how to launch server processes on instances in the fleet.
     /// </summary>
     public partial class DescribeRuntimeConfigurationRequest : AmazonGameLiftRequest
     {
@@ -39,7 +39,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property FleetId. 
         /// <para>
-        /// Unique identifier of the fleet to get the runtime configuration for.
+        /// Unique identifier for a fleet to get the runtime configuration for.
         /// </para>
         /// </summary>
         public string FleetId

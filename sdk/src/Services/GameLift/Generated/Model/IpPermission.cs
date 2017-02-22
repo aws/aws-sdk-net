@@ -29,9 +29,9 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// A range of IP addresses and port settings that allow inbound traffic to connect to
-    /// server processes on GameLift. Each game session hosted on a fleet is assigned a unique
-    /// combination of IP address and port number, which must fall into the fleet's allowed
-    /// ranges. This combination is included in the <a>GameSession</a> object.
+    /// server processes on Amazon GameLift. Each game session hosted on a fleet is assigned
+    /// a unique combination of IP address and port number, which must fall into the fleet's
+    /// allowed ranges. This combination is included in the <a>GameSession</a> object.
     /// </summary>
     public partial class IpPermission
     {
@@ -61,9 +61,9 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property IpRange. 
         /// <para>
-        /// Range of allowed IP addresses. This value must be expressed in <a href="https://tools.ietf.org/id/cidr">CIDR
-        /// notation</a>. Example: "<code>000.000.000.000/[subnet mask]</code>" or optionally
-        /// the shortened version "<code>0.0.0.0/[subnet mask]</code>".
+        /// Range of allowed IP addresses. This value must be expressed in CIDR notation. Example:
+        /// "<code>000.000.000.000/[subnet mask]</code>" or optionally the shortened version "<code>0.0.0.0/[subnet
+        /// mask]</code>".
         /// </para>
         /// </summary>
         public string IpRange

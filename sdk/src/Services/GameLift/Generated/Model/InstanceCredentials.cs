@@ -40,8 +40,9 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Secret. 
         /// <para>
-        /// Secret string. For Windows instances, the secret is a password. For Linux instances,
-        /// it is a private key.
+        /// Secret string. For Windows instances, the secret is a password for use with Windows
+        /// Remote Desktop. For Linux instances, it is a private key (which must be saved as a
+        /// <code>.pem</code> file) for use with SSH.
         /// </para>
         /// </summary>
         public string Secret

@@ -41,7 +41,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property FleetId. 
         /// <para>
-        /// Unique identifier for a fleet.
+        /// Unique identifier for a fleet to be deleted.
         /// </para>
         /// </summary>
         public string FleetId
@@ -59,8 +59,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Descriptive label associated with a scaling policy. Policy names do not need to be
-        /// unique.
+        /// Descriptive label that is associated with a scaling policy. Policy names do not need
+        /// to be unique.
         /// </para>
         /// </summary>
         public string Name

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// A game session's properties and the protection policy currently in force.
+    /// A game session's properties plus the protection policy currently in force.
     /// </summary>
     public partial class GameSessionDetail
     {
@@ -36,7 +36,10 @@ namespace Amazon.GameLift.Model
         private ProtectionPolicy _protectionPolicy;
 
         /// <summary>
-        /// Gets and sets the property GameSession.
+        /// Gets and sets the property GameSession. 
+        /// <para>
+        /// Object that describes a game session.
+        /// </para>
         /// </summary>
         public GameSession GameSession
         {

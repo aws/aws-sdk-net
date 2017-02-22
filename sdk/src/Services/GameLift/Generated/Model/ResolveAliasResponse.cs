@@ -37,7 +37,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property FleetId. 
         /// <para>
-        /// Fleet ID associated with the requested alias.
+        /// Fleet identifier that is associated with the requested alias.
         /// </para>
         /// </summary>
         public string FleetId

@@ -88,6 +88,12 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     unmarshalledObject.IpAddress = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("PlayerData", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PlayerData = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("PlayerId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

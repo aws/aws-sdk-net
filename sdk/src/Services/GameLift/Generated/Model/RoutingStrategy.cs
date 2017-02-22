@@ -39,7 +39,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property FleetId. 
         /// <para>
-        /// Unique identifier for a fleet.
+        /// Unique identifier for a fleet that the alias points to.
         /// </para>
         /// </summary>
         public string FleetId

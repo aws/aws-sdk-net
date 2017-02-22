@@ -39,7 +39,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Build. 
         /// <para>
-        /// Set of properties for the newly created build.
+        /// The newly created build record, including a unique build ID and status. 
         /// </para>
         /// </summary>
         public Build Build
@@ -57,7 +57,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property StorageLocation. 
         /// <para>
-        /// Amazon S3 path and key, identifying where the game build files are stored.
+        /// Amazon S3 location specified in the request.
         /// </para>
         /// </summary>
         public S3Location StorageLocation
@@ -75,10 +75,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property UploadCredentials. 
         /// <para>
-        /// AWS credentials required when uploading a game build to the storage location. These
-        /// credentials have a limited lifespan and are valid only for the build they were issued
-        /// for. If you need to get fresh credentials, call<code> <a>RequestUploadCredentials</a>
-        /// </code>.
+        /// This element is not currently in use.
         /// </para>
         /// </summary>
         public Credentials UploadCredentials

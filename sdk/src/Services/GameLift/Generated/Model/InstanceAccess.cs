@@ -60,7 +60,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property FleetId. 
         /// <para>
-        /// Unique identifier for the fleet containing the instance being accessed.
+        /// Unique identifier for a fleet containing the instance being accessed.
         /// </para>
         /// </summary>
         public string FleetId
@@ -78,7 +78,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// Unique identifier for the instance being accessed.
+        /// Unique identifier for an instance being accessed.
         /// </para>
         /// </summary>
         public string InstanceId

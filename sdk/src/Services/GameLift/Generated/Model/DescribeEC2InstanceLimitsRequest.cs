@@ -41,9 +41,9 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// Service limits vary depending on region. Available regions for GameLift can be found
-    /// in the AWS Management Console for GameLift (see the drop-down list in the upper right
-    /// corner).
+    /// Service limits vary depending on region. Available regions for Amazon GameLift can
+    /// be found in the AWS Management Console for Amazon GameLift (see the drop-down list
+    /// in the upper right corner).
     /// </para>
     /// </summary>
     public partial class DescribeEC2InstanceLimitsRequest : AmazonGameLiftRequest
@@ -55,10 +55,10 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// Name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance
         /// type determines the computing resources of each instance in the fleet, including CPU,
-        /// memory, storage, and networking capacity. GameLift supports the following EC2 instance
-        /// types. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance
-        /// Types</a> for detailed descriptions. Leave this parameter blank to retrieve limits
-        /// for all types.
+        /// memory, storage, and networking capacity. Amazon GameLift supports the following EC2
+        /// instance types. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2
+        /// Instance Types</a> for detailed descriptions. Leave this parameter blank to retrieve
+        /// limits for all types.
         /// </para>
         /// </summary>
         public EC2InstanceType EC2InstanceType

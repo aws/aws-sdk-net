@@ -29,8 +29,15 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeAlias operation.
-    /// Retrieves properties for a specified alias. To get the alias, specify an alias ID.
-    /// If successful, an <a>Alias</a> object is returned.
+    /// Retrieves properties for a fleet alias. This operation returns all alias metadata
+    /// and settings. To get just the fleet ID an alias is currently pointing to, use <a>ResolveAlias</a>.
+    /// 
+    /// 
+    ///  
+    /// <para>
+    /// To get alias properties, specify the alias ID. If successful, an <a>Alias</a> object
+    /// is returned.
+    /// </para>
     /// </summary>
     public partial class DescribeAliasRequest : AmazonGameLiftRequest
     {

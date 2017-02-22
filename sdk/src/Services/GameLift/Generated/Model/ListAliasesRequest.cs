@@ -68,7 +68,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Descriptive label associated with an alias. Alias names do not need to be unique.
+        /// Descriptive label that is associated with an alias. Alias names do not need to be
+        /// unique.
         /// </para>
         /// </summary>
         public string Name
@@ -86,9 +87,9 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Token indicating the start of the next sequential page of results. Use the token that
-        /// is returned with a previous call to this action. To specify the start of the result
-        /// set, do not specify a value.
+        /// Token that indicates the start of the next sequential page of results. Use the token
+        /// that is returned with a previous call to this action. To specify the start of the
+        /// result set, do not specify a value.
         /// </para>
         /// </summary>
         public string NextToken

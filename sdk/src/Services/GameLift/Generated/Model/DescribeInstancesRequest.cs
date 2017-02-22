@@ -51,8 +51,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property FleetId. 
         /// <para>
-        /// Unique identifier for a fleet. Specify the fleet to retrieve instance information
-        /// for.
+        /// Unique identifier for a fleet to retrieve instance information for.
         /// </para>
         /// </summary>
         public string FleetId
@@ -70,8 +69,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// Unique identifier for an instance. Specify an instance to retrieve information for
-        /// or leave blank to get information on all instances in the fleet.
+        /// Unique identifier for an instance to retrieve. Specify an instance ID or leave blank
+        /// to retrieve all instances in the fleet.
         /// </para>
         /// </summary>
         public string InstanceId
@@ -108,9 +107,9 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Token indicating the start of the next sequential page of results. Use the token that
-        /// is returned with a previous call to this action. To specify the start of the result
-        /// set, do not specify a value.
+        /// Token that indicates the start of the next sequential page of results. Use the token
+        /// that is returned with a previous call to this action. To specify the start of the
+        /// result set, do not specify a value.
         /// </para>
         /// </summary>
         public string NextToken

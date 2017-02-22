@@ -29,6 +29,32 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Properties describing a game build.
+    /// 
+    ///  
+    /// <para>
+    /// Build-related operations include:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>CreateBuild</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ListBuilds</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeBuild</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>UpdateBuild</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DeleteBuild</a> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class Build
     {
@@ -62,7 +88,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property CreationTime. 
         /// <para>
         /// Time stamp indicating when this data object was created. Format is a number expressed
-        /// in Unix time as milliseconds (ex: "1469498468.057").
+        /// in Unix time as milliseconds (for example "1469498468.057").
         /// </para>
         /// </summary>
         public DateTime CreationTime
@@ -80,8 +106,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Descriptive label associated with a build. Build names do not need to be unique. It
-        /// can be set using <a>CreateBuild</a> or <a>UpdateBuild</a>.
+        /// Descriptive label that is associated with a build. Build names do not need to be unique.
+        /// It can be set using <a>CreateBuild</a> or <a>UpdateBuild</a>.
         /// </para>
         /// </summary>
         public string Name
@@ -176,8 +202,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
-        /// Version associated with this build. Version strings do not need to be unique to a
-        /// build. This value can be set using <a>CreateBuild</a> or <a>UpdateBuild</a>.
+        /// Version that is associated with this build. Version strings do not need to be unique.
+        /// This value can be set using <a>CreateBuild</a> or <a>UpdateBuild</a>.
         /// </para>
         /// </summary>
         public string Version

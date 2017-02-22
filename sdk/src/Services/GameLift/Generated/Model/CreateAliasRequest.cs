@@ -29,14 +29,21 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateAlias operation.
-    /// Creates an alias for a fleet. You can use an alias to anonymize your fleet by referencing
-    /// an alias instead of a specific fleet when you create game sessions. Amazon GameLift
-    /// supports two types of routing strategies for aliases: simple and terminal. Use a simple
-    /// alias to point to an active fleet. Use a terminal alias to display a message to incoming
-    /// traffic instead of routing players to an active fleet. This option is useful when
-    /// a game server is no longer supported but you want to provide better messaging than
-    /// a standard 404 error.
+    /// Creates an alias and sets a target fleet. A fleet alias can be used in place of a
+    /// fleet ID, such as when calling <code>CreateGameSession</code> from a game client or
+    /// game service or adding destinations to a game session queue. By changing an alias's
+    /// target fleet, you can switch your players to the new fleet without changing any other
+    /// component. In production, this feature is particularly useful to redirect your player
+    /// base seamlessly to the latest game server update. 
     /// 
+    ///  
+    /// <para>
+    /// Amazon GameLift supports two types of routing strategies for aliases: simple and terminal.
+    /// Use a simple alias to point to an active fleet. Use a terminal alias to display a
+    /// message to incoming traffic instead of routing players to an active fleet. This option
+    /// is useful when a game server is no longer supported but you want to provide better
+    /// messaging than a standard 404 error.
+    /// </para>
     ///  
     /// <para>
     /// To create a fleet alias, specify an alias name, routing strategy, and optional description.
@@ -72,7 +79,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Descriptive label associated with an alias. Alias names do not need to be unique.
+        /// Descriptive label that is associated with an alias. Alias names do not need to be
+        /// unique.
         /// </para>
         /// </summary>
         public string Name
@@ -90,7 +98,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property RoutingStrategy. 
         /// <para>
-        /// Object specifying the fleet and routing type to use for the alias.
+        /// Object that specifies the fleet and routing type to use for the alias.
         /// </para>
         /// </summary>
         public RoutingStrategy RoutingStrategy

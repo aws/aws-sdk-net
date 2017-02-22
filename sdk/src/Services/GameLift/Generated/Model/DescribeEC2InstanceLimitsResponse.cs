@@ -37,7 +37,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property EC2InstanceLimits. 
         /// <para>
-        /// Object containing the maximum number of instances for the specified instance type.
+        /// Object that contains the maximum number of instances for the specified instance type.
         /// </para>
         /// </summary>
         public List<EC2InstanceLimit> EC2InstanceLimits

@@ -35,6 +35,7 @@ namespace Amazon.GameLift.Model
         private string _buildId;
         private DateTime? _creationTime;
         private string _description;
+        private string _fleetArn;
         private string _fleetId;
         private List<string> _logPaths = new List<string>();
         private string _name;
@@ -68,7 +69,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property CreationTime. 
         /// <para>
         /// Time stamp indicating when this data object was created. Format is a number expressed
-        /// in Unix time as milliseconds (ex: "1469498468.057").
+        /// in Unix time as milliseconds (for example "1469498468.057").
         /// </para>
         /// </summary>
         public DateTime CreationTime
@@ -102,6 +103,24 @@ namespace Amazon.GameLift.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FleetArn. 
+        /// <para>
+        /// Identifier for a fleet that is unique across all regions.
+        /// </para>
+        /// </summary>
+        public string FleetArn
+        {
+            get { return this._fleetArn; }
+            set { this._fleetArn = value; }
+        }
+
+        // Check to see if FleetArn property is set
+        internal bool IsSetFleetArn()
+        {
+            return this._fleetArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property FleetId. 
         /// <para>
         /// Unique identifier for a fleet.
@@ -125,10 +144,10 @@ namespace Amazon.GameLift.Model
         /// Location of default log files. When a server process is shut down, Amazon GameLift
         /// captures and stores any log files in this location. These logs are in addition to
         /// game session logs; see more on game session logs in the <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code">Amazon
-        /// GameLift Developer Guide</a>. If no default log path for a fleet is specified, GameLift
-        /// will automatically upload logs that are stored on each instance at <code>C:\game\logs</code>
-        /// (for Windows) or <code>/local/game/logs</code> (for Linux). Use the GameLift console
-        /// to access stored logs. 
+        /// GameLift Developer Guide</a>. If no default log path for a fleet is specified, Amazon
+        /// GameLift will automatically upload logs that are stored on each instance at <code>C:\game\logs</code>
+        /// (for Windows) or <code>/local/game/logs</code> (for Linux). Use the Amazon GameLift
+        /// console to access stored logs. 
         /// </para>
         /// </summary>
         public List<string> LogPaths
@@ -146,7 +165,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Descriptive label associated with a fleet. Fleet names do not need to be unique.
+        /// Descriptive label that is associated with a fleet. Fleet names do not need to be unique.
         /// </para>
         /// </summary>
         public string Name
@@ -232,7 +251,7 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// Game server launch parameters specified for fleets created prior to 2016-08-04 (or
         /// AWS SDK v. 0.12.16). Server launch parameters for fleets created after this date are
-        /// specified in the fleet's <code> <a>RuntimeConfiguration</a> </code>.
+        /// specified in the fleet's <a>RuntimeConfiguration</a>.
         /// </para>
         /// </summary>
         public string ServerLaunchParameters
@@ -252,7 +271,7 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// Path to a game server executable in the fleet's build, specified for fleets created
         /// prior to 2016-08-04 (or AWS SDK v. 0.12.16). Server launch paths for fleets created
-        /// after this date are specified in the fleet's <code> <a>RuntimeConfiguration</a> </code>.
+        /// after this date are specified in the fleet's <a>RuntimeConfiguration</a>.
         /// </para>
         /// </summary>
         public string ServerLaunchPath
@@ -282,8 +301,8 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift is setting up the new
-        /// fleet, creating new instances with the game build and starting server processes.
+        ///  <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – Amazon GameLift is setting up
+        /// the new fleet, creating new instances with the game build and starting server processes.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -320,7 +339,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property TerminationTime. 
         /// <para>
         /// Time stamp indicating when this data object was terminated. Format is a number expressed
-        /// in Unix time as milliseconds (ex: "1469498468.057").
+        /// in Unix time as milliseconds (for example "1469498468.057").
         /// </para>
         /// </summary>
         public DateTime TerminationTime

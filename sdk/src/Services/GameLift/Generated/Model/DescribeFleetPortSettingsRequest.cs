@@ -43,7 +43,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property FleetId. 
         /// <para>
-        /// Unique identifier for the fleet you want to retrieve port settings for.
+        /// Unique identifier for a fleet to retrieve port settings for.
         /// </para>
         /// </summary>
         public string FleetId

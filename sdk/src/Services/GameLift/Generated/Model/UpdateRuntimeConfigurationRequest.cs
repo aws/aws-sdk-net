@@ -29,10 +29,10 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateRuntimeConfiguration operation.
-    /// Updates the current runtime configuration for the specified fleet, which tells GameLift
-    /// how to launch server processes on instances in the fleet. You can update a fleet's
-    /// runtime configuration at any time after the fleet is created; it does not need to
-    /// be in an <code>ACTIVE</code> status.
+    /// Updates the current runtime configuration for the specified fleet, which tells Amazon
+    /// GameLift how to launch server processes on instances in the fleet. You can update
+    /// a fleet's runtime configuration at any time after the fleet is created; it does not
+    /// need to be in an <code>ACTIVE</code> status.
     /// 
     ///  
     /// <para>
@@ -41,12 +41,13 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    /// Each instance in a GameLift fleet checks regularly for an updated runtime configuration
+    /// Each instance in a Amazon GameLift fleet checks regularly for an updated runtime configuration
     /// and changes how it launches server processes to comply with the latest version. Existing
     /// server processes are not affected by the update; they continue to run until they end,
-    /// while GameLift simply adds new server processes to fit the current runtime configuration.
-    /// As a result, the runtime configuration changes are applied gradually as existing processes
-    /// shut down and new processes are launched in GameLift's normal process recycling activity.
+    /// while Amazon GameLift simply adds new server processes to fit the current runtime
+    /// configuration. As a result, the runtime configuration changes are applied gradually
+    /// as existing processes shut down and new processes are launched in Amazon GameLift's
+    /// normal process recycling activity.
     /// </para>
     /// </summary>
     public partial class UpdateRuntimeConfigurationRequest : AmazonGameLiftRequest
@@ -57,7 +58,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property FleetId. 
         /// <para>
-        /// Unique identifier of the fleet to update runtime configuration for.
+        /// Unique identifier for a fleet to update runtime configuration for.
         /// </para>
         /// </summary>
         public string FleetId

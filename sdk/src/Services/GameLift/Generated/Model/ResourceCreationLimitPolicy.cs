@@ -38,7 +38,7 @@ namespace Amazon.GameLift.Model
     /// <para>
     /// The policy is evaluated when a player tries to create a new game session. For example,
     /// with a policy of 10 new game sessions and a time period of 60 minutes, on receiving
-    /// a <code>CreateGameSession</code> request, GameLift checks that the player (identified
+    /// a <code>CreateGameSession</code> request, Amazon GameLift checks that the player (identified
     /// by <code>CreatorId</code>) has created fewer than 10 game sessions in the past 60
     /// minutes.
     /// </para>

@@ -31,270 +31,348 @@ namespace Amazon.GameLift
     ///
     /// Amazon GameLift Service 
     /// <para>
-    /// Welcome to the <i>Amazon GameLift API Reference</i>. Amazon GameLift is a managed
-    /// Amazon Web Services (AWS) service for developers who need a scalable, server-based
-    /// solution for multiplayer games. Amazon GameLift provides setup and deployment of game
-    /// servers, and handles infrastructure scaling and session management.
+    ///  Amazon GameLift is a managed service for developers who need a scalable, dedicated
+    /// server solution for their multiplayer games. Amazon GameLift provides tools to acquire
+    /// computing resources and deploy game servers, scale game server capacity to meed player
+    /// demand, and track in-depth metrics on player usage and server performance.
     /// </para>
     ///  
     /// <para>
-    /// This reference describes the low-level service API for GameLift. You can call this
-    /// API directly or use the <a href="http://aws.amazon.com/tools/#sdk">AWS SDK</a> for
-    /// your preferred language. The AWS SDK includes a set of high-level GameLift actions
-    /// multiplayer game sessions. Alternatively, you can use the <a href="http://aws.amazon.com/cli/">AWS
-    /// command-line interface</a> (CLI) tool, which includes commands for GameLift. For administrative
-    /// actions, you can also use the Amazon GameLift console. 
+    /// The Amazon GameLift service API includes important functionality to:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Find game sessions and match players to games – Retrieve information on available
+    /// game sessions; create new game sessions; send player requests to join a game session.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Configure and manage game server resources – Manage builds, fleets, queues, and aliases;
+    /// set autoscaling policies; retrieve logs and metrics.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// This reference guide describes the low-level service API for Amazon GameLift. We recommend
+    /// using either the Amazon Web Services software development kit (<a href="http://aws.amazon.com/tools/#sdk">AWS
+    /// SDK</a>), available in multiple languages, or the <a href="http://aws.amazon.com/cli/">AWS
+    /// command-line interface</a> (CLI) tool. Both of these align with the low-level service
+    /// API. In addition, you can use the <a href="https://console.aws.amazon.com/gamelift/home">AWS
+    /// Management Console</a> for Amazon GameLift for many administrative actions.
     /// </para>
     ///  
     /// <para>
-    ///  <b>More Resources</b> 
+    ///  <b>MORE RESOURCES</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>
     ///  <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/">Amazon GameLift
-    /// Developer Guide</a>: Learn more about GameLift features and how to use them 
+    /// Developer Guide</a> – Learn more about Amazon GameLift features and how to use them.
+    /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="https://gamedev.amazon.com/forums/tutorials">Lumberyard and GameLift Tutorials</a>:
-    /// Get started fast with walkthroughs and sample projects
+    ///  <a href="https://gamedev.amazon.com/forums/tutorials">Lumberyard and Amazon GameLift
+    /// Tutorials</a> – Get started fast with walkthroughs and sample projects.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="http://aws.amazon.com/blogs/gamedev/">GameDev Blog</a>: Stay up to date
-    /// with new features and techniques
+    ///  <a href="http://aws.amazon.com/blogs/gamedev/">GameDev Blog</a> – Stay up to date
+    /// with new features and techniques.
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <a href="https://gamedev.amazon.com/forums/spaces/123/gamelift-discussion.html">GameDev
-    /// Forums</a>: Connect with the GameDev community
+    /// Forums</a> – Connect with the GameDev community.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/doc-history.html">Amazon
+    /// GameLift Document History</a> – See changes to the Amazon GameLift service, SDKs,
+    /// and documentation, as well as links to release notes. 
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    ///  <b>Manage Games and Players Through GameLift</b> 
+    ///  <b>API SUMMARY</b> 
     /// </para>
     ///  
     /// <para>
-    /// Call these actions from your game clients and/or services to create and manage multiplayer
-    /// game sessions and player sessions.
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <b>Game sessions:</b> 
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a>CreateGameSession</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeGameSessions</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeGameSessionDetails</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>UpdateGameSession</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>SearchGameSessions</a> 
-    /// </para>
-    ///  </li> </ul> </li> <li> 
-    /// <para>
-    ///  <b>Player sessions:</b> 
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a>CreatePlayerSession</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>CreatePlayerSessions</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribePlayerSessions</a> 
-    /// </para>
-    ///  </li> </ul> </li> <li> 
-    /// <para>
-    ///  <b>Other actions:</b> 
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a>GetGameSessionLogUrl</a> 
-    /// </para>
-    ///  </li> </ul> </li> </ul> 
-    /// <para>
-    ///  <b>Set Up and Manage Game Servers</b> 
+    /// This list offers a functional overview of the Amazon GameLift service API.
     /// </para>
     ///  
     /// <para>
-    /// Use these administrative actions to configure GameLift to host your game servers.
-    /// When setting up GameLift, you will need to (1) configure a build for your game and
-    /// upload build files, and (2) set up one or more fleets to host game sessions. Once
-    /// you've created and activated a fleet, you can assign aliases to it, scale capacity,
-    /// track performance and utilization, etc.
+    ///  <b>Finding Games and Joining Players</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// You can enable players to connect to game servers on Amazon GameLift from a game client
+    /// or through a game service (such as a matchmaking service). You can use these operations
+    /// to discover actively running game or start new games. You can also match players to
+    /// games, either singly or as a group.
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <b>Game builds:</b> 
+    ///  <b>Discover existing game sessions</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>ListBuilds</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>CreateBuild</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeBuild</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>UpdateBuild</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DeleteBuild</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>RequestUploadCredentials</a> 
+    ///  <a>SearchGameSessions</a> – Get all available game sessions or search for game sessions
+    /// that match a set of criteria. 
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>
-    ///  <b>Fleets:</b> 
+    ///  <b>Start a new game session</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>ListFleets</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>CreateFleet</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Describe fleets:
+    /// Game session placement – Use a queue to process new game session requests and create
+    /// game sessions on fleets designated for the queue.
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>DescribeFleetAttributes</a> 
+    ///  <a>StartGameSessionPlacement</a> – Request a new game session placement and add one
+    /// or more players to it.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DescribeFleetCapacity</a> 
+    ///  <a>DescribeGameSessionPlacement</a> – Get details on a placement request, including
+    /// status.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DescribeFleetPortSettings</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeFleetUtilization</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeEC2InstanceLimits</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeFleetEvents</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeRuntimeConfiguration</a> 
+    ///  <a>StopGameSessionPlacement</a> – Cancel a placement request. 
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>
-    /// Update fleets:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a>UpdateFleetAttributes</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>UpdateFleetCapacity</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>UpdateFleetPortSettings</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>UpdateRuntimeConfiguration</a> 
+    ///  <a>CreateGameSession</a> – Start a new game session on a specific fleet.
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>
-    ///  <a>DeleteFleet</a> 
-    /// </para>
-    ///  </li> </ul> </li> <li> 
-    /// <para>
-    ///  <b>Manage your instances:</b> 
+    ///  <b>Manage game session objects</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>DescribeInstances</a> 
+    ///  <a>DescribeGameSessionDetails</a> – Retrieve metadata and protection policies associated
+    /// with one or more game sessions, including length of time active and current player
+    /// count.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>GetInstanceAccess</a> 
+    ///  <a>UpdateGameSession</a> – Change game session settings, such as maximum player count
+    /// and join policy.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>GetGameSessionLogUrl</a> – Get the location of saved logs for a game session.
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>
-    ///  <b>Manage fleet aliases:</b> 
+    ///  <b>Manage player sessions objects</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>ListAliases</a> 
+    ///  <a>CreatePlayerSession</a> – Send a request for a player to join a game session.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>CreateAlias</a> 
+    ///  <a>CreatePlayerSessions</a> – Send a request for multiple players to join a game
+    /// session.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DescribeAlias</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>UpdateAlias</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DeleteAlias</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>ResolveAlias</a> 
-    /// </para>
-    ///  </li> </ul> </li> <li> 
-    /// <para>
-    ///  <b>Manage autoscaling:</b> 
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a>PutScalingPolicy</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DescribeScalingPolicies</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>DeleteScalingPolicy</a> 
+    ///  <a>DescribePlayerSessions</a> – Get details on player activity, including status,
+    /// playing time, and player data. 
     /// </para>
     ///  </li> </ul> </li> </ul> 
     /// <para>
-    /// To view changes to the API, see the GameLift <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/doc-history.html">Document
-    /// History</a> page.
+    ///  <b>Setting Up and Managing Game Servers</b> 
     /// </para>
+    ///  
+    /// <para>
+    /// When setting up Amazon GameLift, first create a game build and upload the files to
+    /// Amazon GameLift. Then use these operations to set up a fleet of resources to run your
+    /// game servers. Manage games to scale capacity, adjust configuration settings, access
+    /// raw utilization data, and more.
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <b>Manage game builds</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>CreateBuild</a> – Create a new build by uploading files stored in an Amazon S3
+    /// bucket. (To create a build stored at a local file location, use the AWS CLI command
+    /// <code>upload-build</code>.)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ListBuilds</a> – Get a list of all builds uploaded to a Amazon GameLift region.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeBuild</a> – Retrieve information associated with a build.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>UpdateBuild</a> – Change build metadata, including build name and version.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DeleteBuild</a> – Remove a build from Amazon GameLift.
+    /// </para>
+    ///  </li> </ul> </li> <li> 
+    /// <para>
+    ///  <b>Manage fleets</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>CreateFleet</a> – Configure and activate a new fleet to run a build's game servers.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DeleteFleet</a> – Terminate a fleet that is no longer running game servers or
+    /// hosting players.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// View / update fleet configurations.
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>ListFleets</a> – Get a list of all fleet IDs in a Amazon GameLift region (all
+    /// statuses).
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeFleetAttributes</a> / <a>UpdateFleetAttributes</a> – View or change a
+    /// fleet's metadata and settings for game session protection and resource creation limits.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeFleetPortSettings</a> / <a>UpdateFleetPortSettings</a> – View or change
+    /// the inbound permissions (IP address and port setting ranges) allowed for a fleet.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeRuntimeConfiguration</a> / <a>UpdateRuntimeConfiguration</a> – View or
+    /// change what server processes (and how many) to run on each instance in a fleet.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeInstances</a> – Get information on each instance in a fleet, including
+    /// instance ID, IP address, and status.
+    /// </para>
+    ///  </li> </ul> </li> </ul> </li> <li> 
+    /// <para>
+    ///  <b>Control fleet capacity</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>DescribeEC2InstanceLimits</a> – Retrieve maximum number of instances allowed for
+    /// the current AWS account and the current usage level.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeFleetCapacity</a> / <a>UpdateFleetCapacity</a> – Retrieve the capacity
+    /// settings and the current number of instances in a fleet; adjust fleet capacity settings
+    /// to scale up or down.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Autoscale – Manage autoscaling rules and apply them to a fleet.
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>PutScalingPolicy</a> – Create a new autoscaling policy, or update an existing
+    /// one.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeScalingPolicies</a> – Retrieve an existing autoscaling policy.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DeleteScalingPolicy</a> – Delete an autoscaling policy and stop it from affecting
+    /// a fleet's capacity.
+    /// </para>
+    ///  </li> </ul> </li> </ul> </li> <li> 
+    /// <para>
+    ///  <b>Access fleet activity statistics</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>DescribeFleetUtilization</a> – Get current data on the number of server processes,
+    /// game sessions, and players currently active on a fleet.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeFleetEvents</a> – Get a fleet's logged events for a specified time span.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeGameSessions</a> – Retrieve metadata associated with one or more game
+    /// sessions, including length of time active and current player count.
+    /// </para>
+    ///  </li> </ul> </li> <li> 
+    /// <para>
+    ///  <b>Remotely access an instance</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>GetInstanceAccess</a> – Request access credentials needed to remotely connect
+    /// to a specified instance on a fleet.
+    /// </para>
+    ///  </li> </ul> </li> <li> 
+    /// <para>
+    ///  <b>Manage fleet aliases</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>CreateAlias</a> – Define a new alias and optionally assign it to a fleet.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ListAliases</a> – Get all fleet aliases defined in a Amazon GameLift region.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeAlias</a> – Retrieve information on an existing alias.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>UpdateAlias</a> – Change settings for a alias, such as redirecting it from one
+    /// fleet to another.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DeleteAlias</a> – Remove an alias from the region.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ResolveAlias</a> – Get the fleet ID that a specified alias points to.
+    /// </para>
+    ///  </li> </ul> </li> <li> 
+    /// <para>
+    ///  <b>Manage game session queues</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>CreateGameSessionQueue</a> – Create a queue for processing requests for new game
+    /// sessions. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeGameSessionQueues</a> – Get data on all game session queues defined in
+    /// a Amazon GameLift region.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>UpdateGameSessionQueue</a> – Change the configuration of a game session queue.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DeleteGameSessionQueue</a> – Remove a game session queue from the region.
+    /// </para>
+    ///  </li> </ul> </li> </ul>
     /// </summary>
     public partial interface IAmazonGameLift : IAmazonService, IDisposable
     {
@@ -304,14 +382,21 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// Creates an alias for a fleet. You can use an alias to anonymize your fleet by referencing
-        /// an alias instead of a specific fleet when you create game sessions. Amazon GameLift
-        /// supports two types of routing strategies for aliases: simple and terminal. Use a simple
-        /// alias to point to an active fleet. Use a terminal alias to display a message to incoming
-        /// traffic instead of routing players to an active fleet. This option is useful when
-        /// a game server is no longer supported but you want to provide better messaging than
-        /// a standard 404 error.
+        /// Creates an alias and sets a target fleet. A fleet alias can be used in place of a
+        /// fleet ID, such as when calling <code>CreateGameSession</code> from a game client or
+        /// game service or adding destinations to a game session queue. By changing an alias's
+        /// target fleet, you can switch your players to the new fleet without changing any other
+        /// component. In production, this feature is particularly useful to redirect your player
+        /// base seamlessly to the latest game server update. 
         /// 
+        ///  
+        /// <para>
+        /// Amazon GameLift supports two types of routing strategies for aliases: simple and terminal.
+        /// Use a simple alias to point to an active fleet. Use a terminal alias to display a
+        /// message to incoming traffic instead of routing players to an active fleet. This option
+        /// is useful when a game server is no longer supported but you want to provide better
+        /// messaging than a standard 404 error.
+        /// </para>
         ///  
         /// <para>
         /// To create a fleet alias, specify an alias name, routing strategy, and optional description.
@@ -342,6 +427,7 @@ namespace Amazon.GameLift
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateAlias">REST API Reference for CreateAlias Operation</seealso>
         CreateAliasResponse CreateAlias(CreateAliasRequest request);
 
         /// <summary>
@@ -355,6 +441,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateAlias
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateAlias">REST API Reference for CreateAlias Operation</seealso>
         IAsyncResult BeginCreateAlias(CreateAliasRequest request, AsyncCallback callback, object state);
 
 
@@ -366,6 +453,7 @@ namespace Amazon.GameLift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateAlias.</param>
         /// 
         /// <returns>Returns a  CreateAliasResult from GameLift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateAlias">REST API Reference for CreateAlias Operation</seealso>
         CreateAliasResponse EndCreateAlias(IAsyncResult asyncResult);
 
         #endregion
@@ -374,27 +462,29 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// Initializes a new build record and generates information required to upload a game
-        /// build to Amazon GameLift. Once the build record has been created and its status is
-        /// <code>INITIALIZED</code>, you can upload your game build.
+        /// Creates a new Amazon GameLift build from a set of game server binary files stored
+        /// in an Amazon Simple Storage Service (Amazon S3) location. When using this API call,
+        /// you must create a <code>.zip</code> file containing all of the build files and store
+        /// it in an Amazon S3 bucket under your AWS account. For help on packaging your build
+        /// files and creating a build, see <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html">Uploading
+        /// Your Game to Amazon GameLift</a>.
         /// 
         ///  <important> 
         /// <para>
-        /// Do not use this API action unless you are using your own Amazon Simple Storage Service
-        /// (Amazon S3) client and need to manually upload your build files. Instead, to create
-        /// a build, use the CLI command <code>upload-build</code>, which creates a new build
-        /// record and uploads the build files in one step. (See the <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html">Amazon
-        /// GameLift Developer Guide</a> help on packaging and uploading your build.) 
+        /// Use this API action ONLY if you are storing your game build files in an Amazon S3
+        /// bucket in your AWS account. To create a build using files stored in a directory, use
+        /// the CLI command <a href="http://docs.aws.amazon.com/cli/latest/reference/gamelift/upload-build.html">
+        /// <code>upload-build</code> </a>, which uploads the build files from a file location
+        /// you specify and creates a build.
         /// </para>
         ///  </important> 
         /// <para>
-        /// To create a new build, identify the operating system of the game server binaries.
-        /// All game servers in a build must use the same operating system. Optionally, specify
-        /// a build name and version; this metadata is stored with other properties in the build
-        /// record and is displayed in the GameLift console (it is not visible to players). If
-        /// successful, this action returns the newly created build record along with the Amazon
-        /// S3 storage location and AWS account credentials. Use the location and credentials
-        /// to upload your game build.
+        /// To create a new build using <code>CreateBuild</code>, identify the storage location
+        /// and operating system of your game build. You also have the option of specifying a
+        /// build name and version. If successful, this action creates a new build record with
+        /// an unique build ID and in <code>INITIALIZED</code> status. Use the API call <a>DescribeBuild</a>
+        /// to check the status of your build. A build must be in <code>READY</code> status before
+        /// it can be used to create fleets to host your game.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateBuild service method.</param>
@@ -415,6 +505,7 @@ namespace Amazon.GameLift
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateBuild">REST API Reference for CreateBuild Operation</seealso>
         CreateBuildResponse CreateBuild(CreateBuildRequest request);
 
         /// <summary>
@@ -428,6 +519,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateBuild
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateBuild">REST API Reference for CreateBuild Operation</seealso>
         IAsyncResult BeginCreateBuild(CreateBuildRequest request, AsyncCallback callback, object state);
 
 
@@ -439,6 +531,7 @@ namespace Amazon.GameLift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateBuild.</param>
         /// 
         /// <returns>Returns a  CreateBuildResult from GameLift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateBuild">REST API Reference for CreateBuild Operation</seealso>
         CreateBuildResponse EndCreateBuild(IAsyncResult asyncResult);
 
         #endregion
@@ -462,12 +555,11 @@ namespace Amazon.GameLift
         /// settings: (1) a runtime configuration describing what server processes to run on each
         /// instance in the fleet (required to create fleet), (2) access permissions for inbound
         /// traffic, (3) fleet-wide game session protection, and (4) the location of default log
-        /// files for GameLift to upload and store.
+        /// files for Amazon GameLift to upload and store.
         /// </para>
         ///  
         /// <para>
-        /// If the <code>CreateFleet</code> call is successful, Amazon GameLift performs the following
-        /// tasks:
+        /// If the CreateFleet call is successful, Amazon GameLift performs the following tasks:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -476,18 +568,19 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Sets the fleet's capacity to 1 "desired", which causes GameLift to start one new EC2
-        /// instance.
+        /// Sets the fleet's capacity to 1 "desired", which causes Amazon GameLift to start one
+        /// new EC2 instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// Starts launching server processes on the instance. If the fleet is configured to run
-        /// multiple server processes per instance, GameLift staggers each launch by a few seconds.
+        /// multiple server processes per instance, Amazon GameLift staggers each launch by a
+        /// few seconds.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Begins writing events to the fleet event log, which can be accessed in the GameLift
-        /// console.
+        /// Begins writing events to the fleet event log, which can be accessed in the Amazon
+        /// GameLift console.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -519,6 +612,11 @@ namespace Amazon.GameLift
         /// the fleet, including launch path, launch parameters, and the number of concurrent
         /// processes.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>PutScalingPolicy</a> -- Create or update rules that are used to set the fleet's
+        /// capacity (autoscaling).
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateFleet service method.</param>
@@ -547,6 +645,7 @@ namespace Amazon.GameLift
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateFleet">REST API Reference for CreateFleet Operation</seealso>
         CreateFleetResponse CreateFleet(CreateFleetRequest request);
 
         /// <summary>
@@ -560,6 +659,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateFleet
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateFleet">REST API Reference for CreateFleet Operation</seealso>
         IAsyncResult BeginCreateFleet(CreateFleetRequest request, AsyncCallback callback, object state);
 
 
@@ -571,6 +671,7 @@ namespace Amazon.GameLift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateFleet.</param>
         /// 
         /// <returns>Returns a  CreateFleetResult from GameLift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateFleet">REST API Reference for CreateFleet Operation</seealso>
         CreateFleetResponse EndCreateFleet(IAsyncResult asyncResult);
 
         #endregion
@@ -581,7 +682,7 @@ namespace Amazon.GameLift
         /// <summary>
         /// Creates a multiplayer game session for players. This action creates a game session
         /// record and assigns an available server process in the specified fleet to host the
-        /// game session. A fleet must be in an <code>ACTIVE</code> status before a game session
+        /// game session. A fleet must have an <code>ACTIVE</code> status before a game session
         /// can be created in it.
         /// 
         ///  
@@ -591,13 +692,13 @@ namespace Amazon.GameLift
         /// properties for this game session. If successful, a <a>GameSession</a> object is returned
         /// containing session properties, including an IP address. By default, newly created
         /// game sessions allow new players to join. Use <a>UpdateGameSession</a> to change the
-        /// game sessions player session creation policy.
+        /// game session's player session creation policy.
         /// </para>
         ///  
         /// <para>
         /// When creating a game session on a fleet with a resource limit creation policy, the
-        /// request should include a creator ID. If none is provided, GameLift does not evaluate
-        /// the fleet's resource limit creation policy.
+        /// request should include a creator ID. If none is provided, Amazon GameLift does not
+        /// evaluate the fleet's resource limit creation policy.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateGameSession service method.</param>
@@ -644,6 +745,7 @@ namespace Amazon.GameLift
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateGameSession">REST API Reference for CreateGameSession Operation</seealso>
         CreateGameSessionResponse CreateGameSession(CreateGameSessionRequest request);
 
         /// <summary>
@@ -657,6 +759,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateGameSession
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateGameSession">REST API Reference for CreateGameSession Operation</seealso>
         IAsyncResult BeginCreateGameSession(CreateGameSessionRequest request, AsyncCallback callback, object state);
 
 
@@ -668,7 +771,76 @@ namespace Amazon.GameLift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateGameSession.</param>
         /// 
         /// <returns>Returns a  CreateGameSessionResult from GameLift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateGameSession">REST API Reference for CreateGameSession Operation</seealso>
         CreateGameSessionResponse EndCreateGameSession(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateGameSessionQueue
+
+
+        /// <summary>
+        /// Establishes a new queue for processing requests for new game sessions. A queue identifies
+        /// where new game sessions can be hosted--by specifying a list of fleet destinations--and
+        /// how long a request can remain in the queue waiting to be placed before timing out.
+        /// Requests for new game sessions are added to a queue by calling <a>StartGameSessionPlacement</a>
+        /// and referencing the queue name.
+        /// 
+        ///  
+        /// <para>
+        /// When processing a request for a game session, Amazon GameLift tries each destination
+        /// in order until it finds one with available resources to host the new game session.
+        /// A queue's default order is determined by how destinations are listed. This default
+        /// order can be overridden in a game session placement request.
+        /// </para>
+        ///  
+        /// <para>
+        /// To create a new queue, provide a name, timeout value, and a list of destinations.
+        /// If successful, a new queue object is returned.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateGameSessionQueue service method.</param>
+        /// 
+        /// <returns>The response from the CreateGameSessionQueue service method, as returned by GameLift.</returns>
+        /// <exception cref="Amazon.GameLift.Model.InternalServiceException">
+        /// The service encountered an unrecoverable internal failure while processing the request.
+        /// Clients can retry such requests immediately or after a waiting period.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.InvalidRequestException">
+        /// One or more parameter values in the request are invalid. Correct the invalid parameter
+        /// values before retrying.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
+        /// The client failed authentication. Clients should not retry such requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateGameSessionQueue">REST API Reference for CreateGameSessionQueue Operation</seealso>
+        CreateGameSessionQueueResponse CreateGameSessionQueue(CreateGameSessionQueueRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateGameSessionQueue operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateGameSessionQueue operation on AmazonGameLiftClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateGameSessionQueue
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateGameSessionQueue">REST API Reference for CreateGameSessionQueue Operation</seealso>
+        IAsyncResult BeginCreateGameSessionQueue(CreateGameSessionQueueRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateGameSessionQueue operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateGameSessionQueue.</param>
+        /// 
+        /// <returns>Returns a  CreateGameSessionQueueResult from GameLift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateGameSessionQueue">REST API Reference for CreateGameSessionQueue Operation</seealso>
+        CreateGameSessionQueueResponse EndCreateGameSessionQueue(IAsyncResult asyncResult);
 
         #endregion
         
@@ -676,19 +848,21 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// Adds a player to a game session and creates a player session record. A game session
-        /// must be in an <code>ACTIVE</code> status, have a creation policy of <code>ALLOW_ALL</code>,
-        /// and have an open player slot before players can be added to the session.
+        /// Adds a player to a game session and creates a player session record. Before a player
+        /// can be added, a game session must have an <code>ACTIVE</code> status, have a creation
+        /// policy of <code>ALLOW_ALL</code>, and have an open player slot. To add a group of
+        /// players to a game session, use <a>CreatePlayerSessions</a>.
         /// 
         ///  
         /// <para>
-        /// To create a player session, specify a game session ID and player ID. If successful,
-        /// the player is added to the game session and a new <a>PlayerSession</a> object is returned.
+        /// To create a player session, specify a game session ID, player ID, and optionally a
+        /// string of player data. If successful, the player is added to the game session and
+        /// a new <a>PlayerSession</a> object is returned. Player sessions cannot be updated.
         /// 
         /// </para>
         /// </summary>
-        /// <param name="gameSessionId">Unique identifier for the game session to add a player to. Game session ID format is as follows: "arn:aws:gamelift:&lt;region&gt;::gamesession/fleet-&lt;fleet ID&gt;/&lt;ID string&gt;". The value of &lt;ID string&gt; is either a custom ID string (if one was specified when the game session was created) an autogenerated string. </param>
-        /// <param name="playerId">Unique identifier for the player to be added.</param>
+        /// <param name="gameSessionId">Unique identifier for the game session to add a player to.</param>
+        /// <param name="playerId">Unique identifier for a player. Player IDs are developer-defined.</param>
         /// 
         /// <returns>The response from the CreatePlayerSession service method, as returned by GameLift.</returns>
         /// <exception cref="Amazon.GameLift.Model.GameSessionFullException">
@@ -721,17 +895,20 @@ namespace Amazon.GameLift
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreatePlayerSession">REST API Reference for CreatePlayerSession Operation</seealso>
         CreatePlayerSessionResponse CreatePlayerSession(string gameSessionId, string playerId);
 
         /// <summary>
-        /// Adds a player to a game session and creates a player session record. A game session
-        /// must be in an <code>ACTIVE</code> status, have a creation policy of <code>ALLOW_ALL</code>,
-        /// and have an open player slot before players can be added to the session.
+        /// Adds a player to a game session and creates a player session record. Before a player
+        /// can be added, a game session must have an <code>ACTIVE</code> status, have a creation
+        /// policy of <code>ALLOW_ALL</code>, and have an open player slot. To add a group of
+        /// players to a game session, use <a>CreatePlayerSessions</a>.
         /// 
         ///  
         /// <para>
-        /// To create a player session, specify a game session ID and player ID. If successful,
-        /// the player is added to the game session and a new <a>PlayerSession</a> object is returned.
+        /// To create a player session, specify a game session ID, player ID, and optionally a
+        /// string of player data. If successful, the player is added to the game session and
+        /// a new <a>PlayerSession</a> object is returned. Player sessions cannot be updated.
         /// 
         /// </para>
         /// </summary>
@@ -768,6 +945,7 @@ namespace Amazon.GameLift
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreatePlayerSession">REST API Reference for CreatePlayerSession Operation</seealso>
         CreatePlayerSessionResponse CreatePlayerSession(CreatePlayerSessionRequest request);
 
         /// <summary>
@@ -781,6 +959,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreatePlayerSession
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreatePlayerSession">REST API Reference for CreatePlayerSession Operation</seealso>
         IAsyncResult BeginCreatePlayerSession(CreatePlayerSessionRequest request, AsyncCallback callback, object state);
 
 
@@ -792,6 +971,7 @@ namespace Amazon.GameLift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreatePlayerSession.</param>
         /// 
         /// <returns>Returns a  CreatePlayerSessionResult from GameLift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreatePlayerSession">REST API Reference for CreatePlayerSession Operation</seealso>
         CreatePlayerSessionResponse EndCreatePlayerSession(IAsyncResult asyncResult);
 
         #endregion
@@ -800,20 +980,20 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// Adds a group of players to a game session. Similar to <a>CreatePlayerSession</a>,
-        /// this action allows you to add multiple players in a single call, which is useful for
-        /// games that provide party and/or matchmaking features. A game session must be in an
-        /// <code>ACTIVE</code> status, have a creation policy of <code>ALLOW_ALL</code>, and
-        /// have an open player slot before players can be added to the session.
+        /// Adds a group of players to a game session. This action is useful with a team matching
+        /// feature. Before players can be added, a game session must have an <code>ACTIVE</code>
+        /// status, have a creation policy of <code>ALLOW_ALL</code>, and have an open player
+        /// slot. To add a single player to a game session, use <a>CreatePlayerSession</a>.
         /// 
         ///  
         /// <para>
-        /// To create player sessions, specify a game session ID and a list of player IDs. If
-        /// successful, the players are added to the game session and a set of new <a>PlayerSession</a>
-        /// objects is returned. 
+        /// To create player sessions, specify a game session ID, a list of player IDs, and optionally
+        /// a set of player data strings. If successful, the players are added to the game session
+        /// and a set of new <a>PlayerSession</a> objects is returned. Player sessions cannot
+        /// be updated.
         /// </para>
         /// </summary>
-        /// <param name="gameSessionId">Unique identifier for the game session to add players to. Game session ID format is as follows: "arn:aws:gamelift:&lt;region&gt;::gamesession/fleet-&lt;fleet ID&gt;/&lt;ID string&gt;". The value of &lt;ID string&gt; is either a custom ID string (if one was specified when the game session was created) an autogenerated string. </param>
+        /// <param name="gameSessionId">Unique identifier for the game session to add players to.</param>
         /// <param name="playerIds">List of unique identifiers for the players to be added.</param>
         /// 
         /// <returns>The response from the CreatePlayerSessions service method, as returned by GameLift.</returns>
@@ -847,20 +1027,21 @@ namespace Amazon.GameLift
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreatePlayerSessions">REST API Reference for CreatePlayerSessions Operation</seealso>
         CreatePlayerSessionsResponse CreatePlayerSessions(string gameSessionId, List<string> playerIds);
 
         /// <summary>
-        /// Adds a group of players to a game session. Similar to <a>CreatePlayerSession</a>,
-        /// this action allows you to add multiple players in a single call, which is useful for
-        /// games that provide party and/or matchmaking features. A game session must be in an
-        /// <code>ACTIVE</code> status, have a creation policy of <code>ALLOW_ALL</code>, and
-        /// have an open player slot before players can be added to the session.
+        /// Adds a group of players to a game session. This action is useful with a team matching
+        /// feature. Before players can be added, a game session must have an <code>ACTIVE</code>
+        /// status, have a creation policy of <code>ALLOW_ALL</code>, and have an open player
+        /// slot. To add a single player to a game session, use <a>CreatePlayerSession</a>.
         /// 
         ///  
         /// <para>
-        /// To create player sessions, specify a game session ID and a list of player IDs. If
-        /// successful, the players are added to the game session and a set of new <a>PlayerSession</a>
-        /// objects is returned. 
+        /// To create player sessions, specify a game session ID, a list of player IDs, and optionally
+        /// a set of player data strings. If successful, the players are added to the game session
+        /// and a set of new <a>PlayerSession</a> objects is returned. Player sessions cannot
+        /// be updated.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePlayerSessions service method.</param>
@@ -896,6 +1077,7 @@ namespace Amazon.GameLift
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreatePlayerSessions">REST API Reference for CreatePlayerSessions Operation</seealso>
         CreatePlayerSessionsResponse CreatePlayerSessions(CreatePlayerSessionsRequest request);
 
         /// <summary>
@@ -909,6 +1091,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreatePlayerSessions
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreatePlayerSessions">REST API Reference for CreatePlayerSessions Operation</seealso>
         IAsyncResult BeginCreatePlayerSessions(CreatePlayerSessionsRequest request, AsyncCallback callback, object state);
 
 
@@ -920,6 +1103,7 @@ namespace Amazon.GameLift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreatePlayerSessions.</param>
         /// 
         /// <returns>Returns a  CreatePlayerSessionsResult from GameLift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreatePlayerSessions">REST API Reference for CreatePlayerSessions Operation</seealso>
         CreatePlayerSessionsResponse EndCreatePlayerSessions(IAsyncResult asyncResult);
 
         #endregion
@@ -928,7 +1112,7 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// Deletes an alias. This action removes all record of the alias; game clients attempting
+        /// Deletes a fleet alias. This action removes all record of the alias. Game clients attempting
         /// to access a server process using the deleted alias receive an error. To delete an
         /// alias, specify the alias ID to be deleted.
         /// </summary>
@@ -950,10 +1134,11 @@ namespace Amazon.GameLift
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteAlias">REST API Reference for DeleteAlias Operation</seealso>
         DeleteAliasResponse DeleteAlias(string aliasId);
 
         /// <summary>
-        /// Deletes an alias. This action removes all record of the alias; game clients attempting
+        /// Deletes a fleet alias. This action removes all record of the alias. Game clients attempting
         /// to access a server process using the deleted alias receive an error. To delete an
         /// alias, specify the alias ID to be deleted.
         /// </summary>
@@ -975,6 +1160,7 @@ namespace Amazon.GameLift
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteAlias">REST API Reference for DeleteAlias Operation</seealso>
         DeleteAliasResponse DeleteAlias(DeleteAliasRequest request);
 
         /// <summary>
@@ -988,6 +1174,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteAlias
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteAlias">REST API Reference for DeleteAlias Operation</seealso>
         IAsyncResult BeginDeleteAlias(DeleteAliasRequest request, AsyncCallback callback, object state);
 
 
@@ -999,6 +1186,7 @@ namespace Amazon.GameLift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAlias.</param>
         /// 
         /// <returns>Returns a  DeleteAliasResult from GameLift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteAlias">REST API Reference for DeleteAlias Operation</seealso>
         DeleteAliasResponse EndDeleteAlias(IAsyncResult asyncResult);
 
         #endregion
@@ -1017,7 +1205,7 @@ namespace Amazon.GameLift
         /// deleted build.
         /// </para>
         /// </summary>
-        /// <param name="buildId">Unique identifier for the build you want to delete.</param>
+        /// <param name="buildId">Unique identifier for a build to delete.</param>
         /// 
         /// <returns>The response from the DeleteBuild service method, as returned by GameLift.</returns>
         /// <exception cref="Amazon.GameLift.Model.InternalServiceException">
@@ -1035,6 +1223,7 @@ namespace Amazon.GameLift
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteBuild">REST API Reference for DeleteBuild Operation</seealso>
         DeleteBuildResponse DeleteBuild(string buildId);
 
         /// <summary>
@@ -1066,6 +1255,7 @@ namespace Amazon.GameLift
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteBuild">REST API Reference for DeleteBuild Operation</seealso>
         DeleteBuildResponse DeleteBuild(DeleteBuildRequest request);
 
         /// <summary>
@@ -1079,6 +1269,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteBuild
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteBuild">REST API Reference for DeleteBuild Operation</seealso>
         IAsyncResult BeginDeleteBuild(DeleteBuildRequest request, AsyncCallback callback, object state);
 
 
@@ -1090,6 +1281,7 @@ namespace Amazon.GameLift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteBuild.</param>
         /// 
         /// <returns>Returns a  DeleteBuildResult from GameLift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteBuild">REST API Reference for DeleteBuild Operation</seealso>
         DeleteBuildResponse EndDeleteBuild(IAsyncResult asyncResult);
 
         #endregion
@@ -1107,7 +1299,7 @@ namespace Amazon.GameLift
         /// you can no longer use that fleet.
         /// </para>
         /// </summary>
-        /// <param name="fleetId">Unique identifier for the fleet you want to delete.</param>
+        /// <param name="fleetId">Unique identifier for a fleet to be deleted.</param>
         /// 
         /// <returns>The response from the DeleteFleet service method, as returned by GameLift.</returns>
         /// <exception cref="Amazon.GameLift.Model.InternalServiceException">
@@ -1129,6 +1321,7 @@ namespace Amazon.GameLift
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteFleet">REST API Reference for DeleteFleet Operation</seealso>
         DeleteFleetResponse DeleteFleet(string fleetId);
 
         /// <summary>
@@ -1163,6 +1356,7 @@ namespace Amazon.GameLift
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteFleet">REST API Reference for DeleteFleet Operation</seealso>
         DeleteFleetResponse DeleteFleet(DeleteFleetRequest request);
 
         /// <summary>
@@ -1176,6 +1370,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteFleet
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteFleet">REST API Reference for DeleteFleet Operation</seealso>
         IAsyncResult BeginDeleteFleet(DeleteFleetRequest request, AsyncCallback callback, object state);
 
 
@@ -1187,7 +1382,65 @@ namespace Amazon.GameLift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteFleet.</param>
         /// 
         /// <returns>Returns a  DeleteFleetResult from GameLift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteFleet">REST API Reference for DeleteFleet Operation</seealso>
         DeleteFleetResponse EndDeleteFleet(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteGameSessionQueue
+
+
+        /// <summary>
+        /// Deletes a game session queue. This action means that any <a>StartGameSessionPlacement</a>
+        /// requests that reference this queue will fail. To delete a queue, specify the queue
+        /// name.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteGameSessionQueue service method.</param>
+        /// 
+        /// <returns>The response from the DeleteGameSessionQueue service method, as returned by GameLift.</returns>
+        /// <exception cref="Amazon.GameLift.Model.InternalServiceException">
+        /// The service encountered an unrecoverable internal failure while processing the request.
+        /// Clients can retry such requests immediately or after a waiting period.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.InvalidRequestException">
+        /// One or more parameter values in the request are invalid. Correct the invalid parameter
+        /// values before retrying.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.NotFoundException">
+        /// A service resource associated with the request could not be found. Clients should
+        /// not retry such requests.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
+        /// The client failed authentication. Clients should not retry such requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteGameSessionQueue">REST API Reference for DeleteGameSessionQueue Operation</seealso>
+        DeleteGameSessionQueueResponse DeleteGameSessionQueue(DeleteGameSessionQueueRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteGameSessionQueue operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteGameSessionQueue operation on AmazonGameLiftClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteGameSessionQueue
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteGameSessionQueue">REST API Reference for DeleteGameSessionQueue Operation</seealso>
+        IAsyncResult BeginDeleteGameSessionQueue(DeleteGameSessionQueueRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteGameSessionQueue operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteGameSessionQueue.</param>
+        /// 
+        /// <returns>Returns a  DeleteGameSessionQueueResult from GameLift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteGameSessionQueue">REST API Reference for DeleteGameSessionQueue Operation</seealso>
+        DeleteGameSessionQueueResponse EndDeleteGameSessionQueue(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1217,6 +1470,7 @@ namespace Amazon.GameLift
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteScalingPolicy">REST API Reference for DeleteScalingPolicy Operation</seealso>
         DeleteScalingPolicyResponse DeleteScalingPolicy(DeleteScalingPolicyRequest request);
 
         /// <summary>
@@ -1230,6 +1484,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteScalingPolicy
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteScalingPolicy">REST API Reference for DeleteScalingPolicy Operation</seealso>
         IAsyncResult BeginDeleteScalingPolicy(DeleteScalingPolicyRequest request, AsyncCallback callback, object state);
 
 
@@ -1241,6 +1496,7 @@ namespace Amazon.GameLift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteScalingPolicy.</param>
         /// 
         /// <returns>Returns a  DeleteScalingPolicyResult from GameLift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteScalingPolicy">REST API Reference for DeleteScalingPolicy Operation</seealso>
         DeleteScalingPolicyResponse EndDeleteScalingPolicy(IAsyncResult asyncResult);
 
         #endregion
@@ -1249,8 +1505,15 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// Retrieves properties for a specified alias. To get the alias, specify an alias ID.
-        /// If successful, an <a>Alias</a> object is returned.
+        /// Retrieves properties for a fleet alias. This operation returns all alias metadata
+        /// and settings. To get just the fleet ID an alias is currently pointing to, use <a>ResolveAlias</a>.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        /// To get alias properties, specify the alias ID. If successful, an <a>Alias</a> object
+        /// is returned.
+        /// </para>
         /// </summary>
         /// <param name="aliasId">Unique identifier for a fleet alias. Specify the alias you want to retrieve.</param>
         /// 
@@ -1270,11 +1533,19 @@ namespace Amazon.GameLift
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeAlias">REST API Reference for DescribeAlias Operation</seealso>
         DescribeAliasResponse DescribeAlias(string aliasId);
 
         /// <summary>
-        /// Retrieves properties for a specified alias. To get the alias, specify an alias ID.
-        /// If successful, an <a>Alias</a> object is returned.
+        /// Retrieves properties for a fleet alias. This operation returns all alias metadata
+        /// and settings. To get just the fleet ID an alias is currently pointing to, use <a>ResolveAlias</a>.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        /// To get alias properties, specify the alias ID. If successful, an <a>Alias</a> object
+        /// is returned.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAlias service method.</param>
         /// 
@@ -1294,6 +1565,7 @@ namespace Amazon.GameLift
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeAlias">REST API Reference for DescribeAlias Operation</seealso>
         DescribeAliasResponse DescribeAlias(DescribeAliasRequest request);
 
         /// <summary>
@@ -1307,6 +1579,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAlias
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeAlias">REST API Reference for DescribeAlias Operation</seealso>
         IAsyncResult BeginDescribeAlias(DescribeAliasRequest request, AsyncCallback callback, object state);
 
 
@@ -1318,6 +1591,7 @@ namespace Amazon.GameLift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAlias.</param>
         /// 
         /// <returns>Returns a  DescribeAliasResult from GameLift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeAlias">REST API Reference for DescribeAlias Operation</seealso>
         DescribeAliasResponse EndDescribeAlias(IAsyncResult asyncResult);
 
         #endregion
@@ -1329,7 +1603,7 @@ namespace Amazon.GameLift
         /// Retrieves properties for a build. To get a build record, specify a build ID. If successful,
         /// an object containing the build properties is returned.
         /// </summary>
-        /// <param name="buildId">Unique identifier of the build that you want to retrieve properties for.</param>
+        /// <param name="buildId">Unique identifier for a build to retrieve properties for.</param>
         /// 
         /// <returns>The response from the DescribeBuild service method, as returned by GameLift.</returns>
         /// <exception cref="Amazon.GameLift.Model.InternalServiceException">
@@ -1347,6 +1621,7 @@ namespace Amazon.GameLift
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeBuild">REST API Reference for DescribeBuild Operation</seealso>
         DescribeBuildResponse DescribeBuild(string buildId);
 
         /// <summary>
@@ -1371,6 +1646,7 @@ namespace Amazon.GameLift
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeBuild">REST API Reference for DescribeBuild Operation</seealso>
         DescribeBuildResponse DescribeBuild(DescribeBuildRequest request);
 
         /// <summary>
@@ -1384,6 +1660,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeBuild
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeBuild">REST API Reference for DescribeBuild Operation</seealso>
         IAsyncResult BeginDescribeBuild(DescribeBuildRequest request, AsyncCallback callback, object state);
 
 
@@ -1395,6 +1672,7 @@ namespace Amazon.GameLift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeBuild.</param>
         /// 
         /// <returns>Returns a  DescribeBuildResult from GameLift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeBuild">REST API Reference for DescribeBuild Operation</seealso>
         DescribeBuildResponse EndDescribeBuild(IAsyncResult asyncResult);
 
         #endregion
@@ -1415,12 +1693,12 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Service limits vary depending on region. Available regions for GameLift can be found
-        /// in the AWS Management Console for GameLift (see the drop-down list in the upper right
-        /// corner).
+        /// Service limits vary depending on region. Available regions for Amazon GameLift can
+        /// be found in the AWS Management Console for Amazon GameLift (see the drop-down list
+        /// in the upper right corner).
         /// </para>
         /// </summary>
-        /// <param name="ec2InstanceType">Name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the computing resources of each instance in the fleet, including CPU, memory, storage, and networking capacity. GameLift supports the following EC2 instance types. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed descriptions. Leave this parameter blank to retrieve limits for all types.</param>
+        /// <param name="ec2InstanceType">Name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the computing resources of each instance in the fleet, including CPU, memory, storage, and networking capacity. Amazon GameLift supports the following EC2 instance types. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed descriptions. Leave this parameter blank to retrieve limits for all types.</param>
         /// 
         /// <returns>The response from the DescribeEC2InstanceLimits service method, as returned by GameLift.</returns>
         /// <exception cref="Amazon.GameLift.Model.InternalServiceException">
@@ -1434,6 +1712,7 @@ namespace Amazon.GameLift
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeEC2InstanceLimits">REST API Reference for DescribeEC2InstanceLimits Operation</seealso>
         DescribeEC2InstanceLimitsResponse DescribeEC2InstanceLimits(EC2InstanceType ec2InstanceType);
 
         /// <summary>
@@ -1449,9 +1728,9 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Service limits vary depending on region. Available regions for GameLift can be found
-        /// in the AWS Management Console for GameLift (see the drop-down list in the upper right
-        /// corner).
+        /// Service limits vary depending on region. Available regions for Amazon GameLift can
+        /// be found in the AWS Management Console for Amazon GameLift (see the drop-down list
+        /// in the upper right corner).
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEC2InstanceLimits service method.</param>
@@ -1468,6 +1747,7 @@ namespace Amazon.GameLift
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeEC2InstanceLimits">REST API Reference for DescribeEC2InstanceLimits Operation</seealso>
         DescribeEC2InstanceLimitsResponse DescribeEC2InstanceLimits(DescribeEC2InstanceLimitsRequest request);
 
         /// <summary>
@@ -1481,6 +1761,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeEC2InstanceLimits
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeEC2InstanceLimits">REST API Reference for DescribeEC2InstanceLimits Operation</seealso>
         IAsyncResult BeginDescribeEC2InstanceLimits(DescribeEC2InstanceLimitsRequest request, AsyncCallback callback, object state);
 
 
@@ -1492,6 +1773,7 @@ namespace Amazon.GameLift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeEC2InstanceLimits.</param>
         /// 
         /// <returns>Returns a  DescribeEC2InstanceLimitsResult from GameLift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeEC2InstanceLimits">REST API Reference for DescribeEC2InstanceLimits Operation</seealso>
         DescribeEC2InstanceLimitsResponse EndDescribeEC2InstanceLimits(IAsyncResult asyncResult);
 
         #endregion
@@ -1532,6 +1814,7 @@ namespace Amazon.GameLift
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetAttributes">REST API Reference for DescribeFleetAttributes Operation</seealso>
         DescribeFleetAttributesResponse DescribeFleetAttributes(DescribeFleetAttributesRequest request);
 
         /// <summary>
@@ -1545,6 +1828,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeFleetAttributes
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetAttributes">REST API Reference for DescribeFleetAttributes Operation</seealso>
         IAsyncResult BeginDescribeFleetAttributes(DescribeFleetAttributesRequest request, AsyncCallback callback, object state);
 
 
@@ -1556,6 +1840,7 @@ namespace Amazon.GameLift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeFleetAttributes.</param>
         /// 
         /// <returns>Returns a  DescribeFleetAttributesResult from GameLift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetAttributes">REST API Reference for DescribeFleetAttributes Operation</seealso>
         DescribeFleetAttributesResponse EndDescribeFleetAttributes(IAsyncResult asyncResult);
 
         #endregion
@@ -1597,6 +1882,7 @@ namespace Amazon.GameLift
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetCapacity">REST API Reference for DescribeFleetCapacity Operation</seealso>
         DescribeFleetCapacityResponse DescribeFleetCapacity(DescribeFleetCapacityRequest request);
 
         /// <summary>
@@ -1610,6 +1896,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeFleetCapacity
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetCapacity">REST API Reference for DescribeFleetCapacity Operation</seealso>
         IAsyncResult BeginDescribeFleetCapacity(DescribeFleetCapacityRequest request, AsyncCallback callback, object state);
 
 
@@ -1621,6 +1908,7 @@ namespace Amazon.GameLift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeFleetCapacity.</param>
         /// 
         /// <returns>Returns a  DescribeFleetCapacityResult from GameLift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetCapacity">REST API Reference for DescribeFleetCapacity Operation</seealso>
         DescribeFleetCapacityResponse EndDescribeFleetCapacity(IAsyncResult asyncResult);
 
         #endregion
@@ -1652,6 +1940,7 @@ namespace Amazon.GameLift
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetEvents">REST API Reference for DescribeFleetEvents Operation</seealso>
         DescribeFleetEventsResponse DescribeFleetEvents(DescribeFleetEventsRequest request);
 
         /// <summary>
@@ -1665,6 +1954,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeFleetEvents
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetEvents">REST API Reference for DescribeFleetEvents Operation</seealso>
         IAsyncResult BeginDescribeFleetEvents(DescribeFleetEventsRequest request, AsyncCallback callback, object state);
 
 
@@ -1676,6 +1966,7 @@ namespace Amazon.GameLift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeFleetEvents.</param>
         /// 
         /// <returns>Returns a  DescribeFleetEventsResult from GameLift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetEvents">REST API Reference for DescribeFleetEvents Operation</seealso>
         DescribeFleetEventsResponse EndDescribeFleetEvents(IAsyncResult asyncResult);
 
         #endregion
@@ -1691,7 +1982,7 @@ namespace Amazon.GameLift
         /// for the requested fleet ID. If the requested fleet has been deleted, the result set
         /// is empty.
         /// </summary>
-        /// <param name="fleetId">Unique identifier for the fleet you want to retrieve port settings for.</param>
+        /// <param name="fleetId">Unique identifier for a fleet to retrieve port settings for.</param>
         /// 
         /// <returns>The response from the DescribeFleetPortSettings service method, as returned by GameLift.</returns>
         /// <exception cref="Amazon.GameLift.Model.InternalServiceException">
@@ -1709,6 +2000,7 @@ namespace Amazon.GameLift
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetPortSettings">REST API Reference for DescribeFleetPortSettings Operation</seealso>
         DescribeFleetPortSettingsResponse DescribeFleetPortSettings(string fleetId);
 
         /// <summary>
@@ -1737,6 +2029,7 @@ namespace Amazon.GameLift
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetPortSettings">REST API Reference for DescribeFleetPortSettings Operation</seealso>
         DescribeFleetPortSettingsResponse DescribeFleetPortSettings(DescribeFleetPortSettingsRequest request);
 
         /// <summary>
@@ -1750,6 +2043,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeFleetPortSettings
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetPortSettings">REST API Reference for DescribeFleetPortSettings Operation</seealso>
         IAsyncResult BeginDescribeFleetPortSettings(DescribeFleetPortSettingsRequest request, AsyncCallback callback, object state);
 
 
@@ -1761,6 +2055,7 @@ namespace Amazon.GameLift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeFleetPortSettings.</param>
         /// 
         /// <returns>Returns a  DescribeFleetPortSettingsResult from GameLift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetPortSettings">REST API Reference for DescribeFleetPortSettings Operation</seealso>
         DescribeFleetPortSettingsResponse EndDescribeFleetPortSettings(IAsyncResult asyncResult);
 
         #endregion
@@ -1801,6 +2096,7 @@ namespace Amazon.GameLift
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetUtilization">REST API Reference for DescribeFleetUtilization Operation</seealso>
         DescribeFleetUtilizationResponse DescribeFleetUtilization(DescribeFleetUtilizationRequest request);
 
         /// <summary>
@@ -1814,6 +2110,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeFleetUtilization
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetUtilization">REST API Reference for DescribeFleetUtilization Operation</seealso>
         IAsyncResult BeginDescribeFleetUtilization(DescribeFleetUtilizationRequest request, AsyncCallback callback, object state);
 
 
@@ -1825,6 +2122,7 @@ namespace Amazon.GameLift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeFleetUtilization.</param>
         /// 
         /// <returns>Returns a  DescribeFleetUtilizationResult from GameLift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetUtilization">REST API Reference for DescribeFleetUtilization Operation</seealso>
         DescribeFleetUtilizationResponse EndDescribeFleetUtilization(IAsyncResult asyncResult);
 
         #endregion
@@ -1871,6 +2169,7 @@ namespace Amazon.GameLift
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessionDetails">REST API Reference for DescribeGameSessionDetails Operation</seealso>
         DescribeGameSessionDetailsResponse DescribeGameSessionDetails(DescribeGameSessionDetailsRequest request);
 
         /// <summary>
@@ -1884,6 +2183,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeGameSessionDetails
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessionDetails">REST API Reference for DescribeGameSessionDetails Operation</seealso>
         IAsyncResult BeginDescribeGameSessionDetails(DescribeGameSessionDetailsRequest request, AsyncCallback callback, object state);
 
 
@@ -1895,7 +2195,124 @@ namespace Amazon.GameLift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeGameSessionDetails.</param>
         /// 
         /// <returns>Returns a  DescribeGameSessionDetailsResult from GameLift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessionDetails">REST API Reference for DescribeGameSessionDetails Operation</seealso>
         DescribeGameSessionDetailsResponse EndDescribeGameSessionDetails(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeGameSessionPlacement
+
+
+        /// <summary>
+        /// Retrieves properties and current status of a game session placement request. To get
+        /// game session placement details, specify the placement ID. If successful, a <a>GameSessionPlacement</a>
+        /// object is returned.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeGameSessionPlacement service method.</param>
+        /// 
+        /// <returns>The response from the DescribeGameSessionPlacement service method, as returned by GameLift.</returns>
+        /// <exception cref="Amazon.GameLift.Model.InternalServiceException">
+        /// The service encountered an unrecoverable internal failure while processing the request.
+        /// Clients can retry such requests immediately or after a waiting period.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.InvalidRequestException">
+        /// One or more parameter values in the request are invalid. Correct the invalid parameter
+        /// values before retrying.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.NotFoundException">
+        /// A service resource associated with the request could not be found. Clients should
+        /// not retry such requests.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
+        /// The client failed authentication. Clients should not retry such requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessionPlacement">REST API Reference for DescribeGameSessionPlacement Operation</seealso>
+        DescribeGameSessionPlacementResponse DescribeGameSessionPlacement(DescribeGameSessionPlacementRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeGameSessionPlacement operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeGameSessionPlacement operation on AmazonGameLiftClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeGameSessionPlacement
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessionPlacement">REST API Reference for DescribeGameSessionPlacement Operation</seealso>
+        IAsyncResult BeginDescribeGameSessionPlacement(DescribeGameSessionPlacementRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeGameSessionPlacement operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeGameSessionPlacement.</param>
+        /// 
+        /// <returns>Returns a  DescribeGameSessionPlacementResult from GameLift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessionPlacement">REST API Reference for DescribeGameSessionPlacement Operation</seealso>
+        DescribeGameSessionPlacementResponse EndDescribeGameSessionPlacement(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeGameSessionQueues
+
+
+        /// <summary>
+        /// Retrieves the properties for one or more game session queues. When requesting multiple
+        /// queues, use the pagination parameters to retrieve results as a set of sequential pages.
+        /// If successful, a <a>GameSessionQueue</a> object is returned for each requested queue.
+        /// When specifying a list of queues, objects are returned only for queues that currently
+        /// exist in the region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeGameSessionQueues service method.</param>
+        /// 
+        /// <returns>The response from the DescribeGameSessionQueues service method, as returned by GameLift.</returns>
+        /// <exception cref="Amazon.GameLift.Model.InternalServiceException">
+        /// The service encountered an unrecoverable internal failure while processing the request.
+        /// Clients can retry such requests immediately or after a waiting period.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.InvalidRequestException">
+        /// One or more parameter values in the request are invalid. Correct the invalid parameter
+        /// values before retrying.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.NotFoundException">
+        /// A service resource associated with the request could not be found. Clients should
+        /// not retry such requests.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
+        /// The client failed authentication. Clients should not retry such requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessionQueues">REST API Reference for DescribeGameSessionQueues Operation</seealso>
+        DescribeGameSessionQueuesResponse DescribeGameSessionQueues(DescribeGameSessionQueuesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeGameSessionQueues operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeGameSessionQueues operation on AmazonGameLiftClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeGameSessionQueues
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessionQueues">REST API Reference for DescribeGameSessionQueues Operation</seealso>
+        IAsyncResult BeginDescribeGameSessionQueues(DescribeGameSessionQueuesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeGameSessionQueues operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeGameSessionQueues.</param>
+        /// 
+        /// <returns>Returns a  DescribeGameSessionQueuesResult from GameLift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessionQueues">REST API Reference for DescribeGameSessionQueues Operation</seealso>
+        DescribeGameSessionQueuesResponse EndDescribeGameSessionQueues(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1903,20 +2320,17 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// Retrieves a set of one or more game sessions and properties. This action can be used
-        /// in several ways: (1) provide a <code>GameSessionId</code> to request properties for
-        /// a specific game session; (2) provide a <code>FleetId</code> or an <code>AliasId</code>
-        /// to request properties for all game sessions running on a fleet. You can also use <a>SearchGameSessions</a>,
-        /// which allows you to retrieve all game sessions or filter on certain criteria, but
-        /// only returns game sessions with a status of ACTIVE. If you need to retrieve the protection
-        /// policy for each game session, use <a>DescribeGameSessionDetails</a>.
+        /// Retrieves a set of one or more game sessions. Request a specific game session or request
+        /// all game sessions on a fleet. Alternatively, use <a>SearchGameSessions</a> to request
+        /// a set of active game sessions that are filtered by certain criteria. To retrieve protection
+        /// policy settings for game sessions, use <a>DescribeGameSessionDetails</a>.
         /// 
         ///  
         /// <para>
-        /// To get game session record(s), specify just one of the following: game session ID,
-        /// fleet ID, or alias ID. You can filter this request by game session status. Use the
-        /// pagination parameters to retrieve results as a set of sequential pages. If successful,
-        /// a <a>GameSession</a> object is returned for each session matching the request.
+        /// To get game sessions, specify one of the following: game session ID, fleet ID, or
+        /// alias ID. You can filter this request by game session status. Use the pagination parameters
+        /// to retrieve results as a set of sequential pages. If successful, a <a>GameSession</a>
+        /// object is returned for each game session matching the request.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeGameSessions service method.</param>
@@ -1943,6 +2357,7 @@ namespace Amazon.GameLift
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessions">REST API Reference for DescribeGameSessions Operation</seealso>
         DescribeGameSessionsResponse DescribeGameSessions(DescribeGameSessionsRequest request);
 
         /// <summary>
@@ -1956,6 +2371,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeGameSessions
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessions">REST API Reference for DescribeGameSessions Operation</seealso>
         IAsyncResult BeginDescribeGameSessions(DescribeGameSessionsRequest request, AsyncCallback callback, object state);
 
 
@@ -1967,6 +2383,7 @@ namespace Amazon.GameLift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeGameSessions.</param>
         /// 
         /// <returns>Returns a  DescribeGameSessionsResult from GameLift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessions">REST API Reference for DescribeGameSessions Operation</seealso>
         DescribeGameSessionsResponse EndDescribeGameSessions(IAsyncResult asyncResult);
 
         #endregion
@@ -2005,6 +2422,7 @@ namespace Amazon.GameLift
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeInstances">REST API Reference for DescribeInstances Operation</seealso>
         DescribeInstancesResponse DescribeInstances(DescribeInstancesRequest request);
 
         /// <summary>
@@ -2018,6 +2436,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeInstances
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeInstances">REST API Reference for DescribeInstances Operation</seealso>
         IAsyncResult BeginDescribeInstances(DescribeInstancesRequest request, AsyncCallback callback, object state);
 
 
@@ -2029,6 +2448,7 @@ namespace Amazon.GameLift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeInstances.</param>
         /// 
         /// <returns>Returns a  DescribeInstancesResult from GameLift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeInstances">REST API Reference for DescribeInstances Operation</seealso>
         DescribeInstancesResponse EndDescribeInstances(IAsyncResult asyncResult);
 
         #endregion
@@ -2070,6 +2490,7 @@ namespace Amazon.GameLift
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribePlayerSessions">REST API Reference for DescribePlayerSessions Operation</seealso>
         DescribePlayerSessionsResponse DescribePlayerSessions(DescribePlayerSessionsRequest request);
 
         /// <summary>
@@ -2083,6 +2504,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribePlayerSessions
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribePlayerSessions">REST API Reference for DescribePlayerSessions Operation</seealso>
         IAsyncResult BeginDescribePlayerSessions(DescribePlayerSessionsRequest request, AsyncCallback callback, object state);
 
 
@@ -2094,6 +2516,7 @@ namespace Amazon.GameLift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribePlayerSessions.</param>
         /// 
         /// <returns>Returns a  DescribePlayerSessionsResult from GameLift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribePlayerSessions">REST API Reference for DescribePlayerSessions Operation</seealso>
         DescribePlayerSessionsResponse EndDescribePlayerSessions(IAsyncResult asyncResult);
 
         #endregion
@@ -2103,7 +2526,7 @@ namespace Amazon.GameLift
 
         /// <summary>
         /// Retrieves the current runtime configuration for the specified fleet. The runtime configuration
-        /// tells GameLift how to launch server processes on instances in the fleet.
+        /// tells Amazon GameLift how to launch server processes on instances in the fleet.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeRuntimeConfiguration service method.</param>
         /// 
@@ -2123,6 +2546,7 @@ namespace Amazon.GameLift
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeRuntimeConfiguration">REST API Reference for DescribeRuntimeConfiguration Operation</seealso>
         DescribeRuntimeConfigurationResponse DescribeRuntimeConfiguration(DescribeRuntimeConfigurationRequest request);
 
         /// <summary>
@@ -2136,6 +2560,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeRuntimeConfiguration
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeRuntimeConfiguration">REST API Reference for DescribeRuntimeConfiguration Operation</seealso>
         IAsyncResult BeginDescribeRuntimeConfiguration(DescribeRuntimeConfigurationRequest request, AsyncCallback callback, object state);
 
 
@@ -2147,6 +2572,7 @@ namespace Amazon.GameLift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeRuntimeConfiguration.</param>
         /// 
         /// <returns>Returns a  DescribeRuntimeConfigurationResult from GameLift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeRuntimeConfiguration">REST API Reference for DescribeRuntimeConfiguration Operation</seealso>
         DescribeRuntimeConfigurationResponse EndDescribeRuntimeConfiguration(IAsyncResult asyncResult);
 
         #endregion
@@ -2183,6 +2609,7 @@ namespace Amazon.GameLift
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeScalingPolicies">REST API Reference for DescribeScalingPolicies Operation</seealso>
         DescribeScalingPoliciesResponse DescribeScalingPolicies(DescribeScalingPoliciesRequest request);
 
         /// <summary>
@@ -2196,6 +2623,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeScalingPolicies
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeScalingPolicies">REST API Reference for DescribeScalingPolicies Operation</seealso>
         IAsyncResult BeginDescribeScalingPolicies(DescribeScalingPoliciesRequest request, AsyncCallback callback, object state);
 
 
@@ -2207,6 +2635,7 @@ namespace Amazon.GameLift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeScalingPolicies.</param>
         /// 
         /// <returns>Returns a  DescribeScalingPoliciesResult from GameLift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeScalingPolicies">REST API Reference for DescribeScalingPolicies Operation</seealso>
         DescribeScalingPoliciesResponse EndDescribeScalingPolicies(IAsyncResult asyncResult);
 
         #endregion
@@ -2227,7 +2656,7 @@ namespace Amazon.GameLift
         /// </para>
         ///  </note>
         /// </summary>
-        /// <param name="gameSessionId">Unique identifier for the game session to get logs for. Game session ID format is as follows: "arn:aws:gamelift:&lt;region&gt;::gamesession/fleet-&lt;fleet ID&gt;/&lt;ID string&gt;". The value of &lt;ID string&gt; is either a custom ID string (if one was specified when the game session was created) an autogenerated string. </param>
+        /// <param name="gameSessionId">Unique identifier for the game session to get logs for.</param>
         /// 
         /// <returns>The response from the GetGameSessionLogUrl service method, as returned by GameLift.</returns>
         /// <exception cref="Amazon.GameLift.Model.InternalServiceException">
@@ -2245,6 +2674,7 @@ namespace Amazon.GameLift
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GetGameSessionLogUrl">REST API Reference for GetGameSessionLogUrl Operation</seealso>
         GetGameSessionLogUrlResponse GetGameSessionLogUrl(string gameSessionId);
 
         /// <summary>
@@ -2278,6 +2708,7 @@ namespace Amazon.GameLift
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GetGameSessionLogUrl">REST API Reference for GetGameSessionLogUrl Operation</seealso>
         GetGameSessionLogUrlResponse GetGameSessionLogUrl(GetGameSessionLogUrlRequest request);
 
         /// <summary>
@@ -2291,6 +2722,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetGameSessionLogUrl
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GetGameSessionLogUrl">REST API Reference for GetGameSessionLogUrl Operation</seealso>
         IAsyncResult BeginGetGameSessionLogUrl(GetGameSessionLogUrlRequest request, AsyncCallback callback, object state);
 
 
@@ -2302,6 +2734,7 @@ namespace Amazon.GameLift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetGameSessionLogUrl.</param>
         /// 
         /// <returns>Returns a  GetGameSessionLogUrlResult from GameLift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GetGameSessionLogUrl">REST API Reference for GetGameSessionLogUrl Operation</seealso>
         GetGameSessionLogUrlResponse EndGetGameSessionLogUrl(IAsyncResult asyncResult);
 
         #endregion
@@ -2316,13 +2749,13 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         /// Access requires credentials that match the operating system of the instance. For a
-        /// Windows instance, GameLift returns a username and password as strings for use with
-        /// a Windows Remote Desktop client. For a Linux instance, GameLift returns a username
-        /// and RSA private key, also as strings, for use with an SSH client. The private key
-        /// must be saved in the proper format to a .pem file before using. If you're making this
-        /// request using the AWS CLI, saving the secret can be handled as part of the GetInstanceAccess
-        /// request (see the example later in this topic). For more information on remote access,
-        /// see <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-remote-access.html">Remotely
+        /// Windows instance, Amazon GameLift returns a user name and password as strings for
+        /// use with a Windows Remote Desktop client. For a Linux instance, Amazon GameLift returns
+        /// a user name and RSA private key, also as strings, for use with an SSH client. The
+        /// private key must be saved in the proper format to a <code>.pem</code> file before
+        /// using. If you're making this request using the AWS CLI, saving the secret can be handled
+        /// as part of the GetInstanceAccess request. (See the example later in this topic). For
+        /// more information on remote access, see <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-remote-access.html">Remotely
         /// Accessing an Instance</a>.
         /// </para>
         ///  
@@ -2350,6 +2783,7 @@ namespace Amazon.GameLift
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GetInstanceAccess">REST API Reference for GetInstanceAccess Operation</seealso>
         GetInstanceAccessResponse GetInstanceAccess(GetInstanceAccessRequest request);
 
         /// <summary>
@@ -2363,6 +2797,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetInstanceAccess
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GetInstanceAccess">REST API Reference for GetInstanceAccess Operation</seealso>
         IAsyncResult BeginGetInstanceAccess(GetInstanceAccessRequest request, AsyncCallback callback, object state);
 
 
@@ -2374,6 +2809,7 @@ namespace Amazon.GameLift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetInstanceAccess.</param>
         /// 
         /// <returns>Returns a  GetInstanceAccessResult from GameLift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GetInstanceAccess">REST API Reference for GetInstanceAccess Operation</seealso>
         GetInstanceAccessResponse EndGetInstanceAccess(IAsyncResult asyncResult);
 
         #endregion
@@ -2406,6 +2842,7 @@ namespace Amazon.GameLift
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListAliases">REST API Reference for ListAliases Operation</seealso>
         ListAliasesResponse ListAliases(ListAliasesRequest request);
 
         /// <summary>
@@ -2419,6 +2856,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAliases
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListAliases">REST API Reference for ListAliases Operation</seealso>
         IAsyncResult BeginListAliases(ListAliasesRequest request, AsyncCallback callback, object state);
 
 
@@ -2430,6 +2868,7 @@ namespace Amazon.GameLift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAliases.</param>
         /// 
         /// <returns>Returns a  ListAliasesResult from GameLift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListAliases">REST API Reference for ListAliases Operation</seealso>
         ListAliasesResponse EndListAliases(IAsyncResult asyncResult);
 
         #endregion
@@ -2463,6 +2902,7 @@ namespace Amazon.GameLift
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListBuilds">REST API Reference for ListBuilds Operation</seealso>
         ListBuildsResponse ListBuilds(ListBuildsRequest request);
 
         /// <summary>
@@ -2476,6 +2916,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListBuilds
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListBuilds">REST API Reference for ListBuilds Operation</seealso>
         IAsyncResult BeginListBuilds(ListBuildsRequest request, AsyncCallback callback, object state);
 
 
@@ -2487,6 +2928,7 @@ namespace Amazon.GameLift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListBuilds.</param>
         /// 
         /// <returns>Returns a  ListBuildsResult from GameLift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListBuilds">REST API Reference for ListBuilds Operation</seealso>
         ListBuildsResponse EndListBuilds(IAsyncResult asyncResult);
 
         #endregion
@@ -2522,6 +2964,7 @@ namespace Amazon.GameLift
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListFleets">REST API Reference for ListFleets Operation</seealso>
         ListFleetsResponse ListFleets(ListFleetsRequest request);
 
         /// <summary>
@@ -2535,6 +2978,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListFleets
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListFleets">REST API Reference for ListFleets Operation</seealso>
         IAsyncResult BeginListFleets(ListFleetsRequest request, AsyncCallback callback, object state);
 
 
@@ -2546,6 +2990,7 @@ namespace Amazon.GameLift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListFleets.</param>
         /// 
         /// <returns>Returns a  ListFleetsResult from GameLift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListFleets">REST API Reference for ListFleets Operation</seealso>
         ListFleetsResponse EndListFleets(IAsyncResult asyncResult);
 
         #endregion
@@ -2606,6 +3051,7 @@ namespace Amazon.GameLift
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/PutScalingPolicy">REST API Reference for PutScalingPolicy Operation</seealso>
         PutScalingPolicyResponse PutScalingPolicy(PutScalingPolicyRequest request);
 
         /// <summary>
@@ -2619,6 +3065,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutScalingPolicy
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/PutScalingPolicy">REST API Reference for PutScalingPolicy Operation</seealso>
         IAsyncResult BeginPutScalingPolicy(PutScalingPolicyRequest request, AsyncCallback callback, object state);
 
 
@@ -2630,6 +3077,7 @@ namespace Amazon.GameLift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutScalingPolicy.</param>
         /// 
         /// <returns>Returns a  PutScalingPolicyResult from GameLift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/PutScalingPolicy">REST API Reference for PutScalingPolicy Operation</seealso>
         PutScalingPolicyResponse EndPutScalingPolicy(IAsyncResult asyncResult);
 
         #endregion
@@ -2638,26 +3086,11 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// Retrieves a fresh set of upload credentials and the assigned Amazon S3 storage location
-        /// for a specific build. Valid credentials are required to upload your game build files
-        /// to Amazon S3.
-        /// 
-        ///  <important> 
-        /// <para>
-        /// Call this action only if you need credentials for a build created with<code> <a>CreateBuild</a>
-        /// </code>. This is a rare situation; in most cases, builds are created using the CLI
-        /// command <code>upload-build</code>, which creates a build record and also uploads build
-        /// files. 
-        /// </para>
-        ///  </important> 
-        /// <para>
-        /// Upload credentials are returned when you create the build, but they have a limited
-        /// lifespan. You can get fresh credentials and use them to re-upload game files until
-        /// the status of that build changes to <code>READY</code>. Once this happens, you must
-        /// create a brand new build.
-        /// </para>
+        /// <i>This API call is not currently in use. </i> Retrieves a fresh set of upload credentials
+        /// and the assigned Amazon S3 storage location for a specific build. Valid credentials
+        /// are required to upload your game build files to Amazon S3.
         /// </summary>
-        /// <param name="buildId">Unique identifier for the build you want to get credentials for.</param>
+        /// <param name="buildId">Unique identifier for a build to get credentials for.</param>
         /// 
         /// <returns>The response from the RequestUploadCredentials service method, as returned by GameLift.</returns>
         /// <exception cref="Amazon.GameLift.Model.InternalServiceException">
@@ -2675,27 +3108,13 @@ namespace Amazon.GameLift
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/RequestUploadCredentials">REST API Reference for RequestUploadCredentials Operation</seealso>
         RequestUploadCredentialsResponse RequestUploadCredentials(string buildId);
 
         /// <summary>
-        /// Retrieves a fresh set of upload credentials and the assigned Amazon S3 storage location
-        /// for a specific build. Valid credentials are required to upload your game build files
-        /// to Amazon S3.
-        /// 
-        ///  <important> 
-        /// <para>
-        /// Call this action only if you need credentials for a build created with<code> <a>CreateBuild</a>
-        /// </code>. This is a rare situation; in most cases, builds are created using the CLI
-        /// command <code>upload-build</code>, which creates a build record and also uploads build
-        /// files. 
-        /// </para>
-        ///  </important> 
-        /// <para>
-        /// Upload credentials are returned when you create the build, but they have a limited
-        /// lifespan. You can get fresh credentials and use them to re-upload game files until
-        /// the status of that build changes to <code>READY</code>. Once this happens, you must
-        /// create a brand new build.
-        /// </para>
+        /// <i>This API call is not currently in use. </i> Retrieves a fresh set of upload credentials
+        /// and the assigned Amazon S3 storage location for a specific build. Valid credentials
+        /// are required to upload your game build files to Amazon S3.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RequestUploadCredentials service method.</param>
         /// 
@@ -2715,6 +3134,7 @@ namespace Amazon.GameLift
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/RequestUploadCredentials">REST API Reference for RequestUploadCredentials Operation</seealso>
         RequestUploadCredentialsResponse RequestUploadCredentials(RequestUploadCredentialsRequest request);
 
         /// <summary>
@@ -2728,6 +3148,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRequestUploadCredentials
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/RequestUploadCredentials">REST API Reference for RequestUploadCredentials Operation</seealso>
         IAsyncResult BeginRequestUploadCredentials(RequestUploadCredentialsRequest request, AsyncCallback callback, object state);
 
 
@@ -2739,6 +3160,7 @@ namespace Amazon.GameLift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRequestUploadCredentials.</param>
         /// 
         /// <returns>Returns a  RequestUploadCredentialsResult from GameLift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/RequestUploadCredentials">REST API Reference for RequestUploadCredentials Operation</seealso>
         RequestUploadCredentialsResponse EndRequestUploadCredentials(IAsyncResult asyncResult);
 
         #endregion
@@ -2773,6 +3195,7 @@ namespace Amazon.GameLift
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ResolveAlias">REST API Reference for ResolveAlias Operation</seealso>
         ResolveAliasResponse ResolveAlias(string aliasId);
 
         /// <summary>
@@ -2802,6 +3225,7 @@ namespace Amazon.GameLift
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ResolveAlias">REST API Reference for ResolveAlias Operation</seealso>
         ResolveAliasResponse ResolveAlias(ResolveAliasRequest request);
 
         /// <summary>
@@ -2815,6 +3239,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndResolveAlias
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ResolveAlias">REST API Reference for ResolveAlias Operation</seealso>
         IAsyncResult BeginResolveAlias(ResolveAliasRequest request, AsyncCallback callback, object state);
 
 
@@ -2826,6 +3251,7 @@ namespace Amazon.GameLift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginResolveAlias.</param>
         /// 
         /// <returns>Returns a  ResolveAliasResult from GameLift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ResolveAlias">REST API Reference for ResolveAlias Operation</seealso>
         ResolveAliasResponse EndResolveAlias(IAsyncResult asyncResult);
 
         #endregion
@@ -2836,8 +3262,8 @@ namespace Amazon.GameLift
         /// <summary>
         /// Retrieves a set of game sessions that match a set of search criteria and sorts them
         /// in a specified order. Currently a game session search is limited to a single fleet.
-        /// Search results include only game sessions that are in ACTIVE status. If you need to
-        /// retrieve game sessions with a status other than active, use <a>DescribeGameSessions</a>.
+        /// Search results include only game sessions that are in <code>ACTIVE</code> status.
+        /// If you need to retrieve game sessions with a status other than active, use <a>DescribeGameSessions</a>.
         /// If you need to retrieve the protection policy for each game session, use <a>DescribeGameSessionDetails</a>.
         /// 
         ///  
@@ -2919,6 +3345,7 @@ namespace Amazon.GameLift
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/SearchGameSessions">REST API Reference for SearchGameSessions Operation</seealso>
         SearchGameSessionsResponse SearchGameSessions(SearchGameSessionsRequest request);
 
         /// <summary>
@@ -2932,6 +3359,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSearchGameSessions
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/SearchGameSessions">REST API Reference for SearchGameSessions Operation</seealso>
         IAsyncResult BeginSearchGameSessions(SearchGameSessionsRequest request, AsyncCallback callback, object state);
 
 
@@ -2943,7 +3371,151 @@ namespace Amazon.GameLift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSearchGameSessions.</param>
         /// 
         /// <returns>Returns a  SearchGameSessionsResult from GameLift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/SearchGameSessions">REST API Reference for SearchGameSessions Operation</seealso>
         SearchGameSessionsResponse EndSearchGameSessions(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  StartGameSessionPlacement
+
+
+        /// <summary>
+        /// Places a request for a new game session in a queue (see <a>CreateGameSessionQueue</a>).
+        /// When processing a placement request, Amazon GameLift attempts to create a new game
+        /// session on one of the fleets associated with the queue. If no resources are available,
+        /// Amazon GameLift tries again with another and so on until resources are found or the
+        /// placement request times out. A game session placement request can also request player
+        /// sessions. When a new game session is successfully created, Amazon GameLift creates
+        /// a player session for each player included in the request.
+        /// 
+        ///  
+        /// <para>
+        /// When placing a game session, by default Amazon GameLift tries each fleet in the order
+        /// they are listed in the queue configuration. Ideally, a queue's destinations are listed
+        /// in preference order. Alternatively, when requesting a game session with players, you
+        /// can also provide latency data for each player in relevant regions. Latency data indicates
+        /// the performance lag a player experiences when connected to a fleet in the region.
+        /// Amazon GameLift uses latency data to reorder the list of destinations to place the
+        /// game session in a region with minimal lag. If latency data is provided for multiple
+        /// players, Amazon GameLift calculates each region's average lag for all players and
+        /// reorders to get the best game play across all players. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To place a new game session request, specify the queue name and a set of game session
+        /// properties and settings. Also provide a unique ID (such as a UUID) for the placement.
+        /// You'll use this ID to track the status of the placement request. Optionally, provide
+        /// a set of IDs and player data for each player you want to join to the new game session.
+        /// To optimize game play for the players, also provide latency data for all players.
+        /// If successful, a new game session placement is created. To track the status of a placement
+        /// request, call <a>DescribeGameSessionPlacement</a> and check the request's status.
+        /// If the status is Fulfilled, a new game session has been created and a game session
+        /// ARN and region are referenced. If the placement request times out, you have the option
+        /// of resubmitting the request or retrying it with a different queue. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartGameSessionPlacement service method.</param>
+        /// 
+        /// <returns>The response from the StartGameSessionPlacement service method, as returned by GameLift.</returns>
+        /// <exception cref="Amazon.GameLift.Model.InternalServiceException">
+        /// The service encountered an unrecoverable internal failure while processing the request.
+        /// Clients can retry such requests immediately or after a waiting period.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.InvalidRequestException">
+        /// One or more parameter values in the request are invalid. Correct the invalid parameter
+        /// values before retrying.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.NotFoundException">
+        /// A service resource associated with the request could not be found. Clients should
+        /// not retry such requests.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
+        /// The client failed authentication. Clients should not retry such requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StartGameSessionPlacement">REST API Reference for StartGameSessionPlacement Operation</seealso>
+        StartGameSessionPlacementResponse StartGameSessionPlacement(StartGameSessionPlacementRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartGameSessionPlacement operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartGameSessionPlacement operation on AmazonGameLiftClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartGameSessionPlacement
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StartGameSessionPlacement">REST API Reference for StartGameSessionPlacement Operation</seealso>
+        IAsyncResult BeginStartGameSessionPlacement(StartGameSessionPlacementRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartGameSessionPlacement operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartGameSessionPlacement.</param>
+        /// 
+        /// <returns>Returns a  StartGameSessionPlacementResult from GameLift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StartGameSessionPlacement">REST API Reference for StartGameSessionPlacement Operation</seealso>
+        StartGameSessionPlacementResponse EndStartGameSessionPlacement(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  StopGameSessionPlacement
+
+
+        /// <summary>
+        /// Cancels a game session placement that is in Pending status. To stop a placement, provide
+        /// the placement ID values. If successful, the placement is moved to Cancelled status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopGameSessionPlacement service method.</param>
+        /// 
+        /// <returns>The response from the StopGameSessionPlacement service method, as returned by GameLift.</returns>
+        /// <exception cref="Amazon.GameLift.Model.InternalServiceException">
+        /// The service encountered an unrecoverable internal failure while processing the request.
+        /// Clients can retry such requests immediately or after a waiting period.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.InvalidRequestException">
+        /// One or more parameter values in the request are invalid. Correct the invalid parameter
+        /// values before retrying.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.NotFoundException">
+        /// A service resource associated with the request could not be found. Clients should
+        /// not retry such requests.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
+        /// The client failed authentication. Clients should not retry such requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StopGameSessionPlacement">REST API Reference for StopGameSessionPlacement Operation</seealso>
+        StopGameSessionPlacementResponse StopGameSessionPlacement(StopGameSessionPlacementRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopGameSessionPlacement operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopGameSessionPlacement operation on AmazonGameLiftClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopGameSessionPlacement
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StopGameSessionPlacement">REST API Reference for StopGameSessionPlacement Operation</seealso>
+        IAsyncResult BeginStopGameSessionPlacement(StopGameSessionPlacementRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StopGameSessionPlacement operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopGameSessionPlacement.</param>
+        /// 
+        /// <returns>Returns a  StopGameSessionPlacementResult from GameLift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StopGameSessionPlacement">REST API Reference for StopGameSessionPlacement Operation</seealso>
+        StopGameSessionPlacementResponse EndStopGameSessionPlacement(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2951,8 +3523,8 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// Updates properties for an alias. To update properties, specify the alias ID to be
-        /// updated and provide the information to be changed. To reassign an alias to another
+        /// Updates properties for a fleet alias. To update properties, specify the alias ID to
+        /// be updated and provide the information to be changed. To reassign an alias to another
         /// fleet, provide an updated routing strategy. If successful, the updated alias record
         /// is returned.
         /// </summary>
@@ -2974,6 +3546,7 @@ namespace Amazon.GameLift
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateAlias">REST API Reference for UpdateAlias Operation</seealso>
         UpdateAliasResponse UpdateAlias(UpdateAliasRequest request);
 
         /// <summary>
@@ -2987,6 +3560,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateAlias
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateAlias">REST API Reference for UpdateAlias Operation</seealso>
         IAsyncResult BeginUpdateAlias(UpdateAliasRequest request, AsyncCallback callback, object state);
 
 
@@ -2998,6 +3572,7 @@ namespace Amazon.GameLift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateAlias.</param>
         /// 
         /// <returns>Returns a  UpdateAliasResult from GameLift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateAlias">REST API Reference for UpdateAlias Operation</seealso>
         UpdateAliasResponse EndUpdateAlias(IAsyncResult asyncResult);
 
         #endregion
@@ -3028,6 +3603,7 @@ namespace Amazon.GameLift
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateBuild">REST API Reference for UpdateBuild Operation</seealso>
         UpdateBuildResponse UpdateBuild(UpdateBuildRequest request);
 
         /// <summary>
@@ -3041,6 +3617,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateBuild
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateBuild">REST API Reference for UpdateBuild Operation</seealso>
         IAsyncResult BeginUpdateBuild(UpdateBuildRequest request, AsyncCallback callback, object state);
 
 
@@ -3052,6 +3629,7 @@ namespace Amazon.GameLift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateBuild.</param>
         /// 
         /// <returns>Returns a  UpdateBuildResult from GameLift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateBuild">REST API Reference for UpdateBuild Operation</seealso>
         UpdateBuildResponse EndUpdateBuild(IAsyncResult asyncResult);
 
         #endregion
@@ -3094,6 +3672,7 @@ namespace Amazon.GameLift
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetAttributes">REST API Reference for UpdateFleetAttributes Operation</seealso>
         UpdateFleetAttributesResponse UpdateFleetAttributes(UpdateFleetAttributesRequest request);
 
         /// <summary>
@@ -3107,6 +3686,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateFleetAttributes
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetAttributes">REST API Reference for UpdateFleetAttributes Operation</seealso>
         IAsyncResult BeginUpdateFleetAttributes(UpdateFleetAttributesRequest request, AsyncCallback callback, object state);
 
 
@@ -3118,6 +3698,7 @@ namespace Amazon.GameLift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateFleetAttributes.</param>
         /// 
         /// <returns>Returns a  UpdateFleetAttributesResult from GameLift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetAttributes">REST API Reference for UpdateFleetAttributes Operation</seealso>
         UpdateFleetAttributesResponse EndUpdateFleetAttributes(IAsyncResult asyncResult);
 
         #endregion
@@ -3178,6 +3759,7 @@ namespace Amazon.GameLift
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetCapacity">REST API Reference for UpdateFleetCapacity Operation</seealso>
         UpdateFleetCapacityResponse UpdateFleetCapacity(UpdateFleetCapacityRequest request);
 
         /// <summary>
@@ -3191,6 +3773,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateFleetCapacity
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetCapacity">REST API Reference for UpdateFleetCapacity Operation</seealso>
         IAsyncResult BeginUpdateFleetCapacity(UpdateFleetCapacityRequest request, AsyncCallback callback, object state);
 
 
@@ -3202,6 +3785,7 @@ namespace Amazon.GameLift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateFleetCapacity.</param>
         /// 
         /// <returns>Returns a  UpdateFleetCapacityResult from GameLift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetCapacity">REST API Reference for UpdateFleetCapacity Operation</seealso>
         UpdateFleetCapacityResponse EndUpdateFleetCapacity(IAsyncResult asyncResult);
 
         #endregion
@@ -3247,6 +3831,7 @@ namespace Amazon.GameLift
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetPortSettings">REST API Reference for UpdateFleetPortSettings Operation</seealso>
         UpdateFleetPortSettingsResponse UpdateFleetPortSettings(UpdateFleetPortSettingsRequest request);
 
         /// <summary>
@@ -3260,6 +3845,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateFleetPortSettings
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetPortSettings">REST API Reference for UpdateFleetPortSettings Operation</seealso>
         IAsyncResult BeginUpdateFleetPortSettings(UpdateFleetPortSettingsRequest request, AsyncCallback callback, object state);
 
 
@@ -3271,6 +3857,7 @@ namespace Amazon.GameLift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateFleetPortSettings.</param>
         /// 
         /// <returns>Returns a  UpdateFleetPortSettingsResult from GameLift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetPortSettings">REST API Reference for UpdateFleetPortSettings Operation</seealso>
         UpdateFleetPortSettingsResponse EndUpdateFleetPortSettings(IAsyncResult asyncResult);
 
         #endregion
@@ -3313,6 +3900,7 @@ namespace Amazon.GameLift
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateGameSession">REST API Reference for UpdateGameSession Operation</seealso>
         UpdateGameSessionResponse UpdateGameSession(UpdateGameSessionRequest request);
 
         /// <summary>
@@ -3326,6 +3914,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateGameSession
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateGameSession">REST API Reference for UpdateGameSession Operation</seealso>
         IAsyncResult BeginUpdateGameSession(UpdateGameSessionRequest request, AsyncCallback callback, object state);
 
 
@@ -3337,7 +3926,66 @@ namespace Amazon.GameLift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateGameSession.</param>
         /// 
         /// <returns>Returns a  UpdateGameSessionResult from GameLift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateGameSession">REST API Reference for UpdateGameSession Operation</seealso>
         UpdateGameSessionResponse EndUpdateGameSession(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateGameSessionQueue
+
+
+        /// <summary>
+        /// Updates settings for a game session queue, which determines how new game session requests
+        /// in the queue are processed. To update settings, specify the queue name to be updated
+        /// and provide the new settings. When updating destinations, provide a complete list
+        /// of destinations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGameSessionQueue service method.</param>
+        /// 
+        /// <returns>The response from the UpdateGameSessionQueue service method, as returned by GameLift.</returns>
+        /// <exception cref="Amazon.GameLift.Model.InternalServiceException">
+        /// The service encountered an unrecoverable internal failure while processing the request.
+        /// Clients can retry such requests immediately or after a waiting period.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.InvalidRequestException">
+        /// One or more parameter values in the request are invalid. Correct the invalid parameter
+        /// values before retrying.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.NotFoundException">
+        /// A service resource associated with the request could not be found. Clients should
+        /// not retry such requests.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
+        /// The client failed authentication. Clients should not retry such requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateGameSessionQueue">REST API Reference for UpdateGameSessionQueue Operation</seealso>
+        UpdateGameSessionQueueResponse UpdateGameSessionQueue(UpdateGameSessionQueueRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateGameSessionQueue operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGameSessionQueue operation on AmazonGameLiftClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateGameSessionQueue
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateGameSessionQueue">REST API Reference for UpdateGameSessionQueue Operation</seealso>
+        IAsyncResult BeginUpdateGameSessionQueue(UpdateGameSessionQueueRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateGameSessionQueue operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateGameSessionQueue.</param>
+        /// 
+        /// <returns>Returns a  UpdateGameSessionQueueResult from GameLift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateGameSessionQueue">REST API Reference for UpdateGameSessionQueue Operation</seealso>
+        UpdateGameSessionQueueResponse EndUpdateGameSessionQueue(IAsyncResult asyncResult);
 
         #endregion
         
@@ -3345,10 +3993,10 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// Updates the current runtime configuration for the specified fleet, which tells GameLift
-        /// how to launch server processes on instances in the fleet. You can update a fleet's
-        /// runtime configuration at any time after the fleet is created; it does not need to
-        /// be in an <code>ACTIVE</code> status.
+        /// Updates the current runtime configuration for the specified fleet, which tells Amazon
+        /// GameLift how to launch server processes on instances in the fleet. You can update
+        /// a fleet's runtime configuration at any time after the fleet is created; it does not
+        /// need to be in an <code>ACTIVE</code> status.
         /// 
         ///  
         /// <para>
@@ -3357,12 +4005,13 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
-        /// Each instance in a GameLift fleet checks regularly for an updated runtime configuration
+        /// Each instance in a Amazon GameLift fleet checks regularly for an updated runtime configuration
         /// and changes how it launches server processes to comply with the latest version. Existing
         /// server processes are not affected by the update; they continue to run until they end,
-        /// while GameLift simply adds new server processes to fit the current runtime configuration.
-        /// As a result, the runtime configuration changes are applied gradually as existing processes
-        /// shut down and new processes are launched in GameLift's normal process recycling activity.
+        /// while Amazon GameLift simply adds new server processes to fit the current runtime
+        /// configuration. As a result, the runtime configuration changes are applied gradually
+        /// as existing processes shut down and new processes are launched in Amazon GameLift's
+        /// normal process recycling activity.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRuntimeConfiguration service method.</param>
@@ -3387,6 +4036,7 @@ namespace Amazon.GameLift
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateRuntimeConfiguration">REST API Reference for UpdateRuntimeConfiguration Operation</seealso>
         UpdateRuntimeConfigurationResponse UpdateRuntimeConfiguration(UpdateRuntimeConfigurationRequest request);
 
         /// <summary>
@@ -3400,6 +4050,7 @@ namespace Amazon.GameLift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateRuntimeConfiguration
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateRuntimeConfiguration">REST API Reference for UpdateRuntimeConfiguration Operation</seealso>
         IAsyncResult BeginUpdateRuntimeConfiguration(UpdateRuntimeConfigurationRequest request, AsyncCallback callback, object state);
 
 
@@ -3411,6 +4062,7 @@ namespace Amazon.GameLift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateRuntimeConfiguration.</param>
         /// 
         /// <returns>Returns a  UpdateRuntimeConfigurationResult from GameLift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateRuntimeConfiguration">REST API Reference for UpdateRuntimeConfiguration Operation</seealso>
         UpdateRuntimeConfigurationResponse EndUpdateRuntimeConfiguration(IAsyncResult asyncResult);
 
         #endregion

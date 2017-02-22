@@ -28,7 +28,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// Properties describing a player session.
+    /// Properties describing a player session. A player session represents either a player
+    /// reservation for a game session or actual player activity in a game session. A player
+    /// session object (including player data) is automatically passed to a game session when
+    /// the player connects to the game session and is validated.
+    /// 
+    ///  
+    /// <para>
+    /// Player session-related operations include:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>CreatePlayerSession</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>CreatePlayerSessions</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribePlayerSessions</a> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class PlayerSession
     {
@@ -36,6 +57,7 @@ namespace Amazon.GameLift.Model
         private string _fleetId;
         private string _gameSessionId;
         private string _ipAddress;
+        private string _playerData;
         private string _playerId;
         private string _playerSessionId;
         private int? _port;
@@ -46,7 +68,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property CreationTime. 
         /// <para>
         /// Time stamp indicating when this data object was created. Format is a number expressed
-        /// in Unix time as milliseconds (ex: "1469498468.057").
+        /// in Unix time as milliseconds (for example "1469498468.057").
         /// </para>
         /// </summary>
         public DateTime CreationTime
@@ -64,7 +86,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property FleetId. 
         /// <para>
-        /// Unique identifier for a fleet.
+        /// Unique identifier for a fleet that the player's game session is running on.
         /// </para>
         /// </summary>
         public string FleetId
@@ -116,9 +138,28 @@ namespace Amazon.GameLift.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PlayerData. 
+        /// <para>
+        /// Developer-defined information related to a player. Amazon GameLift does not use this
+        /// data, so it can be formatted as needed for use in the game. 
+        /// </para>
+        /// </summary>
+        public string PlayerData
+        {
+            get { return this._playerData; }
+            set { this._playerData = value; }
+        }
+
+        // Check to see if PlayerData property is set
+        internal bool IsSetPlayerData()
+        {
+            return this._playerData != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property PlayerId. 
         /// <para>
-        /// Unique identifier for a player.
+        /// Unique identifier for a player that is associated with this player session.
         /// </para>
         /// </summary>
         public string PlayerId
@@ -154,8 +195,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Port. 
         /// <para>
-        /// Port number for the game session. To connect to a GameLift server process, an app
-        /// needs both the IP address and port number.
+        /// Port number for the game session. To connect to a Amazon GameLift server process,
+        /// an app needs both the IP address and port number.
         /// </para>
         /// </summary>
         public int Port
@@ -216,7 +257,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property TerminationTime. 
         /// <para>
         /// Time stamp indicating when this data object was terminated. Format is a number expressed
-        /// in Unix time as milliseconds (ex: "1469498468.057").
+        /// in Unix time as milliseconds (for example "1469498468.057").
         /// </para>
         /// </summary>
         public DateTime TerminationTime

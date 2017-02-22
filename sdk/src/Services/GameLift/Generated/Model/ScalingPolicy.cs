@@ -83,7 +83,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property FleetId. 
         /// <para>
-        /// Unique identity for the fleet associated with this scaling policy.
+        /// Unique identifier for a fleet that is associated with this scaling policy.
         /// </para>
         /// </summary>
         public string FleetId
@@ -101,7 +101,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property MetricName. 
         /// <para>
-        /// Name of the GameLift-defined metric that is used to trigger an adjustment.
+        /// Name of the Amazon GameLift-defined metric that is used to trigger an adjustment.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -151,8 +151,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Descriptive label associated with a scaling policy. Policy names do not need to be
-        /// unique.
+        /// Descriptive label that is associated with a scaling policy. Policy names do not need
+        /// to be unique.
         /// </para>
         /// </summary>
         public string Name

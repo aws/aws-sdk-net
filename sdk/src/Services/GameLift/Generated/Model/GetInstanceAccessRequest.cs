@@ -35,13 +35,13 @@ namespace Amazon.GameLift.Model
     ///  
     /// <para>
     /// Access requires credentials that match the operating system of the instance. For a
-    /// Windows instance, GameLift returns a username and password as strings for use with
-    /// a Windows Remote Desktop client. For a Linux instance, GameLift returns a username
-    /// and RSA private key, also as strings, for use with an SSH client. The private key
-    /// must be saved in the proper format to a .pem file before using. If you're making this
-    /// request using the AWS CLI, saving the secret can be handled as part of the GetInstanceAccess
-    /// request (see the example later in this topic). For more information on remote access,
-    /// see <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-remote-access.html">Remotely
+    /// Windows instance, Amazon GameLift returns a user name and password as strings for
+    /// use with a Windows Remote Desktop client. For a Linux instance, Amazon GameLift returns
+    /// a user name and RSA private key, also as strings, for use with an SSH client. The
+    /// private key must be saved in the proper format to a <code>.pem</code> file before
+    /// using. If you're making this request using the AWS CLI, saving the secret can be handled
+    /// as part of the GetInstanceAccess request. (See the example later in this topic). For
+    /// more information on remote access, see <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-remote-access.html">Remotely
     /// Accessing an Instance</a>.
     /// </para>
     ///  
@@ -59,10 +59,10 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property FleetId. 
         /// <para>
-        /// Unique identifier for a fleet. Specify the fleet that contain the instance you want
-        /// access to. The fleet can be in any of the following statuses: ACTIVATING, ACTIVE,
-        /// or ERROR. Fleets with an ERROR status can be accessed for a few hours before being
-        /// deleted.
+        /// Unique identifier for a fleet that contains the instance you want access to. The fleet
+        /// can be in any of the following statuses: <code>ACTIVATING</code>, <code>ACTIVE</code>,
+        /// or <code>ERROR</code>. Fleets with an <code>ERROR</code> status may be accessible
+        /// for a short time before they are deleted.
         /// </para>
         /// </summary>
         public string FleetId
@@ -80,8 +80,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// Unique identifier for an instance. Specify the instance you want to get access to.
-        /// You can access an instance in any status.
+        /// Unique identifier for an instance you want to get access to. You can access an instance
+        /// in any status.
         /// </para>
         /// </summary>
         public string InstanceId

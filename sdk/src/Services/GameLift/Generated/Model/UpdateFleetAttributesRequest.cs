@@ -62,7 +62,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property FleetId. 
         /// <para>
-        /// Unique identifier for the fleet you want to update attribute metadata for.
+        /// Unique identifier for a fleet to update attribute metadata for.
         /// </para>
         /// </summary>
         public string FleetId
@@ -80,7 +80,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Descriptive label associated with a fleet. Fleet names do not need to be unique.
+        /// Descriptive label that is associated with a fleet. Fleet names do not need to be unique.
         /// </para>
         /// </summary>
         public string Name

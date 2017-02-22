@@ -79,7 +79,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property FleetId. 
         /// <para>
-        /// Unique identifier for the fleet you want to update capacity for.
+        /// Unique identifier for a fleet to update capacity for.
         /// </para>
         /// </summary>
         public string FleetId

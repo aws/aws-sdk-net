@@ -47,9 +47,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property BuildId. 
         /// <para>
-        /// Unique identifier of the build to return fleets for. Use this parameter to return
-        /// only fleets using the specified build. To retrieve all fleets, leave this parameter
-        /// empty.
+        /// Unique identifier for a build to return fleets for. Use this parameter to return only
+        /// fleets using the specified build. To retrieve all fleets, leave this parameter empty.
         /// </para>
         /// </summary>
         public string BuildId
@@ -86,9 +85,9 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Token indicating the start of the next sequential page of results. Use the token that
-        /// is returned with a previous call to this action. To specify the start of the result
-        /// set, do not specify a value.
+        /// Token that indicates the start of the next sequential page of results. Use the token
+        /// that is returned with a previous call to this action. To specify the start of the
+        /// result set, do not specify a value.
         /// </para>
         /// </summary>
         public string NextToken

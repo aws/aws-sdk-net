@@ -31,8 +31,8 @@ namespace Amazon.GameLift.Model
     /// Container for the parameters to the SearchGameSessions operation.
     /// Retrieves a set of game sessions that match a set of search criteria and sorts them
     /// in a specified order. Currently a game session search is limited to a single fleet.
-    /// Search results include only game sessions that are in ACTIVE status. If you need to
-    /// retrieve game sessions with a status other than active, use <a>DescribeGameSessions</a>.
+    /// Search results include only game sessions that are in <code>ACTIVE</code> status.
+    /// If you need to retrieve game sessions with a status other than active, use <a>DescribeGameSessions</a>.
     /// If you need to retrieve the protection policy for each game session, use <a>DescribeGameSessionDetails</a>.
     /// 
     ///  
@@ -102,8 +102,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property AliasId. 
         /// <para>
-        /// Unique identifier for a fleet alias. Each request must reference either a fleet ID
-        /// or alias ID, but not both.
+        /// Unique identifier for an alias associated with the fleet to search for active game
+        /// sessions. Each request must reference either a fleet ID or alias ID, but not both.
         /// </para>
         /// </summary>
         public string AliasId
@@ -123,7 +123,7 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// String containing the search criteria for the session search. If no filter expression
         /// is included, the request returns results for all game sessions in the fleet that are
-        /// in ACTIVE status.
+        /// in <code>ACTIVE</code> status.
         /// </para>
         ///  
         /// <para>
@@ -204,8 +204,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property FleetId. 
         /// <para>
-        /// Unique identifier for a fleet. Each request must reference either a fleet ID or alias
-        /// ID, but not both.
+        /// Unique identifier for a fleet to search for active game sessions. Each request must
+        /// reference either a fleet ID or alias ID, but not both.
         /// </para>
         /// </summary>
         public string FleetId
@@ -243,9 +243,9 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Token indicating the start of the next sequential page of results. Use the token that
-        /// is returned with a previous call to this action. To specify the start of the result
-        /// set, do not specify a value.
+        /// Token that indicates the start of the next sequential page of results. Use the token
+        /// that is returned with a previous call to this action. To specify the start of the
+        /// result set, do not specify a value.
         /// </para>
         /// </summary>
         public string NextToken

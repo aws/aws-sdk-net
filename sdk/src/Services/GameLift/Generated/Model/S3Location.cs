@@ -28,10 +28,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// Location in Amazon Simple Storage Service (Amazon S3) where a build's files are stored.
-    /// This location is assigned in response to a <a>CreateBuild</a> call, and is always
-    /// in the same region as the service used to create the build. For more details see the
-    /// <a href="http://aws.amazon.com/documentation/s3/">Amazon S3 documentation</a>.
+    /// Location in Amazon Simple Storage Service (Amazon S3) where build files can be stored
+    /// for access by Amazon GameLift. This location is specified in a <a>CreateBuild</a>
+    /// request. For more details, see the <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-cli-uploading.html#gamelift-build-cli-uploading-create-build">Create
+    /// a Build with Files in Amazon S3</a>.
     /// </summary>
     public partial class S3Location
     {
@@ -42,7 +42,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Bucket. 
         /// <para>
-        /// Amazon S3 bucket identifier.
+        /// Amazon S3 bucket identifier. This is the name of your S3 bucket.
         /// </para>
         /// </summary>
         public string Bucket
@@ -60,7 +60,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// Amazon S3 bucket key.
+        /// Name of the zip file containing your build files. 
         /// </para>
         /// </summary>
         public string Key
@@ -78,8 +78,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// Amazon resource number for the cross-account access role that allows GameLift access
-        /// to the S3 bucket.
+        /// Amazon Resource Name (<a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+        /// for the access role that allows Amazon GameLift to access your S3 bucket.
         /// </para>
         /// </summary>
         public string RoleArn

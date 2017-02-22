@@ -365,6 +365,10 @@ namespace Amazon.GameLift
         /// </summary>
         public static readonly EventCode FLEET_VALIDATION_TIMED_OUT = new EventCode("FLEET_VALIDATION_TIMED_OUT");
         /// <summary>
+        /// Constant GAME_SESSION_ACTIVATION_TIMEOUT for EventCode
+        /// </summary>
+        public static readonly EventCode GAME_SESSION_ACTIVATION_TIMEOUT = new EventCode("GAME_SESSION_ACTIVATION_TIMEOUT");
+        /// <summary>
         /// Constant GENERIC_EVENT for EventCode
         /// </summary>
         public static readonly EventCode GENERIC_EVENT = new EventCode("GENERIC_EVENT");
@@ -504,6 +508,64 @@ namespace Amazon.GameLift
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator FleetStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type GameSessionPlacementState.
+    /// </summary>
+    public class GameSessionPlacementState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CANCELLED for GameSessionPlacementState
+        /// </summary>
+        public static readonly GameSessionPlacementState CANCELLED = new GameSessionPlacementState("CANCELLED");
+        /// <summary>
+        /// Constant FULFILLED for GameSessionPlacementState
+        /// </summary>
+        public static readonly GameSessionPlacementState FULFILLED = new GameSessionPlacementState("FULFILLED");
+        /// <summary>
+        /// Constant PENDING for GameSessionPlacementState
+        /// </summary>
+        public static readonly GameSessionPlacementState PENDING = new GameSessionPlacementState("PENDING");
+        /// <summary>
+        /// Constant TIMED_OUT for GameSessionPlacementState
+        /// </summary>
+        public static readonly GameSessionPlacementState TIMED_OUT = new GameSessionPlacementState("TIMED_OUT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GameSessionPlacementState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GameSessionPlacementState FindValue(string value)
+        {
+            return FindValue<GameSessionPlacementState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GameSessionPlacementState(string value)
         {
             return FindValue(value);
         }
@@ -706,6 +768,14 @@ namespace Amazon.GameLift
         /// Constant IdleInstances for MetricName
         /// </summary>
         public static readonly MetricName IdleInstances = new MetricName("IdleInstances");
+        /// <summary>
+        /// Constant QueueDepth for MetricName
+        /// </summary>
+        public static readonly MetricName QueueDepth = new MetricName("QueueDepth");
+        /// <summary>
+        /// Constant WaitTime for MetricName
+        /// </summary>
+        public static readonly MetricName WaitTime = new MetricName("WaitTime");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

@@ -37,7 +37,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property PlayerSession. 
         /// <para>
-        /// Object containing the newly created player session record.
+        /// Object that describes the newly created player session record.
         /// </para>
         /// </summary>
         public PlayerSession PlayerSession
