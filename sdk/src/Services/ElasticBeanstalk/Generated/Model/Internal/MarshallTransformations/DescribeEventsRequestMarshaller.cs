@@ -82,6 +82,10 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
                 }
+                if(publicRequest.IsSetPlatformArn())
+                {
+                    request.Parameters.Add("PlatformArn", StringUtils.FromString(publicRequest.PlatformArn));
+                }
                 if(publicRequest.IsSetRequestId())
                 {
                     request.Parameters.Add("RequestId", StringUtils.FromString(publicRequest.RequestId));

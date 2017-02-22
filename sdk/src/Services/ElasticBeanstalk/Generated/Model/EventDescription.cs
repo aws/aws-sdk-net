@@ -36,6 +36,7 @@ namespace Amazon.ElasticBeanstalk.Model
         private string _environmentName;
         private DateTime? _eventDate;
         private string _message;
+        private string _platformArn;
         private string _requestId;
         private EventSeverity _severity;
         private string _templateName;
@@ -116,6 +117,24 @@ namespace Amazon.ElasticBeanstalk.Model
         internal bool IsSetMessage()
         {
             return this._message != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PlatformArn. 
+        /// <para>
+        /// The ARN of the custom platform.
+        /// </para>
+        /// </summary>
+        public string PlatformArn
+        {
+            get { return this._platformArn; }
+            set { this._platformArn = value; }
+        }
+
+        // Check to see if PlatformArn property is set
+        internal bool IsSetPlatformArn()
+        {
+            return this._platformArn != null;
         }
 
         /// <summary>

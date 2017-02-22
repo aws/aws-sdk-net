@@ -55,6 +55,7 @@ namespace Amazon.ElasticBeanstalk.Model
         private string _groupName;
         private List<ConfigurationOptionSetting> _optionSettings = new List<ConfigurationOptionSetting>();
         private List<OptionSpecification> _optionsToRemove = new List<OptionSpecification>();
+        private string _platformArn;
         private string _solutionStackName;
         private string _templateName;
         private EnvironmentTier _tier;
@@ -214,6 +215,24 @@ namespace Amazon.ElasticBeanstalk.Model
         internal bool IsSetOptionsToRemove()
         {
             return this._optionsToRemove != null && this._optionsToRemove.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PlatformArn. 
+        /// <para>
+        /// The ARN of the platform, if used.
+        /// </para>
+        /// </summary>
+        public string PlatformArn
+        {
+            get { return this._platformArn; }
+            set { this._platformArn = value; }
+        }
+
+        // Check to see if PlatformArn property is set
+        internal bool IsSetPlatformArn()
+        {
+            return this._platformArn != null;
         }
 
         /// <summary>

@@ -94,6 +94,10 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+                if(publicRequest.IsSetPlatformArn())
+                {
+                    request.Parameters.Add("PlatformArn", StringUtils.FromString(publicRequest.PlatformArn));
+                }
                 if(publicRequest.IsSetSolutionStackName())
                 {
                     request.Parameters.Add("SolutionStackName", StringUtils.FromString(publicRequest.SolutionStackName));

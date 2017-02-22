@@ -509,6 +509,38 @@ namespace Amazon.ElasticBeanstalk
 
         #endregion
         
+        #region  CreatePlatformVersion
+
+        internal CreatePlatformVersionResponse CreatePlatformVersion(CreatePlatformVersionRequest request)
+        {
+            var marshaller = new CreatePlatformVersionRequestMarshaller();
+            var unmarshaller = CreatePlatformVersionResponseUnmarshaller.Instance;
+
+            return Invoke<CreatePlatformVersionRequest,CreatePlatformVersionResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreatePlatformVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreatePlatformVersion operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreatePlatformVersion">REST API Reference for CreatePlatformVersion Operation</seealso>
+        public Task<CreatePlatformVersionResponse> CreatePlatformVersionAsync(CreatePlatformVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreatePlatformVersionRequestMarshaller();
+            var unmarshaller = CreatePlatformVersionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreatePlatformVersionRequest,CreatePlatformVersionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateStorageLocation
 
         internal CreateStorageLocationResponse CreateStorageLocation()
@@ -697,6 +729,38 @@ namespace Amazon.ElasticBeanstalk
             var unmarshaller = DeleteEnvironmentConfigurationResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteEnvironmentConfigurationRequest,DeleteEnvironmentConfigurationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeletePlatformVersion
+
+        internal DeletePlatformVersionResponse DeletePlatformVersion(DeletePlatformVersionRequest request)
+        {
+            var marshaller = new DeletePlatformVersionRequestMarshaller();
+            var unmarshaller = DeletePlatformVersionResponseUnmarshaller.Instance;
+
+            return Invoke<DeletePlatformVersionRequest,DeletePlatformVersionResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeletePlatformVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeletePlatformVersion operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeletePlatformVersion">REST API Reference for DeletePlatformVersion Operation</seealso>
+        public Task<DeletePlatformVersionResponse> DeletePlatformVersionAsync(DeletePlatformVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeletePlatformVersionRequestMarshaller();
+            var unmarshaller = DeletePlatformVersionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeletePlatformVersionRequest,DeletePlatformVersionResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1161,6 +1225,38 @@ namespace Amazon.ElasticBeanstalk
 
         #endregion
         
+        #region  DescribePlatformVersion
+
+        internal DescribePlatformVersionResponse DescribePlatformVersion(DescribePlatformVersionRequest request)
+        {
+            var marshaller = new DescribePlatformVersionRequestMarshaller();
+            var unmarshaller = DescribePlatformVersionResponseUnmarshaller.Instance;
+
+            return Invoke<DescribePlatformVersionRequest,DescribePlatformVersionResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribePlatformVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribePlatformVersion operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribePlatformVersion">REST API Reference for DescribePlatformVersion Operation</seealso>
+        public Task<DescribePlatformVersionResponse> DescribePlatformVersionAsync(DescribePlatformVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribePlatformVersionRequestMarshaller();
+            var unmarshaller = DescribePlatformVersionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribePlatformVersionRequest,DescribePlatformVersionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListAvailableSolutionStacks
 
         internal ListAvailableSolutionStacksResponse ListAvailableSolutionStacks()
@@ -1177,7 +1273,8 @@ namespace Amazon.ElasticBeanstalk
 
 
         /// <summary>
-        /// Returns a list of the available solution stack names.
+        /// Returns a list of the available solution stack names, with the public version first
+        /// and then in reverse chronological order.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -1207,6 +1304,38 @@ namespace Amazon.ElasticBeanstalk
             var unmarshaller = ListAvailableSolutionStacksResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListAvailableSolutionStacksRequest,ListAvailableSolutionStacksResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListPlatformVersions
+
+        internal ListPlatformVersionsResponse ListPlatformVersions(ListPlatformVersionsRequest request)
+        {
+            var marshaller = new ListPlatformVersionsRequestMarshaller();
+            var unmarshaller = ListPlatformVersionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListPlatformVersionsRequest,ListPlatformVersionsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListPlatformVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListPlatformVersions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ListPlatformVersions">REST API Reference for ListPlatformVersions Operation</seealso>
+        public Task<ListPlatformVersionsResponse> ListPlatformVersionsAsync(ListPlatformVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListPlatformVersionsRequestMarshaller();
+            var unmarshaller = ListPlatformVersionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListPlatformVersionsRequest,ListPlatformVersionsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

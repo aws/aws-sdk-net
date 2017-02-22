@@ -40,6 +40,7 @@ namespace Amazon.ElasticBeanstalk.Model
         private string _groupName;
         private List<ConfigurationOptionSetting> _optionSettings = new List<ConfigurationOptionSetting>();
         private List<OptionSpecification> _optionsToRemove = new List<OptionSpecification>();
+        private string _platformArn;
         private string _solutionStackName;
         private List<Tag> _tags = new List<Tag>();
         private string _templateName;
@@ -214,18 +215,29 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PlatformArn. 
+        /// <para>
+        /// The ARN of the custom platform.
+        /// </para>
+        /// </summary>
+        public string PlatformArn
+        {
+            get { return this._platformArn; }
+            set { this._platformArn = value; }
+        }
+
+        // Check to see if PlatformArn property is set
+        internal bool IsSetPlatformArn()
+        {
+            return this._platformArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SolutionStackName. 
         /// <para>
         /// This is an alternative to specifying a template name. If specified, AWS Elastic Beanstalk
         /// sets the configuration values to the default values associated with the specified
         /// solution stack.
-        /// </para>
-        ///  
-        /// <para>
-        ///  Condition: You must specify either this or a <code>TemplateName</code>, but not both.
-        /// If you specify both, AWS Elastic Beanstalk returns an <code>InvalidParameterCombination</code>
-        /// error. If you do not specify either, AWS Elastic Beanstalk returns a <code>MissingRequiredParameter</code>
-        /// error. 
         /// </para>
         /// </summary>
         public string SolutionStackName
@@ -263,13 +275,6 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <para>
         ///  The name of the configuration template to use in deployment. If no configuration
         /// template is found with this name, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code>
-        /// error. 
-        /// </para>
-        ///  
-        /// <para>
-        ///  Condition: You must specify either this parameter or a <code>SolutionStackName</code>,
-        /// but not both. If you specify both, AWS Elastic Beanstalk returns an <code>InvalidParameterCombination</code>
-        /// error. If you do not specify either, AWS Elastic Beanstalk returns a <code>MissingRequiredParameter</code>
         /// error. 
         /// </para>
         /// </summary>

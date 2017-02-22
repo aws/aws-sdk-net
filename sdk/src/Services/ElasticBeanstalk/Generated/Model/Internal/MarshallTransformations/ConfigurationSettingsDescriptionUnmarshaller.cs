@@ -97,6 +97,12 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                         unmarshalledObject.OptionSettings.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("PlatformArn", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.PlatformArn = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("SolutionStackName", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

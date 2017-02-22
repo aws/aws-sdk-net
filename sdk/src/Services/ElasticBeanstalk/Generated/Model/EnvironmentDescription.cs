@@ -44,6 +44,7 @@ namespace Amazon.ElasticBeanstalk.Model
         private string _environmentName;
         private EnvironmentHealth _health;
         private EnvironmentHealthStatus _healthStatus;
+        private string _platformArn;
         private EnvironmentResourcesDescription _resources;
         private string _solutionStackName;
         private EnvironmentStatus _status;
@@ -302,6 +303,24 @@ namespace Amazon.ElasticBeanstalk.Model
         internal bool IsSetHealthStatus()
         {
             return this._healthStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PlatformArn. 
+        /// <para>
+        /// The ARN of the custom platform.
+        /// </para>
+        /// </summary>
+        public string PlatformArn
+        {
+            get { return this._platformArn; }
+            set { this._platformArn = value; }
+        }
+
+        // Check to see if PlatformArn property is set
+        internal bool IsSetPlatformArn()
+        {
+            return this._platformArn != null;
         }
 
         /// <summary>

@@ -61,7 +61,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// Gets and sets the property Latency. 
         /// <para>
         /// Represents the average latency for the slowest X percent of requests over the last
-        /// 10 seconds. Latencies are in seconds with one milisecond resolution.
+        /// 10 seconds. Latencies are in seconds with one millisecond resolution.
         /// </para>
         /// </summary>
         public Latency Latency

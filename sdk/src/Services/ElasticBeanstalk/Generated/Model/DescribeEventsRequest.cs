@@ -45,6 +45,7 @@ namespace Amazon.ElasticBeanstalk.Model
         private string _environmentName;
         private int? _maxRecords;
         private string _nextToken;
+        private string _platformArn;
         private string _requestId;
         private EventSeverity _severity;
         private DateTime? _startTime;
@@ -167,6 +168,24 @@ namespace Amazon.ElasticBeanstalk.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PlatformArn. 
+        /// <para>
+        /// The ARN of the version of the custom platform.
+        /// </para>
+        /// </summary>
+        public string PlatformArn
+        {
+            get { return this._platformArn; }
+            set { this._platformArn = value; }
+        }
+
+        // Check to see if PlatformArn property is set
+        internal bool IsSetPlatformArn()
+        {
+            return this._platformArn != null;
         }
 
         /// <summary>

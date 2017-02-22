@@ -395,6 +395,42 @@ namespace Amazon.ElasticBeanstalk
 
         #endregion
         
+        #region  CreatePlatformVersion
+
+
+        /// <summary>
+        /// Create a new version of your custom platform.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePlatformVersion service method.</param>
+        /// 
+        /// <returns>The response from the CreatePlatformVersion service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.ElasticBeanstalkServiceException">
+        /// A generic service exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// The specified account does not have sufficient privileges for one of more AWS services.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyPlatformsException">
+        /// You have exceeded the maximum number of allowed platforms associated with the account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreatePlatformVersion">REST API Reference for CreatePlatformVersion Operation</seealso>
+        CreatePlatformVersionResponse CreatePlatformVersion(CreatePlatformVersionRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreatePlatformVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreatePlatformVersion operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreatePlatformVersion">REST API Reference for CreatePlatformVersion Operation</seealso>
+        Task<CreatePlatformVersionResponse> CreatePlatformVersionAsync(CreatePlatformVersionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateStorageLocation
 
 
@@ -658,6 +694,47 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteEnvironmentConfiguration">REST API Reference for DeleteEnvironmentConfiguration Operation</seealso>
         Task<DeleteEnvironmentConfigurationResponse> DeleteEnvironmentConfigurationAsync(DeleteEnvironmentConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeletePlatformVersion
+
+
+        /// <summary>
+        /// Deletes the specified version of a custom platform.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePlatformVersion service method.</param>
+        /// 
+        /// <returns>The response from the DeletePlatformVersion service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.ElasticBeanstalkServiceException">
+        /// A generic service exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// The specified account does not have sufficient privileges for one of more AWS services.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.OperationInProgressException">
+        /// Unable to perform the specified operation because another operation that effects an
+        /// element in this activity is already in progress.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.PlatformVersionStillReferencedException">
+        /// You cannot delete the platform version because there are still environments running
+        /// on it.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeletePlatformVersion">REST API Reference for DeletePlatformVersion Operation</seealso>
+        DeletePlatformVersionResponse DeletePlatformVersion(DeletePlatformVersionRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeletePlatformVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeletePlatformVersion operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeletePlatformVersion">REST API Reference for DeletePlatformVersion Operation</seealso>
+        Task<DeletePlatformVersionResponse> DeletePlatformVersionAsync(DeletePlatformVersionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1147,11 +1224,45 @@ namespace Amazon.ElasticBeanstalk
 
         #endregion
         
+        #region  DescribePlatformVersion
+
+
+        /// <summary>
+        /// Describes the version of the platform.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribePlatformVersion service method.</param>
+        /// 
+        /// <returns>The response from the DescribePlatformVersion service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.ElasticBeanstalkServiceException">
+        /// A generic service exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// The specified account does not have sufficient privileges for one of more AWS services.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribePlatformVersion">REST API Reference for DescribePlatformVersion Operation</seealso>
+        DescribePlatformVersionResponse DescribePlatformVersion(DescribePlatformVersionRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribePlatformVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribePlatformVersion operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribePlatformVersion">REST API Reference for DescribePlatformVersion Operation</seealso>
+        Task<DescribePlatformVersionResponse> DescribePlatformVersionAsync(DescribePlatformVersionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListAvailableSolutionStacks
 
 
         /// <summary>
-        /// Returns a list of the available solution stack names.
+        /// Returns a list of the available solution stack names, with the public version first
+        /// and then in reverse chronological order.
         /// </summary>
         /// 
         /// <returns>The response from the ListAvailableSolutionStacks service method, as returned by ElasticBeanstalk.</returns>
@@ -1160,7 +1271,8 @@ namespace Amazon.ElasticBeanstalk
 
 
         /// <summary>
-        /// Returns a list of the available solution stack names.
+        /// Returns a list of the available solution stack names, with the public version first
+        /// and then in reverse chronological order.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAvailableSolutionStacks service method.</param>
         /// 
@@ -1170,7 +1282,8 @@ namespace Amazon.ElasticBeanstalk
 
 
         /// <summary>
-        /// Returns a list of the available solution stack names.
+        /// Returns a list of the available solution stack names, with the public version first
+        /// and then in reverse chronological order.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -1192,6 +1305,39 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ListAvailableSolutionStacks">REST API Reference for ListAvailableSolutionStacks Operation</seealso>
         Task<ListAvailableSolutionStacksResponse> ListAvailableSolutionStacksAsync(ListAvailableSolutionStacksRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListPlatformVersions
+
+
+        /// <summary>
+        /// Lists the available platforms.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPlatformVersions service method.</param>
+        /// 
+        /// <returns>The response from the ListPlatformVersions service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.ElasticBeanstalkServiceException">
+        /// A generic service exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// The specified account does not have sufficient privileges for one of more AWS services.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ListPlatformVersions">REST API Reference for ListPlatformVersions Operation</seealso>
+        ListPlatformVersionsResponse ListPlatformVersions(ListPlatformVersionsRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListPlatformVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListPlatformVersions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ListPlatformVersions">REST API Reference for ListPlatformVersions Operation</seealso>
+        Task<ListPlatformVersionsResponse> ListPlatformVersionsAsync(ListPlatformVersionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

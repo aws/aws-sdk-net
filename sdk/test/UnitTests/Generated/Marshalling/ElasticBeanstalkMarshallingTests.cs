@@ -231,6 +231,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("ElasticBeanstalk")]
+        public void CreatePlatformVersionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreatePlatformVersion");
+
+            var request = InstantiateClassGenerator.Execute<CreatePlatformVersionRequest>();
+            var marshaller = new CreatePlatformVersionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = CreatePlatformVersionResponseUnmarshaller.Instance.Unmarshall(context)
+                as CreatePlatformVersionResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticBeanstalk")]
         public void CreateStorageLocationMarshallTest()
         {
             var operation = service_model.FindOperation("CreateStorageLocation");
@@ -323,6 +347,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             validator.Validate();
 
 
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticBeanstalk")]
+        public void DeletePlatformVersionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeletePlatformVersion");
+
+            var request = InstantiateClassGenerator.Execute<DeletePlatformVersionRequest>();
+            var marshaller = new DeletePlatformVersionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DeletePlatformVersionResponseUnmarshaller.Instance.Unmarshall(context)
+                as DeletePlatformVersionResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
         
@@ -595,6 +643,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("ElasticBeanstalk")]
+        public void DescribePlatformVersionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribePlatformVersion");
+
+            var request = InstantiateClassGenerator.Execute<DescribePlatformVersionRequest>();
+            var marshaller = new DescribePlatformVersionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DescribePlatformVersionResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribePlatformVersionResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticBeanstalk")]
         public void ListAvailableSolutionStacksMarshallTest()
         {
             var operation = service_model.FindOperation("ListAvailableSolutionStacks");
@@ -610,6 +682,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
             var response = ListAvailableSolutionStacksResponseUnmarshaller.Instance.Unmarshall(context)
                 as ListAvailableSolutionStacksResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElasticBeanstalk")]
+        public void ListPlatformVersionsMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListPlatformVersions");
+
+            var request = InstantiateClassGenerator.Execute<ListPlatformVersionsRequest>();
+            var marshaller = new ListPlatformVersionsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = ListPlatformVersionsResponseUnmarshaller.Instance.Unmarshall(context)
+                as ListPlatformVersionsResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 

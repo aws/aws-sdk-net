@@ -497,6 +497,55 @@ namespace Amazon.ElasticBeanstalk
 
         #endregion
         
+        #region  CreatePlatformVersion
+
+
+        /// <summary>
+        /// Create a new version of your custom platform.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePlatformVersion service method.</param>
+        /// 
+        /// <returns>The response from the CreatePlatformVersion service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.ElasticBeanstalkServiceException">
+        /// A generic service exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// The specified account does not have sufficient privileges for one of more AWS services.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyPlatformsException">
+        /// You have exceeded the maximum number of allowed platforms associated with the account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreatePlatformVersion">REST API Reference for CreatePlatformVersion Operation</seealso>
+        CreatePlatformVersionResponse CreatePlatformVersion(CreatePlatformVersionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreatePlatformVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreatePlatformVersion operation on AmazonElasticBeanstalkClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreatePlatformVersion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreatePlatformVersion">REST API Reference for CreatePlatformVersion Operation</seealso>
+        IAsyncResult BeginCreatePlatformVersion(CreatePlatformVersionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreatePlatformVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreatePlatformVersion.</param>
+        /// 
+        /// <returns>Returns a  CreatePlatformVersionResult from ElasticBeanstalk.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreatePlatformVersion">REST API Reference for CreatePlatformVersion Operation</seealso>
+        CreatePlatformVersionResponse EndCreatePlatformVersion(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateStorageLocation
 
 
@@ -798,6 +847,60 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>Returns a  DeleteEnvironmentConfigurationResult from ElasticBeanstalk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeleteEnvironmentConfiguration">REST API Reference for DeleteEnvironmentConfiguration Operation</seealso>
         DeleteEnvironmentConfigurationResponse EndDeleteEnvironmentConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeletePlatformVersion
+
+
+        /// <summary>
+        /// Deletes the specified version of a custom platform.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePlatformVersion service method.</param>
+        /// 
+        /// <returns>The response from the DeletePlatformVersion service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.ElasticBeanstalkServiceException">
+        /// A generic service exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// The specified account does not have sufficient privileges for one of more AWS services.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.OperationInProgressException">
+        /// Unable to perform the specified operation because another operation that effects an
+        /// element in this activity is already in progress.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.PlatformVersionStillReferencedException">
+        /// You cannot delete the platform version because there are still environments running
+        /// on it.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeletePlatformVersion">REST API Reference for DeletePlatformVersion Operation</seealso>
+        DeletePlatformVersionResponse DeletePlatformVersion(DeletePlatformVersionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeletePlatformVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeletePlatformVersion operation on AmazonElasticBeanstalkClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeletePlatformVersion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeletePlatformVersion">REST API Reference for DeletePlatformVersion Operation</seealso>
+        IAsyncResult BeginDeletePlatformVersion(DeletePlatformVersionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeletePlatformVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeletePlatformVersion.</param>
+        /// 
+        /// <returns>Returns a  DeletePlatformVersionResult from ElasticBeanstalk.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeletePlatformVersion">REST API Reference for DeletePlatformVersion Operation</seealso>
+        DeletePlatformVersionResponse EndDeletePlatformVersion(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1353,11 +1456,58 @@ namespace Amazon.ElasticBeanstalk
 
         #endregion
         
+        #region  DescribePlatformVersion
+
+
+        /// <summary>
+        /// Describes the version of the platform.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribePlatformVersion service method.</param>
+        /// 
+        /// <returns>The response from the DescribePlatformVersion service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.ElasticBeanstalkServiceException">
+        /// A generic service exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// The specified account does not have sufficient privileges for one of more AWS services.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribePlatformVersion">REST API Reference for DescribePlatformVersion Operation</seealso>
+        DescribePlatformVersionResponse DescribePlatformVersion(DescribePlatformVersionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribePlatformVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribePlatformVersion operation on AmazonElasticBeanstalkClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribePlatformVersion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribePlatformVersion">REST API Reference for DescribePlatformVersion Operation</seealso>
+        IAsyncResult BeginDescribePlatformVersion(DescribePlatformVersionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribePlatformVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribePlatformVersion.</param>
+        /// 
+        /// <returns>Returns a  DescribePlatformVersionResult from ElasticBeanstalk.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribePlatformVersion">REST API Reference for DescribePlatformVersion Operation</seealso>
+        DescribePlatformVersionResponse EndDescribePlatformVersion(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListAvailableSolutionStacks
 
 
         /// <summary>
-        /// Returns a list of the available solution stack names.
+        /// Returns a list of the available solution stack names, with the public version first
+        /// and then in reverse chronological order.
         /// </summary>
         /// 
         /// <returns>The response from the ListAvailableSolutionStacks service method, as returned by ElasticBeanstalk.</returns>
@@ -1365,7 +1515,8 @@ namespace Amazon.ElasticBeanstalk
         ListAvailableSolutionStacksResponse ListAvailableSolutionStacks();
 
         /// <summary>
-        /// Returns a list of the available solution stack names.
+        /// Returns a list of the available solution stack names, with the public version first
+        /// and then in reverse chronological order.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAvailableSolutionStacks service method.</param>
         /// 
@@ -1398,6 +1549,52 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>Returns a  ListAvailableSolutionStacksResult from ElasticBeanstalk.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ListAvailableSolutionStacks">REST API Reference for ListAvailableSolutionStacks Operation</seealso>
         ListAvailableSolutionStacksResponse EndListAvailableSolutionStacks(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListPlatformVersions
+
+
+        /// <summary>
+        /// Lists the available platforms.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPlatformVersions service method.</param>
+        /// 
+        /// <returns>The response from the ListPlatformVersions service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.ElasticBeanstalkServiceException">
+        /// A generic service exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
+        /// The specified account does not have sufficient privileges for one of more AWS services.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ListPlatformVersions">REST API Reference for ListPlatformVersions Operation</seealso>
+        ListPlatformVersionsResponse ListPlatformVersions(ListPlatformVersionsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListPlatformVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListPlatformVersions operation on AmazonElasticBeanstalkClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListPlatformVersions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ListPlatformVersions">REST API Reference for ListPlatformVersions Operation</seealso>
+        IAsyncResult BeginListPlatformVersions(ListPlatformVersionsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListPlatformVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListPlatformVersions.</param>
+        /// 
+        /// <returns>Returns a  ListPlatformVersionsResult from ElasticBeanstalk.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ListPlatformVersions">REST API Reference for ListPlatformVersions Operation</seealso>
+        ListPlatformVersionsResponse EndListPlatformVersions(IAsyncResult asyncResult);
 
         #endregion
         

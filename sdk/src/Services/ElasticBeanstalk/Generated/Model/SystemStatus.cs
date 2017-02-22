@@ -56,8 +56,8 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property LoadAverage. 
         /// <para>
-        /// Load average in the last 1-minute and 5-minute periods. For more information, see
-        /// <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-metrics.html#health-enhanced-metrics-os">Operating
+        /// Load average in the last 1-minute, 5-minute, and 15-minute periods. For more information,
+        /// see <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-metrics.html#health-enhanced-metrics-os">Operating
         /// System Metrics</a>.
         /// </para>
         /// </summary>

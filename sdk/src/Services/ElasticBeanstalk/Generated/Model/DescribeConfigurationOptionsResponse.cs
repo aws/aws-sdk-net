@@ -33,6 +33,7 @@ namespace Amazon.ElasticBeanstalk.Model
     public partial class DescribeConfigurationOptionsResponse : AmazonWebServiceResponse
     {
         private List<ConfigurationOptionDescription> _options = new List<ConfigurationOptionDescription>();
+        private string _platformArn;
         private string _solutionStackName;
 
         /// <summary>
@@ -51,6 +52,24 @@ namespace Amazon.ElasticBeanstalk.Model
         internal bool IsSetOptions()
         {
             return this._options != null && this._options.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PlatformArn. 
+        /// <para>
+        /// The ARN of the custom platform.
+        /// </para>
+        /// </summary>
+        public string PlatformArn
+        {
+            get { return this._platformArn; }
+            set { this._platformArn = value; }
+        }
+
+        // Check to see if PlatformArn property is set
+        internal bool IsSetPlatformArn()
+        {
+            return this._platformArn != null;
         }
 
         /// <summary>

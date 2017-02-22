@@ -88,6 +88,12 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                         response.Options.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("PlatformArn", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.PlatformArn = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("SolutionStackName", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

@@ -951,6 +951,68 @@ namespace Amazon.ElasticBeanstalk
 
 
     /// <summary>
+    /// Constants used for properties of type PlatformStatus.
+    /// </summary>
+    public class PlatformStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Creating for PlatformStatus
+        /// </summary>
+        public static readonly PlatformStatus Creating = new PlatformStatus("Creating");
+        /// <summary>
+        /// Constant Deleted for PlatformStatus
+        /// </summary>
+        public static readonly PlatformStatus Deleted = new PlatformStatus("Deleted");
+        /// <summary>
+        /// Constant Deleting for PlatformStatus
+        /// </summary>
+        public static readonly PlatformStatus Deleting = new PlatformStatus("Deleting");
+        /// <summary>
+        /// Constant Failed for PlatformStatus
+        /// </summary>
+        public static readonly PlatformStatus Failed = new PlatformStatus("Failed");
+        /// <summary>
+        /// Constant Ready for PlatformStatus
+        /// </summary>
+        public static readonly PlatformStatus Ready = new PlatformStatus("Ready");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PlatformStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PlatformStatus FindValue(string value)
+        {
+            return FindValue<PlatformStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PlatformStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SourceRepository.
     /// </summary>
     public class SourceRepository : ConstantClass

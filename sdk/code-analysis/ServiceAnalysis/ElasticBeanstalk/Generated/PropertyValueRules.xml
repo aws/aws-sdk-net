@@ -58,10 +58,6 @@
     <max>200</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.ElasticBeanstalk.Model.CreateConfigurationTemplateRequest.SolutionStackName</property>
-    <max>100</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.CreateConfigurationTemplateRequest.TemplateName</property>
     <min>1</min>
     <max>100</max>
@@ -79,10 +75,6 @@
     <property>Amazon.ElasticBeanstalk.Model.CreateConfigurationTemplateResponse.EnvironmentName</property>
     <min>4</min>
     <max>40</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ElasticBeanstalk.Model.CreateConfigurationTemplateResponse.SolutionStackName</property>
-    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.CreateConfigurationTemplateResponse.TemplateName</property>
@@ -114,10 +106,6 @@
     <max>19</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.ElasticBeanstalk.Model.CreateEnvironmentRequest.SolutionStackName</property>
-    <max>100</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.CreateEnvironmentRequest.TemplateName</property>
     <min>1</min>
     <max>100</max>
@@ -147,10 +135,6 @@
     <max>40</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.ElasticBeanstalk.Model.CreateEnvironmentResponse.SolutionStackName</property>
-    <max>100</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.CreateEnvironmentResponse.TemplateName</property>
     <min>1</min>
     <max>100</max>
@@ -159,6 +143,11 @@
     <property>Amazon.ElasticBeanstalk.Model.CreateEnvironmentResponse.VersionLabel</property>
     <min>1</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticBeanstalk.Model.CreatePlatformVersionRequest.EnvironmentName</property>
+    <min>4</min>
+    <max>40</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.CreateStorageLocationResponse.S3Bucket</property>
@@ -220,16 +209,8 @@
     <max>40</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.ElasticBeanstalk.Model.DescribeConfigurationOptionsRequest.SolutionStackName</property>
-    <max>100</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.DescribeConfigurationOptionsRequest.TemplateName</property>
     <min>1</min>
-    <max>100</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ElasticBeanstalk.Model.DescribeConfigurationOptionsResponse.SolutionStackName</property>
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
@@ -318,6 +299,10 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ElasticBeanstalk.Model.ListPlatformVersionsRequest.MaxRecords</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.RebuildEnvironmentRequest.EnvironmentName</property>
     <min>4</min>
     <max>40</max>
@@ -370,10 +355,6 @@
     <property>Amazon.ElasticBeanstalk.Model.TerminateEnvironmentResponse.EnvironmentName</property>
     <min>4</min>
     <max>40</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ElasticBeanstalk.Model.TerminateEnvironmentResponse.SolutionStackName</property>
-    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.TerminateEnvironmentResponse.TemplateName</property>
@@ -447,10 +428,6 @@
     <max>40</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.ElasticBeanstalk.Model.UpdateConfigurationTemplateResponse.SolutionStackName</property>
-    <max>100</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.UpdateConfigurationTemplateResponse.TemplateName</property>
     <min>1</min>
     <max>100</max>
@@ -473,10 +450,6 @@
     <property>Amazon.ElasticBeanstalk.Model.UpdateEnvironmentRequest.GroupName</property>
     <min>1</min>
     <max>19</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ElasticBeanstalk.Model.UpdateEnvironmentRequest.SolutionStackName</property>
-    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.UpdateEnvironmentRequest.TemplateName</property>
@@ -506,10 +479,6 @@
     <property>Amazon.ElasticBeanstalk.Model.UpdateEnvironmentResponse.EnvironmentName</property>
     <min>4</min>
     <max>40</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ElasticBeanstalk.Model.UpdateEnvironmentResponse.SolutionStackName</property>
-    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.UpdateEnvironmentResponse.TemplateName</property>
@@ -603,6 +572,10 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ElasticBeanstalk.Model.PlatformDescription.Description</property>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.S3Location.S3Bucket</property>
     <max>255</max>
   </property-value-rule>
@@ -614,10 +587,6 @@
     <property>Amazon.ElasticBeanstalk.Model.SingleInstanceHealth.InstanceId</property>
     <min>1</min>
     <max>255</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ElasticBeanstalk.Model.SolutionStackDescription.SolutionStackName</property>
-    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.SourceBuildInformation.SourceLocation</property>

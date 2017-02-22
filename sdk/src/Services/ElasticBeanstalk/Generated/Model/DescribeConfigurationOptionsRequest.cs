@@ -39,6 +39,7 @@ namespace Amazon.ElasticBeanstalk.Model
         private string _applicationName;
         private string _environmentName;
         private List<OptionSpecification> _options = new List<OptionSpecification>();
+        private string _platformArn;
         private string _solutionStackName;
         private string _templateName;
 
@@ -101,6 +102,24 @@ namespace Amazon.ElasticBeanstalk.Model
         internal bool IsSetOptions()
         {
             return this._options != null && this._options.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PlatformArn. 
+        /// <para>
+        /// The ARN of the custom platform.
+        /// </para>
+        /// </summary>
+        public string PlatformArn
+        {
+            get { return this._platformArn; }
+            set { this._platformArn = value; }
+        }
+
+        // Check to see if PlatformArn property is set
+        internal bool IsSetPlatformArn()
+        {
+            return this._platformArn != null;
         }
 
         /// <summary>

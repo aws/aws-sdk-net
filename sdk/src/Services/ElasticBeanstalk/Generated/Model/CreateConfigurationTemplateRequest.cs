@@ -57,6 +57,7 @@ namespace Amazon.ElasticBeanstalk.Model
         private string _description;
         private string _environmentId;
         private List<ConfigurationOptionSetting> _optionSettings = new List<ConfigurationOptionSetting>();
+        private string _platformArn;
         private string _solutionStackName;
         private SourceConfiguration _sourceConfiguration;
         private string _templateName;
@@ -151,6 +152,24 @@ namespace Amazon.ElasticBeanstalk.Model
         internal bool IsSetOptionSettings()
         {
             return this._optionSettings != null && this._optionSettings.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PlatformArn. 
+        /// <para>
+        /// The ARN of the custome platform.
+        /// </para>
+        /// </summary>
+        public string PlatformArn
+        {
+            get { return this._platformArn; }
+            set { this._platformArn = value; }
+        }
+
+        // Check to see if PlatformArn property is set
+        internal bool IsSetPlatformArn()
+        {
+            return this._platformArn != null;
         }
 
         /// <summary>
