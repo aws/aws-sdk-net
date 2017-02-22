@@ -29,10 +29,7 @@ namespace Amazon.CloudDirectory.Model
 {
     /// <summary>
     /// Container for the parameters to the ListObjectAttributes operation.
-    /// Lists all attributes associated with an object. This also supports common namespace
-    /// prefix (key) listing. For example, if you want to retrieve all attributes associated
-    /// with facet1, key can be <code>facet1</code>. If key is empty, all attributes are returned
-    /// in a paginated list.
+    /// Lists all attributes associated with an object.
     /// </summary>
     public partial class ListObjectAttributesRequest : AmazonCloudDirectoryRequest
     {
