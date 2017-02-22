@@ -1,3 +1,13 @@
+### 3.3.55.0 (2017-02-22 21:16 UTC)
+* CloudDirectory (3.3.0.2)
+	* ListObjectAttributes documentation updated based on forum feedback
+* ElasticBeanstalk (3.3.4.0)
+	* Elastic Beanstalk adds support for creating and managing custom platform.
+* GameLift (3.3.3.0)
+	* Allow developers to configure global queues for creating GameSessions. Allow PlayerData on PlayerSessions to store player-specific data.
+* Route53 (3.3.5.0)
+	* Added support for operations CreateVPCAssociationAuthorization and DeleteVPCAssociationAuthorization to throw a ConcurrentModification error when a conflicting modification occurs in parallel to the authorizations in place for a given hosted zone.
+
 ### 3.3.54.0 (2017-02-21 23:35 UTC)
 * EC2 (3.3.9.0)
 	* Added the BillingProduct parameter to the RegisterImage API.
