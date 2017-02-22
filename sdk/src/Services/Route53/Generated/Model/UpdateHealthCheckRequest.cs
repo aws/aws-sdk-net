@@ -128,6 +128,21 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  
         /// <para>
+        /// Use one of the following formats for the value of <code>IPAddress</code>: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>IPv4 address</b>: four values between 0 and 255, separated by periods (.), for
+        /// example, <code>192.0.2.44</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>IPv6 address</b>: eight groups of four hexadecimal values, separated by colons
+        /// (:), for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>. You can also
+        /// shorten IPv6 addresses as described in RFC 5952, for example, <code>2001:db8:85a3::abcd:1:2345</code>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
         /// If the endpoint is an EC2 instance, we recommend that you create an Elastic IP address,
         /// associate it with your EC2 instance, and specify the Elastic IP address for <code>IPAddress</code>.
         /// This ensures that the IP address of your instance never changes. For more information,
@@ -300,7 +315,7 @@ namespace Amazon.Route53.Model
         /// we recommend that you create a separate health check for each endpoint. For example,
         /// create a health check for each HTTP server that is serving content for www.example.com.
         /// For the value of <code>FullyQualifiedDomainName</code>, specify the domain name of
-        /// the server (such as <code>us-east-1-www.example.com</code>), not the name of the resource
+        /// the server (such as <code>us-east-2-www.example.com</code>), not the name of the resource
         /// record sets (www.example.com).
         /// </para>
         ///  <important> 
@@ -360,6 +375,11 @@ namespace Amazon.Route53.Model
         /// vice versa. For more information, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
         /// Amazon Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route
         /// 53 Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you don't specify a value for <code>FailureThreshold</code>, the default value
+        /// is three health checks.
         /// </para>
         /// </summary>
         public int FailureThreshold

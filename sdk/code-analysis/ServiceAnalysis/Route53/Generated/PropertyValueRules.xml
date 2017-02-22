@@ -442,7 +442,7 @@
   <property-value-rule>
     <property>Amazon.Route53.Model.TestDNSAnswerRequest.EDNS0ClientSubnetMask</property>
     <min>0</min>
-    <max>2</max>
+    <max>3</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.TestDNSAnswerResponse.Nameserver</property>

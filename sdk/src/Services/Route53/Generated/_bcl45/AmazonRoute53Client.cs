@@ -336,6 +336,10 @@ namespace Amazon.Route53
         /// </para>
         ///  
         /// <para>
+        ///  <b>Change Batches and Transactional Changes</b> 
+        /// </para>
+        ///  
+        /// <para>
         /// The request body must include a document with a <code>ChangeResourceRecordSetsRequest</code>
         /// element. The request body contains a list of change items, known as a change batch.
         /// Change batches are considered transactional changes. When using the Amazon Route 53
@@ -358,7 +362,11 @@ namespace Amazon.Route53
         /// set more than once in a single change batch. If you attempt to delete the same change
         /// batch more than once, Amazon Route 53 returns an <code>InvalidChangeBatch</code> error.
         /// </para>
-        ///  </important> <note> 
+        ///  </important> 
+        /// <para>
+        ///  <b>Traffic Flow</b> 
+        /// </para>
+        ///  
         /// <para>
         /// To create resource record sets for complex routing configurations, use either the
         /// traffic flow visual editor in the Amazon Route 53 console or the API actions for traffic
@@ -369,7 +377,11 @@ namespace Amazon.Route53
         /// as expected. For more information, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/traffic-flow.html">Using
         /// Traffic Flow to Route DNS Traffic</a> in the <i>Amazon Route 53 Developer Guide</i>.
         /// </para>
-        ///  </note> 
+        ///  
+        /// <para>
+        ///  <b>Create, Delete, and Upsert</b> 
+        /// </para>
+        ///  
         /// <para>
         /// Use <code>ChangeResourceRecordsSetsRequest</code> to perform the following actions:
         /// </para>
@@ -390,71 +402,29 @@ namespace Amazon.Route53
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The values that you need to include in the request depend on the type of resource
-        /// record set that you're creating, deleting, or updating:
+        ///  <b>Syntaxes for Creating, Updating, and Deleting Resource Record Sets</b> 
         /// </para>
         ///  
         /// <para>
-        ///  <b>Basic resource record sets (excluding alias, failover, geolocation, latency, and
-        /// weighted resource record sets)</b> 
+        /// The syntax for a request depends on the type of resource record set that you want
+        /// to create, delete, or update, such as weighted, alias, or failover. The XML elements
+        /// in your request must appear in the order listed in the syntax. 
         /// </para>
-        ///  <ul> <li> 
+        ///  
         /// <para>
-        ///  <code>Name</code> 
+        /// For an example for each type of resource record set, see "Examples."
         /// </para>
-        ///  </li> <li> 
+        ///  
         /// <para>
-        ///  <code>Type</code> 
+        /// Don't refer to the syntax in the "Parameter Syntax" section, which includes all of
+        /// the elements for every kind of resource record set that you can create, delete, or
+        /// update by using <code>ChangeResourceRecordSets</code>. 
         /// </para>
-        ///  </li> <li> 
+        ///  
         /// <para>
-        ///  <code>TTL</code> 
+        ///  <b>Change Propagation to Amazon Route 53 DNS Servers</b> 
         /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        ///  <b>Failover, geolocation, latency, or weighted resource record sets (excluding alias
-        /// resource record sets)</b> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>Name</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>Type</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>TTL</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>SetIdentifier</code> 
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        ///  <b>Alias resource record sets (including failover alias, geolocation alias, latency
-        /// alias, and weighted alias resource record sets)</b> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>Name</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>Type</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>AliasTarget</code> (includes <code>DNSName</code>, <code>EvaluateTargetHealth</code>,
-        /// and <code>HostedZoneId</code>)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>SetIdentifier</code> (for failover, geolocation, latency, and weighted resource
-        /// record sets)
-        /// </para>
-        ///  </li> </ul> 
+        ///  
         /// <para>
         /// When you submit a <code>ChangeResourceRecordSets</code> request, Amazon Route 53 propagates
         /// your changes to all of the Amazon Route 53 authoritative DNS servers. While your changes
@@ -462,7 +432,11 @@ namespace Amazon.Route53
         /// When propagation is complete, <code>GetChange</code> returns a status of <code>INSYNC</code>.
         /// Changes generally propagate to all Amazon Route 53 name servers in a few minutes.
         /// In rare circumstances, propagation can take up to 30 minutes. For more information,
-        /// see <a>GetChange</a> 
+        /// see <a>GetChange</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Limits on ChangeResourceRecordSets Requests</b> 
         /// </para>
         ///  
         /// <para>
@@ -558,7 +532,7 @@ namespace Amazon.Route53
         /// you try the request again.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.ThrottlingException">
-        /// 
+        /// The limit on the number of requests per second was exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ChangeTagsForResource">REST API Reference for ChangeTagsForResource Operation</seealso>
         public ChangeTagsForResourceResponse ChangeTagsForResource(ChangeTagsForResourceRequest request)
@@ -607,7 +581,7 @@ namespace Amazon.Route53
         /// </para>
         ///  
         /// <para>
-        /// If you are registering EC2 instances with an Elastic Load Balancing (ELB) load balancer,
+        /// If you're registering EC2 instances with an Elastic Load Balancing (ELB) load balancer,
         /// do not create Amazon Route 53 health checks for the EC2 instances. When you register
         /// an EC2 instance with a load balancer, you configure settings for an ELB health check,
         /// which performs a similar function to an Amazon Route 53 health check.
@@ -644,13 +618,9 @@ namespace Amazon.Route53
         /// 
         /// <returns>The response from the CreateHealthCheck service method, as returned by Route53.</returns>
         /// <exception cref="Amazon.Route53.Model.HealthCheckAlreadyExistsException">
-        /// The health check you're attempting to create already exists.
-        /// 
-        ///  
-        /// <para>
-        /// Amazon Route 53 returns this error when a health check has already been created with
-        /// the specified value for <code>CallerReference</code>.
-        /// </para>
+        /// The health check you're attempting to create already exists. Amazon Route 53 returns
+        /// this error when a health check has already been created with the specified value for
+        /// <code>CallerReference</code>.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
         /// The input is not valid.
@@ -769,7 +739,7 @@ namespace Amazon.Route53
         /// A reusable delegation set with the specified ID does not exist.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.HostedZoneAlreadyExistsException">
-        /// The hosted zone you are trying to create already exists. Amazon Route 53 returns this
+        /// The hosted zone you're trying to create already exists. Amazon Route 53 returns this
         /// error when a hosted zone has already been created with the specified <code>CallerReference</code>.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidDomainNameException">
@@ -865,7 +835,7 @@ namespace Amazon.Route53
         /// The specified HostedZone can't be found.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidArgumentException">
-        /// Parameter name and problem.
+        /// Parameter name is invalid.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
         /// The input is not valid.
@@ -1130,6 +1100,10 @@ namespace Amazon.Route53
         /// <param name="request">Container for the necessary parameters to execute the CreateVPCAssociationAuthorization service method.</param>
         /// 
         /// <returns>The response from the CreateVPCAssociationAuthorization service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.ConcurrentModificationException">
+        /// Another user submitted a request to update the object at the same time that you did.
+        /// Retry the request.
+        /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
         /// The input is not valid.
         /// </exception>
@@ -1523,6 +1497,10 @@ namespace Amazon.Route53
         /// <param name="request">Container for the necessary parameters to execute the DeleteVPCAssociationAuthorization service method.</param>
         /// 
         /// <returns>The response from the DeleteVPCAssociationAuthorization service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.ConcurrentModificationException">
+        /// Another user submitted a request to update the object at the same time that you did.
+        /// Retry the request.
+        /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
         /// The input is not valid.
         /// </exception>
@@ -1705,11 +1683,11 @@ namespace Amazon.Route53
 
 
         /// <summary>
-        /// Retrieves a list of the IP ranges used by Amazon Route 53 health checkers to check
-        /// the health of your resources. Send a <code>GET</code> request to the <code>/<i>Amazon
-        /// Route 53 API version</i>/checkeripranges</code> resource. Use these IP addresses to
-        /// configure router and firewall rules to allow health checkers to check the health of
-        /// your resources.
+        /// <code>GetCheckerIpRanges</code> still works, but we recommend that you download ip-ranges.json,
+        /// which includes IP address ranges for all AWS services. For more information, see <a
+        /// href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/route-53-ip-addresses.html">IP
+        /// Address Ranges of Amazon Route 53 Servers</a> in the <i>Amazon Route 53 Developer
+        /// Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCheckerIpRanges service method.</param>
         /// 
@@ -1804,8 +1782,7 @@ namespace Amazon.Route53
         /// 
         /// <returns>The response from the GetHealthCheck service method, as returned by Route53.</returns>
         /// <exception cref="Amazon.Route53.Model.IncompatibleVersionException">
-        /// The resource you are trying to access is unsupported on this Amazon Route 53 endpoint.
-        /// Please consider using a newer endpoint or a tool that does so.
+        /// The resource you're trying to access is unsupported on this Amazon Route 53 endpoint.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
         /// The input is not valid.
@@ -2442,8 +2419,7 @@ namespace Amazon.Route53
         /// 
         /// <returns>The response from the ListHealthChecks service method, as returned by Route53.</returns>
         /// <exception cref="Amazon.Route53.Model.IncompatibleVersionException">
-        /// The resource you are trying to access is unsupported on this Amazon Route 53 endpoint.
-        /// Please consider using a newer endpoint or a tool that does so.
+        /// The resource you're trying to access is unsupported on this Amazon Route 53 endpoint.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
         /// The input is not valid.
@@ -2474,8 +2450,7 @@ namespace Amazon.Route53
         /// 
         /// <returns>The response from the ListHealthChecks service method, as returned by Route53.</returns>
         /// <exception cref="Amazon.Route53.Model.IncompatibleVersionException">
-        /// The resource you are trying to access is unsupported on this Amazon Route 53 endpoint.
-        /// Please consider using a newer endpoint or a tool that does so.
+        /// The resource you're trying to access is unsupported on this Amazon Route 53 endpoint.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
         /// The input is not valid.
@@ -2511,8 +2486,7 @@ namespace Amazon.Route53
         /// 
         /// <returns>The response from the ListHealthChecks service method, as returned by Route53.</returns>
         /// <exception cref="Amazon.Route53.Model.IncompatibleVersionException">
-        /// The resource you are trying to access is unsupported on this Amazon Route 53 endpoint.
-        /// Please consider using a newer endpoint or a tool that does so.
+        /// The resource you're trying to access is unsupported on this Amazon Route 53 endpoint.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
         /// The input is not valid.
@@ -3125,7 +3099,7 @@ namespace Amazon.Route53
         /// you try the request again.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.ThrottlingException">
-        /// 
+        /// The limit on the number of requests per second was exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
@@ -3190,7 +3164,7 @@ namespace Amazon.Route53
         /// you try the request again.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.ThrottlingException">
-        /// 
+        /// The limit on the number of requests per second was exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTagsForResources">REST API Reference for ListTagsForResources Operation</seealso>
         public ListTagsForResourcesResponse ListTagsForResources(ListTagsForResourcesRequest request)

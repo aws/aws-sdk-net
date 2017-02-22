@@ -1323,8 +1323,7 @@ namespace Amazon.Route53
         /// 
         /// <returns>The response from the ListHealthChecks service method, as returned by Route53.</returns>
         /// <exception cref="Amazon.Route53.Model.IncompatibleVersionException">
-        /// The resource you are trying to access is unsupported on this Amazon Route 53 endpoint.
-        /// Please consider using a newer endpoint or a tool that does so.
+        /// The resource you're trying to access is unsupported on this Amazon Route 53 endpoint.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
         /// The input is not valid.

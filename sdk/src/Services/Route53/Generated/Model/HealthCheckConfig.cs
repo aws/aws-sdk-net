@@ -60,6 +60,21 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  
         /// <para>
+        /// Use one of the following formats for the value of <code>IPAddress</code>: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>IPv4 address</b>: four values between 0 and 255, separated by periods (.), for
+        /// example, <code>192.0.2.44</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>IPv6 address</b>: eight groups of four hexadecimal values, separated by colons
+        /// (:), for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>. You can also
+        /// shorten IPv6 addresses as described in RFC 5952, for example, <code>2001:db8:85a3::abcd:1:2345</code>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
         /// If the endpoint is an EC2 instance, we recommend that you create an Elastic IP address,
         /// associate it with your EC2 instance, and specify the Elastic IP address for <code>IPAddress</code>.
         /// This ensures that the IP address of your instance will never change.
@@ -299,7 +314,7 @@ namespace Amazon.Route53.Model
         /// we recommend that you create a separate health check for each endpoint. For example,
         /// create a health check for each HTTP server that is serving content for www.example.com.
         /// For the value of <code>FullyQualifiedDomainName</code>, specify the domain name of
-        /// the server (such as us-east-1-www.example.com), not the name of the resource record
+        /// the server (such as us-east-2-www.example.com), not the name of the resource record
         /// sets (www.example.com).
         /// </para>
         ///  <important> 
@@ -360,7 +375,7 @@ namespace Amazon.Route53.Model
         /// Gets and sets the property RequestInterval. 
         /// <para>
         /// The number of seconds between the time that Amazon Route 53 gets a response from your
-        /// endpoint and the time that it sends the next health-check request. Each Amazon Route
+        /// endpoint and the time that it sends the next health check request. Each Amazon Route
         /// 53 health checker makes requests at this interval.
         /// </para>
         ///  <important> 
@@ -368,7 +383,11 @@ namespace Amazon.Route53.Model
         /// You can't change the value of <code>RequestInterval</code> after you create a health
         /// check.
         /// </para>
-        ///  </important>
+        ///  </important> 
+        /// <para>
+        /// If you don't specify a value for <code>RequestInterval</code>, the default value is
+        /// <code>30</code> seconds.
+        /// </para>
         /// </summary>
         public int RequestInterval
         {
@@ -390,6 +409,11 @@ namespace Amazon.Route53.Model
         /// vice versa. For more information, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
         /// Amazon Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route
         /// 53 Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you don't specify a value for <code>FailureThreshold</code>, the default value
+        /// is three health checks.
         /// </para>
         /// </summary>
         public int FailureThreshold
@@ -551,8 +575,20 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property Regions. 
         /// <para>
-        /// A complex type that contains one Region element for each region from which you want
-        /// Amazon Route 53 health checkers to check the specified endpoint.
+        /// A complex type that contains one <code>Region</code> element for each region from
+        /// which you want Amazon Route 53 health checkers to check the specified endpoint.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you don't specify any regions, Amazon Route 53 health checkers automatically performs
+        /// checks from all of the regions that are listed under <b>Valid Values</b>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you update a health check to remove a region that has been performing health checks,
+        /// Amazon Route 53 will briefly continue to perform checks from that region to ensure
+        /// that some health checkers are always checking the endpoint (for example, if you replace
+        /// three regions with four different regions). 
         /// </para>
         /// </summary>
         public List<string> Regions

@@ -320,7 +320,7 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You are not required to create latency resource record sets for all Amazon EC2 Regions.
+        /// You aren't required to create latency resource record sets for all Amazon EC2 Regions.
         /// Amazon Route 53 will choose the region with the best latency from among the regions
         /// for which you create latency resource record sets.
         /// </para>
@@ -539,7 +539,7 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// If you are creating an alias resource record set, omit <code>ResourceRecords</code>.
+        /// If you're creating an alias resource record set, omit <code>ResourceRecords</code>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -560,7 +560,7 @@ namespace Amazon.Route53.Model
         /// <para>
         ///  <i>Alias resource record sets only:</i> Information about the CloudFront distribution,
         /// AWS Elastic Beanstalk environment, ELB load balancer, Amazon S3 bucket, or Amazon
-        /// Route 53 resource record set to which you are redirecting queries. The AWS Elastic
+        /// Route 53 resource record set to which you're redirecting queries. The AWS Elastic
         /// Beanstalk environment must have a regionalized subdomain.
         /// </para>
         ///  
@@ -625,8 +625,8 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For information about how Amazon Route 53 determines whether a health check is healthy,
-        /// see <a>CreateHealthCheck</a>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
+        /// Amazon Route 53 Determines Whether an Endpoint Is Healthy</a>.
         /// </para>
         ///  
         /// <para>
@@ -637,18 +637,18 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You're checking the health of the resource record sets in a weighted, latency, geolocation,
-        /// or failover resource record set, and you specify health check IDs for all of the resource
-        /// record sets. If the health check for one resource record set specifies an endpoint
-        /// that is not healthy, Amazon Route 53 stops responding to queries using the value for
-        /// that resource record set.
+        /// You're checking the health of the resource record sets in a group of weighted, latency,
+        /// geolocation, or failover resource record sets, and you specify health check IDs for
+        /// all of the resource record sets. If the health check for one resource record set specifies
+        /// an endpoint that is not healthy, Amazon Route 53 stops responding to queries using
+        /// the value for that resource record set.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// You set <code>EvaluateTargetHealth</code> to true for the resource record sets in
-        /// an alias, weighted alias, latency alias, geolocation alias, or failover alias resource
-        /// record set, and you specify health check IDs for all of the resource record sets that
-        /// are referenced by the alias resource record sets.
+        /// a group of alias, weighted alias, latency alias, geolocation alias, or failover alias
+        /// resource record sets, and you specify health check IDs for all of the resource record
+        /// sets that are referenced by the alias resource record sets.
         /// </para>
         ///  </li> </ul> <important> 
         /// <para>
@@ -675,7 +675,7 @@ namespace Amazon.Route53.Model
         /// you create a separate health check for each endpoint. For example, create a health
         /// check for each <code>HTTP</code> server that is serving content for <code>www.example.com</code>.
         /// For the value of <code>FullyQualifiedDomainName</code>, specify the domain name of
-        /// the server (such as <code>us-east-1-www.example.com</code>), not the name of the resource
+        /// the server (such as <code>us-east-2-www.example.com</code>), not the name of the resource
         /// record sets (example.com).
         /// </para>
         ///  <important> 

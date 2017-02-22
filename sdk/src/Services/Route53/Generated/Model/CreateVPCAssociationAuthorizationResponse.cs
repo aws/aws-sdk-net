@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// A complex type that contains the response information from a CreateVPCAssociationAuthorization
+    /// A complex type that contains the response information from a <code>CreateVPCAssociationAuthorization</code>
     /// request.
     /// </summary>
     public partial class CreateVPCAssociationAuthorizationResponse : AmazonWebServiceResponse
