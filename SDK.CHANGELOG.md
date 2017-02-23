@@ -1,3 +1,11 @@
+### 3.3.56.0 (2017-02-23 20:54 UTC)
+* CognitoSync (3.3.1.7)
+	* Fixed dependencies for UWP target framework, https://github.com/aws/aws-sdk-net/issues/550 .
+* EC2 (3.3.10.0)
+	* New EC2 I3 instance type.
+* MobileAnalytics (3.3.1.7)
+	* Fixed dependencies for UWP target framework, https://github.com/aws/aws-sdk-net/issues/550 .
+
 ### 3.3.55.0 (2017-02-22 21:16 UTC)
 * CloudDirectory (3.3.0.2)
 	* ListObjectAttributes documentation updated based on forum feedback
