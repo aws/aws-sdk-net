@@ -443,8 +443,7 @@
 
     </Target>
 
-    <Target Name="save-build" Condition="Exists('$(InternalBuildTools)\references.targets') And '$(ReferenceServiceDLLs)' == 
-    'true'" DependsOnTargets="build-tools">
+    <Target Name="save-build" Condition="Exists('$(InternalBuildTools)\references.targets')=='true'" DependsOnTargets="build-tools">
         <SaveBuildArtifactTask
             RepositoryRoot="$(MSBuildProjectDirectory)\.."
             BuildArtifactType="sdk"
@@ -453,7 +452,7 @@
             />
     </Target>
 
-    <Target Name="populate-deployment" Condition="Exists('$(InternalBuildTools)\references.targets')" DependsOnTargets="build-tools">
+    <Target Name="populate-deployment" Condition="Exists('$(InternalBuildTools)\references.targets') And '$(ReferenceServiceDLLs)'" DependsOnTargets="build-tools">
         <PrepopulateDeploymentFolder
             BuildArtifactType="sdk"
             DeploymentFolder="$(Deployment)"
