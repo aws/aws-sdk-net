@@ -1,3 +1,10 @@
+### 3.3.56.1 (2017-02-24 02:15 UTC)
+* S3 (3.3.5.7)
+	* Updated to use new Core, version 3.3.8.2
+	* Pick up Core changes for decompression fix.
+* Core 3.3.8.2
+	* Disable .NET Core version of SDK automatically decompressing streams.
+
 ### 3.3.56.0 (2017-02-23 20:54 UTC)
 * CognitoSync (3.3.1.7)
 	* Fixed dependencies for UWP target framework, https://github.com/aws/aws-sdk-net/issues/550 .
