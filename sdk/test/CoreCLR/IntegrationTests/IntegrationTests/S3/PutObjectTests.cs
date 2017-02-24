@@ -26,6 +26,7 @@ namespace Amazon.DNXCore.IntegrationTests.S3
         private static string bucketName;
         private const string testContent = "This is the content body!";
         private string filePath = string.Empty;
+        private const string testKey = "test-key.json.gz";
 
         public PutObjectTest()
         {
@@ -125,6 +126,83 @@ namespace Amazon.DNXCore.IntegrationTests.S3
 
             Console.WriteLine("S3 generated ETag: {0}", response.ETag);
             Assert.True(response.ETag.Length > 0);
+        }
+
+        [Fact]
+        public async Task GzipTest()
+        {
+            var request = CreatePutObjectRequest();
+            request.Headers.ContentEncoding = "gzip";
+
+            await TestPutAndGet(request);
+        }
+
+        [Fact]
+        public async Task PutObjectWithContentEncoding()
+        {
+            var request = CreatePutObjectRequest();
+            request.Headers.ContentEncoding = "gzip";
+            request.Headers.ContentDisposition = "disposition";
+
+            var headers = await TestPutAndGet(request);
+            Assert.Equal("disposition", headers.ContentDisposition);
+            Assert.Equal("gzip", headers.ContentEncoding);
+        }
+        [Fact]
+        public async Task PutObjectWithContentEncodingIdentity()
+        {
+            var request = CreatePutObjectRequest();
+            request.Headers.ContentEncoding = "identity";
+            request.Headers.ContentDisposition = "disposition";
+
+            var headers = await TestPutAndGet(request);
+            Assert.Equal("disposition", headers.ContentDisposition);
+            Assert.Equal("identity", headers.ContentEncoding);
+        }
+        [Fact]
+        public async Task PutObjectWithoutContentEncoding()
+        {
+            var request = CreatePutObjectRequest();
+            request.Headers.ContentDisposition = "disposition";
+
+            var headers = await TestPutAndGet(request);
+            Assert.Equal("disposition", headers.ContentDisposition);
+            Assert.False(headers.Keys.Contains("Content-Encoding", StringComparer.OrdinalIgnoreCase));
+            Assert.Null(headers.ContentEncoding);
+        }
+
+        private async Task<HeadersCollection> TestPutAndGet(PutObjectRequest request)
+        {
+            await Client.PutObjectAsync(request);
+
+            var key = request.Key;
+
+            using (var response = await Client.GetObjectAsync(bucketName, key))
+            using (var reader = new StreamReader(response.ResponseStream))
+            {
+                var contents = reader.ReadToEnd();
+                Assert.Equal(testContent, contents);
+            }
+            using (var response = await Client.GetObjectAsync(bucketName, key))
+            {
+                await response.WriteResponseStreamToFileAsync(key, false, CancellationToken.None);
+
+                var contents = File.ReadAllText(key);
+                Assert.Equal(testContent, contents);
+            }
+
+            var metadata = await Client.GetObjectMetadataAsync(bucketName, key);
+            return metadata.Headers;
+        }
+        private PutObjectRequest CreatePutObjectRequest()
+        {
+            var request = new PutObjectRequest
+            {
+                BucketName = bucketName,
+                Key = DateTime.Now.ToFileTime() + testKey,
+                ContentBody = testContent
+            };
+            return request;
         }
     }
 }

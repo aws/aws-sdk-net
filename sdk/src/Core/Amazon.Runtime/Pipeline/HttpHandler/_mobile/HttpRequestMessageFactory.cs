@@ -181,6 +181,9 @@ namespace Amazon.Runtime
             // redirects are returned as responses.
             httpMessageHandler.AllowAutoRedirect = clientConfig.AllowAutoRedirect;
 
+            // Disable automatic decompression when Content-Encoding header is present
+            httpMessageHandler.AutomaticDecompression = DecompressionMethods.None;
+
             var proxy = clientConfig.GetWebProxy();
             if (proxy != null)
             {

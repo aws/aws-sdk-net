@@ -31,6 +31,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         private Random random = new Random();
         private static string bucketName;
         private const string testContent = "This is the content body!";
+        private const string testKey = "test-key.json.gz";
 
         [ClassInitialize()]
         public static void Initialize(TestContext a)
@@ -163,7 +164,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
 #endif
-
 
         [TestMethod]
         [TestCategory("S3")]
@@ -666,30 +666,84 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
         [TestMethod]
         [TestCategory("S3")]
+        public void GzipTest()
+        {
+            var request = CreatePutObjectRequest();
+            request.Headers.ContentEncoding = "gzip";
+
+            TestPutAndGet(request);
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
         public void PutObjectWithContentEncoding()
         {
-            PutObjectRequest request = new PutObjectRequest()
-            {
-                BucketName = bucketName,
-                Key = "contentBodyPutWithEncoding" + random.Next(),
-                ContentBody = "This is the content body!",
-                CannedACL = S3CannedACL.AuthenticatedRead
-            };
+            var request = CreatePutObjectRequest();
             request.Headers.ContentEncoding = "gzip";
             request.Headers.ContentDisposition = "disposition";
-            PutObjectResponse response = Client.PutObject(request);
 
-            var getRequest = new GetObjectRequest()
-            {
-                BucketName = request.BucketName,
-                Key = request.Key
-            };
-            using (var getResponse = Client.GetObject(getRequest))
-            {
-                Assert.AreEqual("disposition", getResponse.Headers.ContentDisposition);
-                Assert.AreEqual("gzip", getResponse.Headers.ContentEncoding);
-            }
+            var headers = TestPutAndGet(request);
+            Assert.AreEqual("disposition", headers.ContentDisposition);
+            Assert.AreEqual("gzip", headers.ContentEncoding);
         }
+        [TestMethod]
+        [TestCategory("S3")]
+        public void PutObjectWithContentEncodingIdentity()
+        {
+            var request = CreatePutObjectRequest();
+            request.Headers.ContentEncoding = "identity";
+            request.Headers.ContentDisposition = "disposition";
+
+            var headers = TestPutAndGet(request);
+            Assert.AreEqual("disposition", headers.ContentDisposition);
+            Assert.AreEqual("identity", headers.ContentEncoding);
+        }
+        [TestMethod]
+        [TestCategory("S3")]
+        public void PutObjectWithoutContentEncoding()
+        {
+            var request = CreatePutObjectRequest();
+            request.Headers.ContentDisposition = "disposition";
+
+            var headers = TestPutAndGet(request);
+            Assert.AreEqual("disposition", headers.ContentDisposition);
+            Assert.AreEqual(string.Empty, headers.ContentEncoding);
+        }
+
+        private HeadersCollection TestPutAndGet(PutObjectRequest request)
+        {
+            Client.PutObject(request);
+
+            var key = request.Key;
+
+            using (var response = Client.GetObject(bucketName, key))
+            using (var reader = new StreamReader(response.ResponseStream))
+            {
+                var contents = reader.ReadToEnd();
+                Assert.AreEqual(testContent, contents);
+            }
+            using (var response = Client.GetObject(bucketName, key))
+            {
+                response.WriteResponseStreamToFile(key, false);
+
+                var contents = File.ReadAllText(key);
+                Assert.AreEqual(testContent, contents);
+            }
+
+            var meta = Client.GetObjectMetadata(bucketName, key);
+            return meta.Headers;
+        }
+        private PutObjectRequest CreatePutObjectRequest()
+        {
+            var request = new PutObjectRequest
+            {
+                BucketName = bucketName,
+                Key = DateTime.Now.ToFileTime() + testKey,
+                ContentBody = testContent
+            };
+            return request;
+        }
+
 
         [TestMethod]
         [TestCategory("S3")]
