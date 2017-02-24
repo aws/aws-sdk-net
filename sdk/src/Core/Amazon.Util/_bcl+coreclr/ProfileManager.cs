@@ -47,7 +47,7 @@ namespace Amazon.Util
     /// </code>
     /// </para>
     /// </summary>
-    [Obsolete("This class is obsolete and will be removed in a future release. Visit https://aws-blogs-prod.amazon.com/developer/aws-sdk-dot-net-credential-profiles/ for further details.")]
+    [Obsolete("This class is obsolete and will be removed in a future release. Please use the Amazon.Runtime.CredentialManagement namespace.  Visit http://docs.aws.amazon.com/sdkfornet/v3/apidocs/ for further details.")]
     public static class ProfileManager
     {
 
@@ -444,7 +444,7 @@ namespace Amazon.Util
     /// <summary>
     /// Common base contract for all types of credential and role profiles.
     /// </summary>
-    [Obsolete("This class is obsolete and will be removed in a future release. Visit https://aws-blogs-prod.amazon.com/developer/aws-sdk-dot-net-credential-profiles/ for further details.")]
+    [Obsolete("This class is obsolete and will be removed in a future release. Please use the Amazon.Runtime.CredentialManagement namespace.  Visit http://docs.aws.amazon.com/sdkfornet/v3/apidocs/ for further details.")]
     public abstract class ProfileSettingsBase
     {
         /// <summary>
@@ -477,7 +477,7 @@ namespace Amazon.Util
     /// The persisted data for a set of AWS credentials. At a minimum this
     /// is access key and secret key data.
     /// </summary>
-    [Obsolete("This class is obsolete and will be removed in a future release. Visit https://aws-blogs-prod.amazon.com/developer/aws-sdk-dot-net-credential-profiles/ for further details.")]
+    [Obsolete("This class is obsolete and will be removed in a future release. Please use the Amazon.Runtime.CredentialManagement namespace.  Visit http://docs.aws.amazon.com/sdkfornet/v3/apidocs/ for further details.")]
     public class AWSCredentialsProfile : ProfileSettingsBase
     {
         public BasicAWSCredentials Credentials { get; private set; }
@@ -627,7 +627,7 @@ namespace Amazon.Util
     /// will reference this to obtain the common endpoint and other data needed
     /// to perform authentication with a set of user credentials.
     /// </summary>
-    [Obsolete("This class is obsolete and will be removed in a future release. Visit https://aws-blogs-prod.amazon.com/developer/aws-sdk-dot-net-credential-profiles/ for further details.")]
+    [Obsolete("This class is obsolete and will be removed in a future release. Please use the Amazon.Runtime.CredentialManagement namespace.  Visit http://docs.aws.amazon.com/sdkfornet/v3/apidocs/ for further details.")]
     public class SAMLEndpointSettings : ProfileSettingsBase
     {
         /// <summary>
@@ -824,7 +824,7 @@ namespace Amazon.Util
     /// default network credentials).
     /// </para>
     /// </summary>
-    [Obsolete("This class is obsolete and will be removed in a future release. Visit https://aws-blogs-prod.amazon.com/developer/aws-sdk-dot-net-credential-profiles/ for further details.")]
+    [Obsolete("This class is obsolete and will be removed in a future release. Please use the Amazon.Runtime.CredentialManagement namespace.  Visit http://docs.aws.amazon.com/sdkfornet/v3/apidocs/ for further details.")]
     public class SAMLRoleProfile : ProfileSettingsBase
     {
         private object _synclock = new object();

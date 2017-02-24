@@ -116,7 +116,7 @@ namespace Amazon.Runtime.CredentialManagement
         /// </summary>
         public SharedCredentialsFile()
         {
-            FilePath = DefaultFilePath;
+            SetUpFilePath(null);
             Refresh();
         }
 
@@ -126,8 +126,23 @@ namespace Amazon.Runtime.CredentialManagement
         /// <param name="filePath">The path of the shared credentials file.</param>
         public SharedCredentialsFile(string filePath)
         {
-            FilePath = string.IsNullOrEmpty(filePath) ? DefaultFilePath : filePath;
+            SetUpFilePath(filePath);
             Refresh();
+        }
+
+        private void SetUpFilePath(string filePath)
+        {
+            if (string.IsNullOrEmpty(filePath))
+            {
+                if (string.IsNullOrEmpty(AWSConfigs.AWSProfilesLocation))
+                    FilePath = DefaultFilePath;
+                else
+                    FilePath = AWSConfigs.AWSProfilesLocation;
+            }
+            else
+            {
+                FilePath = filePath;
+            }
         }
 
         public List<string> ListProfileNames()

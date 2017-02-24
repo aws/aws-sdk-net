@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 using Amazon.Runtime.CredentialManagement;
+using Amazon.Runtime.CredentialManagement.Internal;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Util;
@@ -54,20 +55,12 @@ namespace Amazon.Runtime
             }
             else if (!string.IsNullOrEmpty(AWSConfigs.AWSProfileName))
             {
-                var profileName = AWSConfigs.AWSProfileName;
-                var profilesLocation = AWSConfigs.AWSProfilesLocation;
-
-                ICredentialProfileSource profileSource;
-                if (string.IsNullOrEmpty(profilesLocation))
-                    profileSource = new NetSDKCredentialsFile();
-                else
-                    profileSource = new SharedCredentialsFile(profilesLocation);
-
-                CredentialProfile profile;
-                if (profileSource.TryGetProfile(profileName, out profile))
+                CredentialProfileStoreChain chain = new CredentialProfileStoreChain(AWSConfigs.AWSProfilesLocation);
+                PersistedCredentialProfile persistedProfile;
+                if (chain.TryGetPersistedProfile(AWSConfigs.AWSProfileName, out persistedProfile))
                 {
                     // Will throw a descriptive exception if profile.CanCreateAWSCredentials is false.
-                    _wrappedCredentials = profile.GetAWSCredentials(profileSource, true);
+                    _wrappedCredentials = persistedProfile.Profile.GetAWSCredentials(persistedProfile.Store, true);
                 }
             }
 
