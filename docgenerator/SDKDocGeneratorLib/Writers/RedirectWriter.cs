@@ -16,22 +16,12 @@ namespace SDKDocGenerator
 
         public override string ToString()
         {
-            return string.Format("{0} {1} {2} {3}", RuleName, Pattern, Substitution, Flags);
+            return string.Format(@"{0} {1} ""{2}"" {3}", RuleName, Pattern, Substitution, Flags);
         }
 
         public int CompareTo(object obj)
         {
             return this.ToString().CompareTo(obj.ToString());
-        }
-    }
-
-    public class SkipRule : RewriteRuleBase
-    {
-        public SkipRule(string pattern, int skipCount)
-        {
-            Pattern = pattern;
-            Substitution = "\"-\"";
-            Flags = string.Format("[S={0}]", skipCount);
         }
     }
 
@@ -41,14 +31,14 @@ namespace SDKDocGenerator
         {
             Pattern = pattern;
             Substitution = substitution;
-            Flags = "[L,R,E]";
+            Flags = "[L,R,NE]";
         }
     }
     #endregion
 
     public static class SDKDocRedirectWriter
     {
-        public const string RedirectFileName = @"package.redirect.conf";
+        public const string RedirectFileName = @"package.redirects.conf";
         public const string DocPathPrefix    = @"/sdkfornet/v3/apidocs/index.html?page=";
         public const string ToolId           = @"DotNetSDKV3";
         
@@ -62,20 +52,15 @@ namespace SDKDocGenerator
                 int totalRuleCount = 0;
                 foreach (var service in _rulesForServices)
                 {
-                    // count the extra skip rule per service we are adding.
-                    totalRuleCount += service.Value.Count + 1;
+                    totalRuleCount += service.Value.Count;
                 }
 
                 // skip rule for all rules
-                string sdkPattern = string.Format("!^goto/{0}/(.*)", ToolId);
-                writer.WriteLine(new SkipRule(sdkPattern, totalRuleCount));
+                writer.WriteLine(@"RewriteCond ""%{REQUEST_URI}"" ""!^/goto/DotNetSDKV3/""");
+                writer.WriteLine(string.Format(@"RewriteRule "".?"" ""-"" [S={0}]", totalRuleCount));
 
                 foreach (var service in _rulesForServices)
                 {
-                    // skip rule for current service
-                    string servicePattern = string.Format("!^goto/{0}/{1}/(.*)", ToolId, service.Key);
-                    writer.WriteLine(new SkipRule(servicePattern, service.Value.Count));
-
                     foreach (var rule in service.Value)
                     {
                         writer.WriteLine(rule.ToString());
@@ -107,7 +92,7 @@ namespace SDKDocGenerator
 
         public static void AddRule(string serviceId, string shape, string docPath)
         {
-            string requestedPath = string.Format("^goto/{0}/{1}/{2}", ToolId, serviceId, shape);
+            string requestedPath = string.Format("^/goto/{0}/{1}/{2}", ToolId, serviceId, shape);
 
             ISet<RewriteRule> set;
             if (!_rulesForServices.TryGetValue(serviceId, out set))

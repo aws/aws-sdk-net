@@ -153,7 +153,7 @@ namespace SDKDocGenerator
             Options.Verbose = true;
 
             if (string.IsNullOrEmpty(Options.SDKAssembliesRoot))
-                Options.SDKAssembliesRoot = @"..\..\..\..\deployment\sdk\assemblies";
+                Options.SDKAssembliesRoot = @"..\..\..\..\deployment\assemblies";
 
             Options.Services = new[]
             {
