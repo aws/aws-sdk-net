@@ -320,6 +320,10 @@
       <Project>{E8067CB9-E496-41AF-BC14-921EE1521237}</Project>
       <Name>AWSSDK.OpsWorksCM.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/Organizations/AWSSDK.Organizations.CodeAnalysis.csproj">
+      <Project>{9539F8B3-78F6-4C4D-8A47-664D8476011F}</Project>
+      <Name>AWSSDK.Organizations.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/Pinpoint/AWSSDK.Pinpoint.CodeAnalysis.csproj">
       <Project>{82F5F402-030D-49B3-9AB7-1AF67F16EEA9}</Project>
       <Name>AWSSDK.Pinpoint.CodeAnalysis</Name>

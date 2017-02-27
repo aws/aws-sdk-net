@@ -263,6 +263,9 @@
     <Reference Include="AWSSDK.OpsWorksCM">
       <HintPath>..\..\..\Deployment\assemblies\net45\AWSSDK.OpsWorksCM.dll</HintPath>
     </Reference>
+    <Reference Include="AWSSDK.Organizations">
+      <HintPath>..\..\..\Deployment\assemblies\net45\AWSSDK.Organizations.dll</HintPath>
+    </Reference>
     <Reference Include="AWSSDK.Pinpoint">
       <HintPath>..\..\..\Deployment\assemblies\net45\AWSSDK.Pinpoint.dll</HintPath>
     </Reference>
@@ -603,6 +606,10 @@
     <ProjectReference Include="..\..\src\Services\OpsWorksCM\AWSSDK.OpsWorksCM.Net45.csproj">
       <Project>{1848F4AC-7FD3-4D43-A34E-C045358C5B43}</Project>
       <Name>AWSSDK.OpsWorksCM.Net45</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\Organizations\AWSSDK.Organizations.Net45.csproj">
+      <Project>{BC2D65DA-2E82-4EC8-BDB9-554E39193D20}</Project>
+      <Name>AWSSDK.Organizations.Net45</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\src\Services\Pinpoint\AWSSDK.Pinpoint.Net45.csproj">
       <Project>{6F31539F-C39F-4A2E-84AE-DA2434891D48}</Project>
