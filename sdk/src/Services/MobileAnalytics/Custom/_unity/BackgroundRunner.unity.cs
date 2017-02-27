@@ -107,7 +107,6 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
                 catch(ThreadAbortException tae)
                 {
                   // handle thread aports more greacefully in unity
-
                 }
                 catch (System.Exception e)
                 {
