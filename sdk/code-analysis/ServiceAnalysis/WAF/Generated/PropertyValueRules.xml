@@ -208,7 +208,7 @@
   <property-value-rule>
     <property>Amazon.WAF.Model.GetSampledRequestsRequest.MaxItems</property>
     <min>1</min>
-    <max>100</max>
+    <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAF.Model.GetSampledRequestsRequest.RuleId</property>

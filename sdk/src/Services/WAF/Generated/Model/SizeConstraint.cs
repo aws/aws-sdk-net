@@ -94,7 +94,10 @@ namespace Amazon.WAF.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FieldToMatch.
+        /// Gets and sets the property FieldToMatch. 
+        /// <para>
+        /// Specifies where in a web request to look for the size constraint.
+        /// </para>
         /// </summary>
         public FieldToMatch FieldToMatch
         {

@@ -56,7 +56,14 @@ namespace Amazon.WAF.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ActivatedRule.
+        /// Gets and sets the property ActivatedRule. 
+        /// <para>
+        /// The <code>ActivatedRule</code> object in an <a>UpdateWebACL</a> request specifies
+        /// a <code>Rule</code> that you want to insert or delete, the priority of the <code>Rule</code>
+        /// in the <code>WebACL</code>, and the action that you want AWS WAF to take when a web
+        /// request matches the <code>Rule</code> (<code>ALLOW</code>, <code>BLOCK</code>, or
+        /// <code>COUNT</code>).
+        /// </para>
         /// </summary>
         public ActivatedRule ActivatedRule
         {

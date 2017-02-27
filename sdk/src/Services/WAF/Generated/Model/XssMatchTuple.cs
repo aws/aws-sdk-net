@@ -37,7 +37,10 @@ namespace Amazon.WAF.Model
         private TextTransformation _textTransformation;
 
         /// <summary>
-        /// Gets and sets the property FieldToMatch.
+        /// Gets and sets the property FieldToMatch. 
+        /// <para>
+        /// Specifies where in a web request to look for cross-site scripting attacks.
+        /// </para>
         /// </summary>
         public FieldToMatch FieldToMatch
         {

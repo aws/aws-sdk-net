@@ -31,7 +31,7 @@ namespace Amazon.WAF.Model
     /// Container for the parameters to the GetSampledRequests operation.
     /// Gets detailed information about a specified number of requests--a sample--that AWS
     /// WAF randomly selects from among the first 5,000 requests that your AWS resource received
-    /// during a time range that you choose. You can specify a sample size of up to 100 requests,
+    /// during a time range that you choose. You can specify a sample size of up to 500 requests,
     /// and you can specify any time range in the previous three hours.
     /// 
     ///  
@@ -105,8 +105,8 @@ namespace Amazon.WAF.Model
         /// <para>
         /// The start date and time and the end date and time of the range for which you want
         /// <code>GetSampledRequests</code> to return a sample of requests. Specify the date and
-        /// time in Unix time format (in seconds). You can specify any time range in the previous
-        /// three hours.
+        /// time in the following format: <code>"2016-09-27T14:50Z"</code>. You can specify any
+        /// time range in the previous three hours.
         /// </para>
         /// </summary>
         public TimeWindow TimeWindow

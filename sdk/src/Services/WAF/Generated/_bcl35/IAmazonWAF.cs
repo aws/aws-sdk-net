@@ -29,7 +29,10 @@ namespace Amazon.WAF
     /// <summary>
     /// Interface for accessing WAF
     ///
-    /// This is the <i>AWS WAF API Reference</i>. This guide is for developers who need detailed
+    /// This is the <i>AWS WAF API Reference</i> for using AWS WAF with Amazon CloudFront.
+    /// The AWS WAF actions and data types listed in the reference are available for protecting
+    /// Amazon CloudFront distributions. You can use these actions and data types via the
+    /// endpoint <i>waf.amazonaws.com</i>. This guide is for developers who need detailed
     /// information about the AWS WAF API actions, data types, and errors. For detailed information
     /// about AWS WAF features and an overview of how to use the AWS WAF API, see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS
     /// WAF Developer Guide</a>.
@@ -132,6 +135,11 @@ namespace Amazon.WAF
         /// You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code>
         /// but no value for <code>Data</code>.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource with
+        /// which a web ACL cannot be associated.
+        /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFLimitsExceededException">
@@ -143,6 +151,7 @@ namespace Amazon.WAF
         /// The operation failed because you tried to create, update, or delete an object by using
         /// a change token that has already been used.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateByteMatchSet">REST API Reference for CreateByteMatchSet Operation</seealso>
         CreateByteMatchSetResponse CreateByteMatchSet(string name, string changeToken);
 
         /// <summary>
@@ -235,6 +244,11 @@ namespace Amazon.WAF
         /// You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code>
         /// but no value for <code>Data</code>.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource with
+        /// which a web ACL cannot be associated.
+        /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFLimitsExceededException">
@@ -246,6 +260,7 @@ namespace Amazon.WAF
         /// The operation failed because you tried to create, update, or delete an object by using
         /// a change token that has already been used.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateByteMatchSet">REST API Reference for CreateByteMatchSet Operation</seealso>
         CreateByteMatchSetResponse CreateByteMatchSet(CreateByteMatchSetRequest request);
 
         /// <summary>
@@ -259,6 +274,7 @@ namespace Amazon.WAF
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateByteMatchSet
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateByteMatchSet">REST API Reference for CreateByteMatchSet Operation</seealso>
         IAsyncResult BeginCreateByteMatchSet(CreateByteMatchSetRequest request, AsyncCallback callback, object state);
 
 
@@ -270,6 +286,7 @@ namespace Amazon.WAF
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateByteMatchSet.</param>
         /// 
         /// <returns>Returns a  CreateByteMatchSetResult from WAF.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateByteMatchSet">REST API Reference for CreateByteMatchSet Operation</seealso>
         CreateByteMatchSetResponse EndCreateByteMatchSet(IAsyncResult asyncResult);
 
         #endregion
@@ -367,6 +384,11 @@ namespace Amazon.WAF
         /// You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code>
         /// but no value for <code>Data</code>.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource with
+        /// which a web ACL cannot be associated.
+        /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFLimitsExceededException">
@@ -378,6 +400,7 @@ namespace Amazon.WAF
         /// The operation failed because you tried to create, update, or delete an object by using
         /// a change token that has already been used.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateIPSet">REST API Reference for CreateIPSet Operation</seealso>
         CreateIPSetResponse CreateIPSet(string name, string changeToken);
 
         /// <summary>
@@ -469,6 +492,11 @@ namespace Amazon.WAF
         /// You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code>
         /// but no value for <code>Data</code>.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource with
+        /// which a web ACL cannot be associated.
+        /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFLimitsExceededException">
@@ -480,6 +508,7 @@ namespace Amazon.WAF
         /// The operation failed because you tried to create, update, or delete an object by using
         /// a change token that has already been used.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateIPSet">REST API Reference for CreateIPSet Operation</seealso>
         CreateIPSetResponse CreateIPSet(CreateIPSetRequest request);
 
         /// <summary>
@@ -493,6 +522,7 @@ namespace Amazon.WAF
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateIPSet
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateIPSet">REST API Reference for CreateIPSet Operation</seealso>
         IAsyncResult BeginCreateIPSet(CreateIPSetRequest request, AsyncCallback callback, object state);
 
 
@@ -504,6 +534,7 @@ namespace Amazon.WAF
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateIPSet.</param>
         /// 
         /// <returns>Returns a  CreateIPSetResult from WAF.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateIPSet">REST API Reference for CreateIPSet Operation</seealso>
         CreateIPSetResponse EndCreateIPSet(IAsyncResult asyncResult);
 
         #endregion
@@ -623,6 +654,11 @@ namespace Amazon.WAF
         /// You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code>
         /// but no value for <code>Data</code>.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource with
+        /// which a web ACL cannot be associated.
+        /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFLimitsExceededException">
@@ -634,6 +670,7 @@ namespace Amazon.WAF
         /// The operation failed because you tried to create, update, or delete an object by using
         /// a change token that has already been used.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateRule">REST API Reference for CreateRule Operation</seealso>
         CreateRuleResponse CreateRule(string name, string changeToken, string metricName);
 
         /// <summary>
@@ -746,6 +783,11 @@ namespace Amazon.WAF
         /// You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code>
         /// but no value for <code>Data</code>.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource with
+        /// which a web ACL cannot be associated.
+        /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFLimitsExceededException">
@@ -757,6 +799,7 @@ namespace Amazon.WAF
         /// The operation failed because you tried to create, update, or delete an object by using
         /// a change token that has already been used.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateRule">REST API Reference for CreateRule Operation</seealso>
         CreateRuleResponse CreateRule(CreateRuleRequest request);
 
         /// <summary>
@@ -770,6 +813,7 @@ namespace Amazon.WAF
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateRule
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateRule">REST API Reference for CreateRule Operation</seealso>
         IAsyncResult BeginCreateRule(CreateRuleRequest request, AsyncCallback callback, object state);
 
 
@@ -781,6 +825,7 @@ namespace Amazon.WAF
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateRule.</param>
         /// 
         /// <returns>Returns a  CreateRuleResult from WAF.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateRule">REST API Reference for CreateRule Operation</seealso>
         CreateRuleResponse EndCreateRule(IAsyncResult asyncResult);
 
         #endregion
@@ -878,6 +923,11 @@ namespace Amazon.WAF
         /// You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code>
         /// but no value for <code>Data</code>.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource with
+        /// which a web ACL cannot be associated.
+        /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFLimitsExceededException">
@@ -889,6 +939,7 @@ namespace Amazon.WAF
         /// The operation failed because you tried to create, update, or delete an object by using
         /// a change token that has already been used.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateSizeConstraintSet">REST API Reference for CreateSizeConstraintSet Operation</seealso>
         CreateSizeConstraintSetResponse CreateSizeConstraintSet(CreateSizeConstraintSetRequest request);
 
         /// <summary>
@@ -902,6 +953,7 @@ namespace Amazon.WAF
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateSizeConstraintSet
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateSizeConstraintSet">REST API Reference for CreateSizeConstraintSet Operation</seealso>
         IAsyncResult BeginCreateSizeConstraintSet(CreateSizeConstraintSetRequest request, AsyncCallback callback, object state);
 
 
@@ -913,6 +965,7 @@ namespace Amazon.WAF
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateSizeConstraintSet.</param>
         /// 
         /// <returns>Returns a  CreateSizeConstraintSetResult from WAF.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateSizeConstraintSet">REST API Reference for CreateSizeConstraintSet Operation</seealso>
         CreateSizeConstraintSetResponse EndCreateSizeConstraintSet(IAsyncResult asyncResult);
 
         #endregion
@@ -1008,6 +1061,11 @@ namespace Amazon.WAF
         /// You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code>
         /// but no value for <code>Data</code>.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource with
+        /// which a web ACL cannot be associated.
+        /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFLimitsExceededException">
@@ -1019,6 +1077,7 @@ namespace Amazon.WAF
         /// The operation failed because you tried to create, update, or delete an object by using
         /// a change token that has already been used.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateSqlInjectionMatchSet">REST API Reference for CreateSqlInjectionMatchSet Operation</seealso>
         CreateSqlInjectionMatchSetResponse CreateSqlInjectionMatchSet(string name, string changeToken);
 
         /// <summary>
@@ -1108,6 +1167,11 @@ namespace Amazon.WAF
         /// You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code>
         /// but no value for <code>Data</code>.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource with
+        /// which a web ACL cannot be associated.
+        /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFLimitsExceededException">
@@ -1119,6 +1183,7 @@ namespace Amazon.WAF
         /// The operation failed because you tried to create, update, or delete an object by using
         /// a change token that has already been used.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateSqlInjectionMatchSet">REST API Reference for CreateSqlInjectionMatchSet Operation</seealso>
         CreateSqlInjectionMatchSetResponse CreateSqlInjectionMatchSet(CreateSqlInjectionMatchSetRequest request);
 
         /// <summary>
@@ -1132,6 +1197,7 @@ namespace Amazon.WAF
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateSqlInjectionMatchSet
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateSqlInjectionMatchSet">REST API Reference for CreateSqlInjectionMatchSet Operation</seealso>
         IAsyncResult BeginCreateSqlInjectionMatchSet(CreateSqlInjectionMatchSetRequest request, AsyncCallback callback, object state);
 
 
@@ -1143,6 +1209,7 @@ namespace Amazon.WAF
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateSqlInjectionMatchSet.</param>
         /// 
         /// <returns>Returns a  CreateSqlInjectionMatchSetResult from WAF.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateSqlInjectionMatchSet">REST API Reference for CreateSqlInjectionMatchSet Operation</seealso>
         CreateSqlInjectionMatchSetResponse EndCreateSqlInjectionMatchSet(IAsyncResult asyncResult);
 
         #endregion
@@ -1254,6 +1321,11 @@ namespace Amazon.WAF
         /// You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code>
         /// but no value for <code>Data</code>.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource with
+        /// which a web ACL cannot be associated.
+        /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFLimitsExceededException">
@@ -1265,6 +1337,7 @@ namespace Amazon.WAF
         /// The operation failed because you tried to create, update, or delete an object by using
         /// a change token that has already been used.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateWebACL">REST API Reference for CreateWebACL Operation</seealso>
         CreateWebACLResponse CreateWebACL(CreateWebACLRequest request);
 
         /// <summary>
@@ -1278,6 +1351,7 @@ namespace Amazon.WAF
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateWebACL
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateWebACL">REST API Reference for CreateWebACL Operation</seealso>
         IAsyncResult BeginCreateWebACL(CreateWebACLRequest request, AsyncCallback callback, object state);
 
 
@@ -1289,6 +1363,7 @@ namespace Amazon.WAF
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateWebACL.</param>
         /// 
         /// <returns>Returns a  CreateWebACLResult from WAF.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateWebACL">REST API Reference for CreateWebACL Operation</seealso>
         CreateWebACLResponse EndCreateWebACL(IAsyncResult asyncResult);
 
         #endregion
@@ -1382,6 +1457,11 @@ namespace Amazon.WAF
         /// You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code>
         /// but no value for <code>Data</code>.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource with
+        /// which a web ACL cannot be associated.
+        /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFLimitsExceededException">
@@ -1393,6 +1473,7 @@ namespace Amazon.WAF
         /// The operation failed because you tried to create, update, or delete an object by using
         /// a change token that has already been used.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateXssMatchSet">REST API Reference for CreateXssMatchSet Operation</seealso>
         CreateXssMatchSetResponse CreateXssMatchSet(CreateXssMatchSetRequest request);
 
         /// <summary>
@@ -1406,6 +1487,7 @@ namespace Amazon.WAF
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateXssMatchSet
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateXssMatchSet">REST API Reference for CreateXssMatchSet Operation</seealso>
         IAsyncResult BeginCreateXssMatchSet(CreateXssMatchSetRequest request, AsyncCallback callback, object state);
 
 
@@ -1417,6 +1499,7 @@ namespace Amazon.WAF
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateXssMatchSet.</param>
         /// 
         /// <returns>Returns a  CreateXssMatchSetResult from WAF.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateXssMatchSet">REST API Reference for CreateXssMatchSet Operation</seealso>
         CreateXssMatchSetResponse EndCreateXssMatchSet(IAsyncResult asyncResult);
 
         #endregion
@@ -1511,6 +1594,7 @@ namespace Amazon.WAF
         /// The operation failed because you tried to create, update, or delete an object by using
         /// a change token that has already been used.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteByteMatchSet">REST API Reference for DeleteByteMatchSet Operation</seealso>
         DeleteByteMatchSetResponse DeleteByteMatchSet(string byteMatchSetId, string changeToken);
 
         /// <summary>
@@ -1599,6 +1683,7 @@ namespace Amazon.WAF
         /// The operation failed because you tried to create, update, or delete an object by using
         /// a change token that has already been used.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteByteMatchSet">REST API Reference for DeleteByteMatchSet Operation</seealso>
         DeleteByteMatchSetResponse DeleteByteMatchSet(DeleteByteMatchSetRequest request);
 
         /// <summary>
@@ -1612,6 +1697,7 @@ namespace Amazon.WAF
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteByteMatchSet
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteByteMatchSet">REST API Reference for DeleteByteMatchSet Operation</seealso>
         IAsyncResult BeginDeleteByteMatchSet(DeleteByteMatchSetRequest request, AsyncCallback callback, object state);
 
 
@@ -1623,6 +1709,7 @@ namespace Amazon.WAF
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteByteMatchSet.</param>
         /// 
         /// <returns>Returns a  DeleteByteMatchSetResult from WAF.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteByteMatchSet">REST API Reference for DeleteByteMatchSet Operation</seealso>
         DeleteByteMatchSetResponse EndDeleteByteMatchSet(IAsyncResult asyncResult);
 
         #endregion
@@ -1715,6 +1802,7 @@ namespace Amazon.WAF
         /// The operation failed because you tried to create, update, or delete an object by using
         /// a change token that has already been used.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteIPSet">REST API Reference for DeleteIPSet Operation</seealso>
         DeleteIPSetResponse DeleteIPSet(string ipSetId, string changeToken);
 
         /// <summary>
@@ -1801,6 +1889,7 @@ namespace Amazon.WAF
         /// The operation failed because you tried to create, update, or delete an object by using
         /// a change token that has already been used.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteIPSet">REST API Reference for DeleteIPSet Operation</seealso>
         DeleteIPSetResponse DeleteIPSet(DeleteIPSetRequest request);
 
         /// <summary>
@@ -1814,6 +1903,7 @@ namespace Amazon.WAF
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteIPSet
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteIPSet">REST API Reference for DeleteIPSet Operation</seealso>
         IAsyncResult BeginDeleteIPSet(DeleteIPSetRequest request, AsyncCallback callback, object state);
 
 
@@ -1825,6 +1915,7 @@ namespace Amazon.WAF
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteIPSet.</param>
         /// 
         /// <returns>Returns a  DeleteIPSetResult from WAF.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteIPSet">REST API Reference for DeleteIPSet Operation</seealso>
         DeleteIPSetResponse EndDeleteIPSet(IAsyncResult asyncResult);
 
         #endregion
@@ -1918,6 +2009,7 @@ namespace Amazon.WAF
         /// The operation failed because you tried to create, update, or delete an object by using
         /// a change token that has already been used.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteRule">REST API Reference for DeleteRule Operation</seealso>
         DeleteRuleResponse DeleteRule(string ruleId, string changeToken);
 
         /// <summary>
@@ -2005,6 +2097,7 @@ namespace Amazon.WAF
         /// The operation failed because you tried to create, update, or delete an object by using
         /// a change token that has already been used.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteRule">REST API Reference for DeleteRule Operation</seealso>
         DeleteRuleResponse DeleteRule(DeleteRuleRequest request);
 
         /// <summary>
@@ -2018,6 +2111,7 @@ namespace Amazon.WAF
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteRule
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteRule">REST API Reference for DeleteRule Operation</seealso>
         IAsyncResult BeginDeleteRule(DeleteRuleRequest request, AsyncCallback callback, object state);
 
 
@@ -2029,6 +2123,7 @@ namespace Amazon.WAF
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteRule.</param>
         /// 
         /// <returns>Returns a  DeleteRuleResult from WAF.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteRule">REST API Reference for DeleteRule Operation</seealso>
         DeleteRuleResponse EndDeleteRule(IAsyncResult asyncResult);
 
         #endregion
@@ -2122,6 +2217,7 @@ namespace Amazon.WAF
         /// The operation failed because you tried to create, update, or delete an object by using
         /// a change token that has already been used.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteSizeConstraintSet">REST API Reference for DeleteSizeConstraintSet Operation</seealso>
         DeleteSizeConstraintSetResponse DeleteSizeConstraintSet(DeleteSizeConstraintSetRequest request);
 
         /// <summary>
@@ -2135,6 +2231,7 @@ namespace Amazon.WAF
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteSizeConstraintSet
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteSizeConstraintSet">REST API Reference for DeleteSizeConstraintSet Operation</seealso>
         IAsyncResult BeginDeleteSizeConstraintSet(DeleteSizeConstraintSetRequest request, AsyncCallback callback, object state);
 
 
@@ -2146,6 +2243,7 @@ namespace Amazon.WAF
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteSizeConstraintSet.</param>
         /// 
         /// <returns>Returns a  DeleteSizeConstraintSetResult from WAF.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteSizeConstraintSet">REST API Reference for DeleteSizeConstraintSet Operation</seealso>
         DeleteSizeConstraintSetResponse EndDeleteSizeConstraintSet(IAsyncResult asyncResult);
 
         #endregion
@@ -2241,6 +2339,7 @@ namespace Amazon.WAF
         /// The operation failed because you tried to create, update, or delete an object by using
         /// a change token that has already been used.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteSqlInjectionMatchSet">REST API Reference for DeleteSqlInjectionMatchSet Operation</seealso>
         DeleteSqlInjectionMatchSetResponse DeleteSqlInjectionMatchSet(string sqlInjectionMatchSetId, string changeToken);
 
         /// <summary>
@@ -2330,6 +2429,7 @@ namespace Amazon.WAF
         /// The operation failed because you tried to create, update, or delete an object by using
         /// a change token that has already been used.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteSqlInjectionMatchSet">REST API Reference for DeleteSqlInjectionMatchSet Operation</seealso>
         DeleteSqlInjectionMatchSetResponse DeleteSqlInjectionMatchSet(DeleteSqlInjectionMatchSetRequest request);
 
         /// <summary>
@@ -2343,6 +2443,7 @@ namespace Amazon.WAF
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteSqlInjectionMatchSet
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteSqlInjectionMatchSet">REST API Reference for DeleteSqlInjectionMatchSet Operation</seealso>
         IAsyncResult BeginDeleteSqlInjectionMatchSet(DeleteSqlInjectionMatchSetRequest request, AsyncCallback callback, object state);
 
 
@@ -2354,6 +2455,7 @@ namespace Amazon.WAF
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteSqlInjectionMatchSet.</param>
         /// 
         /// <returns>Returns a  DeleteSqlInjectionMatchSetResult from WAF.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteSqlInjectionMatchSet">REST API Reference for DeleteSqlInjectionMatchSet Operation</seealso>
         DeleteSqlInjectionMatchSetResponse EndDeleteSqlInjectionMatchSet(IAsyncResult asyncResult);
 
         #endregion
@@ -2442,6 +2544,7 @@ namespace Amazon.WAF
         /// The operation failed because you tried to create, update, or delete an object by using
         /// a change token that has already been used.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteWebACL">REST API Reference for DeleteWebACL Operation</seealso>
         DeleteWebACLResponse DeleteWebACL(string webACLId, string changeToken);
 
         /// <summary>
@@ -2524,6 +2627,7 @@ namespace Amazon.WAF
         /// The operation failed because you tried to create, update, or delete an object by using
         /// a change token that has already been used.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteWebACL">REST API Reference for DeleteWebACL Operation</seealso>
         DeleteWebACLResponse DeleteWebACL(DeleteWebACLRequest request);
 
         /// <summary>
@@ -2537,6 +2641,7 @@ namespace Amazon.WAF
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteWebACL
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteWebACL">REST API Reference for DeleteWebACL Operation</seealso>
         IAsyncResult BeginDeleteWebACL(DeleteWebACLRequest request, AsyncCallback callback, object state);
 
 
@@ -2548,6 +2653,7 @@ namespace Amazon.WAF
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteWebACL.</param>
         /// 
         /// <returns>Returns a  DeleteWebACLResult from WAF.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteWebACL">REST API Reference for DeleteWebACL Operation</seealso>
         DeleteWebACLResponse EndDeleteWebACL(IAsyncResult asyncResult);
 
         #endregion
@@ -2642,6 +2748,7 @@ namespace Amazon.WAF
         /// The operation failed because you tried to create, update, or delete an object by using
         /// a change token that has already been used.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteXssMatchSet">REST API Reference for DeleteXssMatchSet Operation</seealso>
         DeleteXssMatchSetResponse DeleteXssMatchSet(DeleteXssMatchSetRequest request);
 
         /// <summary>
@@ -2655,6 +2762,7 @@ namespace Amazon.WAF
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteXssMatchSet
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteXssMatchSet">REST API Reference for DeleteXssMatchSet Operation</seealso>
         IAsyncResult BeginDeleteXssMatchSet(DeleteXssMatchSetRequest request, AsyncCallback callback, object state);
 
 
@@ -2666,6 +2774,7 @@ namespace Amazon.WAF
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteXssMatchSet.</param>
         /// 
         /// <returns>Returns a  DeleteXssMatchSetResult from WAF.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteXssMatchSet">REST API Reference for DeleteXssMatchSet Operation</seealso>
         DeleteXssMatchSetResponse EndDeleteXssMatchSet(IAsyncResult asyncResult);
 
         #endregion
@@ -2690,6 +2799,7 @@ namespace Amazon.WAF
         /// <exception cref="Amazon.WAF.Model.WAFNonexistentItemException">
         /// The operation failed because the referenced object doesn't exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetByteMatchSet">REST API Reference for GetByteMatchSet Operation</seealso>
         GetByteMatchSetResponse GetByteMatchSet(string byteMatchSetId);
 
         /// <summary>
@@ -2709,6 +2819,7 @@ namespace Amazon.WAF
         /// <exception cref="Amazon.WAF.Model.WAFNonexistentItemException">
         /// The operation failed because the referenced object doesn't exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetByteMatchSet">REST API Reference for GetByteMatchSet Operation</seealso>
         GetByteMatchSetResponse GetByteMatchSet(GetByteMatchSetRequest request);
 
         /// <summary>
@@ -2722,6 +2833,7 @@ namespace Amazon.WAF
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetByteMatchSet
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetByteMatchSet">REST API Reference for GetByteMatchSet Operation</seealso>
         IAsyncResult BeginGetByteMatchSet(GetByteMatchSetRequest request, AsyncCallback callback, object state);
 
 
@@ -2733,6 +2845,7 @@ namespace Amazon.WAF
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetByteMatchSet.</param>
         /// 
         /// <returns>Returns a  GetByteMatchSetResult from WAF.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetByteMatchSet">REST API Reference for GetByteMatchSet Operation</seealso>
         GetByteMatchSetResponse EndGetByteMatchSet(IAsyncResult asyncResult);
 
         #endregion
@@ -2766,6 +2879,7 @@ namespace Amazon.WAF
         /// The operation failed because of a system problem, even though the request was valid.
         /// Retry your request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetChangeToken">REST API Reference for GetChangeToken Operation</seealso>
         GetChangeTokenResponse GetChangeToken();
 
         /// <summary>
@@ -2795,6 +2909,7 @@ namespace Amazon.WAF
         /// The operation failed because of a system problem, even though the request was valid.
         /// Retry your request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetChangeToken">REST API Reference for GetChangeToken Operation</seealso>
         GetChangeTokenResponse GetChangeToken(GetChangeTokenRequest request);
 
         /// <summary>
@@ -2808,6 +2923,7 @@ namespace Amazon.WAF
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetChangeToken
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetChangeToken">REST API Reference for GetChangeToken Operation</seealso>
         IAsyncResult BeginGetChangeToken(GetChangeTokenRequest request, AsyncCallback callback, object state);
 
 
@@ -2819,6 +2935,7 @@ namespace Amazon.WAF
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetChangeToken.</param>
         /// 
         /// <returns>Returns a  GetChangeTokenResult from WAF.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetChangeToken">REST API Reference for GetChangeToken Operation</seealso>
         GetChangeTokenResponse EndGetChangeToken(IAsyncResult asyncResult);
 
         #endregion
@@ -2856,6 +2973,7 @@ namespace Amazon.WAF
         /// <exception cref="Amazon.WAF.Model.WAFNonexistentItemException">
         /// The operation failed because the referenced object doesn't exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetChangeTokenStatus">REST API Reference for GetChangeTokenStatus Operation</seealso>
         GetChangeTokenStatusResponse GetChangeTokenStatus(string changeToken);
 
         /// <summary>
@@ -2888,6 +3006,7 @@ namespace Amazon.WAF
         /// <exception cref="Amazon.WAF.Model.WAFNonexistentItemException">
         /// The operation failed because the referenced object doesn't exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetChangeTokenStatus">REST API Reference for GetChangeTokenStatus Operation</seealso>
         GetChangeTokenStatusResponse GetChangeTokenStatus(GetChangeTokenStatusRequest request);
 
         /// <summary>
@@ -2901,6 +3020,7 @@ namespace Amazon.WAF
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetChangeTokenStatus
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetChangeTokenStatus">REST API Reference for GetChangeTokenStatus Operation</seealso>
         IAsyncResult BeginGetChangeTokenStatus(GetChangeTokenStatusRequest request, AsyncCallback callback, object state);
 
 
@@ -2912,6 +3032,7 @@ namespace Amazon.WAF
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetChangeTokenStatus.</param>
         /// 
         /// <returns>Returns a  GetChangeTokenStatusResult from WAF.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetChangeTokenStatus">REST API Reference for GetChangeTokenStatus Operation</seealso>
         GetChangeTokenStatusResponse EndGetChangeTokenStatus(IAsyncResult asyncResult);
 
         #endregion
@@ -2936,6 +3057,7 @@ namespace Amazon.WAF
         /// <exception cref="Amazon.WAF.Model.WAFNonexistentItemException">
         /// The operation failed because the referenced object doesn't exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetIPSet">REST API Reference for GetIPSet Operation</seealso>
         GetIPSetResponse GetIPSet(string ipSetId);
 
         /// <summary>
@@ -2955,6 +3077,7 @@ namespace Amazon.WAF
         /// <exception cref="Amazon.WAF.Model.WAFNonexistentItemException">
         /// The operation failed because the referenced object doesn't exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetIPSet">REST API Reference for GetIPSet Operation</seealso>
         GetIPSetResponse GetIPSet(GetIPSetRequest request);
 
         /// <summary>
@@ -2968,6 +3091,7 @@ namespace Amazon.WAF
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetIPSet
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetIPSet">REST API Reference for GetIPSet Operation</seealso>
         IAsyncResult BeginGetIPSet(GetIPSetRequest request, AsyncCallback callback, object state);
 
 
@@ -2979,6 +3103,7 @@ namespace Amazon.WAF
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetIPSet.</param>
         /// 
         /// <returns>Returns a  GetIPSetResult from WAF.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetIPSet">REST API Reference for GetIPSet Operation</seealso>
         GetIPSetResponse EndGetIPSet(IAsyncResult asyncResult);
 
         #endregion
@@ -3004,6 +3129,7 @@ namespace Amazon.WAF
         /// <exception cref="Amazon.WAF.Model.WAFNonexistentItemException">
         /// The operation failed because the referenced object doesn't exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetRule">REST API Reference for GetRule Operation</seealso>
         GetRuleResponse GetRule(string ruleId);
 
         /// <summary>
@@ -3024,6 +3150,7 @@ namespace Amazon.WAF
         /// <exception cref="Amazon.WAF.Model.WAFNonexistentItemException">
         /// The operation failed because the referenced object doesn't exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetRule">REST API Reference for GetRule Operation</seealso>
         GetRuleResponse GetRule(GetRuleRequest request);
 
         /// <summary>
@@ -3037,6 +3164,7 @@ namespace Amazon.WAF
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetRule
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetRule">REST API Reference for GetRule Operation</seealso>
         IAsyncResult BeginGetRule(GetRuleRequest request, AsyncCallback callback, object state);
 
 
@@ -3048,6 +3176,7 @@ namespace Amazon.WAF
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetRule.</param>
         /// 
         /// <returns>Returns a  GetRuleResult from WAF.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetRule">REST API Reference for GetRule Operation</seealso>
         GetRuleResponse EndGetRule(IAsyncResult asyncResult);
 
         #endregion
@@ -3058,7 +3187,7 @@ namespace Amazon.WAF
         /// <summary>
         /// Gets detailed information about a specified number of requests--a sample--that AWS
         /// WAF randomly selects from among the first 5,000 requests that your AWS resource received
-        /// during a time range that you choose. You can specify a sample size of up to 100 requests,
+        /// during a time range that you choose. You can specify a sample size of up to 500 requests,
         /// and you can specify any time range in the previous three hours.
         /// 
         ///  
@@ -3080,6 +3209,7 @@ namespace Amazon.WAF
         /// <exception cref="Amazon.WAF.Model.WAFNonexistentItemException">
         /// The operation failed because the referenced object doesn't exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetSampledRequests">REST API Reference for GetSampledRequests Operation</seealso>
         GetSampledRequestsResponse GetSampledRequests(GetSampledRequestsRequest request);
 
         /// <summary>
@@ -3093,6 +3223,7 @@ namespace Amazon.WAF
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSampledRequests
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetSampledRequests">REST API Reference for GetSampledRequests Operation</seealso>
         IAsyncResult BeginGetSampledRequests(GetSampledRequestsRequest request, AsyncCallback callback, object state);
 
 
@@ -3104,6 +3235,7 @@ namespace Amazon.WAF
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSampledRequests.</param>
         /// 
         /// <returns>Returns a  GetSampledRequestsResult from WAF.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetSampledRequests">REST API Reference for GetSampledRequests Operation</seealso>
         GetSampledRequestsResponse EndGetSampledRequests(IAsyncResult asyncResult);
 
         #endregion
@@ -3128,6 +3260,7 @@ namespace Amazon.WAF
         /// <exception cref="Amazon.WAF.Model.WAFNonexistentItemException">
         /// The operation failed because the referenced object doesn't exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetSizeConstraintSet">REST API Reference for GetSizeConstraintSet Operation</seealso>
         GetSizeConstraintSetResponse GetSizeConstraintSet(GetSizeConstraintSetRequest request);
 
         /// <summary>
@@ -3141,6 +3274,7 @@ namespace Amazon.WAF
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSizeConstraintSet
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetSizeConstraintSet">REST API Reference for GetSizeConstraintSet Operation</seealso>
         IAsyncResult BeginGetSizeConstraintSet(GetSizeConstraintSetRequest request, AsyncCallback callback, object state);
 
 
@@ -3152,6 +3286,7 @@ namespace Amazon.WAF
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSizeConstraintSet.</param>
         /// 
         /// <returns>Returns a  GetSizeConstraintSetResult from WAF.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetSizeConstraintSet">REST API Reference for GetSizeConstraintSet Operation</seealso>
         GetSizeConstraintSetResponse EndGetSizeConstraintSet(IAsyncResult asyncResult);
 
         #endregion
@@ -3176,6 +3311,7 @@ namespace Amazon.WAF
         /// <exception cref="Amazon.WAF.Model.WAFNonexistentItemException">
         /// The operation failed because the referenced object doesn't exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetSqlInjectionMatchSet">REST API Reference for GetSqlInjectionMatchSet Operation</seealso>
         GetSqlInjectionMatchSetResponse GetSqlInjectionMatchSet(string sqlInjectionMatchSetId);
 
         /// <summary>
@@ -3195,6 +3331,7 @@ namespace Amazon.WAF
         /// <exception cref="Amazon.WAF.Model.WAFNonexistentItemException">
         /// The operation failed because the referenced object doesn't exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetSqlInjectionMatchSet">REST API Reference for GetSqlInjectionMatchSet Operation</seealso>
         GetSqlInjectionMatchSetResponse GetSqlInjectionMatchSet(GetSqlInjectionMatchSetRequest request);
 
         /// <summary>
@@ -3208,6 +3345,7 @@ namespace Amazon.WAF
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSqlInjectionMatchSet
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetSqlInjectionMatchSet">REST API Reference for GetSqlInjectionMatchSet Operation</seealso>
         IAsyncResult BeginGetSqlInjectionMatchSet(GetSqlInjectionMatchSetRequest request, AsyncCallback callback, object state);
 
 
@@ -3219,6 +3357,7 @@ namespace Amazon.WAF
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSqlInjectionMatchSet.</param>
         /// 
         /// <returns>Returns a  GetSqlInjectionMatchSetResult from WAF.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetSqlInjectionMatchSet">REST API Reference for GetSqlInjectionMatchSet Operation</seealso>
         GetSqlInjectionMatchSetResponse EndGetSqlInjectionMatchSet(IAsyncResult asyncResult);
 
         #endregion
@@ -3243,6 +3382,7 @@ namespace Amazon.WAF
         /// <exception cref="Amazon.WAF.Model.WAFNonexistentItemException">
         /// The operation failed because the referenced object doesn't exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetWebACL">REST API Reference for GetWebACL Operation</seealso>
         GetWebACLResponse GetWebACL(string webACLId);
 
         /// <summary>
@@ -3262,6 +3402,7 @@ namespace Amazon.WAF
         /// <exception cref="Amazon.WAF.Model.WAFNonexistentItemException">
         /// The operation failed because the referenced object doesn't exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetWebACL">REST API Reference for GetWebACL Operation</seealso>
         GetWebACLResponse GetWebACL(GetWebACLRequest request);
 
         /// <summary>
@@ -3275,6 +3416,7 @@ namespace Amazon.WAF
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetWebACL
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetWebACL">REST API Reference for GetWebACL Operation</seealso>
         IAsyncResult BeginGetWebACL(GetWebACLRequest request, AsyncCallback callback, object state);
 
 
@@ -3286,6 +3428,7 @@ namespace Amazon.WAF
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetWebACL.</param>
         /// 
         /// <returns>Returns a  GetWebACLResult from WAF.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetWebACL">REST API Reference for GetWebACL Operation</seealso>
         GetWebACLResponse EndGetWebACL(IAsyncResult asyncResult);
 
         #endregion
@@ -3310,6 +3453,7 @@ namespace Amazon.WAF
         /// <exception cref="Amazon.WAF.Model.WAFNonexistentItemException">
         /// The operation failed because the referenced object doesn't exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetXssMatchSet">REST API Reference for GetXssMatchSet Operation</seealso>
         GetXssMatchSetResponse GetXssMatchSet(GetXssMatchSetRequest request);
 
         /// <summary>
@@ -3323,6 +3467,7 @@ namespace Amazon.WAF
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetXssMatchSet
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetXssMatchSet">REST API Reference for GetXssMatchSet Operation</seealso>
         IAsyncResult BeginGetXssMatchSet(GetXssMatchSetRequest request, AsyncCallback callback, object state);
 
 
@@ -3334,6 +3479,7 @@ namespace Amazon.WAF
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetXssMatchSet.</param>
         /// 
         /// <returns>Returns a  GetXssMatchSetResult from WAF.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetXssMatchSet">REST API Reference for GetXssMatchSet Operation</seealso>
         GetXssMatchSetResponse EndGetXssMatchSet(IAsyncResult asyncResult);
 
         #endregion
@@ -3355,6 +3501,7 @@ namespace Amazon.WAF
         /// The operation failed because you tried to create, update, or delete an object by using
         /// an invalid account identifier.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListByteMatchSets">REST API Reference for ListByteMatchSets Operation</seealso>
         ListByteMatchSetsResponse ListByteMatchSets(ListByteMatchSetsRequest request);
 
         /// <summary>
@@ -3368,6 +3515,7 @@ namespace Amazon.WAF
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListByteMatchSets
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListByteMatchSets">REST API Reference for ListByteMatchSets Operation</seealso>
         IAsyncResult BeginListByteMatchSets(ListByteMatchSetsRequest request, AsyncCallback callback, object state);
 
 
@@ -3379,6 +3527,7 @@ namespace Amazon.WAF
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListByteMatchSets.</param>
         /// 
         /// <returns>Returns a  ListByteMatchSetsResult from WAF.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListByteMatchSets">REST API Reference for ListByteMatchSets Operation</seealso>
         ListByteMatchSetsResponse EndListByteMatchSets(IAsyncResult asyncResult);
 
         #endregion
@@ -3400,6 +3549,7 @@ namespace Amazon.WAF
         /// The operation failed because you tried to create, update, or delete an object by using
         /// an invalid account identifier.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListIPSets">REST API Reference for ListIPSets Operation</seealso>
         ListIPSetsResponse ListIPSets(ListIPSetsRequest request);
 
         /// <summary>
@@ -3413,6 +3563,7 @@ namespace Amazon.WAF
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListIPSets
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListIPSets">REST API Reference for ListIPSets Operation</seealso>
         IAsyncResult BeginListIPSets(ListIPSetsRequest request, AsyncCallback callback, object state);
 
 
@@ -3424,6 +3575,7 @@ namespace Amazon.WAF
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListIPSets.</param>
         /// 
         /// <returns>Returns a  ListIPSetsResult from WAF.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListIPSets">REST API Reference for ListIPSets Operation</seealso>
         ListIPSetsResponse EndListIPSets(IAsyncResult asyncResult);
 
         #endregion
@@ -3445,6 +3597,7 @@ namespace Amazon.WAF
         /// The operation failed because you tried to create, update, or delete an object by using
         /// an invalid account identifier.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListRules">REST API Reference for ListRules Operation</seealso>
         ListRulesResponse ListRules(ListRulesRequest request);
 
         /// <summary>
@@ -3458,6 +3611,7 @@ namespace Amazon.WAF
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListRules
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListRules">REST API Reference for ListRules Operation</seealso>
         IAsyncResult BeginListRules(ListRulesRequest request, AsyncCallback callback, object state);
 
 
@@ -3469,6 +3623,7 @@ namespace Amazon.WAF
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListRules.</param>
         /// 
         /// <returns>Returns a  ListRulesResult from WAF.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListRules">REST API Reference for ListRules Operation</seealso>
         ListRulesResponse EndListRules(IAsyncResult asyncResult);
 
         #endregion
@@ -3490,6 +3645,7 @@ namespace Amazon.WAF
         /// The operation failed because you tried to create, update, or delete an object by using
         /// an invalid account identifier.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListSizeConstraintSets">REST API Reference for ListSizeConstraintSets Operation</seealso>
         ListSizeConstraintSetsResponse ListSizeConstraintSets(ListSizeConstraintSetsRequest request);
 
         /// <summary>
@@ -3503,6 +3659,7 @@ namespace Amazon.WAF
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListSizeConstraintSets
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListSizeConstraintSets">REST API Reference for ListSizeConstraintSets Operation</seealso>
         IAsyncResult BeginListSizeConstraintSets(ListSizeConstraintSetsRequest request, AsyncCallback callback, object state);
 
 
@@ -3514,6 +3671,7 @@ namespace Amazon.WAF
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListSizeConstraintSets.</param>
         /// 
         /// <returns>Returns a  ListSizeConstraintSetsResult from WAF.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListSizeConstraintSets">REST API Reference for ListSizeConstraintSets Operation</seealso>
         ListSizeConstraintSetsResponse EndListSizeConstraintSets(IAsyncResult asyncResult);
 
         #endregion
@@ -3535,6 +3693,7 @@ namespace Amazon.WAF
         /// The operation failed because you tried to create, update, or delete an object by using
         /// an invalid account identifier.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListSqlInjectionMatchSets">REST API Reference for ListSqlInjectionMatchSets Operation</seealso>
         ListSqlInjectionMatchSetsResponse ListSqlInjectionMatchSets(ListSqlInjectionMatchSetsRequest request);
 
         /// <summary>
@@ -3548,6 +3707,7 @@ namespace Amazon.WAF
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListSqlInjectionMatchSets
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListSqlInjectionMatchSets">REST API Reference for ListSqlInjectionMatchSets Operation</seealso>
         IAsyncResult BeginListSqlInjectionMatchSets(ListSqlInjectionMatchSetsRequest request, AsyncCallback callback, object state);
 
 
@@ -3559,6 +3719,7 @@ namespace Amazon.WAF
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListSqlInjectionMatchSets.</param>
         /// 
         /// <returns>Returns a  ListSqlInjectionMatchSetsResult from WAF.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListSqlInjectionMatchSets">REST API Reference for ListSqlInjectionMatchSets Operation</seealso>
         ListSqlInjectionMatchSetsResponse EndListSqlInjectionMatchSets(IAsyncResult asyncResult);
 
         #endregion
@@ -3580,6 +3741,7 @@ namespace Amazon.WAF
         /// The operation failed because you tried to create, update, or delete an object by using
         /// an invalid account identifier.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListWebACLs">REST API Reference for ListWebACLs Operation</seealso>
         ListWebACLsResponse ListWebACLs(ListWebACLsRequest request);
 
         /// <summary>
@@ -3593,6 +3755,7 @@ namespace Amazon.WAF
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListWebACLs
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListWebACLs">REST API Reference for ListWebACLs Operation</seealso>
         IAsyncResult BeginListWebACLs(ListWebACLsRequest request, AsyncCallback callback, object state);
 
 
@@ -3604,6 +3767,7 @@ namespace Amazon.WAF
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListWebACLs.</param>
         /// 
         /// <returns>Returns a  ListWebACLsResult from WAF.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListWebACLs">REST API Reference for ListWebACLs Operation</seealso>
         ListWebACLsResponse EndListWebACLs(IAsyncResult asyncResult);
 
         #endregion
@@ -3625,6 +3789,7 @@ namespace Amazon.WAF
         /// The operation failed because you tried to create, update, or delete an object by using
         /// an invalid account identifier.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListXssMatchSets">REST API Reference for ListXssMatchSets Operation</seealso>
         ListXssMatchSetsResponse ListXssMatchSets(ListXssMatchSetsRequest request);
 
         /// <summary>
@@ -3638,6 +3803,7 @@ namespace Amazon.WAF
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListXssMatchSets
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListXssMatchSets">REST API Reference for ListXssMatchSets Operation</seealso>
         IAsyncResult BeginListXssMatchSets(ListXssMatchSetsRequest request, AsyncCallback callback, object state);
 
 
@@ -3649,6 +3815,7 @@ namespace Amazon.WAF
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListXssMatchSets.</param>
         /// 
         /// <returns>Returns a  ListXssMatchSetsResult from WAF.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListXssMatchSets">REST API Reference for ListXssMatchSets Operation</seealso>
         ListXssMatchSetsResponse EndListXssMatchSets(IAsyncResult asyncResult);
 
         #endregion
@@ -3803,6 +3970,11 @@ namespace Amazon.WAF
         /// You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code>
         /// but no value for <code>Data</code>.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource with
+        /// which a web ACL cannot be associated.
+        /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFLimitsExceededException">
@@ -3843,6 +4015,7 @@ namespace Amazon.WAF
         /// The operation failed because you tried to create, update, or delete an object by using
         /// a change token that has already been used.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateByteMatchSet">REST API Reference for UpdateByteMatchSet Operation</seealso>
         UpdateByteMatchSetResponse UpdateByteMatchSet(string byteMatchSetId, List<ByteMatchSetUpdate> updates, string changeToken);
 
         /// <summary>
@@ -3990,6 +4163,11 @@ namespace Amazon.WAF
         /// You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code>
         /// but no value for <code>Data</code>.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource with
+        /// which a web ACL cannot be associated.
+        /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFLimitsExceededException">
@@ -4030,6 +4208,7 @@ namespace Amazon.WAF
         /// The operation failed because you tried to create, update, or delete an object by using
         /// a change token that has already been used.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateByteMatchSet">REST API Reference for UpdateByteMatchSet Operation</seealso>
         UpdateByteMatchSetResponse UpdateByteMatchSet(UpdateByteMatchSetRequest request);
 
         /// <summary>
@@ -4043,6 +4222,7 @@ namespace Amazon.WAF
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateByteMatchSet
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateByteMatchSet">REST API Reference for UpdateByteMatchSet Operation</seealso>
         IAsyncResult BeginUpdateByteMatchSet(UpdateByteMatchSetRequest request, AsyncCallback callback, object state);
 
 
@@ -4054,6 +4234,7 @@ namespace Amazon.WAF
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateByteMatchSet.</param>
         /// 
         /// <returns>Returns a  UpdateByteMatchSetResult from WAF.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateByteMatchSet">REST API Reference for UpdateByteMatchSet Operation</seealso>
         UpdateByteMatchSetResponse EndUpdateByteMatchSet(IAsyncResult asyncResult);
 
         #endregion
@@ -4072,7 +4253,7 @@ namespace Amazon.WAF
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The IP address version, <code>IPv4</code>. 
+        /// The IP address version, <code>IPv4</code> or <code>IPv6</code>. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4082,11 +4263,32 @@ namespace Amazon.WAF
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// AWS WAF supports /8, /16, /24, and /32 IP address ranges. For more information about
-        /// CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless
+        /// AWS WAF supports /8, /16, /24, and /32 IP address ranges for IPv4, and /24, /32, /48,
+        /// /56, /64 and /128 for IPv6. For more information about CIDR notation, see the Wikipedia
+        /// entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless
         /// Inter-Domain Routing</a>.
         /// </para>
         ///  
+        /// <para>
+        /// IPv6 addresses can be represented using any of the following formats:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// 1111:0000:0000:0000:0000:0000:0000:0111/128
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// 1111:0:0:0:0:0:0:0111/128
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// 1111::0111/128
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// 1111::111/128
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// You use an <code>IPSet</code> to specify which web requests you want to allow or block
         /// based on the IP addresses that the requests originated from. For example, if you're
@@ -4210,6 +4412,11 @@ namespace Amazon.WAF
         /// You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code>
         /// but no value for <code>Data</code>.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource with
+        /// which a web ACL cannot be associated.
+        /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFLimitsExceededException">
@@ -4264,6 +4471,7 @@ namespace Amazon.WAF
         /// The operation failed because you tried to create, update, or delete an object by using
         /// a change token that has already been used.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateIPSet">REST API Reference for UpdateIPSet Operation</seealso>
         UpdateIPSetResponse UpdateIPSet(string ipSetId, List<IPSetUpdate> updates, string changeToken);
 
         /// <summary>
@@ -4277,7 +4485,7 @@ namespace Amazon.WAF
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The IP address version, <code>IPv4</code>. 
+        /// The IP address version, <code>IPv4</code> or <code>IPv6</code>. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4287,11 +4495,32 @@ namespace Amazon.WAF
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// AWS WAF supports /8, /16, /24, and /32 IP address ranges. For more information about
-        /// CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless
+        /// AWS WAF supports /8, /16, /24, and /32 IP address ranges for IPv4, and /24, /32, /48,
+        /// /56, /64 and /128 for IPv6. For more information about CIDR notation, see the Wikipedia
+        /// entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless
         /// Inter-Domain Routing</a>.
         /// </para>
         ///  
+        /// <para>
+        /// IPv6 addresses can be represented using any of the following formats:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// 1111:0000:0000:0000:0000:0000:0000:0111/128
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// 1111:0:0:0:0:0:0:0111/128
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// 1111::0111/128
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// 1111::111/128
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// You use an <code>IPSet</code> to specify which web requests you want to allow or block
         /// based on the IP addresses that the requests originated from. For example, if you're
@@ -4413,6 +4642,11 @@ namespace Amazon.WAF
         /// You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code>
         /// but no value for <code>Data</code>.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource with
+        /// which a web ACL cannot be associated.
+        /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFLimitsExceededException">
@@ -4467,6 +4701,7 @@ namespace Amazon.WAF
         /// The operation failed because you tried to create, update, or delete an object by using
         /// a change token that has already been used.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateIPSet">REST API Reference for UpdateIPSet Operation</seealso>
         UpdateIPSetResponse UpdateIPSet(UpdateIPSetRequest request);
 
         /// <summary>
@@ -4480,6 +4715,7 @@ namespace Amazon.WAF
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateIPSet
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateIPSet">REST API Reference for UpdateIPSet Operation</seealso>
         IAsyncResult BeginUpdateIPSet(UpdateIPSetRequest request, AsyncCallback callback, object state);
 
 
@@ -4491,6 +4727,7 @@ namespace Amazon.WAF
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateIPSet.</param>
         /// 
         /// <returns>Returns a  UpdateIPSetResult from WAF.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateIPSet">REST API Reference for UpdateIPSet Operation</seealso>
         UpdateIPSetResponse EndUpdateIPSet(IAsyncResult asyncResult);
 
         #endregion
@@ -4644,6 +4881,11 @@ namespace Amazon.WAF
         /// You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code>
         /// but no value for <code>Data</code>.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource with
+        /// which a web ACL cannot be associated.
+        /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFLimitsExceededException">
@@ -4698,6 +4940,7 @@ namespace Amazon.WAF
         /// The operation failed because you tried to create, update, or delete an object by using
         /// a change token that has already been used.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateRule">REST API Reference for UpdateRule Operation</seealso>
         UpdateRuleResponse UpdateRule(string ruleId, List<RuleUpdate> updates, string changeToken);
 
         /// <summary>
@@ -4844,6 +5087,11 @@ namespace Amazon.WAF
         /// You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code>
         /// but no value for <code>Data</code>.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource with
+        /// which a web ACL cannot be associated.
+        /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFLimitsExceededException">
@@ -4898,6 +5146,7 @@ namespace Amazon.WAF
         /// The operation failed because you tried to create, update, or delete an object by using
         /// a change token that has already been used.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateRule">REST API Reference for UpdateRule Operation</seealso>
         UpdateRuleResponse UpdateRule(UpdateRuleRequest request);
 
         /// <summary>
@@ -4911,6 +5160,7 @@ namespace Amazon.WAF
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateRule
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateRule">REST API Reference for UpdateRule Operation</seealso>
         IAsyncResult BeginUpdateRule(UpdateRuleRequest request, AsyncCallback callback, object state);
 
 
@@ -4922,6 +5172,7 @@ namespace Amazon.WAF
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateRule.</param>
         /// 
         /// <returns>Returns a  UpdateRuleResult from WAF.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateRule">REST API Reference for UpdateRule Operation</seealso>
         UpdateRuleResponse EndUpdateRule(IAsyncResult asyncResult);
 
         #endregion
@@ -5076,6 +5327,11 @@ namespace Amazon.WAF
         /// You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code>
         /// but no value for <code>Data</code>.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource with
+        /// which a web ACL cannot be associated.
+        /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFLimitsExceededException">
@@ -5130,6 +5386,7 @@ namespace Amazon.WAF
         /// The operation failed because you tried to create, update, or delete an object by using
         /// a change token that has already been used.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateSizeConstraintSet">REST API Reference for UpdateSizeConstraintSet Operation</seealso>
         UpdateSizeConstraintSetResponse UpdateSizeConstraintSet(UpdateSizeConstraintSetRequest request);
 
         /// <summary>
@@ -5143,6 +5400,7 @@ namespace Amazon.WAF
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateSizeConstraintSet
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateSizeConstraintSet">REST API Reference for UpdateSizeConstraintSet Operation</seealso>
         IAsyncResult BeginUpdateSizeConstraintSet(UpdateSizeConstraintSetRequest request, AsyncCallback callback, object state);
 
 
@@ -5154,6 +5412,7 @@ namespace Amazon.WAF
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateSizeConstraintSet.</param>
         /// 
         /// <returns>Returns a  UpdateSizeConstraintSetResult from WAF.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateSizeConstraintSet">REST API Reference for UpdateSizeConstraintSet Operation</seealso>
         UpdateSizeConstraintSetResponse EndUpdateSizeConstraintSet(IAsyncResult asyncResult);
 
         #endregion
@@ -5300,6 +5559,11 @@ namespace Amazon.WAF
         /// You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code>
         /// but no value for <code>Data</code>.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource with
+        /// which a web ACL cannot be associated.
+        /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFLimitsExceededException">
@@ -5340,6 +5604,7 @@ namespace Amazon.WAF
         /// The operation failed because you tried to create, update, or delete an object by using
         /// a change token that has already been used.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateSqlInjectionMatchSet">REST API Reference for UpdateSqlInjectionMatchSet Operation</seealso>
         UpdateSqlInjectionMatchSetResponse UpdateSqlInjectionMatchSet(string sqlInjectionMatchSetId, List<SqlInjectionMatchSetUpdate> updates, string changeToken);
 
         /// <summary>
@@ -5479,6 +5744,11 @@ namespace Amazon.WAF
         /// You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code>
         /// but no value for <code>Data</code>.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource with
+        /// which a web ACL cannot be associated.
+        /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFLimitsExceededException">
@@ -5519,6 +5789,7 @@ namespace Amazon.WAF
         /// The operation failed because you tried to create, update, or delete an object by using
         /// a change token that has already been used.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateSqlInjectionMatchSet">REST API Reference for UpdateSqlInjectionMatchSet Operation</seealso>
         UpdateSqlInjectionMatchSetResponse UpdateSqlInjectionMatchSet(UpdateSqlInjectionMatchSetRequest request);
 
         /// <summary>
@@ -5532,6 +5803,7 @@ namespace Amazon.WAF
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateSqlInjectionMatchSet
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateSqlInjectionMatchSet">REST API Reference for UpdateSqlInjectionMatchSet Operation</seealso>
         IAsyncResult BeginUpdateSqlInjectionMatchSet(UpdateSqlInjectionMatchSetRequest request, AsyncCallback callback, object state);
 
 
@@ -5543,6 +5815,7 @@ namespace Amazon.WAF
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateSqlInjectionMatchSet.</param>
         /// 
         /// <returns>Returns a  UpdateSqlInjectionMatchSetResult from WAF.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateSqlInjectionMatchSet">REST API Reference for UpdateSqlInjectionMatchSet Operation</seealso>
         UpdateSqlInjectionMatchSetResponse EndUpdateSqlInjectionMatchSet(IAsyncResult asyncResult);
 
         #endregion
@@ -5582,10 +5855,6 @@ namespace Amazon.WAF
         /// and <code>IPSets</code>) in a <code>Rule</code>, AWS WAF immediately takes the corresponding
         /// action, allow or block, and doesn't evaluate the request against the remaining <code>Rules</code>
         /// in the <code>WebACL</code>, if any. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// The CloudFront distribution that you want to associate with the <code>WebACL</code>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -5707,6 +5976,11 @@ namespace Amazon.WAF
         /// You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code>
         /// but no value for <code>Data</code>.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource with
+        /// which a web ACL cannot be associated.
+        /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFLimitsExceededException">
@@ -5761,6 +6035,7 @@ namespace Amazon.WAF
         /// The operation failed because you tried to create, update, or delete an object by using
         /// a change token that has already been used.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateWebACL">REST API Reference for UpdateWebACL Operation</seealso>
         UpdateWebACLResponse UpdateWebACL(UpdateWebACLRequest request);
 
         /// <summary>
@@ -5774,6 +6049,7 @@ namespace Amazon.WAF
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateWebACL
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateWebACL">REST API Reference for UpdateWebACL Operation</seealso>
         IAsyncResult BeginUpdateWebACL(UpdateWebACLRequest request, AsyncCallback callback, object state);
 
 
@@ -5785,6 +6061,7 @@ namespace Amazon.WAF
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateWebACL.</param>
         /// 
         /// <returns>Returns a  UpdateWebACLResult from WAF.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateWebACL">REST API Reference for UpdateWebACL Operation</seealso>
         UpdateWebACLResponse EndUpdateWebACL(IAsyncResult asyncResult);
 
         #endregion
@@ -5928,6 +6205,11 @@ namespace Amazon.WAF
         /// You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code>
         /// but no value for <code>Data</code>.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource with
+        /// which a web ACL cannot be associated.
+        /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.WAF.Model.WAFLimitsExceededException">
@@ -5968,6 +6250,7 @@ namespace Amazon.WAF
         /// The operation failed because you tried to create, update, or delete an object by using
         /// a change token that has already been used.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateXssMatchSet">REST API Reference for UpdateXssMatchSet Operation</seealso>
         UpdateXssMatchSetResponse UpdateXssMatchSet(UpdateXssMatchSetRequest request);
 
         /// <summary>
@@ -5981,6 +6264,7 @@ namespace Amazon.WAF
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateXssMatchSet
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateXssMatchSet">REST API Reference for UpdateXssMatchSet Operation</seealso>
         IAsyncResult BeginUpdateXssMatchSet(UpdateXssMatchSetRequest request, AsyncCallback callback, object state);
 
 
@@ -5992,6 +6276,7 @@ namespace Amazon.WAF
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateXssMatchSet.</param>
         /// 
         /// <returns>Returns a  UpdateXssMatchSetResult from WAF.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateXssMatchSet">REST API Reference for UpdateXssMatchSet Operation</seealso>
         UpdateXssMatchSetResponse EndUpdateXssMatchSet(IAsyncResult asyncResult);
 
         #endregion

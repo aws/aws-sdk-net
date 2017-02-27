@@ -61,10 +61,6 @@ namespace Amazon.WAF.Model
     /// action, allow or block, and doesn't evaluate the request against the remaining <code>Rules</code>
     /// in the <code>WebACL</code>, if any. 
     /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// The CloudFront distribution that you want to associate with the <code>WebACL</code>.
-    /// </para>
     ///  </li> </ul> 
     /// <para>
     /// To create and configure a <code>WebACL</code>, perform the following steps:
@@ -128,7 +124,11 @@ namespace Amazon.WAF.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DefaultAction.
+        /// Gets and sets the property DefaultAction. 
+        /// <para>
+        /// A default action for the web ACL, either ALLOW or BLOCK. AWS WAF performs the default
+        /// action if a request doesn't match the criteria in any of the rules in a web ACL.
+        /// </para>
         /// </summary>
         public WafAction DefaultAction
         {
