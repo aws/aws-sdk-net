@@ -634,6 +634,80 @@ namespace Amazon.Elasticsearch
 
         #endregion
         
+        #region  DescribeElasticsearchInstanceTypeLimits
+
+        /// <summary>
+        /// Describe Elasticsearch Limits for a given InstanceType and ElasticsearchVersion.
+        /// When modifying existing Domain, specify the <code> <a>DomainName</a> </code> to know
+        /// what Limits are supported for modifying.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeElasticsearchInstanceTypeLimits service method.</param>
+        /// 
+        /// <returns>The response from the DescribeElasticsearchInstanceTypeLimits service method, as returned by Elasticsearch.</returns>
+        /// <exception cref="Amazon.Elasticsearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.InternalException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.InvalidTypeException">
+        /// An exception for trying to create or access sub-resource that is either invalid or
+        /// not supported. Gives http status code of 409.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.LimitExceededException">
+        /// An exception for trying to create more than allowed resources or sub-resources. Gives
+        /// http status code of 409.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that does not exist. Gives http
+        /// status code of 400.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
+        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// </exception>
+        public DescribeElasticsearchInstanceTypeLimitsResponse DescribeElasticsearchInstanceTypeLimits(DescribeElasticsearchInstanceTypeLimitsRequest request)
+        {
+            var marshaller = new DescribeElasticsearchInstanceTypeLimitsRequestMarshaller();
+            var unmarshaller = DescribeElasticsearchInstanceTypeLimitsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeElasticsearchInstanceTypeLimitsRequest,DescribeElasticsearchInstanceTypeLimitsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeElasticsearchInstanceTypeLimits operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeElasticsearchInstanceTypeLimits operation on AmazonElasticsearchClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeElasticsearchInstanceTypeLimits
+        ///         operation.</returns>
+        public IAsyncResult BeginDescribeElasticsearchInstanceTypeLimits(DescribeElasticsearchInstanceTypeLimitsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DescribeElasticsearchInstanceTypeLimitsRequestMarshaller();
+            var unmarshaller = DescribeElasticsearchInstanceTypeLimitsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeElasticsearchInstanceTypeLimitsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeElasticsearchInstanceTypeLimits operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeElasticsearchInstanceTypeLimits.</param>
+        /// 
+        /// <returns>Returns a  DescribeElasticsearchInstanceTypeLimitsResult from Elasticsearch.</returns>
+        public  DescribeElasticsearchInstanceTypeLimitsResponse EndDescribeElasticsearchInstanceTypeLimits(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeElasticsearchInstanceTypeLimitsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListDomainNames
 
         /// <summary>
@@ -686,6 +760,134 @@ namespace Amazon.Elasticsearch
         public  ListDomainNamesResponse EndListDomainNames(IAsyncResult asyncResult)
         {
             return EndInvoke<ListDomainNamesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListElasticsearchInstanceTypes
+
+        /// <summary>
+        /// List all Elasticsearch instance types that are supported for given ElasticsearchVersion
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListElasticsearchInstanceTypes service method.</param>
+        /// 
+        /// <returns>The response from the ListElasticsearchInstanceTypes service method, as returned by Elasticsearch.</returns>
+        /// <exception cref="Amazon.Elasticsearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.InternalException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that does not exist. Gives http
+        /// status code of 400.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
+        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// </exception>
+        public ListElasticsearchInstanceTypesResponse ListElasticsearchInstanceTypes(ListElasticsearchInstanceTypesRequest request)
+        {
+            var marshaller = new ListElasticsearchInstanceTypesRequestMarshaller();
+            var unmarshaller = ListElasticsearchInstanceTypesResponseUnmarshaller.Instance;
+
+            return Invoke<ListElasticsearchInstanceTypesRequest,ListElasticsearchInstanceTypesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListElasticsearchInstanceTypes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListElasticsearchInstanceTypes operation on AmazonElasticsearchClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListElasticsearchInstanceTypes
+        ///         operation.</returns>
+        public IAsyncResult BeginListElasticsearchInstanceTypes(ListElasticsearchInstanceTypesRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new ListElasticsearchInstanceTypesRequestMarshaller();
+            var unmarshaller = ListElasticsearchInstanceTypesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListElasticsearchInstanceTypesRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListElasticsearchInstanceTypes operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListElasticsearchInstanceTypes.</param>
+        /// 
+        /// <returns>Returns a  ListElasticsearchInstanceTypesResult from Elasticsearch.</returns>
+        public  ListElasticsearchInstanceTypesResponse EndListElasticsearchInstanceTypes(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListElasticsearchInstanceTypesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListElasticsearchVersions
+
+        /// <summary>
+        /// List all supported Elasticsearch versions
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListElasticsearchVersions service method.</param>
+        /// 
+        /// <returns>The response from the ListElasticsearchVersions service method, as returned by Elasticsearch.</returns>
+        /// <exception cref="Amazon.Elasticsearch.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.InternalException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// (the failure is internal to the service) . Gives http status code of 500.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that does not exist. Gives http
+        /// status code of 400.
+        /// </exception>
+        /// <exception cref="Amazon.Elasticsearch.Model.ValidationException">
+        /// An exception for missing / invalid input fields. Gives http status code of 400.
+        /// </exception>
+        public ListElasticsearchVersionsResponse ListElasticsearchVersions(ListElasticsearchVersionsRequest request)
+        {
+            var marshaller = new ListElasticsearchVersionsRequestMarshaller();
+            var unmarshaller = ListElasticsearchVersionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListElasticsearchVersionsRequest,ListElasticsearchVersionsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListElasticsearchVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListElasticsearchVersions operation on AmazonElasticsearchClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListElasticsearchVersions
+        ///         operation.</returns>
+        public IAsyncResult BeginListElasticsearchVersions(ListElasticsearchVersionsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new ListElasticsearchVersionsRequestMarshaller();
+            var unmarshaller = ListElasticsearchVersionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListElasticsearchVersionsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListElasticsearchVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListElasticsearchVersions.</param>
+        /// 
+        /// <returns>Returns a  ListElasticsearchVersionsResult from Elasticsearch.</returns>
+        public  ListElasticsearchVersionsResponse EndListElasticsearchVersions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListElasticsearchVersionsResponse>(asyncResult);
         }
 
         #endregion

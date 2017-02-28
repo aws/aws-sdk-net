@@ -427,6 +427,37 @@ namespace Amazon.Elasticsearch
 
         #endregion
         
+        #region  DescribeElasticsearchInstanceTypeLimits
+
+        internal DescribeElasticsearchInstanceTypeLimitsResponse DescribeElasticsearchInstanceTypeLimits(DescribeElasticsearchInstanceTypeLimitsRequest request)
+        {
+            var marshaller = new DescribeElasticsearchInstanceTypeLimitsRequestMarshaller();
+            var unmarshaller = DescribeElasticsearchInstanceTypeLimitsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeElasticsearchInstanceTypeLimitsRequest,DescribeElasticsearchInstanceTypeLimitsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeElasticsearchInstanceTypeLimits operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeElasticsearchInstanceTypeLimits operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeElasticsearchInstanceTypeLimitsResponse> DescribeElasticsearchInstanceTypeLimitsAsync(DescribeElasticsearchInstanceTypeLimitsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeElasticsearchInstanceTypeLimitsRequestMarshaller();
+            var unmarshaller = DescribeElasticsearchInstanceTypeLimitsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeElasticsearchInstanceTypeLimitsRequest,DescribeElasticsearchInstanceTypeLimitsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListDomainNames
 
         internal ListDomainNamesResponse ListDomainNames(ListDomainNamesRequest request)
@@ -453,6 +484,68 @@ namespace Amazon.Elasticsearch
             var unmarshaller = ListDomainNamesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListDomainNamesRequest,ListDomainNamesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListElasticsearchInstanceTypes
+
+        internal ListElasticsearchInstanceTypesResponse ListElasticsearchInstanceTypes(ListElasticsearchInstanceTypesRequest request)
+        {
+            var marshaller = new ListElasticsearchInstanceTypesRequestMarshaller();
+            var unmarshaller = ListElasticsearchInstanceTypesResponseUnmarshaller.Instance;
+
+            return Invoke<ListElasticsearchInstanceTypesRequest,ListElasticsearchInstanceTypesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListElasticsearchInstanceTypes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListElasticsearchInstanceTypes operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListElasticsearchInstanceTypesResponse> ListElasticsearchInstanceTypesAsync(ListElasticsearchInstanceTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListElasticsearchInstanceTypesRequestMarshaller();
+            var unmarshaller = ListElasticsearchInstanceTypesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListElasticsearchInstanceTypesRequest,ListElasticsearchInstanceTypesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListElasticsearchVersions
+
+        internal ListElasticsearchVersionsResponse ListElasticsearchVersions(ListElasticsearchVersionsRequest request)
+        {
+            var marshaller = new ListElasticsearchVersionsRequestMarshaller();
+            var unmarshaller = ListElasticsearchVersionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListElasticsearchVersionsRequest,ListElasticsearchVersionsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListElasticsearchVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListElasticsearchVersions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListElasticsearchVersionsResponse> ListElasticsearchVersionsAsync(ListElasticsearchVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListElasticsearchVersionsRequestMarshaller();
+            var unmarshaller = ListElasticsearchVersionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListElasticsearchVersionsRequest,ListElasticsearchVersionsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
