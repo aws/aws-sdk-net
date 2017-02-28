@@ -93,6 +93,12 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                         unmarshalledObject.MissingContextValues.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("OrganizationsDecisionDetail", targetDepth))
+                    {
+                        var unmarshaller = OrganizationsDecisionDetailUnmarshaller.Instance;
+                        unmarshalledObject.OrganizationsDecisionDetail = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("ResourceSpecificResults/member", targetDepth))
                     {
                         var unmarshaller = ResourceSpecificResultUnmarshaller.Instance;

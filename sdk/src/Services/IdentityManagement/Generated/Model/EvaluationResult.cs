@@ -44,6 +44,7 @@ namespace Amazon.IdentityManagement.Model
         private string _evalResourceName;
         private List<Statement> _matchedStatements = new List<Statement>();
         private List<string> _missingContextValues = new List<string>();
+        private OrganizationsDecisionDetail _organizationsDecisionDetail;
         private List<ResourceSpecificResult> _resourceSpecificResults = new List<ResourceSpecificResult>();
 
         /// <summary>
@@ -166,6 +167,26 @@ namespace Amazon.IdentityManagement.Model
         internal bool IsSetMissingContextValues()
         {
             return this._missingContextValues != null && this._missingContextValues.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OrganizationsDecisionDetail. 
+        /// <para>
+        /// A structure that details how AWS Organizations and its service control policies affect
+        /// the results of the simulation. Only applies if the simulated user's account is part
+        /// of an organization.
+        /// </para>
+        /// </summary>
+        public OrganizationsDecisionDetail OrganizationsDecisionDetail
+        {
+            get { return this._organizationsDecisionDetail; }
+            set { this._organizationsDecisionDetail = value; }
+        }
+
+        // Check to see if OrganizationsDecisionDetail property is set
+        internal bool IsSetOrganizationsDecisionDetail()
+        {
+            return this._organizationsDecisionDetail != null;
         }
 
         /// <summary>
