@@ -38,11 +38,12 @@ namespace Amazon.DynamoDBv2.Model
         private OperationType _eventName;
         private string _eventSource;
         private string _eventVersion;
+        private Identity _userIdentity;
 
         /// <summary>
         /// Gets and sets the property AwsRegion. 
         /// <para>
-        /// The region in which the <i>GetRecords</i> request was received.
+        /// The region in which the <code>GetRecords</code> request was received.
         /// </para>
         /// </summary>
         public string AwsRegion
@@ -128,7 +129,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Gets and sets the property EventSource. 
         /// <para>
         /// The AWS service from which the stream record originated. For DynamoDB Streams, this
-        /// is <i>aws:dynamodb</i>.
+        /// is <code>aws:dynamodb</code>.
         /// </para>
         /// </summary>
         public string EventSource
@@ -147,12 +148,12 @@ namespace Amazon.DynamoDBv2.Model
         /// Gets and sets the property EventVersion. 
         /// <para>
         /// The version number of the stream record format. This number is updated whenever the
-        /// structure of <i>Record</i> is modified.
+        /// structure of <code>Record</code> is modified.
         /// </para>
         ///  
         /// <para>
-        /// Client applications must not assume that <i>eventVersion</i> will remain at a particular
-        /// value, as this number is subject to change at any time. In general, <i>eventVersion</i>
+        /// Client applications must not assume that <code>eventVersion</code> will remain at
+        /// a particular value, as this number is subject to change at any time. In general, <code>eventVersion</code>
         /// will only increase as the low-level DynamoDB Streams API evolves.
         /// </para>
         /// </summary>
@@ -166,6 +167,42 @@ namespace Amazon.DynamoDBv2.Model
         internal bool IsSetEventVersion()
         {
             return this._eventVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UserIdentity. 
+        /// <para>
+        /// Items that are deleted by the Time to Live process after expiration have the following
+        /// fields: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Records[].userIdentity.type
+        /// </para>
+        ///  
+        /// <para>
+        /// "Service"
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Records[].userIdentity.principalId
+        /// </para>
+        ///  
+        /// <para>
+        /// "dynamodb.amazonaws.com"
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public Identity UserIdentity
+        {
+            get { return this._userIdentity; }
+            set { this._userIdentity = value; }
+        }
+
+        // Check to see if UserIdentity property is set
+        internal bool IsSetUserIdentity()
+        {
+            return this._userIdentity != null;
         }
 
     }

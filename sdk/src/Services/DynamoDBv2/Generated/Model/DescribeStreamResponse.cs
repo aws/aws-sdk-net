@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
-    /// Represents the output of a <i>DescribeStream</i> operation.
+    /// Represents the output of a <code>DescribeStream</code> operation.
     /// </summary>
     public partial class DescribeStreamResponse : AmazonWebServiceResponse
     {

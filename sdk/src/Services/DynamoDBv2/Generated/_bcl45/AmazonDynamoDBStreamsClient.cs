@@ -42,29 +42,6 @@ namespace Amazon.DynamoDBv2
     /// stream records. To learn more about application development with Streams, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Streams.html">Capturing
     /// Table Activity with DynamoDB Streams</a> in the Amazon DynamoDB Developer Guide.
     /// </para>
-    ///  
-    /// <para>
-    /// The following are short descriptions of each low-level DynamoDB Streams action:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <i>DescribeStream</i> - Returns detailed information about a particular stream.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <i>GetRecords</i> - Retrieves the stream records from within a shard.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <i>GetShardIterator</i> - Returns information on how to retrieve the streams record
-    /// from a shard with a given shard ID.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <i>ListStreams</i> - Returns a list of all the streams associated with the current
-    /// AWS account and endpoint.
-    /// </para>
-    ///  </li> </ul>
     /// </summary>
     public partial class AmazonDynamoDBStreamsClient : AmazonServiceClient, IAmazonDynamoDBStreams
     {
@@ -271,7 +248,7 @@ namespace Amazon.DynamoDBv2
         /// 
         ///  <note> 
         /// <para>
-        /// You can call <i>DescribeStream</i> at a maximum rate of 10 times per second.
+        /// You can call <code>DescribeStream</code> at a maximum rate of 10 times per second.
         /// </para>
         ///  </note> 
         /// <para>
@@ -307,7 +284,7 @@ namespace Amazon.DynamoDBv2
         /// 
         ///  <note> 
         /// <para>
-        /// You can call <i>DescribeStream</i> at a maximum rate of 10 times per second.
+        /// You can call <code>DescribeStream</code> at a maximum rate of 10 times per second.
         /// </para>
         ///  </note> 
         /// <para>
@@ -344,7 +321,7 @@ namespace Amazon.DynamoDBv2
         /// 
         ///  <note> 
         /// <para>
-        /// You can call <i>DescribeStream</i> at a maximum rate of 10 times per second.
+        /// You can call <code>DescribeStream</code> at a maximum rate of 10 times per second.
         /// </para>
         ///  </note> 
         /// <para>
@@ -423,7 +400,7 @@ namespace Amazon.DynamoDBv2
         /// <returns>The response from the GetRecords service method, as returned by DynamoDBStreams.</returns>
         /// <exception cref="Amazon.DynamoDBv2.Model.ExpiredIteratorException">
         /// The shard iterator has expired and can no longer be used to retrieve stream records.
-        /// A shard iterator expires 15 minutes after it is retrieved using the <i>GetShardIterator</i>
+        /// A shard iterator expires 15 minutes after it is retrieved using the <code>GetShardIterator</code>
         /// action.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
@@ -455,7 +432,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  </li> <li>
         /// <para>
-        /// You obtain a shard iterator, but before you use the iterator in a <i>GetRecords</i>
+        /// You obtain a shard iterator, but before you use the iterator in a <code>GetRecords</code>
         /// request, a stream record in the shard exceeds the 24 hour period and is trimmed. This
         /// causes the iterator to access a record that no longer exists.
         /// </para>
@@ -494,7 +471,7 @@ namespace Amazon.DynamoDBv2
         /// <returns>The response from the GetRecords service method, as returned by DynamoDBStreams.</returns>
         /// <exception cref="Amazon.DynamoDBv2.Model.ExpiredIteratorException">
         /// The shard iterator has expired and can no longer be used to retrieve stream records.
-        /// A shard iterator expires 15 minutes after it is retrieved using the <i>GetShardIterator</i>
+        /// A shard iterator expires 15 minutes after it is retrieved using the <code>GetShardIterator</code>
         /// action.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
@@ -526,7 +503,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  </li> <li>
         /// <para>
-        /// You obtain a shard iterator, but before you use the iterator in a <i>GetRecords</i>
+        /// You obtain a shard iterator, but before you use the iterator in a <code>GetRecords</code>
         /// request, a stream record in the shard exceeds the 24 hour period and is trimmed. This
         /// causes the iterator to access a record that no longer exists.
         /// </para>
@@ -569,7 +546,7 @@ namespace Amazon.DynamoDBv2
         /// <returns>The response from the GetRecords service method, as returned by DynamoDBStreams.</returns>
         /// <exception cref="Amazon.DynamoDBv2.Model.ExpiredIteratorException">
         /// The shard iterator has expired and can no longer be used to retrieve stream records.
-        /// A shard iterator expires 15 minutes after it is retrieved using the <i>GetShardIterator</i>
+        /// A shard iterator expires 15 minutes after it is retrieved using the <code>GetShardIterator</code>
         /// action.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
@@ -601,7 +578,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  </li> <li>
         /// <para>
-        /// You obtain a shard iterator, but before you use the iterator in a <i>GetRecords</i>
+        /// You obtain a shard iterator, but before you use the iterator in a <code>GetRecords</code>
         /// request, a stream record in the shard exceeds the 24 hour period and is trimmed. This
         /// causes the iterator to access a record that no longer exists.
         /// </para>
@@ -675,7 +652,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  </li> <li>
         /// <para>
-        /// You obtain a shard iterator, but before you use the iterator in a <i>GetRecords</i>
+        /// You obtain a shard iterator, but before you use the iterator in a <code>GetRecords</code>
         /// request, a stream record in the shard exceeds the 24 hour period and is trimmed. This
         /// causes the iterator to access a record that no longer exists.
         /// </para>
@@ -716,12 +693,12 @@ namespace Amazon.DynamoDBv2
 
         /// <summary>
         /// Returns an array of stream ARNs associated with the current account and endpoint.
-        /// If the <code>TableName</code> parameter is present, then <i>ListStreams</i> will return
-        /// only the streams ARNs for that table.
+        /// If the <code>TableName</code> parameter is present, then <code>ListStreams</code>
+        /// will return only the streams ARNs for that table.
         /// 
         ///  <note> 
         /// <para>
-        /// You can call <i>ListStreams</i> at a maximum rate of 5 times per second.
+        /// You can call <code>ListStreams</code> at a maximum rate of 5 times per second.
         /// </para>
         ///  </note>
         /// </summary>
@@ -742,12 +719,12 @@ namespace Amazon.DynamoDBv2
 
         /// <summary>
         /// Returns an array of stream ARNs associated with the current account and endpoint.
-        /// If the <code>TableName</code> parameter is present, then <i>ListStreams</i> will return
-        /// only the streams ARNs for that table.
+        /// If the <code>TableName</code> parameter is present, then <code>ListStreams</code>
+        /// will return only the streams ARNs for that table.
         /// 
         ///  <note> 
         /// <para>
-        /// You can call <i>ListStreams</i> at a maximum rate of 5 times per second.
+        /// You can call <code>ListStreams</code> at a maximum rate of 5 times per second.
         /// </para>
         ///  </note>
         /// </summary>
@@ -772,12 +749,12 @@ namespace Amazon.DynamoDBv2
 
         /// <summary>
         /// Returns an array of stream ARNs associated with the current account and endpoint.
-        /// If the <code>TableName</code> parameter is present, then <i>ListStreams</i> will return
-        /// only the streams ARNs for that table.
+        /// If the <code>TableName</code> parameter is present, then <code>ListStreams</code>
+        /// will return only the streams ARNs for that table.
         /// 
         ///  <note> 
         /// <para>
-        /// You can call <i>ListStreams</i> at a maximum rate of 5 times per second.
+        /// You can call <code>ListStreams</code> at a maximum rate of 5 times per second.
         /// </para>
         ///  </note>
         /// </summary>

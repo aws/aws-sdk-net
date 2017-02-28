@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Record Object
+    /// Response Unmarshaller for Identity Object
     /// </summary>  
-    public class RecordUnmarshaller : IUnmarshaller<Record, XmlUnmarshallerContext>, IUnmarshaller<Record, JsonUnmarshallerContext>
+    public class IdentityUnmarshaller : IUnmarshaller<Identity, XmlUnmarshallerContext>, IUnmarshaller<Identity, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Record IUnmarshaller<Record, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        Identity IUnmarshaller<Identity, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,57 +53,27 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Record Unmarshall(JsonUnmarshallerContext context)
+        public Identity Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Record unmarshalledObject = new Record();
+            Identity unmarshalledObject = new Identity();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("awsRegion", targetDepth))
+                if (context.TestExpression("PrincipalId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AwsRegion = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PrincipalId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("dynamodb", targetDepth))
-                {
-                    var unmarshaller = StreamRecordUnmarshaller.Instance;
-                    unmarshalledObject.Dynamodb = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("eventID", targetDepth))
+                if (context.TestExpression("Type", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EventID = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("eventName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EventName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("eventSource", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EventSource = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("eventVersion", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EventVersion = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("userIdentity", targetDepth))
-                {
-                    var unmarshaller = IdentityUnmarshaller.Instance;
-                    unmarshalledObject.UserIdentity = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -112,12 +82,12 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
         }
 
 
-        private static RecordUnmarshaller _instance = new RecordUnmarshaller();        
+        private static IdentityUnmarshaller _instance = new IdentityUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RecordUnmarshaller Instance
+        public static IdentityUnmarshaller Instance
         {
             get
             {

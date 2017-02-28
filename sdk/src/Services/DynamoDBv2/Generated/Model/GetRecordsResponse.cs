@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
-    /// Represents the output of a <i>GetRecords</i> operation.
+    /// Represents the output of a <code>GetRecords</code> operation.
     /// </summary>
     public partial class GetRecordsResponse : AmazonWebServiceResponse
     {

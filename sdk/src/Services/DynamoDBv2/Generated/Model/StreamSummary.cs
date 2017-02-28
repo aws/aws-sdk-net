@@ -61,9 +61,9 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  
         /// <para>
-        /// Note that <i>LatestStreamLabel</i> is not a unique identifier for the stream, because
-        /// it is possible that a stream from another table might have the same timestamp. However,
-        /// the combination of the following three elements is guaranteed to be unique:
+        /// Note that <code>LatestStreamLabel</code> is not a unique identifier for the stream,
+        /// because it is possible that a stream from another table might have the same timestamp.
+        /// However, the combination of the following three elements is guaranteed to be unique:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -75,7 +75,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// the <i>StreamLabel</i> 
+        /// the <code>StreamLabel</code> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

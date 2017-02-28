@@ -35,7 +35,7 @@ namespace Amazon.DynamoDBv2.Model
     /// 
     ///  <note> 
     /// <para>
-    /// You can call <i>DescribeStream</i> at a maximum rate of 10 times per second.
+    /// You can call <code>DescribeStream</code> at a maximum rate of 10 times per second.
     /// </para>
     ///  </note> 
     /// <para>
