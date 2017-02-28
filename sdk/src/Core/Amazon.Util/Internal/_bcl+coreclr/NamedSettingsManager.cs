@@ -115,7 +115,8 @@ namespace Amazon.Util.Internal
         /// </summary>
         /// <param name="oldDisplayName"></param>
         /// <param name="newDisplayName"></param>
-        public void RenameObject(string oldDisplayName, string newDisplayName)
+        /// <param name="force">if true and destination object already exists overwrite it</param>
+        public void RenameObject(string oldDisplayName, string newDisplayName, bool force)
         {
             Dictionary<string, string> fromObject;
             string fromUniqueKey;
@@ -125,7 +126,16 @@ namespace Amazon.Util.Internal
             if (TryGetObject(oldDisplayName, out fromUniqueKey, out fromObject))
             {
                 if (TryGetObject(newDisplayName, out toUniqueKey, out toObject))
-                    throw new ArgumentException("Cannot rename object. The destination object " + newDisplayName + " already exists.");
+                {
+                    if (force)
+                    {
+                        settingsManager.UnregisterObject(toUniqueKey);
+                        // recursive call with force == false now that the destination object is gone
+                        RenameObject(oldDisplayName, newDisplayName, false);
+                    }
+                    else
+                        throw new ArgumentException("Cannot rename object. The destination object '" + newDisplayName + "' already exists.");
+                }
                 else
                 {
                     fromObject[SettingsConstants.DisplayNameField] = newDisplayName;
@@ -133,7 +143,7 @@ namespace Amazon.Util.Internal
                 }
             }
             else
-                throw new ArgumentException("Cannot rename object. The source object " + oldDisplayName + " does not exist.");
+                throw new ArgumentException("Cannot rename object. The source object '" + oldDisplayName + "' does not exist.");
 
         }
 
@@ -143,15 +153,26 @@ namespace Amazon.Util.Internal
         /// </summary>
         /// <param name="fromDisplayName"></param>
         /// <param name="toDisplayName"></param>
-        public void CopyObject(string fromDisplayName, string toDisplayName)
+        /// <param name="force">if true and destination object already exists overwrite it</param>
+        public void CopyObject(string fromDisplayName, string toDisplayName, bool force)
         {
             Dictionary<string, string> fromObject;
             Dictionary<string, string> toObject;
+            string toUniqueKey;
 
             if (TryGetObject(fromDisplayName, out fromObject))
             {
-                if (TryGetObject(toDisplayName, out toObject))
-                    throw new ArgumentException("Cannot copy object. The destination object " + toDisplayName + " already exists.");
+                if (TryGetObject(toDisplayName, out toUniqueKey, out toObject))
+                {
+                    if (force)
+                    {
+                        settingsManager.UnregisterObject(toUniqueKey);
+                        // recursive call with force == false now that the destination object is gone
+                        CopyObject(fromDisplayName, toDisplayName, force);
+                    }
+                    else
+                        throw new ArgumentException("Cannot copy object. The destination object '" + toDisplayName + "' already exists.");
+                }
                 else
                 {
                     // Register the copy.  A new unique key will be automatically assigned.
@@ -159,7 +180,7 @@ namespace Amazon.Util.Internal
                 }
             }
             else
-                throw new ArgumentException("Cannot copy object. The source object " + fromDisplayName + " does not exist.");
+                throw new ArgumentException("Cannot copy object. The source object '" + fromDisplayName + "' does not exist.");
         }
 
         /// <summary>

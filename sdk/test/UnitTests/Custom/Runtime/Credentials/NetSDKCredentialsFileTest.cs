@@ -424,7 +424,7 @@ namespace AWSSDK.UnitTests
                 AssertExtensions.ExpectException(() =>
                 {
                     tester.ProfileStore.RenameProfile("ProfileNameX", "ProfileName2");
-                }, typeof(ArgumentException), "Cannot rename object. The source object ProfileNameX does not exist.");
+                }, typeof(ArgumentException), "Cannot rename object. The source object 'ProfileNameX' does not exist.");
             }
         }
 
@@ -436,7 +436,23 @@ namespace AWSSDK.UnitTests
                 AssertExtensions.ExpectException(() =>
                 {
                     tester.ProfileStore.RenameProfile("ProfileName1", "ProfileName1");
-                }, typeof(ArgumentException), "Cannot rename object. The destination object ProfileName1 already exists.");
+                }, typeof(ArgumentException), "Cannot rename object. The destination object 'ProfileName1' already exists.");
+            }
+        }
+
+        [TestMethod]
+        public void RenameProfileTargetAlreadyExistsForce()
+        {
+            using (var tester = new NetSDKCredentialsFileTestFixture())
+            {
+                Create2Profiles(tester);
+                tester.ProfileStore.RenameProfile("profile1", "profile2", true);
+
+                CredentialProfile readProfile;
+                Assert.IsFalse(tester.ProfileStore.TryGetProfile("profile1", out readProfile));
+                Assert.IsTrue(tester.ProfileStore.TryGetProfile("profile2", out readProfile));
+                Assert.AreEqual(readProfile.Options.AccessKey, "access_key1");
+                Assert.AreEqual(readProfile.Options.SecretKey, "secret_key1");
             }
         }
 
@@ -486,7 +502,7 @@ namespace AWSSDK.UnitTests
                 AssertExtensions.ExpectException(() =>
                 {
                     tester.ProfileStore.CopyProfile("ProfileNameX", "ProfileName2");
-                }, typeof(ArgumentException), "Cannot copy object. The source object ProfileNameX does not exist.");
+                }, typeof(ArgumentException), "Cannot copy object. The source object 'ProfileNameX' does not exist.");
             }
         }
 
@@ -498,7 +514,26 @@ namespace AWSSDK.UnitTests
                 AssertExtensions.ExpectException(() =>
                 {
                     tester.ProfileStore.CopyProfile("ProfileName1", "ProfileName1");
-                }, typeof(ArgumentException), "Cannot copy object. The destination object ProfileName1 already exists.");
+                }, typeof(ArgumentException), "Cannot copy object. The destination object 'ProfileName1' already exists.");
+            }
+        }
+
+        [TestMethod]
+        public void CopyProfileTargetAlreadyExistsForce()
+        {
+            using (var tester = new NetSDKCredentialsFileTestFixture())
+            {
+                Create2Profiles(tester);
+                tester.ProfileStore.CopyProfile("profile1", "profile2", true);
+
+                CredentialProfile readProfile;
+                Assert.IsTrue(tester.ProfileStore.TryGetProfile("profile1", out readProfile));
+                Assert.AreEqual(readProfile.Options.AccessKey, "access_key1");
+                Assert.AreEqual(readProfile.Options.SecretKey, "secret_key1");
+
+                Assert.IsTrue(tester.ProfileStore.TryGetProfile("profile2", out readProfile));
+                Assert.AreEqual(readProfile.Options.AccessKey, "access_key1");
+                Assert.AreEqual(readProfile.Options.SecretKey, "secret_key1");
             }
         }
 
@@ -605,5 +640,26 @@ namespace AWSSDK.UnitTests
                 Assert.IsNull(samlProfile);
             }
         }
+
+        private static void Create2Profiles(NetSDKCredentialsFileTestFixture tester)
+        {
+            var options1 = new CredentialProfileOptions
+            {
+                AccessKey = "access_key1",
+                SecretKey = "secret_key1"
+            };
+            CredentialProfile profile1 = new CredentialProfile("profile1", options1);
+
+            var options2 = new CredentialProfileOptions
+            {
+                AccessKey = "access_key2",
+                SecretKey = "secret_key2"
+            };
+
+            CredentialProfile profile2 = new CredentialProfile("profile2", options2);
+            tester.ProfileStore.RegisterProfile(profile1);
+            tester.ProfileStore.RegisterProfile(profile2);
+        }
+
     }
 }

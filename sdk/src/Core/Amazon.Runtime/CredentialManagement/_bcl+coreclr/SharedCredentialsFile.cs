@@ -236,8 +236,19 @@ namespace Amazon.Runtime.CredentialManagement
         /// <param name="newProfileName">The new name for the profile.</param>
         public void RenameProfile(string oldProfileName, string newProfileName)
         {
+            RenameProfile(oldProfileName, newProfileName, false);
+        }
+
+        /// <summary>
+        /// Rename the profile with oldProfileName to newProfileName.
+        /// </summary>
+        /// <param name="oldProfileName">The profile to rename.</param>
+        /// <param name="newProfileName">The new name for the profile.</param>
+        /// <param name="force">If true and the destination profile exists it will be overwritten.</param>
+        public void RenameProfile(string oldProfileName, string newProfileName, bool force)
+        {
             Refresh();
-            credentialsFile.RenameSection(oldProfileName, newProfileName);
+            credentialsFile.RenameSection(oldProfileName, newProfileName, force);
             credentialsFile.Persist();
         }
 
@@ -248,10 +259,21 @@ namespace Amazon.Runtime.CredentialManagement
         /// <param name="toProfileName">The name of the new profile.</param>
         public void CopyProfile(string fromProfileName, string toProfileName)
         {
+            CopyProfile(fromProfileName, toProfileName, false);
+        }
+
+        /// <summary>
+        /// Make a copy of the profile with fromProfileName called toProfileName.
+        /// </summary>
+        /// <param name="fromProfileName">The name of the profile to copy from.</param>
+        /// <param name="toProfileName">The name of the new profile.</param>
+        /// <param name="force">If true and the destination profile exists it will be overwritten.</param>
+        public void CopyProfile(string fromProfileName, string toProfileName, bool force)
+        {
             Refresh();
             // Do the copy but make sure to replace the toolkitArtifactGuid with a new one, if it's there.
             credentialsFile.CopySection(fromProfileName, toProfileName,
-                new Dictionary<string, string> { {ToolkitArtifactGuidField, Guid.NewGuid().ToString()} });
+                new Dictionary<string, string> { {ToolkitArtifactGuidField, Guid.NewGuid().ToString()} }, force);
             credentialsFile.Persist();
         }
 

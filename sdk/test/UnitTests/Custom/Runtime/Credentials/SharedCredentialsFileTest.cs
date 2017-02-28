@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -699,6 +699,21 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
+        public void RenameProfileTargetAlreadyExistsForce()
+        {
+            using (var tester = new SharedCredentialsFileTestFixture())
+            {
+                Create2Profiles(tester);
+                tester.CredentialsFile.RenameProfile("profile1", "profile2", true);
+
+                CredentialProfile readProfile;
+                Assert.IsFalse(tester.CredentialsFile.TryGetProfile("profile1", out readProfile));
+                Assert.IsTrue(tester.CredentialsFile.TryGetProfile("profile2", out readProfile));
+                Assert.AreEqual(readProfile.Options.AccessKey, "access_key1");
+                Assert.AreEqual(readProfile.Options.SecretKey, "secret_key1");
+            }
+        }
+        [TestMethod]
         public void CopyProfile()
         {
             CopyProfile(false, false);
@@ -810,5 +825,42 @@ namespace AWSSDK.UnitTests
             }
         }
 
+        [TestMethod]
+        public void CopyProfileTargetAlreadyExistsForce()
+        {
+            using (var tester = new SharedCredentialsFileTestFixture())
+            {
+                Create2Profiles(tester);
+                tester.CredentialsFile.CopyProfile("profile1", "profile2", true);
+
+                CredentialProfile readProfile;
+                Assert.IsTrue(tester.CredentialsFile.TryGetProfile("profile1", out readProfile));
+                Assert.AreEqual(readProfile.Options.AccessKey, "access_key1");
+                Assert.AreEqual(readProfile.Options.SecretKey, "secret_key1");
+
+                Assert.IsTrue(tester.CredentialsFile.TryGetProfile("profile2", out readProfile));
+                Assert.AreEqual(readProfile.Options.AccessKey, "access_key1");
+                Assert.AreEqual(readProfile.Options.SecretKey, "secret_key1");
+            }
+        }
+        private static void Create2Profiles(SharedCredentialsFileTestFixture tester)
+        {
+            var options1 = new CredentialProfileOptions
+            {
+                AccessKey = "access_key1",
+                SecretKey = "secret_key1"
+            };
+            CredentialProfile profile1 = new CredentialProfile("profile1", options1);
+
+            var options2 = new CredentialProfileOptions
+            {
+                AccessKey = "access_key2",
+                SecretKey = "secret_key2"
+            };
+
+            CredentialProfile profile2 = new CredentialProfile("profile2", options2);
+            tester.CredentialsFile.RegisterProfile(profile1);
+            tester.CredentialsFile.RegisterProfile(profile2);
+        }
     }
 }

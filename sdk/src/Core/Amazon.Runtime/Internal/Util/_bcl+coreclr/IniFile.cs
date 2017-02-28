@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -84,20 +84,39 @@ namespace Amazon.Runtime.Internal.Util
         /// <param name="newSectionName"></param>
         public void RenameSection(string oldSectionName, string newSectionName)
         {
+            RenameSection(oldSectionName, newSectionName, false);
+        }
+
+        /// <summary>
+        /// Rename the section fromSectionName to toSectionName
+        /// </summary>
+        /// <param name="oldSectionName"></param>
+        /// <param name="newSectionName"></param>
+        /// <param name="force">if true and destination section already exists overwrite it</param>
+        public void RenameSection(string oldSectionName, string newSectionName, bool force)
+        {
             int sectionLineNumber = 0;
             if (TrySeekSection(oldSectionName, ref sectionLineNumber))
             {
                 int lineNumber = 0;
                 if (TrySeekSection(newSectionName, ref lineNumber))
-                    throw new ArgumentException("Cannot rename section. The destination section " + newSectionName +
-                        " already exists." + GetLineMessage(lineNumber));
+                {
+                    if (force)
+                    {
+                        DeleteSection(newSectionName);
+                        // recursive call with force == false now that the destination section is gone
+                        RenameSection(oldSectionName, newSectionName, false);
+                    }
+                    else
+                        throw new ArgumentException("Cannot rename section. The destination section " + newSectionName +
+                            " already exists." + GetLineMessage(lineNumber));
+                }
                 else
                     Lines[sectionLineNumber] = sectionNamePrefix + newSectionName + sectionNameSuffix;
             }
             else
                 throw new ArgumentException("Cannot rename section. The source section " + oldSectionName + " does not exist.");
         }
-
         /// <summary>
         /// Copy the section fromSectionName to toSectionName
         /// </summary>
@@ -107,13 +126,35 @@ namespace Amazon.Runtime.Internal.Util
         /// be replaced by the value from this dictionary.</param>
         public void CopySection(string fromSectionName, string toSectionName, Dictionary<string, string> replaceProperties)
         {
+            CopySection(fromSectionName, toSectionName, replaceProperties, false);
+        }
+
+        /// <summary>
+        /// Copy the section fromSectionName to toSectionName
+        /// </summary>
+        /// <param name="fromSectionName"></param>
+        /// <param name="toSectionName"></param>
+        /// <param name="replaceProperties">Any properties in the original section that are also in this dictionary will
+        /// be replaced by the value from this dictionary.</param>
+        /// <param name="force">if true and destination section already exists overwrite it</param>
+        public void CopySection(string fromSectionName, string toSectionName, Dictionary<string, string> replaceProperties, bool force)
+        {
             int currentLineNumber = 0;
             if (TrySeekSection(fromSectionName, ref currentLineNumber))
             {
                 int lineNumber = 0;
                 if (TrySeekSection(toSectionName, ref lineNumber))
-                    throw new ArgumentException("Cannot copy section. The destination section " + toSectionName +
-                        " already exists." + GetLineMessage(lineNumber));
+                {
+                    if (force)
+                    {
+                        DeleteSection(toSectionName);
+                        // recursive call with force == false now that the destination section is gone
+                        CopySection(fromSectionName, toSectionName, replaceProperties, false);
+                    }
+                    else
+                        throw new ArgumentException("Cannot copy section. The destination section " + toSectionName +
+                            " already exists." + GetLineMessage(lineNumber));
+                }
                 else
                 {
                     // keep the first line number
