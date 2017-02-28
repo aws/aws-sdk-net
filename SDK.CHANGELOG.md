@@ -1,3 +1,17 @@
+### 3.3.57.0 (2017-02-28 04:05 UTC)
+* DynamoDBv2 (3.3.3.0)
+	* Time to Live (TTL) is a feature that allows you to define when items in a table expire and can be purged from the database, so that you don't have to track expired data and delete it manually. With TTL enabled on a DynamoDB table, you can set a timestamp for deletion on a per-item basis, allowing you to limit storage usage to only those records that are relevant.
+* Elasticsearch (3.3.1.0)
+	* Adding API's to expose limits imposed by Elasticsearch.
+* IdentityManagement (3.3.2.0)
+	* This release adds support for AWS Organizations service control policies (SCPs) to SimulatePrincipalPolicy operation. If there are SCPs associated with the simulated user's account, their effect on the result is captured in the OrganizationDecisionDetail element in the EvaluationResult
+* MTurk (3.3.0.0)
+	* Amazon Mechanical Turk is a web service that provides an on-demand, scalable, human workforce to complete jobs that humans can do better than computers, for example, recognizing objects in photos.
+* Organizations (3.3.0.0)
+	* AWS Organizations is a web service that enables you to consolidate your multiple AWS accounts into an organization and centrally manage your accounts and their resources.
+* WAF (3.3.1.9)
+	* Doc update for WAF
+
 ### 3.3.56.1 (2017-02-24 02:15 UTC)
 * S3 (3.3.5.7)
 	* Updated to use new Core, version 3.3.8.2
