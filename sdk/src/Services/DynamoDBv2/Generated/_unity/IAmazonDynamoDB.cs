@@ -774,6 +774,23 @@ namespace Amazon.DynamoDBv2
 
         #endregion
         
+        #region  DescribeTimeToLive
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeTimeToLive operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTimeToLive operation on AmazonDynamoDBClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeTimeToLive">REST API Reference for DescribeTimeToLive Operation</seealso>
+        void DescribeTimeToLiveAsync(DescribeTimeToLiveRequest request, AmazonServiceCallback<DescribeTimeToLiveRequest, DescribeTimeToLiveResponse> callback, AsyncOptions options = null);
+
+
+        #endregion
+        
         #region  GetItem
 
 
@@ -1415,7 +1432,7 @@ namespace Amazon.DynamoDBv2
         /// <param name="tableName">The name of the table containing the item to update.</param>
         /// <param name="key">The primary key of the item to be updated. Each element consists of an attribute name and a value for that attribute. For the primary key, you must provide all of the attributes. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide values for both the partition key and the sort key.</param>
         /// <param name="attributeUpdates">This is a legacy parameter. Use <code>UpdateExpression</code> instead. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributeUpdates.html">AttributeUpdates</a> in the <i>Amazon DynamoDB Developer Guide</i>.</param>
-        /// <param name="returnValues">Use <code>ReturnValues</code> if you want to get the item attributes as they appeared either before or after they were updated. For <code>UpdateItem</code>, the valid values are: <ul> <li>  <code>NONE</code> - If <code>ReturnValues</code> is not specified, or if its value is <code>NONE</code>, then nothing is returned. (This setting is the default for <code>ReturnValues</code>.) </li> <li>  <code>ALL_OLD</code> - If <code>UpdateItem</code> overwrote an attribute name-value pair, then the content of the old item is returned. </li> <li>  <code>UPDATED_OLD</code> - The old versions of only the updated attributes are returned. </li> <li>  <code>ALL_NEW</code> - All of the attributes of the new version of the item are returned. </li> <li>  <code>UPDATED_NEW</code> - The new versions of only the updated attributes are returned. </li> </ul> There is no additional cost associated with requesting a return value aside from the small network and processing overhead of receiving a larger response. No Read Capacity Units are consumed. Values returned are strongly consistent</param>
+        /// <param name="returnValues">Use <code>ReturnValues</code> if you want to get the item attributes as they appeared either before or after they were updated. For <code>UpdateItem</code>, the valid values are: <ul> <li>  <code>NONE</code> - If <code>ReturnValues</code> is not specified, or if its value is <code>NONE</code>, then nothing is returned. (This setting is the default for <code>ReturnValues</code>.) </li> <li>  <code>ALL_OLD</code> - Returns all of the attributes of the item, as they appeared before the UpdateItem operation. </li> <li>  <code>UPDATED_OLD</code> - Returns only the updated attributes, as they appeared before the UpdateItem operation. </li> <li>  <code>ALL_NEW</code> - Returns all of the attributes of the item, as they appear after the UpdateItem operation. </li> <li>  <code>UPDATED_NEW</code> - Returns only the updated attributes, as they appear after the UpdateItem operation. </li> </ul> There is no additional cost associated with requesting a return value aside from the small network and processing overhead of receiving a larger response. No Read Capacity Units are consumed. Values returned are strongly consistent</param>
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">
         ///     A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
@@ -1547,6 +1564,23 @@ namespace Amazon.DynamoDBv2
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateTable">REST API Reference for UpdateTable Operation</seealso>
         void UpdateTableAsync(UpdateTableRequest request, AmazonServiceCallback<UpdateTableRequest, UpdateTableResponse> callback, AsyncOptions options = null);
+
+
+        #endregion
+        
+        #region  UpdateTimeToLive
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateTimeToLive operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTimeToLive operation on AmazonDynamoDBClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateTimeToLive">REST API Reference for UpdateTimeToLive Operation</seealso>
+        void UpdateTimeToLiveAsync(UpdateTimeToLiveRequest request, AmazonServiceCallback<UpdateTimeToLiveRequest, UpdateTimeToLiveResponse> callback, AsyncOptions options = null);
 
 
         #endregion

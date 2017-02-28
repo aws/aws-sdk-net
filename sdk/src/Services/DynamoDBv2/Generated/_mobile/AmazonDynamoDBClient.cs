@@ -1122,6 +1122,38 @@ namespace Amazon.DynamoDBv2
 
         #endregion
         
+        #region  DescribeTimeToLive
+
+        internal DescribeTimeToLiveResponse DescribeTimeToLive(DescribeTimeToLiveRequest request)
+        {
+            var marshaller = new DescribeTimeToLiveRequestMarshaller();
+            var unmarshaller = DescribeTimeToLiveResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeTimeToLiveRequest,DescribeTimeToLiveResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeTimeToLive operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTimeToLive operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeTimeToLive">REST API Reference for DescribeTimeToLive Operation</seealso>
+        public Task<DescribeTimeToLiveResponse> DescribeTimeToLiveAsync(DescribeTimeToLiveRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeTimeToLiveRequestMarshaller();
+            var unmarshaller = DescribeTimeToLiveResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeTimeToLiveRequest,DescribeTimeToLiveResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetItem
 
         internal GetItemResponse GetItem(GetItemRequest request)
@@ -1972,7 +2004,7 @@ namespace Amazon.DynamoDBv2
         /// <param name="tableName">The name of the table containing the item to update.</param>
         /// <param name="key">The primary key of the item to be updated. Each element consists of an attribute name and a value for that attribute. For the primary key, you must provide all of the attributes. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide values for both the partition key and the sort key.</param>
         /// <param name="attributeUpdates">This is a legacy parameter. Use <code>UpdateExpression</code> instead. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributeUpdates.html">AttributeUpdates</a> in the <i>Amazon DynamoDB Developer Guide</i>.</param>
-        /// <param name="returnValues">Use <code>ReturnValues</code> if you want to get the item attributes as they appeared either before or after they were updated. For <code>UpdateItem</code>, the valid values are: <ul> <li>  <code>NONE</code> - If <code>ReturnValues</code> is not specified, or if its value is <code>NONE</code>, then nothing is returned. (This setting is the default for <code>ReturnValues</code>.) </li> <li>  <code>ALL_OLD</code> - If <code>UpdateItem</code> overwrote an attribute name-value pair, then the content of the old item is returned. </li> <li>  <code>UPDATED_OLD</code> - The old versions of only the updated attributes are returned. </li> <li>  <code>ALL_NEW</code> - All of the attributes of the new version of the item are returned. </li> <li>  <code>UPDATED_NEW</code> - The new versions of only the updated attributes are returned. </li> </ul> There is no additional cost associated with requesting a return value aside from the small network and processing overhead of receiving a larger response. No Read Capacity Units are consumed. Values returned are strongly consistent</param>
+        /// <param name="returnValues">Use <code>ReturnValues</code> if you want to get the item attributes as they appeared either before or after they were updated. For <code>UpdateItem</code>, the valid values are: <ul> <li>  <code>NONE</code> - If <code>ReturnValues</code> is not specified, or if its value is <code>NONE</code>, then nothing is returned. (This setting is the default for <code>ReturnValues</code>.) </li> <li>  <code>ALL_OLD</code> - Returns all of the attributes of the item, as they appeared before the UpdateItem operation. </li> <li>  <code>UPDATED_OLD</code> - Returns only the updated attributes, as they appeared before the UpdateItem operation. </li> <li>  <code>ALL_NEW</code> - Returns all of the attributes of the item, as they appear after the UpdateItem operation. </li> <li>  <code>UPDATED_NEW</code> - Returns only the updated attributes, as they appear after the UpdateItem operation. </li> </ul> There is no additional cost associated with requesting a return value aside from the small network and processing overhead of receiving a larger response. No Read Capacity Units are consumed. Values returned are strongly consistent</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -2137,6 +2169,38 @@ namespace Amazon.DynamoDBv2
             var unmarshaller = UpdateTableResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateTableRequest,UpdateTableResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateTimeToLive
+
+        internal UpdateTimeToLiveResponse UpdateTimeToLive(UpdateTimeToLiveRequest request)
+        {
+            var marshaller = new UpdateTimeToLiveRequestMarshaller();
+            var unmarshaller = UpdateTimeToLiveResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateTimeToLiveRequest,UpdateTimeToLiveResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateTimeToLive operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTimeToLive operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateTimeToLive">REST API Reference for UpdateTimeToLive Operation</seealso>
+        public Task<UpdateTimeToLiveResponse> UpdateTimeToLiveAsync(UpdateTimeToLiveRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateTimeToLiveRequestMarshaller();
+            var unmarshaller = UpdateTimeToLiveResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateTimeToLiveRequest,UpdateTimeToLiveResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

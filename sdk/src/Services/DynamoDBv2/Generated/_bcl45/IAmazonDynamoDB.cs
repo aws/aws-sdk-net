@@ -1835,6 +1835,40 @@ namespace Amazon.DynamoDBv2
 
         #endregion
         
+        #region  DescribeTimeToLive
+
+
+        /// <summary>
+        /// Gives a description of the Time to Live (TTL) status on the specified table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTimeToLive service method.</param>
+        /// 
+        /// <returns>The response from the DescribeTimeToLive service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
+        /// The operation tried to access a nonexistent table or index. The resource might not
+        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeTimeToLive">REST API Reference for DescribeTimeToLive Operation</seealso>
+        DescribeTimeToLiveResponse DescribeTimeToLive(DescribeTimeToLiveRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeTimeToLive operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTimeToLive operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeTimeToLive">REST API Reference for DescribeTimeToLive Operation</seealso>
+        Task<DescribeTimeToLiveResponse> DescribeTimeToLiveAsync(DescribeTimeToLiveRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetItem
 
 
@@ -3204,7 +3238,7 @@ namespace Amazon.DynamoDBv2
         /// <param name="tableName">The name of the table containing the item to update.</param>
         /// <param name="key">The primary key of the item to be updated. Each element consists of an attribute name and a value for that attribute. For the primary key, you must provide all of the attributes. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide values for both the partition key and the sort key.</param>
         /// <param name="attributeUpdates">This is a legacy parameter. Use <code>UpdateExpression</code> instead. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributeUpdates.html">AttributeUpdates</a> in the <i>Amazon DynamoDB Developer Guide</i>.</param>
-        /// <param name="returnValues">Use <code>ReturnValues</code> if you want to get the item attributes as they appeared either before or after they were updated. For <code>UpdateItem</code>, the valid values are: <ul> <li>  <code>NONE</code> - If <code>ReturnValues</code> is not specified, or if its value is <code>NONE</code>, then nothing is returned. (This setting is the default for <code>ReturnValues</code>.) </li> <li>  <code>ALL_OLD</code> - If <code>UpdateItem</code> overwrote an attribute name-value pair, then the content of the old item is returned. </li> <li>  <code>UPDATED_OLD</code> - The old versions of only the updated attributes are returned. </li> <li>  <code>ALL_NEW</code> - All of the attributes of the new version of the item are returned. </li> <li>  <code>UPDATED_NEW</code> - The new versions of only the updated attributes are returned. </li> </ul> There is no additional cost associated with requesting a return value aside from the small network and processing overhead of receiving a larger response. No Read Capacity Units are consumed. Values returned are strongly consistent</param>
+        /// <param name="returnValues">Use <code>ReturnValues</code> if you want to get the item attributes as they appeared either before or after they were updated. For <code>UpdateItem</code>, the valid values are: <ul> <li>  <code>NONE</code> - If <code>ReturnValues</code> is not specified, or if its value is <code>NONE</code>, then nothing is returned. (This setting is the default for <code>ReturnValues</code>.) </li> <li>  <code>ALL_OLD</code> - Returns all of the attributes of the item, as they appeared before the UpdateItem operation. </li> <li>  <code>UPDATED_OLD</code> - Returns only the updated attributes, as they appeared before the UpdateItem operation. </li> <li>  <code>ALL_NEW</code> - Returns all of the attributes of the item, as they appear after the UpdateItem operation. </li> <li>  <code>UPDATED_NEW</code> - Returns only the updated attributes, as they appear after the UpdateItem operation. </li> </ul> There is no additional cost associated with requesting a return value aside from the small network and processing overhead of receiving a larger response. No Read Capacity Units are consumed. Values returned are strongly consistent</param>
         /// 
         /// <returns>The response from the UpdateItem service method, as returned by DynamoDB.</returns>
         /// <exception cref="Amazon.DynamoDBv2.Model.ConditionalCheckFailedException">
@@ -3333,7 +3367,7 @@ namespace Amazon.DynamoDBv2
         /// <param name="tableName">The name of the table containing the item to update.</param>
         /// <param name="key">The primary key of the item to be updated. Each element consists of an attribute name and a value for that attribute. For the primary key, you must provide all of the attributes. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide values for both the partition key and the sort key.</param>
         /// <param name="attributeUpdates">This is a legacy parameter. Use <code>UpdateExpression</code> instead. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributeUpdates.html">AttributeUpdates</a> in the <i>Amazon DynamoDB Developer Guide</i>.</param>
-        /// <param name="returnValues">Use <code>ReturnValues</code> if you want to get the item attributes as they appeared either before or after they were updated. For <code>UpdateItem</code>, the valid values are: <ul> <li>  <code>NONE</code> - If <code>ReturnValues</code> is not specified, or if its value is <code>NONE</code>, then nothing is returned. (This setting is the default for <code>ReturnValues</code>.) </li> <li>  <code>ALL_OLD</code> - If <code>UpdateItem</code> overwrote an attribute name-value pair, then the content of the old item is returned. </li> <li>  <code>UPDATED_OLD</code> - The old versions of only the updated attributes are returned. </li> <li>  <code>ALL_NEW</code> - All of the attributes of the new version of the item are returned. </li> <li>  <code>UPDATED_NEW</code> - The new versions of only the updated attributes are returned. </li> </ul> There is no additional cost associated with requesting a return value aside from the small network and processing overhead of receiving a larger response. No Read Capacity Units are consumed. Values returned are strongly consistent</param>
+        /// <param name="returnValues">Use <code>ReturnValues</code> if you want to get the item attributes as they appeared either before or after they were updated. For <code>UpdateItem</code>, the valid values are: <ul> <li>  <code>NONE</code> - If <code>ReturnValues</code> is not specified, or if its value is <code>NONE</code>, then nothing is returned. (This setting is the default for <code>ReturnValues</code>.) </li> <li>  <code>ALL_OLD</code> - Returns all of the attributes of the item, as they appeared before the UpdateItem operation. </li> <li>  <code>UPDATED_OLD</code> - Returns only the updated attributes, as they appeared before the UpdateItem operation. </li> <li>  <code>ALL_NEW</code> - Returns all of the attributes of the item, as they appear after the UpdateItem operation. </li> <li>  <code>UPDATED_NEW</code> - Returns only the updated attributes, as they appear after the UpdateItem operation. </li> </ul> There is no additional cost associated with requesting a return value aside from the small network and processing overhead of receiving a larger response. No Read Capacity Units are consumed. Values returned are strongly consistent</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -3598,6 +3632,98 @@ namespace Amazon.DynamoDBv2
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateTable">REST API Reference for UpdateTable Operation</seealso>
         Task<UpdateTableResponse> UpdateTableAsync(UpdateTableRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateTimeToLive
+
+
+        /// <summary>
+        /// Specify the lifetime of individual table items. The database automatically removes
+        /// the item at the expiration of the item. The UpdateTimeToLive method will enable or
+        /// disable TTL for the specified table. A successful <code>UpdateTimeToLive</code> call
+        /// returns the current <code>TimeToLiveSpecification</code>; it may take up to one hour
+        /// for the change to fully process. 
+        /// 
+        ///  
+        /// <para>
+        /// TTL compares the current time in epoch time format to the time stored in the TTL attribute
+        /// of an item. If the epoch time value stored in the attribute is less than the current
+        /// time, the item is marked as expired and subsequently deleted.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  The epoch time format is the number of seconds elapsed since 12:00:00 AM January
+        /// 1st, 1970 UTC. 
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// DynamoDB deletes expired items on a best-effort basis to ensure availability of throughput
+        /// for other data operations. 
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// DynamoDB typically deletes expired items within two days of expiration. The exact
+        /// duration within which an item gets deleted after expiration is specific to the nature
+        /// of the workload. Items that have expired and not been deleted will still show up in
+        /// reads, queries, and scans.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// As items are deleted, they are removed from any Local Secondary Index and Global Secondary
+        /// Index immediately in the same eventually consistent way as a standard delete operation.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/TTL.html">Time
+        /// To Live</a> in the Amazon DynamoDB Developer Guide. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTimeToLive service method.</param>
+        /// 
+        /// <returns>The response from the UpdateTimeToLive service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.LimitExceededException">
+        /// The number of concurrent table requests (cumulative number of tables in the <code>CREATING</code>,
+        /// <code>DELETING</code> or <code>UPDATING</code> state) exceeds the maximum allowed
+        /// of 10.
+        /// 
+        ///  
+        /// <para>
+        /// Also, for tables with secondary indexes, only one of those tables can be in the <code>CREATING</code>
+        /// state at any point in time. Do not attempt to create more than one such table simultaneously.
+        /// </para>
+        ///  
+        /// <para>
+        /// The total limit of tables in the <code>ACTIVE</code> state is 250.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
+        /// The operation conflicts with the resource's availability. For example, you attempted
+        /// to recreate an existing table, or tried to delete a table currently in the <code>CREATING</code>
+        /// state.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
+        /// The operation tried to access a nonexistent table or index. The resource might not
+        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateTimeToLive">REST API Reference for UpdateTimeToLive Operation</seealso>
+        UpdateTimeToLiveResponse UpdateTimeToLive(UpdateTimeToLiveRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateTimeToLive operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTimeToLive operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateTimeToLive">REST API Reference for UpdateTimeToLive Operation</seealso>
+        Task<UpdateTimeToLiveResponse> UpdateTimeToLiveAsync(UpdateTimeToLiveRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

@@ -144,8 +144,8 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Comparison operators: <code> = | &lt;&gt; | &lt; | &gt; | &lt;= | &gt;= | BETWEEN
-        /// | IN</code> 
+        /// Comparison operators: <code>= | &lt;&gt; | &lt; | &gt; | &lt;= | &gt;= | BETWEEN |
+        /// IN </code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
