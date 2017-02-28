@@ -86,6 +86,7 @@
       <Directory>$(ProjectDir)/src/Services/lightsail/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/machinelearning/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/mobileanalytics/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/mturk/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/opsworks/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/opsworkscm/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/organizations/bin/Release/net45/</Directory>
@@ -180,6 +181,7 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Lightsail.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.MachineLearning.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.MobileAnalytics.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.MTurk.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.OpsWorks.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.OpsWorksCM.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Organizations.dll" Analyze="True" AnalyzeAllChildren="True" />

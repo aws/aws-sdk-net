@@ -257,6 +257,9 @@
     <Reference Include="AWSSDK.MobileAnalytics">
       <HintPath>..\..\..\Deployment\assemblies\net45\AWSSDK.MobileAnalytics.dll</HintPath>
     </Reference>
+    <Reference Include="AWSSDK.MTurk">
+      <HintPath>..\..\..\Deployment\assemblies\net45\AWSSDK.MTurk.dll</HintPath>
+    </Reference>
     <Reference Include="AWSSDK.OpsWorks">
       <HintPath>..\..\..\Deployment\assemblies\net45\AWSSDK.OpsWorks.dll</HintPath>
     </Reference>
@@ -598,6 +601,10 @@
     <ProjectReference Include="..\..\src\Services\MobileAnalytics\AWSSDK.MobileAnalytics.Net45.csproj">
       <Project>{0701A0D6-DF61-47D7-B89D-73FB88A5FAB7}</Project>
       <Name>AWSSDK.MobileAnalytics.Net45</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\MTurk\AWSSDK.MTurk.Net45.csproj">
+      <Project>{670BC52D-8CF3-4CB8-9421-23143AF104D3}</Project>
+      <Name>AWSSDK.MTurk.Net45</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\src\Services\OpsWorks\AWSSDK.OpsWorks.Net45.csproj">
       <Project>{9123E499-47D5-4B7C-BAB4-155A96CA5E9C}</Project>

@@ -1,3 +1,4 @@
+
 {
     "version" : "1.0.0-*",
     "description" : "",
@@ -107,7 +108,8 @@
         "CostAndUsageReport"              : "1.0.0-*",
         "CloudDirectory"                  : "1.0.0-*",
         "Organizations"                   : "1.0.0-*",
-        "Lex"                             : "1.0.0-*"
+        "Lex"                             : "1.0.0-*",
+        "MTurk"                           : "1.0.0-*"
     },
     "testRunner"   : "xunit",
     "frameworks"   : {
