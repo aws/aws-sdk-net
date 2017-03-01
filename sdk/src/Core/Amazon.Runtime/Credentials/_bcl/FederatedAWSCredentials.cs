@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -178,12 +178,13 @@ namespace Amazon.Runtime
         {
             CredentialsRefreshState state;
 
-            var configuredRegion = AWSConfigs.AWSRegion;
-            var region = string.IsNullOrEmpty(configuredRegion) ?
-                DefaultSTSClientRegion : RegionEndpoint.GetBySystemName(configuredRegion);
+            var region = Options.STSRegion;
+            if (region == null && !string.IsNullOrEmpty(AWSConfigs.AWSRegion))
+                region = RegionEndpoint.GetBySystemName(AWSConfigs.AWSRegion);
+            else
+                region = DefaultSTSClientRegion;
 
             ICoreAmazonSTS coreSTSClient = null;
-
             try
             {
                 var stsConfig = ServiceClientHelpers.CreateServiceConfig(

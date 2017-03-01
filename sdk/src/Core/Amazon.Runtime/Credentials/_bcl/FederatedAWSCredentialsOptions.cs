@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ namespace Amazon.Runtime
         private object customCallbackState;
         private string userIdentity;
         private string profileName;
+        private RegionEndpoint stsRegion;
         private WebProxy proxySettings;
 
         /// <summary>
@@ -114,6 +115,28 @@ namespace Amazon.Runtime
                 lock (syncLock)
                 {
                     proxySettings = value;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Set this property when a region-specific STS endpoint must be used (eg cn-north-1).
+        /// If left empty/null, the global sts.amazonaws.com endpoint will be used when credentials are obtained.
+        /// </summary>
+        public RegionEndpoint STSRegion
+        {
+            get
+            {
+                lock (syncLock)
+                {
+                    return stsRegion;
+                }
+            }
+            set
+            {
+                lock (syncLock)
+                {
+                    stsRegion = value;
                 }
             }
         }

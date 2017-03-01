@@ -53,7 +53,7 @@ namespace Amazon.Runtime.CredentialManagement
         /// <returns>AWSCredentials for this profile.</returns>
         public static AWSCredentials GetAWSCredentials(CredentialProfile profile, ICredentialProfileSource profileSource)
         {
-            return GetAWSCredentials(profile.Name, profileSource, profile.Options, false);
+            return GetAWSCredentials(profile.Name, profileSource, profile.Options, profile.Region, false);
         }
 
         /// <summary>
@@ -67,7 +67,7 @@ namespace Amazon.Runtime.CredentialManagement
         /// <returns>AWSCredentials for the options given.</returns>
         public static AWSCredentials GetAWSCredentials(CredentialProfileOptions options, ICredentialProfileSource profileSource)
         {
-            return GetAWSCredentials(null, profileSource, options, false);
+            return GetAWSCredentials(null, profileSource, options, null, false);
         }
 
         /// <summary>
@@ -83,7 +83,7 @@ namespace Amazon.Runtime.CredentialManagement
         /// <returns>AWSCredentials for this profile.</returns>
         public static AWSCredentials GetAWSCredentials(CredentialProfile profile, ICredentialProfileSource profileSource, bool nonCallbackOnly)
         {
-            return GetAWSCredentials(profile.Name, profileSource, profile.Options, nonCallbackOnly);
+            return GetAWSCredentials(profile.Name, profileSource, profile.Options, profile.Region, nonCallbackOnly);
         }
 
         /// <summary>
@@ -99,7 +99,7 @@ namespace Amazon.Runtime.CredentialManagement
         /// <returns>AWSCredentials for the options given.</returns>
         public static AWSCredentials GetAWSCredentials(CredentialProfileOptions options, ICredentialProfileSource profileSource, bool nonCallbackOnly)
         {
-            return GetAWSCredentials(null, profileSource, options, nonCallbackOnly);
+            return GetAWSCredentials(null, profileSource, options, null, nonCallbackOnly);
         }
 
         /// <summary>
@@ -111,14 +111,21 @@ namespace Amazon.Runtime.CredentialManagement
         /// <returns>True if credentials can be created from the profile, false otherwise.</returns>
         public static bool TryGetAWSCredentials(CredentialProfile profile, ICredentialProfileSource profileSource, out AWSCredentials credentials)
         {
-            credentials = GetAWSCredentialsInternal(profile.Name, profile.ProfileType, profile.Options, profileSource, false);
+            credentials = GetAWSCredentialsInternal(profile.Name, profile.ProfileType, profile.Options, profile.Region, profileSource, false);
             return credentials != null;
         }
 
+        /// <summary>
+        /// Return the credentials for the profile if valid credentials can created.
+        /// </summary>
+        /// <param name="options">The options to get AWSCredentials for.</param>
+        /// <param name="profileSource">The profile source, for profiles that reference other profiles.</param>
+        /// <param name="credentials">The credentials for the profile.</param>
+        /// <returns>True if credentials can be created from the profile, false otherwise.</returns>
         public static bool TryGetAWSCredentials(CredentialProfileOptions options, ICredentialProfileSource profileSource, out AWSCredentials credentials)
         {
             var profileType = CredentialProfileTypeDetector.DetectProfileType(options);
-            credentials = GetAWSCredentialsInternal(null, profileType, options, profileSource, false);
+            credentials = GetAWSCredentialsInternal(null, profileType, options, null, profileSource, false);
             return credentials != null;
         }
 
@@ -133,7 +140,7 @@ namespace Amazon.Runtime.CredentialManagement
         }
 
         private static AWSCredentials GetAWSCredentials(string profileName, ICredentialProfileSource profileSource,
-            CredentialProfileOptions options, bool nonCallbackOnly)
+            CredentialProfileOptions options, RegionEndpoint region, bool nonCallbackOnly)
         {
             var profileType = CredentialProfileTypeDetector.DetectProfileType(options);
             if (nonCallbackOnly && profileType.HasValue && IsCallbackRequired(profileType.Value))
@@ -162,11 +169,11 @@ namespace Amazon.Runtime.CredentialManagement
                 }
 #endif
             }
-            return GetAWSCredentialsInternal(profileName, profileType, options, profileSource, true);
+            return GetAWSCredentialsInternal(profileName, profileType, options, region, profileSource, true);
         }
 
         private static AWSCredentials GetAWSCredentialsInternal(string profileName, CredentialProfileType? profileType,
-            CredentialProfileOptions options, ICredentialProfileSource profileSource, bool throwIfInvalid)
+            CredentialProfileOptions options, RegionEndpoint region, ICredentialProfileSource profileSource, bool throwIfInvalid)
         {
             if (profileType.HasValue)
             {
@@ -209,6 +216,7 @@ namespace Amazon.Runtime.CredentialManagement
                     case CredentialProfileType.SAMLRoleUserIdentity:
                         var federatedOptions = new FederatedAWSCredentialsOptions()
                         {
+                            STSRegion = region,
                             UserIdentity = options.UserIdentity,
                             ProfileName = profileName
                         };
