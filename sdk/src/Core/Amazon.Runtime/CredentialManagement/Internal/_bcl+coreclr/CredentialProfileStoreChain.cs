@@ -32,8 +32,7 @@ namespace Amazon.Runtime.CredentialManagement.Internal
         public string ProfilesLocation { get; private set; }
 
         /// <summary>
-        /// Construct a CredentialProfileChain that looks at the .NET SDK credentials file, if available,
-        /// and the shared credentials file in the default location.
+        /// Construct a CredentialProfileChain.
         /// </summary>
         public CredentialProfileStoreChain()
             : this(null)
@@ -41,8 +40,7 @@ namespace Amazon.Runtime.CredentialManagement.Internal
         }
 
         /// <summary>
-        /// Construct a CredentialProfileChain that looks at the .NET SDK credentials file, if available,
-        /// and the shared credentials file in the location given.
+        /// Construct a CredentialProfileChain.
         /// </summary>
         /// <param name="profilesLocation">The path to the aws credentials file to look at.</param>
         public CredentialProfileStoreChain(string profilesLocation)

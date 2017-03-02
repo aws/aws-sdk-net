@@ -31,7 +31,7 @@ namespace Amazon.SecurityToken.SAML
     /// Currently only the SDK store supports profiles that contain the necessary data to support 
     /// authentication and role-based credential generation.
     /// </remarks>
-    [Obsolete("This class is obsolete and will be removed in a future release. Please use the Amazon.Runtime.CredentialManagement namespace.  Visit http://docs.aws.amazon.com/sdkfornet/v3/apidocs/ for further details.")]
+    [Obsolete("This class is obsolete and will be removed in a future release. Please use Amazon.Runtime.FederatedAWSCredentials.  Visit http://docs.aws.amazon.com/sdk-for-net/v3/developer-guide/net-dg-config-creds.html for further details.")]
     public class StoredProfileSAMLCredentials : RefreshingAWSCredentials
     {
         private const int MaxAuthenticationRetries = 3;

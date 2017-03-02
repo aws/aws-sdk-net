@@ -34,7 +34,7 @@ namespace Amazon.Runtime
     /// 2. In order to use the StoredProfileFederatedCredentials class the AWSSDK.SecurityToken assembly
     /// must be available to your application at runtime.
     /// </remarks>
-    [Obsolete("This class is obsolete and will be removed in a future release. Please use the Amazon.Runtime.CredentialManagement namespace.  Visit http://docs.aws.amazon.com/sdkfornet/v3/apidocs/ for further details.")]
+    [Obsolete("This class is obsolete and will be removed in a future release. Please use Amazon.Runtime.FederatedAWSCredentials.  Visit http://docs.aws.amazon.com/sdk-for-net/v3/developer-guide/net-dg-config-creds.html for further details.")]
     public class StoredProfileFederatedCredentials : RefreshingAWSCredentials
     {
         #region Private data
