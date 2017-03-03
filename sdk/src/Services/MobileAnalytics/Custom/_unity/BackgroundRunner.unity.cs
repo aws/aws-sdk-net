@@ -104,7 +104,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
                     }
                     Thread.Sleep(BackgroundSubmissionWaitTime * 1000);
                 }
-                catch(ThreadAbortException tae)
+                catch(ThreadAbortException)
                 {
                   // handle thread aports more greacefully in unity
                 }
