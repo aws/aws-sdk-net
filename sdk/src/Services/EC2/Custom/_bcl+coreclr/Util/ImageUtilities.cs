@@ -43,6 +43,7 @@ namespace Amazon.EC2.Util
 
         public const string WINDOWS_2016_BASE_KEY = "WINDOWS_2016_BASE";
         public const string WINDOWS_2016_NANO_KEY = "WINDOWS_2016_NANO";
+        public const string WINDOWS_2016_CORE_KEY = "WINDOWS_2016_CORE";
         public const string WINDOWS_2016_CONTAINER_KEY = "WINDOWS_2016_CONTAINER";
 
         public const string WINDOWS_2016_SQL_SERVER_ENTERPRISE_2016_KEY = "WINDOWS_2016_SQL_SERVER_ENTERPRISE_2016";
@@ -51,6 +52,7 @@ namespace Amazon.EC2.Util
         public const string WINDOWS_2016_SQL_SERVER_EXPRESS_2016_KEY = "WINDOWS_2016_SQL_SERVER_EXPRESS_2016";
 
         public const string WINDOWS_2012R2_BASE_KEY = "WINDOWS_2012R2_BASE";
+        public const string WINDOWS_2012R2_CORE_KEY = "WINDOWS_2012R2_CORE";
 
         public const string WINDOWS_2012R2_SQL_SERVER_EXPRESS_2016_KEY = "WINDOWS_2012R2_SQL_SERVER_EXPRESS_2016";
         public const string WINDOWS_2012R2_SQL_SERVER_STANDARD_2016_KEY = "WINDOWS_2012R2_SQL_SERVER_STANDARD_2016";
@@ -101,12 +103,14 @@ namespace Amazon.EC2.Util
         {
             WINDOWS_2016_BASE_KEY,
             WINDOWS_2016_NANO_KEY,
+            WINDOWS_2016_CORE_KEY,
             WINDOWS_2016_CONTAINER_KEY,
             WINDOWS_2016_SQL_SERVER_ENTERPRISE_2016_KEY,
             WINDOWS_2016_SQL_SERVER_STANDARD_2016_KEY,
             WINDOWS_2016_SQL_SERVER_WEB_2016_KEY,
             WINDOWS_2016_SQL_SERVER_EXPRESS_2016_KEY,
             WINDOWS_2012R2_BASE_KEY,
+            WINDOWS_2012R2_CORE_KEY,
             WINDOWS_2012R2_SQL_SERVER_EXPRESS_2016_KEY,
             WINDOWS_2012R2_SQL_SERVER_STANDARD_2016_KEY,
             WINDOWS_2012R2_SQL_SERVER_WEB_2016_KEY,
@@ -144,6 +148,7 @@ namespace Amazon.EC2.Util
 
         public static readonly ImageDescriptor WINDOWS_2016_BASE = new ImageDescriptor(WINDOWS_2016_BASE_KEY);
         public static readonly ImageDescriptor WINDOWS_2016_NANO = new ImageDescriptor(WINDOWS_2016_NANO_KEY);
+        public static readonly ImageDescriptor WINDOWS_2016_CORE = new ImageDescriptor(WINDOWS_2016_CORE_KEY);
         public static readonly ImageDescriptor WINDOWS_2016_CONTAINER = new ImageDescriptor(WINDOWS_2016_CONTAINER_KEY);
 
         public static readonly ImageDescriptor WINDOWS_2016_SQL_SERVER_ENTERPRISE_2016 = new ImageDescriptor(WINDOWS_2016_SQL_SERVER_ENTERPRISE_2016_KEY);
@@ -156,6 +161,7 @@ namespace Amazon.EC2.Util
         #region Windows 2012 R2 Images
 
         public static readonly ImageDescriptor WINDOWS_2012R2_BASE = new ImageDescriptor(WINDOWS_2012R2_BASE_KEY);
+        public static readonly ImageDescriptor WINDOWS_2012R2_CORE = new ImageDescriptor(WINDOWS_2012R2_CORE_KEY);
 
         public static readonly ImageDescriptor WINDOWS_2012R2_SQL_SERVER_EXPRESS_2016 = new ImageDescriptor(WINDOWS_2012R2_SQL_SERVER_EXPRESS_2016_KEY);
         public static readonly ImageDescriptor WINDOWS_2012R2_SQL_SERVER_STANDARD_2016 = new ImageDescriptor(WINDOWS_2012R2_SQL_SERVER_STANDARD_2016_KEY);
@@ -297,6 +303,7 @@ namespace Amazon.EC2.Util
         {
             WINDOWS_2016_BASE,
             WINDOWS_2016_NANO,
+            WINDOWS_2016_CORE,
             WINDOWS_2016_CONTAINER,
 
             WINDOWS_2016_SQL_SERVER_ENTERPRISE_2016,
@@ -305,6 +312,7 @@ namespace Amazon.EC2.Util
             WINDOWS_2016_SQL_SERVER_EXPRESS_2016,
 
             WINDOWS_2012R2_BASE,
+            WINDOWS_2012R2_CORE,
 
             WINDOWS_2012R2_SQL_SERVER_EXPRESS_2016,
             WINDOWS_2012R2_SQL_SERVER_STANDARD_2016,
