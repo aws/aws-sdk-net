@@ -29,9 +29,9 @@ namespace Amazon.CloudTrail.Model
 {
     /// <summary>
     /// The Amazon S3 objects that you specify in your event selectors for your trail to log
-    /// data events. Data events are object level API operations that access S3 objects, such
+    /// data events. Data events are object-level API operations that access S3 objects, such
     /// as <code>GetObject</code>, <code>DeleteObject</code>, and <code>PutObject</code>.
-    /// You can specify up to 50 S3 buckets and object prefixes for an event selector. 
+    /// You can specify up to 250 S3 buckets and object prefixes for a trail. 
     /// 
     ///  
     /// <para>

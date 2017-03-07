@@ -132,6 +132,7 @@ namespace Amazon.CloudTrail
         /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
         /// This exception is thrown when the requested operation is not supported.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/AddTags">REST API Reference for AddTags Operation</seealso>
         AddTagsResponse AddTags(AddTagsRequest request);
 
         /// <summary>
@@ -145,6 +146,7 @@ namespace Amazon.CloudTrail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAddTags
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/AddTags">REST API Reference for AddTags Operation</seealso>
         IAsyncResult BeginAddTags(AddTagsRequest request, AsyncCallback callback, object state);
 
 
@@ -156,6 +158,7 @@ namespace Amazon.CloudTrail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAddTags.</param>
         /// 
         /// <returns>Returns a  AddTagsResult from CloudTrail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/AddTags">REST API Reference for AddTags Operation</seealso>
         AddTagsResponse EndAddTags(IAsyncResult asyncResult);
 
         #endregion
@@ -261,6 +264,7 @@ namespace Amazon.CloudTrail
         /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
         /// This exception is thrown when the requested operation is not supported.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/CreateTrail">REST API Reference for CreateTrail Operation</seealso>
         CreateTrailResponse CreateTrail(CreateTrailRequest request);
 
         /// <summary>
@@ -274,6 +278,7 @@ namespace Amazon.CloudTrail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateTrail
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/CreateTrail">REST API Reference for CreateTrail Operation</seealso>
         IAsyncResult BeginCreateTrail(CreateTrailRequest request, AsyncCallback callback, object state);
 
 
@@ -285,6 +290,7 @@ namespace Amazon.CloudTrail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateTrail.</param>
         /// 
         /// <returns>Returns a  CreateTrailResult from CloudTrail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/CreateTrail">REST API Reference for CreateTrail Operation</seealso>
         CreateTrailResponse EndCreateTrail(IAsyncResult asyncResult);
 
         #endregion
@@ -335,6 +341,7 @@ namespace Amazon.CloudTrail
         /// <exception cref="Amazon.CloudTrail.Model.TrailNotFoundException">
         /// This exception is thrown when the trail with the given name is not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DeleteTrail">REST API Reference for DeleteTrail Operation</seealso>
         DeleteTrailResponse DeleteTrail(DeleteTrailRequest request);
 
         /// <summary>
@@ -348,6 +355,7 @@ namespace Amazon.CloudTrail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteTrail
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DeleteTrail">REST API Reference for DeleteTrail Operation</seealso>
         IAsyncResult BeginDeleteTrail(DeleteTrailRequest request, AsyncCallback callback, object state);
 
 
@@ -359,6 +367,7 @@ namespace Amazon.CloudTrail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteTrail.</param>
         /// 
         /// <returns>Returns a  DeleteTrailResult from CloudTrail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DeleteTrail">REST API Reference for DeleteTrail Operation</seealso>
         DeleteTrailResponse EndDeleteTrail(IAsyncResult asyncResult);
 
         #endregion
@@ -377,6 +386,7 @@ namespace Amazon.CloudTrail
         /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
         /// This exception is thrown when the requested operation is not supported.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DescribeTrails">REST API Reference for DescribeTrails Operation</seealso>
         DescribeTrailsResponse DescribeTrails();
 
         /// <summary>
@@ -391,6 +401,7 @@ namespace Amazon.CloudTrail
         /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
         /// This exception is thrown when the requested operation is not supported.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DescribeTrails">REST API Reference for DescribeTrails Operation</seealso>
         DescribeTrailsResponse DescribeTrails(DescribeTrailsRequest request);
 
         /// <summary>
@@ -404,6 +415,7 @@ namespace Amazon.CloudTrail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeTrails
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DescribeTrails">REST API Reference for DescribeTrails Operation</seealso>
         IAsyncResult BeginDescribeTrails(DescribeTrailsRequest request, AsyncCallback callback, object state);
 
 
@@ -415,6 +427,7 @@ namespace Amazon.CloudTrail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeTrails.</param>
         /// 
         /// <returns>Returns a  DescribeTrailsResult from CloudTrail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DescribeTrails">REST API Reference for DescribeTrails Operation</seealso>
         DescribeTrailsResponse EndDescribeTrails(IAsyncResult asyncResult);
 
         #endregion
@@ -440,8 +453,8 @@ namespace Amazon.CloudTrail
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-event-selectors-for-a-trail.html">Configuring
-        /// Event Selectors for Trails</a> in the <i>AWS CloudTrail User Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html">Logging
+        /// Data and Management Events for Trails </a> in the <i>AWS CloudTrail User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEventSelectors service method.</param>
@@ -484,6 +497,7 @@ namespace Amazon.CloudTrail
         /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
         /// This exception is thrown when the requested operation is not supported.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetEventSelectors">REST API Reference for GetEventSelectors Operation</seealso>
         GetEventSelectorsResponse GetEventSelectors(GetEventSelectorsRequest request);
 
         /// <summary>
@@ -497,6 +511,7 @@ namespace Amazon.CloudTrail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetEventSelectors
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetEventSelectors">REST API Reference for GetEventSelectors Operation</seealso>
         IAsyncResult BeginGetEventSelectors(GetEventSelectorsRequest request, AsyncCallback callback, object state);
 
 
@@ -508,6 +523,7 @@ namespace Amazon.CloudTrail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetEventSelectors.</param>
         /// 
         /// <returns>Returns a  GetEventSelectorsResult from CloudTrail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetEventSelectors">REST API Reference for GetEventSelectors Operation</seealso>
         GetEventSelectorsResponse EndGetEventSelectors(IAsyncResult asyncResult);
 
         #endregion
@@ -555,6 +571,7 @@ namespace Amazon.CloudTrail
         /// <exception cref="Amazon.CloudTrail.Model.TrailNotFoundException">
         /// This exception is thrown when the trail with the given name is not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetTrailStatus">REST API Reference for GetTrailStatus Operation</seealso>
         GetTrailStatusResponse GetTrailStatus(GetTrailStatusRequest request);
 
         /// <summary>
@@ -568,6 +585,7 @@ namespace Amazon.CloudTrail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetTrailStatus
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetTrailStatus">REST API Reference for GetTrailStatus Operation</seealso>
         IAsyncResult BeginGetTrailStatus(GetTrailStatusRequest request, AsyncCallback callback, object state);
 
 
@@ -579,6 +597,7 @@ namespace Amazon.CloudTrail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetTrailStatus.</param>
         /// 
         /// <returns>Returns a  GetTrailStatusResult from CloudTrail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetTrailStatus">REST API Reference for GetTrailStatus Operation</seealso>
         GetTrailStatusResponse EndGetTrailStatus(IAsyncResult asyncResult);
 
         #endregion
@@ -616,6 +635,7 @@ namespace Amazon.CloudTrail
         /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
         /// This exception is thrown when the requested operation is not supported.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListPublicKeys">REST API Reference for ListPublicKeys Operation</seealso>
         ListPublicKeysResponse ListPublicKeys(ListPublicKeysRequest request);
 
         /// <summary>
@@ -629,6 +649,7 @@ namespace Amazon.CloudTrail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListPublicKeys
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListPublicKeys">REST API Reference for ListPublicKeys Operation</seealso>
         IAsyncResult BeginListPublicKeys(ListPublicKeysRequest request, AsyncCallback callback, object state);
 
 
@@ -640,6 +661,7 @@ namespace Amazon.CloudTrail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListPublicKeys.</param>
         /// 
         /// <returns>Returns a  ListPublicKeysResult from CloudTrail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListPublicKeys">REST API Reference for ListPublicKeys Operation</seealso>
         ListPublicKeysResponse EndListPublicKeys(IAsyncResult asyncResult);
 
         #endregion
@@ -705,6 +727,7 @@ namespace Amazon.CloudTrail
         /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
         /// This exception is thrown when the requested operation is not supported.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListTags">REST API Reference for ListTags Operation</seealso>
         ListTagsResponse ListTags(ListTagsRequest request);
 
         /// <summary>
@@ -718,6 +741,7 @@ namespace Amazon.CloudTrail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTags
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListTags">REST API Reference for ListTags Operation</seealso>
         IAsyncResult BeginListTags(ListTagsRequest request, AsyncCallback callback, object state);
 
 
@@ -729,6 +753,7 @@ namespace Amazon.CloudTrail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTags.</param>
         /// 
         /// <returns>Returns a  ListTagsResult from CloudTrail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListTags">REST API Reference for ListTags Operation</seealso>
         ListTagsResponse EndListTags(IAsyncResult asyncResult);
 
         #endregion
@@ -749,6 +774,10 @@ namespace Amazon.CloudTrail
         ///  </li> <li> 
         /// <para>
         /// Event name
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Event source
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -797,6 +826,7 @@ namespace Amazon.CloudTrail
         /// Occurs if the timestamp values are invalid. Either the start time occurs after the
         /// end time or the time range is outside the range of possible values.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/LookupEvents">REST API Reference for LookupEvents Operation</seealso>
         LookupEventsResponse LookupEvents(LookupEventsRequest request);
 
         /// <summary>
@@ -810,6 +840,7 @@ namespace Amazon.CloudTrail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndLookupEvents
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/LookupEvents">REST API Reference for LookupEvents Operation</seealso>
         IAsyncResult BeginLookupEvents(LookupEventsRequest request, AsyncCallback callback, object state);
 
 
@@ -821,6 +852,7 @@ namespace Amazon.CloudTrail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginLookupEvents.</param>
         /// 
         /// <returns>Returns a  LookupEventsResult from CloudTrail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/LookupEvents">REST API Reference for LookupEvents Operation</seealso>
         LookupEventsResponse EndLookupEvents(IAsyncResult asyncResult);
 
         #endregion
@@ -829,11 +861,11 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
-        /// Configures an event selector for your trail. Use event selectors to specify the type
-        /// of events that you want your trail to log. When an event occurs in your account, CloudTrail
-        /// evaluates the event selectors in all trails. For each trail, if the event matches
-        /// any event selector, the trail processes and logs the event. If the event doesn't match
-        /// any event selector, the trail doesn't log the event. 
+        /// Configures an event selector for your trail. Use event selectors to specify whether
+        /// you want your trail to log management and/or data events. When an event occurs in
+        /// your account, CloudTrail evaluates the event selectors in all trails. For each trail,
+        /// if the event matches any event selector, the trail processes and logs the event. If
+        /// the event doesn't match any event selector, the trail doesn't log the event. 
         /// 
         ///  
         /// <para>
@@ -870,8 +902,8 @@ namespace Amazon.CloudTrail
         ///  
         /// <para>
         /// You can configure up to five event selectors for each trail. For more information,
-        /// see <a href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-event-selectors-for-a-trail.html">Configuring
-        /// Event Selectors for Trails</a> in the <i>AWS CloudTrail User Guide</i>.
+        /// see <a href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html">Logging
+        /// Data and Management Events for Trails </a> in the <i>AWS CloudTrail User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutEventSelectors service method.</param>
@@ -888,7 +920,7 @@ namespace Amazon.CloudTrail
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Specify a valid number of data resources (1 to 50) for an event selector.
+        /// Specify a valid number of data resources (1 to 250) for an event selector.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -938,6 +970,7 @@ namespace Amazon.CloudTrail
         /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
         /// This exception is thrown when the requested operation is not supported.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/PutEventSelectors">REST API Reference for PutEventSelectors Operation</seealso>
         PutEventSelectorsResponse PutEventSelectors(PutEventSelectorsRequest request);
 
         /// <summary>
@@ -951,6 +984,7 @@ namespace Amazon.CloudTrail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutEventSelectors
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/PutEventSelectors">REST API Reference for PutEventSelectors Operation</seealso>
         IAsyncResult BeginPutEventSelectors(PutEventSelectorsRequest request, AsyncCallback callback, object state);
 
 
@@ -962,6 +996,7 @@ namespace Amazon.CloudTrail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutEventSelectors.</param>
         /// 
         /// <returns>Returns a  PutEventSelectorsResult from CloudTrail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/PutEventSelectors">REST API Reference for PutEventSelectors Operation</seealso>
         PutEventSelectorsResponse EndPutEventSelectors(IAsyncResult asyncResult);
 
         #endregion
@@ -1028,6 +1063,7 @@ namespace Amazon.CloudTrail
         /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
         /// This exception is thrown when the requested operation is not supported.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/RemoveTags">REST API Reference for RemoveTags Operation</seealso>
         RemoveTagsResponse RemoveTags(RemoveTagsRequest request);
 
         /// <summary>
@@ -1041,6 +1077,7 @@ namespace Amazon.CloudTrail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRemoveTags
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/RemoveTags">REST API Reference for RemoveTags Operation</seealso>
         IAsyncResult BeginRemoveTags(RemoveTagsRequest request, AsyncCallback callback, object state);
 
 
@@ -1052,6 +1089,7 @@ namespace Amazon.CloudTrail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRemoveTags.</param>
         /// 
         /// <returns>Returns a  RemoveTagsResult from CloudTrail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/RemoveTags">REST API Reference for RemoveTags Operation</seealso>
         RemoveTagsResponse EndRemoveTags(IAsyncResult asyncResult);
 
         #endregion
@@ -1103,6 +1141,7 @@ namespace Amazon.CloudTrail
         /// <exception cref="Amazon.CloudTrail.Model.TrailNotFoundException">
         /// This exception is thrown when the trail with the given name is not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StartLogging">REST API Reference for StartLogging Operation</seealso>
         StartLoggingResponse StartLogging(StartLoggingRequest request);
 
         /// <summary>
@@ -1116,6 +1155,7 @@ namespace Amazon.CloudTrail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartLogging
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StartLogging">REST API Reference for StartLogging Operation</seealso>
         IAsyncResult BeginStartLogging(StartLoggingRequest request, AsyncCallback callback, object state);
 
 
@@ -1127,6 +1167,7 @@ namespace Amazon.CloudTrail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartLogging.</param>
         /// 
         /// <returns>Returns a  StartLoggingResult from CloudTrail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StartLogging">REST API Reference for StartLogging Operation</seealso>
         StartLoggingResponse EndStartLogging(IAsyncResult asyncResult);
 
         #endregion
@@ -1181,6 +1222,7 @@ namespace Amazon.CloudTrail
         /// <exception cref="Amazon.CloudTrail.Model.TrailNotFoundException">
         /// This exception is thrown when the trail with the given name is not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StopLogging">REST API Reference for StopLogging Operation</seealso>
         StopLoggingResponse StopLogging(StopLoggingRequest request);
 
         /// <summary>
@@ -1194,6 +1236,7 @@ namespace Amazon.CloudTrail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopLogging
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StopLogging">REST API Reference for StopLogging Operation</seealso>
         IAsyncResult BeginStopLogging(StopLoggingRequest request, AsyncCallback callback, object state);
 
 
@@ -1205,6 +1248,7 @@ namespace Amazon.CloudTrail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopLogging.</param>
         /// 
         /// <returns>Returns a  StopLoggingResult from CloudTrail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StopLogging">REST API Reference for StopLogging Operation</seealso>
         StopLoggingResponse EndStopLogging(IAsyncResult asyncResult);
 
         #endregion
@@ -1314,6 +1358,7 @@ namespace Amazon.CloudTrail
         /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
         /// This exception is thrown when the requested operation is not supported.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/UpdateTrail">REST API Reference for UpdateTrail Operation</seealso>
         UpdateTrailResponse UpdateTrail(UpdateTrailRequest request);
 
         /// <summary>
@@ -1327,6 +1372,7 @@ namespace Amazon.CloudTrail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateTrail
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/UpdateTrail">REST API Reference for UpdateTrail Operation</seealso>
         IAsyncResult BeginUpdateTrail(UpdateTrailRequest request, AsyncCallback callback, object state);
 
 
@@ -1338,6 +1384,7 @@ namespace Amazon.CloudTrail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateTrail.</param>
         /// 
         /// <returns>Returns a  UpdateTrailResult from CloudTrail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/UpdateTrail">REST API Reference for UpdateTrail Operation</seealso>
         UpdateTrailResponse EndUpdateTrail(IAsyncResult asyncResult);
 
         #endregion

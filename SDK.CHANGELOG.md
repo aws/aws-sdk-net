@@ -1,3 +1,13 @@
+### 3.3.58.0 (2017-03-07 02:39 UTC)
+* Budgets (3.3.1.0)
+	* API Update for Budgets: When creating or editing a budget via the AWS Budgets API you can define notifications that are sent to subscribers when the actual or forecasted value for cost or usage exceeds the notificationThreshold associated with the budget notification object. Starting today, the maximum allowed value for the notificationThreshold was raised from 100 to 300. This change was made to give you more flexibility when setting budget notifications.
+* CloudTrail (3.3.1.5)
+	* Doc update for CloudTrail
+* EC2 (3.3.11.0)
+	* Adds keys to obtain the latest Windows 2016 Core and Windows 2012R2 Core images to the Amazon.EC2.Util.ImageUtilities helper class.
+* OpsWorksCM (3.3.3.0)
+	* API Update for OpsWorksCM: OpsWorks for Chef Automate has added a new field "AssociatePublicIpAddress" to the CreateServer request, "CloudFormationStackArn" to the Server model and "TERMINATED" server state.
+
 ### 3.3.57.0 (2017-02-28 04:05 UTC)
 * DynamoDBv2 (3.3.3.0)
 	* Time to Live (TTL) is a feature that allows you to define when items in a table expire and can be purged from the database, so that you don't have to track expired data and delete it manually. With TTL enabled on a DynamoDB table, you can set a timestamp for deletion on a per-item basis, allowing you to limit storage usage to only those records that are relevant.

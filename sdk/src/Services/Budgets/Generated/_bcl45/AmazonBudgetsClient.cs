@@ -357,6 +357,10 @@ namespace Amazon.Budgets
         /// This exception is thrown if any request is given an invalid parameter. E.g., if a
         /// required Date field is null.
         /// </exception>
+        /// <exception cref="Amazon.Budgets.Model.NotFoundException">
+        /// This exception is thrown if a requested entity is not found. E.g., if a budget id
+        /// doesn't exist for an account ID.
+        /// </exception>
         public CreateSubscriberResponse CreateSubscriber(CreateSubscriberRequest request)
         {
             var marshaller = new CreateSubscriberRequestMarshaller();
