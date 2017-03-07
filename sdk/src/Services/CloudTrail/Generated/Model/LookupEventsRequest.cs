@@ -44,6 +44,10 @@ namespace Amazon.CloudTrail.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
+    /// Event source
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     /// Resource name
     /// </para>
     ///  </li> <li> 

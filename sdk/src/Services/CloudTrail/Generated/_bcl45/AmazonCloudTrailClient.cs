@@ -322,6 +322,7 @@ namespace Amazon.CloudTrail
         /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
         /// This exception is thrown when the requested operation is not supported.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/AddTags">REST API Reference for AddTags Operation</seealso>
         public AddTagsResponse AddTags(AddTagsRequest request)
         {
             var marshaller = new AddTagsRequestMarshaller();
@@ -339,6 +340,7 @@ namespace Amazon.CloudTrail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/AddTags">REST API Reference for AddTags Operation</seealso>
         public Task<AddTagsResponse> AddTagsAsync(AddTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AddTagsRequestMarshaller();
@@ -451,6 +453,7 @@ namespace Amazon.CloudTrail
         /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
         /// This exception is thrown when the requested operation is not supported.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/CreateTrail">REST API Reference for CreateTrail Operation</seealso>
         public CreateTrailResponse CreateTrail(CreateTrailRequest request)
         {
             var marshaller = new CreateTrailRequestMarshaller();
@@ -468,6 +471,7 @@ namespace Amazon.CloudTrail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/CreateTrail">REST API Reference for CreateTrail Operation</seealso>
         public Task<CreateTrailResponse> CreateTrailAsync(CreateTrailRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateTrailRequestMarshaller();
@@ -525,6 +529,7 @@ namespace Amazon.CloudTrail
         /// <exception cref="Amazon.CloudTrail.Model.TrailNotFoundException">
         /// This exception is thrown when the trail with the given name is not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DeleteTrail">REST API Reference for DeleteTrail Operation</seealso>
         public DeleteTrailResponse DeleteTrail(DeleteTrailRequest request)
         {
             var marshaller = new DeleteTrailRequestMarshaller();
@@ -542,6 +547,7 @@ namespace Amazon.CloudTrail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DeleteTrail">REST API Reference for DeleteTrail Operation</seealso>
         public Task<DeleteTrailResponse> DeleteTrailAsync(DeleteTrailRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteTrailRequestMarshaller();
@@ -567,6 +573,7 @@ namespace Amazon.CloudTrail
         /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
         /// This exception is thrown when the requested operation is not supported.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DescribeTrails">REST API Reference for DescribeTrails Operation</seealso>
         public DescribeTrailsResponse DescribeTrails()
         {
             return DescribeTrails(new DescribeTrailsRequest());
@@ -585,6 +592,7 @@ namespace Amazon.CloudTrail
         /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
         /// This exception is thrown when the requested operation is not supported.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DescribeTrails">REST API Reference for DescribeTrails Operation</seealso>
         public DescribeTrailsResponse DescribeTrails(DescribeTrailsRequest request)
         {
             var marshaller = new DescribeTrailsRequestMarshaller();
@@ -608,6 +616,7 @@ namespace Amazon.CloudTrail
         /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
         /// This exception is thrown when the requested operation is not supported.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DescribeTrails">REST API Reference for DescribeTrails Operation</seealso>
         public Task<DescribeTrailsResponse> DescribeTrailsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeTrailsAsync(new DescribeTrailsRequest(), cancellationToken);
@@ -621,6 +630,7 @@ namespace Amazon.CloudTrail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DescribeTrails">REST API Reference for DescribeTrails Operation</seealso>
         public Task<DescribeTrailsResponse> DescribeTrailsAsync(DescribeTrailsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeTrailsRequestMarshaller();
@@ -653,8 +663,8 @@ namespace Amazon.CloudTrail
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-event-selectors-for-a-trail.html">Configuring
-        /// Event Selectors for Trails</a> in the <i>AWS CloudTrail User Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html">Logging
+        /// Data and Management Events for Trails </a> in the <i>AWS CloudTrail User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEventSelectors service method.</param>
@@ -697,6 +707,7 @@ namespace Amazon.CloudTrail
         /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
         /// This exception is thrown when the requested operation is not supported.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetEventSelectors">REST API Reference for GetEventSelectors Operation</seealso>
         public GetEventSelectorsResponse GetEventSelectors(GetEventSelectorsRequest request)
         {
             var marshaller = new GetEventSelectorsRequestMarshaller();
@@ -714,6 +725,7 @@ namespace Amazon.CloudTrail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetEventSelectors">REST API Reference for GetEventSelectors Operation</seealso>
         public Task<GetEventSelectorsResponse> GetEventSelectorsAsync(GetEventSelectorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetEventSelectorsRequestMarshaller();
@@ -768,6 +780,7 @@ namespace Amazon.CloudTrail
         /// <exception cref="Amazon.CloudTrail.Model.TrailNotFoundException">
         /// This exception is thrown when the trail with the given name is not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetTrailStatus">REST API Reference for GetTrailStatus Operation</seealso>
         public GetTrailStatusResponse GetTrailStatus(GetTrailStatusRequest request)
         {
             var marshaller = new GetTrailStatusRequestMarshaller();
@@ -785,6 +798,7 @@ namespace Amazon.CloudTrail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetTrailStatus">REST API Reference for GetTrailStatus Operation</seealso>
         public Task<GetTrailStatusResponse> GetTrailStatusAsync(GetTrailStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetTrailStatusRequestMarshaller();
@@ -829,6 +843,7 @@ namespace Amazon.CloudTrail
         /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
         /// This exception is thrown when the requested operation is not supported.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListPublicKeys">REST API Reference for ListPublicKeys Operation</seealso>
         public ListPublicKeysResponse ListPublicKeys(ListPublicKeysRequest request)
         {
             var marshaller = new ListPublicKeysRequestMarshaller();
@@ -846,6 +861,7 @@ namespace Amazon.CloudTrail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListPublicKeys">REST API Reference for ListPublicKeys Operation</seealso>
         public Task<ListPublicKeysResponse> ListPublicKeysAsync(ListPublicKeysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListPublicKeysRequestMarshaller();
@@ -918,6 +934,7 @@ namespace Amazon.CloudTrail
         /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
         /// This exception is thrown when the requested operation is not supported.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListTags">REST API Reference for ListTags Operation</seealso>
         public ListTagsResponse ListTags(ListTagsRequest request)
         {
             var marshaller = new ListTagsRequestMarshaller();
@@ -935,6 +952,7 @@ namespace Amazon.CloudTrail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListTags">REST API Reference for ListTags Operation</seealso>
         public Task<ListTagsResponse> ListTagsAsync(ListTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListTagsRequestMarshaller();
@@ -962,6 +980,10 @@ namespace Amazon.CloudTrail
         ///  </li> <li> 
         /// <para>
         /// Event name
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Event source
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1010,6 +1032,7 @@ namespace Amazon.CloudTrail
         /// Occurs if the timestamp values are invalid. Either the start time occurs after the
         /// end time or the time range is outside the range of possible values.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/LookupEvents">REST API Reference for LookupEvents Operation</seealso>
         public LookupEventsResponse LookupEvents(LookupEventsRequest request)
         {
             var marshaller = new LookupEventsRequestMarshaller();
@@ -1027,6 +1050,7 @@ namespace Amazon.CloudTrail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/LookupEvents">REST API Reference for LookupEvents Operation</seealso>
         public Task<LookupEventsResponse> LookupEventsAsync(LookupEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new LookupEventsRequestMarshaller();
@@ -1042,11 +1066,11 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
-        /// Configures an event selector for your trail. Use event selectors to specify the type
-        /// of events that you want your trail to log. When an event occurs in your account, CloudTrail
-        /// evaluates the event selectors in all trails. For each trail, if the event matches
-        /// any event selector, the trail processes and logs the event. If the event doesn't match
-        /// any event selector, the trail doesn't log the event. 
+        /// Configures an event selector for your trail. Use event selectors to specify whether
+        /// you want your trail to log management and/or data events. When an event occurs in
+        /// your account, CloudTrail evaluates the event selectors in all trails. For each trail,
+        /// if the event matches any event selector, the trail processes and logs the event. If
+        /// the event doesn't match any event selector, the trail doesn't log the event. 
         /// 
         ///  
         /// <para>
@@ -1083,8 +1107,8 @@ namespace Amazon.CloudTrail
         ///  
         /// <para>
         /// You can configure up to five event selectors for each trail. For more information,
-        /// see <a href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-event-selectors-for-a-trail.html">Configuring
-        /// Event Selectors for Trails</a> in the <i>AWS CloudTrail User Guide</i>.
+        /// see <a href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html">Logging
+        /// Data and Management Events for Trails </a> in the <i>AWS CloudTrail User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutEventSelectors service method.</param>
@@ -1101,7 +1125,7 @@ namespace Amazon.CloudTrail
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Specify a valid number of data resources (1 to 50) for an event selector.
+        /// Specify a valid number of data resources (1 to 250) for an event selector.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1151,6 +1175,7 @@ namespace Amazon.CloudTrail
         /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
         /// This exception is thrown when the requested operation is not supported.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/PutEventSelectors">REST API Reference for PutEventSelectors Operation</seealso>
         public PutEventSelectorsResponse PutEventSelectors(PutEventSelectorsRequest request)
         {
             var marshaller = new PutEventSelectorsRequestMarshaller();
@@ -1168,6 +1193,7 @@ namespace Amazon.CloudTrail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/PutEventSelectors">REST API Reference for PutEventSelectors Operation</seealso>
         public Task<PutEventSelectorsResponse> PutEventSelectorsAsync(PutEventSelectorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutEventSelectorsRequestMarshaller();
@@ -1241,6 +1267,7 @@ namespace Amazon.CloudTrail
         /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
         /// This exception is thrown when the requested operation is not supported.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/RemoveTags">REST API Reference for RemoveTags Operation</seealso>
         public RemoveTagsResponse RemoveTags(RemoveTagsRequest request)
         {
             var marshaller = new RemoveTagsRequestMarshaller();
@@ -1258,6 +1285,7 @@ namespace Amazon.CloudTrail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/RemoveTags">REST API Reference for RemoveTags Operation</seealso>
         public Task<RemoveTagsResponse> RemoveTagsAsync(RemoveTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RemoveTagsRequestMarshaller();
@@ -1316,6 +1344,7 @@ namespace Amazon.CloudTrail
         /// <exception cref="Amazon.CloudTrail.Model.TrailNotFoundException">
         /// This exception is thrown when the trail with the given name is not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StartLogging">REST API Reference for StartLogging Operation</seealso>
         public StartLoggingResponse StartLogging(StartLoggingRequest request)
         {
             var marshaller = new StartLoggingRequestMarshaller();
@@ -1333,6 +1362,7 @@ namespace Amazon.CloudTrail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StartLogging">REST API Reference for StartLogging Operation</seealso>
         public Task<StartLoggingResponse> StartLoggingAsync(StartLoggingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new StartLoggingRequestMarshaller();
@@ -1394,6 +1424,7 @@ namespace Amazon.CloudTrail
         /// <exception cref="Amazon.CloudTrail.Model.TrailNotFoundException">
         /// This exception is thrown when the trail with the given name is not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StopLogging">REST API Reference for StopLogging Operation</seealso>
         public StopLoggingResponse StopLogging(StopLoggingRequest request)
         {
             var marshaller = new StopLoggingRequestMarshaller();
@@ -1411,6 +1442,7 @@ namespace Amazon.CloudTrail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StopLogging">REST API Reference for StopLogging Operation</seealso>
         public Task<StopLoggingResponse> StopLoggingAsync(StopLoggingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new StopLoggingRequestMarshaller();
@@ -1527,6 +1559,7 @@ namespace Amazon.CloudTrail
         /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
         /// This exception is thrown when the requested operation is not supported.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/UpdateTrail">REST API Reference for UpdateTrail Operation</seealso>
         public UpdateTrailResponse UpdateTrail(UpdateTrailRequest request)
         {
             var marshaller = new UpdateTrailRequestMarshaller();
@@ -1544,6 +1577,7 @@ namespace Amazon.CloudTrail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/UpdateTrail">REST API Reference for UpdateTrail Operation</seealso>
         public Task<UpdateTrailResponse> UpdateTrailAsync(UpdateTrailRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateTrailRequestMarshaller();

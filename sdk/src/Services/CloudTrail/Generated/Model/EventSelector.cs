@@ -28,11 +28,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudTrail.Model
 {
     /// <summary>
-    /// Use event selectors to specify the types of events that you want your trail to log.
-    /// When an event occurs in your account, CloudTrail evaluates the event selector for
-    /// all trails. For each trail, if the event matches any event selector, the trail processes
-    /// and logs the event. If the event doesn't match any event selector, the trail doesn't
-    /// log the event.
+    /// Use event selectors to specify whether you want your trail to log management and/or
+    /// data events. When an event occurs in your account, CloudTrail evaluates the event
+    /// selector for all trails. For each trail, if the event matches any event selector,
+    /// the trail processes and logs the event. If the event doesn't match any event selector,
+    /// the trail doesn't log the event.
     /// 
     ///  
     /// <para>
@@ -49,11 +49,11 @@ namespace Amazon.CloudTrail.Model
         /// Gets and sets the property DataResources. 
         /// <para>
         /// CloudTrail supports logging only data events for S3 objects. You can specify up to
-        /// 50 S3 buckets and object prefixes for an event selector.
+        /// 250 S3 buckets and object prefixes for a trail.
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-event-selectors-for-a-trail.html#data-events-resources">Data
+        /// For more information, see <a href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events">Data
         /// Events</a> in the <i>AWS CloudTrail User Guide</i>.
         /// </para>
         /// </summary>
@@ -76,7 +76,7 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  
         /// <para>
-        ///  For more information, see <a href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-event-selectors-for-a-trail.html#event-selector-for-management-events">Management
+        ///  For more information, see <a href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-management-events">Management
         /// Events</a> in the <i>AWS CloudTrail User Guide</i>.
         /// </para>
         ///  
