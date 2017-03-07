@@ -140,7 +140,7 @@ namespace Amazon.Runtime.CredentialManagement
         }
 
         private static AWSCredentials GetAWSCredentials(string profileName, ICredentialProfileSource profileSource,
-            CredentialProfileOptions options, RegionEndpoint region, bool nonCallbackOnly)
+            CredentialProfileOptions options, RegionEndpoint stsRegion, bool nonCallbackOnly)
         {
             var profileType = CredentialProfileTypeDetector.DetectProfileType(options);
             if (nonCallbackOnly && profileType.HasValue && IsCallbackRequired(profileType.Value))
@@ -169,11 +169,11 @@ namespace Amazon.Runtime.CredentialManagement
                 }
 #endif
             }
-            return GetAWSCredentialsInternal(profileName, profileType, options, region, profileSource, true);
+            return GetAWSCredentialsInternal(profileName, profileType, options, stsRegion, profileSource, true);
         }
 
         private static AWSCredentials GetAWSCredentialsInternal(string profileName, CredentialProfileType? profileType,
-            CredentialProfileOptions options, RegionEndpoint region, ICredentialProfileSource profileSource, bool throwIfInvalid)
+            CredentialProfileOptions options, RegionEndpoint stsRegion, ICredentialProfileSource profileSource, bool throwIfInvalid)
         {
             if (profileType.HasValue)
             {
@@ -216,7 +216,7 @@ namespace Amazon.Runtime.CredentialManagement
                     case CredentialProfileType.SAMLRoleUserIdentity:
                         var federatedOptions = new FederatedAWSCredentialsOptions()
                         {
-                            STSRegion = region,
+                            STSRegion = stsRegion,
                             UserIdentity = options.UserIdentity,
                             ProfileName = profileName
                         };
