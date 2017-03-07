@@ -61,13 +61,13 @@ namespace Amazon.OpsWorksCM.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <i>ServerLimit:</i> The number of servers that currently existing / maximal allowed.
-        /// By default 10 servers can be created. 
+        ///  <i>ServerLimit:</i> The number of current servers/maximum number of servers allowed.
+        /// By default, you can have a maximum of 10 servers. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i>ManualBackupLimit:</i> The number of manual backups that currently exist / are
-        /// maximal allowed. By default 50 manual backups can be created. 
+        ///  <i>ManualBackupLimit:</i> The number of current manual backups/maximum number of
+        /// backups allowed. By default, you can have a maximum of 50 manual backups saved. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -86,8 +86,8 @@ namespace Amazon.OpsWorksCM.Model
         /// <summary>
         /// Gets and sets the property Used. 
         /// <para>
-        ///  The current usage, such as the current number of servers associated with the account.
-        /// 
+        ///  The current usage, such as the current number of servers that are associated with
+        /// the account. 
         /// </para>
         /// </summary>
         public int Used

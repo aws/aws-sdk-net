@@ -32,7 +32,9 @@ namespace Amazon.OpsWorksCM.Model
     /// </summary>
     public partial class CMServer
     {
+        private bool? _associatePublicIpAddress;
         private int? _backupRetentionCount;
+        private string _cloudFormationStackArn;
         private DateTime? _createdAt;
         private bool? _disableAutomatedBackup;
         private string _endpoint;
@@ -55,6 +57,24 @@ namespace Amazon.OpsWorksCM.Model
         private List<string> _subnetIds = new List<string>();
 
         /// <summary>
+        /// Gets and sets the property AssociatePublicIpAddress. 
+        /// <para>
+        /// Associate a public IP address with a server that you are launching. 
+        /// </para>
+        /// </summary>
+        public bool AssociatePublicIpAddress
+        {
+            get { return this._associatePublicIpAddress.GetValueOrDefault(); }
+            set { this._associatePublicIpAddress = value; }
+        }
+
+        // Check to see if AssociatePublicIpAddress property is set
+        internal bool IsSetAssociatePublicIpAddress()
+        {
+            return this._associatePublicIpAddress.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property BackupRetentionCount. 
         /// <para>
         /// The number of automated backups to keep. 
@@ -70,6 +90,24 @@ namespace Amazon.OpsWorksCM.Model
         internal bool IsSetBackupRetentionCount()
         {
             return this._backupRetentionCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CloudFormationStackArn. 
+        /// <para>
+        /// The ARN of the CloudFormation stack that was used to create the server. 
+        /// </para>
+        /// </summary>
+        public string CloudFormationStackArn
+        {
+            get { return this._cloudFormationStackArn; }
+            set { this._cloudFormationStackArn = value; }
+        }
+
+        // Check to see if CloudFormationStackArn property is set
+        internal bool IsSetCloudFormationStackArn()
+        {
+            return this._cloudFormationStackArn != null;
         }
 
         /// <summary>
@@ -408,7 +446,8 @@ namespace Amazon.OpsWorksCM.Model
         /// Gets and sets the property Status. 
         /// <para>
         ///  The server's status. This field displays the states of actions in progress, such
-        /// as creating, running, or backing up the server, as well as server health. 
+        /// as creating, running, or backing up the server, as well as the server's health state.
+        /// 
         /// </para>
         /// </summary>
         public ServerStatus Status

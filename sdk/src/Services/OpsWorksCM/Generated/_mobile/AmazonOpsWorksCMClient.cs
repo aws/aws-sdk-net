@@ -38,21 +38,21 @@ namespace Amazon.OpsWorksCM
     ///
     /// AWS OpsWorks for Chef Automate 
     /// <para>
-    ///  A service that runs and manages configuration management servers. 
+    ///  AWS OpsWorks for Chef Automate is a service that runs and manages configuration management
+    /// servers. 
     /// </para>
     ///  
     /// <para>
-    /// Glossary of terms
+    ///  <b>Glossary of terms</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <b>Server</b>: A server is a configuration management server, and can be highly-available.
-    /// The configuration manager runs on your instances by using various AWS services, such
-    /// as Amazon Elastic Compute Cloud (EC2), and potentially Amazon Relational Database
-    /// Service (RDS). A server is a generic abstraction over the configuration manager that
-    /// you want to use, much like Amazon RDS. In AWS OpsWorks for Chef Automate, you do not
-    /// start or stop servers. After you create servers, they continue to run until they are
-    /// deleted.
+    ///  <b>Server</b>: A configuration management server that can be highly-available. The
+    /// configuration manager runs on your instances by using various AWS services, such as
+    /// Amazon Elastic Compute Cloud (EC2), and potentially Amazon Relational Database Service
+    /// (RDS). A server is a generic abstraction over the configuration manager that you want
+    /// to use, much like Amazon RDS. In AWS OpsWorks for Chef Automate, you do not start
+    /// or stop servers. After you create servers, they continue to run until they are deleted.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -81,12 +81,34 @@ namespace Amazon.OpsWorksCM
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// Throttling limits
+    ///  <b>Endpoints</b> 
     /// </para>
     ///  
     /// <para>
-    /// All API operations allow for 5 requests per second with a burst of 10 requests per
-    /// second.
+    /// AWS OpsWorks for Chef Automate supports the following endpoints, all HTTPS. You must
+    /// connect to one of the following endpoints. Chef servers can only be accessed or managed
+    /// within the endpoint in which they are created.
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// opsworks-cm.us-east-1.amazonaws.com
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// opsworks-cm.us-west-2.amazonaws.com
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// opsworks-cm.eu-west-1.amazonaws.com
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    ///  <b>Throttling limits</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// All API operations allow for five requests per second with a burst of 10 requests
+    /// per second.
     /// </para>
     /// </summary>
     public partial class AmazonOpsWorksCMClient : AmazonServiceClient, IAmazonOpsWorksCM

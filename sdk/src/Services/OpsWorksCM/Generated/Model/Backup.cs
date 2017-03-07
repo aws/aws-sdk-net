@@ -302,8 +302,7 @@ namespace Amazon.OpsWorksCM.Model
         /// <summary>
         /// Gets and sets the property S3DataSize. 
         /// <para>
-        ///  The size of the backup, in bytes. The size is returned by the instance in the command
-        /// results. 
+        ///  This field is deprecated and is no longer used. 
         /// </para>
         /// </summary>
         public int S3DataSize
@@ -321,7 +320,7 @@ namespace Amazon.OpsWorksCM.Model
         /// <summary>
         /// Gets and sets the property S3DataUrl. 
         /// <para>
-        ///  The Amazon S3 URL of the backup's tar.gz file. 
+        ///  This field is deprecated and is no longer used. 
         /// </para>
         /// </summary>
         public string S3DataUrl
