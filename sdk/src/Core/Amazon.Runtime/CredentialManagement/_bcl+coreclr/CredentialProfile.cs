@@ -80,6 +80,16 @@ namespace Amazon.Runtime.CredentialManagement
         }
 
         /// <summary>
+        /// The <see cref="ICredentialProfileStore"/> that this <see cref="CredentialProfile"/> is associated with.
+        /// Null if this <see cref="CredentialProfile"/> is not associated with a <see cref="ICredentialProfileStore"/>.
+        /// </summary>
+        public ICredentialProfileStore CredentialProfileStore
+        {
+            get;
+            internal set;
+        }
+
+        /// <summary>
         /// If CanCreateAWSCredentials is true, returns a short description of the type of
         /// credentials that would be created.
         /// If CanCreateAWSCredentials is false, return null.

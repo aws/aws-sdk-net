@@ -18,7 +18,7 @@ using Amazon.Util.Internal;
 using Amazon.Runtime.Internal.Settings;
 using System.Linq;
 
-namespace Amazon.Runtime.CredentialManagement.Internal
+namespace Amazon.Runtime.CredentialManagement
 {
     /// <summary>
     /// Class to abstract the combined use of NetSDKCredentialsFile and SharedCredentialsFile where possible.
@@ -47,6 +47,50 @@ namespace Amazon.Runtime.CredentialManagement.Internal
         {
             ProfilesLocation = profilesLocation;
         }
+
+        /// <summary>
+        /// Tries to get <see cref="AWSCredentials"/> from a profile based on these rules:
+        /// <list type="table">
+        /// <listheader>
+        /// <term>ProfilesLocation</term>
+        /// <term>Platform Supports .NET SDK Credentials File</term>
+        /// <term>Action</term>
+        /// </listheader>
+        /// <item>
+        /// <term>null or empty</term>
+        /// <term>yes</term>
+        /// <term>search sdk credentials file then shared credentials file in default location</term>
+        /// </item>
+        /// <item>
+        /// <term>null or empty</term>
+        /// <term>no</term>
+        /// <term>search shared credentials file in the default location</term>
+        /// </item>
+        /// <item>
+        /// <term>non-null and non-empty</term>
+        /// <term>yes</term>
+        /// <term>search shared credentials file at disk path: profilesLocation</term>
+        /// </item>
+        /// <item>
+        /// <term>non-null and non-empty</term>
+        /// <term>no</term>
+        /// <term>search shared credentials file at disk path: profilesLocation</term>
+        /// </item>
+        /// </list>
+        /// </summary>
+        /// <param name="profileName">The name of the profile to get credentials from.</param>
+        /// <param name="credentials">The credentials, if the profile is found and credentials can be created</param>
+        /// <returns>True if the profile was found and credentials could be created, false otherwise.</returns>
+        public bool TryGetAWSCredentials(string profileName, out AWSCredentials credentials)
+        {
+            CredentialProfile profile;
+            if (TryGetProfile(profileName, out profile))
+                return AWSCredentialsFactory.TryGetAWSCredentials(profile, profile.CredentialProfileStore, out credentials);
+
+            credentials = null;
+            return false;
+        }
+
 
         /// <summary>
         /// Tries to get a profile based on these rules:
@@ -81,77 +125,24 @@ namespace Amazon.Runtime.CredentialManagement.Internal
         /// <param name="profileName">The name of the profile to get.</param>
         /// <param name="profile">The profile, if found</param>
         /// <returns>True if the profile was found, false otherwise.</returns>
-        /// <returns></returns>
         public bool TryGetProfile(string profileName, out CredentialProfile profile)
-        {
-            PersistedCredentialProfile persistedProfile;
-            if (TryGetPersistedProfile(profileName, out persistedProfile))
-            {
-                profile = persistedProfile.Profile;
-                return true;
-            }
-            else
-            {
-                profile = null;
-                return false;
-            }
-        }
-
-        /// <summary>
-        /// Tries to get a persisted profile based on these rules:
-        /// <list type="table">
-        /// <listheader>
-        /// <term>ProfilesLocation</term>
-        /// <term>Platform Supports .NET SDK Credentials File</term>
-        /// <term>Action</term>
-        /// </listheader>
-        /// <item>
-        /// <term>null or empty</term>
-        /// <term>yes</term>
-        /// <term>search sdk credentials file then shared credentials file in default location</term>
-        /// </item>
-        /// <item>
-        /// <term>null or empty</term>
-        /// <term>no</term>
-        /// <term>search shared credentials file in the default location</term>
-        /// </item>
-        /// <item>
-        /// <term>non-null and non-empty</term>
-        /// <term>yes</term>
-        /// <term>search shared credentials file at disk path: profilesLocation</term>
-        /// </item>
-        /// <item>
-        /// <term>non-null and non-empty</term>
-        /// <term>no</term>
-        /// <term>search shared credentials file at disk path: profilesLocation</term>
-        /// </item>
-        /// </list>
-        /// </summary>
-        /// <param name="profileName">The name of the profile to get.</param>
-        /// <param name="persistedProfile">The persisted profile, if found</param>
-        /// <returns>True if the profile was found, false otherwise.</returns>
-        public bool TryGetPersistedProfile(string profileName, out PersistedCredentialProfile persistedProfile)
         {
             if (string.IsNullOrEmpty(ProfilesLocation) && UserCrypto.IsUserCryptAvailable)
             {
                 var netCredentialsFile = new NetSDKCredentialsFile();
-                CredentialProfile netProfile;
-                if (netCredentialsFile.TryGetProfile(profileName, out netProfile))
+                if (netCredentialsFile.TryGetProfile(profileName, out profile))
                 {
-                    persistedProfile = new PersistedCredentialProfile(netProfile, netCredentialsFile);
                     return true;
                 }
             }
 
             var sharedCredentialsFile = new SharedCredentialsFile(ProfilesLocation);
-            CredentialProfile sharedProfile;
-            if (sharedCredentialsFile.TryGetProfile(profileName, out sharedProfile))
+            if (sharedCredentialsFile.TryGetProfile(profileName, out profile))
             {
-                persistedProfile = new PersistedCredentialProfile(sharedProfile, sharedCredentialsFile);
                 return true;
             }
 
-            persistedProfile = null;
+            profile = null;
             return false;
         }
 
@@ -186,17 +177,17 @@ namespace Amazon.Runtime.CredentialManagement.Internal
         /// </list>
         /// </summary>
         /// <returns>A list of persisted profiles.</returns>
-        public List<PersistedCredentialProfile> ListPersistedProfiles()
+        public List<CredentialProfile> ListProfiles()
         {
-            var profiles = new List<PersistedCredentialProfile>();
+            var profiles = new List<CredentialProfile>();
 
             if (string.IsNullOrEmpty(ProfilesLocation) && UserCrypto.IsUserCryptAvailable)
             {
                 var netSdkFile = new NetSDKCredentialsFile();
-                profiles.AddRange(netSdkFile.ListProfiles().Select(p => new PersistedCredentialProfile(p, netSdkFile)));
+                profiles.AddRange(netSdkFile.ListProfiles());
             }
             var sharedFile = new SharedCredentialsFile(ProfilesLocation);
-            profiles.AddRange(sharedFile.ListProfiles().Select(p => new PersistedCredentialProfile(p, sharedFile)));
+            profiles.AddRange(sharedFile.ListProfiles());
 
             return profiles;
         }
@@ -277,10 +268,10 @@ namespace Amazon.Runtime.CredentialManagement.Internal
         /// <param name="profileName">The name of the profile to unregister.</param>
         public void UnregisterProfile(string profileName)
         {
-            PersistedCredentialProfile persistedProfile;
-            if (TryGetPersistedProfile(profileName, out persistedProfile))
+            CredentialProfile profile;
+            if (TryGetProfile(profileName, out profile))
             {
-                persistedProfile.Store.UnregisterProfile(profileName);
+                profile.CredentialProfileStore.UnregisterProfile(profileName);
             }
         }
     }

@@ -15,7 +15,7 @@
 using Amazon.Runtime.CredentialManagement;
 using System.Collections.Generic;
 
-namespace Amazon.Runtime.CredentialManagement.Internal
+namespace Amazon.Runtime.CredentialManagement
 {
     /// <summary>
     /// Interface to define the necessary operations for a CredentialProfile storage mechanism.

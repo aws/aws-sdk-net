@@ -252,6 +252,26 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
+        public void CredentialProfileStorePropertyIsSet()
+        {
+            using (var tester = new SharedCredentialsFileTestFixture())
+            {
+                var writeProfile = new CredentialProfile("test_profile", new CredentialProfileOptions
+                {
+                    AccessKey = "access_key",
+                    SecretKey = "secret_key"
+                });
+                Assert.IsNull(writeProfile.CredentialProfileStore);
+                tester.CredentialsFile.RegisterProfile(writeProfile);
+                Assert.IsTrue(object.ReferenceEquals(tester.CredentialsFile, writeProfile.CredentialProfileStore));
+
+                CredentialProfile readProfile;
+                Assert.IsTrue(tester.CredentialsFile.TryGetProfile("test_profile", out readProfile));
+                Assert.IsTrue(object.ReferenceEquals(tester.CredentialsFile, readProfile.CredentialProfileStore));
+            }
+        }
+
+        [TestMethod]
         public void WriteBasicProfileReservedPropertyName()
         {
             TestReservedProperty("aws_access_key_id");

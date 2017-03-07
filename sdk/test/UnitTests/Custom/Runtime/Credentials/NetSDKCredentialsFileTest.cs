@@ -188,6 +188,26 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
+        public void CredentialProfileStorePropertyIsSet()
+        {
+            using (var tester = new NetSDKCredentialsFileTestFixture())
+            {
+                var writeProfile = new CredentialProfile("test_profile", new CredentialProfileOptions
+                {
+                    AccessKey = "access_key",
+                    SecretKey = "secret_key"
+                });
+                Assert.IsNull(writeProfile.CredentialProfileStore);
+                tester.ProfileStore.RegisterProfile(writeProfile);
+                Assert.IsTrue(object.ReferenceEquals(tester.ProfileStore, writeProfile.CredentialProfileStore));
+
+                CredentialProfile readProfile;
+                Assert.IsTrue(tester.ProfileStore.TryGetProfile("test_profile", out readProfile));
+                Assert.IsTrue(object.ReferenceEquals(tester.ProfileStore, readProfile.CredentialProfileStore));
+            }
+        }
+
+        [TestMethod]
         public void ReadRegionOnlyProfile()
         {
             using (var tester = new NetSDKCredentialsFileTestFixture(RegionOnlyProfileText))

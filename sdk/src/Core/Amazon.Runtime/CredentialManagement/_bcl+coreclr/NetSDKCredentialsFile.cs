@@ -135,7 +135,8 @@ namespace Amazon.Runtime.CredentialManagement
                     {
                         UniqueKey = uniqueKey,
                         Properties = userProperties,
-                        Region = region
+                        Region = region,
+                        CredentialProfileStore = this
                     };
                     return true;
                 }
@@ -179,6 +180,7 @@ namespace Amazon.Runtime.CredentialManagement
                 Guid? newUniqueKey;
                 if (GuidUtils.TryParseNullableGuid(newUniqueKeyStr, out newUniqueKey))
                     profile.UniqueKey = newUniqueKey;
+                profile.CredentialProfileStore = this;
             }
             else
             {

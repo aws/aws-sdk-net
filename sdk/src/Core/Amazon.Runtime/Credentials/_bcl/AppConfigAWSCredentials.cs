@@ -56,11 +56,11 @@ namespace Amazon.Runtime
             else if (!string.IsNullOrEmpty(AWSConfigs.AWSProfileName))
             {
                 CredentialProfileStoreChain chain = new CredentialProfileStoreChain(AWSConfigs.AWSProfilesLocation);
-                PersistedCredentialProfile persistedProfile;
-                if (chain.TryGetPersistedProfile(AWSConfigs.AWSProfileName, out persistedProfile))
+                CredentialProfile profile;
+                if (chain.TryGetProfile(AWSConfigs.AWSProfileName, out profile))
                 {
                     // Will throw a descriptive exception if profile.CanCreateAWSCredentials is false.
-                    _wrappedCredentials = persistedProfile.Profile.GetAWSCredentials(persistedProfile.Store, true);
+                    _wrappedCredentials = profile.GetAWSCredentials(profile.CredentialProfileStore, true);
                 }
             }
 

@@ -216,6 +216,7 @@ namespace Amazon.Runtime.CredentialManagement
 
             credentialsFile.EditSection(profile.Name, new SortedDictionary<string, string>(profileDictionary));
             credentialsFile.Persist();
+            profile.CredentialProfileStore = this;
         }
 
         /// <summary>
@@ -350,7 +351,8 @@ namespace Amazon.Runtime.CredentialManagement
                 {
                     UniqueKey = toolkitArtifactGuid,
                     Properties = userProperties,
-                    Region = region
+                    Region = region,
+                    CredentialProfileStore = this
                 };
 
                 if (!IsSupportedProfileType(profile.ProfileType))
