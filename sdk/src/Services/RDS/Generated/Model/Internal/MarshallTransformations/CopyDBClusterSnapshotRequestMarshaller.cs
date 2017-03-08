@@ -58,6 +58,18 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
 
             if(publicRequest != null)
             {
+                if(publicRequest.IsSetCopyTags())
+                {
+                    request.Parameters.Add("CopyTags", StringUtils.FromBool(publicRequest.CopyTags));
+                }
+                if(publicRequest.IsSetKmsKeyId())
+                {
+                    request.Parameters.Add("KmsKeyId", StringUtils.FromString(publicRequest.KmsKeyId));
+                }
+                if(publicRequest.IsSetPreSignedUrl())
+                {
+                    request.Parameters.Add("PreSignedUrl", StringUtils.FromString(publicRequest.PreSignedUrl));
+                }
                 if(publicRequest.IsSetSourceDBClusterSnapshotIdentifier())
                 {
                     request.Parameters.Add("SourceDBClusterSnapshotIdentifier", StringUtils.FromString(publicRequest.SourceDBClusterSnapshotIdentifier));
