@@ -15,6 +15,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 using Amazon.DynamoDBv2.Model;
 using System.IO;
@@ -85,18 +86,25 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>Amazon.DynamoDBv2.Model.ExpectedAttributeValue</returns>
         public ExpectedAttributeValue ToExpectedAttributeValue(DynamoDBEntryConversion conversion)
         {
+            return ToExpectedAttributeValue(this.Exists, this.Values.Cast<DynamoDBEntry>(), this.Comparison, conversion, ttlAttribute: null);
+        }
+
+        internal static ExpectedAttributeValue ToExpectedAttributeValue(bool exists, IEnumerable<DynamoDBEntry> values, ScanOperator comparison,
+            DynamoDBEntryConversion conversion, string ttlAttribute)
+        {
             var eav = new ExpectedAttributeValue();
 
-            if (this.Exists)
+            if (exists)
             {
-                eav.ComparisonOperator = EnumMapper.Convert(this.Comparison);
-                foreach (var val in this.Values)
+                eav.ComparisonOperator = EnumMapper.Convert(comparison);
+                foreach (var val in values)
                     eav.AttributeValueList.Add(val.ConvertToAttributeValue(new DynamoDBEntry.AttributeConversionConfig(conversion)));
             }
             else
-                eav.Exists = this.Exists;
+                eav.Exists = exists;
 
             return eav;
+
         }
     }
 
@@ -164,13 +172,38 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns></returns>
         public Dictionary<string, ExpectedAttributeValue> ToExpectedAttributeMap(DynamoDBEntryConversion conversion)
         {
+            return ToExpectedAttributeMap(conversion, epochAttributes: null);
+        }
+
+        /// <summary>
+        /// Creates a map of attribute names mapped to ExpectedAttributeValue objects.
+        /// This call will use the conversion specified in the table.
+        /// </summary>
+        /// <returns></returns>
+        public Dictionary<string, ExpectedAttributeValue> ToExpectedAttributeMap(Table table)
+        {
+            return ToExpectedAttributeMap(table.Conversion, table.StoreAsEpoch);
+        }
+
+        private Dictionary<string, ExpectedAttributeValue> ToExpectedAttributeMap(DynamoDBEntryConversion conversion, IEnumerable<string> epochAttributes)
+        {
             Dictionary<string, ExpectedAttributeValue> ret = new Dictionary<string, ExpectedAttributeValue>();
 
             foreach (var kvp in ExpectedValues)
             {
                 string attributeName = kvp.Key;
                 ExpectedValue expectedValue = kvp.Value;
-                ExpectedAttributeValue eav = expectedValue.ToExpectedAttributeValue(conversion);
+
+                ExpectedAttributeValue eav;
+                if (epochAttributes != null && epochAttributes.Contains(attributeName))
+                {
+                    var values = expectedValue.Values.Select(p => Document.DateTimeToEpochSeconds(p, attributeName)).ToList();
+                    eav = ExpectedValue.ToExpectedAttributeValue(expectedValue.Exists, values, expectedValue.Comparison, conversion, attributeName);
+                }
+                else
+                {
+                    eav = expectedValue.ToExpectedAttributeValue(conversion);
+                }
                 ret[attributeName] = eav;
             }
 

@@ -15,8 +15,9 @@
 
 using System;
 using System.Collections.Generic;
-
 using System.IO;
+using System.Linq;
+
 using Amazon.DynamoDBv2.Model;
 using Amazon.Util;
 
@@ -82,36 +83,36 @@ namespace Amazon.DynamoDBv2.DocumentModel
             set { this._expressionAttributeValues = value; }
         }
 
-        internal void ApplyExpression(ScanRequest request, DynamoDBEntryConversion conversion)
+        internal void ApplyExpression(ScanRequest request, Table table)
         {
             request.FilterExpression = this.ExpressionStatement;
             request.ExpressionAttributeNames = new Dictionary<string, string>(this.ExpressionAttributeNames);
-            request.ExpressionAttributeValues = ConvertToAttributeValues(this.ExpressionAttributeValues, conversion);
+            request.ExpressionAttributeValues = ConvertToAttributeValues(this.ExpressionAttributeValues, table);
         }
 
-        internal void ApplyExpression(DeleteItemRequest request, DynamoDBEntryConversion conversion)
+        internal void ApplyExpression(DeleteItemRequest request, Table table)
         {
             request.ConditionExpression = this.ExpressionStatement;
             request.ExpressionAttributeNames = new Dictionary<string, string>(this.ExpressionAttributeNames);
-            request.ExpressionAttributeValues = ConvertToAttributeValues(this.ExpressionAttributeValues, conversion);
+            request.ExpressionAttributeValues = ConvertToAttributeValues(this.ExpressionAttributeValues, table);
         }
 
-        internal void ApplyExpression(PutItemRequest request, DynamoDBEntryConversion conversion)
+        internal void ApplyExpression(PutItemRequest request, Table table)
         {
             request.ConditionExpression = this.ExpressionStatement;
             request.ExpressionAttributeNames = new Dictionary<string, string>(this.ExpressionAttributeNames);
-            request.ExpressionAttributeValues = ConvertToAttributeValues(this.ExpressionAttributeValues, conversion);
+            request.ExpressionAttributeValues = ConvertToAttributeValues(this.ExpressionAttributeValues, table);
         }
 
-        internal void ApplyExpression(UpdateItemRequest request, DynamoDBEntryConversion conversion)
+        internal void ApplyExpression(UpdateItemRequest request, Table table)
         {
             request.ConditionExpression = this.ExpressionStatement;
             request.ExpressionAttributeNames = new Dictionary<string,string>(this.ExpressionAttributeNames);
-            request.ExpressionAttributeValues = ConvertToAttributeValues(this.ExpressionAttributeValues, conversion);
+            request.ExpressionAttributeValues = ConvertToAttributeValues(this.ExpressionAttributeValues, table);
         }
 
 
-        internal static void ApplyExpression(QueryRequest request, DynamoDBEntryConversion conversion,
+        internal static void ApplyExpression(QueryRequest request, Table table,
             Expression keyExpression, Expression filterExpression)
         {
             if (keyExpression == null)
@@ -132,24 +133,31 @@ namespace Amazon.DynamoDBv2.DocumentModel
             var combinedEan = Common.Combine(kean, fean, StringComparer.Ordinal);
             request.ExpressionAttributeNames = combinedEan;
 
-            var keav = new Document(keyExpression.ExpressionAttributeValues).ForceConversion(conversion);
-            var feav = new Document(filterExpression.ExpressionAttributeValues).ForceConversion(conversion);
+            var keav = new Document(keyExpression.ExpressionAttributeValues).ForceConversion(table.Conversion);
+            var feav = new Document(filterExpression.ExpressionAttributeValues).ForceConversion(table.Conversion);
             var combinedEav = Common.Combine(keav, feav, null);
-            request.ExpressionAttributeValues = ConvertToAttributeValues(combinedEav, conversion);
+            request.ExpressionAttributeValues = ConvertToAttributeValues(combinedEav, table);
         }
 
         internal static Dictionary<string, AttributeValue> ConvertToAttributeValues(
-            Dictionary<string, DynamoDBEntry> valueMap, DynamoDBEntryConversion conversion)
+            Dictionary<string, DynamoDBEntry> valueMap, Table table)
         {
             var convertedValues = new Dictionary<string, AttributeValue>();
             if (valueMap != null)
             {
                 foreach (var kvp in valueMap)
                 {
-                    if (kvp.Value == null)
-                        convertedValues[kvp.Key] = new AttributeValue { NULL = true };
+                    var attributeName = kvp.Key;
+                    var entry = kvp.Value;
+
+                    if (entry == null)
+                        convertedValues[attributeName] = new AttributeValue { NULL = true };
                     else
-                        convertedValues[kvp.Key] = kvp.Value.ConvertToAttributeValue(new DynamoDBEntry.AttributeConversionConfig(conversion));
+                    {
+                        if (table.StoreAsEpoch.Contains(attributeName))
+                            entry = Document.DateTimeToEpochSeconds(entry, attributeName);
+                        convertedValues[attributeName] = entry.ConvertToAttributeValue(new DynamoDBEntry.AttributeConversionConfig(table.Conversion));
+                    }
                 }
             }
 

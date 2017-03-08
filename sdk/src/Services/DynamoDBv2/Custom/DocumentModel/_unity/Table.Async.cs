@@ -59,15 +59,26 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <param name="asyncOptions">An instance of AsyncOptions that specifies how the async method should be executed.</param>
         public static void LoadTableAsync(IAmazonDynamoDB ddbClient, string tableName, DynamoDBEntryConversion conversion, AmazonDynamoDBCallback<Table> callback, AsyncOptions asyncOptions = null)
         {
-            LoadTableAsync(ddbClient,tableName, DynamoDBConsumer.DocumentModel, conversion,callback,asyncOptions);
+            var config = new TableConfig(tableName, conversion, DynamoDBConsumer.DocumentModel, storeAsEpoch: null);
+            LoadTableAsync(ddbClient, config, callback, asyncOptions);
         }
-        
-        internal static void LoadTableAsync(IAmazonDynamoDB ddbClient, string tableName, Table.DynamoDBConsumer consumer, DynamoDBEntryConversion conversion, AmazonDynamoDBCallback<Table> callback, AsyncOptions asyncOptions = null)
+
+        /// <summary>
+        /// Creates a Table object with the specified configuration, using the
+        /// passed-in client to load the table definition.
+        /// 
+        /// This method will throw an exception if the table does not exist.
+        /// </summary>
+        /// <param name="ddbClient">Client to use to access DynamoDB.</param>
+        /// <param name="config">Configuration to use for the table.</param>
+        /// <param name="callback">The callback that will be invoked when the asynchronous operation completes.</param>
+        /// <param name="asyncOptions">An instance of AsyncOptions that specifies how the async method should be executed.</param>
+        public static void LoadTableAsync(IAmazonDynamoDB ddbClient, TableConfig config, AmazonDynamoDBCallback<Table> callback, AsyncOptions asyncOptions = null)
         {
             asyncOptions = asyncOptions??new AsyncOptions();
             DynamoDBAsyncExecutor.ExecuteAsync<Table>(
             ()=>{
-                return LoadTable(ddbClient,tableName,consumer,conversion);
+                return LoadTable(ddbClient, config);
             },asyncOptions,callback);
         }
         

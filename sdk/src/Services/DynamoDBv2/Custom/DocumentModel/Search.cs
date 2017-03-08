@@ -216,14 +216,14 @@ namespace Amazon.DynamoDBv2.DocumentModel
                             Limit = Limit,
                             TableName = TableName,
                             AttributesToGet = AttributesToGet,
-                            ScanFilter = Filter.ToConditions(SourceTable.Conversion),
+                            ScanFilter = Filter.ToConditions(SourceTable),
                             Select = EnumMapper.Convert(Select),
                             ConsistentRead = IsConsistentRead
                         };
                         if (!string.IsNullOrEmpty(this.IndexName))
                             scanReq.IndexName = this.IndexName;
                         if (this.FilterExpression != null && this.FilterExpression.IsSet)
-                            this.FilterExpression.ApplyExpression(scanReq, SourceTable.Conversion);
+                            this.FilterExpression.ApplyExpression(scanReq, SourceTable);
                         if (scanReq.ScanFilter != null && scanReq.ScanFilter.Count > 1)
                             scanReq.ConditionalOperator = EnumMapper.Convert(ConditionalOperator);
                         Common.ConvertAttributesToGetToProjectionExpression(scanReq);
@@ -234,15 +234,12 @@ namespace Amazon.DynamoDBv2.DocumentModel
                             scanReq.Segment = this.Segment;
                         }
 
-                        ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)scanReq).AddBeforeRequestHandler(isAsync ?
-                            new RequestEventHandler(SourceTable.UserAgentRequestEventHandlerAsync) :
-                            new RequestEventHandler(SourceTable.UserAgentRequestEventHandlerSync)
-                            );
+                        SourceTable.AddRequestHandler(scanReq, isAsync);
 
                         var scanResult = SourceTable.DDBClient.Scan(scanReq);
                         foreach (var item in scanResult.Items)
                         {
-                            Document doc = Document.FromAttributeMap(item);
+                            Document doc = SourceTable.FromAttributeMap(item);
                             ret.Add(doc);
                             if (CollectResults)
                             {
@@ -268,7 +265,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                             IndexName = IndexName,
                         };
 
-                        Expression.ApplyExpression(queryReq, SourceTable.Conversion, KeyExpression, FilterExpression);
+                        Expression.ApplyExpression(queryReq, SourceTable, KeyExpression, FilterExpression);
 
                         Dictionary<string, Condition> keyConditions, filterConditions;
                         SplitQueryFilter(Filter, SourceTable, queryReq.IndexName, out keyConditions, out filterConditions);
@@ -279,14 +276,12 @@ namespace Amazon.DynamoDBv2.DocumentModel
                         if (queryReq.QueryFilter != null && queryReq.QueryFilter.Count > 1)
                             queryReq.ConditionalOperator = EnumMapper.Convert(ConditionalOperator);
 
-                        ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)queryReq).AddBeforeRequestHandler(isAsync ?
-                            new RequestEventHandler(SourceTable.UserAgentRequestEventHandlerAsync) :
-                            new RequestEventHandler(SourceTable.UserAgentRequestEventHandlerSync)
-                            );
+                        SourceTable.AddRequestHandler(queryReq, isAsync);
+
                         var queryResult = SourceTable.DDBClient.Query(queryReq);
                         foreach (var item in queryResult.Items)
                         {
-                            Document doc = Document.FromAttributeMap(item);
+                            Document doc = SourceTable.FromAttributeMap(item);
                             ret.Add(doc);
                             if (CollectResults)
                             {
@@ -336,7 +331,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             keyConditions = new Dictionary<string, Condition>();
             filterConditions = new Dictionary<string, Condition>();
 
-            var conditions = filter.ToConditions(targetTable.Conversion);
+            var conditions = filter.ToConditions(targetTable);
             foreach (var kvp in conditions)
             {
                 string attributeName = kvp.Key;
@@ -402,7 +397,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                             if (!string.IsNullOrEmpty(this.IndexName))
                                 scanReq.IndexName = this.IndexName;
                             if (this.FilterExpression != null && this.FilterExpression.IsSet)
-                                this.FilterExpression.ApplyExpression(scanReq, SourceTable.Conversion);
+                                this.FilterExpression.ApplyExpression(scanReq, SourceTable);
                             if (scanReq.ScanFilter != null && scanReq.ScanFilter.Count > 1)
                                 scanReq.ConditionalOperator = EnumMapper.Convert(ConditionalOperator);
 
@@ -411,7 +406,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
                                 scanReq.TotalSegments = this.TotalSegments;
                                 scanReq.Segment = this.Segment;
                             }
-                            ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)scanReq).AddBeforeRequestHandler(SourceTable.UserAgentRequestEventHandlerSync);
+
+                            SourceTable.AddRequestHandler(scanReq, isAsync: false);
+
                             var scanResult = SourceTable.DDBClient.Scan(scanReq);
                             count = Matches.Count + scanResult.Count;
                             return count;
@@ -426,7 +423,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                                 IndexName = IndexName
                             };
 
-                            Expression.ApplyExpression(queryReq, SourceTable.Conversion, KeyExpression, FilterExpression);
+                            Expression.ApplyExpression(queryReq, SourceTable, KeyExpression, FilterExpression);
                             Dictionary<string, Condition> keyConditions, filterConditions;
                             SplitQueryFilter(Filter, SourceTable, queryReq.IndexName, out keyConditions, out filterConditions);
                             queryReq.KeyConditions = keyConditions;
@@ -435,7 +432,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
                             if (queryReq.QueryFilter != null && queryReq.QueryFilter.Count > 1)
                                 queryReq.ConditionalOperator = EnumMapper.Convert(ConditionalOperator);
 
-                            ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)queryReq).AddBeforeRequestHandler(SourceTable.UserAgentRequestEventHandlerSync);
+                            SourceTable.AddRequestHandler(queryReq, isAsync: false);
+
                             var queryResult = SourceTable.DDBClient.Query(queryReq);
                             count = Matches.Count + queryResult.Count;
                             return count;

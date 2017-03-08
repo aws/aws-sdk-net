@@ -266,21 +266,20 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return GetItemsHelper(false);
         }
 
-        // Dictionary to be populated by service calls
-        private Dictionary<string, List<Dictionary<string, AttributeValue>>> AllRetrievedItems;
-
         internal Dictionary<string, List<Document>> GetItemsHelper(bool isAsync)
         {
-            AllRetrievedItems = new Dictionary<string, List<Dictionary<string, AttributeValue>>>();
-            GetAttributeItems(isAsync);
-            var itemsAsDocuments = new Dictionary<string, List<Document>>();
+            var results = GetAttributeItems(isAsync);
 
-            foreach (var kvp in AllRetrievedItems)
+            var itemsAsDocuments = new Dictionary<string, List<Document>>(StringComparer.Ordinal);
+            foreach (var kvp in results.RetrievedItems)
             {
+                var tableName = kvp.Key;
+                var table = results.TargetTables[tableName];
+
                 List<Document> documents = new List<Document>();
                 foreach (var dictionary in kvp.Value)
                 {
-                    documents.Add(Document.FromAttributeMap(dictionary));
+                    documents.Add(table.FromAttributeMap(dictionary));
                 }
                 itemsAsDocuments[kvp.Key] = documents;
             }
@@ -288,14 +287,16 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return itemsAsDocuments;
         }
 
-        private void GetAttributeItems(bool isAsync)
+        private Results GetAttributeItems(bool isAsync)
         {
+            var results = new Results(Batches);
             if (Batches == null || Batches.Count == 0)
-                return;
+                return results;
 
+            // use client from the table from the first batch
             var firstBatch = this.Batches[0];
             var targetTable = firstBatch.TargetTable;
-            var client = targetTable.DDBClient;
+            var clientToUse = targetTable.DDBClient;
 
             var convertedBatches = ConvertBatches();
             while (true)
@@ -304,46 +305,40 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 if (nextSet.Count == 0)
                     break;
 
-                BatchGetItemRequest request = CreateRequest(nextSet, targetTable, isAsync);
-                CallUntilCompletion(client, request);
+                BatchGetItemRequest request = CreateRequest(nextSet);
+                targetTable.AddRequestHandler(request, isAsync);
+
+                CallUntilCompletion(clientToUse, request, results);
             }
+
+            return results;
         }
 
 #if PCL|| UNITY || CORECLR
-        private void CallUntilCompletion(AmazonDynamoDBClient client, BatchGetItemRequest request)
+        private void CallUntilCompletion(AmazonDynamoDBClient client, BatchGetItemRequest request, Results allResults)
 #else
-        private void CallUntilCompletion(IAmazonDynamoDB client, BatchGetItemRequest request)
+        private void CallUntilCompletion(IAmazonDynamoDB client, BatchGetItemRequest request, Results allResults)
 #endif
         {
             do
             {
-                var result = client.BatchGetItem(request);
+                var serviceResponse = client.BatchGetItem(request);
 
-                var responses = result.Responses;
-                foreach (var response in responses)
+                foreach (var kvp in serviceResponse.Responses)
                 {
-                    var tableName = response.Key;
-                    var items = response.Value;
+                    var tableName = kvp.Key;
+                    var items = kvp.Value;
 
-                    List<Dictionary<string, AttributeValue>> fetchedItems;
-                    if (!AllRetrievedItems.TryGetValue(tableName, out fetchedItems))
-                    {
-                        fetchedItems = new List<Dictionary<string, AttributeValue>>();
-                        AllRetrievedItems[tableName] = fetchedItems;
-                    }
-                    fetchedItems.AddRange(items);
+                    allResults.Add(tableName, items);
                 }
-                request.RequestItems = result.UnprocessedKeys;
+                request.RequestItems = serviceResponse.UnprocessedKeys;
             } while (request.RequestItems.Count > 0);
         }
 
-        private static BatchGetItemRequest CreateRequest(Dictionary<string, RequestSet> set, Table targetTable, bool isAsync)
+        private static BatchGetItemRequest CreateRequest(Dictionary<string, RequestSet> set)
         {
             BatchGetItemRequest request = new BatchGetItemRequest();
-            ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)request).AddBeforeRequestHandler(isAsync ?
-                new RequestEventHandler(targetTable.UserAgentRequestEventHandlerAsync) :
-                new RequestEventHandler(targetTable.UserAgentRequestEventHandlerSync)
-                );
+
             var requestItems = new Dictionary<string, KeysAndAttributes>();
             foreach (var kvp in set)
             {
@@ -372,7 +367,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
             foreach (var batch in Batches)
             {
-                string tableName = batch.TargetTable.TableName;
+                var table = batch.TargetTable;
+                var tableName = table.TableName;
                 if (allItems.ContainsKey(tableName))
                     throw new AmazonDynamoDBException("More than one batch request against a single table is not supported.");
 
@@ -420,6 +416,38 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 : base(items)
             {
                 Batch = batch;
+            }
+        }
+
+        private class Results
+        {
+            public Dictionary<string, List<Dictionary<string, AttributeValue>>> RetrievedItems { get; private set; }
+            public Dictionary<string, Table> TargetTables { get; private set; }
+
+            public Results(IEnumerable<DocumentBatchGet> batches)
+            {
+                RetrievedItems = new Dictionary<string, List<Dictionary<string, AttributeValue>>>(StringComparer.Ordinal);
+                TargetTables = new Dictionary<string, Table>(StringComparer.Ordinal);
+
+                if (batches != null)
+                {
+                    foreach (var batch in batches)
+                    {
+                        var table = batch.TargetTable;
+                        TargetTables[table.TableName] = table;
+                    }
+                }
+            }
+
+            public void Add(string tableName, List<Dictionary<string, AttributeValue>> items)
+            {
+                List<Dictionary<string, AttributeValue>> fetchedItems;
+                if (!RetrievedItems.TryGetValue(tableName, out fetchedItems))
+                {
+                    fetchedItems = new List<Dictionary<string, AttributeValue>>();
+                    RetrievedItems[tableName] = fetchedItems;
+                }
+                fetchedItems.AddRange(items);
             }
         }
     }

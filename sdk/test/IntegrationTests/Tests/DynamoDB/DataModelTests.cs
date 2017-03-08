@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Text;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -8,7 +9,6 @@ using AWSSDK_DotNet.IntegrationTests.Utils;
 using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.Model;
 using Amazon.DynamoDBv2.DocumentModel;
-using System.IO;
 using Amazon.DynamoDBv2.DataModel;
 
 
@@ -43,6 +43,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 TestHashRangeObjects();
                 TestOtherContextOperations();
                 TestBatchOperations();
+
+                TestStoreAsEpoch();
             }
         }
 
@@ -959,6 +961,32 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         public class VersionedEmployee : Employee
         {
             public int? Version { get; set; }
+        }
+
+        /// <summary>
+        /// Class representing items in the table [TableNamePrefix]HashTable
+        /// Two fields are being stored as epoch seconds, two are not.
+        /// </summary>
+        public class EpochEmployee : Employee
+        {
+            [DynamoDBProperty(StoreAsEpoch = true)]
+            public DateTime CreationTime { get; set; }
+
+            public DateTime EpochDate2 { get; set; }
+
+            [DynamoDBProperty(StoreAsEpoch = false)]
+            public DateTime NonEpochDate1 { get; set; }
+
+            public DateTime NonEpochDate2 { get; set; }
+        }
+
+        /// <summary>
+        /// Class representing items in the table [TableNamePrefix]NumericHashRangeTable.
+        /// </summary>
+        [DynamoDBTable("NumericHashRangeTable")]
+        public class NumericEpochEmployee : EpochEmployee
+        {
+
         }
 
         #endregion

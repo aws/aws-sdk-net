@@ -164,6 +164,19 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
         /// <summary>
+        /// Constructor that specifies that this type should be stored as epoch seconds.
+        /// </summary>
+        /// <param name="storeAsEpoch">
+        /// Whether the data should be stored as epoch seconds.
+        /// If false, data is stored as ISO-8601 string.
+        /// </param>
+        public DynamoDBPropertyAttribute(bool storeAsEpoch)
+        {
+            StoreAsEpoch = storeAsEpoch;
+        }
+
+
+        /// <summary>
         /// Constructor that specifies an alternate attribute name and a custom converter.
         /// 
         /// Converter must be the type of a class that implements IPropertyConverter.
@@ -179,9 +192,34 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
         /// <summary>
+        /// Constructor that specifies an alternate attribute name and that this type should
+        /// be stored as epoch seconds.
+        /// </summary>
+        /// <param name="attributeName">
+        /// Name of attribute to be associated with property or field.
+        /// </param>
+        /// <param name="storeAsEpoch">
+        /// Whether the data should be stored as epoch seconds.
+        /// If false, data is stored as ISO-8601 string.
+        /// </param>
+        public DynamoDBPropertyAttribute(string attributeName, bool storeAsEpoch)
+            : base(attributeName)
+        {
+            StoreAsEpoch = storeAsEpoch;
+        }
+
+        /// <summary>
         /// Type of the custom converter.
+        /// Cannot be set at the same time as StoreAsEpoch.
         /// </summary>
         public Type Converter { get; set; }
+
+        /// <summary>
+        /// Flag that directs DynamoDBContext to store this data as epoch seconds integer.
+        /// If false, data is stored as ISO-8601 string.
+        /// Cannot be set at the same time as Converter.
+        /// </summary>
+        public bool StoreAsEpoch { get; set; }
     }
 
     /// <summary>

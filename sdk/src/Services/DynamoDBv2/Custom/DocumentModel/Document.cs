@@ -146,15 +146,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return false;
         }
 
-        internal void CommitChanges()
-        {
-            this.originalValues.Clear();
-            foreach (var kvp in currentValues)
-            {
-                this.originalValues[kvp.Key] = kvp.Value.Clone() as DynamoDBEntry;
-            }
-        }
-
         /// <summary>
         /// Gets the value associated with the specified attribute value.
         /// </summary>
@@ -209,6 +200,185 @@ namespace Amazon.DynamoDBv2.DocumentModel
             }
 
             return newDocument;
+        }
+
+        #endregion
+
+        #region Private/internal methods
+
+        internal void CommitChanges()
+        {
+            this.originalValues.Clear();
+            foreach (var kvp in currentValues)
+            {
+                this.originalValues[kvp.Key] = kvp.Value.Clone() as DynamoDBEntry;
+            }
+        }
+
+        // Converts a Numeric Primitive value from a service attribute to a DynamoDBEntry that can
+        // be converted to a DateTime.
+        internal static DynamoDBEntry EpochSecondsToDateTime(DynamoDBEntry entry, string attributeName)
+        {
+            var primitive = entry.AsPrimitive();
+
+            // only try to convert N types to epoch time
+            if (primitive != null &&
+                primitive.Type == DynamoDBEntryType.Numeric)
+            {
+                DateTime? dateTime = null;
+                try
+                {
+                    var epochSeconds = primitive.AsInt();
+                    dateTime = AWSSDKUtils.ConvertFromUnixEpochSeconds(epochSeconds);
+                }
+                catch (Exception e)
+                {
+                    var logger = Logger.GetLogger(typeof(Document));
+                    logger.InfoFormat(
+                        "Encountered error attempting to convert attribute '{0}' with value '{1}' to DateTime: {2}",
+                        attributeName, entry, e);
+                }
+
+                if (dateTime.HasValue)
+                {
+                    entry = (Primitive)(dateTime.Value);
+                }
+            }
+
+            return entry;
+        }
+
+        // Converts a user-supplied DateTime-convertible DynamoDBEntry to epoch seconds stored in a Numeric Primitive.
+        internal static DynamoDBEntry DateTimeToEpochSeconds(DynamoDBEntry entry, string attributeName)
+        {
+            int? epochSeconds = null;
+            try
+            {
+                var dateTime = entry.AsDateTime();
+                epochSeconds = AWSSDKUtils.ConvertToUnixEpochSeconds(dateTime);
+            }
+            catch (Exception e)
+            {
+                var logger = Logger.GetLogger(typeof(Document));
+                logger.InfoFormat(
+                    "Encountered error attempting to convert '{0}' with value '{1}' to epoch seconds: {1}",
+                    attributeName, entry, e);
+            }
+
+            if (epochSeconds.HasValue)
+            {
+                entry = (Primitive)(epochSeconds.Value);
+            }
+
+            return entry;
+        }
+
+        internal static Document FromAttributeMap(Dictionary<string, AttributeValue> data, IEnumerable<string> epochAttributes)
+        {
+            Document doc = new Document();
+
+            if (data != null)
+            {
+                // Add Primitives and PrimitiveLists
+                foreach (var attribute in data)
+                {
+                    string wholeKey = attribute.Key;
+                    AttributeValue value = attribute.Value;
+
+                    DynamoDBEntry convertedValue = AttributeValueToDynamoDBEntry(value);
+                    if (convertedValue != null)
+                        doc.currentValues[wholeKey] = convertedValue;
+                }
+            }
+
+            if (epochAttributes != null)
+            {
+                foreach (var epochAttribute in epochAttributes)
+                {
+                    DynamoDBEntry epochEntry;
+                    if (doc.currentValues.TryGetValue(epochAttribute, out epochEntry))
+                    {
+                        doc.currentValues[epochAttribute] = EpochSecondsToDateTime(epochEntry, epochAttribute);
+                    }
+                }
+            }
+
+            doc.CommitChanges();
+            return doc;
+        }
+
+        internal Dictionary<string, AttributeValue> ToAttributeMap(DynamoDBEntryConversion conversion, IEnumerable<string> epochAttributes)
+        {
+            if (conversion == null) throw new ArgumentNullException("conversion");
+
+            Dictionary<string, AttributeValue> ret = new Dictionary<string, AttributeValue>();
+
+            foreach (var kvp in currentValues)
+            {
+                var attributeName = kvp.Key;
+                var entry = kvp.Value;
+
+                ApplyEpochRules(epochAttributes, attributeName, ref entry);
+
+                var value = entry.ConvertToAttributeValue(new AttributeConversionConfig(conversion));
+                if (value != null)
+                {
+                    ret.Add(attributeName, value);
+                }
+            }
+
+            return ret;
+        }
+        internal Dictionary<string, ExpectedAttributeValue> ToExpectedAttributeMap(DynamoDBEntryConversion conversion, IEnumerable<string> epochAttributes)
+        {
+            if (conversion == null) throw new ArgumentNullException("conversion");
+            Dictionary<string, ExpectedAttributeValue> ret = new Dictionary<string, ExpectedAttributeValue>();
+
+            foreach (var kvp in currentValues)
+            {
+                var attributeName = kvp.Key;
+                var entry = kvp.Value;
+
+                ApplyEpochRules(epochAttributes, attributeName, ref entry);
+
+                ret.Add(attributeName, entry.ConvertToExpectedAttributeValue(new AttributeConversionConfig(conversion)));
+            }
+
+            return ret;
+        }
+        internal Dictionary<string, AttributeValueUpdate> ToAttributeUpdateMap(DynamoDBEntryConversion conversion, bool changedAttributesOnly, IEnumerable<string> epochAttributes)
+        {
+            if (conversion == null) throw new ArgumentNullException("conversion");
+            Dictionary<string, AttributeValueUpdate> ret = new Dictionary<string, AttributeValueUpdate>();
+
+            foreach (var kvp in currentValues)
+            {
+                string attributeName = kvp.Key;
+                DynamoDBEntry entry = kvp.Value;
+
+                ApplyEpochRules(epochAttributes, attributeName, ref entry);
+
+                if (!changedAttributesOnly || this.IsAttributeChanged(attributeName))
+                {
+                    ret.Add(attributeName, entry.ConvertToAttributeUpdateValue(new AttributeConversionConfig(conversion)));
+                }
+            }
+
+            return ret;
+        }
+
+        private static void ApplyEpochRules(IEnumerable<string> epochAttributes, string attributeName, ref DynamoDBEntry entry)
+        {
+            if (epochAttributes != null)
+            {
+                foreach (var epochAttribute in epochAttributes)
+                {
+                    if (string.Equals(epochAttribute, attributeName, StringComparison.Ordinal))
+                    {
+                        entry = DateTimeToEpochSeconds(entry, attributeName);
+                    }
+                }
+            }
         }
 
         #endregion
@@ -276,20 +446,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns></returns>
         public Dictionary<string, AttributeValue> ToAttributeMap(DynamoDBEntryConversion conversion)
         {
-            if (conversion == null) throw new ArgumentNullException("conversion");
-
-            Dictionary<string, AttributeValue> ret = new Dictionary<string, AttributeValue>();
-
-            foreach (var attribute in currentValues)
-            {
-                AttributeValue value = attribute.Value.ConvertToAttributeValue(new AttributeConversionConfig(conversion));
-                if (value != null)
-                {
-                    ret.Add(attribute.Key, value);
-                }
-            }
-            
-            return ret;
+            return ToAttributeMap(conversion, epochAttributes: null);
         }
 
         /// <summary>
@@ -307,16 +464,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns></returns>
         public Dictionary<string, ExpectedAttributeValue> ToExpectedAttributeMap(DynamoDBEntryConversion conversion)
         {
-            if (conversion == null) throw new ArgumentNullException("conversion");
-            Dictionary<string, ExpectedAttributeValue> ret = new Dictionary<string, ExpectedAttributeValue>();
-
-            foreach (var attribute in currentValues)
-            {
-                ret.Add(attribute.Key, attribute.Value.ConvertToExpectedAttributeValue(new AttributeConversionConfig(conversion)));
-            }
-
-            return ret;
+            return ToExpectedAttributeMap(conversion, epochAttributes: null);
         }
+
 
         /// <summary>
         /// Creates a map of attribute names mapped to AttributeValueUpdate objects.
@@ -336,22 +486,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns></returns>
         public Dictionary<string, AttributeValueUpdate> ToAttributeUpdateMap(DynamoDBEntryConversion conversion, bool changedAttributesOnly)
         {
-            if (conversion == null) throw new ArgumentNullException("conversion");
-            Dictionary<string, AttributeValueUpdate> ret = new Dictionary<string, AttributeValueUpdate>();
-
-            foreach (var attribute in currentValues)
-            {
-                string name = attribute.Key;
-                DynamoDBEntry value = attribute.Value;
-
-                if (!changedAttributesOnly || this.IsAttributeChanged(name))
-                {
-                    ret.Add(name, value.ConvertToAttributeUpdateValue(new AttributeConversionConfig(conversion)));
-                }
-            }
-
-            return ret;
+            return ToAttributeUpdateMap(conversion, changedAttributesOnly, epochAttributes: null);
         }
+
 
         /// <summary>
         /// Returns the names of all the attributes.
@@ -535,24 +672,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>Document representing the data.</returns>
         public static Document FromAttributeMap(Dictionary<string, AttributeValue> data)
         {
-            Document doc = new Document();
-
-            if (data != null)
-            {
-                // Add Primitives and PrimitiveLists
-                foreach (var attribute in data)
-                {
-                    string wholeKey = attribute.Key;
-                    AttributeValue value = attribute.Value;
-
-                    DynamoDBEntry convertedValue = AttributeValueToDynamoDBEntry(value);
-                    if (convertedValue != null)
-                        doc.currentValues[wholeKey] = convertedValue;
-                }
-            }
-
-            doc.CommitChanges();
-            return doc;
+            return FromAttributeMap(data, epochAttributes: null);
         }
 
         /// <summary>
