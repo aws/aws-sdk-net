@@ -44,6 +44,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
             EnsureSimpleMethodExists(typeof(Amazon.DynamoDBv2.AmazonDynamoDBClient), "DeleteItem", new Type[] { typeof(string), typeof(Dictionary<string, AttributeValue>), typeof(ReturnValue), });
             EnsureSimpleMethodExists(typeof(Amazon.DynamoDBv2.AmazonDynamoDBClient), "DeleteTable", new Type[] { typeof(string), });
             EnsureSimpleMethodExists(typeof(Amazon.DynamoDBv2.AmazonDynamoDBClient), "DescribeTable", new Type[] { typeof(string), });
+            EnsureSimpleMethodExists(typeof(Amazon.DynamoDBv2.AmazonDynamoDBClient), "DescribeTimeToLive", new Type[] { typeof(string), });
             EnsureSimpleMethodExists(typeof(Amazon.DynamoDBv2.AmazonDynamoDBClient), "GetItem", new Type[] { typeof(string), typeof(Dictionary<string, AttributeValue>), });
             EnsureSimpleMethodExists(typeof(Amazon.DynamoDBv2.AmazonDynamoDBClient), "GetItem", new Type[] { typeof(string), typeof(Dictionary<string, AttributeValue>), typeof(bool), });
             EnsureSimpleMethodExists(typeof(Amazon.DynamoDBv2.AmazonDynamoDBClient), "ListTables", new Type[] { typeof(string), });

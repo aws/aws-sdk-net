@@ -104,17 +104,17 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             // construct tables with StoreAsEpoch
             var config = new TableConfig(hashRangeTable.TableName)
             {
-                StoreAsEpoch = new List<string> { "CreationTime", "EpochDate2" }
+                AttributesToStoreAsEpoch = new List<string> { "CreationTime", "EpochDate2" }
             };
             var epochTable = Table.LoadTable(Client, config);
-            CollectionAssert.AreEqual(config.StoreAsEpoch, epochTable.GetStoreAsEpoch().ToList());
+            CollectionAssert.AreEqual(config.AttributesToStoreAsEpoch, epochTable.GetStoreAsEpoch().ToList());
 
             config = new TableConfig(numericHashRangeTable.TableName)
             {
-                StoreAsEpoch = new List<string> { "CreationTime", "EpochDate2" }
+                AttributesToStoreAsEpoch = new List<string> { "CreationTime", "EpochDate2" }
             };
             var numericEpochTable = Table.LoadTable(Client, config);
-            CollectionAssert.AreEqual(config.StoreAsEpoch, epochTable.GetStoreAsEpoch().ToList());
+            CollectionAssert.AreEqual(config.AttributesToStoreAsEpoch, epochTable.GetStoreAsEpoch().ToList());
 
             // verify ToAttributeMap calls
             var map = hashRangeTable.ToAttributeMap(CreateTestDocument());

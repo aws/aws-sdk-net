@@ -1688,6 +1688,28 @@ namespace Amazon.DynamoDBv2
         /// <summary>
         /// Gives a description of the Time to Live (TTL) status on the specified table.
         /// </summary>
+        /// <param name="tableName">The name of the table to be described.</param>
+        /// 
+        /// <returns>The response from the DescribeTimeToLive service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
+        /// The operation tried to access a nonexistent table or index. The resource might not
+        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeTimeToLive">REST API Reference for DescribeTimeToLive Operation</seealso>
+        public DescribeTimeToLiveResponse DescribeTimeToLive(string tableName)
+        {
+            var request = new DescribeTimeToLiveRequest();
+            request.TableName = tableName;
+            return DescribeTimeToLive(request);
+        }
+
+
+        /// <summary>
+        /// Gives a description of the Time to Live (TTL) status on the specified table.
+        /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeTimeToLive service method.</param>
         /// 
         /// <returns>The response from the DescribeTimeToLive service method, as returned by DynamoDB.</returns>

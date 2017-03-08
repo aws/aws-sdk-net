@@ -315,9 +315,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
         }
 
 #if PCL|| UNITY || CORECLR
-        private void CallUntilCompletion(AmazonDynamoDBClient client, BatchGetItemRequest request, Results allResults)
+        private static void CallUntilCompletion(AmazonDynamoDBClient client, BatchGetItemRequest request, Results allResults)
 #else
-        private void CallUntilCompletion(IAmazonDynamoDB client, BatchGetItemRequest request, Results allResults)
+        private static void CallUntilCompletion(IAmazonDynamoDB client, BatchGetItemRequest request, Results allResults)
 #endif
         {
             do

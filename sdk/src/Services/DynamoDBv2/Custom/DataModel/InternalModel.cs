@@ -610,7 +610,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 ConfigTableCache tableCache;
                 if (!Cache.TryGetValue(type, out tableCache))
                 {
-                    var baseStorageConfig = CreateStorageConfig(type, actualTableName: null, flatConfig: flatConfig);
+                    var baseStorageConfig = CreateStorageConfig(type, actualTableName: null);
                     tableCache = new ConfigTableCache(baseStorageConfig);
                     Cache[type] = tableCache;
                 }
@@ -624,7 +624,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 ItemStorageConfig config;
                 if (!tableCache.Cache.TryGetValue(actualTableName, out config))
                 {
-                    config = CreateStorageConfig(type, actualTableName, flatConfig);
+                    config = CreateStorageConfig(type, actualTableName);
                     tableCache.Cache[actualTableName] = config;
                 }
                 return config;
@@ -635,7 +635,7 @@ namespace Amazon.DynamoDBv2.DataModel
         {
             return (config.LowerCamelCaseProperties ? Utils.ToLowerCamelCase(value) : value);
         }
-        private ItemStorageConfig CreateStorageConfig(Type baseType, string actualTableName, DynamoDBFlatConfig flatConfig)
+        private ItemStorageConfig CreateStorageConfig(Type baseType, string actualTableName)
         {
             if (baseType == null) throw new ArgumentNullException("baseType");
             ITypeInfo typeInfo = TypeFactory.GetTypeInfo(baseType);
@@ -650,7 +650,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 Table table;
                 try
                 {
-                    table = Context.GetUnconfiguredTable(actualTableName, flatConfig);
+                    table = Context.GetUnconfiguredTable(actualTableName);
                 }
                 catch
                 {

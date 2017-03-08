@@ -108,10 +108,10 @@ namespace Amazon.DynamoDBv2.DataModel
                 throw new ArgumentNullException("flatConfig");
 
             string tableName = GetTableName(storageConfig.TableName, flatConfig);
-            var unconfiguredTable = GetUnconfiguredTable(tableName, flatConfig);
+            var unconfiguredTable = GetUnconfiguredTable(tableName);
             ValidateConfigAgainstTable(storageConfig, unconfiguredTable);
 
-            var tableConfig = new TableConfig(tableName, flatConfig.Conversion, Table.DynamoDBConsumer.DataModel, storageConfig.AttributesToStoreAsEpoch);
+            var tableConfig = new TableConfig(tableName, flatConfig.Conversion, consumer, storageConfig.AttributesToStoreAsEpoch);
             var table = unconfiguredTable.Copy(tableConfig);
             return table;
         }
@@ -119,7 +119,7 @@ namespace Amazon.DynamoDBv2.DataModel
         // Retrieves Config-less Table from cache or constructs it on cache-miss
         // This Table should not be used for data operations.
         // To use for data operations, Copy with a TableConfig first.
-        internal Table GetUnconfiguredTable(string tableName, DynamoDBFlatConfig flatConfig)
+        internal Table GetUnconfiguredTable(string tableName)
         {
             Table table;
             lock (tablesMapLock)

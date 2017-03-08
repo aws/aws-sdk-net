@@ -40,7 +40,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// List of DateTime attributes that should be converted to epoch seconds
         /// before they are stored in DynamoDB.
         /// </summary>
-        public List<string> StoreAsEpoch { get; set; }
+        public List<string> AttributesToStoreAsEpoch { get; set; }
 
 
         internal Table.DynamoDBConsumer Consumer { get; set; }
@@ -60,10 +60,11 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
             TableName = tableName;
             Conversion = conversion;
-            StoreAsEpoch = new List<string>();
+            Consumer = consumer;
+            AttributesToStoreAsEpoch = new List<string>();
             if (storeAsEpoch != null)
             {
-                StoreAsEpoch.AddRange(storeAsEpoch);
+                AttributesToStoreAsEpoch.AddRange(storeAsEpoch);
             }
         }
     }

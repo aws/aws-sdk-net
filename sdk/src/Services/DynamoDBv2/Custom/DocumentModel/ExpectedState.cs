@@ -86,11 +86,11 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>Amazon.DynamoDBv2.Model.ExpectedAttributeValue</returns>
         public ExpectedAttributeValue ToExpectedAttributeValue(DynamoDBEntryConversion conversion)
         {
-            return ToExpectedAttributeValue(this.Exists, this.Values.Cast<DynamoDBEntry>(), this.Comparison, conversion, ttlAttribute: null);
+            return ToExpectedAttributeValue(this.Exists, this.Values.Cast<DynamoDBEntry>(), this.Comparison, conversion);
         }
 
         internal static ExpectedAttributeValue ToExpectedAttributeValue(bool exists, IEnumerable<DynamoDBEntry> values, ScanOperator comparison,
-            DynamoDBEntryConversion conversion, string ttlAttribute)
+            DynamoDBEntryConversion conversion)
         {
             var eav = new ExpectedAttributeValue();
 
@@ -198,7 +198,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 if (epochAttributes != null && epochAttributes.Contains(attributeName))
                 {
                     var values = expectedValue.Values.Select(p => Document.DateTimeToEpochSeconds(p, attributeName)).ToList();
-                    eav = ExpectedValue.ToExpectedAttributeValue(expectedValue.Exists, values, expectedValue.Comparison, conversion, attributeName);
+                    eav = ExpectedValue.ToExpectedAttributeValue(expectedValue.Exists, values, expectedValue.Comparison, conversion);
                 }
                 else
                 {

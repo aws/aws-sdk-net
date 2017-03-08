@@ -47,7 +47,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         internal Table.DynamoDBConsumer TableConsumer { get { return Config.Consumer; } }
         internal DynamoDBEntryConversion Conversion { get { return Config.Conversion; } }
-        internal IEnumerable<string> StoreAsEpoch { get { return Config.StoreAsEpoch; } }
+        internal IEnumerable<string> StoreAsEpoch { get { return Config.AttributesToStoreAsEpoch; } }
         internal IEnumerable<string> KeyNames { get { return Keys.Keys; } }
 
 #if PCL || UNITY || CORECLR
@@ -241,7 +241,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
             return newKey;
         }
-        private Primitive KeyDateTimeToEpochSeconds(Primitive key, string attributeName)
+        private static Primitive KeyDateTimeToEpochSeconds(Primitive key, string attributeName)
         {
             DynamoDBEntry entry = Document.DateTimeToEpochSeconds(key, attributeName);
             Primitive converted = entry as Primitive;
