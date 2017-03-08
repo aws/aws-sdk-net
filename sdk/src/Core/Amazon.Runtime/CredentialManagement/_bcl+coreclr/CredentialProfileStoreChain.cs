@@ -49,37 +49,24 @@ namespace Amazon.Runtime.CredentialManagement
         }
 
         /// <summary>
-        /// Tries to get <see cref="AWSCredentials"/> from a profile based on these rules:
-        /// <list type="table">
-        /// <listheader>
-        /// <term>ProfilesLocation</term>
-        /// <term>Platform Supports .NET SDK Credentials File</term>
-        /// <term>Action</term>
-        /// </listheader>
-        /// <item>
-        /// <term>null or empty</term>
-        /// <term>yes</term>
-        /// <term>search sdk credentials file then shared credentials file in default location</term>
-        /// </item>
-        /// <item>
-        /// <term>null or empty</term>
-        /// <term>no</term>
-        /// <term>search shared credentials file in the default location</term>
-        /// </item>
-        /// <item>
-        /// <term>non-null and non-empty</term>
-        /// <term>yes</term>
-        /// <term>search shared credentials file at disk path: profilesLocation</term>
-        /// </item>
-        /// <item>
-        /// <term>non-null and non-empty</term>
-        /// <term>no</term>
-        /// <term>search shared credentials file at disk path: profilesLocation</term>
-        /// </item>
-        /// </list>
+        /// <para>
+        /// Try to get <see cref="AWSCredentials"/> from a profile.
+        /// </para>
+        /// <para>
+        /// If ProfilesLocation is non-null and non-empty search the shared credentials
+        /// file at the disk path in the ProfilesLocation property.
+        /// </para>
+        /// <para>
+        /// If ProfilesLocation is null or empty and the platform supports the .NET SDK credentials file
+        /// search the SDK credentials file.  If the profile is not found search the shared credentials file in the default location.
+        /// </para>
+        ///<para>
+        /// If ProfilesLocation is null or empty and the platform doesn't support the .NET SDK credentials file
+        /// search the shared credentials file in the default location.
+        /// </para>
         /// </summary>
         /// <param name="profileName">The name of the profile to get credentials from.</param>
-        /// <param name="credentials">The credentials, if the profile is found and credentials can be created</param>
+        /// <param name="credentials">The credentials, if the profile is found and credentials can be created.</param>
         /// <returns>True if the profile was found and credentials could be created, false otherwise.</returns>
         public bool TryGetAWSCredentials(string profileName, out AWSCredentials credentials)
         {
@@ -93,34 +80,21 @@ namespace Amazon.Runtime.CredentialManagement
 
 
         /// <summary>
-        /// Tries to get a profile based on these rules:
-        /// <list type="table">
-        /// <listheader>
-        /// <term>ProfilesLocation</term>
-        /// <term>Platform Supports .NET SDK Credentials File</term>
-        /// <term>Action</term>
-        /// </listheader>
-        /// <item>
-        /// <term>null or empty</term>
-        /// <term>yes</term>
-        /// <term>search sdk credentials file then shared credentials file in default location</term>
-        /// </item>
-        /// <item>
-        /// <term>null or empty</term>
-        /// <term>no</term>
-        /// <term>search shared credentials file in the default location</term>
-        /// </item>
-        /// <item>
-        /// <term>non-null and non-empty</term>
-        /// <term>yes</term>
-        /// <term>search shared credentials file at disk path: profilesLocation</term>
-        /// </item>
-        /// <item>
-        /// <term>non-null and non-empty</term>
-        /// <term>no</term>
-        /// <term>search shared credentials file at disk path: profilesLocation</term>
-        /// </item>
-        /// </list>
+        /// <para>
+        /// Try to get a <see cref="CredentialProfile"/> 
+        /// </para>
+        /// <para>
+        /// If ProfilesLocation is non-null and non-empty search the shared credentials
+        /// file at the disk path in the ProfilesLocation property.
+        /// </para>
+        /// <para>
+        /// If ProfilesLocation is null or empty and the platform supports the .NET SDK credentials file
+        /// search the SDK credentials file.  If the profile is not found search the shared credentials file in the default location.
+        /// </para>
+        ///<para>
+        /// If ProfilesLocation is null or empty and the platform doesn't support the .NET SDK credentials file
+        /// search the shared credentials file in the default location.
+        /// </para>
         /// </summary>
         /// <param name="profileName">The name of the profile to get.</param>
         /// <param name="profile">The profile, if found</param>
@@ -147,36 +121,23 @@ namespace Amazon.Runtime.CredentialManagement
         }
 
         /// <summary>
-        /// List profiles based on these rules:
-        /// <list type="table">
-        /// <listheader>
-        /// <term>ProfilesLocation</term>
-        /// <term>Platform Supports .NET SDK Credentials File</term>
-        /// <term>Action</term>
-        /// </listheader>
-        /// <item>
-        /// <term>null or empty</term>
-        /// <term>yes</term>
-        /// <term>include profiles from sdk credentials file and shared credentials file in default location</term>
-        /// </item>
-        /// <item>
-        /// <term>null or empty</term>
-        /// <term>no</term>
-        /// <term>include profiles from shared credentials file in the default location</term>
-        /// </item>
-        /// <item>
-        /// <term>non-null and non-empty</term>
-        /// <term>yes</term>
-        /// <term>include profiles from shared credentials file at disk path: profilesLocation</term>
-        /// </item>
-        /// <item>
-        /// <term>non-null and non-empty</term>
-        /// <term>no</term>
-        /// <term>include profiles from shared credentials file at disk path: profilesLocation</term>
-        /// </item>
-        /// </list>
+        /// <para>
+        /// Get a list of available <see cref="CredentialProfile"/> objects.
+        /// </para>
+        /// <para>
+        /// If ProfilesLocation is non-null and non-empty include profiles in the shared credentials
+        /// file at the disk path in the ProfilesLocation property.
+        /// </para>
+        /// <para>
+        /// If ProfilesLocation is null or empty and the platform supports the .NET SDK credentials file
+        /// include profiles from the SDK credentials file and from the shared credentials file in the default location.
+        /// </para>
+        ///<para>
+        /// If ProfilesLocation is null or empty and the platform doesn't support the .NET SDK credentials file
+        /// include profiles from the shared credentials file in the default location.
+        /// </para>
         /// </summary>
-        /// <returns>A list of persisted profiles.</returns>
+        /// <returns>A list of <see cref="CredentialProfile"/> objects.</returns>
         public List<CredentialProfile> ListProfiles()
         {
             var profiles = new List<CredentialProfile>();
@@ -193,34 +154,21 @@ namespace Amazon.Runtime.CredentialManagement
         }
 
         /// <summary>
-        /// Register a profile based on these rules:
-        /// <list type="table">
-        /// <listheader>
-        /// <term>ProfilesLocation</term>
-        /// <term>Platform Supports .NET SDK Credentials File</term>
-        /// <term>Action</term>
-        /// </listheader>
-        /// <item>
-        /// <term>null or empty</term>
-        /// <term>yes</term>
-        /// <term>register in sdk credentials file</term>
-        /// </item>
-        /// <item>
-        /// <term>null or empty</term>
-        /// <term>no</term>
-        /// <term>register in shared credentials file in the default location</term>
-        /// </item>
-        /// <item>
-        /// <term>non-null and non-empty</term>
-        /// <term>yes</term>
-        /// <term>register in shared credentials file at disk path: profilesLocation</term>
-        /// </item>
-        /// <item>
-        /// <term>non-null and non-empty</term>
-        /// <term>no</term>
-        /// <term>register in shared credentials file at disk path: profilesLocation</term>
-        /// </item>
-        /// </list>
+        /// <para>
+        /// Register a <see cref="CredentialProfile"/>
+        /// </para>
+        /// <para>
+        /// If ProfilesLocation is non-null and non-empty register the profile in the shared credentials
+        /// file at the disk path in the ProfilesLocation property.
+        /// </para>
+        /// <para>
+        /// If ProfilesLocation is null or empty and the platform supports the .NET SDK credentials file
+        /// register the profile in the SDK credentials file.
+        /// </para>
+        ///<para>
+        /// If ProfilesLocation is null or empty and the platform doesn't support the .NET SDK credentials file
+        /// register the profile in the shared credentials file in the default location.
+        /// </para>
         /// </summary>
         /// <param name="profile">The profile to register.</param>
         public void RegisterProfile(CredentialProfile profile)
@@ -236,34 +184,24 @@ namespace Amazon.Runtime.CredentialManagement
         }
 
         /// <summary>
-        /// Unregister a profile based on these rules:
-        /// <list type="table">
-        /// <listheader>
-        /// <term>ProfilesLocation</term>
-        /// <term>Platform Supports .NET SDK Credentials File</term>
-        /// <term>Action</term>
-        /// </listheader>
-        /// <item>
-        /// <term>null or empty</term>
-        /// <term>yes</term>
-        /// <term>unregister from sdk credentials file, if not there unregister from shared credentials file in default location</term>
-        /// </item>
-        /// <item>
-        /// <term>null or empty</term>
-        /// <term>no</term>
-        /// <term>unregister from shared credentials file in the default location</term>
-        /// </item>
-        /// <item>
-        /// <term>non-null and non-empty</term>
-        /// <term>yes</term>
-        /// <term>unregister from shared credentials file at disk path: profilesLocation</term>
-        /// </item>
-        /// <item>
-        /// <term>non-null and non-empty</term>
-        /// <term>no</term>
-        /// <term>unregister from shared credentials file at disk path: profilesLocation</term>
-        /// </item>
-        /// </list>
+        /// <para>
+        /// Unregister a <see cref="CredentialProfile"/>
+        /// </para>
+        /// <para>
+        /// If ProfilesLocation is non-null and non-empty unregister the profile from the shared credentials
+        /// file at the disk path in the ProfilesLocation property.
+        /// </para>
+        /// <para>
+        /// If ProfilesLocation is null or empty and the platform supports the .NET SDK credentials file
+        /// search the SDK credentials file.  If the profile is found there unregister it.
+        /// If the profile was not found search the shared credentials file in the default location.
+        /// If the profile is found in the shared credentials file in the default location unregister it.
+        /// </para>
+        ///<para>
+        /// If ProfilesLocation is null or empty and the platform doesn't support the .NET SDK credentials file
+        /// search the shared credentials file in the default location. If the profile is found in the
+        /// shared credentials file in the default location unregister it.
+        /// </para>
         /// </summary>
         /// <param name="profileName">The name of the profile to unregister.</param>
         public void UnregisterProfile(string profileName)
