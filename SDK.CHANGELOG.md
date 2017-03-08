@@ -1,3 +1,7 @@
+### 3.3.59.0 (2017-03-08 01:33 UTC)
+* RDS (3.3.8.0)
+	* Add support to using encrypted clusters as cross-region replication masters. Update CopyDBClusterSnapshot API to support encrypted cross region copy of Aurora cluster snapshots.
+
 ### 3.3.58.0 (2017-03-07 02:39 UTC)
 * Budgets (3.3.1.0)
 	* API Update for Budgets: When creating or editing a budget via the AWS Budgets API you can define notifications that are sent to subscribers when the actual or forecasted value for cost or usage exceeds the notificationThreshold associated with the budget notification object. Starting today, the maximum allowed value for the notificationThreshold was raised from 100 to 300. This change was made to give you more flexibility when setting budget notifications.
