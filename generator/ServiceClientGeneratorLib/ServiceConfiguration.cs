@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Runtime.Remoting.Messaging;
 using System.Text;
 
@@ -13,15 +14,12 @@ namespace ServiceClientGenerator
         private const string amazonDotPrefix = "Amazon.";
 
         string _modelPath;
-        string _displayModelPath;
 
         /// <summary>
         /// The name of the model, taken from the "model" entry in the service models 
         /// manifest.
         /// </summary>
         public string ModelName { get; set; }
-
-        public string ServiceDirectoryName { get; set; }
 
         /// <summary>
         /// Path to the model that is represented by these attributes
@@ -35,8 +33,6 @@ namespace ServiceClientGenerator
                 this._modelPath = value; 
             }
         }
-
-        public string DisplayModelPath { get; set; }
 
         ServiceModel _serviceModel;
 
@@ -226,6 +222,25 @@ namespace ServiceClientGenerator
         }
 
         public ServiceConfiguration ParentConfig { get; set; }
+
+        public string ServiceDirectoryName
+        {
+            get
+            {
+                var directory = Path.GetDirectoryName(ModelPath);
+                var directoryName = Path.GetFileName(directory);
+                return directoryName;
+            }
+        }
+
+        public string DisplayModelPath
+        {
+            get
+            {
+                return Path.GetFileName(ModelPath);
+            }
+        }
+
 
         public override string ToString()
         {

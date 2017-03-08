@@ -227,9 +227,7 @@ namespace ServiceClientGenerator
             var config = new ServiceConfiguration
             {
                 ModelName = modelName,
-                ServiceDirectoryName = Path.GetFileName(serviceDirectoryPath),
                 ModelPath = Path.Combine(serviceDirectoryPath, serviceModelFileName),
-                DisplayModelPath = serviceModelFileName, 
                 Namespace = modelNode[ModelsSectionKeys.NamespaceKey] != null ? modelNode[ModelsSectionKeys.NamespaceKey].ToString() : null, // Namespace of the service if it's different from basename
                 LockedApiVersion = modelNode[ModelsSectionKeys.LockedApiVersionKey] != null ? modelNode[ModelsSectionKeys.LockedApiVersionKey].ToString() : null,
                 BaseName = modelNode[ModelsSectionKeys.BaseNameKey].ToString(), // The name that is used as the client name and base request name
