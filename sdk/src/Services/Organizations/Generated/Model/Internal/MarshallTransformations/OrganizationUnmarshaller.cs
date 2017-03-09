@@ -76,6 +76,12 @@ namespace Amazon.Organizations.Model.Internal.MarshallTransformations
                     unmarshalledObject.AvailablePolicyTypes = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("FeatureSet", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FeatureSet = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -98,12 +104,6 @@ namespace Amazon.Organizations.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MasterAccountId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Mode", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Mode = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

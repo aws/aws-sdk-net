@@ -338,6 +338,9 @@
     <Reference Include="AWSSDK.WAFRegional">
       <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.WAFRegional.dll</HintPath>
     </Reference>
+    <Reference Include="AWSSDK.WorkDocs">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.WorkDocs.dll</HintPath>
+    </Reference>
     <Reference Include="AWSSDK.WorkSpaces">
       <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.WorkSpaces.dll</HintPath>
     </Reference>
@@ -709,6 +712,10 @@
     <ProjectReference Include="..\..\src\Services\WAFRegional\AWSSDK.WAFRegional.Net35.csproj">
       <Project>{500BD983-DBDD-46A3-B411-D7300749E618}</Project>
       <Name>AWSSDK.WAFRegional.Net35</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\WorkDocs\AWSSDK.WorkDocs.Net35.csproj">
+      <Project>{BA945EC8-DEFD-42A1-844B-22C0B2095149}</Project>
+      <Name>AWSSDK.WorkDocs.Net35</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\src\Services\WorkSpaces\AWSSDK.WorkSpaces.Net35.csproj">
       <Project>{63422F3B-8FAC-4E5F-A27C-07FB8742E8BD}</Project>

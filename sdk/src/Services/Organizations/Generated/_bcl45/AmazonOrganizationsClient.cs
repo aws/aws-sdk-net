@@ -119,11 +119,11 @@ namespace Amazon.Organizations
     /// </para>
     ///  
     /// <para>
-    /// We welcome your feedback. Send your comments to <a href="mailto:feedback-awsorganizations@amazon.com">feedback-awsorganizations@amazon.com</a>
+    /// We welcome your feedback. Send your comments to <a href="mailto:aws-organizations-feedback@amazon.com">aws-organizations-feedback@amazon.com</a>
     /// or post your feedback and questions in our private <a href="http://forums.aws.amazon.com/forum.jspa?forumID=219">AWS
     /// Organizations support forum</a>. If you don't have access to the forum, send a request
     /// for access to the email address, along with your forum user ID. For more information
-    /// about the AWS support forums, see <a href="https://forums.aws.amazon.com/help.jspa">Forums
+    /// about the AWS support forums, see <a href="http://forums.aws.amazon.com/help.jspa">Forums
     /// Help</a>.
     /// </para>
     ///  
@@ -399,20 +399,21 @@ namespace Amazon.Organizations
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>Invitation to join</b> or <b>Full-control request</b> handshake: only a principal
-        /// from the member account. 
+        ///  <b>Invitation to join</b> or <b>Approve all features request</b> handshakes: only
+        /// a principal from the member account. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Full-control final confirmation</b> handshake: only a principal from the master
-        /// account.
+        ///  <b>Enable all features final confirmation</b> handshake: only a principal from the
+        /// master account.
         /// </para>
         ///  
         /// <para>
         /// For more information about invitations, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_invites.html">Inviting
         /// an AWS Account to Join Your Organization</a> in the <i>AWS Organizations User Guide</i>.
-        /// For more information about full-control requests, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_full-control-mode.html">Migrating
-        /// to Full-Control Mode in Your Organization</a> in the <i>AWS Organizations User Guide</i>.
+        /// For more information about requests to enable all features in the organization, see
+        /// <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">Enabling
+        /// All Features in Your Organization</a> in the <i>AWS Organizations User Guide</i>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -422,22 +423,23 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedException">
         /// You don't have permissions to perform the requested operation. The user or role that
         /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see <a href="IAM/latest/UserGuide/access.html">Access
+        /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// Management</a> in the <i>IAM User Guide</i>.
-        /// </exception>
-        /// <exception cref="Amazon.Organizations.Model.AlreadyInOrganizationException">
-        /// This account is already a member of an organization. An account can belong to only
-        /// one organization at a time.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AWSOrganizationsNotInUseException">
         /// Your account is not a member of an organization. To make this request, you must use
         /// the credentials of an account that belongs to an organization.
         /// </exception>
-        /// <exception cref="Amazon.Organizations.Model.ConstraintViolationException">
-        /// Performing this operation violates a minimum or maximum value limit. For example,
-        /// attempting to removing the last SCP from an OU or root, inviting or creating too many
-        /// accounts to the organization, or attaching too many policies to an account, OU, or
-        /// root.
+        /// <exception cref="Amazon.Organizations.Model.ConcurrentModificationException">
+        /// The target of the operation is currently being modified by a different request. Try
+        /// again later.
+        /// </exception>
+        /// <exception cref="Amazon.Organizations.Model.HandshakeAlreadyInStateException">
+        /// The specified handshake is already in the requested state. For example, you can't
+        /// accept a handshake that was already accepted.
+        /// </exception>
+        /// <exception cref="Amazon.Organizations.Model.HandshakeConstraintViolationException">
+        /// The requested operation would violate the constraint identified in the reason code.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.HandshakeNotFoundException">
         /// We can't find a handshake with the HandshakeId that you specified.
@@ -449,10 +451,6 @@ namespace Amazon.Organizations
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.InvalidInputException">
         /// You provided invalid values for one or more of the request parameters.
-        /// </exception>
-        /// <exception cref="Amazon.Organizations.Model.OrganizationFromDifferentSellerOfRecordException">
-        /// You can add accounts only to an organization that was created by the same AWS seller
-        /// as the master account of the organization.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.ServiceException">
         /// AWS Organizations can't complete your request because of an internal service error.
@@ -542,7 +540,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  
         /// <para>
-        /// For more information about how Organizations policies permissions work, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps.html">Using
+        /// For more information about how Organizations policies permissions work, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">Using
         /// Service Control Policies</a> in the <i>AWS Organizations User Guide</i>.
         /// </para>
         ///  </li> </ul> 
@@ -556,7 +554,7 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedException">
         /// You don't have permissions to perform the requested operation. The user or role that
         /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see <a href="IAM/latest/UserGuide/access.html">Access
+        /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AWSOrganizationsNotInUseException">
@@ -583,7 +581,10 @@ namespace Amazon.Organizations
         /// We can't find a policy with the PolicyId that you specified.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.PolicyTypeNotEnabledException">
-        /// The specified policy type is not currently enabled in this root.
+        /// The specified policy type is not currently enabled in this root. You cannot attach
+        /// policies of the specified type to entities in a root until you enable that type in
+        /// the root. For more information, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">Enabling
+        /// All Features in Your Organization</a> in the <i>AWS Organizations User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.ServiceException">
         /// AWS Organizations can't complete your request because of an internal service error.
@@ -647,8 +648,12 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedException">
         /// You don't have permissions to perform the requested operation. The user or role that
         /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see <a href="IAM/latest/UserGuide/access.html">Access
+        /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// Management</a> in the <i>IAM User Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.Organizations.Model.HandshakeAlreadyInStateException">
+        /// The specified handshake is already in the requested state. For example, you can't
+        /// accept a handshake that was already accepted.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.HandshakeNotFoundException">
         /// We can't find a handshake with the HandshakeId that you specified.
@@ -747,7 +752,7 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedException">
         /// You don't have permissions to perform the requested operation. The user or role that
         /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see <a href="IAM/latest/UserGuide/access.html">Access
+        /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AWSOrganizationsNotInUseException">
@@ -821,10 +826,12 @@ namespace Amazon.Organizations
         /// </para>
         ///  
         /// <para>
-        /// By default, a new organization is created in full-control mode and service control
-        /// policies are automatically enabled in the root. If you instead choose to create the
-        /// organization in billing mode by setting the <code>Mode</code> parameter to <code>BILLING"</code>,
-        /// then no policy types are enabled by default.
+        /// By default (or if you set the <code>FeatureSet</code> parameter to <code>ALL</code>),
+        /// the new organization is created with all features enabled and service control policies
+        /// automatically enabled in the root. If you instead choose to create the organization
+        /// supporting only the consolidated billing features by setting the <code>FeatureSet</code>
+        /// parameter to <code>CONSOLIDATED_BILLING"</code>, then no policy types are enabled
+        /// by default and you cannot use organization policies.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateOrganization service method.</param>
@@ -833,7 +840,7 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedException">
         /// You don't have permissions to perform the requested operation. The user or role that
         /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see <a href="IAM/latest/UserGuide/access.html">Access
+        /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AlreadyInOrganizationException">
@@ -844,12 +851,14 @@ namespace Amazon.Organizations
         /// The target of the operation is currently being modified by a different request. Try
         /// again later.
         /// </exception>
+        /// <exception cref="Amazon.Organizations.Model.ConstraintViolationException">
+        /// Performing this operation violates a minimum or maximum value limit. For example,
+        /// attempting to removing the last SCP from an OU or root, inviting or creating too many
+        /// accounts to the organization, or attaching too many policies to an account, OU, or
+        /// root.
+        /// </exception>
         /// <exception cref="Amazon.Organizations.Model.InvalidInputException">
         /// You provided invalid values for one or more of the request parameters.
-        /// </exception>
-        /// <exception cref="Amazon.Organizations.Model.PaymentInstrumentRequiredException">
-        /// The account isn't set up with a payment method, such as a credit card. Provide a payment
-        /// method, and then try again.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.ServiceException">
         /// AWS Organizations can't complete your request because of an internal service error.
@@ -915,7 +924,7 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedException">
         /// You don't have permissions to perform the requested operation. The user or role that
         /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see <a href="IAM/latest/UserGuide/access.html">Access
+        /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AWSOrganizationsNotInUseException">
@@ -985,7 +994,7 @@ namespace Amazon.Organizations
         ///  
         /// <para>
         /// For more information about policies and their use, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies.html">Managing
-        /// Organization Control Policies</a>.
+        /// Organization Policies</a>.
         /// </para>
         ///  
         /// <para>
@@ -998,7 +1007,7 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedException">
         /// You don't have permissions to perform the requested operation. The user or role that
         /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see <a href="IAM/latest/UserGuide/access.html">Access
+        /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AWSOrganizationsNotInUseException">
@@ -1021,10 +1030,17 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.InvalidInputException">
         /// You provided invalid values for one or more of the request parameters.
         /// </exception>
+        /// <exception cref="Amazon.Organizations.Model.MalformedPolicyDocumentException">
+        /// The provided policy document does not meet the requirements of the specified policy
+        /// type. For example, the syntax might be incorrect. For details about service control
+        /// policy syntax, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service
+        /// Control Policy Syntax</a> in the <i>AWS Organizations User Guide</i>.
+        /// </exception>
         /// <exception cref="Amazon.Organizations.Model.PolicyTypeNotAvailableForOrganizationException">
-        /// You can't use the specified policy type with the organization in its current mode
-        /// of operation. For example, you can enable service control policies (SCPs) only after
-        /// the organization upgrades to full-control mode.
+        /// You can't use the specified policy type with the feature set currently enabled for
+        /// this organization. For example, you can enable service control policies (SCPs) only
+        /// after you enable all features in the organization. For more information, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies.html#enable_policies_on_root">Enabling
+        /// and Disabling a Policy Type on a Root</a> in the <i>AWS Organizations User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.ServiceException">
         /// AWS Organizations can't complete your request because of an internal service error.
@@ -1085,8 +1101,12 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedException">
         /// You don't have permissions to perform the requested operation. The user or role that
         /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see <a href="IAM/latest/UserGuide/access.html">Access
+        /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// Management</a> in the <i>IAM User Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.Organizations.Model.HandshakeAlreadyInStateException">
+        /// The specified handshake is already in the requested state. For example, you can't
+        /// accept a handshake that was already accepted.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.HandshakeNotFoundException">
         /// We can't find a handshake with the HandshakeId that you specified.
@@ -1159,7 +1179,7 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedException">
         /// You don't have permissions to perform the requested operation. The user or role that
         /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see <a href="IAM/latest/UserGuide/access.html">Access
+        /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AWSOrganizationsNotInUseException">
@@ -1175,8 +1195,8 @@ namespace Amazon.Organizations
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.OrganizationNotEmptyException">
         /// The organization isn't empty. To delete an organization, you must first remove all
-        /// accounts except the master, delete all organizational units (OUs), and delete all
-        /// policies.
+        /// accounts except the master account, delete all organizational units (OUs), and delete
+        /// all policies.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.ServiceException">
         /// AWS Organizations can't complete your request because of an internal service error.
@@ -1234,7 +1254,7 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedException">
         /// You don't have permissions to perform the requested operation. The user or role that
         /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see <a href="IAM/latest/UserGuide/access.html">Access
+        /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AWSOrganizationsNotInUseException">
@@ -1249,8 +1269,8 @@ namespace Amazon.Organizations
         /// You provided invalid values for one or more of the request parameters.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.OrganizationalUnitNotEmptyException">
-        /// The specified organizational unit (OU) is not empty. Move all entities to another
-        /// root or to other OUs, and then try the operation again.
+        /// The specified organizational unit (OU) is not empty. Move all accounts to another
+        /// root or to other OUs, remove all child OUs, and then try the operation again.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.OrganizationalUnitNotFoundException">
         /// We can't find an organizational unit (OU) with the OrganizationalUnitId that you specified.
@@ -1311,7 +1331,7 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedException">
         /// You don't have permissions to perform the requested operation. The user or role that
         /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see <a href="IAM/latest/UserGuide/access.html">Access
+        /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AWSOrganizationsNotInUseException">
@@ -1387,7 +1407,7 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedException">
         /// You don't have permissions to perform the requested operation. The user or role that
         /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see <a href="IAM/latest/UserGuide/access.html">Access
+        /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AccountNotFoundException">
@@ -1456,7 +1476,7 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedException">
         /// You don't have permissions to perform the requested operation. The user or role that
         /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see <a href="IAM/latest/UserGuide/access.html">Access
+        /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AWSOrganizationsNotInUseException">
@@ -1526,7 +1546,7 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedException">
         /// You don't have permissions to perform the requested operation. The user or role that
         /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see <a href="IAM/latest/UserGuide/access.html">Access
+        /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.HandshakeNotFoundException">
@@ -1590,7 +1610,7 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedException">
         /// You don't have permissions to perform the requested operation. The user or role that
         /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see <a href="IAM/latest/UserGuide/access.html">Access
+        /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AWSOrganizationsNotInUseException">
@@ -1652,7 +1672,7 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedException">
         /// You don't have permissions to perform the requested operation. The user or role that
         /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see <a href="IAM/latest/UserGuide/access.html">Access
+        /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AWSOrganizationsNotInUseException">
@@ -1720,7 +1740,7 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedException">
         /// You don't have permissions to perform the requested operation. The user or role that
         /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see <a href="IAM/latest/UserGuide/access.html">Access
+        /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AWSOrganizationsNotInUseException">
@@ -1784,11 +1804,11 @@ namespace Amazon.Organizations
         ///  <b>Note:</b> Every root, OU, and account must have at least one SCP attached. If
         /// you want to replace the default <code>FullAWSAccess</code> policy with one that limits
         /// the permissions that can be delegated, then you must attach the replacement policy
-        /// before you can remove the default one. This is the authorization strategy of <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps.html#orgs_policies_whitelist">whitelisting</a>.
+        /// before you can remove the default one. This is the authorization strategy of <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_about-scps.html#orgs_policies_whitelist">whitelisting</a>.
         /// If you instead attach a second SCP and leave the <code>FullAWSAccess</code> SCP still
         /// attached, and specify <code>"Effect": "Deny"</code> in the second SCP to override
         /// the <code>"Effect": "Allow"</code> in the <code>FullAWSAccess</code> policy (or any
-        /// other attached SCP), then you are using the authorization strategy of <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps.html#orgs_policies_blacklist">blacklisting</a>.
+        /// other attached SCP), then you are using the authorization strategy of <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_about-scps.html#orgs_policies_blacklist">blacklisting</a>.
         /// 
         /// </para>
         ///  
@@ -1802,7 +1822,7 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedException">
         /// You don't have permissions to perform the requested operation. The user or role that
         /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see <a href="IAM/latest/UserGuide/access.html">Access
+        /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AWSOrganizationsNotInUseException">
@@ -1890,7 +1910,7 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedException">
         /// You don't have permissions to perform the requested operation. The user or role that
         /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see <a href="IAM/latest/UserGuide/access.html">Access
+        /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AWSOrganizationsNotInUseException">
@@ -1911,7 +1931,10 @@ namespace Amazon.Organizations
         /// You provided invalid values for one or more of the request parameters.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.PolicyTypeNotEnabledException">
-        /// The specified policy type is not currently enabled in this root.
+        /// The specified policy type is not currently enabled in this root. You cannot attach
+        /// policies of the specified type to entities in a root until you enable that type in
+        /// the root. For more information, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">Enabling
+        /// All Features in Your Organization</a> in the <i>AWS Organizations User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.RootNotFoundException">
         /// We can't find a root with the RootId that you specified.
@@ -1954,65 +1977,60 @@ namespace Amazon.Organizations
 
         #endregion
         
-        #region  EnableFullControl
+        #region  EnableAllFeatures
 
 
         /// <summary>
-        /// Enables full-control mode in an organization. Full-control mode enables the use of
-        /// policies to restrict the services and actions that can be called in each account.
-        /// Until you enable full-control mode, you have access only to shared billing, and you
-        /// can't use any of the advanced account administration features that AWS Organizations
-        /// supports. For more information about full-control mode, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_full-control-mode.html">Enabling
-        /// Full-Control Mode in Your Organization</a> in the <i>AWS Organizations User Guide</i>.
+        /// Enables all features in an organization. This enables the use of organization policies
+        /// that can restrict the services and actions that can be called in each account. Until
+        /// you enable all features, you have access only to consolidated billing, and you can't
+        /// use any of the advanced account administration features that AWS Organizations supports.
+        /// For more information, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">Enabling
+        /// All Features in Your Organization</a> in the <i>AWS Organizations User Guide</i>.
         /// 
         ///  <important> 
         /// <para>
-        /// This operation is required only for organizations that were created explicitly in
-        /// billing mode, or that were migrated from a Consolidated Billing account family to
-        /// Organizations. Calling this operation sends a handshake to every account in the organization.
-        /// The migration can be finalized and the new features enabled only after all administrators
-        /// approve the switch by accepting the handshake.
+        /// This operation is required only for organizations that were created explicitly with
+        /// only the consolidated billing features enabled, or that were migrated from a Consolidated
+        /// Billing account family to Organizations. Calling this operation sends a handshake
+        /// to every invited account in the organization. The feature set change can be finalized
+        /// and the additional features enabled only after all administrators in the invited accounts
+        /// approve the change by accepting the handshake.
         /// </para>
         ///  </important> 
         /// <para>
-        /// After all member accounts accept the handshake, you finalize the migration by accepting
-        /// the handshake that contains <code>"Action": "ENABLE_FULL_CONTROL"</code>. This completes
-        /// the switch.
+        /// After all invited member accounts accept the handshake, you finalize the feature set
+        /// change by accepting the handshake that contains <code>"Action": "ENABLE_ALL_FEATURES"</code>.
+        /// This completes the change.
         /// </para>
         ///  
         /// <para>
-        /// After you enable full-control mode, the master account in the organization can apply
-        /// policies on all member accounts. These policies can restrict what users and even administrators
-        /// in those accounts can do. The master account can apply policies that prevent accounts
-        /// from leaving the organization. Ensure that your account administrators are aware of
-        /// this.
+        /// After you enable all features in your organization, the master account in the organization
+        /// can apply policies on all member accounts. These policies can restrict what users
+        /// and even administrators in those accounts can do. The master account can apply policies
+        /// that prevent accounts from leaving the organization. Ensure that your account administrators
+        /// are aware of this.
         /// </para>
         ///  
         /// <para>
         /// This operation can be called only from the organization's master account. 
         /// </para>
         /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the EnableFullControl service method.</param>
+        /// <param name="request">Container for the necessary parameters to execute the EnableAllFeatures service method.</param>
         /// 
-        /// <returns>The response from the EnableFullControl service method, as returned by Organizations.</returns>
+        /// <returns>The response from the EnableAllFeatures service method, as returned by Organizations.</returns>
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedException">
         /// You don't have permissions to perform the requested operation. The user or role that
         /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see <a href="IAM/latest/UserGuide/access.html">Access
+        /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AWSOrganizationsNotInUseException">
         /// Your account is not a member of an organization. To make this request, you must use
         /// the credentials of an account that belongs to an organization.
         /// </exception>
-        /// <exception cref="Amazon.Organizations.Model.ConstraintViolationException">
-        /// Performing this operation violates a minimum or maximum value limit. For example,
-        /// attempting to removing the last SCP from an OU or root, inviting or creating too many
-        /// accounts to the organization, or attaching too many policies to an account, OU, or
-        /// root.
-        /// </exception>
-        /// <exception cref="Amazon.Organizations.Model.FullControlAlreadyEnabledException">
-        /// This organization is already in full-control mode.
+        /// <exception cref="Amazon.Organizations.Model.HandshakeConstraintViolationException">
+        /// The requested operation would violate the constraint identified in the reason code.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.InvalidInputException">
         /// You provided invalid values for one or more of the request parameters.
@@ -2025,31 +2043,31 @@ namespace Amazon.Organizations
         /// You've sent too many requests in too short a period of time. The limit helps protect
         /// against denial-of-service attacks. Try again later.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/EnableFullControl">REST API Reference for EnableFullControl Operation</seealso>
-        public EnableFullControlResponse EnableFullControl(EnableFullControlRequest request)
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/EnableAllFeatures">REST API Reference for EnableAllFeatures Operation</seealso>
+        public EnableAllFeaturesResponse EnableAllFeatures(EnableAllFeaturesRequest request)
         {
-            var marshaller = new EnableFullControlRequestMarshaller();
-            var unmarshaller = EnableFullControlResponseUnmarshaller.Instance;
+            var marshaller = new EnableAllFeaturesRequestMarshaller();
+            var unmarshaller = EnableAllFeaturesResponseUnmarshaller.Instance;
 
-            return Invoke<EnableFullControlRequest,EnableFullControlResponse>(request, marshaller, unmarshaller);
+            return Invoke<EnableAllFeaturesRequest,EnableAllFeaturesResponse>(request, marshaller, unmarshaller);
         }
 
         /// <summary>
-        /// Initiates the asynchronous execution of the EnableFullControl operation.
+        /// Initiates the asynchronous execution of the EnableAllFeatures operation.
         /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the EnableFullControl operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the EnableAllFeatures operation.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/EnableFullControl">REST API Reference for EnableFullControl Operation</seealso>
-        public Task<EnableFullControlResponse> EnableFullControlAsync(EnableFullControlRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/EnableAllFeatures">REST API Reference for EnableAllFeatures Operation</seealso>
+        public Task<EnableAllFeaturesResponse> EnableAllFeaturesAsync(EnableAllFeaturesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new EnableFullControlRequestMarshaller();
-            var unmarshaller = EnableFullControlResponseUnmarshaller.Instance;
+            var marshaller = new EnableAllFeaturesRequestMarshaller();
+            var unmarshaller = EnableAllFeaturesResponseUnmarshaller.Instance;
 
-            return InvokeAsync<EnableFullControlRequest,EnableFullControlResponse>(request, marshaller, 
+            return InvokeAsync<EnableAllFeaturesRequest,EnableAllFeaturesResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -2074,7 +2092,7 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedException">
         /// You don't have permissions to perform the requested operation. The user or role that
         /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see <a href="IAM/latest/UserGuide/access.html">Access
+        /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AWSOrganizationsNotInUseException">
@@ -2098,9 +2116,10 @@ namespace Amazon.Organizations
         /// The specified policy type is already enabled in the specified root.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.PolicyTypeNotAvailableForOrganizationException">
-        /// You can't use the specified policy type with the organization in its current mode
-        /// of operation. For example, you can enable service control policies (SCPs) only after
-        /// the organization upgrades to full-control mode.
+        /// You can't use the specified policy type with the feature set currently enabled for
+        /// this organization. For example, you can enable service control policies (SCPs) only
+        /// after you enable all features in the organization. For more information, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies.html#enable_policies_on_root">Enabling
+        /// and Disabling a Policy Type on a Root</a> in the <i>AWS Organizations User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.RootNotFoundException">
         /// We can't find a root with the RootId that you specified.
@@ -2163,18 +2182,12 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedException">
         /// You don't have permissions to perform the requested operation. The user or role that
         /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see <a href="IAM/latest/UserGuide/access.html">Access
+        /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AWSOrganizationsNotInUseException">
         /// Your account is not a member of an organization. To make this request, you must use
         /// the credentials of an account that belongs to an organization.
-        /// </exception>
-        /// <exception cref="Amazon.Organizations.Model.ConstraintViolationException">
-        /// Performing this operation violates a minimum or maximum value limit. For example,
-        /// attempting to removing the last SCP from an OU or root, inviting or creating too many
-        /// accounts to the organization, or attaching too many policies to an account, OU, or
-        /// root.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.DuplicateHandshakeException">
         /// A handshake with the same action and target already exists. For example, if you invited
@@ -2187,13 +2200,11 @@ namespace Amazon.Organizations
         /// AWS Organizations could not finalize the creation of your organization. Try again
         /// later. If this persists, contact AWS customer support.
         /// </exception>
+        /// <exception cref="Amazon.Organizations.Model.HandshakeConstraintViolationException">
+        /// The requested operation would violate the constraint identified in the reason code.
+        /// </exception>
         /// <exception cref="Amazon.Organizations.Model.InvalidInputException">
         /// You provided invalid values for one or more of the request parameters.
-        /// </exception>
-        /// <exception cref="Amazon.Organizations.Model.InvitationsDisabledDuringOrganizationModeChangeException">
-        /// You can't send invitations to join an organization that is in the process of upgrading
-        /// to full-control mode. Wait until the switch to full-control mode complete and try
-        /// again.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.ServiceException">
         /// AWS Organizations can't complete your request because of an internal service error.
@@ -2247,7 +2258,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  <important> 
         /// <para>
-        /// The master account in an organization in full-control mode can set service control
+        /// The master account in an organization with all features enabled can set service control
         /// policies (SCPs) that can restrict what administrators of member accounts can do, including
         /// preventing them from successfully calling <code>LeaveOrganization</code> and leaving
         /// the organization. 
@@ -2260,12 +2271,8 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedException">
         /// You don't have permissions to perform the requested operation. The user or role that
         /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see <a href="IAM/latest/UserGuide/access.html">Access
+        /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// Management</a> in the <i>IAM User Guide</i>.
-        /// </exception>
-        /// <exception cref="Amazon.Organizations.Model.AccountCannotLeaveOrganizationException">
-        /// You can't remove an account from an organization that was created by AWS Organizations.
-        /// You can remove only invited accounts.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AccountNotFoundException">
         /// We can't find an AWS account with the AccountId that you specified, or the account
@@ -2278,6 +2285,12 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.ConcurrentModificationException">
         /// The target of the operation is currently being modified by a different request. Try
         /// again later.
+        /// </exception>
+        /// <exception cref="Amazon.Organizations.Model.ConstraintViolationException">
+        /// Performing this operation violates a minimum or maximum value limit. For example,
+        /// attempting to removing the last SCP from an OU or root, inviting or creating too many
+        /// accounts to the organization, or attaching too many policies to an account, OU, or
+        /// root.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.InvalidInputException">
         /// You provided invalid values for one or more of the request parameters.
@@ -2343,7 +2356,7 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedException">
         /// You don't have permissions to perform the requested operation. The user or role that
         /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see <a href="IAM/latest/UserGuide/access.html">Access
+        /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AWSOrganizationsNotInUseException">
@@ -2407,7 +2420,7 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedException">
         /// You don't have permissions to perform the requested operation. The user or role that
         /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see <a href="IAM/latest/UserGuide/access.html">Access
+        /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AWSOrganizationsNotInUseException">
@@ -2472,7 +2485,7 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedException">
         /// You don't have permissions to perform the requested operation. The user or role that
         /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see <a href="IAM/latest/UserGuide/access.html">Access
+        /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AWSOrganizationsNotInUseException">
@@ -2541,7 +2554,7 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedException">
         /// You don't have permissions to perform the requested operation. The user or role that
         /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see <a href="IAM/latest/UserGuide/access.html">Access
+        /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AWSOrganizationsNotInUseException">
@@ -2607,7 +2620,7 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedException">
         /// You don't have permissions to perform the requested operation. The user or role that
         /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see <a href="IAM/latest/UserGuide/access.html">Access
+        /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.InvalidInputException">
@@ -2671,7 +2684,7 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedException">
         /// You don't have permissions to perform the requested operation. The user or role that
         /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see <a href="IAM/latest/UserGuide/access.html">Access
+        /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AWSOrganizationsNotInUseException">
@@ -2736,7 +2749,7 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedException">
         /// You don't have permissions to perform the requested operation. The user or role that
         /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see <a href="IAM/latest/UserGuide/access.html">Access
+        /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AWSOrganizationsNotInUseException">
@@ -2799,6 +2812,11 @@ namespace Amazon.Organizations
         /// <para>
         /// This operation can be called only from the organization's master account.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// In the current release, a child can have only a single parent. 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListParents service method.</param>
         /// 
@@ -2806,7 +2824,7 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedException">
         /// You don't have permissions to perform the requested operation. The user or role that
         /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see <a href="IAM/latest/UserGuide/access.html">Access
+        /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AWSOrganizationsNotInUseException">
@@ -2875,7 +2893,7 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedException">
         /// You don't have permissions to perform the requested operation. The user or role that
         /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see <a href="IAM/latest/UserGuide/access.html">Access
+        /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AWSOrganizationsNotInUseException">
@@ -2942,7 +2960,7 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedException">
         /// You don't have permissions to perform the requested operation. The user or role that
         /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see <a href="IAM/latest/UserGuide/access.html">Access
+        /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AWSOrganizationsNotInUseException">
@@ -3010,7 +3028,7 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedException">
         /// You don't have permissions to perform the requested operation. The user or role that
         /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see <a href="IAM/latest/UserGuide/access.html">Access
+        /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AWSOrganizationsNotInUseException">
@@ -3075,7 +3093,7 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedException">
         /// You don't have permissions to perform the requested operation. The user or role that
         /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see <a href="IAM/latest/UserGuide/access.html">Access
+        /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AWSOrganizationsNotInUseException">
@@ -3144,7 +3162,7 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedException">
         /// You don't have permissions to perform the requested operation. The user or role that
         /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see <a href="IAM/latest/UserGuide/access.html">Access
+        /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AccountNotFoundException">
@@ -3162,6 +3180,9 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.DestinationParentNotFoundException">
         /// We can't find the destination container (a root or OU) with the ParentId that you
         /// specified.
+        /// </exception>
+        /// <exception cref="Amazon.Organizations.Model.DuplicateAccountException">
+        /// That account is already present in the specified destination.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.InvalidInputException">
         /// You provided invalid values for one or more of the request parameters.
@@ -3238,12 +3259,8 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedException">
         /// You don't have permissions to perform the requested operation. The user or role that
         /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see <a href="IAM/latest/UserGuide/access.html">Access
+        /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// Management</a> in the <i>IAM User Guide</i>.
-        /// </exception>
-        /// <exception cref="Amazon.Organizations.Model.AccountCannotLeaveOrganizationException">
-        /// You can't remove an account from an organization that was created by AWS Organizations.
-        /// You can remove only invited accounts.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AccountNotFoundException">
         /// We can't find an AWS account with the AccountId that you specified, or the account
@@ -3256,6 +3273,12 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.ConcurrentModificationException">
         /// The target of the operation is currently being modified by a different request. Try
         /// again later.
+        /// </exception>
+        /// <exception cref="Amazon.Organizations.Model.ConstraintViolationException">
+        /// Performing this operation violates a minimum or maximum value limit. For example,
+        /// attempting to removing the last SCP from an OU or root, inviting or creating too many
+        /// accounts to the organization, or attaching too many policies to an account, OU, or
+        /// root.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.InvalidInputException">
         /// You provided invalid values for one or more of the request parameters.
@@ -3322,7 +3345,7 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedException">
         /// You don't have permissions to perform the requested operation. The user or role that
         /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see <a href="IAM/latest/UserGuide/access.html">Access
+        /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AWSOrganizationsNotInUseException">
@@ -3399,7 +3422,7 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedException">
         /// You don't have permissions to perform the requested operation. The user or role that
         /// is making the request must have at least one IAM permissions policy attached that
-        /// grants the required permissions. For more information, see <a href="IAM/latest/UserGuide/access.html">Access
+        /// grants the required permissions. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AWSOrganizationsNotInUseException">
@@ -3421,6 +3444,12 @@ namespace Amazon.Organizations
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.InvalidInputException">
         /// You provided invalid values for one or more of the request parameters.
+        /// </exception>
+        /// <exception cref="Amazon.Organizations.Model.MalformedPolicyDocumentException">
+        /// The provided policy document does not meet the requirements of the specified policy
+        /// type. For example, the syntax might be incorrect. For details about service control
+        /// policy syntax, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service
+        /// Control Policy Syntax</a> in the <i>AWS Organizations User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.PolicyNotFoundException">
         /// We can't find a policy with the PolicyId that you specified.

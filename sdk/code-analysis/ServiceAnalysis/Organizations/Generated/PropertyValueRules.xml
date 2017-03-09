@@ -304,7 +304,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.OrganizationalUnit.Arn</property>
-    <pattern>^arn:aws:organizations::\d{12}:ou\/o-[a-z0-9]{10,32}\/ou-[0-9a-z]{8,32}</pattern>
+    <pattern>^arn:aws:organizations::\d{12}:ou\/o-[a-z0-9]{10,32}\/ou-[0-9a-z]{4,32}-[0-9a-z]{8,32}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.OrganizationalUnit.Id</property>

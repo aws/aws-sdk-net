@@ -1,0 +1,8 @@
+{
+    "base-name": "WorkDocs",  
+    "region-lookup-name": "workdocs", 
+    "authentication-service-name": "workdocs", 
+    "synopsis": "Amazon WorkDocs is a fully managed, secure enterprise storage and sharing service with strong administrative controls and feedback capabilities that improve user productivity.", 
+    "active": true, 
+    "model": "workdocs"
+}

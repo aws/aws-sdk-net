@@ -119,11 +119,11 @@ namespace Amazon.Organizations
     /// </para>
     ///  
     /// <para>
-    /// We welcome your feedback. Send your comments to <a href="mailto:feedback-awsorganizations@amazon.com">feedback-awsorganizations@amazon.com</a>
+    /// We welcome your feedback. Send your comments to <a href="mailto:aws-organizations-feedback@amazon.com">aws-organizations-feedback@amazon.com</a>
     /// or post your feedback and questions in our private <a href="http://forums.aws.amazon.com/forum.jspa?forumID=219">AWS
     /// Organizations support forum</a>. If you don't have access to the forum, send a request
     /// for access to the email address, along with your forum user ID. For more information
-    /// about the AWS support forums, see <a href="https://forums.aws.amazon.com/help.jspa">Forums
+    /// about the AWS support forums, see <a href="http://forums.aws.amazon.com/help.jspa">Forums
     /// Help</a>.
     /// </para>
     ///  
@@ -998,33 +998,33 @@ namespace Amazon.Organizations
 
         #endregion
         
-        #region  EnableFullControl
+        #region  EnableAllFeatures
 
-        internal EnableFullControlResponse EnableFullControl(EnableFullControlRequest request)
+        internal EnableAllFeaturesResponse EnableAllFeatures(EnableAllFeaturesRequest request)
         {
-            var marshaller = new EnableFullControlRequestMarshaller();
-            var unmarshaller = EnableFullControlResponseUnmarshaller.Instance;
+            var marshaller = new EnableAllFeaturesRequestMarshaller();
+            var unmarshaller = EnableAllFeaturesResponseUnmarshaller.Instance;
 
-            return Invoke<EnableFullControlRequest,EnableFullControlResponse>(request, marshaller, unmarshaller);
+            return Invoke<EnableAllFeaturesRequest,EnableAllFeaturesResponse>(request, marshaller, unmarshaller);
         }
 
 
         /// <summary>
-        /// Initiates the asynchronous execution of the EnableFullControl operation.
+        /// Initiates the asynchronous execution of the EnableAllFeatures operation.
         /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the EnableFullControl operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the EnableAllFeatures operation.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/EnableFullControl">REST API Reference for EnableFullControl Operation</seealso>
-        public Task<EnableFullControlResponse> EnableFullControlAsync(EnableFullControlRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/EnableAllFeatures">REST API Reference for EnableAllFeatures Operation</seealso>
+        public Task<EnableAllFeaturesResponse> EnableAllFeaturesAsync(EnableAllFeaturesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new EnableFullControlRequestMarshaller();
-            var unmarshaller = EnableFullControlResponseUnmarshaller.Instance;
+            var marshaller = new EnableAllFeaturesRequestMarshaller();
+            var unmarshaller = EnableAllFeaturesResponseUnmarshaller.Instance;
 
-            return InvokeAsync<EnableFullControlRequest,EnableFullControlResponse>(request, marshaller, 
+            return InvokeAsync<EnableAllFeaturesRequest,EnableAllFeaturesResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

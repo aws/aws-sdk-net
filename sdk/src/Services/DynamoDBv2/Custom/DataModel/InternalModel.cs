@@ -85,6 +85,9 @@ namespace Amazon.DynamoDBv2.DataModel
         public bool IsGSIKey { get { return IsGSIHashKey || IsGSIRangeKey; } }
         public bool IsIgnored { get; set; }
 
+        // whether to store DateTime as epoch seconds integer
+        public bool StoreAsEpoch { get; set; }
+
         // corresponding IndexNames, if applicable
         public List<string> IndexNames { get; set; }
 
@@ -155,6 +158,9 @@ namespace Amazon.DynamoDBv2.DataModel
 
             if (ConverterType != null)
             {
+                if (StoreAsEpoch)
+                    throw new InvalidOperationException("Converter for " + PropertyName + " must not be set at the same time as StoreAsEpoch is set to true");
+
                 if (!Utils.CanInstantiateConverter(ConverterType) || !Utils.ImplementsInterface(ConverterType, typeof(IPropertyConverter)))
                     throw new InvalidOperationException("Converter for " + PropertyName + " must be instantiable with no parameters and must implement IPropertyConverter");
 
@@ -344,6 +350,7 @@ namespace Amazon.DynamoDBv2.DataModel
         // table
         public string TableName { get; set; }
         public bool LowerCamelCaseProperties { get; set; }
+        public HashSet<string> AttributesToStoreAsEpoch { get; set; }
 
         // keys
         public List<string> HashKeyPropertyNames { get; private set; }
@@ -484,6 +491,9 @@ namespace Amazon.DynamoDBv2.DataModel
             AddPropertyStorage(propertyName, value);
             if (!AttributesToGet.Contains(attributeName))
                 AttributesToGet.Add(attributeName);
+            if (value.StoreAsEpoch)
+                AttributesToStoreAsEpoch.Add(attributeName);
+
             if (value.IsLSIRangeKey || value.IsGSIKey)
             {
                 List<string> indexes;
@@ -553,6 +563,7 @@ namespace Amazon.DynamoDBv2.DataModel
             AttributesToGet = new List<string>();
             HashKeyPropertyNames = new List<string>();
             RangeKeyPropertyNames = new List<string>();
+            AttributesToStoreAsEpoch = new HashSet<string>();
         }
     }
 
@@ -599,7 +610,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 ConfigTableCache tableCache;
                 if (!Cache.TryGetValue(type, out tableCache))
                 {
-                    var baseStorageConfig = CreateStorageConfig(type, actualTableName: null, flatConfig: flatConfig);
+                    var baseStorageConfig = CreateStorageConfig(type, actualTableName: null);
                     tableCache = new ConfigTableCache(baseStorageConfig);
                     Cache[type] = tableCache;
                 }
@@ -613,7 +624,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 ItemStorageConfig config;
                 if (!tableCache.Cache.TryGetValue(actualTableName, out config))
                 {
-                    config = CreateStorageConfig(type, actualTableName, flatConfig);
+                    config = CreateStorageConfig(type, actualTableName);
                     tableCache.Cache[actualTableName] = config;
                 }
                 return config;
@@ -624,7 +635,7 @@ namespace Amazon.DynamoDBv2.DataModel
         {
             return (config.LowerCamelCaseProperties ? Utils.ToLowerCamelCase(value) : value);
         }
-        private ItemStorageConfig CreateStorageConfig(Type baseType, string actualTableName, DynamoDBFlatConfig flatConfig)
+        private ItemStorageConfig CreateStorageConfig(Type baseType, string actualTableName)
         {
             if (baseType == null) throw new ArgumentNullException("baseType");
             ITypeInfo typeInfo = TypeFactory.GetTypeInfo(baseType);
@@ -633,11 +644,20 @@ namespace Amazon.DynamoDBv2.DataModel
             PopulateConfigFromType(config, typeInfo);
             PopulateConfigFromMappings(config, AWSConfigsDynamoDB.Context.TypeMappings);
 
-            // populate config from table definition only if actual table name is known
+            // try to populate config from table definition only if actual table name is known
             if (!string.IsNullOrEmpty(actualTableName))
             {
                 Table table;
-                if (Context.TryGetTable(actualTableName, flatConfig, out table))
+                try
+                {
+                    table = Context.GetUnconfiguredTable(actualTableName);
+                }
+                catch
+                {
+                    table = null;
+                }
+
+                if (table != null)
                 {
                     PopulateConfigFromTable(config, table);
                 }
@@ -691,7 +711,9 @@ namespace Amazon.DynamoDBv2.DataModel
                     {
                         if (!string.IsNullOrEmpty(propertyAttribute.AttributeName))
                             propertyStorage.AttributeName = GetAccurateCase(config, propertyAttribute.AttributeName);
-                        
+
+                        propertyStorage.StoreAsEpoch = propertyAttribute.StoreAsEpoch;
+
                         if (propertyAttribute.Converter != null)
                             propertyStorage.ConverterType = propertyAttribute.Converter;
                         
@@ -819,6 +841,7 @@ namespace Amazon.DynamoDBv2.DataModel
                         propertyStorage.ConverterType = propertyConfig.Converter;
                     propertyStorage.IsIgnored = propertyConfig.Ignore;
                     propertyStorage.IsVersion = propertyConfig.Version;
+                    propertyStorage.StoreAsEpoch = propertyConfig.StoreAsEpoch;
                 }
             }
         }

@@ -136,6 +136,13 @@
                         "RequestItems"
                     ]
                 ]
+            },
+            "DescribeTimeToLive" : {
+                "methodForms" : [
+                    [
+                        "TableName"
+                    ]
+                ]
             }
         }
     }

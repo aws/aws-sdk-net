@@ -301,6 +301,11 @@ namespace Amazon.Util
         public Type Converter { get; set; }
 
         /// <summary>
+        /// Whether this property should be stored as epoch seconds integer.
+        /// </summary>
+        public bool StoreAsEpoch { get; set; }
+
+        /// <summary>
         /// Initializes a PropertyConfig object for a specific property
         /// </summary>
         /// <param name="propertyName"></param>
@@ -317,6 +322,7 @@ namespace Amazon.Util
             Ignore = prop.Ignore.GetValueOrDefault(false);
             Version = prop.Version.GetValueOrDefault(false);
             Converter = prop.Converter;
+            StoreAsEpoch = prop.StoreAsEpoch.GetValueOrDefault(false);
         }
 #endif
     }
@@ -518,6 +524,7 @@ namespace Amazon.Util
         private const string ignoreKey = "ignore";
         private const string versionKey = "version";
         private const string converterKey = "converter";
+        private const string storeAsEpochKey = "storeAsEpoch";
 
         [ConfigurationProperty(nameKey, IsRequired = true)]
         public string Name
@@ -553,6 +560,13 @@ namespace Amazon.Util
         {
             get { return (Type)this[converterKey]; }
             set { this[converterKey] = value; }
+        }
+
+        [ConfigurationProperty(storeAsEpochKey)]
+        public bool? StoreAsEpoch
+        {
+            get { return (bool?)this[storeAsEpochKey]; }
+            set { this[storeAsEpochKey] = value; }
         }
     }
 

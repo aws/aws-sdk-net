@@ -43,13 +43,12 @@ namespace Amazon.DynamoDBv2.DocumentModel
         }
 
         private static string TableInfoCacheIdentifier = typeof(Table).FullName;
-        private ICache<string, TableDescription> TableInfoCache { get; set; }
-        private string[] KeyNames { get; set; }
-        private Logger LoggerInstance;
+        private TableConfig Config;
 
-        internal bool ContainsCachedData { get; private set; }
-        internal Table.DynamoDBConsumer TableConsumer { get; private set; }
-        internal DynamoDBEntryConversion Conversion { get; private set; }
+        internal Table.DynamoDBConsumer TableConsumer { get { return Config.Consumer; } }
+        internal DynamoDBEntryConversion Conversion { get { return Config.Conversion; } }
+        internal IEnumerable<string> StoreAsEpoch { get { return Config.AttributesToStoreAsEpoch; } }
+        internal IEnumerable<string> KeyNames { get { return Keys.Keys; } }
 
 #if PCL || UNITY || CORECLR
         internal AmazonDynamoDBClient DDBClient { get; private set; }
@@ -64,7 +63,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <summary>
         /// Name of the table.
         /// </summary>
-        public string TableName { get; private set; }
+        public string TableName { get { return Config.TableName; } }
 
         /// <summary>
         /// Keys of the table.
@@ -126,11 +125,14 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             ClearTableData();
 
+            var tableInfoCache = SdkCache.GetCache<string, TableDescription>(DDBClient, TableInfoCacheIdentifier, StringComparer.Ordinal);
             bool staleCacheData;
-            TableDescription table = TableInfoCache.GetValue(TableName, this.DescribeTable, out staleCacheData);
-            this.ContainsCachedData = staleCacheData;
-            if (this.ContainsCachedData)
-                LoggerInstance.InfoFormat("Description for table [{0}] loaded from SDK Cache", TableName);
+            TableDescription table = tableInfoCache.GetValue(TableName, this.DescribeTable, out staleCacheData);
+            if (staleCacheData)
+            {
+                var logger = Logger.GetLogger(typeof(Table));
+                logger.InfoFormat("Description for table [{0}] loaded from SDK Cache", TableName);
+            }
 
             foreach (var key in table.KeySchema)
             {
@@ -172,8 +174,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
             {
                 Attributes.Add(attribute);
             }
-
-            KeyNames = Keys.Keys.ToArray();
         }
 
         internal Key MakeKey(IDictionary<string, DynamoDBEntry> doc)
@@ -187,6 +187,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 if (!doc.TryGetValue(keyName, out value))
                     throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture, "Document does not contain value for key {0}", keyName));
                 value = value.ToConvertedEntry(Conversion);
+                if (StoreAsEpoch.Contains(keyName))
+                    value = Document.DateTimeToEpochSeconds(value, keyName);
 
                 Primitive primitive = value.AsPrimitive();
                 if (primitive == null)
@@ -207,12 +209,15 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 throw new InvalidOperationException("Must have one hash key defined for the table " + TableName);
             string hashKeyName = HashKeys[0];
             KeyDescription hashKeyDescription = Keys[hashKeyName];
+            if (this.StoreAsEpoch.Contains(hashKeyName))
+                hashKey = KeyDateTimeToEpochSeconds(hashKey, hashKeyName);
+
             if (hashKeyDescription.Type != hashKey.Type)
                 throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture,
                     "Schema for table {0}, hash key {1}, is inconsistent with specified hash key value.", TableName, hashKeyName));
 
-            var hashKeyValue = hashKey.ConvertToAttributeValue(new DynamoDBEntry.AttributeConversionConfig(Conversion));
-            newKey[hashKeyName] = hashKeyValue;
+            var hashKeyAttributeValue = hashKey.ConvertToAttributeValue(new DynamoDBEntry.AttributeConversionConfig(Conversion));
+            newKey[hashKeyName] = hashKeyAttributeValue;
 
             if ((rangeKey == null) != (RangeKeys.Count == 0))
             {
@@ -223,14 +228,24 @@ namespace Amazon.DynamoDBv2.DocumentModel
             {
                 string rangeKeyName = RangeKeys[0];
                 KeyDescription rangeKeyDescription = Keys[rangeKeyName];
+
+                if (this.StoreAsEpoch.Contains(rangeKeyName))
+                    rangeKey = KeyDateTimeToEpochSeconds(rangeKey, rangeKeyName);
+
                 if (rangeKeyDescription.Type != rangeKey.Type)
                     throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture,
                         "Schema for table {0}, range key {1}, is inconsistent with specified range key value.", TableName, hashKeyName));
-                var rangeKeyValue = rangeKey.ConvertToAttributeValue(new DynamoDBEntry.AttributeConversionConfig(Conversion));
-                newKey[rangeKeyName] = rangeKeyValue;
+                var rangeKeyAttributeValue = rangeKey.ConvertToAttributeValue(new DynamoDBEntry.AttributeConversionConfig(Conversion));
+                newKey[rangeKeyName] = rangeKeyAttributeValue;
             }
 
             return newKey;
+        }
+        private static Primitive KeyDateTimeToEpochSeconds(Primitive key, string attributeName)
+        {
+            DynamoDBEntry entry = Document.DateTimeToEpochSeconds(key, attributeName);
+            Primitive converted = entry as Primitive;
+            return converted;
         }
 
         internal void UserAgentRequestEventHandlerSync(object sender, RequestEventArgs args)
@@ -240,6 +255,14 @@ namespace Amazon.DynamoDBv2.DocumentModel
         internal void UserAgentRequestEventHandlerAsync(object sender, RequestEventArgs args)
         {
             UserAgentRequestEventHandler(sender, args, true);
+        }
+
+        internal void AddRequestHandler(AmazonDynamoDBRequest request, bool isAsync)
+        {
+            ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)request).AddBeforeRequestHandler(isAsync ?
+                new RequestEventHandler(this.UserAgentRequestEventHandlerAsync) :
+                new RequestEventHandler(this.UserAgentRequestEventHandlerSync)
+                );
         }
 
         private void UserAgentRequestEventHandler(object sender, RequestEventArgs args, bool isAsync)
@@ -299,7 +322,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
             {
                 TableName = TableName
             };
-            ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)req).AddBeforeRequestHandler(new RequestEventHandler(this.UserAgentRequestEventHandlerSync));
+            this.AddRequestHandler(req, isAsync: false);
+
             var info = this.DDBClient.DescribeTable(req);
 
             if (info.Table == null)
@@ -312,25 +336,26 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         internal Table Copy()
         {
-            return this.Copy(this.TableConsumer);
+            return this.Copy(Config);
         }
-
-        internal Table Copy(Table.DynamoDBConsumer newConsumer)
+        internal Table Copy(TableConfig newConfig)
         {
-            return new Table(this.DDBClient, this.TableName, newConsumer, this.Conversion)
+            return new Table(this.DDBClient, newConfig)
             {
-                KeyNames = this.KeyNames,
                 Keys = this.Keys,
                 RangeKeys = this.RangeKeys,
                 HashKeys = this.HashKeys,
-                Conversion = this.Conversion,
                 Attributes = this.Attributes,
                 GlobalSecondaryIndexes = this.GlobalSecondaryIndexes,
                 GlobalSecondaryIndexNames = this.GlobalSecondaryIndexNames,
                 LocalSecondaryIndexes = this.LocalSecondaryIndexes,
-                LocalSecondaryIndexNames = this.LocalSecondaryIndexNames,
-                ContainsCachedData = this.ContainsCachedData
+                LocalSecondaryIndexNames = this.LocalSecondaryIndexNames
             };
+        }
+
+        internal Dictionary<string, AttributeValue> ToAttributeMap(Document doc, DynamoDBEntryConversion conversion)
+        {
+            return doc.ToAttributeMap(conversion, this.StoreAsEpoch);
         }
 
         #endregion
@@ -338,41 +363,22 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         #region Constructor/factory
 
-        private Table(IAmazonDynamoDB ddbClient, string tableName, Table.DynamoDBConsumer consumer, DynamoDBEntryConversion conversion)
+        private Table(IAmazonDynamoDB ddbClient, TableConfig config)
         {
+            if (config == null)
+                throw new ArgumentNullException("config");
+
+            if (ddbClient == null)
+                throw new ArgumentNullException("ddbClient");
+
 #if PCL || UNITY || CORECLR
             DDBClient = ddbClient as AmazonDynamoDBClient;
 #else
             DDBClient = ddbClient;
 #endif
-            TableInfoCache = SdkCache.GetCache<string, TableDescription>(ddbClient, TableInfoCacheIdentifier, StringComparer.Ordinal);
-            LoggerInstance = Logger.GetLogger(typeof(SdkCache));
-
-            TableConsumer = consumer;
-            TableName = tableName;
-            Conversion = conversion;
-            ClearTableData();
+            Config = config;
         }
 
-        internal static Table LoadTable(IAmazonDynamoDB ddbClient, string tableName, Table.DynamoDBConsumer consumer, DynamoDBEntryConversion conversion)
-        {
-            Table table = new Table(ddbClient, tableName, consumer, conversion);
-            table.LoadTableInfo();
-            return table;
-        }
-        internal static bool TryLoadTable(IAmazonDynamoDB ddbClient, string tableName, Table.DynamoDBConsumer consumer, DynamoDBEntryConversion conversion, out Table table)
-        {
-            try
-            {
-                table = LoadTable(ddbClient, tableName, consumer, conversion);
-                return true;
-            }
-            catch
-            {
-                table = null;
-                return false;
-            }
-        }
 
         /// <summary>
         /// Clears current table cache. Next time a Table is created, its information
@@ -381,6 +387,22 @@ namespace Amazon.DynamoDBv2.DocumentModel
         public static void ClearTableCache()
         {
             SdkCache.Clear(TableInfoCacheIdentifier);
+        }
+
+        /// <summary>
+        /// Creates a Table object with the specified configuration, using the
+        /// passed-in client to load the table definition.
+        /// 
+        /// This method will throw an exception if the table does not exist.
+        /// </summary>
+        /// <param name="ddbClient">Client to use to access DynamoDB.</param>
+        /// <param name="config">Configuration to use for the table.</param>
+        /// <returns>Table object representing the specified table.</returns>
+        public static Table LoadTable(IAmazonDynamoDB ddbClient, TableConfig config)
+        {
+            Table table = new Table(ddbClient, config);
+            table.LoadTableInfo();
+            return table;
         }
 
 #if !UNITY
@@ -412,7 +434,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>Table object representing the specified table.</returns>
         public static Table LoadTable(IAmazonDynamoDB ddbClient, string tableName, DynamoDBEntryConversion conversion)
         {
-            return LoadTable(ddbClient, tableName, DynamoDBConsumer.DocumentModel, conversion);
+            var config = new TableConfig(tableName, conversion, DynamoDBConsumer.DocumentModel, storeAsEpoch: null);
+
+            return LoadTable(ddbClient, config);
         }
 
         /// <summary>
@@ -449,9 +473,30 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// </returns>
         public static bool TryLoadTable(IAmazonDynamoDB ddbClient, string tableName, DynamoDBEntryConversion conversion, out Table table)
         {
+            var config = new TableConfig(tableName, conversion, DynamoDBConsumer.DocumentModel, storeAsEpoch: null);
+            return TryLoadTable(ddbClient, config, out table);
+        }
+
+        /// <summary>
+        /// Creates a Table object with the specified configuration, using the
+        /// passed-in client to load the table definition.
+        /// 
+        /// This method will return false if the table does not exist.
+        /// </summary>
+        /// <param name="ddbClient">Client to use to access DynamoDB.</param>
+        /// <param name="config">Configuration to use for the table.</param>
+        /// <param name="table">Loaded table.</param>
+        /// <returns>
+        /// True if table was successfully loaded; otherwise false.
+        /// </returns>
+        public static bool TryLoadTable(IAmazonDynamoDB ddbClient, TableConfig config, out Table table)
+        {
+            if (config == null)
+                throw new ArgumentNullException("config");
+
             try
             {
-                table = LoadTable(ddbClient, tableName, conversion);
+                table = LoadTable(ddbClient, config);
                 return true;
             }
             catch
@@ -460,9 +505,53 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 return false;
             }
         }
+
 #endif
         #endregion
 
+        #region Conversion methods
+
+        /// <summary>
+        /// Creates a Document from an attribute map.
+        /// </summary>
+        /// <param name="data">Map of attribute names to attribute values.</param>
+        /// <returns>Document representing the data.</returns>
+        public Document FromAttributeMap(Dictionary<string, AttributeValue> data)
+        {
+            return Document.FromAttributeMap(data, this.StoreAsEpoch);
+        }
+
+        /// <summary>
+        /// Creates a map of attribute names mapped to AttributeValue objects.
+        /// Converts .NET types using the conversion specified in this Table.
+        /// </summary>
+        /// <returns></returns>
+        public Dictionary<string, AttributeValue> ToAttributeMap(Document doc)
+        {
+            return doc.ToAttributeMap(this.Conversion, this.StoreAsEpoch);
+        }
+
+        /// <summary>
+        /// Creates a map of attribute names mapped to ExpectedAttributeValue objects.
+        /// </summary>
+        /// <returns></returns>
+        public Dictionary<string, ExpectedAttributeValue> ToExpectedAttributeMap(Document doc)
+        {
+            return doc.ToExpectedAttributeMap(this.Conversion, this.StoreAsEpoch);
+        }
+
+        /// <summary>
+        /// Creates a map of attribute names mapped to AttributeValueUpdate objects.
+        /// </summary>
+        /// <param name="changedAttributesOnly">If true, only attributes that have been changed will be in the map.</param>
+        /// <returns></returns>
+        public Dictionary<string, AttributeValueUpdate> ToAttributeUpdateMap(Document doc, bool changedAttributesOnly)
+        {
+            return doc.ToAttributeUpdateMap(this.Conversion, changedAttributesOnly, this.StoreAsEpoch);
+        }
+
+
+        #endregion
 
         #region PutItem
 
@@ -473,11 +562,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
             PutItemRequest req = new PutItemRequest
             {
                 TableName = TableName,
-                Item = doc.ToAttributeMap(Conversion)
+                Item = this.ToAttributeMap(doc)
             };
-            ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)req).AddBeforeRequestHandler(isAsync ?
-                new RequestEventHandler(UserAgentRequestEventHandlerAsync) :
-                new RequestEventHandler(UserAgentRequestEventHandlerSync));
+            this.AddRequestHandler(req, isAsync);
 
             if (currentConfig.ReturnValues == ReturnValues.AllOldAttributes)
                 req.ReturnValues = EnumMapper.Convert(currentConfig.ReturnValues);
@@ -487,19 +574,19 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
             if (currentConfig.Expected != null)
             {
-                req.Expected = currentConfig.Expected.ToExpectedAttributeMap(Conversion);
+                req.Expected = this.ToExpectedAttributeMap(currentConfig.Expected);
             }
             else if (currentConfig.ExpectedState != null &&
                 currentConfig.ExpectedState.ExpectedValues != null &&
                 currentConfig.ExpectedState.ExpectedValues.Count > 0)
             {
-                req.Expected = currentConfig.ExpectedState.ToExpectedAttributeMap(Conversion);
+                req.Expected = currentConfig.ExpectedState.ToExpectedAttributeMap(this);
                 if (req.Expected.Count > 1)
                     req.ConditionalOperator = EnumMapper.Convert(currentConfig.ExpectedState.ConditionalOperator);
             }
             else if (currentConfig.ConditionalExpression != null && currentConfig.ConditionalExpression.IsSet)
             {
-                currentConfig.ConditionalExpression.ApplyExpression(req, this.Conversion);
+                currentConfig.ConditionalExpression.ApplyExpression(req, this);
             }
 
             var resp = DDBClient.PutItem(req);
@@ -508,7 +595,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             Document ret = null;
             if (currentConfig.ReturnValues == ReturnValues.AllOldAttributes)
             {
-                ret = Document.FromAttributeMap(resp.Attributes);
+                ret = this.FromAttributeMap(resp.Attributes);
             }
             return ret;
         }
@@ -528,10 +615,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 ConsistentRead = currentConfig.ConsistentRead
             };
 
-            ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)request).AddBeforeRequestHandler(isAsync ?
-                new RequestEventHandler(UserAgentRequestEventHandlerAsync) :
-                new RequestEventHandler(UserAgentRequestEventHandlerSync)
-                );
+            this.AddRequestHandler(request, isAsync);
+
             if (currentConfig.AttributesToGet != null)
                 request.AttributesToGet = currentConfig.AttributesToGet;
 
@@ -539,7 +624,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             var attributeMap = result.Item;
             if (attributeMap == null || attributeMap.Count == 0)
                 return null;
-            return Document.FromAttributeMap(attributeMap);
+            return this.FromAttributeMap(attributeMap);
         }
 
         #endregion
@@ -560,7 +645,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             bool haveKeysChanged = HaveKeysChanged(doc);
             bool updateChangedAttributesOnly = !haveKeysChanged;
 
-            var attributeUpdates = doc.ToAttributeUpdateMap(Conversion, updateChangedAttributesOnly);
+            var attributeUpdates = this.ToAttributeUpdateMap(doc, updateChangedAttributesOnly);
             foreach (var keyName in this.KeyNames)
             {
                 attributeUpdates.Remove(keyName);
@@ -574,29 +659,25 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 ReturnValues = EnumMapper.Convert(currentConfig.ReturnValues)
             };
 
-
-            ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)req).AddBeforeRequestHandler(isAsync ?
-                new RequestEventHandler(UserAgentRequestEventHandlerAsync) :
-                new RequestEventHandler(UserAgentRequestEventHandlerSync)
-                );
+            this.AddRequestHandler(req, isAsync);
 
             ValidateConditional(currentConfig);
 
             if (currentConfig.Expected != null)
             {
-                req.Expected = currentConfig.Expected.ToExpectedAttributeMap(Conversion);
+                req.Expected = this.ToExpectedAttributeMap(currentConfig.Expected);
             }
             else if (currentConfig.ExpectedState != null &&
                 currentConfig.ExpectedState.ExpectedValues != null &&
                 currentConfig.ExpectedState.ExpectedValues.Count > 0)
             {
-                req.Expected = currentConfig.ExpectedState.ToExpectedAttributeMap(Conversion);
+                req.Expected = currentConfig.ExpectedState.ToExpectedAttributeMap(this);
                 if (req.Expected.Count > 1)
                     req.ConditionalOperator = EnumMapper.Convert(currentConfig.ExpectedState.ConditionalOperator);
             }
             else if (currentConfig.ConditionalExpression != null && currentConfig.ConditionalExpression.IsSet)
             {
-                currentConfig.ConditionalExpression.ApplyExpression(req, this.Conversion);
+                currentConfig.ConditionalExpression.ApplyExpression(req, this);
 
                 string statement;
                 Dictionary<string, AttributeValue> expressionAttributeValues;
@@ -630,7 +711,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             Document ret = null;
             if (currentConfig.ReturnValues != ReturnValues.None)
             {
-                ret = Document.FromAttributeMap(returnedAttributes);
+                ret = this.FromAttributeMap(returnedAttributes);
             }
             return ret;
         }
@@ -660,10 +741,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 TableName = TableName,
                 Key = key
             };
-            ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)req).AddBeforeRequestHandler(isAsync ?
-                new RequestEventHandler(UserAgentRequestEventHandlerAsync) :
-                new RequestEventHandler(UserAgentRequestEventHandlerSync)
-                );
+            this.AddRequestHandler(req, isAsync);
+
             if (currentConfig.ReturnValues == ReturnValues.AllOldAttributes)
                 req.ReturnValues = EnumMapper.Convert(currentConfig.ReturnValues);
 
@@ -671,19 +750,19 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
             if (currentConfig.Expected != null)
             {
-                req.Expected = currentConfig.Expected.ToExpectedAttributeMap(Conversion);
+                req.Expected = this.ToExpectedAttributeMap(currentConfig.Expected);
             }
             else if (currentConfig.ExpectedState != null &&
                 currentConfig.ExpectedState.ExpectedValues != null &&
                 currentConfig.ExpectedState.ExpectedValues.Count > 0)
             {
-                req.Expected = currentConfig.ExpectedState.ToExpectedAttributeMap(Conversion);
+                req.Expected = currentConfig.ExpectedState.ToExpectedAttributeMap(this);
                 if (req.Expected.Count > 1)
                     req.ConditionalOperator = EnumMapper.Convert(currentConfig.ExpectedState.ConditionalOperator);
             }
             else if (currentConfig.ConditionalExpression != null && currentConfig.ConditionalExpression.IsSet)
             {
-                currentConfig.ConditionalExpression.ApplyExpression(req, this.Conversion);
+                currentConfig.ConditionalExpression.ApplyExpression(req, this);
             }
 
             var attributes = DDBClient.DeleteItem(req).Attributes;
@@ -691,7 +770,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             Document ret = null;
             if (currentConfig.ReturnValues == ReturnValues.AllOldAttributes)
             {
-                ret = Document.FromAttributeMap(attributes);
+                ret = this.FromAttributeMap(attributes);
             }
             return ret;
         }

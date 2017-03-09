@@ -29,9 +29,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
                 Table hashTable;
                 Table hashRangeTable;
+                Table numericHashRangeTable;
 
                 // Load tables using provided conversion schema
-                LoadTables(conversion, out hashTable, out hashRangeTable);
+                LoadTables(conversion, out hashTable, out hashRangeTable, out numericHashRangeTable);
 
                 // Test saving and loading empty lists and maps
                 TestEmptyCollections(hashTable);
@@ -62,8 +63,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
                 // Test Query and Scan manual pagination
                 TestPagination(hashRangeTable);
+
+                // Test storing some attributes as epoch seconds
+                TestStoreAsEpoch(hashRangeTable, numericHashRangeTable);
             }
         }
+
 
         private void TestPagination(Table hashRangeTable)
         {
@@ -806,7 +811,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 return true;
             return docA.Equals(docB);
         }
-        private void LoadTables(DynamoDBEntryConversion conversion, out Table hashTable, out Table hashRangeTable)
+        private void LoadTables(DynamoDBEntryConversion conversion, out Table hashTable, out Table hashRangeTable, out Table numericHashRangeTable)
         {
             TableCache.Clear();
 
@@ -848,6 +853,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 Assert.AreEqual(1, hashRangeTable.LocalSecondaryIndexes.Count);
                 Assert.AreEqual(2, hashRangeTable.LocalSecondaryIndexes["LocalIndex"].KeySchema.Count);
                 Assert.AreEqual(1, hashRangeTable.LocalSecondaryIndexNames.Count);
+
+                numericHashRangeTable = Table.LoadTable(Client, numericHashRangeTableName, conversion);
+                Assert.AreEqual(1, numericHashRangeTable.HashKeys.Count);
+                Assert.AreEqual(1, numericHashRangeTable.RangeKeys.Count);
+                Assert.AreEqual(2, numericHashRangeTable.Keys.Count);
+                Assert.IsTrue(numericHashRangeTable.Keys.ContainsKey("CreationTime"));
+                Assert.IsTrue(numericHashRangeTable.Keys.ContainsKey("Name"));
             }
         }
     }

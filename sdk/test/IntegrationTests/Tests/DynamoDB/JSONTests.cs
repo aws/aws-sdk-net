@@ -51,9 +51,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
             Table hashTable;
             Table hashRangeTable;
+            Table numericHashRangeTable;
 
             // Load tables using provided conversion schema
-            LoadTables(DynamoDBEntryConversion.V2, out hashTable, out hashRangeTable);
+            LoadTables(DynamoDBEntryConversion.V2, out hashTable, out hashRangeTable, out numericHashRangeTable);
 
             // JSON as top-level data
             var doc = Document.FromJson(sampleJson);

@@ -91,56 +91,47 @@ namespace Amazon.DynamoDBv2.DataModel
 
         #region Table methods
 
-        internal Table GetTargetTableInternal<T>(DynamoDBOperationConfig operationConfig)
+        // Retrieves the target table for the specified type
+        private Table GetTargetTableInternal<T>(DynamoDBOperationConfig operationConfig)
         {
             Type type = typeof(T);
             DynamoDBFlatConfig flatConfig = new DynamoDBFlatConfig(operationConfig, this.Config);
             ItemStorageConfig storageConfig = StorageConfigCache.GetConfig(type, flatConfig);
-            Table table = GetTargetTable(storageConfig, flatConfig);
-            Table copy = table.Copy(Table.DynamoDBConsumer.DocumentModel);
+            Table table = GetTargetTable(storageConfig, flatConfig, Table.DynamoDBConsumer.DocumentModel);
             return table;
         }
-        internal Table GetTargetTable(ItemStorageConfig storageConfig, DynamoDBFlatConfig flatConfig)
+
+        // Retrieves a new instance of a table configured for the given storage and flat configs.
+        internal Table GetTargetTable(ItemStorageConfig storageConfig, DynamoDBFlatConfig flatConfig, Table.DynamoDBConsumer consumer = Table.DynamoDBConsumer.DataModel)
         {
             if (flatConfig == null)
                 throw new ArgumentNullException("flatConfig");
 
             string tableName = GetTableName(storageConfig.TableName, flatConfig);
-            Table table = GetTable(tableName, flatConfig);
+            var unconfiguredTable = GetUnconfiguredTable(tableName);
+            ValidateConfigAgainstTable(storageConfig, unconfiguredTable);
 
-            ValidateConfigAgainstTable(storageConfig, table);
+            var tableConfig = new TableConfig(tableName, flatConfig.Conversion, consumer, storageConfig.AttributesToStoreAsEpoch);
+            var table = unconfiguredTable.Copy(tableConfig);
             return table;
         }
-        internal Table GetTable(string tableName, DynamoDBFlatConfig flatConfig)
+
+        // Retrieves Config-less Table from cache or constructs it on cache-miss
+        // This Table should not be used for data operations.
+        // To use for data operations, Copy with a TableConfig first.
+        internal Table GetUnconfiguredTable(string tableName)
         {
             Table table;
             lock (tablesMapLock)
             {
                 if (!tablesMap.TryGetValue(tableName, out table))
                 {
-                    table = Table.LoadTable(Client, tableName, Table.DynamoDBConsumer.DataModel, flatConfig.Conversion);
+                    var emptyConfig = new TableConfig(tableName, conversion: null, consumer: Table.DynamoDBConsumer.DataModel, storeAsEpoch: null);
+                    table = Table.LoadTable(Client, emptyConfig);
                     tablesMap[tableName] = table;
                 }
             }
             return table;
-        }
-        internal bool TryGetTable(string tableName, DynamoDBFlatConfig flatConfig, out Table table)
-        {
-            Table loadedTable = null;
-
-            lock (tablesMapLock)
-            {
-                if (!tablesMap.TryGetValue(tableName, out loadedTable))
-                {
-                    if (Table.TryLoadTable(Client, tableName, Table.DynamoDBConsumer.DataModel, flatConfig.Conversion, out loadedTable))
-                    {
-                        tablesMap[tableName] = loadedTable;
-                    }
-                }
-            }
-
-            table = loadedTable;
-            return (table != null);
         }
 
         internal static string GetTableName(string baseTableName, DynamoDBFlatConfig flatConfig)
@@ -163,7 +154,6 @@ namespace Amazon.DynamoDBv2.DataModel
             CompareKeys(config, table, table.HashKeys, config.HashKeyPropertyNames, "hash");
             CompareKeys(config, table, table.RangeKeys, config.RangeKeyPropertyNames, "range");
         }
-
         private static void CompareKeys(ItemStorageConfig config, Table table, List<string> attributes, List<string> properties, string keyType)
         {
             if (attributes.Count != properties.Count)
@@ -887,6 +877,8 @@ namespace Amazon.DynamoDBv2.DataModel
 
             DynamoDBEntry hashKeyEntry = ValueToDynamoDBEntry(hashKeyProperty, hashKey, flatConfig);
             if (hashKeyEntry == null) throw new InvalidOperationException("Unable to convert hash key value for property " + hashKeyPropertyName);
+            if (storageConfig.AttributesToStoreAsEpoch.Contains(hashKeyProperty.AttributeName))
+                hashKeyEntry = Document.DateTimeToEpochSeconds(hashKeyEntry, hashKeyProperty.AttributeName);
             key[hashKeyProperty.AttributeName] = hashKeyEntry.ConvertToAttributeValue(new DynamoDBEntry.AttributeConversionConfig(flatConfig.Conversion));
 
             if (storageConfig.RangeKeyPropertyNames.Count > 0)
@@ -899,6 +891,8 @@ namespace Amazon.DynamoDBv2.DataModel
 
                 DynamoDBEntry rangeKeyEntry = ValueToDynamoDBEntry(rangeKeyProperty, rangeKey, flatConfig);
                 if (rangeKeyEntry == null) throw new InvalidOperationException("Unable to convert range key value for property " + rangeKeyPropertyName);
+                if (storageConfig.AttributesToStoreAsEpoch.Contains(rangeKeyProperty.AttributeName))
+                    rangeKeyEntry = Document.DateTimeToEpochSeconds(rangeKeyEntry, rangeKeyProperty.AttributeName);
                 key[rangeKeyProperty.AttributeName] = rangeKeyEntry.ConvertToAttributeValue(new DynamoDBEntry.AttributeConversionConfig(flatConfig.Conversion));
             }
 
@@ -910,7 +904,7 @@ namespace Amazon.DynamoDBv2.DataModel
             ItemStorage keyAsStorage = ObjectToItemStorageHelper(keyObject, storageConfig, flatConfig, keysOnly: true, ignoreNullValues: true);
             if (storageConfig.HasVersion) // if version field is defined, it would have been returned, so remove before making the key
                 keyAsStorage.Document[storageConfig.VersionPropertyStorage.AttributeName] = null;
-            Key key = new Key(keyAsStorage.Document.ToAttributeMap(flatConfig.Conversion));
+            Key key = new Key(keyAsStorage.Document.ToAttributeMap(flatConfig.Conversion, storageConfig.AttributesToStoreAsEpoch));
             ValidateKey(key, storageConfig);
             return key;
         }
@@ -978,7 +972,8 @@ namespace Amazon.DynamoDBv2.DataModel
         private ContextSearch ConvertFromScan<T>(ScanOperationConfig scanConfig, DynamoDBOperationConfig operationConfig)
         {
             DynamoDBFlatConfig flatConfig = new DynamoDBFlatConfig(operationConfig, Config);
-            Table table = GetTargetTableInternal<T>(operationConfig);
+            ItemStorageConfig storageConfig = StorageConfigCache.GetConfig<T>(flatConfig);
+            Table table = GetTargetTable(storageConfig, flatConfig);
             Search search = table.Scan(scanConfig);
             return new ContextSearch(search, flatConfig);
         }
@@ -986,7 +981,8 @@ namespace Amazon.DynamoDBv2.DataModel
         private ContextSearch ConvertFromQuery<T>(QueryOperationConfig queryConfig, DynamoDBOperationConfig operationConfig)
         {
             DynamoDBFlatConfig flatConfig = new DynamoDBFlatConfig(operationConfig, Config);
-            Table table = GetTargetTableInternal<T>(operationConfig);
+            ItemStorageConfig storageConfig = StorageConfigCache.GetConfig<T>(flatConfig);
+            Table table = GetTargetTable(storageConfig, flatConfig);
             Search search = table.Query(queryConfig);
             return new ContextSearch(search, flatConfig);
         }

@@ -41,53 +41,49 @@ namespace Amazon.Organizations.Model
     /// </para>
     ///  
     /// <para>
-    /// By default, a new organization is created in full-control mode and service control
-    /// policies are automatically enabled in the root. If you instead choose to create the
-    /// organization in billing mode by setting the <code>Mode</code> parameter to <code>BILLING"</code>,
-    /// then no policy types are enabled by default.
+    /// By default (or if you set the <code>FeatureSet</code> parameter to <code>ALL</code>),
+    /// the new organization is created with all features enabled and service control policies
+    /// automatically enabled in the root. If you instead choose to create the organization
+    /// supporting only the consolidated billing features by setting the <code>FeatureSet</code>
+    /// parameter to <code>CONSOLIDATED_BILLING"</code>, then no policy types are enabled
+    /// by default and you cannot use organization policies.
     /// </para>
     /// </summary>
     public partial class CreateOrganizationRequest : AmazonOrganizationsRequest
     {
-        private OrganizationMode _mode;
+        private OrganizationFeatureSet _featureSet;
 
         /// <summary>
-        /// Gets and sets the property Mode. 
+        /// Gets and sets the property FeatureSet. 
         /// <para>
-        /// Specifies the mode that the new organization is in. Each mode supports different levels
-        /// of functionality.
+        /// Specifies the feature set supported by the new organization. Each feature set supports
+        /// different levels of functionality.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <i>BILLING</i>: All member accounts have their bills consolidated to and paid by
-        /// the master account. For more information, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#billing-mode">Billing
-        /// mode</a> in the <i>AWS Organizations User Guide</i>.
+        ///  <i>CONSOLIDATED_BILLING</i>: All member accounts have their bills consolidated to
+        /// and paid by the master account. For more information, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-cb-only">Consolidated
+        /// Billing</a> in the <i>AWS Organizations User Guide</i>.
         /// </para>
-        ///  <note> 
+        ///  </li> <li> 
         /// <para>
-        /// If you use the AWS Organizations console, you can create an organization only in full-control
-        /// mode. To create an organization in billing mode, you must call this API through a
-        /// tool such as the AWS CLI or an AWS SDK.
-        /// </para>
-        ///  </note> </li> <li> 
-        /// <para>
-        ///  <i>FULL_CONTROL</i>: In addition to all the features of billing mode, the master
-        /// account can apply any type of policy to any member account in the organization. For
-        /// more information, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#full-control-mode">Full-control
-        /// mode</a> in the <i>AWS Organizations User Guide</i>.
+        ///  <i>ALL</i>: In addition to all the features supported by the consolidated billing
+        /// feature set, the master account can also apply any type of policy to any member account
+        /// in the organization. For more information, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-all">All
+        /// features</a> in the <i>AWS Organizations User Guide</i>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public OrganizationMode Mode
+        public OrganizationFeatureSet FeatureSet
         {
-            get { return this._mode; }
-            set { this._mode = value; }
+            get { return this._featureSet; }
+            set { this._featureSet = value; }
         }
 
-        // Check to see if Mode property is set
-        internal bool IsSetMode()
+        // Check to see if FeatureSet property is set
+        internal bool IsSetFeatureSet()
         {
-            return this._mode != null;
+            return this._featureSet != null;
         }
 
     }

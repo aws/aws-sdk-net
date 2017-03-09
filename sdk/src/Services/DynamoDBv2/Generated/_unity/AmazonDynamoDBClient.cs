@@ -1104,6 +1104,33 @@ namespace Amazon.DynamoDBv2
         }
 
         /// <summary>
+        /// Gives a description of the Time to Live (TTL) status on the specified table.
+        /// </summary>
+        /// <param name="tableName">The name of the table to be described.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">
+        ///     A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///     procedure using the AsyncState property.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeTimeToLive service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
+        /// The operation tried to access a nonexistent table or index. The resource might not
+        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeTimeToLive">REST API Reference for DescribeTimeToLive Operation</seealso>
+        public void DescribeTimeToLiveAsync(string tableName,  AmazonServiceCallback<DescribeTimeToLiveRequest, DescribeTimeToLiveResponse> callback, AsyncOptions options = null)
+        {
+            var request = new DescribeTimeToLiveRequest();
+            request.TableName = tableName;
+            DescribeTimeToLiveAsync(request, callback, options);
+        }
+
+
+        /// <summary>
         /// Initiates the asynchronous execution of the DescribeTimeToLive operation.
         /// </summary>
         /// 

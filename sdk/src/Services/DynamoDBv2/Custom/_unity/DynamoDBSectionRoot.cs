@@ -119,6 +119,8 @@ namespace Amazon.Util
         public bool? Version { get; private set; }
 
         public Type Converter { get; private set; }
+
+        public bool? StoreAsEpoch { get; set; }
     }
 
     /// <summary>

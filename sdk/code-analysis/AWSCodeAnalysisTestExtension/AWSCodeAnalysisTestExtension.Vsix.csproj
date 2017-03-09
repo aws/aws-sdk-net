@@ -420,6 +420,10 @@
       <Project>{12DBC502-3D1B-41A6-82D4-9E60DD32FC41}</Project>
       <Name>AWSSDK.WAFRegional.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/WorkDocs/AWSSDK.WorkDocs.CodeAnalysis.csproj">
+      <Project>{386E816F-4EA7-413F-BA4B-4D02226A2856}</Project>
+      <Name>AWSSDK.WorkDocs.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/WorkSpaces/AWSSDK.WorkSpaces.CodeAnalysis.csproj">
       <Project>{D7B54129-A9F3-47F0-BA76-8FE371315827}</Project>
       <Name>AWSSDK.WorkSpaces.CodeAnalysis</Name>

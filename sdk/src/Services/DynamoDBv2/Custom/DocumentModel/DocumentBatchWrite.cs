@@ -342,11 +342,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 }
             }
 
-            ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)request).AddBeforeRequestHandler(isAsync ?
-                new RequestEventHandler(targetTable.UserAgentRequestEventHandlerAsync) :
-                new RequestEventHandler(targetTable.UserAgentRequestEventHandlerSync)
-                );
-
+            targetTable.AddRequestHandler(request, isAsync);
             return request;
         }
 
@@ -396,7 +392,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
                     {
                         if (writeRequest.PutRequest != null)
                         {
-                            var key = table.MakeKey(Document.FromAttributeMap(writeRequest.PutRequest.Item));
+                            var doc = table.FromAttributeMap(writeRequest.PutRequest.Item);
+                            var key = table.MakeKey(doc);
 
                             Document document = null;
                             if (tableDocumentMap.TryGetValue(key, out document))
@@ -440,7 +437,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
             {
                 var table = batch.TargetTable;
                 var tableName = table.TableName;
-                var conversion = table.Conversion;
 
                 if (result.ContainsKey(tableName))
                     throw new AmazonDynamoDBException("More than one batch request against a single table is not supported.");
@@ -460,14 +456,17 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 if (batch.ToPut != null)
                 {
                     foreach (var toPut in batch.ToPut)
+                    {
+                        var item = table.ToAttributeMap(toPut);
                         writeRequests.Add(new WriteRequestDocument
                         {
                             WriteRequest = new WriteRequest
                             {
-                                PutRequest = new PutRequest { Item = toPut.ToAttributeMap(conversion) }
+                                PutRequest = new PutRequest { Item = item }
                             },
                             Document = toPut
                         });
+                    }
                 }
 
                 if (writeRequests.Count > 0)

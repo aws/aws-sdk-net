@@ -86,12 +86,26 @@ namespace Amazon.DynamoDBv2.DocumentModel
             /// <returns></returns>
             public Condition ToCondition(DynamoDBEntryConversion conversion)
             {
+                return ToCondition(conversion, shouldConvertToEpochSeconds: false, attributeName: null);
+            }
+
+            /// <summary>
+            /// Converts the FilterCondition to the Amazon.DynamoDBv2.Model.Condition object.
+            /// </summary>
+            /// <param name="conversion"></param>
+            /// <param name="shouldConvertToEpochSeconds"></param>
+            /// <returns></returns>
+            public Condition ToCondition(DynamoDBEntryConversion conversion, bool shouldConvertToEpochSeconds, string attributeName)
+            {
                 var attributeValues = AttributeValues;
                 if (attributeValues == null)
                 {
                     attributeValues = new List<AttributeValue>();
-                    foreach(var entry in DynamoDBEntries)
+                    for (int i = 0; i < DynamoDBEntries.Count; i++)
                     {
+                        var entry = DynamoDBEntries[i];
+                        if (shouldConvertToEpochSeconds)
+                            entry = Document.DateTimeToEpochSeconds(entry, attributeName);
                         var attributeValue = entry.ConvertToAttributeValue(new DynamoDBEntry.AttributeConversionConfig(conversion));
                         attributeValues.Add(attributeValue);
                     }
@@ -144,12 +158,28 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>Map from attribute name to condition</returns>
         public Dictionary<string, Condition> ToConditions(DynamoDBEntryConversion conversion)
         {
+            return ToConditions(conversion, epochAttributes: null);
+        }
+
+        /// <summary>
+        /// Converts filter to a map of conditions
+        /// </summary>
+        /// <param name="table">Table to use for converting .NET values to DynamoDB values.</param>
+        /// <returns>Map from attribute name to condition</returns>
+        public Dictionary<string, Condition> ToConditions(Table table)
+        {
+            return ToConditions(table.Conversion, table.StoreAsEpoch);
+        }
+
+        private Dictionary<string, Condition> ToConditions(DynamoDBEntryConversion conversion, IEnumerable<string> epochAttributes)
+        {
             var dic = new Dictionary<string, Condition>();
-            foreach(var kvp in Conditions)
+            foreach (var kvp in Conditions)
             {
                 string name = kvp.Key;
                 FilterCondition fc = kvp.Value;
-                Condition condition = fc.ToCondition(conversion);
+                bool convertToEpochSeconds = epochAttributes != null && epochAttributes.Contains(name);
+                Condition condition = fc.ToCondition(conversion, convertToEpochSeconds, name);
 
                 dic[name] = condition;
             }

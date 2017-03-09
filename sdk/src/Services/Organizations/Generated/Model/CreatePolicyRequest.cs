@@ -35,7 +35,7 @@ namespace Amazon.Organizations.Model
     ///  
     /// <para>
     /// For more information about policies and their use, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies.html">Managing
-    /// Organization Control Policies</a>.
+    /// Organization Policies</a>.
     /// </para>
     ///  
     /// <para>
@@ -52,11 +52,11 @@ namespace Amazon.Organizations.Model
         /// <summary>
         /// Gets and sets the property Content. 
         /// <para>
-        /// The policy content to add to the new policy. For example, if you create a <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps.html">service
+        /// The policy content to add to the new policy. For example, if you create a <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">service
         /// control policy</a> (SCP), this string must be JSON text that specifies the permissions
         /// that admins in attached accounts can delegate to their users, groups, and roles. For
-        /// more information about the SCP syntax, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps.html#scp_syntax">Syntax
-        /// for SCPs</a> in the <i>AWS Organizations User Guide</i>.
+        /// more information about the SCP syntax, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service
+        /// Control Policy Syntax</a> in the <i>AWS Organizations User Guide</i>.
         /// </para>
         /// </summary>
         public string Content

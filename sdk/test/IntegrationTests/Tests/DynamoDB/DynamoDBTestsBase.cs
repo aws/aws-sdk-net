@@ -87,6 +87,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         {
             ClearTable(hashTableName);
             ClearTable(hashRangeTableName);
+            ClearTable(numericHashRangeTableName);
         }
 
         public static void CreateContext(DynamoDBEntryConversion conversion)
@@ -101,6 +102,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
         public static string hashTableName;
         public static string hashRangeTableName;
+        public static string numericHashRangeTableName;
         public static DynamoDBContext Context = null;
 
         public static int OneMB = 1024 * 1024;
@@ -114,6 +116,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         public const bool ReuseTables = true;
         public const int DefaultReadCapacity = 50;
         public const int DefaultWriteCapacity = 50;
+        public const string DefaultTTLAttribute = "TTL";
 
         public const int ScanLimit = 1;
         public static readonly string BaseTableNamePrefix = "DotNetTests";
@@ -147,8 +150,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         {
             hashTableName = TableNamePrefix + "HashTable";
             hashRangeTableName = TableNamePrefix + "HashRangeTable";
+            numericHashRangeTableName = TableNamePrefix + "NumericHashRangeTable";
             bool createHashTable = true;
             bool createHashRangeTable = true;
+            bool createNumericHashRangeTable = true;
 
             if (ReuseTables)
             {
@@ -162,6 +167,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                     WaitForTableStatus(hashRangeTableName, TableStatus.ACTIVE);
                     createHashRangeTable = false;
                 }
+                if (GetStatus(numericHashRangeTableName) != null)
+                {
+                    WaitForTableStatus(numericHashRangeTableName, TableStatus.ACTIVE);
+                    createNumericHashRangeTable = false;
+                }
             }
 
             if (createHashTable)
@@ -171,29 +181,29 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 {
                     TableName = hashTableName,
                     AttributeDefinitions = new List<AttributeDefinition>
-                {
-                    new AttributeDefinition { AttributeName = "Id", AttributeType = ScalarAttributeType.N },
-                    new AttributeDefinition { AttributeName = "Company", AttributeType = ScalarAttributeType.S },
-                    new AttributeDefinition { AttributeName = "Price", AttributeType = ScalarAttributeType.N }
-                },
-                    KeySchema = new List<KeySchemaElement>
-                {
-                    new KeySchemaElement { KeyType = KeyType.HASH, AttributeName = "Id" }
-                },
-                    GlobalSecondaryIndexes = new List<GlobalSecondaryIndex>
-                {
-                    new GlobalSecondaryIndex
                     {
-                        IndexName = "GlobalIndex",
-                        KeySchema = new List<KeySchemaElement>
+                        new AttributeDefinition { AttributeName = "Id", AttributeType = ScalarAttributeType.N },
+                        new AttributeDefinition { AttributeName = "Company", AttributeType = ScalarAttributeType.S },
+                        new AttributeDefinition { AttributeName = "Price", AttributeType = ScalarAttributeType.N }
+                    },
+                    KeySchema = new List<KeySchemaElement>
+                    {
+                        new KeySchemaElement { KeyType = KeyType.HASH, AttributeName = "Id" }
+                    },
+                    GlobalSecondaryIndexes = new List<GlobalSecondaryIndex>
+                    {
+                        new GlobalSecondaryIndex
                         {
-                            new KeySchemaElement { AttributeName = "Company", KeyType = KeyType.HASH },
-                            new KeySchemaElement { AttributeName = "Price", KeyType = KeyType.RANGE }
-                        },
-                        ProvisionedThroughput = new ProvisionedThroughput { ReadCapacityUnits = 1, WriteCapacityUnits = 1 },
-                        Projection = new Projection { ProjectionType = ProjectionType.ALL }
-                    }
-                },
+                            IndexName = "GlobalIndex",
+                            KeySchema = new List<KeySchemaElement>
+                            {
+                                new KeySchemaElement { AttributeName = "Company", KeyType = KeyType.HASH },
+                                new KeySchemaElement { AttributeName = "Price", KeyType = KeyType.RANGE }
+                            },
+                            ProvisionedThroughput = new ProvisionedThroughput { ReadCapacityUnits = 1, WriteCapacityUnits = 1 },
+                            Projection = new Projection { ProjectionType = ProjectionType.ALL }
+                        }
+                    },
                     ProvisionedThroughput = new ProvisionedThroughput { ReadCapacityUnits = DefaultReadCapacity, WriteCapacityUnits = DefaultWriteCapacity },
                 });
                 CreatedTables.Add(hashTableName);
@@ -209,49 +219,49 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 {
                     TableName = hashRangeTableName,
                     AttributeDefinitions = new List<AttributeDefinition>
-                {
-                    new AttributeDefinition { AttributeName = "Name", AttributeType = ScalarAttributeType.S },
-                    new AttributeDefinition { AttributeName = "Age", AttributeType = ScalarAttributeType.N },
-                    new AttributeDefinition { AttributeName = "Company", AttributeType = ScalarAttributeType.S },
-                    new AttributeDefinition { AttributeName = "Score", AttributeType = ScalarAttributeType.N },
-                    new AttributeDefinition { AttributeName = "Manager", AttributeType = ScalarAttributeType.S }
-                },
+                    {
+                        new AttributeDefinition { AttributeName = "Name", AttributeType = ScalarAttributeType.S },
+                        new AttributeDefinition { AttributeName = "Age", AttributeType = ScalarAttributeType.N },
+                        new AttributeDefinition { AttributeName = "Company", AttributeType = ScalarAttributeType.S },
+                        new AttributeDefinition { AttributeName = "Score", AttributeType = ScalarAttributeType.N },
+                        new AttributeDefinition { AttributeName = "Manager", AttributeType = ScalarAttributeType.S }
+                    },
                     KeySchema = new List<KeySchemaElement>
-                {
-                    new KeySchemaElement { AttributeName = "Name", KeyType = KeyType.HASH },
-                    new KeySchemaElement { AttributeName = "Age", KeyType = KeyType.RANGE }
-                },
+                    {
+                        new KeySchemaElement { AttributeName = "Name", KeyType = KeyType.HASH },
+                        new KeySchemaElement { AttributeName = "Age", KeyType = KeyType.RANGE }
+                    },
                     GlobalSecondaryIndexes = new List<GlobalSecondaryIndex>
-                {
-                    new GlobalSecondaryIndex
                     {
-                        IndexName = "GlobalIndex",
-                        KeySchema = new List<KeySchemaElement>
+                        new GlobalSecondaryIndex
                         {
-                            new KeySchemaElement { AttributeName = "Company", KeyType = KeyType.HASH },
-                            new KeySchemaElement { AttributeName = "Score", KeyType = KeyType.RANGE }
-                        },
-                        ProvisionedThroughput = new ProvisionedThroughput { ReadCapacityUnits = 1, WriteCapacityUnits = 1 },
-                        Projection = new Projection { ProjectionType = ProjectionType.ALL }
-                    }
-                },
-                    LocalSecondaryIndexes = new List<LocalSecondaryIndex> 
-                {
-                    new LocalSecondaryIndex
-                    {
-                        IndexName = "LocalIndex",
-                        KeySchema = new List<KeySchemaElement>
-                        {
-                            new KeySchemaElement { AttributeName = "Name", KeyType = KeyType.HASH },
-                            new KeySchemaElement { AttributeName = "Manager", KeyType = KeyType.RANGE }
-                        },
-                        Projection = new Projection
-                        {
-                            ProjectionType = ProjectionType.INCLUDE,
-                            NonKeyAttributes = new List<string> { "Company", "Score" }
+                            IndexName = "GlobalIndex",
+                            KeySchema = new List<KeySchemaElement>
+                            {
+                                new KeySchemaElement { AttributeName = "Company", KeyType = KeyType.HASH },
+                                new KeySchemaElement { AttributeName = "Score", KeyType = KeyType.RANGE }
+                            },
+                            ProvisionedThroughput = new ProvisionedThroughput { ReadCapacityUnits = 1, WriteCapacityUnits = 1 },
+                            Projection = new Projection { ProjectionType = ProjectionType.ALL }
                         }
-                    }
-                },
+                    },
+                    LocalSecondaryIndexes = new List<LocalSecondaryIndex> 
+                    {
+                        new LocalSecondaryIndex
+                        {
+                            IndexName = "LocalIndex",
+                            KeySchema = new List<KeySchemaElement>
+                            {
+                                new KeySchemaElement { AttributeName = "Name", KeyType = KeyType.HASH },
+                                new KeySchemaElement { AttributeName = "Manager", KeyType = KeyType.RANGE }
+                            },
+                            Projection = new Projection
+                            {
+                                ProjectionType = ProjectionType.INCLUDE,
+                                NonKeyAttributes = new List<string> { "Company", "Score" }
+                            }
+                        }
+                    },
                     ProvisionedThroughput = new ProvisionedThroughput { ReadCapacityUnits = DefaultReadCapacity, WriteCapacityUnits = DefaultWriteCapacity },
                 });
                 CreatedTables.Add(hashRangeTableName);
@@ -259,6 +269,36 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 // Wait for table to be ready
                 WaitForTableStatus(hashRangeTableName, TableStatus.ACTIVE);
             }
+
+            if (createNumericHashRangeTable)
+            {
+                // Create hash-and-range-key table with local and global indexes
+                Client.CreateTable(new CreateTableRequest
+                {
+                    TableName = numericHashRangeTableName,
+                    AttributeDefinitions = new List<AttributeDefinition>
+                    {
+                        new AttributeDefinition { AttributeName = "CreationTime", AttributeType = ScalarAttributeType.N },
+                        new AttributeDefinition { AttributeName = "Name", AttributeType = ScalarAttributeType.S },
+                    },
+                    KeySchema = new List<KeySchemaElement>
+                    {
+                        new KeySchemaElement { AttributeName = "CreationTime", KeyType = KeyType.HASH },
+                        new KeySchemaElement { AttributeName = "Name", KeyType = KeyType.RANGE }
+                    },
+                    ProvisionedThroughput = new ProvisionedThroughput { ReadCapacityUnits = DefaultReadCapacity, WriteCapacityUnits = DefaultWriteCapacity },
+                });
+                CreatedTables.Add(numericHashRangeTableName);
+
+                // Wait for table to be ready
+                WaitForTableStatus(numericHashRangeTableName, TableStatus.ACTIVE);
+            }
+
+
+            // Make sure TTL is enabled for the tables and is on the correct attribute
+            EnsureTTL(hashTableName);
+            EnsureTTL(hashRangeTableName);
+            EnsureTTL(numericHashRangeTableName);
         }
         public static void RemoveCreatedTables()
         {
@@ -279,6 +319,35 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             }
         }
 
+        public static void EnsureTTL(string tableName)
+        {
+            Func<bool> testFunction = () =>
+            {
+                var ttl = GetTTL(tableName);
+                var ttlReady = (ttl.TimeToLiveStatus == TimeToLiveStatus.ENABLED &&
+                string.Equals(ttl.AttributeName, DefaultTTLAttribute));
+                return ttlReady;
+            };
+
+            if (testFunction())
+                return;
+
+            Client.UpdateTimeToLive(new UpdateTimeToLiveRequest
+            {
+                TableName = tableName,
+                TimeToLiveSpecification = new TimeToLiveSpecification
+                {
+                    Enabled = true,
+                    AttributeName = DefaultTTLAttribute
+                }
+            });
+
+            UtilityMethods.WaitUntil(testFunction);
+        }
+        public static TimeToLiveDescription GetTTL(string tableName)
+        {
+            return Client.DescribeTimeToLive(new DescribeTimeToLiveRequest { TableName = tableName }).TimeToLiveDescription;
+        }
         public static void WaitForTableStatus(string tableName, TableStatus status)
         {
             WaitForTableStatus(new string[] { tableName }, status);
