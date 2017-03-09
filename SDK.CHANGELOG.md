@@ -2,7 +2,7 @@
 * DynamoDBv2 (3.3.4.0)
 	* Adding Time-to-Live support to higher-level APIs.
 * Organizations (3.3.1.0)
-	* Regenerating from latest service model organizations-2016-11-28.normal.json
+	* Picked up the latest model updates. Note that this includes breaking changes to the service interface, client, and model shapes.
 * WorkDocs (3.3.0.0)
 	* Amazon WorkDocs SDK provides full administrator level access to WorkDocs site resources, allowing developers to integrate their applications to manage WorkDocs users, content and permissions programmatically.
 
