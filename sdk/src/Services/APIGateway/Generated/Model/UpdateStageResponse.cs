@@ -124,8 +124,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property CreatedDate. 
         /// <para>
-        /// The date and time that the stage was created, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
-        /// target="_blank">ISO 8601 format</a>.
+        /// The timestamp when the stage was created.
         /// </para>
         /// </summary>
         public DateTime CreatedDate
@@ -197,8 +196,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property LastUpdatedDate. 
         /// <para>
-        /// The date and time that information about the stage was last updated, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
-        /// target="_blank">ISO 8601 format</a>.
+        /// The timestamp when the stage last updated.
         /// </para>
         /// </summary>
         public DateTime LastUpdatedDate

@@ -65,8 +65,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property CreatedDate. 
         /// <para>
-        /// The date when the client certificate was created, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
-        /// target="_blank">ISO 8601 format</a>.
+        /// The timestamp when the client certificate was created.
         /// </para>
         /// </summary>
         public DateTime CreatedDate
@@ -102,8 +101,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property ExpirationDate. 
         /// <para>
-        /// The date when the client certificate will expire, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
-        /// target="_blank">ISO 8601 format</a>.
+        /// The timestamp when the client certificate will expire.
         /// </para>
         /// </summary>
         public DateTime ExpirationDate

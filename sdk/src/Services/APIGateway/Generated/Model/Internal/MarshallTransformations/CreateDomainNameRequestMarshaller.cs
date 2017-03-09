@@ -65,6 +65,12 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetCertificateArn())
+                {
+                    context.Writer.WritePropertyName("certificateArn");
+                    context.Writer.Write(publicRequest.CertificateArn);
+                }
+
                 if(publicRequest.IsSetCertificateBody())
                 {
                     context.Writer.WritePropertyName("certificateBody");

@@ -140,7 +140,8 @@ namespace Amazon.APIGateway.Model
         /// <code>QUERY_PARAMETER</code>, <code>REQUEST_HEADER</code>, <code>REQUEST_BODY</code>,
         /// <code>RESPONSE</code>, <code>RESPONSE_HEADER</code>, and <code>RESPONSE_BODY</code>.
         /// Content inheritance does not apply to any entity of the <code>API</code>, <code>AUTHROZER</code>,
-        /// <code>MODEL</code>, or <code>RESOURCE</code> type.
+        /// <code>METHOD</code>, <code>MODEL</code>, <code>REQUEST_BODY</code>, or <code>RESOURCE</code>
+        /// type.
         /// </para>
         /// </summary>
         public DocumentationPartType Type
