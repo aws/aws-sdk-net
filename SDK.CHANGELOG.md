@@ -1,3 +1,11 @@
+### 3.3.60.0 (2017-03-09 01:36 UTC)
+* DynamoDBv2 (3.3.4.0)
+	* Adding Time-to-Live support to higher-level APIs.
+* Organizations (3.3.1.0)
+	* Regenerating from latest service model organizations-2016-11-28.normal.json
+* WorkDocs (3.3.0.0)
+	* Amazon WorkDocs SDK provides full administrator level access to WorkDocs site resources, allowing developers to integrate their applications to manage WorkDocs users, content and permissions programmatically.
+
 ### 3.3.59.0 (2017-03-08 01:33 UTC)
 * RDS (3.3.8.0)
 	* Add support to using encrypted clusters as cross-region replication masters. Update CopyDBClusterSnapshot API to support encrypted cross region copy of Aurora cluster snapshots.
