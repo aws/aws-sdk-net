@@ -36,11 +36,11 @@ namespace Amazon.Organizations.Model
     {
         private string _arn;
         private List<PolicyTypeSummary> _availablePolicyTypes = new List<PolicyTypeSummary>();
+        private OrganizationFeatureSet _featureSet;
         private string _id;
         private string _masterAccountArn;
         private string _masterAccountEmail;
         private string _masterAccountId;
-        private OrganizationMode _mode;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -69,7 +69,7 @@ namespace Amazon.Organizations.Model
         /// Gets and sets the property AvailablePolicyTypes. 
         /// <para>
         /// A list of policy types that are enabled for this organization. For example, if your
-        /// organization is in full-control mode, then service control policies (SCPs) are included
+        /// organization has all features enabled, then service control policies (SCPs) are included
         /// in the list.
         /// </para>
         /// </summary>
@@ -83,6 +83,28 @@ namespace Amazon.Organizations.Model
         internal bool IsSetAvailablePolicyTypes()
         {
             return this._availablePolicyTypes != null && this._availablePolicyTypes.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property FeatureSet. 
+        /// <para>
+        /// Specifies the functionality that currently is available to the organization. If set
+        /// to "ALL", then all features are enabled and policies can be applied to accounts in
+        /// the organization. If set to "CONSOLIDATED_BILLING", then only consolidated billing
+        /// functionality is available. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/orgs_manage_org_support-all-features.html">Enabling
+        /// All Features in Your Organization</a> in the <i>AWS Organizations User Guide</i>.
+        /// </para>
+        /// </summary>
+        public OrganizationFeatureSet FeatureSet
+        {
+            get { return this._featureSet; }
+            set { this._featureSet = value; }
+        }
+
+        // Check to see if FeatureSet property is set
+        internal bool IsSetFeatureSet()
+        {
+            return this._featureSet != null;
         }
 
         /// <summary>
@@ -172,28 +194,6 @@ namespace Amazon.Organizations.Model
         internal bool IsSetMasterAccountId()
         {
             return this._masterAccountId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Mode. 
-        /// <para>
-        /// Specifies the mode of operation that currently applies to all accounts in the organization.
-        /// If full-control mode is enabled, then policies can be applied to accounts in the organization.
-        /// If not, then only shared billing functionality is available. For more information,
-        /// see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/orgs_operating-modes.html">Organization
-        /// Operating Modes</a> in the <i>AWS Organizations User Guide</i>.
-        /// </para>
-        /// </summary>
-        public OrganizationMode Mode
-        {
-            get { return this._mode; }
-            set { this._mode = value; }
-        }
-
-        // Check to see if Mode property is set
-        internal bool IsSetMode()
-        {
-            return this._mode != null;
         }
 
     }

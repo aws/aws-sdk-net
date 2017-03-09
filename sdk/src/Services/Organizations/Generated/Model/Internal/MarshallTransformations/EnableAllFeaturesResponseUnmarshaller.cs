@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Organizations.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for EnableFullControl operation
+    /// Response Unmarshaller for EnableAllFeatures operation
     /// </summary>  
-    public class EnableFullControlResponseUnmarshaller : JsonResponseUnmarshaller
+    public class EnableAllFeaturesResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,7 +45,7 @@ namespace Amazon.Organizations.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            EnableFullControlResponse response = new EnableFullControlResponse();
+            EnableAllFeaturesResponse response = new EnableAllFeaturesResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
@@ -80,13 +80,9 @@ namespace Amazon.Organizations.Model.Internal.MarshallTransformations
             {
                 return new AWSOrganizationsNotInUseException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("ConstraintViolationException"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("HandshakeConstraintViolationException"))
             {
-                return new ConstraintViolationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("FullControlAlreadyEnabledException"))
-            {
-                return new FullControlAlreadyEnabledException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new HandshakeConstraintViolationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidInputException"))
             {
@@ -103,9 +99,9 @@ namespace Amazon.Organizations.Model.Internal.MarshallTransformations
             return new AmazonOrganizationsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static EnableFullControlResponseUnmarshaller _instance = new EnableFullControlResponseUnmarshaller();        
+        private static EnableAllFeaturesResponseUnmarshaller _instance = new EnableAllFeaturesResponseUnmarshaller();        
 
-        internal static EnableFullControlResponseUnmarshaller GetInstance()
+        internal static EnableAllFeaturesResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -113,7 +109,7 @@ namespace Amazon.Organizations.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static EnableFullControlResponseUnmarshaller Instance
+        public static EnableAllFeaturesResponseUnmarshaller Instance
         {
             get
             {

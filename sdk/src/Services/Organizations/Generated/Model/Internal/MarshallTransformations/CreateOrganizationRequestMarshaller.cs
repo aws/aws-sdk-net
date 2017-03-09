@@ -67,10 +67,10 @@ namespace Amazon.Organizations.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetMode())
+                if(publicRequest.IsSetFeatureSet())
                 {
-                    context.Writer.WritePropertyName("Mode");
-                    context.Writer.Write(publicRequest.Mode);
+                    context.Writer.WritePropertyName("FeatureSet");
+                    context.Writer.Write(publicRequest.FeatureSet);
                 }
 
         

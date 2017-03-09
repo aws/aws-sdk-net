@@ -37,6 +37,11 @@ namespace Amazon.Organizations.Model
     /// <para>
     /// This operation can be called only from the organization's master account.
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// In the current release, a child can have only a single parent. 
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class ListParentsRequest : AmazonOrganizationsRequest
     {

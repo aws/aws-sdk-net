@@ -23,17 +23,17 @@
       "output":{"shape":"AcceptHandshakeResponse"},
       "errors":[
         {"shape":"AccessDeniedException"},
-        {"shape":"AlreadyInOrganizationException"},
         {"shape":"AWSOrganizationsNotInUseException"},
-        {"shape":"ConstraintViolationException"},
+        {"shape":"HandshakeConstraintViolationException"},
         {"shape":"HandshakeNotFoundException"},
         {"shape":"InvalidHandshakeTransitionException"},
+        {"shape":"HandshakeAlreadyInStateException"},
         {"shape":"InvalidInputException"},
-        {"shape":"OrganizationFromDifferentSellerOfRecordException"},
+        {"shape":"ConcurrentModificationException"},
         {"shape":"ServiceException"},
         {"shape":"TooManyRequestsException"}
       ],
-      "documentation":"<p>Sends a response to the originator of a handshake agreeing to the action proposed by the handshake request. </p> <p>This operation can be called only by the following principals when they also have the relevant IAM permissions:</p> <ul> <li> <p> <b>Invitation to join</b> or <b>Full-control request</b> handshake: only a principal from the member account. </p> </li> <li> <p> <b>Full-control final confirmation</b> handshake: only a principal from the master account.</p> <p>For more information about invitations, see <a href=\"http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_invites.html\">Inviting an AWS Account to Join Your Organization</a> in the <i>AWS Organizations User Guide</i>. For more information about full-control requests, see <a href=\"http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_full-control-mode.html\">Migrating to Full-Control Mode in Your Organization</a> in the <i>AWS Organizations User Guide</i>.</p> </li> </ul>"
+      "documentation":"<p>Sends a response to the originator of a handshake agreeing to the action proposed by the handshake request. </p> <p>This operation can be called only by the following principals when they also have the relevant IAM permissions:</p> <ul> <li> <p> <b>Invitation to join</b> or <b>Approve all features request</b> handshakes: only a principal from the member account. </p> </li> <li> <p> <b>Enable all features final confirmation</b> handshake: only a principal from the master account.</p> <p>For more information about invitations, see <a href=\"http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_invites.html\">Inviting an AWS Account to Join Your Organization</a> in the <i>AWS Organizations User Guide</i>. For more information about requests to enable all features in the organization, see <a href=\"http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html\">Enabling All Features in Your Organization</a> in the <i>AWS Organizations User Guide</i>.</p> </li> </ul>"
     },
     "AttachPolicy":{
       "name":"AttachPolicy",
@@ -55,7 +55,7 @@
         {"shape":"TargetNotFoundException"},
         {"shape":"TooManyRequestsException"}
       ],
-      "documentation":"<p>Attaches a policy to a root, an organizational unit, or an individual account. How the policy affects accounts depends on the type of policy:</p> <ul> <li> <p> <b>Service control policy (SCP)</b> - An SCP specifies what permissions can be delegated to users in affected member accounts. The scope of influence for a policy depends on what you attach the policy to:</p> <ul> <li> <p>If you attach an SCP to a root, it affects all accounts in the organization.</p> </li> <li> <p>If you attach an SCP to an OU, it affects all accounts in that OU and in any child OUs.</p> </li> <li> <p>If you attach the policy directly to an account, then it affects only that account.</p> </li> </ul> <p>SCPs essentially are permission \"filters\". When you attach one SCP to a higher level root or OU, and you also attach a different SCP to a child OU or to an account, the child policy can further restrict only the permissions that pass through the parent filter and are available to the child. An SCP that is attached to a child cannot grant a permission that is not already granted by the parent. For example, imagine that the parent SCP allows permissions A, B, C, D, and E. The child SCP allows C, D, E, F, and G. The result is that the accounts affected by the child SCP are allowed to use only C, D, and E. They cannot use A or B because they were filtered out by the child OU. They also cannot use F and G because they were filtered out by the parent OU. They cannot be granted back by the child SCP; child SCPs can only filter the permissions they receive from the parent SCP.</p> <p>AWS Organizations attaches a default SCP named <code>\"FullAWSAccess</code> to every root, OU, and account. This default SCP allows all services and actions, enabling any new child OU or account to inherit the permissions of the parent root or OU. If you detach the default policy, you must replace it with a policy that specifies the permissions that you want to allow in that OU or account.</p> <p>For more information about how Organizations policies permissions work, see <a href=\"http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps.html\">Using Service Control Policies</a> in the <i>AWS Organizations User Guide</i>.</p> </li> </ul> <p>This operation can be called only from the organization's master account.</p>"
+      "documentation":"<p>Attaches a policy to a root, an organizational unit, or an individual account. How the policy affects accounts depends on the type of policy:</p> <ul> <li> <p> <b>Service control policy (SCP)</b> - An SCP specifies what permissions can be delegated to users in affected member accounts. The scope of influence for a policy depends on what you attach the policy to:</p> <ul> <li> <p>If you attach an SCP to a root, it affects all accounts in the organization.</p> </li> <li> <p>If you attach an SCP to an OU, it affects all accounts in that OU and in any child OUs.</p> </li> <li> <p>If you attach the policy directly to an account, then it affects only that account.</p> </li> </ul> <p>SCPs essentially are permission \"filters\". When you attach one SCP to a higher level root or OU, and you also attach a different SCP to a child OU or to an account, the child policy can further restrict only the permissions that pass through the parent filter and are available to the child. An SCP that is attached to a child cannot grant a permission that is not already granted by the parent. For example, imagine that the parent SCP allows permissions A, B, C, D, and E. The child SCP allows C, D, E, F, and G. The result is that the accounts affected by the child SCP are allowed to use only C, D, and E. They cannot use A or B because they were filtered out by the child OU. They also cannot use F and G because they were filtered out by the parent OU. They cannot be granted back by the child SCP; child SCPs can only filter the permissions they receive from the parent SCP.</p> <p>AWS Organizations attaches a default SCP named <code>\"FullAWSAccess</code> to every root, OU, and account. This default SCP allows all services and actions, enabling any new child OU or account to inherit the permissions of the parent root or OU. If you detach the default policy, you must replace it with a policy that specifies the permissions that you want to allow in that OU or account.</p> <p>For more information about how Organizations policies permissions work, see <a href=\"http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html\">Using Service Control Policies</a> in the <i>AWS Organizations User Guide</i>.</p> </li> </ul> <p>This operation can be called only from the organization's master account.</p>"
     },
     "CancelHandshake":{
       "name":"CancelHandshake",
@@ -69,6 +69,7 @@
         {"shape":"AccessDeniedException"},
         {"shape":"HandshakeNotFoundException"},
         {"shape":"InvalidHandshakeTransitionException"},
+        {"shape":"HandshakeAlreadyInStateException"},
         {"shape":"InvalidInputException"},
         {"shape":"ServiceException"},
         {"shape":"TooManyRequestsException"}
@@ -106,12 +107,12 @@
         {"shape":"AccessDeniedException"},
         {"shape":"AlreadyInOrganizationException"},
         {"shape":"ConcurrentModificationException"},
+        {"shape":"ConstraintViolationException"},
         {"shape":"InvalidInputException"},
-        {"shape":"PaymentInstrumentRequiredException"},
         {"shape":"ServiceException"},
         {"shape":"TooManyRequestsException"}
       ],
-      "documentation":"<p>Creates an AWS organization. The account whose user is calling the CreateOrganization operation automatically becomes the <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/orgs_getting-started_concepts.html#account\">master account</a> of the new organization.</p> <p>This operation must be called using credentials from the account that is to become the new organization's master account. The principal must also have the relevant IAM permissions.</p> <p>By default, a new organization is created in full-control mode and service control policies are automatically enabled in the root. If you instead choose to create the organization in billing mode by setting the <code>Mode</code> parameter to <code>BILLING\"</code>, then no policy types are enabled by default.</p>"
+      "documentation":"<p>Creates an AWS organization. The account whose user is calling the CreateOrganization operation automatically becomes the <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/orgs_getting-started_concepts.html#account\">master account</a> of the new organization.</p> <p>This operation must be called using credentials from the account that is to become the new organization's master account. The principal must also have the relevant IAM permissions.</p> <p>By default (or if you set the <code>FeatureSet</code> parameter to <code>ALL</code>), the new organization is created with all features enabled and service control policies automatically enabled in the root. If you instead choose to create the organization supporting only the consolidated billing features by setting the <code>FeatureSet</code> parameter to <code>CONSOLIDATED_BILLING\"</code>, then no policy types are enabled by default and you cannot use organization policies.</p>"
     },
     "CreateOrganizationalUnit":{
       "name":"CreateOrganizationalUnit",
@@ -148,11 +149,12 @@
         {"shape":"ConstraintViolationException"},
         {"shape":"DuplicatePolicyException"},
         {"shape":"InvalidInputException"},
+        {"shape":"MalformedPolicyDocumentException"},
         {"shape":"PolicyTypeNotAvailableForOrganizationException"},
         {"shape":"ServiceException"},
         {"shape":"TooManyRequestsException"}
       ],
-      "documentation":"<p>Creates a policy of a specified type that you can attach to a root, an organizational unit (OU), or an individual AWS account.</p> <p>For more information about policies and their use, see <a href=\"http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies.html\">Managing Organization Control Policies</a>.</p> <p>This operation can be called only from the organization's master account.</p>"
+      "documentation":"<p>Creates a policy of a specified type that you can attach to a root, an organizational unit (OU), or an individual AWS account.</p> <p>For more information about policies and their use, see <a href=\"http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies.html\">Managing Organization Policies</a>.</p> <p>This operation can be called only from the organization's master account.</p>"
     },
     "DeclineHandshake":{
       "name":"DeclineHandshake",
@@ -166,6 +168,7 @@
         {"shape":"AccessDeniedException"},
         {"shape":"HandshakeNotFoundException"},
         {"shape":"InvalidHandshakeTransitionException"},
+        {"shape":"HandshakeAlreadyInStateException"},
         {"shape":"InvalidInputException"},
         {"shape":"ServiceException"},
         {"shape":"TooManyRequestsException"}
@@ -350,7 +353,7 @@
         {"shape":"TargetNotFoundException"},
         {"shape":"TooManyRequestsException"}
       ],
-      "documentation":"<p>Detaches a policy from a target root, organizational unit, or account. If the policy being detached is a service control policy (SCP), the changes to permissions for IAM users and roles in affected accounts are immediate.</p> <p> <b>Note:</b> Every root, OU, and account must have at least one SCP attached. If you want to replace the default <code>FullAWSAccess</code> policy with one that limits the permissions that can be delegated, then you must attach the replacement policy before you can remove the default one. This is the authorization strategy of <a href=\"http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps.html#orgs_policies_whitelist\">whitelisting</a>. If you instead attach a second SCP and leave the <code>FullAWSAccess</code> SCP still attached, and specify <code>\"Effect\": \"Deny\"</code> in the second SCP to override the <code>\"Effect\": \"Allow\"</code> in the <code>FullAWSAccess</code> policy (or any other attached SCP), then you are using the authorization strategy of <a href=\"http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps.html#orgs_policies_blacklist\">blacklisting</a>. </p> <p>This operation can be called only from the organization's master account.</p>"
+      "documentation":"<p>Detaches a policy from a target root, organizational unit, or account. If the policy being detached is a service control policy (SCP), the changes to permissions for IAM users and roles in affected accounts are immediate.</p> <p> <b>Note:</b> Every root, OU, and account must have at least one SCP attached. If you want to replace the default <code>FullAWSAccess</code> policy with one that limits the permissions that can be delegated, then you must attach the replacement policy before you can remove the default one. This is the authorization strategy of <a href=\"http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_about-scps.html#orgs_policies_whitelist\">whitelisting</a>. If you instead attach a second SCP and leave the <code>FullAWSAccess</code> SCP still attached, and specify <code>\"Effect\": \"Deny\"</code> in the second SCP to override the <code>\"Effect\": \"Allow\"</code> in the <code>FullAWSAccess</code> policy (or any other attached SCP), then you are using the authorization strategy of <a href=\"http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_about-scps.html#orgs_policies_blacklist\">blacklisting</a>. </p> <p>This operation can be called only from the organization's master account.</p>"
     },
     "DisablePolicyType":{
       "name":"DisablePolicyType",
@@ -373,24 +376,23 @@
       ],
       "documentation":"<p>Disables an organizational control policy type in a root. A poicy of a certain type can be attached to entities in a root only if that type is enabled in the root. After you perform this operation, you no longer can attach policies of the specified type to that root or to any OU or account in that root. You can undo this by using the <a>EnablePolicyType</a> operation.</p> <p>This operation can be called only from the organization's master account.</p>"
     },
-    "EnableFullControl":{
-      "name":"EnableFullControl",
+    "EnableAllFeatures":{
+      "name":"EnableAllFeatures",
       "http":{
         "method":"POST",
         "requestUri":"/"
       },
-      "input":{"shape":"EnableFullControlRequest"},
-      "output":{"shape":"EnableFullControlResponse"},
+      "input":{"shape":"EnableAllFeaturesRequest"},
+      "output":{"shape":"EnableAllFeaturesResponse"},
       "errors":[
         {"shape":"AccessDeniedException"},
         {"shape":"AWSOrganizationsNotInUseException"},
-        {"shape":"ConstraintViolationException"},
-        {"shape":"FullControlAlreadyEnabledException"},
+        {"shape":"HandshakeConstraintViolationException"},
         {"shape":"InvalidInputException"},
         {"shape":"ServiceException"},
         {"shape":"TooManyRequestsException"}
       ],
-      "documentation":"<p>Enables full-control mode in an organization. Full-control mode enables the use of policies to restrict the services and actions that can be called in each account. Until you enable full-control mode, you have access only to shared billing, and you can't use any of the advanced account administration features that AWS Organizations supports. For more information about full-control mode, see <a href=\"http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_full-control-mode.html\">Enabling Full-Control Mode in Your Organization</a> in the <i>AWS Organizations User Guide</i>.</p> <important> <p>This operation is required only for organizations that were created explicitly in billing mode, or that were migrated from a Consolidated Billing account family to Organizations. Calling this operation sends a handshake to every account in the organization. The migration can be finalized and the new features enabled only after all administrators approve the switch by accepting the handshake.</p> </important> <p>After all member accounts accept the handshake, you finalize the migration by accepting the handshake that contains <code>\"Action\": \"ENABLE_FULL_CONTROL\"</code>. This completes the switch.</p> <p>After you enable full-control mode, the master account in the organization can apply policies on all member accounts. These policies can restrict what users and even administrators in those accounts can do. The master account can apply policies that prevent accounts from leaving the organization. Ensure that your account administrators are aware of this.</p> <p>This operation can be called only from the organization's master account. </p>"
+      "documentation":"<p>Enables all features in an organization. This enables the use of organization policies that can restrict the services and actions that can be called in each account. Until you enable all features, you have access only to consolidated billing, and you can't use any of the advanced account administration features that AWS Organizations supports. For more information, see <a href=\"http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html\">Enabling All Features in Your Organization</a> in the <i>AWS Organizations User Guide</i>.</p> <important> <p>This operation is required only for organizations that were created explicitly with only the consolidated billing features enabled, or that were migrated from a Consolidated Billing account family to Organizations. Calling this operation sends a handshake to every invited account in the organization. The feature set change can be finalized and the additional features enabled only after all administrators in the invited accounts approve the change by accepting the handshake.</p> </important> <p>After all invited member accounts accept the handshake, you finalize the feature set change by accepting the handshake that contains <code>\"Action\": \"ENABLE_ALL_FEATURES\"</code>. This completes the change.</p> <p>After you enable all features in your organization, the master account in the organization can apply policies on all member accounts. These policies can restrict what users and even administrators in those accounts can do. The master account can apply policies that prevent accounts from leaving the organization. Ensure that your account administrators are aware of this.</p> <p>This operation can be called only from the organization's master account. </p>"
     },
     "EnablePolicyType":{
       "name":"EnablePolicyType",
@@ -425,10 +427,9 @@
       "errors":[
         {"shape":"AccessDeniedException"},
         {"shape":"AWSOrganizationsNotInUseException"},
-        {"shape":"ConstraintViolationException"},
+        {"shape":"HandshakeConstraintViolationException"},
         {"shape":"DuplicateHandshakeException"},
         {"shape":"InvalidInputException"},
-        {"shape":"InvitationsDisabledDuringOrganizationModeChangeException"},
         {"shape":"FinalizingOrganizationException"},
         {"shape":"ServiceException"},
         {"shape":"TooManyRequestsException"}
@@ -443,16 +444,16 @@
       },
       "errors":[
         {"shape":"AccessDeniedException"},
-        {"shape":"AccountCannotLeaveOrganizationException"},
         {"shape":"AccountNotFoundException"},
         {"shape":"AWSOrganizationsNotInUseException"},
         {"shape":"ConcurrentModificationException"},
+        {"shape":"ConstraintViolationException"},
         {"shape":"InvalidInputException"},
         {"shape":"MasterCannotLeaveOrganizationException"},
         {"shape":"ServiceException"},
         {"shape":"TooManyRequestsException"}
       ],
-      "documentation":"<p>Removes a member account from its parent organization. This version of the operation is performed by the account that wants to leave. To remove a member account as a user in the master account, use <a>RemoveAccountFromOrganization</a> instead.</p> <p>This operation can be called only from a member account in the organization.</p> <important> <p>The master account in an organization in full-control mode can set service control policies (SCPs) that can restrict what administrators of member accounts can do, including preventing them from successfully calling <code>LeaveOrganization</code> and leaving the organization. </p> </important>"
+      "documentation":"<p>Removes a member account from its parent organization. This version of the operation is performed by the account that wants to leave. To remove a member account as a user in the master account, use <a>RemoveAccountFromOrganization</a> instead.</p> <p>This operation can be called only from a member account in the organization.</p> <important> <p>The master account in an organization with all features enabled can set service control policies (SCPs) that can restrict what administrators of member accounts can do, including preventing them from successfully calling <code>LeaveOrganization</code> and leaving the organization. </p> </important>"
     },
     "ListAccounts":{
       "name":"ListAccounts",
@@ -591,7 +592,7 @@
         {"shape":"ServiceException"},
         {"shape":"TooManyRequestsException"}
       ],
-      "documentation":"<p>Lists the root or organizational units (OUs) that serve as the immediate parent of the specified child OU or account. This operation, along with <a>ListChildren</a> enables you to traverse the tree structure that makes up this root.</p> <p>This operation can be called only from the organization's master account.</p>"
+      "documentation":"<p>Lists the root or organizational units (OUs) that serve as the immediate parent of the specified child OU or account. This operation, along with <a>ListChildren</a> enables you to traverse the tree structure that makes up this root.</p> <p>This operation can be called only from the organization's master account.</p> <note> <p>In the current release, a child can have only a single parent. </p> </note>"
     },
     "ListPolicies":{
       "name":"ListPolicies",
@@ -675,6 +676,7 @@
         {"shape":"InvalidInputException"},
         {"shape":"SourceParentNotFoundException"},
         {"shape":"DestinationParentNotFoundException"},
+        {"shape":"DuplicateAccountException"},
         {"shape":"AccountNotFoundException"},
         {"shape":"TooManyRequestsException"},
         {"shape":"ConcurrentModificationException"},
@@ -692,10 +694,10 @@
       "input":{"shape":"RemoveAccountFromOrganizationRequest"},
       "errors":[
         {"shape":"AccessDeniedException"},
-        {"shape":"AccountCannotLeaveOrganizationException"},
         {"shape":"AccountNotFoundException"},
         {"shape":"AWSOrganizationsNotInUseException"},
         {"shape":"ConcurrentModificationException"},
+        {"shape":"ConstraintViolationException"},
         {"shape":"InvalidInputException"},
         {"shape":"MasterCannotLeaveOrganizationException"},
         {"shape":"ServiceException"},
@@ -738,6 +740,7 @@
         {"shape":"ConstraintViolationException"},
         {"shape":"DuplicatePolicyException"},
         {"shape":"InvalidInputException"},
+        {"shape":"MalformedPolicyDocumentException"},
         {"shape":"PolicyNotFoundException"},
         {"shape":"ServiceException"},
         {"shape":"TooManyRequestsException"}
@@ -778,7 +781,7 @@
       "members":{
         "Message":{"shape":"ExceptionMessage"}
       },
-      "documentation":"<p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions. For more information, see <a href=\"IAM/latest/UserGuide/access.html\">Access Management</a> in the <i>IAM User Guide</i>.</p>",
+      "documentation":"<p>You don't have permissions to perform the requested operation. The user or role that is making the request must have at least one IAM permissions policy attached that grants the required permissions. For more information, see <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html\">Access Management</a> in the <i>IAM User Guide</i>.</p>",
       "exception":true
     },
     "Account":{
@@ -814,14 +817,6 @@
     "AccountArn":{
       "type":"string",
       "pattern":"^arn:aws:organizations::\\d{12}:account\\/o-[a-z0-9]{10,32}\\/\\d{12}"
-    },
-    "AccountCannotLeaveOrganizationException":{
-      "type":"structure",
-      "members":{
-        "Message":{"shape":"ExceptionMessage"}
-      },
-      "documentation":"<p>You can't remove an account from an organization that was created by AWS Organizations. You can remove only invited accounts.</p>",
-      "exception":true
     },
     "AccountId":{
       "type":"string",
@@ -863,8 +858,8 @@
       "type":"string",
       "enum":[
         "INVITE",
-        "ENABLE_FULL_CONTROL",
-        "APPROVE_FULL_CONTROL"
+        "ENABLE_ALL_FEATURES",
+        "APPROVE_ALL_FEATURES"
       ]
     },
     "AlreadyInOrganizationException":{
@@ -976,8 +971,9 @@
         "POLICY_NUMBER_LIMIT_EXCEEDED",
         "MAX_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED",
         "MIN_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED",
-        "RATE_LIMIT_EXCEEDED",
-        "SIZE_LIMIT_EXCEEDED"
+        "ACCOUNT_CANNOT_LEAVE_ORGANIZATION",
+        "MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED",
+        "ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED"
       ]
     },
     "CreateAccountFailureReason":{
@@ -1006,11 +1002,11 @@
         },
         "RoleName":{
           "shape":"RoleName",
-          "documentation":"<p>(Optional)</p> <p>The name of an IAM role that Organizations automatically preconfigures in the new member account. This role trusts the master account, allowing users in the master account to assume the role, as permitted by the master account administrator. The role has administrator permissions in the new member account.</p> <p>If you do not specify this parameter, the role name defaults to <code>OrganizationAccountAccessRole</code>.</p> <p>For more information about how to use this role to access the member account, see <a href=\"organizations/latest/userguide/orgs_permissions.html#orgs_manage_accounts_access-new\">Cross-Account Access to Accounts Created as Part of the Organization</a> in the <i>AWS Organizations User Guide</i>, and steps 2 and 3 in <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html\">Tutorial: Delegate Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User Guide</i>.</p> <p>The <a href=\"http://wikipedia.org/wiki/regex\">regex pattern</a> that is used to validate this parameter is a string of characters that can consist of uppercase letters, lowercase letters, digits with no spaces, and any of the following characters: =,.@-</p>"
+          "documentation":"<p>(Optional)</p> <p>The name of an IAM role that Organizations automatically preconfigures in the new member account. This role trusts the master account, allowing users in the master account to assume the role, as permitted by the master account administrator. The role has administrator permissions in the new member account.</p> <p>If you do not specify this parameter, the role name defaults to <code>OrganizationAccountAccessRole</code>.</p> <p>For more information about how to use this role to access the member account, see <a href=\"http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role\">Accessing and Administering the Member Accounts in Your Organization</a> in the <i>AWS Organizations User Guide</i>, and steps 2 and 3 in <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html\">Tutorial: Delegate Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User Guide</i>.</p> <p>The <a href=\"http://wikipedia.org/wiki/regex\">regex pattern</a> that is used to validate this parameter is a string of characters that can consist of uppercase letters, lowercase letters, digits with no spaces, and any of the following characters: =,.@-</p>"
         },
         "IamUserAccessToBilling":{
           "shape":"IAMUserAccessToBilling",
-          "documentation":"<p>If set to <code>ALLOW</code>, the new account enables IAM users to access account billing information <i>if</i> they have the required permissions. If set to <code>DENY</code>, then only the root user of the new account can access account billing information. For more information, see <a href=\"http://docs.aws.amazon.com/http:/docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate\">Activating Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and Cost Management User Guide</i>.</p>"
+          "documentation":"<p>If set to <code>ALLOW</code>, the new account enables IAM users to access account billing information <i>if</i> they have the required permissions. If set to <code>DENY</code>, then only the root user of the new account can access account billing information. For more information, see <a href=\"http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate\">Activating Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and Cost Management User Guide</i>.</p>"
         }
       }
     },
@@ -1088,9 +1084,9 @@
     "CreateOrganizationRequest":{
       "type":"structure",
       "members":{
-        "Mode":{
-          "shape":"OrganizationMode",
-          "documentation":"<p>Specifies the mode that the new organization is in. Each mode supports different levels of functionality.</p> <ul> <li> <p> <i>BILLING</i>: All member accounts have their bills consolidated to and paid by the master account. For more information, see <a href=\"http://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#billing-mode\">Billing mode</a> in the <i>AWS Organizations User Guide</i>.</p> <note> <p>If you use the AWS Organizations console, you can create an organization only in full-control mode. To create an organization in billing mode, you must call this API through a tool such as the AWS CLI or an AWS SDK.</p> </note> </li> <li> <p> <i>FULL_CONTROL</i>: In addition to all the features of billing mode, the master account can apply any type of policy to any member account in the organization. For more information, see <a href=\"http://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#full-control-mode\">Full-control mode</a> in the <i>AWS Organizations User Guide</i>.</p> </li> </ul>"
+        "FeatureSet":{
+          "shape":"OrganizationFeatureSet",
+          "documentation":"<p>Specifies the feature set supported by the new organization. Each feature set supports different levels of functionality.</p> <ul> <li> <p> <i>CONSOLIDATED_BILLING</i>: All member accounts have their bills consolidated to and paid by the master account. For more information, see <a href=\"http://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-cb-only\">Consolidated Billing</a> in the <i>AWS Organizations User Guide</i>.</p> </li> <li> <p> <i>ALL</i>: In addition to all the features supported by the consolidated billing feature set, the master account can also apply any type of policy to any member account in the organization. For more information, see <a href=\"http://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-all\">All features</a> in the <i>AWS Organizations User Guide</i>.</p> </li> </ul>"
         }
       }
     },
@@ -1140,7 +1136,7 @@
       "members":{
         "Content":{
           "shape":"PolicyContent",
-          "documentation":"<p>The policy content to add to the new policy. For example, if you create a <a href=\"http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps.html\">service control policy</a> (SCP), this string must be JSON text that specifies the permissions that admins in attached accounts can delegate to their users, groups, and roles. For more information about the SCP syntax, see <a href=\"http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps.html#scp_syntax\">Syntax for SCPs</a> in the <i>AWS Organizations User Guide</i>.</p>"
+          "documentation":"<p>The policy content to add to the new policy. For example, if you create a <a href=\"http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html\">service control policy</a> (SCP), this string must be JSON text that specifies the permissions that admins in attached accounts can delegate to their users, groups, and roles. For more information about the SCP syntax, see <a href=\"http://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html\">Service Control Policy Syntax</a> in the <i>AWS Organizations User Guide</i>.</p>"
         },
         "Description":{
           "shape":"PolicyDescription",
@@ -1359,6 +1355,14 @@
         }
       }
     },
+    "DuplicateAccountException":{
+      "type":"structure",
+      "members":{
+        "Message":{"shape":"ExceptionMessage"}
+      },
+      "documentation":"<p>That account is already present in the specified destination.</p>",
+      "exception":true
+    },
     "DuplicateHandshakeException":{
       "type":"structure",
       "members":{
@@ -1398,17 +1402,17 @@
       "pattern":"[\\w+=,.-]+@[\\w.-]+\\.[\\w]+",
       "sensitive":true
     },
-    "EnableFullControlRequest":{
+    "EnableAllFeaturesRequest":{
       "type":"structure",
       "members":{
       }
     },
-    "EnableFullControlResponse":{
+    "EnableAllFeaturesResponse":{
       "type":"structure",
       "members":{
         "Handshake":{
           "shape":"Handshake",
-          "documentation":"<p>A structure that contains details about the handshake created to support this request to migrate to full-control mode.</p>"
+          "documentation":"<p>A structure that contains details about the handshake created to support this request to enable all features in the organization.</p>"
         }
       }
     },
@@ -1446,14 +1450,6 @@
         "Message":{"shape":"ExceptionMessage"}
       },
       "documentation":"<p>AWS Organizations could not finalize the creation of your organization. Try again later. If this persists, contact AWS customer support.</p>",
-      "exception":true
-    },
-    "FullControlAlreadyEnabledException":{
-      "type":"structure",
-      "members":{
-        "Message":{"shape":"ExceptionMessage"}
-      },
-      "documentation":"<p>This organization is already in full-control mode.</p>",
       "exception":true
     },
     "GenericArn":{
@@ -1498,9 +1494,39 @@
       },
       "documentation":"<p>Contains information that must be exchanged to securely establish a relationship between two accounts (an <i>originator</i> and a <i>recipient</i>). For example, when a master account (the originator) invites another account (the recipient) to join its organization, the two accounts exchange information as a series of handshake requests and responses. </p>"
     },
+    "HandshakeAlreadyInStateException":{
+      "type":"structure",
+      "members":{
+        "Message":{"shape":"ExceptionMessage"}
+      },
+      "documentation":"<p>The specified handshake is already in the requested state. For example, you can't accept a handshake that was already accepted.</p>",
+      "exception":true
+    },
     "HandshakeArn":{
       "type":"string",
       "pattern":"^arn:aws:organizations::\\d{12}:handshake\\/o-[a-z0-9]{10,32}\\/[a-z_]{1,32}\\/h-[0-9a-z]{8,32}"
+    },
+    "HandshakeConstraintViolationException":{
+      "type":"structure",
+      "members":{
+        "Message":{"shape":"ExceptionMessage"},
+        "Reason":{"shape":"HandshakeConstraintViolationExceptionReason"}
+      },
+      "documentation":"<p>The requested operation would violate the constraint identified in the reason code.</p>",
+      "exception":true
+    },
+    "HandshakeConstraintViolationExceptionReason":{
+      "type":"string",
+      "enum":[
+        "ACCOUNT_NUMBER_LIMIT_EXCEEDED",
+        "HANDSHAKE_RATE_LIMIT_EXCEEDED",
+        "ALREADY_IN_AN_ORGANIZATION",
+        "ORGANIZATION_ALREADY_HAS_ALL_FEATURES",
+        "INVITE_DISABLED_DURING_ENABLE_ALL_FEATURES",
+        "PAYMENT_INSTRUMENT_REQUIRED",
+        "ORGANIZATION_FROM_DIFFERENT_SELLER_OF_RECORD",
+        "ORGANIZATION_MEMBERSHIP_CHANGE_RATE_LIMIT_EXCEEDED"
+      ]
     },
     "HandshakeFilter":{
       "type":"structure",
@@ -1588,7 +1614,7 @@
       "enum":[
         "ACCOUNT",
         "ORGANIZATION",
-        "ORGANIZATION_MODE",
+        "ORGANIZATION_FEATURE_SET",
         "EMAIL",
         "MASTER_EMAIL",
         "MASTER_NAME",
@@ -1649,7 +1675,6 @@
         "INVALID_PARTY_TYPE_TARGET",
         "INVALID_SYNTAX_ORGANIZATION_ARN",
         "INVALID_SYNTAX_POLICY_ID",
-        "INVALID_SYNTAX_POLICY_CONTENT",
         "INVALID_ENUM",
         "INVALID_LIST_MEMBER",
         "MAX_LENGTH_EXCEEDED",
@@ -1664,14 +1689,6 @@
         "MAX_LIMIT_EXCEEDED_FILTER",
         "MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS"
       ]
-    },
-    "InvitationsDisabledDuringOrganizationModeChangeException":{
-      "type":"structure",
-      "members":{
-        "Message":{"shape":"ExceptionMessage"}
-      },
-      "documentation":"<p>You can't send invitations to join an organization that is in the process of upgrading to full-control mode. Wait until the switch to full-control mode complete and try again.</p>",
-      "exception":true
     },
     "InviteAccountToOrganizationRequest":{
       "type":"structure",
@@ -1856,7 +1873,7 @@
       "members":{
         "Filter":{
           "shape":"HandshakeFilter",
-          "documentation":"<p>A filter of the handshakes that you want included in the response. The default is all types. Use the <code>ActionType</code> element to limit the output to only a specified type, such as <code>INVITE</code>, <code>ENABLE-FULL-CONTROL</code>, or <code>APPROVE-FULL-CONTROL</code>. Alternatively, for the <code>ENABLE-FULL-CONTROL</code> handshake that generates a separate child handshake for each member account, you can specify the <code>ParentHandshakeId</code> to see only the handshakes that were generated by that parent request.</p>"
+          "documentation":"<p>A filter of the handshakes that you want included in the response. The default is all types. Use the <code>ActionType</code> element to limit the output to only a specified type, such as <code>INVITE</code>, <code>ENABLE-ALL-FEATURES</code>, or <code>APPROVE-ALL-FEATURES</code>. Alternatively, for the <code>ENABLE-ALL-FEATURES</code> handshake that generates a separate child handshake for each member account, you can specify the <code>ParentHandshakeId</code> to see only the handshakes that were generated by that parent request.</p>"
         },
         "NextToken":{
           "shape":"NextToken",
@@ -1935,7 +1952,7 @@
       "members":{
         "Parents":{
           "shape":"Parents",
-          "documentation":"<p>A list of parent containers for the specified child entity.</p>"
+          "documentation":"<p>A list of parents for the specified child account or OU.</p>"
         },
         "NextToken":{
           "shape":"NextToken",
@@ -2069,6 +2086,14 @@
         }
       }
     },
+    "MalformedPolicyDocumentException":{
+      "type":"structure",
+      "members":{
+        "Message":{"shape":"ExceptionMessage"}
+      },
+      "documentation":"<p>The provided policy document does not meet the requirements of the specified policy type. For example, the syntax might be incorrect. For details about service control policy syntax, see <a href=\"http://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html\">Service Control Policy Syntax</a> in the <i>AWS Organizations User Guide</i>.</p>",
+      "exception":true
+    },
     "MasterCannotLeaveOrganizationException":{
       "type":"structure",
       "members":{
@@ -2117,9 +2142,9 @@
           "shape":"OrganizationArn",
           "documentation":"<p>The Amazon Resource Name (ARN) of an organization.</p> <p>For more information about ARNs in Organizations, see <a href=\"http://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns\">ARN Formats Supported by Organizations</a> in the <i>AWS Organizations User Guide</i>.</p>"
         },
-        "Mode":{
-          "shape":"OrganizationMode",
-          "documentation":"<p>Specifies the mode of operation that currently applies to all accounts in the organization. If full-control mode is enabled, then policies can be applied to accounts in the organization. If not, then only shared billing functionality is available. For more information, see <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/orgs_operating-modes.html\">Organization Operating Modes</a> in the <i>AWS Organizations User Guide</i>.</p>"
+        "FeatureSet":{
+          "shape":"OrganizationFeatureSet",
+          "documentation":"<p>Specifies the functionality that currently is available to the organization. If set to \"ALL\", then all features are enabled and policies can be applied to accounts in the organization. If set to \"CONSOLIDATED_BILLING\", then only consolidated billing functionality is available. For more information, see <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/orgs_manage_org_support-all-features.html\">Enabling All Features in Your Organization</a> in the <i>AWS Organizations User Guide</i>.</p>"
         },
         "MasterAccountArn":{
           "shape":"AccountArn",
@@ -2135,7 +2160,7 @@
         },
         "AvailablePolicyTypes":{
           "shape":"PolicyTypes",
-          "documentation":"<p>A list of policy types that are enabled for this organization. For example, if your organization is in full-control mode, then service control policies (SCPs) are included in the list.</p>"
+          "documentation":"<p>A list of policy types that are enabled for this organization. For example, if your organization has all features enabled, then service control policies (SCPs) are included in the list.</p>"
         }
       },
       "documentation":"<p>Contains details about an organization. An organization is a collection of accounts that are centrally managed together using consolidated billing, organized hierarchically with organizational units (OUs), and controlled with policies .</p>"
@@ -2144,31 +2169,23 @@
       "type":"string",
       "pattern":"^arn:aws:organizations::\\d{12}:organization\\/o-[a-z0-9]{10,32}"
     },
-    "OrganizationFromDifferentSellerOfRecordException":{
-      "type":"structure",
-      "members":{
-        "Message":{"shape":"ExceptionMessage"}
-      },
-      "documentation":"<p>You can add accounts only to an organization that was created by the same AWS seller as the master account of the organization.</p>",
-      "exception":true
+    "OrganizationFeatureSet":{
+      "type":"string",
+      "enum":[
+        "ALL",
+        "CONSOLIDATED_BILLING"
+      ]
     },
     "OrganizationId":{
       "type":"string",
       "pattern":"^o-[a-z0-9]{10,32}$"
-    },
-    "OrganizationMode":{
-      "type":"string",
-      "enum":[
-        "FULL_CONTROL",
-        "BILLING"
-      ]
     },
     "OrganizationNotEmptyException":{
       "type":"structure",
       "members":{
         "Message":{"shape":"ExceptionMessage"}
       },
-      "documentation":"<p>The organization isn't empty. To delete an organization, you must first remove all accounts except the master, delete all organizational units (OUs), and delete all policies.</p>",
+      "documentation":"<p>The organization isn't empty. To delete an organization, you must first remove all accounts except the master account, delete all organizational units (OUs), and delete all policies.</p>",
       "exception":true
     },
     "OrganizationalUnit":{
@@ -2191,7 +2208,7 @@
     },
     "OrganizationalUnitArn":{
       "type":"string",
-      "pattern":"^arn:aws:organizations::\\d{12}:ou\\/o-[a-z0-9]{10,32}\\/ou-[0-9a-z]{8,32}"
+      "pattern":"^arn:aws:organizations::\\d{12}:ou\\/o-[a-z0-9]{10,32}\\/ou-[0-9a-z]{4,32}-[0-9a-z]{8,32}"
     },
     "OrganizationalUnitId":{
       "type":"string",
@@ -2207,7 +2224,7 @@
       "members":{
         "Message":{"shape":"ExceptionMessage"}
       },
-      "documentation":"<p>The specified organizational unit (OU) is not empty. Move all entities to another root or to other OUs, and then try the operation again.</p>",
+      "documentation":"<p>The specified organizational unit (OU) is not empty. Move all accounts to another root or to other OUs, remove all child OUs, and then try the operation again.</p>",
       "exception":true
     },
     "OrganizationalUnitNotFoundException":{
@@ -2258,14 +2275,6 @@
     "Parents":{
       "type":"list",
       "member":{"shape":"Parent"}
-    },
-    "PaymentInstrumentRequiredException":{
-      "type":"structure",
-      "members":{
-        "Message":{"shape":"ExceptionMessage"}
-      },
-      "documentation":"<p>The account isn't set up with a payment method, such as a credit card. Provide a payment method, and then try again.</p>",
-      "exception":true
     },
     "Policies":{
       "type":"list",
@@ -2408,7 +2417,7 @@
       "members":{
         "Message":{"shape":"ExceptionMessage"}
       },
-      "documentation":"<p>You can't use the specified policy type with the organization in its current mode of operation. For example, you can enable service control policies (SCPs) only after the organization upgrades to full-control mode.</p>",
+      "documentation":"<p>You can't use the specified policy type with the feature set currently enabled for this organization. For example, you can enable service control policies (SCPs) only after you enable all features in the organization. For more information, see <a href=\"http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies.html#enable_policies_on_root\">Enabling and Disabling a Policy Type on a Root</a> in the <i>AWS Organizations User Guide</i>.</p>",
       "exception":true
     },
     "PolicyTypeNotEnabledException":{
@@ -2416,7 +2425,7 @@
       "members":{
         "Message":{"shape":"ExceptionMessage"}
       },
-      "documentation":"<p>The specified policy type is not currently enabled in this root.</p>",
+      "documentation":"<p>The specified policy type is not currently enabled in this root. You cannot attach policies of the specified type to entities in a root until you enable that type in the root. For more information, see <a href=\"http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html\">Enabling All Features in Your Organization</a> in the <i>AWS Organizations User Guide</i>.</p>",
       "exception":true
     },
     "PolicyTypeStatus":{
@@ -2594,7 +2603,7 @@
         },
         "Content":{
           "shape":"PolicyContent",
-          "documentation":"<p>If provided, the new content for the policy. The text must be correctly formatted JSON that complies with <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html\">IAM policy grammar</a>.</p>"
+          "documentation":"<p>If provided, the new content for the policy. The text must be correctly formatted JSON that complies with the syntax for the policy's type. For more information, see <a href=\"http://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html\">Service Control Policy Syntax</a> in the <i>AWS Organizations User Guide</i>.</p>"
         }
       }
     },
@@ -2608,5 +2617,5 @@
       }
     }
   },
-  "documentation":"<fullname>AWS Organizations API Reference</fullname> <p>AWS Organizations is a web service that enables you to consolidate your multiple AWS accounts into an <i>organization</i> and centrally manage your accounts and their resources.</p> <p>This guide provides descriptions of the Organizations API. For more information about using this service, see the <a href=\"http://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html\">AWS Organizations User Guide</a>.</p> <p> <b>API Version</b> </p> <p>This version of the Organizations API Reference documents the Organizations API version 2016-11-28.</p> <note> <p>As an alternative to using the API directly, you can use one of the AWS SDKs, which consist of libraries and sample code for various programming languages and platforms (Java, Ruby, .NET, iOS, Android, and more). The SDKs provide a convenient way to create programmatic access to AWS Organizations. For example, the SDKs take care of cryptographically signing requests, managing errors, and retrying requests automatically. For more information about the AWS SDKs, including how to download and install them, see <a href=\"http://aws.amazon.com/tools/\">Tools for Amazon Web Services</a>.</p> </note> <p>We recommend that you use the AWS SDKs to make programmatic API calls to Organizations. However, you also can use the Organizations Query API to make direct calls to the Organizations web service. To learn more about the Organizations Query API, see <a href=\"http://docs.aws.amazon.com/organizations/latest/userguide/orgs_query-requests.html\">Making Query Requests</a> in the <i>AWS Organizations User Guide</i>. Organizations supports GET and POST requests for all actions. That is, the API does not require you to use GET for some actions and POST for others. However, GET requests are subject to the limitation size of a URL. Therefore, for operations that require larger sizes, use a POST request.</p> <p> <b>Signing Requests</b> </p> <p>When you send HTTP requests to AWS, you must sign the requests so that AWS can identify who sent them. You sign requests with your AWS access key, which consists of an access key ID and a secret access key. We strongly recommend that you do not create an access key for your root account. Anyone who has the access key for your root account has unrestricted access to all the resources in your account. Instead, create an access key for an IAM user account that has administrative privileges. As another option, use AWS Security Token Service to generate temporary security credentials, and use those credentials to sign requests. </p> <p>To sign requests, we recommend that you use <a href=\"http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html\">Signature Version 4</a>. If you have an existing application that uses Signature Version 2, you do not have to update it to use Signature Version 4. However, some operations now require Signature Version 4. The documentation for operations that require version 4 indicate this requirement. </p> <p>When you use the AWS Command Line Interface (AWS CLI) or one of the AWS SDKs to make requests to AWS, these tools automatically sign the requests for you with the access key that you specify when you configure the tools.</p> <p>In this release, each organization can have only one root. In a future release, a single organization will support multiple roots.</p> <p> <b>Support and Feedback for AWS Organizations</b> </p> <p>We welcome your feedback. Send your comments to <a href=\"mailto:feedback-awsorganizations@amazon.com\">feedback-awsorganizations@amazon.com</a> or post your feedback and questions in our private <a href=\"http://forums.aws.amazon.com/forum.jspa?forumID=219\">AWS Organizations support forum</a>. If you don't have access to the forum, send a request for access to the email address, along with your forum user ID. For more information about the AWS support forums, see <a href=\"https://forums.aws.amazon.com/help.jspa\">Forums Help</a>.</p> <p> <b>Endpoint to Call When Using the CLI or the AWS API</b> </p> <p>For the current release of Organizations, you must specify the <code>us-east-1</code> region for all AWS API and CLI calls. You can do this in the CLI by using these parameters and commands:</p> <ul> <li> <p>Use the following parameter with each command to specify both the endpoint and its region:</p> <p> <code>--endpoint-url https://organizations.us-east-1.amazonaws.com</code> </p> </li> <li> <p>Use the default endpoint, but configure your default region with this command:</p> <p> <code>aws configure set default.region us-east-1</code> </p> </li> <li> <p>Use the following parameter with each command to specify the endpoint:</p> <p> <code>--region us-east-1</code> </p> </li> </ul> <p>For the various SDKs used to call the APIs, see the documentation for the SDK of interest to learn how to direct the requests to a specific endpoint. For more information, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/rande.html#sts_region\">Regions and Endpoints</a> in the <i>AWS General Reference</i>. </p> <p> <b>How examples are presented</b> </p> <p>The JSON returned by the AWS Organizations service as response to your requests is returned as a single long string without line breaks or formatting whitespace. Both line breaks and whitespace are included in the examples in this guide to improve readability. When example input parameters also would result in long strings that would extend beyond the screen, we insert line breaks to enhance readability. You should always submit the input as a single JSON text string.</p> <p> <b>Recording API Requests</b> </p> <p>AWS Organizations supports AWS CloudTrail, a service that records AWS API calls for your AWS account and delivers log files to an Amazon S3 bucket. By using information collected by AWS CloudTrail, you can determine which requests were successfully made to Organizations, who made the request, when it was made, and so on. For more about AWS Organizations and its support for AWS CloudTrail, see <a href=\"http://docs.aws.amazon.com/organizations/latest/userguide/orgs_cloudtrail-integration.html\">Logging AWS Organizations Events with AWS CloudTrail</a> in the <i>AWS Organizations User Guide</i>. To learn more about CloudTrail, including how to turn it on and find your log files, see the <a href=\"http://docs.aws.amazon.com/awscloudtrail/latest/userguide/what_is_cloud_trail_top_level.html\">AWS CloudTrail User Guide</a>.</p>"
+  "documentation":"<fullname>AWS Organizations API Reference</fullname> <p>AWS Organizations is a web service that enables you to consolidate your multiple AWS accounts into an <i>organization</i> and centrally manage your accounts and their resources.</p> <p>This guide provides descriptions of the Organizations API. For more information about using this service, see the <a href=\"http://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html\">AWS Organizations User Guide</a>.</p> <p> <b>API Version</b> </p> <p>This version of the Organizations API Reference documents the Organizations API version 2016-11-28.</p> <note> <p>As an alternative to using the API directly, you can use one of the AWS SDKs, which consist of libraries and sample code for various programming languages and platforms (Java, Ruby, .NET, iOS, Android, and more). The SDKs provide a convenient way to create programmatic access to AWS Organizations. For example, the SDKs take care of cryptographically signing requests, managing errors, and retrying requests automatically. For more information about the AWS SDKs, including how to download and install them, see <a href=\"http://aws.amazon.com/tools/\">Tools for Amazon Web Services</a>.</p> </note> <p>We recommend that you use the AWS SDKs to make programmatic API calls to Organizations. However, you also can use the Organizations Query API to make direct calls to the Organizations web service. To learn more about the Organizations Query API, see <a href=\"http://docs.aws.amazon.com/organizations/latest/userguide/orgs_query-requests.html\">Making Query Requests</a> in the <i>AWS Organizations User Guide</i>. Organizations supports GET and POST requests for all actions. That is, the API does not require you to use GET for some actions and POST for others. However, GET requests are subject to the limitation size of a URL. Therefore, for operations that require larger sizes, use a POST request.</p> <p> <b>Signing Requests</b> </p> <p>When you send HTTP requests to AWS, you must sign the requests so that AWS can identify who sent them. You sign requests with your AWS access key, which consists of an access key ID and a secret access key. We strongly recommend that you do not create an access key for your root account. Anyone who has the access key for your root account has unrestricted access to all the resources in your account. Instead, create an access key for an IAM user account that has administrative privileges. As another option, use AWS Security Token Service to generate temporary security credentials, and use those credentials to sign requests. </p> <p>To sign requests, we recommend that you use <a href=\"http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html\">Signature Version 4</a>. If you have an existing application that uses Signature Version 2, you do not have to update it to use Signature Version 4. However, some operations now require Signature Version 4. The documentation for operations that require version 4 indicate this requirement. </p> <p>When you use the AWS Command Line Interface (AWS CLI) or one of the AWS SDKs to make requests to AWS, these tools automatically sign the requests for you with the access key that you specify when you configure the tools.</p> <p>In this release, each organization can have only one root. In a future release, a single organization will support multiple roots.</p> <p> <b>Support and Feedback for AWS Organizations</b> </p> <p>We welcome your feedback. Send your comments to <a href=\"mailto:aws-organizations-feedback@amazon.com\">aws-organizations-feedback@amazon.com</a> or post your feedback and questions in our private <a href=\"http://forums.aws.amazon.com/forum.jspa?forumID=219\">AWS Organizations support forum</a>. If you don't have access to the forum, send a request for access to the email address, along with your forum user ID. For more information about the AWS support forums, see <a href=\"http://forums.aws.amazon.com/help.jspa\">Forums Help</a>.</p> <p> <b>Endpoint to Call When Using the CLI or the AWS API</b> </p> <p>For the current release of Organizations, you must specify the <code>us-east-1</code> region for all AWS API and CLI calls. You can do this in the CLI by using these parameters and commands:</p> <ul> <li> <p>Use the following parameter with each command to specify both the endpoint and its region:</p> <p> <code>--endpoint-url https://organizations.us-east-1.amazonaws.com</code> </p> </li> <li> <p>Use the default endpoint, but configure your default region with this command:</p> <p> <code>aws configure set default.region us-east-1</code> </p> </li> <li> <p>Use the following parameter with each command to specify the endpoint:</p> <p> <code>--region us-east-1</code> </p> </li> </ul> <p>For the various SDKs used to call the APIs, see the documentation for the SDK of interest to learn how to direct the requests to a specific endpoint. For more information, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/rande.html#sts_region\">Regions and Endpoints</a> in the <i>AWS General Reference</i>. </p> <p> <b>How examples are presented</b> </p> <p>The JSON returned by the AWS Organizations service as response to your requests is returned as a single long string without line breaks or formatting whitespace. Both line breaks and whitespace are included in the examples in this guide to improve readability. When example input parameters also would result in long strings that would extend beyond the screen, we insert line breaks to enhance readability. You should always submit the input as a single JSON text string.</p> <p> <b>Recording API Requests</b> </p> <p>AWS Organizations supports AWS CloudTrail, a service that records AWS API calls for your AWS account and delivers log files to an Amazon S3 bucket. By using information collected by AWS CloudTrail, you can determine which requests were successfully made to Organizations, who made the request, when it was made, and so on. For more about AWS Organizations and its support for AWS CloudTrail, see <a href=\"http://docs.aws.amazon.com/organizations/latest/userguide/orgs_cloudtrail-integration.html\">Logging AWS Organizations Events with AWS CloudTrail</a> in the <i>AWS Organizations User Guide</i>. To learn more about CloudTrail, including how to turn it on and find your log files, see the <a href=\"http://docs.aws.amazon.com/awscloudtrail/latest/userguide/what_is_cloud_trail_top_level.html\">AWS CloudTrail User Guide</a>.</p>"
 }

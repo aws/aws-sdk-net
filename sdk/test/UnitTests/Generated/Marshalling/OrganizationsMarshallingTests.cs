@@ -523,14 +523,14 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("Organizations")]
-        public void EnableFullControlMarshallTest()
+        public void EnableAllFeaturesMarshallTest()
         {
-            var request = InstantiateClassGenerator.Execute<EnableFullControlRequest>();
-            var marshaller = new EnableFullControlRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<EnableAllFeaturesRequest>();
+            var marshaller = new EnableAllFeaturesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
             var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
-            Comparer.CompareObjectToJson<EnableFullControlRequest>(request,jsonRequest);
+            Comparer.CompareObjectToJson<EnableAllFeaturesRequest>(request,jsonRequest);
 
             var webResponse = new WebResponseData
             {
@@ -539,11 +539,11 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amz-crc32","0"}
                 }
             };
-            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("EnableFullControl").ResponseStructure).Execute();
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("EnableAllFeatures").ResponseStructure).Execute();
             webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
-            var response = EnableFullControlResponseUnmarshaller.Instance.Unmarshall(context)
-                as EnableFullControlResponse;
+            var response = EnableAllFeaturesResponseUnmarshaller.Instance.Unmarshall(context)
+                as EnableAllFeaturesResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 

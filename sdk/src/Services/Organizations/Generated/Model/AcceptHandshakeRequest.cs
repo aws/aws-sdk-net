@@ -39,20 +39,21 @@ namespace Amazon.Organizations.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <b>Invitation to join</b> or <b>Full-control request</b> handshake: only a principal
-    /// from the member account. 
+    ///  <b>Invitation to join</b> or <b>Approve all features request</b> handshakes: only
+    /// a principal from the member account. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>Full-control final confirmation</b> handshake: only a principal from the master
-    /// account.
+    ///  <b>Enable all features final confirmation</b> handshake: only a principal from the
+    /// master account.
     /// </para>
     ///  
     /// <para>
     /// For more information about invitations, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_invites.html">Inviting
     /// an AWS Account to Join Your Organization</a> in the <i>AWS Organizations User Guide</i>.
-    /// For more information about full-control requests, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_full-control-mode.html">Migrating
-    /// to Full-Control Mode in Your Organization</a> in the <i>AWS Organizations User Guide</i>.
+    /// For more information about requests to enable all features in the organization, see
+    /// <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">Enabling
+    /// All Features in Your Organization</a> in the <i>AWS Organizations User Guide</i>.
     /// </para>
     ///  </li> </ul>
     /// </summary>

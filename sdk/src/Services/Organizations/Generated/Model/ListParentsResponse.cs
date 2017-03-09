@@ -59,7 +59,7 @@ namespace Amazon.Organizations.Model
         /// <summary>
         /// Gets and sets the property Parents. 
         /// <para>
-        /// A list of parent containers for the specified child entity.
+        /// A list of parents for the specified child account or OU.
         /// </para>
         /// </summary>
         public List<Parent> Parents

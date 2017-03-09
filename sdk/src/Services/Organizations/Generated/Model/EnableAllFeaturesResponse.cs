@@ -28,9 +28,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Organizations.Model
 {
     /// <summary>
-    /// This is the response object from the EnableFullControl operation.
+    /// This is the response object from the EnableAllFeatures operation.
     /// </summary>
-    public partial class EnableFullControlResponse : AmazonWebServiceResponse
+    public partial class EnableAllFeaturesResponse : AmazonWebServiceResponse
     {
         private Handshake _handshake;
 
@@ -38,7 +38,7 @@ namespace Amazon.Organizations.Model
         /// Gets and sets the property Handshake. 
         /// <para>
         /// A structure that contains details about the handshake created to support this request
-        /// to migrate to full-control mode.
+        /// to enable all features in the organization.
         /// </para>
         /// </summary>
         public Handshake Handshake

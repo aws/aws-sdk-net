@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Organizations.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// EnableFullControl Request Marshaller
+    /// EnableAllFeatures Request Marshaller
     /// </summary>       
-    public class EnableFullControlRequestMarshaller : IMarshaller<IRequest, EnableFullControlRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class EnableAllFeaturesRequestMarshaller : IMarshaller<IRequest, EnableAllFeaturesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.Organizations.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((EnableFullControlRequest)input);
+            return this.Marshall((EnableAllFeaturesRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.Organizations.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(EnableFullControlRequest publicRequest)
+        public IRequest Marshall(EnableAllFeaturesRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Organizations");
-            string target = "AWSOrganizationsV20161128.EnableFullControl";
+            string target = "AWSOrganizationsV20161128.EnableAllFeatures";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.HttpMethod = "POST";

@@ -131,13 +131,13 @@ namespace Amazon.Organizations
     {
 
         /// <summary>
-        /// Constant APPROVE_FULL_CONTROL for ActionType
+        /// Constant APPROVE_ALL_FEATURES for ActionType
         /// </summary>
-        public static readonly ActionType APPROVE_FULL_CONTROL = new ActionType("APPROVE_FULL_CONTROL");
+        public static readonly ActionType APPROVE_ALL_FEATURES = new ActionType("APPROVE_ALL_FEATURES");
         /// <summary>
-        /// Constant ENABLE_FULL_CONTROL for ActionType
+        /// Constant ENABLE_ALL_FEATURES for ActionType
         /// </summary>
-        public static readonly ActionType ENABLE_FULL_CONTROL = new ActionType("ENABLE_FULL_CONTROL");
+        public static readonly ActionType ENABLE_ALL_FEATURES = new ActionType("ENABLE_ALL_FEATURES");
         /// <summary>
         /// Constant INVITE for ActionType
         /// </summary>
@@ -235,6 +235,14 @@ namespace Amazon.Organizations
     {
 
         /// <summary>
+        /// Constant ACCOUNT_CANNOT_LEAVE_ORGANIZATION for ConstraintViolationExceptionReason
+        /// </summary>
+        public static readonly ConstraintViolationExceptionReason ACCOUNT_CANNOT_LEAVE_ORGANIZATION = new ConstraintViolationExceptionReason("ACCOUNT_CANNOT_LEAVE_ORGANIZATION");
+        /// <summary>
+        /// Constant ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED for ConstraintViolationExceptionReason
+        /// </summary>
+        public static readonly ConstraintViolationExceptionReason ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED = new ConstraintViolationExceptionReason("ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED");
+        /// <summary>
         /// Constant ACCOUNT_NUMBER_LIMIT_EXCEEDED for ConstraintViolationExceptionReason
         /// </summary>
         public static readonly ConstraintViolationExceptionReason ACCOUNT_NUMBER_LIMIT_EXCEEDED = new ConstraintViolationExceptionReason("ACCOUNT_NUMBER_LIMIT_EXCEEDED");
@@ -242,6 +250,10 @@ namespace Amazon.Organizations
         /// Constant HANDSHAKE_RATE_LIMIT_EXCEEDED for ConstraintViolationExceptionReason
         /// </summary>
         public static readonly ConstraintViolationExceptionReason HANDSHAKE_RATE_LIMIT_EXCEEDED = new ConstraintViolationExceptionReason("HANDSHAKE_RATE_LIMIT_EXCEEDED");
+        /// <summary>
+        /// Constant MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED for ConstraintViolationExceptionReason
+        /// </summary>
+        public static readonly ConstraintViolationExceptionReason MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED = new ConstraintViolationExceptionReason("MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED");
         /// <summary>
         /// Constant MAX_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED for ConstraintViolationExceptionReason
         /// </summary>
@@ -262,14 +274,6 @@ namespace Amazon.Organizations
         /// Constant POLICY_NUMBER_LIMIT_EXCEEDED for ConstraintViolationExceptionReason
         /// </summary>
         public static readonly ConstraintViolationExceptionReason POLICY_NUMBER_LIMIT_EXCEEDED = new ConstraintViolationExceptionReason("POLICY_NUMBER_LIMIT_EXCEEDED");
-        /// <summary>
-        /// Constant RATE_LIMIT_EXCEEDED for ConstraintViolationExceptionReason
-        /// </summary>
-        public static readonly ConstraintViolationExceptionReason RATE_LIMIT_EXCEEDED = new ConstraintViolationExceptionReason("RATE_LIMIT_EXCEEDED");
-        /// <summary>
-        /// Constant SIZE_LIMIT_EXCEEDED for ConstraintViolationExceptionReason
-        /// </summary>
-        public static readonly ConstraintViolationExceptionReason SIZE_LIMIT_EXCEEDED = new ConstraintViolationExceptionReason("SIZE_LIMIT_EXCEEDED");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -419,6 +423,80 @@ namespace Amazon.Organizations
 
 
     /// <summary>
+    /// Constants used for properties of type HandshakeConstraintViolationExceptionReason.
+    /// </summary>
+    public class HandshakeConstraintViolationExceptionReason : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACCOUNT_NUMBER_LIMIT_EXCEEDED for HandshakeConstraintViolationExceptionReason
+        /// </summary>
+        public static readonly HandshakeConstraintViolationExceptionReason ACCOUNT_NUMBER_LIMIT_EXCEEDED = new HandshakeConstraintViolationExceptionReason("ACCOUNT_NUMBER_LIMIT_EXCEEDED");
+        /// <summary>
+        /// Constant ALREADY_IN_AN_ORGANIZATION for HandshakeConstraintViolationExceptionReason
+        /// </summary>
+        public static readonly HandshakeConstraintViolationExceptionReason ALREADY_IN_AN_ORGANIZATION = new HandshakeConstraintViolationExceptionReason("ALREADY_IN_AN_ORGANIZATION");
+        /// <summary>
+        /// Constant HANDSHAKE_RATE_LIMIT_EXCEEDED for HandshakeConstraintViolationExceptionReason
+        /// </summary>
+        public static readonly HandshakeConstraintViolationExceptionReason HANDSHAKE_RATE_LIMIT_EXCEEDED = new HandshakeConstraintViolationExceptionReason("HANDSHAKE_RATE_LIMIT_EXCEEDED");
+        /// <summary>
+        /// Constant INVITE_DISABLED_DURING_ENABLE_ALL_FEATURES for HandshakeConstraintViolationExceptionReason
+        /// </summary>
+        public static readonly HandshakeConstraintViolationExceptionReason INVITE_DISABLED_DURING_ENABLE_ALL_FEATURES = new HandshakeConstraintViolationExceptionReason("INVITE_DISABLED_DURING_ENABLE_ALL_FEATURES");
+        /// <summary>
+        /// Constant ORGANIZATION_ALREADY_HAS_ALL_FEATURES for HandshakeConstraintViolationExceptionReason
+        /// </summary>
+        public static readonly HandshakeConstraintViolationExceptionReason ORGANIZATION_ALREADY_HAS_ALL_FEATURES = new HandshakeConstraintViolationExceptionReason("ORGANIZATION_ALREADY_HAS_ALL_FEATURES");
+        /// <summary>
+        /// Constant ORGANIZATION_FROM_DIFFERENT_SELLER_OF_RECORD for HandshakeConstraintViolationExceptionReason
+        /// </summary>
+        public static readonly HandshakeConstraintViolationExceptionReason ORGANIZATION_FROM_DIFFERENT_SELLER_OF_RECORD = new HandshakeConstraintViolationExceptionReason("ORGANIZATION_FROM_DIFFERENT_SELLER_OF_RECORD");
+        /// <summary>
+        /// Constant ORGANIZATION_MEMBERSHIP_CHANGE_RATE_LIMIT_EXCEEDED for HandshakeConstraintViolationExceptionReason
+        /// </summary>
+        public static readonly HandshakeConstraintViolationExceptionReason ORGANIZATION_MEMBERSHIP_CHANGE_RATE_LIMIT_EXCEEDED = new HandshakeConstraintViolationExceptionReason("ORGANIZATION_MEMBERSHIP_CHANGE_RATE_LIMIT_EXCEEDED");
+        /// <summary>
+        /// Constant PAYMENT_INSTRUMENT_REQUIRED for HandshakeConstraintViolationExceptionReason
+        /// </summary>
+        public static readonly HandshakeConstraintViolationExceptionReason PAYMENT_INSTRUMENT_REQUIRED = new HandshakeConstraintViolationExceptionReason("PAYMENT_INSTRUMENT_REQUIRED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HandshakeConstraintViolationExceptionReason(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HandshakeConstraintViolationExceptionReason FindValue(string value)
+        {
+            return FindValue<HandshakeConstraintViolationExceptionReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HandshakeConstraintViolationExceptionReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type HandshakePartyType.
     /// </summary>
     public class HandshakePartyType : ConstantClass
@@ -503,9 +581,9 @@ namespace Amazon.Organizations
         /// </summary>
         public static readonly HandshakeResourceType ORGANIZATION = new HandshakeResourceType("ORGANIZATION");
         /// <summary>
-        /// Constant ORGANIZATION_MODE for HandshakeResourceType
+        /// Constant ORGANIZATION_FEATURE_SET for HandshakeResourceType
         /// </summary>
-        public static readonly HandshakeResourceType ORGANIZATION_MODE = new HandshakeResourceType("ORGANIZATION_MODE");
+        public static readonly HandshakeResourceType ORGANIZATION_FEATURE_SET = new HandshakeResourceType("ORGANIZATION_FEATURE_SET");
         /// <summary>
         /// Constant PARENT_HANDSHAKE for HandshakeResourceType
         /// </summary>
@@ -705,10 +783,6 @@ namespace Amazon.Organizations
         /// </summary>
         public static readonly InvalidInputExceptionReason INVALID_SYNTAX_ORGANIZATION_ARN = new InvalidInputExceptionReason("INVALID_SYNTAX_ORGANIZATION_ARN");
         /// <summary>
-        /// Constant INVALID_SYNTAX_POLICY_CONTENT for InvalidInputExceptionReason
-        /// </summary>
-        public static readonly InvalidInputExceptionReason INVALID_SYNTAX_POLICY_CONTENT = new InvalidInputExceptionReason("INVALID_SYNTAX_POLICY_CONTENT");
-        /// <summary>
         /// Constant INVALID_SYNTAX_POLICY_ID for InvalidInputExceptionReason
         /// </summary>
         public static readonly InvalidInputExceptionReason INVALID_SYNTAX_POLICY_ID = new InvalidInputExceptionReason("INVALID_SYNTAX_POLICY_ID");
@@ -773,19 +847,19 @@ namespace Amazon.Organizations
 
 
     /// <summary>
-    /// Constants used for properties of type OrganizationMode.
+    /// Constants used for properties of type OrganizationFeatureSet.
     /// </summary>
-    public class OrganizationMode : ConstantClass
+    public class OrganizationFeatureSet : ConstantClass
     {
 
         /// <summary>
-        /// Constant BILLING for OrganizationMode
+        /// Constant ALL for OrganizationFeatureSet
         /// </summary>
-        public static readonly OrganizationMode BILLING = new OrganizationMode("BILLING");
+        public static readonly OrganizationFeatureSet ALL = new OrganizationFeatureSet("ALL");
         /// <summary>
-        /// Constant FULL_CONTROL for OrganizationMode
+        /// Constant CONSOLIDATED_BILLING for OrganizationFeatureSet
         /// </summary>
-        public static readonly OrganizationMode FULL_CONTROL = new OrganizationMode("FULL_CONTROL");
+        public static readonly OrganizationFeatureSet CONSOLIDATED_BILLING = new OrganizationFeatureSet("CONSOLIDATED_BILLING");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -795,7 +869,7 @@ namespace Amazon.Organizations
         /// defined as statics, for instance if attempting to use a feature that is
         /// newer than the current version of the SDK.
         /// </summary>
-        public OrganizationMode(string value)
+        public OrganizationFeatureSet(string value)
             : base(value)
         {
         }
@@ -805,9 +879,9 @@ namespace Amazon.Organizations
         /// </summary>
         /// <param name="value">The unique value for the constant</param>
         /// <returns>The constant for the unique value</returns>
-        public static OrganizationMode FindValue(string value)
+        public static OrganizationFeatureSet FindValue(string value)
         {
-            return FindValue<OrganizationMode>(value);
+            return FindValue<OrganizationFeatureSet>(value);
         }
 
         /// <summary>
@@ -815,7 +889,7 @@ namespace Amazon.Organizations
         /// </summary>
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
-        public static implicit operator OrganizationMode(string value)
+        public static implicit operator OrganizationFeatureSet(string value)
         {
             return FindValue(value);
         }
