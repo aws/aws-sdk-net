@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudDirectory.Model
 {
     /// <summary>
-    /// Represents the output of a DetachObject operation.
+    /// Represents the output of a <code>DetachObject</code> operation.
     /// </summary>
     public partial class BatchDetachObject
     {

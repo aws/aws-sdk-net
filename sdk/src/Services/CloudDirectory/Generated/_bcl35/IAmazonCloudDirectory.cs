@@ -208,7 +208,7 @@ namespace Amazon.CloudDirectory
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Using ObjectIdentifier
+        /// Using <code>ObjectIdentifier</code> 
         /// </para>
         ///  </li> </ol>
         /// </summary>
@@ -538,7 +538,7 @@ namespace Amazon.CloudDirectory
         /// Access denied. Check your permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.BatchWriteException">
-        /// A BatchWrite exception has occurred.
+        /// A <code>BatchWrite</code> exception has occurred.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
         /// An operation can only operate on a directory that is not enabled.
@@ -1052,6 +1052,14 @@ namespace Amazon.CloudDirectory
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
         /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.RetryableConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. For example,
+        /// if a write operation occurs on an object and then an attempt is made to read the object
+        /// using “SERIALIZABLE” consistency, this exception may result. This generally occurs
+        /// when the previous write did not have time to propagate to the host serving the current
+        /// request. A retry (with appropriate backoff logic) is the recommended response to this
+        /// exception.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
         /// Indicates your request is malformed in some manner. See the exception message.
@@ -1579,6 +1587,14 @@ namespace Amazon.CloudDirectory
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
         /// The specified resource could not be found.
         /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.RetryableConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. For example,
+        /// if a write operation occurs on an object and then an attempt is made to read the object
+        /// using “SERIALIZABLE” consistency, this exception may result. This generally occurs
+        /// when the previous write did not have time to propagate to the host serving the current
+        /// request. A retry (with appropriate backoff logic) is the recommended response to this
+        /// exception.
+        /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
         /// Indicates your request is malformed in some manner. See the exception message.
         /// </exception>
@@ -1642,6 +1658,14 @@ namespace Amazon.CloudDirectory
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
         /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.RetryableConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. For example,
+        /// if a write operation occurs on an object and then an attempt is made to read the object
+        /// using “SERIALIZABLE” consistency, this exception may result. This generally occurs
+        /// when the previous write did not have time to propagate to the host serving the current
+        /// request. A retry (with appropriate backoff logic) is the recommended response to this
+        /// exception.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
         /// Indicates your request is malformed in some manner. See the exception message.
@@ -1988,7 +2012,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InvalidNextTokenException">
-        /// Indicates that the NextToken value is not valid.
+        /// Indicates that the <code>NextToken</code> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
         /// Indicates limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
@@ -2134,7 +2158,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InvalidNextTokenException">
-        /// Indicates that the NextToken value is not valid.
+        /// Indicates that the <code>NextToken</code> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
         /// Indicates limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
@@ -2207,7 +2231,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InvalidNextTokenException">
-        /// Indicates that the NextToken value is not valid.
+        /// Indicates that the <code>NextToken</code> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
         /// Indicates limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
@@ -2280,7 +2304,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InvalidNextTokenException">
-        /// Indicates that the NextToken value is not valid.
+        /// Indicates that the <code>NextToken</code> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
         /// Indicates limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
@@ -2353,7 +2377,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InvalidNextTokenException">
-        /// Indicates that the NextToken value is not valid.
+        /// Indicates that the <code>NextToken</code> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
         /// Indicates limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
@@ -2508,7 +2532,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InvalidNextTokenException">
-        /// Indicates that the NextToken value is not valid.
+        /// Indicates that the <code>NextToken</code> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
         /// Indicates limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
@@ -2587,7 +2611,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InvalidNextTokenException">
-        /// Indicates that the NextToken value is not valid.
+        /// Indicates that the <code>NextToken</code> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
         /// Indicates limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
@@ -2595,7 +2619,7 @@ namespace Amazon.CloudDirectory
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.NotNodeException">
         /// Occurs when any invalid operations are performed on an object which is not a node,
-        /// such as calling ListObjectChildren for a leaf node object.
+        /// such as calling <code>ListObjectChildren</code> for a leaf node object.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
         /// The specified resource could not be found.
@@ -2642,6 +2666,94 @@ namespace Amazon.CloudDirectory
 
         #endregion
         
+        #region  ListObjectParentPaths
+
+
+        /// <summary>
+        /// Retrieves all available parent paths for any object type such as node, leaf node,
+        /// policy node, and index node objects. For more information about objects, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#dirstructure">Directory
+        /// Structure</a>.
+        /// 
+        ///  
+        /// <para>
+        /// Use this API to evaluate all parents for an object. The call returns all objects from
+        /// the root of the directory up to the requested object. The API returns the number of
+        /// paths based on user-defined <code>MaxResults</code>, in case there are multiple paths
+        /// to the parent. The order of the paths and nodes returned is consistent among multiple
+        /// API calls unless the objects are deleted or moved. Paths not leading to directory
+        /// root are ignored from the target object.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListObjectParentPaths service method.</param>
+        /// 
+        /// <returns>The response from the ListObjectParentPaths service method, as returned by CloudDirectory.</returns>
+        /// <exception cref="Amazon.CloudDirectory.Model.AccessDeniedException">
+        /// Access denied. Check your permissions.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
+        /// An operation can only operate on a directory that is not enabled.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.InternalServiceException">
+        /// Indicates a problem that must be resolved by Amazon Web Services. This might be a
+        /// transient error in which case you can retry your request until it succeeds. Otherwise,
+        /// go to the <a href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a>
+        /// site to see if there are any operational issues with the service.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.InvalidArnException">
+        /// Indicates that the provided ARN value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.InvalidNextTokenException">
+        /// Indicates that the <code>NextToken</code> value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
+        /// Indicates limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
+        /// for more information.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.RetryableConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. For example,
+        /// if a write operation occurs on an object and then an attempt is made to read the object
+        /// using “SERIALIZABLE” consistency, this exception may result. This generally occurs
+        /// when the previous write did not have time to propagate to the host serving the current
+        /// request. A retry (with appropriate backoff logic) is the recommended response to this
+        /// exception.
+        /// </exception>
+        /// <exception cref="Amazon.CloudDirectory.Model.ValidationException">
+        /// Indicates your request is malformed in some manner. See the exception message.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectParentPaths">REST API Reference for ListObjectParentPaths Operation</seealso>
+        ListObjectParentPathsResponse ListObjectParentPaths(ListObjectParentPathsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListObjectParentPaths operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListObjectParentPaths operation on AmazonCloudDirectoryClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListObjectParentPaths
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectParentPaths">REST API Reference for ListObjectParentPaths Operation</seealso>
+        IAsyncResult BeginListObjectParentPaths(ListObjectParentPathsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListObjectParentPaths operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListObjectParentPaths.</param>
+        /// 
+        /// <returns>Returns a  ListObjectParentPathsResult from CloudDirectory.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectParentPaths">REST API Reference for ListObjectParentPaths Operation</seealso>
+        ListObjectParentPathsResponse EndListObjectParentPaths(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListObjectParents
 
 
@@ -2673,7 +2785,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InvalidNextTokenException">
-        /// Indicates that the NextToken value is not valid.
+        /// Indicates that the <code>NextToken</code> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
         /// Indicates limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
@@ -2749,7 +2861,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InvalidNextTokenException">
-        /// Indicates that the NextToken value is not valid.
+        /// Indicates that the <code>NextToken</code> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
         /// Indicates limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
@@ -2804,7 +2916,7 @@ namespace Amazon.CloudDirectory
 
 
         /// <summary>
-        /// Returns all of the ObjectIdentifiers to which a given policy is attached.
+        /// Returns all of the <code>ObjectIdentifiers</code> to which a given policy is attached.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPolicyAttachments service method.</param>
         /// 
@@ -2828,7 +2940,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InvalidNextTokenException">
-        /// Indicates that the NextToken value is not valid.
+        /// Indicates that the <code>NextToken</code> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
         /// Indicates limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
@@ -2904,7 +3016,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InvalidNextTokenException">
-        /// Indicates that the NextToken value is not valid.
+        /// Indicates that the <code>NextToken</code> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
         /// Indicates limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
@@ -3038,9 +3150,10 @@ namespace Amazon.CloudDirectory
         /// <summary>
         /// Lists all policies from the root of the <a>Directory</a> to the object specified.
         /// If there are no policies present, an empty list is returned. If policies are present,
-        /// and if some objects don't have the policies attached, it returns the objectIdentifier
-        /// for such objects. If policies are present, it returns objectIdentifier, policyId,
-        /// and policyType. Paths that don't lead to the root from the target object are ignored.
+        /// and if some objects don't have the policies attached, it returns the <code>ObjectIdentifier</code>
+        /// for such objects. If policies are present, it returns <code>ObjectIdentifier</code>,
+        /// <code>policyId</code>, and <code>policyType</code>. Paths that don't lead to the root
+        /// from the target object are ignored.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the LookupPolicy service method.</param>
         /// 
@@ -3064,7 +3177,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InvalidNextTokenException">
-        /// Indicates that the NextToken value is not valid.
+        /// Indicates that the <code>NextToken</code> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
         /// Indicates limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
@@ -3217,7 +3330,7 @@ namespace Amazon.CloudDirectory
         /// Occurs when any of the rule parameter keys or values are invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InvalidSchemaDocException">
-        /// Indicates that the provided SchemaDoc value is not valid.
+        /// Indicates that the provided <code>SchemaDoc</code> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
         /// Indicates limits are exceeded. See <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a>
@@ -3500,15 +3613,15 @@ namespace Amazon.CloudDirectory
         /// 
         ///  <ol> <li> 
         /// <para>
-        /// Adds new Attributes, Rules, or ObjectTypes.
+        /// Adds new <code>Attributes</code>, <code>Rules</code>, or <code>ObjectTypes</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Updates existing Attributes, Rules, or ObjectTypes.
+        /// Updates existing <code>Attributes</code>, <code>Rules</code>, or <code>ObjectTypes</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Deletes existing Attributes, Rules, or ObjectTypes.
+        /// Deletes existing <code>Attributes</code>, <code>Rules</code>, or <code>ObjectTypes</code>.
         /// </para>
         ///  </li> </ol>
         /// </summary>

@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DisableDirectory operation
+    /// Response Unmarshaller for ListObjectParentPaths operation
     /// </summary>  
-    public class DisableDirectoryResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ListObjectParentPathsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,16 +45,22 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DisableDirectoryResponse response = new DisableDirectoryResponse();
+            ListObjectParentPathsResponse response = new ListObjectParentPathsResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("DirectoryArn", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.DirectoryArn = unmarshaller.Unmarshall(context);
+                    response.NextToken = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PathToObjectIdentifiersList", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<PathToObjectIdentifiers, PathToObjectIdentifiersUnmarshaller>(PathToObjectIdentifiersUnmarshaller.Instance);
+                    response.PathToObjectIdentifiersList = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -76,13 +82,21 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
             {
                 return new AccessDeniedException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("DirectoryDeletedException"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("DirectoryNotEnabledException"))
             {
-                return new DirectoryDeletedException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new DirectoryNotEnabledException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServiceException"))
             {
                 return new InternalServiceException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidArnException"))
+            {
+                return new InvalidArnException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidNextTokenException"))
+            {
+                return new InvalidNextTokenException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceededException"))
             {
@@ -103,9 +117,9 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
             return new AmazonCloudDirectoryException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static DisableDirectoryResponseUnmarshaller _instance = new DisableDirectoryResponseUnmarshaller();        
+        private static ListObjectParentPathsResponseUnmarshaller _instance = new ListObjectParentPathsResponseUnmarshaller();        
 
-        internal static DisableDirectoryResponseUnmarshaller GetInstance()
+        internal static ListObjectParentPathsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -113,7 +127,7 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DisableDirectoryResponseUnmarshaller Instance
+        public static ListObjectParentPathsResponseUnmarshaller Instance
         {
             get
             {

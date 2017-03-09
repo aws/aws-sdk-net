@@ -61,8 +61,8 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Next token used for pagination. This is for future use. Currently pagination is not
-        /// supported for tagging.
+        /// The pagination token. This is for future use. Currently pagination is not supported
+        /// for tagging.
         /// </para>
         /// </summary>
         public string NextToken

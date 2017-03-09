@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudDirectory.Model
 {
     /// <summary>
-    /// Represents the output of a BatchRead success response operation.
+    /// Represents the output of a <code>BatchRead</code> success response operation.
     /// </summary>
     public partial class BatchReadSuccessfulResponse
     {

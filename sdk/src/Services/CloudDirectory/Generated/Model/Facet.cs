@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudDirectory.Model
 {
     /// <summary>
-    /// A structure that contains Name, ARN, Attributes, <a>Rule</a>s, and ObjectTypes.
+    /// A structure that contains <code>Name</code>, <code>ARN</code>, <code>Attributes</code>,
+    /// <a>Rule</a>s, and <code>ObjectTypes</code>.
     /// </summary>
     public partial class Facet
     {

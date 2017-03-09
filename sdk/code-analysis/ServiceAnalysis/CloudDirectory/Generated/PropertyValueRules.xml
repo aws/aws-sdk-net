@@ -33,7 +33,7 @@
   <property-value-rule>
     <property>Amazon.CloudDirectory.Model.CreateSchemaRequest.Name</property>
     <min>1</min>
-    <max>50</max>
+    <max>32</max>
     <pattern>^[a-zA-Z0-9._-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -55,28 +55,28 @@
   <property-value-rule>
     <property>Amazon.CloudDirectory.Model.GetSchemaAsJsonResponse.Name</property>
     <min>1</min>
-    <max>50</max>
+    <max>32</max>
     <pattern>^[a-zA-Z0-9._-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudDirectory.Model.ListAppliedSchemaArnsRequest.MaxResults</property>
-    <min>0</min>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudDirectory.Model.ListAttachedIndicesRequest.MaxResults</property>
-    <min>0</min>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudDirectory.Model.ListDevelopmentSchemaArnsRequest.MaxResults</property>
-    <min>0</min>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudDirectory.Model.ListDirectoriesRequest.MaxResults</property>
-    <min>0</min>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudDirectory.Model.ListFacetAttributesRequest.MaxResults</property>
-    <min>0</min>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudDirectory.Model.ListFacetAttributesRequest.Name</property>
@@ -86,35 +86,39 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudDirectory.Model.ListFacetNamesRequest.MaxResults</property>
-    <min>0</min>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudDirectory.Model.ListIndexRequest.MaxResults</property>
-    <min>0</min>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudDirectory.Model.ListObjectAttributesRequest.MaxResults</property>
-    <min>0</min>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudDirectory.Model.ListObjectChildrenRequest.MaxResults</property>
-    <min>0</min>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudDirectory.Model.ListObjectParentPathsRequest.MaxResults</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudDirectory.Model.ListObjectParentsRequest.MaxResults</property>
-    <min>0</min>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudDirectory.Model.ListObjectPoliciesRequest.MaxResults</property>
-    <min>0</min>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudDirectory.Model.ListPolicyAttachmentsRequest.MaxResults</property>
-    <min>0</min>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudDirectory.Model.ListPublishedSchemaArnsRequest.MaxResults</property>
-    <min>0</min>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudDirectory.Model.ListTagsForResourceRequest.MaxResults</property>
@@ -122,12 +126,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudDirectory.Model.LookupPolicyRequest.MaxResults</property>
-    <min>0</min>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudDirectory.Model.PublishSchemaRequest.Name</property>
     <min>1</min>
-    <max>50</max>
+    <max>32</max>
     <pattern>^[a-zA-Z0-9._-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -145,7 +149,7 @@
   <property-value-rule>
     <property>Amazon.CloudDirectory.Model.UpdateSchemaRequest.Name</property>
     <min>1</min>
-    <max>50</max>
+    <max>32</max>
     <pattern>^[a-zA-Z0-9._-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -174,11 +178,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudDirectory.Model.BatchListObjectAttributes.MaxResults</property>
-    <min>0</min>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudDirectory.Model.BatchListObjectChildren.MaxResults</property>
-    <min>0</min>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudDirectory.Model.Directory.Name</property>

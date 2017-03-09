@@ -28,41 +28,32 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudDirectory.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListPolicyAttachments operation.
-    /// Returns all of the <code>ObjectIdentifiers</code> to which a given policy is attached.
+    /// Container for the parameters to the ListObjectParentPaths operation.
+    /// Retrieves all available parent paths for any object type such as node, leaf node,
+    /// policy node, and index node objects. For more information about objects, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#dirstructure">Directory
+    /// Structure</a>.
+    /// 
+    ///  
+    /// <para>
+    /// Use this API to evaluate all parents for an object. The call returns all objects from
+    /// the root of the directory up to the requested object. The API returns the number of
+    /// paths based on user-defined <code>MaxResults</code>, in case there are multiple paths
+    /// to the parent. The order of the paths and nodes returned is consistent among multiple
+    /// API calls unless the objects are deleted or moved. Paths not leading to directory
+    /// root are ignored from the target object.
+    /// </para>
     /// </summary>
-    public partial class ListPolicyAttachmentsRequest : AmazonCloudDirectoryRequest
+    public partial class ListObjectParentPathsRequest : AmazonCloudDirectoryRequest
     {
-        private ConsistencyLevel _consistencyLevel;
         private string _directoryArn;
         private int? _maxResults;
         private string _nextToken;
-        private ObjectReference _policyReference;
-
-        /// <summary>
-        /// Gets and sets the property ConsistencyLevel. 
-        /// <para>
-        /// Represents the manner and timing in which the successful write or update of an object
-        /// is reflected in a subsequent read operation of that same object.
-        /// </para>
-        /// </summary>
-        public ConsistencyLevel ConsistencyLevel
-        {
-            get { return this._consistencyLevel; }
-            set { this._consistencyLevel = value; }
-        }
-
-        // Check to see if ConsistencyLevel property is set
-        internal bool IsSetConsistencyLevel()
-        {
-            return this._consistencyLevel != null;
-        }
+        private ObjectReference _objectReference;
 
         /// <summary>
         /// Gets and sets the property DirectoryArn. 
         /// <para>
-        /// ARN associated with the <a>Directory</a> where objects reside. For more information,
-        /// see <a>arns</a>.
+        /// The ARN of the directory to which the parent path applies.
         /// </para>
         /// </summary>
         public string DirectoryArn
@@ -114,21 +105,21 @@ namespace Amazon.CloudDirectory.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PolicyReference. 
+        /// Gets and sets the property ObjectReference. 
         /// <para>
-        /// Reference that identifies the policy object.
+        /// Reference that identifies the object whose parent paths are listed.
         /// </para>
         /// </summary>
-        public ObjectReference PolicyReference
+        public ObjectReference ObjectReference
         {
-            get { return this._policyReference; }
-            set { this._policyReference = value; }
+            get { return this._objectReference; }
+            set { this._objectReference = value; }
         }
 
-        // Check to see if PolicyReference property is set
-        internal bool IsSetPolicyReference()
+        // Check to see if ObjectReference property is set
+        internal bool IsSetObjectReference()
         {
-            return this._policyReference != null;
+            return this._objectReference != null;
         }
 
     }

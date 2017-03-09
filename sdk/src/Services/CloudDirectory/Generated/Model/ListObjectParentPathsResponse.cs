@@ -28,12 +28,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudDirectory.Model
 {
     /// <summary>
-    /// This is the response object from the LookupPolicy operation.
+    /// This is the response object from the ListObjectParentPaths operation.
     /// </summary>
-    public partial class LookupPolicyResponse : AmazonWebServiceResponse
+    public partial class ListObjectParentPathsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<PolicyToPath> _policyToPathList = new List<PolicyToPath>();
+        private List<PathToObjectIdentifiers> _pathToObjectIdentifiersList = new List<PathToObjectIdentifiers>();
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -54,22 +54,21 @@ namespace Amazon.CloudDirectory.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PolicyToPathList. 
+        /// Gets and sets the property PathToObjectIdentifiersList. 
         /// <para>
-        /// Provides list of path to policies. Policies contain <code>PolicyId</code>, <code>ObjectIdentifier</code>,
-        /// and <code>PolicyType</code>.
+        /// Returns the path to the <code>ObjectIdentifiers</code> associated with the directory.
         /// </para>
         /// </summary>
-        public List<PolicyToPath> PolicyToPathList
+        public List<PathToObjectIdentifiers> PathToObjectIdentifiersList
         {
-            get { return this._policyToPathList; }
-            set { this._policyToPathList = value; }
+            get { return this._pathToObjectIdentifiersList; }
+            set { this._pathToObjectIdentifiersList = value; }
         }
 
-        // Check to see if PolicyToPathList property is set
-        internal bool IsSetPolicyToPathList()
+        // Check to see if PathToObjectIdentifiersList property is set
+        internal bool IsSetPathToObjectIdentifiersList()
         {
-            return this._policyToPathList != null && this._policyToPathList.Count > 0; 
+            return this._pathToObjectIdentifiersList != null && this._pathToObjectIdentifiersList.Count > 0; 
         }
 
     }

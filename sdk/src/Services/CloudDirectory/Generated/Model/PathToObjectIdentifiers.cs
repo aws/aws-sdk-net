@@ -28,47 +28,48 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudDirectory.Model
 {
     /// <summary>
-    /// Represents the output of a <code>BatchRead</code> operation.
+    /// Returns the path to the <code>ObjectIdentifiers</code> associated with the directory.
     /// </summary>
-    public partial class BatchReadOperation
+    public partial class PathToObjectIdentifiers
     {
-        private BatchListObjectAttributes _listObjectAttributes;
-        private BatchListObjectChildren _listObjectChildren;
+        private List<string> _objectIdentifiers = new List<string>();
+        private string _path;
 
         /// <summary>
-        /// Gets and sets the property ListObjectAttributes. 
+        /// Gets and sets the property ObjectIdentifiers. 
         /// <para>
-        /// Lists all attributes associated with an object.
+        /// Lists <code>ObjectIdentifiers</code> starting from directory root to the object in
+        /// the request.
         /// </para>
         /// </summary>
-        public BatchListObjectAttributes ListObjectAttributes
+        public List<string> ObjectIdentifiers
         {
-            get { return this._listObjectAttributes; }
-            set { this._listObjectAttributes = value; }
+            get { return this._objectIdentifiers; }
+            set { this._objectIdentifiers = value; }
         }
 
-        // Check to see if ListObjectAttributes property is set
-        internal bool IsSetListObjectAttributes()
+        // Check to see if ObjectIdentifiers property is set
+        internal bool IsSetObjectIdentifiers()
         {
-            return this._listObjectAttributes != null;
+            return this._objectIdentifiers != null && this._objectIdentifiers.Count > 0; 
         }
 
         /// <summary>
-        /// Gets and sets the property ListObjectChildren. 
+        /// Gets and sets the property Path. 
         /// <para>
-        /// Returns a paginated list of child objects that are associated with a given object.
+        /// The path used to identify the object starting from directory root.
         /// </para>
         /// </summary>
-        public BatchListObjectChildren ListObjectChildren
+        public string Path
         {
-            get { return this._listObjectChildren; }
-            set { this._listObjectChildren = value; }
+            get { return this._path; }
+            set { this._path = value; }
         }
 
-        // Check to see if ListObjectChildren property is set
-        internal bool IsSetListObjectChildren()
+        // Check to see if Path property is set
+        internal bool IsSetPath()
         {
-            return this._listObjectChildren != null;
+            return this._path != null;
         }
 
     }

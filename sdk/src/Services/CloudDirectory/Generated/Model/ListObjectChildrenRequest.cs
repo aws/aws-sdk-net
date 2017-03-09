@@ -98,7 +98,7 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Token used for pagination.
+        /// The pagination token.
         /// </para>
         /// </summary>
         public string NextToken

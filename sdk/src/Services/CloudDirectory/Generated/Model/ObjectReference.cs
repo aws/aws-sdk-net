@@ -42,7 +42,8 @@ namespace Amazon.CloudDirectory.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <i>$ObjectIdentifier</i> - Identifies the object by ObjectIdentifier
+        ///  <i>$ObjectIdentifier</i> - Identifies the object by <code>ObjectIdentifier</code>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>

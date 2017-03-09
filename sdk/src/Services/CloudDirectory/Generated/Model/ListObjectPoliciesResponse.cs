@@ -38,7 +38,7 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property AttachedPolicyIds. 
         /// <para>
-        /// List of policy ObjectIdentifiers, that are attached to the object.
+        /// List of policy <code>ObjectIdentifiers</code>, that are attached to the object.
         /// </para>
         /// </summary>
         public List<string> AttachedPolicyIds
@@ -56,7 +56,7 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Token used for pagination.
+        /// The pagination token.
         /// </para>
         /// </summary>
         public string NextToken

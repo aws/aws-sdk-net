@@ -97,7 +97,7 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property RequiredBehavior. 
         /// <para>
-        /// The required behavior of the FacetAttribute.
+        /// The required behavior of the <code>FacetAttribute</code>.
         /// </para>
         /// </summary>
         public RequiredAttributeBehavior RequiredBehavior

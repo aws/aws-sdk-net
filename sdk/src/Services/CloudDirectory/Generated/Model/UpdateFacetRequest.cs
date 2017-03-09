@@ -33,15 +33,15 @@ namespace Amazon.CloudDirectory.Model
     /// 
     ///  <ol> <li> 
     /// <para>
-    /// Adds new Attributes, Rules, or ObjectTypes.
+    /// Adds new <code>Attributes</code>, <code>Rules</code>, or <code>ObjectTypes</code>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Updates existing Attributes, Rules, or ObjectTypes.
+    /// Updates existing <code>Attributes</code>, <code>Rules</code>, or <code>ObjectTypes</code>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Deletes existing Attributes, Rules, or ObjectTypes.
+    /// Deletes existing <code>Attributes</code>, <code>Rules</code>, or <code>ObjectTypes</code>.
     /// </para>
     ///  </li> </ol>
     /// </summary>
