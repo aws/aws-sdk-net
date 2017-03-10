@@ -1,3 +1,9 @@
+### 3.3.61.0 (2017-03-09 22:22 UTC)
+* APIGateway (3.3.5.0)
+	* API Gateway has added support for ACM certificates on custom domain names. Both Amazon-issued certificates and uploaded third-part certificates are supported.
+* CloudDirectory (3.3.1.0)
+	* Introduces a new Cloud Directory API that enables you to retrieve all available parent paths for any type of object (a node, leaf node, policy node, and index node) in a hierarchy.
+
 ### 3.3.60.0 (2017-03-09 01:36 UTC)
 * DynamoDBv2 (3.3.4.0)
 	* Adding Time-to-Live support to higher-level APIs.
