@@ -28,11 +28,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// The Amazon EC2 location for the job flow.
+    /// The Amazon EC2 Availability Zone configuration of the cluster (job flow).
     /// </summary>
     public partial class PlacementType
     {
         private string _availabilityZone;
+        private List<string> _availabilityZones = new List<string>();
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -42,7 +43,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Instantiates PlacementType with the parameterized properties
         /// </summary>
-        /// <param name="availabilityZone">The Amazon EC2 Availability Zone for the job flow.</param>
+        /// <param name="availabilityZone">The Amazon EC2 Availability Zone for the cluster. <code>AvailabilityZone</code> is used for uniform instance groups, while <code>AvailabilityZones</code> (plural) is used for instance fleets.</param>
         public PlacementType(string availabilityZone)
         {
             _availabilityZone = availabilityZone;
@@ -51,7 +52,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
         /// <para>
-        /// The Amazon EC2 Availability Zone for the job flow.
+        /// The Amazon EC2 Availability Zone for the cluster. <code>AvailabilityZone</code> is
+        /// used for uniform instance groups, while <code>AvailabilityZones</code> (plural) is
+        /// used for instance fleets.
         /// </para>
         /// </summary>
         public string AvailabilityZone
@@ -64,6 +67,33 @@ namespace Amazon.ElasticMapReduce.Model
         internal bool IsSetAvailabilityZone()
         {
             return this._availabilityZone != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AvailabilityZones. 
+        /// <para>
+        /// When multiple Availability Zones are specified, Amazon EMR evaluates them and launches
+        /// instances in the optimal Availability Zone. <code>AvailabilityZones</code> is used
+        /// for instance fleets, while <code>AvailabilityZone</code> (singular) is used for uniform
+        /// instance groups.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and
+        /// later, excluding 5.0.x versions.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public List<string> AvailabilityZones
+        {
+            get { return this._availabilityZones; }
+            set { this._availabilityZones = value; }
+        }
+
+        // Check to see if AvailabilityZones property is set
+        internal bool IsSetAvailabilityZones()
+        {
+            return this._availabilityZones != null && this._availabilityZones.Count > 0; 
         }
 
     }

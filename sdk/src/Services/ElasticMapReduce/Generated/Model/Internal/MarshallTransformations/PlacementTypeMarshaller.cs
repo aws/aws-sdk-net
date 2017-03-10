@@ -51,6 +51,17 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.AvailabilityZone);
             }
 
+            if(requestObject.IsSetAvailabilityZones())
+            {
+                context.Writer.WritePropertyName("AvailabilityZones");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectAvailabilityZonesListValue in requestObject.AvailabilityZones)
+                {
+                        context.Writer.Write(requestObjectAvailabilityZonesListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
         }
 
         /// <summary>

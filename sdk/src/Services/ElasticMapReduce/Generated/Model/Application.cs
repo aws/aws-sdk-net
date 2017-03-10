@@ -32,21 +32,21 @@ namespace Amazon.ElasticMapReduce.Model
     /// This structure contains a list of strings that indicates the software to use with
     /// the cluster and accepts a user argument list. Amazon EMR accepts and forwards the
     /// argument list to the corresponding installation script as bootstrap action argument.
-    /// For more information, see <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-mapr.html">Launch
-    /// a Job Flow on the MapR Distribution for Hadoop</a>. Currently supported values are:
+    /// For more information, see <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/ManagementGuide/emr-mapr.html">Using
+    /// the MapR Distribution for Hadoop</a>. Currently supported values are:
     /// 
     ///  <ul> <li> 
     /// <para>
-    /// "mapr-m3" - launch the job flow using MapR M3 Edition.
+    /// "mapr-m3" - launch the cluster using MapR M3 Edition.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// "mapr-m5" - launch the job flow using MapR M5 Edition.
+    /// "mapr-m5" - launch the cluster using MapR M5 Edition.
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// "mapr" with the user arguments specifying "--edition,m3" or "--edition,m5" - launch
-    /// the job flow using MapR M3 or M5 Edition, respectively.
+    /// the cluster using MapR M3 or M5 Edition, respectively.
     /// </para>
     ///  </li> </ul> <note> 
     /// <para>

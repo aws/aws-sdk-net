@@ -100,6 +100,12 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("InstanceCollectionType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.InstanceCollectionType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LogUri", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// Specify the type of Amazon EC2 instances to run the job flow on.
+    /// Specify the type of Amazon EC2 instances that the cluster (job flow) runs on.
     /// </summary>
     public partial class JobFlowInstancesDetail
     {
@@ -67,8 +67,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property Ec2KeyName. 
         /// <para>
-        /// The name of an Amazon EC2 key pair that can be used to ssh to the master node of job
-        /// flow.
+        /// The name of an Amazon EC2 key pair that can be used to ssh to the master node.
         /// </para>
         /// </summary>
         public string Ec2KeyName
@@ -86,8 +85,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property Ec2SubnetId. 
         /// <para>
-        /// For job flows launched within Amazon Virtual Private Cloud, this value specifies the
-        /// identifier of the subnet where the job flow was launched.
+        /// For clusters launched within Amazon Virtual Private Cloud, this is the identifier
+        /// of the subnet where the cluster was launched.
         /// </para>
         /// </summary>
         public string Ec2SubnetId
@@ -105,7 +104,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property HadoopVersion. 
         /// <para>
-        /// The Hadoop version for the job flow.
+        /// The Hadoop version for the cluster.
         /// </para>
         /// </summary>
         public string HadoopVersion
@@ -143,7 +142,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property InstanceGroups. 
         /// <para>
-        /// Details about the job flow's instance groups.
+        /// Details about the instance groups in a cluster.
         /// </para>
         /// </summary>
         public List<InstanceGroupDetail> InstanceGroups
@@ -161,7 +160,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property KeepJobFlowAliveWhenNoSteps. 
         /// <para>
-        /// Specifies whether the job flow should terminate after completing all steps.
+        /// Specifies whether the cluster should remain available after completing all steps.
         /// </para>
         /// </summary>
         public bool KeepJobFlowAliveWhenNoSteps
@@ -233,9 +232,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property NormalizedInstanceHours. 
         /// <para>
-        /// An approximation of the cost of the job flow, represented in m1.small/hours. This
-        /// value is incremented one time for every hour that an m1.small runs. Larger instances
-        /// are weighted more, so an Amazon EC2 instance that is roughly four times more expensive
+        /// An approximation of the cost of the cluster, represented in m1.small/hours. This value
+        /// is incremented one time for every hour that an m1.small runs. Larger instances are
+        /// weighted more, so an Amazon EC2 instance that is roughly four times more expensive
         /// would result in the normalized instance hours being incremented by four. This result
         /// is only an approximation and does not reflect the actual billing rate.
         /// </para>
@@ -255,7 +254,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property Placement. 
         /// <para>
-        /// The Amazon EC2 Availability Zone for the job flow.
+        /// The Amazon EC2 Availability Zone for the cluster.
         /// </para>
         /// </summary>
         public PlacementType Placement
@@ -292,7 +291,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// Gets and sets the property TerminationProtected. 
         /// <para>
         /// Specifies whether the Amazon EC2 instances in the cluster are protected from termination
-        /// by API calls, user intervention, or in the event of a job flow error.
+        /// by API calls, user intervention, or in the event of a job-flow error.
         /// </para>
         /// </summary>
         public bool TerminationProtected

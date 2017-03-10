@@ -46,7 +46,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Instantiates StepExecutionStatusDetail with the parameterized properties
         /// </summary>
-        /// <param name="state">The state of the job flow step.</param>
+        /// <param name="state">The state of the step.</param>
         /// <param name="creationDateTime">The creation date and time of the step.</param>
         public StepExecutionStatusDetail(StepExecutionState state, DateTime creationDateTime)
         {
@@ -129,7 +129,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The state of the job flow step.
+        /// The state of the step.
         /// </para>
         /// </summary>
         public StepExecutionState State

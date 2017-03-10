@@ -29,17 +29,17 @@ namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
     /// Container for the parameters to the RunJobFlow operation.
-    /// RunJobFlow creates and starts running a new job flow. The job flow will run the steps
-    /// specified. After the job flow completes, the cluster is stopped and the HDFS partition
+    /// RunJobFlow creates and starts running a new cluster (job flow). The cluster runs the
+    /// steps specified. After the steps complete, the cluster stops and the HDFS partition
     /// is lost. To prevent loss of data, configure the last step of the job flow to store
     /// results in Amazon S3. If the <a>JobFlowInstancesConfig</a> <code>KeepJobFlowAliveWhenNoSteps</code>
-    /// parameter is set to <code>TRUE</code>, the job flow will transition to the WAITING
-    /// state rather than shutting down after the steps have completed. 
+    /// parameter is set to <code>TRUE</code>, the cluster transitions to the WAITING state
+    /// rather than shutting down after the steps have completed. 
     /// 
     ///  
     /// <para>
     /// For additional protection, you can set the <a>JobFlowInstancesConfig</a> <code>TerminationProtected</code>
-    /// parameter to <code>TRUE</code> to lock the job flow and prevent it from being terminated
+    /// parameter to <code>TRUE</code> to lock the cluster and prevent it from being terminated
     /// by API call, user intervention, or in the event of a job flow error.
     /// </para>
     ///  
@@ -48,17 +48,24 @@ namespace Amazon.ElasticMapReduce.Model
     /// </para>
     ///  
     /// <para>
-    /// If your job flow is long-running (such as a Hive data warehouse) or complex, you may
+    /// If your cluster is long-running (such as a Hive data warehouse) or complex, you may
     /// require more than 256 steps to process your data. You can bypass the 256-step limitation
     /// in various ways, including using the SSH shell to connect to the master node and submitting
     /// queries directly to the software running on the master node, such as Hive and Hadoop.
     /// For more information on how to do this, see <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/Management/Guide/AddMoreThan256Steps.html">Add
-    /// More than 256 Steps to a Job Flow</a> in the <i>Amazon EMR Management Guide</i>.
+    /// More than 256 Steps to a Cluster</a> in the <i>Amazon EMR Management Guide</i>.
     /// </para>
     ///  
     /// <para>
-    /// For long running job flows, we recommend that you periodically store your results.
+    /// For long running clusters, we recommend that you periodically store your results.
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// The instance fleets configuration is available only in Amazon EMR versions 4.8.0 and
+    /// later, excluding 5.0.x versions. The RunJobFlow request can contain InstanceFleets
+    /// parameters or InstanceGroups parameters, but not both.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class RunJobFlowRequest : AmazonElasticMapReduceRequest
     {
@@ -91,7 +98,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// Instantiates RunJobFlowRequest with the parameterized properties
         /// </summary>
         /// <param name="name">The name of the job flow.</param>
-        /// <param name="instances">A specification of the number and type of Amazon EC2 instances on which to run the job flow.</param>
+        /// <param name="instances">A specification of the number and type of Amazon EC2 instances.</param>
         public RunJobFlowRequest(string name, JobFlowInstancesConfig instances)
         {
             _name = name;
@@ -211,8 +218,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property BootstrapActions. 
         /// <para>
-        /// A list of bootstrap actions that will be run before Hadoop is started on the cluster
-        /// nodes.
+        /// A list of bootstrap actions to run before Hadoop starts on the cluster nodes.
         /// </para>
         /// </summary>
         public List<BootstrapActionConfig> BootstrapActions
@@ -252,8 +258,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property Instances. 
         /// <para>
-        /// A specification of the number and type of Amazon EC2 instances on which to run the
-        /// job flow.
+        /// A specification of the number and type of Amazon EC2 instances.
         /// </para>
         /// </summary>
         public JobFlowInstancesConfig Instances
@@ -336,8 +341,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// <para>
         /// A list of strings that indicates third-party software to use with the job flow that
         /// accepts a user argument list. EMR accepts and forwards the argument list to the corresponding
-        /// installation script as bootstrap action arguments. For more information, see <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-mapr.html">Launch
-        /// a Job Flow on the MapR Distribution for Hadoop</a>. Currently supported values are:
+        /// installation script as bootstrap action arguments. For more information, see "Launch
+        /// a Job Flow on the MapR Distribution for Hadoop" in the <a href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon
+        /// EMR Developer Guide</a>. Supported values are:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -477,7 +483,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property Steps. 
         /// <para>
-        /// A list of steps to be executed by the job flow.
+        /// A list of steps to run.
         /// </para>
         /// </summary>
         public List<StepConfig> Steps
@@ -500,8 +506,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// </para>
         ///  </note> 
         /// <para>
-        /// A list of strings that indicates third-party software to use with the job flow. For
-        /// more information, see <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use
+        /// A list of strings that indicates third-party software to use. For more information,
+        /// see <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use
         /// Third Party Applications with Amazon EMR</a>. Currently supported values are:
         /// </para>
         ///  <ul> <li> 
@@ -547,11 +553,11 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property VisibleToAllUsers. 
         /// <para>
-        /// Whether the job flow is visible to all IAM users of the AWS account associated with
-        /// the job flow. If this value is set to <code>true</code>, all IAM users of that AWS
-        /// account can view and (if they have the proper policy permissions set) manage the job
-        /// flow. If it is set to <code>false</code>, only the IAM user that created the job flow
-        /// can view and manage it.
+        /// Whether the cluster is visible to all IAM users of the AWS account associated with
+        /// the cluster. If this value is set to <code>true</code>, all IAM users of that AWS
+        /// account can view and (if they have the proper policy permissions set) manage the cluster.
+        /// If it is set to <code>false</code>, only the IAM user that created the cluster can
+        /// view and manage it.
         /// </para>
         /// </summary>
         public bool VisibleToAllUsers

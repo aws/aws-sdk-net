@@ -35,7 +35,10 @@ namespace Amazon.ElasticMapReduce.Model
         private List<EbsVolume> _ebsVolumes = new List<EbsVolume>();
         private string _ec2InstanceId;
         private string _id;
+        private string _instanceFleetId;
         private string _instanceGroupId;
+        private string _instanceType;
+        private MarketType _market;
         private string _privateDnsName;
         private string _privateIpAddress;
         private string _publicDnsName;
@@ -97,6 +100,24 @@ namespace Amazon.ElasticMapReduce.Model
         }
 
         /// <summary>
+        /// Gets and sets the property InstanceFleetId. 
+        /// <para>
+        /// The unique identifier of the instance fleet to which an EC2 instance belongs.
+        /// </para>
+        /// </summary>
+        public string InstanceFleetId
+        {
+            get { return this._instanceFleetId; }
+            set { this._instanceFleetId = value; }
+        }
+
+        // Check to see if InstanceFleetId property is set
+        internal bool IsSetInstanceFleetId()
+        {
+            return this._instanceFleetId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property InstanceGroupId. 
         /// <para>
         /// The identifier of the instance group to which this instance belongs.
@@ -112,6 +133,43 @@ namespace Amazon.ElasticMapReduce.Model
         internal bool IsSetInstanceGroupId()
         {
             return this._instanceGroupId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceType. 
+        /// <para>
+        /// The EC2 instance type, for example <code>m3.xlarge</code>.
+        /// </para>
+        /// </summary>
+        public string InstanceType
+        {
+            get { return this._instanceType; }
+            set { this._instanceType = value; }
+        }
+
+        // Check to see if InstanceType property is set
+        internal bool IsSetInstanceType()
+        {
+            return this._instanceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Market. 
+        /// <para>
+        /// The instance purchasing option. Valid values are <code>ON_DEMAND</code> or <code>SPOT</code>.
+        /// 
+        /// </para>
+        /// </summary>
+        public MarketType Market
+        {
+            get { return this._market; }
+            set { this._market = value; }
+        }
+
+        // Check to see if Market property is set
+        internal bool IsSetMarket()
+        {
+            return this._market != null;
         }
 
         /// <summary>

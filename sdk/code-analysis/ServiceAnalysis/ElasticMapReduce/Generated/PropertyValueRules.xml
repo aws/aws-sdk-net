@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.AddInstanceFleetRequest.ClusterId</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.AddInstanceFleetResponse.ClusterId</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.AddInstanceGroupsRequest.JobFlowId</property>
     <min>0</min>
     <max>256</max>
@@ -125,6 +135,53 @@
     <max>10280</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.Instance.InstanceType</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.InstanceFleet.Name</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.InstanceFleet.ProvisionedOnDemandCapacity</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.InstanceFleet.ProvisionedSpotCapacity</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.InstanceFleet.TargetOnDemandCapacity</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.InstanceFleet.TargetSpotCapacity</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.InstanceFleetConfig.Name</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.InstanceFleetConfig.TargetOnDemandCapacity</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.InstanceFleetConfig.TargetSpotCapacity</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.InstanceFleetModifyConfig.TargetOnDemandCapacity</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.InstanceFleetModifyConfig.TargetSpotCapacity</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.InstanceGroup.InstanceType</property>
     <min>1</min>
     <max>256</max>
@@ -173,6 +230,42 @@
     <property>Amazon.ElasticMapReduce.Model.InstanceGroupModifyConfig.InstanceGroupId</property>
     <min>0</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.InstanceTypeConfig.BidPrice</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.InstanceTypeConfig.BidPriceAsPercentageOfOnDemandPrice</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.InstanceTypeConfig.InstanceType</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.InstanceTypeConfig.WeightedCapacity</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.InstanceTypeSpecification.BidPrice</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.InstanceTypeSpecification.BidPriceAsPercentageOfOnDemandPrice</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.InstanceTypeSpecification.InstanceType</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.InstanceTypeSpecification.WeightedCapacity</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.InvalidRequestException.ErrorCode</property>
@@ -318,6 +411,14 @@
     <property>Amazon.ElasticMapReduce.Model.SecurityConfigurationSummary.Name</property>
     <min>0</min>
     <max>10280</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.SpotProvisioningSpecification.BlockDurationMinutes</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.SpotProvisioningSpecification.TimeoutDurationMinutes</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.StepConfig.Name</property>

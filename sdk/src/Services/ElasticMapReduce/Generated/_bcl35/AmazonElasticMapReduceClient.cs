@@ -226,6 +226,72 @@ namespace Amazon.ElasticMapReduce
         #endregion
 
         
+        #region  AddInstanceFleet
+
+        /// <summary>
+        /// Adds an instance fleet to a running cluster.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and
+        /// later, excluding 5.0.x.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AddInstanceFleet service method.</param>
+        /// 
+        /// <returns>The response from the AddInstanceFleet service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the EMR service.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/AddInstanceFleet">REST API Reference for AddInstanceFleet Operation</seealso>
+        public AddInstanceFleetResponse AddInstanceFleet(AddInstanceFleetRequest request)
+        {
+            var marshaller = new AddInstanceFleetRequestMarshaller();
+            var unmarshaller = AddInstanceFleetResponseUnmarshaller.Instance;
+
+            return Invoke<AddInstanceFleetRequest,AddInstanceFleetResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AddInstanceFleet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AddInstanceFleet operation on AmazonElasticMapReduceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAddInstanceFleet
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/AddInstanceFleet">REST API Reference for AddInstanceFleet Operation</seealso>
+        public IAsyncResult BeginAddInstanceFleet(AddInstanceFleetRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new AddInstanceFleetRequestMarshaller();
+            var unmarshaller = AddInstanceFleetResponseUnmarshaller.Instance;
+
+            return BeginInvoke<AddInstanceFleetRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AddInstanceFleet operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAddInstanceFleet.</param>
+        /// 
+        /// <returns>Returns a  AddInstanceFleetResult from ElasticMapReduce.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/AddInstanceFleet">REST API Reference for AddInstanceFleet Operation</seealso>
+        public  AddInstanceFleetResponse EndAddInstanceFleet(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AddInstanceFleetResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  AddInstanceGroups
 
         /// <summary>
@@ -238,6 +304,7 @@ namespace Amazon.ElasticMapReduce
         /// Indicates that an error occurred while processing the request and that the request
         /// was not completed.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/AddInstanceGroups">REST API Reference for AddInstanceGroups Operation</seealso>
         public AddInstanceGroupsResponse AddInstanceGroups(AddInstanceGroupsRequest request)
         {
             var marshaller = new AddInstanceGroupsRequestMarshaller();
@@ -257,6 +324,7 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAddInstanceGroups
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/AddInstanceGroups">REST API Reference for AddInstanceGroups Operation</seealso>
         public IAsyncResult BeginAddInstanceGroups(AddInstanceGroupsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AddInstanceGroupsRequestMarshaller();
@@ -273,6 +341,7 @@ namespace Amazon.ElasticMapReduce
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAddInstanceGroups.</param>
         /// 
         /// <returns>Returns a  AddInstanceGroupsResult from ElasticMapReduce.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/AddInstanceGroups">REST API Reference for AddInstanceGroups Operation</seealso>
         public  AddInstanceGroupsResponse EndAddInstanceGroups(IAsyncResult asyncResult)
         {
             return EndInvoke<AddInstanceGroupsResponse>(asyncResult);
@@ -283,24 +352,24 @@ namespace Amazon.ElasticMapReduce
         #region  AddJobFlowSteps
 
         /// <summary>
-        /// AddJobFlowSteps adds new steps to a running job flow. A maximum of 256 steps are allowed
+        /// AddJobFlowSteps adds new steps to a running cluster. A maximum of 256 steps are allowed
         /// in each job flow.
         /// 
         ///  
         /// <para>
-        /// If your job flow is long-running (such as a Hive data warehouse) or complex, you may
+        /// If your cluster is long-running (such as a Hive data warehouse) or complex, you may
         /// require more than 256 steps to process your data. You can bypass the 256-step limitation
-        /// in various ways, including using the SSH shell to connect to the master node and submitting
+        /// in various ways, including using SSH to connect to the master node and submitting
         /// queries directly to the software running on the master node, such as Hive and Hadoop.
-        /// For more information on how to do this, see <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/AddMoreThan256Steps.html">Add
-        /// More than 256 Steps to a Job Flow</a> in the <i>Amazon EMR Developer's Guide</i>.
+        /// For more information on how to do this, see <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/ManagementGuide/AddMoreThan256Steps.html">Add
+        /// More than 256 Steps to a Cluster</a> in the <i>Amazon EMR Management Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// A step specifies the location of a JAR file stored either on the master node of the
-        /// job flow or in Amazon S3. Each step is performed by the main function of the main
-        /// class of the JAR file. The main class can be specified either in the manifest of the
-        /// JAR or by using the MainFunction parameter of the step.
+        /// cluster or in Amazon S3. Each step is performed by the main function of the main class
+        /// of the JAR file. The main class can be specified either in the manifest of the JAR
+        /// or by using the MainFunction parameter of the step.
         /// </para>
         ///  
         /// <para>
@@ -310,7 +379,7 @@ namespace Amazon.ElasticMapReduce
         /// </para>
         ///  
         /// <para>
-        /// You can only add steps to a job flow that is in one of the following states: STARTING,
+        /// You can only add steps to a cluster that is in one of the following states: STARTING,
         /// BOOTSTRAPPING, RUNNING, or WAITING.
         /// </para>
         /// </summary>
@@ -321,6 +390,7 @@ namespace Amazon.ElasticMapReduce
         /// Indicates that an error occurred while processing the request and that the request
         /// was not completed.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/AddJobFlowSteps">REST API Reference for AddJobFlowSteps Operation</seealso>
         public AddJobFlowStepsResponse AddJobFlowSteps(AddJobFlowStepsRequest request)
         {
             var marshaller = new AddJobFlowStepsRequestMarshaller();
@@ -340,6 +410,7 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAddJobFlowSteps
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/AddJobFlowSteps">REST API Reference for AddJobFlowSteps Operation</seealso>
         public IAsyncResult BeginAddJobFlowSteps(AddJobFlowStepsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AddJobFlowStepsRequestMarshaller();
@@ -356,6 +427,7 @@ namespace Amazon.ElasticMapReduce
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAddJobFlowSteps.</param>
         /// 
         /// <returns>Returns a  AddJobFlowStepsResult from ElasticMapReduce.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/AddJobFlowSteps">REST API Reference for AddJobFlowSteps Operation</seealso>
         public  AddJobFlowStepsResponse EndAddJobFlowSteps(IAsyncResult asyncResult)
         {
             return EndInvoke<AddJobFlowStepsResponse>(asyncResult);
@@ -380,6 +452,7 @@ namespace Amazon.ElasticMapReduce
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/AddTags">REST API Reference for AddTags Operation</seealso>
         public AddTagsResponse AddTags(AddTagsRequest request)
         {
             var marshaller = new AddTagsRequestMarshaller();
@@ -399,6 +472,7 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAddTags
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/AddTags">REST API Reference for AddTags Operation</seealso>
         public IAsyncResult BeginAddTags(AddTagsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AddTagsRequestMarshaller();
@@ -415,6 +489,7 @@ namespace Amazon.ElasticMapReduce
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAddTags.</param>
         /// 
         /// <returns>Returns a  AddTagsResult from ElasticMapReduce.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/AddTags">REST API Reference for AddTags Operation</seealso>
         public  AddTagsResponse EndAddTags(IAsyncResult asyncResult)
         {
             return EndInvoke<AddTagsResponse>(asyncResult);
@@ -441,6 +516,7 @@ namespace Amazon.ElasticMapReduce
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/CancelSteps">REST API Reference for CancelSteps Operation</seealso>
         public CancelStepsResponse CancelSteps(CancelStepsRequest request)
         {
             var marshaller = new CancelStepsRequestMarshaller();
@@ -460,6 +536,7 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCancelSteps
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/CancelSteps">REST API Reference for CancelSteps Operation</seealso>
         public IAsyncResult BeginCancelSteps(CancelStepsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CancelStepsRequestMarshaller();
@@ -476,6 +553,7 @@ namespace Amazon.ElasticMapReduce
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCancelSteps.</param>
         /// 
         /// <returns>Returns a  CancelStepsResult from ElasticMapReduce.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/CancelSteps">REST API Reference for CancelSteps Operation</seealso>
         public  CancelStepsResponse EndCancelSteps(IAsyncResult asyncResult)
         {
             return EndInvoke<CancelStepsResponse>(asyncResult);
@@ -498,6 +576,7 @@ namespace Amazon.ElasticMapReduce
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/CreateSecurityConfiguration">REST API Reference for CreateSecurityConfiguration Operation</seealso>
         public CreateSecurityConfigurationResponse CreateSecurityConfiguration(CreateSecurityConfigurationRequest request)
         {
             var marshaller = new CreateSecurityConfigurationRequestMarshaller();
@@ -517,6 +596,7 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateSecurityConfiguration
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/CreateSecurityConfiguration">REST API Reference for CreateSecurityConfiguration Operation</seealso>
         public IAsyncResult BeginCreateSecurityConfiguration(CreateSecurityConfigurationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateSecurityConfigurationRequestMarshaller();
@@ -533,6 +613,7 @@ namespace Amazon.ElasticMapReduce
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateSecurityConfiguration.</param>
         /// 
         /// <returns>Returns a  CreateSecurityConfigurationResult from ElasticMapReduce.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/CreateSecurityConfiguration">REST API Reference for CreateSecurityConfiguration Operation</seealso>
         public  CreateSecurityConfigurationResponse EndCreateSecurityConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateSecurityConfigurationResponse>(asyncResult);
@@ -554,6 +635,7 @@ namespace Amazon.ElasticMapReduce
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DeleteSecurityConfiguration">REST API Reference for DeleteSecurityConfiguration Operation</seealso>
         public DeleteSecurityConfigurationResponse DeleteSecurityConfiguration(DeleteSecurityConfigurationRequest request)
         {
             var marshaller = new DeleteSecurityConfigurationRequestMarshaller();
@@ -573,6 +655,7 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteSecurityConfiguration
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DeleteSecurityConfiguration">REST API Reference for DeleteSecurityConfiguration Operation</seealso>
         public IAsyncResult BeginDeleteSecurityConfiguration(DeleteSecurityConfigurationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteSecurityConfigurationRequestMarshaller();
@@ -589,6 +672,7 @@ namespace Amazon.ElasticMapReduce
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteSecurityConfiguration.</param>
         /// 
         /// <returns>Returns a  DeleteSecurityConfigurationResult from ElasticMapReduce.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DeleteSecurityConfiguration">REST API Reference for DeleteSecurityConfiguration Operation</seealso>
         public  DeleteSecurityConfigurationResponse EndDeleteSecurityConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteSecurityConfigurationResponse>(asyncResult);
@@ -610,6 +694,7 @@ namespace Amazon.ElasticMapReduce
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DescribeCluster">REST API Reference for DescribeCluster Operation</seealso>
         public DescribeClusterResponse DescribeCluster()
         {
             return DescribeCluster(new DescribeClusterRequest());
@@ -628,6 +713,7 @@ namespace Amazon.ElasticMapReduce
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DescribeCluster">REST API Reference for DescribeCluster Operation</seealso>
         public DescribeClusterResponse DescribeCluster(DescribeClusterRequest request)
         {
             var marshaller = new DescribeClusterRequestMarshaller();
@@ -647,6 +733,7 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeCluster
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DescribeCluster">REST API Reference for DescribeCluster Operation</seealso>
         public IAsyncResult BeginDescribeCluster(DescribeClusterRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeClusterRequestMarshaller();
@@ -663,6 +750,7 @@ namespace Amazon.ElasticMapReduce
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeCluster.</param>
         /// 
         /// <returns>Returns a  DescribeClusterResult from ElasticMapReduce.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DescribeCluster">REST API Reference for DescribeCluster Operation</seealso>
         public  DescribeClusterResponse EndDescribeCluster(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeClusterResponse>(asyncResult);
@@ -714,6 +802,7 @@ namespace Amazon.ElasticMapReduce
         /// Indicates that an error occurred while processing the request and that the request
         /// was not completed.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DescribeJobFlows">REST API Reference for DescribeJobFlows Operation</seealso>
         [Obsolete("This API is deprecated and will eventually be removed. We recommend that you use ListClusters, DescribeCluster, ListSteps, ListInstanceGroups and ListBootstrapActions instead.")]
         public DescribeJobFlowsResponse DescribeJobFlows()
         {
@@ -763,6 +852,7 @@ namespace Amazon.ElasticMapReduce
         /// Indicates that an error occurred while processing the request and that the request
         /// was not completed.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DescribeJobFlows">REST API Reference for DescribeJobFlows Operation</seealso>
         [Obsolete("This API is deprecated and will eventually be removed. We recommend that you use ListClusters, DescribeCluster, ListSteps, ListInstanceGroups and ListBootstrapActions instead.")]
         public DescribeJobFlowsResponse DescribeJobFlows(DescribeJobFlowsRequest request)
         {
@@ -783,6 +873,7 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeJobFlows
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DescribeJobFlows">REST API Reference for DescribeJobFlows Operation</seealso>
         [Obsolete("This API is deprecated and will eventually be removed. We recommend that you use ListClusters, DescribeCluster, ListSteps, ListInstanceGroups and ListBootstrapActions instead.")]
         public IAsyncResult BeginDescribeJobFlows(DescribeJobFlowsRequest request, AsyncCallback callback, object state)
         {
@@ -800,6 +891,7 @@ namespace Amazon.ElasticMapReduce
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeJobFlows.</param>
         /// 
         /// <returns>Returns a  DescribeJobFlowsResult from ElasticMapReduce.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DescribeJobFlows">REST API Reference for DescribeJobFlows Operation</seealso>
         [Obsolete("This API is deprecated and will eventually be removed. We recommend that you use ListClusters, DescribeCluster, ListSteps, ListInstanceGroups and ListBootstrapActions instead.")]
         public  DescribeJobFlowsResponse EndDescribeJobFlows(IAsyncResult asyncResult)
         {
@@ -822,6 +914,7 @@ namespace Amazon.ElasticMapReduce
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DescribeSecurityConfiguration">REST API Reference for DescribeSecurityConfiguration Operation</seealso>
         public DescribeSecurityConfigurationResponse DescribeSecurityConfiguration(DescribeSecurityConfigurationRequest request)
         {
             var marshaller = new DescribeSecurityConfigurationRequestMarshaller();
@@ -841,6 +934,7 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeSecurityConfiguration
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DescribeSecurityConfiguration">REST API Reference for DescribeSecurityConfiguration Operation</seealso>
         public IAsyncResult BeginDescribeSecurityConfiguration(DescribeSecurityConfigurationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeSecurityConfigurationRequestMarshaller();
@@ -857,6 +951,7 @@ namespace Amazon.ElasticMapReduce
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeSecurityConfiguration.</param>
         /// 
         /// <returns>Returns a  DescribeSecurityConfigurationResult from ElasticMapReduce.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DescribeSecurityConfiguration">REST API Reference for DescribeSecurityConfiguration Operation</seealso>
         public  DescribeSecurityConfigurationResponse EndDescribeSecurityConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeSecurityConfigurationResponse>(asyncResult);
@@ -877,6 +972,7 @@ namespace Amazon.ElasticMapReduce
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DescribeStep">REST API Reference for DescribeStep Operation</seealso>
         public DescribeStepResponse DescribeStep()
         {
             return DescribeStep(new DescribeStepRequest());
@@ -894,6 +990,7 @@ namespace Amazon.ElasticMapReduce
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DescribeStep">REST API Reference for DescribeStep Operation</seealso>
         public DescribeStepResponse DescribeStep(DescribeStepRequest request)
         {
             var marshaller = new DescribeStepRequestMarshaller();
@@ -913,6 +1010,7 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeStep
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DescribeStep">REST API Reference for DescribeStep Operation</seealso>
         public IAsyncResult BeginDescribeStep(DescribeStepRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeStepRequestMarshaller();
@@ -929,6 +1027,7 @@ namespace Amazon.ElasticMapReduce
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeStep.</param>
         /// 
         /// <returns>Returns a  DescribeStepResult from ElasticMapReduce.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DescribeStep">REST API Reference for DescribeStep Operation</seealso>
         public  DescribeStepResponse EndDescribeStep(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeStepResponse>(asyncResult);
@@ -949,6 +1048,7 @@ namespace Amazon.ElasticMapReduce
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListBootstrapActions">REST API Reference for ListBootstrapActions Operation</seealso>
         public ListBootstrapActionsResponse ListBootstrapActions()
         {
             return ListBootstrapActions(new ListBootstrapActionsRequest());
@@ -966,6 +1066,7 @@ namespace Amazon.ElasticMapReduce
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListBootstrapActions">REST API Reference for ListBootstrapActions Operation</seealso>
         public ListBootstrapActionsResponse ListBootstrapActions(ListBootstrapActionsRequest request)
         {
             var marshaller = new ListBootstrapActionsRequestMarshaller();
@@ -985,6 +1086,7 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListBootstrapActions
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListBootstrapActions">REST API Reference for ListBootstrapActions Operation</seealso>
         public IAsyncResult BeginListBootstrapActions(ListBootstrapActionsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListBootstrapActionsRequestMarshaller();
@@ -1001,6 +1103,7 @@ namespace Amazon.ElasticMapReduce
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListBootstrapActions.</param>
         /// 
         /// <returns>Returns a  ListBootstrapActionsResult from ElasticMapReduce.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListBootstrapActions">REST API Reference for ListBootstrapActions Operation</seealso>
         public  ListBootstrapActionsResponse EndListBootstrapActions(IAsyncResult asyncResult)
         {
             return EndInvoke<ListBootstrapActionsResponse>(asyncResult);
@@ -1025,6 +1128,7 @@ namespace Amazon.ElasticMapReduce
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListClusters">REST API Reference for ListClusters Operation</seealso>
         public ListClustersResponse ListClusters()
         {
             return ListClusters(new ListClustersRequest());
@@ -1046,6 +1150,7 @@ namespace Amazon.ElasticMapReduce
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListClusters">REST API Reference for ListClusters Operation</seealso>
         public ListClustersResponse ListClusters(ListClustersRequest request)
         {
             var marshaller = new ListClustersRequestMarshaller();
@@ -1065,6 +1170,7 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListClusters
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListClusters">REST API Reference for ListClusters Operation</seealso>
         public IAsyncResult BeginListClusters(ListClustersRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListClustersRequestMarshaller();
@@ -1081,9 +1187,76 @@ namespace Amazon.ElasticMapReduce
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListClusters.</param>
         /// 
         /// <returns>Returns a  ListClustersResult from ElasticMapReduce.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListClusters">REST API Reference for ListClusters Operation</seealso>
         public  ListClustersResponse EndListClusters(IAsyncResult asyncResult)
         {
             return EndInvoke<ListClustersResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListInstanceFleets
+
+        /// <summary>
+        /// Lists all available details about the instance fleets in a cluster.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and
+        /// later, excluding 5.0.x versions.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListInstanceFleets service method.</param>
+        /// 
+        /// <returns>The response from the ListInstanceFleets service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the EMR service.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListInstanceFleets">REST API Reference for ListInstanceFleets Operation</seealso>
+        public ListInstanceFleetsResponse ListInstanceFleets(ListInstanceFleetsRequest request)
+        {
+            var marshaller = new ListInstanceFleetsRequestMarshaller();
+            var unmarshaller = ListInstanceFleetsResponseUnmarshaller.Instance;
+
+            return Invoke<ListInstanceFleetsRequest,ListInstanceFleetsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListInstanceFleets operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListInstanceFleets operation on AmazonElasticMapReduceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListInstanceFleets
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListInstanceFleets">REST API Reference for ListInstanceFleets Operation</seealso>
+        public IAsyncResult BeginListInstanceFleets(ListInstanceFleetsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new ListInstanceFleetsRequestMarshaller();
+            var unmarshaller = ListInstanceFleetsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListInstanceFleetsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListInstanceFleets operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListInstanceFleets.</param>
+        /// 
+        /// <returns>Returns a  ListInstanceFleetsResult from ElasticMapReduce.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListInstanceFleets">REST API Reference for ListInstanceFleets Operation</seealso>
+        public  ListInstanceFleetsResponse EndListInstanceFleets(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListInstanceFleetsResponse>(asyncResult);
         }
 
         #endregion
@@ -1101,6 +1274,7 @@ namespace Amazon.ElasticMapReduce
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListInstanceGroups">REST API Reference for ListInstanceGroups Operation</seealso>
         public ListInstanceGroupsResponse ListInstanceGroups()
         {
             return ListInstanceGroups(new ListInstanceGroupsRequest());
@@ -1118,6 +1292,7 @@ namespace Amazon.ElasticMapReduce
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListInstanceGroups">REST API Reference for ListInstanceGroups Operation</seealso>
         public ListInstanceGroupsResponse ListInstanceGroups(ListInstanceGroupsRequest request)
         {
             var marshaller = new ListInstanceGroupsRequestMarshaller();
@@ -1137,6 +1312,7 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListInstanceGroups
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListInstanceGroups">REST API Reference for ListInstanceGroups Operation</seealso>
         public IAsyncResult BeginListInstanceGroups(ListInstanceGroupsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListInstanceGroupsRequestMarshaller();
@@ -1153,6 +1329,7 @@ namespace Amazon.ElasticMapReduce
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListInstanceGroups.</param>
         /// 
         /// <returns>Returns a  ListInstanceGroupsResult from ElasticMapReduce.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListInstanceGroups">REST API Reference for ListInstanceGroups Operation</seealso>
         public  ListInstanceGroupsResponse EndListInstanceGroups(IAsyncResult asyncResult)
         {
             return EndInvoke<ListInstanceGroupsResponse>(asyncResult);
@@ -1176,6 +1353,7 @@ namespace Amazon.ElasticMapReduce
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListInstances">REST API Reference for ListInstances Operation</seealso>
         public ListInstancesResponse ListInstances()
         {
             return ListInstances(new ListInstancesRequest());
@@ -1196,6 +1374,7 @@ namespace Amazon.ElasticMapReduce
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListInstances">REST API Reference for ListInstances Operation</seealso>
         public ListInstancesResponse ListInstances(ListInstancesRequest request)
         {
             var marshaller = new ListInstancesRequestMarshaller();
@@ -1215,6 +1394,7 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListInstances
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListInstances">REST API Reference for ListInstances Operation</seealso>
         public IAsyncResult BeginListInstances(ListInstancesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListInstancesRequestMarshaller();
@@ -1231,6 +1411,7 @@ namespace Amazon.ElasticMapReduce
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListInstances.</param>
         /// 
         /// <returns>Returns a  ListInstancesResult from ElasticMapReduce.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListInstances">REST API Reference for ListInstances Operation</seealso>
         public  ListInstancesResponse EndListInstances(IAsyncResult asyncResult)
         {
             return EndInvoke<ListInstancesResponse>(asyncResult);
@@ -1255,6 +1436,7 @@ namespace Amazon.ElasticMapReduce
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListSecurityConfigurations">REST API Reference for ListSecurityConfigurations Operation</seealso>
         public ListSecurityConfigurationsResponse ListSecurityConfigurations(ListSecurityConfigurationsRequest request)
         {
             var marshaller = new ListSecurityConfigurationsRequestMarshaller();
@@ -1274,6 +1456,7 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListSecurityConfigurations
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListSecurityConfigurations">REST API Reference for ListSecurityConfigurations Operation</seealso>
         public IAsyncResult BeginListSecurityConfigurations(ListSecurityConfigurationsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListSecurityConfigurationsRequestMarshaller();
@@ -1290,6 +1473,7 @@ namespace Amazon.ElasticMapReduce
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListSecurityConfigurations.</param>
         /// 
         /// <returns>Returns a  ListSecurityConfigurationsResult from ElasticMapReduce.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListSecurityConfigurations">REST API Reference for ListSecurityConfigurations Operation</seealso>
         public  ListSecurityConfigurationsResponse EndListSecurityConfigurations(IAsyncResult asyncResult)
         {
             return EndInvoke<ListSecurityConfigurationsResponse>(asyncResult);
@@ -1311,6 +1495,7 @@ namespace Amazon.ElasticMapReduce
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListSteps">REST API Reference for ListSteps Operation</seealso>
         public ListStepsResponse ListSteps()
         {
             return ListSteps(new ListStepsRequest());
@@ -1329,6 +1514,7 @@ namespace Amazon.ElasticMapReduce
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListSteps">REST API Reference for ListSteps Operation</seealso>
         public ListStepsResponse ListSteps(ListStepsRequest request)
         {
             var marshaller = new ListStepsRequestMarshaller();
@@ -1348,6 +1534,7 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListSteps
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListSteps">REST API Reference for ListSteps Operation</seealso>
         public IAsyncResult BeginListSteps(ListStepsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListStepsRequestMarshaller();
@@ -1364,9 +1551,78 @@ namespace Amazon.ElasticMapReduce
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListSteps.</param>
         /// 
         /// <returns>Returns a  ListStepsResult from ElasticMapReduce.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListSteps">REST API Reference for ListSteps Operation</seealso>
         public  ListStepsResponse EndListSteps(IAsyncResult asyncResult)
         {
             return EndInvoke<ListStepsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ModifyInstanceFleet
+
+        /// <summary>
+        /// Modifies the target On-Demand and target Spot capacities for the instance fleet with
+        /// the specified InstanceFleetID within the cluster specified using ClusterID. The call
+        /// either succeeds or fails atomically.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and
+        /// later, excluding 5.0.x versions.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyInstanceFleet service method.</param>
+        /// 
+        /// <returns>The response from the ModifyInstanceFleet service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the EMR service.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ModifyInstanceFleet">REST API Reference for ModifyInstanceFleet Operation</seealso>
+        public ModifyInstanceFleetResponse ModifyInstanceFleet(ModifyInstanceFleetRequest request)
+        {
+            var marshaller = new ModifyInstanceFleetRequestMarshaller();
+            var unmarshaller = ModifyInstanceFleetResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyInstanceFleetRequest,ModifyInstanceFleetResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyInstanceFleet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyInstanceFleet operation on AmazonElasticMapReduceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyInstanceFleet
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ModifyInstanceFleet">REST API Reference for ModifyInstanceFleet Operation</seealso>
+        public IAsyncResult BeginModifyInstanceFleet(ModifyInstanceFleetRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new ModifyInstanceFleetRequestMarshaller();
+            var unmarshaller = ModifyInstanceFleetResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ModifyInstanceFleetRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyInstanceFleet operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyInstanceFleet.</param>
+        /// 
+        /// <returns>Returns a  ModifyInstanceFleetResult from ElasticMapReduce.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ModifyInstanceFleet">REST API Reference for ModifyInstanceFleet Operation</seealso>
+        public  ModifyInstanceFleetResponse EndModifyInstanceFleet(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ModifyInstanceFleetResponse>(asyncResult);
         }
 
         #endregion
@@ -1385,6 +1641,7 @@ namespace Amazon.ElasticMapReduce
         /// Indicates that an error occurred while processing the request and that the request
         /// was not completed.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ModifyInstanceGroups">REST API Reference for ModifyInstanceGroups Operation</seealso>
         public ModifyInstanceGroupsResponse ModifyInstanceGroups(ModifyInstanceGroupsRequest request)
         {
             var marshaller = new ModifyInstanceGroupsRequestMarshaller();
@@ -1404,6 +1661,7 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyInstanceGroups
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ModifyInstanceGroups">REST API Reference for ModifyInstanceGroups Operation</seealso>
         public IAsyncResult BeginModifyInstanceGroups(ModifyInstanceGroupsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ModifyInstanceGroupsRequestMarshaller();
@@ -1420,6 +1678,7 @@ namespace Amazon.ElasticMapReduce
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyInstanceGroups.</param>
         /// 
         /// <returns>Returns a  ModifyInstanceGroupsResult from ElasticMapReduce.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ModifyInstanceGroups">REST API Reference for ModifyInstanceGroups Operation</seealso>
         public  ModifyInstanceGroupsResponse EndModifyInstanceGroups(IAsyncResult asyncResult)
         {
             return EndInvoke<ModifyInstanceGroupsResponse>(asyncResult);
@@ -1438,6 +1697,7 @@ namespace Amazon.ElasticMapReduce
         /// <param name="request">Container for the necessary parameters to execute the PutAutoScalingPolicy service method.</param>
         /// 
         /// <returns>The response from the PutAutoScalingPolicy service method, as returned by ElasticMapReduce.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/PutAutoScalingPolicy">REST API Reference for PutAutoScalingPolicy Operation</seealso>
         public PutAutoScalingPolicyResponse PutAutoScalingPolicy(PutAutoScalingPolicyRequest request)
         {
             var marshaller = new PutAutoScalingPolicyRequestMarshaller();
@@ -1457,6 +1717,7 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutAutoScalingPolicy
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/PutAutoScalingPolicy">REST API Reference for PutAutoScalingPolicy Operation</seealso>
         public IAsyncResult BeginPutAutoScalingPolicy(PutAutoScalingPolicyRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new PutAutoScalingPolicyRequestMarshaller();
@@ -1473,6 +1734,7 @@ namespace Amazon.ElasticMapReduce
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutAutoScalingPolicy.</param>
         /// 
         /// <returns>Returns a  PutAutoScalingPolicyResult from ElasticMapReduce.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/PutAutoScalingPolicy">REST API Reference for PutAutoScalingPolicy Operation</seealso>
         public  PutAutoScalingPolicyResponse EndPutAutoScalingPolicy(IAsyncResult asyncResult)
         {
             return EndInvoke<PutAutoScalingPolicyResponse>(asyncResult);
@@ -1489,6 +1751,7 @@ namespace Amazon.ElasticMapReduce
         /// <param name="request">Container for the necessary parameters to execute the RemoveAutoScalingPolicy service method.</param>
         /// 
         /// <returns>The response from the RemoveAutoScalingPolicy service method, as returned by ElasticMapReduce.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/RemoveAutoScalingPolicy">REST API Reference for RemoveAutoScalingPolicy Operation</seealso>
         public RemoveAutoScalingPolicyResponse RemoveAutoScalingPolicy(RemoveAutoScalingPolicyRequest request)
         {
             var marshaller = new RemoveAutoScalingPolicyRequestMarshaller();
@@ -1508,6 +1771,7 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRemoveAutoScalingPolicy
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/RemoveAutoScalingPolicy">REST API Reference for RemoveAutoScalingPolicy Operation</seealso>
         public IAsyncResult BeginRemoveAutoScalingPolicy(RemoveAutoScalingPolicyRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RemoveAutoScalingPolicyRequestMarshaller();
@@ -1524,6 +1788,7 @@ namespace Amazon.ElasticMapReduce
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRemoveAutoScalingPolicy.</param>
         /// 
         /// <returns>Returns a  RemoveAutoScalingPolicyResult from ElasticMapReduce.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/RemoveAutoScalingPolicy">REST API Reference for RemoveAutoScalingPolicy Operation</seealso>
         public  RemoveAutoScalingPolicyResponse EndRemoveAutoScalingPolicy(IAsyncResult asyncResult)
         {
             return EndInvoke<RemoveAutoScalingPolicyResponse>(asyncResult);
@@ -1553,6 +1818,7 @@ namespace Amazon.ElasticMapReduce
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/RemoveTags">REST API Reference for RemoveTags Operation</seealso>
         public RemoveTagsResponse RemoveTags(RemoveTagsRequest request)
         {
             var marshaller = new RemoveTagsRequestMarshaller();
@@ -1572,6 +1838,7 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRemoveTags
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/RemoveTags">REST API Reference for RemoveTags Operation</seealso>
         public IAsyncResult BeginRemoveTags(RemoveTagsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RemoveTagsRequestMarshaller();
@@ -1588,6 +1855,7 @@ namespace Amazon.ElasticMapReduce
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRemoveTags.</param>
         /// 
         /// <returns>Returns a  RemoveTagsResult from ElasticMapReduce.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/RemoveTags">REST API Reference for RemoveTags Operation</seealso>
         public  RemoveTagsResponse EndRemoveTags(IAsyncResult asyncResult)
         {
             return EndInvoke<RemoveTagsResponse>(asyncResult);
@@ -1598,17 +1866,17 @@ namespace Amazon.ElasticMapReduce
         #region  RunJobFlow
 
         /// <summary>
-        /// RunJobFlow creates and starts running a new job flow. The job flow will run the steps
-        /// specified. After the job flow completes, the cluster is stopped and the HDFS partition
+        /// RunJobFlow creates and starts running a new cluster (job flow). The cluster runs the
+        /// steps specified. After the steps complete, the cluster stops and the HDFS partition
         /// is lost. To prevent loss of data, configure the last step of the job flow to store
         /// results in Amazon S3. If the <a>JobFlowInstancesConfig</a> <code>KeepJobFlowAliveWhenNoSteps</code>
-        /// parameter is set to <code>TRUE</code>, the job flow will transition to the WAITING
-        /// state rather than shutting down after the steps have completed. 
+        /// parameter is set to <code>TRUE</code>, the cluster transitions to the WAITING state
+        /// rather than shutting down after the steps have completed. 
         /// 
         ///  
         /// <para>
         /// For additional protection, you can set the <a>JobFlowInstancesConfig</a> <code>TerminationProtected</code>
-        /// parameter to <code>TRUE</code> to lock the job flow and prevent it from being terminated
+        /// parameter to <code>TRUE</code> to lock the cluster and prevent it from being terminated
         /// by API call, user intervention, or in the event of a job flow error.
         /// </para>
         ///  
@@ -1617,17 +1885,24 @@ namespace Amazon.ElasticMapReduce
         /// </para>
         ///  
         /// <para>
-        /// If your job flow is long-running (such as a Hive data warehouse) or complex, you may
+        /// If your cluster is long-running (such as a Hive data warehouse) or complex, you may
         /// require more than 256 steps to process your data. You can bypass the 256-step limitation
         /// in various ways, including using the SSH shell to connect to the master node and submitting
         /// queries directly to the software running on the master node, such as Hive and Hadoop.
         /// For more information on how to do this, see <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/Management/Guide/AddMoreThan256Steps.html">Add
-        /// More than 256 Steps to a Job Flow</a> in the <i>Amazon EMR Management Guide</i>.
+        /// More than 256 Steps to a Cluster</a> in the <i>Amazon EMR Management Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// For long running job flows, we recommend that you periodically store your results.
+        /// For long running clusters, we recommend that you periodically store your results.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The instance fleets configuration is available only in Amazon EMR versions 4.8.0 and
+        /// later, excluding 5.0.x versions. The RunJobFlow request can contain InstanceFleets
+        /// parameters or InstanceGroups parameters, but not both.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RunJobFlow service method.</param>
         /// 
@@ -1636,6 +1911,7 @@ namespace Amazon.ElasticMapReduce
         /// Indicates that an error occurred while processing the request and that the request
         /// was not completed.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/RunJobFlow">REST API Reference for RunJobFlow Operation</seealso>
         public RunJobFlowResponse RunJobFlow(RunJobFlowRequest request)
         {
             var marshaller = new RunJobFlowRequestMarshaller();
@@ -1655,6 +1931,7 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRunJobFlow
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/RunJobFlow">REST API Reference for RunJobFlow Operation</seealso>
         public IAsyncResult BeginRunJobFlow(RunJobFlowRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RunJobFlowRequestMarshaller();
@@ -1671,6 +1948,7 @@ namespace Amazon.ElasticMapReduce
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRunJobFlow.</param>
         /// 
         /// <returns>Returns a  RunJobFlowResult from ElasticMapReduce.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/RunJobFlow">REST API Reference for RunJobFlow Operation</seealso>
         public  RunJobFlowResponse EndRunJobFlow(IAsyncResult asyncResult)
         {
             return EndInvoke<RunJobFlowResponse>(asyncResult);
@@ -1681,28 +1959,28 @@ namespace Amazon.ElasticMapReduce
         #region  SetTerminationProtection
 
         /// <summary>
-        /// SetTerminationProtection locks a job flow so the EC2 instances in the cluster cannot
-        /// be terminated by user intervention, an API call, or in the event of a job-flow error.
-        /// The cluster still terminates upon successful completion of the job flow. Calling SetTerminationProtection
-        /// on a job flow is analogous to calling the Amazon EC2 DisableAPITermination API on
-        /// all of the EC2 instances in a cluster.
+        /// SetTerminationProtection locks a cluster (job flow) so the EC2 instances in the cluster
+        /// cannot be terminated by user intervention, an API call, or in the event of a job-flow
+        /// error. The cluster still terminates upon successful completion of the job flow. Calling
+        /// <code>SetTerminationProtection</code> on a cluster is similar to calling the Amazon
+        /// EC2 <code>DisableAPITermination</code> API on all EC2 instances in a cluster.
         /// 
         ///  
         /// <para>
-        /// SetTerminationProtection is used to prevent accidental termination of a job flow and
-        /// to ensure that in the event of an error, the instances will persist so you can recover
-        /// any data stored in their ephemeral instance storage.
+        ///  <code>SetTerminationProtection</code> is used to prevent accidental termination of
+        /// a cluster and to ensure that in the event of an error, the instances persist so that
+        /// you can recover any data stored in their ephemeral instance storage.
         /// </para>
         ///  
         /// <para>
-        ///  To terminate a job flow that has been locked by setting SetTerminationProtection
-        /// to <code>true</code>, you must first unlock the job flow by a subsequent call to SetTerminationProtection
+        ///  To terminate a cluster that has been locked by setting <code>SetTerminationProtection</code>
+        /// to <code>true</code>, you must first unlock the job flow by a subsequent call to <code>SetTerminationProtection</code>
         /// in which you set the value to <code>false</code>. 
         /// </para>
         ///  
         /// <para>
-        ///  For more information, see<a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/UsingEMR_TerminationProtection.html">Protecting
-        /// a Job Flow from Termination</a> in the <i>Amazon EMR Guide.</i> 
+        ///  For more information, see<a href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/UsingEMR_TerminationProtection.html">Managing
+        /// Cluster Termination</a> in the <i>Amazon EMR Management Guide</i>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetTerminationProtection service method.</param>
@@ -1712,6 +1990,7 @@ namespace Amazon.ElasticMapReduce
         /// Indicates that an error occurred while processing the request and that the request
         /// was not completed.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/SetTerminationProtection">REST API Reference for SetTerminationProtection Operation</seealso>
         public SetTerminationProtectionResponse SetTerminationProtection(SetTerminationProtectionRequest request)
         {
             var marshaller = new SetTerminationProtectionRequestMarshaller();
@@ -1731,6 +2010,7 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSetTerminationProtection
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/SetTerminationProtection">REST API Reference for SetTerminationProtection Operation</seealso>
         public IAsyncResult BeginSetTerminationProtection(SetTerminationProtectionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new SetTerminationProtectionRequestMarshaller();
@@ -1747,6 +2027,7 @@ namespace Amazon.ElasticMapReduce
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetTerminationProtection.</param>
         /// 
         /// <returns>Returns a  SetTerminationProtectionResult from ElasticMapReduce.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/SetTerminationProtection">REST API Reference for SetTerminationProtection Operation</seealso>
         public  SetTerminationProtectionResponse EndSetTerminationProtection(IAsyncResult asyncResult)
         {
             return EndInvoke<SetTerminationProtectionResponse>(asyncResult);
@@ -1758,10 +2039,10 @@ namespace Amazon.ElasticMapReduce
 
         /// <summary>
         /// Sets whether all AWS Identity and Access Management (IAM) users under your account
-        /// can access the specified job flows. This action works on running job flows. You can
-        /// also set the visibility of a job flow when you launch it using the <code>VisibleToAllUsers</code>
+        /// can access the specified clusters (job flows). This action works on running clusters.
+        /// You can also set the visibility of a cluster when you launch it using the <code>VisibleToAllUsers</code>
         /// parameter of <a>RunJobFlow</a>. The SetVisibleToAllUsers action can be called only
-        /// by an IAM user who created the job flow or the AWS account that owns the job flow.
+        /// by an IAM user who created the cluster or the AWS account that owns the cluster.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetVisibleToAllUsers service method.</param>
         /// 
@@ -1770,6 +2051,7 @@ namespace Amazon.ElasticMapReduce
         /// Indicates that an error occurred while processing the request and that the request
         /// was not completed.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/SetVisibleToAllUsers">REST API Reference for SetVisibleToAllUsers Operation</seealso>
         public SetVisibleToAllUsersResponse SetVisibleToAllUsers(SetVisibleToAllUsersRequest request)
         {
             var marshaller = new SetVisibleToAllUsersRequestMarshaller();
@@ -1789,6 +2071,7 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSetVisibleToAllUsers
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/SetVisibleToAllUsers">REST API Reference for SetVisibleToAllUsers Operation</seealso>
         public IAsyncResult BeginSetVisibleToAllUsers(SetVisibleToAllUsersRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new SetVisibleToAllUsersRequestMarshaller();
@@ -1805,6 +2088,7 @@ namespace Amazon.ElasticMapReduce
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetVisibleToAllUsers.</param>
         /// 
         /// <returns>Returns a  SetVisibleToAllUsersResult from ElasticMapReduce.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/SetVisibleToAllUsers">REST API Reference for SetVisibleToAllUsers Operation</seealso>
         public  SetVisibleToAllUsersResponse EndSetVisibleToAllUsers(IAsyncResult asyncResult)
         {
             return EndInvoke<SetVisibleToAllUsersResponse>(asyncResult);
@@ -1815,17 +2099,17 @@ namespace Amazon.ElasticMapReduce
         #region  TerminateJobFlows
 
         /// <summary>
-        /// TerminateJobFlows shuts a list of job flows down. When a job flow is shut down, any
-        /// step not yet completed is canceled and the EC2 instances on which the job flow is
-        /// running are stopped. Any log files not already saved are uploaded to Amazon S3 if
-        /// a LogUri was specified when the job flow was created.
+        /// TerminateJobFlows shuts a list of clusters (job flows) down. When a job flow is shut
+        /// down, any step not yet completed is canceled and the EC2 instances on which the cluster
+        /// is running are stopped. Any log files not already saved are uploaded to Amazon S3
+        /// if a LogUri was specified when the cluster was created.
         /// 
         ///  
         /// <para>
-        /// The maximum number of JobFlows allowed is 10. The call to TerminateJobFlows is asynchronous.
-        /// Depending on the configuration of the job flow, it may take up to 1-5 minutes for
-        /// the job flow to completely terminate and release allocated resources, such as Amazon
-        /// EC2 instances.
+        /// The maximum number of clusters allowed is 10. The call to <code>TerminateJobFlows</code>
+        /// is asynchronous. Depending on the configuration of the cluster, it may take up to
+        /// 1-5 minutes for the cluster to completely terminate and release allocated resources,
+        /// such as Amazon EC2 instances.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TerminateJobFlows service method.</param>
@@ -1835,6 +2119,7 @@ namespace Amazon.ElasticMapReduce
         /// Indicates that an error occurred while processing the request and that the request
         /// was not completed.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/TerminateJobFlows">REST API Reference for TerminateJobFlows Operation</seealso>
         public TerminateJobFlowsResponse TerminateJobFlows(TerminateJobFlowsRequest request)
         {
             var marshaller = new TerminateJobFlowsRequestMarshaller();
@@ -1854,6 +2139,7 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTerminateJobFlows
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/TerminateJobFlows">REST API Reference for TerminateJobFlows Operation</seealso>
         public IAsyncResult BeginTerminateJobFlows(TerminateJobFlowsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new TerminateJobFlowsRequestMarshaller();
@@ -1870,6 +2156,7 @@ namespace Amazon.ElasticMapReduce
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTerminateJobFlows.</param>
         /// 
         /// <returns>Returns a  TerminateJobFlowsResult from ElasticMapReduce.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/TerminateJobFlows">REST API Reference for TerminateJobFlows Operation</seealso>
         public  TerminateJobFlowsResponse EndTerminateJobFlows(IAsyncResult asyncResult)
         {
             return EndInvoke<TerminateJobFlowsResponse>(asyncResult);
