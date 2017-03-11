@@ -1,3 +1,7 @@
+### 3.3.62.0 (2017-03-10 22:50 UTC)
+* ElasticMapReduce (3.3.3.0)
+	* This release includes support for instance fleets.
+
 ### 3.3.61.0 (2017-03-09 22:22 UTC)
 * APIGateway (3.3.5.0)
 	* API Gateway has added support for ACM certificates on custom domain names. Both Amazon-issued certificates and uploaded third-part certificates are supported.
