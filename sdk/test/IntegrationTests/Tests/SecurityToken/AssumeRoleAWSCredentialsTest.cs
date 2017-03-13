@@ -39,7 +39,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         private static readonly string TestMfaSerialNumber = Guid.NewGuid().ToString();
 
         [TestMethod]
-        [TestCategory("SecurityTokenService")]
+        [TestCategory("SecurityToken")]
         [TestCategory("IdentityManagement")]
         public void MfaProfileTokenCodeCallback()
         {
@@ -59,7 +59,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         }
 
         [TestMethod]
-        [TestCategory("SecurityTokenService")]
+        [TestCategory("SecurityToken")]
         [TestCategory("IdentityManagement")]
         public void MfaProfileNoTokenCodeCallback()
         {
@@ -73,7 +73,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         }
 
         [TestMethod]
-        [TestCategory("SecurityTokenService")]
+        [TestCategory("SecurityToken")]
         [TestCategory("IdentityManagement")]
         public void NoExternalIdButExpected()
         {
@@ -87,7 +87,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         }
 
         [TestMethod]
-        [TestCategory("SecurityTokenService")]
+        [TestCategory("SecurityToken")]
         [TestCategory("IdentityManagement")]
         public void ExternalIdProvidedButNotExpected()
         {
@@ -101,7 +101,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         }
 
         [TestMethod]
-        [TestCategory("SecurityTokenService")]
+        [TestCategory("SecurityToken")]
         [TestCategory("IdentityManagement")]
         public void ExternalId()
         {
@@ -109,7 +109,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         }
 
         [TestMethod]
-        [TestCategory("SecurityTokenService")]
+        [TestCategory("SecurityToken")]
         [TestCategory("IdentityManagement")]
         public void NoExternalId()
         {
