@@ -46,13 +46,30 @@ namespace Amazon.Runtime.Internal.Auth
         public const string StreamingBodySha256 = "STREAMING-AWS4-HMAC-SHA256-PAYLOAD";
         public const string AWSChunkedEncoding = "aws-chunked";
 
+        public const string UnsignedPayload = "UNSIGNED-PAYLOAD";
+
         static readonly Regex CompressWhitespaceRegex = new Regex("\\s+");
         const SigningAlgorithm SignerAlgorithm = SigningAlgorithm.HmacSHA256;
-
 
         private static IEnumerable<string> _headersToIgnoreWhenSigning = new HashSet<string>{
             HeaderKeys.XAmznTraceIdHeader
         };
+
+        public AWS4Signer()
+            : this(true)
+        {
+        }
+
+        public AWS4Signer(bool signPayload)
+        {
+            SignPayload = signPayload;
+        }
+
+        public bool SignPayload
+        {
+            get;
+            private set;
+        }
 
         public override ClientProtocol Protocol
         {
@@ -138,7 +155,7 @@ namespace Amazon.Runtime.Internal.Auth
 
             var parametersToCanonicalize = GetParametersToCanonicalize(request);
             var canonicalParameters = CanonicalizeQueryParameters(parametersToCanonicalize);
-            var bodyHash = SetRequestBodyHash(request);
+            var bodyHash = SetRequestBodyHash(request, SignPayload);
             var sortedHeaders = SortAndPruneHeaders(request.Headers);
             
             var canonicalRequest = CanonicalizeRequest(request.Endpoint,
@@ -214,6 +231,7 @@ namespace Amazon.Runtime.Internal.Auth
             }
         }
 
+
         /// <summary>
         /// Computes and returns an AWS4 signature for the specified canonicalized request
         /// </summary>
@@ -239,7 +257,6 @@ namespace Amazon.Runtime.Internal.Auth
                                     signedHeaders,
                                     canonicalRequest);
         }
-
 
         /// <summary>
         /// Computes and returns an AWS4 signature for the specified canonicalized request
@@ -364,11 +381,37 @@ namespace Amazon.Runtime.Internal.Auth
         /// </returns>
         public static string SetRequestBodyHash(IRequest request)
         {
+            return SetRequestBodyHash(request, true);
+        }
+
+        /// <summary>
+        /// If signPayload is false set the x-amz-content-sha256 header to
+        /// the UNSIGNED-PAYLOAD magic string and return it.
+        /// Otherwise, if the caller has already set the x-amz-content-sha256 header with a pre-computed
+        /// content hash, or it is present as ContentStreamHash on the request instance, return
+        /// the value to be used in request canonicalization.
+        /// If not set as a header or in the request, attempt to compute a hash based on
+        /// inspection of the style of the request content.
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="signPayload"></param>
+        /// <returns>
+        /// The computed hash, whether already set in headers or computed here. Null
+        /// if we were not able to compute a hash.
+        /// </returns>
+        public static string SetRequestBodyHash(IRequest request, bool signPayload)
+        {
+            // if unsigned payload, set the magic string in the header and return it
+            if (!signPayload)
+                return SetPayloadSignatureHeader(request, UnsignedPayload);
+
+            // if the body hash has been precomputed and already placed in the header, just extract and return it
             string computedContentHash = null;
             var shaHeaderPresent = request.Headers.TryGetValue(HeaderKeys.XAmzContentSha256Header, out computedContentHash);
             if (shaHeaderPresent && !request.UseChunkEncoding)
                 return computedContentHash;
 
+            // otherwise continue to calculate the hash and set it in the headers before returning
             if (request.UseChunkEncoding)
             {
                 computedContentHash = StreamingBodySha256;
@@ -406,15 +449,8 @@ namespace Amazon.Runtime.Internal.Auth
                 }
             }
 
-            if (computedContentHash != null)
-            {
-                if (shaHeaderPresent)
-                    request.Headers[HeaderKeys.XAmzContentSha256Header] = computedContentHash;
-                else
-                    request.Headers.Add(HeaderKeys.XAmzContentSha256Header, computedContentHash);
-            }
-
-            return computedContentHash;
+            // set the header if needed and return it
+            return (computedContentHash != null) ? SetPayloadSignatureHeader(request, computedContentHash) : null;
         }
 
         /// <summary>
@@ -486,6 +522,15 @@ namespace Amazon.Runtime.Internal.Auth
         #endregion
 
         #region Private Signing Helpers
+        static string SetPayloadSignatureHeader(IRequest request, string payloadHash)
+        {
+            if (request.Headers.ContainsKey(HeaderKeys.XAmzContentSha256Header))
+                request.Headers[HeaderKeys.XAmzContentSha256Header] = payloadHash;
+            else
+                request.Headers.Add(HeaderKeys.XAmzContentSha256Header, payloadHash);
+
+            return payloadHash;
+        }
 
         public static string DetermineSigningRegion(IClientConfig clientConfig, 
                                                     string serviceName, 
@@ -846,8 +891,6 @@ namespace Amazon.Runtime.Internal.Auth
         internal const string XAmzCredential = "X-Amz-Credential";
         internal const string XAmzExpires = "X-Amz-Expires";
 
-        public const string UnsignedPayload = "UNSIGNED-PAYLOAD";
-
         /// <summary>
         /// Calculates and signs the specified request using the AWS4 signing protocol by using the
         /// AWS account credentials given in the method parameters. The resulting signature is added
@@ -956,6 +999,10 @@ namespace Amazon.Runtime.Internal.Auth
         /// entry to the signer. Parameters passed in the request.Parameters collection should
         /// be not be encoded; encoding will be done for these parameters as part of the 
         /// construction of the canonical request.
+        ///
+        /// The X-Amz-Content-SHA256 is cleared out of the request.
+        /// If the request is for S3 then the UNSIGNED_PAYLOAD value is used to generate the canonical request.
+        /// If the request isn't for S3 then the empty body SHA is used to generate the canonical request.
         /// </remarks>
         public static AWS4SigningResult SignRequest(IRequest request,
                                                  IClientConfig clientConfig,

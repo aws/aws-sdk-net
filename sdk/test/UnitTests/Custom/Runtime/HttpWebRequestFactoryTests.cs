@@ -15,6 +15,7 @@ using Amazon.S3;
 using Amazon.S3.Model;
 using Amazon.S3.Model.Internal.MarshallTransformations;
 using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Auth;
 
 namespace AWSSDK.UnitTests
 {
@@ -42,7 +43,7 @@ namespace AWSSDK.UnitTests
                 
             };
             var proxyCreds = new System.Net.NetworkCredential("UserName","Password");
-            var requestContext = new RequestContext(true)
+            var requestContext = new RequestContext(true, new NullSigner())
             {
                 ClientConfig = new AmazonS3Config
                 {                    
@@ -130,7 +131,7 @@ namespace AWSSDK.UnitTests
                 Key = "TestKey",
                 ContentBody = "Test_Content",
             };
-            var requestContext = new RequestContext(true)
+            var requestContext = new RequestContext(true, new NullSigner())
             {
                 ClientConfig = new AmazonS3Config
                 {

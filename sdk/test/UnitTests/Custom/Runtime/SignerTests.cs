@@ -29,9 +29,8 @@ namespace AWSSDK.UnitTests
             pipeline.AddHandler(new Signer());
             pipeline.AddHandler(new CredentialsRetriever(new AnonymousAWSCredentials()));
 
-            var context = CreateTestContext();
             var signer = new MockSigner();
-            ((RequestContext)context.RequestContext).Signer = signer;
+            var context = CreateTestContext(signer);
             pipeline.InvokeSync(context);
 
             Assert.IsTrue(context.RequestContext.IsSigned);
@@ -46,9 +45,8 @@ namespace AWSSDK.UnitTests
             pipeline.AddHandler(new Signer());
             pipeline.AddHandler(new CredentialsRetriever(new BasicAWSCredentials("accessKey", "secretKey")));
 
-            var context = CreateTestContext();
             var signer = new MockSigner();
-            ((RequestContext)context.RequestContext).Signer = signer;
+            var context = CreateTestContext(signer);
             pipeline.InvokeSync(context);
 
             Assert.IsTrue(context.RequestContext.IsSigned);
@@ -63,9 +61,8 @@ namespace AWSSDK.UnitTests
             pipeline.AddHandler(new Signer());
             pipeline.AddHandler(new CredentialsRetriever(new BasicAWSCredentials("accessKey", "secretKey")));
 
-            var context = CreateTestContext();
             var signer = new AWS4Signer();
-            ((RequestContext)context.RequestContext).Signer = signer;
+            var context = CreateTestContext(signer);
 
             // inject a mutable header that the signer should strip out
             context.RequestContext.Request.Headers[HeaderKeys.XAmznTraceIdHeader] = "stuff";
@@ -128,9 +125,8 @@ namespace AWSSDK.UnitTests
             pipeline.AddHandler(new Signer());
             pipeline.AddHandler(new CredentialsRetriever(new BasicAWSCredentials("accessKey", "secretKey")));
 
-            var context = CreateTestContext();
             var signer = new MockSigner();
-            ((RequestContext)context.RequestContext).Signer = signer;
+            var context = CreateTestContext(signer);
             await pipeline.InvokeAsync<AmazonWebServiceResponse>(context);
 
             Assert.IsTrue(context.RequestContext.IsSigned);
@@ -146,9 +142,8 @@ namespace AWSSDK.UnitTests
             pipeline.AddHandler(new Signer());
             pipeline.AddHandler(new CredentialsRetriever(new BasicAWSCredentials("accessKey", "secretKey")));
 
-            var context = CreateAsyncTestContext();
             var signer = new MockSigner();
-            ((RequestContext)context.RequestContext).Signer = signer;
+            var context = CreateAsyncTestContext(signer);
             var asyncResult = pipeline.InvokeAsync(context);
             asyncResult.AsyncWaitHandle.WaitOne();
 

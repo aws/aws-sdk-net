@@ -202,6 +202,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ServiceInterfaceUnity.tt</DependentUpon>
     </Compile>
+    <Compile Include="OperationAuthTypeParser.cs" />
     <Compile Include="ProjectFileConfiguration.cs" />
     <Compile Include="ProjectFileCreator.cs" />
     <Compile Include="ServiceConfiguration.cs" />

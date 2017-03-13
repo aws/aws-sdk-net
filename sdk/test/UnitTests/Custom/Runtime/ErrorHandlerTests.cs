@@ -16,6 +16,7 @@ using Amazon.S3.Model;
 using Amazon.S3.Model.Internal.MarshallTransformations;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Auth;
 
 namespace AWSSDK.UnitTests
 {
@@ -184,7 +185,7 @@ namespace AWSSDK.UnitTests
                 BucketName = "TestBucket",
                 EtagToNotMatch = "54b0c58c7ce9f2a8b551351102ee0938"
             };
-            var requestContext = new RequestContext(true)
+            var requestContext = new RequestContext(true, new NullSigner())
             {
                 OriginalRequest = getObjectRequest,
                 Request = new GetObjectRequestMarshaller().Marshall(getObjectRequest),

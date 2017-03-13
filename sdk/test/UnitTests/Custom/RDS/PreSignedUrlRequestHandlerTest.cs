@@ -9,6 +9,7 @@ using Amazon.Runtime.Internal;
 using AWSSDK_DotNet.CommonTest.Utils;
 using Amazon;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Auth;
 
 namespace AWSSDK.UnitTests
 {
@@ -81,7 +82,7 @@ namespace AWSSDK.UnitTests
         {
             var credentials = new BasicAWSCredentials("access_key", "secret_key");
             var handler = new PreSignedUrlRequestHandler(credentials);
-            var requestContext = new RequestContext(false);
+            var requestContext = new RequestContext(false, new NullSigner());
             var responseContext = new ResponseContext();
             var executionContext = new ExecutionContext(requestContext, responseContext);
             var marshaller = new PreSignedUrlRequestMarshaller();

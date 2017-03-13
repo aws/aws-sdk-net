@@ -15,6 +15,7 @@
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.S3.Model;
 using Amazon.S3.Model.Internal.MarshallTransformations;
@@ -182,7 +183,7 @@ namespace Amazon.S3
             }
 
             var executionContext = new AsyncExecutionContext(
-                new AsyncRequestContext(this.Config.LogMetrics)
+                new AsyncRequestContext(this.Config.LogMetrics, new NullSigner())
                 {
                     ClientConfig = this.Config,
                     OriginalRequest = request,

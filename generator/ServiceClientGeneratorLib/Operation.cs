@@ -403,6 +403,14 @@ namespace ServiceClientGenerator
             }
         }
 
+        public OperationAuthType? AuthType
+        {
+            get
+            {
+                return OperationAuthTypeParser.Parse(this.data[ServiceModel.AuthTypeKey]);
+            }
+        }
+
         /// <summary>
         /// The method of the operation (i.e. POST, GET, ...)
         /// </summary>

@@ -87,15 +87,20 @@ namespace Amazon.Runtime.Internal
 {
     public class RequestContext : IRequestContext
     {
-        public RequestContext(bool enableMetrics)
+        AbstractAWSSigner clientSigner;
+
+        public RequestContext(bool enableMetrics, AbstractAWSSigner clientSigner)
         {
+            if (clientSigner == null)
+                throw new ArgumentNullException("clientSigner");
+
+            this.clientSigner = clientSigner;
             this.Metrics = new RequestMetrics();
             this.Metrics.IsEnabled = enableMetrics;
         }
 
         public IRequest Request { get; set; }
         public RequestMetrics Metrics { get; private set; }
-        public AbstractAWSSigner Signer { get; set; }
         public IClientConfig ClientConfig { get; set; }
         public int Retries { get; set; }
         public bool IsSigned { get; set; }
@@ -105,6 +110,17 @@ namespace Amazon.Runtime.Internal
         public ResponseUnmarshaller Unmarshaller { get; set; }
         public ImmutableCredentials ImmutableCredentials { get; set; }
 
+        public AbstractAWSSigner Signer
+        {
+            get
+            {
+                var requestSigner = OriginalRequest == null ? null : OriginalRequest.GetSigner();
+                if (requestSigner == null)
+                    return clientSigner;
+                else
+                    return requestSigner;
+            }
+        }
 
 #if AWS_ASYNC_API
         public System.Threading.CancellationToken CancellationToken { get; set; }
@@ -118,8 +134,8 @@ namespace Amazon.Runtime.Internal
 
     public class AsyncRequestContext : RequestContext, IAsyncRequestContext
     {
-        public AsyncRequestContext(bool enableMetrics):
-            base(enableMetrics)
+        public AsyncRequestContext(bool enableMetrics, AbstractAWSSigner clientSigner):
+            base(enableMetrics, clientSigner)
         {
         }
 
@@ -150,9 +166,9 @@ namespace Amazon.Runtime.Internal
         public IRequestContext RequestContext { get; private set; }
         public IResponseContext ResponseContext { get; private set; }        
 
-        public ExecutionContext(bool enableMetrics)
+        public ExecutionContext(bool enableMetrics, AbstractAWSSigner clientSigner)
         {
-            this.RequestContext = new RequestContext(enableMetrics);
+            this.RequestContext = new RequestContext(enableMetrics, clientSigner);
             this.ResponseContext = new ResponseContext();
         }
 
@@ -176,9 +192,9 @@ namespace Amazon.Runtime.Internal
 
         public object RuntimeState { get; set; }
 
-        public AsyncExecutionContext(bool enableMetrics)
+        public AsyncExecutionContext(bool enableMetrics, AbstractAWSSigner clientSigner)
         {
-            this.RequestContext = new AsyncRequestContext(enableMetrics);
+            this.RequestContext = new AsyncRequestContext(enableMetrics, clientSigner);
             this.ResponseContext = new AsyncResponseContext();
         }
 

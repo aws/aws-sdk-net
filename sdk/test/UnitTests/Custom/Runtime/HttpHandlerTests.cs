@@ -15,6 +15,7 @@ using Amazon.S3.Model;
 using Amazon.S3.Model.Internal.MarshallTransformations;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Auth;
 
 namespace AWSSDK.UnitTests
 {
@@ -177,7 +178,7 @@ namespace AWSSDK.UnitTests
         {
             var listBucketsRequest = new ListBucketsRequest();       
             var executionContext = new ExecutionContext(
-                new RequestContext(true)
+                new RequestContext(true, new NullSigner())
                 {
                     ClientConfig = new AmazonS3Config(),
                     Marshaller = new ListBucketsRequestMarshaller(),
@@ -195,7 +196,7 @@ namespace AWSSDK.UnitTests
         {
             var listBucketsRequest = new ListBucketsRequest();
             var executionContext = new AsyncExecutionContext(            
-                new AsyncRequestContext(true)
+                new AsyncRequestContext(true, new NullSigner())
                 {
                     ClientConfig = new AmazonS3Config(),
                     Marshaller = new ListBucketsRequestMarshaller(),

@@ -18,13 +18,18 @@ namespace AWSSDK.UnitTests
     {
         protected virtual IExecutionContext CreateTestContext()
         {
+            return CreateTestContext(null);
+        }
+
+        protected virtual IExecutionContext CreateTestContext(AbstractAWSSigner signer)
+        {
             var putObjectRequest = new PutObjectRequest
             {
                 Key = "TestKey",
                 BucketName = "TestBucket",
                 ContentBody = "Test Content"
             };
-            var requestContext = new RequestContext(true)
+            var requestContext = new RequestContext(true, signer == null ? new NullSigner() : signer)
             {
                 OriginalRequest = putObjectRequest,
                 Request = new PutObjectRequestMarshaller().Marshall(putObjectRequest),
@@ -47,13 +52,18 @@ namespace AWSSDK.UnitTests
 
         protected IAsyncExecutionContext CreateAsyncTestContext()
         {
+            return CreateAsyncTestContext();
+        }
+
+        protected IAsyncExecutionContext CreateAsyncTestContext(AbstractAWSSigner signer)
+        {
             var putObjectRequest = new PutObjectRequest
             {
                 Key = "Test",
                 BucketName = "Test",
                 ContentBody = "Test Content"
             };
-            var requestContext = new AsyncRequestContext(true)
+            var requestContext = new AsyncRequestContext(true, signer == null ? new NullSigner() : signer)
             {
                 OriginalRequest = putObjectRequest,
                 Request = new PutObjectRequestMarshaller().Marshall(putObjectRequest),

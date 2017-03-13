@@ -488,7 +488,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 MaxBackoffInMilliseconds = maxMilliseconds
             };
 
-            var context = new ExecutionContext(new RequestContext(false), null);
+            var context = new ExecutionContext(new RequestContext(false, new NullSigner()), null);
             for (int i = 0; i < maxRetries; i++)
             {
                 context.RequestContext.Retries = i;

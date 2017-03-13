@@ -17,6 +17,7 @@ using System.Collections.Generic;
 using System.Text;
 
 using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Auth;
 
 namespace Amazon.Runtime
 {
@@ -54,5 +55,22 @@ namespace Amazon.Runtime
         {
             return this.IncludeSHA256Header;
         }
+
+        /// <summary>
+        /// Gets the signer to use for this request.
+        /// A null return value indicates to use the configured
+        /// signer for the service that this request is part of.
+        /// </summary>
+        /// <returns>A signer for this request, or null.</returns>
+        protected virtual AbstractAWSSigner CreateSigner()
+        {
+            return null;
+        }
+
+        internal AbstractAWSSigner GetSigner()
+        {
+            return CreateSigner();
+        }
+
     }
 }

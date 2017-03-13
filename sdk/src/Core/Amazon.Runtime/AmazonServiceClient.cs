@@ -190,12 +190,11 @@ namespace Amazon.Runtime
             ThrowIfDisposed();
 
             var executionContext = new ExecutionContext(
-                new RequestContext(this.Config.LogMetrics)
+                new RequestContext(this.Config.LogMetrics, Signer)
                 {
                     ClientConfig = this.Config,
                     Marshaller = marshaller,
                     OriginalRequest = request,
-                    Signer = Signer,
                     Unmarshaller = unmarshaller,
                     IsAsync = false
                 },
@@ -216,12 +215,11 @@ namespace Amazon.Runtime
 
             asyncOptions = asyncOptions ?? new AsyncOptions();
             var executionContext = new AsyncExecutionContext(
-                new AsyncRequestContext(this.Config.LogMetrics)
+                new AsyncRequestContext(this.Config.LogMetrics, Signer)
                 {
                     ClientConfig = this.Config,
                     Marshaller = marshaller,
                     OriginalRequest = request,
-                    Signer = Signer,
                     Unmarshaller = unmarshaller,
                     Action = callbackHelper,
                     AsyncOptions = asyncOptions,
@@ -245,12 +243,11 @@ namespace Amazon.Runtime
             ThrowIfDisposed();
 
             var executionContext = new ExecutionContext(
-                new RequestContext(this.Config.LogMetrics)
+                new RequestContext(this.Config.LogMetrics, Signer)
                 {
                     ClientConfig = this.Config,
                     Marshaller = marshaller,
                     OriginalRequest = request,
-                    Signer = Signer,
                     Unmarshaller = unmarshaller,
                     IsAsync = true,
                     CancellationToken = cancellationToken
@@ -270,12 +267,11 @@ namespace Amazon.Runtime
             ThrowIfDisposed();
 
             var executionContext = new AsyncExecutionContext(
-                new AsyncRequestContext(this.Config.LogMetrics)
+                new AsyncRequestContext(this.Config.LogMetrics, Signer)
                 {
                     ClientConfig = this.Config,
                     Marshaller = marshaller,
                     OriginalRequest = request,
-                    Signer = Signer,
                     Unmarshaller = unmarshaller,
                     Callback = callback,
                     State = state,

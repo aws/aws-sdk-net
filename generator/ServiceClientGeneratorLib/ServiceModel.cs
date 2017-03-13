@@ -42,6 +42,7 @@ namespace ServiceClientGenerator
         public const string DeprecatedKey = "deprecated";
         public const string IdempotencyTokenKey = "idempotencyToken";
         public const string UidKey = "uid";
+        public const string AuthTypeKey = "authtype";
 
         /// <summary>
         /// This model contains information about customizations needed during the generation process
