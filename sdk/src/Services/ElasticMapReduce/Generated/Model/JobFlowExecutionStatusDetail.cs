@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// Describes the status of the job flow.
+    /// Describes the status of the cluster (job flow).
     /// </summary>
     public partial class JobFlowExecutionStatusDetail
     {

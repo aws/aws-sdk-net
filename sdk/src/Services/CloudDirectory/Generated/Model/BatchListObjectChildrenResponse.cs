@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudDirectory.Model
 {
     /// <summary>
-    /// Represents the output of a ListObjectChildren response operation.
+    /// Represents the output of a <code>ListObjectChildren</code> response operation.
     /// </summary>
     public partial class BatchListObjectChildrenResponse
     {
@@ -38,8 +38,8 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property Children. 
         /// <para>
-        /// Children structure, which is a map with key as the LinkName and ObjectIdentifier as
-        /// the value.
+        /// Children structure, which is a map with key as the <code>LinkName</code> and <code>ObjectIdentifier</code>
+        /// as the value.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Children
@@ -57,7 +57,7 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Token used for pagination.
+        /// The pagination token.
         /// </para>
         /// </summary>
         public string NextToken

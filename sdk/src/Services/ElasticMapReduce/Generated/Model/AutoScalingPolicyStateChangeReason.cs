@@ -41,7 +41,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// The code indicating the reason for the change in status.<code>USER_REQUEST</code>
         /// indicates that the scaling policy status was changed by a user. <code>PROVISION_FAILURE</code>
         /// indicates that the status change was because the policy failed to provision. <code>CLEANUP_FAILURE</code>
-        /// indicates something unclean happened.--&gt;
+        /// indicates an error.
         /// </para>
         /// </summary>
         public AutoScalingPolicyStateChangeReasonCode Code

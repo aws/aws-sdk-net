@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// A description of a job flow.
+    /// A description of a cluster (job flow).
     /// </summary>
     public partial class JobFlowDetail
     {
@@ -321,11 +321,11 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property VisibleToAllUsers. 
         /// <para>
-        /// Specifies whether the job flow is visible to all IAM users of the AWS account associated
-        /// with the job flow. If this value is set to <code>true</code>, all IAM users of that
+        /// Specifies whether the cluster is visible to all IAM users of the AWS account associated
+        /// with the cluster. If this value is set to <code>true</code>, all IAM users of that
         /// AWS account can view and (if they have the proper policy permissions set) manage the
-        /// job flow. If it is set to <code>false</code>, only the IAM user that created the job
-        /// flow can view and manage it. This value can be changed using the <a>SetVisibleToAllUsers</a>
+        /// cluster. If it is set to <code>false</code>, only the IAM user that created the cluster
+        /// can view and manage it. This value can be changed using the <a>SetVisibleToAllUsers</a>
         /// action.
         /// </para>
         /// </summary>

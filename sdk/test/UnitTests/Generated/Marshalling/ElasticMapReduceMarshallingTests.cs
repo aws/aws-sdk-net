@@ -43,6 +43,35 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("ElasticMapReduce")]
+        public void AddInstanceFleetMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<AddInstanceFleetRequest>();
+            var marshaller = new AddInstanceFleetRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<AddInstanceFleetRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("AddInstanceFleet").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = AddInstanceFleetResponseUnmarshaller.Instance.Unmarshall(context)
+                as AddInstanceFleetResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("ElasticMapReduce")]
         public void AddInstanceGroupsMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<AddInstanceGroupsRequest>();
@@ -391,6 +420,35 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("ElasticMapReduce")]
+        public void ListInstanceFleetsMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<ListInstanceFleetsRequest>();
+            var marshaller = new ListInstanceFleetsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<ListInstanceFleetsRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListInstanceFleets").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = ListInstanceFleetsResponseUnmarshaller.Instance.Unmarshall(context)
+                as ListInstanceFleetsResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("ElasticMapReduce")]
         public void ListInstanceGroupsMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<ListInstanceGroupsRequest>();
@@ -500,6 +558,22 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var response = ListStepsResponseUnmarshaller.Instance.Unmarshall(context)
                 as ListStepsResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("ElasticMapReduce")]
+        public void ModifyInstanceFleetMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<ModifyInstanceFleetRequest>();
+            var marshaller = new ModifyInstanceFleetRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<ModifyInstanceFleetRequest>(request,jsonRequest);
+
         }
 
         

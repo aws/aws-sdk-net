@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudDirectory.Model
 {
     /// <summary>
-    /// Represents the output of a ListObjectAttributes operation.
+    /// Represents the output of a <code>ListObjectAttributes</code> operation.
     /// </summary>
     public partial class BatchListObjectAttributes
     {
@@ -57,7 +57,7 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Token used for pagination.
+        /// The pagination token.
         /// </para>
         /// </summary>
         public string NextToken

@@ -1132,6 +1132,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("CloudDirectory")]
+        public void ListObjectParentPathsMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListObjectParentPaths");
+
+            var request = InstantiateClassGenerator.Execute<ListObjectParentPathsRequest>();
+            var marshaller = new ListObjectParentPathsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            RequestValidator.Validate("ListObjectParentPaths", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString());
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = ListObjectParentPathsResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as ListObjectParentPathsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("CloudDirectory")]
         public void ListObjectParentsMarshallTest()
         {
             var operation = service_model.FindOperation("ListObjectParents");

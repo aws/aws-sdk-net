@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudDirectory.Model
 {
     /// <summary>
-    /// Represents the output of a DetachObject response operation.
+    /// Represents the output of a <code>DetachObject</code> response operation.
     /// </summary>
     public partial class BatchDetachObjectResponse
     {
@@ -37,7 +37,7 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property DetachedObjectIdentifier. 
         /// <para>
-        /// The ObjectIdentifier of the detached object.
+        /// The <code>ObjectIdentifier</code> of the detached object.
         /// </para>
         /// </summary>
         public string DetachedObjectIdentifier

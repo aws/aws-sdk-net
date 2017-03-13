@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudDirectory.Model
 {
     /// <summary>
-    /// Represents the output of a BatchWrite response operation.
+    /// Represents the output of a <code>BatchWrite</code> response operation.
     /// </summary>
     public partial class BatchWriteOperationResponse
     {

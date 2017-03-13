@@ -94,7 +94,8 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The state of the directory. Can be either Enabled, Disabled, or Deleted.
+        /// The state of the directory. Can be either <code>Enabled</code>, <code>Disabled</code>,
+        /// or <code>Deleted</code>.
         /// </para>
         /// </summary>
         public DirectoryState State

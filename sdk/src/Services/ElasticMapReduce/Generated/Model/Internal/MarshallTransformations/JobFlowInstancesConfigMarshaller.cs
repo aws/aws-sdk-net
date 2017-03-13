@@ -79,6 +79,17 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Ec2SubnetId);
             }
 
+            if(requestObject.IsSetEc2SubnetIds())
+            {
+                context.Writer.WritePropertyName("Ec2SubnetIds");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectEc2SubnetIdsListValue in requestObject.Ec2SubnetIds)
+                {
+                        context.Writer.Write(requestObjectEc2SubnetIdsListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetEmrManagedMasterSecurityGroup())
             {
                 context.Writer.WritePropertyName("EmrManagedMasterSecurityGroup");
@@ -101,6 +112,22 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("InstanceCount");
                 context.Writer.Write(requestObject.InstanceCount);
+            }
+
+            if(requestObject.IsSetInstanceFleets())
+            {
+                context.Writer.WritePropertyName("InstanceFleets");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectInstanceFleetsListValue in requestObject.InstanceFleets)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = InstanceFleetConfigMarshaller.Instance;
+                    marshaller.Marshall(requestObjectInstanceFleetsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
             }
 
             if(requestObject.IsSetInstanceGroups())

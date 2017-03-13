@@ -36,10 +36,30 @@ namespace Amazon.APIGateway.Model
     /// </summary>
     public partial class GetDomainNameResponse : AmazonWebServiceResponse
     {
+        private string _certificateArn;
         private string _certificateName;
         private DateTime? _certificateUploadDate;
         private string _distributionDomainName;
         private string _name;
+
+        /// <summary>
+        /// Gets and sets the property CertificateArn. 
+        /// <para>
+        /// The reference to an AWS-managed certificate. AWS Certificate Manager is the only supported
+        /// source.
+        /// </para>
+        /// </summary>
+        public string CertificateArn
+        {
+            get { return this._certificateArn; }
+            set { this._certificateArn = value; }
+        }
+
+        // Check to see if CertificateArn property is set
+        internal bool IsSetCertificateArn()
+        {
+            return this._certificateArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CertificateName. 
@@ -62,8 +82,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property CertificateUploadDate. 
         /// <para>
-        /// The date when the certificate was uploaded, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
-        /// target="_blank">ISO 8601 format</a>.
+        /// The timestamp when the certificate was uploaded.
         /// </para>
         /// </summary>
         public DateTime CertificateUploadDate

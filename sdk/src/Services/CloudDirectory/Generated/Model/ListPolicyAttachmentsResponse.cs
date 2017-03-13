@@ -38,7 +38,7 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Token used for pagination.
+        /// The pagination token.
         /// </para>
         /// </summary>
         public string NextToken
@@ -56,7 +56,7 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property ObjectIdentifiers. 
         /// <para>
-        /// List of ObjectIdentifiers to which the policy is attached.
+        /// List of <code>ObjectIdentifiers</code> to which the policy is attached.
         /// </para>
         /// </summary>
         public List<string> ObjectIdentifiers

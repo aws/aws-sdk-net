@@ -505,6 +505,238 @@ namespace Amazon.ElasticMapReduce
 
 
     /// <summary>
+    /// Constants used for properties of type InstanceCollectionType.
+    /// </summary>
+    public class InstanceCollectionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INSTANCE_FLEET for InstanceCollectionType
+        /// </summary>
+        public static readonly InstanceCollectionType INSTANCE_FLEET = new InstanceCollectionType("INSTANCE_FLEET");
+        /// <summary>
+        /// Constant INSTANCE_GROUP for InstanceCollectionType
+        /// </summary>
+        public static readonly InstanceCollectionType INSTANCE_GROUP = new InstanceCollectionType("INSTANCE_GROUP");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InstanceCollectionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InstanceCollectionType FindValue(string value)
+        {
+            return FindValue<InstanceCollectionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InstanceCollectionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InstanceFleetState.
+    /// </summary>
+    public class InstanceFleetState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BOOTSTRAPPING for InstanceFleetState
+        /// </summary>
+        public static readonly InstanceFleetState BOOTSTRAPPING = new InstanceFleetState("BOOTSTRAPPING");
+        /// <summary>
+        /// Constant PROVISIONING for InstanceFleetState
+        /// </summary>
+        public static readonly InstanceFleetState PROVISIONING = new InstanceFleetState("PROVISIONING");
+        /// <summary>
+        /// Constant RESIZING for InstanceFleetState
+        /// </summary>
+        public static readonly InstanceFleetState RESIZING = new InstanceFleetState("RESIZING");
+        /// <summary>
+        /// Constant RUNNING for InstanceFleetState
+        /// </summary>
+        public static readonly InstanceFleetState RUNNING = new InstanceFleetState("RUNNING");
+        /// <summary>
+        /// Constant SUSPENDED for InstanceFleetState
+        /// </summary>
+        public static readonly InstanceFleetState SUSPENDED = new InstanceFleetState("SUSPENDED");
+        /// <summary>
+        /// Constant TERMINATED for InstanceFleetState
+        /// </summary>
+        public static readonly InstanceFleetState TERMINATED = new InstanceFleetState("TERMINATED");
+        /// <summary>
+        /// Constant TERMINATING for InstanceFleetState
+        /// </summary>
+        public static readonly InstanceFleetState TERMINATING = new InstanceFleetState("TERMINATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InstanceFleetState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InstanceFleetState FindValue(string value)
+        {
+            return FindValue<InstanceFleetState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InstanceFleetState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InstanceFleetStateChangeReasonCode.
+    /// </summary>
+    public class InstanceFleetStateChangeReasonCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CLUSTER_TERMINATED for InstanceFleetStateChangeReasonCode
+        /// </summary>
+        public static readonly InstanceFleetStateChangeReasonCode CLUSTER_TERMINATED = new InstanceFleetStateChangeReasonCode("CLUSTER_TERMINATED");
+        /// <summary>
+        /// Constant INSTANCE_FAILURE for InstanceFleetStateChangeReasonCode
+        /// </summary>
+        public static readonly InstanceFleetStateChangeReasonCode INSTANCE_FAILURE = new InstanceFleetStateChangeReasonCode("INSTANCE_FAILURE");
+        /// <summary>
+        /// Constant INTERNAL_ERROR for InstanceFleetStateChangeReasonCode
+        /// </summary>
+        public static readonly InstanceFleetStateChangeReasonCode INTERNAL_ERROR = new InstanceFleetStateChangeReasonCode("INTERNAL_ERROR");
+        /// <summary>
+        /// Constant VALIDATION_ERROR for InstanceFleetStateChangeReasonCode
+        /// </summary>
+        public static readonly InstanceFleetStateChangeReasonCode VALIDATION_ERROR = new InstanceFleetStateChangeReasonCode("VALIDATION_ERROR");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InstanceFleetStateChangeReasonCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InstanceFleetStateChangeReasonCode FindValue(string value)
+        {
+            return FindValue<InstanceFleetStateChangeReasonCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InstanceFleetStateChangeReasonCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InstanceFleetType.
+    /// </summary>
+    public class InstanceFleetType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CORE for InstanceFleetType
+        /// </summary>
+        public static readonly InstanceFleetType CORE = new InstanceFleetType("CORE");
+        /// <summary>
+        /// Constant MASTER for InstanceFleetType
+        /// </summary>
+        public static readonly InstanceFleetType MASTER = new InstanceFleetType("MASTER");
+        /// <summary>
+        /// Constant TASK for InstanceFleetType
+        /// </summary>
+        public static readonly InstanceFleetType TASK = new InstanceFleetType("TASK");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InstanceFleetType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InstanceFleetType FindValue(string value)
+        {
+            return FindValue<InstanceFleetType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InstanceFleetType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type InstanceGroupState.
     /// </summary>
     public class InstanceGroupState : ConstantClass
@@ -1044,6 +1276,56 @@ namespace Amazon.ElasticMapReduce
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ScaleDownBehavior(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SpotProvisioningTimeoutAction.
+    /// </summary>
+    public class SpotProvisioningTimeoutAction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SWITCH_TO_ON_DEMAND for SpotProvisioningTimeoutAction
+        /// </summary>
+        public static readonly SpotProvisioningTimeoutAction SWITCH_TO_ON_DEMAND = new SpotProvisioningTimeoutAction("SWITCH_TO_ON_DEMAND");
+        /// <summary>
+        /// Constant TERMINATE_CLUSTER for SpotProvisioningTimeoutAction
+        /// </summary>
+        public static readonly SpotProvisioningTimeoutAction TERMINATE_CLUSTER = new SpotProvisioningTimeoutAction("TERMINATE_CLUSTER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SpotProvisioningTimeoutAction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SpotProvisioningTimeoutAction FindValue(string value)
+        {
+            return FindValue<SpotProvisioningTimeoutAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SpotProvisioningTimeoutAction(string value)
         {
             return FindValue(value);
         }

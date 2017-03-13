@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudDirectory.Model
 {
     /// <summary>
-    /// Contains the PolicyType, PolicyId, and the ObjectIdentifier to which it is attached.
+    /// Contains the <code>PolicyType</code>, <code>PolicyId</code>, and the <code>ObjectIdentifier</code>
+    /// to which it is attached.
     /// </summary>
     public partial class PolicyAttachment
     {
@@ -39,7 +40,7 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property ObjectIdentifier. 
         /// <para>
-        /// The ObjectIdentifier associated with PolicyAttachment.
+        /// The <code>ObjectIdentifier</code> associated with <code>PolicyAttachment</code>.
         /// </para>
         /// </summary>
         public string ObjectIdentifier
@@ -57,7 +58,7 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property PolicyId. 
         /// <para>
-        /// The ID of PolicyAttachment.
+        /// The ID of <code>PolicyAttachment</code>.
         /// </para>
         /// </summary>
         public string PolicyId
@@ -75,7 +76,7 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property PolicyType. 
         /// <para>
-        /// The type of policy that can be associated with PolicyAttachment.
+        /// The type of policy that can be associated with <code>PolicyAttachment</code>.
         /// </para>
         /// </summary>
         public string PolicyType

@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// 
+    /// Specification of the status of a CancelSteps request. Available only in Amazon EMR
+    /// version 4.8.0 and later, excluding version 5.0.0.
     /// </summary>
     public partial class CancelStepsInfo
     {
@@ -37,7 +38,10 @@ namespace Amazon.ElasticMapReduce.Model
         private string _stepId;
 
         /// <summary>
-        /// Gets and sets the property Reason.
+        /// Gets and sets the property Reason. 
+        /// <para>
+        /// The reason for the failure if the CancelSteps request fails.
+        /// </para>
         /// </summary>
         public string Reason
         {
@@ -52,7 +56,10 @@ namespace Amazon.ElasticMapReduce.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Status.
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The status of a CancelSteps Request. The value may be SUBMITTED or FAILED.
+        /// </para>
         /// </summary>
         public CancelStepsRequestStatus Status
         {
@@ -67,7 +74,10 @@ namespace Amazon.ElasticMapReduce.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StepId.
+        /// Gets and sets the property StepId. 
+        /// <para>
+        /// The encrypted StepId of a step.
+        /// </para>
         /// </summary>
         public string StepId
         {

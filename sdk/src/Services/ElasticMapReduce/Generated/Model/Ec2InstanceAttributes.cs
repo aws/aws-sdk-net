@@ -41,6 +41,8 @@ namespace Amazon.ElasticMapReduce.Model
         private string _emrManagedMasterSecurityGroup;
         private string _emrManagedSlaveSecurityGroup;
         private string _iamInstanceProfile;
+        private List<string> _requestedEc2AvailabilityZones = new List<string>();
+        private List<string> _requestedEc2SubnetIds = new List<string>();
         private string _serviceAccessSecurityGroup;
 
         /// <summary>
@@ -82,7 +84,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property Ec2AvailabilityZone. 
         /// <para>
-        /// The Availability Zone in which the cluster will run.
+        /// The Availability Zone in which the cluster will run. 
         /// </para>
         /// </summary>
         public string Ec2AvailabilityZone
@@ -119,15 +121,15 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property Ec2SubnetId. 
         /// <para>
-        /// To launch the job flow in Amazon VPC, set this parameter to the identifier of the
-        /// Amazon VPC subnet where you want the job flow to launch. If you do not specify this
-        /// value, the job flow is launched in the normal AWS cloud, outside of a VPC.
+        /// To launch the cluster in Amazon VPC, set this parameter to the identifier of the Amazon
+        /// VPC subnet where you want the cluster to launch. If you do not specify this value,
+        /// the cluster is launched in the normal AWS cloud, outside of a VPC.
         /// </para>
         ///  
         /// <para>
         /// Amazon VPC currently does not support cluster compute quadruple extra large (cc1.4xlarge)
-        /// instances. Thus, you cannot specify the cc1.4xlarge instance type for nodes of a job
-        /// flow launched in a VPC.
+        /// instances. Thus, you cannot specify the cc1.4xlarge instance type for nodes of a cluster
+        /// launched in a VPC.
         /// </para>
         /// </summary>
         public string Ec2SubnetId
@@ -181,8 +183,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property IamInstanceProfile. 
         /// <para>
-        /// The IAM role that was specified when the job flow was launched. The EC2 instances
-        /// of the job flow assume this role.
+        /// The IAM role that was specified when the cluster was launched. The EC2 instances of
+        /// the cluster assume this role.
         /// </para>
         /// </summary>
         public string IamInstanceProfile
@@ -195,6 +197,50 @@ namespace Amazon.ElasticMapReduce.Model
         internal bool IsSetIamInstanceProfile()
         {
             return this._iamInstanceProfile != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RequestedEc2AvailabilityZones. 
+        /// <para>
+        /// Applies to clusters configured with the The list of availability zones to choose from.
+        /// The service will choose the availability zone with the best mix of available capacity
+        /// and lowest cost to launch the cluster. If you do not specify this value, the cluster
+        /// is launched in any availability zone that the customer account has access to.
+        /// </para>
+        /// </summary>
+        public List<string> RequestedEc2AvailabilityZones
+        {
+            get { return this._requestedEc2AvailabilityZones; }
+            set { this._requestedEc2AvailabilityZones = value; }
+        }
+
+        // Check to see if RequestedEc2AvailabilityZones property is set
+        internal bool IsSetRequestedEc2AvailabilityZones()
+        {
+            return this._requestedEc2AvailabilityZones != null && this._requestedEc2AvailabilityZones.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RequestedEc2SubnetIds. 
+        /// <para>
+        /// Applies to clusters configured with the instance fleets option. Specifies the unique
+        /// identifier of one or more Amazon EC2 subnets in which to launch EC2 cluster instances.
+        /// Amazon EMR chooses the EC2 subnet with the best performance and cost characteristics
+        /// from among the list of RequestedEc2SubnetIds and launches all cluster instances within
+        /// that subnet. If this value is not specified, and the account supports EC2-Classic
+        /// networks, the cluster launches instances in the EC2-Classic network and uses Requested
+        /// </para>
+        /// </summary>
+        public List<string> RequestedEc2SubnetIds
+        {
+            get { return this._requestedEc2SubnetIds; }
+            set { this._requestedEc2SubnetIds = value; }
+        }
+
+        // Check to see if RequestedEc2SubnetIds property is set
+        internal bool IsSetRequestedEc2SubnetIds()
+        {
+            return this._requestedEc2SubnetIds != null && this._requestedEc2SubnetIds.Count > 0; 
         }
 
         /// <summary>

@@ -37,7 +37,7 @@ namespace Amazon.CloudDirectory.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Using ObjectIdentifier
+    /// Using <code>ObjectIdentifier</code> 
     /// </para>
     ///  </li> </ol>
     /// </summary>

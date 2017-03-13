@@ -228,6 +228,58 @@ namespace Amazon.ElasticMapReduce
         #endregion
 
         
+        #region  AddInstanceFleet
+
+
+        /// <summary>
+        /// Adds an instance fleet to a running cluster.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and
+        /// later, excluding 5.0.x.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AddInstanceFleet service method.</param>
+        /// 
+        /// <returns>The response from the AddInstanceFleet service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the EMR service.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/AddInstanceFleet">REST API Reference for AddInstanceFleet Operation</seealso>
+        public AddInstanceFleetResponse AddInstanceFleet(AddInstanceFleetRequest request)
+        {
+            var marshaller = new AddInstanceFleetRequestMarshaller();
+            var unmarshaller = AddInstanceFleetResponseUnmarshaller.Instance;
+
+            return Invoke<AddInstanceFleetRequest,AddInstanceFleetResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AddInstanceFleet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AddInstanceFleet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/AddInstanceFleet">REST API Reference for AddInstanceFleet Operation</seealso>
+        public Task<AddInstanceFleetResponse> AddInstanceFleetAsync(AddInstanceFleetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new AddInstanceFleetRequestMarshaller();
+            var unmarshaller = AddInstanceFleetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AddInstanceFleetRequest,AddInstanceFleetResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  AddInstanceGroups
 
 
@@ -241,6 +293,7 @@ namespace Amazon.ElasticMapReduce
         /// Indicates that an error occurred while processing the request and that the request
         /// was not completed.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/AddInstanceGroups">REST API Reference for AddInstanceGroups Operation</seealso>
         public AddInstanceGroupsResponse AddInstanceGroups(AddInstanceGroupsRequest request)
         {
             var marshaller = new AddInstanceGroupsRequestMarshaller();
@@ -258,6 +311,7 @@ namespace Amazon.ElasticMapReduce
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/AddInstanceGroups">REST API Reference for AddInstanceGroups Operation</seealso>
         public Task<AddInstanceGroupsResponse> AddInstanceGroupsAsync(AddInstanceGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AddInstanceGroupsRequestMarshaller();
@@ -273,24 +327,24 @@ namespace Amazon.ElasticMapReduce
 
 
         /// <summary>
-        /// AddJobFlowSteps adds new steps to a running job flow. A maximum of 256 steps are allowed
+        /// AddJobFlowSteps adds new steps to a running cluster. A maximum of 256 steps are allowed
         /// in each job flow.
         /// 
         ///  
         /// <para>
-        /// If your job flow is long-running (such as a Hive data warehouse) or complex, you may
+        /// If your cluster is long-running (such as a Hive data warehouse) or complex, you may
         /// require more than 256 steps to process your data. You can bypass the 256-step limitation
-        /// in various ways, including using the SSH shell to connect to the master node and submitting
+        /// in various ways, including using SSH to connect to the master node and submitting
         /// queries directly to the software running on the master node, such as Hive and Hadoop.
-        /// For more information on how to do this, see <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/AddMoreThan256Steps.html">Add
-        /// More than 256 Steps to a Job Flow</a> in the <i>Amazon EMR Developer's Guide</i>.
+        /// For more information on how to do this, see <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/ManagementGuide/AddMoreThan256Steps.html">Add
+        /// More than 256 Steps to a Cluster</a> in the <i>Amazon EMR Management Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// A step specifies the location of a JAR file stored either on the master node of the
-        /// job flow or in Amazon S3. Each step is performed by the main function of the main
-        /// class of the JAR file. The main class can be specified either in the manifest of the
-        /// JAR or by using the MainFunction parameter of the step.
+        /// cluster or in Amazon S3. Each step is performed by the main function of the main class
+        /// of the JAR file. The main class can be specified either in the manifest of the JAR
+        /// or by using the MainFunction parameter of the step.
         /// </para>
         ///  
         /// <para>
@@ -300,7 +354,7 @@ namespace Amazon.ElasticMapReduce
         /// </para>
         ///  
         /// <para>
-        /// You can only add steps to a job flow that is in one of the following states: STARTING,
+        /// You can only add steps to a cluster that is in one of the following states: STARTING,
         /// BOOTSTRAPPING, RUNNING, or WAITING.
         /// </para>
         /// </summary>
@@ -311,6 +365,7 @@ namespace Amazon.ElasticMapReduce
         /// Indicates that an error occurred while processing the request and that the request
         /// was not completed.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/AddJobFlowSteps">REST API Reference for AddJobFlowSteps Operation</seealso>
         public AddJobFlowStepsResponse AddJobFlowSteps(AddJobFlowStepsRequest request)
         {
             var marshaller = new AddJobFlowStepsRequestMarshaller();
@@ -328,6 +383,7 @@ namespace Amazon.ElasticMapReduce
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/AddJobFlowSteps">REST API Reference for AddJobFlowSteps Operation</seealso>
         public Task<AddJobFlowStepsResponse> AddJobFlowStepsAsync(AddJobFlowStepsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AddJobFlowStepsRequestMarshaller();
@@ -357,6 +413,7 @@ namespace Amazon.ElasticMapReduce
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/AddTags">REST API Reference for AddTags Operation</seealso>
         public AddTagsResponse AddTags(AddTagsRequest request)
         {
             var marshaller = new AddTagsRequestMarshaller();
@@ -374,6 +431,7 @@ namespace Amazon.ElasticMapReduce
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/AddTags">REST API Reference for AddTags Operation</seealso>
         public Task<AddTagsResponse> AddTagsAsync(AddTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AddTagsRequestMarshaller();
@@ -405,6 +463,7 @@ namespace Amazon.ElasticMapReduce
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/CancelSteps">REST API Reference for CancelSteps Operation</seealso>
         public CancelStepsResponse CancelSteps(CancelStepsRequest request)
         {
             var marshaller = new CancelStepsRequestMarshaller();
@@ -422,6 +481,7 @@ namespace Amazon.ElasticMapReduce
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/CancelSteps">REST API Reference for CancelSteps Operation</seealso>
         public Task<CancelStepsResponse> CancelStepsAsync(CancelStepsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CancelStepsRequestMarshaller();
@@ -449,6 +509,7 @@ namespace Amazon.ElasticMapReduce
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/CreateSecurityConfiguration">REST API Reference for CreateSecurityConfiguration Operation</seealso>
         public CreateSecurityConfigurationResponse CreateSecurityConfiguration(CreateSecurityConfigurationRequest request)
         {
             var marshaller = new CreateSecurityConfigurationRequestMarshaller();
@@ -466,6 +527,7 @@ namespace Amazon.ElasticMapReduce
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/CreateSecurityConfiguration">REST API Reference for CreateSecurityConfiguration Operation</seealso>
         public Task<CreateSecurityConfigurationResponse> CreateSecurityConfigurationAsync(CreateSecurityConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateSecurityConfigurationRequestMarshaller();
@@ -492,6 +554,7 @@ namespace Amazon.ElasticMapReduce
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DeleteSecurityConfiguration">REST API Reference for DeleteSecurityConfiguration Operation</seealso>
         public DeleteSecurityConfigurationResponse DeleteSecurityConfiguration(DeleteSecurityConfigurationRequest request)
         {
             var marshaller = new DeleteSecurityConfigurationRequestMarshaller();
@@ -509,6 +572,7 @@ namespace Amazon.ElasticMapReduce
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DeleteSecurityConfiguration">REST API Reference for DeleteSecurityConfiguration Operation</seealso>
         public Task<DeleteSecurityConfigurationResponse> DeleteSecurityConfigurationAsync(DeleteSecurityConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteSecurityConfigurationRequestMarshaller();
@@ -535,6 +599,7 @@ namespace Amazon.ElasticMapReduce
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DescribeCluster">REST API Reference for DescribeCluster Operation</seealso>
         public DescribeClusterResponse DescribeCluster()
         {
             return DescribeCluster(new DescribeClusterRequest());
@@ -554,6 +619,7 @@ namespace Amazon.ElasticMapReduce
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DescribeCluster">REST API Reference for DescribeCluster Operation</seealso>
         public DescribeClusterResponse DescribeCluster(DescribeClusterRequest request)
         {
             var marshaller = new DescribeClusterRequestMarshaller();
@@ -578,6 +644,7 @@ namespace Amazon.ElasticMapReduce
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DescribeCluster">REST API Reference for DescribeCluster Operation</seealso>
         public Task<DescribeClusterResponse> DescribeClusterAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeClusterAsync(new DescribeClusterRequest(), cancellationToken);
@@ -591,6 +658,7 @@ namespace Amazon.ElasticMapReduce
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DescribeCluster">REST API Reference for DescribeCluster Operation</seealso>
         public Task<DescribeClusterResponse> DescribeClusterAsync(DescribeClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeClusterRequestMarshaller();
@@ -647,6 +715,7 @@ namespace Amazon.ElasticMapReduce
         /// Indicates that an error occurred while processing the request and that the request
         /// was not completed.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DescribeJobFlows">REST API Reference for DescribeJobFlows Operation</seealso>
         [Obsolete("This API is deprecated and will eventually be removed. We recommend that you use ListClusters, DescribeCluster, ListSteps, ListInstanceGroups and ListBootstrapActions instead.")]
         public DescribeJobFlowsResponse DescribeJobFlows()
         {
@@ -697,6 +766,7 @@ namespace Amazon.ElasticMapReduce
         /// Indicates that an error occurred while processing the request and that the request
         /// was not completed.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DescribeJobFlows">REST API Reference for DescribeJobFlows Operation</seealso>
         [Obsolete("This API is deprecated and will eventually be removed. We recommend that you use ListClusters, DescribeCluster, ListSteps, ListInstanceGroups and ListBootstrapActions instead.")]
         public DescribeJobFlowsResponse DescribeJobFlows(DescribeJobFlowsRequest request)
         {
@@ -752,6 +822,7 @@ namespace Amazon.ElasticMapReduce
         /// Indicates that an error occurred while processing the request and that the request
         /// was not completed.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DescribeJobFlows">REST API Reference for DescribeJobFlows Operation</seealso>
         [Obsolete("This API is deprecated and will eventually be removed. We recommend that you use ListClusters, DescribeCluster, ListSteps, ListInstanceGroups and ListBootstrapActions instead.")]
         public Task<DescribeJobFlowsResponse> DescribeJobFlowsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -766,6 +837,7 @@ namespace Amazon.ElasticMapReduce
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DescribeJobFlows">REST API Reference for DescribeJobFlows Operation</seealso>
         [Obsolete("This API is deprecated and will eventually be removed. We recommend that you use ListClusters, DescribeCluster, ListSteps, ListInstanceGroups and ListBootstrapActions instead.")]
         public Task<DescribeJobFlowsResponse> DescribeJobFlowsAsync(DescribeJobFlowsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -793,6 +865,7 @@ namespace Amazon.ElasticMapReduce
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DescribeSecurityConfiguration">REST API Reference for DescribeSecurityConfiguration Operation</seealso>
         public DescribeSecurityConfigurationResponse DescribeSecurityConfiguration(DescribeSecurityConfigurationRequest request)
         {
             var marshaller = new DescribeSecurityConfigurationRequestMarshaller();
@@ -810,6 +883,7 @@ namespace Amazon.ElasticMapReduce
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DescribeSecurityConfiguration">REST API Reference for DescribeSecurityConfiguration Operation</seealso>
         public Task<DescribeSecurityConfigurationResponse> DescribeSecurityConfigurationAsync(DescribeSecurityConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeSecurityConfigurationRequestMarshaller();
@@ -835,6 +909,7 @@ namespace Amazon.ElasticMapReduce
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DescribeStep">REST API Reference for DescribeStep Operation</seealso>
         public DescribeStepResponse DescribeStep()
         {
             return DescribeStep(new DescribeStepRequest());
@@ -853,6 +928,7 @@ namespace Amazon.ElasticMapReduce
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DescribeStep">REST API Reference for DescribeStep Operation</seealso>
         public DescribeStepResponse DescribeStep(DescribeStepRequest request)
         {
             var marshaller = new DescribeStepRequestMarshaller();
@@ -876,6 +952,7 @@ namespace Amazon.ElasticMapReduce
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DescribeStep">REST API Reference for DescribeStep Operation</seealso>
         public Task<DescribeStepResponse> DescribeStepAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeStepAsync(new DescribeStepRequest(), cancellationToken);
@@ -889,6 +966,7 @@ namespace Amazon.ElasticMapReduce
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DescribeStep">REST API Reference for DescribeStep Operation</seealso>
         public Task<DescribeStepResponse> DescribeStepAsync(DescribeStepRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeStepRequestMarshaller();
@@ -914,6 +992,7 @@ namespace Amazon.ElasticMapReduce
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListBootstrapActions">REST API Reference for ListBootstrapActions Operation</seealso>
         public ListBootstrapActionsResponse ListBootstrapActions()
         {
             return ListBootstrapActions(new ListBootstrapActionsRequest());
@@ -932,6 +1011,7 @@ namespace Amazon.ElasticMapReduce
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListBootstrapActions">REST API Reference for ListBootstrapActions Operation</seealso>
         public ListBootstrapActionsResponse ListBootstrapActions(ListBootstrapActionsRequest request)
         {
             var marshaller = new ListBootstrapActionsRequestMarshaller();
@@ -955,6 +1035,7 @@ namespace Amazon.ElasticMapReduce
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListBootstrapActions">REST API Reference for ListBootstrapActions Operation</seealso>
         public Task<ListBootstrapActionsResponse> ListBootstrapActionsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return ListBootstrapActionsAsync(new ListBootstrapActionsRequest(), cancellationToken);
@@ -968,6 +1049,7 @@ namespace Amazon.ElasticMapReduce
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListBootstrapActions">REST API Reference for ListBootstrapActions Operation</seealso>
         public Task<ListBootstrapActionsResponse> ListBootstrapActionsAsync(ListBootstrapActionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListBootstrapActionsRequestMarshaller();
@@ -997,6 +1079,7 @@ namespace Amazon.ElasticMapReduce
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListClusters">REST API Reference for ListClusters Operation</seealso>
         public ListClustersResponse ListClusters()
         {
             return ListClusters(new ListClustersRequest());
@@ -1019,6 +1102,7 @@ namespace Amazon.ElasticMapReduce
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListClusters">REST API Reference for ListClusters Operation</seealso>
         public ListClustersResponse ListClusters(ListClustersRequest request)
         {
             var marshaller = new ListClustersRequestMarshaller();
@@ -1046,6 +1130,7 @@ namespace Amazon.ElasticMapReduce
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListClusters">REST API Reference for ListClusters Operation</seealso>
         public Task<ListClustersResponse> ListClustersAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return ListClustersAsync(new ListClustersRequest(), cancellationToken);
@@ -1059,12 +1144,65 @@ namespace Amazon.ElasticMapReduce
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListClusters">REST API Reference for ListClusters Operation</seealso>
         public Task<ListClustersResponse> ListClustersAsync(ListClustersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListClustersRequestMarshaller();
             var unmarshaller = ListClustersResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListClustersRequest,ListClustersResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListInstanceFleets
+
+
+        /// <summary>
+        /// Lists all available details about the instance fleets in a cluster.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and
+        /// later, excluding 5.0.x versions.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListInstanceFleets service method.</param>
+        /// 
+        /// <returns>The response from the ListInstanceFleets service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the EMR service.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListInstanceFleets">REST API Reference for ListInstanceFleets Operation</seealso>
+        public ListInstanceFleetsResponse ListInstanceFleets(ListInstanceFleetsRequest request)
+        {
+            var marshaller = new ListInstanceFleetsRequestMarshaller();
+            var unmarshaller = ListInstanceFleetsResponseUnmarshaller.Instance;
+
+            return Invoke<ListInstanceFleetsRequest,ListInstanceFleetsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListInstanceFleets operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListInstanceFleets operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListInstanceFleets">REST API Reference for ListInstanceFleets Operation</seealso>
+        public Task<ListInstanceFleetsResponse> ListInstanceFleetsAsync(ListInstanceFleetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListInstanceFleetsRequestMarshaller();
+            var unmarshaller = ListInstanceFleetsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListInstanceFleetsRequest,ListInstanceFleetsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1084,6 +1222,7 @@ namespace Amazon.ElasticMapReduce
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListInstanceGroups">REST API Reference for ListInstanceGroups Operation</seealso>
         public ListInstanceGroupsResponse ListInstanceGroups()
         {
             return ListInstanceGroups(new ListInstanceGroupsRequest());
@@ -1102,6 +1241,7 @@ namespace Amazon.ElasticMapReduce
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListInstanceGroups">REST API Reference for ListInstanceGroups Operation</seealso>
         public ListInstanceGroupsResponse ListInstanceGroups(ListInstanceGroupsRequest request)
         {
             var marshaller = new ListInstanceGroupsRequestMarshaller();
@@ -1125,6 +1265,7 @@ namespace Amazon.ElasticMapReduce
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListInstanceGroups">REST API Reference for ListInstanceGroups Operation</seealso>
         public Task<ListInstanceGroupsResponse> ListInstanceGroupsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return ListInstanceGroupsAsync(new ListInstanceGroupsRequest(), cancellationToken);
@@ -1138,6 +1279,7 @@ namespace Amazon.ElasticMapReduce
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListInstanceGroups">REST API Reference for ListInstanceGroups Operation</seealso>
         public Task<ListInstanceGroupsResponse> ListInstanceGroupsAsync(ListInstanceGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListInstanceGroupsRequestMarshaller();
@@ -1166,6 +1308,7 @@ namespace Amazon.ElasticMapReduce
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListInstances">REST API Reference for ListInstances Operation</seealso>
         public ListInstancesResponse ListInstances()
         {
             return ListInstances(new ListInstancesRequest());
@@ -1187,6 +1330,7 @@ namespace Amazon.ElasticMapReduce
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListInstances">REST API Reference for ListInstances Operation</seealso>
         public ListInstancesResponse ListInstances(ListInstancesRequest request)
         {
             var marshaller = new ListInstancesRequestMarshaller();
@@ -1213,6 +1357,7 @@ namespace Amazon.ElasticMapReduce
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListInstances">REST API Reference for ListInstances Operation</seealso>
         public Task<ListInstancesResponse> ListInstancesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return ListInstancesAsync(new ListInstancesRequest(), cancellationToken);
@@ -1226,6 +1371,7 @@ namespace Amazon.ElasticMapReduce
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListInstances">REST API Reference for ListInstances Operation</seealso>
         public Task<ListInstancesResponse> ListInstancesAsync(ListInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListInstancesRequestMarshaller();
@@ -1255,6 +1401,7 @@ namespace Amazon.ElasticMapReduce
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListSecurityConfigurations">REST API Reference for ListSecurityConfigurations Operation</seealso>
         public ListSecurityConfigurationsResponse ListSecurityConfigurations(ListSecurityConfigurationsRequest request)
         {
             var marshaller = new ListSecurityConfigurationsRequestMarshaller();
@@ -1272,6 +1419,7 @@ namespace Amazon.ElasticMapReduce
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListSecurityConfigurations">REST API Reference for ListSecurityConfigurations Operation</seealso>
         public Task<ListSecurityConfigurationsResponse> ListSecurityConfigurationsAsync(ListSecurityConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListSecurityConfigurationsRequestMarshaller();
@@ -1298,6 +1446,7 @@ namespace Amazon.ElasticMapReduce
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListSteps">REST API Reference for ListSteps Operation</seealso>
         public ListStepsResponse ListSteps()
         {
             return ListSteps(new ListStepsRequest());
@@ -1317,6 +1466,7 @@ namespace Amazon.ElasticMapReduce
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListSteps">REST API Reference for ListSteps Operation</seealso>
         public ListStepsResponse ListSteps(ListStepsRequest request)
         {
             var marshaller = new ListStepsRequestMarshaller();
@@ -1341,6 +1491,7 @@ namespace Amazon.ElasticMapReduce
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListSteps">REST API Reference for ListSteps Operation</seealso>
         public Task<ListStepsResponse> ListStepsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return ListStepsAsync(new ListStepsRequest(), cancellationToken);
@@ -1354,12 +1505,67 @@ namespace Amazon.ElasticMapReduce
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListSteps">REST API Reference for ListSteps Operation</seealso>
         public Task<ListStepsResponse> ListStepsAsync(ListStepsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListStepsRequestMarshaller();
             var unmarshaller = ListStepsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListStepsRequest,ListStepsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ModifyInstanceFleet
+
+
+        /// <summary>
+        /// Modifies the target On-Demand and target Spot capacities for the instance fleet with
+        /// the specified InstanceFleetID within the cluster specified using ClusterID. The call
+        /// either succeeds or fails atomically.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and
+        /// later, excluding 5.0.x versions.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyInstanceFleet service method.</param>
+        /// 
+        /// <returns>The response from the ModifyInstanceFleet service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the EMR service.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ModifyInstanceFleet">REST API Reference for ModifyInstanceFleet Operation</seealso>
+        public ModifyInstanceFleetResponse ModifyInstanceFleet(ModifyInstanceFleetRequest request)
+        {
+            var marshaller = new ModifyInstanceFleetRequestMarshaller();
+            var unmarshaller = ModifyInstanceFleetResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyInstanceFleetRequest,ModifyInstanceFleetResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyInstanceFleet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyInstanceFleet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ModifyInstanceFleet">REST API Reference for ModifyInstanceFleet Operation</seealso>
+        public Task<ModifyInstanceFleetResponse> ModifyInstanceFleetAsync(ModifyInstanceFleetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ModifyInstanceFleetRequestMarshaller();
+            var unmarshaller = ModifyInstanceFleetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ModifyInstanceFleetRequest,ModifyInstanceFleetResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1380,6 +1586,7 @@ namespace Amazon.ElasticMapReduce
         /// Indicates that an error occurred while processing the request and that the request
         /// was not completed.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ModifyInstanceGroups">REST API Reference for ModifyInstanceGroups Operation</seealso>
         public ModifyInstanceGroupsResponse ModifyInstanceGroups(ModifyInstanceGroupsRequest request)
         {
             var marshaller = new ModifyInstanceGroupsRequestMarshaller();
@@ -1397,6 +1604,7 @@ namespace Amazon.ElasticMapReduce
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ModifyInstanceGroups">REST API Reference for ModifyInstanceGroups Operation</seealso>
         public Task<ModifyInstanceGroupsResponse> ModifyInstanceGroupsAsync(ModifyInstanceGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ModifyInstanceGroupsRequestMarshaller();
@@ -1420,6 +1628,7 @@ namespace Amazon.ElasticMapReduce
         /// <param name="request">Container for the necessary parameters to execute the PutAutoScalingPolicy service method.</param>
         /// 
         /// <returns>The response from the PutAutoScalingPolicy service method, as returned by ElasticMapReduce.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/PutAutoScalingPolicy">REST API Reference for PutAutoScalingPolicy Operation</seealso>
         public PutAutoScalingPolicyResponse PutAutoScalingPolicy(PutAutoScalingPolicyRequest request)
         {
             var marshaller = new PutAutoScalingPolicyRequestMarshaller();
@@ -1437,6 +1646,7 @@ namespace Amazon.ElasticMapReduce
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/PutAutoScalingPolicy">REST API Reference for PutAutoScalingPolicy Operation</seealso>
         public Task<PutAutoScalingPolicyResponse> PutAutoScalingPolicyAsync(PutAutoScalingPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutAutoScalingPolicyRequestMarshaller();
@@ -1458,6 +1668,7 @@ namespace Amazon.ElasticMapReduce
         /// <param name="request">Container for the necessary parameters to execute the RemoveAutoScalingPolicy service method.</param>
         /// 
         /// <returns>The response from the RemoveAutoScalingPolicy service method, as returned by ElasticMapReduce.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/RemoveAutoScalingPolicy">REST API Reference for RemoveAutoScalingPolicy Operation</seealso>
         public RemoveAutoScalingPolicyResponse RemoveAutoScalingPolicy(RemoveAutoScalingPolicyRequest request)
         {
             var marshaller = new RemoveAutoScalingPolicyRequestMarshaller();
@@ -1475,6 +1686,7 @@ namespace Amazon.ElasticMapReduce
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/RemoveAutoScalingPolicy">REST API Reference for RemoveAutoScalingPolicy Operation</seealso>
         public Task<RemoveAutoScalingPolicyResponse> RemoveAutoScalingPolicyAsync(RemoveAutoScalingPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RemoveAutoScalingPolicyRequestMarshaller();
@@ -1509,6 +1721,7 @@ namespace Amazon.ElasticMapReduce
         /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
         /// This exception occurs when there is something wrong with user input.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/RemoveTags">REST API Reference for RemoveTags Operation</seealso>
         public RemoveTagsResponse RemoveTags(RemoveTagsRequest request)
         {
             var marshaller = new RemoveTagsRequestMarshaller();
@@ -1526,6 +1739,7 @@ namespace Amazon.ElasticMapReduce
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/RemoveTags">REST API Reference for RemoveTags Operation</seealso>
         public Task<RemoveTagsResponse> RemoveTagsAsync(RemoveTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RemoveTagsRequestMarshaller();
@@ -1541,17 +1755,17 @@ namespace Amazon.ElasticMapReduce
 
 
         /// <summary>
-        /// RunJobFlow creates and starts running a new job flow. The job flow will run the steps
-        /// specified. After the job flow completes, the cluster is stopped and the HDFS partition
+        /// RunJobFlow creates and starts running a new cluster (job flow). The cluster runs the
+        /// steps specified. After the steps complete, the cluster stops and the HDFS partition
         /// is lost. To prevent loss of data, configure the last step of the job flow to store
         /// results in Amazon S3. If the <a>JobFlowInstancesConfig</a> <code>KeepJobFlowAliveWhenNoSteps</code>
-        /// parameter is set to <code>TRUE</code>, the job flow will transition to the WAITING
-        /// state rather than shutting down after the steps have completed. 
+        /// parameter is set to <code>TRUE</code>, the cluster transitions to the WAITING state
+        /// rather than shutting down after the steps have completed. 
         /// 
         ///  
         /// <para>
         /// For additional protection, you can set the <a>JobFlowInstancesConfig</a> <code>TerminationProtected</code>
-        /// parameter to <code>TRUE</code> to lock the job flow and prevent it from being terminated
+        /// parameter to <code>TRUE</code> to lock the cluster and prevent it from being terminated
         /// by API call, user intervention, or in the event of a job flow error.
         /// </para>
         ///  
@@ -1560,17 +1774,24 @@ namespace Amazon.ElasticMapReduce
         /// </para>
         ///  
         /// <para>
-        /// If your job flow is long-running (such as a Hive data warehouse) or complex, you may
+        /// If your cluster is long-running (such as a Hive data warehouse) or complex, you may
         /// require more than 256 steps to process your data. You can bypass the 256-step limitation
         /// in various ways, including using the SSH shell to connect to the master node and submitting
         /// queries directly to the software running on the master node, such as Hive and Hadoop.
         /// For more information on how to do this, see <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/Management/Guide/AddMoreThan256Steps.html">Add
-        /// More than 256 Steps to a Job Flow</a> in the <i>Amazon EMR Management Guide</i>.
+        /// More than 256 Steps to a Cluster</a> in the <i>Amazon EMR Management Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// For long running job flows, we recommend that you periodically store your results.
+        /// For long running clusters, we recommend that you periodically store your results.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The instance fleets configuration is available only in Amazon EMR versions 4.8.0 and
+        /// later, excluding 5.0.x versions. The RunJobFlow request can contain InstanceFleets
+        /// parameters or InstanceGroups parameters, but not both.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RunJobFlow service method.</param>
         /// 
@@ -1579,6 +1800,7 @@ namespace Amazon.ElasticMapReduce
         /// Indicates that an error occurred while processing the request and that the request
         /// was not completed.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/RunJobFlow">REST API Reference for RunJobFlow Operation</seealso>
         public RunJobFlowResponse RunJobFlow(RunJobFlowRequest request)
         {
             var marshaller = new RunJobFlowRequestMarshaller();
@@ -1596,6 +1818,7 @@ namespace Amazon.ElasticMapReduce
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/RunJobFlow">REST API Reference for RunJobFlow Operation</seealso>
         public Task<RunJobFlowResponse> RunJobFlowAsync(RunJobFlowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RunJobFlowRequestMarshaller();
@@ -1611,28 +1834,28 @@ namespace Amazon.ElasticMapReduce
 
 
         /// <summary>
-        /// SetTerminationProtection locks a job flow so the EC2 instances in the cluster cannot
-        /// be terminated by user intervention, an API call, or in the event of a job-flow error.
-        /// The cluster still terminates upon successful completion of the job flow. Calling SetTerminationProtection
-        /// on a job flow is analogous to calling the Amazon EC2 DisableAPITermination API on
-        /// all of the EC2 instances in a cluster.
+        /// SetTerminationProtection locks a cluster (job flow) so the EC2 instances in the cluster
+        /// cannot be terminated by user intervention, an API call, or in the event of a job-flow
+        /// error. The cluster still terminates upon successful completion of the job flow. Calling
+        /// <code>SetTerminationProtection</code> on a cluster is similar to calling the Amazon
+        /// EC2 <code>DisableAPITermination</code> API on all EC2 instances in a cluster.
         /// 
         ///  
         /// <para>
-        /// SetTerminationProtection is used to prevent accidental termination of a job flow and
-        /// to ensure that in the event of an error, the instances will persist so you can recover
-        /// any data stored in their ephemeral instance storage.
+        ///  <code>SetTerminationProtection</code> is used to prevent accidental termination of
+        /// a cluster and to ensure that in the event of an error, the instances persist so that
+        /// you can recover any data stored in their ephemeral instance storage.
         /// </para>
         ///  
         /// <para>
-        ///  To terminate a job flow that has been locked by setting SetTerminationProtection
-        /// to <code>true</code>, you must first unlock the job flow by a subsequent call to SetTerminationProtection
+        ///  To terminate a cluster that has been locked by setting <code>SetTerminationProtection</code>
+        /// to <code>true</code>, you must first unlock the job flow by a subsequent call to <code>SetTerminationProtection</code>
         /// in which you set the value to <code>false</code>. 
         /// </para>
         ///  
         /// <para>
-        ///  For more information, see<a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/UsingEMR_TerminationProtection.html">Protecting
-        /// a Job Flow from Termination</a> in the <i>Amazon EMR Guide.</i> 
+        ///  For more information, see<a href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/UsingEMR_TerminationProtection.html">Managing
+        /// Cluster Termination</a> in the <i>Amazon EMR Management Guide</i>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetTerminationProtection service method.</param>
@@ -1642,6 +1865,7 @@ namespace Amazon.ElasticMapReduce
         /// Indicates that an error occurred while processing the request and that the request
         /// was not completed.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/SetTerminationProtection">REST API Reference for SetTerminationProtection Operation</seealso>
         public SetTerminationProtectionResponse SetTerminationProtection(SetTerminationProtectionRequest request)
         {
             var marshaller = new SetTerminationProtectionRequestMarshaller();
@@ -1659,6 +1883,7 @@ namespace Amazon.ElasticMapReduce
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/SetTerminationProtection">REST API Reference for SetTerminationProtection Operation</seealso>
         public Task<SetTerminationProtectionResponse> SetTerminationProtectionAsync(SetTerminationProtectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new SetTerminationProtectionRequestMarshaller();
@@ -1675,10 +1900,10 @@ namespace Amazon.ElasticMapReduce
 
         /// <summary>
         /// Sets whether all AWS Identity and Access Management (IAM) users under your account
-        /// can access the specified job flows. This action works on running job flows. You can
-        /// also set the visibility of a job flow when you launch it using the <code>VisibleToAllUsers</code>
+        /// can access the specified clusters (job flows). This action works on running clusters.
+        /// You can also set the visibility of a cluster when you launch it using the <code>VisibleToAllUsers</code>
         /// parameter of <a>RunJobFlow</a>. The SetVisibleToAllUsers action can be called only
-        /// by an IAM user who created the job flow or the AWS account that owns the job flow.
+        /// by an IAM user who created the cluster or the AWS account that owns the cluster.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetVisibleToAllUsers service method.</param>
         /// 
@@ -1687,6 +1912,7 @@ namespace Amazon.ElasticMapReduce
         /// Indicates that an error occurred while processing the request and that the request
         /// was not completed.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/SetVisibleToAllUsers">REST API Reference for SetVisibleToAllUsers Operation</seealso>
         public SetVisibleToAllUsersResponse SetVisibleToAllUsers(SetVisibleToAllUsersRequest request)
         {
             var marshaller = new SetVisibleToAllUsersRequestMarshaller();
@@ -1704,6 +1930,7 @@ namespace Amazon.ElasticMapReduce
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/SetVisibleToAllUsers">REST API Reference for SetVisibleToAllUsers Operation</seealso>
         public Task<SetVisibleToAllUsersResponse> SetVisibleToAllUsersAsync(SetVisibleToAllUsersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new SetVisibleToAllUsersRequestMarshaller();
@@ -1719,17 +1946,17 @@ namespace Amazon.ElasticMapReduce
 
 
         /// <summary>
-        /// TerminateJobFlows shuts a list of job flows down. When a job flow is shut down, any
-        /// step not yet completed is canceled and the EC2 instances on which the job flow is
-        /// running are stopped. Any log files not already saved are uploaded to Amazon S3 if
-        /// a LogUri was specified when the job flow was created.
+        /// TerminateJobFlows shuts a list of clusters (job flows) down. When a job flow is shut
+        /// down, any step not yet completed is canceled and the EC2 instances on which the cluster
+        /// is running are stopped. Any log files not already saved are uploaded to Amazon S3
+        /// if a LogUri was specified when the cluster was created.
         /// 
         ///  
         /// <para>
-        /// The maximum number of JobFlows allowed is 10. The call to TerminateJobFlows is asynchronous.
-        /// Depending on the configuration of the job flow, it may take up to 1-5 minutes for
-        /// the job flow to completely terminate and release allocated resources, such as Amazon
-        /// EC2 instances.
+        /// The maximum number of clusters allowed is 10. The call to <code>TerminateJobFlows</code>
+        /// is asynchronous. Depending on the configuration of the cluster, it may take up to
+        /// 1-5 minutes for the cluster to completely terminate and release allocated resources,
+        /// such as Amazon EC2 instances.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TerminateJobFlows service method.</param>
@@ -1739,6 +1966,7 @@ namespace Amazon.ElasticMapReduce
         /// Indicates that an error occurred while processing the request and that the request
         /// was not completed.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/TerminateJobFlows">REST API Reference for TerminateJobFlows Operation</seealso>
         public TerminateJobFlowsResponse TerminateJobFlows(TerminateJobFlowsRequest request)
         {
             var marshaller = new TerminateJobFlowsRequestMarshaller();
@@ -1756,6 +1984,7 @@ namespace Amazon.ElasticMapReduce
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/TerminateJobFlows">REST API Reference for TerminateJobFlows Operation</seealso>
         public Task<TerminateJobFlowsResponse> TerminateJobFlowsAsync(TerminateJobFlowsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new TerminateJobFlowsRequestMarshaller();

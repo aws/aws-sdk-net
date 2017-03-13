@@ -38,6 +38,7 @@ namespace Amazon.ElasticMapReduce.Model
         private List<Configuration> _configurations = new List<Configuration>();
         private Ec2InstanceAttributes _ec2InstanceAttributes;
         private string _id;
+        private InstanceCollectionType _instanceCollectionType;
         private string _logUri;
         private string _masterPublicDnsName;
         private string _name;
@@ -169,6 +170,31 @@ namespace Amazon.ElasticMapReduce.Model
         }
 
         /// <summary>
+        /// Gets and sets the property InstanceCollectionType. <note> 
+        /// <para>
+        /// The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and
+        /// later, excluding 5.0.x versions.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// The instance group configuration of the cluster. A value of <code>INSTANCE_GROUP</code>
+        /// indicates a uniform instance group configuration. A value of <code>INSTANCE_FLEET</code>
+        /// indicates an instance fleets configuration.
+        /// </para>
+        /// </summary>
+        public InstanceCollectionType InstanceCollectionType
+        {
+            get { return this._instanceCollectionType; }
+            set { this._instanceCollectionType = value; }
+        }
+
+        // Check to see if InstanceCollectionType property is set
+        internal bool IsSetInstanceCollectionType()
+        {
+            return this._instanceCollectionType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property LogUri. 
         /// <para>
         /// The path to the Amazon S3 location where logs for this cluster are stored.
@@ -225,8 +251,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property NormalizedInstanceHours. 
         /// <para>
-        /// An approximation of the cost of the job flow, represented in m1.small/hours. This
-        /// value is incremented one time for every hour an m1.small instance runs. Larger instances
+        /// An approximation of the cost of the cluster, represented in m1.small/hours. This value
+        /// is incremented one time for every hour an m1.small instance runs. Larger instances
         /// are weighted more, so an EC2 instance that is roughly four times more expensive would
         /// result in the normalized instance hours being incremented by four. This result is
         /// only an approximation and does not reflect the actual billing rate.
@@ -423,9 +449,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property VisibleToAllUsers. 
         /// <para>
-        /// Indicates whether the job flow is visible to all IAM users of the AWS account associated
-        /// with the job flow. If this value is set to <code>true</code>, all IAM users of that
-        /// AWS account can view and manage the job flow if they have the proper policy permissions
+        /// Indicates whether the cluster is visible to all IAM users of the AWS account associated
+        /// with the cluster. If this value is set to <code>true</code>, all IAM users of that
+        /// AWS account can view and manage the cluster if they have the proper policy permissions
         /// set. If this value is <code>false</code>, only the IAM user that created the cluster
         /// can view and manage it. This value can be changed using the <a>SetVisibleToAllUsers</a>
         /// action.

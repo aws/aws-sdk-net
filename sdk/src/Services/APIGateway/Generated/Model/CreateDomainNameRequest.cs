@@ -33,6 +33,7 @@ namespace Amazon.APIGateway.Model
     /// </summary>
     public partial class CreateDomainNameRequest : AmazonAPIGatewayRequest
     {
+        private string _certificateArn;
         private string _certificateBody;
         private string _certificateChain;
         private string _certificateName;
@@ -40,9 +41,28 @@ namespace Amazon.APIGateway.Model
         private string _domainName;
 
         /// <summary>
+        /// Gets and sets the property CertificateArn. 
+        /// <para>
+        /// The reference to an AWS-managed certificate. AWS Certificate Manager is the only supported
+        /// source.
+        /// </para>
+        /// </summary>
+        public string CertificateArn
+        {
+            get { return this._certificateArn; }
+            set { this._certificateArn = value; }
+        }
+
+        // Check to see if CertificateArn property is set
+        internal bool IsSetCertificateArn()
+        {
+            return this._certificateArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property CertificateBody. 
         /// <para>
-        /// The body of the server certificate provided by your certificate authority.
+        /// [Deprecated] The body of the server certificate provided by your certificate authority.
         /// </para>
         /// </summary>
         public string CertificateBody
@@ -60,11 +80,11 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property CertificateChain. 
         /// <para>
-        /// The intermediate certificates and optionally the root certificate, one after the other
-        /// without any blank lines. If you include the root certificate, your certificate chain
-        /// must start with intermediate certificates and end with the root certificate. Use the
-        /// intermediate certificates that were provided by your certificate authority. Do not
-        /// include any intermediaries that are not in the chain of trust path.
+        /// [Deprecated] The intermediate certificates and optionally the root certificate, one
+        /// after the other without any blank lines. If you include the root certificate, your
+        /// certificate chain must start with intermediate certificates and end with the root
+        /// certificate. Use the intermediate certificates that were provided by your certificate
+        /// authority. Do not include any intermediaries that are not in the chain of trust path.
         /// </para>
         /// </summary>
         public string CertificateChain
@@ -82,7 +102,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property CertificateName. 
         /// <para>
-        /// The name of the certificate.
+        /// The user-friendly name of the certificate.
         /// </para>
         /// </summary>
         public string CertificateName
@@ -100,7 +120,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property CertificatePrivateKey. 
         /// <para>
-        /// Your certificate's private key.
+        /// [Deprecated] Your certificate's private key.
         /// </para>
         /// </summary>
         public string CertificatePrivateKey
@@ -118,7 +138,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property DomainName. 
         /// <para>
-        /// The name of the <a>DomainName</a> resource.
+        /// (Required) The name of the <a>DomainName</a> resource.
         /// </para>
         /// </summary>
         public string DomainName

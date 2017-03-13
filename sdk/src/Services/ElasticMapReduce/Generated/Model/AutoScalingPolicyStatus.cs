@@ -38,7 +38,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// 
+        /// Indicates the status of the automatic scaling policy.
         /// </para>
         /// </summary>
         public AutoScalingPolicyState State

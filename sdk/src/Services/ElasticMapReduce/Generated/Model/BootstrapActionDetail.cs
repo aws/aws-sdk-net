@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// Reports the configuration of a bootstrap action in a job flow.
+    /// Reports the configuration of a bootstrap action in a cluster (job flow).
     /// </summary>
     public partial class BootstrapActionDetail
     {

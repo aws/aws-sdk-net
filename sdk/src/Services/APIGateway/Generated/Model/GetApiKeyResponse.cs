@@ -50,8 +50,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property CreatedDate. 
         /// <para>
-        /// The date when the API Key was created, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
-        /// target="_blank">ISO 8601 format</a>.
+        /// The timestamp when the API Key was created.
         /// </para>
         /// </summary>
         public DateTime CreatedDate
@@ -141,7 +140,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property LastUpdatedDate. 
         /// <para>
-        /// When the API Key was last updated, in ISO 8601 format.
+        /// The timestamp when the API Key was last updated.
         /// </para>
         /// </summary>
         public DateTime LastUpdatedDate

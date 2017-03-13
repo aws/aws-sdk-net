@@ -73,6 +73,18 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ClusterId);
                 }
 
+                if(publicRequest.IsSetInstanceFleetId())
+                {
+                    context.Writer.WritePropertyName("InstanceFleetId");
+                    context.Writer.Write(publicRequest.InstanceFleetId);
+                }
+
+                if(publicRequest.IsSetInstanceFleetType())
+                {
+                    context.Writer.WritePropertyName("InstanceFleetType");
+                    context.Writer.Write(publicRequest.InstanceFleetType);
+                }
+
                 if(publicRequest.IsSetInstanceGroupId())
                 {
                     context.Writer.WritePropertyName("InstanceGroupId");

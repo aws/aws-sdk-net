@@ -37,6 +37,8 @@ namespace Amazon.ElasticMapReduce.Model
     public partial class ListInstancesRequest : AmazonElasticMapReduceRequest
     {
         private string _clusterId;
+        private string _instanceFleetId;
+        private InstanceFleetType _instanceFleetType;
         private string _instanceGroupId;
         private List<string> _instanceGroupTypes = new List<string>();
         private List<string> _instanceStates = new List<string>();
@@ -58,6 +60,42 @@ namespace Amazon.ElasticMapReduce.Model
         internal bool IsSetClusterId()
         {
             return this._clusterId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceFleetId. 
+        /// <para>
+        /// The unique identifier of the instance fleet.
+        /// </para>
+        /// </summary>
+        public string InstanceFleetId
+        {
+            get { return this._instanceFleetId; }
+            set { this._instanceFleetId = value; }
+        }
+
+        // Check to see if InstanceFleetId property is set
+        internal bool IsSetInstanceFleetId()
+        {
+            return this._instanceFleetId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceFleetType. 
+        /// <para>
+        /// The node type of the instance fleet. For example MASTER, CORE, or TASK.
+        /// </para>
+        /// </summary>
+        public InstanceFleetType InstanceFleetType
+        {
+            get { return this._instanceFleetType; }
+            set { this._instanceFleetType = value; }
+        }
+
+        // Check to see if InstanceFleetType property is set
+        internal bool IsSetInstanceFleetType()
+        {
+            return this._instanceFleetType != null;
         }
 
         /// <summary>

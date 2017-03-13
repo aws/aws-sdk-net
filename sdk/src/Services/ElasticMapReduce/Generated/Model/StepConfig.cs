@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// Specification of a job flow step.
+    /// Specification of a cluster (job flow) step.
     /// </summary>
     public partial class StepConfig
     {
@@ -44,8 +44,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Instantiates StepConfig with the parameterized properties
         /// </summary>
-        /// <param name="name">The name of the job flow step.</param>
-        /// <param name="hadoopJarStep">The JAR file used for the job flow step.</param>
+        /// <param name="name">The name of the step.</param>
+        /// <param name="hadoopJarStep">The JAR file used for the step.</param>
         public StepConfig(string name, HadoopJarStepConfig hadoopJarStep)
         {
             _name = name;
@@ -55,7 +55,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property ActionOnFailure. 
         /// <para>
-        /// The action to take if the job flow step fails.
+        /// The action to take if the step fails.
         /// </para>
         /// </summary>
         public ActionOnFailure ActionOnFailure
@@ -73,7 +73,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property HadoopJarStep. 
         /// <para>
-        /// The JAR file used for the job flow step.
+        /// The JAR file used for the step.
         /// </para>
         /// </summary>
         public HadoopJarStepConfig HadoopJarStep
@@ -91,7 +91,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the job flow step.
+        /// The name of the step.
         /// </para>
         /// </summary>
         public string Name

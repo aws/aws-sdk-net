@@ -37,7 +37,7 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property DetachedObjectIdentifier. 
         /// <para>
-        /// The ObjectIdentifier that was detached from the object.
+        /// The <code>ObjectIdentifier</code> that was detached from the object.
         /// </para>
         /// </summary>
         public string DetachedObjectIdentifier

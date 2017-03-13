@@ -112,6 +112,18 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                     unmarshalledObject.IamInstanceProfile = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("RequestedEc2AvailabilityZones", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.RequestedEc2AvailabilityZones = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RequestedEc2SubnetIds", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.RequestedEc2SubnetIds = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ServiceAccessSecurityGroup", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

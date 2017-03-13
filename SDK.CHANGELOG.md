@@ -1,8 +1,18 @@
+### 3.3.62.0 (2017-03-10 22:50 UTC)
+* ElasticMapReduce (3.3.3.0)
+	* This release includes support for instance fleets.
+
+### 3.3.61.0 (2017-03-09 22:22 UTC)
+* APIGateway (3.3.5.0)
+	* API Gateway has added support for ACM certificates on custom domain names. Both Amazon-issued certificates and uploaded third-part certificates are supported.
+* CloudDirectory (3.3.1.0)
+	* Introduces a new Cloud Directory API that enables you to retrieve all available parent paths for any type of object (a node, leaf node, policy node, and index node) in a hierarchy.
+
 ### 3.3.60.0 (2017-03-09 01:36 UTC)
 * DynamoDBv2 (3.3.4.0)
 	* Adding Time-to-Live support to higher-level APIs.
 * Organizations (3.3.1.0)
-	* Regenerating from latest service model organizations-2016-11-28.normal.json
+	* Picked up the latest model updates. Note that this includes breaking changes to the service interface, client, and model shapes.
 * WorkDocs (3.3.0.0)
 	* Amazon WorkDocs SDK provides full administrator level access to WorkDocs site resources, allowing developers to integrate their applications to manage WorkDocs users, content and permissions programmatically.
 

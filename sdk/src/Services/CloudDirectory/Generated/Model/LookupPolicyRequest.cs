@@ -31,9 +31,10 @@ namespace Amazon.CloudDirectory.Model
     /// Container for the parameters to the LookupPolicy operation.
     /// Lists all policies from the root of the <a>Directory</a> to the object specified.
     /// If there are no policies present, an empty list is returned. If policies are present,
-    /// and if some objects don't have the policies attached, it returns the objectIdentifier
-    /// for such objects. If policies are present, it returns objectIdentifier, policyId,
-    /// and policyType. Paths that don't lead to the root from the target object are ignored.
+    /// and if some objects don't have the policies attached, it returns the <code>ObjectIdentifier</code>
+    /// for such objects. If policies are present, it returns <code>ObjectIdentifier</code>,
+    /// <code>policyId</code>, and <code>policyType</code>. Paths that don't lead to the root
+    /// from the target object are ignored.
     /// </summary>
     public partial class LookupPolicyRequest : AmazonCloudDirectoryRequest
     {

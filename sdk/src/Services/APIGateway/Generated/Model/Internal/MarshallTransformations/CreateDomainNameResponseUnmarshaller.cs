@@ -51,6 +51,12 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("certificateArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.CertificateArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("certificateName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -56,7 +56,7 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// Type of exception, such as InvalidArnException.
+        /// Type of exception, such as <code>InvalidArnException</code>.
         /// </para>
         /// </summary>
         public BatchReadExceptionType Type
