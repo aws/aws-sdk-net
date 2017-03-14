@@ -1,3 +1,17 @@
+### 3.3.63.0 (2017-03-14 05:25 UTC)
+* CloudWatchEvents (3.3.1.0)
+	* Updated to use new Core, version 3.3.9.0
+	* This update extends Target Data Type for configuring Target behavior during invocation.
+* DeviceFarm (3.3.1.0)
+	* Updated to use new Core, version 3.3.9.0
+	* Network shaping allows users to simulate network connections and conditions while testing their Android, iOS, and web apps with AWS Device Farm.
+* SecurityToken (3.3.1.0)
+	* Updated to use new Core, version 3.3.9.0
+	* Changes to STS to support new assume role credentials features.
+* Core 3.3.9.0
+	* Support writing of AWS shared credentials file. Support assume role profiles in .NET credentials file and shared credentials file.
+	* all services packages updated to require new core
+
 ### 3.3.62.0 (2017-03-10 22:50 UTC)
 * ElasticMapReduce (3.3.3.0)
 	* This release includes support for instance fleets.
