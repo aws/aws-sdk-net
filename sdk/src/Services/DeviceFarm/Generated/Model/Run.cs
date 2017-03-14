@@ -40,6 +40,7 @@ namespace Amazon.DeviceFarm.Model
         private DeviceMinutes _deviceMinutes;
         private string _message;
         private string _name;
+        private NetworkProfile _networkProfile;
         private DevicePlatform _platform;
         private ExecutionResult _result;
         private DateTime? _started;
@@ -191,6 +192,24 @@ namespace Amazon.DeviceFarm.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkProfile. 
+        /// <para>
+        /// The network profile being used for a test run.
+        /// </para>
+        /// </summary>
+        public NetworkProfile NetworkProfile
+        {
+            get { return this._networkProfile; }
+            set { this._networkProfile = value; }
+        }
+
+        // Check to see if NetworkProfile property is set
+        internal bool IsSetNetworkProfile()
+        {
+            return this._networkProfile != null;
         }
 
         /// <summary>

@@ -28,28 +28,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DeviceFarm.Model
 {
     /// <summary>
-    /// Represents the result of an update project request.
+    /// This is the response object from the GetNetworkProfile operation.
     /// </summary>
-    public partial class UpdateProjectResponse : AmazonWebServiceResponse
+    public partial class GetNetworkProfileResponse : AmazonWebServiceResponse
     {
-        private Project _project;
+        private NetworkProfile _networkProfile;
 
         /// <summary>
-        /// Gets and sets the property Project. 
+        /// Gets and sets the property NetworkProfile. 
         /// <para>
-        /// The project you wish to update.
+        /// The network profile.
         /// </para>
         /// </summary>
-        public Project Project
+        public NetworkProfile NetworkProfile
         {
-            get { return this._project; }
-            set { this._project = value; }
+            get { return this._networkProfile; }
+            set { this._networkProfile = value; }
         }
 
-        // Check to see if Project property is set
-        internal bool IsSetProject()
+        // Check to see if NetworkProfile property is set
+        internal bool IsSetNetworkProfile()
         {
-            return this._project != null;
+            return this._networkProfile != null;
         }
 
     }

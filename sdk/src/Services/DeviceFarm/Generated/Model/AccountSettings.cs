@@ -33,6 +33,8 @@ namespace Amazon.DeviceFarm.Model
     public partial class AccountSettings
     {
         private string _awsAccountNumber;
+        private int? _defaultJobTimeoutMinutes;
+        private int? _maxJobTimeoutMinutes;
         private Dictionary<string, int> _unmeteredDevices = new Dictionary<string, int>();
         private Dictionary<string, int> _unmeteredRemoteAccessDevices = new Dictionary<string, int>();
 
@@ -52,6 +54,43 @@ namespace Amazon.DeviceFarm.Model
         internal bool IsSetAwsAccountNumber()
         {
             return this._awsAccountNumber != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DefaultJobTimeoutMinutes. 
+        /// <para>
+        /// The default number of minutes (at the account level) a test run will execute before
+        /// it times out. Default value is 60 minutes.
+        /// </para>
+        /// </summary>
+        public int DefaultJobTimeoutMinutes
+        {
+            get { return this._defaultJobTimeoutMinutes.GetValueOrDefault(); }
+            set { this._defaultJobTimeoutMinutes = value; }
+        }
+
+        // Check to see if DefaultJobTimeoutMinutes property is set
+        internal bool IsSetDefaultJobTimeoutMinutes()
+        {
+            return this._defaultJobTimeoutMinutes.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxJobTimeoutMinutes. 
+        /// <para>
+        /// The maximum number of minutes a test run will execute before it times out.
+        /// </para>
+        /// </summary>
+        public int MaxJobTimeoutMinutes
+        {
+            get { return this._maxJobTimeoutMinutes.GetValueOrDefault(); }
+            set { this._maxJobTimeoutMinutes = value; }
+        }
+
+        // Check to see if MaxJobTimeoutMinutes property is set
+        internal bool IsSetMaxJobTimeoutMinutes()
+        {
+            return this._maxJobTimeoutMinutes.HasValue; 
         }
 
         /// <summary>

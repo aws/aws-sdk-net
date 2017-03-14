@@ -35,7 +35,10 @@ namespace Amazon.DeviceFarm.Model
         private Project _project;
 
         /// <summary>
-        /// Gets and sets the property Project.
+        /// Gets and sets the property Project. 
+        /// <para>
+        /// The project you wish to get information about.
+        /// </para>
         /// </summary>
         public Project Project
         {

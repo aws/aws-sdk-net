@@ -28,28 +28,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DeviceFarm.Model
 {
     /// <summary>
-    /// Represents the result of an update project request.
+    /// Represents configuration information about a test run, such as the execution timeout
+    /// (in minutes).
     /// </summary>
-    public partial class UpdateProjectResponse : AmazonWebServiceResponse
+    public partial class ExecutionConfiguration
     {
-        private Project _project;
+        private int? _jobTimeoutMinutes;
 
         /// <summary>
-        /// Gets and sets the property Project. 
+        /// Gets and sets the property JobTimeoutMinutes. 
         /// <para>
-        /// The project you wish to update.
+        /// The number of minutes a test run will execute before it times out.
         /// </para>
         /// </summary>
-        public Project Project
+        public int JobTimeoutMinutes
         {
-            get { return this._project; }
-            set { this._project = value; }
+            get { return this._jobTimeoutMinutes.GetValueOrDefault(); }
+            set { this._jobTimeoutMinutes = value; }
         }
 
-        // Check to see if Project property is set
-        internal bool IsSetProject()
+        // Check to see if JobTimeoutMinutes property is set
+        internal bool IsSetJobTimeoutMinutes()
         {
-            return this._project != null;
+            return this._jobTimeoutMinutes.HasValue; 
         }
 
     }

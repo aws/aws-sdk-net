@@ -35,7 +35,10 @@ namespace Amazon.DeviceFarm.Model
         private DevicePool _devicePool;
 
         /// <summary>
-        /// Gets and sets the property DevicePool.
+        /// Gets and sets the property DevicePool. 
+        /// <para>
+        /// The device pool you just updated.
+        /// </para>
         /// </summary>
         public DevicePool DevicePool
         {

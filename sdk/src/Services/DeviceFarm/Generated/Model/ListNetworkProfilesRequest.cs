@@ -28,19 +28,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DeviceFarm.Model
 {
     /// <summary>
-    /// Container for the parameters to the UpdateProject operation.
-    /// Modifies the specified project name, given the project ARN and a new name.
+    /// Container for the parameters to the ListNetworkProfiles operation.
+    /// Returns the list of available network profiles.
     /// </summary>
-    public partial class UpdateProjectRequest : AmazonDeviceFarmRequest
+    public partial class ListNetworkProfilesRequest : AmazonDeviceFarmRequest
     {
         private string _arn;
-        private int? _defaultJobTimeoutMinutes;
-        private string _name;
+        private string _nextToken;
+        private NetworkProfileType _type;
 
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the project whose name you wish to update.
+        /// The Amazon Resource Name (ARN) of the project for which you want to list network profiles.
         /// </para>
         /// </summary>
         public string Arn
@@ -56,39 +56,41 @@ namespace Amazon.DeviceFarm.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DefaultJobTimeoutMinutes. 
+        /// Gets and sets the property NextToken. 
         /// <para>
-        /// The number of minutes a test run in the project will execute before it times out.
+        /// An identifier that was returned from the previous call to this operation, which can
+        /// be used to return the next set of items in the list.
         /// </para>
         /// </summary>
-        public int DefaultJobTimeoutMinutes
+        public string NextToken
         {
-            get { return this._defaultJobTimeoutMinutes.GetValueOrDefault(); }
-            set { this._defaultJobTimeoutMinutes = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
-        // Check to see if DefaultJobTimeoutMinutes property is set
-        internal bool IsSetDefaultJobTimeoutMinutes()
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
         {
-            return this._defaultJobTimeoutMinutes.HasValue; 
+            return this._nextToken != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Name. 
+        /// Gets and sets the property Type. 
         /// <para>
-        /// A string representing the new name of the project that you are updating.
+        /// The type of network profile you wish to return information about. Valid values are
+        /// listed below.
         /// </para>
         /// </summary>
-        public string Name
+        public NetworkProfileType Type
         {
-            get { return this._name; }
-            set { this._name = value; }
+            get { return this._type; }
+            set { this._type = value; }
         }
 
-        // Check to see if Name property is set
-        internal bool IsSetName()
+        // Check to see if Type property is set
+        internal bool IsSetType()
         {
-            return this._name != null;
+            return this._type != null;
         }
 
     }

@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateProject Request Marshaller
+    /// GetNetworkProfile Request Marshaller
     /// </summary>       
-    public class CreateProjectRequestMarshaller : IMarshaller<IRequest, CreateProjectRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class GetNetworkProfileRequestMarshaller : IMarshaller<IRequest, GetNetworkProfileRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateProjectRequest)input);
+            return this.Marshall((GetNetworkProfileRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateProjectRequest publicRequest)
+        public IRequest Marshall(GetNetworkProfileRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.DeviceFarm");
-            string target = "DeviceFarm_20150623.CreateProject";
+            string target = "DeviceFarm_20150623.GetNetworkProfile";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.HttpMethod = "POST";
@@ -67,16 +67,10 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDefaultJobTimeoutMinutes())
+                if(publicRequest.IsSetArn())
                 {
-                    context.Writer.WritePropertyName("defaultJobTimeoutMinutes");
-                    context.Writer.Write(publicRequest.DefaultJobTimeoutMinutes);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
+                    context.Writer.WritePropertyName("arn");
+                    context.Writer.Write(publicRequest.Arn);
                 }
 
         

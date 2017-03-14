@@ -112,6 +112,12 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("networkProfile", targetDepth))
+                {
+                    var unmarshaller = NetworkProfileUnmarshaller.Instance;
+                    unmarshalledObject.NetworkProfile = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("platform", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -35,7 +35,10 @@ namespace Amazon.DeviceFarm.Model
         private Upload _upload;
 
         /// <summary>
-        /// Gets and sets the property Upload.
+        /// Gets and sets the property Upload. 
+        /// <para>
+        /// An app or a set of one or more tests to upload or that have been uploaded.
+        /// </para>
         /// </summary>
         public Upload Upload
         {

@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ScheduleRun Request Marshaller
+    /// CreateNetworkProfile Request Marshaller
     /// </summary>       
-    public class ScheduleRunRequestMarshaller : IMarshaller<IRequest, ScheduleRunRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class CreateNetworkProfileRequestMarshaller : IMarshaller<IRequest, CreateNetworkProfileRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((ScheduleRunRequest)input);
+            return this.Marshall((CreateNetworkProfileRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(ScheduleRunRequest publicRequest)
+        public IRequest Marshall(CreateNetworkProfileRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.DeviceFarm");
-            string target = "DeviceFarm_20150623.ScheduleRun";
+            string target = "DeviceFarm_20150623.CreateNetworkProfile";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.HttpMethod = "POST";
@@ -67,38 +67,34 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAppArn())
+                if(publicRequest.IsSetDescription())
                 {
-                    context.Writer.WritePropertyName("appArn");
-                    context.Writer.Write(publicRequest.AppArn);
+                    context.Writer.WritePropertyName("description");
+                    context.Writer.Write(publicRequest.Description);
                 }
 
-                if(publicRequest.IsSetConfiguration())
+                if(publicRequest.IsSetDownlinkBandwidthBits())
                 {
-                    context.Writer.WritePropertyName("configuration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ScheduleRunConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Configuration, context);
-
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WritePropertyName("downlinkBandwidthBits");
+                    context.Writer.Write(publicRequest.DownlinkBandwidthBits);
                 }
 
-                if(publicRequest.IsSetDevicePoolArn())
+                if(publicRequest.IsSetDownlinkDelayMs())
                 {
-                    context.Writer.WritePropertyName("devicePoolArn");
-                    context.Writer.Write(publicRequest.DevicePoolArn);
+                    context.Writer.WritePropertyName("downlinkDelayMs");
+                    context.Writer.Write(publicRequest.DownlinkDelayMs);
                 }
 
-                if(publicRequest.IsSetExecutionConfiguration())
+                if(publicRequest.IsSetDownlinkJitterMs())
                 {
-                    context.Writer.WritePropertyName("executionConfiguration");
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WritePropertyName("downlinkJitterMs");
+                    context.Writer.Write(publicRequest.DownlinkJitterMs);
+                }
 
-                    var marshaller = ExecutionConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ExecutionConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
+                if(publicRequest.IsSetDownlinkLossPercent())
+                {
+                    context.Writer.WritePropertyName("downlinkLossPercent");
+                    context.Writer.Write(publicRequest.DownlinkLossPercent);
                 }
 
                 if(publicRequest.IsSetName())
@@ -113,15 +109,34 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ProjectArn);
                 }
 
-                if(publicRequest.IsSetTest())
+                if(publicRequest.IsSetType())
                 {
-                    context.Writer.WritePropertyName("test");
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WritePropertyName("type");
+                    context.Writer.Write(publicRequest.Type);
+                }
 
-                    var marshaller = ScheduleRunTestMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Test, context);
+                if(publicRequest.IsSetUplinkBandwidthBits())
+                {
+                    context.Writer.WritePropertyName("uplinkBandwidthBits");
+                    context.Writer.Write(publicRequest.UplinkBandwidthBits);
+                }
 
-                    context.Writer.WriteObjectEnd();
+                if(publicRequest.IsSetUplinkDelayMs())
+                {
+                    context.Writer.WritePropertyName("uplinkDelayMs");
+                    context.Writer.Write(publicRequest.UplinkDelayMs);
+                }
+
+                if(publicRequest.IsSetUplinkJitterMs())
+                {
+                    context.Writer.WritePropertyName("uplinkJitterMs");
+                    context.Writer.Write(publicRequest.UplinkJitterMs);
+                }
+
+                if(publicRequest.IsSetUplinkLossPercent())
+                {
+                    context.Writer.WritePropertyName("uplinkLossPercent");
+                    context.Writer.Write(publicRequest.UplinkLossPercent);
                 }
 
         

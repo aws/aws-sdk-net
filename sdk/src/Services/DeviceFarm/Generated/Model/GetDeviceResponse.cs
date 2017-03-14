@@ -35,7 +35,10 @@ namespace Amazon.DeviceFarm.Model
         private Device _device;
 
         /// <summary>
-        /// Gets and sets the property Device.
+        /// Gets and sets the property Device. 
+        /// <para>
+        /// An object containing information about the requested device.
+        /// </para>
         /// </summary>
         public Device Device
         {

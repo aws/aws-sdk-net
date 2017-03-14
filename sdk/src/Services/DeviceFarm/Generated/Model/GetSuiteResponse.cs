@@ -35,7 +35,10 @@ namespace Amazon.DeviceFarm.Model
         private Suite _suite;
 
         /// <summary>
-        /// Gets and sets the property Suite.
+        /// Gets and sets the property Suite. 
+        /// <para>
+        /// A collection of one or more tests.
+        /// </para>
         /// </summary>
         public Suite Suite
         {

@@ -35,7 +35,10 @@ namespace Amazon.DeviceFarm.Model
         private Job _job;
 
         /// <summary>
-        /// Gets and sets the property Job.
+        /// Gets and sets the property Job. 
+        /// <para>
+        /// An object containing information about the requested job.
+        /// </para>
         /// </summary>
         public Job Job
         {

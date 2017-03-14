@@ -28,28 +28,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DeviceFarm.Model
 {
     /// <summary>
-    /// Represents the result of an update project request.
+    /// Container for the parameters to the GetNetworkProfile operation.
+    /// Returns information about a network profile.
     /// </summary>
-    public partial class UpdateProjectResponse : AmazonWebServiceResponse
+    public partial class GetNetworkProfileRequest : AmazonDeviceFarmRequest
     {
-        private Project _project;
+        private string _arn;
 
         /// <summary>
-        /// Gets and sets the property Project. 
+        /// Gets and sets the property Arn. 
         /// <para>
-        /// The project you wish to update.
+        /// The Amazon Resource Name (ARN) of the network profile you want to return information
+        /// about.
         /// </para>
         /// </summary>
-        public Project Project
+        public string Arn
         {
-            get { return this._project; }
-            set { this._project = value; }
+            get { return this._arn; }
+            set { this._arn = value; }
         }
 
-        // Check to see if Project property is set
-        internal bool IsSetProject()
+        // Check to see if Arn property is set
+        internal bool IsSetArn()
         {
-            return this._project != null;
+            return this._arn != null;
         }
 
     }

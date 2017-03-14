@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// UpdateProject Request Marshaller
+    /// UpdateNetworkProfile Request Marshaller
     /// </summary>       
-    public class UpdateProjectRequestMarshaller : IMarshaller<IRequest, UpdateProjectRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class UpdateNetworkProfileRequestMarshaller : IMarshaller<IRequest, UpdateNetworkProfileRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((UpdateProjectRequest)input);
+            return this.Marshall((UpdateNetworkProfileRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(UpdateProjectRequest publicRequest)
+        public IRequest Marshall(UpdateNetworkProfileRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.DeviceFarm");
-            string target = "DeviceFarm_20150623.UpdateProject";
+            string target = "DeviceFarm_20150623.UpdateNetworkProfile";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.HttpMethod = "POST";
@@ -73,16 +73,70 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Arn);
                 }
 
-                if(publicRequest.IsSetDefaultJobTimeoutMinutes())
+                if(publicRequest.IsSetDescription())
                 {
-                    context.Writer.WritePropertyName("defaultJobTimeoutMinutes");
-                    context.Writer.Write(publicRequest.DefaultJobTimeoutMinutes);
+                    context.Writer.WritePropertyName("description");
+                    context.Writer.Write(publicRequest.Description);
+                }
+
+                if(publicRequest.IsSetDownlinkBandwidthBits())
+                {
+                    context.Writer.WritePropertyName("downlinkBandwidthBits");
+                    context.Writer.Write(publicRequest.DownlinkBandwidthBits);
+                }
+
+                if(publicRequest.IsSetDownlinkDelayMs())
+                {
+                    context.Writer.WritePropertyName("downlinkDelayMs");
+                    context.Writer.Write(publicRequest.DownlinkDelayMs);
+                }
+
+                if(publicRequest.IsSetDownlinkJitterMs())
+                {
+                    context.Writer.WritePropertyName("downlinkJitterMs");
+                    context.Writer.Write(publicRequest.DownlinkJitterMs);
+                }
+
+                if(publicRequest.IsSetDownlinkLossPercent())
+                {
+                    context.Writer.WritePropertyName("downlinkLossPercent");
+                    context.Writer.Write(publicRequest.DownlinkLossPercent);
                 }
 
                 if(publicRequest.IsSetName())
                 {
                     context.Writer.WritePropertyName("name");
                     context.Writer.Write(publicRequest.Name);
+                }
+
+                if(publicRequest.IsSetType())
+                {
+                    context.Writer.WritePropertyName("type");
+                    context.Writer.Write(publicRequest.Type);
+                }
+
+                if(publicRequest.IsSetUplinkBandwidthBits())
+                {
+                    context.Writer.WritePropertyName("uplinkBandwidthBits");
+                    context.Writer.Write(publicRequest.UplinkBandwidthBits);
+                }
+
+                if(publicRequest.IsSetUplinkDelayMs())
+                {
+                    context.Writer.WritePropertyName("uplinkDelayMs");
+                    context.Writer.Write(publicRequest.UplinkDelayMs);
+                }
+
+                if(publicRequest.IsSetUplinkJitterMs())
+                {
+                    context.Writer.WritePropertyName("uplinkJitterMs");
+                    context.Writer.Write(publicRequest.UplinkJitterMs);
+                }
+
+                if(publicRequest.IsSetUplinkLossPercent())
+                {
+                    context.Writer.WritePropertyName("uplinkLossPercent");
+                    context.Writer.Write(publicRequest.UplinkLossPercent);
                 }
 
         

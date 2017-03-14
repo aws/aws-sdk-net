@@ -35,7 +35,10 @@ namespace Amazon.DeviceFarm.Model
         private Test _test;
 
         /// <summary>
-        /// Gets and sets the property Test.
+        /// Gets and sets the property Test. 
+        /// <para>
+        /// A test condition that is evaluated.
+        /// </para>
         /// </summary>
         public Test Test
         {

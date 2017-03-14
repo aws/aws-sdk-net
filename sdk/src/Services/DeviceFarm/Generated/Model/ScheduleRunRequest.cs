@@ -36,6 +36,7 @@ namespace Amazon.DeviceFarm.Model
         private string _appArn;
         private ScheduleRunConfiguration _configuration;
         private string _devicePoolArn;
+        private ExecutionConfiguration _executionConfiguration;
         private string _name;
         private string _projectArn;
         private ScheduleRunTest _test;
@@ -92,6 +93,25 @@ namespace Amazon.DeviceFarm.Model
         internal bool IsSetDevicePoolArn()
         {
             return this._devicePoolArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExecutionConfiguration. 
+        /// <para>
+        /// Specifies configuration information about a test run, such as the execution timeout
+        /// (in minutes).
+        /// </para>
+        /// </summary>
+        public ExecutionConfiguration ExecutionConfiguration
+        {
+            get { return this._executionConfiguration; }
+            set { this._executionConfiguration = value; }
+        }
+
+        // Check to see if ExecutionConfiguration property is set
+        internal bool IsSetExecutionConfiguration()
+        {
+            return this._executionConfiguration != null;
         }
 
         /// <summary>

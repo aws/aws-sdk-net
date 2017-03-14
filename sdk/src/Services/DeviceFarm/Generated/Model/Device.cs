@@ -366,7 +366,10 @@ namespace Amazon.DeviceFarm.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Resolution.
+        /// Gets and sets the property Resolution. 
+        /// <para>
+        /// The resolution of the device.
+        /// </para>
         /// </summary>
         public Resolution Resolution
         {

@@ -102,7 +102,10 @@ namespace Amazon.DeviceFarm.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Device.
+        /// Gets and sets the property Device. 
+        /// <para>
+        /// The device (phone or tablet) used in the remote access session.
+        /// </para>
         /// </summary>
         public Device Device
         {
@@ -117,7 +120,11 @@ namespace Amazon.DeviceFarm.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DeviceMinutes.
+        /// Gets and sets the property DeviceMinutes. 
+        /// <para>
+        /// The number of minutes a device is used in a remote access sesssion (including setup
+        /// and teardown minutes).
+        /// </para>
         /// </summary>
         public DeviceMinutes DeviceMinutes
         {

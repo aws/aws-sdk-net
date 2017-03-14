@@ -28,29 +28,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DeviceFarm.Model
 {
     /// <summary>
-    /// Represents the result of an update project request.
+    /// This is the response object from the DeleteNetworkProfile operation.
     /// </summary>
-    public partial class UpdateProjectResponse : AmazonWebServiceResponse
+    public partial class DeleteNetworkProfileResponse : AmazonWebServiceResponse
     {
-        private Project _project;
-
-        /// <summary>
-        /// Gets and sets the property Project. 
-        /// <para>
-        /// The project you wish to update.
-        /// </para>
-        /// </summary>
-        public Project Project
-        {
-            get { return this._project; }
-            set { this._project = value; }
-        }
-
-        // Check to see if Project property is set
-        internal bool IsSetProject()
-        {
-            return this._project != null;
-        }
 
     }
 }

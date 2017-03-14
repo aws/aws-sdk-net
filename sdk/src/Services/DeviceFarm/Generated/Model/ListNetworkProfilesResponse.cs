@@ -28,50 +28,48 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DeviceFarm.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreateProject operation.
-    /// Creates a new project.
+    /// This is the response object from the ListNetworkProfiles operation.
     /// </summary>
-    public partial class CreateProjectRequest : AmazonDeviceFarmRequest
+    public partial class ListNetworkProfilesResponse : AmazonWebServiceResponse
     {
-        private int? _defaultJobTimeoutMinutes;
-        private string _name;
+        private List<NetworkProfile> _networkProfiles = new List<NetworkProfile>();
+        private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property DefaultJobTimeoutMinutes. 
+        /// Gets and sets the property NetworkProfiles. 
         /// <para>
-        /// Sets the execution timeout value (in minutes) for a project. All test runs in this
-        /// project will use the specified execution timeout value unless overridden when scheduling
-        /// a run.
+        /// A list of the available network profiles.
         /// </para>
         /// </summary>
-        public int DefaultJobTimeoutMinutes
+        public List<NetworkProfile> NetworkProfiles
         {
-            get { return this._defaultJobTimeoutMinutes.GetValueOrDefault(); }
-            set { this._defaultJobTimeoutMinutes = value; }
+            get { return this._networkProfiles; }
+            set { this._networkProfiles = value; }
         }
 
-        // Check to see if DefaultJobTimeoutMinutes property is set
-        internal bool IsSetDefaultJobTimeoutMinutes()
+        // Check to see if NetworkProfiles property is set
+        internal bool IsSetNetworkProfiles()
         {
-            return this._defaultJobTimeoutMinutes.HasValue; 
+            return this._networkProfiles != null && this._networkProfiles.Count > 0; 
         }
 
         /// <summary>
-        /// Gets and sets the property Name. 
+        /// Gets and sets the property NextToken. 
         /// <para>
-        /// The project's name.
+        /// An identifier that was returned from the previous call to this operation, which can
+        /// be used to return the next set of items in the list.
         /// </para>
         /// </summary>
-        public string Name
+        public string NextToken
         {
-            get { return this._name; }
-            set { this._name = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
-        // Check to see if Name property is set
-        internal bool IsSetName()
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
         {
-            return this._name != null;
+            return this._nextToken != null;
         }
 
     }

@@ -36,7 +36,10 @@ namespace Amazon.DeviceFarm.Model
         private AccountSettings _accountSettings;
 
         /// <summary>
-        /// Gets and sets the property AccountSettings.
+        /// Gets and sets the property AccountSettings. 
+        /// <para>
+        /// The account settings.
+        /// </para>
         /// </summary>
         public AccountSettings AccountSettings
         {

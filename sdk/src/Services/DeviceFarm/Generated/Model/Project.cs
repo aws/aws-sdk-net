@@ -34,6 +34,7 @@ namespace Amazon.DeviceFarm.Model
     {
         private string _arn;
         private DateTime? _created;
+        private int? _defaultJobTimeoutMinutes;
         private string _name;
 
         /// <summary>
@@ -70,6 +71,25 @@ namespace Amazon.DeviceFarm.Model
         internal bool IsSetCreated()
         {
             return this._created.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DefaultJobTimeoutMinutes. 
+        /// <para>
+        /// The default number of minutes (at the project level) a test run will execute before
+        /// it times out. Default value is 60 minutes.
+        /// </para>
+        /// </summary>
+        public int DefaultJobTimeoutMinutes
+        {
+            get { return this._defaultJobTimeoutMinutes.GetValueOrDefault(); }
+            set { this._defaultJobTimeoutMinutes = value; }
+        }
+
+        // Check to see if DefaultJobTimeoutMinutes property is set
+        internal bool IsSetDefaultJobTimeoutMinutes()
+        {
+            return this._defaultJobTimeoutMinutes.HasValue; 
         }
 
         /// <summary>
