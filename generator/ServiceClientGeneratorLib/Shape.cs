@@ -29,7 +29,7 @@ namespace ServiceClientGenerator
         public const string PatternKey = "pattern";
         public const string ErrorKey = "error";
         public const string ErrorCodeKey = "code";
-        
+
         public static readonly HashSet<string> NullableTypes = new HashSet<string> {
             "bool",
             "boolean",
@@ -41,6 +41,19 @@ namespace ServiceClientGenerator
             "int",
             "integer",
             "long",
+        };
+
+        public static readonly Dictionary<string, string> PrimitiveTypeNames = new Dictionary<string, string>
+        {
+            { "blob",       "MemoryStream" },
+            { "boolean",    "Bool" },
+            { "decimal",    "Decimal" },
+            { "double",     "Double" },
+            { "float",      "Float" },
+            { "integer",    "Int" },
+            { "long",       "Long" },
+            { "string",     "String" },
+            { "timestamp",  "DateTime"},
         };
 
         readonly string _name;
@@ -611,48 +624,18 @@ namespace ServiceClientGenerator
         {
             get
             {
-                string name;
-                return TryGetPrimitiveType(out name);
+                return PrimitiveTypeNames.ContainsKey(this.Type);
             }
         }
 
         public string GetPrimitiveType()
         {
             string type;
-            if (!TryGetPrimitiveType(out type))
+            if (!PrimitiveTypeNames.TryGetValue(this.Type, out type))
             {
                 throw new Exception("Shape is not a primitive type: " + this.Type);
             }
             return type;
-        }
-
-        public bool TryGetPrimitiveType(out string typeName)
-        {
-            bool ret = true;
-            switch (this.Type)
-            {
-                case "blob":
-                    typeName = "MemoryStream"; break;
-                case "boolean":
-                    typeName = "Bool"; break;
-                case "decimal":
-                    typeName = "Decimal"; break;
-                case "double":
-                    typeName = "Double"; break;
-                case "integer":
-                    typeName = "Int"; break;
-                case "long":
-                    typeName = "Long"; break;
-                case "string":
-                    typeName = "String"; break;
-                case "timestamp":
-                    typeName = "DateTime"; break;
-                default:
-                    typeName = "";
-                    ret = false; break;
-            }
-
-            return ret;
         }
 
         /// <summary>
