@@ -1,3 +1,8 @@
+### 3.3.64.0 (2017-03-14 18:49 UTC)
+* Core 3.3.10.0
+	* Fix FallbackCredentialsFactory and FallbackRegionFactory on platforms without Windows crypto.
+	* all services packages updated to require new core
+
 ### 3.3.63.0 (2017-03-14 05:25 UTC)
 * CloudWatchEvents (3.3.1.0)
 	* Updated to use new Core, version 3.3.9.0
