@@ -15,9 +15,7 @@
 #if BCL || CORECLR
 using Amazon.Runtime.CredentialManagement;
 #endif
-using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Util;
-using Amazon.Util;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -30,8 +28,8 @@ namespace Amazon.Runtime
     public static class FallbackCredentialsFactory
     {
 #if BCL || CORECLR
-        private static NetSDKCredentialsFile netSDKCredentialsFile = new NetSDKCredentialsFile();
-        private static SharedCredentialsFile sharedCredentialsFile = new SharedCredentialsFile();
+        private const string DefaultProfileName = "default";
+        private static CredentialProfileStoreChain credentialProfileChain = new CredentialProfileStoreChain();
 #endif
 
         static FallbackCredentialsFactory()
@@ -51,8 +49,7 @@ namespace Amazon.Runtime
 #endif
 #if BCL || CORECLR
                 // Attempt to load the default profile.  It could be Basic, Session, AssumeRole, or SAML.
-                () => GetAWSCredentials(netSDKCredentialsFile, NetSDKCredentialsFile.DefaultProfileName),
-                () => GetAWSCredentials(sharedCredentialsFile, SharedCredentialsFile.DefaultProfileName),
+                () => GetAWSCredentials(credentialProfileChain, DefaultProfileName),
                 () => new EnvironmentVariablesAWSCredentials(), // Look for credentials set in environment vars.
 #endif
                 ECSEC2CredentialsWrapper,                       // either get ECS credentials or instance profile credentials
@@ -69,7 +66,7 @@ namespace Amazon.Runtime
             }
             else
             {
-                throw new AmazonClientException("Unable to find a default profile in store " + source.GetType());
+                throw new AmazonClientException("Unable to find a default profile in CredentialProfileStoreChain.");
             }
         }
 #endif

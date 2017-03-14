@@ -165,8 +165,8 @@ namespace Amazon.Runtime
     public static class FallbackRegionFactory
     {
 #if BCL || CORECLR
-        private static NetSDKCredentialsFile netSDKCredentialsFile = new NetSDKCredentialsFile();
-        private static SharedCredentialsFile sharedCredentialsFile = new SharedCredentialsFile();
+        private const string DefaultProfileName = "default";
+        private static CredentialProfileStoreChain credentialProfileChain = new CredentialProfileStoreChain();
 #endif
 
         private static object _lock = new object();
@@ -189,8 +189,7 @@ namespace Amazon.Runtime
                 () => new AppConfigAWSRegion(),
 #if BCL || CORECLR
                 () => new EnvironmentVariableAWSRegion(),
-                () => new ProfileAWSRegion(netSDKCredentialsFile, NetSDKCredentialsFile.DefaultProfileName),
-                () => new ProfileAWSRegion(sharedCredentialsFile, SharedCredentialsFile.DefaultProfileName),
+                () => new ProfileAWSRegion(credentialProfileChain, DefaultProfileName),
                 () => new InstanceProfileAWSRegion()
 #endif
             };
@@ -200,8 +199,7 @@ namespace Amazon.Runtime
                 () => new AppConfigAWSRegion(),
 #if BCL || CORECLR
                 () => new EnvironmentVariableAWSRegion(),
-                () => new ProfileAWSRegion(netSDKCredentialsFile, NetSDKCredentialsFile.DefaultProfileName),
-                () => new ProfileAWSRegion(sharedCredentialsFile, SharedCredentialsFile.DefaultProfileName)
+                () => new ProfileAWSRegion(credentialProfileChain, DefaultProfileName),
 #endif
             };
         }
