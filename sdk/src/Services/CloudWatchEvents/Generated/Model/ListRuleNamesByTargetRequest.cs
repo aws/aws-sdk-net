@@ -29,11 +29,8 @@ namespace Amazon.CloudWatchEvents.Model
 {
     /// <summary>
     /// Container for the parameters to the ListRuleNamesByTarget operation.
-    /// Lists the names of the rules that the given target is put to. You can see which of
-    /// the rules in Amazon CloudWatch Events can invoke a specific target in your account.
-    /// If you have more rules in your account than the given limit, the results will be paginated.
-    /// In that case, use the next token returned in the response and repeat ListRulesByTarget
-    /// until the NextToken in the response is returned as null.
+    /// Lists the rules for the specified target. You can see which of the rules in Amazon
+    /// CloudWatch Events can invoke a specific target in your account.
     /// </summary>
     public partial class ListRuleNamesByTargetRequest : AmazonCloudWatchEventsRequest
     {
@@ -62,7 +59,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token returned by a previous call to indicate that there is more data available.
+        /// The token returned by a previous call to retrieve the next set of results.
         /// </para>
         /// </summary>
         public string NextToken
@@ -80,8 +77,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property TargetArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the target resource that you want to list the rules
-        /// for.
+        /// The Amazon Resource Name (ARN) of the target resource.
         /// </para>
         /// </summary>
         public string TargetArn

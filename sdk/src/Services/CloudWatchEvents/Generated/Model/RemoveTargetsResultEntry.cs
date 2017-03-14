@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchEvents.Model
 {
     /// <summary>
-    /// The ID of the target requested to be removed from the rule by Amazon CloudWatch Events.
+    /// Represents a target that failed to be removed from a rule.
     /// </summary>
     public partial class RemoveTargetsResultEntry
     {
@@ -39,7 +39,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property ErrorCode. 
         /// <para>
-        /// The error code representing why the target removal failed on this entry.
+        /// The error code that indicates why the target removal failed.
         /// </para>
         /// </summary>
         public string ErrorCode
@@ -57,7 +57,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property ErrorMessage. 
         /// <para>
-        /// The error message explaining why the target removal failed on this entry.
+        /// The error message that explains why the target removal failed.
         /// </para>
         /// </summary>
         public string ErrorMessage
@@ -75,7 +75,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property TargetId. 
         /// <para>
-        /// The ID of the target requested to be removed by Amazon CloudWatch Events.
+        /// The ID of the target.
         /// </para>
         /// </summary>
         public string TargetId

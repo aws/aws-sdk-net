@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchEvents.Model
 {
     /// <summary>
-    /// The result of the <a>DescribeRule</a> operation.
+    /// This is the response object from the DescribeRule operation.
     /// </summary>
     public partial class DescribeRuleResponse : AmazonWebServiceResponse
     {
@@ -43,7 +43,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) associated with the rule.
+        /// The Amazon Resource Name (ARN) of the rule.
         /// </para>
         /// </summary>
         public string Arn
@@ -61,7 +61,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The rule's description.
+        /// The description of the rule.
         /// </para>
         /// </summary>
         public string Description
@@ -97,7 +97,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The rule's name.
+        /// The name of the rule.
         /// </para>
         /// </summary>
         public string Name

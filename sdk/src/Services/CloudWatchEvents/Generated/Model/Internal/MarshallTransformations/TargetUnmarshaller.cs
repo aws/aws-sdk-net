@@ -70,6 +70,12 @@ namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EcsParameters", targetDepth))
+                {
+                    var unmarshaller = EcsParametersUnmarshaller.Instance;
+                    unmarshalledObject.EcsParameters = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -86,6 +92,30 @@ namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.InputPath = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("InputTransformer", targetDepth))
+                {
+                    var unmarshaller = InputTransformerUnmarshaller.Instance;
+                    unmarshalledObject.InputTransformer = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("KinesisParameters", targetDepth))
+                {
+                    var unmarshaller = KinesisParametersUnmarshaller.Instance;
+                    unmarshalledObject.KinesisParameters = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RoleArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RoleArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RunCommandParameters", targetDepth))
+                {
+                    var unmarshaller = RunCommandParametersUnmarshaller.Instance;
+                    unmarshalledObject.RunCommandParameters = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

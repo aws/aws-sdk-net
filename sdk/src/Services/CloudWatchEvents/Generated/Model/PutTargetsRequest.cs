@@ -29,35 +29,67 @@ namespace Amazon.CloudWatchEvents.Model
 {
     /// <summary>
     /// Container for the parameters to the PutTargets operation.
-    /// Adds target(s) to a rule. Targets are the resources that can be invoked when a rule
-    /// is triggered. For example, AWS Lambda functions, Amazon Kinesis streams, and built-in
-    /// targets. Updates the target(s) if they are already associated with the role. In other
-    /// words, if there is already a target with the given target ID, then the target associated
-    /// with that ID is updated.
+    /// Adds the specified targets to the specified rule, or updates the targets if they are
+    /// already associated with the rule.
     /// 
     ///  
     /// <para>
-    /// In order to be able to make API calls against the resources you own, Amazon CloudWatch
-    /// Events needs the appropriate permissions. For AWS Lambda and Amazon SNS resources,
-    /// CloudWatch Events relies on resource-based policies. For Amazon Kinesis streams, CloudWatch
-    /// Events relies on IAM roles. For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/EventsTargetPermissions.html">Permissions
-    /// for Sending Events to Targets</a> in the <b><i>Amazon CloudWatch Developer Guide</i></b>.
+    /// Targets are the resources that are invoked when a rule is triggered. Example targets
+    /// include EC2 instances, AWS Lambda functions, Amazon Kinesis streams, Amazon ECS tasks,
+    /// AWS Step Functions state machines, and built-in targets. Note that creating rules
+    /// with built-in targets is supported only in the AWS Management Console.
     /// </para>
     ///  
     /// <para>
-    /// <b>Input</b> and <b>InputPath</b> are mutually-exclusive and optional parameters of
-    /// a target. When a rule is triggered due to a matched event, if for a target:
+    /// For some target types, <code>PutTargets</code> provides target-specific parameters.
+    /// If the target is an Amazon Kinesis stream, you can optionally specify which shard
+    /// the event goes to by using the <code>KinesisParameters</code> argument. To invoke
+    /// a command on multiple EC2 instances with one rule, you can use the <code>RunCommandParameters</code>
+    /// field.
     /// </para>
-    ///  <ul> <li>Neither <b>Input</b> nor <b>InputPath</b> is specified, then the entire
-    /// event is passed to the target in JSON form.</li> <li><b>InputPath</b> is specified
-    /// in the form of JSONPath (e.g. <b>$.detail</b>), then only the part of the event specified
-    /// in the path is passed to the target (e.g. only the detail part of the event is passed).
-    /// </li> <li><b>Input</b> is specified in the form of a valid JSON, then the matched
-    /// event is overridden with this constant.</li> </ul> 
+    ///  
     /// <para>
-    ///  <b>Note:</b> When you add targets to a rule, when the associated rule triggers, new
-    /// or updated targets might not be immediately invoked. Please allow a short period of
-    /// time for changes to take effect. 
+    /// To be able to make API calls against the resources that you own, Amazon CloudWatch
+    /// Events needs the appropriate permissions. For AWS Lambda and Amazon SNS resources,
+    /// CloudWatch Events relies on resource-based policies. For EC2 instances, Amazon Kinesis
+    /// streams, and AWS Step Functions state machines, CloudWatch Events relies on IAM roles
+    /// that you specify in the <code>RoleARN</code> argument in <code>PutTarget</code>. For
+    /// more information, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/auth-and-access-control-cwe.html">Authentication
+    /// and Access Control</a> in the <i>Amazon CloudWatch Events User Guide</i>.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Input</b>, <b>InputPath</b> and <b>InputTransformer</b> are mutually exclusive
+    /// and optional parameters of a target. When a rule is triggered due to a matched event:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// If none of the following arguments are specified for a target, then the entire event
+    /// is passed to the target in JSON form (unless the target is Amazon EC2 Run Command
+    /// or Amazon ECS task, in which case nothing from the event is passed to the target).
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// If <b>Input</b> is specified in the form of valid JSON, then the matched event is
+    /// overridden with this constant.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// If <b>InputPath</b> is specified in the form of JSONPath (for example, <code>$.detail</code>),
+    /// then only the part of the event specified in the path is passed to the target (for
+    /// example, only the detail part of the event is passed). 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// If <b>InputTransformer</b> is specified, then one or more specified JSONPaths are
+    /// extracted from the event and used as values in a template that you specify as the
+    /// input to the target.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// When you add targets to a rule and the associated rule triggers soon after, new or
+    /// updated targets might not be immediately invoked. Please allow a short period of time
+    /// for changes to take effect.
     /// </para>
     /// </summary>
     public partial class PutTargetsRequest : AmazonCloudWatchEventsRequest
@@ -68,7 +100,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property Rule. 
         /// <para>
-        /// The name of the rule you want to add targets to.
+        /// The name of the rule.
         /// </para>
         /// </summary>
         public string Rule
@@ -86,7 +118,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property Targets. 
         /// <para>
-        /// List of targets you want to update or add to the rule.
+        /// The targets to update or add to the rule.
         /// </para>
         /// </summary>
         public List<Target> Targets

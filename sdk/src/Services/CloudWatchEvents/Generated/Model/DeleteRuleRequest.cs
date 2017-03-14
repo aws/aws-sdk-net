@@ -29,14 +29,17 @@ namespace Amazon.CloudWatchEvents.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteRule operation.
-    /// Deletes a rule. You must remove all targets from a rule using <a>RemoveTargets</a>
-    /// before you can delete the rule.
+    /// Deletes the specified rule.
     /// 
     ///  
     /// <para>
-    ///  <b>Note:</b> When you delete a rule, incoming events might still continue to match
-    /// to the deleted rule. Please allow a short period of time for changes to take effect.
-    /// 
+    /// You must remove all targets from a rule using <a>RemoveTargets</a> before you can
+    /// delete the rule.
+    /// </para>
+    ///  
+    /// <para>
+    /// When you delete a rule, incoming events might continue to match to the deleted rule.
+    /// Please allow a short period of time for changes to take effect.
     /// </para>
     /// </summary>
     public partial class DeleteRuleRequest : AmazonCloudWatchEventsRequest
@@ -46,7 +49,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the rule to be deleted.
+        /// The name of the rule.
         /// </para>
         /// </summary>
         public string Name

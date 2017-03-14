@@ -32,19 +32,29 @@ namespace Amazon.CloudWatchEvents
     /// Interface for accessing CloudWatchEvents
     ///
     /// Amazon CloudWatch Events helps you to respond to state changes in your AWS resources.
-    /// When your resources change state they automatically send events into an event stream.
+    /// When your resources change state, they automatically send events into an event stream.
     /// You can create rules that match selected events in the stream and route them to targets
     /// to take action. You can also use rules to take action on a pre-determined schedule.
-    /// For example, you can configure rules to: 
+    /// For example, you can configure rules to:
     /// 
-    ///  <ul> <li>Automatically invoke an AWS Lambda function to update DNS entries when an
-    /// event notifies you that Amazon EC2 instance enters the running state.</li> <li>Direct
-    /// specific API records from CloudTrail to an Amazon Kinesis stream for detailed analysis
-    /// of potential security or availability risks.</li> <li>Periodically invoke a built-in
-    /// target to create a snapshot of an Amazon EBS volume.</li> </ul> 
+    ///  <ul> <li> 
     /// <para>
-    ///  For more information about Amazon CloudWatch Events features, see the <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide">Amazon
-    /// CloudWatch Developer Guide</a>. 
+    /// Automatically invoke an AWS Lambda function to update DNS entries when an event notifies
+    /// you that Amazon EC2 instance enters the running state.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Direct specific API records from CloudTrail to an Amazon Kinesis stream for detailed
+    /// analysis of potential security or availability risks.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Periodically invoke a built-in target to create a snapshot of an Amazon EBS volume.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// For more information about the features of Amazon CloudWatch Events, see the <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events">Amazon
+    /// CloudWatch Events User Guide</a>.
     /// </para>
     /// </summary>
     public partial interface IAmazonCloudWatchEvents : IAmazonService, IDisposable
@@ -62,6 +72,7 @@ namespace Amazon.CloudWatchEvents
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DeleteRule">REST API Reference for DeleteRule Operation</seealso>
         Task<DeleteRuleResponse> DeleteRuleAsync(DeleteRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -78,6 +89,7 @@ namespace Amazon.CloudWatchEvents
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribeRule">REST API Reference for DescribeRule Operation</seealso>
         Task<DescribeRuleResponse> DescribeRuleAsync(DescribeRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -94,6 +106,7 @@ namespace Amazon.CloudWatchEvents
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DisableRule">REST API Reference for DisableRule Operation</seealso>
         Task<DisableRuleResponse> DisableRuleAsync(DisableRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -110,6 +123,7 @@ namespace Amazon.CloudWatchEvents
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/EnableRule">REST API Reference for EnableRule Operation</seealso>
         Task<EnableRuleResponse> EnableRuleAsync(EnableRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -126,6 +140,7 @@ namespace Amazon.CloudWatchEvents
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListRuleNamesByTarget">REST API Reference for ListRuleNamesByTarget Operation</seealso>
         Task<ListRuleNamesByTargetResponse> ListRuleNamesByTargetAsync(ListRuleNamesByTargetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -134,11 +149,8 @@ namespace Amazon.CloudWatchEvents
 
 
         /// <summary>
-        /// Lists the Amazon CloudWatch Events rules in your account. You can either list all
-        /// the rules or you can provide a prefix to match to the rule names. If you have more
-        /// rules in your account than the given limit, the results will be paginated. In that
-        /// case, use the next token returned in the response and repeat ListRules until the NextToken
-        /// in the response is returned as null.
+        /// Lists your Amazon CloudWatch Events rules. You can either list all the rules or you
+        /// can provide a prefix to match to the rule names.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -148,6 +160,7 @@ namespace Amazon.CloudWatchEvents
         /// <exception cref="Amazon.CloudWatchEvents.Model.InternalException">
         /// This exception occurs due to unexpected causes.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListRules">REST API Reference for ListRules Operation</seealso>
         Task<ListRulesResponse> ListRulesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -160,6 +173,7 @@ namespace Amazon.CloudWatchEvents
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListRules">REST API Reference for ListRules Operation</seealso>
         Task<ListRulesResponse> ListRulesAsync(ListRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -176,6 +190,7 @@ namespace Amazon.CloudWatchEvents
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListTargetsByRule">REST API Reference for ListTargetsByRule Operation</seealso>
         Task<ListTargetsByRuleResponse> ListTargetsByRuleAsync(ListTargetsByRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -192,6 +207,7 @@ namespace Amazon.CloudWatchEvents
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutEvents">REST API Reference for PutEvents Operation</seealso>
         Task<PutEventsResponse> PutEventsAsync(PutEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -208,6 +224,7 @@ namespace Amazon.CloudWatchEvents
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutRule">REST API Reference for PutRule Operation</seealso>
         Task<PutRuleResponse> PutRuleAsync(PutRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -224,6 +241,7 @@ namespace Amazon.CloudWatchEvents
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutTargets">REST API Reference for PutTargets Operation</seealso>
         Task<PutTargetsResponse> PutTargetsAsync(PutTargetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -240,6 +258,7 @@ namespace Amazon.CloudWatchEvents
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/RemoveTargets">REST API Reference for RemoveTargets Operation</seealso>
         Task<RemoveTargetsResponse> RemoveTargetsAsync(RemoveTargetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -256,6 +275,7 @@ namespace Amazon.CloudWatchEvents
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/TestEventPattern">REST API Reference for TestEventPattern Operation</seealso>
         Task<TestEventPatternResponse> TestEventPatternAsync(TestEventPatternRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion

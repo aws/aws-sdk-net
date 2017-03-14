@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchEvents.Model
 {
     /// <summary>
-    /// The result of the <a>PutRule</a> operation.
+    /// This is the response object from the PutRule operation.
     /// </summary>
     public partial class PutRuleResponse : AmazonWebServiceResponse
     {
@@ -37,7 +37,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property RuleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) that identifies the rule.
+        /// The Amazon Resource Name (ARN) of the rule.
         /// </para>
         /// </summary>
         public string RuleArn

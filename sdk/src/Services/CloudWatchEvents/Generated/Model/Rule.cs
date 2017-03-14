@@ -28,8 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchEvents.Model
 {
     /// <summary>
-    /// Contains information about a rule in Amazon CloudWatch Events. A ListRulesResult contains
-    /// a list of Rules.
+    /// Contains information about a rule in Amazon CloudWatch Events.
     /// </summary>
     public partial class Rule
     {
@@ -98,7 +97,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The rule's name.
+        /// The name of the rule.
         /// </para>
         /// </summary>
         public string Name
@@ -116,7 +115,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) associated with the role that is used for target invocation.
+        /// The Amazon Resource Name (ARN) of the role that is used for target invocation.
         /// </para>
         /// </summary>
         public string RoleArn
@@ -152,7 +151,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The rule's state.
+        /// The state of the rule.
         /// </para>
         /// </summary>
         public RuleState State

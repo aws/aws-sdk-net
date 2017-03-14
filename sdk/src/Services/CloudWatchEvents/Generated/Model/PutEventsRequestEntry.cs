@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchEvents.Model
 {
     /// <summary>
-    /// Contains information about the event to be used in PutEvents.
+    /// Represents an event to be submitted.
     /// </summary>
     public partial class PutEventsRequestEntry
     {
@@ -41,7 +41,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property Detail. 
         /// <para>
-        /// In the JSON sense, an object containing fields, which may also contain nested sub-objects.
+        /// In the JSON sense, an object containing fields, which may also contain nested subobjects.
         /// No constraints are imposed on its contents.
         /// </para>
         /// </summary>
@@ -115,8 +115,8 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property Time. 
         /// <para>
-        /// Timestamp of event, per <a href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>.
-        /// If no timestamp is provided, the timestamp of the <a>PutEvents</a> call will be used.
+        /// The timestamp of the event, per <a href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>.
+        /// If no timestamp is provided, the timestamp of the <a>PutEvents</a> call is used.
         /// </para>
         /// </summary>
         public DateTime Time

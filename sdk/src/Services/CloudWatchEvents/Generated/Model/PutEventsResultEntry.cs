@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchEvents.Model
 {
     /// <summary>
-    /// A PutEventsResult contains a list of PutEventsResultEntry.
+    /// Represents an event that failed to be submitted.
     /// </summary>
     public partial class PutEventsResultEntry
     {
@@ -39,7 +39,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property ErrorCode. 
         /// <para>
-        /// The error code representing why the event submission failed on this entry.
+        /// The error code that indicates why the event submission failed.
         /// </para>
         /// </summary>
         public string ErrorCode
@@ -57,7 +57,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property ErrorMessage. 
         /// <para>
-        /// The error message explaining why the event submission failed on this entry.
+        /// The error message that explains why the event submission failed.
         /// </para>
         /// </summary>
         public string ErrorMessage
@@ -75,7 +75,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property EventId. 
         /// <para>
-        /// The ID of the event submitted to Amazon CloudWatch Events.
+        /// The ID of the event.
         /// </para>
         /// </summary>
         public string EventId

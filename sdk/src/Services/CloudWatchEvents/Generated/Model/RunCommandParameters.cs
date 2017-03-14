@@ -28,29 +28,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchEvents.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeRule operation.
-    /// Describes the specified rule.
+    /// This parameter contains the criteria (either InstanceIds or a tag) used to specify
+    /// which EC2 instances are to be sent the command.
     /// </summary>
-    public partial class DescribeRuleRequest : AmazonCloudWatchEventsRequest
+    public partial class RunCommandParameters
     {
-        private string _name;
+        private List<RunCommandTarget> _runCommandTargets = new List<RunCommandTarget>();
 
         /// <summary>
-        /// Gets and sets the property Name. 
+        /// Gets and sets the property RunCommandTargets. 
         /// <para>
-        /// The name of the rule.
+        /// Currently, we support including only one RunCommandTarget block, which specifies either
+        /// an array of InstanceIds or a tag.
         /// </para>
         /// </summary>
-        public string Name
+        public List<RunCommandTarget> RunCommandTargets
         {
-            get { return this._name; }
-            set { this._name = value; }
+            get { return this._runCommandTargets; }
+            set { this._runCommandTargets = value; }
         }
 
-        // Check to see if Name property is set
-        internal bool IsSetName()
+        // Check to see if RunCommandTargets property is set
+        internal bool IsSetRunCommandTargets()
         {
-            return this._name != null;
+            return this._runCommandTargets != null && this._runCommandTargets.Count > 0; 
         }
 
     }

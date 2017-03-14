@@ -29,13 +29,12 @@ namespace Amazon.CloudWatchEvents.Model
 {
     /// <summary>
     /// Container for the parameters to the EnableRule operation.
-    /// Enables a rule. If the rule does not exist, the operation fails.
+    /// Enables the specified rule. If the rule does not exist, the operation fails.
     /// 
     ///  
     /// <para>
-    ///  <b>Note:</b> When you enable a rule, incoming events might not immediately start
-    /// matching to a newly enabled rule. Please allow a short period of time for changes
-    /// to take effect. 
+    /// When you enable a rule, incoming events might not immediately start matching to a
+    /// newly enabled rule. Please allow a short period of time for changes to take effect.
     /// </para>
     /// </summary>
     public partial class EnableRuleRequest : AmazonCloudWatchEventsRequest
@@ -45,7 +44,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the rule that you want to enable.
+        /// The name of the rule.
         /// </para>
         /// </summary>
         public string Name

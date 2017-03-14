@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchEvents.Model
 {
     /// <summary>
-    /// The result of the <a>PutEvents</a> operation.
+    /// This is the response object from the PutEvents operation.
     /// </summary>
     public partial class PutEventsResponse : AmazonWebServiceResponse
     {
@@ -38,9 +38,9 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property Entries. 
         /// <para>
-        /// A list of successfully and unsuccessfully ingested events results. If the ingestion
-        /// was successful, the entry will have the event ID in it. If not, then the ErrorCode
-        /// and ErrorMessage can be used to identify the problem with the entry.
+        /// The successfully and unsuccessfully ingested events results. If the ingestion was
+        /// successful, the entry has the event ID in it. Otherwise, you can use the error code
+        /// and error message to identify the problem with the entry.
         /// </para>
         /// </summary>
         public List<PutEventsResultEntry> Entries

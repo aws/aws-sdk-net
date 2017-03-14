@@ -29,14 +29,14 @@ namespace Amazon.CloudWatchEvents.Model
 {
     /// <summary>
     /// Container for the parameters to the TestEventPattern operation.
-    /// Tests whether an event pattern matches the provided event.
+    /// Tests whether the specified event pattern matches the provided event.
     /// 
     ///  
     /// <para>
-    ///  <b>Note:</b> Most services in AWS treat : or / as the same character in Amazon Resource
-    /// Names (ARNs). However, CloudWatch Events uses an exact match in event patterns and
-    /// rules. Be sure to use the correct ARN characters when creating event patterns so that
-    /// they match the ARN syntax in the event you want to match. 
+    /// Most services in AWS treat : or / as the same character in Amazon Resource Names (ARNs).
+    /// However, CloudWatch Events uses an exact match in event patterns and rules. Be sure
+    /// to use the correct ARN characters when creating event patterns so that they match
+    /// the ARN syntax in the event you want to match.
     /// </para>
     /// </summary>
     public partial class TestEventPatternRequest : AmazonCloudWatchEventsRequest
@@ -47,7 +47,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property Event. 
         /// <para>
-        /// The event in the JSON format to test against the event pattern.
+        /// The event, in JSON format, to test against the event pattern.
         /// </para>
         /// </summary>
         public string Event
@@ -65,7 +65,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property EventPattern. 
         /// <para>
-        /// The event pattern you want to test.
+        /// The event pattern.
         /// </para>
         /// </summary>
         public string EventPattern

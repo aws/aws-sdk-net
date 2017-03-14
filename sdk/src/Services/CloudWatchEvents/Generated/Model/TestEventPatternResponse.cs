@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchEvents.Model
 {
     /// <summary>
-    /// The result of the <a>TestEventPattern</a> operation.
+    /// This is the response object from the TestEventPattern operation.
     /// </summary>
     public partial class TestEventPatternResponse : AmazonWebServiceResponse
     {

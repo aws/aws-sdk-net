@@ -28,48 +28,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchEvents.Model
 {
     /// <summary>
-    /// This is the response object from the ListRules operation.
+    /// The custom parameters to be used when the target is an Amazon ECS cluster.
     /// </summary>
-    public partial class ListRulesResponse : AmazonWebServiceResponse
+    public partial class EcsParameters
     {
-        private string _nextToken;
-        private List<Rule> _rules = new List<Rule>();
+        private int? _taskCount;
+        private string _taskDefinitionArn;
 
         /// <summary>
-        /// Gets and sets the property NextToken. 
+        /// Gets and sets the property TaskCount. 
         /// <para>
-        /// Indicates whether there are additional results to retrieve. If there are no more results,
-        /// the value is null.
+        /// The number of tasks to create based on the <code>TaskDefinition</code>. The default
+        /// is one.
         /// </para>
         /// </summary>
-        public string NextToken
+        public int TaskCount
         {
-            get { return this._nextToken; }
-            set { this._nextToken = value; }
+            get { return this._taskCount.GetValueOrDefault(); }
+            set { this._taskCount = value; }
         }
 
-        // Check to see if NextToken property is set
-        internal bool IsSetNextToken()
+        // Check to see if TaskCount property is set
+        internal bool IsSetTaskCount()
         {
-            return this._nextToken != null;
+            return this._taskCount.HasValue; 
         }
 
         /// <summary>
-        /// Gets and sets the property Rules. 
+        /// Gets and sets the property TaskDefinitionArn. 
         /// <para>
-        /// The rules that match the specified criteria.
+        /// The ARN of the task definition to use if the event target is an Amazon ECS cluster.
+        /// 
         /// </para>
         /// </summary>
-        public List<Rule> Rules
+        public string TaskDefinitionArn
         {
-            get { return this._rules; }
-            set { this._rules = value; }
+            get { return this._taskDefinitionArn; }
+            set { this._taskDefinitionArn = value; }
         }
 
-        // Check to see if Rules property is set
-        internal bool IsSetRules()
+        // Check to see if TaskDefinitionArn property is set
+        internal bool IsSetTaskDefinitionArn()
         {
-            return this._rules != null && this._rules.Count > 0; 
+            return this._taskDefinitionArn != null;
         }
 
     }

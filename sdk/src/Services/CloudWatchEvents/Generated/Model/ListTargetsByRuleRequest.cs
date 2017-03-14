@@ -29,7 +29,7 @@ namespace Amazon.CloudWatchEvents.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTargetsByRule operation.
-    /// Lists of targets assigned to the rule.
+    /// Lists the targets assigned to the specified rule.
     /// </summary>
     public partial class ListTargetsByRuleRequest : AmazonCloudWatchEventsRequest
     {
@@ -58,7 +58,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token returned by a previous call to indicate that there is more data available.
+        /// The token returned by a previous call to retrieve the next set of results.
         /// </para>
         /// </summary>
         public string NextToken
@@ -76,7 +76,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property Rule. 
         /// <para>
-        /// The name of the rule whose targets you want to list.
+        /// The name of the rule.
         /// </para>
         /// </summary>
         public string Rule

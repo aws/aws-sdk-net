@@ -29,11 +29,8 @@ namespace Amazon.CloudWatchEvents.Model
 {
     /// <summary>
     /// Container for the parameters to the ListRules operation.
-    /// Lists the Amazon CloudWatch Events rules in your account. You can either list all
-    /// the rules or you can provide a prefix to match to the rule names. If you have more
-    /// rules in your account than the given limit, the results will be paginated. In that
-    /// case, use the next token returned in the response and repeat ListRules until the NextToken
-    /// in the response is returned as null.
+    /// Lists your Amazon CloudWatch Events rules. You can either list all the rules or you
+    /// can provide a prefix to match to the rule names.
     /// </summary>
     public partial class ListRulesRequest : AmazonCloudWatchEventsRequest
     {
@@ -80,7 +77,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token returned by a previous call to indicate that there is more data available.
+        /// The token returned by a previous call to retrieve the next set of results.
         /// </para>
         /// </summary>
         public string NextToken

@@ -29,14 +29,13 @@ namespace Amazon.CloudWatchEvents.Model
 {
     /// <summary>
     /// Container for the parameters to the DisableRule operation.
-    /// Disables a rule. A disabled rule won't match any events, and won't self-trigger if
-    /// it has a schedule expression.
+    /// Disables the specified rule. A disabled rule won't match any events, and won't self-trigger
+    /// if it has a schedule expression.
     /// 
     ///  
     /// <para>
-    ///  <b>Note:</b> When you disable a rule, incoming events might still continue to match
-    /// to the disabled rule. Please allow a short period of time for changes to take effect.
-    /// 
+    /// When you disable a rule, incoming events might continue to match to the disabled rule.
+    /// Please allow a short period of time for changes to take effect.
     /// </para>
     /// </summary>
     public partial class DisableRuleRequest : AmazonCloudWatchEventsRequest
@@ -46,7 +45,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the rule you want to disable.
+        /// The name of the rule.
         /// </para>
         /// </summary>
         public string Name

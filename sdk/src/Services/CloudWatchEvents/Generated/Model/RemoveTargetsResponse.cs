@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchEvents.Model
 {
     /// <summary>
-    /// The result of the <a>RemoveTargets</a> operation.
+    /// This is the response object from the RemoveTargets operation.
     /// </summary>
     public partial class RemoveTargetsResponse : AmazonWebServiceResponse
     {
@@ -37,7 +37,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property FailedEntries. 
         /// <para>
-        /// An array of failed target entries.
+        /// The failed target entries.
         /// </para>
         /// </summary>
         public List<RemoveTargetsResultEntry> FailedEntries

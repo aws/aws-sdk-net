@@ -29,14 +29,13 @@ namespace Amazon.CloudWatchEvents.Model
 {
     /// <summary>
     /// Container for the parameters to the RemoveTargets operation.
-    /// Removes target(s) from a rule so that when the rule is triggered, those targets will
-    /// no longer be invoked.
+    /// Removes the specified targets from the specified rule. When the rule is triggered,
+    /// those targets are no longer be invoked.
     /// 
     ///  
     /// <para>
-    ///  <b>Note:</b> When you remove a target, when the associated rule triggers, removed
-    /// targets might still continue to be invoked. Please allow a short period of time for
-    /// changes to take effect. 
+    /// When you remove a target, when the associated rule triggers, removed targets might
+    /// continue to be invoked. Please allow a short period of time for changes to take effect.
     /// </para>
     /// </summary>
     public partial class RemoveTargetsRequest : AmazonCloudWatchEventsRequest
@@ -47,7 +46,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property Ids. 
         /// <para>
-        /// The list of target IDs to remove from the rule.
+        /// The IDs of the targets to remove from the rule.
         /// </para>
         /// </summary>
         public List<string> Ids
@@ -65,7 +64,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property Rule. 
         /// <para>
-        /// The name of the rule you want to remove targets from.
+        /// The name of the rule.
         /// </para>
         /// </summary>
         public string Rule

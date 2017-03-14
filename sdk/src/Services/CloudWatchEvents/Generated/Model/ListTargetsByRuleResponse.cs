@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchEvents.Model
 {
     /// <summary>
-    /// The result of the <a>ListTargetsByRule</a> operation.
+    /// This is the response object from the ListTargetsByRule operation.
     /// </summary>
     public partial class ListTargetsByRuleResponse : AmazonWebServiceResponse
     {
@@ -38,7 +38,8 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Indicates that there are additional results to retrieve.
+        /// Indicates whether there are additional results to retrieve. If there are no more results,
+        /// the value is null.
         /// </para>
         /// </summary>
         public string NextToken
@@ -56,7 +57,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property Targets. 
         /// <para>
-        /// Lists the targets assigned to the rule.
+        /// The targets assigned to the rule.
         /// </para>
         /// </summary>
         public List<Target> Targets

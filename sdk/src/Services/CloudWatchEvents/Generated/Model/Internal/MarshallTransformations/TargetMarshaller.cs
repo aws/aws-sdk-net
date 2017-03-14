@@ -51,6 +51,17 @@ namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Arn);
             }
 
+            if(requestObject.IsSetEcsParameters())
+            {
+                context.Writer.WritePropertyName("EcsParameters");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = EcsParametersMarshaller.Instance;
+                marshaller.Marshall(requestObject.EcsParameters, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetId())
             {
                 context.Writer.WritePropertyName("Id");
@@ -67,6 +78,45 @@ namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("InputPath");
                 context.Writer.Write(requestObject.InputPath);
+            }
+
+            if(requestObject.IsSetInputTransformer())
+            {
+                context.Writer.WritePropertyName("InputTransformer");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = InputTransformerMarshaller.Instance;
+                marshaller.Marshall(requestObject.InputTransformer, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetKinesisParameters())
+            {
+                context.Writer.WritePropertyName("KinesisParameters");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = KinesisParametersMarshaller.Instance;
+                marshaller.Marshall(requestObject.KinesisParameters, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetRoleArn())
+            {
+                context.Writer.WritePropertyName("RoleArn");
+                context.Writer.Write(requestObject.RoleArn);
+            }
+
+            if(requestObject.IsSetRunCommandParameters())
+            {
+                context.Writer.WritePropertyName("RunCommandParameters");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = RunCommandParametersMarshaller.Instance;
+                marshaller.Marshall(requestObject.RunCommandParameters, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
         }

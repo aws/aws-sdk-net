@@ -28,32 +28,26 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchEvents.Model
 {
     /// <summary>
-    /// Targets are the resources that can be invoked when a rule is triggered. For example,
-    /// AWS Lambda functions, Amazon Kinesis streams, and built-in targets.
-    /// 
-    ///  
-    /// <para>
-    /// <b>Input</b> and <b>InputPath</b> are mutually-exclusive and optional parameters of
-    /// a target. When a rule is triggered due to a matched event, if for a target:
-    /// </para>
-    ///  <ul> <li>Neither <b>Input</b> nor <b>InputPath</b> is specified, then the entire
-    /// event is passed to the target in JSON form.</li> <li><b>InputPath</b> is specified
-    /// in the form of JSONPath (e.g. <b>$.detail</b>), then only the part of the event specified
-    /// in the path is passed to the target (e.g. only the detail part of the event is passed).
-    /// </li> <li><b>Input</b> is specified in the form of a valid JSON, then the matched
-    /// event is overridden with this constant.</li> </ul>
+    /// Targets are the resources to be invoked when a rule is triggered. Target types include
+    /// EC2 instances, AWS Lambda functions, Amazon Kinesis streams, Amazon ECS tasks, AWS
+    /// Step Functions state machines, Run Command, and built-in targets.
     /// </summary>
     public partial class Target
     {
         private string _arn;
+        private EcsParameters _ecsParameters;
         private string _id;
         private string _input;
         private string _inputPath;
+        private InputTransformer _inputTransformer;
+        private KinesisParameters _kinesisParameters;
+        private string _roleArn;
+        private RunCommandParameters _runCommandParameters;
 
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) associated of the target.
+        /// The Amazon Resource Name (ARN) of the target.
         /// </para>
         /// </summary>
         public string Arn
@@ -69,9 +63,29 @@ namespace Amazon.CloudWatchEvents.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EcsParameters. 
+        /// <para>
+        /// Contains the Amazon ECS task definition and task count to be used, if the event target
+        /// is an Amazon ECS task. For more information about Amazon ECS tasks, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Task
+        /// Definitions </a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        public EcsParameters EcsParameters
+        {
+            get { return this._ecsParameters; }
+            set { this._ecsParameters = value; }
+        }
+
+        // Check to see if EcsParameters property is set
+        internal bool IsSetEcsParameters()
+        {
+            return this._ecsParameters != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The unique target assignment ID.
+        /// The ID of the target.
         /// </para>
         /// </summary>
         public string Id
@@ -89,9 +103,9 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property Input. 
         /// <para>
-        /// Valid JSON text passed to the target. For more information about JSON text, see <a
-        /// href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation (JSON)
-        /// Data Interchange Format</a>.
+        /// Valid JSON text passed to the target. In this case, nothing from the event itself
+        /// is passed to the target. For more information, see <a href="http://www.rfc-editor.org/rfc/rfc7159.txt">The
+        /// JavaScript Object Notation (JSON) Data Interchange Format</a>.
         /// </para>
         /// </summary>
         public string Input
@@ -123,6 +137,84 @@ namespace Amazon.CloudWatchEvents.Model
         internal bool IsSetInputPath()
         {
             return this._inputPath != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InputTransformer. 
+        /// <para>
+        /// Settings to enable you to provide custom input to a target based on certain event
+        /// data. You can extract one or more key-value pairs from the event and then use that
+        /// data to send customized input to the target.
+        /// </para>
+        /// </summary>
+        public InputTransformer InputTransformer
+        {
+            get { return this._inputTransformer; }
+            set { this._inputTransformer = value; }
+        }
+
+        // Check to see if InputTransformer property is set
+        internal bool IsSetInputTransformer()
+        {
+            return this._inputTransformer != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KinesisParameters. 
+        /// <para>
+        /// The custom parameter you can use to control shard assignment, when the target is an
+        /// Amazon Kinesis stream. If you do not include this parameter, the default is to use
+        /// the <code>eventId</code> as the partition key.
+        /// </para>
+        /// </summary>
+        public KinesisParameters KinesisParameters
+        {
+            get { return this._kinesisParameters; }
+            set { this._kinesisParameters = value; }
+        }
+
+        // Check to see if KinesisParameters property is set
+        internal bool IsSetKinesisParameters()
+        {
+            return this._kinesisParameters != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RoleArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the IAM role to be used for this target when the
+        /// rule is triggered. If one rule triggers multiple targets, you can use a different
+        /// IAM role for each target.
+        /// </para>
+        /// </summary>
+        public string RoleArn
+        {
+            get { return this._roleArn; }
+            set { this._roleArn = value; }
+        }
+
+        // Check to see if RoleArn property is set
+        internal bool IsSetRoleArn()
+        {
+            return this._roleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RunCommandParameters. 
+        /// <para>
+        /// Parameters used when you are using the rule to invoke Amazon EC2 Run Command.
+        /// </para>
+        /// </summary>
+        public RunCommandParameters RunCommandParameters
+        {
+            get { return this._runCommandParameters; }
+            set { this._runCommandParameters = value; }
+        }
+
+        // Check to see if RunCommandParameters property is set
+        internal bool IsSetRunCommandParameters()
+        {
+            return this._runCommandParameters != null;
         }
 
     }

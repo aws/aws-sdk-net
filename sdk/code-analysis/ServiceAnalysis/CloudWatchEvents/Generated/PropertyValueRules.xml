@@ -159,6 +159,24 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudWatchEvents.Model.EcsParameters.TaskCount</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchEvents.Model.EcsParameters.TaskDefinitionArn</property>
+    <min>1</min>
+    <max>1600</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchEvents.Model.InputTransformer.InputTemplate</property>
+    <min>1</min>
+    <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchEvents.Model.KinesisParameters.PartitionKeyPath</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudWatchEvents.Model.PutTargetsResultEntry.TargetId</property>
     <min>1</min>
     <max>64</max>
@@ -199,6 +217,12 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudWatchEvents.Model.RunCommandTarget.Key</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[\p{L}\p{Z}\p{N}_.:/=+\-@]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudWatchEvents.Model.Target.Arn</property>
     <min>1</min>
     <max>1600</max>
@@ -216,5 +240,10 @@
   <property-value-rule>
     <property>Amazon.CloudWatchEvents.Model.Target.InputPath</property>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchEvents.Model.Target.RoleArn</property>
+    <min>1</min>
+    <max>1600</max>
   </property-value-rule>
 </property-value-rules>
