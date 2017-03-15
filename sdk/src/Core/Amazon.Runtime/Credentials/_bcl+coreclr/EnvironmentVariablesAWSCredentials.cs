@@ -41,7 +41,7 @@ namespace Amazon.Runtime
         // used if no value exists for the standard key for backwards compatibility.
         public const string LEGACY_ENVIRONMENT_VARIABLE_SECRETKEY = "AWS_SECRET_KEY";
 
-        private ImmutableCredentials _wrappedCredentials;
+        private Logger logger;
 
         #region Public constructors
 
@@ -53,6 +53,18 @@ namespace Amazon.Runtime
         {
             var logger = Logger.GetLogger(typeof(EnvironmentVariablesAWSCredentials));
 
+            // We need to do an initial fetch to validate that we can use environment variables to get the credentials.
+            GetCredentials();
+        }
+
+        #endregion
+
+        /// <summary>
+        /// Returns an instance of ImmutableCredentials for this instance
+        /// </summary>
+        /// <returns></returns>
+        public override ImmutableCredentials GetCredentials()
+        {
             string accessKeyId = Environment.GetEnvironmentVariable(ENVIRONMENT_VARIABLE_ACCESSKEY);
             string secretKey = Environment.GetEnvironmentVariable(ENVIRONMENT_VARIABLE_SECRETKEY);
             if (string.IsNullOrEmpty(secretKey))
@@ -72,19 +84,9 @@ namespace Amazon.Runtime
 
             string sessionToken = Environment.GetEnvironmentVariable(ENVIRONMENT_VARIABLE_SESSION_TOKEN);
 
-            this._wrappedCredentials = new ImmutableCredentials(accessKeyId, secretKey, sessionToken);
             logger.InfoFormat("Credentials found using environment variables.");
-        }
 
-        #endregion
-
-        /// <summary>
-        /// Returns an instance of ImmutableCredentials for this instance
-        /// </summary>
-        /// <returns></returns>
-        public override ImmutableCredentials GetCredentials()
-        {
-            return this._wrappedCredentials.Copy();
+            return new ImmutableCredentials(accessKeyId, secretKey, sessionToken);
         }
     }
 }
