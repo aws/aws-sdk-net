@@ -51,7 +51,7 @@ namespace Amazon.Runtime
         /// </summary>
         public EnvironmentVariablesAWSCredentials()
         {
-            var logger = Logger.GetLogger(typeof(EnvironmentVariablesAWSCredentials));
+            logger = Logger.GetLogger(typeof(EnvironmentVariablesAWSCredentials));
 
             // We need to do an initial fetch to validate that we can use environment variables to get the credentials.
             FetchCredentials();
