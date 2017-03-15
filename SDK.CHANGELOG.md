@@ -1,3 +1,8 @@
+### 3.3.64.1 (2017-03-15 21:58 UTC)
+* Core 3.3.10.1
+	* Fixed role authentication failure on ECS reported at https://github.com/aws/aws-sdk-net/issues/588.
+	* all services packages updated to require new core
+
 ### 3.3.64.0 (2017-03-14 18:49 UTC)
 * Core 3.3.10.0
 	* Fix FallbackCredentialsFactory and FallbackRegionFactory on platforms without Windows crypto.
