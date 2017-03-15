@@ -54,16 +54,16 @@ namespace Amazon.Runtime
             var logger = Logger.GetLogger(typeof(EnvironmentVariablesAWSCredentials));
 
             // We need to do an initial fetch to validate that we can use environment variables to get the credentials.
-            GetCredentials();
+            FetchCredentials();
         }
 
         #endregion
 
         /// <summary>
-        /// Returns an instance of ImmutableCredentials for this instance
+        /// Creates immutable credentials from environment variables.
         /// </summary>
         /// <returns></returns>
-        public override ImmutableCredentials GetCredentials()
+        public ImmutableCredentials FetchCredentials()
         {
             string accessKeyId = Environment.GetEnvironmentVariable(ENVIRONMENT_VARIABLE_ACCESSKEY);
             string secretKey = Environment.GetEnvironmentVariable(ENVIRONMENT_VARIABLE_SECRETKEY);
@@ -87,6 +87,15 @@ namespace Amazon.Runtime
             logger.InfoFormat("Credentials found using environment variables.");
 
             return new ImmutableCredentials(accessKeyId, secretKey, sessionToken);
+        }
+
+        /// <summary>
+        /// Returns an instance of ImmutableCredentials for this instance
+        /// </summary>
+        /// <returns></returns>
+        public override ImmutableCredentials GetCredentials()
+        {
+            return FetchCredentials();
         }
     }
 }
