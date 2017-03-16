@@ -99,24 +99,28 @@ See [Github Issue #296](https://github.com/aws/aws-sdk-net/issues/296)
 
 #### Unity - Webgl Support
 
-See [Github Issues](https://github.com/aws/aws-sdk-net/issues/326)
+See [Github Issue #362](https://github.com/aws/aws-sdk-net/issues/326)
 
 #### Unity - Windows 8 & Win Store support
 
-See [Github Issues](https://github.com/aws/aws-sdk-unity/issues/67)
+See [Github Issue #67](https://github.com/aws/aws-sdk-unity/issues/67)
 
 #### Cognito Sync Manager - Add support for Sync Success callback
 
-See [Github Issues](https://github.com/aws/aws-sdk-unity/issues/51)
+See [Github Issue #51](https://github.com/aws/aws-sdk-unity/issues/51)
 
 #### Unity - Get information regarding number of bytes downloaded
 
-See [Github Issues](https://github.com/aws/aws-sdk-unity/issues/68)
+See [Github Issue #68](https://github.com/aws/aws-sdk-unity/issues/68)
 
 #### Unity - Add support for Unity Editor
 
-See [Github Issues](https://github.com/aws/aws-sdk-unity/issues/37)
+See [Github Issue #37](https://github.com/aws/aws-sdk-unity/issues/37)
 
 #### Cognito Sync - Object mapper support
 
-See [Github Issues](https://github.com/aws/aws-sdk-unity/issues/33)
+See [Github Issue #33](https://github.com/aws/aws-sdk-unity/issues/33)
+
+#### Cognito User Pools for Unity SDK
+
+See [Github Issue #369](https://github.com/aws/aws-sdk-unity/issues/369)
