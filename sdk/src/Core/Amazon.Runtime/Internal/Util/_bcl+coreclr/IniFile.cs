@@ -101,15 +101,19 @@ namespace Amazon.Runtime.Internal.Util
                 int lineNumber = 0;
                 if (TrySeekSection(newSectionName, ref lineNumber))
                 {
-                    if (force)
+                    //  if oldSectionName == newSectionName it's a no op
+                    if (!string.Equals(oldSectionName, newSectionName, StringComparison.Ordinal))
                     {
-                        DeleteSection(newSectionName);
-                        // recursive call with force == false now that the destination section is gone
-                        RenameSection(oldSectionName, newSectionName, false);
+                        if (force)
+                        {
+                            DeleteSection(newSectionName);
+                            // recursive call with force == false now that the destination section is gone
+                            RenameSection(oldSectionName, newSectionName, false);
+                        }
+                        else
+                            throw new ArgumentException("Cannot rename section. The destination section " + newSectionName +
+                                " already exists." + GetLineMessage(lineNumber));
                     }
-                    else
-                        throw new ArgumentException("Cannot rename section. The destination section " + newSectionName +
-                            " already exists." + GetLineMessage(lineNumber));
                 }
                 else
                     Lines[sectionLineNumber] = sectionNamePrefix + newSectionName + sectionNameSuffix;
@@ -145,15 +149,19 @@ namespace Amazon.Runtime.Internal.Util
                 int lineNumber = 0;
                 if (TrySeekSection(toSectionName, ref lineNumber))
                 {
-                    if (force)
+                    //  if fromSectionName == toSectionName it's a no op
+                    if (!string.Equals(fromSectionName, toSectionName, StringComparison.Ordinal))
                     {
-                        DeleteSection(toSectionName);
-                        // recursive call with force == false now that the destination section is gone
-                        CopySection(fromSectionName, toSectionName, replaceProperties, false);
+                        if (force)
+                        {
+                            DeleteSection(toSectionName);
+                            // recursive call with force == false now that the destination section is gone
+                            CopySection(fromSectionName, toSectionName, replaceProperties, false);
+                        }
+                        else
+                            throw new ArgumentException("Cannot copy section. The destination section " + toSectionName +
+                                " already exists." + GetLineMessage(lineNumber));
                     }
-                    else
-                        throw new ArgumentException("Cannot copy section. The destination section " + toSectionName +
-                            " already exists." + GetLineMessage(lineNumber));
                 }
                 else
                 {

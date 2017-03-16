@@ -435,6 +435,26 @@ namespace AWSSDK.UnitTests
             }
         }
 
+        [TestMethod]
+        public void RenameProfileFromEqualsTo()
+        {
+            using (var tester = new NetSDKCredentialsFileTestFixture(BasicProfileText))
+            {
+                // read the profile
+                CredentialProfile before;
+                Assert.IsTrue(tester.ProfileStore.TryGetProfile("ProfileName1", out before));
+
+                // rename it with the same name
+                tester.ProfileStore.RenameProfile("ProfileName1", "ProfileName1");
+
+                // make sure it's still there
+                CredentialProfile after;
+                Assert.IsTrue(tester.ProfileStore.TryGetProfile("ProfileName1", out after));
+
+                // make sure everything is the same
+                Assert.AreEqual(before, after);
+            }
+        }
 
         [TestMethod]
         public void RenameProfileSourceDoesNotExist()
@@ -453,9 +473,10 @@ namespace AWSSDK.UnitTests
         {
             using (var tester = new NetSDKCredentialsFileTestFixture(BasicProfileText))
             {
+                RegisteOtherProfile(tester);
                 AssertExtensions.ExpectException(() =>
                 {
-                    tester.ProfileStore.RenameProfile("ProfileName1", "ProfileName1");
+                    tester.ProfileStore.RenameProfile("OtherProfile", "ProfileName1");
                 }, typeof(ArgumentException), "Cannot rename object. The destination object 'ProfileName1' already exists.");
             }
         }
@@ -515,6 +536,25 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
+        public void CopyProfileFromEqualsTo()
+        {
+            using (var tester = new NetSDKCredentialsFileTestFixture(BasicProfileText))
+            {
+                // read the profile
+                CredentialProfile profile1;
+                Assert.IsTrue(tester.ProfileStore.TryGetProfile("ProfileName1", out profile1));
+
+                // copy it
+                tester.ProfileStore.CopyProfile("ProfileName1", "ProfileName1");
+
+                // make sure the original is untouched
+                CredentialProfile profile1Reread;
+                Assert.IsTrue(tester.ProfileStore.TryGetProfile("ProfileName1", out profile1Reread));
+                Assert.AreEqual(profile1, profile1Reread);
+            }
+        }
+
+        [TestMethod]
         public void CopyProfileSourceDoesNotExist()
         {
             using (var tester = new NetSDKCredentialsFileTestFixture(BasicProfileText))
@@ -531,9 +571,10 @@ namespace AWSSDK.UnitTests
         {
             using (var tester = new NetSDKCredentialsFileTestFixture(BasicProfileText))
             {
+                RegisteOtherProfile(tester);
                 AssertExtensions.ExpectException(() =>
                 {
-                    tester.ProfileStore.CopyProfile("ProfileName1", "ProfileName1");
+                    tester.ProfileStore.CopyProfile("OtherProfile", "ProfileName1");
                 }, typeof(ArgumentException), "Cannot copy object. The destination object 'ProfileName1' already exists.");
             }
         }
@@ -681,5 +722,14 @@ namespace AWSSDK.UnitTests
             tester.ProfileStore.RegisterProfile(profile2);
         }
 
+        private static void RegisteOtherProfile(NetSDKCredentialsFileTestFixture tester)
+        {
+            var options = new CredentialProfileOptions
+            {
+                AccessKey = "ak",
+                SecretKey = "sk"
+            };
+            tester.ProfileStore.RegisterProfile(new CredentialProfile("OtherProfile", options));
+        }
     }
 }

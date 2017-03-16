@@ -224,6 +224,12 @@ namespace AWSSDK.UnitTests
 
         private static readonly CredentialProfileOptions RegionOnlyProfileOptions = new CredentialProfileOptions();
 
+        private static readonly string OtherProfileTextForCopyAndRename = new StringBuilder()
+            .AppendLine("[other_profile]")
+            .AppendLine("aws_access_key_id=session_aws_access_key_id")
+            .AppendLine("aws_secret_access_key=session_aws_secret_access_key")
+            .ToString();
+
         private static readonly string BasicProfileTextForCopyAndRename = new StringBuilder()
             .AppendLine("[basic_profile]")
             .AppendLine("aws_access_key_id=session_aws_access_key_id")
@@ -644,18 +650,26 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         public void RenameProfile()
         {
-            RenameProfile(false);
+            RenameProfile(false, false);
+        }
+
+        [TestMethod]
+        public void RenameProfileFromEqualsTo()
+        {
+            RenameProfile(false, true);
         }
 
         [TestMethod]
         public void RenameProfileWithUniqueKey()
         {
-            RenameProfile(true);
+            RenameProfile(true, false);
         }
 
-        public void RenameProfile(bool addUniqueKey)
+        public void RenameProfile(bool addUniqueKey, bool useSameName)
         {
             var profileText = BasicProfileTextForCopyAndRename;
+            var fromName = "basic_profile";
+            var toName = fromName + (useSameName ? "" : "2");
 
             if (addUniqueKey)
                 profileText += "toolkit_artifact_guid=" + UniqueKey;
@@ -664,19 +678,25 @@ namespace AWSSDK.UnitTests
             {
                 // read the profile
                 CredentialProfile before;
-                Assert.IsTrue(tester.CredentialsFile.TryGetProfile("basic_profile", out before));
+                Assert.IsTrue(tester.CredentialsFile.TryGetProfile(fromName, out before));
 
                 // rename it
-                tester.CredentialsFile.RenameProfile("basic_profile", "basic_profile2");
+                tester.CredentialsFile.RenameProfile(fromName, toName);
 
-                // make sure there isn't one with the original name
                 CredentialProfile profile1Reread;
-                Assert.IsFalse(tester.CredentialsFile.TryGetProfile("basic_profile", out profile1Reread));
+                if (useSameName)
+                    Assert.IsTrue(tester.CredentialsFile.TryGetProfile(fromName, out profile1Reread));
+                else
+                    Assert.IsFalse(tester.CredentialsFile.TryGetProfile(fromName, out profile1Reread));
 
                 // make sure one with the new name exists
                 CredentialProfile after;
-                Assert.IsTrue(tester.CredentialsFile.TryGetProfile("basic_profile2", out after));
-                Assert.AreNotEqual(before.Name, after.Name);
+                Assert.IsTrue(tester.CredentialsFile.TryGetProfile(toName, out after));
+
+                if (useSameName)
+                    Assert.AreEqual(before.Name, after.Name);
+                else
+                    Assert.AreNotEqual(before.Name, after.Name);
 
                 // make sure the unique key is the same as before the rename
                 if (addUniqueKey)
@@ -685,12 +705,13 @@ namespace AWSSDK.UnitTests
                     Assert.IsNull(CredentialProfileUtils.GetUniqueKey(before));
                 Assert.AreEqual(CredentialProfileUtils.GetUniqueKey(before), CredentialProfileUtils.GetUniqueKey(after));
 
-                // make sure everything is the same, except for the name
-                ReflectionHelpers.Invoke(after, "Name", before.Name);
+                // make sure everything is the same (except for the name if it's a real rename)
+                if (!useSameName)
+                    ReflectionHelpers.Invoke(after, "Name", before.Name);
                 Assert.AreEqual(before, after);
 
                 // make sure comments and other properties are unchanged after the rename
-                tester.AssertCredentialsFileContents(profileText.Replace("basic_profile", "basic_profile2"));
+                tester.AssertCredentialsFileContents(profileText.Replace(fromName, toName));
             }
         }
 
@@ -709,11 +730,11 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         public void RenameProfileTargetAlreadyExists()
         {
-            using (var tester = new SharedCredentialsFileTestFixture(BasicProfileTextForCopyAndRename))
+            using (var tester = new SharedCredentialsFileTestFixture(OtherProfileTextForCopyAndRename + BasicProfileTextForCopyAndRename))
             {
                 AssertExtensions.ExpectException(() =>
                 {
-                    tester.CredentialsFile.RenameProfile("basic_profile", "basic_profile");
+                    tester.CredentialsFile.RenameProfile("other_profile", "basic_profile");
                 }, typeof(ArgumentException), new Regex("Cannot rename section. The destination section basic_profile already exists."));
             }
         }
@@ -733,27 +754,36 @@ namespace AWSSDK.UnitTests
                 Assert.AreEqual(readProfile.Options.SecretKey, "secret_key1");
             }
         }
+
         [TestMethod]
         public void CopyProfile()
         {
-            CopyProfile(false, false);
+            CopyProfile(false, false, false);
+        }
+
+        [TestMethod]
+        public void CopyProfileFromEqualsTo()
+        {
+            CopyProfile(false, false, true);
         }
 
         [TestMethod]
         public void CopyProfileWithUniqueKey()
         {
-            CopyProfile(true, false);
+            CopyProfile(true, false, false);
         }
 
         [TestMethod]
         public void CopyProfileWithUniqueKeyAndANotherSection()
         {
-            CopyProfile(true, true);
+            CopyProfile(true, true, false);
         }
 
-        public void CopyProfile(bool addUniqueKey, bool addAnotherSection)
+        public void CopyProfile(bool addUniqueKey, bool addAnotherSection, bool useSameName)
         {
             var profileText = BasicProfileTextForCopyAndRename;
+            var fromName = "basic_profile";
+            var toName = fromName + (useSameName ? "" : "2");
 
             if (addUniqueKey)
                 profileText += "toolkit_artifact_guid=" + UniqueKey + Environment.NewLine;
@@ -764,29 +794,38 @@ namespace AWSSDK.UnitTests
             {
                 // read the profile
                 CredentialProfile profile1;
-                Assert.IsTrue(tester.CredentialsFile.TryGetProfile("basic_profile", out profile1));
+                Assert.IsTrue(tester.CredentialsFile.TryGetProfile(fromName, out profile1));
 
                 // copy it
-                tester.CredentialsFile.CopyProfile("basic_profile", "basic_profile2");
+                tester.CredentialsFile.CopyProfile(fromName, toName);
 
                 // make sure the original is untouched
                 CredentialProfile profile1Reread;
-                Assert.IsTrue(tester.CredentialsFile.TryGetProfile("basic_profile", out profile1Reread));
+                Assert.IsTrue(tester.CredentialsFile.TryGetProfile(fromName, out profile1Reread));
                 Assert.AreEqual(profile1, profile1Reread);
 
                 // make sure the copy exists
                 CredentialProfile profile2;
-                Assert.IsTrue(tester.CredentialsFile.TryGetProfile("basic_profile2", out profile2));
+                Assert.IsTrue(tester.CredentialsFile.TryGetProfile(toName, out profile2));
 
-                // make sure the name the copy is different from the original
-                Assert.AreNotEqual(profile1.Name, profile2.Name);
+                if (useSameName)
+                    Assert.AreEqual(profile1.Name, profile2.Name);
+                else
+                    Assert.AreNotEqual(profile1.Name, profile2.Name);
 
 
-                // make sure the unique key is the changed or not present
                 if (addUniqueKey)
                 {
-                    Assert.AreEqual(UniqueKey.ToString("D"), CredentialProfileUtils.GetUniqueKey(profile1));
-                    Assert.AreNotEqual(CredentialProfileUtils.GetUniqueKey(profile1), CredentialProfileUtils.GetUniqueKey(profile2));
+                    if (useSameName)
+                    {
+                        Assert.AreEqual(UniqueKey.ToString("D"), CredentialProfileUtils.GetUniqueKey(profile1));
+                        Assert.AreEqual(CredentialProfileUtils.GetUniqueKey(profile1), CredentialProfileUtils.GetUniqueKey(profile2));
+                    }
+                    else
+                    {
+                        Assert.AreEqual(UniqueKey.ToString("D"), CredentialProfileUtils.GetUniqueKey(profile1));
+                        Assert.AreNotEqual(CredentialProfileUtils.GetUniqueKey(profile1), CredentialProfileUtils.GetUniqueKey(profile2));
+                    }
                 }
                 else
                 {
@@ -794,17 +833,23 @@ namespace AWSSDK.UnitTests
                     Assert.IsNull(CredentialProfileUtils.GetUniqueKey(profile2));
                 }
 
-                // make sure the comments and everything got copied
-                var contentsAfter = (profileText + anotherSection).TrimEnd() + Environment.NewLine;
-                if (addUniqueKey)
+                var contentsAfter = profileText;
+
+                if (!useSameName)
                 {
-                    contentsAfter += profileText.Replace("basic_profile", "basic_profile2")
-                    .Replace(CredentialProfileUtils.GetUniqueKey(profile1).ToString(), CredentialProfileUtils.GetUniqueKey(profile2).ToString()).TrimEnd();
+                    // make sure the comments and everything got copied
+                    contentsAfter = (contentsAfter + anotherSection).TrimEnd() + Environment.NewLine;
+                    if (addUniqueKey)
+                    {
+                        contentsAfter += profileText.Replace(fromName, toName)
+                        .Replace(CredentialProfileUtils.GetUniqueKey(profile1).ToString(), CredentialProfileUtils.GetUniqueKey(profile2).ToString()).TrimEnd();
+                    }
+                    else
+                    {
+                        contentsAfter += profileText.Replace(fromName, toName);
+                    }
                 }
-                else
-                {
-                    contentsAfter += profileText.Replace("basic_profile", "basic_profile2");
-                }
+
                 tester.AssertCredentialsFileContents(contentsAfter);
 
                 // make sure everything else on the copy is the same as the original
@@ -836,11 +881,11 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         public void CopyProfileTargetAlreadyExists()
         {
-            using (var tester = new SharedCredentialsFileTestFixture(BasicProfileTextForCopyAndRename))
+            using (var tester = new SharedCredentialsFileTestFixture(OtherProfileTextForCopyAndRename + BasicProfileTextForCopyAndRename))
             {
                 AssertExtensions.ExpectException(() =>
                 {
-                    tester.CredentialsFile.CopyProfile("basic_profile", "basic_profile");
+                    tester.CredentialsFile.CopyProfile("other_profile", "basic_profile");
                 }, typeof(ArgumentException), new Regex("Cannot copy section. The destination section basic_profile already exists."));
             }
         }

@@ -127,14 +127,18 @@ namespace Amazon.Util.Internal
             {
                 if (TryGetObject(newDisplayName, out toUniqueKey, out toObject))
                 {
-                    if (force)
+                    //  if oldDisplayName == newDisplayName it's a no op
+                    if (!string.Equals(oldDisplayName, newDisplayName, StringComparison.Ordinal))
                     {
-                        settingsManager.UnregisterObject(toUniqueKey);
-                        // recursive call with force == false now that the destination object is gone
-                        RenameObject(oldDisplayName, newDisplayName, false);
+                        if (force)
+                        {
+                            settingsManager.UnregisterObject(toUniqueKey);
+                            // recursive call with force == false now that the destination object is gone
+                            RenameObject(oldDisplayName, newDisplayName, false);
+                        }
+                        else
+                            throw new ArgumentException("Cannot rename object. The destination object '" + newDisplayName + "' already exists.");
                     }
-                    else
-                        throw new ArgumentException("Cannot rename object. The destination object '" + newDisplayName + "' already exists.");
                 }
                 else
                 {
@@ -164,14 +168,18 @@ namespace Amazon.Util.Internal
             {
                 if (TryGetObject(toDisplayName, out toUniqueKey, out toObject))
                 {
-                    if (force)
+                    //  if fromDisplayName == toDisplayName it's a no op
+                    if (!string.Equals(fromDisplayName, toDisplayName, StringComparison.Ordinal))
                     {
-                        settingsManager.UnregisterObject(toUniqueKey);
-                        // recursive call with force == false now that the destination object is gone
-                        CopyObject(fromDisplayName, toDisplayName, force);
+                        if (force)
+                        {
+                            settingsManager.UnregisterObject(toUniqueKey);
+                            // recursive call with force == false now that the destination object is gone
+                            CopyObject(fromDisplayName, toDisplayName, force);
+                        }
+                        else
+                            throw new ArgumentException("Cannot copy object. The destination object '" + toDisplayName + "' already exists.");
                     }
-                    else
-                        throw new ArgumentException("Cannot copy object. The destination object '" + toDisplayName + "' already exists.");
                 }
                 else
                 {
