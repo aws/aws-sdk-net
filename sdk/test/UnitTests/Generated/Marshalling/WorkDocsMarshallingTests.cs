@@ -52,7 +52,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new AbortDocumentVersionUploadRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("AbortDocumentVersionUpload", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("AbortDocumentVersionUpload", request, internalRequest, service_model);            
 
         }
 
@@ -69,7 +69,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ActivateUserRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("ActivateUser", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ActivateUser", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -101,7 +101,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new AddResourcePermissionsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("AddResourcePermissions", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("AddResourcePermissions", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -133,7 +133,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new CreateFolderRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("CreateFolder", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("CreateFolder", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -165,7 +165,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new CreateNotificationSubscriptionRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("CreateNotificationSubscription", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("CreateNotificationSubscription", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -197,7 +197,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new CreateUserRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("CreateUser", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("CreateUser", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -229,7 +229,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DeactivateUserRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("DeactivateUser", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DeactivateUser", request, internalRequest, service_model);            
 
         }
 
@@ -246,7 +246,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DeleteDocumentRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("DeleteDocument", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DeleteDocument", request, internalRequest, service_model);            
 
         }
 
@@ -263,7 +263,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DeleteFolderRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("DeleteFolder", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DeleteFolder", request, internalRequest, service_model);            
 
         }
 
@@ -280,7 +280,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DeleteFolderContentsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("DeleteFolderContents", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DeleteFolderContents", request, internalRequest, service_model);            
 
         }
 
@@ -297,7 +297,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DeleteNotificationSubscriptionRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("DeleteNotificationSubscription", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DeleteNotificationSubscription", request, internalRequest, service_model);            
 
         }
 
@@ -314,7 +314,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DeleteUserRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("DeleteUser", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DeleteUser", request, internalRequest, service_model);            
 
         }
 
@@ -331,7 +331,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DescribeDocumentVersionsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("DescribeDocumentVersions", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DescribeDocumentVersions", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -363,7 +363,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DescribeFolderContentsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("DescribeFolderContents", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DescribeFolderContents", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -395,7 +395,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DescribeNotificationSubscriptionsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("DescribeNotificationSubscriptions", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DescribeNotificationSubscriptions", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -427,7 +427,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DescribeResourcePermissionsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("DescribeResourcePermissions", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DescribeResourcePermissions", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -459,7 +459,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DescribeUsersRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("DescribeUsers", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DescribeUsers", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -491,7 +491,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetDocumentRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("GetDocument", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetDocument", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -523,7 +523,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetDocumentPathRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("GetDocumentPath", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetDocumentPath", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -555,7 +555,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetDocumentVersionRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("GetDocumentVersion", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetDocumentVersion", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -587,7 +587,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetFolderRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("GetFolder", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetFolder", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -619,7 +619,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetFolderPathRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("GetFolderPath", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetFolderPath", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -651,7 +651,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new InitiateDocumentVersionUploadRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("InitiateDocumentVersionUpload", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("InitiateDocumentVersionUpload", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -683,7 +683,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new RemoveAllResourcePermissionsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("RemoveAllResourcePermissions", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("RemoveAllResourcePermissions", request, internalRequest, service_model);            
 
         }
 
@@ -700,7 +700,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new RemoveResourcePermissionRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("RemoveResourcePermission", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("RemoveResourcePermission", request, internalRequest, service_model);            
 
         }
 
@@ -717,7 +717,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new UpdateDocumentRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("UpdateDocument", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("UpdateDocument", request, internalRequest, service_model);            
 
         }
 
@@ -734,7 +734,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new UpdateDocumentVersionRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("UpdateDocumentVersion", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("UpdateDocumentVersion", request, internalRequest, service_model);            
 
         }
 
@@ -751,7 +751,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new UpdateFolderRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("UpdateFolder", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("UpdateFolder", request, internalRequest, service_model);            
 
         }
 
@@ -768,7 +768,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new UpdateUserRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("UpdateUser", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("UpdateUser", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {

@@ -52,7 +52,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new AddTagsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("AddTags", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("AddTags", request, internalRequest, service_model);            
 
         }
 
@@ -69,7 +69,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new CreateElasticsearchDomainRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("CreateElasticsearchDomain", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("CreateElasticsearchDomain", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -101,7 +101,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DeleteElasticsearchDomainRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("DeleteElasticsearchDomain", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DeleteElasticsearchDomain", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -133,7 +133,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DescribeElasticsearchDomainRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("DescribeElasticsearchDomain", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DescribeElasticsearchDomain", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -165,7 +165,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DescribeElasticsearchDomainConfigRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("DescribeElasticsearchDomainConfig", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DescribeElasticsearchDomainConfig", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -197,7 +197,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DescribeElasticsearchDomainsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("DescribeElasticsearchDomains", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DescribeElasticsearchDomains", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -229,7 +229,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DescribeElasticsearchInstanceTypeLimitsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("DescribeElasticsearchInstanceTypeLimits", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DescribeElasticsearchInstanceTypeLimits", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -261,7 +261,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListDomainNamesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("ListDomainNames", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ListDomainNames", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -293,7 +293,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListElasticsearchInstanceTypesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("ListElasticsearchInstanceTypes", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ListElasticsearchInstanceTypes", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -325,7 +325,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListElasticsearchVersionsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("ListElasticsearchVersions", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ListElasticsearchVersions", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -357,7 +357,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListTagsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("ListTags", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ListTags", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -389,7 +389,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new RemoveTagsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("RemoveTags", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("RemoveTags", request, internalRequest, service_model);            
 
         }
 
@@ -406,7 +406,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new UpdateElasticsearchDomainConfigRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("UpdateElasticsearchDomainConfig", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("UpdateElasticsearchDomainConfig", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {

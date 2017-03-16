@@ -52,7 +52,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DeleteThingShadowRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("DeleteThingShadow", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DeleteThingShadow", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -84,7 +84,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetThingShadowRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("GetThingShadow", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetThingShadow", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -116,7 +116,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new PublishRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("Publish", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("Publish", request, internalRequest, service_model);            
 
         }
 
@@ -133,7 +133,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new UpdateThingShadowRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("UpdateThingShadow", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("UpdateThingShadow", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {

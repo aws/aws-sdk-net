@@ -52,7 +52,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new CreateCampaignRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("CreateCampaign", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("CreateCampaign", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -84,7 +84,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new CreateImportJobRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("CreateImportJob", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("CreateImportJob", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -116,7 +116,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new CreateSegmentRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("CreateSegment", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("CreateSegment", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -148,7 +148,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DeleteApnsChannelRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("DeleteApnsChannel", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DeleteApnsChannel", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -180,7 +180,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DeleteCampaignRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("DeleteCampaign", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DeleteCampaign", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -212,7 +212,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DeleteGcmChannelRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("DeleteGcmChannel", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DeleteGcmChannel", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -244,7 +244,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DeleteSegmentRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("DeleteSegment", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DeleteSegment", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -276,7 +276,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetApnsChannelRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("GetApnsChannel", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetApnsChannel", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -308,7 +308,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetApplicationSettingsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("GetApplicationSettings", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetApplicationSettings", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -340,7 +340,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetCampaignRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("GetCampaign", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetCampaign", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -372,7 +372,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetCampaignActivitiesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("GetCampaignActivities", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetCampaignActivities", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -404,7 +404,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetCampaignsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("GetCampaigns", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetCampaigns", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -436,7 +436,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetCampaignVersionRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("GetCampaignVersion", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetCampaignVersion", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -468,7 +468,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetCampaignVersionsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("GetCampaignVersions", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetCampaignVersions", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -500,7 +500,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetEndpointRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("GetEndpoint", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetEndpoint", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -532,7 +532,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetGcmChannelRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("GetGcmChannel", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetGcmChannel", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -564,7 +564,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetImportJobRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("GetImportJob", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetImportJob", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -596,7 +596,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetImportJobsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("GetImportJobs", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetImportJobs", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -628,7 +628,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetSegmentRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("GetSegment", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetSegment", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -660,7 +660,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetSegmentImportJobsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("GetSegmentImportJobs", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetSegmentImportJobs", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -692,7 +692,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetSegmentsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("GetSegments", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetSegments", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -724,7 +724,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetSegmentVersionRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("GetSegmentVersion", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetSegmentVersion", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -756,7 +756,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetSegmentVersionsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("GetSegmentVersions", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetSegmentVersions", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -788,7 +788,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new UpdateApnsChannelRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("UpdateApnsChannel", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("UpdateApnsChannel", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -820,7 +820,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new UpdateApplicationSettingsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("UpdateApplicationSettings", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("UpdateApplicationSettings", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -852,7 +852,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new UpdateCampaignRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("UpdateCampaign", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("UpdateCampaign", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -884,7 +884,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new UpdateEndpointRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("UpdateEndpoint", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("UpdateEndpoint", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -916,7 +916,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new UpdateEndpointsBatchRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("UpdateEndpointsBatch", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("UpdateEndpointsBatch", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -948,7 +948,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new UpdateGcmChannelRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("UpdateGcmChannel", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("UpdateGcmChannel", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -980,7 +980,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new UpdateSegmentRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("UpdateSegment", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("UpdateSegment", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {

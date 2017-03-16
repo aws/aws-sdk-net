@@ -52,7 +52,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new AddFacetToObjectRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("AddFacetToObject", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("AddFacetToObject", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -84,7 +84,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ApplySchemaRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("ApplySchema", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ApplySchema", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -116,7 +116,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new AttachObjectRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("AttachObject", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("AttachObject", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -148,7 +148,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new AttachPolicyRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("AttachPolicy", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("AttachPolicy", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -180,7 +180,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new AttachToIndexRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("AttachToIndex", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("AttachToIndex", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -212,7 +212,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new BatchReadRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("BatchRead", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("BatchRead", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -244,7 +244,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new BatchWriteRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("BatchWrite", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("BatchWrite", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -276,7 +276,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new CreateDirectoryRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("CreateDirectory", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("CreateDirectory", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -308,7 +308,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new CreateFacetRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("CreateFacet", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("CreateFacet", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -340,7 +340,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new CreateIndexRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("CreateIndex", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("CreateIndex", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -372,7 +372,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new CreateObjectRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("CreateObject", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("CreateObject", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -404,7 +404,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new CreateSchemaRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("CreateSchema", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("CreateSchema", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -436,7 +436,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DeleteDirectoryRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("DeleteDirectory", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DeleteDirectory", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -468,7 +468,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DeleteFacetRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("DeleteFacet", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DeleteFacet", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -500,7 +500,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DeleteObjectRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("DeleteObject", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DeleteObject", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -532,7 +532,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DeleteSchemaRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("DeleteSchema", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DeleteSchema", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -564,7 +564,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DetachFromIndexRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("DetachFromIndex", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DetachFromIndex", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -596,7 +596,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DetachObjectRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("DetachObject", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DetachObject", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -628,7 +628,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DetachPolicyRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("DetachPolicy", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DetachPolicy", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -660,7 +660,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DisableDirectoryRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("DisableDirectory", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DisableDirectory", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -692,7 +692,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new EnableDirectoryRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("EnableDirectory", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("EnableDirectory", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -724,7 +724,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetDirectoryRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("GetDirectory", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetDirectory", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -756,7 +756,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetFacetRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("GetFacet", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetFacet", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -788,7 +788,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetObjectInformationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("GetObjectInformation", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetObjectInformation", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -820,7 +820,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetSchemaAsJsonRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("GetSchemaAsJson", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetSchemaAsJson", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -852,7 +852,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListAppliedSchemaArnsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("ListAppliedSchemaArns", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ListAppliedSchemaArns", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -884,7 +884,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListAttachedIndicesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("ListAttachedIndices", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ListAttachedIndices", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -916,7 +916,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListDevelopmentSchemaArnsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("ListDevelopmentSchemaArns", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ListDevelopmentSchemaArns", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -948,7 +948,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListDirectoriesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("ListDirectories", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ListDirectories", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -980,7 +980,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListFacetAttributesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("ListFacetAttributes", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ListFacetAttributes", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -1012,7 +1012,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListFacetNamesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("ListFacetNames", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ListFacetNames", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -1044,7 +1044,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListIndexRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("ListIndex", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ListIndex", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -1076,7 +1076,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListObjectAttributesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("ListObjectAttributes", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ListObjectAttributes", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -1108,7 +1108,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListObjectChildrenRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("ListObjectChildren", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ListObjectChildren", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -1140,7 +1140,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListObjectParentPathsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("ListObjectParentPaths", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ListObjectParentPaths", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -1172,7 +1172,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListObjectParentsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("ListObjectParents", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ListObjectParents", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -1204,7 +1204,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListObjectPoliciesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("ListObjectPolicies", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ListObjectPolicies", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -1236,7 +1236,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListPolicyAttachmentsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("ListPolicyAttachments", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ListPolicyAttachments", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -1268,7 +1268,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListPublishedSchemaArnsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("ListPublishedSchemaArns", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ListPublishedSchemaArns", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -1300,7 +1300,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListTagsForResourceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("ListTagsForResource", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ListTagsForResource", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -1332,7 +1332,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new LookupPolicyRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("LookupPolicy", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("LookupPolicy", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -1364,7 +1364,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new PublishSchemaRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("PublishSchema", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("PublishSchema", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -1396,7 +1396,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new PutSchemaFromJsonRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("PutSchemaFromJson", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("PutSchemaFromJson", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -1428,7 +1428,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new RemoveFacetFromObjectRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("RemoveFacetFromObject", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("RemoveFacetFromObject", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -1460,7 +1460,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new TagResourceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("TagResource", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("TagResource", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -1492,7 +1492,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new UntagResourceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("UntagResource", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("UntagResource", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -1524,7 +1524,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new UpdateFacetRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("UpdateFacet", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("UpdateFacet", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -1556,7 +1556,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new UpdateObjectAttributesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("UpdateObjectAttributes", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("UpdateObjectAttributes", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -1588,7 +1588,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new UpdateSchemaRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("UpdateSchema", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("UpdateSchema", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {

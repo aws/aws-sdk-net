@@ -52,7 +52,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new PostTextRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("PostText", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("PostText", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {

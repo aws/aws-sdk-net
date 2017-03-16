@@ -52,7 +52,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new CreateFileSystemRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("CreateFileSystem", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("CreateFileSystem", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -84,7 +84,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new CreateMountTargetRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("CreateMountTarget", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("CreateMountTarget", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -116,7 +116,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new CreateTagsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("CreateTags", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("CreateTags", request, internalRequest, service_model);            
 
         }
 
@@ -133,7 +133,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DeleteFileSystemRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("DeleteFileSystem", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DeleteFileSystem", request, internalRequest, service_model);            
 
         }
 
@@ -150,7 +150,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DeleteMountTargetRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("DeleteMountTarget", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DeleteMountTarget", request, internalRequest, service_model);            
 
         }
 
@@ -167,7 +167,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DeleteTagsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("DeleteTags", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DeleteTags", request, internalRequest, service_model);            
 
         }
 
@@ -184,7 +184,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DescribeFileSystemsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("DescribeFileSystems", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DescribeFileSystems", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -216,7 +216,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DescribeMountTargetsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("DescribeMountTargets", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DescribeMountTargets", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -248,7 +248,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DescribeMountTargetSecurityGroupsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("DescribeMountTargetSecurityGroups", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DescribeMountTargetSecurityGroups", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -280,7 +280,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DescribeTagsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("DescribeTags", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DescribeTags", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -312,7 +312,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ModifyMountTargetSecurityGroupsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("ModifyMountTargetSecurityGroups", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ModifyMountTargetSecurityGroups", request, internalRequest, service_model);            
 
         }
 

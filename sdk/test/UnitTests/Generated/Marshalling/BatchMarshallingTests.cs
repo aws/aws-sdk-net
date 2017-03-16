@@ -52,7 +52,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new CancelJobRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("CancelJob", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("CancelJob", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -84,7 +84,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new CreateComputeEnvironmentRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("CreateComputeEnvironment", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("CreateComputeEnvironment", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -116,7 +116,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new CreateJobQueueRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("CreateJobQueue", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("CreateJobQueue", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -148,7 +148,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DeleteComputeEnvironmentRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("DeleteComputeEnvironment", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DeleteComputeEnvironment", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -180,7 +180,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DeleteJobQueueRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("DeleteJobQueue", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DeleteJobQueue", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -212,7 +212,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DeregisterJobDefinitionRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("DeregisterJobDefinition", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DeregisterJobDefinition", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -244,7 +244,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DescribeComputeEnvironmentsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("DescribeComputeEnvironments", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DescribeComputeEnvironments", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -276,7 +276,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DescribeJobDefinitionsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("DescribeJobDefinitions", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DescribeJobDefinitions", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -308,7 +308,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DescribeJobQueuesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("DescribeJobQueues", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DescribeJobQueues", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -340,7 +340,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DescribeJobsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("DescribeJobs", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DescribeJobs", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -372,7 +372,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListJobsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("ListJobs", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ListJobs", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -404,7 +404,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new RegisterJobDefinitionRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("RegisterJobDefinition", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("RegisterJobDefinition", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -436,7 +436,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new SubmitJobRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("SubmitJob", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("SubmitJob", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -468,7 +468,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new TerminateJobRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("TerminateJob", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("TerminateJob", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -500,7 +500,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new UpdateComputeEnvironmentRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("UpdateComputeEnvironment", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("UpdateComputeEnvironment", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -532,7 +532,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new UpdateJobQueueRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("UpdateJobQueue", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("UpdateJobQueue", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {

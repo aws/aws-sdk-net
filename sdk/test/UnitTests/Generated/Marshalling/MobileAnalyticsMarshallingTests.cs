@@ -52,7 +52,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new PutEventsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("PutEvents", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("PutEvents", request, internalRequest, service_model);            
 
         }
 

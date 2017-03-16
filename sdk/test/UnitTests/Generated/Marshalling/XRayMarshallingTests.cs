@@ -52,7 +52,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new BatchGetTracesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("BatchGetTraces", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("BatchGetTraces", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -84,7 +84,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetServiceGraphRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("GetServiceGraph", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetServiceGraph", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -116,7 +116,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetTraceGraphRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("GetTraceGraph", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetTraceGraph", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -148,7 +148,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetTraceSummariesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("GetTraceSummaries", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetTraceSummaries", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -180,7 +180,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new PutTelemetryRecordsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("PutTelemetryRecords", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("PutTelemetryRecords", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -212,7 +212,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new PutTraceSegmentsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("PutTraceSegments", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("PutTraceSegments", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {

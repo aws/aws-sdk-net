@@ -52,7 +52,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new BulkPublishRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("BulkPublish", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("BulkPublish", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -84,7 +84,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DeleteDatasetRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("DeleteDataset", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DeleteDataset", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -116,7 +116,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DescribeDatasetRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("DescribeDataset", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DescribeDataset", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -148,7 +148,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DescribeIdentityPoolUsageRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("DescribeIdentityPoolUsage", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DescribeIdentityPoolUsage", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -180,7 +180,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DescribeIdentityUsageRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("DescribeIdentityUsage", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DescribeIdentityUsage", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -212,7 +212,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetBulkPublishDetailsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("GetBulkPublishDetails", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetBulkPublishDetails", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -244,7 +244,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetCognitoEventsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("GetCognitoEvents", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetCognitoEvents", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -276,7 +276,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetIdentityPoolConfigurationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("GetIdentityPoolConfiguration", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetIdentityPoolConfiguration", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -308,7 +308,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListDatasetsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("ListDatasets", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ListDatasets", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -340,7 +340,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListIdentityPoolUsageRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("ListIdentityPoolUsage", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ListIdentityPoolUsage", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -372,7 +372,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListRecordsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("ListRecords", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ListRecords", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -404,7 +404,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new RegisterDeviceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("RegisterDevice", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("RegisterDevice", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -436,7 +436,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new SetCognitoEventsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("SetCognitoEvents", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("SetCognitoEvents", request, internalRequest, service_model);            
 
         }
 
@@ -453,7 +453,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new SetIdentityPoolConfigurationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("SetIdentityPoolConfiguration", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("SetIdentityPoolConfiguration", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -485,7 +485,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new SubscribeToDatasetRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("SubscribeToDataset", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("SubscribeToDataset", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -517,7 +517,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new UnsubscribeFromDatasetRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("UnsubscribeFromDataset", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("UnsubscribeFromDataset", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -549,7 +549,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new UpdateRecordsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("UpdateRecords", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("UpdateRecords", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {

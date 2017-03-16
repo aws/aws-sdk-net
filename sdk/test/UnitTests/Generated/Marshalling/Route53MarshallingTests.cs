@@ -52,7 +52,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new AssociateVPCWithHostedZoneRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("AssociateVPCWithHostedZone", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("AssociateVPCWithHostedZone", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -83,7 +83,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ChangeResourceRecordSetsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("ChangeResourceRecordSets", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ChangeResourceRecordSets", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -114,7 +114,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ChangeTagsForResourceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("ChangeTagsForResource", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ChangeTagsForResource", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -145,7 +145,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new CreateHealthCheckRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("CreateHealthCheck", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("CreateHealthCheck", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -177,7 +177,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new CreateHostedZoneRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("CreateHostedZone", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("CreateHostedZone", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -209,7 +209,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new CreateReusableDelegationSetRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("CreateReusableDelegationSet", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("CreateReusableDelegationSet", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -241,7 +241,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new CreateTrafficPolicyRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("CreateTrafficPolicy", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("CreateTrafficPolicy", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -273,7 +273,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new CreateTrafficPolicyInstanceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("CreateTrafficPolicyInstance", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("CreateTrafficPolicyInstance", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -305,7 +305,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new CreateTrafficPolicyVersionRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("CreateTrafficPolicyVersion", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("CreateTrafficPolicyVersion", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -337,7 +337,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new CreateVPCAssociationAuthorizationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("CreateVPCAssociationAuthorization", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("CreateVPCAssociationAuthorization", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -368,7 +368,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DeleteHealthCheckRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("DeleteHealthCheck", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DeleteHealthCheck", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -399,7 +399,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DeleteHostedZoneRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("DeleteHostedZone", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DeleteHostedZone", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -430,7 +430,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DeleteReusableDelegationSetRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("DeleteReusableDelegationSet", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DeleteReusableDelegationSet", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -461,7 +461,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DeleteTrafficPolicyRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("DeleteTrafficPolicy", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DeleteTrafficPolicy", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -492,7 +492,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DeleteTrafficPolicyInstanceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("DeleteTrafficPolicyInstance", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DeleteTrafficPolicyInstance", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -523,7 +523,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DeleteVPCAssociationAuthorizationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("DeleteVPCAssociationAuthorization", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DeleteVPCAssociationAuthorization", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -554,7 +554,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DisassociateVPCFromHostedZoneRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("DisassociateVPCFromHostedZone", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DisassociateVPCFromHostedZone", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -585,7 +585,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetChangeRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("GetChange", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetChange", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -616,7 +616,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetCheckerIpRangesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("GetCheckerIpRanges", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetCheckerIpRanges", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -647,7 +647,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetGeoLocationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("GetGeoLocation", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetGeoLocation", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -678,7 +678,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetHealthCheckRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("GetHealthCheck", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetHealthCheck", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -709,7 +709,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetHealthCheckCountRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("GetHealthCheckCount", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetHealthCheckCount", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -740,7 +740,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetHealthCheckLastFailureReasonRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("GetHealthCheckLastFailureReason", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetHealthCheckLastFailureReason", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -771,7 +771,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetHealthCheckStatusRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("GetHealthCheckStatus", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetHealthCheckStatus", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -802,7 +802,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetHostedZoneRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("GetHostedZone", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetHostedZone", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -833,7 +833,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetHostedZoneCountRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("GetHostedZoneCount", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetHostedZoneCount", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -864,7 +864,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetReusableDelegationSetRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("GetReusableDelegationSet", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetReusableDelegationSet", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -895,7 +895,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetTrafficPolicyRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("GetTrafficPolicy", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetTrafficPolicy", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -926,7 +926,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetTrafficPolicyInstanceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("GetTrafficPolicyInstance", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetTrafficPolicyInstance", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -957,7 +957,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetTrafficPolicyInstanceCountRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("GetTrafficPolicyInstanceCount", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetTrafficPolicyInstanceCount", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -988,7 +988,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListGeoLocationsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("ListGeoLocations", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ListGeoLocations", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -1019,7 +1019,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListHealthChecksRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("ListHealthChecks", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ListHealthChecks", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -1050,7 +1050,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListHostedZonesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("ListHostedZones", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ListHostedZones", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -1081,7 +1081,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListHostedZonesByNameRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("ListHostedZonesByName", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ListHostedZonesByName", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -1112,7 +1112,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListResourceRecordSetsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("ListResourceRecordSets", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ListResourceRecordSets", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -1143,7 +1143,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListReusableDelegationSetsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("ListReusableDelegationSets", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ListReusableDelegationSets", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -1174,7 +1174,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListTagsForResourceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("ListTagsForResource", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ListTagsForResource", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -1205,7 +1205,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListTagsForResourcesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("ListTagsForResources", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ListTagsForResources", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -1236,7 +1236,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListTrafficPoliciesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("ListTrafficPolicies", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ListTrafficPolicies", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -1267,7 +1267,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListTrafficPolicyInstancesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("ListTrafficPolicyInstances", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ListTrafficPolicyInstances", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -1298,7 +1298,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListTrafficPolicyInstancesByHostedZoneRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("ListTrafficPolicyInstancesByHostedZone", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ListTrafficPolicyInstancesByHostedZone", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -1329,7 +1329,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListTrafficPolicyInstancesByPolicyRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("ListTrafficPolicyInstancesByPolicy", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ListTrafficPolicyInstancesByPolicy", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -1360,7 +1360,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListTrafficPolicyVersionsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("ListTrafficPolicyVersions", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ListTrafficPolicyVersions", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -1391,7 +1391,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListVPCAssociationAuthorizationsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("ListVPCAssociationAuthorizations", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ListVPCAssociationAuthorizations", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -1422,7 +1422,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new TestDNSAnswerRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("TestDNSAnswer", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("TestDNSAnswer", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -1453,7 +1453,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new UpdateHealthCheckRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("UpdateHealthCheck", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("UpdateHealthCheck", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -1484,7 +1484,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new UpdateHostedZoneCommentRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("UpdateHostedZoneComment", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("UpdateHostedZoneComment", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -1515,7 +1515,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new UpdateTrafficPolicyCommentRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("UpdateTrafficPolicyComment", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("UpdateTrafficPolicyComment", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -1546,7 +1546,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new UpdateTrafficPolicyInstanceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("UpdateTrafficPolicyInstance", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("UpdateTrafficPolicyInstance", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {

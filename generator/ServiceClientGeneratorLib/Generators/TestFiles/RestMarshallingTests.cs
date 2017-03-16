@@ -137,7 +137,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             #line default
             #line hidden
             this.Write("RequestMarshaller();\r\n\r\n            var internalRequest = marshaller.Marshall(req" +
-                    "uest);\r\n            RequestValidator.Validate(\"");
+                    "uest);\r\n            TestTools.RequestValidator.Validate(\"");
             
             #line 50 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));

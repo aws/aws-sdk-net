@@ -52,7 +52,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new CreateCloudFrontOriginAccessIdentityRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("CreateCloudFrontOriginAccessIdentity", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("CreateCloudFrontOriginAccessIdentity", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -85,7 +85,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new CreateDistributionRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("CreateDistribution", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("CreateDistribution", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -118,7 +118,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new CreateDistributionWithTagsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("CreateDistributionWithTags", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("CreateDistributionWithTags", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -151,7 +151,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new CreateInvalidationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("CreateInvalidation", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("CreateInvalidation", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -183,7 +183,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new CreateStreamingDistributionRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("CreateStreamingDistribution", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("CreateStreamingDistribution", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -216,7 +216,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new CreateStreamingDistributionWithTagsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("CreateStreamingDistributionWithTags", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("CreateStreamingDistributionWithTags", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -249,7 +249,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DeleteCloudFrontOriginAccessIdentityRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("DeleteCloudFrontOriginAccessIdentity", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DeleteCloudFrontOriginAccessIdentity", request, internalRequest, service_model);            
 
         }
 
@@ -266,7 +266,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DeleteDistributionRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("DeleteDistribution", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DeleteDistribution", request, internalRequest, service_model);            
 
         }
 
@@ -283,7 +283,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DeleteStreamingDistributionRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("DeleteStreamingDistribution", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DeleteStreamingDistribution", request, internalRequest, service_model);            
 
         }
 
@@ -300,7 +300,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetCloudFrontOriginAccessIdentityRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("GetCloudFrontOriginAccessIdentity", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetCloudFrontOriginAccessIdentity", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -332,7 +332,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetCloudFrontOriginAccessIdentityConfigRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("GetCloudFrontOriginAccessIdentityConfig", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetCloudFrontOriginAccessIdentityConfig", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -364,7 +364,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetDistributionRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("GetDistribution", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetDistribution", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -396,7 +396,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetDistributionConfigRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("GetDistributionConfig", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetDistributionConfig", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -428,7 +428,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetInvalidationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("GetInvalidation", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetInvalidation", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -459,7 +459,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetStreamingDistributionRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("GetStreamingDistribution", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetStreamingDistribution", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -491,7 +491,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetStreamingDistributionConfigRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("GetStreamingDistributionConfig", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetStreamingDistributionConfig", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -523,7 +523,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListCloudFrontOriginAccessIdentitiesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("ListCloudFrontOriginAccessIdentities", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ListCloudFrontOriginAccessIdentities", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -554,7 +554,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListDistributionsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("ListDistributions", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ListDistributions", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -585,7 +585,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListDistributionsByWebACLIdRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("ListDistributionsByWebACLId", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ListDistributionsByWebACLId", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -616,7 +616,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListInvalidationsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("ListInvalidations", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ListInvalidations", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -647,7 +647,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListStreamingDistributionsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("ListStreamingDistributions", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ListStreamingDistributions", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -678,7 +678,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListTagsForResourceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("ListTagsForResource", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ListTagsForResource", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -709,7 +709,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new TagResourceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("TagResource", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("TagResource", request, internalRequest, service_model);            
 
         }
 
@@ -726,7 +726,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new UntagResourceRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("UntagResource", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("UntagResource", request, internalRequest, service_model);            
 
         }
 
@@ -743,7 +743,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new UpdateCloudFrontOriginAccessIdentityRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("UpdateCloudFrontOriginAccessIdentity", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("UpdateCloudFrontOriginAccessIdentity", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -775,7 +775,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new UpdateDistributionRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("UpdateDistribution", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("UpdateDistribution", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -807,7 +807,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new UpdateStreamingDistributionRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("UpdateStreamingDistribution", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("UpdateStreamingDistribution", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {

@@ -52,7 +52,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new SearchRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("Search", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("Search", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -84,7 +84,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new SuggestRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("Suggest", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("Suggest", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -116,7 +116,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new UploadDocumentsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("UploadDocuments", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("UploadDocuments", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {

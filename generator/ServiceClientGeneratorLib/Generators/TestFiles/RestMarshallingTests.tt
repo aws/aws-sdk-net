@@ -47,7 +47,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new <#=operation.Name#>RequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("<#=operation.Name#>", request, internalRequest, service_model);			
+            TestTools.RequestValidator.Validate("<#=operation.Name#>", request, internalRequest, service_model);			
 
 <#
             if(operation.ResponseStructure != null)

@@ -52,7 +52,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new AbortMultipartUploadRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("AbortMultipartUpload", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("AbortMultipartUpload", request, internalRequest, service_model);            
 
         }
 
@@ -69,7 +69,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new AbortVaultLockRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("AbortVaultLock", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("AbortVaultLock", request, internalRequest, service_model);            
 
         }
 
@@ -86,7 +86,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new AddTagsToVaultRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("AddTagsToVault", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("AddTagsToVault", request, internalRequest, service_model);            
 
         }
 
@@ -103,7 +103,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new CompleteMultipartUploadRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("CompleteMultipartUpload", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("CompleteMultipartUpload", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -138,7 +138,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new CompleteVaultLockRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("CompleteVaultLock", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("CompleteVaultLock", request, internalRequest, service_model);            
 
         }
 
@@ -155,7 +155,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new CreateVaultRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("CreateVault", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("CreateVault", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -188,7 +188,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DeleteArchiveRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("DeleteArchive", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DeleteArchive", request, internalRequest, service_model);            
 
         }
 
@@ -205,7 +205,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DeleteVaultRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("DeleteVault", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DeleteVault", request, internalRequest, service_model);            
 
         }
 
@@ -222,7 +222,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DeleteVaultAccessPolicyRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("DeleteVaultAccessPolicy", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DeleteVaultAccessPolicy", request, internalRequest, service_model);            
 
         }
 
@@ -239,7 +239,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DeleteVaultNotificationsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("DeleteVaultNotifications", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DeleteVaultNotifications", request, internalRequest, service_model);            
 
         }
 
@@ -256,7 +256,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DescribeJobRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("DescribeJob", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DescribeJob", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -288,7 +288,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new DescribeVaultRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("DescribeVault", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("DescribeVault", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -320,7 +320,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetDataRetrievalPolicyRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("GetDataRetrievalPolicy", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetDataRetrievalPolicy", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -352,7 +352,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetJobOutputRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("GetJobOutput", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetJobOutput", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -389,7 +389,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetVaultAccessPolicyRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("GetVaultAccessPolicy", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetVaultAccessPolicy", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -421,7 +421,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetVaultLockRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("GetVaultLock", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetVaultLock", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -453,7 +453,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new GetVaultNotificationsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("GetVaultNotifications", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("GetVaultNotifications", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -485,7 +485,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new InitiateJobRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("InitiateJob", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("InitiateJob", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -519,7 +519,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new InitiateMultipartUploadRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("InitiateMultipartUpload", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("InitiateMultipartUpload", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -553,7 +553,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new InitiateVaultLockRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("InitiateVaultLock", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("InitiateVaultLock", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -586,7 +586,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListJobsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("ListJobs", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ListJobs", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -618,7 +618,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListMultipartUploadsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("ListMultipartUploads", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ListMultipartUploads", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -650,7 +650,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListPartsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("ListParts", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ListParts", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -682,7 +682,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListProvisionedCapacityRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("ListProvisionedCapacity", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ListProvisionedCapacity", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -714,7 +714,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListTagsForVaultRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("ListTagsForVault", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ListTagsForVault", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -746,7 +746,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new ListVaultsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("ListVaults", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("ListVaults", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -778,7 +778,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new PurchaseProvisionedCapacityRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("PurchaseProvisionedCapacity", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("PurchaseProvisionedCapacity", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -811,7 +811,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new RemoveTagsFromVaultRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("RemoveTagsFromVault", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("RemoveTagsFromVault", request, internalRequest, service_model);            
 
         }
 
@@ -828,7 +828,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new SetDataRetrievalPolicyRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("SetDataRetrievalPolicy", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("SetDataRetrievalPolicy", request, internalRequest, service_model);            
 
         }
 
@@ -845,7 +845,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new SetVaultAccessPolicyRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("SetVaultAccessPolicy", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("SetVaultAccessPolicy", request, internalRequest, service_model);            
 
         }
 
@@ -862,7 +862,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new SetVaultNotificationsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("SetVaultNotifications", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("SetVaultNotifications", request, internalRequest, service_model);            
 
         }
 
@@ -879,7 +879,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new UploadArchiveRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("UploadArchive", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("UploadArchive", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
@@ -914,7 +914,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var marshaller = new UploadMultipartPartRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            RequestValidator.Validate("UploadMultipartPart", request, internalRequest, service_model);            
+            TestTools.RequestValidator.Validate("UploadMultipartPart", request, internalRequest, service_model);            
 
             var webResponse = new WebResponseData
             {
