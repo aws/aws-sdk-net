@@ -72,7 +72,8 @@ namespace Amazon.Runtime.Internal
         private static readonly HashSet<string> _coreCLRRetryErrorMessages = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
         {
             "The server returned an invalid or unrecognized response",
-            "The connection with the server was terminated abnormally"
+            "The connection with the server was terminated abnormally",
+            "An error occurred while sending the request."
         };
 
         // Set of AWS error codes to retry on.
