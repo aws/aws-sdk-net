@@ -1,3 +1,7 @@
+### 3.3.64.2 (2017-03-16 23:15 UTC)
+* Core 3.3.10.2
+	* Fix issue when copying or renaming a credential profile to a profile with the same name.
+
 ### 3.3.64.1 (2017-03-15 21:58 UTC)
 * Core 3.3.10.1
 	* Fixed role authentication failure on ECS reported at https://github.com/aws/aws-sdk-net/issues/588.
