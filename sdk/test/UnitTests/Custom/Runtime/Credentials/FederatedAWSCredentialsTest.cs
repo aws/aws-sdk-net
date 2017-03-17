@@ -173,7 +173,7 @@ namespace AWSSDK.UnitTests
                         credentials.GetCredentials();
                     }, typeof(AmazonClientException)).InnerException;
                 }, typeof(FederatedAuthenticationFailureException)).InnerException;
-            }, typeof(AdfsAuthenticationControllerException), new Regex("The remote name could not be resolved: \'somesamlendpoint.com\'"));
+            }, typeof(AdfsAuthenticationControllerException), new Regex("(The remote name could not be resolved: \'somesamlendpoint.com\')|(The remote server returned an error: \\(502\\) Bad Gateway.)"));
         }
 
         private static void AssertSAMLImmutableCredentials(SAMLImmutableCredentials expected, ImmutableCredentials actual)
