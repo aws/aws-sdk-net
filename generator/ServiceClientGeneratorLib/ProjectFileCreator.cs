@@ -148,7 +148,6 @@ namespace ServiceClientGenerator
                 if (newProject)
                     CreatedProjectFiles[projectName] = projectConfigurationData;
 
-                var coreRuntimeProject = string.Concat(@"..\..\Core\AWSSDK.Core.", projectType, ".csproj");
                 var projectReferences = new List<ProjectReference>();
 
 
@@ -453,11 +452,27 @@ namespace ServiceClientGenerator
             return foldersThatExist;
         }
 
-        public class ProjectReference
+        public class Reference : IComparable<Reference>
+        {
+            public string Name { get; set; }
+            public string HintPath { get; set; }
+
+            int IComparable<Reference>.CompareTo(Reference that)
+            {
+                return string.Compare(this.Name, that.Name);
+            }
+        }
+
+        public class ProjectReference : IComparable<ProjectReference>
         {
             public string IncludePath { get; set; }
             public string ProjectGuid { get; set; }
             public string Name { get; set; }
+
+            int IComparable<ProjectReference>.CompareTo(ProjectReference that)
+            {
+                return string.Compare(this.Name, that.Name);
+            }
         }
 
         public class ProjectConfigurationData

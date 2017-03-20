@@ -157,6 +157,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PCLProjectFile.tt</DependentUpon>
     </Compile>
+    <Compile Include="Generators\ProjectFiles\UnitTestProjectFile.cs">
+      <DependentUpon>UnitTestProjectFile.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Generators\ProjectFiles\UnityProjectFile.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -422,7 +427,7 @@
     <Compile Include="ThirdParty\Json\JsonWriter.cs" />
     <Compile Include="ThirdParty\Json\Lexer.cs" />
     <Compile Include="ThirdParty\Json\ParserToken.cs" />
-    <Compile Include="UnitTestProjectReferenceChecker.cs" />
+    <Compile Include="UnitTestProjectFileCreator.cs" />
     <Compile Include="Utils.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -676,6 +681,10 @@
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>VsixTestProfileFile.cs</LastGenOutput>
     </Content>
+    <None Include="Generators\ProjectFiles\UnitTestProjectFile.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>UnitTestProjectFile.cs</LastGenOutput>
+    </None>
     <None Include="Generators\Examples\ExampleCode.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ExampleCode.cs</LastGenOutput>

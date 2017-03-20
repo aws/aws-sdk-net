@@ -644,6 +644,14 @@ namespace ServiceClientGenerator
             }
         }
 
+        public static void UpdateUnitTestProjects(GenerationManifest generationManifest, GeneratorOptions options)
+        {
+            Console.WriteLine("Updating unit test project files.");
+            string unitTestRoot = Path.Combine(options.SdkRootFolder, "test", "UnitTests");
+            var creator = new UnitTestProjectFileCreator(options);
+            creator.Execute(unitTestRoot, generationManifest.ServiceConfigurations);
+        }
+
         public static void UpdateSolutionFiles(GenerationManifest manifest, GeneratorOptions options)
         {
             Console.WriteLine("Updating solution files.");
@@ -1080,25 +1088,6 @@ namespace ServiceClientGenerator
 
                 ExecuteCustomizationTestGenerator(methodTests, this.Configuration.BaseName + "MethodTests.cs", "SimpleMethods");
             }
-        }
-
-        /// <summary>
-        /// Update project references in unit test projects to include any new services.
-        /// </summary>
-        public static void UpdateUnitTestProjectReferences(GeneratorOptions options)
-        {
-            var servicesRoot = Path.Combine(options.SdkRootFolder, "src", "Services");
-            var testRoot = Path.Combine(options.SdkRootFolder, "test", "UnitTests");
-
-            var command = new UnitTestProjectReferenceChecker()
-            {
-                ServiceRoot = servicesRoot,
-                ProjectFilePath = Path.Combine(testRoot, "AWSSDK.UnitTests.Net35.csproj")
-            };
-            command.Execute();
-
-            command.ProjectFilePath = Path.Combine(testRoot, "AWSSDK.UnitTests.Net45.csproj");
-            command.Execute();
         }
 
         public static void UpdateCoreCLRTestDependencies(GenerationManifest manifest, GeneratorOptions options)
