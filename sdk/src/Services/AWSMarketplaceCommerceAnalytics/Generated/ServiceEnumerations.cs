@@ -110,6 +110,10 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics
         /// Constant Sales_compensation_billed_revenue for DataSetType
         /// </summary>
         public static readonly DataSetType Sales_compensation_billed_revenue = new DataSetType("sales_compensation_billed_revenue");
+        /// <summary>
+        /// Constant Us_sales_and_use_tax_records for DataSetType
+        /// </summary>
+        public static readonly DataSetType Us_sales_and_use_tax_records = new DataSetType("us_sales_and_use_tax_records");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
