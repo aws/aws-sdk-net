@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Rekognition.Model
 {
     /// <summary>
-    /// Identifies image brightness and sharpness.
+    /// Identifies face image brightness and sharpness.
     /// </summary>
     public partial class ImageQuality
     {
@@ -39,7 +39,7 @@ namespace Amazon.Rekognition.Model
         /// Gets and sets the property Brightness. 
         /// <para>
         /// Value representing brightness of the face. The service returns a value between 0 and
-        /// 1 (inclusive).
+        /// 100 (inclusive). A higher value indicates a brighter face image.
         /// </para>
         /// </summary>
         public float Brightness
@@ -57,7 +57,8 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property Sharpness. 
         /// <para>
-        /// Value representing sharpness of the face.
+        /// Value representing sharpness of the face. The service returns a value between 0 and
+        /// 100 (inclusive). A higher value indicates a sharper face image.
         /// </para>
         /// </summary>
         public float Sharpness

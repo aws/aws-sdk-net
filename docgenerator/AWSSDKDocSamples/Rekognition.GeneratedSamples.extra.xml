@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.Rekognition.IAmazonRekognition.CompareFaces(Amazon.Rekognition.Model.CompareFacesRequest)" />
+            <member name="M:Amazon.Rekognition.AmazonRekognitionClient.CompareFaces(Amazon.Rekognition.Model.CompareFacesRequest)" />
+            <member name="T:Amazon.Rekognition.Model.CompareFacesRequest" />
+            <member name="T:Amazon.Rekognition.Model.CompareFacesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation compares the largest face detected in the source image with each face detected in the target image.
+                </para>
+                <code
+                    title="To compare two images"
+                    source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs"
+                    region="to-compare-two-images-1482181985581" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Rekognition.IAmazonRekognition.CreateCollection(Amazon.Rekognition.Model.CreateCollectionRequest)" />
+            <member name="M:Amazon.Rekognition.AmazonRekognitionClient.CreateCollection(Amazon.Rekognition.Model.CreateCollectionRequest)" />
+            <member name="T:Amazon.Rekognition.Model.CreateCollectionRequest" />
+            <member name="T:Amazon.Rekognition.Model.CreateCollectionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation creates a Rekognition collection for storing image data.
+                </para>
+                <code
+                    title="To create a collection"
+                    source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs"
+                    region="to-create-a-collection-1481833313674" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Rekognition.IAmazonRekognition.DeleteCollection(Amazon.Rekognition.Model.DeleteCollectionRequest)" />
+            <member name="M:Amazon.Rekognition.AmazonRekognitionClient.DeleteCollection(Amazon.Rekognition.Model.DeleteCollectionRequest)" />
+            <member name="T:Amazon.Rekognition.Model.DeleteCollectionRequest" />
+            <member name="T:Amazon.Rekognition.Model.DeleteCollectionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation deletes a Rekognition collection.
+                </para>
+                <code
+                    title="To delete a collection"
+                    source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs"
+                    region="to-delete-a-collection-1481838179973" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Rekognition.IAmazonRekognition.DeleteFaces(Amazon.Rekognition.Model.DeleteFacesRequest)" />
+            <member name="M:Amazon.Rekognition.AmazonRekognitionClient.DeleteFaces(Amazon.Rekognition.Model.DeleteFacesRequest)" />
+            <member name="T:Amazon.Rekognition.Model.DeleteFacesRequest" />
+            <member name="T:Amazon.Rekognition.Model.DeleteFacesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation deletes one or more faces from a Rekognition collection.
+                </para>
+                <code
+                    title="To delete a face"
+                    source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs"
+                    region="to-delete-a-face-1482182799377" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Rekognition.IAmazonRekognition.DetectFaces(Amazon.Rekognition.Model.DetectFacesRequest)" />
+            <member name="M:Amazon.Rekognition.AmazonRekognitionClient.DetectFaces(Amazon.Rekognition.Model.DetectFacesRequest)" />
+            <member name="T:Amazon.Rekognition.Model.DetectFacesRequest" />
+            <member name="T:Amazon.Rekognition.Model.DetectFacesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation detects faces in an image stored in an AWS S3 bucket.
+                </para>
+                <code
+                    title="To detect faces in an image"
+                    source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs"
+                    region="to-detect-faces-in-an-image-1481841782793" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Rekognition.IAmazonRekognition.DetectLabels(Amazon.Rekognition.Model.DetectLabelsRequest)" />
+            <member name="M:Amazon.Rekognition.AmazonRekognitionClient.DetectLabels(Amazon.Rekognition.Model.DetectLabelsRequest)" />
+            <member name="T:Amazon.Rekognition.Model.DetectLabelsRequest" />
+            <member name="T:Amazon.Rekognition.Model.DetectLabelsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation detects labels in the supplied image
+                </para>
+                <code
+                    title="To detect labels"
+                    source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs"
+                    region="to-detect-labels-1481834255770" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Rekognition.IAmazonRekognition.IndexFaces(Amazon.Rekognition.Model.IndexFacesRequest)" />
+            <member name="M:Amazon.Rekognition.AmazonRekognitionClient.IndexFaces(Amazon.Rekognition.Model.IndexFacesRequest)" />
+            <member name="T:Amazon.Rekognition.Model.IndexFacesRequest" />
+            <member name="T:Amazon.Rekognition.Model.IndexFacesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation detects faces in an image and adds them to the specified Rekognition collection.
+                </para>
+                <code
+                    title="To add a face to a collection"
+                    source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs"
+                    region="to-add-a-face-to-a-collection-1482179542923" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Rekognition.IAmazonRekognition.ListCollections(Amazon.Rekognition.Model.ListCollectionsRequest)" />
+            <member name="M:Amazon.Rekognition.AmazonRekognitionClient.ListCollections(Amazon.Rekognition.Model.ListCollectionsRequest)" />
+            <member name="T:Amazon.Rekognition.Model.ListCollectionsRequest" />
+            <member name="T:Amazon.Rekognition.Model.ListCollectionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation returns a list of Rekognition collections.
+                </para>
+                <code
+                    title="To list the collections"
+                    source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs"
+                    region="to-list-the-collections-1482179199088" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Rekognition.IAmazonRekognition.ListFaces(Amazon.Rekognition.Model.ListFacesRequest)" />
+            <member name="M:Amazon.Rekognition.AmazonRekognitionClient.ListFaces(Amazon.Rekognition.Model.ListFacesRequest)" />
+            <member name="T:Amazon.Rekognition.Model.ListFacesRequest" />
+            <member name="T:Amazon.Rekognition.Model.ListFacesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation lists the faces in a Rekognition collection.
+                </para>
+                <code
+                    title="To list the faces in a collection"
+                    source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs"
+                    region="to-list-the-faces-in-a-collection-1482181416530" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Rekognition.IAmazonRekognition.SearchFaces(Amazon.Rekognition.Model.SearchFacesRequest)" />
+            <member name="M:Amazon.Rekognition.AmazonRekognitionClient.SearchFaces(Amazon.Rekognition.Model.SearchFacesRequest)" />
+            <member name="T:Amazon.Rekognition.Model.SearchFacesRequest" />
+            <member name="T:Amazon.Rekognition.Model.SearchFacesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation searches for matching faces in the collection the supplied face belongs to.
+                </para>
+                <code
+                    title="To delete a face"
+                    source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs"
+                    region="to-delete-a-face-1482182799377" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Rekognition.IAmazonRekognition.SearchFacesByImage(Amazon.Rekognition.Model.SearchFacesByImageRequest)" />
+            <member name="M:Amazon.Rekognition.AmazonRekognitionClient.SearchFacesByImage(Amazon.Rekognition.Model.SearchFacesByImageRequest)" />
+            <member name="T:Amazon.Rekognition.Model.SearchFacesByImageRequest" />
+            <member name="T:Amazon.Rekognition.Model.SearchFacesByImageResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation searches for faces in a Rekognition collection that match the largest face in an S3 bucket stored image.
+                </para>
+                <code
+                    title="To search for faces matching a supplied image"
+                    source=".\AWSSDKDocSamples\Rekognition\Rekognition.GeneratedSamples.cs"
+                    region="to-search-for-faces-matching-a-supplied-image-1482175994491" />
+            </example>
+        </value>
+    </doc>
+</docs>
