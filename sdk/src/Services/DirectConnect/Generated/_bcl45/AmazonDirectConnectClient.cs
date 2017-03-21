@@ -268,6 +268,7 @@ namespace Amazon.DirectConnect
         /// details about the cause.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocateConnectionOnInterconnect">REST API Reference for AllocateConnectionOnInterconnect Operation</seealso>
+        [Obsolete("Deprecated in favor of AllocateHostedConnection.")]
         public AllocateConnectionOnInterconnectResponse AllocateConnectionOnInterconnect(AllocateConnectionOnInterconnectRequest request)
         {
             var marshaller = new AllocateConnectionOnInterconnectRequestMarshaller();
@@ -286,6 +287,7 @@ namespace Amazon.DirectConnect
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocateConnectionOnInterconnect">REST API Reference for AllocateConnectionOnInterconnect Operation</seealso>
+        [Obsolete("Deprecated in favor of AllocateHostedConnection.")]
         public Task<AllocateConnectionOnInterconnectResponse> AllocateConnectionOnInterconnectAsync(AllocateConnectionOnInterconnectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AllocateConnectionOnInterconnectRequestMarshaller();
@@ -1500,6 +1502,7 @@ namespace Amazon.DirectConnect
         /// details about the cause.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeConnectionLoa">REST API Reference for DescribeConnectionLoa Operation</seealso>
+        [Obsolete("Deprecated in favor of DescribeLoa.")]
         public DescribeConnectionLoaResponse DescribeConnectionLoa(DescribeConnectionLoaRequest request)
         {
             var marshaller = new DescribeConnectionLoaRequestMarshaller();
@@ -1518,6 +1521,7 @@ namespace Amazon.DirectConnect
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeConnectionLoa">REST API Reference for DescribeConnectionLoa Operation</seealso>
+        [Obsolete("Deprecated in favor of DescribeLoa.")]
         public Task<DescribeConnectionLoaResponse> DescribeConnectionLoaAsync(DescribeConnectionLoaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeConnectionLoaRequestMarshaller();
@@ -1661,6 +1665,7 @@ namespace Amazon.DirectConnect
         /// details about the cause.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeConnectionsOnInterconnect">REST API Reference for DescribeConnectionsOnInterconnect Operation</seealso>
+        [Obsolete("Deprecated in favor of DescribeHostedConnections.")]
         public DescribeConnectionsOnInterconnectResponse DescribeConnectionsOnInterconnect(DescribeConnectionsOnInterconnectRequest request)
         {
             var marshaller = new DescribeConnectionsOnInterconnectRequestMarshaller();
@@ -1679,6 +1684,7 @@ namespace Amazon.DirectConnect
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeConnectionsOnInterconnect">REST API Reference for DescribeConnectionsOnInterconnect Operation</seealso>
+        [Obsolete("Deprecated in favor of DescribeHostedConnections.")]
         public Task<DescribeConnectionsOnInterconnectResponse> DescribeConnectionsOnInterconnectAsync(DescribeConnectionsOnInterconnectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeConnectionsOnInterconnectRequestMarshaller();
@@ -1775,6 +1781,7 @@ namespace Amazon.DirectConnect
         /// details about the cause.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeInterconnectLoa">REST API Reference for DescribeInterconnectLoa Operation</seealso>
+        [Obsolete("Deprecated in favor of DescribeLoa.")]
         public DescribeInterconnectLoaResponse DescribeInterconnectLoa(DescribeInterconnectLoaRequest request)
         {
             var marshaller = new DescribeInterconnectLoaRequestMarshaller();
@@ -1793,6 +1800,7 @@ namespace Amazon.DirectConnect
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeInterconnectLoa">REST API Reference for DescribeInterconnectLoa Operation</seealso>
+        [Obsolete("Deprecated in favor of DescribeLoa.")]
         public Task<DescribeInterconnectLoaResponse> DescribeInterconnectLoaAsync(DescribeInterconnectLoaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeInterconnectLoaRequestMarshaller();

@@ -265,6 +265,7 @@ namespace Amazon.DirectConnect
         /// details about the cause.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocateConnectionOnInterconnect">REST API Reference for AllocateConnectionOnInterconnect Operation</seealso>
+        [Obsolete("Deprecated in favor of AllocateHostedConnection.")]
         public AllocateConnectionOnInterconnectResponse AllocateConnectionOnInterconnect(AllocateConnectionOnInterconnectRequest request)
         {
             var marshaller = new AllocateConnectionOnInterconnectRequestMarshaller();
@@ -285,6 +286,7 @@ namespace Amazon.DirectConnect
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAllocateConnectionOnInterconnect
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocateConnectionOnInterconnect">REST API Reference for AllocateConnectionOnInterconnect Operation</seealso>
+        [Obsolete("Deprecated in favor of AllocateHostedConnection.")]
         public IAsyncResult BeginAllocateConnectionOnInterconnect(AllocateConnectionOnInterconnectRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AllocateConnectionOnInterconnectRequestMarshaller();
@@ -302,6 +304,7 @@ namespace Amazon.DirectConnect
         /// 
         /// <returns>Returns a  AllocateConnectionOnInterconnectResult from DirectConnect.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocateConnectionOnInterconnect">REST API Reference for AllocateConnectionOnInterconnect Operation</seealso>
+        [Obsolete("Deprecated in favor of AllocateHostedConnection.")]
         public  AllocateConnectionOnInterconnectResponse EndAllocateConnectionOnInterconnect(IAsyncResult asyncResult)
         {
             return EndInvoke<AllocateConnectionOnInterconnectResponse>(asyncResult);
@@ -1791,6 +1794,7 @@ namespace Amazon.DirectConnect
         /// details about the cause.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeConnectionLoa">REST API Reference for DescribeConnectionLoa Operation</seealso>
+        [Obsolete("Deprecated in favor of DescribeLoa.")]
         public DescribeConnectionLoaResponse DescribeConnectionLoa(DescribeConnectionLoaRequest request)
         {
             var marshaller = new DescribeConnectionLoaRequestMarshaller();
@@ -1811,6 +1815,7 @@ namespace Amazon.DirectConnect
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeConnectionLoa
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeConnectionLoa">REST API Reference for DescribeConnectionLoa Operation</seealso>
+        [Obsolete("Deprecated in favor of DescribeLoa.")]
         public IAsyncResult BeginDescribeConnectionLoa(DescribeConnectionLoaRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeConnectionLoaRequestMarshaller();
@@ -1828,6 +1833,7 @@ namespace Amazon.DirectConnect
         /// 
         /// <returns>Returns a  DescribeConnectionLoaResult from DirectConnect.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeConnectionLoa">REST API Reference for DescribeConnectionLoa Operation</seealso>
+        [Obsolete("Deprecated in favor of DescribeLoa.")]
         public  DescribeConnectionLoaResponse EndDescribeConnectionLoa(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeConnectionLoaResponse>(asyncResult);
@@ -1952,6 +1958,7 @@ namespace Amazon.DirectConnect
         /// details about the cause.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeConnectionsOnInterconnect">REST API Reference for DescribeConnectionsOnInterconnect Operation</seealso>
+        [Obsolete("Deprecated in favor of DescribeHostedConnections.")]
         public DescribeConnectionsOnInterconnectResponse DescribeConnectionsOnInterconnect(DescribeConnectionsOnInterconnectRequest request)
         {
             var marshaller = new DescribeConnectionsOnInterconnectRequestMarshaller();
@@ -1972,6 +1979,7 @@ namespace Amazon.DirectConnect
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeConnectionsOnInterconnect
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeConnectionsOnInterconnect">REST API Reference for DescribeConnectionsOnInterconnect Operation</seealso>
+        [Obsolete("Deprecated in favor of DescribeHostedConnections.")]
         public IAsyncResult BeginDescribeConnectionsOnInterconnect(DescribeConnectionsOnInterconnectRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeConnectionsOnInterconnectRequestMarshaller();
@@ -1989,6 +1997,7 @@ namespace Amazon.DirectConnect
         /// 
         /// <returns>Returns a  DescribeConnectionsOnInterconnectResult from DirectConnect.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeConnectionsOnInterconnect">REST API Reference for DescribeConnectionsOnInterconnect Operation</seealso>
+        [Obsolete("Deprecated in favor of DescribeHostedConnections.")]
         public  DescribeConnectionsOnInterconnectResponse EndDescribeConnectionsOnInterconnect(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeConnectionsOnInterconnectResponse>(asyncResult);
@@ -2094,6 +2103,7 @@ namespace Amazon.DirectConnect
         /// details about the cause.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeInterconnectLoa">REST API Reference for DescribeInterconnectLoa Operation</seealso>
+        [Obsolete("Deprecated in favor of DescribeLoa.")]
         public DescribeInterconnectLoaResponse DescribeInterconnectLoa(DescribeInterconnectLoaRequest request)
         {
             var marshaller = new DescribeInterconnectLoaRequestMarshaller();
@@ -2114,6 +2124,7 @@ namespace Amazon.DirectConnect
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeInterconnectLoa
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeInterconnectLoa">REST API Reference for DescribeInterconnectLoa Operation</seealso>
+        [Obsolete("Deprecated in favor of DescribeLoa.")]
         public IAsyncResult BeginDescribeInterconnectLoa(DescribeInterconnectLoaRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeInterconnectLoaRequestMarshaller();
@@ -2131,6 +2142,7 @@ namespace Amazon.DirectConnect
         /// 
         /// <returns>Returns a  DescribeInterconnectLoaResult from DirectConnect.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeInterconnectLoa">REST API Reference for DescribeInterconnectLoa Operation</seealso>
+        [Obsolete("Deprecated in favor of DescribeLoa.")]
         public  DescribeInterconnectLoaResponse EndDescribeInterconnectLoa(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeInterconnectLoaResponse>(asyncResult);

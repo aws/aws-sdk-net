@@ -242,6 +242,7 @@ namespace Amazon.DirectConnect
         
         #region  AllocateConnectionOnInterconnect
 
+        [Obsolete("Deprecated in favor of AllocateHostedConnection.")]
         internal AllocateConnectionOnInterconnectResponse AllocateConnectionOnInterconnect(AllocateConnectionOnInterconnectRequest request)
         {
             var marshaller = new AllocateConnectionOnInterconnectRequestMarshaller();
@@ -261,6 +262,7 @@ namespace Amazon.DirectConnect
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocateConnectionOnInterconnect">REST API Reference for AllocateConnectionOnInterconnect Operation</seealso>
+        [Obsolete("Deprecated in favor of AllocateHostedConnection.")]
         public Task<AllocateConnectionOnInterconnectResponse> AllocateConnectionOnInterconnectAsync(AllocateConnectionOnInterconnectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AllocateConnectionOnInterconnectRequestMarshaller();
@@ -914,6 +916,7 @@ namespace Amazon.DirectConnect
         
         #region  DescribeConnectionLoa
 
+        [Obsolete("Deprecated in favor of DescribeLoa.")]
         internal DescribeConnectionLoaResponse DescribeConnectionLoa(DescribeConnectionLoaRequest request)
         {
             var marshaller = new DescribeConnectionLoaRequestMarshaller();
@@ -933,6 +936,7 @@ namespace Amazon.DirectConnect
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeConnectionLoa">REST API Reference for DescribeConnectionLoa Operation</seealso>
+        [Obsolete("Deprecated in favor of DescribeLoa.")]
         public Task<DescribeConnectionLoaResponse> DescribeConnectionLoaAsync(DescribeConnectionLoaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeConnectionLoaRequestMarshaller();
@@ -1010,6 +1014,7 @@ namespace Amazon.DirectConnect
         
         #region  DescribeConnectionsOnInterconnect
 
+        [Obsolete("Deprecated in favor of DescribeHostedConnections.")]
         internal DescribeConnectionsOnInterconnectResponse DescribeConnectionsOnInterconnect(DescribeConnectionsOnInterconnectRequest request)
         {
             var marshaller = new DescribeConnectionsOnInterconnectRequestMarshaller();
@@ -1029,6 +1034,7 @@ namespace Amazon.DirectConnect
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeConnectionsOnInterconnect">REST API Reference for DescribeConnectionsOnInterconnect Operation</seealso>
+        [Obsolete("Deprecated in favor of DescribeHostedConnections.")]
         public Task<DescribeConnectionsOnInterconnectResponse> DescribeConnectionsOnInterconnectAsync(DescribeConnectionsOnInterconnectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeConnectionsOnInterconnectRequestMarshaller();
@@ -1074,6 +1080,7 @@ namespace Amazon.DirectConnect
         
         #region  DescribeInterconnectLoa
 
+        [Obsolete("Deprecated in favor of DescribeLoa.")]
         internal DescribeInterconnectLoaResponse DescribeInterconnectLoa(DescribeInterconnectLoaRequest request)
         {
             var marshaller = new DescribeInterconnectLoaRequestMarshaller();
@@ -1093,6 +1100,7 @@ namespace Amazon.DirectConnect
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeInterconnectLoa">REST API Reference for DescribeInterconnectLoa Operation</seealso>
+        [Obsolete("Deprecated in favor of DescribeLoa.")]
         public Task<DescribeInterconnectLoaResponse> DescribeInterconnectLoaAsync(DescribeInterconnectLoaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeInterconnectLoaRequestMarshaller();

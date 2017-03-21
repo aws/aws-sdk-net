@@ -78,6 +78,7 @@ namespace Amazon.DirectConnect
         /// details about the cause.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocateConnectionOnInterconnect">REST API Reference for AllocateConnectionOnInterconnect Operation</seealso>
+        [Obsolete("Deprecated in favor of AllocateHostedConnection.")]
         AllocateConnectionOnInterconnectResponse AllocateConnectionOnInterconnect(AllocateConnectionOnInterconnectRequest request);
 
         /// <summary>
@@ -92,6 +93,7 @@ namespace Amazon.DirectConnect
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAllocateConnectionOnInterconnect
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocateConnectionOnInterconnect">REST API Reference for AllocateConnectionOnInterconnect Operation</seealso>
+        [Obsolete("Deprecated in favor of AllocateHostedConnection.")]
         IAsyncResult BeginAllocateConnectionOnInterconnect(AllocateConnectionOnInterconnectRequest request, AsyncCallback callback, object state);
 
 
@@ -104,6 +106,7 @@ namespace Amazon.DirectConnect
         /// 
         /// <returns>Returns a  AllocateConnectionOnInterconnectResult from DirectConnect.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AllocateConnectionOnInterconnect">REST API Reference for AllocateConnectionOnInterconnect Operation</seealso>
+        [Obsolete("Deprecated in favor of AllocateHostedConnection.")]
         AllocateConnectionOnInterconnectResponse EndAllocateConnectionOnInterconnect(IAsyncResult asyncResult);
 
         #endregion
@@ -1331,6 +1334,7 @@ namespace Amazon.DirectConnect
         /// details about the cause.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeConnectionLoa">REST API Reference for DescribeConnectionLoa Operation</seealso>
+        [Obsolete("Deprecated in favor of DescribeLoa.")]
         DescribeConnectionLoaResponse DescribeConnectionLoa(DescribeConnectionLoaRequest request);
 
         /// <summary>
@@ -1345,6 +1349,7 @@ namespace Amazon.DirectConnect
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeConnectionLoa
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeConnectionLoa">REST API Reference for DescribeConnectionLoa Operation</seealso>
+        [Obsolete("Deprecated in favor of DescribeLoa.")]
         IAsyncResult BeginDescribeConnectionLoa(DescribeConnectionLoaRequest request, AsyncCallback callback, object state);
 
 
@@ -1357,6 +1362,7 @@ namespace Amazon.DirectConnect
         /// 
         /// <returns>Returns a  DescribeConnectionLoaResult from DirectConnect.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeConnectionLoa">REST API Reference for DescribeConnectionLoa Operation</seealso>
+        [Obsolete("Deprecated in favor of DescribeLoa.")]
         DescribeConnectionLoaResponse EndDescribeConnectionLoa(IAsyncResult asyncResult);
 
         #endregion
@@ -1463,6 +1469,7 @@ namespace Amazon.DirectConnect
         /// details about the cause.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeConnectionsOnInterconnect">REST API Reference for DescribeConnectionsOnInterconnect Operation</seealso>
+        [Obsolete("Deprecated in favor of DescribeHostedConnections.")]
         DescribeConnectionsOnInterconnectResponse DescribeConnectionsOnInterconnect(DescribeConnectionsOnInterconnectRequest request);
 
         /// <summary>
@@ -1477,6 +1484,7 @@ namespace Amazon.DirectConnect
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeConnectionsOnInterconnect
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeConnectionsOnInterconnect">REST API Reference for DescribeConnectionsOnInterconnect Operation</seealso>
+        [Obsolete("Deprecated in favor of DescribeHostedConnections.")]
         IAsyncResult BeginDescribeConnectionsOnInterconnect(DescribeConnectionsOnInterconnectRequest request, AsyncCallback callback, object state);
 
 
@@ -1489,6 +1497,7 @@ namespace Amazon.DirectConnect
         /// 
         /// <returns>Returns a  DescribeConnectionsOnInterconnectResult from DirectConnect.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeConnectionsOnInterconnect">REST API Reference for DescribeConnectionsOnInterconnect Operation</seealso>
+        [Obsolete("Deprecated in favor of DescribeHostedConnections.")]
         DescribeConnectionsOnInterconnectResponse EndDescribeConnectionsOnInterconnect(IAsyncResult asyncResult);
 
         #endregion
@@ -1579,6 +1588,7 @@ namespace Amazon.DirectConnect
         /// details about the cause.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeInterconnectLoa">REST API Reference for DescribeInterconnectLoa Operation</seealso>
+        [Obsolete("Deprecated in favor of DescribeLoa.")]
         DescribeInterconnectLoaResponse DescribeInterconnectLoa(DescribeInterconnectLoaRequest request);
 
         /// <summary>
@@ -1593,6 +1603,7 @@ namespace Amazon.DirectConnect
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeInterconnectLoa
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeInterconnectLoa">REST API Reference for DescribeInterconnectLoa Operation</seealso>
+        [Obsolete("Deprecated in favor of DescribeLoa.")]
         IAsyncResult BeginDescribeInterconnectLoa(DescribeInterconnectLoaRequest request, AsyncCallback callback, object state);
 
 
@@ -1605,6 +1616,7 @@ namespace Amazon.DirectConnect
         /// 
         /// <returns>Returns a  DescribeInterconnectLoaResult from DirectConnect.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeInterconnectLoa">REST API Reference for DescribeInterconnectLoa Operation</seealso>
+        [Obsolete("Deprecated in favor of DescribeLoa.")]
         DescribeInterconnectLoaResponse EndDescribeInterconnectLoa(IAsyncResult asyncResult);
 
         #endregion
