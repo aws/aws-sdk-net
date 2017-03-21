@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// 
+    /// Endpoint demographic data
     /// </summary>
     public partial class EndpointDemographic
     {

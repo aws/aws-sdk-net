@@ -29,7 +29,7 @@ namespace Amazon.Pinpoint.Model
 {
     /// <summary>
     /// Container for the parameters to the GetCampaignVersion operation.
-    /// Returns information about your campaign versions.
+    /// Returns information about a specific version of a campaign.
     /// </summary>
     public partial class GetCampaignVersionRequest : AmazonPinpointRequest
     {

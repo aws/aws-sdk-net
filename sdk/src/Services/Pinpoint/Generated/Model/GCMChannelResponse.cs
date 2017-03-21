@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// 
+    /// Google Cloud Messaging channel definition
     /// </summary>
     public partial class GCMChannelResponse
     {
@@ -43,7 +43,8 @@ namespace Amazon.Pinpoint.Model
         private int? _version;
 
         /// <summary>
-        /// Gets and sets the property ApplicationId.
+        /// Gets and sets the property ApplicationId. The ID of the application to which the channel
+        /// applies.
         /// </summary>
         public string ApplicationId
         {
@@ -88,7 +89,7 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Id.
+        /// Gets and sets the property Id. The unique channel ID.
         /// </summary>
         public string Id
         {

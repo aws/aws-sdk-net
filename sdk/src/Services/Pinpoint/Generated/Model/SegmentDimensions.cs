@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// 
+    /// Segment dimensions
     /// </summary>
     public partial class SegmentDimensions
     {
@@ -36,6 +36,7 @@ namespace Amazon.Pinpoint.Model
         private SegmentBehaviors _behavior;
         private SegmentDemographics _demographic;
         private SegmentLocation _location;
+        private Dictionary<string, AttributeDimension> _userAttributes = new Dictionary<string, AttributeDimension>();
 
         /// <summary>
         /// Gets and sets the property Attributes. Custom segment attributes.
@@ -95,6 +96,21 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetLocation()
         {
             return this._location != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UserAttributes. Custom segment user attributes.
+        /// </summary>
+        public Dictionary<string, AttributeDimension> UserAttributes
+        {
+            get { return this._userAttributes; }
+            set { this._userAttributes = value; }
+        }
+
+        // Check to see if UserAttributes property is set
+        internal bool IsSetUserAttributes()
+        {
+            return this._userAttributes != null && this._userAttributes.Count > 0; 
         }
 
     }

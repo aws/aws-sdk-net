@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// 
+    /// Application settings.
     /// </summary>
     public partial class ApplicationSettingsResource
     {

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// 
+    /// Apple Push Notification Service channel definition.
     /// </summary>
     public partial class APNSChannelRequest
     {

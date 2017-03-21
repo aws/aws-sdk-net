@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// 
+    /// Google Cloud Messaging credentials
     /// </summary>
     public partial class GCMChannelRequest
     {

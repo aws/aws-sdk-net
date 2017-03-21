@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// 
+    /// Activity definition
     /// </summary>
     public partial class ActivityResponse
     {
@@ -41,6 +41,8 @@ namespace Amazon.Pinpoint.Model
         private string _start;
         private string _state;
         private int? _successfulEndpointCount;
+        private int? _timezonesCompletedCount;
+        private int? _timezonesTotalCount;
         private int? _totalEndpointCount;
         private string _treatmentId;
 
@@ -185,6 +187,38 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetSuccessfulEndpointCount()
         {
             return this._successfulEndpointCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TimezonesCompletedCount. The total number of timezones
+        /// completed.
+        /// </summary>
+        public int TimezonesCompletedCount
+        {
+            get { return this._timezonesCompletedCount.GetValueOrDefault(); }
+            set { this._timezonesCompletedCount = value; }
+        }
+
+        // Check to see if TimezonesCompletedCount property is set
+        internal bool IsSetTimezonesCompletedCount()
+        {
+            return this._timezonesCompletedCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TimezonesTotalCount. The total number of unique timezones
+        /// present in the segment.
+        /// </summary>
+        public int TimezonesTotalCount
+        {
+            get { return this._timezonesTotalCount.GetValueOrDefault(); }
+            set { this._timezonesTotalCount = value; }
+        }
+
+        // Check to see if TimezonesTotalCount property is set
+        internal bool IsSetTimezonesTotalCount()
+        {
+            return this._timezonesTotalCount.HasValue; 
         }
 
         /// <summary>

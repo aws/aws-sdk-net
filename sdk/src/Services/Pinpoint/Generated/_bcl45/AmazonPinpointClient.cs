@@ -235,22 +235,22 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>The response from the CreateCampaign service method, as returned by Pinpoint.</returns>
         /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
-        /// 
+        /// Simple message object.
         /// </exception>
         public CreateCampaignResponse CreateCampaign(CreateCampaignRequest request)
         {
@@ -290,22 +290,22 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>The response from the CreateImportJob service method, as returned by Pinpoint.</returns>
         /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
-        /// 
+        /// Simple message object.
         /// </exception>
         public CreateImportJobResponse CreateImportJob(CreateImportJobRequest request)
         {
@@ -345,22 +345,22 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>The response from the CreateSegment service method, as returned by Pinpoint.</returns>
         /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
-        /// 
+        /// Simple message object.
         /// </exception>
         public CreateSegmentResponse CreateSegment(CreateSegmentRequest request)
         {
@@ -400,22 +400,22 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>The response from the DeleteApnsChannel service method, as returned by Pinpoint.</returns>
         /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
-        /// 
+        /// Simple message object.
         /// </exception>
         public DeleteApnsChannelResponse DeleteApnsChannel(DeleteApnsChannelRequest request)
         {
@@ -455,22 +455,22 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>The response from the DeleteCampaign service method, as returned by Pinpoint.</returns>
         /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
-        /// 
+        /// Simple message object.
         /// </exception>
         public DeleteCampaignResponse DeleteCampaign(DeleteCampaignRequest request)
         {
@@ -500,6 +500,61 @@ namespace Amazon.Pinpoint
 
         #endregion
         
+        #region  DeleteEventStream
+
+
+        /// <summary>
+        /// Deletes the event stream for an app.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEventStream service method.</param>
+        /// 
+        /// <returns>The response from the DeleteEventStream service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Simple message object.
+        /// </exception>
+        public DeleteEventStreamResponse DeleteEventStream(DeleteEventStreamRequest request)
+        {
+            var marshaller = new DeleteEventStreamRequestMarshaller();
+            var unmarshaller = DeleteEventStreamResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteEventStreamRequest,DeleteEventStreamResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteEventStream operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEventStream operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteEventStreamResponse> DeleteEventStreamAsync(DeleteEventStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteEventStreamRequestMarshaller();
+            var unmarshaller = DeleteEventStreamResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteEventStreamRequest,DeleteEventStreamResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteGcmChannel
 
 
@@ -510,22 +565,22 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>The response from the DeleteGcmChannel service method, as returned by Pinpoint.</returns>
         /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
-        /// 
+        /// Simple message object.
         /// </exception>
         public DeleteGcmChannelResponse DeleteGcmChannel(DeleteGcmChannelRequest request)
         {
@@ -565,22 +620,22 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>The response from the DeleteSegment service method, as returned by Pinpoint.</returns>
         /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
-        /// 
+        /// Simple message object.
         /// </exception>
         public DeleteSegmentResponse DeleteSegment(DeleteSegmentRequest request)
         {
@@ -620,22 +675,22 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>The response from the GetApnsChannel service method, as returned by Pinpoint.</returns>
         /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
-        /// 
+        /// Simple message object.
         /// </exception>
         public GetApnsChannelResponse GetApnsChannel(GetApnsChannelRequest request)
         {
@@ -675,22 +730,22 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>The response from the GetApplicationSettings service method, as returned by Pinpoint.</returns>
         /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
-        /// 
+        /// Simple message object.
         /// </exception>
         public GetApplicationSettingsResponse GetApplicationSettings(GetApplicationSettingsRequest request)
         {
@@ -730,22 +785,22 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>The response from the GetCampaign service method, as returned by Pinpoint.</returns>
         /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
-        /// 
+        /// Simple message object.
         /// </exception>
         public GetCampaignResponse GetCampaign(GetCampaignRequest request)
         {
@@ -785,22 +840,22 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>The response from the GetCampaignActivities service method, as returned by Pinpoint.</returns>
         /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
-        /// 
+        /// Simple message object.
         /// </exception>
         public GetCampaignActivitiesResponse GetCampaignActivities(GetCampaignActivitiesRequest request)
         {
@@ -840,22 +895,22 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>The response from the GetCampaigns service method, as returned by Pinpoint.</returns>
         /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
-        /// 
+        /// Simple message object.
         /// </exception>
         public GetCampaignsResponse GetCampaigns(GetCampaignsRequest request)
         {
@@ -889,28 +944,28 @@ namespace Amazon.Pinpoint
 
 
         /// <summary>
-        /// Returns information about your campaign versions.
+        /// Returns information about a specific version of a campaign.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCampaignVersion service method.</param>
         /// 
         /// <returns>The response from the GetCampaignVersion service method, as returned by Pinpoint.</returns>
         /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
-        /// 
+        /// Simple message object.
         /// </exception>
         public GetCampaignVersionResponse GetCampaignVersion(GetCampaignVersionRequest request)
         {
@@ -950,22 +1005,22 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>The response from the GetCampaignVersions service method, as returned by Pinpoint.</returns>
         /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
-        /// 
+        /// Simple message object.
         /// </exception>
         public GetCampaignVersionsResponse GetCampaignVersions(GetCampaignVersionsRequest request)
         {
@@ -1005,22 +1060,22 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>The response from the GetEndpoint service method, as returned by Pinpoint.</returns>
         /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
-        /// 
+        /// Simple message object.
         /// </exception>
         public GetEndpointResponse GetEndpoint(GetEndpointRequest request)
         {
@@ -1050,6 +1105,61 @@ namespace Amazon.Pinpoint
 
         #endregion
         
+        #region  GetEventStream
+
+
+        /// <summary>
+        /// Returns the event stream for an app.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEventStream service method.</param>
+        /// 
+        /// <returns>The response from the GetEventStream service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Simple message object.
+        /// </exception>
+        public GetEventStreamResponse GetEventStream(GetEventStreamRequest request)
+        {
+            var marshaller = new GetEventStreamRequestMarshaller();
+            var unmarshaller = GetEventStreamResponseUnmarshaller.Instance;
+
+            return Invoke<GetEventStreamRequest,GetEventStreamResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetEventStream operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetEventStream operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetEventStreamResponse> GetEventStreamAsync(GetEventStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetEventStreamRequestMarshaller();
+            var unmarshaller = GetEventStreamResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetEventStreamRequest,GetEventStreamResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetGcmChannel
 
 
@@ -1060,22 +1170,22 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>The response from the GetGcmChannel service method, as returned by Pinpoint.</returns>
         /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
-        /// 
+        /// Simple message object.
         /// </exception>
         public GetGcmChannelResponse GetGcmChannel(GetGcmChannelRequest request)
         {
@@ -1115,22 +1225,22 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>The response from the GetImportJob service method, as returned by Pinpoint.</returns>
         /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
-        /// 
+        /// Simple message object.
         /// </exception>
         public GetImportJobResponse GetImportJob(GetImportJobRequest request)
         {
@@ -1170,22 +1280,22 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>The response from the GetImportJobs service method, as returned by Pinpoint.</returns>
         /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
-        /// 
+        /// Simple message object.
         /// </exception>
         public GetImportJobsResponse GetImportJobs(GetImportJobsRequest request)
         {
@@ -1225,22 +1335,22 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>The response from the GetSegment service method, as returned by Pinpoint.</returns>
         /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
-        /// 
+        /// Simple message object.
         /// </exception>
         public GetSegmentResponse GetSegment(GetSegmentRequest request)
         {
@@ -1280,22 +1390,22 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>The response from the GetSegmentImportJobs service method, as returned by Pinpoint.</returns>
         /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
-        /// 
+        /// Simple message object.
         /// </exception>
         public GetSegmentImportJobsResponse GetSegmentImportJobs(GetSegmentImportJobsRequest request)
         {
@@ -1335,22 +1445,22 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>The response from the GetSegments service method, as returned by Pinpoint.</returns>
         /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
-        /// 
+        /// Simple message object.
         /// </exception>
         public GetSegmentsResponse GetSegments(GetSegmentsRequest request)
         {
@@ -1390,22 +1500,22 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>The response from the GetSegmentVersion service method, as returned by Pinpoint.</returns>
         /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
-        /// 
+        /// Simple message object.
         /// </exception>
         public GetSegmentVersionResponse GetSegmentVersion(GetSegmentVersionRequest request)
         {
@@ -1445,22 +1555,22 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>The response from the GetSegmentVersions service method, as returned by Pinpoint.</returns>
         /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
-        /// 
+        /// Simple message object.
         /// </exception>
         public GetSegmentVersionsResponse GetSegmentVersions(GetSegmentVersionsRequest request)
         {
@@ -1490,6 +1600,61 @@ namespace Amazon.Pinpoint
 
         #endregion
         
+        #region  PutEventStream
+
+
+        /// <summary>
+        /// Use to create or update the event stream for an app.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutEventStream service method.</param>
+        /// 
+        /// <returns>The response from the PutEventStream service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Simple message object.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Simple message object.
+        /// </exception>
+        public PutEventStreamResponse PutEventStream(PutEventStreamRequest request)
+        {
+            var marshaller = new PutEventStreamRequestMarshaller();
+            var unmarshaller = PutEventStreamResponseUnmarshaller.Instance;
+
+            return Invoke<PutEventStreamRequest,PutEventStreamResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutEventStream operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutEventStream operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<PutEventStreamResponse> PutEventStreamAsync(PutEventStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new PutEventStreamRequestMarshaller();
+            var unmarshaller = PutEventStreamResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutEventStreamRequest,PutEventStreamResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateApnsChannel
 
 
@@ -1500,22 +1665,22 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>The response from the UpdateApnsChannel service method, as returned by Pinpoint.</returns>
         /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
-        /// 
+        /// Simple message object.
         /// </exception>
         public UpdateApnsChannelResponse UpdateApnsChannel(UpdateApnsChannelRequest request)
         {
@@ -1555,22 +1720,22 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>The response from the UpdateApplicationSettings service method, as returned by Pinpoint.</returns>
         /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
-        /// 
+        /// Simple message object.
         /// </exception>
         public UpdateApplicationSettingsResponse UpdateApplicationSettings(UpdateApplicationSettingsRequest request)
         {
@@ -1610,22 +1775,22 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>The response from the UpdateCampaign service method, as returned by Pinpoint.</returns>
         /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
-        /// 
+        /// Simple message object.
         /// </exception>
         public UpdateCampaignResponse UpdateCampaign(UpdateCampaignRequest request)
         {
@@ -1665,22 +1830,22 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>The response from the UpdateEndpoint service method, as returned by Pinpoint.</returns>
         /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
-        /// 
+        /// Simple message object.
         /// </exception>
         public UpdateEndpointResponse UpdateEndpoint(UpdateEndpointRequest request)
         {
@@ -1714,28 +1879,28 @@ namespace Amazon.Pinpoint
 
 
         /// <summary>
-        /// Use to update your endpoints.
+        /// Use to update a batch of endpoints.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateEndpointsBatch service method.</param>
         /// 
         /// <returns>The response from the UpdateEndpointsBatch service method, as returned by Pinpoint.</returns>
         /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
-        /// 
+        /// Simple message object.
         /// </exception>
         public UpdateEndpointsBatchResponse UpdateEndpointsBatch(UpdateEndpointsBatchRequest request)
         {
@@ -1775,22 +1940,22 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>The response from the UpdateGcmChannel service method, as returned by Pinpoint.</returns>
         /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
-        /// 
+        /// Simple message object.
         /// </exception>
         public UpdateGcmChannelResponse UpdateGcmChannel(UpdateGcmChannelRequest request)
         {
@@ -1830,22 +1995,22 @@ namespace Amazon.Pinpoint
         /// 
         /// <returns>The response from the UpdateSegment service method, as returned by Pinpoint.</returns>
         /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
-        /// 
+        /// Simple message object.
         /// </exception>
         /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
-        /// 
+        /// Simple message object.
         /// </exception>
         public UpdateSegmentResponse UpdateSegment(UpdateSegmentRequest request)
         {

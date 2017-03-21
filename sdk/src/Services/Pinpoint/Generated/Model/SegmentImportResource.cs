@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// 
+    /// Segment import definition.
     /// </summary>
     public partial class SegmentImportResource
     {

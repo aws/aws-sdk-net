@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// 
+    /// Dimension specification of a segment.
     /// </summary>
     public partial class SetDimension
     {

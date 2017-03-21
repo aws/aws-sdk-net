@@ -385,6 +385,37 @@ namespace Amazon.Pinpoint
 
         #endregion
         
+        #region  DeleteEventStream
+
+        internal DeleteEventStreamResponse DeleteEventStream(DeleteEventStreamRequest request)
+        {
+            var marshaller = new DeleteEventStreamRequestMarshaller();
+            var unmarshaller = DeleteEventStreamResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteEventStreamRequest,DeleteEventStreamResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteEventStream operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEventStream operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteEventStreamResponse> DeleteEventStreamAsync(DeleteEventStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteEventStreamRequestMarshaller();
+            var unmarshaller = DeleteEventStreamResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteEventStreamRequest,DeleteEventStreamResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteGcmChannel
 
         internal DeleteGcmChannelResponse DeleteGcmChannel(DeleteGcmChannelRequest request)
@@ -695,6 +726,37 @@ namespace Amazon.Pinpoint
 
         #endregion
         
+        #region  GetEventStream
+
+        internal GetEventStreamResponse GetEventStream(GetEventStreamRequest request)
+        {
+            var marshaller = new GetEventStreamRequestMarshaller();
+            var unmarshaller = GetEventStreamResponseUnmarshaller.Instance;
+
+            return Invoke<GetEventStreamRequest,GetEventStreamResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetEventStream operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetEventStream operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetEventStreamResponse> GetEventStreamAsync(GetEventStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetEventStreamRequestMarshaller();
+            var unmarshaller = GetEventStreamResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetEventStreamRequest,GetEventStreamResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetGcmChannel
 
         internal GetGcmChannelResponse GetGcmChannel(GetGcmChannelRequest request)
@@ -938,6 +1000,37 @@ namespace Amazon.Pinpoint
             var unmarshaller = GetSegmentVersionsResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetSegmentVersionsRequest,GetSegmentVersionsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutEventStream
+
+        internal PutEventStreamResponse PutEventStream(PutEventStreamRequest request)
+        {
+            var marshaller = new PutEventStreamRequestMarshaller();
+            var unmarshaller = PutEventStreamResponseUnmarshaller.Instance;
+
+            return Invoke<PutEventStreamRequest,PutEventStreamResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutEventStream operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutEventStream operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<PutEventStreamResponse> PutEventStreamAsync(PutEventStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new PutEventStreamRequestMarshaller();
+            var unmarshaller = PutEventStreamResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutEventStreamRequest,PutEventStreamResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

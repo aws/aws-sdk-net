@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SegmentDimensions Object
+    /// Response Unmarshaller for EventStream Object
     /// </summary>  
-    public class SegmentDimensionsUnmarshaller : IUnmarshaller<SegmentDimensions, XmlUnmarshallerContext>, IUnmarshaller<SegmentDimensions, JsonUnmarshallerContext>
+    public class EventStreamUnmarshaller : IUnmarshaller<EventStream, XmlUnmarshallerContext>, IUnmarshaller<EventStream, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        SegmentDimensions IUnmarshaller<SegmentDimensions, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        EventStream IUnmarshaller<EventStream, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,51 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public SegmentDimensions Unmarshall(JsonUnmarshallerContext context)
+        public EventStream Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            SegmentDimensions unmarshalledObject = new SegmentDimensions();
+            EventStream unmarshalledObject = new EventStream();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Attributes", targetDepth))
+                if (context.TestExpression("ApplicationId", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, AttributeDimension, StringUnmarshaller, AttributeDimensionUnmarshaller>(StringUnmarshaller.Instance, AttributeDimensionUnmarshaller.Instance);
-                    unmarshalledObject.Attributes = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ApplicationId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Behavior", targetDepth))
+                if (context.TestExpression("DestinationStreamArn", targetDepth))
                 {
-                    var unmarshaller = SegmentBehaviorsUnmarshaller.Instance;
-                    unmarshalledObject.Behavior = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DestinationStreamArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Demographic", targetDepth))
+                if (context.TestExpression("ExternalId", targetDepth))
                 {
-                    var unmarshaller = SegmentDemographicsUnmarshaller.Instance;
-                    unmarshalledObject.Demographic = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ExternalId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Location", targetDepth))
+                if (context.TestExpression("LastModifiedDate", targetDepth))
                 {
-                    var unmarshaller = SegmentLocationUnmarshaller.Instance;
-                    unmarshalledObject.Location = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LastModifiedDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("UserAttributes", targetDepth))
+                if (context.TestExpression("LastUpdatedBy", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, AttributeDimension, StringUnmarshaller, AttributeDimensionUnmarshaller>(StringUnmarshaller.Instance, AttributeDimensionUnmarshaller.Instance);
-                    unmarshalledObject.UserAttributes = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LastUpdatedBy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RoleArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RoleArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +106,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         }
 
 
-        private static SegmentDimensionsUnmarshaller _instance = new SegmentDimensionsUnmarshaller();        
+        private static EventStreamUnmarshaller _instance = new EventStreamUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SegmentDimensionsUnmarshaller Instance
+        public static EventStreamUnmarshaller Instance
         {
             get
             {

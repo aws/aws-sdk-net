@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// 
+    /// Used to create a campaign treatment.
     /// </summary>
     public partial class WriteTreatmentResource
     {

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// 
+    /// List of available campaigns.
     /// </summary>
     public partial class CampaignsResponse
     {

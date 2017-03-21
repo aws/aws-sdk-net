@@ -28,41 +28,42 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Simple message object.
+    /// Container for the parameters to the PutEventStream operation.
+    /// Use to create or update the event stream for an app.
     /// </summary>
-    public partial class MessageBody
+    public partial class PutEventStreamRequest : AmazonPinpointRequest
     {
-        private string _message;
-        private string _requestID;
+        private string _applicationId;
+        private WriteEventStream _writeEventStream;
 
         /// <summary>
-        /// Gets and sets the property Message. The error message returned from the API.
+        /// Gets and sets the property ApplicationId. ApplicationId
         /// </summary>
-        public string Message
+        public string ApplicationId
         {
-            get { return this._message; }
-            set { this._message = value; }
+            get { return this._applicationId; }
+            set { this._applicationId = value; }
         }
 
-        // Check to see if Message property is set
-        internal bool IsSetMessage()
+        // Check to see if ApplicationId property is set
+        internal bool IsSetApplicationId()
         {
-            return this._message != null;
+            return this._applicationId != null;
         }
 
         /// <summary>
-        /// Gets and sets the property RequestID. The unique message body ID.
+        /// Gets and sets the property WriteEventStream. EventStream to write.
         /// </summary>
-        public string RequestID
+        public WriteEventStream WriteEventStream
         {
-            get { return this._requestID; }
-            set { this._requestID = value; }
+            get { return this._writeEventStream; }
+            set { this._writeEventStream = value; }
         }
 
-        // Check to see if RequestID property is set
-        internal bool IsSetRequestID()
+        // Check to see if WriteEventStream property is set
+        internal bool IsSetWriteEventStream()
         {
-            return this._requestID != null;
+            return this._writeEventStream != null;
         }
 
     }

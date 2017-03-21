@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// 
+    /// Endpoint batch update request.
     /// </summary>
     public partial class EndpointBatchRequest
     {

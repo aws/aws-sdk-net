@@ -28,41 +28,25 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Simple message object.
+    /// GetEventStream Response
     /// </summary>
-    public partial class MessageBody
+    public partial class GetEventStreamResponse : AmazonWebServiceResponse
     {
-        private string _message;
-        private string _requestID;
+        private EventStream _eventStream;
 
         /// <summary>
-        /// Gets and sets the property Message. The error message returned from the API.
+        /// Gets and sets the property EventStream.
         /// </summary>
-        public string Message
+        public EventStream EventStream
         {
-            get { return this._message; }
-            set { this._message = value; }
+            get { return this._eventStream; }
+            set { this._eventStream = value; }
         }
 
-        // Check to see if Message property is set
-        internal bool IsSetMessage()
+        // Check to see if EventStream property is set
+        internal bool IsSetEventStream()
         {
-            return this._message != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property RequestID. The unique message body ID.
-        /// </summary>
-        public string RequestID
-        {
-            get { return this._requestID; }
-            set { this._requestID = value; }
-        }
-
-        // Check to see if RequestID property is set
-        internal bool IsSetRequestID()
-        {
-            return this._requestID != null;
+            return this._eventStream != null;
         }
 
     }

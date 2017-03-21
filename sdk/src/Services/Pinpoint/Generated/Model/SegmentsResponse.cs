@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// 
+    /// Segments in your account.
     /// </summary>
     public partial class SegmentsResponse
     {

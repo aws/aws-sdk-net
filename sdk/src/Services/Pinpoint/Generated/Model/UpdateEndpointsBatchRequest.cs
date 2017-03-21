@@ -29,7 +29,7 @@ namespace Amazon.Pinpoint.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateEndpointsBatch operation.
-    /// Use to update your endpoints.
+    /// Use to update a batch of endpoints.
     /// </summary>
     public partial class UpdateEndpointsBatchRequest : AmazonPinpointRequest
     {

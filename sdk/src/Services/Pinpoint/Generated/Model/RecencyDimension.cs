@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// 
+    /// Define how a segment based on recency of use.
     /// </summary>
     public partial class RecencyDimension
     {

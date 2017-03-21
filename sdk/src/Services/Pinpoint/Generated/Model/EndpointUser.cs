@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// 
+    /// Endpoint user specific custom userAttributes
     /// </summary>
     public partial class EndpointUser
     {
@@ -36,7 +36,7 @@ namespace Amazon.Pinpoint.Model
         private string _userId;
 
         /// <summary>
-        /// Gets and sets the property UserAttributes. Custom attributesd specific to the user.
+        /// Gets and sets the property UserAttributes. Custom attributes specific to the user.
         /// </summary>
         public Dictionary<string, List<string>> UserAttributes
         {

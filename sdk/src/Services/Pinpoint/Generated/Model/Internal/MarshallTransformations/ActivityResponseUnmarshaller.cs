@@ -118,6 +118,18 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                     unmarshalledObject.SuccessfulEndpointCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("TimezonesCompletedCount", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.TimezonesCompletedCount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TimezonesTotalCount", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.TimezonesTotalCount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("TotalEndpointCount", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

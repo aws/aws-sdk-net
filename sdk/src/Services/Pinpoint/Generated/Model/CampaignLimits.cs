@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// 
+    /// Campaign Limits are used to limit the number of messages that can be sent to a user.
     /// </summary>
     public partial class CampaignLimits
     {

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// 
+    /// Endpoint update request
     /// </summary>
     public partial class EndpointRequest
     {
@@ -45,7 +45,8 @@ namespace Amazon.Pinpoint.Model
         private EndpointUser _user;
 
         /// <summary>
-        /// Gets and sets the property Address. The address or token of the endpoint.
+        /// Gets and sets the property Address. The address or token of the endpoint as provided
+        /// by your push provider (e.g. DeviceToken or RegistrationId).
         /// </summary>
         public string Address
         {

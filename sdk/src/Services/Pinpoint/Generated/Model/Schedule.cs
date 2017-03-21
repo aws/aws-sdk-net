@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// 
+    /// Shcedule that defines when a campaign is run.
     /// </summary>
     public partial class Schedule
     {

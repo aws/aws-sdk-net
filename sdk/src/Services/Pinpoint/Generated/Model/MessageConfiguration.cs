@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// 
+    /// Message configuration for a campaign.
     /// </summary>
     public partial class MessageConfiguration
     {

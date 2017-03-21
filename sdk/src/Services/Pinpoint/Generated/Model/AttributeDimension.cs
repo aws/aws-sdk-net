@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// 
+    /// Custom attibute dimension
     /// </summary>
     public partial class AttributeDimension
     {

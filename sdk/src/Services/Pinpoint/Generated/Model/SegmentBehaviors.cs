@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// 
+    /// Segment behavior dimensions
     /// </summary>
     public partial class SegmentBehaviors
     {

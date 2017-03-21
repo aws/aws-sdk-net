@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// 
+    /// Endpoint update request
     /// </summary>
     public partial class EndpointBatchItem
     {
@@ -46,7 +46,8 @@ namespace Amazon.Pinpoint.Model
         private EndpointUser _user;
 
         /// <summary>
-        /// Gets and sets the property Address. The address or token of the endpoint.
+        /// Gets and sets the property Address. The address or token of the endpoint as provided
+        /// by your push provider (e.g. DeviceToken or RegistrationId).
         /// </summary>
         public string Address
         {
@@ -141,7 +142,7 @@ namespace Amazon.Pinpoint.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Id.
+        /// Gets and sets the property Id. The unique Id for the Endpoint in the batch.
         /// </summary>
         public string Id
         {
