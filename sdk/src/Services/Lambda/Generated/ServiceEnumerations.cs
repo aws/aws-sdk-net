@@ -209,6 +209,10 @@ namespace Amazon.Lambda
         /// </summary>
         public static readonly Runtime Nodejs43Edge = new Runtime("nodejs4.3-edge");
         /// <summary>
+        /// Constant Nodejs610 for Runtime
+        /// </summary>
+        public static readonly Runtime Nodejs610 = new Runtime("nodejs6.10");
+        /// <summary>
         /// Constant Python27 for Runtime
         /// </summary>
         public static readonly Runtime Python27 = new Runtime("python2.7");

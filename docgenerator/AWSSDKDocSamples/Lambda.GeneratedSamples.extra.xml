@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.Lambda.IAmazonLambda.AddPermission(Amazon.Lambda.Model.AddPermissionRequest)" />
+            <member name="M:Amazon.Lambda.AmazonLambdaClient.AddPermission(Amazon.Lambda.Model.AddPermissionRequest)" />
+            <member name="T:Amazon.Lambda.Model.AddPermissionRequest" />
+            <member name="T:Amazon.Lambda.Model.AddPermissionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example adds a permission for an S3 bucket to invoke a Lambda function.
+                </para>
+                <code
+                    title="add-permission"
+                    source=".\AWSSDKDocSamples\Lambda\Lambda.GeneratedSamples.cs"
+                    region="add-permission-1474651469455" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Lambda.IAmazonLambda.CreateFunction(Amazon.Lambda.Model.CreateFunctionRequest)" />
+            <member name="M:Amazon.Lambda.AmazonLambdaClient.CreateFunction(Amazon.Lambda.Model.CreateFunctionRequest)" />
+            <member name="T:Amazon.Lambda.Model.CreateFunctionRequest" />
+            <member name="T:Amazon.Lambda.Model.CreateFunctionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates a Lambda function.
+                </para>
+                <code
+                    title="create-function"
+                    source=".\AWSSDKDocSamples\Lambda\Lambda.GeneratedSamples.cs"
+                    region="create-function-1474653449931" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Lambda.IAmazonLambda.DeleteAlias(Amazon.Lambda.Model.DeleteAliasRequest)" />
+            <member name="M:Amazon.Lambda.AmazonLambdaClient.DeleteAlias(Amazon.Lambda.Model.DeleteAliasRequest)" />
+            <member name="T:Amazon.Lambda.Model.DeleteAliasRequest" />
+            <member name="T:Amazon.Lambda.Model.DeleteAliasResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation deletes a Lambda function alias
+                </para>
+                <code
+                    title="To delete a Lambda function alias"
+                    source=".\AWSSDKDocSamples\Lambda\Lambda.GeneratedSamples.cs"
+                    region="to-delete-a-lambda-function-alias-1481660370804" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Lambda.IAmazonLambda.DeleteEventSourceMapping(Amazon.Lambda.Model.DeleteEventSourceMappingRequest)" />
+            <member name="M:Amazon.Lambda.AmazonLambdaClient.DeleteEventSourceMapping(Amazon.Lambda.Model.DeleteEventSourceMappingRequest)" />
+            <member name="T:Amazon.Lambda.Model.DeleteEventSourceMappingRequest" />
+            <member name="T:Amazon.Lambda.Model.DeleteEventSourceMappingResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation deletes a Lambda function event source mapping
+                </para>
+                <code
+                    title="To delete a Lambda function event source mapping"
+                    source=".\AWSSDKDocSamples\Lambda\Lambda.GeneratedSamples.cs"
+                    region="to-delete-a-lambda-function-event-source-mapping-1481658973862" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Lambda.IAmazonLambda.DeleteFunction(Amazon.Lambda.Model.DeleteFunctionRequest)" />
+            <member name="M:Amazon.Lambda.AmazonLambdaClient.DeleteFunction(Amazon.Lambda.Model.DeleteFunctionRequest)" />
+            <member name="T:Amazon.Lambda.Model.DeleteFunctionRequest" />
+            <member name="T:Amazon.Lambda.Model.DeleteFunctionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation deletes a Lambda function
+                </para>
+                <code
+                    title="To delete a Lambda function"
+                    source=".\AWSSDKDocSamples\Lambda\Lambda.GeneratedSamples.cs"
+                    region="to-delete-a-lambda-function-1481648553696" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Lambda.IAmazonLambda.GetAccountSettings(Amazon.Lambda.Model.GetAccountSettingsRequest)" />
+            <member name="M:Amazon.Lambda.AmazonLambdaClient.GetAccountSettings(Amazon.Lambda.Model.GetAccountSettingsRequest)" />
+            <member name="T:Amazon.Lambda.Model.GetAccountSettingsRequest" />
+            <member name="T:Amazon.Lambda.Model.GetAccountSettingsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation retrieves a Lambda customer's account settings
+                </para>
+                <code
+                    title="To retrieves a Lambda customer's account settings"
+                    source=".\AWSSDKDocSamples\Lambda\Lambda.GeneratedSamples.cs"
+                    region="to-retrieves-a-lambda-customers-account-settings-1481657495274" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Lambda.IAmazonLambda.GetAlias(Amazon.Lambda.Model.GetAliasRequest)" />
+            <member name="M:Amazon.Lambda.AmazonLambdaClient.GetAlias(Amazon.Lambda.Model.GetAliasRequest)" />
+            <member name="T:Amazon.Lambda.Model.GetAliasRequest" />
+            <member name="T:Amazon.Lambda.Model.GetAliasResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation retrieves a Lambda function alias
+                </para>
+                <code
+                    title="To retrieve a Lambda function alias"
+                    source=".\AWSSDKDocSamples\Lambda\Lambda.GeneratedSamples.cs"
+                    region="to-retrieve-a-lambda-function-alias-1481648742254" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Lambda.IAmazonLambda.GetEventSourceMapping(Amazon.Lambda.Model.GetEventSourceMappingRequest)" />
+            <member name="M:Amazon.Lambda.AmazonLambdaClient.GetEventSourceMapping(Amazon.Lambda.Model.GetEventSourceMappingRequest)" />
+            <member name="T:Amazon.Lambda.Model.GetEventSourceMappingRequest" />
+            <member name="T:Amazon.Lambda.Model.GetEventSourceMappingResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation retrieves a Lambda function's event source mapping
+                </para>
+                <code
+                    title="To retrieve a Lambda function's event source mapping"
+                    source=".\AWSSDKDocSamples\Lambda\Lambda.GeneratedSamples.cs"
+                    region="to-retrieve-a-lambda-functions-event-source-mapping-1481661622799" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Lambda.IAmazonLambda.GetFunction(Amazon.Lambda.Model.GetFunctionRequest)" />
+            <member name="M:Amazon.Lambda.AmazonLambdaClient.GetFunction(Amazon.Lambda.Model.GetFunctionRequest)" />
+            <member name="T:Amazon.Lambda.Model.GetFunctionRequest" />
+            <member name="T:Amazon.Lambda.Model.GetFunctionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation retrieves a Lambda function's event source mapping
+                </para>
+                <code
+                    title="To retrieve a Lambda function's event source mapping"
+                    source=".\AWSSDKDocSamples\Lambda\Lambda.GeneratedSamples.cs"
+                    region="to-retrieve-a-lambda-functions-event-source-mapping-1481661622799" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Lambda.IAmazonLambda.GetFunctionConfiguration(Amazon.Lambda.Model.GetFunctionConfigurationRequest)" />
+            <member name="M:Amazon.Lambda.AmazonLambdaClient.GetFunctionConfiguration(Amazon.Lambda.Model.GetFunctionConfigurationRequest)" />
+            <member name="T:Amazon.Lambda.Model.GetFunctionConfigurationRequest" />
+            <member name="T:Amazon.Lambda.Model.GetFunctionConfigurationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation retrieves a Lambda function's event source mapping
+                </para>
+                <code
+                    title="To retrieve a Lambda function's event source mapping"
+                    source=".\AWSSDKDocSamples\Lambda\Lambda.GeneratedSamples.cs"
+                    region="to-retrieve-a-lambda-functions-event-source-mapping-1481661622799" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Lambda.IAmazonLambda.GetPolicy(Amazon.Lambda.Model.GetPolicyRequest)" />
+            <member name="M:Amazon.Lambda.AmazonLambdaClient.GetPolicy(Amazon.Lambda.Model.GetPolicyRequest)" />
+            <member name="T:Amazon.Lambda.Model.GetPolicyRequest" />
+            <member name="T:Amazon.Lambda.Model.GetPolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation retrieves a Lambda function policy
+                </para>
+                <code
+                    title="To retrieve a Lambda function policy"
+                    source=".\AWSSDKDocSamples\Lambda\Lambda.GeneratedSamples.cs"
+                    region="to-retrieve-a-lambda-function-policy-1481649319053" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Lambda.IAmazonLambda.Invoke(Amazon.Lambda.Model.InvokeRequest)" />
+            <member name="M:Amazon.Lambda.AmazonLambdaClient.Invoke(Amazon.Lambda.Model.InvokeRequest)" />
+            <member name="T:Amazon.Lambda.Model.InvokeRequest" />
+            <member name="T:Amazon.Lambda.Model.InvokeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation invokes a Lambda function
+                </para>
+                <code
+                    title="To invoke a Lambda function"
+                    source=".\AWSSDKDocSamples\Lambda\Lambda.GeneratedSamples.cs"
+                    region="to-invoke-a-lambda-function-1481659683915" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Lambda.IAmazonLambda.InvokeAsync(Amazon.Lambda.Model.InvokeAsyncRequest)" />
+            <member name="M:Amazon.Lambda.AmazonLambdaClient.InvokeAsync(Amazon.Lambda.Model.InvokeAsyncRequest)" />
+            <member name="T:Amazon.Lambda.Model.InvokeAsyncRequest" />
+            <member name="T:Amazon.Lambda.Model.InvokeAsyncResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation invokes a Lambda function asynchronously
+                </para>
+                <code
+                    title="To invoke a Lambda function asynchronously"
+                    source=".\AWSSDKDocSamples\Lambda\Lambda.GeneratedSamples.cs"
+                    region="to-invoke-a-lambda-function-asynchronously-1481649694923" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Lambda.IAmazonLambda.ListAliases(Amazon.Lambda.Model.ListAliasesRequest)" />
+            <member name="M:Amazon.Lambda.AmazonLambdaClient.ListAliases(Amazon.Lambda.Model.ListAliasesRequest)" />
+            <member name="T:Amazon.Lambda.Model.ListAliasesRequest" />
+            <member name="T:Amazon.Lambda.Model.ListAliasesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation retrieves a Lambda function's aliases
+                </para>
+                <code
+                    title="To retrieve a Lambda function aliases"
+                    source=".\AWSSDKDocSamples\Lambda\Lambda.GeneratedSamples.cs"
+                    region="to-retrieve-a-lambda-function-aliases-1481650199732" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Lambda.IAmazonLambda.ListFunctions(Amazon.Lambda.Model.ListFunctionsRequest)" />
+            <member name="M:Amazon.Lambda.AmazonLambdaClient.ListFunctions(Amazon.Lambda.Model.ListFunctionsRequest)" />
+            <member name="T:Amazon.Lambda.Model.ListFunctionsRequest" />
+            <member name="T:Amazon.Lambda.Model.ListFunctionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation retrieves a Lambda functions
+                </para>
+                <code
+                    title="To retrieve a list of Lambda functions"
+                    source=".\AWSSDKDocSamples\Lambda\Lambda.GeneratedSamples.cs"
+                    region="to-retrieve-a-list-of-lambda-functions-1481650507425" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Lambda.IAmazonLambda.ListVersionsByFunction(Amazon.Lambda.Model.ListVersionsByFunctionRequest)" />
+            <member name="M:Amazon.Lambda.AmazonLambdaClient.ListVersionsByFunction(Amazon.Lambda.Model.ListVersionsByFunctionRequest)" />
+            <member name="T:Amazon.Lambda.Model.ListVersionsByFunctionRequest" />
+            <member name="T:Amazon.Lambda.Model.ListVersionsByFunctionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation retrieves a Lambda function versions
+                </para>
+                <code
+                    title="To retrieve a list of Lambda function versions"
+                    source=".\AWSSDKDocSamples\Lambda\Lambda.GeneratedSamples.cs"
+                    region="to-retrieve-a-list-of-lambda-function-versions-1481650603750" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Lambda.IAmazonLambda.PublishVersion(Amazon.Lambda.Model.PublishVersionRequest)" />
+            <member name="M:Amazon.Lambda.AmazonLambdaClient.PublishVersion(Amazon.Lambda.Model.PublishVersionRequest)" />
+            <member name="T:Amazon.Lambda.Model.PublishVersionRequest" />
+            <member name="T:Amazon.Lambda.Model.PublishVersionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation publishes a version of a Lambda function
+                </para>
+                <code
+                    title="To publish a version of a Lambda function"
+                    source=".\AWSSDKDocSamples\Lambda\Lambda.GeneratedSamples.cs"
+                    region="to-publish-a-version-of-a-lambda-function-1481650704986" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Lambda.IAmazonLambda.RemovePermission(Amazon.Lambda.Model.RemovePermissionRequest)" />
+            <member name="M:Amazon.Lambda.AmazonLambdaClient.RemovePermission(Amazon.Lambda.Model.RemovePermissionRequest)" />
+            <member name="T:Amazon.Lambda.Model.RemovePermissionRequest" />
+            <member name="T:Amazon.Lambda.Model.RemovePermissionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation removes a Lambda function's permissions
+                </para>
+                <code
+                    title="To remove a Lambda function's permissions"
+                    source=".\AWSSDKDocSamples\Lambda\Lambda.GeneratedSamples.cs"
+                    region="to-remove-a-lambda-functions-permissions-1481661337021" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Lambda.IAmazonLambda.UpdateAlias(Amazon.Lambda.Model.UpdateAliasRequest)" />
+            <member name="M:Amazon.Lambda.AmazonLambdaClient.UpdateAlias(Amazon.Lambda.Model.UpdateAliasRequest)" />
+            <member name="T:Amazon.Lambda.Model.UpdateAliasRequest" />
+            <member name="T:Amazon.Lambda.Model.UpdateAliasResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation updates a Lambda function alias
+                </para>
+                <code
+                    title="To update a Lambda function alias"
+                    source=".\AWSSDKDocSamples\Lambda\Lambda.GeneratedSamples.cs"
+                    region="to-update-a-lambda-function-alias-1481650817950" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Lambda.IAmazonLambda.UpdateEventSourceMapping(Amazon.Lambda.Model.UpdateEventSourceMappingRequest)" />
+            <member name="M:Amazon.Lambda.AmazonLambdaClient.UpdateEventSourceMapping(Amazon.Lambda.Model.UpdateEventSourceMappingRequest)" />
+            <member name="T:Amazon.Lambda.Model.UpdateEventSourceMappingRequest" />
+            <member name="T:Amazon.Lambda.Model.UpdateEventSourceMappingResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation updates a Lambda function event source mapping
+                </para>
+                <code
+                    title="To update a Lambda function event source mapping"
+                    source=".\AWSSDKDocSamples\Lambda\Lambda.GeneratedSamples.cs"
+                    region="to-update-a-lambda-function-event-source-mapping-1481650907413" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Lambda.IAmazonLambda.UpdateFunctionCode(Amazon.Lambda.Model.UpdateFunctionCodeRequest)" />
+            <member name="M:Amazon.Lambda.AmazonLambdaClient.UpdateFunctionCode(Amazon.Lambda.Model.UpdateFunctionCodeRequest)" />
+            <member name="T:Amazon.Lambda.Model.UpdateFunctionCodeRequest" />
+            <member name="T:Amazon.Lambda.Model.UpdateFunctionCodeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation updates a Lambda function's code
+                </para>
+                <code
+                    title="To update a Lambda function's code"
+                    source=".\AWSSDKDocSamples\Lambda\Lambda.GeneratedSamples.cs"
+                    region="to-update-a-lambda-functions-code-1481650992672" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Lambda.IAmazonLambda.UpdateFunctionConfiguration(Amazon.Lambda.Model.UpdateFunctionConfigurationRequest)" />
+            <member name="M:Amazon.Lambda.AmazonLambdaClient.UpdateFunctionConfiguration(Amazon.Lambda.Model.UpdateFunctionConfigurationRequest)" />
+            <member name="T:Amazon.Lambda.Model.UpdateFunctionConfigurationRequest" />
+            <member name="T:Amazon.Lambda.Model.UpdateFunctionConfigurationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation updates a Lambda function's configuration
+                </para>
+                <code
+                    title="To update a Lambda function's configuration"
+                    source=".\AWSSDKDocSamples\Lambda\Lambda.GeneratedSamples.cs"
+                    region="to-update-a-lambda-functions-configuration-1481651096447" />
+            </example>
+        </value>
+    </doc>
+</docs>
