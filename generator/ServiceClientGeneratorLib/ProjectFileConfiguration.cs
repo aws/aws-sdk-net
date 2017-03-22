@@ -158,4 +158,29 @@ namespace ServiceClientGenerator
             return true;
         }
     }
+
+    public class UnitTestProjectConfiguration
+    {
+        /// <summary>
+        /// Name of the project configuration.  e.g. Net35, Net45
+        /// </summary>
+        public string Name { get; set; }
+
+        /// <summary>
+        /// The #define constants to be set at compile time. These are used for all
+        /// compilation types (debug, release etc).
+        /// </summary>
+        public string DefineConstants { get; set; }
+
+        /// <summary>
+        /// External dependencies.  Do not include other serivce project references.
+        /// Only add well-known references such as System.Http.Web
+        /// </summary>
+        public IEnumerable<string> References { get; set; }
+
+        /// <summary>
+        /// Directories or paths to include in this *.csproj
+        /// </summary>
+        public IEnumerable<string> CompileInclude { get; set; }
+    }
 }

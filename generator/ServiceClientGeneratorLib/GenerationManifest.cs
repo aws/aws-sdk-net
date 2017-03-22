@@ -67,6 +67,15 @@ namespace ServiceClientGenerator
             public const string SharedNugetTargetFrameworksKey = "sharedNugetTargetFrameworks";
         }
 
+        abstract class UnitTestProjectsSectionKeys
+        {
+            public const string UnitTestProjectsKey = "unittestprojects";
+            public const string NameKey = "name";
+            public const string DefineConstantsKey = "defineConstants";
+            public const string References = "references";
+            public const string CompileIncludeKey = "compileInclude";
+        }
+
         /// <summary>
         /// URL for Apache License 2.0
         /// </summary>
@@ -84,6 +93,8 @@ namespace ServiceClientGenerator
         /// specific project file for a service.
         /// </summary>
         public IEnumerable<ProjectFileConfiguration> ProjectFileConfigurations { get; private set; }
+
+        public IEnumerable<UnitTestProjectConfiguration> UnitTestProjectFileConfigurations { get; private set; }
 
         public string CoreVersion
         {
@@ -131,6 +142,7 @@ namespace ServiceClientGenerator
 
             generationManifest.LoadServiceConfigurations(manifest, versionsManifest["ServiceVersions"], modelsFolder);
             generationManifest.LoadProjectConfigurations(manifest);
+            generationManifest.LoadUnitTestProjectConfigurations(manifest);
 
             return generationManifest;
         }
@@ -434,6 +446,27 @@ namespace ServiceClientGenerator
             }
 
             ProjectFileConfigurations = projectConfigurations;
+        }
+
+        void LoadUnitTestProjectConfigurations(JsonData document)
+        {
+            IList<UnitTestProjectConfiguration> configuraitons = new List<UnitTestProjectConfiguration>();
+            var projectsNode = document[UnitTestProjectsSectionKeys.UnitTestProjectsKey];
+            foreach (JsonData projectNode in projectsNode)
+            {
+                UnitTestProjectConfiguration configuration = new UnitTestProjectConfiguration
+                {
+                    Name = projectNode[UnitTestProjectsSectionKeys.NameKey].ToString(),
+                    DefineConstants = projectNode[UnitTestProjectsSectionKeys.DefineConstantsKey].ToString(),
+                    CompileInclude = (from object include in projectNode[UnitTestProjectsSectionKeys.CompileIncludeKey]
+                                      select include.ToString()).ToList(),
+                    References = (from object reference in projectNode[UnitTestProjectsSectionKeys.References]
+                                    select reference.ToString()).ToList(),
+                };
+                configuraitons.Add(configuration);
+            }
+
+            UnitTestProjectFileConfigurations = configuraitons;
         }
 
         /// <summary>

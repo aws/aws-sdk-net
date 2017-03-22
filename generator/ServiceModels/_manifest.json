@@ -110,5 +110,19 @@
             "template": "UnityProjectFile",
             "platformCodeFolders": [ "_unity", "_bcl+unity" ]
         }
+    ],
+    "unittestprojects":[
+        {
+            "name": "Net35",
+            "defineConstants": "TRACE;;BCL;BCL35;AWS_APM_API;LOCAL_FILE",
+            "references" : [],
+            "compileInclude" : []
+        },
+        {
+            "name": "Net45",
+            "defineConstants" : "TRACE;;BCL;BCL45;ASYNC_AWAIT;AWS_APM_API;LOCAL_FILE",
+            "references": ["System.Net.Http"],
+            "compileInclude": ["Custom\\*\\_bcl45\\*.cs"],
+        }
     ]
 }

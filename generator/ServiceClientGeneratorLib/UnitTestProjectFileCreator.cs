@@ -10,48 +10,38 @@ namespace ServiceClientGenerator
     class UnitTestProjectFileCreator
     {
         private readonly string TemplateName = "UnitTestProjectFile";
+
         private GeneratorOptions _options;
-        public UnitTestProjectFileCreator(GeneratorOptions options)
+        private IEnumerable<UnitTestProjectConfiguration> _configurations;
+
+        public UnitTestProjectFileCreator(GeneratorOptions options, IEnumerable<UnitTestProjectConfiguration> configurations)
         {
             _options = options;
+            _configurations = configurations;
         }
         public void Execute(string unitTestRoot, IEnumerable<ServiceConfiguration> serviceConfigurations)
         {
-            string net35TestProjectName = "AWSSDK.UnitTests.Net35.csproj";
-            var templateSession35 = new Dictionary<string, object>
+            foreach (var configuration in _configurations)
             {
-                {"ProjectGuid",             Utils.GetProjectGuid(Path.Combine(unitTestRoot, net35TestProjectName))},
-                {"RootNamespace",           "AWSSDK_DotNet35.UnitTests"},
-                {"AssemblyName",            "AWSSDK.UnitTests.Net35"},
-                {"DebugOutputPath",         @"bin\Debug\net35"},
-                {"ReleaseOutputPath",       @"bin\Release\net35"},
-                {"ReleaseDefineConstants",  "TRACE;;BCL;BCL35;AWS_APM_API;LOCAL_FILE"},
-                {"DebugDefineConstants",    "DEBUG;TRACE;;BCL;BCL35;AWS_APM_API;LOCAL_FILE"},
-                {"Reference",               null},
-                {"CompileInclude",          null},
-                {"CommonReferences",        GetCommonReferences(unitTestRoot, "Net35")},
-                {"ServiceProjectReferences",ServiceProjectReferences(unitTestRoot, serviceConfigurations, "Net35")},
-                {"ServiceDllReferences",    ServiceDllReferences(unitTestRoot, serviceConfigurations, "Net35")},
-            };
-            GenerateProjectFile(templateSession35, unitTestRoot, net35TestProjectName);
+                string projectName = string.Format("AWSSDK.UnitTests.{0}.csproj", configuration.Name);
+                var session = new Dictionary<string, object>
+                {
+                    {"ProjectGuid",             Utils.GetProjectGuid(Path.Combine(unitTestRoot, projectName))},
+                    {"RootNamespace",           string.Format("AWSSDK_Dot{0}.UnitTests", configuration.Name)},
+                    {"AssemblyName",            string.Format("AWSSDK.UnitTests.{0}", configuration.Name)},
+                    {"DebugOutputPath",         string.Format(@"bin\Debug\{0}", configuration.Name.ToLower())},
+                    {"ReleaseOutputPath",       string.Format(@"bin\Release\{0}", configuration.Name.ToLower())},
+                    {"ReleaseDefineConstants",  configuration.DefineConstants},
+                    {"DebugDefineConstants",    "DEBUG;" + configuration.DefineConstants},
+                    {"Reference",               configuration.References},
+                    {"CompileInclude",          configuration.CompileInclude},
+                    {"CommonReferences",        GetCommonReferences(unitTestRoot, configuration.Name)},
+                    {"ServiceProjectReferences",ServiceProjectReferences(unitTestRoot, serviceConfigurations, configuration.Name)},
+                    {"ServiceDllReferences",    ServiceDllReferences(unitTestRoot, serviceConfigurations, configuration.Name)},
+                };
 
-            string net45TestProjectName = "AWSSDK.UnitTests.Net45.csproj";
-            var templateSession45 = new Dictionary<string, object>
-            {
-                {"ProjectGuid",             Utils.GetProjectGuid(Path.Combine(unitTestRoot, net45TestProjectName))},
-                {"RootNamespace",           "AWSSDK_DotNet45.UnitTests"},
-                {"AssemblyName",            "AWSSDK.UnitTests.Net45"},
-                {"DebugOutputPath",         @"bin\Debug\net45"},
-                {"DebugDefineConstants",    "DEBUG;TRACE;;BCL;BCL45;ASYNC_AWAIT;AWS_APM_API;LOCAL_FILE"},
-                {"ReleaseOutputPath",       @"bin\Release\net45"},
-                {"ReleaseDefineConstants",  "TRACE;;BCL;BCL45;ASYNC_AWAIT;AWS_APM_API;LOCAL_FILE"},
-                {"Reference",               new List<string> { "System.Net.Http" } },
-                {"CompileInclude",          new List<string> { @"Custom\*\_bcl45\*.cs"} },
-                {"CommonReferences",        GetCommonReferences(unitTestRoot, "Net45")},
-                {"ServiceProjectReferences",ServiceProjectReferences(unitTestRoot, serviceConfigurations, "Net45")},
-                {"ServiceDllReferences",    ServiceDllReferences(unitTestRoot, serviceConfigurations, "Net45")},
-            };
-            GenerateProjectFile(templateSession45, unitTestRoot, net45TestProjectName);
+                GenerateProjectFile(session, unitTestRoot, projectName);
+            }
         }
 
         private IList<ProjectFileCreator.ProjectReference> GetCommonReferences(string unitTestRoot, string projectType)
