@@ -1,3 +1,9 @@
+### 3.3.66.0 (2017-03-22 21:50 UTC)
+* ApplicationDiscoveryService (3.3.2.0)
+	* Adds export configuration options to the AWS Discovery Service API.
+* Lambda (3.3.3.0)
+	* Adds support for new runtime Node.js v6.10 for AWS Lambda service
+
 ### 3.3.65.0 (2017-03-21 22:36 UTC)
 * AWSMarketplaceCommerceAnalytics (3.3.3.0)
 	* This update adds a new data set, us_sales_and_use_tax_records, which enables AWS Marketplace sellers to programmatically access to their U.S. Sales and Use Tax report data.
