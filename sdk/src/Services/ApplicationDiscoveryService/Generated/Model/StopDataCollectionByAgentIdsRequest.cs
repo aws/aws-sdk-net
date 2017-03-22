@@ -29,7 +29,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
 {
     /// <summary>
     /// Container for the parameters to the StopDataCollectionByAgentIds operation.
-    /// Instructs the specified agents or Connectors to stop collecting data.
+    /// Instructs the specified agents or connectors to stop collecting data.
     /// </summary>
     public partial class StopDataCollectionByAgentIdsRequest : AmazonApplicationDiscoveryServiceRequest
     {
@@ -38,7 +38,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property AgentIds. 
         /// <para>
-        /// The IDs of the agents or Connectors that you want to stop collecting data.
+        /// The IDs of the agents or connectors from which to stop collecting data.
         /// </para>
         /// </summary>
         public List<string> AgentIds

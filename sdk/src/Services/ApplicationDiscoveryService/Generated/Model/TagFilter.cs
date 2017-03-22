@@ -28,8 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ApplicationDiscoveryService.Model
 {
     /// <summary>
-    /// The name of a tag filter. Valid names are: <code>tagKey</code>, <code>tagValue</code>,
-    /// <code>configurationId</code>.
+    /// The tag filter. Valid names are: <code>tagKey</code>, <code>tagValue</code>, <code>configurationId</code>.
     /// </summary>
     public partial class TagFilter
     {
@@ -39,7 +38,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// A name of a tag filter.
+        /// A name of the tag filter.
         /// </para>
         /// </summary>
         public string Name
@@ -57,7 +56,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property Values. 
         /// <para>
-        /// Values of a tag filter.
+        /// Values for the tag filter.
         /// </para>
         /// </summary>
         public List<string> Values

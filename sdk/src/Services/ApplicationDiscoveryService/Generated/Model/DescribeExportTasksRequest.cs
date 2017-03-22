@@ -28,41 +28,41 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ApplicationDiscoveryService.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeTags operation.
-    /// Retrieves a list of configuration items that are tagged with a specific tag. Or retrieves
-    /// a list of all tags assigned to a specific configuration item.
+    /// Container for the parameters to the DescribeExportTasks operation.
+    /// Retrieve status of one or more export tasks. You can retrieve the status of up to
+    /// 100 export tasks.
     /// </summary>
-    public partial class DescribeTagsRequest : AmazonApplicationDiscoveryServiceRequest
+    public partial class DescribeExportTasksRequest : AmazonApplicationDiscoveryServiceRequest
     {
-        private List<TagFilter> _filters = new List<TagFilter>();
+        private List<string> _exportIds = new List<string>();
         private int? _maxResults;
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property Filters. 
+        /// Gets and sets the property ExportIds. 
         /// <para>
-        /// You can filter the list using a <i>key</i>-<i>value</i> format. You can separate these
-        /// items by using logical operators. Allowed filters include <code>tagKey</code>, <code>tagValue</code>,
-        /// and <code>configurationId</code>. 
+        /// One or more unique identifiers used to query the status of an export request.
         /// </para>
         /// </summary>
-        public List<TagFilter> Filters
+        public List<string> ExportIds
         {
-            get { return this._filters; }
-            set { this._filters = value; }
+            get { return this._exportIds; }
+            set { this._exportIds = value; }
         }
 
-        // Check to see if Filters property is set
-        internal bool IsSetFilters()
+        // Check to see if ExportIds property is set
+        internal bool IsSetExportIds()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._exportIds != null && this._exportIds.Count > 0; 
         }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The total number of items to return in a single page of output. The maximum value
-        /// is 100.
+        /// The maximum number of volume results returned by <code>DescribeExportTasks</code>
+        /// in paginated output. When this parameter is used, <code>DescribeExportTasks</code>
+        /// only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code>
+        /// response element.
         /// </para>
         /// </summary>
         public int MaxResults
@@ -80,7 +80,11 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A token to start the list. Use this token to get the next set of results.
+        /// The <code>nextToken</code> value returned from a previous paginated <code>DescribeExportTasks</code>
+        /// request where <code>maxResults</code> was used and the results exceeded the value
+        /// of that parameter. Pagination continues from the end of the previous results that
+        /// returned the <code>nextToken</code> value. This value is null when there are no more
+        /// results to return.
         /// </para>
         /// </summary>
         public string NextToken

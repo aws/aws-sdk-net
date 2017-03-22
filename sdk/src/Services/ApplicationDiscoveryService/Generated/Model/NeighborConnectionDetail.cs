@@ -41,7 +41,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property ConnectionsCount. 
         /// <para>
-        /// Number of open network connections with the neighboring server.
+        /// The number of open network connections with the neighboring server.
         /// </para>
         /// </summary>
         public long ConnectionsCount
@@ -59,7 +59,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property DestinationPort. 
         /// <para>
-        /// Destination network port for the connection.
+        /// The destination network port for the connection.
         /// </para>
         /// </summary>
         public int DestinationPort
@@ -77,7 +77,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property DestinationServerId. 
         /// <para>
-        /// ID of the server that accepted the networker connection.
+        /// The ID of the server that accepted the network connection.
         /// </para>
         /// </summary>
         public string DestinationServerId
@@ -95,7 +95,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property SourceServerId. 
         /// <para>
-        /// ID of server that opened the network connection.
+        /// The ID of the server that opened the network connection.
         /// </para>
         /// </summary>
         public string SourceServerId
@@ -113,7 +113,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property TransportProtocol. 
         /// <para>
-        /// Network protocol used for the connection.
+        /// The network protocol used for the connection.
         /// </para>
         /// </summary>
         public string TransportProtocol

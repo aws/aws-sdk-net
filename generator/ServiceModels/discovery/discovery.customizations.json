@@ -1,0 +1,12 @@
+{
+  "deprecatedOverrides": {
+    "operation": {
+      "DescribeExportConfigurations": {
+        "message": "Deprecated in favor of DescribeExportTasks."
+      },
+      "ExportConfigurations":  { 
+        "message": "Deprecated in favor of StartExportTask."
+      }
+    }
+  }
+}

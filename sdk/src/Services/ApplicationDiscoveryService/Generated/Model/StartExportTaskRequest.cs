@@ -28,30 +28,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ApplicationDiscoveryService.Model
 {
     /// <summary>
-    /// This is the response object from the StopDataCollectionByAgentIds operation.
+    /// Container for the parameters to the StartExportTask operation.
+    /// Export the configuration data about discovered configuration items and relationships
+    /// to an S3 bucket in a specified format.
     /// </summary>
-    public partial class StopDataCollectionByAgentIdsResponse : AmazonWebServiceResponse
+    public partial class StartExportTaskRequest : AmazonApplicationDiscoveryServiceRequest
     {
-        private List<AgentConfigurationStatus> _agentsConfigurationStatus = new List<AgentConfigurationStatus>();
+        private List<string> _exportDataFormat = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property AgentsConfigurationStatus. 
+        /// Gets and sets the property ExportDataFormat. 
         /// <para>
-        /// Information about the agents or connector that were instructed to stop collecting
-        /// data. Information includes the agent/connector ID, a description of the operation
-        /// performed, and whether the agent/connector configuration was updated.
+        /// The file format for the returned export data. Default value is <code>CSV</code>.
         /// </para>
         /// </summary>
-        public List<AgentConfigurationStatus> AgentsConfigurationStatus
+        public List<string> ExportDataFormat
         {
-            get { return this._agentsConfigurationStatus; }
-            set { this._agentsConfigurationStatus = value; }
+            get { return this._exportDataFormat; }
+            set { this._exportDataFormat = value; }
         }
 
-        // Check to see if AgentsConfigurationStatus property is set
-        internal bool IsSetAgentsConfigurationStatus()
+        // Check to see if ExportDataFormat property is set
+        internal bool IsSetExportDataFormat()
         {
-            return this._agentsConfigurationStatus != null && this._agentsConfigurationStatus.Count > 0; 
+            return this._exportDataFormat != null && this._exportDataFormat.Count > 0; 
         }
 
     }

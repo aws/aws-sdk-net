@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ApplicationDiscoveryService.Model
 {
     /// <summary>
-    /// Field and direction for ordered output.
+    /// A field and direction for ordered output.
     /// </summary>
     public partial class OrderByElement
     {
@@ -38,7 +38,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property FieldName. 
         /// <para>
-        /// Field to order on.
+        /// The field on which to order.
         /// </para>
         /// </summary>
         public string FieldName

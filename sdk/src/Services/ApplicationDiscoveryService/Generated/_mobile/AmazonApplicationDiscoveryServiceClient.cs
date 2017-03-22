@@ -80,7 +80,7 @@ namespace Amazon.ApplicationDiscoveryService
     /// <para>
     /// Application Discovery Service integrates with application discovery solutions from
     /// AWS Partner Network (APN) partners. Third-party application discovery tools can query
-    /// the Application Discovery Service and write to the Application Discovery Service database
+    /// Application Discovery Service and write to the Application Discovery Service database
     /// using a public API. You can then import the data into either a visualization tool
     /// or cloud-migration solution.
     /// </para>
@@ -95,13 +95,13 @@ namespace Amazon.ApplicationDiscoveryService
     /// <para>
     /// Your AWS account must be granted access to Application Discovery Service, a process
     /// called <i>whitelisting</i>. This is true for AWS partners and customers alike. To
-    /// request access, sign up for the AWS Application Discovery Service <a href="http://aws.amazon.com/application-discovery/preview/">here</a>.
-    /// We will send you information about how to get started.
+    /// request access, sign up for AWS Application Discovery Service <a href="http://aws.amazon.com/application-discovery/preview/">here</a>.
+    /// We send you information about how to get started.
     /// </para>
     ///  
     /// <para>
     /// This API reference provides descriptions, syntax, and usage examples for each of the
-    /// actions and data types for the Application Discovery Service. The topic for each action
+    /// actions and data types for Application Discovery Service. The topic for each action
     /// shows the API request parameters and the response. Alternatively, you can use one
     /// of the AWS SDKs to access an API that is tailored to the programming language or platform
     /// that you're using. For more information, see <a href="http://aws.amazon.com/tools/#SDKs">AWS
@@ -524,6 +524,7 @@ namespace Amazon.ApplicationDiscoveryService
         
         #region  DescribeExportConfigurations
 
+        [Obsolete("Deprecated in favor of DescribeExportTasks.")]
         internal DescribeExportConfigurationsResponse DescribeExportConfigurations(DescribeExportConfigurationsRequest request)
         {
             var marshaller = new DescribeExportConfigurationsRequestMarshaller();
@@ -542,12 +543,44 @@ namespace Amazon.ApplicationDiscoveryService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        [Obsolete("Deprecated in favor of DescribeExportTasks.")]
         public Task<DescribeExportConfigurationsResponse> DescribeExportConfigurationsAsync(DescribeExportConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeExportConfigurationsRequestMarshaller();
             var unmarshaller = DescribeExportConfigurationsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeExportConfigurationsRequest,DescribeExportConfigurationsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeExportTasks
+
+        internal DescribeExportTasksResponse DescribeExportTasks(DescribeExportTasksRequest request)
+        {
+            var marshaller = new DescribeExportTasksRequestMarshaller();
+            var unmarshaller = DescribeExportTasksResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeExportTasksRequest,DescribeExportTasksResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeExportTasks operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeExportTasks operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeExportTasksResponse> DescribeExportTasksAsync(DescribeExportTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeExportTasksRequestMarshaller();
+            var unmarshaller = DescribeExportTasksResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeExportTasksRequest,DescribeExportTasksResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -617,6 +650,7 @@ namespace Amazon.ApplicationDiscoveryService
         
         #region  ExportConfigurations
 
+        [Obsolete("Deprecated in favor of StartExportTask.")]
         internal ExportConfigurationsResponse ExportConfigurations(ExportConfigurationsRequest request)
         {
             var marshaller = new ExportConfigurationsRequestMarshaller();
@@ -635,6 +669,7 @@ namespace Amazon.ApplicationDiscoveryService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        [Obsolete("Deprecated in favor of StartExportTask.")]
         public Task<ExportConfigurationsResponse> ExportConfigurationsAsync(ExportConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ExportConfigurationsRequestMarshaller();
@@ -765,6 +800,37 @@ namespace Amazon.ApplicationDiscoveryService
             var unmarshaller = StartDataCollectionByAgentIdsResponseUnmarshaller.Instance;
 
             return InvokeAsync<StartDataCollectionByAgentIdsRequest,StartDataCollectionByAgentIdsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartExportTask
+
+        internal StartExportTaskResponse StartExportTask(StartExportTaskRequest request)
+        {
+            var marshaller = new StartExportTaskRequestMarshaller();
+            var unmarshaller = StartExportTaskResponseUnmarshaller.Instance;
+
+            return Invoke<StartExportTaskRequest,StartExportTaskResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartExportTask operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartExportTask operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<StartExportTaskResponse> StartExportTaskAsync(StartExportTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new StartExportTaskRequestMarshaller();
+            var unmarshaller = StartExportTaskResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartExportTaskRequest,StartExportTaskResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

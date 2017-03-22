@@ -41,8 +41,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property ConfigurationId. 
         /// <para>
-        /// The configuration ID for the item you want to tag. You can specify a list of keys
-        /// and values.
+        /// The configuration ID for the item to tag. You can specify a list of keys and values.
         /// </para>
         /// </summary>
         public string ConfigurationId
@@ -60,7 +59,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property ConfigurationType. 
         /// <para>
-        /// A type of IT asset that you want to tag.
+        /// A type of IT asset to tag.
         /// </para>
         /// </summary>
         public ConfigurationItemType ConfigurationType
@@ -78,7 +77,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// A type of tag to filter on. For example, <i>serverType</i>.
+        /// A type of tag on which to filter. For example, <i>serverType</i>.
         /// </para>
         /// </summary>
         public string Key
@@ -114,7 +113,8 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// A value to filter on. For example <i>key = serverType</i> and <i>value = web server</i>.
+        /// A value on which to filter. For example <i>key = serverType</i> and <i>value = web
+        /// server</i>.
         /// </para>
         /// </summary>
         public string Value

@@ -275,6 +275,35 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("ApplicationDiscoveryService")]
+        public void DescribeExportTasksMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeExportTasksRequest>();
+            var marshaller = new DescribeExportTasksRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<DescribeExportTasksRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeExportTasks").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = DescribeExportTasksResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeExportTasksResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("ApplicationDiscoveryService")]
         public void DescribeTagsMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<DescribeTagsRequest>();
@@ -467,6 +496,35 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = StartDataCollectionByAgentIdsResponseUnmarshaller.Instance.Unmarshall(context)
                 as StartDataCollectionByAgentIdsResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("ApplicationDiscoveryService")]
+        public void StartExportTaskMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<StartExportTaskRequest>();
+            var marshaller = new StartExportTaskRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<StartExportTaskRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("StartExportTask").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = StartExportTaskResponseUnmarshaller.Instance.Unmarshall(context)
+                as StartExportTaskResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 

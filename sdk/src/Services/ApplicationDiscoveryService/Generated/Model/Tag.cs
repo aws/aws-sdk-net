@@ -38,7 +38,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// A type of tag to filter on.
+        /// The type of tag on which to filter.
         /// </para>
         /// </summary>
         public string Key
@@ -56,7 +56,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// A value for a tag key to filter on.
+        /// A value for a tag key on which to filter.
         /// </para>
         /// </summary>
         public string Value

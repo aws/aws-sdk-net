@@ -28,9 +28,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ApplicationDiscoveryService.Model
 {
     /// <summary>
-    /// This is the response object from the DescribeExportConfigurations operation.
+    /// This is the response object from the DescribeExportTasks operation.
     /// </summary>
-    public partial class DescribeExportConfigurationsResponse : AmazonWebServiceResponse
+    public partial class DescribeExportTasksResponse : AmazonWebServiceResponse
     {
         private List<ExportInfo> _exportsInfo = new List<ExportInfo>();
         private string _nextToken;
@@ -38,8 +38,9 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property ExportsInfo. 
         /// <para>
-        /// Returns export details. When the status is complete, the response includes a URL for
-        /// an Amazon S3 bucket where you can view the data in a CSV file.
+        /// Contains one or more sets of export request details. When the status of a request
+        /// is <code>SUCCEEDED</code>, the response includes a URL for an Amazon S3 bucket where
+        /// you can view the data in a CSV file.
         /// </para>
         /// </summary>
         public List<ExportInfo> ExportsInfo
@@ -57,9 +58,10 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A token to get the next set of results. For example, if you specify 100 IDs for <code>DescribeExportConfigurationsRequest$exportIds</code>
-        /// but set <code>DescribeExportConfigurationsRequest$maxResults</code> to 10, you get
-        /// results in a set of 10. Use the token in the query to get the next set of 10.
+        /// The <code>nextToken</code> value to include in a future <code>DescribeExportTasks</code>
+        /// request. When the results of a <code>DescribeExportTasks</code> request exceed <code>maxResults</code>,
+        /// this value can be used to retrieve the next page of results. This value is null when
+        /// there are no more results to return.
         /// </para>
         /// </summary>
         public string NextToken

@@ -79,7 +79,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property ExportRequestTime. 
         /// <para>
-        /// The time the configuration data export was initiated.
+        /// The time that the configuration data export was initiated.
         /// </para>
         /// </summary>
         public DateTime ExportRequestTime

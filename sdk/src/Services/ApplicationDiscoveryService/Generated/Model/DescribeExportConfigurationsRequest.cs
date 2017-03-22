@@ -29,8 +29,13 @@ namespace Amazon.ApplicationDiscoveryService.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeExportConfigurations operation.
+    /// Deprecated. Use <code>DescribeExportTasks</code> instead.
+    /// 
+    ///  
+    /// <para>
     /// Retrieves the status of a given export process. You can retrieve status from a maximum
     /// of 100 processes.
+    /// </para>
     /// </summary>
     public partial class DescribeExportConfigurationsRequest : AmazonApplicationDiscoveryServiceRequest
     {
@@ -77,10 +82,9 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A token to get the next set of results. For example, if you specified 100 IDs for
-        /// <code>DescribeExportConfigurationsRequest$exportIds</code> but set <code>DescribeExportConfigurationsRequest$maxResults</code>
-        /// to 10, you will get results in a set of 10. Use the token in the query to get the
-        /// next set of 10.
+        /// A token to get the next set of results. For example, if you specify 100 IDs for <code>DescribeExportConfigurationsRequest$exportIds</code>
+        /// but set <code>DescribeExportConfigurationsRequest$maxResults</code> to 10, you get
+        /// results in a set of 10. Use the token in the query to get the next set of 10.
         /// </para>
         /// </summary>
         public string NextToken

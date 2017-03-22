@@ -73,7 +73,7 @@ namespace Amazon.ApplicationDiscoveryService
     /// <para>
     /// Application Discovery Service integrates with application discovery solutions from
     /// AWS Partner Network (APN) partners. Third-party application discovery tools can query
-    /// the Application Discovery Service and write to the Application Discovery Service database
+    /// Application Discovery Service and write to the Application Discovery Service database
     /// using a public API. You can then import the data into either a visualization tool
     /// or cloud-migration solution.
     /// </para>
@@ -88,13 +88,13 @@ namespace Amazon.ApplicationDiscoveryService
     /// <para>
     /// Your AWS account must be granted access to Application Discovery Service, a process
     /// called <i>whitelisting</i>. This is true for AWS partners and customers alike. To
-    /// request access, sign up for the AWS Application Discovery Service <a href="http://aws.amazon.com/application-discovery/preview/">here</a>.
-    /// We will send you information about how to get started.
+    /// request access, sign up for AWS Application Discovery Service <a href="http://aws.amazon.com/application-discovery/preview/">here</a>.
+    /// We send you information about how to get started.
     /// </para>
     ///  
     /// <para>
     /// This API reference provides descriptions, syntax, and usage examples for each of the
-    /// actions and data types for the Application Discovery Service. The topic for each action
+    /// actions and data types for Application Discovery Service. The topic for each action
     /// shows the API request parameters and the response. Alternatively, you can use one
     /// of the AWS SDKs to access an API that is tailored to the programming language or platform
     /// that you're using. For more information, see <a href="http://aws.amazon.com/tools/#SDKs">AWS
@@ -439,8 +439,8 @@ namespace Amazon.ApplicationDiscoveryService
         /// 
         ///  
         /// <para>
-        /// For a complete list of outputs for each asset type, see <a href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/querying-configuration-items.html#DescribeConfigurations">Querying
-        /// Discovered Configuration Items</a>.
+        /// For a complete list of outputs for each asset type, see <a href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/discovery-api-queries.html#DescribeConfigurations">Using
+        /// the DescribeConfigurations Action</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeConfigurations service method.</param>
@@ -492,8 +492,13 @@ namespace Amazon.ApplicationDiscoveryService
 
 
         /// <summary>
+        /// Deprecated. Use <code>DescribeExportTasks</code> instead.
+        /// 
+        ///  
+        /// <para>
         /// Retrieves the status of a given export process. You can retrieve status from a maximum
         /// of 100 processes.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeExportConfigurations service method.</param>
         /// 
@@ -516,6 +521,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ServerInternalErrorException">
         /// The server experienced an internal error. Try again.
         /// </exception>
+        [Obsolete("Deprecated in favor of DescribeExportTasks.")]
         DescribeExportConfigurationsResponse DescribeExportConfigurations(DescribeExportConfigurationsRequest request);
 
         /// <summary>
@@ -529,6 +535,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeExportConfigurations
         ///         operation.</returns>
+        [Obsolete("Deprecated in favor of DescribeExportTasks.")]
         IAsyncResult BeginDescribeExportConfigurations(DescribeExportConfigurationsRequest request, AsyncCallback callback, object state);
 
 
@@ -540,7 +547,60 @@ namespace Amazon.ApplicationDiscoveryService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeExportConfigurations.</param>
         /// 
         /// <returns>Returns a  DescribeExportConfigurationsResult from ApplicationDiscoveryService.</returns>
+        [Obsolete("Deprecated in favor of DescribeExportTasks.")]
         DescribeExportConfigurationsResponse EndDescribeExportConfigurations(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeExportTasks
+
+
+        /// <summary>
+        /// Retrieve status of one or more export tasks. You can retrieve the status of up to
+        /// 100 export tasks.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeExportTasks service method.</param>
+        /// 
+        /// <returns>The response from the DescribeExportTasks service method, as returned by ApplicationDiscoveryService.</returns>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.AuthorizationErrorException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid. Verify the parameters and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.InvalidParameterValueException">
+        /// The value of one or more parameters are either invalid or out of range. Verify the
+        /// parameter values and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ServerInternalErrorException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        DescribeExportTasksResponse DescribeExportTasks(DescribeExportTasksRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeExportTasks operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeExportTasks operation on AmazonApplicationDiscoveryServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeExportTasks
+        ///         operation.</returns>
+        IAsyncResult BeginDescribeExportTasks(DescribeExportTasksRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeExportTasks operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeExportTasks.</param>
+        /// 
+        /// <returns>Returns a  DescribeExportTasksResult from ApplicationDiscoveryService.</returns>
+        DescribeExportTasksResponse EndDescribeExportTasks(IAsyncResult asyncResult);
 
         #endregion
         
@@ -655,11 +715,16 @@ namespace Amazon.ApplicationDiscoveryService
 
 
         /// <summary>
+        /// Deprecated. Use <code>StartExportTask</code> instead.
+        /// 
+        ///  
+        /// <para>
         /// Exports all discovered configuration data to an Amazon S3 bucket or an application
         /// that enables you to view and evaluate the data. Data includes tags and tag associations,
         /// processes, connections, servers, and system performance. This API returns an export
-        /// ID which you can query using the <i>DescribeExportConfigurations</i> API. The system
+        /// ID that you can query using the <i>DescribeExportConfigurations</i> API. The system
         /// imposes a limit of two configuration exports in six hours.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ExportConfigurations service method.</param>
         /// 
@@ -681,6 +746,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ServerInternalErrorException">
         /// The server experienced an internal error. Try again.
         /// </exception>
+        [Obsolete("Deprecated in favor of StartExportTask.")]
         ExportConfigurationsResponse ExportConfigurations(ExportConfigurationsRequest request);
 
         /// <summary>
@@ -694,6 +760,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndExportConfigurations
         ///         operation.</returns>
+        [Obsolete("Deprecated in favor of StartExportTask.")]
         IAsyncResult BeginExportConfigurations(ExportConfigurationsRequest request, AsyncCallback callback, object state);
 
 
@@ -705,6 +772,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginExportConfigurations.</param>
         /// 
         /// <returns>Returns a  ExportConfigurationsResult from ApplicationDiscoveryService.</returns>
+        [Obsolete("Deprecated in favor of StartExportTask.")]
         ExportConfigurationsResponse EndExportConfigurations(IAsyncResult asyncResult);
 
         #endregion
@@ -764,8 +832,8 @@ namespace Amazon.ApplicationDiscoveryService
 
 
         /// <summary>
-        /// Retrieves a list of configuration items according to criteria you specify in a filter.
-        /// The filter criteria identify relationship requirements.
+        /// Retrieves a list of configuration items according to criteria that you specify in
+        /// a filter. The filter criteria identifies the relationship requirements.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListConfigurations service method.</param>
         /// 
@@ -820,7 +888,7 @@ namespace Amazon.ApplicationDiscoveryService
 
 
         /// <summary>
-        /// Retrieves a list of servers which are one network hop away from a specified server.
+        /// Retrieves a list of servers that are one network hop away from a specified server.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListServerNeighbors service method.</param>
         /// 
@@ -871,7 +939,7 @@ namespace Amazon.ApplicationDiscoveryService
 
 
         /// <summary>
-        /// Instructs the specified agents or Connectors to start collecting data.
+        /// Instructs the specified agents or connectors to start collecting data.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartDataCollectionByAgentIds service method.</param>
         /// 
@@ -918,11 +986,66 @@ namespace Amazon.ApplicationDiscoveryService
 
         #endregion
         
+        #region  StartExportTask
+
+
+        /// <summary>
+        /// Export the configuration data about discovered configuration items and relationships
+        /// to an S3 bucket in a specified format.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartExportTask service method.</param>
+        /// 
+        /// <returns>The response from the StartExportTask service method, as returned by ApplicationDiscoveryService.</returns>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.AuthorizationErrorException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid. Verify the parameters and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.InvalidParameterValueException">
+        /// The value of one or more parameters are either invalid or out of range. Verify the
+        /// parameter values and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.OperationNotPermittedException">
+        /// This operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationDiscoveryService.Model.ServerInternalErrorException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        StartExportTaskResponse StartExportTask(StartExportTaskRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartExportTask operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartExportTask operation on AmazonApplicationDiscoveryServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartExportTask
+        ///         operation.</returns>
+        IAsyncResult BeginStartExportTask(StartExportTaskRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartExportTask operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartExportTask.</param>
+        /// 
+        /// <returns>Returns a  StartExportTaskResult from ApplicationDiscoveryService.</returns>
+        StartExportTaskResponse EndStartExportTask(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  StopDataCollectionByAgentIds
 
 
         /// <summary>
-        /// Instructs the specified agents or Connectors to stop collecting data.
+        /// Instructs the specified agents or connectors to stop collecting data.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopDataCollectionByAgentIds service method.</param>
         /// 

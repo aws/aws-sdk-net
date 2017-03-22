@@ -37,8 +37,8 @@ namespace Amazon.ApplicationDiscoveryService.Model
     /// 
     ///  
     /// <para>
-    /// For a complete list of outputs for each asset type, see <a href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/querying-configuration-items.html#DescribeConfigurations">Querying
-    /// Discovered Configuration Items</a>.
+    /// For a complete list of outputs for each asset type, see <a href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/discovery-api-queries.html#DescribeConfigurations">Using
+    /// the DescribeConfigurations Action</a>.
     /// </para>
     /// </summary>
     public partial class DescribeConfigurationsRequest : AmazonApplicationDiscoveryServiceRequest

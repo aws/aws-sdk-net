@@ -60,7 +60,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property Applications. 
         /// <para>
-        /// Number of applications discovered.
+        /// The number of applications discovered.
         /// </para>
         /// </summary>
         public long Applications
@@ -96,7 +96,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property Servers. 
         /// <para>
-        /// Number of servers discovered.
+        /// The number of servers discovered.
         /// </para>
         /// </summary>
         public long Servers
@@ -114,7 +114,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property ServersMappedToApplications. 
         /// <para>
-        /// Number of servers mapped to applications.
+        /// The number of servers mapped to applications.
         /// </para>
         /// </summary>
         public long ServersMappedToApplications
@@ -132,7 +132,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property ServersMappedtoTags. 
         /// <para>
-        /// Number of servers mapped to tags.
+        /// The number of servers mapped to tags.
         /// </para>
         /// </summary>
         public long ServersMappedtoTags

@@ -32,9 +32,8 @@ namespace Amazon.ApplicationDiscoveryService.Model
     /// 
     ///  
     /// <para>
-    /// for a complete list of filters and guidance for using them with the Application Discovery
-    /// Service, see <a href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/querying-configuration-items.html">Querying
-    /// Discovered Configuration Items</a>.
+    /// For more information about filters, see <a href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/discovery-api-queries.html">Querying
+    /// Discovered Configuration Items</a>. 
     /// </para>
     /// </summary>
     public partial class Filter
@@ -86,7 +85,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property Values. 
         /// <para>
-        /// A string value that you want to filter on. For example, if you choose the <code>destinationServer.osVersion</code>
+        /// A string value on which to filter. For example, if you choose the <code>destinationServer.osVersion</code>
         /// filter name, you could specify <code>Ubuntu</code> for the value.
         /// </para>
         /// </summary>

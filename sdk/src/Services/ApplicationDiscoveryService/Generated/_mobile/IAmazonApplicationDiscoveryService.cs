@@ -75,7 +75,7 @@ namespace Amazon.ApplicationDiscoveryService
     /// <para>
     /// Application Discovery Service integrates with application discovery solutions from
     /// AWS Partner Network (APN) partners. Third-party application discovery tools can query
-    /// the Application Discovery Service and write to the Application Discovery Service database
+    /// Application Discovery Service and write to the Application Discovery Service database
     /// using a public API. You can then import the data into either a visualization tool
     /// or cloud-migration solution.
     /// </para>
@@ -90,13 +90,13 @@ namespace Amazon.ApplicationDiscoveryService
     /// <para>
     /// Your AWS account must be granted access to Application Discovery Service, a process
     /// called <i>whitelisting</i>. This is true for AWS partners and customers alike. To
-    /// request access, sign up for the AWS Application Discovery Service <a href="http://aws.amazon.com/application-discovery/preview/">here</a>.
-    /// We will send you information about how to get started.
+    /// request access, sign up for AWS Application Discovery Service <a href="http://aws.amazon.com/application-discovery/preview/">here</a>.
+    /// We send you information about how to get started.
     /// </para>
     ///  
     /// <para>
     /// This API reference provides descriptions, syntax, and usage examples for each of the
-    /// actions and data types for the Application Discovery Service. The topic for each action
+    /// actions and data types for Application Discovery Service. The topic for each action
     /// shows the API request parameters and the response. Alternatively, you can use one
     /// of the AWS SDKs to access an API that is tailored to the programming language or platform
     /// that you're using. For more information, see <a href="http://aws.amazon.com/tools/#SDKs">AWS
@@ -235,7 +235,24 @@ namespace Amazon.ApplicationDiscoveryService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        [Obsolete("Deprecated in favor of DescribeExportTasks.")]
         Task<DescribeExportConfigurationsResponse> DescribeExportConfigurationsAsync(DescribeExportConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeExportTasks
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeExportTasks operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeExportTasks operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DescribeExportTasksResponse> DescribeExportTasksAsync(DescribeExportTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -283,6 +300,7 @@ namespace Amazon.ApplicationDiscoveryService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        [Obsolete("Deprecated in favor of StartExportTask.")]
         Task<ExportConfigurationsResponse> ExportConfigurationsAsync(ExportConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -348,6 +366,22 @@ namespace Amazon.ApplicationDiscoveryService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<StartDataCollectionByAgentIdsResponse> StartDataCollectionByAgentIdsAsync(StartDataCollectionByAgentIdsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  StartExportTask
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartExportTask operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartExportTask operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<StartExportTaskResponse> StartExportTaskAsync(StartExportTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

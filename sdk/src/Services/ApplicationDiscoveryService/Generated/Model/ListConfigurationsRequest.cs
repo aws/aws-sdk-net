@@ -29,8 +29,8 @@ namespace Amazon.ApplicationDiscoveryService.Model
 {
     /// <summary>
     /// Container for the parameters to the ListConfigurations operation.
-    /// Retrieves a list of configuration items according to criteria you specify in a filter.
-    /// The filter criteria identify relationship requirements.
+    /// Retrieves a list of configuration items according to criteria that you specify in
+    /// a filter. The filter criteria identifies the relationship requirements.
     /// </summary>
     public partial class ListConfigurationsRequest : AmazonApplicationDiscoveryServiceRequest
     {
@@ -43,7 +43,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property ConfigurationType. 
         /// <para>
-        /// A valid configuration identified by the Discovery Service. 
+        /// A valid configuration identified by Application Discovery Service. 
         /// </para>
         /// </summary>
         public ConfigurationItemType ConfigurationType
@@ -71,7 +71,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         ///  
         /// <para>
         /// For a complete list of filter options and guidance about using them with this action,
-        /// see <a href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/querying-configuration-items.html#ListConfigurations">Querying
+        /// see <a href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/discovery-api-queries.html#ListConfigurations">Querying
         /// Discovered Configuration Items</a>. 
         /// </para>
         /// </summary>
@@ -130,8 +130,8 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// Gets and sets the property OrderBy. 
         /// <para>
         /// Certain filter criteria return output that can be sorted in ascending or descending
-        /// order. For a list of output characteristics for each filter, see <a href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/querying-configuration-items.html#ListConfigurations">Querying
-        /// Discovered Configuration Items</a>.
+        /// order. For a list of output characteristics for each filter, see <a href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/discovery-api-queries.html#ListConfigurations">Using
+        /// the ListConfigurations Action</a>.
         /// </para>
         /// </summary>
         public List<OrderByElement> OrderBy

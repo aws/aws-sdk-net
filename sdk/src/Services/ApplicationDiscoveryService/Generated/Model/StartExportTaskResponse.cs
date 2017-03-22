@@ -28,30 +28,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ApplicationDiscoveryService.Model
 {
     /// <summary>
-    /// This is the response object from the StopDataCollectionByAgentIds operation.
+    /// This is the response object from the StartExportTask operation.
     /// </summary>
-    public partial class StopDataCollectionByAgentIdsResponse : AmazonWebServiceResponse
+    public partial class StartExportTaskResponse : AmazonWebServiceResponse
     {
-        private List<AgentConfigurationStatus> _agentsConfigurationStatus = new List<AgentConfigurationStatus>();
+        private string _exportId;
 
         /// <summary>
-        /// Gets and sets the property AgentsConfigurationStatus. 
+        /// Gets and sets the property ExportId. 
         /// <para>
-        /// Information about the agents or connector that were instructed to stop collecting
-        /// data. Information includes the agent/connector ID, a description of the operation
-        /// performed, and whether the agent/connector configuration was updated.
+        ///  A unique identifier used to query the status of an export request.
         /// </para>
         /// </summary>
-        public List<AgentConfigurationStatus> AgentsConfigurationStatus
+        public string ExportId
         {
-            get { return this._agentsConfigurationStatus; }
-            set { this._agentsConfigurationStatus = value; }
+            get { return this._exportId; }
+            set { this._exportId = value; }
         }
 
-        // Check to see if AgentsConfigurationStatus property is set
-        internal bool IsSetAgentsConfigurationStatus()
+        // Check to see if ExportId property is set
+        internal bool IsSetExportId()
         {
-            return this._agentsConfigurationStatus != null && this._agentsConfigurationStatus.Count > 0; 
+            return this._exportId != null;
         }
 
     }

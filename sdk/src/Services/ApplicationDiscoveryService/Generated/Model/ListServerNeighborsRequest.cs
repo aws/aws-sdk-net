@@ -29,7 +29,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
 {
     /// <summary>
     /// Container for the parameters to the ListServerNeighbors operation.
-    /// Retrieves a list of servers which are one network hop away from a specified server.
+    /// Retrieves a list of servers that are one network hop away from a specified server.
     /// </summary>
     public partial class ListServerNeighborsRequest : AmazonApplicationDiscoveryServiceRequest
     {

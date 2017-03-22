@@ -194,7 +194,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property RegisteredTime. 
         /// <para>
-        /// Agent's first registration time stamp in UTC.
+        /// Agent's first registration timestamp in UTC.
         /// </para>
         /// </summary>
         public string RegisteredTime

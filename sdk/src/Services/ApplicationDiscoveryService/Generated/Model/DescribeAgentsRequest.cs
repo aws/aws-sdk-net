@@ -69,13 +69,6 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <para>
         ///  <code>{"key": "collectionStatus", "value": "STARTED"}</code> 
         /// </para>
-        ///  
-        /// <para>
-        /// For a complete list of filter options and guidance about using them with this action,
-        /// see <a href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/managing-agent.html">Managing
-        /// AWS Application Discovery Service Agents and the AWS Application Discovery Connector
-        /// </a>.
-        /// </para>
         /// </summary>
         public List<Filter> Filters
         {
