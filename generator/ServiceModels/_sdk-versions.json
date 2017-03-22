@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.64.2",
+    "ProductVersion" : "3.3.65.0",
     "CoreVersion"    : "3.3.10.2",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -119,7 +119,7 @@
             "InPreview"    : false
         },
         "DirectConnect"     : {
-            "Version" : "3.3.3.3",
+            "Version" : "3.3.4.0",
             "Dependencies" : {
                 "Core" : "3.3.10.1"
             },
@@ -394,7 +394,7 @@
             "InPreview"    : false
         },
         "AWSMarketplaceCommerceAnalytics" : {
-            "Version" : "3.3.2.4",
+            "Version" : "3.3.3.0",
             "Dependencies" : {
                 "Core" : "3.3.10.1"
             },
@@ -534,7 +534,7 @@
             "InPreview"    : false
         },
         "Rekognition"                     : {
-            "Version" : "3.3.1.3",
+            "Version" : "3.3.1.4",
             "Dependencies" : {
                 "Core" : "3.3.10.1"
             },
@@ -576,14 +576,14 @@
             "InPreview"    : false
         },
         "CodeBuild"                       : {
-            "Version" : "3.3.0.9",
+            "Version" : "3.3.0.10",
             "Dependencies" : {
                 "Core" : "3.3.10.1"
             },
             "InPreview"    : false
         },
         "Pinpoint"                        : {
-            "Version" : "3.3.0.7",
+            "Version" : "3.3.1.0",
             "Dependencies" : {
                 "Core" : "3.3.10.1"
             },

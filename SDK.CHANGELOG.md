@@ -1,3 +1,15 @@
+### 3.3.65.0 (2017-03-21 22:36 UTC)
+* AWSMarketplaceCommerceAnalytics (3.3.3.0)
+	* This update adds a new data set, us_sales_and_use_tax_records, which enables AWS Marketplace sellers to programmatically access to their U.S. Sales and Use Tax report data.
+* CodeBuild (3.3.0.10)
+	* Documentation update for AWS CodeBuild
+* DirectConnect (3.3.4.0)
+	* Deprecated DescribeConnectionLoa, DescribeInterconnectLoa, AllocateConnectionOnInterconnect and DescribeConnectionsOnInterconnect operations in favor of DescribeLoa, DescribeLoa, AllocateHostedConnection and DescribeHostedConnections respectively.
+* Pinpoint (3.3.1.0)
+	* Amazon Pinpoint User Segmentation * Added ability to segment endpoints by user attributes in addition to endpoint attributes. Amazon Pinpoint Event Stream Preview * Added functionality to publish raw app analytics and campaign events data as events streams to Kinesis and Kinesis Firehose * The feature provides developers with increased flexibility of exporting raw events to S3, Redshift, Elasticsearch using a Kinesis Firehose stream or enable real time event processing use cases using a Kinesis stream
+* Rekognition (3.3.1.4)
+	* Doc only reference update for Rekognition 
+
 ### 3.3.64.2 (2017-03-16 23:15 UTC)
 * Core 3.3.10.2
 	* Fix issue when copying or renaming a credential profile to a profile with the same name.
