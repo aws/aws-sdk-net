@@ -1,3 +1,9 @@
+### 3.3.67.0 (2017-03-23 18:14 UTC)
+* ApplicationAutoScaling (3.3.2.0)
+	* Application AutoScaling is launching support for a new target resource (AppStream 2.0 Fleets) as a scalable target.
+* CloudTrail (3.3.1.9)
+	* Doc-only Update for CloudTrail: Add required parameters for GetEventSelectors and PutEventSelectors
+
 ### 3.3.66.0 (2017-03-22 21:50 UTC)
 * ApplicationDiscoveryService (3.3.2.0)
 	* Adds export configuration options to the AWS Discovery Service API.
