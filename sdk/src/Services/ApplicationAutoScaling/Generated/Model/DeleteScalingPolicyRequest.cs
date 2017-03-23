@@ -87,6 +87,11 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// EMR cluster - The resource type is <code>instancegroup</code> and the unique identifier
         /// is the cluster ID and instance group ID. Example: <code>instancegroup/j-2EEZNYKUA1NTV/ig-1791Y4E1L8YI0</code>.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// AppStream 2.0 fleet - The resource type is <code>fleet</code> and the unique identifier
+        /// is the fleet name. Example: <code>fleet/sample-fleet</code>.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public string ResourceId
@@ -120,6 +125,11 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <para>
         ///  <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count of
         /// an EMR Instance Group.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an AppStream
+        /// 2.0 fleet.
         /// </para>
         ///  </li> </ul>
         /// </summary>

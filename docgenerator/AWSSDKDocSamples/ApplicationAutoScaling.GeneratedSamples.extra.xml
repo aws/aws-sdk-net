@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.ApplicationAutoScaling.IAmazonApplicationAutoScaling.DeleteScalingPolicy(Amazon.ApplicationAutoScaling.Model.DeleteScalingPolicyRequest)" />
+            <member name="M:Amazon.ApplicationAutoScaling.AmazonApplicationAutoScalingClient.DeleteScalingPolicy(Amazon.ApplicationAutoScaling.Model.DeleteScalingPolicyRequest)" />
+            <member name="T:Amazon.ApplicationAutoScaling.Model.DeleteScalingPolicyRequest" />
+            <member name="T:Amazon.ApplicationAutoScaling.Model.DeleteScalingPolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example deletes a scaling policy for the Amazon ECS service called web-app, which is running in the default cluster.
+                </para>
+                <code
+                    title="To delete a scaling policy"
+                    source=".\AWSSDKDocSamples\ApplicationAutoScaling\ApplicationAutoScaling.GeneratedSamples.cs"
+                    region="to-delete-a-scaling-policy-1470863892689" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ApplicationAutoScaling.IAmazonApplicationAutoScaling.DeregisterScalableTarget(Amazon.ApplicationAutoScaling.Model.DeregisterScalableTargetRequest)" />
+            <member name="M:Amazon.ApplicationAutoScaling.AmazonApplicationAutoScalingClient.DeregisterScalableTarget(Amazon.ApplicationAutoScaling.Model.DeregisterScalableTargetRequest)" />
+            <member name="T:Amazon.ApplicationAutoScaling.Model.DeregisterScalableTargetRequest" />
+            <member name="T:Amazon.ApplicationAutoScaling.Model.DeregisterScalableTargetResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example deregisters a scalable target for an Amazon ECS service called web-app that is running in the default cluster.
+                </para>
+                <code
+                    title="To deregister a scalable target"
+                    source=".\AWSSDKDocSamples\ApplicationAutoScaling\ApplicationAutoScaling.GeneratedSamples.cs"
+                    region="to-deregister-a-scalable-target-1470864164895" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ApplicationAutoScaling.IAmazonApplicationAutoScaling.DescribeScalableTargets(Amazon.ApplicationAutoScaling.Model.DescribeScalableTargetsRequest)" />
+            <member name="M:Amazon.ApplicationAutoScaling.AmazonApplicationAutoScalingClient.DescribeScalableTargets(Amazon.ApplicationAutoScaling.Model.DescribeScalableTargetsRequest)" />
+            <member name="T:Amazon.ApplicationAutoScaling.Model.DescribeScalableTargetsRequest" />
+            <member name="T:Amazon.ApplicationAutoScaling.Model.DescribeScalableTargetsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes the scalable targets for the ecs service namespace.
+                </para>
+                <code
+                    title="To describe scalable targets"
+                    source=".\AWSSDKDocSamples\ApplicationAutoScaling\ApplicationAutoScaling.GeneratedSamples.cs"
+                    region="to-describe-scalable-targets-1470864286961" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ApplicationAutoScaling.IAmazonApplicationAutoScaling.DescribeScalingActivities(Amazon.ApplicationAutoScaling.Model.DescribeScalingActivitiesRequest)" />
+            <member name="M:Amazon.ApplicationAutoScaling.AmazonApplicationAutoScalingClient.DescribeScalingActivities(Amazon.ApplicationAutoScaling.Model.DescribeScalingActivitiesRequest)" />
+            <member name="T:Amazon.ApplicationAutoScaling.Model.DescribeScalingActivitiesRequest" />
+            <member name="T:Amazon.ApplicationAutoScaling.Model.DescribeScalingActivitiesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes the scaling activities for an Amazon ECS service called web-app that is running in the default cluster.
+                </para>
+                <code
+                    title="To describe scaling activities for a scalable target"
+                    source=".\AWSSDKDocSamples\ApplicationAutoScaling\ApplicationAutoScaling.GeneratedSamples.cs"
+                    region="to-describe-scaling-activities-for-a-scalable-target-1470864398629" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ApplicationAutoScaling.IAmazonApplicationAutoScaling.DescribeScalingPolicies(Amazon.ApplicationAutoScaling.Model.DescribeScalingPoliciesRequest)" />
+            <member name="M:Amazon.ApplicationAutoScaling.AmazonApplicationAutoScalingClient.DescribeScalingPolicies(Amazon.ApplicationAutoScaling.Model.DescribeScalingPoliciesRequest)" />
+            <member name="T:Amazon.ApplicationAutoScaling.Model.DescribeScalingPoliciesRequest" />
+            <member name="T:Amazon.ApplicationAutoScaling.Model.DescribeScalingPoliciesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes the scaling policies for the ecs service namespace.
+                </para>
+                <code
+                    title="To describe scaling policies"
+                    source=".\AWSSDKDocSamples\ApplicationAutoScaling\ApplicationAutoScaling.GeneratedSamples.cs"
+                    region="to-describe-scaling-policies-1470864609734" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ApplicationAutoScaling.IAmazonApplicationAutoScaling.PutScalingPolicy(Amazon.ApplicationAutoScaling.Model.PutScalingPolicyRequest)" />
+            <member name="M:Amazon.ApplicationAutoScaling.AmazonApplicationAutoScalingClient.PutScalingPolicy(Amazon.ApplicationAutoScaling.Model.PutScalingPolicyRequest)" />
+            <member name="T:Amazon.ApplicationAutoScaling.Model.PutScalingPolicyRequest" />
+            <member name="T:Amazon.ApplicationAutoScaling.Model.PutScalingPolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example applies a scaling policy to an Amazon ECS service called web-app in the default cluster. The policy increases the desired count of the service by 200%, with a cool down period of 60 seconds.
+                </para>
+                <code
+                    title="To apply a scaling policy to an Amazon ECS service"
+                    source=".\AWSSDKDocSamples\ApplicationAutoScaling\ApplicationAutoScaling.GeneratedSamples.cs"
+                    region="to-apply-a-scaling-policy-to-an-amazon-ecs-service-1470864779862" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ApplicationAutoScaling.IAmazonApplicationAutoScaling.PutScalingPolicy(Amazon.ApplicationAutoScaling.Model.PutScalingPolicyRequest)" />
+            <member name="M:Amazon.ApplicationAutoScaling.AmazonApplicationAutoScalingClient.PutScalingPolicy(Amazon.ApplicationAutoScaling.Model.PutScalingPolicyRequest)" />
+            <member name="T:Amazon.ApplicationAutoScaling.Model.PutScalingPolicyRequest" />
+            <member name="T:Amazon.ApplicationAutoScaling.Model.PutScalingPolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example applies a scaling policy to an Amazon EC2 Spot fleet. The policy increases the target capacity of the spot fleet by 200%, with a cool down period of 180 seconds.",
+   
+                </para>
+                <code
+                    title="To apply a scaling policy to an Amazon EC2 Spot fleet"
+                    source=".\AWSSDKDocSamples\ApplicationAutoScaling\ApplicationAutoScaling.GeneratedSamples.cs"
+                    region="to-apply-a-scaling-policy-to-an-amazon-ec2-spot-fleet-1472073278469" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ApplicationAutoScaling.IAmazonApplicationAutoScaling.RegisterScalableTarget(Amazon.ApplicationAutoScaling.Model.RegisterScalableTargetRequest)" />
+            <member name="M:Amazon.ApplicationAutoScaling.AmazonApplicationAutoScalingClient.RegisterScalableTarget(Amazon.ApplicationAutoScaling.Model.RegisterScalableTargetRequest)" />
+            <member name="T:Amazon.ApplicationAutoScaling.Model.RegisterScalableTargetRequest" />
+            <member name="T:Amazon.ApplicationAutoScaling.Model.RegisterScalableTargetResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example registers a scalable target from an Amazon ECS service called web-app that is running on the default cluster, with a minimum desired count of 1 task and a maximum desired count of 10 tasks.
+                </para>
+                <code
+                    title="To register an ECS service as a scalable target"
+                    source=".\AWSSDKDocSamples\ApplicationAutoScaling\ApplicationAutoScaling.GeneratedSamples.cs"
+                    region="to-register-a-new-scalable-target-1470864910380" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ApplicationAutoScaling.IAmazonApplicationAutoScaling.RegisterScalableTarget(Amazon.ApplicationAutoScaling.Model.RegisterScalableTargetRequest)" />
+            <member name="M:Amazon.ApplicationAutoScaling.AmazonApplicationAutoScalingClient.RegisterScalableTarget(Amazon.ApplicationAutoScaling.Model.RegisterScalableTargetRequest)" />
+            <member name="T:Amazon.ApplicationAutoScaling.Model.RegisterScalableTargetRequest" />
+            <member name="T:Amazon.ApplicationAutoScaling.Model.RegisterScalableTargetResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example registers a scalable target from an Amazon EC2 Spot fleet with a minimum target capacity of 1 and a maximum of 10.
+                </para>
+                <code
+                    title="To register an EC2 Spot fleet as a scalable target"
+                    source=".\AWSSDKDocSamples\ApplicationAutoScaling\ApplicationAutoScaling.GeneratedSamples.cs"
+                    region="to-register-an-ec2-spot-fleet-as-a-scalable-target-1472072899649" />
+            </example>
+        </value>
+    </doc>
+</docs>

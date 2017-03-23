@@ -68,6 +68,11 @@ namespace Amazon.ApplicationAutoScaling
     /// Amazon EMR clusters. For more information, see <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/ManagementGuide/emr-automatic-scaling.html">Using
     /// Automatic Scaling in Amazon EMR</a> in the <i>Amazon EMR Management Guide</i>.
     /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// AppStream 2.0 fleets. For more information, see <a href="http://docs.aws.amazon.com/appstream2/latest/developerguide/autoscaling.html">Autoscaling
+    /// Amazon AppStream 2.0 Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.
+    /// </para>
     ///  </li> </ul> 
     /// <para>
     /// For a list of supported regions, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#as-app_region">AWS
@@ -299,6 +304,7 @@ namespace Amazon.ApplicationAutoScaling
         /// An exception was thrown for a validation issue. Review the available parameters for
         /// the API request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DeleteScalingPolicy">REST API Reference for DeleteScalingPolicy Operation</seealso>
         public DeleteScalingPolicyResponse DeleteScalingPolicy(DeleteScalingPolicyRequest request)
         {
             var marshaller = new DeleteScalingPolicyRequestMarshaller();
@@ -318,6 +324,7 @@ namespace Amazon.ApplicationAutoScaling
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteScalingPolicy
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DeleteScalingPolicy">REST API Reference for DeleteScalingPolicy Operation</seealso>
         public IAsyncResult BeginDeleteScalingPolicy(DeleteScalingPolicyRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteScalingPolicyRequestMarshaller();
@@ -334,6 +341,7 @@ namespace Amazon.ApplicationAutoScaling
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteScalingPolicy.</param>
         /// 
         /// <returns>Returns a  DeleteScalingPolicyResult from ApplicationAutoScaling.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DeleteScalingPolicy">REST API Reference for DeleteScalingPolicy Operation</seealso>
         public  DeleteScalingPolicyResponse EndDeleteScalingPolicy(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteScalingPolicyResponse>(asyncResult);
@@ -378,6 +386,7 @@ namespace Amazon.ApplicationAutoScaling
         /// An exception was thrown for a validation issue. Review the available parameters for
         /// the API request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DeregisterScalableTarget">REST API Reference for DeregisterScalableTarget Operation</seealso>
         public DeregisterScalableTargetResponse DeregisterScalableTarget(DeregisterScalableTargetRequest request)
         {
             var marshaller = new DeregisterScalableTargetRequestMarshaller();
@@ -397,6 +406,7 @@ namespace Amazon.ApplicationAutoScaling
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeregisterScalableTarget
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DeregisterScalableTarget">REST API Reference for DeregisterScalableTarget Operation</seealso>
         public IAsyncResult BeginDeregisterScalableTarget(DeregisterScalableTargetRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeregisterScalableTargetRequestMarshaller();
@@ -413,6 +423,7 @@ namespace Amazon.ApplicationAutoScaling
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeregisterScalableTarget.</param>
         /// 
         /// <returns>Returns a  DeregisterScalableTargetResult from ApplicationAutoScaling.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DeregisterScalableTarget">REST API Reference for DeregisterScalableTarget Operation</seealso>
         public  DeregisterScalableTargetResponse EndDeregisterScalableTarget(IAsyncResult asyncResult)
         {
             return EndInvoke<DeregisterScalableTargetResponse>(asyncResult);
@@ -453,6 +464,7 @@ namespace Amazon.ApplicationAutoScaling
         /// An exception was thrown for a validation issue. Review the available parameters for
         /// the API request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DescribeScalableTargets">REST API Reference for DescribeScalableTargets Operation</seealso>
         public DescribeScalableTargetsResponse DescribeScalableTargets(DescribeScalableTargetsRequest request)
         {
             var marshaller = new DescribeScalableTargetsRequestMarshaller();
@@ -472,6 +484,7 @@ namespace Amazon.ApplicationAutoScaling
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeScalableTargets
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DescribeScalableTargets">REST API Reference for DescribeScalableTargets Operation</seealso>
         public IAsyncResult BeginDescribeScalableTargets(DescribeScalableTargetsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeScalableTargetsRequestMarshaller();
@@ -488,6 +501,7 @@ namespace Amazon.ApplicationAutoScaling
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeScalableTargets.</param>
         /// 
         /// <returns>Returns a  DescribeScalableTargetsResult from ApplicationAutoScaling.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DescribeScalableTargets">REST API Reference for DescribeScalableTargets Operation</seealso>
         public  DescribeScalableTargetsResponse EndDescribeScalableTargets(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeScalableTargetsResponse>(asyncResult);
@@ -530,6 +544,7 @@ namespace Amazon.ApplicationAutoScaling
         /// An exception was thrown for a validation issue. Review the available parameters for
         /// the API request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DescribeScalingActivities">REST API Reference for DescribeScalingActivities Operation</seealso>
         public DescribeScalingActivitiesResponse DescribeScalingActivities(DescribeScalingActivitiesRequest request)
         {
             var marshaller = new DescribeScalingActivitiesRequestMarshaller();
@@ -549,6 +564,7 @@ namespace Amazon.ApplicationAutoScaling
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeScalingActivities
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DescribeScalingActivities">REST API Reference for DescribeScalingActivities Operation</seealso>
         public IAsyncResult BeginDescribeScalingActivities(DescribeScalingActivitiesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeScalingActivitiesRequestMarshaller();
@@ -565,6 +581,7 @@ namespace Amazon.ApplicationAutoScaling
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeScalingActivities.</param>
         /// 
         /// <returns>Returns a  DescribeScalingActivitiesResult from ApplicationAutoScaling.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DescribeScalingActivities">REST API Reference for DescribeScalingActivities Operation</seealso>
         public  DescribeScalingActivitiesResponse EndDescribeScalingActivities(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeScalingActivitiesResponse>(asyncResult);
@@ -613,6 +630,7 @@ namespace Amazon.ApplicationAutoScaling
         /// An exception was thrown for a validation issue. Review the available parameters for
         /// the API request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DescribeScalingPolicies">REST API Reference for DescribeScalingPolicies Operation</seealso>
         public DescribeScalingPoliciesResponse DescribeScalingPolicies(DescribeScalingPoliciesRequest request)
         {
             var marshaller = new DescribeScalingPoliciesRequestMarshaller();
@@ -632,6 +650,7 @@ namespace Amazon.ApplicationAutoScaling
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeScalingPolicies
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DescribeScalingPolicies">REST API Reference for DescribeScalingPolicies Operation</seealso>
         public IAsyncResult BeginDescribeScalingPolicies(DescribeScalingPoliciesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeScalingPoliciesRequestMarshaller();
@@ -648,6 +667,7 @@ namespace Amazon.ApplicationAutoScaling
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeScalingPolicies.</param>
         /// 
         /// <returns>Returns a  DescribeScalingPoliciesResult from ApplicationAutoScaling.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DescribeScalingPolicies">REST API Reference for DescribeScalingPolicies Operation</seealso>
         public  DescribeScalingPoliciesResponse EndDescribeScalingPolicies(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeScalingPoliciesResponse>(asyncResult);
@@ -705,6 +725,7 @@ namespace Amazon.ApplicationAutoScaling
         /// An exception was thrown for a validation issue. Review the available parameters for
         /// the API request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/PutScalingPolicy">REST API Reference for PutScalingPolicy Operation</seealso>
         public PutScalingPolicyResponse PutScalingPolicy(PutScalingPolicyRequest request)
         {
             var marshaller = new PutScalingPolicyRequestMarshaller();
@@ -724,6 +745,7 @@ namespace Amazon.ApplicationAutoScaling
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutScalingPolicy
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/PutScalingPolicy">REST API Reference for PutScalingPolicy Operation</seealso>
         public IAsyncResult BeginPutScalingPolicy(PutScalingPolicyRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new PutScalingPolicyRequestMarshaller();
@@ -740,6 +762,7 @@ namespace Amazon.ApplicationAutoScaling
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutScalingPolicy.</param>
         /// 
         /// <returns>Returns a  PutScalingPolicyResult from ApplicationAutoScaling.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/PutScalingPolicy">REST API Reference for PutScalingPolicy Operation</seealso>
         public  PutScalingPolicyResponse EndPutScalingPolicy(IAsyncResult asyncResult)
         {
             return EndInvoke<PutScalingPolicyResponse>(asyncResult);
@@ -782,6 +805,7 @@ namespace Amazon.ApplicationAutoScaling
         /// An exception was thrown for a validation issue. Review the available parameters for
         /// the API request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/RegisterScalableTarget">REST API Reference for RegisterScalableTarget Operation</seealso>
         public RegisterScalableTargetResponse RegisterScalableTarget(RegisterScalableTargetRequest request)
         {
             var marshaller = new RegisterScalableTargetRequestMarshaller();
@@ -801,6 +825,7 @@ namespace Amazon.ApplicationAutoScaling
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRegisterScalableTarget
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/RegisterScalableTarget">REST API Reference for RegisterScalableTarget Operation</seealso>
         public IAsyncResult BeginRegisterScalableTarget(RegisterScalableTargetRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RegisterScalableTargetRequestMarshaller();
@@ -817,6 +842,7 @@ namespace Amazon.ApplicationAutoScaling
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRegisterScalableTarget.</param>
         /// 
         /// <returns>Returns a  RegisterScalableTargetResult from ApplicationAutoScaling.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/RegisterScalableTarget">REST API Reference for RegisterScalableTarget Operation</seealso>
         public  RegisterScalableTargetResponse EndRegisterScalableTarget(IAsyncResult asyncResult)
         {
             return EndInvoke<RegisterScalableTargetResponse>(asyncResult);
