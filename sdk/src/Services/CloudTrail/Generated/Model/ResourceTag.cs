@@ -54,7 +54,10 @@ namespace Amazon.CloudTrail.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TagsList.
+        /// Gets and sets the property TagsList. 
+        /// <para>
+        /// A list of tags.
+        /// </para>
         /// </summary>
         public List<Tag> TagsList
         {
