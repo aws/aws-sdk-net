@@ -16,6 +16,7 @@ namespace ServiceClientGenerator
         public const string Locationkey = "location";
         public const string MemberKey = "member";
         public const string FlattenedKey = "flattened";
+        public const string JsonValueKey = "jsonvalue";
 
         private const string UnhandledTypeDecimalErrorMessage = "Unhandled type 'decimal' : using .net's decimal type for modeled decimal type may result in loss of data.  decimal type members should explicitly opt-in via shape customization.";
 
@@ -224,6 +225,20 @@ namespace ServiceClientGenerator
                 var locationName = source[ServiceModel.LocationNameKey];
                 if (locationName == null) return null;
                 return locationName.ToString();
+            }
+        }
+
+        /// <summary>
+        /// Determines if this member is a base64 encoded json in the header of the request/response
+        /// Note: In the future this may also include members that are not in a header.  For now the generator assumes
+        /// that if IsJsonValue is true then IsInHeader is also true.
+        /// </summary>
+        public bool IsJsonValue
+        {
+            get
+            {
+                var jsonValueData = data[JsonValueKey];
+                return jsonValueData == null ? false : (bool)jsonValueData;
             }
         }
 

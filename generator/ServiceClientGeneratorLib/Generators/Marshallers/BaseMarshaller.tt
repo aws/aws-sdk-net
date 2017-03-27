@@ -41,6 +41,12 @@ using Amazon.Runtime.Internal.Util;
 				request.Headers["<#=member.MarshallLocationName#>"] = <#=member.CustomMarshallerTransformation#>(<#=variableName#>.<#=member.PropertyName#>);
 <#+        
             }
+            else if (member.IsJsonValue)
+            {
+#>
+				request.Headers["<#=member.MarshallLocationName#>"] = Convert.ToBase64String(Encoding.UTF8.GetBytes(<#=variableName#>.<#=member.PropertyName#>));
+<#+
+            }
             else
             {
 #>
