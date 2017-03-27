@@ -15,8 +15,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
     [TestClass]
     public class Elasticsearch : TestBase<AmazonElasticsearchClient>
     {
-        [TestMethod]
-        [TestCategory("ElasticLoadBalancing")]
+        // Test temporarily disabled.
+        //[TestMethod]
+        //[TestCategory("Elasticsearch")]
         public void TestElasticsearchOperations()
         {
             var domainName = UtilityMethods.GenerateName("domain");
