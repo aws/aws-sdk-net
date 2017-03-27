@@ -29,6 +29,7 @@ namespace AWSSDK.UnitTests
         private const string DisplayNameField = "DisplayName";
 
         private string OriginalSettingsStoreFolder { get; set; }
+        private bool OriginalUserCryptAvailable { get; set; }
         private HashSet<string> OriginalEncryptedKeys { get; set; }
 
         public string DirectoryPath { get; private set; }
@@ -40,11 +41,17 @@ namespace AWSSDK.UnitTests
         }
 
         public EncryptedStoreTestFixture(string filename, string fileContents)
+            : this(filename, fileContents, true)
+        {
+        }
+
+        public EncryptedStoreTestFixture(string filename, string fileContents, bool userCryptAvailable)
         {
             MainFilename = filename;
             PrepareTempFilePaths();
             MockSettingsStoreFolder();
             MockEncryptedKeys();
+            MockUserCryptAvailable(userCryptAvailable);
 
             SetFileContents(fileContents);
         }
@@ -71,6 +78,7 @@ namespace AWSSDK.UnitTests
             }
             UnMockSettingsStoreFolder();
             UnMockEncryptedKeys();
+            UnMockUserCryptAvailable();
         }
 
         public void AssertFileExists(bool fileExists)
@@ -170,6 +178,18 @@ namespace AWSSDK.UnitTests
         private void UnMockEncryptedKeys()
         {
             ReflectionHelpers.Invoke(PersistenceManager.Instance, "_encryptedKeys", OriginalEncryptedKeys);
+        }
+
+
+        private void MockUserCryptAvailable(bool userCryptAvailable)
+        {
+            OriginalUserCryptAvailable = UserCrypto.IsUserCryptAvailable;
+            ReflectionHelpers.Invoke(typeof(UserCrypto), "_isUserCryptAvailable", userCryptAvailable);
+        }
+
+        private void UnMockUserCryptAvailable()
+        {
+            ReflectionHelpers.Invoke(typeof(UserCrypto), "_isUserCryptAvailable", OriginalUserCryptAvailable);
         }
 
         private void PrepareTempFilePaths()

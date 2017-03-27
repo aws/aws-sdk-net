@@ -19,6 +19,7 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
+using Amazon.Runtime.Internal.Settings;
 
 namespace Amazon.Runtime.CredentialManagement
 {
@@ -37,10 +38,6 @@ namespace Amazon.Runtime.CredentialManagement
             };
 
         private const string RoleSessionNamePrefix = "aws-dotnet-sdk-session-";
-
-#if BCL
-        private static readonly SAMLEndpointManager EndpointManager = new SAMLEndpointManager();
-#endif
 
         /// <summary>
         /// Gets the AWSCredentials for this profile if CanCreateAWSCredentials is true
@@ -214,14 +211,21 @@ namespace Amazon.Runtime.CredentialManagement
 #if BCL
                     case CredentialProfileType.SAMLRole:
                     case CredentialProfileType.SAMLRoleUserIdentity:
-                        var federatedOptions = new FederatedAWSCredentialsOptions()
+                        if (UserCrypto.IsUserCryptAvailable)
                         {
-                            STSRegion = stsRegion,
-                            UserIdentity = options.UserIdentity,
-                            ProfileName = profileName
-                        };
-                        return new FederatedAWSCredentials(EndpointManager.GetEndpoint(options.EndpointName),
-                            options.RoleArn, federatedOptions);
+                            var federatedOptions = new FederatedAWSCredentialsOptions()
+                            {
+                                STSRegion = stsRegion,
+                                UserIdentity = options.UserIdentity,
+                                ProfileName = profileName
+                            };
+                            return new FederatedAWSCredentials(new SAMLEndpointManager().GetEndpoint(options.EndpointName),
+                                options.RoleArn, federatedOptions);
+                        }
+                        else
+                        {
+                            return ThrowOrReturnNull("Federated credentials are not available on this platform.", null, throwIfInvalid);
+                        }
 #endif
                     default:
                         var defaultMessage = profileName == null

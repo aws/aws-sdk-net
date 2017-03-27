@@ -217,6 +217,15 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
+        public void GetBasicCredentialsNoUserCrypto()
+        {
+            using (var fixture = new EncryptedStoreTestFixture(SettingsConstants.RegisteredSAMLEndpoints, null, false))
+            {
+                Assert.AreEqual(BasicCredentials, AWSCredentialsFactory.GetAWSCredentials(BasicProfile, ProfileStore));
+            }
+        }
+
+        [TestMethod]
         public void GetSessionCredentials()
         {
             Assert.AreEqual(SessionCredentials, AWSCredentialsFactory.GetAWSCredentials(SessionProfile, ProfileStore));
@@ -253,6 +262,18 @@ namespace AWSSDK.UnitTests
             {
                 (new SAMLEndpointManager()).RegisterEndpoint(SomeSAMLEndpoint);
                 AssertFederatedCredentialsAreEqual(FederatedCredentials, AWSCredentialsFactory.GetAWSCredentials(SAMLRoleProfile, ProfileStore));
+            }
+        }
+
+        [TestMethod]
+        public void GetSAMLRoleCredentialsNoUserCrypto()
+        {
+            using (var fixture = new EncryptedStoreTestFixture(SettingsConstants.RegisteredSAMLEndpoints, null, false))
+            {
+                AssertExtensions.ExpectException(() =>
+                {
+                    AWSCredentialsFactory.GetAWSCredentials(SAMLRoleProfile, ProfileStore);
+                }, typeof(InvalidDataException), "Federated credentials are not available on this platform.");
             }
         }
 
