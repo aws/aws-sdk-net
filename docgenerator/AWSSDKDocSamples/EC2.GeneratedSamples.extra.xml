@@ -1,0 +1,2610 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.AllocateAddress(Amazon.EC2.Model.AllocateAddressRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.AllocateAddress(Amazon.EC2.Model.AllocateAddressRequest)" />
+            <member name="T:Amazon.EC2.Model.AllocateAddressRequest" />
+            <member name="T:Amazon.EC2.Model.AllocateAddressResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example allocates an Elastic IP address to use with an instance in a VPC.
+                </para>
+                <code
+                    title="To allocate an Elastic IP address for EC2-VPC"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-allocate-address-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.AllocateAddress(Amazon.EC2.Model.AllocateAddressRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.AllocateAddress(Amazon.EC2.Model.AllocateAddressRequest)" />
+            <member name="T:Amazon.EC2.Model.AllocateAddressRequest" />
+            <member name="T:Amazon.EC2.Model.AllocateAddressResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example allocates an Elastic IP address to use with an instance in EC2-Classic.
+                </para>
+                <code
+                    title="To allocate an Elastic IP address for EC2-Classic"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-allocate-address-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.AssignPrivateIpAddresses(Amazon.EC2.Model.AssignPrivateIpAddressesRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.AssignPrivateIpAddresses(Amazon.EC2.Model.AssignPrivateIpAddressesRequest)" />
+            <member name="T:Amazon.EC2.Model.AssignPrivateIpAddressesRequest" />
+            <member name="T:Amazon.EC2.Model.AssignPrivateIpAddressesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example assigns the specified secondary private IP address to the specified network interface.
+                </para>
+                <code
+                    title="To assign a specific secondary private IP address to an interface"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-assign-private-ip-addresses-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.AssignPrivateIpAddresses(Amazon.EC2.Model.AssignPrivateIpAddressesRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.AssignPrivateIpAddresses(Amazon.EC2.Model.AssignPrivateIpAddressesRequest)" />
+            <member name="T:Amazon.EC2.Model.AssignPrivateIpAddressesRequest" />
+            <member name="T:Amazon.EC2.Model.AssignPrivateIpAddressesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example assigns two secondary private IP addresses to the specified network interface. Amazon EC2 automatically assigns these IP addresses from the available IP addresses in the CIDR block range of the subnet the network interface is associated with.
+                </para>
+                <code
+                    title="To assign secondary private IP addresses that Amazon EC2 selects to an interface"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-assign-private-ip-addresses-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.AssociateAddress(Amazon.EC2.Model.AssociateAddressRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.AssociateAddress(Amazon.EC2.Model.AssociateAddressRequest)" />
+            <member name="T:Amazon.EC2.Model.AssociateAddressRequest" />
+            <member name="T:Amazon.EC2.Model.AssociateAddressResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example associates the specified Elastic IP address with the specified instance in a VPC.
+                </para>
+                <code
+                    title="To associate an Elastic IP address in EC2-VPC"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-associate-address-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.AssociateAddress(Amazon.EC2.Model.AssociateAddressRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.AssociateAddress(Amazon.EC2.Model.AssociateAddressRequest)" />
+            <member name="T:Amazon.EC2.Model.AssociateAddressRequest" />
+            <member name="T:Amazon.EC2.Model.AssociateAddressResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example associates the specified Elastic IP address with the specified network interface.
+                </para>
+                <code
+                    title="To associate an Elastic IP address with a network interface"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-associate-address-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.AssociateAddress(Amazon.EC2.Model.AssociateAddressRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.AssociateAddress(Amazon.EC2.Model.AssociateAddressRequest)" />
+            <member name="T:Amazon.EC2.Model.AssociateAddressRequest" />
+            <member name="T:Amazon.EC2.Model.AssociateAddressResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example associates an Elastic IP address with an instance in EC2-Classic.
+                </para>
+                <code
+                    title="To associate an Elastic IP address in EC2-Classic"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-associate-address-3" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.AssociateDhcpOptions(Amazon.EC2.Model.AssociateDhcpOptionsRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.AssociateDhcpOptions(Amazon.EC2.Model.AssociateDhcpOptionsRequest)" />
+            <member name="T:Amazon.EC2.Model.AssociateDhcpOptionsRequest" />
+            <member name="T:Amazon.EC2.Model.AssociateDhcpOptionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example associates the specified DHCP options set with the specified VPC.
+                </para>
+                <code
+                    title="To associate a DHCP options set with a VPC"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-associate-dhcp-options-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.AssociateDhcpOptions(Amazon.EC2.Model.AssociateDhcpOptionsRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.AssociateDhcpOptions(Amazon.EC2.Model.AssociateDhcpOptionsRequest)" />
+            <member name="T:Amazon.EC2.Model.AssociateDhcpOptionsRequest" />
+            <member name="T:Amazon.EC2.Model.AssociateDhcpOptionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example associates the default DHCP options set with the specified VPC.
+                </para>
+                <code
+                    title="To associate the default DHCP options set with a VPC"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-associate-dhcp-options-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.AssociateRouteTable(Amazon.EC2.Model.AssociateRouteTableRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.AssociateRouteTable(Amazon.EC2.Model.AssociateRouteTableRequest)" />
+            <member name="T:Amazon.EC2.Model.AssociateRouteTableRequest" />
+            <member name="T:Amazon.EC2.Model.AssociateRouteTableResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example associates the specified route table with the specified subnet.
+                </para>
+                <code
+                    title="To associate a route table with a subnet"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-associate-route-table-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.AttachInternetGateway(Amazon.EC2.Model.AttachInternetGatewayRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.AttachInternetGateway(Amazon.EC2.Model.AttachInternetGatewayRequest)" />
+            <member name="T:Amazon.EC2.Model.AttachInternetGatewayRequest" />
+            <member name="T:Amazon.EC2.Model.AttachInternetGatewayResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example attaches the specified Internet gateway to the specified VPC.
+                </para>
+                <code
+                    title="To attach an Internet gateway to a VPC"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-attach-internet-gateway-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.AttachNetworkInterface(Amazon.EC2.Model.AttachNetworkInterfaceRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.AttachNetworkInterface(Amazon.EC2.Model.AttachNetworkInterfaceRequest)" />
+            <member name="T:Amazon.EC2.Model.AttachNetworkInterfaceRequest" />
+            <member name="T:Amazon.EC2.Model.AttachNetworkInterfaceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example attaches the specified network interface to the specified instance.
+                </para>
+                <code
+                    title="To attach a network interface to an instance"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-attach-network-interface-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.AttachVolume(Amazon.EC2.Model.AttachVolumeRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.AttachVolume(Amazon.EC2.Model.AttachVolumeRequest)" />
+            <member name="T:Amazon.EC2.Model.AttachVolumeRequest" />
+            <member name="T:Amazon.EC2.Model.AttachVolumeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example attaches a volume (``vol-1234567890abcdef0``) to an instance (``i-01474ef662b89480``) as ``/dev/sdf``.
+                </para>
+                <code
+                    title="To attach a volume to an instance"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="to-attach-a-volume-to-an-instance-1472499213109" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.CancelSpotFleetRequests(Amazon.EC2.Model.CancelSpotFleetRequestsRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.CancelSpotFleetRequests(Amazon.EC2.Model.CancelSpotFleetRequestsRequest)" />
+            <member name="T:Amazon.EC2.Model.CancelSpotFleetRequestsRequest" />
+            <member name="T:Amazon.EC2.Model.CancelSpotFleetRequestsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example cancels the specified Spot fleet request and terminates its associated Spot Instances.
+                </para>
+                <code
+                    title="To cancel a Spot fleet request"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-cancel-spot-fleet-requests-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.CancelSpotFleetRequests(Amazon.EC2.Model.CancelSpotFleetRequestsRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.CancelSpotFleetRequests(Amazon.EC2.Model.CancelSpotFleetRequestsRequest)" />
+            <member name="T:Amazon.EC2.Model.CancelSpotFleetRequestsRequest" />
+            <member name="T:Amazon.EC2.Model.CancelSpotFleetRequestsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example cancels the specified Spot fleet request without terminating its associated Spot Instances.
+                </para>
+                <code
+                    title="To cancel a Spot fleet request without terminating its Spot Instances"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-cancel-spot-fleet-requests-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.CancelSpotInstanceRequests(Amazon.EC2.Model.CancelSpotInstanceRequestsRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.CancelSpotInstanceRequests(Amazon.EC2.Model.CancelSpotInstanceRequestsRequest)" />
+            <member name="T:Amazon.EC2.Model.CancelSpotInstanceRequestsRequest" />
+            <member name="T:Amazon.EC2.Model.CancelSpotInstanceRequestsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example cancels a Spot Instance request.
+                </para>
+                <code
+                    title="To cancel Spot Instance requests"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-cancel-spot-instance-requests-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.ConfirmProductInstance(Amazon.EC2.Model.ConfirmProductInstanceRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.ConfirmProductInstance(Amazon.EC2.Model.ConfirmProductInstanceRequest)" />
+            <member name="T:Amazon.EC2.Model.ConfirmProductInstanceRequest" />
+            <member name="T:Amazon.EC2.Model.ConfirmProductInstanceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example determines whether the specified product code is associated with the specified instance.
+                </para>
+                <code
+                    title="To confirm the product instance"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="to-confirm-the-product-instance-1472712108494" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.CopySnapshot(Amazon.EC2.Model.CopySnapshotRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.CopySnapshot(Amazon.EC2.Model.CopySnapshotRequest)" />
+            <member name="T:Amazon.EC2.Model.CopySnapshotRequest" />
+            <member name="T:Amazon.EC2.Model.CopySnapshotResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example copies a snapshot with the snapshot ID of ``snap-066877671789bd71b`` from the ``us-west-2`` region to the ``us-east-1`` region and adds a short description to identify the snapshot.
+                </para>
+                <code
+                    title="To copy a snapshot"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="to-copy-a-snapshot-1472502259774" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.CreateCustomerGateway(Amazon.EC2.Model.CreateCustomerGatewayRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.CreateCustomerGateway(Amazon.EC2.Model.CreateCustomerGatewayRequest)" />
+            <member name="T:Amazon.EC2.Model.CreateCustomerGatewayRequest" />
+            <member name="T:Amazon.EC2.Model.CreateCustomerGatewayResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates a customer gateway with the specified IP address for its outside interface.
+                </para>
+                <code
+                    title="To create a customer gateway"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-create-customer-gateway-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.CreateDhcpOptions(Amazon.EC2.Model.CreateDhcpOptionsRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.CreateDhcpOptions(Amazon.EC2.Model.CreateDhcpOptionsRequest)" />
+            <member name="T:Amazon.EC2.Model.CreateDhcpOptionsRequest" />
+            <member name="T:Amazon.EC2.Model.CreateDhcpOptionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates a DHCP options set.
+                </para>
+                <code
+                    title="To create a DHCP options set"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-create-dhcp-options-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.CreateInternetGateway(Amazon.EC2.Model.CreateInternetGatewayRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.CreateInternetGateway(Amazon.EC2.Model.CreateInternetGatewayRequest)" />
+            <member name="T:Amazon.EC2.Model.CreateInternetGatewayRequest" />
+            <member name="T:Amazon.EC2.Model.CreateInternetGatewayResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates an Internet gateway.
+                </para>
+                <code
+                    title="To create an Internet gateway"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-create-internet-gateway-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.CreateKeyPair(Amazon.EC2.Model.CreateKeyPairRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.CreateKeyPair(Amazon.EC2.Model.CreateKeyPairRequest)" />
+            <member name="T:Amazon.EC2.Model.CreateKeyPairRequest" />
+            <member name="T:Amazon.EC2.Model.CreateKeyPairResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates a key pair named my-key-pair.
+                </para>
+                <code
+                    title="To create a key pair"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-create-key-pair-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.CreateNatGateway(Amazon.EC2.Model.CreateNatGatewayRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.CreateNatGateway(Amazon.EC2.Model.CreateNatGatewayRequest)" />
+            <member name="T:Amazon.EC2.Model.CreateNatGatewayRequest" />
+            <member name="T:Amazon.EC2.Model.CreateNatGatewayResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates a NAT gateway in subnet subnet-1a2b3c4d and associates an Elastic IP address with the allocation ID eipalloc-37fc1a52 with the NAT gateway.
+                </para>
+                <code
+                    title="To create a NAT gateway"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-create-nat-gateway-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.CreateNetworkAcl(Amazon.EC2.Model.CreateNetworkAclRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.CreateNetworkAcl(Amazon.EC2.Model.CreateNetworkAclRequest)" />
+            <member name="T:Amazon.EC2.Model.CreateNetworkAclRequest" />
+            <member name="T:Amazon.EC2.Model.CreateNetworkAclResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates a network ACL for the specified VPC.
+                </para>
+                <code
+                    title="To create a network ACL"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-create-network-acl-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.CreateNetworkAclEntry(Amazon.EC2.Model.CreateNetworkAclEntryRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.CreateNetworkAclEntry(Amazon.EC2.Model.CreateNetworkAclEntryRequest)" />
+            <member name="T:Amazon.EC2.Model.CreateNetworkAclEntryRequest" />
+            <member name="T:Amazon.EC2.Model.CreateNetworkAclEntryResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates an entry for the specified network ACL. The rule allows ingress traffic from anywhere (0.0.0.0/0) on UDP port 53 (DNS) into any associated subnet.
+                </para>
+                <code
+                    title="To create a network ACL entry"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-create-network-acl-entry-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.CreateNetworkInterface(Amazon.EC2.Model.CreateNetworkInterfaceRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.CreateNetworkInterface(Amazon.EC2.Model.CreateNetworkInterfaceRequest)" />
+            <member name="T:Amazon.EC2.Model.CreateNetworkInterfaceRequest" />
+            <member name="T:Amazon.EC2.Model.CreateNetworkInterfaceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates a network interface for the specified subnet.
+                </para>
+                <code
+                    title="To create a network interface"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-create-network-interface-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.CreatePlacementGroup(Amazon.EC2.Model.CreatePlacementGroupRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.CreatePlacementGroup(Amazon.EC2.Model.CreatePlacementGroupRequest)" />
+            <member name="T:Amazon.EC2.Model.CreatePlacementGroupRequest" />
+            <member name="T:Amazon.EC2.Model.CreatePlacementGroupResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates a placement group with the specified name.
+                </para>
+                <code
+                    title="To create a placement group"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="to-create-a-placement-group-1472712245768" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.CreateRoute(Amazon.EC2.Model.CreateRouteRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.CreateRoute(Amazon.EC2.Model.CreateRouteRequest)" />
+            <member name="T:Amazon.EC2.Model.CreateRouteRequest" />
+            <member name="T:Amazon.EC2.Model.CreateRouteResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates a route for the specified route table. The route matches all traffic (0.0.0.0/0) and routes it to the specified Internet gateway.
+                </para>
+                <code
+                    title="To create a route"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-create-route-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.CreateRouteTable(Amazon.EC2.Model.CreateRouteTableRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.CreateRouteTable(Amazon.EC2.Model.CreateRouteTableRequest)" />
+            <member name="T:Amazon.EC2.Model.CreateRouteTableRequest" />
+            <member name="T:Amazon.EC2.Model.CreateRouteTableResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates a route table for the specified VPC.
+                </para>
+                <code
+                    title="To create a route table"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-create-route-table-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.CreateSnapshot(Amazon.EC2.Model.CreateSnapshotRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.CreateSnapshot(Amazon.EC2.Model.CreateSnapshotRequest)" />
+            <member name="T:Amazon.EC2.Model.CreateSnapshotRequest" />
+            <member name="T:Amazon.EC2.Model.CreateSnapshotResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates a snapshot of the volume with a volume ID of ``vol-1234567890abcdef0`` and a short description to identify the snapshot.
+                </para>
+                <code
+                    title="To create a snapshot"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="to-create-a-snapshot-1472502529790" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.CreateSpotDatafeedSubscription(Amazon.EC2.Model.CreateSpotDatafeedSubscriptionRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.CreateSpotDatafeedSubscription(Amazon.EC2.Model.CreateSpotDatafeedSubscriptionRequest)" />
+            <member name="T:Amazon.EC2.Model.CreateSpotDatafeedSubscriptionRequest" />
+            <member name="T:Amazon.EC2.Model.CreateSpotDatafeedSubscriptionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates a Spot Instance data feed for your AWS account.
+                </para>
+                <code
+                    title="To create a Spot Instance datafeed"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-create-spot-datafeed-subscription-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.CreateSubnet(Amazon.EC2.Model.CreateSubnetRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.CreateSubnet(Amazon.EC2.Model.CreateSubnetRequest)" />
+            <member name="T:Amazon.EC2.Model.CreateSubnetRequest" />
+            <member name="T:Amazon.EC2.Model.CreateSubnetResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates a subnet in the specified VPC with the specified CIDR block. We recommend that you let us select an Availability Zone for you.
+                </para>
+                <code
+                    title="To create a subnet"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-create-subnet-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.CreateTags(Amazon.EC2.Model.CreateTagsRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.CreateTags(Amazon.EC2.Model.CreateTagsRequest)" />
+            <member name="T:Amazon.EC2.Model.CreateTagsRequest" />
+            <member name="T:Amazon.EC2.Model.CreateTagsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example adds the tag Stack=production to the specified image, or overwrites an existing tag for the AMI where the tag key is Stack.
+                </para>
+                <code
+                    title="To add a tag to a resource"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-create-tags-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.CreateVolume(Amazon.EC2.Model.CreateVolumeRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.CreateVolume(Amazon.EC2.Model.CreateVolumeRequest)" />
+            <member name="T:Amazon.EC2.Model.CreateVolumeRequest" />
+            <member name="T:Amazon.EC2.Model.CreateVolumeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates an 80 GiB General Purpose (SSD) volume in the Availability Zone ``us-east-1a``.
+                </para>
+                <code
+                    title="To create a new volume"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="to-create-a-new-volume-1472496724296" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.CreateVolume(Amazon.EC2.Model.CreateVolumeRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.CreateVolume(Amazon.EC2.Model.CreateVolumeRequest)" />
+            <member name="T:Amazon.EC2.Model.CreateVolumeRequest" />
+            <member name="T:Amazon.EC2.Model.CreateVolumeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates a new Provisioned IOPS (SSD) volume with 1000 provisioned IOPS from a snapshot in the Availability Zone ``us-east-1a``.
+                </para>
+                <code
+                    title="To create a new Provisioned IOPS (SSD) volume from a snapshot"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="to-create-a-new-provisioned-iops-ssd-volume-from-a-snapshot-1472498975176" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.CreateVpc(Amazon.EC2.Model.CreateVpcRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.CreateVpc(Amazon.EC2.Model.CreateVpcRequest)" />
+            <member name="T:Amazon.EC2.Model.CreateVpcRequest" />
+            <member name="T:Amazon.EC2.Model.CreateVpcResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates a VPC with the specified CIDR block.
+                </para>
+                <code
+                    title="To create a VPC"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-create-vpc-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DeleteCustomerGateway(Amazon.EC2.Model.DeleteCustomerGatewayRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DeleteCustomerGateway(Amazon.EC2.Model.DeleteCustomerGatewayRequest)" />
+            <member name="T:Amazon.EC2.Model.DeleteCustomerGatewayRequest" />
+            <member name="T:Amazon.EC2.Model.DeleteCustomerGatewayResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example deletes the specified customer gateway.
+                </para>
+                <code
+                    title="To delete a customer gateway"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-delete-customer-gateway-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DeleteDhcpOptions(Amazon.EC2.Model.DeleteDhcpOptionsRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DeleteDhcpOptions(Amazon.EC2.Model.DeleteDhcpOptionsRequest)" />
+            <member name="T:Amazon.EC2.Model.DeleteDhcpOptionsRequest" />
+            <member name="T:Amazon.EC2.Model.DeleteDhcpOptionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example deletes the specified DHCP options set.
+                </para>
+                <code
+                    title="To delete a DHCP options set"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-delete-dhcp-options-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DeleteInternetGateway(Amazon.EC2.Model.DeleteInternetGatewayRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DeleteInternetGateway(Amazon.EC2.Model.DeleteInternetGatewayRequest)" />
+            <member name="T:Amazon.EC2.Model.DeleteInternetGatewayRequest" />
+            <member name="T:Amazon.EC2.Model.DeleteInternetGatewayResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example deletes the specified Internet gateway.
+                </para>
+                <code
+                    title="To delete an Internet gateway"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-delete-internet-gateway-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DeleteKeyPair(Amazon.EC2.Model.DeleteKeyPairRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DeleteKeyPair(Amazon.EC2.Model.DeleteKeyPairRequest)" />
+            <member name="T:Amazon.EC2.Model.DeleteKeyPairRequest" />
+            <member name="T:Amazon.EC2.Model.DeleteKeyPairResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example deletes the specified key pair.
+                </para>
+                <code
+                    title="To delete a key pair"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-delete-key-pair-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DeleteNatGateway(Amazon.EC2.Model.DeleteNatGatewayRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DeleteNatGateway(Amazon.EC2.Model.DeleteNatGatewayRequest)" />
+            <member name="T:Amazon.EC2.Model.DeleteNatGatewayRequest" />
+            <member name="T:Amazon.EC2.Model.DeleteNatGatewayResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example deletes the specified NAT gateway.
+                </para>
+                <code
+                    title="To delete a NAT gateway"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-delete-nat-gateway-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DeleteNetworkAcl(Amazon.EC2.Model.DeleteNetworkAclRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DeleteNetworkAcl(Amazon.EC2.Model.DeleteNetworkAclRequest)" />
+            <member name="T:Amazon.EC2.Model.DeleteNetworkAclRequest" />
+            <member name="T:Amazon.EC2.Model.DeleteNetworkAclResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example deletes the specified network ACL.
+                </para>
+                <code
+                    title="To delete a network ACL"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-delete-network-acl-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DeleteNetworkAclEntry(Amazon.EC2.Model.DeleteNetworkAclEntryRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DeleteNetworkAclEntry(Amazon.EC2.Model.DeleteNetworkAclEntryRequest)" />
+            <member name="T:Amazon.EC2.Model.DeleteNetworkAclEntryRequest" />
+            <member name="T:Amazon.EC2.Model.DeleteNetworkAclEntryResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example deletes ingress rule number 100 from the specified network ACL.
+                </para>
+                <code
+                    title="To delete a network ACL entry"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-delete-network-acl-entry-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DeleteNetworkInterface(Amazon.EC2.Model.DeleteNetworkInterfaceRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DeleteNetworkInterface(Amazon.EC2.Model.DeleteNetworkInterfaceRequest)" />
+            <member name="T:Amazon.EC2.Model.DeleteNetworkInterfaceRequest" />
+            <member name="T:Amazon.EC2.Model.DeleteNetworkInterfaceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example deletes the specified network interface.
+                </para>
+                <code
+                    title="To delete a network interface"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-delete-network-interface-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DeletePlacementGroup(Amazon.EC2.Model.DeletePlacementGroupRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DeletePlacementGroup(Amazon.EC2.Model.DeletePlacementGroupRequest)" />
+            <member name="T:Amazon.EC2.Model.DeletePlacementGroupRequest" />
+            <member name="T:Amazon.EC2.Model.DeletePlacementGroupResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example deletes the specified placement group.
+
+                </para>
+                <code
+                    title="To delete a placement group"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="to-delete-a-placement-group-1472712349959" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DeleteRoute(Amazon.EC2.Model.DeleteRouteRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DeleteRoute(Amazon.EC2.Model.DeleteRouteRequest)" />
+            <member name="T:Amazon.EC2.Model.DeleteRouteRequest" />
+            <member name="T:Amazon.EC2.Model.DeleteRouteResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example deletes the specified route from the specified route table.
+                </para>
+                <code
+                    title="To delete a route"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-delete-route-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DeleteRouteTable(Amazon.EC2.Model.DeleteRouteTableRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DeleteRouteTable(Amazon.EC2.Model.DeleteRouteTableRequest)" />
+            <member name="T:Amazon.EC2.Model.DeleteRouteTableRequest" />
+            <member name="T:Amazon.EC2.Model.DeleteRouteTableResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example deletes the specified route table.
+                </para>
+                <code
+                    title="To delete a route table"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-delete-route-table-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DeleteSnapshot(Amazon.EC2.Model.DeleteSnapshotRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DeleteSnapshot(Amazon.EC2.Model.DeleteSnapshotRequest)" />
+            <member name="T:Amazon.EC2.Model.DeleteSnapshotRequest" />
+            <member name="T:Amazon.EC2.Model.DeleteSnapshotResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example deletes a snapshot with the snapshot ID of ``snap-1234567890abcdef0``. If the command succeeds, no output is returned.
+                </para>
+                <code
+                    title="To delete a snapshot"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="to-delete-a-snapshot-1472503042567" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DeleteSpotDatafeedSubscription(Amazon.EC2.Model.DeleteSpotDatafeedSubscriptionRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DeleteSpotDatafeedSubscription(Amazon.EC2.Model.DeleteSpotDatafeedSubscriptionRequest)" />
+            <member name="T:Amazon.EC2.Model.DeleteSpotDatafeedSubscriptionRequest" />
+            <member name="T:Amazon.EC2.Model.DeleteSpotDatafeedSubscriptionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example deletes a Spot data feed subscription for the account.
+                </para>
+                <code
+                    title="To cancel a Spot Instance data feed subscription"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-delete-spot-datafeed-subscription-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DeleteSubnet(Amazon.EC2.Model.DeleteSubnetRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DeleteSubnet(Amazon.EC2.Model.DeleteSubnetRequest)" />
+            <member name="T:Amazon.EC2.Model.DeleteSubnetRequest" />
+            <member name="T:Amazon.EC2.Model.DeleteSubnetResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example deletes the specified subnet.
+                </para>
+                <code
+                    title="To delete a subnet"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-delete-subnet-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DeleteTags(Amazon.EC2.Model.DeleteTagsRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DeleteTags(Amazon.EC2.Model.DeleteTagsRequest)" />
+            <member name="T:Amazon.EC2.Model.DeleteTagsRequest" />
+            <member name="T:Amazon.EC2.Model.DeleteTagsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example deletes the tag Stack=test from the specified image.
+                </para>
+                <code
+                    title="To delete a tag from a resource"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-delete-tags-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DeleteVolume(Amazon.EC2.Model.DeleteVolumeRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DeleteVolume(Amazon.EC2.Model.DeleteVolumeRequest)" />
+            <member name="T:Amazon.EC2.Model.DeleteVolumeRequest" />
+            <member name="T:Amazon.EC2.Model.DeleteVolumeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example deletes an available volume with the volume ID of ``vol-049df61146c4d7901``. If the command succeeds, no output is returned.
+                </para>
+                <code
+                    title="To delete a volume"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="to-delete-a-volume-1472503111160" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DeleteVpc(Amazon.EC2.Model.DeleteVpcRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DeleteVpc(Amazon.EC2.Model.DeleteVpcRequest)" />
+            <member name="T:Amazon.EC2.Model.DeleteVpcRequest" />
+            <member name="T:Amazon.EC2.Model.DeleteVpcResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example deletes the specified VPC.
+                </para>
+                <code
+                    title="To delete a VPC"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-delete-vpc-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DescribeAccountAttributes(Amazon.EC2.Model.DescribeAccountAttributesRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DescribeAccountAttributes(Amazon.EC2.Model.DescribeAccountAttributesRequest)" />
+            <member name="T:Amazon.EC2.Model.DescribeAccountAttributesRequest" />
+            <member name="T:Amazon.EC2.Model.DescribeAccountAttributesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes the supported-platforms attribute for your AWS account.
+                </para>
+                <code
+                    title="To describe a single attribute for your AWS account"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-describe-account-attributes-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DescribeAccountAttributes(Amazon.EC2.Model.DescribeAccountAttributesRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DescribeAccountAttributes(Amazon.EC2.Model.DescribeAccountAttributesRequest)" />
+            <member name="T:Amazon.EC2.Model.DescribeAccountAttributesRequest" />
+            <member name="T:Amazon.EC2.Model.DescribeAccountAttributesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes the attributes for your AWS account.
+                </para>
+                <code
+                    title="To describe all attributes for your AWS account"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-describe-account-attributes-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DescribeAddresses(Amazon.EC2.Model.DescribeAddressesRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DescribeAddresses(Amazon.EC2.Model.DescribeAddressesRequest)" />
+            <member name="T:Amazon.EC2.Model.DescribeAddressesRequest" />
+            <member name="T:Amazon.EC2.Model.DescribeAddressesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes your Elastic IP addresses.
+                </para>
+                <code
+                    title="To describe your Elastic IP addresses"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-describe-addresses-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DescribeAddresses(Amazon.EC2.Model.DescribeAddressesRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DescribeAddresses(Amazon.EC2.Model.DescribeAddressesRequest)" />
+            <member name="T:Amazon.EC2.Model.DescribeAddressesRequest" />
+            <member name="T:Amazon.EC2.Model.DescribeAddressesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes your Elastic IP addresses for use with instances in a VPC.
+                </para>
+                <code
+                    title="To describe your Elastic IP addresses for EC2-VPC"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-describe-addresses-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DescribeAddresses(Amazon.EC2.Model.DescribeAddressesRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DescribeAddresses(Amazon.EC2.Model.DescribeAddressesRequest)" />
+            <member name="T:Amazon.EC2.Model.DescribeAddressesRequest" />
+            <member name="T:Amazon.EC2.Model.DescribeAddressesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes your Elastic IP addresses for use with instances in EC2-Classic.
+                </para>
+                <code
+                    title="To describe your Elastic IP addresses for EC2-Classic"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-describe-addresses-3" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DescribeAvailabilityZones(Amazon.EC2.Model.DescribeAvailabilityZonesRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DescribeAvailabilityZones(Amazon.EC2.Model.DescribeAvailabilityZonesRequest)" />
+            <member name="T:Amazon.EC2.Model.DescribeAvailabilityZonesRequest" />
+            <member name="T:Amazon.EC2.Model.DescribeAvailabilityZonesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes the Availability Zones that are available to you. The response includes Availability Zones only for the current region.
+                </para>
+                <code
+                    title="To describe your Availability Zones"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-describe-availability-zones-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DescribeCustomerGateways(Amazon.EC2.Model.DescribeCustomerGatewaysRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DescribeCustomerGateways(Amazon.EC2.Model.DescribeCustomerGatewaysRequest)" />
+            <member name="T:Amazon.EC2.Model.DescribeCustomerGatewaysRequest" />
+            <member name="T:Amazon.EC2.Model.DescribeCustomerGatewaysResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes the specified customer gateway.
+                </para>
+                <code
+                    title="To describe a customer gateway"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-describe-customer-gateways-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DescribeDhcpOptions(Amazon.EC2.Model.DescribeDhcpOptionsRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DescribeDhcpOptions(Amazon.EC2.Model.DescribeDhcpOptionsRequest)" />
+            <member name="T:Amazon.EC2.Model.DescribeDhcpOptionsRequest" />
+            <member name="T:Amazon.EC2.Model.DescribeDhcpOptionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes the specified DHCP options set.
+                </para>
+                <code
+                    title="To describe a DHCP options set"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-describe-dhcp-options-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DescribeInstanceAttribute(Amazon.EC2.Model.DescribeInstanceAttributeRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DescribeInstanceAttribute(Amazon.EC2.Model.DescribeInstanceAttributeRequest)" />
+            <member name="T:Amazon.EC2.Model.DescribeInstanceAttributeRequest" />
+            <member name="T:Amazon.EC2.Model.DescribeInstanceAttributeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes the instance type of the specified instance.
+
+                </para>
+                <code
+                    title="To describe the instance type"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="to-describe-the-instance-type-1472712432132" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DescribeInstanceAttribute(Amazon.EC2.Model.DescribeInstanceAttributeRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DescribeInstanceAttribute(Amazon.EC2.Model.DescribeInstanceAttributeRequest)" />
+            <member name="T:Amazon.EC2.Model.DescribeInstanceAttributeRequest" />
+            <member name="T:Amazon.EC2.Model.DescribeInstanceAttributeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes the ``disableApiTermination`` attribute of the specified instance.
+
+                </para>
+                <code
+                    title="To describe the disableApiTermination attribute"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="to-describe-the-disableapitermination-attribute-1472712533466" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DescribeInstanceAttribute(Amazon.EC2.Model.DescribeInstanceAttributeRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DescribeInstanceAttribute(Amazon.EC2.Model.DescribeInstanceAttributeRequest)" />
+            <member name="T:Amazon.EC2.Model.DescribeInstanceAttributeRequest" />
+            <member name="T:Amazon.EC2.Model.DescribeInstanceAttributeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes the ``blockDeviceMapping`` attribute of the specified instance.
+
+                </para>
+                <code
+                    title="To describe the block device mapping for an instance"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="to-describe-the-block-device-mapping-for-an-instance-1472712645423" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DescribeInternetGateways(Amazon.EC2.Model.DescribeInternetGatewaysRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DescribeInternetGateways(Amazon.EC2.Model.DescribeInternetGatewaysRequest)" />
+            <member name="T:Amazon.EC2.Model.DescribeInternetGatewaysRequest" />
+            <member name="T:Amazon.EC2.Model.DescribeInternetGatewaysResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes the Internet gateway for the specified VPC.
+                </para>
+                <code
+                    title="To describe the Internet gateway for a VPC"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-describe-internet-gateways-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DescribeKeyPairs(Amazon.EC2.Model.DescribeKeyPairsRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DescribeKeyPairs(Amazon.EC2.Model.DescribeKeyPairsRequest)" />
+            <member name="T:Amazon.EC2.Model.DescribeKeyPairsRequest" />
+            <member name="T:Amazon.EC2.Model.DescribeKeyPairsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example displays the fingerprint for the specified key.
+                </para>
+                <code
+                    title="To display a key pair"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-describe-key-pairs-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DescribeMovingAddresses(Amazon.EC2.Model.DescribeMovingAddressesRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DescribeMovingAddresses(Amazon.EC2.Model.DescribeMovingAddressesRequest)" />
+            <member name="T:Amazon.EC2.Model.DescribeMovingAddressesRequest" />
+            <member name="T:Amazon.EC2.Model.DescribeMovingAddressesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes all of your moving Elastic IP addresses.
+                </para>
+                <code
+                    title="To describe your moving addresses"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-describe-moving-addresses-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DescribeNatGateways(Amazon.EC2.Model.DescribeNatGatewaysRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DescribeNatGateways(Amazon.EC2.Model.DescribeNatGatewaysRequest)" />
+            <member name="T:Amazon.EC2.Model.DescribeNatGatewaysRequest" />
+            <member name="T:Amazon.EC2.Model.DescribeNatGatewaysResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes the NAT gateway for the specified VPC.
+                </para>
+                <code
+                    title="To describe a NAT gateway"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-describe-nat-gateways-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DescribeNetworkAcls(Amazon.EC2.Model.DescribeNetworkAclsRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DescribeNetworkAcls(Amazon.EC2.Model.DescribeNetworkAclsRequest)" />
+            <member name="T:Amazon.EC2.Model.DescribeNetworkAclsRequest" />
+            <member name="T:Amazon.EC2.Model.DescribeNetworkAclsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes the specified network ACL.
+                </para>
+                <code
+                    title="To describe a network ACL"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DescribeNetworkInterfaceAttribute(Amazon.EC2.Model.DescribeNetworkInterfaceAttributeRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DescribeNetworkInterfaceAttribute(Amazon.EC2.Model.DescribeNetworkInterfaceAttributeRequest)" />
+            <member name="T:Amazon.EC2.Model.DescribeNetworkInterfaceAttributeRequest" />
+            <member name="T:Amazon.EC2.Model.DescribeNetworkInterfaceAttributeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes the attachment attribute of the specified network interface.
+                </para>
+                <code
+                    title="To describe the attachment attribute of a network interface"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-describe-network-interface-attribute-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DescribeNetworkInterfaceAttribute(Amazon.EC2.Model.DescribeNetworkInterfaceAttributeRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DescribeNetworkInterfaceAttribute(Amazon.EC2.Model.DescribeNetworkInterfaceAttributeRequest)" />
+            <member name="T:Amazon.EC2.Model.DescribeNetworkInterfaceAttributeRequest" />
+            <member name="T:Amazon.EC2.Model.DescribeNetworkInterfaceAttributeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes the description attribute of the specified network interface.
+                </para>
+                <code
+                    title="To describe the description attribute of a network interface"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-describe-network-interface-attribute-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DescribeNetworkInterfaceAttribute(Amazon.EC2.Model.DescribeNetworkInterfaceAttributeRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DescribeNetworkInterfaceAttribute(Amazon.EC2.Model.DescribeNetworkInterfaceAttributeRequest)" />
+            <member name="T:Amazon.EC2.Model.DescribeNetworkInterfaceAttributeRequest" />
+            <member name="T:Amazon.EC2.Model.DescribeNetworkInterfaceAttributeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes the groupSet attribute of the specified network interface.
+                </para>
+                <code
+                    title="To describe the groupSet attribute of a network interface"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-describe-network-interface-attribute-3" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DescribeNetworkInterfaceAttribute(Amazon.EC2.Model.DescribeNetworkInterfaceAttributeRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DescribeNetworkInterfaceAttribute(Amazon.EC2.Model.DescribeNetworkInterfaceAttributeRequest)" />
+            <member name="T:Amazon.EC2.Model.DescribeNetworkInterfaceAttributeRequest" />
+            <member name="T:Amazon.EC2.Model.DescribeNetworkInterfaceAttributeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes the sourceDestCheck attribute of the specified network interface.
+                </para>
+                <code
+                    title="To describe the sourceDestCheck attribute of a network interface"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-describe-network-interface-attribute-4" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DescribeNetworkInterfaces(Amazon.EC2.Model.DescribeNetworkInterfacesRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DescribeNetworkInterfaces(Amazon.EC2.Model.DescribeNetworkInterfacesRequest)" />
+            <member name="T:Amazon.EC2.Model.DescribeNetworkInterfacesRequest" />
+            <member name="T:Amazon.EC2.Model.DescribeNetworkInterfacesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="To describe a network interface"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-describe-network-interfaces-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DescribeRegions(Amazon.EC2.Model.DescribeRegionsRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DescribeRegions(Amazon.EC2.Model.DescribeRegionsRequest)" />
+            <member name="T:Amazon.EC2.Model.DescribeRegionsRequest" />
+            <member name="T:Amazon.EC2.Model.DescribeRegionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes all the regions that are available to you.
+                </para>
+                <code
+                    title="To describe your regions"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-describe-regions-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DescribeRouteTables(Amazon.EC2.Model.DescribeRouteTablesRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DescribeRouteTables(Amazon.EC2.Model.DescribeRouteTablesRequest)" />
+            <member name="T:Amazon.EC2.Model.DescribeRouteTablesRequest" />
+            <member name="T:Amazon.EC2.Model.DescribeRouteTablesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes the specified route table.
+                </para>
+                <code
+                    title="To describe a route table"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-describe-route-tables-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DescribeScheduledInstanceAvailability(Amazon.EC2.Model.DescribeScheduledInstanceAvailabilityRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DescribeScheduledInstanceAvailability(Amazon.EC2.Model.DescribeScheduledInstanceAvailabilityRequest)" />
+            <member name="T:Amazon.EC2.Model.DescribeScheduledInstanceAvailabilityRequest" />
+            <member name="T:Amazon.EC2.Model.DescribeScheduledInstanceAvailabilityResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes a schedule that occurs every week on Sunday, starting on the specified date. Note that the output contains a single schedule as an example.
+                </para>
+                <code
+                    title="To describe an available schedule"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-describe-scheduled-instance-availability-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DescribeScheduledInstances(Amazon.EC2.Model.DescribeScheduledInstancesRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DescribeScheduledInstances(Amazon.EC2.Model.DescribeScheduledInstancesRequest)" />
+            <member name="T:Amazon.EC2.Model.DescribeScheduledInstancesRequest" />
+            <member name="T:Amazon.EC2.Model.DescribeScheduledInstancesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes the specified Scheduled Instance.
+                </para>
+                <code
+                    title="To describe your Scheduled Instances"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-describe-scheduled-instances-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DescribeSnapshotAttribute(Amazon.EC2.Model.DescribeSnapshotAttributeRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DescribeSnapshotAttribute(Amazon.EC2.Model.DescribeSnapshotAttributeRequest)" />
+            <member name="T:Amazon.EC2.Model.DescribeSnapshotAttributeRequest" />
+            <member name="T:Amazon.EC2.Model.DescribeSnapshotAttributeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes the ``createVolumePermission`` attribute on a snapshot with the snapshot ID of ``snap-066877671789bd71b``.
+                </para>
+                <code
+                    title="To describe snapshot attributes"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="to-describe-snapshot-attributes-1472503199736" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DescribeSnapshots(Amazon.EC2.Model.DescribeSnapshotsRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DescribeSnapshots(Amazon.EC2.Model.DescribeSnapshotsRequest)" />
+            <member name="T:Amazon.EC2.Model.DescribeSnapshotsRequest" />
+            <member name="T:Amazon.EC2.Model.DescribeSnapshotsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes a snapshot with the snapshot ID of ``snap-1234567890abcdef0``.
+                </para>
+                <code
+                    title="To describe a snapshot"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="to-describe-a-snapshot-1472503807850" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DescribeSnapshots(Amazon.EC2.Model.DescribeSnapshotsRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DescribeSnapshots(Amazon.EC2.Model.DescribeSnapshotsRequest)" />
+            <member name="T:Amazon.EC2.Model.DescribeSnapshotsRequest" />
+            <member name="T:Amazon.EC2.Model.DescribeSnapshotsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes all snapshots owned by the ID 012345678910 that are in the ``pending`` status.
+                </para>
+                <code
+                    title="To describe snapshots using filters"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="to-describe-snapshots-using-filters-1472503929793" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DescribeSpotDatafeedSubscription(Amazon.EC2.Model.DescribeSpotDatafeedSubscriptionRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DescribeSpotDatafeedSubscription(Amazon.EC2.Model.DescribeSpotDatafeedSubscriptionRequest)" />
+            <member name="T:Amazon.EC2.Model.DescribeSpotDatafeedSubscriptionRequest" />
+            <member name="T:Amazon.EC2.Model.DescribeSpotDatafeedSubscriptionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes the Spot Instance datafeed subscription for your AWS account.
+                </para>
+                <code
+                    title="To describe the datafeed for your AWS account"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-describe-spot-datafeed-subscription-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DescribeSpotFleetInstances(Amazon.EC2.Model.DescribeSpotFleetInstancesRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DescribeSpotFleetInstances(Amazon.EC2.Model.DescribeSpotFleetInstancesRequest)" />
+            <member name="T:Amazon.EC2.Model.DescribeSpotFleetInstancesRequest" />
+            <member name="T:Amazon.EC2.Model.DescribeSpotFleetInstancesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example lists the Spot Instances associated with the specified Spot fleet.
+                </para>
+                <code
+                    title="To describe the Spot Instances associated with a Spot fleet"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-describe-spot-fleet-instances-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DescribeSpotFleetRequestHistory(Amazon.EC2.Model.DescribeSpotFleetRequestHistoryRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DescribeSpotFleetRequestHistory(Amazon.EC2.Model.DescribeSpotFleetRequestHistoryRequest)" />
+            <member name="T:Amazon.EC2.Model.DescribeSpotFleetRequestHistoryRequest" />
+            <member name="T:Amazon.EC2.Model.DescribeSpotFleetRequestHistoryResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example returns the history for the specified Spot fleet starting at the specified time.
+                </para>
+                <code
+                    title="To describe Spot fleet history"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-describe-spot-fleet-request-history-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DescribeSpotFleetRequests(Amazon.EC2.Model.DescribeSpotFleetRequestsRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DescribeSpotFleetRequests(Amazon.EC2.Model.DescribeSpotFleetRequestsRequest)" />
+            <member name="T:Amazon.EC2.Model.DescribeSpotFleetRequestsRequest" />
+            <member name="T:Amazon.EC2.Model.DescribeSpotFleetRequestsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes the specified Spot fleet request.
+                </para>
+                <code
+                    title="To describe a Spot fleet request"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-describe-spot-fleet-requests-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DescribeSpotInstanceRequests(Amazon.EC2.Model.DescribeSpotInstanceRequestsRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DescribeSpotInstanceRequests(Amazon.EC2.Model.DescribeSpotInstanceRequestsRequest)" />
+            <member name="T:Amazon.EC2.Model.DescribeSpotInstanceRequestsRequest" />
+            <member name="T:Amazon.EC2.Model.DescribeSpotInstanceRequestsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes the specified Spot Instance request.
+                </para>
+                <code
+                    title="To describe a Spot Instance request"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-describe-spot-instance-requests-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DescribeSpotPriceHistory(Amazon.EC2.Model.DescribeSpotPriceHistoryRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DescribeSpotPriceHistory(Amazon.EC2.Model.DescribeSpotPriceHistoryRequest)" />
+            <member name="T:Amazon.EC2.Model.DescribeSpotPriceHistoryRequest" />
+            <member name="T:Amazon.EC2.Model.DescribeSpotPriceHistoryResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example returns the Spot Price history for m1.xlarge, Linux/UNIX (Amazon VPC) instances for a particular day in January.
+                </para>
+                <code
+                    title="To describe Spot price history for Linux/UNIX (Amazon VPC)"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-describe-spot-price-history-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DescribeSubnets(Amazon.EC2.Model.DescribeSubnetsRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DescribeSubnets(Amazon.EC2.Model.DescribeSubnetsRequest)" />
+            <member name="T:Amazon.EC2.Model.DescribeSubnetsRequest" />
+            <member name="T:Amazon.EC2.Model.DescribeSubnetsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes the subnets for the specified VPC.
+                </para>
+                <code
+                    title="To describe the subnets for a VPC"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-describe-subnets-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DescribeTags(Amazon.EC2.Model.DescribeTagsRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DescribeTags(Amazon.EC2.Model.DescribeTagsRequest)" />
+            <member name="T:Amazon.EC2.Model.DescribeTagsRequest" />
+            <member name="T:Amazon.EC2.Model.DescribeTagsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes the tags for the specified instance.
+                </para>
+                <code
+                    title="To describe the tags for a single resource"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-describe-tags-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DescribeVolumeAttribute(Amazon.EC2.Model.DescribeVolumeAttributeRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DescribeVolumeAttribute(Amazon.EC2.Model.DescribeVolumeAttributeRequest)" />
+            <member name="T:Amazon.EC2.Model.DescribeVolumeAttributeRequest" />
+            <member name="T:Amazon.EC2.Model.DescribeVolumeAttributeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes the ``autoEnableIo`` attribute of the volume with the ID ``vol-049df61146c4d7901``.
+                </para>
+                <code
+                    title="To describe a volume attribute"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="to-describe-a-volume-attribute-1472505773492" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DescribeVolumes(Amazon.EC2.Model.DescribeVolumesRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DescribeVolumes(Amazon.EC2.Model.DescribeVolumesRequest)" />
+            <member name="T:Amazon.EC2.Model.DescribeVolumesRequest" />
+            <member name="T:Amazon.EC2.Model.DescribeVolumesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes all of your volumes in the default region.
+                </para>
+                <code
+                    title="To describe all volumes"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="to-describe-all-volumes-1472506358883" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DescribeVolumes(Amazon.EC2.Model.DescribeVolumesRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DescribeVolumes(Amazon.EC2.Model.DescribeVolumesRequest)" />
+            <member name="T:Amazon.EC2.Model.DescribeVolumesRequest" />
+            <member name="T:Amazon.EC2.Model.DescribeVolumesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes all volumes that are both attached to the instance with the ID i-1234567890abcdef0 and set to delete when the instance terminates.
+                </para>
+                <code
+                    title="To describe volumes that are attached to a specific instance"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="to-describe-volumes-that-are-attached-to-a-specific-instance-1472506613578" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DescribeVolumeStatus(Amazon.EC2.Model.DescribeVolumeStatusRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DescribeVolumeStatus(Amazon.EC2.Model.DescribeVolumeStatusRequest)" />
+            <member name="T:Amazon.EC2.Model.DescribeVolumeStatusRequest" />
+            <member name="T:Amazon.EC2.Model.DescribeVolumeStatusResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes the status for the volume ``vol-1234567890abcdef0``.
+                </para>
+                <code
+                    title="To describe the status of a single volume"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="to-describe-the-status-of-a-single-volume-1472507016193" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DescribeVolumeStatus(Amazon.EC2.Model.DescribeVolumeStatusRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DescribeVolumeStatus(Amazon.EC2.Model.DescribeVolumeStatusRequest)" />
+            <member name="T:Amazon.EC2.Model.DescribeVolumeStatusRequest" />
+            <member name="T:Amazon.EC2.Model.DescribeVolumeStatusResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes the status for all volumes that are impaired. In this example output, there are no impaired volumes.
+                </para>
+                <code
+                    title="To describe the status of impaired volumes"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="to-describe-the-status-of-impaired-volumes-1472507239821" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DescribeVpcAttribute(Amazon.EC2.Model.DescribeVpcAttributeRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DescribeVpcAttribute(Amazon.EC2.Model.DescribeVpcAttributeRequest)" />
+            <member name="T:Amazon.EC2.Model.DescribeVpcAttributeRequest" />
+            <member name="T:Amazon.EC2.Model.DescribeVpcAttributeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes the enableDnsSupport attribute. This attribute indicates whether DNS resolution is enabled for the VPC. If this attribute is true, the Amazon DNS server resolves DNS hostnames for your instances to their corresponding IP addresses; otherwise, it does not.
+                </para>
+                <code
+                    title="To describe the enableDnsSupport attribute"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-describe-vpc-attribute-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DescribeVpcAttribute(Amazon.EC2.Model.DescribeVpcAttributeRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DescribeVpcAttribute(Amazon.EC2.Model.DescribeVpcAttributeRequest)" />
+            <member name="T:Amazon.EC2.Model.DescribeVpcAttributeRequest" />
+            <member name="T:Amazon.EC2.Model.DescribeVpcAttributeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes the enableDnsHostnames attribute. This attribute indicates whether the instances launched in the VPC get DNS hostnames. If this attribute is true, instances in the VPC get DNS hostnames; otherwise, they do not.
+                </para>
+                <code
+                    title="To describe the enableDnsHostnames attribute"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-describe-vpc-attribute-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DescribeVpcs(Amazon.EC2.Model.DescribeVpcsRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DescribeVpcs(Amazon.EC2.Model.DescribeVpcsRequest)" />
+            <member name="T:Amazon.EC2.Model.DescribeVpcsRequest" />
+            <member name="T:Amazon.EC2.Model.DescribeVpcsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes the specified VPC.
+                </para>
+                <code
+                    title="To describe a VPC"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-describe-vpcs-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DetachInternetGateway(Amazon.EC2.Model.DetachInternetGatewayRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DetachInternetGateway(Amazon.EC2.Model.DetachInternetGatewayRequest)" />
+            <member name="T:Amazon.EC2.Model.DetachInternetGatewayRequest" />
+            <member name="T:Amazon.EC2.Model.DetachInternetGatewayResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example detaches the specified Internet gateway from the specified VPC.
+                </para>
+                <code
+                    title="To detach an Internet gateway from a VPC"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-detach-internet-gateway-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DetachNetworkInterface(Amazon.EC2.Model.DetachNetworkInterfaceRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DetachNetworkInterface(Amazon.EC2.Model.DetachNetworkInterfaceRequest)" />
+            <member name="T:Amazon.EC2.Model.DetachNetworkInterfaceRequest" />
+            <member name="T:Amazon.EC2.Model.DetachNetworkInterfaceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example detaches the specified network interface from its attached instance.
+                </para>
+                <code
+                    title="To detach a network interface from an instance"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-detach-network-interface-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DetachVolume(Amazon.EC2.Model.DetachVolumeRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DetachVolume(Amazon.EC2.Model.DetachVolumeRequest)" />
+            <member name="T:Amazon.EC2.Model.DetachVolumeRequest" />
+            <member name="T:Amazon.EC2.Model.DetachVolumeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example detaches the volume (``vol-049df61146c4d7901``) from the instance it is attached to.
+                </para>
+                <code
+                    title="To detach a volume from an instance"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="to-detach-a-volume-from-an-instance-1472507977694" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DisableVgwRoutePropagation(Amazon.EC2.Model.DisableVgwRoutePropagationRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DisableVgwRoutePropagation(Amazon.EC2.Model.DisableVgwRoutePropagationRequest)" />
+            <member name="T:Amazon.EC2.Model.DisableVgwRoutePropagationRequest" />
+            <member name="T:Amazon.EC2.Model.DisableVgwRoutePropagationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example disables the specified virtual private gateway from propagating static routes to the specified route table.
+                </para>
+                <code
+                    title="To disable route propagation"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-disable-vgw-route-propagation-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DisassociateAddress(Amazon.EC2.Model.DisassociateAddressRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DisassociateAddress(Amazon.EC2.Model.DisassociateAddressRequest)" />
+            <member name="T:Amazon.EC2.Model.DisassociateAddressRequest" />
+            <member name="T:Amazon.EC2.Model.DisassociateAddressResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example disassociates an Elastic IP address from an instance in a VPC.
+                </para>
+                <code
+                    title="To disassociate an Elastic IP address in EC2-VPC"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-disassociate-address-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DisassociateAddress(Amazon.EC2.Model.DisassociateAddressRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DisassociateAddress(Amazon.EC2.Model.DisassociateAddressRequest)" />
+            <member name="T:Amazon.EC2.Model.DisassociateAddressRequest" />
+            <member name="T:Amazon.EC2.Model.DisassociateAddressResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example disassociates an Elastic IP address from an instance in EC2-Classic.
+                </para>
+                <code
+                    title="To disassociate an Elastic IP addresses in EC2-Classic"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-disassociate-address-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DisassociateRouteTable(Amazon.EC2.Model.DisassociateRouteTableRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DisassociateRouteTable(Amazon.EC2.Model.DisassociateRouteTableRequest)" />
+            <member name="T:Amazon.EC2.Model.DisassociateRouteTableRequest" />
+            <member name="T:Amazon.EC2.Model.DisassociateRouteTableResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example disassociates the specified route table from its associated subnet.
+                </para>
+                <code
+                    title="To disassociate a route table"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-disassociate-route-table-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.EnableVgwRoutePropagation(Amazon.EC2.Model.EnableVgwRoutePropagationRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.EnableVgwRoutePropagation(Amazon.EC2.Model.EnableVgwRoutePropagationRequest)" />
+            <member name="T:Amazon.EC2.Model.EnableVgwRoutePropagationRequest" />
+            <member name="T:Amazon.EC2.Model.EnableVgwRoutePropagationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example enables the specified virtual private gateway to propagate static routes to the specified route table.
+                </para>
+                <code
+                    title="To enable route propagation"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-enable-vgw-route-propagation-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.EnableVolumeIO(Amazon.EC2.Model.EnableVolumeIORequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.EnableVolumeIO(Amazon.EC2.Model.EnableVolumeIORequest)" />
+            <member name="T:Amazon.EC2.Model.EnableVolumeIORequest" />
+            <member name="T:Amazon.EC2.Model.EnableVolumeIOResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example enables I/O on volume ``vol-1234567890abcdef0``.
+                </para>
+                <code
+                    title="To enable I/O for a volume"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="to-enable-io-for-a-volume-1472508114867" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.ModifyNetworkInterfaceAttribute(Amazon.EC2.Model.ModifyNetworkInterfaceAttributeRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.ModifyNetworkInterfaceAttribute(Amazon.EC2.Model.ModifyNetworkInterfaceAttributeRequest)" />
+            <member name="T:Amazon.EC2.Model.ModifyNetworkInterfaceAttributeRequest" />
+            <member name="T:Amazon.EC2.Model.ModifyNetworkInterfaceAttributeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example modifies the attachment attribute of the specified network interface.
+                </para>
+                <code
+                    title="To modify the attachment attribute of a network interface"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-modify-network-interface-attribute-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.ModifyNetworkInterfaceAttribute(Amazon.EC2.Model.ModifyNetworkInterfaceAttributeRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.ModifyNetworkInterfaceAttribute(Amazon.EC2.Model.ModifyNetworkInterfaceAttributeRequest)" />
+            <member name="T:Amazon.EC2.Model.ModifyNetworkInterfaceAttributeRequest" />
+            <member name="T:Amazon.EC2.Model.ModifyNetworkInterfaceAttributeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example modifies the description attribute of the specified network interface.
+                </para>
+                <code
+                    title="To modify the description attribute of a network interface"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-modify-network-interface-attribute-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.ModifyNetworkInterfaceAttribute(Amazon.EC2.Model.ModifyNetworkInterfaceAttributeRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.ModifyNetworkInterfaceAttribute(Amazon.EC2.Model.ModifyNetworkInterfaceAttributeRequest)" />
+            <member name="T:Amazon.EC2.Model.ModifyNetworkInterfaceAttributeRequest" />
+            <member name="T:Amazon.EC2.Model.ModifyNetworkInterfaceAttributeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example command modifies the groupSet attribute of the specified network interface.
+                </para>
+                <code
+                    title="To modify the groupSet attribute of a network interface"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-modify-network-interface-attribute-3" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.ModifyNetworkInterfaceAttribute(Amazon.EC2.Model.ModifyNetworkInterfaceAttributeRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.ModifyNetworkInterfaceAttribute(Amazon.EC2.Model.ModifyNetworkInterfaceAttributeRequest)" />
+            <member name="T:Amazon.EC2.Model.ModifyNetworkInterfaceAttributeRequest" />
+            <member name="T:Amazon.EC2.Model.ModifyNetworkInterfaceAttributeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example command modifies the sourceDestCheck attribute of the specified network interface.
+                </para>
+                <code
+                    title="To modify the sourceDestCheck attribute of a network interface"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-modify-network-interface-attribute-4" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.ModifySnapshotAttribute(Amazon.EC2.Model.ModifySnapshotAttributeRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.ModifySnapshotAttribute(Amazon.EC2.Model.ModifySnapshotAttributeRequest)" />
+            <member name="T:Amazon.EC2.Model.ModifySnapshotAttributeRequest" />
+            <member name="T:Amazon.EC2.Model.ModifySnapshotAttributeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example modifies snapshot ``snap-1234567890abcdef0`` to remove the create volume permission for a user with the account ID ``123456789012``. If the command succeeds, no output is returned.
+                </para>
+                <code
+                    title="To modify a snapshot attribute"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="to-modify-a-snapshot-attribute-1472508385907" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.ModifySnapshotAttribute(Amazon.EC2.Model.ModifySnapshotAttributeRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.ModifySnapshotAttribute(Amazon.EC2.Model.ModifySnapshotAttributeRequest)" />
+            <member name="T:Amazon.EC2.Model.ModifySnapshotAttributeRequest" />
+            <member name="T:Amazon.EC2.Model.ModifySnapshotAttributeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example makes the snapshot ``snap-1234567890abcdef0`` public.
+                </para>
+                <code
+                    title="To make a snapshot public"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="to-make-a-snapshot-public-1472508470529" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.ModifySpotFleetRequest(Amazon.EC2.Model.ModifySpotFleetRequestRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.ModifySpotFleetRequest(Amazon.EC2.Model.ModifySpotFleetRequestRequest)" />
+            <member name="T:Amazon.EC2.Model.ModifySpotFleetRequestRequest" />
+            <member name="T:Amazon.EC2.Model.ModifySpotFleetRequestResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example increases the target capacity of the specified Spot fleet request.
+                </para>
+                <code
+                    title="To increase the target capacity of a Spot fleet request"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-modify-spot-fleet-request-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.ModifySpotFleetRequest(Amazon.EC2.Model.ModifySpotFleetRequestRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.ModifySpotFleetRequest(Amazon.EC2.Model.ModifySpotFleetRequestRequest)" />
+            <member name="T:Amazon.EC2.Model.ModifySpotFleetRequestRequest" />
+            <member name="T:Amazon.EC2.Model.ModifySpotFleetRequestResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example decreases the target capacity of the specified Spot fleet request without terminating any Spot Instances as a result.
+                </para>
+                <code
+                    title="To decrease the target capacity of a Spot fleet request"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-modify-spot-fleet-request-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.ModifySubnetAttribute(Amazon.EC2.Model.ModifySubnetAttributeRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.ModifySubnetAttribute(Amazon.EC2.Model.ModifySubnetAttributeRequest)" />
+            <member name="T:Amazon.EC2.Model.ModifySubnetAttributeRequest" />
+            <member name="T:Amazon.EC2.Model.ModifySubnetAttributeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example modifies the specified subnet so that all instances launched into this subnet are assigned a public IP address.
+                </para>
+                <code
+                    title="To change a subnet's public IP addressing behavior"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-modify-subnet-attribute-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.ModifyVolumeAttribute(Amazon.EC2.Model.ModifyVolumeAttributeRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.ModifyVolumeAttribute(Amazon.EC2.Model.ModifyVolumeAttributeRequest)" />
+            <member name="T:Amazon.EC2.Model.ModifyVolumeAttributeRequest" />
+            <member name="T:Amazon.EC2.Model.ModifyVolumeAttributeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example sets the ``autoEnableIo`` attribute of the volume with the ID ``vol-1234567890abcdef0`` to ``true``. If the command succeeds, no output is returned.
+                </para>
+                <code
+                    title="To modify a volume attribute"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="to-modify-a-volume-attribute-1472508596749" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.ModifyVpcAttribute(Amazon.EC2.Model.ModifyVpcAttributeRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.ModifyVpcAttribute(Amazon.EC2.Model.ModifyVpcAttributeRequest)" />
+            <member name="T:Amazon.EC2.Model.ModifyVpcAttributeRequest" />
+            <member name="T:Amazon.EC2.Model.ModifyVpcAttributeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example modifies the enableDnsSupport attribute. This attribute indicates whether DNS resolution is enabled for the VPC. If this attribute is true, the Amazon DNS server resolves DNS hostnames for instances in the VPC to their corresponding IP addresses; otherwise, it does not.
+                </para>
+                <code
+                    title="To modify the enableDnsSupport attribute"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-modify-vpc-attribute-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.ModifyVpcAttribute(Amazon.EC2.Model.ModifyVpcAttributeRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.ModifyVpcAttribute(Amazon.EC2.Model.ModifyVpcAttributeRequest)" />
+            <member name="T:Amazon.EC2.Model.ModifyVpcAttributeRequest" />
+            <member name="T:Amazon.EC2.Model.ModifyVpcAttributeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example modifies the enableDnsHostnames attribute. This attribute indicates whether instances launched in the VPC get DNS hostnames. If this attribute is true, instances in the VPC get DNS hostnames; otherwise, they do not.
+                </para>
+                <code
+                    title="To modify the enableDnsHostnames attribute"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-modify-vpc-attribute-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.MoveAddressToVpc(Amazon.EC2.Model.MoveAddressToVpcRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.MoveAddressToVpc(Amazon.EC2.Model.MoveAddressToVpcRequest)" />
+            <member name="T:Amazon.EC2.Model.MoveAddressToVpcRequest" />
+            <member name="T:Amazon.EC2.Model.MoveAddressToVpcResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example moves the specified Elastic IP address to the EC2-VPC platform.
+                </para>
+                <code
+                    title="To move an address to EC2-VPC"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-move-address-to-vpc-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.PurchaseScheduledInstances(Amazon.EC2.Model.PurchaseScheduledInstancesRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.PurchaseScheduledInstances(Amazon.EC2.Model.PurchaseScheduledInstancesRequest)" />
+            <member name="T:Amazon.EC2.Model.PurchaseScheduledInstancesRequest" />
+            <member name="T:Amazon.EC2.Model.PurchaseScheduledInstancesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example purchases a Scheduled Instance.
+                </para>
+                <code
+                    title="To purchase a Scheduled Instance"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-purchase-scheduled-instances-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.ReleaseAddress(Amazon.EC2.Model.ReleaseAddressRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.ReleaseAddress(Amazon.EC2.Model.ReleaseAddressRequest)" />
+            <member name="T:Amazon.EC2.Model.ReleaseAddressRequest" />
+            <member name="T:Amazon.EC2.Model.ReleaseAddressResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example releases an Elastic IP address for use with instances in a VPC.
+                </para>
+                <code
+                    title="To release an Elastic IP address for EC2-VPC"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-release-address-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.ReleaseAddress(Amazon.EC2.Model.ReleaseAddressRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.ReleaseAddress(Amazon.EC2.Model.ReleaseAddressRequest)" />
+            <member name="T:Amazon.EC2.Model.ReleaseAddressRequest" />
+            <member name="T:Amazon.EC2.Model.ReleaseAddressResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example releases an Elastic IP address for use with instances in EC2-Classic.
+                </para>
+                <code
+                    title="To release an Elastic IP addresses for EC2-Classic"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-release-address-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.ReplaceNetworkAclAssociation(Amazon.EC2.Model.ReplaceNetworkAclAssociationRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.ReplaceNetworkAclAssociation(Amazon.EC2.Model.ReplaceNetworkAclAssociationRequest)" />
+            <member name="T:Amazon.EC2.Model.ReplaceNetworkAclAssociationRequest" />
+            <member name="T:Amazon.EC2.Model.ReplaceNetworkAclAssociationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example associates the specified network ACL with the subnet for the specified network ACL association.
+                </para>
+                <code
+                    title="To replace the network ACL associated with a subnet"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-replace-network-acl-association-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.ReplaceNetworkAclEntry(Amazon.EC2.Model.ReplaceNetworkAclEntryRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.ReplaceNetworkAclEntry(Amazon.EC2.Model.ReplaceNetworkAclEntryRequest)" />
+            <member name="T:Amazon.EC2.Model.ReplaceNetworkAclEntryRequest" />
+            <member name="T:Amazon.EC2.Model.ReplaceNetworkAclEntryResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example replaces an entry for the specified network ACL. The new rule 100 allows ingress traffic from 203.0.113.12/24 on UDP port 53 (DNS) into any associated subnet.
+                </para>
+                <code
+                    title="To replace a network ACL entry"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-replace-network-acl-entry-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.ReplaceRoute(Amazon.EC2.Model.ReplaceRouteRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.ReplaceRoute(Amazon.EC2.Model.ReplaceRouteRequest)" />
+            <member name="T:Amazon.EC2.Model.ReplaceRouteRequest" />
+            <member name="T:Amazon.EC2.Model.ReplaceRouteResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example replaces the specified route in the specified table table. The new route matches the specified CIDR and sends the traffic to the specified virtual private gateway.
+                </para>
+                <code
+                    title="To replace a route"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-replace-route-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.ReplaceRouteTableAssociation(Amazon.EC2.Model.ReplaceRouteTableAssociationRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.ReplaceRouteTableAssociation(Amazon.EC2.Model.ReplaceRouteTableAssociationRequest)" />
+            <member name="T:Amazon.EC2.Model.ReplaceRouteTableAssociationRequest" />
+            <member name="T:Amazon.EC2.Model.ReplaceRouteTableAssociationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example associates the specified route table with the subnet for the specified route table association.
+                </para>
+                <code
+                    title="To replace the route table associated with a subnet"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-replace-route-table-association-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.RequestSpotFleet(Amazon.EC2.Model.RequestSpotFleetRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.RequestSpotFleet(Amazon.EC2.Model.RequestSpotFleetRequest)" />
+            <member name="T:Amazon.EC2.Model.RequestSpotFleetRequest" />
+            <member name="T:Amazon.EC2.Model.RequestSpotFleetResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates a Spot fleet request with two launch specifications that differ only by subnet. The Spot fleet launches the instances in the specified subnet with the lowest price. If the instances are launched in a default VPC, they receive a public IP address by default. If the instances are launched in a nondefault VPC, they do not receive a public IP address by default. Note that you can't specify different subnets from the same Availability Zone in a Spot fleet request.
+                </para>
+                <code
+                    title="To request a Spot fleet in the subnet with the lowest price"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-request-spot-fleet-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.RequestSpotFleet(Amazon.EC2.Model.RequestSpotFleetRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.RequestSpotFleet(Amazon.EC2.Model.RequestSpotFleetRequest)" />
+            <member name="T:Amazon.EC2.Model.RequestSpotFleetRequest" />
+            <member name="T:Amazon.EC2.Model.RequestSpotFleetResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates a Spot fleet request with two launch specifications that differ only by Availability Zone. The Spot fleet launches the instances in the specified Availability Zone with the lowest price. If your account supports EC2-VPC only, Amazon EC2 launches the Spot instances in the default subnet of the Availability Zone. If your account supports EC2-Classic, Amazon EC2 launches the instances in EC2-Classic in the Availability Zone.
+                </para>
+                <code
+                    title="To request a Spot fleet in the Availability Zone with the lowest price"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-request-spot-fleet-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.RequestSpotFleet(Amazon.EC2.Model.RequestSpotFleetRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.RequestSpotFleet(Amazon.EC2.Model.RequestSpotFleetRequest)" />
+            <member name="T:Amazon.EC2.Model.RequestSpotFleetRequest" />
+            <member name="T:Amazon.EC2.Model.RequestSpotFleetResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example assigns public addresses to instances launched in a nondefault VPC. Note that when you specify a network interface, you must include the subnet ID and security group ID using the network interface.
+                </para>
+                <code
+                    title="To launch Spot instances in a subnet and assign them public IP addresses"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-request-spot-fleet-3" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.RequestSpotFleet(Amazon.EC2.Model.RequestSpotFleetRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.RequestSpotFleet(Amazon.EC2.Model.RequestSpotFleetRequest)" />
+            <member name="T:Amazon.EC2.Model.RequestSpotFleetRequest" />
+            <member name="T:Amazon.EC2.Model.RequestSpotFleetResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates a Spot fleet request that launches 30 instances using the diversified allocation strategy. The launch specifications differ by instance type. The Spot fleet distributes the instances across the launch specifications such that there are 10 instances of each type.
+                </para>
+                <code
+                    title="To request a Spot fleet using the diversified allocation strategy"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-request-spot-fleet-4" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.RequestSpotInstances(Amazon.EC2.Model.RequestSpotInstancesRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.RequestSpotInstances(Amazon.EC2.Model.RequestSpotInstancesRequest)" />
+            <member name="T:Amazon.EC2.Model.RequestSpotInstancesRequest" />
+            <member name="T:Amazon.EC2.Model.RequestSpotInstancesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates a one-time Spot Instance request for five instances in the specified Availability Zone. If your account supports EC2-VPC only, Amazon EC2 launches the instances in the default subnet of the specified Availability Zone. If your account supports EC2-Classic, Amazon EC2 launches the instances in EC2-Classic in the specified Availability Zone.
+                </para>
+                <code
+                    title="To create a one-time Spot Instance request"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-request-spot-instances-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.RequestSpotInstances(Amazon.EC2.Model.RequestSpotInstancesRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.RequestSpotInstances(Amazon.EC2.Model.RequestSpotInstancesRequest)" />
+            <member name="T:Amazon.EC2.Model.RequestSpotInstancesRequest" />
+            <member name="T:Amazon.EC2.Model.RequestSpotInstancesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example command creates a one-time Spot Instance request for five instances in the specified subnet. Amazon EC2 launches the instances in the specified subnet. If the VPC is a nondefault VPC, the instances do not receive a public IP address by default.
+                </para>
+                <code
+                    title="To create a one-time Spot Instance request"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-request-spot-instances-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.ResetSnapshotAttribute(Amazon.EC2.Model.ResetSnapshotAttributeRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.ResetSnapshotAttribute(Amazon.EC2.Model.ResetSnapshotAttributeRequest)" />
+            <member name="T:Amazon.EC2.Model.ResetSnapshotAttributeRequest" />
+            <member name="T:Amazon.EC2.Model.ResetSnapshotAttributeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example resets the create volume permissions for snapshot ``snap-1234567890abcdef0``. If the command succeeds, no output is returned.
+                </para>
+                <code
+                    title="To reset a snapshot attribute"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="to-reset-a-snapshot-attribute-1472508825735" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.RestoreAddressToClassic(Amazon.EC2.Model.RestoreAddressToClassicRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.RestoreAddressToClassic(Amazon.EC2.Model.RestoreAddressToClassicRequest)" />
+            <member name="T:Amazon.EC2.Model.RestoreAddressToClassicRequest" />
+            <member name="T:Amazon.EC2.Model.RestoreAddressToClassicResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example restores the specified Elastic IP address to the EC2-Classic platform.
+                </para>
+                <code
+                    title="To restore an address to EC2-Classic"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-restore-address-to-classic-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.RunScheduledInstances(Amazon.EC2.Model.RunScheduledInstancesRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.RunScheduledInstances(Amazon.EC2.Model.RunScheduledInstancesRequest)" />
+            <member name="T:Amazon.EC2.Model.RunScheduledInstancesRequest" />
+            <member name="T:Amazon.EC2.Model.RunScheduledInstancesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example launches the specified Scheduled Instance in a VPC.
+                </para>
+                <code
+                    title="To launch a Scheduled Instance in a VPC"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-run-scheduled-instances-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.RunScheduledInstances(Amazon.EC2.Model.RunScheduledInstancesRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.RunScheduledInstances(Amazon.EC2.Model.RunScheduledInstancesRequest)" />
+            <member name="T:Amazon.EC2.Model.RunScheduledInstancesRequest" />
+            <member name="T:Amazon.EC2.Model.RunScheduledInstancesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example launches the specified Scheduled Instance in EC2-Classic.
+                </para>
+                <code
+                    title="To launch a Scheduled Instance in EC2-Classic"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-run-scheduled-instances-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.UnassignPrivateIpAddresses(Amazon.EC2.Model.UnassignPrivateIpAddressesRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.UnassignPrivateIpAddresses(Amazon.EC2.Model.UnassignPrivateIpAddressesRequest)" />
+            <member name="T:Amazon.EC2.Model.UnassignPrivateIpAddressesRequest" />
+            <member name="T:Amazon.EC2.Model.UnassignPrivateIpAddressesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example unassigns the specified private IP address from the specified network interface.
+                </para>
+                <code
+                    title="To unassign a secondary private IP address from a network interface"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-unassign-private-ip-addresses-1" />
+            </example>
+        </value>
+    </doc>
+</docs>

@@ -84,9 +84,9 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// An instance is ready for you to use when it's in the <code>running</code> state. You
-    /// can check the state of your instance using <a>DescribeInstances</a>. After launch,
-    /// you can apply tags to your running instance (requires a resource ID). For more information,
-    /// see <a>CreateTags</a> and <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
+    /// can check the state of your instance using <a>DescribeInstances</a>. You can tag instances
+    /// and EBS volumes during launch, after launch, or both. For more information, see <a>CreateTags</a>
+    /// and <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
     /// Your Amazon EC2 Resources</a>.
     /// </para>
     ///  
@@ -128,6 +128,7 @@ namespace Amazon.EC2.Model
         private List<string> _securityGroupIds = new List<string>();
         private List<string> _securityGroups = new List<string>();
         private string _subnetId;
+        private List<TagSpecification> _tagSpecifications = new List<TagSpecification>();
         private string _userData;
 
         /// <summary>
@@ -662,6 +663,26 @@ namespace Amazon.EC2.Model
         internal bool IsSetSubnetId()
         {
             return this._subnetId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TagSpecifications. 
+        /// <para>
+        /// The tags to apply to the resources during launch. You can tag instances and volumes.
+        /// The specified tags are applied to all instances or volumes that are created during
+        /// launch.
+        /// </para>
+        /// </summary>
+        public List<TagSpecification> TagSpecifications
+        {
+            get { return this._tagSpecifications; }
+            set { this._tagSpecifications = value; }
+        }
+
+        // Check to see if TagSpecifications property is set
+        internal bool IsSetTagSpecifications()
+        {
+            return this._tagSpecifications != null && this._tagSpecifications.Count > 0; 
         }
 
         /// <summary>

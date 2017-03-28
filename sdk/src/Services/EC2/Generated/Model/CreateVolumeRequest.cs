@@ -49,9 +49,13 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  
     /// <para>
+    /// You can tag your volumes during creation. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
+    /// Your Amazon EC2 Resources</a>.
+    /// </para>
+    ///  
+    /// <para>
     /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-volume.html">Creating
-    /// or Restoring an Amazon EBS Volume</a> in the <i>Amazon Elastic Compute Cloud User
-    /// Guide</i>.
+    /// an Amazon EBS Volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </para>
     /// </summary>
     public partial class CreateVolumeRequest : AmazonEC2Request
@@ -62,6 +66,7 @@ namespace Amazon.EC2.Model
         private string _kmsKeyId;
         private int? _size;
         private string _snapshotId;
+        private List<TagSpecification> _tagSpecifications = new List<TagSpecification>();
         private VolumeType _volumeType;
 
         /// <summary>
@@ -228,6 +233,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetSnapshotId()
         {
             return this._snapshotId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TagSpecifications. 
+        /// <para>
+        /// The tags to apply to the volume during creation.
+        /// </para>
+        /// </summary>
+        public List<TagSpecification> TagSpecifications
+        {
+            get { return this._tagSpecifications; }
+            set { this._tagSpecifications = value; }
+        }
+
+        // Check to see if TagSpecifications property is set
+        internal bool IsSetTagSpecifications()
+        {
+            return this._tagSpecifications != null && this._tagSpecifications.Count > 0; 
         }
 
         /// <summary>

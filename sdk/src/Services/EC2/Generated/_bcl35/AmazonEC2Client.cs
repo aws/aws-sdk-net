@@ -1258,9 +1258,15 @@ namespace Amazon.EC2
         #region  AttachVpnGateway
 
         /// <summary>
-        /// Attaches a virtual private gateway to a VPC. For more information, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">Adding
+        /// Attaches a virtual private gateway to a VPC. You can attach one virtual private gateway
+        /// to one VPC at a time.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">Adding
         /// a Hardware Virtual Private Gateway to Your VPC</a> in the <i>Amazon Virtual Private
         /// Cloud User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AttachVpnGateway service method.</param>
         /// 
@@ -3674,9 +3680,13 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
+        /// You can tag your volumes during creation. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
+        /// Your Amazon EC2 Resources</a>.
+        /// </para>
+        ///  
+        /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-volume.html">Creating
-        /// or Restoring an Amazon EBS Volume</a> in the <i>Amazon Elastic Compute Cloud User
-        /// Guide</i>.
+        /// an Amazon EBS Volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateVolume service method.</param>
@@ -13575,8 +13585,8 @@ namespace Amazon.EC2
         /// <para>
         /// You can also use <code>RegisterImage</code> to create an Amazon EBS-backed Linux AMI
         /// from a snapshot of a root device volume. You specify the snapshot using the block
-        /// device mapping. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_LaunchingInstanceFromSnapshot.html">Launching
-        /// an Instance from a Snapshot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// device mapping. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-launch-snapshot.html">Launching
+        /// a Linux Instance from a Backup</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -14820,9 +14830,9 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// An instance is ready for you to use when it's in the <code>running</code> state. You
-        /// can check the state of your instance using <a>DescribeInstances</a>. After launch,
-        /// you can apply tags to your running instance (requires a resource ID). For more information,
-        /// see <a>CreateTags</a> and <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
+        /// can check the state of your instance using <a>DescribeInstances</a>. You can tag instances
+        /// and EBS volumes during launch, after launch, or both. For more information, see <a>CreateTags</a>
+        /// and <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
         /// Your Amazon EC2 Resources</a>.
         /// </para>
         ///  
