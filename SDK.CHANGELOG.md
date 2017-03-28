@@ -1,3 +1,7 @@
+### 3.3.68.0 (2017-03-28 00:01 UTC)
+* SimpleSystemsManagement (3.3.3.0)
+	* Updated validation rules for SendCommand and RegisterTaskWithMaintenanceWindow APIs.
+
 ### 3.3.67.0 (2017-03-23 18:14 UTC)
 * ApplicationAutoScaling (3.3.2.0)
 	* Application AutoScaling is launching support for a new target resource (AppStream 2.0 Fleets) as a scalable target.
