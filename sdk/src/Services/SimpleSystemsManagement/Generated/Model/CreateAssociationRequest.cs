@@ -29,13 +29,14 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateAssociation operation.
-    /// Associates the specified SSM document with the specified instances or targets.
+    /// Associates the specified Systems Manager document with the specified instances or
+    /// targets.
     /// 
     ///  
     /// <para>
-    /// When you associate an SSM document with one or more instances using instance IDs or
-    /// tags, the SSM agent running on the instance processes the document and configures
-    /// the instance as specified.
+    /// When you associate a document with one or more instances using instance IDs or tags,
+    /// the SSM Agent running on the instance processes the document and configures the instance
+    /// as specified.
     /// </para>
     ///  
     /// <para>
@@ -62,7 +63,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Instantiates CreateAssociationRequest with the parameterized properties
         /// </summary>
         /// <param name="instanceId">The instance ID.</param>
-        /// <param name="name">The name of the SSM document.</param>
+        /// <param name="name">The name of the Systems Manager document.</param>
         public CreateAssociationRequest(string instanceId, string name)
         {
             _instanceId = instanceId;
@@ -109,7 +110,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the SSM document.
+        /// The name of the Systems Manager document.
         /// </para>
         /// </summary>
         public string Name

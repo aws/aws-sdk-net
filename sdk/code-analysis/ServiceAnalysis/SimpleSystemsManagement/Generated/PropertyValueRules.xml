@@ -615,13 +615,13 @@
     <property>Amazon.SimpleSystemsManagement.Model.GetMaintenanceWindowExecutionTaskResponse.MaxConcurrency</property>
     <min>1</min>
     <max>7</max>
-    <pattern>^[1-9]\d*$|[0-9][%]|[1-9][0-9][%]|[1][0][0][%]|[0-9]?</pattern>
+    <pattern>^([1-9][0-9]*|[1-9][0-9]%|[1-9]%|100%)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.GetMaintenanceWindowExecutionTaskResponse.MaxErrors</property>
     <min>1</min>
     <max>7</max>
-    <pattern>^[1-9]\d*$|[0-9][%]|[1-9][0-9][%]|[1][0][0][%]|[0-9]?</pattern>
+    <pattern>^([1-9][0-9]*|[0]|[1-9][0-9]%|[0-9]%|100%)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.GetMaintenanceWindowExecutionTaskResponse.Priority</property>
@@ -809,7 +809,7 @@
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.PutParameterRequest.Value</property>
     <min>1</min>
-    <max>1024</max>
+    <max>4096</max>
     <pattern>^(?:(?!(\{\{.*\}\})).)*$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -879,13 +879,13 @@
     <property>Amazon.SimpleSystemsManagement.Model.RegisterTaskWithMaintenanceWindowRequest.MaxConcurrency</property>
     <min>1</min>
     <max>7</max>
-    <pattern>^[1-9]\d*$|[0-9][%]|[1-9][0-9][%]|[1][0][0][%]|[0-9]?</pattern>
+    <pattern>^([1-9][0-9]*|[1-9][0-9]%|[1-9]%|100%)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.RegisterTaskWithMaintenanceWindowRequest.MaxErrors</property>
     <min>1</min>
     <max>7</max>
-    <pattern>^[1-9]\d*$|[0-9][%]|[1-9][0-9][%]|[1][0][0][%]|[0-9]?</pattern>
+    <pattern>^([1-9][0-9]*|[0]|[1-9][0-9]%|[0-9]%|100%)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.RegisterTaskWithMaintenanceWindowRequest.Priority</property>
@@ -924,13 +924,13 @@
     <property>Amazon.SimpleSystemsManagement.Model.SendCommandRequest.MaxConcurrency</property>
     <min>1</min>
     <max>7</max>
-    <pattern>^[1-9]\d*$|[0-9][%]|[1-9][0-9][%]|[1][0][0][%]|[0-9]?</pattern>
+    <pattern>^([1-9][0-9]*|[1-9][0-9]%|[1-9]%|100%)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.SendCommandRequest.MaxErrors</property>
     <min>1</min>
     <max>7</max>
-    <pattern>^[1-9]\d*$|[0-9][%]|[1-9][0-9][%]|[1][0][0][%]|[0-9]?</pattern>
+    <pattern>^([1-9][0-9]*|[0]|[1-9][0-9]%|[0-9]%|100%)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.SendCommandRequest.OutputS3BucketName</property>
@@ -1233,13 +1233,13 @@
     <property>Amazon.SimpleSystemsManagement.Model.Command.MaxConcurrency</property>
     <min>1</min>
     <max>7</max>
-    <pattern>^[1-9]\d*$|[0-9][%]|[1-9][0-9][%]|[1][0][0][%]|[0-9]?</pattern>
+    <pattern>^([1-9][0-9]*|[1-9][0-9]%|[1-9]%|100%)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.Command.MaxErrors</property>
     <min>1</min>
     <max>7</max>
-    <pattern>^[1-9]\d*$|[0-9][%]|[1-9][0-9][%]|[1][0][0][%]|[0-9]?</pattern>
+    <pattern>^([1-9][0-9]*|[0]|[1-9][0-9]%|[0-9]%|100%)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.Command.OutputS3BucketName</property>
@@ -1695,13 +1695,13 @@
     <property>Amazon.SimpleSystemsManagement.Model.MaintenanceWindowTask.MaxConcurrency</property>
     <min>1</min>
     <max>7</max>
-    <pattern>^[1-9]\d*$|[0-9][%]|[1-9][0-9][%]|[1][0][0][%]|[0-9]?</pattern>
+    <pattern>^([1-9][0-9]*|[1-9][0-9]%|[1-9]%|100%)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.MaintenanceWindowTask.MaxErrors</property>
     <min>1</min>
     <max>7</max>
-    <pattern>^[1-9]\d*$|[0-9][%]|[1-9][0-9][%]|[1][0][0][%]|[0-9]?</pattern>
+    <pattern>^([1-9][0-9]*|[0]|[1-9][0-9]%|[0-9]%|100%)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.MaintenanceWindowTask.Priority</property>
@@ -1733,7 +1733,7 @@
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.Parameter.Value</property>
     <min>1</min>
-    <max>1024</max>
+    <max>4096</max>
     <pattern>^(?:(?!(\{\{.*\}\})).)*$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1756,7 +1756,7 @@
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.ParameterHistory.Value</property>
     <min>1</min>
-    <max>1024</max>
+    <max>4096</max>
     <pattern>^(?:(?!(\{\{.*\}\})).)*$</pattern>
   </property-value-rule>
   <property-value-rule>

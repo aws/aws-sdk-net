@@ -33,23 +33,26 @@ namespace Amazon.SimpleSystemsManagement
     /// <summary>
     /// Implementation for accessing SimpleSystemsManagement
     ///
+    /// Amazon EC2 Systems Manager 
+    /// <para>
     /// Amazon EC2 Systems Manager is a collection of capabilities that helps you automate
     /// management tasks such as collecting system inventory, applying operating system (OS)
     /// patches, automating the creation of Amazon Machine Images (AMIs), and configuring
-    /// operating systems (OSs) and applications at scale. Systems Manager works with managed
-    /// instances: Amazon EC2 instances and servers or virtual machines (VMs) in your on-premises
-    /// environment that are configured for Systems Manager. 
-    /// 
-    ///  
-    /// <para>
-    /// This references is intended to be used with the EC2 Systems Manager User Guide (<a
-    /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/systems-manager.html">Linux</a>)
-    /// (<a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/systems-manager.html">Windows</a>).
+    /// operating systems (OSs) and applications at scale. Systems Manager lets you remotely
+    /// and securely manage the configuration of your managed instances. A <i>managed instance</i>
+    /// is any Amazon EC2 instance or on-premises machine in your hybrid environment that
+    /// has been configured for Systems Manager.
     /// </para>
     ///  
     /// <para>
-    /// To get started, verify prerequisites and configure managed instances (<a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/systems-manager-prereqs.html">Linux</a>)
-    /// (<a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/systems-manager-prereqs.html">Windows</a>).
+    /// This reference is intended to be used with the <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/">Amazon
+    /// EC2 Systems Manager User Guide</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// To get started, verify prerequisites and configure managed instances. For more information,
+    /// see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-prereqs.html">Systems
+    /// Manager Prerequisites</a>.
     /// </para>
     /// </summary>
     public partial class AmazonSimpleSystemsManagementClient : AmazonServiceClient, IAmazonSimpleSystemsManagement
@@ -263,7 +266,7 @@ namespace Amazon.SimpleSystemsManagement
         ///  
         /// <para>
         /// For more information about tags, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
-        /// Your Amazon EC2 Resources</a> in the Amazon EC2 User Guide. 
+        /// Your Amazon EC2 Resources</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddTagsToResource service method.</param>
@@ -355,14 +358,14 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         ///  
         /// <para>
-        /// The SSM agent is not running. On managed instances and Linux instances, verify that
-        /// the SSM agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// The SSM Agent is not running. On managed instances and Linux instances, verify that
+        /// the SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service
         /// is running.
         /// </para>
         ///  
         /// <para>
-        /// The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
-        /// the SSM agent or EC2Config service.
+        /// The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// the SSM Agent or EC2Config service.
         /// </para>
         ///  
         /// <para>
@@ -405,14 +408,14 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         ///  
         /// <para>
-        /// The SSM agent is not running. On managed instances and Linux instances, verify that
-        /// the SSM agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// The SSM Agent is not running. On managed instances and Linux instances, verify that
+        /// the SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service
         /// is running.
         /// </para>
         ///  
         /// <para>
-        /// The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
-        /// the SSM agent or EC2Config service.
+        /// The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// the SSM Agent or EC2Config service.
         /// </para>
         ///  
         /// <para>
@@ -455,14 +458,14 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         ///  
         /// <para>
-        /// The SSM agent is not running. On managed instances and Linux instances, verify that
-        /// the SSM agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// The SSM Agent is not running. On managed instances and Linux instances, verify that
+        /// the SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service
         /// is running.
         /// </para>
         ///  
         /// <para>
-        /// The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
-        /// the SSM agent or EC2Config service.
+        /// The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// the SSM Agent or EC2Config service.
         /// </para>
         ///  
         /// <para>
@@ -521,9 +524,8 @@ namespace Amazon.SimpleSystemsManagement
         /// Registers your on-premises server or virtual machine with Amazon EC2 so that you can
         /// manage these resources using Run Command. An on-premises server or virtual machine
         /// that has been registered with EC2 is called a managed instance. For more information
-        /// about activations, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/managed-instances.html">Setting
-        /// Up Managed Instances (Linux)</a> or <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/managed-instances.html">Setting
-        /// Up Managed Instances (Windows)</a> in the Amazon EC2 User Guide.
+        /// about activations, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances.html">Setting
+        /// Up Systems Manager in Hybrid Environments</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateActivation service method.</param>
         /// 
@@ -579,13 +581,14 @@ namespace Amazon.SimpleSystemsManagement
         #region  CreateAssociation
 
         /// <summary>
-        /// Associates the specified SSM document with the specified instances or targets.
+        /// Associates the specified Systems Manager document with the specified instances or
+        /// targets.
         /// 
         ///  
         /// <para>
-        /// When you associate an SSM document with one or more instances using instance IDs or
-        /// tags, the SSM agent running on the instance processes the document and configures
-        /// the instance as specified.
+        /// When you associate a document with one or more instances using instance IDs or tags,
+        /// the SSM Agent running on the instance processes the document and configures the instance
+        /// as specified.
         /// </para>
         ///  
         /// <para>
@@ -594,7 +597,7 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         /// </summary>
         /// <param name="instanceId">The instance ID.</param>
-        /// <param name="name">The name of the SSM document.</param>
+        /// <param name="name">The name of the Systems Manager document.</param>
         /// 
         /// <returns>The response from the CreateAssociation service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.AssociationAlreadyExistsException">
@@ -621,14 +624,14 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         ///  
         /// <para>
-        /// The SSM agent is not running. On managed instances and Linux instances, verify that
-        /// the SSM agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// The SSM Agent is not running. On managed instances and Linux instances, verify that
+        /// the SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service
         /// is running.
         /// </para>
         ///  
         /// <para>
-        /// The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
-        /// the SSM agent or EC2Config service.
+        /// The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// the SSM Agent or EC2Config service.
         /// </para>
         ///  
         /// <para>
@@ -652,7 +655,7 @@ namespace Amazon.SimpleSystemsManagement
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.UnsupportedPlatformTypeException">
         /// The document does not support the platform type of the given instance ID(s). For example,
-        /// you sent an SSM document for a Windows instance to a Linux instance.
+        /// you sent an document for a Windows instance to a Linux instance.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateAssociation">REST API Reference for CreateAssociation Operation</seealso>
         public CreateAssociationResponse CreateAssociation(string instanceId, string name)
@@ -665,13 +668,14 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Associates the specified SSM document with the specified instances or targets.
+        /// Associates the specified Systems Manager document with the specified instances or
+        /// targets.
         /// 
         ///  
         /// <para>
-        /// When you associate an SSM document with one or more instances using instance IDs or
-        /// tags, the SSM agent running on the instance processes the document and configures
-        /// the instance as specified.
+        /// When you associate a document with one or more instances using instance IDs or tags,
+        /// the SSM Agent running on the instance processes the document and configures the instance
+        /// as specified.
         /// </para>
         ///  
         /// <para>
@@ -706,14 +710,14 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         ///  
         /// <para>
-        /// The SSM agent is not running. On managed instances and Linux instances, verify that
-        /// the SSM agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// The SSM Agent is not running. On managed instances and Linux instances, verify that
+        /// the SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service
         /// is running.
         /// </para>
         ///  
         /// <para>
-        /// The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
-        /// the SSM agent or EC2Config service.
+        /// The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// the SSM Agent or EC2Config service.
         /// </para>
         ///  
         /// <para>
@@ -737,7 +741,7 @@ namespace Amazon.SimpleSystemsManagement
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.UnsupportedPlatformTypeException">
         /// The document does not support the platform type of the given instance ID(s). For example,
-        /// you sent an SSM document for a Windows instance to a Linux instance.
+        /// you sent an document for a Windows instance to a Linux instance.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateAssociation">REST API Reference for CreateAssociation Operation</seealso>
         public CreateAssociationResponse CreateAssociation(CreateAssociationRequest request)
@@ -787,13 +791,14 @@ namespace Amazon.SimpleSystemsManagement
         #region  CreateAssociationBatch
 
         /// <summary>
-        /// Associates the specified SSM document with the specified instances or targets.
+        /// Associates the specified Systems Manager document with the specified instances or
+        /// targets.
         /// 
         ///  
         /// <para>
-        /// When you associate an SSM document with one or more instances using instance IDs or
-        /// tags, the SSM agent running on the instance processes the document and configures
-        /// the instance as specified.
+        /// When you associate a document with one or more instances using instance IDs or tags,
+        /// the SSM Agent running on the instance processes the document and configures the instance
+        /// as specified.
         /// </para>
         ///  
         /// <para>
@@ -828,14 +833,14 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         ///  
         /// <para>
-        /// The SSM agent is not running. On managed instances and Linux instances, verify that
-        /// the SSM agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// The SSM Agent is not running. On managed instances and Linux instances, verify that
+        /// the SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service
         /// is running.
         /// </para>
         ///  
         /// <para>
-        /// The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
-        /// the SSM agent or EC2Config service.
+        /// The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// the SSM Agent or EC2Config service.
         /// </para>
         ///  
         /// <para>
@@ -859,7 +864,7 @@ namespace Amazon.SimpleSystemsManagement
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.UnsupportedPlatformTypeException">
         /// The document does not support the platform type of the given instance ID(s). For example,
-        /// you sent an SSM document for a Windows instance to a Linux instance.
+        /// you sent an document for a Windows instance to a Linux instance.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateAssociationBatch">REST API Reference for CreateAssociationBatch Operation</seealso>
         public CreateAssociationBatchResponse CreateAssociationBatch(CreateAssociationBatchRequest request)
@@ -909,20 +914,20 @@ namespace Amazon.SimpleSystemsManagement
         #region  CreateDocument
 
         /// <summary>
-        /// Creates an SSM document.
+        /// Creates a Systems Manager document.
         /// 
         ///  
         /// <para>
-        /// After you create an SSM document, you can use CreateAssociation to associate it with
-        /// one or more running instances.
+        /// After you create a document, you can use CreateAssociation to associate it with one
+        /// or more running instances.
         /// </para>
         /// </summary>
         /// <param name="content">A valid JSON string.</param>
-        /// <param name="name">A name for the SSM document.</param>
+        /// <param name="name">A name for the Systems Manager document.</param>
         /// 
         /// <returns>The response from the CreateDocument service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DocumentAlreadyExistsException">
-        /// The specified SSM document already exists.
+        /// The specified document already exists.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DocumentLimitExceededException">
         /// You can have at most 200 active SSM documents.
@@ -931,13 +936,13 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentContentException">
-        /// The content for the SSM document is not valid.
+        /// The content for the document is not valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentSchemaVersionException">
         /// The version of the document schema is not supported.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.MaxDocumentSizeExceededException">
-        /// The size limit of an SSM document is 64 KB.
+        /// The size limit of a document is 64 KB.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateDocument">REST API Reference for CreateDocument Operation</seealso>
         public CreateDocumentResponse CreateDocument(string content, string name)
@@ -950,19 +955,19 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Creates an SSM document.
+        /// Creates a Systems Manager document.
         /// 
         ///  
         /// <para>
-        /// After you create an SSM document, you can use CreateAssociation to associate it with
-        /// one or more running instances.
+        /// After you create a document, you can use CreateAssociation to associate it with one
+        /// or more running instances.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDocument service method.</param>
         /// 
         /// <returns>The response from the CreateDocument service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DocumentAlreadyExistsException">
-        /// The specified SSM document already exists.
+        /// The specified document already exists.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DocumentLimitExceededException">
         /// You can have at most 200 active SSM documents.
@@ -971,13 +976,13 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentContentException">
-        /// The content for the SSM document is not valid.
+        /// The content for the document is not valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentSchemaVersionException">
         /// The version of the document schema is not supported.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.MaxDocumentSizeExceededException">
-        /// The size limit of an SSM document is 64 KB.
+        /// The size limit of a document is 64 KB.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateDocument">REST API Reference for CreateDocument Operation</seealso>
         public CreateDocumentResponse CreateDocument(CreateDocumentRequest request)
@@ -1222,18 +1227,18 @@ namespace Amazon.SimpleSystemsManagement
         #region  DeleteAssociation
 
         /// <summary>
-        /// Disassociates the specified SSM document from the specified instance.
+        /// Disassociates the specified Systems Manager document from the specified instance.
         /// 
         ///  
         /// <para>
-        /// When you disassociate an SSM document from an instance, it does not change the configuration
+        /// When you disassociate a document from an instance, it does not change the configuration
         /// of the instance. To change the configuration state of an instance after you disassociate
         /// a document, you must create a new document with the desired configuration and associate
         /// it with the instance.
         /// </para>
         /// </summary>
         /// <param name="instanceId">The ID of the instance.</param>
-        /// <param name="name">The name of the SSM document.</param>
+        /// <param name="name">The name of the Systems Manager document.</param>
         /// 
         /// <returns>The response from the DeleteAssociation service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.AssociationDoesNotExistException">
@@ -1254,14 +1259,14 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         ///  
         /// <para>
-        /// The SSM agent is not running. On managed instances and Linux instances, verify that
-        /// the SSM agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// The SSM Agent is not running. On managed instances and Linux instances, verify that
+        /// the SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service
         /// is running.
         /// </para>
         ///  
         /// <para>
-        /// The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
-        /// the SSM agent or EC2Config service.
+        /// The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// the SSM Agent or EC2Config service.
         /// </para>
         ///  
         /// <para>
@@ -1283,11 +1288,11 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Disassociates the specified SSM document from the specified instance.
+        /// Disassociates the specified Systems Manager document from the specified instance.
         /// 
         ///  
         /// <para>
-        /// When you disassociate an SSM document from an instance, it does not change the configuration
+        /// When you disassociate a document from an instance, it does not change the configuration
         /// of the instance. To change the configuration state of an instance after you disassociate
         /// a document, you must create a new document with the desired configuration and associate
         /// it with the instance.
@@ -1314,14 +1319,14 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         ///  
         /// <para>
-        /// The SSM agent is not running. On managed instances and Linux instances, verify that
-        /// the SSM agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// The SSM Agent is not running. On managed instances and Linux instances, verify that
+        /// the SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service
         /// is running.
         /// </para>
         ///  
         /// <para>
-        /// The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
-        /// the SSM agent or EC2Config service.
+        /// The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// the SSM Agent or EC2Config service.
         /// </para>
         ///  
         /// <para>
@@ -1380,19 +1385,19 @@ namespace Amazon.SimpleSystemsManagement
         #region  DeleteDocument
 
         /// <summary>
-        /// Deletes the SSM document and all instance associations to the document.
+        /// Deletes the Systems Manager document and all instance associations to the document.
         /// 
         ///  
         /// <para>
-        /// Before you delete the SSM document, we recommend that you use DeleteAssociation to
-        /// disassociate all instances that are associated with the document.
+        /// Before you delete the document, we recommend that you use <a>DeleteAssociation</a>
+        /// to disassociate all instances that are associated with the document.
         /// </para>
         /// </summary>
-        /// <param name="name">The name of the SSM document.</param>
+        /// <param name="name">The name of the document.</param>
         /// 
         /// <returns>The response from the DeleteDocument service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.AssociatedInstancesException">
-        /// You must disassociate an SSM document from all instances before you can delete it.
+        /// You must disassociate a document from all instances before you can delete it.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
@@ -1414,19 +1419,19 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Deletes the SSM document and all instance associations to the document.
+        /// Deletes the Systems Manager document and all instance associations to the document.
         /// 
         ///  
         /// <para>
-        /// Before you delete the SSM document, we recommend that you use DeleteAssociation to
-        /// disassociate all instances that are associated with the document.
+        /// Before you delete the document, we recommend that you use <a>DeleteAssociation</a>
+        /// to disassociate all instances that are associated with the document.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDocument service method.</param>
         /// 
         /// <returns>The response from the DeleteDocument service method, as returned by SimpleSystemsManagement.</returns>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.AssociatedInstancesException">
-        /// You must disassociate an SSM document from all instances before you can delete it.
+        /// You must disassociate a document from all instances before you can delete it.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
@@ -1663,7 +1668,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <summary>
         /// Removes the server or virtual machine from the list of registered servers. You can
         /// reregister the instance again at any time. If you don’t plan to use Run Command on
-        /// the server, we suggest uninstalling the SSM agent first.
+        /// the server, we suggest uninstalling the SSM Agent first.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeregisterManagedInstance service method.</param>
         /// 
@@ -1680,14 +1685,14 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         ///  
         /// <para>
-        /// The SSM agent is not running. On managed instances and Linux instances, verify that
-        /// the SSM agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// The SSM Agent is not running. On managed instances and Linux instances, verify that
+        /// the SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service
         /// is running.
         /// </para>
         ///  
         /// <para>
-        /// The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
-        /// the SSM agent or EC2Config service.
+        /// The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// the SSM Agent or EC2Config service.
         /// </para>
         ///  
         /// <para>
@@ -1986,7 +1991,7 @@ namespace Amazon.SimpleSystemsManagement
         #region  DescribeAssociation
 
         /// <summary>
-        /// Describes the associations for the specified SSM document or instance.
+        /// Describes the associations for the specified Systems Manager document or instance.
         /// </summary>
         /// <param name="instanceId">The instance ID.</param>
         /// <param name="name">The name of the SSM document.</param>
@@ -2010,14 +2015,14 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         ///  
         /// <para>
-        /// The SSM agent is not running. On managed instances and Linux instances, verify that
-        /// the SSM agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// The SSM Agent is not running. On managed instances and Linux instances, verify that
+        /// the SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service
         /// is running.
         /// </para>
         ///  
         /// <para>
-        /// The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
-        /// the SSM agent or EC2Config service.
+        /// The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// the SSM Agent or EC2Config service.
         /// </para>
         ///  
         /// <para>
@@ -2036,7 +2041,7 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Describes the associations for the specified SSM document or instance.
+        /// Describes the associations for the specified Systems Manager document or instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAssociation service method.</param>
         /// 
@@ -2059,14 +2064,14 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         ///  
         /// <para>
-        /// The SSM agent is not running. On managed instances and Linux instances, verify that
-        /// the SSM agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// The SSM Agent is not running. On managed instances and Linux instances, verify that
+        /// the SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service
         /// is running.
         /// </para>
         ///  
         /// <para>
-        /// The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
-        /// the SSM agent or EC2Config service.
+        /// The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// the SSM Agent or EC2Config service.
         /// </para>
         ///  
         /// <para>
@@ -2323,9 +2328,9 @@ namespace Amazon.SimpleSystemsManagement
         #region  DescribeDocumentPermission
 
         /// <summary>
-        /// Describes the permissions for an SSM document. If you created the document, you are
-        /// the owner. If a document is shared, it can either be shared privately (by specifying
-        /// a user’s AWS account ID) or publicly (<i>All</i>).
+        /// Describes the permissions for a Systems Manager document. If you created the document,
+        /// you are the owner. If a document is shared, it can either be shared privately (by
+        /// specifying a user’s AWS account ID) or publicly (<i>All</i>).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDocumentPermission service method.</param>
         /// 
@@ -2405,14 +2410,14 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         ///  
         /// <para>
-        /// The SSM agent is not running. On managed instances and Linux instances, verify that
-        /// the SSM agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// The SSM Agent is not running. On managed instances and Linux instances, verify that
+        /// the SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service
         /// is running.
         /// </para>
         ///  
         /// <para>
-        /// The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
-        /// the SSM agent or EC2Config service.
+        /// The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// the SSM Agent or EC2Config service.
         /// </para>
         ///  
         /// <para>
@@ -2552,14 +2557,14 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         ///  
         /// <para>
-        /// The SSM agent is not running. On managed instances and Linux instances, verify that
-        /// the SSM agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// The SSM Agent is not running. On managed instances and Linux instances, verify that
+        /// the SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service
         /// is running.
         /// </para>
         ///  
         /// <para>
-        /// The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
-        /// the SSM agent or EC2Config service.
+        /// The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// the SSM Agent or EC2Config service.
         /// </para>
         ///  
         /// <para>
@@ -2619,7 +2624,7 @@ namespace Amazon.SimpleSystemsManagement
 
         /// <summary>
         /// Describes one or more of your instances. You can use this to get information about
-        /// instances like the operating system platform, the SSM agent version (Linux), status
+        /// instances like the operating system platform, the SSM Agent version (Linux), status
         /// etc. If you specify one or more instance IDs, it returns information for those instances.
         /// If you do not specify instance IDs, it returns information for all your instances.
         /// If you specify an instance ID that is not valid or an instance that you do not own,
@@ -2642,14 +2647,14 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         ///  
         /// <para>
-        /// The SSM agent is not running. On managed instances and Linux instances, verify that
-        /// the SSM agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// The SSM Agent is not running. On managed instances and Linux instances, verify that
+        /// the SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service
         /// is running.
         /// </para>
         ///  
         /// <para>
-        /// The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
-        /// the SSM agent or EC2Config service.
+        /// The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// the SSM Agent or EC2Config service.
         /// </para>
         ///  
         /// <para>
@@ -2671,7 +2676,7 @@ namespace Amazon.SimpleSystemsManagement
 
         /// <summary>
         /// Describes one or more of your instances. You can use this to get information about
-        /// instances like the operating system platform, the SSM agent version (Linux), status
+        /// instances like the operating system platform, the SSM Agent version (Linux), status
         /// etc. If you specify one or more instance IDs, it returns information for those instances.
         /// If you do not specify instance IDs, it returns information for all your instances.
         /// If you specify an instance ID that is not valid or an instance that you do not own,
@@ -2695,14 +2700,14 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         ///  
         /// <para>
-        /// The SSM agent is not running. On managed instances and Linux instances, verify that
-        /// the SSM agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// The SSM Agent is not running. On managed instances and Linux instances, verify that
+        /// the SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service
         /// is running.
         /// </para>
         ///  
         /// <para>
-        /// The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
-        /// the SSM agent or EC2Config service.
+        /// The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// the SSM Agent or EC2Config service.
         /// </para>
         ///  
         /// <para>
@@ -2785,14 +2790,14 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         ///  
         /// <para>
-        /// The SSM agent is not running. On managed instances and Linux instances, verify that
-        /// the SSM agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// The SSM Agent is not running. On managed instances and Linux instances, verify that
+        /// the SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service
         /// is running.
         /// </para>
         ///  
         /// <para>
-        /// The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
-        /// the SSM agent or EC2Config service.
+        /// The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// the SSM Agent or EC2Config service.
         /// </para>
         ///  
         /// <para>
@@ -3640,14 +3645,14 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         ///  
         /// <para>
-        /// The SSM agent is not running. On managed instances and Linux instances, verify that
-        /// the SSM agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// The SSM Agent is not running. On managed instances and Linux instances, verify that
+        /// the SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service
         /// is running.
         /// </para>
         ///  
         /// <para>
-        /// The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
-        /// the SSM agent or EC2Config service.
+        /// The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// the SSM Agent or EC2Config service.
         /// </para>
         ///  
         /// <para>
@@ -4283,7 +4288,7 @@ namespace Amazon.SimpleSystemsManagement
         #region  GetParameters
 
         /// <summary>
-        /// Get a list of parameters used by the AWS account.&gt;
+        /// Get details of a parameter.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetParameters service method.</param>
         /// 
@@ -4458,7 +4463,7 @@ namespace Amazon.SimpleSystemsManagement
         #region  ListAssociations
 
         /// <summary>
-        /// Lists the associations for the specified SSM document or instance.
+        /// Lists the associations for the specified Systems Manager document or instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAssociations service method.</param>
         /// 
@@ -4543,14 +4548,14 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         ///  
         /// <para>
-        /// The SSM agent is not running. On managed instances and Linux instances, verify that
-        /// the SSM agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// The SSM Agent is not running. On managed instances and Linux instances, verify that
+        /// the SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service
         /// is running.
         /// </para>
         ///  
         /// <para>
-        /// The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
-        /// the SSM agent or EC2Config service.
+        /// The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// the SSM Agent or EC2Config service.
         /// </para>
         ///  
         /// <para>
@@ -4595,14 +4600,14 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         ///  
         /// <para>
-        /// The SSM agent is not running. On managed instances and Linux instances, verify that
-        /// the SSM agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// The SSM Agent is not running. On managed instances and Linux instances, verify that
+        /// the SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service
         /// is running.
         /// </para>
         ///  
         /// <para>
-        /// The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
-        /// the SSM agent or EC2Config service.
+        /// The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// the SSM Agent or EC2Config service.
         /// </para>
         ///  
         /// <para>
@@ -4650,14 +4655,14 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         ///  
         /// <para>
-        /// The SSM agent is not running. On managed instances and Linux instances, verify that
-        /// the SSM agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// The SSM Agent is not running. On managed instances and Linux instances, verify that
+        /// the SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service
         /// is running.
         /// </para>
         ///  
         /// <para>
-        /// The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
-        /// the SSM agent or EC2Config service.
+        /// The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// the SSM Agent or EC2Config service.
         /// </para>
         ///  
         /// <para>
@@ -4738,14 +4743,14 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         ///  
         /// <para>
-        /// The SSM agent is not running. On managed instances and Linux instances, verify that
-        /// the SSM agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// The SSM Agent is not running. On managed instances and Linux instances, verify that
+        /// the SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service
         /// is running.
         /// </para>
         ///  
         /// <para>
-        /// The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
-        /// the SSM agent or EC2Config service.
+        /// The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// the SSM Agent or EC2Config service.
         /// </para>
         ///  
         /// <para>
@@ -4786,14 +4791,14 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         ///  
         /// <para>
-        /// The SSM agent is not running. On managed instances and Linux instances, verify that
-        /// the SSM agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// The SSM Agent is not running. On managed instances and Linux instances, verify that
+        /// the SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service
         /// is running.
         /// </para>
         ///  
         /// <para>
-        /// The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
-        /// the SSM agent or EC2Config service.
+        /// The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// the SSM Agent or EC2Config service.
         /// </para>
         ///  
         /// <para>
@@ -4837,14 +4842,14 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         ///  
         /// <para>
-        /// The SSM agent is not running. On managed instances and Linux instances, verify that
-        /// the SSM agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// The SSM Agent is not running. On managed instances and Linux instances, verify that
+        /// the SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service
         /// is running.
         /// </para>
         ///  
         /// <para>
-        /// The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
-        /// the SSM agent or EC2Config service.
+        /// The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// the SSM Agent or EC2Config service.
         /// </para>
         ///  
         /// <para>
@@ -5067,14 +5072,14 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         ///  
         /// <para>
-        /// The SSM agent is not running. On managed instances and Linux instances, verify that
-        /// the SSM agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// The SSM Agent is not running. On managed instances and Linux instances, verify that
+        /// the SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service
         /// is running.
         /// </para>
         ///  
         /// <para>
-        /// The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
-        /// the SSM agent or EC2Config service.
+        /// The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// the SSM Agent or EC2Config service.
         /// </para>
         ///  
         /// <para>
@@ -5199,9 +5204,9 @@ namespace Amazon.SimpleSystemsManagement
         #region  ModifyDocumentPermission
 
         /// <summary>
-        /// Share a document publicly or privately. If you share a document privately, you must
-        /// specify the AWS user account IDs for those people who can use the document. If you
-        /// share a document publicly, you must specify <i>All</i> as the account ID.
+        /// Shares a Systems Manager document publicly or privately. If you share a document privately,
+        /// you must specify the AWS user account IDs for those people who can use the document.
+        /// If you share a document publicly, you must specify <i>All</i> as the account ID.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyDocumentPermission service method.</param>
         /// 
@@ -5294,14 +5299,14 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         ///  
         /// <para>
-        /// The SSM agent is not running. On managed instances and Linux instances, verify that
-        /// the SSM agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// The SSM Agent is not running. On managed instances and Linux instances, verify that
+        /// the SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service
         /// is running.
         /// </para>
         ///  
         /// <para>
-        /// The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
-        /// the SSM agent or EC2Config service.
+        /// The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// the SSM Agent or EC2Config service.
         /// </para>
         ///  
         /// <para>
@@ -5784,7 +5789,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <summary>
         /// Executes commands on one or more remote instances.
         /// </summary>
-        /// <param name="documentName">Required. The name of the SSM document to execute. This can be an SSM public document or a custom document.</param>
+        /// <param name="documentName">Required. The name of the Systems Manager document to execute. This can be a public document or a custom document.</param>
         /// <param name="instanceIds">Required. The instance IDs where the command should execute. You can specify a maximum of 50 IDs.</param>
         /// 
         /// <returns>The response from the SendCommand service method, as returned by SimpleSystemsManagement.</returns>
@@ -5806,14 +5811,14 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         ///  
         /// <para>
-        /// The SSM agent is not running. On managed instances and Linux instances, verify that
-        /// the SSM agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// The SSM Agent is not running. On managed instances and Linux instances, verify that
+        /// the SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service
         /// is running.
         /// </para>
         ///  
         /// <para>
-        /// The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
-        /// the SSM agent or EC2Config service.
+        /// The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// the SSM Agent or EC2Config service.
         /// </para>
         ///  
         /// <para>
@@ -5835,16 +5840,16 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidRoleException">
         /// The role name can't contain invalid characters. Also verify that you specified an
         /// IAM role for notifications that includes the required trust policy. For information
-        /// about configuring the IAM role for Run Command notifications, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/rc-sns.html">Getting
-        /// Amazon SNS Notifications When a Command Changes Status</a> in the <i>Amazon Elastic
-        /// Compute Cloud User Guide </i>.
+        /// about configuring the IAM role for Run Command notifications, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/rc-sns-notifications.html">Configuring
+        /// Amazon SNS Notifications for Run Command</a> in the <i>Amazon EC2 Systems Manager
+        /// User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.MaxDocumentSizeExceededException">
-        /// The size limit of an SSM document is 64 KB.
+        /// The size limit of a document is 64 KB.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.UnsupportedPlatformTypeException">
         /// The document does not support the platform type of the given instance ID(s). For example,
-        /// you sent an SSM document for a Windows instance to a Linux instance.
+        /// you sent an document for a Windows instance to a Linux instance.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/SendCommand">REST API Reference for SendCommand Operation</seealso>
         public SendCommandResponse SendCommand(string documentName, List<string> instanceIds)
@@ -5880,14 +5885,14 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         ///  
         /// <para>
-        /// The SSM agent is not running. On managed instances and Linux instances, verify that
-        /// the SSM agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// The SSM Agent is not running. On managed instances and Linux instances, verify that
+        /// the SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service
         /// is running.
         /// </para>
         ///  
         /// <para>
-        /// The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
-        /// the SSM agent or EC2Config service.
+        /// The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// the SSM Agent or EC2Config service.
         /// </para>
         ///  
         /// <para>
@@ -5909,16 +5914,16 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidRoleException">
         /// The role name can't contain invalid characters. Also verify that you specified an
         /// IAM role for notifications that includes the required trust policy. For information
-        /// about configuring the IAM role for Run Command notifications, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/rc-sns.html">Getting
-        /// Amazon SNS Notifications When a Command Changes Status</a> in the <i>Amazon Elastic
-        /// Compute Cloud User Guide </i>.
+        /// about configuring the IAM role for Run Command notifications, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/rc-sns-notifications.html">Configuring
+        /// Amazon SNS Notifications for Run Command</a> in the <i>Amazon EC2 Systems Manager
+        /// User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.MaxDocumentSizeExceededException">
-        /// The size limit of an SSM document is 64 KB.
+        /// The size limit of a document is 64 KB.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.UnsupportedPlatformTypeException">
         /// The document does not support the platform type of the given instance ID(s). For example,
-        /// you sent an SSM document for a Windows instance to a Linux instance.
+        /// you sent an document for a Windows instance to a Linux instance.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/SendCommand">REST API Reference for SendCommand Operation</seealso>
         public SendCommandResponse SendCommand(SendCommandRequest request)
@@ -6178,7 +6183,7 @@ namespace Amazon.SimpleSystemsManagement
         #region  UpdateAssociationStatus
 
         /// <summary>
-        /// Updates the status of the SSM document associated with the specified instance.
+        /// Updates the status of the Systems Manager document associated with the specified instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAssociationStatus service method.</param>
         /// 
@@ -6201,14 +6206,14 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         ///  
         /// <para>
-        /// The SSM agent is not running. On managed instances and Linux instances, verify that
-        /// the SSM agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// The SSM Agent is not running. On managed instances and Linux instances, verify that
+        /// the SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service
         /// is running.
         /// </para>
         ///  
         /// <para>
-        /// The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
-        /// the SSM agent or EC2Config service.
+        /// The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// the SSM Agent or EC2Config service.
         /// </para>
         ///  
         /// <para>
@@ -6286,7 +6291,7 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentContentException">
-        /// The content for the SSM document is not valid.
+        /// The content for the document is not valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
         /// The specified document does not exist.
@@ -6298,7 +6303,7 @@ namespace Amazon.SimpleSystemsManagement
         /// The document version is not valid or does not exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.MaxDocumentSizeExceededException">
-        /// The size limit of an SSM document is 64 KB.
+        /// The size limit of a document is 64 KB.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateDocument">REST API Reference for UpdateDocument Operation</seealso>
         public UpdateDocumentResponse UpdateDocument(UpdateDocumentRequest request)
@@ -6491,14 +6496,14 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         ///  
         /// <para>
-        /// The SSM agent is not running. On managed instances and Linux instances, verify that
-        /// the SSM agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// The SSM Agent is not running. On managed instances and Linux instances, verify that
+        /// the SSM Agent is running. On EC2 Windows instances, verify that the EC2Config service
         /// is running.
         /// </para>
         ///  
         /// <para>
-        /// The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
-        /// the SSM agent or EC2Config service.
+        /// The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// the SSM Agent or EC2Config service.
         /// </para>
         ///  
         /// <para>

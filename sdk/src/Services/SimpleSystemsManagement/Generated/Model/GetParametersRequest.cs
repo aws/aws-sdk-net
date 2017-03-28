@@ -29,7 +29,7 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the GetParameters operation.
-    /// Get a list of parameters used by the AWS account.&gt;
+    /// Get details of a parameter.
     /// </summary>
     public partial class GetParametersRequest : AmazonSimpleSystemsManagementRequest
     {

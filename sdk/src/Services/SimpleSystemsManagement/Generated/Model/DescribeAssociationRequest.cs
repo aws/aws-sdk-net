@@ -29,7 +29,7 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeAssociation operation.
-    /// Describes the associations for the specified SSM document or instance.
+    /// Describes the associations for the specified Systems Manager document or instance.
     /// </summary>
     public partial class DescribeAssociationRequest : AmazonSimpleSystemsManagementRequest
     {

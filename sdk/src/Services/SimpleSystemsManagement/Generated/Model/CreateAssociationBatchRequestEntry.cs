@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// Describes the association of an SSM document and an instance.
+    /// Describes the association of a Systems Manager document and an instance.
     /// </summary>
     public partial class CreateAssociationBatchRequestEntry
     {

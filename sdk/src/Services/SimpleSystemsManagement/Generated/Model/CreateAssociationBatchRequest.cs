@@ -29,13 +29,14 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateAssociationBatch operation.
-    /// Associates the specified SSM document with the specified instances or targets.
+    /// Associates the specified Systems Manager document with the specified instances or
+    /// targets.
     /// 
     ///  
     /// <para>
-    /// When you associate an SSM document with one or more instances using instance IDs or
-    /// tags, the SSM agent running on the instance processes the document and configures
-    /// the instance as specified.
+    /// When you associate a document with one or more instances using instance IDs or tags,
+    /// the SSM Agent running on the instance processes the document and configures the instance
+    /// as specified.
     /// </para>
     ///  
     /// <para>

@@ -49,7 +49,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     ///  
     /// <para>
     /// For more information about tags, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
-    /// Your Amazon EC2 Resources</a> in the Amazon EC2 User Guide. 
+    /// Your Amazon EC2 Resources</a> in the <i>Amazon EC2 User Guide</i>.
     /// </para>
     /// </summary>
     public partial class AddTagsToResourceRequest : AmazonSimpleSystemsManagementRequest

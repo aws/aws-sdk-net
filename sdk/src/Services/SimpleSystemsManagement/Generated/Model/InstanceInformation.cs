@@ -73,7 +73,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property AgentVersion. 
         /// <para>
-        /// The version of the SSM agent running on your Linux instance. 
+        /// The version of the SSM Agent running on your Linux instance. 
         /// </para>
         /// </summary>
         public string AgentVersion
@@ -200,7 +200,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property IsLatestVersion. 
         /// <para>
-        /// Indicates whether latest version of the SSM agent is running on your instance. 
+        /// Indicates whether latest version of the SSM Agent is running on your instance. 
         /// </para>
         /// </summary>
         public bool IsLatestVersion
@@ -290,7 +290,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property PingStatus. 
         /// <para>
-        /// Connection status of the SSM agent. 
+        /// Connection status of the SSM Agent. 
         /// </para>
         /// </summary>
         public PingStatus PingStatus

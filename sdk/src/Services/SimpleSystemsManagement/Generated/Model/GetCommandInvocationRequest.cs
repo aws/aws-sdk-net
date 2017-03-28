@@ -78,9 +78,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property PluginName. 
         /// <para>
-        /// (Optional) The name of the plugin for which you want detailed results. If the SSM
-        /// document contains only one plugin, the name can be omitted and the details will be
-        /// returned.
+        /// (Optional) The name of the plugin for which you want detailed results. If the document
+        /// contains only one plugin, the name can be omitted and the details will be returned.
         /// </para>
         /// </summary>
         public string PluginName

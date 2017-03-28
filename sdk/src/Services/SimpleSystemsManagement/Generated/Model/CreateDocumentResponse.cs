@@ -37,7 +37,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property DocumentDescription. 
         /// <para>
-        /// Information about the SSM document.
+        /// Information about the Systems Manager document.
         /// </para>
         /// </summary>
         public DocumentDescription DocumentDescription

@@ -51,7 +51,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property CreatedDate. 
         /// <para>
-        ///  The date when the SSM document was created. 
+        ///  The date when the document was created.
         /// </para>
         /// </summary>
         public DateTime CreatedDate

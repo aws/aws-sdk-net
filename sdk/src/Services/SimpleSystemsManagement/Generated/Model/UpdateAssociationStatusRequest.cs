@@ -29,7 +29,7 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateAssociationStatus operation.
-    /// Updates the status of the SSM document associated with the specified instance.
+    /// Updates the status of the Systems Manager document associated with the specified instance.
     /// </summary>
     public partial class UpdateAssociationStatusRequest : AmazonSimpleSystemsManagementRequest
     {

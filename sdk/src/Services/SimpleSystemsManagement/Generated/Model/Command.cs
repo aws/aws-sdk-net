@@ -114,7 +114,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property DocumentName. 
         /// <para>
-        /// The name of the SSM document requested for execution.
+        /// The name of the document requested for execution.
         /// </para>
         /// </summary>
         public string DocumentName
@@ -192,9 +192,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The maximum number of instances that are allowed to execute the command at the same
         /// time. You can specify a number of instances, such as 10, or a percentage of instances,
         /// such as 10%. The default value is 50. For more information about how to use <code>MaxConcurrency</code>,
-        /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing
-        /// a Command Using Amazon EC2 Run Command</a> (Linux) or <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing
-        /// a Command Using Amazon EC2 Run Command</a> (Windows). 
+        /// see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
+        /// a Command Using Systems Manager Run Command</a>.
         /// </para>
         /// </summary>
         public string MaxConcurrency
@@ -215,9 +214,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The maximum number of errors allowed before the system stops sending the command to
         /// additional targets. You can specify a number of errors, such as 10, or a percentage
         /// or errors, such as 10%. The default value is 50. For more information about how to
-        /// use <code>MaxErrors</code>, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing
-        /// a Command Using Amazon EC2 Run Command</a> (Linux) or <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing
-        /// a Command Using Amazon EC2 Run Command</a> (Windows).
+        /// use <code>MaxErrors</code>, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
+        /// a Command Using Systems Manager Run Command</a>.
         /// </para>
         /// </summary>
         public string MaxErrors
@@ -310,7 +308,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Parameters. 
         /// <para>
-        /// The parameter values to be inserted in the SSM document when executing the command.
+        /// The parameter values to be inserted in the document when executing the command.
         /// </para>
         /// </summary>
         public Dictionary<string, List<string>> Parameters
@@ -387,9 +385,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// information than <code>Status</code> because it includes states resulting from error
         /// and concurrency control parameters. <code>StatusDetails</code> can show different
         /// results than <code>Status</code>. For more information about these statuses, see <a
-        /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-commands.html">Monitor
-        /// Commands</a> (Linux) or <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/monitor-commands.html">Monitor
-        /// Commands</a> (Windows). <code>StatusDetails</code> can be one of the following values:
+        /// href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-about-status.html">Run
+        /// Command Status</a>. <code>StatusDetails</code> can be one of the following values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -472,7 +469,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Targets. 
         /// <para>
-        /// An array of search criteria that targets instances using a <code>Key</code>;<code>Value</code>
+        /// An array of search criteria that targets instances using a <code>Key</code>,<code>Value</code>
         /// combination that you specify. <code>Targets</code> is required if you don't provide
         /// one or more instance IDs in the call.
         /// </para>

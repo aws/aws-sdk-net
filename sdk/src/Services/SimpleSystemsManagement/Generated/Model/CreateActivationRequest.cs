@@ -32,9 +32,8 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// Registers your on-premises server or virtual machine with Amazon EC2 so that you can
     /// manage these resources using Run Command. An on-premises server or virtual machine
     /// that has been registered with EC2 is called a managed instance. For more information
-    /// about activations, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/managed-instances.html">Setting
-    /// Up Managed Instances (Linux)</a> or <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/managed-instances.html">Setting
-    /// Up Managed Instances (Windows)</a> in the Amazon EC2 User Guide.
+    /// about activations, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances.html">Setting
+    /// Up Systems Manager in Hybrid Environments</a>.
     /// </summary>
     public partial class CreateActivationRequest : AmazonSimpleSystemsManagementRequest
     {

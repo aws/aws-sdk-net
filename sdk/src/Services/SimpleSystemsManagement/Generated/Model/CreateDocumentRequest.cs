@@ -29,12 +29,12 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDocument operation.
-    /// Creates an SSM document.
+    /// Creates a Systems Manager document.
     /// 
     ///  
     /// <para>
-    /// After you create an SSM document, you can use CreateAssociation to associate it with
-    /// one or more running instances.
+    /// After you create a document, you can use CreateAssociation to associate it with one
+    /// or more running instances.
     /// </para>
     /// </summary>
     public partial class CreateDocumentRequest : AmazonSimpleSystemsManagementRequest
@@ -51,7 +51,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Instantiates CreateDocumentRequest with the parameterized properties
         /// </summary>
-        /// <param name="name">A name for the SSM document.</param>
+        /// <param name="name">A name for the Systems Manager document.</param>
         /// <param name="content">A valid JSON string.</param>
         public CreateDocumentRequest(string name, string content)
         {
@@ -99,7 +99,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// A name for the SSM document.
+        /// A name for the Systems Manager document.
         /// </para>
         /// </summary>
         public string Name

@@ -56,7 +56,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Parameters. 
         /// <para>
-        /// A list of parameters used by the AWS account.
+        /// A list of details for a parameter.
         /// </para>
         /// </summary>
         public List<Parameter> Parameters

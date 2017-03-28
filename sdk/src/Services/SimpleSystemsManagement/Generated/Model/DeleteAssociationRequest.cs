@@ -29,11 +29,11 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteAssociation operation.
-    /// Disassociates the specified SSM document from the specified instance.
+    /// Disassociates the specified Systems Manager document from the specified instance.
     /// 
     ///  
     /// <para>
-    /// When you disassociate an SSM document from an instance, it does not change the configuration
+    /// When you disassociate a document from an instance, it does not change the configuration
     /// of the instance. To change the configuration state of an instance after you disassociate
     /// a document, you must create a new document with the desired configuration and associate
     /// it with the instance.
@@ -54,7 +54,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Instantiates DeleteAssociationRequest with the parameterized properties
         /// </summary>
         /// <param name="instanceId">The ID of the instance.</param>
-        /// <param name="name">The name of the SSM document.</param>
+        /// <param name="name">The name of the Systems Manager document.</param>
         public DeleteAssociationRequest(string instanceId, string name)
         {
             _instanceId = instanceId;
@@ -100,7 +100,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the SSM document.
+        /// The name of the Systems Manager document.
         /// </para>
         /// </summary>
         public string Name

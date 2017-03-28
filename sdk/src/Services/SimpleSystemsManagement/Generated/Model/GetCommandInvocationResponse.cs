@@ -87,8 +87,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property DocumentName. 
         /// <para>
-        /// The name of the SSM document that was executed. For example, AWS-RunShellScript is
-        /// an SSM document.
+        /// The name of the document that was executed. For example, AWS-RunShellScript.
         /// </para>
         /// </summary>
         public string DocumentName
@@ -323,10 +322,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// includes more information than <code>Status</code> because it includes states resulting
         /// from error and concurrency control parameters. <code>StatusDetails</code> can show
         /// different results than <code>Status</code>. For more information about these statuses,
-        /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-commands.html">Monitor
-        /// Commands</a> (Linux) or <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/monitor-commands.html">Monitor
-        /// Commands</a> (Windows). <code>StatusDetails</code> can be one of the following values:
-        /// 
+        /// see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-about-status.html">Run
+        /// Command Status</a>. <code>StatusDetails</code> can be one of the following values:
         /// </para>
         ///  <ul> <li> 
         /// <para>

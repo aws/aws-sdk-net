@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// Parameters specified in the SSM document that execute on the server when the command
-    /// is run.
+    /// Parameters specified in a System Manager document that execute on the server when
+    /// the command is run.
     /// </summary>
     public partial class DocumentParameter
     {

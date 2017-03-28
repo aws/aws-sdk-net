@@ -60,8 +60,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// The different events for which you can receive notifications. These events include
         /// the following: All (events), InProgress, Success, TimedOut, Cancelled, Failed. To
-        /// learn more about these events, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-commands.html">Monitoring
-        /// Commands</a> in the <i>Amazon Elastic Compute Cloud User Guide </i>.
+        /// learn more about these events, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Setting
+        /// Up Events and Notifications</a> in the <i>Amazon EC2 Systems Manager User Guide</i>.
         /// </para>
         /// </summary>
         public List<string> NotificationEvents

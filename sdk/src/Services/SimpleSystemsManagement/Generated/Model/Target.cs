@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// An array of search criteria that targets instances using a <code>Key</code>;<code>Value</code>
+    /// An array of search criteria that targets instances using a <code>Key</code>,<code>Value</code>
     /// combination that you specify. <code>Targets</code> is required if you don't provide
     /// one or more instance IDs in the call.
     /// </summary>
@@ -41,12 +41,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property Key. 
         /// <para>
         /// User-defined criteria for sending commands that target instances that meet the criteria.
-        /// <code>Key</code> can be <code>tag:&lt;Amazon EC2 tag&gt;</code> or <code>name:&lt;Amazon
-        /// EC2 instance ID&gt;</code>. For example, <code>tag:ServerRole</code> or <code>name:0123456789012345</code>.
-        /// For more information about how to send commands that target instances using <code>Key</code>;<code>Value</code>
-        /// parameters, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing
-        /// a Command Using Amazon EC2 Run Command</a> (Linux) or <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing
-        /// a Command Using Amazon EC2 Run Command</a> (Windows).
+        /// <code>Key</code> can be <code>tag:&lt;Amazon EC2 tag&gt;</code> or <code>InstanceIds</code>.
+        /// For more information about how to send commands that target instances using <code>Key</code>,<code>Value</code>
+        /// parameters, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
+        /// a Command Using Systems Manager Run Command</a>.
         /// </para>
         /// </summary>
         public string Key
@@ -66,11 +64,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// User-defined criteria that maps to <code>Key</code>. For example, if you specified
         /// <code>tag:ServerRole</code>, you could specify <code>value:WebServer</code> to execute
-        /// a command on instances that include Amazon EC2 tags of ServerRole;WebServer. For more
-        /// information about how to send commands that target instances using <code>Key</code>;<code>Value</code>
-        /// parameters, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing
-        /// a Command Using Amazon EC2 Run Command</a> (Linux) or <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing
-        /// a Command Using Amazon EC2 Run Command</a> (Windows).
+        /// a command on instances that include Amazon EC2 tags of ServerRole,WebServer. For more
+        /// information about how to send commands that target instances using <code>Key</code>,<code>Value</code>
+        /// parameters, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
+        /// a Command Using Systems Manager Run Command</a>.
         /// </para>
         /// </summary>
         public List<string> Values
