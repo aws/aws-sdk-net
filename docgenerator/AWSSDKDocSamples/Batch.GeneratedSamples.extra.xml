@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.Batch.IAmazonBatch.CancelJob(Amazon.Batch.Model.CancelJobRequest)" />
+            <member name="M:Amazon.Batch.AmazonBatchClient.CancelJob(Amazon.Batch.Model.CancelJobRequest)" />
+            <member name="T:Amazon.Batch.Model.CancelJobRequest" />
+            <member name="T:Amazon.Batch.Model.CancelJobResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example cancels a job with the specified job ID.
+                </para>
+                <code
+                    title="To cancel a job"
+                    source=".\AWSSDKDocSamples\Batch\Batch.GeneratedSamples.cs"
+                    region="to-cancel-a-job-1481152314733" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Batch.IAmazonBatch.CreateComputeEnvironment(Amazon.Batch.Model.CreateComputeEnvironmentRequest)" />
+            <member name="M:Amazon.Batch.AmazonBatchClient.CreateComputeEnvironment(Amazon.Batch.Model.CreateComputeEnvironmentRequest)" />
+            <member name="T:Amazon.Batch.Model.CreateComputeEnvironmentRequest" />
+            <member name="T:Amazon.Batch.Model.CreateComputeEnvironmentResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates a managed compute environment with specific C4 instance types that are launched on demand. The compute environment is called C4OnDemand.
+                </para>
+                <code
+                    title="To create a managed EC2 compute environment"
+                    source=".\AWSSDKDocSamples\Batch\Batch.GeneratedSamples.cs"
+                    region="to-create-a-managed-ec2-compute-environment-1481152600017" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Batch.IAmazonBatch.CreateComputeEnvironment(Amazon.Batch.Model.CreateComputeEnvironmentRequest)" />
+            <member name="M:Amazon.Batch.AmazonBatchClient.CreateComputeEnvironment(Amazon.Batch.Model.CreateComputeEnvironmentRequest)" />
+            <member name="T:Amazon.Batch.Model.CreateComputeEnvironmentRequest" />
+            <member name="T:Amazon.Batch.Model.CreateComputeEnvironmentResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates a managed compute environment with the M4 instance type that is launched when the Spot bid price is at or below 20% of the On-Demand price for the instance type. The compute environment is called M4Spot.
+                </para>
+                <code
+                    title="To create a managed EC2 Spot compute environment"
+                    source=".\AWSSDKDocSamples\Batch\Batch.GeneratedSamples.cs"
+                    region="to-create-a-managed-ec2-spot-compute-environment-1481152844190" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Batch.IAmazonBatch.CreateJobQueue(Amazon.Batch.Model.CreateJobQueueRequest)" />
+            <member name="M:Amazon.Batch.AmazonBatchClient.CreateJobQueue(Amazon.Batch.Model.CreateJobQueueRequest)" />
+            <member name="T:Amazon.Batch.Model.CreateJobQueueRequest" />
+            <member name="T:Amazon.Batch.Model.CreateJobQueueResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates a job queue called LowPriority that uses the M4Spot compute environment.
+                </para>
+                <code
+                    title="To create a job queue with a single compute environment"
+                    source=".\AWSSDKDocSamples\Batch\Batch.GeneratedSamples.cs"
+                    region="to-create-a-job-queue-with-a-single-compute-environment-1481152967946" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Batch.IAmazonBatch.CreateJobQueue(Amazon.Batch.Model.CreateJobQueueRequest)" />
+            <member name="M:Amazon.Batch.AmazonBatchClient.CreateJobQueue(Amazon.Batch.Model.CreateJobQueueRequest)" />
+            <member name="T:Amazon.Batch.Model.CreateJobQueueRequest" />
+            <member name="T:Amazon.Batch.Model.CreateJobQueueResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates a job queue called HighPriority that uses the C4OnDemand compute environment with an order of 1 and the M4Spot compute environment with an order of 2.
+                </para>
+                <code
+                    title="To create a job queue with multiple compute environments"
+                    source=".\AWSSDKDocSamples\Batch\Batch.GeneratedSamples.cs"
+                    region="to-create-a-job-queue-with-multiple-compute-environments-1481153027051" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Batch.IAmazonBatch.DeleteComputeEnvironment(Amazon.Batch.Model.DeleteComputeEnvironmentRequest)" />
+            <member name="M:Amazon.Batch.AmazonBatchClient.DeleteComputeEnvironment(Amazon.Batch.Model.DeleteComputeEnvironmentRequest)" />
+            <member name="T:Amazon.Batch.Model.DeleteComputeEnvironmentRequest" />
+            <member name="T:Amazon.Batch.Model.DeleteComputeEnvironmentResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example deletes the P2OnDemand compute environment.
+                </para>
+                <code
+                    title="To delete a compute environment"
+                    source=".\AWSSDKDocSamples\Batch\Batch.GeneratedSamples.cs"
+                    region="to-delete-a-compute-environment-1481153105644" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Batch.IAmazonBatch.DeleteJobQueue(Amazon.Batch.Model.DeleteJobQueueRequest)" />
+            <member name="M:Amazon.Batch.AmazonBatchClient.DeleteJobQueue(Amazon.Batch.Model.DeleteJobQueueRequest)" />
+            <member name="T:Amazon.Batch.Model.DeleteJobQueueRequest" />
+            <member name="T:Amazon.Batch.Model.DeleteJobQueueResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example deletes the GPGPU job queue.
+                </para>
+                <code
+                    title="To delete a job queue"
+                    source=".\AWSSDKDocSamples\Batch\Batch.GeneratedSamples.cs"
+                    region="to-delete-a-job-queue-1481153508134" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Batch.IAmazonBatch.DeregisterJobDefinition(Amazon.Batch.Model.DeregisterJobDefinitionRequest)" />
+            <member name="M:Amazon.Batch.AmazonBatchClient.DeregisterJobDefinition(Amazon.Batch.Model.DeregisterJobDefinitionRequest)" />
+            <member name="T:Amazon.Batch.Model.DeregisterJobDefinitionRequest" />
+            <member name="T:Amazon.Batch.Model.DeregisterJobDefinitionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example deregisters a job definition called sleep10.
+                </para>
+                <code
+                    title="To deregister a job definition"
+                    source=".\AWSSDKDocSamples\Batch\Batch.GeneratedSamples.cs"
+                    region="to-deregister-a-job-definition-1481153579565" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Batch.IAmazonBatch.DescribeComputeEnvironments(Amazon.Batch.Model.DescribeComputeEnvironmentsRequest)" />
+            <member name="M:Amazon.Batch.AmazonBatchClient.DescribeComputeEnvironments(Amazon.Batch.Model.DescribeComputeEnvironmentsRequest)" />
+            <member name="T:Amazon.Batch.Model.DescribeComputeEnvironmentsRequest" />
+            <member name="T:Amazon.Batch.Model.DescribeComputeEnvironmentsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes the P2OnDemand compute environment.
+                </para>
+                <code
+                    title="To describe a compute environment"
+                    source=".\AWSSDKDocSamples\Batch\Batch.GeneratedSamples.cs"
+                    region="to-describe-a-compute-environment-1481153713334" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Batch.IAmazonBatch.DescribeJobDefinitions(Amazon.Batch.Model.DescribeJobDefinitionsRequest)" />
+            <member name="M:Amazon.Batch.AmazonBatchClient.DescribeJobDefinitions(Amazon.Batch.Model.DescribeJobDefinitionsRequest)" />
+            <member name="T:Amazon.Batch.Model.DescribeJobDefinitionsRequest" />
+            <member name="T:Amazon.Batch.Model.DescribeJobDefinitionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes all of your active job definitions.
+                </para>
+                <code
+                    title="To describe active job definitions"
+                    source=".\AWSSDKDocSamples\Batch\Batch.GeneratedSamples.cs"
+                    region="to-describe-active-job-definitions-1481153895831" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Batch.IAmazonBatch.DescribeJobQueues(Amazon.Batch.Model.DescribeJobQueuesRequest)" />
+            <member name="M:Amazon.Batch.AmazonBatchClient.DescribeJobQueues(Amazon.Batch.Model.DescribeJobQueuesRequest)" />
+            <member name="T:Amazon.Batch.Model.DescribeJobQueuesRequest" />
+            <member name="T:Amazon.Batch.Model.DescribeJobQueuesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes the HighPriority job queue.
+                </para>
+                <code
+                    title="To describe a job queue"
+                    source=".\AWSSDKDocSamples\Batch\Batch.GeneratedSamples.cs"
+                    region="to-describe-a-job-queue-1481153995804" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Batch.IAmazonBatch.DescribeJobs(Amazon.Batch.Model.DescribeJobsRequest)" />
+            <member name="M:Amazon.Batch.AmazonBatchClient.DescribeJobs(Amazon.Batch.Model.DescribeJobsRequest)" />
+            <member name="T:Amazon.Batch.Model.DescribeJobsRequest" />
+            <member name="T:Amazon.Batch.Model.DescribeJobsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes a job with the specified job ID.
+                </para>
+                <code
+                    title="To describe a specific job"
+                    source=".\AWSSDKDocSamples\Batch\Batch.GeneratedSamples.cs"
+                    region="to-describe-a-specific-job-1481154090490" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Batch.IAmazonBatch.ListJobs(Amazon.Batch.Model.ListJobsRequest)" />
+            <member name="M:Amazon.Batch.AmazonBatchClient.ListJobs(Amazon.Batch.Model.ListJobsRequest)" />
+            <member name="T:Amazon.Batch.Model.ListJobsRequest" />
+            <member name="T:Amazon.Batch.Model.ListJobsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example lists the running jobs in the HighPriority job queue.
+                </para>
+                <code
+                    title="To list running jobs"
+                    source=".\AWSSDKDocSamples\Batch\Batch.GeneratedSamples.cs"
+                    region="to-list-running-jobs-1481154202164" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Batch.IAmazonBatch.ListJobs(Amazon.Batch.Model.ListJobsRequest)" />
+            <member name="M:Amazon.Batch.AmazonBatchClient.ListJobs(Amazon.Batch.Model.ListJobsRequest)" />
+            <member name="T:Amazon.Batch.Model.ListJobsRequest" />
+            <member name="T:Amazon.Batch.Model.ListJobsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example lists jobs in the HighPriority job queue that are in the SUBMITTED job status.
+                </para>
+                <code
+                    title="To list submitted jobs"
+                    source=".\AWSSDKDocSamples\Batch\Batch.GeneratedSamples.cs"
+                    region="to-list-submitted-jobs-1481154251623" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Batch.IAmazonBatch.RegisterJobDefinition(Amazon.Batch.Model.RegisterJobDefinitionRequest)" />
+            <member name="M:Amazon.Batch.AmazonBatchClient.RegisterJobDefinition(Amazon.Batch.Model.RegisterJobDefinitionRequest)" />
+            <member name="T:Amazon.Batch.Model.RegisterJobDefinitionRequest" />
+            <member name="T:Amazon.Batch.Model.RegisterJobDefinitionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example registers a job definition for a simple container job.
+                </para>
+                <code
+                    title="To register a job definition"
+                    source=".\AWSSDKDocSamples\Batch\Batch.GeneratedSamples.cs"
+                    region="to-register-a-job-definition-1481154325325" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Batch.IAmazonBatch.SubmitJob(Amazon.Batch.Model.SubmitJobRequest)" />
+            <member name="M:Amazon.Batch.AmazonBatchClient.SubmitJob(Amazon.Batch.Model.SubmitJobRequest)" />
+            <member name="T:Amazon.Batch.Model.SubmitJobRequest" />
+            <member name="T:Amazon.Batch.Model.SubmitJobResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example submits a simple container job called example to the HighPriority job queue.
+                </para>
+                <code
+                    title="To submit a job to a queue"
+                    source=".\AWSSDKDocSamples\Batch\Batch.GeneratedSamples.cs"
+                    region="to-submit-a-job-to-a-queue-1481154481673" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Batch.IAmazonBatch.TerminateJob(Amazon.Batch.Model.TerminateJobRequest)" />
+            <member name="M:Amazon.Batch.AmazonBatchClient.TerminateJob(Amazon.Batch.Model.TerminateJobRequest)" />
+            <member name="T:Amazon.Batch.Model.TerminateJobRequest" />
+            <member name="T:Amazon.Batch.Model.TerminateJobResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example terminates a job with the specified job ID.
+                </para>
+                <code
+                    title="To terminate a job"
+                    source=".\AWSSDKDocSamples\Batch\Batch.GeneratedSamples.cs"
+                    region="to-terminate-a-job-1481154558276" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Batch.IAmazonBatch.UpdateComputeEnvironment(Amazon.Batch.Model.UpdateComputeEnvironmentRequest)" />
+            <member name="M:Amazon.Batch.AmazonBatchClient.UpdateComputeEnvironment(Amazon.Batch.Model.UpdateComputeEnvironmentRequest)" />
+            <member name="T:Amazon.Batch.Model.UpdateComputeEnvironmentRequest" />
+            <member name="T:Amazon.Batch.Model.UpdateComputeEnvironmentResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example disables the P2OnDemand compute environment so it can be deleted.
+                </para>
+                <code
+                    title="To update a compute environment"
+                    source=".\AWSSDKDocSamples\Batch\Batch.GeneratedSamples.cs"
+                    region="to-update-a-compute-environment-1481154702731" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Batch.IAmazonBatch.UpdateJobQueue(Amazon.Batch.Model.UpdateJobQueueRequest)" />
+            <member name="M:Amazon.Batch.AmazonBatchClient.UpdateJobQueue(Amazon.Batch.Model.UpdateJobQueueRequest)" />
+            <member name="T:Amazon.Batch.Model.UpdateJobQueueRequest" />
+            <member name="T:Amazon.Batch.Model.UpdateJobQueueResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example disables a job queue so that it can be deleted.
+                </para>
+                <code
+                    title="To update a job queue"
+                    source=".\AWSSDKDocSamples\Batch\Batch.GeneratedSamples.cs"
+                    region="to-update-a-job-queue-1481154806981" />
+            </example>
+        </value>
+    </doc>
+</docs>

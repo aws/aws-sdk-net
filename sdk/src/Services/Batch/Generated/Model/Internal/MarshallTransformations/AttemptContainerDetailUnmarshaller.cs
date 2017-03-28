@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Batch.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for JobDefinition Object
+    /// Response Unmarshaller for AttemptContainerDetail Object
     /// </summary>  
-    public class JobDefinitionUnmarshaller : IUnmarshaller<JobDefinition, XmlUnmarshallerContext>, IUnmarshaller<JobDefinition, JsonUnmarshallerContext>
+    public class AttemptContainerDetailUnmarshaller : IUnmarshaller<AttemptContainerDetail, XmlUnmarshallerContext>, IUnmarshaller<AttemptContainerDetail, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        JobDefinition IUnmarshaller<JobDefinition, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AttemptContainerDetail IUnmarshaller<AttemptContainerDetail, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,63 +53,39 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public JobDefinition Unmarshall(JsonUnmarshallerContext context)
+        public AttemptContainerDetail Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            JobDefinition unmarshalledObject = new JobDefinition();
+            AttemptContainerDetail unmarshalledObject = new AttemptContainerDetail();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("containerProperties", targetDepth))
-                {
-                    var unmarshaller = ContainerPropertiesUnmarshaller.Instance;
-                    unmarshalledObject.ContainerProperties = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("jobDefinitionArn", targetDepth))
+                if (context.TestExpression("containerInstanceArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.JobDefinitionArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ContainerInstanceArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("jobDefinitionName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.JobDefinitionName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("parameters", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    unmarshalledObject.Parameters = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("retryStrategy", targetDepth))
-                {
-                    var unmarshaller = RetryStrategyUnmarshaller.Instance;
-                    unmarshalledObject.RetryStrategy = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("revision", targetDepth))
+                if (context.TestExpression("exitCode", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.Revision = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ExitCode = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("status", targetDepth))
+                if (context.TestExpression("reason", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Reason = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("type", targetDepth))
+                if (context.TestExpression("taskArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TaskArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -118,12 +94,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         }
 
 
-        private static JobDefinitionUnmarshaller _instance = new JobDefinitionUnmarshaller();        
+        private static AttemptContainerDetailUnmarshaller _instance = new AttemptContainerDetailUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static JobDefinitionUnmarshaller Instance
+        public static AttemptContainerDetailUnmarshaller Instance
         {
             get
             {

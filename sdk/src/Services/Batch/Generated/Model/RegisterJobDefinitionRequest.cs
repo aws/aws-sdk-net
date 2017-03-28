@@ -36,6 +36,7 @@ namespace Amazon.Batch.Model
         private ContainerProperties _containerProperties;
         private string _jobDefinitionName;
         private Dictionary<string, string> _parameters = new Dictionary<string, string>();
+        private RetryStrategy _retryStrategy;
         private JobDefinitionType _type;
 
         /// <summary>
@@ -93,6 +94,26 @@ namespace Amazon.Batch.Model
         internal bool IsSetParameters()
         {
             return this._parameters != null && this._parameters.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RetryStrategy. 
+        /// <para>
+        /// The retry strategy to use for failed jobs that are submitted with this job definition.
+        /// Any retry strategy that is specified during a <a>SubmitJob</a> operation overrides
+        /// the retry strategy defined here.
+        /// </para>
+        /// </summary>
+        public RetryStrategy RetryStrategy
+        {
+            get { return this._retryStrategy; }
+            set { this._retryStrategy = value; }
+        }
+
+        // Check to see if RetryStrategy property is set
+        internal bool IsSetRetryStrategy()
+        {
+            return this._retryStrategy != null;
         }
 
         /// <summary>

@@ -64,6 +64,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("attempts", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<AttemptDetail, AttemptDetailUnmarshaller>(AttemptDetailUnmarshaller.Instance);
+                    unmarshalledObject.Attempts = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("container", targetDepth))
                 {
                     var unmarshaller = ContainerDetailUnmarshaller.Instance;
@@ -110,6 +116,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.Parameters = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("retryStrategy", targetDepth))
+                {
+                    var unmarshaller = RetryStrategyUnmarshaller.Instance;
+                    unmarshalledObject.RetryStrategy = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("startedAt", targetDepth))

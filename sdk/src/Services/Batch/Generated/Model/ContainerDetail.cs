@@ -43,6 +43,7 @@ namespace Amazon.Batch.Model
         private bool? _privileged;
         private bool? _readonlyRootFilesystem;
         private string _reason;
+        private string _taskArn;
         private List<Ulimit> _ulimits = new List<Ulimit>();
         private string _user;
         private int? _vcpus;
@@ -248,6 +249,25 @@ namespace Amazon.Batch.Model
         internal bool IsSetReason()
         {
             return this._reason != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TaskArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with the
+        /// container job.
+        /// </para>
+        /// </summary>
+        public string TaskArn
+        {
+            get { return this._taskArn; }
+            set { this._taskArn = value; }
+        }
+
+        // Check to see if TaskArn property is set
+        internal bool IsSetTaskArn()
+        {
+            return this._taskArn != null;
         }
 
         /// <summary>

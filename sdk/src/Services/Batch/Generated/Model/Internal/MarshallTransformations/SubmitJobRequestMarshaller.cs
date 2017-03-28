@@ -124,6 +124,17 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetRetryStrategy())
+                {
+                    context.Writer.WritePropertyName("retryStrategy");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = RetryStrategyMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.RetryStrategy, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

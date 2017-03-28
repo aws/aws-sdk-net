@@ -40,6 +40,7 @@ namespace Amazon.Batch.Model
         private string _jobName;
         private string _jobQueue;
         private Dictionary<string, string> _parameters = new Dictionary<string, string>();
+        private RetryStrategy _retryStrategy;
 
         /// <summary>
         /// Gets and sets the property ContainerOverrides. 
@@ -68,8 +69,8 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property DependsOn. 
         /// <para>
-        /// A list of job names or IDs on which this job depends. A job can depend upon a maximum
-        /// of 100 jobs. 
+        /// A list of job IDs on which this job depends. A job can depend upon a maximum of 100
+        /// jobs. 
         /// </para>
         /// </summary>
         public List<JobDependency> DependsOn
@@ -106,7 +107,11 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property JobName. 
         /// <para>
-        /// The name of the job.
+        /// The name of the job. A name must be 1 to 128 characters in length.
+        /// </para>
+        ///  
+        /// <para>
+        /// Pattern: ^[a-zA-Z0-9_]+$
         /// </para>
         /// </summary>
         public string JobName
@@ -159,6 +164,26 @@ namespace Amazon.Batch.Model
         internal bool IsSetParameters()
         {
             return this._parameters != null && this._parameters.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RetryStrategy. 
+        /// <para>
+        /// The retry strategy to use for failed jobs from this <a>SubmitJob</a> operation. When
+        /// a retry strategy is specified here, it overrides the retry strategy defined in the
+        /// job definition.
+        /// </para>
+        /// </summary>
+        public RetryStrategy RetryStrategy
+        {
+            get { return this._retryStrategy; }
+            set { this._retryStrategy = value; }
+        }
+
+        // Check to see if RetryStrategy property is set
+        internal bool IsSetRetryStrategy()
+        {
+            return this._retryStrategy != null;
         }
 
     }

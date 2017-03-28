@@ -130,6 +130,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                     unmarshalledObject.Reason = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("taskArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TaskArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ulimits", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<Ulimit, UlimitUnmarshaller>(UlimitUnmarshaller.Instance);

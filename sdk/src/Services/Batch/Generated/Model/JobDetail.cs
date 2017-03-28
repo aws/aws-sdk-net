@@ -32,6 +32,7 @@ namespace Amazon.Batch.Model
     /// </summary>
     public partial class JobDetail
     {
+        private List<AttemptDetail> _attempts = new List<AttemptDetail>();
         private ContainerDetail _container;
         private long? _createdAt;
         private List<JobDependency> _dependsOn = new List<JobDependency>();
@@ -40,10 +41,29 @@ namespace Amazon.Batch.Model
         private string _jobName;
         private string _jobQueue;
         private Dictionary<string, string> _parameters = new Dictionary<string, string>();
+        private RetryStrategy _retryStrategy;
         private long? _startedAt;
         private JobStatus _status;
         private string _statusReason;
         private long? _stoppedAt;
+
+        /// <summary>
+        /// Gets and sets the property Attempts. 
+        /// <para>
+        /// A list of job attempts associated with this job.
+        /// </para>
+        /// </summary>
+        public List<AttemptDetail> Attempts
+        {
+            get { return this._attempts; }
+            set { this._attempts = value; }
+        }
+
+        // Check to see if Attempts property is set
+        internal bool IsSetAttempts()
+        {
+            return this._attempts != null && this._attempts.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property Container. 
@@ -189,6 +209,24 @@ namespace Amazon.Batch.Model
         internal bool IsSetParameters()
         {
             return this._parameters != null && this._parameters.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RetryStrategy. 
+        /// <para>
+        /// The retry strategy to use for this job if an attempt fails.
+        /// </para>
+        /// </summary>
+        public RetryStrategy RetryStrategy
+        {
+            get { return this._retryStrategy; }
+            set { this._retryStrategy = value; }
+        }
+
+        // Check to see if RetryStrategy property is set
+        internal bool IsSetRetryStrategy()
+        {
+            return this._retryStrategy != null;
         }
 
         /// <summary>

@@ -298,8 +298,8 @@ namespace Amazon.Batch
 
 
         /// <summary>
-        /// Creates an AWS Batch compute environment. You can create <code>MANAGED</code> or <code>UNMANAGED</code>compute
-        /// environments.
+        /// Creates an AWS Batch compute environment. You can create <code>MANAGED</code> or <code>UNMANAGED</code>
+        /// compute environments.
         /// 
         ///  
         /// <para>

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Batch.Model
 {
     /// <summary>
-    /// Details on a volume mount point that is used in a job's container properties.
+    /// Details on a Docker volume mount point that is used in a job's container properties.
     /// </summary>
     public partial class MountPoint
     {
