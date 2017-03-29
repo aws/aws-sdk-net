@@ -195,7 +195,7 @@ namespace <#=this.Config.Namespace#>.Model
             return new AWS4Signer();
 <#
                         break;
-                        case OperationAuthType.V4UnsignedPayload:
+                        case OperationAuthType.V4UnsignedBody:
 #>
             return new AWS4Signer(false);
 <#

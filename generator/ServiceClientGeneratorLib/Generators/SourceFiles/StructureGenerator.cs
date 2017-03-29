@@ -514,7 +514,7 @@ if(this.StructureType == StructureType.Request && this.Operation.AuthType.HasVal
             #line 196 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
                         break;
-                        case OperationAuthType.V4UnsignedPayload:
+                        case OperationAuthType.V4UnsignedBody:
 
             
             #line default

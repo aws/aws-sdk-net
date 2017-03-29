@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ServiceClientGenerator
 {
-    public enum OperationAuthType { None, V4, V4UnsignedPayload }
+    public enum OperationAuthType { None, V4, V4UnsignedBody }
 
     public static class OperationAuthTypeParser
     {
@@ -15,7 +15,7 @@ namespace ServiceClientGenerator
         {
             { "none", OperationAuthType.None },
             { "v4", OperationAuthType.V4 },
-            { "v4-unsigned-payload", OperationAuthType.V4UnsignedPayload },
+            { "v4-unsigned-body", OperationAuthType.V4UnsignedBody },
 
         };
         public static OperationAuthType? Parse(JsonData authTypeNode)
