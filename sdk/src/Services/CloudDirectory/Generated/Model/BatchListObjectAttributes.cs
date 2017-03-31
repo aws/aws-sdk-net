@@ -32,9 +32,28 @@ namespace Amazon.CloudDirectory.Model
     /// </summary>
     public partial class BatchListObjectAttributes
     {
+        private SchemaFacet _facetFilter;
         private int? _maxResults;
         private string _nextToken;
         private ObjectReference _objectReference;
+
+        /// <summary>
+        /// Gets and sets the property FacetFilter. 
+        /// <para>
+        /// Used to filter the list of object attributes associated with a certain facet.
+        /// </para>
+        /// </summary>
+        public SchemaFacet FacetFilter
+        {
+            get { return this._facetFilter; }
+            set { this._facetFilter = value; }
+        }
+
+        // Check to see if FacetFilter property is set
+        internal bool IsSetFacetFilter()
+        {
+            return this._facetFilter != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 

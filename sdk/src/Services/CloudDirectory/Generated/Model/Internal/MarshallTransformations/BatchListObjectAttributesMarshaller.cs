@@ -45,6 +45,17 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(BatchListObjectAttributes requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetFacetFilter())
+            {
+                context.Writer.WritePropertyName("FacetFilter");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = SchemaFacetMarshaller.Instance;
+                marshaller.Marshall(requestObject.FacetFilter, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetMaxResults())
             {
                 context.Writer.WritePropertyName("MaxResults");

@@ -65,6 +65,17 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetFacetFilter())
+                {
+                    context.Writer.WritePropertyName("FacetFilter");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = SchemaFacetMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.FacetFilter, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("MaxResults");
