@@ -1,3 +1,8 @@
+### 3.3.69.1 (2017-03-30 22:31 UTC)
+* Core 3.3.10.3
+	* Fix issue with CredentialsFactory on non-Windows environments.
+	* all services packages updated to require new core
+
 ### 3.3.69.0 (2017-03-28 21:45 UTC)
 * Batch (3.3.1.0)
 	* Customers can now provide a retryStrategy as part of the RegisterJobDefinition and SubmitJob API calls. The retryStrategy object has a number value for attempts. This is the number of non successful executions before a job is considered FAILED. In addition, the JobDetail object now has an attempts field and shows all execution attempts.
