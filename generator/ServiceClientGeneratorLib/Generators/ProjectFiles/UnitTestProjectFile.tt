@@ -100,7 +100,9 @@
 	}
 #>
   </ItemGroup>
-  <ItemGroup Condition="$(ReferenceServiceDLLs)">
+  <Choose>
+    <When Condition="$(ReferenceServiceDLLs)">
+      <ItemGroup>
 <#
 	IList<ProjectFileCreator.Reference> dllReferences = this.Session["ServiceDllReferences"] as IList<ProjectFileCreator.Reference>;
 	if (commonReferences != null)
@@ -108,15 +110,17 @@
 		foreach(var reference in dllReferences)
 		{
 #>
-    <Reference Include="<#=reference.Name#>">
-      <HintPath><#=reference.HintPath#></HintPath>
-    </Reference>
+        <Reference Include="<#=reference.Name#>">
+          <HintPath><#=reference.HintPath#></HintPath>
+        </Reference>
 <#
 		}
 	}
 #>
-  </ItemGroup>
-  <ItemGroup Condition="!$(ReferenceServiceDLLs)">
+      </ItemGroup>
+    </When>
+    <When Condition="!$(ReferenceServiceDLLs)">
+      <ItemGroup>
 <#
 	IList<ProjectFileCreator.ProjectReference> serviceReferences = this.Session["ServiceProjectReferences"] as IList<ProjectFileCreator.ProjectReference>;
 	if (commonReferences != null)
@@ -124,15 +128,17 @@
 		foreach(var reference in serviceReferences)
 		{
 #>
-    <ProjectReference Include="<#=reference.IncludePath#>">
-      <Project><#=reference.ProjectGuid#></Project>
-      <Name><#=reference.Name#></Name>
-    </ProjectReference>
+        <ProjectReference Include="<#=reference.IncludePath#>">
+          <Project><#=reference.ProjectGuid#></Project>
+          <Name><#=reference.Name#></Name>
+        </ProjectReference>
 <#
 		}
 	}
 #>
-  </ItemGroup>
+       </ItemGroup>
+    </When>
+  </Choose>
   <ItemGroup>
     <ProjectReference Include="..\..\..\generator\ServiceClientGeneratorLib\ServiceClientGeneratorLib.csproj">
       <Project>{7BEE7C44-BE12-43CC-AFB9-B5852A1F43C8}</Project>
