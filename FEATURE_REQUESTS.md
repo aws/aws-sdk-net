@@ -124,3 +124,7 @@ See [Github Issue #33](https://github.com/aws/aws-sdk-unity/issues/33)
 #### Cognito User Pools for Unity SDK
 
 See [Github Issue #369](https://github.com/aws/aws-sdk-unity/issues/369)
+
+#### DynamoDb DocumentModel difficult to create stubs
+
+See [Github Issue #604](https://github.com/aws/aws-sdk-net/issues/604)
