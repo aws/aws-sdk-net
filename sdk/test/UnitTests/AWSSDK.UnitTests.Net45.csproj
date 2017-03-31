@@ -286,6 +286,9 @@
     <Reference Include="AWSSDK.Rekognition">
       <HintPath>..\..\..\Deployment\assemblies\net45\AWSSDK.Rekognition.dll</HintPath>
     </Reference>
+    <Reference Include="AWSSDK.ResourceGroupsTaggingAPI">
+      <HintPath>..\..\..\Deployment\assemblies\net45\AWSSDK.ResourceGroupsTaggingAPI.dll</HintPath>
+    </Reference>
     <Reference Include="AWSSDK.Route53">
       <HintPath>..\..\..\Deployment\assemblies\net45\AWSSDK.Route53.dll</HintPath>
     </Reference>
@@ -642,6 +645,10 @@
     <ProjectReference Include="..\..\src\Services\Rekognition\AWSSDK.Rekognition.Net45.csproj">
       <Project>{B340B99E-1351-4616-940E-C8AF852F6EB5}</Project>
       <Name>AWSSDK.Rekognition.Net45</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\ResourceGroupsTaggingAPI\AWSSDK.ResourceGroupsTaggingAPI.Net45.csproj">
+      <Project>{F4391E4F-9EE9-44D5-88E1-95388AF46DBE}</Project>
+      <Name>AWSSDK.ResourceGroupsTaggingAPI.Net45</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\src\Services\Route53\AWSSDK.Route53.Net45.csproj">
       <Project>{297FC084-5027-44B3-BE25-2E16D16E85D2}</Project>
