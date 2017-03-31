@@ -34,7 +34,8 @@ namespace Amazon.StorageGateway.Model
     ///  
     /// <para>
     /// If a specific <code>TapeARN</code> is not specified, AWS Storage Gateway returns a
-    /// description of all virtual tapes found in the VTS associated with your account.
+    /// description of all virtual tapes found in the VTS associated with your account. This
+    /// operation is only supported in tape gateways.
     /// </para>
     /// </summary>
     public partial class DescribeTapeArchivesRequest : AmazonStorageGatewayRequest

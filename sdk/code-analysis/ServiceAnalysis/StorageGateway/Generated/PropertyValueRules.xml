@@ -185,6 +185,11 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StorageGateway.Model.CreateNFSFileShareRequest.Squash</property>
+    <min>5</min>
+    <max>15</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StorageGateway.Model.CreateNFSFileShareResponse.FileShareARN</property>
     <min>50</min>
     <max>500</max>
@@ -775,6 +780,16 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StorageGateway.Model.RefreshCacheRequest.FileShareARN</property>
+    <min>50</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.RefreshCacheResponse.FileShareARN</property>
+    <min>50</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StorageGateway.Model.RemoveTagsFromResourceRequest.ResourceARN</property>
     <min>50</min>
     <max>500</max>
@@ -986,6 +1001,11 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StorageGateway.Model.UpdateNFSFileShareRequest.Squash</property>
+    <min>5</min>
+    <max>15</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StorageGateway.Model.UpdateNFSFileShareResponse.FileShareARN</property>
     <min>50</min>
     <max>500</max>
@@ -1195,6 +1215,11 @@
     <property>Amazon.StorageGateway.Model.NFSFileShareInfo.Role</property>
     <min>20</min>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.NFSFileShareInfo.Squash</property>
+    <min>5</min>
+    <max>15</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.StorediSCSIVolume.SourceSnapshotId</property>

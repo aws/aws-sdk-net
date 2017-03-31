@@ -47,7 +47,8 @@ namespace Amazon.StorageGateway.Model
     /// takes the snapshot of specified volume, the snapshot and description appears in the
     /// AWS Storage Gateway Console. In response, AWS Storage Gateway returns you a snapshot
     /// ID. You can use this snapshot ID to check the snapshot progress or later use it when
-    /// you want to create a volume from a snapshot.
+    /// you want to create a volume from a snapshot. This operation is only supported in stored
+    /// and cached volumes gateways.
     /// </para>
     ///  <note> 
     /// <para>

@@ -1,0 +1,1048 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.StorageGateway.IAmazonStorageGateway.ActivateGateway(Amazon.StorageGateway.Model.ActivateGatewayRequest)" />
+            <member name="M:Amazon.StorageGateway.AmazonStorageGatewayClient.ActivateGateway(Amazon.StorageGateway.Model.ActivateGatewayRequest)" />
+            <member name="T:Amazon.StorageGateway.Model.ActivateGatewayRequest" />
+            <member name="T:Amazon.StorageGateway.Model.ActivateGatewayResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Activates the gateway you previously deployed on your host.
+                </para>
+                <code
+                    title="To activate the gateway"
+                    source=".\AWSSDKDocSamples\StorageGateway\StorageGateway.GeneratedSamples.cs"
+                    region="to-activate-the-gateway-1471281611207" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.StorageGateway.IAmazonStorageGateway.AddCache(Amazon.StorageGateway.Model.AddCacheRequest)" />
+            <member name="M:Amazon.StorageGateway.AmazonStorageGatewayClient.AddCache(Amazon.StorageGateway.Model.AddCacheRequest)" />
+            <member name="T:Amazon.StorageGateway.Model.AddCacheRequest" />
+            <member name="T:Amazon.StorageGateway.Model.AddCacheResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example shows a request that activates a gateway-stored volume.
+                </para>
+                <code
+                    title="To add a cache"
+                    source=".\AWSSDKDocSamples\StorageGateway\StorageGateway.GeneratedSamples.cs"
+                    region="to-add-a-cache-1471043606854" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.StorageGateway.IAmazonStorageGateway.AddTagsToResource(Amazon.StorageGateway.Model.AddTagsToResourceRequest)" />
+            <member name="M:Amazon.StorageGateway.AmazonStorageGatewayClient.AddTagsToResource(Amazon.StorageGateway.Model.AddTagsToResourceRequest)" />
+            <member name="T:Amazon.StorageGateway.Model.AddTagsToResourceRequest" />
+            <member name="T:Amazon.StorageGateway.Model.AddTagsToResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Adds one or more tags to the specified resource.
+                </para>
+                <code
+                    title="To add tags to resource"
+                    source=".\AWSSDKDocSamples\StorageGateway\StorageGateway.GeneratedSamples.cs"
+                    region="to-add-tags-to-resource-1471283689460" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.StorageGateway.IAmazonStorageGateway.AddUploadBuffer(Amazon.StorageGateway.Model.AddUploadBufferRequest)" />
+            <member name="M:Amazon.StorageGateway.AmazonStorageGatewayClient.AddUploadBuffer(Amazon.StorageGateway.Model.AddUploadBufferRequest)" />
+            <member name="T:Amazon.StorageGateway.Model.AddUploadBufferRequest" />
+            <member name="T:Amazon.StorageGateway.Model.AddUploadBufferResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Configures one or more gateway local disks as upload buffer for a specified gateway.
+                </para>
+                <code
+                    title="To add upload buffer on local disk"
+                    source=".\AWSSDKDocSamples\StorageGateway\StorageGateway.GeneratedSamples.cs"
+                    region="to-add-upload-buffer-on-local-disk-1471293902847" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.StorageGateway.IAmazonStorageGateway.AddWorkingStorage(Amazon.StorageGateway.Model.AddWorkingStorageRequest)" />
+            <member name="M:Amazon.StorageGateway.AmazonStorageGatewayClient.AddWorkingStorage(Amazon.StorageGateway.Model.AddWorkingStorageRequest)" />
+            <member name="T:Amazon.StorageGateway.Model.AddWorkingStorageRequest" />
+            <member name="T:Amazon.StorageGateway.Model.AddWorkingStorageResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Configures one or more gateway local disks as working storage for a gateway. (Working storage is also referred to as upload buffer.)
+                </para>
+                <code
+                    title="To add storage on local disk"
+                    source=".\AWSSDKDocSamples\StorageGateway\StorageGateway.GeneratedSamples.cs"
+                    region="to-add-storage-on-local-disk-1471294305401" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.StorageGateway.IAmazonStorageGateway.CancelArchival(Amazon.StorageGateway.Model.CancelArchivalRequest)" />
+            <member name="M:Amazon.StorageGateway.AmazonStorageGatewayClient.CancelArchival(Amazon.StorageGateway.Model.CancelArchivalRequest)" />
+            <member name="T:Amazon.StorageGateway.Model.CancelArchivalRequest" />
+            <member name="T:Amazon.StorageGateway.Model.CancelArchivalResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Cancels archiving of a virtual tape to the virtual tape shelf (VTS) after the archiving process is initiated.
+                </para>
+                <code
+                    title="To cancel virtual tape archiving"
+                    source=".\AWSSDKDocSamples\StorageGateway\StorageGateway.GeneratedSamples.cs"
+                    region="to-cancel-virtual-tape-archiving-1471294865203" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.StorageGateway.IAmazonStorageGateway.CancelRetrieval(Amazon.StorageGateway.Model.CancelRetrievalRequest)" />
+            <member name="M:Amazon.StorageGateway.AmazonStorageGatewayClient.CancelRetrieval(Amazon.StorageGateway.Model.CancelRetrievalRequest)" />
+            <member name="T:Amazon.StorageGateway.Model.CancelRetrievalRequest" />
+            <member name="T:Amazon.StorageGateway.Model.CancelRetrievalResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Cancels retrieval of a virtual tape from the virtual tape shelf (VTS) to a gateway after the retrieval process is initiated.
+                </para>
+                <code
+                    title="To cancel virtual tape retrieval"
+                    source=".\AWSSDKDocSamples\StorageGateway\StorageGateway.GeneratedSamples.cs"
+                    region="to-cancel-virtual-tape-retrieval-1471295704491" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.StorageGateway.IAmazonStorageGateway.CreateCachediSCSIVolume(Amazon.StorageGateway.Model.CreateCachediSCSIVolumeRequest)" />
+            <member name="M:Amazon.StorageGateway.AmazonStorageGatewayClient.CreateCachediSCSIVolume(Amazon.StorageGateway.Model.CreateCachediSCSIVolumeRequest)" />
+            <member name="T:Amazon.StorageGateway.Model.CreateCachediSCSIVolumeRequest" />
+            <member name="T:Amazon.StorageGateway.Model.CreateCachediSCSIVolumeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Creates a cached volume on a specified cached gateway.
+                </para>
+                <code
+                    title="To create a cached iSCSI volume"
+                    source=".\AWSSDKDocSamples\StorageGateway\StorageGateway.GeneratedSamples.cs"
+                    region="to-create-a-cached-iscsi-volume-1471296661787" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.StorageGateway.IAmazonStorageGateway.CreateSnapshot(Amazon.StorageGateway.Model.CreateSnapshotRequest)" />
+            <member name="M:Amazon.StorageGateway.AmazonStorageGatewayClient.CreateSnapshot(Amazon.StorageGateway.Model.CreateSnapshotRequest)" />
+            <member name="T:Amazon.StorageGateway.Model.CreateSnapshotRequest" />
+            <member name="T:Amazon.StorageGateway.Model.CreateSnapshotResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Initiates an ad-hoc snapshot of a gateway volume.
+                </para>
+                <code
+                    title="To create a snapshot of a gateway volume"
+                    source=".\AWSSDKDocSamples\StorageGateway\StorageGateway.GeneratedSamples.cs"
+                    region="to-create-a-snapshot-of-a-gateway-volume-1471301469561" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.StorageGateway.IAmazonStorageGateway.CreateSnapshotFromVolumeRecoveryPoint(Amazon.StorageGateway.Model.CreateSnapshotFromVolumeRecoveryPointRequest)" />
+            <member name="M:Amazon.StorageGateway.AmazonStorageGatewayClient.CreateSnapshotFromVolumeRecoveryPoint(Amazon.StorageGateway.Model.CreateSnapshotFromVolumeRecoveryPointRequest)" />
+            <member name="T:Amazon.StorageGateway.Model.CreateSnapshotFromVolumeRecoveryPointRequest" />
+            <member name="T:Amazon.StorageGateway.Model.CreateSnapshotFromVolumeRecoveryPointResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Initiates a snapshot of a gateway from a volume recovery point.
+                </para>
+                <code
+                    title="To create a snapshot of a gateway volume"
+                    source=".\AWSSDKDocSamples\StorageGateway\StorageGateway.GeneratedSamples.cs"
+                    region="to-create-a-snapshot-of-a-gateway-volume-1471301469561" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.StorageGateway.IAmazonStorageGateway.CreateStorediSCSIVolume(Amazon.StorageGateway.Model.CreateStorediSCSIVolumeRequest)" />
+            <member name="M:Amazon.StorageGateway.AmazonStorageGatewayClient.CreateStorediSCSIVolume(Amazon.StorageGateway.Model.CreateStorediSCSIVolumeRequest)" />
+            <member name="T:Amazon.StorageGateway.Model.CreateStorediSCSIVolumeRequest" />
+            <member name="T:Amazon.StorageGateway.Model.CreateStorediSCSIVolumeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Creates a stored volume on a specified stored gateway.
+                </para>
+                <code
+                    title="To create a stored iSCSI volume"
+                    source=".\AWSSDKDocSamples\StorageGateway\StorageGateway.GeneratedSamples.cs"
+                    region="to-create-a-stored-iscsi-volume-1471367662813" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.StorageGateway.IAmazonStorageGateway.CreateTapes(Amazon.StorageGateway.Model.CreateTapesRequest)" />
+            <member name="M:Amazon.StorageGateway.AmazonStorageGatewayClient.CreateTapes(Amazon.StorageGateway.Model.CreateTapesRequest)" />
+            <member name="T:Amazon.StorageGateway.Model.CreateTapesRequest" />
+            <member name="T:Amazon.StorageGateway.Model.CreateTapesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Creates one or more virtual tapes.
+                </para>
+                <code
+                    title="To create a virtual tape"
+                    source=".\AWSSDKDocSamples\StorageGateway\StorageGateway.GeneratedSamples.cs"
+                    region="to-create-a-virtual-tape-1471372061659" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.StorageGateway.IAmazonStorageGateway.CreateTapeWithBarcode(Amazon.StorageGateway.Model.CreateTapeWithBarcodeRequest)" />
+            <member name="M:Amazon.StorageGateway.AmazonStorageGatewayClient.CreateTapeWithBarcode(Amazon.StorageGateway.Model.CreateTapeWithBarcodeRequest)" />
+            <member name="T:Amazon.StorageGateway.Model.CreateTapeWithBarcodeRequest" />
+            <member name="T:Amazon.StorageGateway.Model.CreateTapeWithBarcodeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Creates a virtual tape by using your own barcode.
+                </para>
+                <code
+                    title="To create a virtual tape using a barcode"
+                    source=".\AWSSDKDocSamples\StorageGateway\StorageGateway.GeneratedSamples.cs"
+                    region="to-create-a-virtual-tape-using-a-barcode-1471371842452" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.StorageGateway.IAmazonStorageGateway.DeleteBandwidthRateLimit(Amazon.StorageGateway.Model.DeleteBandwidthRateLimitRequest)" />
+            <member name="M:Amazon.StorageGateway.AmazonStorageGatewayClient.DeleteBandwidthRateLimit(Amazon.StorageGateway.Model.DeleteBandwidthRateLimitRequest)" />
+            <member name="T:Amazon.StorageGateway.Model.DeleteBandwidthRateLimitRequest" />
+            <member name="T:Amazon.StorageGateway.Model.DeleteBandwidthRateLimitResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Deletes the bandwidth rate limits of a gateway; either the upload or download limit, or both.
+                </para>
+                <code
+                    title="To delete bandwidth rate limits of gateway"
+                    source=".\AWSSDKDocSamples\StorageGateway\StorageGateway.GeneratedSamples.cs"
+                    region="to-delete-bandwidth-rate-limits-of-gateway-1471373225520" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.StorageGateway.IAmazonStorageGateway.DeleteChapCredentials(Amazon.StorageGateway.Model.DeleteChapCredentialsRequest)" />
+            <member name="M:Amazon.StorageGateway.AmazonStorageGatewayClient.DeleteChapCredentials(Amazon.StorageGateway.Model.DeleteChapCredentialsRequest)" />
+            <member name="T:Amazon.StorageGateway.Model.DeleteChapCredentialsRequest" />
+            <member name="T:Amazon.StorageGateway.Model.DeleteChapCredentialsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Deletes Challenge-Handshake Authentication Protocol (CHAP) credentials for a specified iSCSI target and initiator pair.
+                </para>
+                <code
+                    title="To delete CHAP credentials"
+                    source=".\AWSSDKDocSamples\StorageGateway\StorageGateway.GeneratedSamples.cs"
+                    region="to-delete-chap-credentials-1471375025612" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.StorageGateway.IAmazonStorageGateway.DeleteGateway(Amazon.StorageGateway.Model.DeleteGatewayRequest)" />
+            <member name="M:Amazon.StorageGateway.AmazonStorageGatewayClient.DeleteGateway(Amazon.StorageGateway.Model.DeleteGatewayRequest)" />
+            <member name="T:Amazon.StorageGateway.Model.DeleteGatewayRequest" />
+            <member name="T:Amazon.StorageGateway.Model.DeleteGatewayResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation deletes the gateway, but not the gateway's VM from the host computer.
+                </para>
+                <code
+                    title="To delete a gatgeway"
+                    source=".\AWSSDKDocSamples\StorageGateway\StorageGateway.GeneratedSamples.cs"
+                    region="to-delete-a-gatgeway-1471381697333" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.StorageGateway.IAmazonStorageGateway.DeleteSnapshotSchedule(Amazon.StorageGateway.Model.DeleteSnapshotScheduleRequest)" />
+            <member name="M:Amazon.StorageGateway.AmazonStorageGatewayClient.DeleteSnapshotSchedule(Amazon.StorageGateway.Model.DeleteSnapshotScheduleRequest)" />
+            <member name="T:Amazon.StorageGateway.Model.DeleteSnapshotScheduleRequest" />
+            <member name="T:Amazon.StorageGateway.Model.DeleteSnapshotScheduleResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This action enables you to delete a snapshot schedule for a volume.
+                </para>
+                <code
+                    title="To delete a snapshot of a volume"
+                    source=".\AWSSDKDocSamples\StorageGateway\StorageGateway.GeneratedSamples.cs"
+                    region="to-delete-a-snapshot-of-a-volume-1471382234377" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.StorageGateway.IAmazonStorageGateway.DeleteTape(Amazon.StorageGateway.Model.DeleteTapeRequest)" />
+            <member name="M:Amazon.StorageGateway.AmazonStorageGatewayClient.DeleteTape(Amazon.StorageGateway.Model.DeleteTapeRequest)" />
+            <member name="T:Amazon.StorageGateway.Model.DeleteTapeRequest" />
+            <member name="T:Amazon.StorageGateway.Model.DeleteTapeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example deletes the specified virtual tape.
+                </para>
+                <code
+                    title="To delete a virtual tape"
+                    source=".\AWSSDKDocSamples\StorageGateway\StorageGateway.GeneratedSamples.cs"
+                    region="to-delete-a-virtual-tape-1471382444157" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.StorageGateway.IAmazonStorageGateway.DeleteTapeArchive(Amazon.StorageGateway.Model.DeleteTapeArchiveRequest)" />
+            <member name="M:Amazon.StorageGateway.AmazonStorageGatewayClient.DeleteTapeArchive(Amazon.StorageGateway.Model.DeleteTapeArchiveRequest)" />
+            <member name="T:Amazon.StorageGateway.Model.DeleteTapeArchiveRequest" />
+            <member name="T:Amazon.StorageGateway.Model.DeleteTapeArchiveResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Deletes the specified virtual tape from the virtual tape shelf (VTS).
+                </para>
+                <code
+                    title="To delete a virtual tape from the shelf (VTS)"
+                    source=".\AWSSDKDocSamples\StorageGateway\StorageGateway.GeneratedSamples.cs"
+                    region="to-delete-a-virtual-tape-from-the-shelf-vts-1471383964329" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.StorageGateway.IAmazonStorageGateway.DeleteVolume(Amazon.StorageGateway.Model.DeleteVolumeRequest)" />
+            <member name="M:Amazon.StorageGateway.AmazonStorageGatewayClient.DeleteVolume(Amazon.StorageGateway.Model.DeleteVolumeRequest)" />
+            <member name="T:Amazon.StorageGateway.Model.DeleteVolumeRequest" />
+            <member name="T:Amazon.StorageGateway.Model.DeleteVolumeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Deletes the specified gateway volume that you previously created using the CreateCachediSCSIVolume or CreateStorediSCSIVolume API.
+                </para>
+                <code
+                    title="To delete a gateway volume"
+                    source=".\AWSSDKDocSamples\StorageGateway\StorageGateway.GeneratedSamples.cs"
+                    region="to-delete-a-gateway-volume-1471384418416" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.StorageGateway.IAmazonStorageGateway.DescribeBandwidthRateLimit(Amazon.StorageGateway.Model.DescribeBandwidthRateLimitRequest)" />
+            <member name="M:Amazon.StorageGateway.AmazonStorageGatewayClient.DescribeBandwidthRateLimit(Amazon.StorageGateway.Model.DescribeBandwidthRateLimitRequest)" />
+            <member name="T:Amazon.StorageGateway.Model.DescribeBandwidthRateLimitRequest" />
+            <member name="T:Amazon.StorageGateway.Model.DescribeBandwidthRateLimitResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Returns a value for a bandwidth rate limit if set. If not set, then only the gateway ARN is returned.
+                </para>
+                <code
+                    title="To describe the bandwidth rate limits of a gateway"
+                    source=".\AWSSDKDocSamples\StorageGateway\StorageGateway.GeneratedSamples.cs"
+                    region="to-describe-the-bandwidth-rate-limits-of-a-gateway-1471384826404" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.StorageGateway.IAmazonStorageGateway.DescribeCache(Amazon.StorageGateway.Model.DescribeCacheRequest)" />
+            <member name="M:Amazon.StorageGateway.AmazonStorageGatewayClient.DescribeCache(Amazon.StorageGateway.Model.DescribeCacheRequest)" />
+            <member name="T:Amazon.StorageGateway.Model.DescribeCacheRequest" />
+            <member name="T:Amazon.StorageGateway.Model.DescribeCacheResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Returns information about the cache of a gateway.
+                </para>
+                <code
+                    title="To describe cache information"
+                    source=".\AWSSDKDocSamples\StorageGateway\StorageGateway.GeneratedSamples.cs"
+                    region="to-describe-cache-information-1471385756036" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.StorageGateway.IAmazonStorageGateway.DescribeCachediSCSIVolumes(Amazon.StorageGateway.Model.DescribeCachediSCSIVolumesRequest)" />
+            <member name="M:Amazon.StorageGateway.AmazonStorageGatewayClient.DescribeCachediSCSIVolumes(Amazon.StorageGateway.Model.DescribeCachediSCSIVolumesRequest)" />
+            <member name="T:Amazon.StorageGateway.Model.DescribeCachediSCSIVolumesRequest" />
+            <member name="T:Amazon.StorageGateway.Model.DescribeCachediSCSIVolumesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Returns a description of the gateway cached iSCSI volumes specified in the request.
+                </para>
+                <code
+                    title="To describe gateway cached iSCSI volumes"
+                    source=".\AWSSDKDocSamples\StorageGateway\StorageGateway.GeneratedSamples.cs"
+                    region="to-describe-gateway-cached-iscsi-volumes-1471458094649" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.StorageGateway.IAmazonStorageGateway.DescribeChapCredentials(Amazon.StorageGateway.Model.DescribeChapCredentialsRequest)" />
+            <member name="M:Amazon.StorageGateway.AmazonStorageGatewayClient.DescribeChapCredentials(Amazon.StorageGateway.Model.DescribeChapCredentialsRequest)" />
+            <member name="T:Amazon.StorageGateway.Model.DescribeChapCredentialsRequest" />
+            <member name="T:Amazon.StorageGateway.Model.DescribeChapCredentialsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Returns an array of Challenge-Handshake Authentication Protocol (CHAP) credentials information for a specified iSCSI target, one for each target-initiator pair.
+                </para>
+                <code
+                    title="To describe CHAP credetnitals for an iSCSI"
+                    source=".\AWSSDKDocSamples\StorageGateway\StorageGateway.GeneratedSamples.cs"
+                    region="to-describe-chap-credetnitals-for-an-iscsi-1471467462967" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.StorageGateway.IAmazonStorageGateway.DescribeGatewayInformation(Amazon.StorageGateway.Model.DescribeGatewayInformationRequest)" />
+            <member name="M:Amazon.StorageGateway.AmazonStorageGatewayClient.DescribeGatewayInformation(Amazon.StorageGateway.Model.DescribeGatewayInformationRequest)" />
+            <member name="T:Amazon.StorageGateway.Model.DescribeGatewayInformationRequest" />
+            <member name="T:Amazon.StorageGateway.Model.DescribeGatewayInformationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Returns metadata about a gateway such as its name, network interfaces, configured time zone, and the state (whether the gateway is running or not).
+                </para>
+                <code
+                    title="To describe metadata about the gateway"
+                    source=".\AWSSDKDocSamples\StorageGateway\StorageGateway.GeneratedSamples.cs"
+                    region="to-describe-metadata-about-the-gateway-1471467849079" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.StorageGateway.IAmazonStorageGateway.DescribeMaintenanceStartTime(Amazon.StorageGateway.Model.DescribeMaintenanceStartTimeRequest)" />
+            <member name="M:Amazon.StorageGateway.AmazonStorageGatewayClient.DescribeMaintenanceStartTime(Amazon.StorageGateway.Model.DescribeMaintenanceStartTimeRequest)" />
+            <member name="T:Amazon.StorageGateway.Model.DescribeMaintenanceStartTimeRequest" />
+            <member name="T:Amazon.StorageGateway.Model.DescribeMaintenanceStartTimeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Returns your gateway's weekly maintenance start time including the day and time of the week.
+                </para>
+                <code
+                    title="To describe gateway's maintenance start time"
+                    source=".\AWSSDKDocSamples\StorageGateway\StorageGateway.GeneratedSamples.cs"
+                    region="to-describe-gateways-maintenance-start-time-1471470727387" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.StorageGateway.IAmazonStorageGateway.DescribeSnapshotSchedule(Amazon.StorageGateway.Model.DescribeSnapshotScheduleRequest)" />
+            <member name="M:Amazon.StorageGateway.AmazonStorageGatewayClient.DescribeSnapshotSchedule(Amazon.StorageGateway.Model.DescribeSnapshotScheduleRequest)" />
+            <member name="T:Amazon.StorageGateway.Model.DescribeSnapshotScheduleRequest" />
+            <member name="T:Amazon.StorageGateway.Model.DescribeSnapshotScheduleResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Describes the snapshot schedule for the specified gateway volume including intervals at which snapshots are automatically initiated.
+                </para>
+                <code
+                    title="To describe snapshot schedule for gateway volume"
+                    source=".\AWSSDKDocSamples\StorageGateway\StorageGateway.GeneratedSamples.cs"
+                    region="to-describe-snapshot-schedule-for-gateway-volume-1471471139538" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.StorageGateway.IAmazonStorageGateway.DescribeStorediSCSIVolumes(Amazon.StorageGateway.Model.DescribeStorediSCSIVolumesRequest)" />
+            <member name="M:Amazon.StorageGateway.AmazonStorageGatewayClient.DescribeStorediSCSIVolumes(Amazon.StorageGateway.Model.DescribeStorediSCSIVolumesRequest)" />
+            <member name="T:Amazon.StorageGateway.Model.DescribeStorediSCSIVolumesRequest" />
+            <member name="T:Amazon.StorageGateway.Model.DescribeStorediSCSIVolumesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Returns the description of the gateway volumes specified in the request belonging to the same gateway.
+                </para>
+                <code
+                    title="To describe the volumes of a gateway"
+                    source=".\AWSSDKDocSamples\StorageGateway\StorageGateway.GeneratedSamples.cs"
+                    region="to-describe-the-volumes-of-a-gateway-1471472640660" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.StorageGateway.IAmazonStorageGateway.DescribeTapeArchives(Amazon.StorageGateway.Model.DescribeTapeArchivesRequest)" />
+            <member name="M:Amazon.StorageGateway.AmazonStorageGatewayClient.DescribeTapeArchives(Amazon.StorageGateway.Model.DescribeTapeArchivesRequest)" />
+            <member name="T:Amazon.StorageGateway.Model.DescribeTapeArchivesRequest" />
+            <member name="T:Amazon.StorageGateway.Model.DescribeTapeArchivesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Returns a description of specified virtual tapes in the virtual tape shelf (VTS).
+                </para>
+                <code
+                    title="To describe virtual tapes in the VTS"
+                    source=".\AWSSDKDocSamples\StorageGateway\StorageGateway.GeneratedSamples.cs"
+                    region="to-describe-virtual-tapes-in-the-vts-1471473188198" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.StorageGateway.IAmazonStorageGateway.DescribeTapeRecoveryPoints(Amazon.StorageGateway.Model.DescribeTapeRecoveryPointsRequest)" />
+            <member name="M:Amazon.StorageGateway.AmazonStorageGatewayClient.DescribeTapeRecoveryPoints(Amazon.StorageGateway.Model.DescribeTapeRecoveryPointsRequest)" />
+            <member name="T:Amazon.StorageGateway.Model.DescribeTapeRecoveryPointsRequest" />
+            <member name="T:Amazon.StorageGateway.Model.DescribeTapeRecoveryPointsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Returns a list of virtual tape recovery points that are available for the specified gateway-VTL.
+                </para>
+                <code
+                    title="To describe virtual tape recovery points"
+                    source=".\AWSSDKDocSamples\StorageGateway\StorageGateway.GeneratedSamples.cs"
+                    region="to-describe-virtual-tape-recovery-points-1471542042026" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.StorageGateway.IAmazonStorageGateway.DescribeTapes(Amazon.StorageGateway.Model.DescribeTapesRequest)" />
+            <member name="M:Amazon.StorageGateway.AmazonStorageGatewayClient.DescribeTapes(Amazon.StorageGateway.Model.DescribeTapesRequest)" />
+            <member name="T:Amazon.StorageGateway.Model.DescribeTapesRequest" />
+            <member name="T:Amazon.StorageGateway.Model.DescribeTapesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Returns a description of the specified Amazon Resource Name (ARN) of virtual tapes. If a TapeARN is not specified, returns a description of all virtual tapes.
+                </para>
+                <code
+                    title="To describe virtual tape(s) associated with gateway"
+                    source=".\AWSSDKDocSamples\StorageGateway\StorageGateway.GeneratedSamples.cs"
+                    region="to-describe-virtual-tapes-associated-with-gateway-1471629287727" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.StorageGateway.IAmazonStorageGateway.DescribeUploadBuffer(Amazon.StorageGateway.Model.DescribeUploadBufferRequest)" />
+            <member name="M:Amazon.StorageGateway.AmazonStorageGatewayClient.DescribeUploadBuffer(Amazon.StorageGateway.Model.DescribeUploadBufferRequest)" />
+            <member name="T:Amazon.StorageGateway.Model.DescribeUploadBufferRequest" />
+            <member name="T:Amazon.StorageGateway.Model.DescribeUploadBufferResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Returns information about the upload buffer of a gateway including disk IDs and the amount of upload buffer space allocated/used.
+                </para>
+                <code
+                    title="To describe upload buffer of gateway"
+                    source=".\AWSSDKDocSamples\StorageGateway\StorageGateway.GeneratedSamples.cs"
+                    region="to-describe-upload-buffer-of-gateway-1471631099003" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.StorageGateway.IAmazonStorageGateway.DescribeUploadBuffer(Amazon.StorageGateway.Model.DescribeUploadBufferRequest)" />
+            <member name="M:Amazon.StorageGateway.AmazonStorageGatewayClient.DescribeUploadBuffer(Amazon.StorageGateway.Model.DescribeUploadBufferRequest)" />
+            <member name="T:Amazon.StorageGateway.Model.DescribeUploadBufferRequest" />
+            <member name="T:Amazon.StorageGateway.Model.DescribeUploadBufferResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Returns information about the upload buffer of a gateway including disk IDs and the amount of upload buffer space allocated and used.
+                </para>
+                <code
+                    title="To describe upload buffer of a gateway"
+                    source=".\AWSSDKDocSamples\StorageGateway\StorageGateway.GeneratedSamples.cs"
+                    region="to-describe-upload-buffer-of-a-gateway--1471904566370" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.StorageGateway.IAmazonStorageGateway.DescribeVTLDevices(Amazon.StorageGateway.Model.DescribeVTLDevicesRequest)" />
+            <member name="M:Amazon.StorageGateway.AmazonStorageGatewayClient.DescribeVTLDevices(Amazon.StorageGateway.Model.DescribeVTLDevicesRequest)" />
+            <member name="T:Amazon.StorageGateway.Model.DescribeVTLDevicesRequest" />
+            <member name="T:Amazon.StorageGateway.Model.DescribeVTLDevicesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Returns a description of virtual tape library (VTL) devices for the specified gateway.
+                </para>
+                <code
+                    title="To describe virtual tape library (VTL) devices of a single gateway"
+                    source=".\AWSSDKDocSamples\StorageGateway\StorageGateway.GeneratedSamples.cs"
+                    region="to-describe-virtual-tape-library-vtl-devices-of-a-single-gateway-1471906071410" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.StorageGateway.IAmazonStorageGateway.DescribeWorkingStorage(Amazon.StorageGateway.Model.DescribeWorkingStorageRequest)" />
+            <member name="M:Amazon.StorageGateway.AmazonStorageGatewayClient.DescribeWorkingStorage(Amazon.StorageGateway.Model.DescribeWorkingStorageRequest)" />
+            <member name="T:Amazon.StorageGateway.Model.DescribeWorkingStorageRequest" />
+            <member name="T:Amazon.StorageGateway.Model.DescribeWorkingStorageResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation is supported only for the gateway-stored volume architecture. This operation is deprecated in cached-volumes API version (20120630). Use DescribeUploadBuffer instead.
+                </para>
+                <code
+                    title="To describe the working storage of a gateway [Depreciated]"
+                    source=".\AWSSDKDocSamples\StorageGateway\StorageGateway.GeneratedSamples.cs"
+                    region="to-describe-the-working-storage-of-a-gateway-depreciated-1472070842332" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.StorageGateway.IAmazonStorageGateway.DisableGateway(Amazon.StorageGateway.Model.DisableGatewayRequest)" />
+            <member name="M:Amazon.StorageGateway.AmazonStorageGatewayClient.DisableGateway(Amazon.StorageGateway.Model.DisableGatewayRequest)" />
+            <member name="T:Amazon.StorageGateway.Model.DisableGatewayRequest" />
+            <member name="T:Amazon.StorageGateway.Model.DisableGatewayResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Disables a gateway when the gateway is no longer functioning. Use this operation for a gateway-VTL that is not reachable or not functioning.
+                </para>
+                <code
+                    title="To disable a gateway when it is no longer functioning"
+                    source=".\AWSSDKDocSamples\StorageGateway\StorageGateway.GeneratedSamples.cs"
+                    region="to-disable-a-gateway-when-it-is-no-longer-functioning-1472076046936" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.StorageGateway.IAmazonStorageGateway.ListGateways(Amazon.StorageGateway.Model.ListGatewaysRequest)" />
+            <member name="M:Amazon.StorageGateway.AmazonStorageGatewayClient.ListGateways(Amazon.StorageGateway.Model.ListGatewaysRequest)" />
+            <member name="T:Amazon.StorageGateway.Model.ListGatewaysRequest" />
+            <member name="T:Amazon.StorageGateway.Model.ListGatewaysResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Lists gateways owned by an AWS account in a specified region as requested. Results are sorted by gateway ARN up to a maximum of 100 gateways.
+                </para>
+                <code
+                    title="To lists region specific gateways per AWS account"
+                    source=".\AWSSDKDocSamples\StorageGateway\StorageGateway.GeneratedSamples.cs"
+                    region="to-lists-region-specific-gateways-per-aws-account-1472077860657" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.StorageGateway.IAmazonStorageGateway.ListLocalDisks(Amazon.StorageGateway.Model.ListLocalDisksRequest)" />
+            <member name="M:Amazon.StorageGateway.AmazonStorageGatewayClient.ListLocalDisks(Amazon.StorageGateway.Model.ListLocalDisksRequest)" />
+            <member name="T:Amazon.StorageGateway.Model.ListLocalDisksRequest" />
+            <member name="T:Amazon.StorageGateway.Model.ListLocalDisksResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The request returns a list of all disks, specifying which are configured as working storage, cache storage, or stored volume or not configured at all.
+                </para>
+                <code
+                    title="To list the gateway's local disks"
+                    source=".\AWSSDKDocSamples\StorageGateway\StorageGateway.GeneratedSamples.cs"
+                    region="to-list-the-gateways-local-disks-1472079564618" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.StorageGateway.IAmazonStorageGateway.ListTagsForResource(Amazon.StorageGateway.Model.ListTagsForResourceRequest)" />
+            <member name="M:Amazon.StorageGateway.AmazonStorageGatewayClient.ListTagsForResource(Amazon.StorageGateway.Model.ListTagsForResourceRequest)" />
+            <member name="T:Amazon.StorageGateway.Model.ListTagsForResourceRequest" />
+            <member name="T:Amazon.StorageGateway.Model.ListTagsForResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Lists the tags that have been added to the specified resource.
+                </para>
+                <code
+                    title="To list tags that have been added to a resource"
+                    source=".\AWSSDKDocSamples\StorageGateway\StorageGateway.GeneratedSamples.cs"
+                    region="to-list-tags-that-have-been-added-to-a-resource-1472080268972" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.StorageGateway.IAmazonStorageGateway.ListVolumeRecoveryPoints(Amazon.StorageGateway.Model.ListVolumeRecoveryPointsRequest)" />
+            <member name="M:Amazon.StorageGateway.AmazonStorageGatewayClient.ListVolumeRecoveryPoints(Amazon.StorageGateway.Model.ListVolumeRecoveryPointsRequest)" />
+            <member name="T:Amazon.StorageGateway.Model.ListVolumeRecoveryPointsRequest" />
+            <member name="T:Amazon.StorageGateway.Model.ListVolumeRecoveryPointsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Lists the recovery points for a specified gateway in which all data of the volume is consistent and can be used to create a snapshot.
+                </para>
+                <code
+                    title="To list recovery points for a gateway"
+                    source=".\AWSSDKDocSamples\StorageGateway\StorageGateway.GeneratedSamples.cs"
+                    region="to-list-recovery-points-for-a-gateway-1472143015088" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.StorageGateway.IAmazonStorageGateway.ListVolumes(Amazon.StorageGateway.Model.ListVolumesRequest)" />
+            <member name="M:Amazon.StorageGateway.AmazonStorageGatewayClient.ListVolumes(Amazon.StorageGateway.Model.ListVolumesRequest)" />
+            <member name="T:Amazon.StorageGateway.Model.ListVolumesRequest" />
+            <member name="T:Amazon.StorageGateway.Model.ListVolumesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Lists the iSCSI stored volumes of a gateway. Results are sorted by volume ARN up to a maximum of 100 volumes.
+                </para>
+                <code
+                    title="To list the iSCSI stored volumes of a gateway"
+                    source=".\AWSSDKDocSamples\StorageGateway\StorageGateway.GeneratedSamples.cs"
+                    region="to-list-the-iscsi-stored-volumes-of-a-gateway-1472145723653" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.StorageGateway.IAmazonStorageGateway.RemoveTagsFromResource(Amazon.StorageGateway.Model.RemoveTagsFromResourceRequest)" />
+            <member name="M:Amazon.StorageGateway.AmazonStorageGatewayClient.RemoveTagsFromResource(Amazon.StorageGateway.Model.RemoveTagsFromResourceRequest)" />
+            <member name="T:Amazon.StorageGateway.Model.RemoveTagsFromResourceRequest" />
+            <member name="T:Amazon.StorageGateway.Model.RemoveTagsFromResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Lists the iSCSI stored volumes of a gateway. Removes one or more tags from the specified resource.
+                </para>
+                <code
+                    title="To remove tags from a resource"
+                    source=".\AWSSDKDocSamples\StorageGateway\StorageGateway.GeneratedSamples.cs"
+                    region="to-remove-tags-from-a-resource-1472147210553" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.StorageGateway.IAmazonStorageGateway.ResetCache(Amazon.StorageGateway.Model.ResetCacheRequest)" />
+            <member name="M:Amazon.StorageGateway.AmazonStorageGatewayClient.ResetCache(Amazon.StorageGateway.Model.ResetCacheRequest)" />
+            <member name="T:Amazon.StorageGateway.Model.ResetCacheRequest" />
+            <member name="T:Amazon.StorageGateway.Model.ResetCacheResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Resets all cache disks that have encountered a error and makes the disks available for reconfiguration as cache storage.
+                </para>
+                <code
+                    title="To reset cache disks in error status"
+                    source=".\AWSSDKDocSamples\StorageGateway\StorageGateway.GeneratedSamples.cs"
+                    region="to-reset-cache-disks-in-error-status-1472148909807" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.StorageGateway.IAmazonStorageGateway.RetrieveTapeArchive(Amazon.StorageGateway.Model.RetrieveTapeArchiveRequest)" />
+            <member name="M:Amazon.StorageGateway.AmazonStorageGatewayClient.RetrieveTapeArchive(Amazon.StorageGateway.Model.RetrieveTapeArchiveRequest)" />
+            <member name="T:Amazon.StorageGateway.Model.RetrieveTapeArchiveRequest" />
+            <member name="T:Amazon.StorageGateway.Model.RetrieveTapeArchiveResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Retrieves an archived virtual tape from the virtual tape shelf (VTS) to a gateway-VTL. Virtual tapes archived in the VTS are not associated with any gateway.
+                </para>
+                <code
+                    title="To retrieve an archived tape from the VTS"
+                    source=".\AWSSDKDocSamples\StorageGateway\StorageGateway.GeneratedSamples.cs"
+                    region="to-retrieve-an-archived-tape-from-the-vts-1472149812358" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.StorageGateway.IAmazonStorageGateway.RetrieveTapeRecoveryPoint(Amazon.StorageGateway.Model.RetrieveTapeRecoveryPointRequest)" />
+            <member name="M:Amazon.StorageGateway.AmazonStorageGatewayClient.RetrieveTapeRecoveryPoint(Amazon.StorageGateway.Model.RetrieveTapeRecoveryPointRequest)" />
+            <member name="T:Amazon.StorageGateway.Model.RetrieveTapeRecoveryPointRequest" />
+            <member name="T:Amazon.StorageGateway.Model.RetrieveTapeRecoveryPointResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Retrieves the recovery point for the specified virtual tape.
+                </para>
+                <code
+                    title="To retrieve the recovery point of a virtual tape"
+                    source=".\AWSSDKDocSamples\StorageGateway\StorageGateway.GeneratedSamples.cs"
+                    region="to-retrieve-the-recovery-point-of-a-virtual-tape-1472150014805" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.StorageGateway.IAmazonStorageGateway.SetLocalConsolePassword(Amazon.StorageGateway.Model.SetLocalConsolePasswordRequest)" />
+            <member name="M:Amazon.StorageGateway.AmazonStorageGatewayClient.SetLocalConsolePassword(Amazon.StorageGateway.Model.SetLocalConsolePasswordRequest)" />
+            <member name="T:Amazon.StorageGateway.Model.SetLocalConsolePasswordRequest" />
+            <member name="T:Amazon.StorageGateway.Model.SetLocalConsolePasswordResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Sets the password for your VM local console.
+                </para>
+                <code
+                    title="To set a password for your VM"
+                    source=".\AWSSDKDocSamples\StorageGateway\StorageGateway.GeneratedSamples.cs"
+                    region="to-set-a-password-for-your-vm-1472150202632" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.StorageGateway.IAmazonStorageGateway.ShutdownGateway(Amazon.StorageGateway.Model.ShutdownGatewayRequest)" />
+            <member name="M:Amazon.StorageGateway.AmazonStorageGatewayClient.ShutdownGateway(Amazon.StorageGateway.Model.ShutdownGatewayRequest)" />
+            <member name="T:Amazon.StorageGateway.Model.ShutdownGatewayRequest" />
+            <member name="T:Amazon.StorageGateway.Model.ShutdownGatewayResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation shuts down the gateway service component running in the storage gateway's virtual machine (VM) and not the VM.
+                </para>
+                <code
+                    title="To shut down a gateway service"
+                    source=".\AWSSDKDocSamples\StorageGateway\StorageGateway.GeneratedSamples.cs"
+                    region="to-shut-down-a-gateway-service-1472150508835" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.StorageGateway.IAmazonStorageGateway.StartGateway(Amazon.StorageGateway.Model.StartGatewayRequest)" />
+            <member name="M:Amazon.StorageGateway.AmazonStorageGatewayClient.StartGateway(Amazon.StorageGateway.Model.StartGatewayRequest)" />
+            <member name="T:Amazon.StorageGateway.Model.StartGatewayRequest" />
+            <member name="T:Amazon.StorageGateway.Model.StartGatewayResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Starts a gateway service that was previously shut down.
+                </para>
+                <code
+                    title="To start a gateway service"
+                    source=".\AWSSDKDocSamples\StorageGateway\StorageGateway.GeneratedSamples.cs"
+                    region="to-start-a-gateway-service-1472150722315" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.StorageGateway.IAmazonStorageGateway.UpdateBandwidthRateLimit(Amazon.StorageGateway.Model.UpdateBandwidthRateLimitRequest)" />
+            <member name="M:Amazon.StorageGateway.AmazonStorageGatewayClient.UpdateBandwidthRateLimit(Amazon.StorageGateway.Model.UpdateBandwidthRateLimitRequest)" />
+            <member name="T:Amazon.StorageGateway.Model.UpdateBandwidthRateLimitRequest" />
+            <member name="T:Amazon.StorageGateway.Model.UpdateBandwidthRateLimitResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Updates the bandwidth rate limits of a gateway. Both the upload and download bandwidth rate limit can be set, or either one of the two. If a new limit is not set, the existing rate limit remains.
+                </para>
+                <code
+                    title="To update the bandwidth rate limits of a gateway"
+                    source=".\AWSSDKDocSamples\StorageGateway\StorageGateway.GeneratedSamples.cs"
+                    region="to-update-the-bandwidth-rate-limits-of-a-gateway-1472151016202" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.StorageGateway.IAmazonStorageGateway.UpdateChapCredentials(Amazon.StorageGateway.Model.UpdateChapCredentialsRequest)" />
+            <member name="M:Amazon.StorageGateway.AmazonStorageGatewayClient.UpdateChapCredentials(Amazon.StorageGateway.Model.UpdateChapCredentialsRequest)" />
+            <member name="T:Amazon.StorageGateway.Model.UpdateChapCredentialsRequest" />
+            <member name="T:Amazon.StorageGateway.Model.UpdateChapCredentialsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Updates the Challenge-Handshake Authentication Protocol (CHAP) credentials for a specified iSCSI target.
+                </para>
+                <code
+                    title="To update CHAP credentials for an iSCSI target"
+                    source=".\AWSSDKDocSamples\StorageGateway\StorageGateway.GeneratedSamples.cs"
+                    region="to-update-chap-credentials-for-an-iscsi-target-1472151325795" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.StorageGateway.IAmazonStorageGateway.UpdateGatewayInformation(Amazon.StorageGateway.Model.UpdateGatewayInformationRequest)" />
+            <member name="M:Amazon.StorageGateway.AmazonStorageGatewayClient.UpdateGatewayInformation(Amazon.StorageGateway.Model.UpdateGatewayInformationRequest)" />
+            <member name="T:Amazon.StorageGateway.Model.UpdateGatewayInformationRequest" />
+            <member name="T:Amazon.StorageGateway.Model.UpdateGatewayInformationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Updates a gateway's metadata, which includes the gateway's name and time zone.
+                </para>
+                <code
+                    title="To update a gateway's metadata"
+                    source=".\AWSSDKDocSamples\StorageGateway\StorageGateway.GeneratedSamples.cs"
+                    region="to-update-a-gateways-metadata-1472151688693" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.StorageGateway.IAmazonStorageGateway.UpdateGatewaySoftwareNow(Amazon.StorageGateway.Model.UpdateGatewaySoftwareNowRequest)" />
+            <member name="M:Amazon.StorageGateway.AmazonStorageGatewayClient.UpdateGatewaySoftwareNow(Amazon.StorageGateway.Model.UpdateGatewaySoftwareNowRequest)" />
+            <member name="T:Amazon.StorageGateway.Model.UpdateGatewaySoftwareNowRequest" />
+            <member name="T:Amazon.StorageGateway.Model.UpdateGatewaySoftwareNowResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Updates the gateway virtual machine (VM) software. The request immediately triggers the software update.
+                </para>
+                <code
+                    title="To update a gateway's VM software"
+                    source=".\AWSSDKDocSamples\StorageGateway\StorageGateway.GeneratedSamples.cs"
+                    region="to-update-a-gateways-vm-software-1472152020929" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.StorageGateway.IAmazonStorageGateway.UpdateMaintenanceStartTime(Amazon.StorageGateway.Model.UpdateMaintenanceStartTimeRequest)" />
+            <member name="M:Amazon.StorageGateway.AmazonStorageGatewayClient.UpdateMaintenanceStartTime(Amazon.StorageGateway.Model.UpdateMaintenanceStartTimeRequest)" />
+            <member name="T:Amazon.StorageGateway.Model.UpdateMaintenanceStartTimeRequest" />
+            <member name="T:Amazon.StorageGateway.Model.UpdateMaintenanceStartTimeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Updates a gateway's weekly maintenance start time information, including day and time of the week. The maintenance time is in your gateway's time zone.
+                </para>
+                <code
+                    title="To update a gateway's maintenance start time"
+                    source=".\AWSSDKDocSamples\StorageGateway\StorageGateway.GeneratedSamples.cs"
+                    region="to-update-a-gateways-maintenance-start-time-1472152552031" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.StorageGateway.IAmazonStorageGateway.UpdateSnapshotSchedule(Amazon.StorageGateway.Model.UpdateSnapshotScheduleRequest)" />
+            <member name="M:Amazon.StorageGateway.AmazonStorageGatewayClient.UpdateSnapshotSchedule(Amazon.StorageGateway.Model.UpdateSnapshotScheduleRequest)" />
+            <member name="T:Amazon.StorageGateway.Model.UpdateSnapshotScheduleRequest" />
+            <member name="T:Amazon.StorageGateway.Model.UpdateSnapshotScheduleResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Updates a snapshot schedule configured for a gateway volume.
+                </para>
+                <code
+                    title="To update a volume snapshot schedule"
+                    source=".\AWSSDKDocSamples\StorageGateway\StorageGateway.GeneratedSamples.cs"
+                    region="to-update-a-volume-snapshot-schedule-1472152757068" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.StorageGateway.IAmazonStorageGateway.UpdateVTLDeviceType(Amazon.StorageGateway.Model.UpdateVTLDeviceTypeRequest)" />
+            <member name="M:Amazon.StorageGateway.AmazonStorageGatewayClient.UpdateVTLDeviceType(Amazon.StorageGateway.Model.UpdateVTLDeviceTypeRequest)" />
+            <member name="T:Amazon.StorageGateway.Model.UpdateVTLDeviceTypeRequest" />
+            <member name="T:Amazon.StorageGateway.Model.UpdateVTLDeviceTypeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Updates the type of medium changer in a gateway-VTL after a gateway-VTL is activated.
+                </para>
+                <code
+                    title="To update a VTL device type"
+                    source=".\AWSSDKDocSamples\StorageGateway\StorageGateway.GeneratedSamples.cs"
+                    region="to-update-a-vtl-device-type-1472153012967" />
+            </example>
+        </value>
+    </doc>
+</docs>

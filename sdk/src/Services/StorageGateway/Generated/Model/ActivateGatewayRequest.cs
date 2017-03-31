@@ -32,10 +32,10 @@ namespace Amazon.StorageGateway.Model
     /// Activates the gateway you previously deployed on your host. For more information,
     /// see <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/GettingStartedActivateGateway-common.html">
     /// Activate the AWS Storage Gateway</a>. In the activation process, you specify information
-    /// such as the you want to use for storing snapshots, the time zone for scheduled snapshots
-    /// the gateway snapshot schedule window, an activation key, and a name for your gateway.
-    /// The activation process also associates your gateway with your account; for more information,
-    /// see <a>UpdateGatewayInformation</a>.
+    /// such as the region you want to use for storing snapshots, the time zone for scheduled
+    /// snapshots the gateway snapshot schedule window, an activation key, and a name for
+    /// your gateway. The activation process also associates your gateway with your account;
+    /// for more information, see <a>UpdateGatewayInformation</a>.
     /// 
     ///  <note> 
     /// <para>
@@ -105,8 +105,9 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         ///  
         /// <para>
-        ///  Valid Values: "us-east-1", "us-west-1", "us-west-2", "eu-west-1", "eu-central-1",
-        /// "ap-northeast-1", "ap-northeast-2", "ap-southeast-1", "ap-southeast-2", "sa-east-1"
+        ///  Valid Values: "us-east-1", "us-east-2", "us-west-1", "us-west-2", "ca-central-1",
+        /// "eu-west-1", "eu-central-1", "eu-west-2", "ap-northeast-1", "ap-northeast-2", "ap-southeast-1",
+        /// "ap-southeast-2", "sa-east-1"
         /// </para>
         /// </summary>
         public string GatewayRegion
@@ -147,6 +148,10 @@ namespace Amazon.StorageGateway.Model
         /// to all later functions of the gateway and cannot be changed after activation. The
         /// default value is <code>STORED</code>. 
         /// </para>
+        ///  
+        /// <para>
+        ///  Valid Values: "STORED", "CACHED", "VTL", "FILE_S3"
+        /// </para>
         /// </summary>
         public string GatewayType
         {
@@ -163,8 +168,8 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property MediumChangerType. 
         /// <para>
-        /// The value that indicates the type of medium changer to use for gateway-VTL. This field
-        /// is optional.
+        /// The value that indicates the type of medium changer to use for tape gateway. This
+        /// field is optional.
         /// </para>
         ///  
         /// <para>
@@ -186,7 +191,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property TapeDriveType. 
         /// <para>
-        /// The value that indicates the type of tape drive to use for gateway-VTL. This field
+        /// The value that indicates the type of tape drive to use for tape gateway. This field
         /// is optional.
         /// </para>
         ///  

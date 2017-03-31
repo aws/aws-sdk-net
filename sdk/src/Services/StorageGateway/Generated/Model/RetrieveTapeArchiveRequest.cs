@@ -29,7 +29,7 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the RetrieveTapeArchive operation.
-    /// Retrieves an archived virtual tape from the virtual tape shelf (VTS) to a gateway-VTL.
+    /// Retrieves an archived virtual tape from the virtual tape shelf (VTS) to a tape gateway.
     /// Virtual tapes archived in the VTS are not associated with any gateway. However after
     /// a tape is retrieved, it is associated with a gateway, even though it is also listed
     /// in the VTS.
@@ -56,7 +56,7 @@ namespace Amazon.StorageGateway.Model
         ///  
         /// <para>
         /// You retrieve archived virtual tapes to only one gateway and the gateway must be a
-        /// gateway-VTL.
+        /// tape gateway.
         /// </para>
         /// </summary>
         public string GatewayARN

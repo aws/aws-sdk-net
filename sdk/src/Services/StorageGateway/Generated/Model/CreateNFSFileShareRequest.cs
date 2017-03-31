@@ -31,7 +31,8 @@ namespace Amazon.StorageGateway.Model
     /// Container for the parameters to the CreateNFSFileShare operation.
     /// Creates a file share on an existing file gateway. In Storage Gateway, a file share
     /// is a file system mount point backed by Amazon S3 cloud storage. Storage Gateway exposes
-    /// file shares using a Network File System (NFS) interface.
+    /// file shares using a Network File System (NFS) interface. This operation is only supported
+    /// in file gateways.
     /// </summary>
     public partial class CreateNFSFileShareRequest : AmazonStorageGatewayRequest
     {
@@ -43,13 +44,15 @@ namespace Amazon.StorageGateway.Model
         private string _kmsKey;
         private string _locationARN;
         private NFSFileShareDefaults _nfsFileShareDefaults;
+        private bool? _readOnly;
         private string _role;
+        private string _squash;
 
         /// <summary>
         /// Gets and sets the property ClientList. 
         /// <para>
         /// The list of clients that are allowed to access the file gateway. The list must contain
-        /// either valid IP addresses or valid CIDR blocks.
+        /// either valid IP addresses or valid CIDR blocks. 
         /// </para>
         /// </summary>
         public List<string> ClientList
@@ -197,6 +200,25 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ReadOnly. 
+        /// <para>
+        /// Sets the write status of a file share. "true", if the write status is read-only; otherwise
+        /// "false.
+        /// </para>
+        /// </summary>
+        public bool ReadOnly
+        {
+            get { return this._readOnly.GetValueOrDefault(); }
+            set { this._readOnly = value; }
+        }
+
+        // Check to see if ReadOnly property is set
+        internal bool IsSetReadOnly()
+        {
+            return this._readOnly.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Role. 
         /// <para>
         /// The ARN of the AWS Identity and Access Management (IAM) role that a file gateway assumes
@@ -213,6 +235,26 @@ namespace Amazon.StorageGateway.Model
         internal bool IsSetRole()
         {
             return this._role != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Squash. 
+        /// <para>
+        /// Maps a user to anonymous user. Valid options: "RootSquash" - Only root is mapped to
+        /// anonymous user, "NoSquash" - No one is mapped to anonymous user or "AllSquash" - Everyone
+        /// is mapped to anonymous user. 
+        /// </para>
+        /// </summary>
+        public string Squash
+        {
+            get { return this._squash; }
+            set { this._squash = value; }
+        }
+
+        // Check to see if Squash property is set
+        internal bool IsSetSquash()
+        {
+            return this._squash != null;
         }
 
     }

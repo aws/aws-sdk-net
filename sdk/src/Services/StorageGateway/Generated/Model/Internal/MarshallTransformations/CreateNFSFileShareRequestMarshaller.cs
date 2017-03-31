@@ -125,10 +125,22 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetReadOnly())
+                {
+                    context.Writer.WritePropertyName("ReadOnly");
+                    context.Writer.Write(publicRequest.ReadOnly);
+                }
+
                 if(publicRequest.IsSetRole())
                 {
                     context.Writer.WritePropertyName("Role");
                     context.Writer.Write(publicRequest.Role);
+                }
+
+                if(publicRequest.IsSetSquash())
+                {
+                    context.Writer.WritePropertyName("Squash");
+                    context.Writer.Write(publicRequest.Squash);
                 }
 
         

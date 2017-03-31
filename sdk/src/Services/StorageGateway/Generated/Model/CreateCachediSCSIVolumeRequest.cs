@@ -29,8 +29,8 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateCachediSCSIVolume operation.
-    /// Creates a cached volume on a specified cached gateway. This operation is supported
-    /// only for the gateway-cached volume architecture.
+    /// Creates a cached volume on a specified cached volumes gateway. This operation is only
+    /// supported in the cached volumes gateway architecture.
     /// 
     ///  <note> 
     /// <para>

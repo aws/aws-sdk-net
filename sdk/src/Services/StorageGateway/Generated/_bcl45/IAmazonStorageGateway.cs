@@ -122,10 +122,10 @@ namespace Amazon.StorageGateway
         /// Activates the gateway you previously deployed on your host. For more information,
         /// see <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/GettingStartedActivateGateway-common.html">
         /// Activate the AWS Storage Gateway</a>. In the activation process, you specify information
-        /// such as the you want to use for storing snapshots, the time zone for scheduled snapshots
-        /// the gateway snapshot schedule window, an activation key, and a name for your gateway.
-        /// The activation process also associates your gateway with your account; for more information,
-        /// see <a>UpdateGatewayInformation</a>.
+        /// such as the region you want to use for storing snapshots, the time zone for scheduled
+        /// snapshots the gateway snapshot schedule window, an activation key, and a name for
+        /// your gateway. The activation process also associates your gateway with your account;
+        /// for more information, see <a>UpdateGatewayInformation</a>.
         /// 
         ///  <note> 
         /// <para>
@@ -166,8 +166,9 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// Configures one or more gateway local disks as cache for a cached-volume gateway. This
-        /// operation is supported only for the gateway-cached volume architecture (see <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html">Storage
+        /// Configures one or more gateway local disks as cache for a cached volumes gateway.
+        /// This operation is only supported in the cached volumes gateway architecture (see <a
+        /// href="http://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html">Storage
         /// Gateway Concepts</a>).
         /// 
         ///  
@@ -266,7 +267,7 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Configures one or more gateway local disks as upload buffer for a specified gateway.
-        /// This operation is supported for both the gateway-stored and gateway-cached volume
+        /// This operation is supported for both the stored volumes and cached volumes gateway
         /// architectures.
         /// 
         ///  
@@ -310,7 +311,7 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Configures one or more gateway local disks as working storage for a gateway. This
-        /// operation is supported only for the gateway-stored volume architecture. This operation
+        /// operation is only supported in the stored volume gateway architecture. This operation
         /// is deprecated in cached-volumes API version 20120630. Use <a>AddUploadBuffer</a> instead.
         /// 
         ///  <note> 
@@ -359,7 +360,7 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Cancels archiving of a virtual tape to the virtual tape shelf (VTS) after the archiving
-        /// process is initiated.
+        /// process is initiated. This operation is only supported in tape gateways.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelArchival service method.</param>
         /// 
@@ -430,8 +431,8 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// Creates a cached volume on a specified cached gateway. This operation is supported
-        /// only for the gateway-cached volume architecture.
+        /// Creates a cached volume on a specified cached volumes gateway. This operation is only
+        /// supported in the cached volumes gateway architecture.
         /// 
         ///  <note> 
         /// <para>
@@ -489,7 +490,8 @@ namespace Amazon.StorageGateway
         /// <summary>
         /// Creates a file share on an existing file gateway. In Storage Gateway, a file share
         /// is a file system mount point backed by Amazon S3 cloud storage. Storage Gateway exposes
-        /// file shares using a Network File System (NFS) interface.
+        /// file shares using a Network File System (NFS) interface. This operation is only supported
+        /// in file gateways.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateNFSFileShare service method.</param>
         /// 
@@ -542,7 +544,8 @@ namespace Amazon.StorageGateway
         /// takes the snapshot of specified volume, the snapshot and description appears in the
         /// AWS Storage Gateway Console. In response, AWS Storage Gateway returns you a snapshot
         /// ID. You can use this snapshot ID to check the snapshot progress or later use it when
-        /// you want to create a volume from a snapshot.
+        /// you want to create a volume from a snapshot. This operation is only supported in stored
+        /// and cached volumes gateways.
         /// </para>
         ///  <note> 
         /// <para>
@@ -596,13 +599,13 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Initiates a snapshot of a gateway from a volume recovery point. This operation is
-        /// supported only for the gateway-cached volume architecture.
+        /// only supported in the cached volumes gateway architecture.
         /// 
         ///  
         /// <para>
         /// A volume recovery point is a point in time at which all data of the volume is consistent
         /// and from which you can create a snapshot. To get a list of volume recovery point for
-        /// gateway-cached volumes, use <a>ListVolumeRecoveryPoints</a>.
+        /// cached volumes gateway, use <a>ListVolumeRecoveryPoints</a>.
         /// </para>
         ///  
         /// <para>
@@ -657,8 +660,8 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// Creates a volume on a specified gateway. This operation is supported only for the
-        /// gateway-stored volume architecture.
+        /// Creates a volume on a specified gateway. This operation is only supported in the stored
+        /// volumes gateway architecture.
         /// 
         ///  
         /// <para>
@@ -709,7 +712,7 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Creates one or more virtual tapes. You write data to the virtual tapes and then archive
-        /// the tapes.
+        /// the tapes. This operation is only supported in tape gateways.
         /// 
         ///  <note> 
         /// <para>
@@ -752,7 +755,7 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Creates a virtual tape by using your own barcode. You write data to the virtual tape
-        /// and then archive the tape.
+        /// and then archive the tape. This operation is only supported in tape gateways.
         /// 
         ///  <note> 
         /// <para>
@@ -868,7 +871,8 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// Deletes a file share from a file gateway.
+        /// Deletes a file share from a file gateway. This operation is only supported in file
+        /// gateways.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteFileShare service method.</param>
         /// 
@@ -1008,7 +1012,7 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// Deletes the specified virtual tape.
+        /// Deletes the specified virtual tape. This operation is only supported in tape gateways.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteTape service method.</param>
         /// 
@@ -1043,7 +1047,8 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// Deletes the specified virtual tape from the virtual tape shelf (VTS).
+        /// Deletes the specified virtual tape from the virtual tape shelf (VTS). This operation
+        /// is only supported in tape gateways.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteTapeArchive service method.</param>
         /// 
@@ -1079,7 +1084,7 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Deletes the specified gateway volume that you previously created using the <a>CreateCachediSCSIVolume</a>
-        /// or <a>CreateStorediSCSIVolume</a> API. For gateway-stored volumes, the local disk
+        /// or <a>CreateStorediSCSIVolume</a> API. For stored volumes gateways, the local disk
         /// that was configured as the storage volume is not deleted. You can reuse the local
         /// disk to create another storage volume. 
         /// 
@@ -1175,8 +1180,8 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// Returns information about the cache of a gateway. This operation is supported only
-        /// for the gateway-cached volume architecture.
+        /// Returns information about the cache of a gateway. This operation is only supported
+        /// in the cached volumes gateway architecture.
         /// 
         ///  
         /// <para>
@@ -1218,7 +1223,7 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Returns a description of the gateway volumes specified in the request. This operation
-        /// is supported only for the gateway-cached volume architecture.
+        /// is only supported in the cached volumes gateway architecture.
         /// 
         ///  
         /// <para>
@@ -1369,7 +1374,8 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// Gets a description for one or more file shares from a file gateway.
+        /// Gets a description for one or more file shares from a file gateway. This operation
+        /// is only supported in file gateways.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeNFSFileShares service method.</param>
         /// 
@@ -1443,7 +1449,8 @@ namespace Amazon.StorageGateway
         /// <summary>
         /// Returns the description of the gateway volumes specified in the request. The list
         /// of gateway volumes in the request must be from one gateway. In the response Amazon
-        /// Storage Gateway returns volume information sorted by volume ARNs.
+        /// Storage Gateway returns volume information sorted by volume ARNs. This operation is
+        /// only supported in stored volumes gateways.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeStorediSCSIVolumes service method.</param>
         /// 
@@ -1483,7 +1490,8 @@ namespace Amazon.StorageGateway
         ///  
         /// <para>
         /// If a specific <code>TapeARN</code> is not specified, AWS Storage Gateway returns a
-        /// description of all virtual tapes found in the VTS associated with your account.
+        /// description of all virtual tapes found in the VTS associated with your account. This
+        /// operation is only supported in tape gateways.
         /// </para>
         /// </summary>
         /// 
@@ -1506,7 +1514,8 @@ namespace Amazon.StorageGateway
         ///  
         /// <para>
         /// If a specific <code>TapeARN</code> is not specified, AWS Storage Gateway returns a
-        /// description of all virtual tapes found in the VTS associated with your account.
+        /// description of all virtual tapes found in the VTS associated with your account. This
+        /// operation is only supported in tape gateways.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeTapeArchives service method.</param>
@@ -1530,7 +1539,8 @@ namespace Amazon.StorageGateway
         ///  
         /// <para>
         /// If a specific <code>TapeARN</code> is not specified, AWS Storage Gateway returns a
-        /// description of all virtual tapes found in the VTS associated with your account.
+        /// description of all virtual tapes found in the VTS associated with your account. This
+        /// operation is only supported in tape gateways.
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">
@@ -1569,13 +1579,14 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Returns a list of virtual tape recovery points that are available for the specified
-        /// gateway-VTL.
+        /// tape gateway.
         /// 
         ///  
         /// <para>
         /// A recovery point is a point-in-time view of a virtual tape at which all the data on
         /// the virtual tape is consistent. If your gateway crashes, virtual tapes that have recovery
-        /// points can be recovered to a new gateway.
+        /// points can be recovered to a new gateway. This operation is only supported in tape
+        /// gateways.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeTapeRecoveryPoints service method.</param>
@@ -1613,7 +1624,7 @@ namespace Amazon.StorageGateway
         /// <summary>
         /// Returns a description of the specified Amazon Resource Name (ARN) of virtual tapes.
         /// If a <code>TapeARN</code> is not specified, returns a description of all virtual tapes
-        /// associated with the specified gateway.
+        /// associated with the specified gateway. This operation is only supported in tape gateways.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeTapes service method.</param>
         /// 
@@ -1649,7 +1660,7 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Returns information about the upload buffer of a gateway. This operation is supported
-        /// for both the gateway-stored and gateway-cached volume architectures.
+        /// for both the stored volume and cached volumes gateway architectures.
         /// 
         ///  
         /// <para>
@@ -1690,12 +1701,12 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// Returns a description of virtual tape library (VTL) devices for the specified gateway.
-        /// In the response, AWS Storage Gateway returns VTL device information.
+        /// Returns a description of virtual tape library (VTL) devices for the specified tape
+        /// gateway. In the response, AWS Storage Gateway returns VTL device information.
         /// 
         ///  
         /// <para>
-        /// The list of VTL devices must be from one gateway.
+        /// This operation is only supported in tape gateways.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeVTLDevices service method.</param>
@@ -1731,9 +1742,9 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// Returns information about the working storage of a gateway. This operation is supported
-        /// only for the gateway-stored volume architecture. This operation is deprecated in cached-volumes
-        /// API version (20120630). Use DescribeUploadBuffer instead.
+        /// Returns information about the working storage of a gateway. This operation is only
+        /// supported in the stored volumes gateway architecture. This operation is deprecated
+        /// in cached-volumes API version (20120630). Use DescribeUploadBuffer instead.
         /// 
         ///  <note> 
         /// <para>
@@ -1784,7 +1795,7 @@ namespace Amazon.StorageGateway
         /// 
         ///  
         /// <para>
-        /// Use this operation for a gateway-VTL that is not reachable or not functioning.
+        /// Use this operation for a tape gateway that is not reachable or not functioning.
         /// </para>
         ///  <important> 
         /// <para>
@@ -1826,7 +1837,8 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Gets a list of the file shares for a specific file gateway, or the list of file shares
-        /// that belong to the calling user account.
+        /// that belong to the calling user account. This operation is only supported in file
+        /// gateways.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListFileShares service method.</param>
         /// 
@@ -2067,7 +2079,8 @@ namespace Amazon.StorageGateway
         /// up to 100 tapes. You can optionally specify the <code>Limit</code> parameter in the
         /// body to limit the number of tapes in the response. If the number of tapes returned
         /// in the response is truncated, the response includes a <code>Marker</code> element
-        /// that you can use in your subsequent request to retrieve the next set of tapes.
+        /// that you can use in your subsequent request to retrieve the next set of tapes. This
+        /// operation is only supported in tape gateways.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTapes service method.</param>
@@ -2139,15 +2152,15 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// Lists the recovery points for a specified gateway. This operation is supported only
-        /// for the gateway-cached volume architecture.
+        /// Lists the recovery points for a specified gateway. This operation is only supported
+        /// in the cached volumes gateway architecture.
         /// 
         ///  
         /// <para>
-        /// Each gateway-cached volume has one recovery point. A volume recovery point is a point
-        /// in time at which all data of the volume is consistent and from which you can create
-        /// a snapshot. To create a snapshot from a volume recovery point use the <a>CreateSnapshotFromVolumeRecoveryPoint</a>
-        /// operation.
+        /// Each cache volume has one recovery point. A volume recovery point is a point in time
+        /// at which all data of the volume is consistent and from which you can create a snapshot
+        /// or clone a new cached volume from a source volume. To create a snapshot from a volume
+        /// recovery point use the <a>CreateSnapshotFromVolumeRecoveryPoint</a> operation.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListVolumeRecoveryPoints service method.</param>
@@ -2223,6 +2236,43 @@ namespace Amazon.StorageGateway
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListVolumes">REST API Reference for ListVolumes Operation</seealso>
         Task<ListVolumesResponse> ListVolumesAsync(ListVolumesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  RefreshCache
+
+
+        /// <summary>
+        /// Refreshes the cache for the specified file share. This operation finds objects in
+        /// the Amazon S3 bucket that were added or removed since the gateway last listed the
+        /// bucket's contents and cached the results.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RefreshCache service method.</param>
+        /// 
+        /// <returns>The response from the RefreshCache service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// For more information, see the error and message fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/RefreshCache">REST API Reference for RefreshCache Operation</seealso>
+        RefreshCacheResponse RefreshCache(RefreshCacheRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RefreshCache operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RefreshCache operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/RefreshCache">REST API Reference for RefreshCache Operation</seealso>
+        Task<RefreshCacheResponse> RefreshCacheAsync(RefreshCacheRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -2379,7 +2429,7 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// Retrieves an archived virtual tape from the virtual tape shelf (VTS) to a gateway-VTL.
+        /// Retrieves an archived virtual tape from the virtual tape shelf (VTS) to a tape gateway.
         /// Virtual tapes archived in the VTS are not associated with any gateway. However after
         /// a tape is retrieved, it is associated with a gateway, even though it is also listed
         /// in the VTS.
@@ -2435,7 +2485,7 @@ namespace Amazon.StorageGateway
         ///  <note> 
         /// <para>
         /// The virtual tape can be retrieved to only one gateway. The retrieved tape is read-only.
-        /// The virtual tape can be retrieved to only a gateway-VTL. There is no charge for retrieving
+        /// The virtual tape can be retrieved to only a tape gateway. There is no charge for retrieving
         /// recovery points.
         /// </para>
         ///  </note>
@@ -2855,7 +2905,7 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// Updates a file share. 
+        /// Updates a file share. This operation is only supported in file gateways.
         /// 
         ///  <note> 
         /// <para>
@@ -2944,9 +2994,10 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// Updates the type of medium changer in a gateway-VTL. When you activate a gateway-VTL,
-        /// you select a medium changer type for the gateway-VTL. This operation enables you to
-        /// select a different type of medium changer after a gateway-VTL is activated.
+        /// Updates the type of medium changer in a tape gateway. When you activate a tape gateway,
+        /// you select a medium changer type for the tape gateway. This operation enables you
+        /// to select a different type of medium changer after a tape gateway is activated. This
+        /// operation is only supported in tape gateways.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateVTLDeviceType service method.</param>
         /// 

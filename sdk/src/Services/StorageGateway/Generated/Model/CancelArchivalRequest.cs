@@ -30,7 +30,7 @@ namespace Amazon.StorageGateway.Model
     /// <summary>
     /// Container for the parameters to the CancelArchival operation.
     /// Cancels archiving of a virtual tape to the virtual tape shelf (VTS) after the archiving
-    /// process is initiated.
+    /// process is initiated. This operation is only supported in tape gateways.
     /// </summary>
     public partial class CancelArchivalRequest : AmazonStorageGatewayRequest
     {

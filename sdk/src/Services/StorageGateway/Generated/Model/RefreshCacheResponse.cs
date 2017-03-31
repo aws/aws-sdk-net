@@ -28,33 +28,25 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeUploadBuffer operation.
-    /// Returns information about the upload buffer of a gateway. This operation is supported
-    /// for both the stored volume and cached volumes gateway architectures.
-    /// 
-    ///  
-    /// <para>
-    /// The response includes disk IDs that are configured as upload buffer space, and it
-    /// includes the amount of upload buffer space allocated and used.
-    /// </para>
+    /// This is the response object from the RefreshCache operation.
     /// </summary>
-    public partial class DescribeUploadBufferRequest : AmazonStorageGatewayRequest
+    public partial class RefreshCacheResponse : AmazonWebServiceResponse
     {
-        private string _gatewayARN;
+        private string _fileShareARN;
 
         /// <summary>
-        /// Gets and sets the property GatewayARN.
+        /// Gets and sets the property FileShareARN.
         /// </summary>
-        public string GatewayARN
+        public string FileShareARN
         {
-            get { return this._gatewayARN; }
-            set { this._gatewayARN = value; }
+            get { return this._fileShareARN; }
+            set { this._fileShareARN = value; }
         }
 
-        // Check to see if GatewayARN property is set
-        internal bool IsSetGatewayARN()
+        // Check to see if FileShareARN property is set
+        internal bool IsSetFileShareARN()
         {
-            return this._gatewayARN != null;
+            return this._fileShareARN != null;
         }
 
     }

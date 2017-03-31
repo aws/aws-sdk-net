@@ -29,7 +29,7 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateNFSFileShare operation.
-    /// Updates a file share. 
+    /// Updates a file share. This operation is only supported in file gateways.
     /// 
     ///  <note> 
     /// <para>
@@ -45,6 +45,8 @@ namespace Amazon.StorageGateway.Model
         private bool? _kmsEncrypted;
         private string _kmsKey;
         private NFSFileShareDefaults _nfsFileShareDefaults;
+        private bool? _readOnly;
+        private string _squash;
 
         /// <summary>
         /// Gets and sets the property ClientList. 
@@ -157,6 +159,45 @@ namespace Amazon.StorageGateway.Model
         internal bool IsSetNFSFileShareDefaults()
         {
             return this._nfsFileShareDefaults != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReadOnly. 
+        /// <para>
+        /// Sets the write status of a file share. "true", if the write status is read-only; otherwise
+        /// "false.
+        /// </para>
+        /// </summary>
+        public bool ReadOnly
+        {
+            get { return this._readOnly.GetValueOrDefault(); }
+            set { this._readOnly = value; }
+        }
+
+        // Check to see if ReadOnly property is set
+        internal bool IsSetReadOnly()
+        {
+            return this._readOnly.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Squash. 
+        /// <para>
+        /// Indicates the user mapped to anonymous user. Valid options: "RootSquash" - Only root
+        /// is mapped to anonymous user, "NoSquash" - No one is mapped to anonymous user or "AllSquash"
+        /// - Everyone is mapped to anonymous user.
+        /// </para>
+        /// </summary>
+        public string Squash
+        {
+            get { return this._squash; }
+            set { this._squash = value; }
+        }
+
+        // Check to see if Squash property is set
+        internal bool IsSetSquash()
+        {
+            return this._squash != null;
         }
 
     }

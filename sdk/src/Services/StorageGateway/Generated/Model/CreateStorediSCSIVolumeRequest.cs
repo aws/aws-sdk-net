@@ -29,8 +29,8 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateStorediSCSIVolume operation.
-    /// Creates a volume on a specified gateway. This operation is supported only for the
-    /// gateway-stored volume architecture.
+    /// Creates a volume on a specified gateway. This operation is only supported in the stored
+    /// volumes gateway architecture.
     /// 
     ///  
     /// <para>

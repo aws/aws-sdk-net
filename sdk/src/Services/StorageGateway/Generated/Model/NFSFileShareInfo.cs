@@ -29,7 +29,8 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// The Unix file permissions and ownership information assigned, by default, to native
-    /// S3 objects when Storage Gateway discovers them in S3 buckets.
+    /// S3 objects when Storage Gateway discovers them in S3 buckets. This operation is only
+    /// supported in file gateways.
     /// </summary>
     public partial class NFSFileShareInfo
     {
@@ -44,7 +45,9 @@ namespace Amazon.StorageGateway.Model
         private string _locationARN;
         private NFSFileShareDefaults _nfsFileShareDefaults;
         private string _path;
+        private bool? _readOnly;
         private string _role;
+        private string _squash;
 
         /// <summary>
         /// Gets and sets the property ClientList.
@@ -221,6 +224,21 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ReadOnly.
+        /// </summary>
+        public bool ReadOnly
+        {
+            get { return this._readOnly.GetValueOrDefault(); }
+            set { this._readOnly = value; }
+        }
+
+        // Check to see if ReadOnly property is set
+        internal bool IsSetReadOnly()
+        {
+            return this._readOnly.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Role.
         /// </summary>
         public string Role
@@ -233,6 +251,21 @@ namespace Amazon.StorageGateway.Model
         internal bool IsSetRole()
         {
             return this._role != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Squash.
+        /// </summary>
+        public string Squash
+        {
+            get { return this._squash; }
+            set { this._squash = value; }
+        }
+
+        // Check to see if Squash property is set
+        internal bool IsSetSquash()
+        {
+            return this._squash != null;
         }
 
     }

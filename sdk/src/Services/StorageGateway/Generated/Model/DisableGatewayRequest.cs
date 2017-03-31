@@ -34,7 +34,7 @@ namespace Amazon.StorageGateway.Model
     /// 
     ///  
     /// <para>
-    /// Use this operation for a gateway-VTL that is not reachable or not functioning.
+    /// Use this operation for a tape gateway that is not reachable or not functioning.
     /// </para>
     ///  <important> 
     /// <para>

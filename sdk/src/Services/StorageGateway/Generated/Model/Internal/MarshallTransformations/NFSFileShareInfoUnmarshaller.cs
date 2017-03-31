@@ -130,10 +130,22 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                     unmarshalledObject.Path = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ReadOnly", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.ReadOnly = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Role", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Role = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Squash", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Squash = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

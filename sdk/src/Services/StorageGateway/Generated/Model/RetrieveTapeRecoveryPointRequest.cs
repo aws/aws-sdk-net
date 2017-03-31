@@ -40,7 +40,7 @@ namespace Amazon.StorageGateway.Model
     ///  <note> 
     /// <para>
     /// The virtual tape can be retrieved to only one gateway. The retrieved tape is read-only.
-    /// The virtual tape can be retrieved to only a gateway-VTL. There is no charge for retrieving
+    /// The virtual tape can be retrieved to only a tape gateway. There is no charge for retrieving
     /// recovery points.
     /// </para>
     ///  </note>

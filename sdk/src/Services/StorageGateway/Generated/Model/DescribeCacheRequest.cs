@@ -29,8 +29,8 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeCache operation.
-    /// Returns information about the cache of a gateway. This operation is supported only
-    /// for the gateway-cached volume architecture.
+    /// Returns information about the cache of a gateway. This operation is only supported
+    /// in the cached volumes gateway architecture.
     /// 
     ///  
     /// <para>

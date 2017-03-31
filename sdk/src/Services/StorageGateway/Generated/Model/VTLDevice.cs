@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
-    /// Represents a device object associated with a gateway-VTL.
+    /// Represents a device object associated with a tape gateway.
     /// </summary>
     public partial class VTLDevice
     {

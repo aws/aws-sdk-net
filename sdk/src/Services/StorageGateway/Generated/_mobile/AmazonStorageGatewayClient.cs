@@ -1321,7 +1321,8 @@ namespace Amazon.StorageGateway
         ///  
         /// <para>
         /// If a specific <code>TapeARN</code> is not specified, AWS Storage Gateway returns a
-        /// description of all virtual tapes found in the VTS associated with your account.
+        /// description of all virtual tapes found in the VTS associated with your account. This
+        /// operation is only supported in tape gateways.
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">
@@ -1849,6 +1850,38 @@ namespace Amazon.StorageGateway
             var unmarshaller = ListVolumesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListVolumesRequest,ListVolumesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  RefreshCache
+
+        internal RefreshCacheResponse RefreshCache(RefreshCacheRequest request)
+        {
+            var marshaller = new RefreshCacheRequestMarshaller();
+            var unmarshaller = RefreshCacheResponseUnmarshaller.Instance;
+
+            return Invoke<RefreshCacheRequest,RefreshCacheResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RefreshCache operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RefreshCache operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/RefreshCache">REST API Reference for RefreshCache Operation</seealso>
+        public Task<RefreshCacheResponse> RefreshCacheAsync(RefreshCacheRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new RefreshCacheRequestMarshaller();
+            var unmarshaller = RefreshCacheResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RefreshCacheRequest,RefreshCacheResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
