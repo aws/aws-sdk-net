@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2016-11-25.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2017-03-25.normal.json service model.
  */
 
 
@@ -74,7 +74,7 @@ namespace Amazon.CloudFront
         /// Processing your request would cause you to exceed the maximum number of origin access
         /// identities allowed.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/CreateCloudFrontOriginAccessIdentity">REST API Reference for CreateCloudFrontOriginAccessIdentity Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateCloudFrontOriginAccessIdentity">REST API Reference for CreateCloudFrontOriginAccessIdentity Operation</seealso>
         CreateCloudFrontOriginAccessIdentityResponse CreateCloudFrontOriginAccessIdentity(CreateCloudFrontOriginAccessIdentityRequest request);
 
         /// <summary>
@@ -88,7 +88,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateCloudFrontOriginAccessIdentity
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/CreateCloudFrontOriginAccessIdentity">REST API Reference for CreateCloudFrontOriginAccessIdentity Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateCloudFrontOriginAccessIdentity">REST API Reference for CreateCloudFrontOriginAccessIdentity Operation</seealso>
         IAsyncResult BeginCreateCloudFrontOriginAccessIdentity(CreateCloudFrontOriginAccessIdentityRequest request, AsyncCallback callback, object state);
 
 
@@ -100,7 +100,7 @@ namespace Amazon.CloudFront
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateCloudFrontOriginAccessIdentity.</param>
         /// 
         /// <returns>Returns a  CreateCloudFrontOriginAccessIdentityResult from CloudFront.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/CreateCloudFrontOriginAccessIdentity">REST API Reference for CreateCloudFrontOriginAccessIdentity Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateCloudFrontOriginAccessIdentity">REST API Reference for CreateCloudFrontOriginAccessIdentity Operation</seealso>
         CreateCloudFrontOriginAccessIdentityResponse EndCreateCloudFrontOriginAccessIdentity(IAsyncResult asyncResult);
 
         #endregion
@@ -109,7 +109,7 @@ namespace Amazon.CloudFront
 
 
         /// <summary>
-        /// Creates a new web distribution. Send a <code>GET</code> request to the <code>/<i>CloudFront
+        /// Creates a new web distribution. Send a <code>POST</code> request to the <code>/<i>CloudFront
         /// API version</i>/distribution</code>/<code>distribution ID</code> resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDistribution service method.</param>
@@ -162,6 +162,12 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidOriginException">
         /// The Amazon S3 origin server specified does not refer to a valid Amazon S3 bucket.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginKeepaliveTimeoutException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginReadTimeoutException">
+        /// 
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidProtocolSettingsException">
         /// You cannot specify SSLv3 as the minimum protocol version if you only want to support
@@ -239,7 +245,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.TrustedSignerDoesNotExistException">
         /// One or more of your trusted signers do not exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/CreateDistribution">REST API Reference for CreateDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateDistribution">REST API Reference for CreateDistribution Operation</seealso>
         CreateDistributionResponse CreateDistribution(CreateDistributionRequest request);
 
         /// <summary>
@@ -253,7 +259,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDistribution
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/CreateDistribution">REST API Reference for CreateDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateDistribution">REST API Reference for CreateDistribution Operation</seealso>
         IAsyncResult BeginCreateDistribution(CreateDistributionRequest request, AsyncCallback callback, object state);
 
 
@@ -265,7 +271,7 @@ namespace Amazon.CloudFront
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateDistribution.</param>
         /// 
         /// <returns>Returns a  CreateDistributionResult from CloudFront.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/CreateDistribution">REST API Reference for CreateDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateDistribution">REST API Reference for CreateDistribution Operation</seealso>
         CreateDistributionResponse EndCreateDistribution(IAsyncResult asyncResult);
 
         #endregion
@@ -326,6 +332,12 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidOriginException">
         /// The Amazon S3 origin server specified does not refer to a valid Amazon S3 bucket.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginKeepaliveTimeoutException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginReadTimeoutException">
+        /// 
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidProtocolSettingsException">
         /// You cannot specify SSLv3 as the minimum protocol version if you only want to support
@@ -406,7 +418,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.TrustedSignerDoesNotExistException">
         /// One or more of your trusted signers do not exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/CreateDistributionWithTags">REST API Reference for CreateDistributionWithTags Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateDistributionWithTags">REST API Reference for CreateDistributionWithTags Operation</seealso>
         CreateDistributionWithTagsResponse CreateDistributionWithTags(CreateDistributionWithTagsRequest request);
 
         /// <summary>
@@ -420,7 +432,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDistributionWithTags
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/CreateDistributionWithTags">REST API Reference for CreateDistributionWithTags Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateDistributionWithTags">REST API Reference for CreateDistributionWithTags Operation</seealso>
         IAsyncResult BeginCreateDistributionWithTags(CreateDistributionWithTagsRequest request, AsyncCallback callback, object state);
 
 
@@ -432,7 +444,7 @@ namespace Amazon.CloudFront
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateDistributionWithTags.</param>
         /// 
         /// <returns>Returns a  CreateDistributionWithTagsResult from CloudFront.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/CreateDistributionWithTags">REST API Reference for CreateDistributionWithTags Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateDistributionWithTags">REST API Reference for CreateDistributionWithTags Operation</seealso>
         CreateDistributionWithTagsResponse EndCreateDistributionWithTags(IAsyncResult asyncResult);
 
         #endregion
@@ -469,7 +481,7 @@ namespace Amazon.CloudFront
         /// You have exceeded the maximum number of allowable InProgress invalidation batch requests,
         /// or invalidation objects.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/CreateInvalidation">REST API Reference for CreateInvalidation Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateInvalidation">REST API Reference for CreateInvalidation Operation</seealso>
         CreateInvalidationResponse CreateInvalidation(CreateInvalidationRequest request);
 
         /// <summary>
@@ -483,7 +495,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateInvalidation
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/CreateInvalidation">REST API Reference for CreateInvalidation Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateInvalidation">REST API Reference for CreateInvalidation Operation</seealso>
         IAsyncResult BeginCreateInvalidation(CreateInvalidationRequest request, AsyncCallback callback, object state);
 
 
@@ -495,7 +507,7 @@ namespace Amazon.CloudFront
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateInvalidation.</param>
         /// 
         /// <returns>Returns a  CreateInvalidationResult from CloudFront.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/CreateInvalidation">REST API Reference for CreateInvalidation Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateInvalidation">REST API Reference for CreateInvalidation Operation</seealso>
         CreateInvalidationResponse EndCreateInvalidation(IAsyncResult asyncResult);
 
         #endregion
@@ -582,7 +594,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.TrustedSignerDoesNotExistException">
         /// One or more of your trusted signers do not exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/CreateStreamingDistribution">REST API Reference for CreateStreamingDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateStreamingDistribution">REST API Reference for CreateStreamingDistribution Operation</seealso>
         CreateStreamingDistributionResponse CreateStreamingDistribution(CreateStreamingDistributionRequest request);
 
         /// <summary>
@@ -596,7 +608,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateStreamingDistribution
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/CreateStreamingDistribution">REST API Reference for CreateStreamingDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateStreamingDistribution">REST API Reference for CreateStreamingDistribution Operation</seealso>
         IAsyncResult BeginCreateStreamingDistribution(CreateStreamingDistributionRequest request, AsyncCallback callback, object state);
 
 
@@ -608,7 +620,7 @@ namespace Amazon.CloudFront
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateStreamingDistribution.</param>
         /// 
         /// <returns>Returns a  CreateStreamingDistributionResult from CloudFront.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/CreateStreamingDistribution">REST API Reference for CreateStreamingDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateStreamingDistribution">REST API Reference for CreateStreamingDistribution Operation</seealso>
         CreateStreamingDistributionResponse EndCreateStreamingDistribution(IAsyncResult asyncResult);
 
         #endregion
@@ -663,7 +675,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.TrustedSignerDoesNotExistException">
         /// One or more of your trusted signers do not exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/CreateStreamingDistributionWithTags">REST API Reference for CreateStreamingDistributionWithTags Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateStreamingDistributionWithTags">REST API Reference for CreateStreamingDistributionWithTags Operation</seealso>
         CreateStreamingDistributionWithTagsResponse CreateStreamingDistributionWithTags(CreateStreamingDistributionWithTagsRequest request);
 
         /// <summary>
@@ -677,7 +689,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateStreamingDistributionWithTags
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/CreateStreamingDistributionWithTags">REST API Reference for CreateStreamingDistributionWithTags Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateStreamingDistributionWithTags">REST API Reference for CreateStreamingDistributionWithTags Operation</seealso>
         IAsyncResult BeginCreateStreamingDistributionWithTags(CreateStreamingDistributionWithTagsRequest request, AsyncCallback callback, object state);
 
 
@@ -689,7 +701,7 @@ namespace Amazon.CloudFront
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateStreamingDistributionWithTags.</param>
         /// 
         /// <returns>Returns a  CreateStreamingDistributionWithTagsResult from CloudFront.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/CreateStreamingDistributionWithTags">REST API Reference for CreateStreamingDistributionWithTags Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateStreamingDistributionWithTags">REST API Reference for CreateStreamingDistributionWithTags Operation</seealso>
         CreateStreamingDistributionWithTagsResponse EndCreateStreamingDistributionWithTags(IAsyncResult asyncResult);
 
         #endregion
@@ -717,7 +729,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
         /// The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/DeleteCloudFrontOriginAccessIdentity">REST API Reference for DeleteCloudFrontOriginAccessIdentity Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteCloudFrontOriginAccessIdentity">REST API Reference for DeleteCloudFrontOriginAccessIdentity Operation</seealso>
         DeleteCloudFrontOriginAccessIdentityResponse DeleteCloudFrontOriginAccessIdentity();
 
         /// <summary>
@@ -741,7 +753,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
         /// The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/DeleteCloudFrontOriginAccessIdentity">REST API Reference for DeleteCloudFrontOriginAccessIdentity Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteCloudFrontOriginAccessIdentity">REST API Reference for DeleteCloudFrontOriginAccessIdentity Operation</seealso>
         DeleteCloudFrontOriginAccessIdentityResponse DeleteCloudFrontOriginAccessIdentity(DeleteCloudFrontOriginAccessIdentityRequest request);
 
         /// <summary>
@@ -755,7 +767,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteCloudFrontOriginAccessIdentity
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/DeleteCloudFrontOriginAccessIdentity">REST API Reference for DeleteCloudFrontOriginAccessIdentity Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteCloudFrontOriginAccessIdentity">REST API Reference for DeleteCloudFrontOriginAccessIdentity Operation</seealso>
         IAsyncResult BeginDeleteCloudFrontOriginAccessIdentity(DeleteCloudFrontOriginAccessIdentityRequest request, AsyncCallback callback, object state);
 
 
@@ -767,7 +779,7 @@ namespace Amazon.CloudFront
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteCloudFrontOriginAccessIdentity.</param>
         /// 
         /// <returns>Returns a  DeleteCloudFrontOriginAccessIdentityResult from CloudFront.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/DeleteCloudFrontOriginAccessIdentity">REST API Reference for DeleteCloudFrontOriginAccessIdentity Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteCloudFrontOriginAccessIdentity">REST API Reference for DeleteCloudFrontOriginAccessIdentity Operation</seealso>
         DeleteCloudFrontOriginAccessIdentityResponse EndDeleteCloudFrontOriginAccessIdentity(IAsyncResult asyncResult);
 
         #endregion
@@ -795,7 +807,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
         /// The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/DeleteDistribution">REST API Reference for DeleteDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteDistribution">REST API Reference for DeleteDistribution Operation</seealso>
         DeleteDistributionResponse DeleteDistribution();
 
         /// <summary>
@@ -819,7 +831,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
         /// The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/DeleteDistribution">REST API Reference for DeleteDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteDistribution">REST API Reference for DeleteDistribution Operation</seealso>
         DeleteDistributionResponse DeleteDistribution(DeleteDistributionRequest request);
 
         /// <summary>
@@ -833,7 +845,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDistribution
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/DeleteDistribution">REST API Reference for DeleteDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteDistribution">REST API Reference for DeleteDistribution Operation</seealso>
         IAsyncResult BeginDeleteDistribution(DeleteDistributionRequest request, AsyncCallback callback, object state);
 
 
@@ -845,7 +857,7 @@ namespace Amazon.CloudFront
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteDistribution.</param>
         /// 
         /// <returns>Returns a  DeleteDistributionResult from CloudFront.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/DeleteDistribution">REST API Reference for DeleteDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteDistribution">REST API Reference for DeleteDistribution Operation</seealso>
         DeleteDistributionResponse EndDeleteDistribution(IAsyncResult asyncResult);
 
         #endregion
@@ -931,7 +943,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.StreamingDistributionNotDisabledException">
         /// 
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/DeleteStreamingDistribution">REST API Reference for DeleteStreamingDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteStreamingDistribution">REST API Reference for DeleteStreamingDistribution Operation</seealso>
         DeleteStreamingDistributionResponse DeleteStreamingDistribution();
 
         /// <summary>
@@ -1013,7 +1025,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.StreamingDistributionNotDisabledException">
         /// 
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/DeleteStreamingDistribution">REST API Reference for DeleteStreamingDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteStreamingDistribution">REST API Reference for DeleteStreamingDistribution Operation</seealso>
         DeleteStreamingDistributionResponse DeleteStreamingDistribution(DeleteStreamingDistributionRequest request);
 
         /// <summary>
@@ -1027,7 +1039,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteStreamingDistribution
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/DeleteStreamingDistribution">REST API Reference for DeleteStreamingDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteStreamingDistribution">REST API Reference for DeleteStreamingDistribution Operation</seealso>
         IAsyncResult BeginDeleteStreamingDistribution(DeleteStreamingDistributionRequest request, AsyncCallback callback, object state);
 
 
@@ -1039,7 +1051,7 @@ namespace Amazon.CloudFront
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteStreamingDistribution.</param>
         /// 
         /// <returns>Returns a  DeleteStreamingDistributionResult from CloudFront.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/DeleteStreamingDistribution">REST API Reference for DeleteStreamingDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteStreamingDistribution">REST API Reference for DeleteStreamingDistribution Operation</seealso>
         DeleteStreamingDistributionResponse EndDeleteStreamingDistribution(IAsyncResult asyncResult);
 
         #endregion
@@ -1058,7 +1070,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchCloudFrontOriginAccessIdentityException">
         /// The specified origin access identity does not exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/GetCloudFrontOriginAccessIdentity">REST API Reference for GetCloudFrontOriginAccessIdentity Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetCloudFrontOriginAccessIdentity">REST API Reference for GetCloudFrontOriginAccessIdentity Operation</seealso>
         GetCloudFrontOriginAccessIdentityResponse GetCloudFrontOriginAccessIdentity();
 
         /// <summary>
@@ -1073,7 +1085,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchCloudFrontOriginAccessIdentityException">
         /// The specified origin access identity does not exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/GetCloudFrontOriginAccessIdentity">REST API Reference for GetCloudFrontOriginAccessIdentity Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetCloudFrontOriginAccessIdentity">REST API Reference for GetCloudFrontOriginAccessIdentity Operation</seealso>
         GetCloudFrontOriginAccessIdentityResponse GetCloudFrontOriginAccessIdentity(GetCloudFrontOriginAccessIdentityRequest request);
 
         /// <summary>
@@ -1087,7 +1099,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetCloudFrontOriginAccessIdentity
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/GetCloudFrontOriginAccessIdentity">REST API Reference for GetCloudFrontOriginAccessIdentity Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetCloudFrontOriginAccessIdentity">REST API Reference for GetCloudFrontOriginAccessIdentity Operation</seealso>
         IAsyncResult BeginGetCloudFrontOriginAccessIdentity(GetCloudFrontOriginAccessIdentityRequest request, AsyncCallback callback, object state);
 
 
@@ -1099,7 +1111,7 @@ namespace Amazon.CloudFront
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetCloudFrontOriginAccessIdentity.</param>
         /// 
         /// <returns>Returns a  GetCloudFrontOriginAccessIdentityResult from CloudFront.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/GetCloudFrontOriginAccessIdentity">REST API Reference for GetCloudFrontOriginAccessIdentity Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetCloudFrontOriginAccessIdentity">REST API Reference for GetCloudFrontOriginAccessIdentity Operation</seealso>
         GetCloudFrontOriginAccessIdentityResponse EndGetCloudFrontOriginAccessIdentity(IAsyncResult asyncResult);
 
         #endregion
@@ -1118,7 +1130,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchCloudFrontOriginAccessIdentityException">
         /// The specified origin access identity does not exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/GetCloudFrontOriginAccessIdentityConfig">REST API Reference for GetCloudFrontOriginAccessIdentityConfig Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetCloudFrontOriginAccessIdentityConfig">REST API Reference for GetCloudFrontOriginAccessIdentityConfig Operation</seealso>
         GetCloudFrontOriginAccessIdentityConfigResponse GetCloudFrontOriginAccessIdentityConfig();
 
         /// <summary>
@@ -1133,7 +1145,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchCloudFrontOriginAccessIdentityException">
         /// The specified origin access identity does not exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/GetCloudFrontOriginAccessIdentityConfig">REST API Reference for GetCloudFrontOriginAccessIdentityConfig Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetCloudFrontOriginAccessIdentityConfig">REST API Reference for GetCloudFrontOriginAccessIdentityConfig Operation</seealso>
         GetCloudFrontOriginAccessIdentityConfigResponse GetCloudFrontOriginAccessIdentityConfig(GetCloudFrontOriginAccessIdentityConfigRequest request);
 
         /// <summary>
@@ -1147,7 +1159,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetCloudFrontOriginAccessIdentityConfig
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/GetCloudFrontOriginAccessIdentityConfig">REST API Reference for GetCloudFrontOriginAccessIdentityConfig Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetCloudFrontOriginAccessIdentityConfig">REST API Reference for GetCloudFrontOriginAccessIdentityConfig Operation</seealso>
         IAsyncResult BeginGetCloudFrontOriginAccessIdentityConfig(GetCloudFrontOriginAccessIdentityConfigRequest request, AsyncCallback callback, object state);
 
 
@@ -1159,7 +1171,7 @@ namespace Amazon.CloudFront
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetCloudFrontOriginAccessIdentityConfig.</param>
         /// 
         /// <returns>Returns a  GetCloudFrontOriginAccessIdentityConfigResult from CloudFront.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/GetCloudFrontOriginAccessIdentityConfig">REST API Reference for GetCloudFrontOriginAccessIdentityConfig Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetCloudFrontOriginAccessIdentityConfig">REST API Reference for GetCloudFrontOriginAccessIdentityConfig Operation</seealso>
         GetCloudFrontOriginAccessIdentityConfigResponse EndGetCloudFrontOriginAccessIdentityConfig(IAsyncResult asyncResult);
 
         #endregion
@@ -1178,7 +1190,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
         /// The specified distribution does not exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/GetDistribution">REST API Reference for GetDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetDistribution">REST API Reference for GetDistribution Operation</seealso>
         GetDistributionResponse GetDistribution();
 
         /// <summary>
@@ -1193,7 +1205,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
         /// The specified distribution does not exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/GetDistribution">REST API Reference for GetDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetDistribution">REST API Reference for GetDistribution Operation</seealso>
         GetDistributionResponse GetDistribution(GetDistributionRequest request);
 
         /// <summary>
@@ -1207,7 +1219,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDistribution
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/GetDistribution">REST API Reference for GetDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetDistribution">REST API Reference for GetDistribution Operation</seealso>
         IAsyncResult BeginGetDistribution(GetDistributionRequest request, AsyncCallback callback, object state);
 
 
@@ -1219,7 +1231,7 @@ namespace Amazon.CloudFront
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDistribution.</param>
         /// 
         /// <returns>Returns a  GetDistributionResult from CloudFront.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/GetDistribution">REST API Reference for GetDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetDistribution">REST API Reference for GetDistribution Operation</seealso>
         GetDistributionResponse EndGetDistribution(IAsyncResult asyncResult);
 
         #endregion
@@ -1238,7 +1250,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
         /// The specified distribution does not exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/GetDistributionConfig">REST API Reference for GetDistributionConfig Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetDistributionConfig">REST API Reference for GetDistributionConfig Operation</seealso>
         GetDistributionConfigResponse GetDistributionConfig();
 
         /// <summary>
@@ -1253,7 +1265,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
         /// The specified distribution does not exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/GetDistributionConfig">REST API Reference for GetDistributionConfig Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetDistributionConfig">REST API Reference for GetDistributionConfig Operation</seealso>
         GetDistributionConfigResponse GetDistributionConfig(GetDistributionConfigRequest request);
 
         /// <summary>
@@ -1267,7 +1279,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDistributionConfig
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/GetDistributionConfig">REST API Reference for GetDistributionConfig Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetDistributionConfig">REST API Reference for GetDistributionConfig Operation</seealso>
         IAsyncResult BeginGetDistributionConfig(GetDistributionConfigRequest request, AsyncCallback callback, object state);
 
 
@@ -1279,7 +1291,7 @@ namespace Amazon.CloudFront
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDistributionConfig.</param>
         /// 
         /// <returns>Returns a  GetDistributionConfigResult from CloudFront.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/GetDistributionConfig">REST API Reference for GetDistributionConfig Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetDistributionConfig">REST API Reference for GetDistributionConfig Operation</seealso>
         GetDistributionConfigResponse EndGetDistributionConfig(IAsyncResult asyncResult);
 
         #endregion
@@ -1302,7 +1314,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchInvalidationException">
         /// The specified invalidation does not exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/GetInvalidation">REST API Reference for GetInvalidation Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetInvalidation">REST API Reference for GetInvalidation Operation</seealso>
         GetInvalidationResponse GetInvalidation(GetInvalidationRequest request);
 
         /// <summary>
@@ -1316,7 +1328,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetInvalidation
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/GetInvalidation">REST API Reference for GetInvalidation Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetInvalidation">REST API Reference for GetInvalidation Operation</seealso>
         IAsyncResult BeginGetInvalidation(GetInvalidationRequest request, AsyncCallback callback, object state);
 
 
@@ -1328,7 +1340,7 @@ namespace Amazon.CloudFront
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetInvalidation.</param>
         /// 
         /// <returns>Returns a  GetInvalidationResult from CloudFront.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/GetInvalidation">REST API Reference for GetInvalidation Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetInvalidation">REST API Reference for GetInvalidation Operation</seealso>
         GetInvalidationResponse EndGetInvalidation(IAsyncResult asyncResult);
 
         #endregion
@@ -1347,7 +1359,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchStreamingDistributionException">
         /// The specified streaming distribution does not exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/GetStreamingDistribution">REST API Reference for GetStreamingDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetStreamingDistribution">REST API Reference for GetStreamingDistribution Operation</seealso>
         GetStreamingDistributionResponse GetStreamingDistribution();
 
         /// <summary>
@@ -1362,7 +1374,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchStreamingDistributionException">
         /// The specified streaming distribution does not exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/GetStreamingDistribution">REST API Reference for GetStreamingDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetStreamingDistribution">REST API Reference for GetStreamingDistribution Operation</seealso>
         GetStreamingDistributionResponse GetStreamingDistribution(GetStreamingDistributionRequest request);
 
         /// <summary>
@@ -1376,7 +1388,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetStreamingDistribution
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/GetStreamingDistribution">REST API Reference for GetStreamingDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetStreamingDistribution">REST API Reference for GetStreamingDistribution Operation</seealso>
         IAsyncResult BeginGetStreamingDistribution(GetStreamingDistributionRequest request, AsyncCallback callback, object state);
 
 
@@ -1388,7 +1400,7 @@ namespace Amazon.CloudFront
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetStreamingDistribution.</param>
         /// 
         /// <returns>Returns a  GetStreamingDistributionResult from CloudFront.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/GetStreamingDistribution">REST API Reference for GetStreamingDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetStreamingDistribution">REST API Reference for GetStreamingDistribution Operation</seealso>
         GetStreamingDistributionResponse EndGetStreamingDistribution(IAsyncResult asyncResult);
 
         #endregion
@@ -1407,7 +1419,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchStreamingDistributionException">
         /// The specified streaming distribution does not exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/GetStreamingDistributionConfig">REST API Reference for GetStreamingDistributionConfig Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetStreamingDistributionConfig">REST API Reference for GetStreamingDistributionConfig Operation</seealso>
         GetStreamingDistributionConfigResponse GetStreamingDistributionConfig();
 
         /// <summary>
@@ -1422,7 +1434,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchStreamingDistributionException">
         /// The specified streaming distribution does not exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/GetStreamingDistributionConfig">REST API Reference for GetStreamingDistributionConfig Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetStreamingDistributionConfig">REST API Reference for GetStreamingDistributionConfig Operation</seealso>
         GetStreamingDistributionConfigResponse GetStreamingDistributionConfig(GetStreamingDistributionConfigRequest request);
 
         /// <summary>
@@ -1436,7 +1448,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetStreamingDistributionConfig
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/GetStreamingDistributionConfig">REST API Reference for GetStreamingDistributionConfig Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetStreamingDistributionConfig">REST API Reference for GetStreamingDistributionConfig Operation</seealso>
         IAsyncResult BeginGetStreamingDistributionConfig(GetStreamingDistributionConfigRequest request, AsyncCallback callback, object state);
 
 
@@ -1448,7 +1460,7 @@ namespace Amazon.CloudFront
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetStreamingDistributionConfig.</param>
         /// 
         /// <returns>Returns a  GetStreamingDistributionConfigResult from CloudFront.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/GetStreamingDistributionConfig">REST API Reference for GetStreamingDistributionConfig Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetStreamingDistributionConfig">REST API Reference for GetStreamingDistributionConfig Operation</seealso>
         GetStreamingDistributionConfigResponse EndGetStreamingDistributionConfig(IAsyncResult asyncResult);
 
         #endregion
@@ -1464,7 +1476,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// The argument is invalid.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/ListCloudFrontOriginAccessIdentities">REST API Reference for ListCloudFrontOriginAccessIdentities Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListCloudFrontOriginAccessIdentities">REST API Reference for ListCloudFrontOriginAccessIdentities Operation</seealso>
         ListCloudFrontOriginAccessIdentitiesResponse ListCloudFrontOriginAccessIdentities();
 
         /// <summary>
@@ -1476,7 +1488,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// The argument is invalid.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/ListCloudFrontOriginAccessIdentities">REST API Reference for ListCloudFrontOriginAccessIdentities Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListCloudFrontOriginAccessIdentities">REST API Reference for ListCloudFrontOriginAccessIdentities Operation</seealso>
         ListCloudFrontOriginAccessIdentitiesResponse ListCloudFrontOriginAccessIdentities(ListCloudFrontOriginAccessIdentitiesRequest request);
 
         /// <summary>
@@ -1490,7 +1502,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListCloudFrontOriginAccessIdentities
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/ListCloudFrontOriginAccessIdentities">REST API Reference for ListCloudFrontOriginAccessIdentities Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListCloudFrontOriginAccessIdentities">REST API Reference for ListCloudFrontOriginAccessIdentities Operation</seealso>
         IAsyncResult BeginListCloudFrontOriginAccessIdentities(ListCloudFrontOriginAccessIdentitiesRequest request, AsyncCallback callback, object state);
 
 
@@ -1502,7 +1514,7 @@ namespace Amazon.CloudFront
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListCloudFrontOriginAccessIdentities.</param>
         /// 
         /// <returns>Returns a  ListCloudFrontOriginAccessIdentitiesResult from CloudFront.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/ListCloudFrontOriginAccessIdentities">REST API Reference for ListCloudFrontOriginAccessIdentities Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListCloudFrontOriginAccessIdentities">REST API Reference for ListCloudFrontOriginAccessIdentities Operation</seealso>
         ListCloudFrontOriginAccessIdentitiesResponse EndListCloudFrontOriginAccessIdentities(IAsyncResult asyncResult);
 
         #endregion
@@ -1518,7 +1530,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// The argument is invalid.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/ListDistributions">REST API Reference for ListDistributions Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListDistributions">REST API Reference for ListDistributions Operation</seealso>
         ListDistributionsResponse ListDistributions();
 
         /// <summary>
@@ -1530,7 +1542,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// The argument is invalid.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/ListDistributions">REST API Reference for ListDistributions Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListDistributions">REST API Reference for ListDistributions Operation</seealso>
         ListDistributionsResponse ListDistributions(ListDistributionsRequest request);
 
         /// <summary>
@@ -1544,7 +1556,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDistributions
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/ListDistributions">REST API Reference for ListDistributions Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListDistributions">REST API Reference for ListDistributions Operation</seealso>
         IAsyncResult BeginListDistributions(ListDistributionsRequest request, AsyncCallback callback, object state);
 
 
@@ -1556,7 +1568,7 @@ namespace Amazon.CloudFront
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDistributions.</param>
         /// 
         /// <returns>Returns a  ListDistributionsResult from CloudFront.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/ListDistributions">REST API Reference for ListDistributions Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListDistributions">REST API Reference for ListDistributions Operation</seealso>
         ListDistributionsResponse EndListDistributions(IAsyncResult asyncResult);
 
         #endregion
@@ -1576,7 +1588,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.InvalidWebACLIdException">
         /// 
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/ListDistributionsByWebACLId">REST API Reference for ListDistributionsByWebACLId Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListDistributionsByWebACLId">REST API Reference for ListDistributionsByWebACLId Operation</seealso>
         ListDistributionsByWebACLIdResponse ListDistributionsByWebACLId(ListDistributionsByWebACLIdRequest request);
 
         /// <summary>
@@ -1590,7 +1602,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDistributionsByWebACLId
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/ListDistributionsByWebACLId">REST API Reference for ListDistributionsByWebACLId Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListDistributionsByWebACLId">REST API Reference for ListDistributionsByWebACLId Operation</seealso>
         IAsyncResult BeginListDistributionsByWebACLId(ListDistributionsByWebACLIdRequest request, AsyncCallback callback, object state);
 
 
@@ -1602,7 +1614,7 @@ namespace Amazon.CloudFront
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDistributionsByWebACLId.</param>
         /// 
         /// <returns>Returns a  ListDistributionsByWebACLIdResult from CloudFront.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/ListDistributionsByWebACLId">REST API Reference for ListDistributionsByWebACLId Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListDistributionsByWebACLId">REST API Reference for ListDistributionsByWebACLId Operation</seealso>
         ListDistributionsByWebACLIdResponse EndListDistributionsByWebACLId(IAsyncResult asyncResult);
 
         #endregion
@@ -1625,7 +1637,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
         /// The specified distribution does not exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/ListInvalidations">REST API Reference for ListInvalidations Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListInvalidations">REST API Reference for ListInvalidations Operation</seealso>
         ListInvalidationsResponse ListInvalidations(ListInvalidationsRequest request);
 
         /// <summary>
@@ -1639,7 +1651,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListInvalidations
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/ListInvalidations">REST API Reference for ListInvalidations Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListInvalidations">REST API Reference for ListInvalidations Operation</seealso>
         IAsyncResult BeginListInvalidations(ListInvalidationsRequest request, AsyncCallback callback, object state);
 
 
@@ -1651,7 +1663,7 @@ namespace Amazon.CloudFront
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListInvalidations.</param>
         /// 
         /// <returns>Returns a  ListInvalidationsResult from CloudFront.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/ListInvalidations">REST API Reference for ListInvalidations Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListInvalidations">REST API Reference for ListInvalidations Operation</seealso>
         ListInvalidationsResponse EndListInvalidations(IAsyncResult asyncResult);
 
         #endregion
@@ -1667,7 +1679,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// The argument is invalid.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/ListStreamingDistributions">REST API Reference for ListStreamingDistributions Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListStreamingDistributions">REST API Reference for ListStreamingDistributions Operation</seealso>
         ListStreamingDistributionsResponse ListStreamingDistributions();
 
         /// <summary>
@@ -1679,7 +1691,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// The argument is invalid.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/ListStreamingDistributions">REST API Reference for ListStreamingDistributions Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListStreamingDistributions">REST API Reference for ListStreamingDistributions Operation</seealso>
         ListStreamingDistributionsResponse ListStreamingDistributions(ListStreamingDistributionsRequest request);
 
         /// <summary>
@@ -1693,7 +1705,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListStreamingDistributions
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/ListStreamingDistributions">REST API Reference for ListStreamingDistributions Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListStreamingDistributions">REST API Reference for ListStreamingDistributions Operation</seealso>
         IAsyncResult BeginListStreamingDistributions(ListStreamingDistributionsRequest request, AsyncCallback callback, object state);
 
 
@@ -1705,7 +1717,7 @@ namespace Amazon.CloudFront
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListStreamingDistributions.</param>
         /// 
         /// <returns>Returns a  ListStreamingDistributionsResult from CloudFront.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/ListStreamingDistributions">REST API Reference for ListStreamingDistributions Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListStreamingDistributions">REST API Reference for ListStreamingDistributions Operation</seealso>
         ListStreamingDistributionsResponse EndListStreamingDistributions(IAsyncResult asyncResult);
 
         #endregion
@@ -1731,7 +1743,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchResourceException">
         /// 
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
 
         /// <summary>
@@ -1745,7 +1757,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTagsForResource
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state);
 
 
@@ -1757,7 +1769,7 @@ namespace Amazon.CloudFront
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTagsForResource.</param>
         /// 
         /// <returns>Returns a  ListTagsForResourceResult from CloudFront.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult);
 
         #endregion
@@ -1783,7 +1795,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchResourceException">
         /// 
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/TagResource">REST API Reference for TagResource Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/TagResource">REST API Reference for TagResource Operation</seealso>
         TagResourceResponse TagResource(TagResourceRequest request);
 
         /// <summary>
@@ -1797,7 +1809,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTagResource
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/TagResource">REST API Reference for TagResource Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/TagResource">REST API Reference for TagResource Operation</seealso>
         IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state);
 
 
@@ -1809,7 +1821,7 @@ namespace Amazon.CloudFront
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTagResource.</param>
         /// 
         /// <returns>Returns a  TagResourceResult from CloudFront.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/TagResource">REST API Reference for TagResource Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/TagResource">REST API Reference for TagResource Operation</seealso>
         TagResourceResponse EndTagResource(IAsyncResult asyncResult);
 
         #endregion
@@ -1835,7 +1847,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchResourceException">
         /// 
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/UntagResource">REST API Reference for UntagResource Operation</seealso>
         UntagResourceResponse UntagResource(UntagResourceRequest request);
 
         /// <summary>
@@ -1849,7 +1861,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUntagResource
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/UntagResource">REST API Reference for UntagResource Operation</seealso>
         IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state);
 
 
@@ -1861,7 +1873,7 @@ namespace Amazon.CloudFront
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUntagResource.</param>
         /// 
         /// <returns>Returns a  UntagResourceResult from CloudFront.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/UntagResource">REST API Reference for UntagResource Operation</seealso>
         UntagResourceResponse EndUntagResource(IAsyncResult asyncResult);
 
         #endregion
@@ -1900,7 +1912,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
         /// The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/UpdateCloudFrontOriginAccessIdentity">REST API Reference for UpdateCloudFrontOriginAccessIdentity Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/UpdateCloudFrontOriginAccessIdentity">REST API Reference for UpdateCloudFrontOriginAccessIdentity Operation</seealso>
         UpdateCloudFrontOriginAccessIdentityResponse UpdateCloudFrontOriginAccessIdentity(UpdateCloudFrontOriginAccessIdentityRequest request);
 
         /// <summary>
@@ -1914,7 +1926,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateCloudFrontOriginAccessIdentity
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/UpdateCloudFrontOriginAccessIdentity">REST API Reference for UpdateCloudFrontOriginAccessIdentity Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/UpdateCloudFrontOriginAccessIdentity">REST API Reference for UpdateCloudFrontOriginAccessIdentity Operation</seealso>
         IAsyncResult BeginUpdateCloudFrontOriginAccessIdentity(UpdateCloudFrontOriginAccessIdentityRequest request, AsyncCallback callback, object state);
 
 
@@ -1926,7 +1938,7 @@ namespace Amazon.CloudFront
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateCloudFrontOriginAccessIdentity.</param>
         /// 
         /// <returns>Returns a  UpdateCloudFrontOriginAccessIdentityResult from CloudFront.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/UpdateCloudFrontOriginAccessIdentity">REST API Reference for UpdateCloudFrontOriginAccessIdentity Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/UpdateCloudFrontOriginAccessIdentity">REST API Reference for UpdateCloudFrontOriginAccessIdentity Operation</seealso>
         UpdateCloudFrontOriginAccessIdentityResponse EndUpdateCloudFrontOriginAccessIdentity(IAsyncResult asyncResult);
 
         #endregion
@@ -1986,6 +1998,12 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessIdentityException">
         /// The origin access identity is not valid or doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginKeepaliveTimeoutException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginReadTimeoutException">
+        /// 
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidQueryStringParametersException">
         /// 
@@ -2061,7 +2079,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.TrustedSignerDoesNotExistException">
         /// One or more of your trusted signers do not exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/UpdateDistribution">REST API Reference for UpdateDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/UpdateDistribution">REST API Reference for UpdateDistribution Operation</seealso>
         UpdateDistributionResponse UpdateDistribution(UpdateDistributionRequest request);
 
         /// <summary>
@@ -2075,7 +2093,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateDistribution
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/UpdateDistribution">REST API Reference for UpdateDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/UpdateDistribution">REST API Reference for UpdateDistribution Operation</seealso>
         IAsyncResult BeginUpdateDistribution(UpdateDistributionRequest request, AsyncCallback callback, object state);
 
 
@@ -2087,7 +2105,7 @@ namespace Amazon.CloudFront
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateDistribution.</param>
         /// 
         /// <returns>Returns a  UpdateDistributionResult from CloudFront.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/UpdateDistribution">REST API Reference for UpdateDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/UpdateDistribution">REST API Reference for UpdateDistribution Operation</seealso>
         UpdateDistributionResponse EndUpdateDistribution(IAsyncResult asyncResult);
 
         #endregion
@@ -2141,7 +2159,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.TrustedSignerDoesNotExistException">
         /// One or more of your trusted signers do not exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/UpdateStreamingDistribution">REST API Reference for UpdateStreamingDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/UpdateStreamingDistribution">REST API Reference for UpdateStreamingDistribution Operation</seealso>
         UpdateStreamingDistributionResponse UpdateStreamingDistribution(UpdateStreamingDistributionRequest request);
 
         /// <summary>
@@ -2155,7 +2173,7 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateStreamingDistribution
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/UpdateStreamingDistribution">REST API Reference for UpdateStreamingDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/UpdateStreamingDistribution">REST API Reference for UpdateStreamingDistribution Operation</seealso>
         IAsyncResult BeginUpdateStreamingDistribution(UpdateStreamingDistributionRequest request, AsyncCallback callback, object state);
 
 
@@ -2167,7 +2185,7 @@ namespace Amazon.CloudFront
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateStreamingDistribution.</param>
         /// 
         /// <returns>Returns a  UpdateStreamingDistributionResult from CloudFront.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/UpdateStreamingDistribution">REST API Reference for UpdateStreamingDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/UpdateStreamingDistribution">REST API Reference for UpdateStreamingDistribution Operation</seealso>
         UpdateStreamingDistributionResponse EndUpdateStreamingDistribution(IAsyncResult asyncResult);
 
         #endregion

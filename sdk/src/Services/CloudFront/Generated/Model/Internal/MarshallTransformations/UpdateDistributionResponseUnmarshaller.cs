@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2016-11-25.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2017-03-25.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -147,6 +147,14 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidOriginAccessIdentity"))
             {
                 return new InvalidOriginAccessIdentityException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidOriginKeepaliveTimeout"))
+            {
+                return new InvalidOriginKeepaliveTimeoutException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidOriginReadTimeout"))
+            {
+                return new InvalidOriginReadTimeoutException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidQueryStringParameters"))
             {

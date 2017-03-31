@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2016-11-25.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2017-03-25.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -34,7 +34,9 @@ namespace Amazon.CloudFront.Model
     {
         private int? _httpPort;
         private int? _httpsPort;
+        private int? _originKeepaliveTimeout;
         private OriginProtocolPolicy _originProtocolPolicy;
+        private int? _originReadTimeout;
         private OriginSslProtocols _originSslProtocols;
 
         /// <summary>
@@ -74,6 +76,32 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OriginKeepaliveTimeout. 
+        /// <para>
+        /// You can create a custom keep-alive timeout. All timeout units are in seconds. The
+        /// default keep-alive timeout is 5 seconds, but you can configure custom timeout lengths
+        /// using the CloudFront API. The minimum timeout length is 1 second; the maximum is 60
+        /// seconds.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you need to increase the maximum time limit, contact the <a href="https://console.aws.amazon.com/support/home#/">AWS
+        /// Support Center</a>.
+        /// </para>
+        /// </summary>
+        public int OriginKeepaliveTimeout
+        {
+            get { return this._originKeepaliveTimeout.GetValueOrDefault(); }
+            set { this._originKeepaliveTimeout = value; }
+        }
+
+        // Check to see if OriginKeepaliveTimeout property is set
+        internal bool IsSetOriginKeepaliveTimeout()
+        {
+            return this._originKeepaliveTimeout.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property OriginProtocolPolicy. 
         /// <para>
         /// The origin protocol policy to apply to your origin.
@@ -89,6 +117,32 @@ namespace Amazon.CloudFront.Model
         internal bool IsSetOriginProtocolPolicy()
         {
             return this._originProtocolPolicy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OriginReadTimeout. 
+        /// <para>
+        /// You can create a custom origin read timeout. All timeout units are in seconds. The
+        /// default origin read timeout is 30 seconds, but you can configure custom timeout lengths
+        /// using the CloudFront API. The minimum timeout length is 4 seconds; the maximum is
+        /// 60 seconds.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you need to increase the maximum time limit, contact the <a href="https://console.aws.amazon.com/support/home#/">AWS
+        /// Support Center</a>.
+        /// </para>
+        /// </summary>
+        public int OriginReadTimeout
+        {
+            get { return this._originReadTimeout.GetValueOrDefault(); }
+            set { this._originReadTimeout = value; }
+        }
+
+        // Check to see if OriginReadTimeout property is set
+        internal bool IsSetOriginReadTimeout()
+        {
+            return this._originReadTimeout.HasValue; 
         }
 
         /// <summary>

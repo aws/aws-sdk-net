@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2016-11-25.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2017-03-25.normal.json service model.
  */
 
 
@@ -256,7 +256,7 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/CreateCloudFrontOriginAccessIdentity">REST API Reference for CreateCloudFrontOriginAccessIdentity Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateCloudFrontOriginAccessIdentity">REST API Reference for CreateCloudFrontOriginAccessIdentity Operation</seealso>
         public Task<CreateCloudFrontOriginAccessIdentityResponse> CreateCloudFrontOriginAccessIdentityAsync(CreateCloudFrontOriginAccessIdentityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateCloudFrontOriginAccessIdentityRequestMarshaller();
@@ -288,7 +288,7 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/CreateDistribution">REST API Reference for CreateDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateDistribution">REST API Reference for CreateDistribution Operation</seealso>
         public Task<CreateDistributionResponse> CreateDistributionAsync(CreateDistributionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateDistributionRequestMarshaller();
@@ -320,7 +320,7 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/CreateDistributionWithTags">REST API Reference for CreateDistributionWithTags Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateDistributionWithTags">REST API Reference for CreateDistributionWithTags Operation</seealso>
         public Task<CreateDistributionWithTagsResponse> CreateDistributionWithTagsAsync(CreateDistributionWithTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateDistributionWithTagsRequestMarshaller();
@@ -352,7 +352,7 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/CreateInvalidation">REST API Reference for CreateInvalidation Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateInvalidation">REST API Reference for CreateInvalidation Operation</seealso>
         public Task<CreateInvalidationResponse> CreateInvalidationAsync(CreateInvalidationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateInvalidationRequestMarshaller();
@@ -384,7 +384,7 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/CreateStreamingDistribution">REST API Reference for CreateStreamingDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateStreamingDistribution">REST API Reference for CreateStreamingDistribution Operation</seealso>
         public Task<CreateStreamingDistributionResponse> CreateStreamingDistributionAsync(CreateStreamingDistributionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateStreamingDistributionRequestMarshaller();
@@ -416,7 +416,7 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/CreateStreamingDistributionWithTags">REST API Reference for CreateStreamingDistributionWithTags Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateStreamingDistributionWithTags">REST API Reference for CreateStreamingDistributionWithTags Operation</seealso>
         public Task<CreateStreamingDistributionWithTagsResponse> CreateStreamingDistributionWithTagsAsync(CreateStreamingDistributionWithTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateStreamingDistributionWithTagsRequestMarshaller();
@@ -466,7 +466,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
         /// The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/DeleteCloudFrontOriginAccessIdentity">REST API Reference for DeleteCloudFrontOriginAccessIdentity Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteCloudFrontOriginAccessIdentity">REST API Reference for DeleteCloudFrontOriginAccessIdentity Operation</seealso>
         public Task<DeleteCloudFrontOriginAccessIdentityResponse> DeleteCloudFrontOriginAccessIdentityAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DeleteCloudFrontOriginAccessIdentityAsync(new DeleteCloudFrontOriginAccessIdentityRequest(), cancellationToken);
@@ -482,7 +482,7 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/DeleteCloudFrontOriginAccessIdentity">REST API Reference for DeleteCloudFrontOriginAccessIdentity Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteCloudFrontOriginAccessIdentity">REST API Reference for DeleteCloudFrontOriginAccessIdentity Operation</seealso>
         public Task<DeleteCloudFrontOriginAccessIdentityResponse> DeleteCloudFrontOriginAccessIdentityAsync(DeleteCloudFrontOriginAccessIdentityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteCloudFrontOriginAccessIdentityRequestMarshaller();
@@ -532,7 +532,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
         /// The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/DeleteDistribution">REST API Reference for DeleteDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteDistribution">REST API Reference for DeleteDistribution Operation</seealso>
         public Task<DeleteDistributionResponse> DeleteDistributionAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DeleteDistributionAsync(new DeleteDistributionRequest(), cancellationToken);
@@ -548,7 +548,7 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/DeleteDistribution">REST API Reference for DeleteDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteDistribution">REST API Reference for DeleteDistribution Operation</seealso>
         public Task<DeleteDistributionResponse> DeleteDistributionAsync(DeleteDistributionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteDistributionRequestMarshaller();
@@ -656,7 +656,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.StreamingDistributionNotDisabledException">
         /// 
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/DeleteStreamingDistribution">REST API Reference for DeleteStreamingDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteStreamingDistribution">REST API Reference for DeleteStreamingDistribution Operation</seealso>
         public Task<DeleteStreamingDistributionResponse> DeleteStreamingDistributionAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DeleteStreamingDistributionAsync(new DeleteStreamingDistributionRequest(), cancellationToken);
@@ -672,7 +672,7 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/DeleteStreamingDistribution">REST API Reference for DeleteStreamingDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteStreamingDistribution">REST API Reference for DeleteStreamingDistribution Operation</seealso>
         public Task<DeleteStreamingDistributionResponse> DeleteStreamingDistributionAsync(DeleteStreamingDistributionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteStreamingDistributionRequestMarshaller();
@@ -713,7 +713,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchCloudFrontOriginAccessIdentityException">
         /// The specified origin access identity does not exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/GetCloudFrontOriginAccessIdentity">REST API Reference for GetCloudFrontOriginAccessIdentity Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetCloudFrontOriginAccessIdentity">REST API Reference for GetCloudFrontOriginAccessIdentity Operation</seealso>
         public Task<GetCloudFrontOriginAccessIdentityResponse> GetCloudFrontOriginAccessIdentityAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return GetCloudFrontOriginAccessIdentityAsync(new GetCloudFrontOriginAccessIdentityRequest(), cancellationToken);
@@ -729,7 +729,7 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/GetCloudFrontOriginAccessIdentity">REST API Reference for GetCloudFrontOriginAccessIdentity Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetCloudFrontOriginAccessIdentity">REST API Reference for GetCloudFrontOriginAccessIdentity Operation</seealso>
         public Task<GetCloudFrontOriginAccessIdentityResponse> GetCloudFrontOriginAccessIdentityAsync(GetCloudFrontOriginAccessIdentityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetCloudFrontOriginAccessIdentityRequestMarshaller();
@@ -770,7 +770,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchCloudFrontOriginAccessIdentityException">
         /// The specified origin access identity does not exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/GetCloudFrontOriginAccessIdentityConfig">REST API Reference for GetCloudFrontOriginAccessIdentityConfig Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetCloudFrontOriginAccessIdentityConfig">REST API Reference for GetCloudFrontOriginAccessIdentityConfig Operation</seealso>
         public Task<GetCloudFrontOriginAccessIdentityConfigResponse> GetCloudFrontOriginAccessIdentityConfigAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return GetCloudFrontOriginAccessIdentityConfigAsync(new GetCloudFrontOriginAccessIdentityConfigRequest(), cancellationToken);
@@ -786,7 +786,7 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/GetCloudFrontOriginAccessIdentityConfig">REST API Reference for GetCloudFrontOriginAccessIdentityConfig Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetCloudFrontOriginAccessIdentityConfig">REST API Reference for GetCloudFrontOriginAccessIdentityConfig Operation</seealso>
         public Task<GetCloudFrontOriginAccessIdentityConfigResponse> GetCloudFrontOriginAccessIdentityConfigAsync(GetCloudFrontOriginAccessIdentityConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetCloudFrontOriginAccessIdentityConfigRequestMarshaller();
@@ -827,7 +827,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
         /// The specified distribution does not exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/GetDistribution">REST API Reference for GetDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetDistribution">REST API Reference for GetDistribution Operation</seealso>
         public Task<GetDistributionResponse> GetDistributionAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return GetDistributionAsync(new GetDistributionRequest(), cancellationToken);
@@ -843,7 +843,7 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/GetDistribution">REST API Reference for GetDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetDistribution">REST API Reference for GetDistribution Operation</seealso>
         public Task<GetDistributionResponse> GetDistributionAsync(GetDistributionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetDistributionRequestMarshaller();
@@ -884,7 +884,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
         /// The specified distribution does not exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/GetDistributionConfig">REST API Reference for GetDistributionConfig Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetDistributionConfig">REST API Reference for GetDistributionConfig Operation</seealso>
         public Task<GetDistributionConfigResponse> GetDistributionConfigAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return GetDistributionConfigAsync(new GetDistributionConfigRequest(), cancellationToken);
@@ -900,7 +900,7 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/GetDistributionConfig">REST API Reference for GetDistributionConfig Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetDistributionConfig">REST API Reference for GetDistributionConfig Operation</seealso>
         public Task<GetDistributionConfigResponse> GetDistributionConfigAsync(GetDistributionConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetDistributionConfigRequestMarshaller();
@@ -932,7 +932,7 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/GetInvalidation">REST API Reference for GetInvalidation Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetInvalidation">REST API Reference for GetInvalidation Operation</seealso>
         public Task<GetInvalidationResponse> GetInvalidationAsync(GetInvalidationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetInvalidationRequestMarshaller();
@@ -973,7 +973,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchStreamingDistributionException">
         /// The specified streaming distribution does not exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/GetStreamingDistribution">REST API Reference for GetStreamingDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetStreamingDistribution">REST API Reference for GetStreamingDistribution Operation</seealso>
         public Task<GetStreamingDistributionResponse> GetStreamingDistributionAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return GetStreamingDistributionAsync(new GetStreamingDistributionRequest(), cancellationToken);
@@ -989,7 +989,7 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/GetStreamingDistribution">REST API Reference for GetStreamingDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetStreamingDistribution">REST API Reference for GetStreamingDistribution Operation</seealso>
         public Task<GetStreamingDistributionResponse> GetStreamingDistributionAsync(GetStreamingDistributionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetStreamingDistributionRequestMarshaller();
@@ -1030,7 +1030,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.NoSuchStreamingDistributionException">
         /// The specified streaming distribution does not exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/GetStreamingDistributionConfig">REST API Reference for GetStreamingDistributionConfig Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetStreamingDistributionConfig">REST API Reference for GetStreamingDistributionConfig Operation</seealso>
         public Task<GetStreamingDistributionConfigResponse> GetStreamingDistributionConfigAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return GetStreamingDistributionConfigAsync(new GetStreamingDistributionConfigRequest(), cancellationToken);
@@ -1046,7 +1046,7 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/GetStreamingDistributionConfig">REST API Reference for GetStreamingDistributionConfig Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetStreamingDistributionConfig">REST API Reference for GetStreamingDistributionConfig Operation</seealso>
         public Task<GetStreamingDistributionConfigResponse> GetStreamingDistributionConfigAsync(GetStreamingDistributionConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetStreamingDistributionConfigRequestMarshaller();
@@ -1084,7 +1084,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// The argument is invalid.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/ListCloudFrontOriginAccessIdentities">REST API Reference for ListCloudFrontOriginAccessIdentities Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListCloudFrontOriginAccessIdentities">REST API Reference for ListCloudFrontOriginAccessIdentities Operation</seealso>
         public Task<ListCloudFrontOriginAccessIdentitiesResponse> ListCloudFrontOriginAccessIdentitiesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return ListCloudFrontOriginAccessIdentitiesAsync(new ListCloudFrontOriginAccessIdentitiesRequest(), cancellationToken);
@@ -1100,7 +1100,7 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/ListCloudFrontOriginAccessIdentities">REST API Reference for ListCloudFrontOriginAccessIdentities Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListCloudFrontOriginAccessIdentities">REST API Reference for ListCloudFrontOriginAccessIdentities Operation</seealso>
         public Task<ListCloudFrontOriginAccessIdentitiesResponse> ListCloudFrontOriginAccessIdentitiesAsync(ListCloudFrontOriginAccessIdentitiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListCloudFrontOriginAccessIdentitiesRequestMarshaller();
@@ -1138,7 +1138,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// The argument is invalid.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/ListDistributions">REST API Reference for ListDistributions Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListDistributions">REST API Reference for ListDistributions Operation</seealso>
         public Task<ListDistributionsResponse> ListDistributionsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return ListDistributionsAsync(new ListDistributionsRequest(), cancellationToken);
@@ -1154,7 +1154,7 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/ListDistributions">REST API Reference for ListDistributions Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListDistributions">REST API Reference for ListDistributions Operation</seealso>
         public Task<ListDistributionsResponse> ListDistributionsAsync(ListDistributionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListDistributionsRequestMarshaller();
@@ -1186,7 +1186,7 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/ListDistributionsByWebACLId">REST API Reference for ListDistributionsByWebACLId Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListDistributionsByWebACLId">REST API Reference for ListDistributionsByWebACLId Operation</seealso>
         public Task<ListDistributionsByWebACLIdResponse> ListDistributionsByWebACLIdAsync(ListDistributionsByWebACLIdRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListDistributionsByWebACLIdRequestMarshaller();
@@ -1218,7 +1218,7 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/ListInvalidations">REST API Reference for ListInvalidations Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListInvalidations">REST API Reference for ListInvalidations Operation</seealso>
         public Task<ListInvalidationsResponse> ListInvalidationsAsync(ListInvalidationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListInvalidationsRequestMarshaller();
@@ -1256,7 +1256,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// The argument is invalid.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/ListStreamingDistributions">REST API Reference for ListStreamingDistributions Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListStreamingDistributions">REST API Reference for ListStreamingDistributions Operation</seealso>
         public Task<ListStreamingDistributionsResponse> ListStreamingDistributionsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return ListStreamingDistributionsAsync(new ListStreamingDistributionsRequest(), cancellationToken);
@@ -1272,7 +1272,7 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/ListStreamingDistributions">REST API Reference for ListStreamingDistributions Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListStreamingDistributions">REST API Reference for ListStreamingDistributions Operation</seealso>
         public Task<ListStreamingDistributionsResponse> ListStreamingDistributionsAsync(ListStreamingDistributionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListStreamingDistributionsRequestMarshaller();
@@ -1304,7 +1304,7 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListTagsForResourceRequestMarshaller();
@@ -1336,7 +1336,7 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/TagResource">REST API Reference for TagResource Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/TagResource">REST API Reference for TagResource Operation</seealso>
         public Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new TagResourceRequestMarshaller();
@@ -1368,7 +1368,7 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UntagResourceRequestMarshaller();
@@ -1400,7 +1400,7 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/UpdateCloudFrontOriginAccessIdentity">REST API Reference for UpdateCloudFrontOriginAccessIdentity Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/UpdateCloudFrontOriginAccessIdentity">REST API Reference for UpdateCloudFrontOriginAccessIdentity Operation</seealso>
         public Task<UpdateCloudFrontOriginAccessIdentityResponse> UpdateCloudFrontOriginAccessIdentityAsync(UpdateCloudFrontOriginAccessIdentityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateCloudFrontOriginAccessIdentityRequestMarshaller();
@@ -1432,7 +1432,7 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/UpdateDistribution">REST API Reference for UpdateDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/UpdateDistribution">REST API Reference for UpdateDistribution Operation</seealso>
         public Task<UpdateDistributionResponse> UpdateDistributionAsync(UpdateDistributionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateDistributionRequestMarshaller();
@@ -1464,7 +1464,7 @@ namespace Amazon.CloudFront
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/UpdateStreamingDistribution">REST API Reference for UpdateStreamingDistribution Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/UpdateStreamingDistribution">REST API Reference for UpdateStreamingDistribution Operation</seealso>
         public Task<UpdateStreamingDistributionResponse> UpdateStreamingDistributionAsync(UpdateStreamingDistributionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateStreamingDistributionRequestMarshaller();

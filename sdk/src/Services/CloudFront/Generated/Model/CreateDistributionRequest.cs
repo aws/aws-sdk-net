@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2016-11-25.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2017-03-25.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -29,7 +29,7 @@ namespace Amazon.CloudFront.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDistribution operation.
-    /// Creates a new web distribution. Send a <code>GET</code> request to the <code>/<i>CloudFront
+    /// Creates a new web distribution. Send a <code>POST</code> request to the <code>/<i>CloudFront
     /// API version</i>/distribution</code>/<code>distribution ID</code> resource.
     /// </summary>
     public partial class CreateDistributionRequest : AmazonCloudFrontRequest

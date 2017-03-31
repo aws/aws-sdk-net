@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2016-11-25.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2017-03-25.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -318,8 +318,8 @@ namespace Amazon.CloudFront.Model
         ///  <ul> <li> 
         /// <para>
         ///  <code>vip</code>: CloudFront uses dedicated IP addresses for your content and can
-        /// respond to HTTPS requests from any viewer. However, you must request permission to
-        /// use this feature, and you incur additional monthly charges.
+        /// respond to HTTPS requests from any viewer. However, you will incur additional monthly
+        /// charges.
         /// </para>
         ///  </li> <li> 
         /// <para>

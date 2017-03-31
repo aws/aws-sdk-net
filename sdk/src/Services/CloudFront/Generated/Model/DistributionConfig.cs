@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2016-11-25.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2017-03-25.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -58,7 +58,7 @@ namespace Amazon.CloudFront.Model
         /// Instantiates DistributionConfig with the parameterized properties
         /// </summary>
         /// <param name="callerReference">A unique value (for example, a date-time stamp) that ensures that the request can't be replayed. If the value of <code>CallerReference</code> is new (regardless of the content of the <code>DistributionConfig</code> object), CloudFront creates a new distribution. If <code>CallerReference</code> is a value you already sent in a previous request to create a distribution, and if the content of the <code>DistributionConfig</code> is identical to the original request (ignoring white space), CloudFront returns the same the response that it returned to the original request. If <code>CallerReference</code> is a value you already sent in a previous request to create a distribution but the content of the <code>DistributionConfig</code> is different from the original request, CloudFront returns a <code>DistributionAlreadyExists</code> error.</param>
-        /// <param name="enabled">Specifies whether you want CloudFront to save access logs to an Amazon S3 bucket. If you do not want to enable logging when you create a distribution, or if you want to disable logging for an existing distribution, specify <code>false</code> for <code>Enabled</code>, and specify empty <code>Bucket</code> and <code>Prefix</code> elements. If you specify <code>false</code> for <code>Enabled</code> but you specify values for <code>Bucket</code> and <code>Prefix</code>, the values are automatically deleted.</param>
+        /// <param name="enabled">From this field, you can enable or disable the selected distribution. If you specify <code>false</code> for <code>Enabled</code> but you specify values for <code>Bucket</code> and <code>Prefix</code>, the values are automatically deleted.</param>
         public DistributionConfig(string callerReference, bool enabled)
         {
             _callerReference = callerReference;
@@ -273,13 +273,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        /// Specifies whether you want CloudFront to save access logs to an Amazon S3 bucket.
-        /// </para>
-        ///  
-        /// <para>
-        /// If you do not want to enable logging when you create a distribution, or if you want
-        /// to disable logging for an existing distribution, specify <code>false</code> for <code>Enabled</code>,
-        /// and specify empty <code>Bucket</code> and <code>Prefix</code> elements.
+        /// From this field, you can enable or disable the selected distribution.
         /// </para>
         ///  
         /// <para>
