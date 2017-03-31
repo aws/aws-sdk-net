@@ -1,3 +1,7 @@
+### 3.3.71.0 (2017-03-31 18:43 UTC)
+* CloudDirectory (3.3.2.0)
+	* ListObjectAttributes now supports filtering by facet.
+
 ### 3.3.70.0 (2017-03-31 04:55 UTC)
 * CloudFormation (3.3.4.0)
 	* Adding paginators for ListExports and ListImports
