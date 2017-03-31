@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudFormation.IAmazonCloudFormation.CancelUpdateStack(Amazon.CloudFormation.Model.CancelUpdateStackRequest)" />
+            <member name="M:Amazon.CloudFormation.AmazonCloudFormationClient.CancelUpdateStack(Amazon.CloudFormation.Model.CancelUpdateStackRequest)" />
+            <member name="T:Amazon.CloudFormation.Model.CancelUpdateStackRequest" />
+            <member name="T:Amazon.CloudFormation.Model.CancelUpdateStackResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example cancels an update of the specified stack.
+                </para>
+                <code
+                    title="To cancel a stack update in progress"
+                    source=".\AWSSDKDocSamples\CloudFormation\CloudFormation.GeneratedSamples.cs"
+                    region="to-cancel-a-stack-update-that-is-in-progress-1472747085196" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudFormation.IAmazonCloudFormation.UpdateStack(Amazon.CloudFormation.Model.UpdateStackRequest)" />
+            <member name="M:Amazon.CloudFormation.AmazonCloudFormationClient.UpdateStack(Amazon.CloudFormation.Model.UpdateStackRequest)" />
+            <member name="T:Amazon.CloudFormation.Model.UpdateStackRequest" />
+            <member name="T:Amazon.CloudFormation.Model.UpdateStackResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example updates the template and input parameters for the specified stack.
+                </para>
+                <code
+                    title="To update an AWS CloudFormation stack"
+                    source=".\AWSSDKDocSamples\CloudFormation\CloudFormation.GeneratedSamples.cs"
+                    region="to-update-an-aws-cloudformation-stack-1472841931621" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudFormation.IAmazonCloudFormation.UpdateStack(Amazon.CloudFormation.Model.UpdateStackRequest)" />
+            <member name="M:Amazon.CloudFormation.AmazonCloudFormationClient.UpdateStack(Amazon.CloudFormation.Model.UpdateStackRequest)" />
+            <member name="T:Amazon.CloudFormation.Model.UpdateStackRequest" />
+            <member name="T:Amazon.CloudFormation.Model.UpdateStackResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example updates only the the specified parameter value for the specified stack. If you don't specify a parameter value, AWS CloudFormation uses the default value from the template.
+                </para>
+                <code
+                    title="To update an AWS CloudFormation stack"
+                    source=".\AWSSDKDocSamples\CloudFormation\CloudFormation.GeneratedSamples.cs"
+                    region="to-update-an-aws-cloudformation-stack-1472841931621" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudFormation.IAmazonCloudFormation.UpdateStack(Amazon.CloudFormation.Model.UpdateStackRequest)" />
+            <member name="M:Amazon.CloudFormation.AmazonCloudFormationClient.UpdateStack(Amazon.CloudFormation.Model.UpdateStackRequest)" />
+            <member name="T:Amazon.CloudFormation.Model.UpdateStackRequest" />
+            <member name="T:Amazon.CloudFormation.Model.UpdateStackResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example adds two stack notification topics to the specified stack.
+                </para>
+                <code
+                    title="To update an AWS CloudFormation stack"
+                    source=".\AWSSDKDocSamples\CloudFormation\CloudFormation.GeneratedSamples.cs"
+                    region="to-update-an-aws-cloudformation-stack-1472841931621" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudFormation.IAmazonCloudFormation.ValidateTemplate(Amazon.CloudFormation.Model.ValidateTemplateRequest)" />
+            <member name="M:Amazon.CloudFormation.AmazonCloudFormationClient.ValidateTemplate(Amazon.CloudFormation.Model.ValidateTemplateRequest)" />
+            <member name="T:Amazon.CloudFormation.Model.ValidateTemplateRequest" />
+            <member name="T:Amazon.CloudFormation.Model.ValidateTemplateResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example validates the specified template.
+                </para>
+                <code
+                    title="To validate an AWS CloudFormation template"
+                    source=".\AWSSDKDocSamples\CloudFormation\CloudFormation.GeneratedSamples.cs"
+                    region="to-validate-an-aws-cloudformation-template-1472839072307" />
+            </example>
+        </value>
+    </doc>
+</docs>
