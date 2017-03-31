@@ -13,6 +13,13 @@ namespace TestWrapper
     public class MSTestRunner : TestRunner
     {
         private const string RESULTS_FILE_TEXT = "Results file:";
+        private static readonly List<string> FAIL_STATUSES = new List<string>
+        {
+            "Failed",
+            "Error",
+            "Aborted",
+            "Not Executed"
+        };
         public DirectoryInfo ResultsOutputDir { get; set; }
 
         public MSTestRunner(FileInfo testSuiteExecutable, FileInfo testAssembly, DirectoryInfo workingDirectory)
@@ -41,17 +48,25 @@ namespace TestWrapper
             {
                 while ((line = reader.ReadLine()) != null)
                 {
-                    if (line.StartsWith("Summary") || line.StartsWith("Final Test Results"))
+                    if (line.StartsWith("Results file:"))
                         foundSummary = true;
 
-                    if (!foundSummary && line.StartsWith("Passed"))
-                        passed++;
-                    if (!foundSummary && line.StartsWith("Failed"))
+                    if (!foundSummary)
                     {
-                        failed++;
+                        if (line.StartsWith("Passed"))
+                            passed++;
+                        foreach (var failStatus in FAIL_STATUSES)
+                        {
+                            if (line.StartsWith(failStatus))
+                            {
+                                failed++;
 
-                        var testName = line.Substring(line.IndexOf(' ')).Trim();
-                        failedTests.Add(testName);
+                                var testName = line.Substring(failStatus.Length).Substring(line.IndexOf(' ')).Trim();
+                                failedTests.Add(testName);
+
+                                break;
+                            }
+                        }
                     }
 
                     if (foundSummary && line.StartsWith(RESULTS_FILE_TEXT))

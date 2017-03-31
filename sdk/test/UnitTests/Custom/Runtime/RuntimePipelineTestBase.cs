@@ -52,7 +52,7 @@ namespace AWSSDK.UnitTests
 
         protected IAsyncExecutionContext CreateAsyncTestContext()
         {
-            return CreateAsyncTestContext();
+            return CreateAsyncTestContext(null);
         }
 
         protected IAsyncExecutionContext CreateAsyncTestContext(AbstractAWSSigner signer)
