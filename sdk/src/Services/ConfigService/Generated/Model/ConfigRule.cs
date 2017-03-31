@@ -200,11 +200,15 @@ namespace Amazon.ConfigService.Model
         ///  </li> <li> 
         /// <para>
         /// Your custom rule is triggered when AWS Config delivers the configuration snapshot.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
         /// For more information, see <a>ConfigSnapshotDeliveryProperties</a>.
         /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// By default, rules with a periodic trigger are evaluated every 24 hours. To change
+        /// the frequency, specify a valid value for the <code>MaximumExecutionFrequency</code>
+        /// parameter.
+        /// </para>
+        ///  </note>
         /// </summary>
         public MaximumExecutionFrequency MaximumExecutionFrequency
         {

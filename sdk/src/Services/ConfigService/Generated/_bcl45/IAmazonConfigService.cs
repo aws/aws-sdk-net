@@ -1231,9 +1231,9 @@ namespace Amazon.ConfigService
         /// </para>
         ///  
         /// <para>
-        /// If you are adding a new AWS managed Config rule, specify the rule's identifier for
-        /// the <code>SourceIdentifier</code> key. To reference AWS managed Config rule identifiers,
-        /// see <a href="http://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Using
+        /// If you are adding an AWS managed Config rule, specify the rule's identifier for the
+        /// <code>SourceIdentifier</code> key. To reference AWS managed Config rule identifiers,
+        /// see <a href="http://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">About
         /// AWS Managed Config Rules</a>.
         /// </para>
         ///  
