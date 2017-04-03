@@ -298,42 +298,42 @@ this.Write("\"))\r\n");
         #line hidden
         
         #line 129 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseResponseUnmarshaller.tt"
-this.Write("\t\t\t\tresponse.");
-
-        
-        #line default
-        #line hidden
-        
-        #line 130 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseResponseUnmarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
-
-        
-        #line default
-        #line hidden
-        
-        #line 130 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseResponseUnmarshaller.tt"
-this.Write(" = Encoding.UTF8.GetString(Convert.FromBase64String(context.ResponseData.GetHeade" +
-        "rValue(\"");
-
-        
-        #line default
-        #line hidden
-        
-        #line 130 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseResponseUnmarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
-
-        
-        #line default
-        #line hidden
-        
-        #line 130 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseResponseUnmarshaller.tt"
-this.Write("\")));\r\n");
+this.Write("\t\t\t{\r\n\t\t\t\tvar headerBytes = Convert.FromBase64String(context.ResponseData.GetHead" +
+        "erValue(\"");
 
         
         #line default
         #line hidden
         
         #line 131 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseResponseUnmarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
+
+        
+        #line default
+        #line hidden
+        
+        #line 131 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseResponseUnmarshaller.tt"
+this.Write("\"));\r\n\t\t\t\tresponse.");
+
+        
+        #line default
+        #line hidden
+        
+        #line 132 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseResponseUnmarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
+
+        
+        #line default
+        #line hidden
+        
+        #line 132 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseResponseUnmarshaller.tt"
+this.Write(" = Encoding.UTF8.GetString(headerBytes, 0, headerBytes.Length);\r\n\t\t\t}\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 134 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseResponseUnmarshaller.tt"
 
 					}
 					else
@@ -343,42 +343,42 @@ this.Write("\")));\r\n");
         #line default
         #line hidden
         
-        #line 135 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseResponseUnmarshaller.tt"
+        #line 138 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseResponseUnmarshaller.tt"
 this.Write("\t\t\t\tresponse.");
 
         
         #line default
         #line hidden
         
-        #line 136 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseResponseUnmarshaller.tt"
+        #line 139 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseResponseUnmarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 136 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseResponseUnmarshaller.tt"
+        #line 139 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseResponseUnmarshaller.tt"
 this.Write(" = context.ResponseData.GetHeaderValue(\"");
 
         
         #line default
         #line hidden
         
-        #line 136 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseResponseUnmarshaller.tt"
+        #line 139 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseResponseUnmarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
 
         
         #line default
         #line hidden
         
-        #line 136 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseResponseUnmarshaller.tt"
+        #line 139 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseResponseUnmarshaller.tt"
 this.Write("\");\r\n");
 
         
         #line default
         #line hidden
         
-        #line 137 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseResponseUnmarshaller.tt"
+        #line 140 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseResponseUnmarshaller.tt"
 
 					}
 				}
@@ -389,42 +389,42 @@ this.Write("\");\r\n");
         #line default
         #line hidden
         
-        #line 142 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseResponseUnmarshaller.tt"
+        #line 145 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseResponseUnmarshaller.tt"
 this.Write("\t\t\t\tresponse.");
 
         
         #line default
         #line hidden
         
-        #line 143 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseResponseUnmarshaller.tt"
+        #line 146 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseResponseUnmarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 143 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseResponseUnmarshaller.tt"
+        #line 146 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseResponseUnmarshaller.tt"
 this.Write(" = int.Parse(context.ResponseData.GetHeaderValue(\"");
 
         
         #line default
         #line hidden
         
-        #line 143 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseResponseUnmarshaller.tt"
+        #line 146 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseResponseUnmarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
 
         
         #line default
         #line hidden
         
-        #line 143 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseResponseUnmarshaller.tt"
+        #line 146 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseResponseUnmarshaller.tt"
 this.Write("\"), CultureInfo.InvariantCulture);\r\n");
 
         
         #line default
         #line hidden
         
-        #line 144 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseResponseUnmarshaller.tt"
+        #line 147 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseResponseUnmarshaller.tt"
 
 				}
 				else
@@ -445,28 +445,28 @@ this.Write("\"), CultureInfo.InvariantCulture);\r\n");
         #line default
         #line hidden
         
-        #line 159 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseResponseUnmarshaller.tt"
+        #line 162 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseResponseUnmarshaller.tt"
 this.Write("\t\t\tresponse.");
 
         
         #line default
         #line hidden
         
-        #line 160 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseResponseUnmarshaller.tt"
+        #line 163 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseResponseUnmarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.ResponseStatusCodeMember.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 160 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseResponseUnmarshaller.tt"
+        #line 163 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseResponseUnmarshaller.tt"
 this.Write(" = (int)context.ResponseData.StatusCode;\r\n");
 
         
         #line default
         #line hidden
         
-        #line 161 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseResponseUnmarshaller.tt"
+        #line 164 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseResponseUnmarshaller.tt"
 						
 		}
 	}

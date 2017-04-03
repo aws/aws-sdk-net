@@ -127,7 +127,10 @@ using Amazon.Runtime.Internal.Util;
 					if (member.IsJsonValue)
 					{
 #>
-				response.<#=member.PropertyName#> = Encoding.UTF8.GetString(Convert.FromBase64String(context.ResponseData.GetHeaderValue("<#=member.MarshallLocationName#>")));
+			{
+				var headerBytes = Convert.FromBase64String(context.ResponseData.GetHeaderValue("<#=member.MarshallLocationName#>"));
+				response.<#=member.PropertyName#> = Encoding.UTF8.GetString(headerBytes, 0, headerBytes.Length);
+			}
 <#+
 					}
 					else

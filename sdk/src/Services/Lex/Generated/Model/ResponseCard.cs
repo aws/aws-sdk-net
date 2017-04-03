@@ -29,8 +29,8 @@ namespace Amazon.Lex.Model
 {
     /// <summary>
     /// If you configure a response card when creating your bots, Amazon Lex substitutes the
-    /// session attributes and slot values available, and then returns it. The response card
-    /// can also come from a Lambda function ( <code>dialogCodeHook</code> and <code>fulfillmentActivity</code>
+    /// session attributes and slot values that are available, and then returns it. The response
+    /// card can also come from a Lambda function ( <code>dialogCodeHook</code> and <code>fulfillmentActivity</code>
     /// on an intent).
     /// </summary>
     public partial class ResponseCard
@@ -42,7 +42,7 @@ namespace Amazon.Lex.Model
         /// <summary>
         /// Gets and sets the property ContentType. 
         /// <para>
-        /// Content type of the response.
+        /// The content type of the response.
         /// </para>
         /// </summary>
         public ContentType ContentType
@@ -78,7 +78,7 @@ namespace Amazon.Lex.Model
         /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
-        /// Version of response card format.
+        /// The version of the response card format.
         /// </para>
         /// </summary>
         public string Version

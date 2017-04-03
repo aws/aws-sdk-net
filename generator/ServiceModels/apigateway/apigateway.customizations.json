@@ -1,4 +1,9 @@
 {
+    "runtimePipelineOverride": {
+        "overrides": [
+            { "operation": "addAfter", "newType": "Amazon.APIGateway.Internal.AmazonAPIGatewayPostMarshallHandler", "targetType": "Amazon.Runtime.Internal.Marshaller" },
+        ]
+    },
     "shapeModifiers": {
         "DomainName": {
             "modify": [

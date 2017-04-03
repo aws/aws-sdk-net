@@ -38,7 +38,7 @@ namespace Amazon.Lex.Model
         /// <summary>
         /// Gets and sets the property Text. 
         /// <para>
-        /// Text visible to the user on the button.
+        /// Text that is visible to the user on the button.
         /// </para>
         /// </summary>
         public string Text
@@ -56,8 +56,9 @@ namespace Amazon.Lex.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// Value sent to Amazon Lex when user clicks the button. For example, consider button
-        /// text "NYC". When the user clicks the button, the value sent can be "New York City".
+        /// The value sent to Amazon Lex when a user chooses the button. For example, consider
+        /// button text "NYC." When the user chooses the button, the value sent can be "New York
+        /// City."
         /// </para>
         /// </summary>
         public string Value

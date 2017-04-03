@@ -63,9 +63,18 @@ if( operation.ResponseHeaderMembers.Count() > 0 )
 			{
 				if (member.Shape.IsString)
 				{
+					if (member.IsJsonValue)
+					{
+#>
+					{"<#=member.MarshallLocationName#>",Convert.ToBase64String(Encoding.UTF8.GetBytes("<#=member.MarshallLocationName#>_Value"))},
+<#	
+					}
+					else
+					{
 #>
 					{"<#=member.MarshallLocationName#>","<#=member.MarshallLocationName#>_Value"},
 <#	
+					}
 				}
 				else if (member.Shape.IsInt)
 				{

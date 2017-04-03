@@ -40,7 +40,10 @@ namespace Amazon.Lex.Model
         private string _title;
 
         /// <summary>
-        /// Gets and sets the property AttachmentLinkUrl.
+        /// Gets and sets the property AttachmentLinkUrl. 
+        /// <para>
+        /// The URL of an attachment to the response card.
+        /// </para>
         /// </summary>
         public string AttachmentLinkUrl
         {
@@ -57,7 +60,7 @@ namespace Amazon.Lex.Model
         /// <summary>
         /// Gets and sets the property Buttons. 
         /// <para>
-        /// List of options to show to the user.
+        /// The list of options to show to the user.
         /// </para>
         /// </summary>
         public List<Button> Buttons
@@ -75,7 +78,7 @@ namespace Amazon.Lex.Model
         /// <summary>
         /// Gets and sets the property ImageUrl. 
         /// <para>
-        /// URL of an image that is displayed to the user.
+        /// The URL of an image that is displayed to the user.
         /// </para>
         /// </summary>
         public string ImageUrl
@@ -93,7 +96,7 @@ namespace Amazon.Lex.Model
         /// <summary>
         /// Gets and sets the property SubTitle. 
         /// <para>
-        /// Subtitle shown below the title.
+        /// The subtitle shown below the title.
         /// </para>
         /// </summary>
         public string SubTitle
@@ -111,7 +114,7 @@ namespace Amazon.Lex.Model
         /// <summary>
         /// Gets and sets the property Title. 
         /// <para>
-        /// Title of the option.
+        /// The title of the option.
         /// </para>
         /// </summary>
         public string Title

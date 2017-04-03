@@ -250,7 +250,15 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
                     {
                         Assert.IsTrue(this.MarshalledRequest.Headers.ContainsKey(member.MarshallLocationName));
                         if (member.OverrideDataType == null)
-                            Assert.AreEqual(property.GetValue(this.Request), this.MarshalledRequest.Headers[member.MarshallLocationName]);
+                        {
+                            if (member.IsJsonValue)
+                            {
+                                var encodedValue = Convert.ToBase64String(Encoding.UTF8.GetBytes((string)property.GetValue(this.Request)));
+                                Assert.AreEqual(encodedValue, this.MarshalledRequest.Headers[member.MarshallLocationName]);
+                            }
+                            else
+                                Assert.AreEqual(property.GetValue(this.Request), this.MarshalledRequest.Headers[member.MarshallLocationName]);
+                        }
                     }
                 }
             }

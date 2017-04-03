@@ -213,6 +213,14 @@ namespace Amazon.APIGateway
             return new AWS4Signer();
         }
 
+        /// <summary>
+        /// Customize the pipeline
+        /// </summary>
+        /// <param name="pipeline"></param>
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
+        {
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new Amazon.APIGateway.Internal.AmazonAPIGatewayPostMarshallHandler());
+        }    
 
         #endregion
 

@@ -460,12 +460,6 @@ namespace Amazon.Runtime.Internal
                 }
             }
 
-            if (requestContext.Unmarshaller is JsonResponseUnmarshaller)
-            {
-                // Currently the signature seems to be valid without including this header in the calculation.
-                request.Headers["Accept"] = "application/json";
-            }
-
             return httpRequest;
         }
 

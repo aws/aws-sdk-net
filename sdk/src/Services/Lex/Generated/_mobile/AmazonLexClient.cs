@@ -37,15 +37,15 @@ namespace Amazon.Lex
     /// Implementation for accessing Lex
     ///
     /// Amazon Lex provides both build and runtime endpoints. Each endpoint provides a set
-    /// of operations (API). Your application uses the runtime API to understand user utterances
-    /// (user input text or voice). For example, suppose user says "I want pizza", your application
-    /// sends this input to Amazon Lex using the runtime API. Amazon Lex recognizes that the
-    /// user request is for the OrderPizza intent (one of the intents defined in the application).
-    /// Then Amazon Lex engages in user conversation on behalf of the application to elicit
+    /// of operations (API). Your conversational bot uses the runtime API to understand user
+    /// utterances (user input text or voice). For example, suppose a user says "I want pizza",
+    /// your bot sends this input to Amazon Lex using the runtime API. Amazon Lex recognizes
+    /// that the user request is for the OrderPizza intent (one of the intents defined in
+    /// the bot). Then Amazon Lex engages in user conversation on behalf of the bot to elicit
     /// required information (slot values, such as pizza size and crust type), and then performs
-    /// fulfillment activity (that you configured when you created the application). You use
-    /// the build-time API to create and manage your Amazon Lex applications. For a list of
-    /// build-time operations, see the build-time API. .
+    /// fulfillment activity (that you configured when you created the bot). You use the build-time
+    /// API to create and manage your Amazon Lex bot. For a list of build-time operations,
+    /// see the build-time API, .
     /// </summary>
     public partial class AmazonLexClient : AmazonServiceClient, IAmazonLex
     {
@@ -238,6 +238,38 @@ namespace Amazon.Lex
 
         #endregion
 
+        
+        #region  PostContent
+
+        internal PostContentResponse PostContent(PostContentRequest request)
+        {
+            var marshaller = new PostContentRequestMarshaller();
+            var unmarshaller = PostContentResponseUnmarshaller.Instance;
+
+            return Invoke<PostContentRequest,PostContentResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PostContent operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PostContent operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex-2016-11-28/PostContent">REST API Reference for PostContent Operation</seealso>
+        public Task<PostContentResponse> PostContentAsync(PostContentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new PostContentRequestMarshaller();
+            var unmarshaller = PostContentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PostContentRequest,PostContentResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
         
         #region  PostText
 
