@@ -1,3 +1,10 @@
+### 3.3.72.0 (2017-04-03 22:03 UTC)
+* Lex (3.3.1.0)
+	* Updated to use new Core, version 3.3.10.4
+	* Adds support to PostContent for speech input
+* Core 3.3.10.4
+	* Update to support Lex PostContent operation.
+
 ### 3.3.71.0 (2017-03-31 18:43 UTC)
 * CloudDirectory (3.3.2.0)
 	* ListObjectAttributes now supports filtering by facet.
