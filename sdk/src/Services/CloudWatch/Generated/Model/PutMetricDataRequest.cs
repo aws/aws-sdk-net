@@ -36,8 +36,8 @@ namespace Amazon.CloudWatch.Model
     /// 
     ///  
     /// <para>
-    /// Each <code>PutMetricData</code> request is limited to 8 KB in size for HTTP GET requests
-    /// and is limited to 40 KB in size for HTTP POST requests.
+    /// Each <code>PutMetricData</code> request is limited to 40 KB in size for HTTP POST
+    /// requests.
     /// </para>
     ///  
     /// <para>
@@ -48,9 +48,30 @@ namespace Amazon.CloudWatch.Model
     /// </para>
     ///  
     /// <para>
+    /// You can use up to 10 dimensions per metric to further clarify what data the metric
+    /// collects. For more information on specifying dimensions, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
+    /// Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.
+    /// </para>
+    ///  
+    /// <para>
     /// Data points with time stamps from 24 hours ago or longer can take at least 48 hours
     /// to become available for <a>GetMetricStatistics</a> from the time they are submitted.
     /// </para>
+    ///  
+    /// <para>
+    /// CloudWatch needs raw data points to calculate percentile statistics. If you publish
+    /// data using a statistic set instead, you cannot retrieve percentile statistics for
+    /// this data unless one of the following conditions is true:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// The SampleCount of the statistic set is 1
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The Min and the Max of the statistic set are equal
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class PutMetricDataRequest : AmazonCloudWatchRequest
     {

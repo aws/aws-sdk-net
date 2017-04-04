@@ -252,6 +252,7 @@ namespace Amazon.CloudWatch
         /// <exception cref="Amazon.CloudWatch.Model.ResourceNotFoundException">
         /// The named resource does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteAlarms">REST API Reference for DeleteAlarms Operation</seealso>
         public DeleteAlarmsResponse DeleteAlarms(DeleteAlarmsRequest request)
         {
             var marshaller = new DeleteAlarmsRequestMarshaller();
@@ -271,6 +272,7 @@ namespace Amazon.CloudWatch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteAlarms
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteAlarms">REST API Reference for DeleteAlarms Operation</seealso>
         public IAsyncResult BeginDeleteAlarms(DeleteAlarmsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteAlarmsRequestMarshaller();
@@ -287,6 +289,7 @@ namespace Amazon.CloudWatch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAlarms.</param>
         /// 
         /// <returns>Returns a  DeleteAlarmsResult from CloudWatch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteAlarms">REST API Reference for DeleteAlarms Operation</seealso>
         public  DeleteAlarmsResponse EndDeleteAlarms(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteAlarmsResponse>(asyncResult);
@@ -312,6 +315,7 @@ namespace Amazon.CloudWatch
         /// <exception cref="Amazon.CloudWatch.Model.InvalidNextTokenException">
         /// The next token specified is invalid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarmHistory">REST API Reference for DescribeAlarmHistory Operation</seealso>
         public DescribeAlarmHistoryResponse DescribeAlarmHistory()
         {
             return DescribeAlarmHistory(new DescribeAlarmHistoryRequest());
@@ -334,6 +338,7 @@ namespace Amazon.CloudWatch
         /// <exception cref="Amazon.CloudWatch.Model.InvalidNextTokenException">
         /// The next token specified is invalid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarmHistory">REST API Reference for DescribeAlarmHistory Operation</seealso>
         public DescribeAlarmHistoryResponse DescribeAlarmHistory(DescribeAlarmHistoryRequest request)
         {
             var marshaller = new DescribeAlarmHistoryRequestMarshaller();
@@ -353,6 +358,7 @@ namespace Amazon.CloudWatch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAlarmHistory
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarmHistory">REST API Reference for DescribeAlarmHistory Operation</seealso>
         public IAsyncResult BeginDescribeAlarmHistory(DescribeAlarmHistoryRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeAlarmHistoryRequestMarshaller();
@@ -369,6 +375,7 @@ namespace Amazon.CloudWatch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAlarmHistory.</param>
         /// 
         /// <returns>Returns a  DescribeAlarmHistoryResult from CloudWatch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarmHistory">REST API Reference for DescribeAlarmHistory Operation</seealso>
         public  DescribeAlarmHistoryResponse EndDescribeAlarmHistory(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeAlarmHistoryResponse>(asyncResult);
@@ -388,6 +395,7 @@ namespace Amazon.CloudWatch
         /// <exception cref="Amazon.CloudWatch.Model.InvalidNextTokenException">
         /// The next token specified is invalid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarms">REST API Reference for DescribeAlarms Operation</seealso>
         public DescribeAlarmsResponse DescribeAlarms()
         {
             return DescribeAlarms(new DescribeAlarmsRequest());
@@ -404,6 +412,7 @@ namespace Amazon.CloudWatch
         /// <exception cref="Amazon.CloudWatch.Model.InvalidNextTokenException">
         /// The next token specified is invalid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarms">REST API Reference for DescribeAlarms Operation</seealso>
         public DescribeAlarmsResponse DescribeAlarms(DescribeAlarmsRequest request)
         {
             var marshaller = new DescribeAlarmsRequestMarshaller();
@@ -423,6 +432,7 @@ namespace Amazon.CloudWatch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAlarms
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarms">REST API Reference for DescribeAlarms Operation</seealso>
         public IAsyncResult BeginDescribeAlarms(DescribeAlarmsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeAlarmsRequestMarshaller();
@@ -439,6 +449,7 @@ namespace Amazon.CloudWatch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAlarms.</param>
         /// 
         /// <returns>Returns a  DescribeAlarmsResult from CloudWatch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarms">REST API Reference for DescribeAlarms Operation</seealso>
         public  DescribeAlarmsResponse EndDescribeAlarms(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeAlarmsResponse>(asyncResult);
@@ -455,6 +466,7 @@ namespace Amazon.CloudWatch
         /// <param name="request">Container for the necessary parameters to execute the DescribeAlarmsForMetric service method.</param>
         /// 
         /// <returns>The response from the DescribeAlarmsForMetric service method, as returned by CloudWatch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarmsForMetric">REST API Reference for DescribeAlarmsForMetric Operation</seealso>
         public DescribeAlarmsForMetricResponse DescribeAlarmsForMetric(DescribeAlarmsForMetricRequest request)
         {
             var marshaller = new DescribeAlarmsForMetricRequestMarshaller();
@@ -474,6 +486,7 @@ namespace Amazon.CloudWatch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAlarmsForMetric
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarmsForMetric">REST API Reference for DescribeAlarmsForMetric Operation</seealso>
         public IAsyncResult BeginDescribeAlarmsForMetric(DescribeAlarmsForMetricRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeAlarmsForMetricRequestMarshaller();
@@ -490,6 +503,7 @@ namespace Amazon.CloudWatch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAlarmsForMetric.</param>
         /// 
         /// <returns>Returns a  DescribeAlarmsForMetricResult from CloudWatch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarmsForMetric">REST API Reference for DescribeAlarmsForMetric Operation</seealso>
         public  DescribeAlarmsForMetricResponse EndDescribeAlarmsForMetric(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeAlarmsForMetricResponse>(asyncResult);
@@ -506,6 +520,7 @@ namespace Amazon.CloudWatch
         /// <param name="request">Container for the necessary parameters to execute the DisableAlarmActions service method.</param>
         /// 
         /// <returns>The response from the DisableAlarmActions service method, as returned by CloudWatch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DisableAlarmActions">REST API Reference for DisableAlarmActions Operation</seealso>
         public DisableAlarmActionsResponse DisableAlarmActions(DisableAlarmActionsRequest request)
         {
             var marshaller = new DisableAlarmActionsRequestMarshaller();
@@ -525,6 +540,7 @@ namespace Amazon.CloudWatch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisableAlarmActions
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DisableAlarmActions">REST API Reference for DisableAlarmActions Operation</seealso>
         public IAsyncResult BeginDisableAlarmActions(DisableAlarmActionsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DisableAlarmActionsRequestMarshaller();
@@ -541,6 +557,7 @@ namespace Amazon.CloudWatch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisableAlarmActions.</param>
         /// 
         /// <returns>Returns a  DisableAlarmActionsResult from CloudWatch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DisableAlarmActions">REST API Reference for DisableAlarmActions Operation</seealso>
         public  DisableAlarmActionsResponse EndDisableAlarmActions(IAsyncResult asyncResult)
         {
             return EndInvoke<DisableAlarmActionsResponse>(asyncResult);
@@ -556,6 +573,7 @@ namespace Amazon.CloudWatch
         /// <param name="request">Container for the necessary parameters to execute the EnableAlarmActions service method.</param>
         /// 
         /// <returns>The response from the EnableAlarmActions service method, as returned by CloudWatch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/EnableAlarmActions">REST API Reference for EnableAlarmActions Operation</seealso>
         public EnableAlarmActionsResponse EnableAlarmActions(EnableAlarmActionsRequest request)
         {
             var marshaller = new EnableAlarmActionsRequestMarshaller();
@@ -575,6 +593,7 @@ namespace Amazon.CloudWatch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndEnableAlarmActions
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/EnableAlarmActions">REST API Reference for EnableAlarmActions Operation</seealso>
         public IAsyncResult BeginEnableAlarmActions(EnableAlarmActionsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new EnableAlarmActionsRequestMarshaller();
@@ -591,6 +610,7 @@ namespace Amazon.CloudWatch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginEnableAlarmActions.</param>
         /// 
         /// <returns>Returns a  EnableAlarmActionsResult from CloudWatch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/EnableAlarmActions">REST API Reference for EnableAlarmActions Operation</seealso>
         public  EnableAlarmActionsResponse EndEnableAlarmActions(IAsyncResult asyncResult)
         {
             return EndInvoke<EnableAlarmActionsResponse>(asyncResult);
@@ -644,6 +664,20 @@ namespace Amazon.CloudWatch
         /// </para>
         ///  
         /// <para>
+        /// CloudWatch needs raw data points to calculate percentile statistics. If you publish
+        /// data using a statistic set instead, you cannot retrieve percentile statistics for
+        /// this data unless one of the following conditions is true:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The SampleCount of the statistic set is 1
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The Min and the Max of the statistic set are equal
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
         /// For a list of metrics and dimensions supported by AWS services, see the <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CW_Support_For_AWS.html">Amazon
         /// CloudWatch Metrics and Dimensions Reference</a> in the <i>Amazon CloudWatch User Guide</i>.
         /// </para>
@@ -663,6 +697,7 @@ namespace Amazon.CloudWatch
         /// <exception cref="Amazon.CloudWatch.Model.MissingRequiredParameterException">
         /// An input parameter that is required is missing.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetMetricStatistics">REST API Reference for GetMetricStatistics Operation</seealso>
         public GetMetricStatisticsResponse GetMetricStatistics(GetMetricStatisticsRequest request)
         {
             var marshaller = new GetMetricStatisticsRequestMarshaller();
@@ -682,6 +717,7 @@ namespace Amazon.CloudWatch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetMetricStatistics
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetMetricStatistics">REST API Reference for GetMetricStatistics Operation</seealso>
         public IAsyncResult BeginGetMetricStatistics(GetMetricStatisticsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetMetricStatisticsRequestMarshaller();
@@ -698,6 +734,7 @@ namespace Amazon.CloudWatch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetMetricStatistics.</param>
         /// 
         /// <returns>Returns a  GetMetricStatisticsResult from CloudWatch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetMetricStatistics">REST API Reference for GetMetricStatistics Operation</seealso>
         public  GetMetricStatisticsResponse EndGetMetricStatistics(IAsyncResult asyncResult)
         {
             return EndInvoke<GetMetricStatisticsResponse>(asyncResult);
@@ -730,6 +767,7 @@ namespace Amazon.CloudWatch
         /// <exception cref="Amazon.CloudWatch.Model.InvalidParameterValueException">
         /// The value of an input parameter is bad or out-of-range.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListMetrics">REST API Reference for ListMetrics Operation</seealso>
         public ListMetricsResponse ListMetrics()
         {
             return ListMetrics(new ListMetricsRequest());
@@ -759,6 +797,7 @@ namespace Amazon.CloudWatch
         /// <exception cref="Amazon.CloudWatch.Model.InvalidParameterValueException">
         /// The value of an input parameter is bad or out-of-range.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListMetrics">REST API Reference for ListMetrics Operation</seealso>
         public ListMetricsResponse ListMetrics(ListMetricsRequest request)
         {
             var marshaller = new ListMetricsRequestMarshaller();
@@ -778,6 +817,7 @@ namespace Amazon.CloudWatch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListMetrics
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListMetrics">REST API Reference for ListMetrics Operation</seealso>
         public IAsyncResult BeginListMetrics(ListMetricsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListMetricsRequestMarshaller();
@@ -794,6 +834,7 @@ namespace Amazon.CloudWatch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListMetrics.</param>
         /// 
         /// <returns>Returns a  ListMetricsResult from CloudWatch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListMetrics">REST API Reference for ListMetrics Operation</seealso>
         public  ListMetricsResponse EndListMetrics(IAsyncResult asyncResult)
         {
             return EndInvoke<ListMetricsResponse>(asyncResult);
@@ -875,6 +916,7 @@ namespace Amazon.CloudWatch
         /// <exception cref="Amazon.CloudWatch.Model.LimitExceededException">
         /// The quota for alarms for this customer has already been reached.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutMetricAlarm">REST API Reference for PutMetricAlarm Operation</seealso>
         public PutMetricAlarmResponse PutMetricAlarm(PutMetricAlarmRequest request)
         {
             var marshaller = new PutMetricAlarmRequestMarshaller();
@@ -894,6 +936,7 @@ namespace Amazon.CloudWatch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutMetricAlarm
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutMetricAlarm">REST API Reference for PutMetricAlarm Operation</seealso>
         public IAsyncResult BeginPutMetricAlarm(PutMetricAlarmRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new PutMetricAlarmRequestMarshaller();
@@ -910,6 +953,7 @@ namespace Amazon.CloudWatch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutMetricAlarm.</param>
         /// 
         /// <returns>Returns a  PutMetricAlarmResult from CloudWatch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutMetricAlarm">REST API Reference for PutMetricAlarm Operation</seealso>
         public  PutMetricAlarmResponse EndPutMetricAlarm(IAsyncResult asyncResult)
         {
             return EndInvoke<PutMetricAlarmResponse>(asyncResult);
@@ -927,8 +971,8 @@ namespace Amazon.CloudWatch
         /// 
         ///  
         /// <para>
-        /// Each <code>PutMetricData</code> request is limited to 8 KB in size for HTTP GET requests
-        /// and is limited to 40 KB in size for HTTP POST requests.
+        /// Each <code>PutMetricData</code> request is limited to 40 KB in size for HTTP POST
+        /// requests.
         /// </para>
         ///  
         /// <para>
@@ -939,9 +983,30 @@ namespace Amazon.CloudWatch
         /// </para>
         ///  
         /// <para>
+        /// You can use up to 10 dimensions per metric to further clarify what data the metric
+        /// collects. For more information on specifying dimensions, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
+        /// Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
         /// Data points with time stamps from 24 hours ago or longer can take at least 48 hours
         /// to become available for <a>GetMetricStatistics</a> from the time they are submitted.
         /// </para>
+        ///  
+        /// <para>
+        /// CloudWatch needs raw data points to calculate percentile statistics. If you publish
+        /// data using a statistic set instead, you cannot retrieve percentile statistics for
+        /// this data unless one of the following conditions is true:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The SampleCount of the statistic set is 1
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The Min and the Max of the statistic set are equal
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutMetricData service method.</param>
         /// 
@@ -958,6 +1023,7 @@ namespace Amazon.CloudWatch
         /// <exception cref="Amazon.CloudWatch.Model.MissingRequiredParameterException">
         /// An input parameter that is required is missing.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutMetricData">REST API Reference for PutMetricData Operation</seealso>
         public PutMetricDataResponse PutMetricData(PutMetricDataRequest request)
         {
             var marshaller = new PutMetricDataRequestMarshaller();
@@ -977,6 +1043,7 @@ namespace Amazon.CloudWatch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutMetricData
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutMetricData">REST API Reference for PutMetricData Operation</seealso>
         public IAsyncResult BeginPutMetricData(PutMetricDataRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new PutMetricDataRequestMarshaller();
@@ -993,6 +1060,7 @@ namespace Amazon.CloudWatch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutMetricData.</param>
         /// 
         /// <returns>Returns a  PutMetricDataResult from CloudWatch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutMetricData">REST API Reference for PutMetricData Operation</seealso>
         public  PutMetricDataResponse EndPutMetricData(IAsyncResult asyncResult)
         {
             return EndInvoke<PutMetricDataResponse>(asyncResult);
@@ -1020,6 +1088,7 @@ namespace Amazon.CloudWatch
         /// <exception cref="Amazon.CloudWatch.Model.ResourceNotFoundException">
         /// The named resource does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/SetAlarmState">REST API Reference for SetAlarmState Operation</seealso>
         public SetAlarmStateResponse SetAlarmState(SetAlarmStateRequest request)
         {
             var marshaller = new SetAlarmStateRequestMarshaller();
@@ -1039,6 +1108,7 @@ namespace Amazon.CloudWatch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSetAlarmState
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/SetAlarmState">REST API Reference for SetAlarmState Operation</seealso>
         public IAsyncResult BeginSetAlarmState(SetAlarmStateRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new SetAlarmStateRequestMarshaller();
@@ -1055,6 +1125,7 @@ namespace Amazon.CloudWatch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetAlarmState.</param>
         /// 
         /// <returns>Returns a  SetAlarmStateResult from CloudWatch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/SetAlarmState">REST API Reference for SetAlarmState Operation</seealso>
         public  SetAlarmStateResponse EndSetAlarmState(IAsyncResult asyncResult)
         {
             return EndInvoke<SetAlarmStateResponse>(asyncResult);

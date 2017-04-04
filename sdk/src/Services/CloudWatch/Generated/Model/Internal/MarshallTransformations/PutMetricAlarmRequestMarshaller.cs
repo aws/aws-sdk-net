@@ -99,6 +99,10 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+                if(publicRequest.IsSetEvaluateLowSampleCountPercentile())
+                {
+                    request.Parameters.Add("EvaluateLowSampleCountPercentile", StringUtils.FromString(publicRequest.EvaluateLowSampleCountPercentile));
+                }
                 if(publicRequest.IsSetEvaluationPeriods())
                 {
                     request.Parameters.Add("EvaluationPeriods", StringUtils.FromInt(publicRequest.EvaluationPeriods));
@@ -144,6 +148,10 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetThreshold())
                 {
                     request.Parameters.Add("Threshold", StringUtils.FromDouble(publicRequest.Threshold));
+                }
+                if(publicRequest.IsSetTreatMissingData())
+                {
+                    request.Parameters.Add("TreatMissingData", StringUtils.FromString(publicRequest.TreatMissingData));
                 }
                 if(publicRequest.IsSetUnit())
                 {

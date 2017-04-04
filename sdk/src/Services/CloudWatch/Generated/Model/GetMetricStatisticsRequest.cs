@@ -72,6 +72,20 @@ namespace Amazon.CloudWatch.Model
     /// </para>
     ///  
     /// <para>
+    /// CloudWatch needs raw data points to calculate percentile statistics. If you publish
+    /// data using a statistic set instead, you cannot retrieve percentile statistics for
+    /// this data unless one of the following conditions is true:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// The SampleCount of the statistic set is 1
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The Min and the Max of the statistic set are equal
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
     /// For a list of metrics and dimensions supported by AWS services, see the <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CW_Support_For_AWS.html">Amazon
     /// CloudWatch Metrics and Dimensions Reference</a> in the <i>Amazon CloudWatch User Guide</i>.
     /// </para>
@@ -91,11 +105,14 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property Dimensions. 
         /// <para>
-        /// The dimensions. CloudWatch treats each unique combination of dimensions as a separate
+        /// The dimensions. If the metric contains multiple dimensions, you must include a value
+        /// for each dimension. CloudWatch treats each unique combination of dimensions as a separate
         /// metric. You can't retrieve statistics using combinations of dimensions that were not
         /// specially published. You must specify the same dimensions that were used when the
         /// metrics were created. For an example, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#dimension-combinations">Dimension
-        /// Combinations</a> in the <i>Amazon CloudWatch User Guide</i>.
+        /// Combinations</a> in the <i>Amazon CloudWatch User Guide</i>. For more information
+        /// on specifying dimensions, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
+        /// Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.
         /// </para>
         /// </summary>
         public List<Dimension> Dimensions

@@ -40,6 +40,7 @@ namespace Amazon.CloudWatch.Model
         private string _alarmName;
         private ComparisonOperator _comparisonOperator;
         private List<Dimension> _dimensions = new List<Dimension>();
+        private string _evaluateLowSampleCountPercentile;
         private int? _evaluationPeriods;
         private string _extendedStatistic;
         private List<string> _insufficientDataActions = new List<string>();
@@ -53,6 +54,7 @@ namespace Amazon.CloudWatch.Model
         private StateValue _stateValue;
         private Statistic _statistic;
         private double? _threshold;
+        private string _treatMissingData;
         private StandardUnit _unit;
 
         /// <summary>
@@ -199,6 +201,21 @@ namespace Amazon.CloudWatch.Model
         internal bool IsSetDimensions()
         {
             return this._dimensions != null && this._dimensions.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EvaluateLowSampleCountPercentile.
+        /// </summary>
+        public string EvaluateLowSampleCountPercentile
+        {
+            get { return this._evaluateLowSampleCountPercentile; }
+            set { this._evaluateLowSampleCountPercentile = value; }
+        }
+
+        // Check to see if EvaluateLowSampleCountPercentile property is set
+        internal bool IsSetEvaluateLowSampleCountPercentile()
+        {
+            return this._evaluateLowSampleCountPercentile != null;
         }
 
         /// <summary>
@@ -437,6 +454,21 @@ namespace Amazon.CloudWatch.Model
         internal bool IsSetThreshold()
         {
             return this._threshold.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TreatMissingData.
+        /// </summary>
+        public string TreatMissingData
+        {
+            get { return this._treatMissingData; }
+            set { this._treatMissingData = value; }
+        }
+
+        // Check to see if TreatMissingData property is set
+        internal bool IsSetTreatMissingData()
+        {
+            return this._treatMissingData != null;
         }
 
         /// <summary>

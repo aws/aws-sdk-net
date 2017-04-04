@@ -104,6 +104,12 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                         unmarshalledObject.Dimensions.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("EvaluateLowSampleCountPercentile", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.EvaluateLowSampleCountPercentile = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("EvaluationPeriods", targetDepth))
                     {
                         var unmarshaller = IntUnmarshaller.Instance;
@@ -182,6 +188,12 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = DoubleUnmarshaller.Instance;
                         unmarshalledObject.Threshold = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("TreatMissingData", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.TreatMissingData = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Unit", targetDepth))

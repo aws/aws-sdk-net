@@ -102,6 +102,7 @@ namespace Amazon.CloudWatch.Model
         private string _alarmName;
         private ComparisonOperator _comparisonOperator;
         private List<Dimension> _dimensions = new List<Dimension>();
+        private string _evaluateLowSampleCountPercentile;
         private int? _evaluationPeriods;
         private string _extendedStatistic;
         private List<string> _insufficientDataActions = new List<string>();
@@ -111,6 +112,7 @@ namespace Amazon.CloudWatch.Model
         private int? _period;
         private Statistic _statistic;
         private double? _threshold;
+        private string _treatMissingData;
         private StandardUnit _unit;
 
         /// <summary>
@@ -232,6 +234,33 @@ namespace Amazon.CloudWatch.Model
         internal bool IsSetDimensions()
         {
             return this._dimensions != null && this._dimensions.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EvaluateLowSampleCountPercentile. 
+        /// <para>
+        ///  Used only for alarms based on percentiles. If you specify <code>ignore</code>, the
+        /// alarm state will not change during periods with too few data points to be statistically
+        /// significant. If you specify <code>evaluate</code> or omit this parameter, the alarm
+        /// will always be evaluated and possibly change state no matter how many data points
+        /// are available. For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#percentiles-with-low-samples">Percentile-Based
+        /// CloudWatch Alarms and Low Data Samples</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Values: <code>evaluate | ignore</code> 
+        /// </para>
+        /// </summary>
+        public string EvaluateLowSampleCountPercentile
+        {
+            get { return this._evaluateLowSampleCountPercentile; }
+            set { this._evaluateLowSampleCountPercentile = value; }
+        }
+
+        // Check to see if EvaluateLowSampleCountPercentile property is set
+        internal bool IsSetEvaluateLowSampleCountPercentile()
+        {
+            return this._evaluateLowSampleCountPercentile != null;
         }
 
         /// <summary>
@@ -420,6 +449,31 @@ namespace Amazon.CloudWatch.Model
         internal bool IsSetThreshold()
         {
             return this._threshold.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TreatMissingData. 
+        /// <para>
+        ///  Sets how this alarm is to handle missing data points. If <code>TreatMissingData</code>
+        /// is omitted, the default behavior of <code>missing</code> is used. For more information,
+        /// see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring
+        /// How CloudWatch Alarms Treats Missing Data</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Values: <code>breaching | notBreaching | ignore | missing</code> 
+        /// </para>
+        /// </summary>
+        public string TreatMissingData
+        {
+            get { return this._treatMissingData; }
+            set { this._treatMissingData = value; }
+        }
+
+        // Check to see if TreatMissingData property is set
+        internal bool IsSetTreatMissingData()
+        {
+            return this._treatMissingData != null;
         }
 
         /// <summary>

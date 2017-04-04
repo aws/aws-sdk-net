@@ -111,6 +111,11 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudWatch.Model.PutMetricAlarmRequest.EvaluateLowSampleCountPercentile</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudWatch.Model.PutMetricAlarmRequest.EvaluationPeriods</property>
     <min>1</min>
   </property-value-rule>
@@ -132,6 +137,11 @@
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.PutMetricAlarmRequest.Period</property>
     <min>60</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.PutMetricAlarmRequest.TreatMissingData</property>
+    <min>1</min>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.PutMetricDataRequest.Namespace</property>
@@ -231,6 +241,11 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudWatch.Model.MetricAlarm.EvaluateLowSampleCountPercentile</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudWatch.Model.MetricAlarm.EvaluationPeriods</property>
     <min>1</min>
   </property-value-rule>
@@ -262,6 +277,11 @@
     <property>Amazon.CloudWatch.Model.MetricAlarm.StateReasonData</property>
     <min>0</min>
     <max>4000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.MetricAlarm.TreatMissingData</property>
+    <min>1</min>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.MetricDatum.MetricName</property>
