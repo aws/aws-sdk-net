@@ -1,3 +1,7 @@
+### 3.3.73.0 (2017-04-04 17:08 UTC)
+* CloudWatch (3.3.2.0)
+	* Amazon Web Services announced the immediate availability of two additional alarm configuration rules for Amazon CloudWatch Alarms. The first rule is for configuring missing data treatment. Customers have the options to treat missing data as alarm threshold breached, alarm threshold not breached, maintain alarm state and the current default treatment. The second rule is for alarms based on percentiles metrics that can trigger unnecassarily if the percentile is calculated from a small number of samples. The new rule can treat percentiles with low sample counts as same as missing data. If the first rule is enabled, the same treatment will be applied when an alarm encounters a percentile with low sample counts.
+
 ### 3.3.72.0 (2017-04-03 22:03 UTC)
 * Lex (3.3.1.0)
 	* Updated to use new Core, version 3.3.10.4
