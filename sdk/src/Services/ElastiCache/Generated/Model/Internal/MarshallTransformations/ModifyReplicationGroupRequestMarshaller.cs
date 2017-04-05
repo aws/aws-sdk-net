@@ -91,6 +91,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("EngineVersion", StringUtils.FromString(publicRequest.EngineVersion));
                 }
+                if(publicRequest.IsSetNodeGroupId())
+                {
+                    request.Parameters.Add("NodeGroupId", StringUtils.FromString(publicRequest.NodeGroupId));
+                }
                 if(publicRequest.IsSetNotificationTopicArn())
                 {
                     request.Parameters.Add("NotificationTopicArn", StringUtils.FromString(publicRequest.NotificationTopicArn));

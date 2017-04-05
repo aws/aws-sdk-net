@@ -1,0 +1,915 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElastiCache.IAmazonElastiCache.AddTagsToResource(Amazon.ElastiCache.Model.AddTagsToResourceRequest)" />
+            <member name="M:Amazon.ElastiCache.AmazonElastiCacheClient.AddTagsToResource(Amazon.ElastiCache.Model.AddTagsToResourceRequest)" />
+            <member name="T:Amazon.ElastiCache.Model.AddTagsToResourceRequest" />
+            <member name="T:Amazon.ElastiCache.Model.AddTagsToResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Adds up to 10 tags, key/value pairs, to a cluster or snapshot resource.
+                </para>
+                <code
+                    title="AddTagsToResource"
+                    source=".\AWSSDKDocSamples\ElastiCache\ElastiCache.GeneratedSamples.cs"
+                    region="addtagstoresource-1482430264385" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElastiCache.IAmazonElastiCache.AuthorizeCacheSecurityGroupIngress(Amazon.ElastiCache.Model.AuthorizeCacheSecurityGroupIngressRequest)" />
+            <member name="M:Amazon.ElastiCache.AmazonElastiCacheClient.AuthorizeCacheSecurityGroupIngress(Amazon.ElastiCache.Model.AuthorizeCacheSecurityGroupIngressRequest)" />
+            <member name="T:Amazon.ElastiCache.Model.AuthorizeCacheSecurityGroupIngressRequest" />
+            <member name="T:Amazon.ElastiCache.Model.AuthorizeCacheSecurityGroupIngressResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Allows network ingress to a cache security group. Applications using ElastiCache must be running on Amazon EC2. Amazon EC2 security groups are used as the authorization mechanism.
+                </para>
+                <code
+                    title="AuthorizeCacheCacheSecurityGroupIngress"
+                    source=".\AWSSDKDocSamples\ElastiCache\ElastiCache.GeneratedSamples.cs"
+                    region="authorizecachecachesecuritygroupingress-1483046446206" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElastiCache.IAmazonElastiCache.CopySnapshot(Amazon.ElastiCache.Model.CopySnapshotRequest)" />
+            <member name="M:Amazon.ElastiCache.AmazonElastiCacheClient.CopySnapshot(Amazon.ElastiCache.Model.CopySnapshotRequest)" />
+            <member name="T:Amazon.ElastiCache.Model.CopySnapshotRequest" />
+            <member name="T:Amazon.ElastiCache.Model.CopySnapshotResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Copies a snapshot to a specified name.
+                </para>
+                <code
+                    title="CopySnapshot"
+                    source=".\AWSSDKDocSamples\ElastiCache\ElastiCache.GeneratedSamples.cs"
+                    region="copysnapshot-1482961393820" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElastiCache.IAmazonElastiCache.CreateCacheCluster(Amazon.ElastiCache.Model.CreateCacheClusterRequest)" />
+            <member name="M:Amazon.ElastiCache.AmazonElastiCacheClient.CreateCacheCluster(Amazon.ElastiCache.Model.CreateCacheClusterRequest)" />
+            <member name="T:Amazon.ElastiCache.Model.CreateCacheClusterRequest" />
+            <member name="T:Amazon.ElastiCache.Model.CreateCacheClusterResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Creates a Memcached cluster with 2 nodes. 
+                </para>
+                <code
+                    title="CreateCacheCluster"
+                    source=".\AWSSDKDocSamples\ElastiCache\ElastiCache.GeneratedSamples.cs"
+                    region="createcachecluster-1474994727381" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElastiCache.IAmazonElastiCache.CreateCacheCluster(Amazon.ElastiCache.Model.CreateCacheClusterRequest)" />
+            <member name="M:Amazon.ElastiCache.AmazonElastiCacheClient.CreateCacheCluster(Amazon.ElastiCache.Model.CreateCacheClusterRequest)" />
+            <member name="T:Amazon.ElastiCache.Model.CreateCacheClusterRequest" />
+            <member name="T:Amazon.ElastiCache.Model.CreateCacheClusterResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Creates a Redis cluster with 1 node. 
+                </para>
+                <code
+                    title="CreateCacheCluster"
+                    source=".\AWSSDKDocSamples\ElastiCache\ElastiCache.GeneratedSamples.cs"
+                    region="createcachecluster-1474994727381" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElastiCache.IAmazonElastiCache.CreateCacheParameterGroup(Amazon.ElastiCache.Model.CreateCacheParameterGroupRequest)" />
+            <member name="M:Amazon.ElastiCache.AmazonElastiCacheClient.CreateCacheParameterGroup(Amazon.ElastiCache.Model.CreateCacheParameterGroupRequest)" />
+            <member name="T:Amazon.ElastiCache.Model.CreateCacheParameterGroupRequest" />
+            <member name="T:Amazon.ElastiCache.Model.CreateCacheParameterGroupResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Creates the Amazon ElastiCache parameter group custom-redis2-8.
+                </para>
+                <code
+                    title="CreateCacheParameterGroup"
+                    source=".\AWSSDKDocSamples\ElastiCache\ElastiCache.GeneratedSamples.cs"
+                    region="createcacheparametergroup-1474997699362" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElastiCache.IAmazonElastiCache.CreateCacheSecurityGroup(Amazon.ElastiCache.Model.CreateCacheSecurityGroupRequest)" />
+            <member name="M:Amazon.ElastiCache.AmazonElastiCacheClient.CreateCacheSecurityGroup(Amazon.ElastiCache.Model.CreateCacheSecurityGroupRequest)" />
+            <member name="T:Amazon.ElastiCache.Model.CreateCacheSecurityGroupRequest" />
+            <member name="T:Amazon.ElastiCache.Model.CreateCacheSecurityGroupResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Creates an ElastiCache security group. ElastiCache security groups are only for clusters not running in an AWS VPC.
+                </para>
+                <code
+                    title="CreateCacheSecurityGroup"
+                    source=".\AWSSDKDocSamples\ElastiCache\ElastiCache.GeneratedSamples.cs"
+                    region="createcachesecuritygroup-1483041506604" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElastiCache.IAmazonElastiCache.CreateCacheSubnetGroup(Amazon.ElastiCache.Model.CreateCacheSubnetGroupRequest)" />
+            <member name="M:Amazon.ElastiCache.AmazonElastiCacheClient.CreateCacheSubnetGroup(Amazon.ElastiCache.Model.CreateCacheSubnetGroupRequest)" />
+            <member name="T:Amazon.ElastiCache.Model.CreateCacheSubnetGroupRequest" />
+            <member name="T:Amazon.ElastiCache.Model.CreateCacheSubnetGroupResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Creates a new cache subnet group.
+                </para>
+                <code
+                    title="CreateCacheSubnet"
+                    source=".\AWSSDKDocSamples\ElastiCache\ElastiCache.GeneratedSamples.cs"
+                    region="createcachesubnet-1483042274558" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElastiCache.IAmazonElastiCache.CreateReplicationGroup(Amazon.ElastiCache.Model.CreateReplicationGroupRequest)" />
+            <member name="M:Amazon.ElastiCache.AmazonElastiCacheClient.CreateReplicationGroup(Amazon.ElastiCache.Model.CreateReplicationGroupRequest)" />
+            <member name="T:Amazon.ElastiCache.Model.CreateReplicationGroupRequest" />
+            <member name="T:Amazon.ElastiCache.Model.CreateReplicationGroupResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Creates a Redis replication group with 3 nodes.
+                </para>
+                <code
+                    title="CreateCacheReplicationGroup"
+                    source=".\AWSSDKDocSamples\ElastiCache\ElastiCache.GeneratedSamples.cs"
+                    region="createcachereplicationgroup-1474998730655" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElastiCache.IAmazonElastiCache.CreateReplicationGroup(Amazon.ElastiCache.Model.CreateReplicationGroupRequest)" />
+            <member name="M:Amazon.ElastiCache.AmazonElastiCacheClient.CreateReplicationGroup(Amazon.ElastiCache.Model.CreateReplicationGroupRequest)" />
+            <member name="T:Amazon.ElastiCache.Model.CreateReplicationGroupRequest" />
+            <member name="T:Amazon.ElastiCache.Model.CreateReplicationGroupResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Creates a Redis (cluster mode enabled) replication group with two shards. One shard has one read replica node and the other shard has two read replicas.
+                </para>
+                <code
+                    title="CreateReplicationGroup"
+                    source=".\AWSSDKDocSamples\ElastiCache\ElastiCache.GeneratedSamples.cs"
+                    region="createreplicationgroup-1483657035585" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElastiCache.IAmazonElastiCache.CreateSnapshot(Amazon.ElastiCache.Model.CreateSnapshotRequest)" />
+            <member name="M:Amazon.ElastiCache.AmazonElastiCacheClient.CreateSnapshot(Amazon.ElastiCache.Model.CreateSnapshotRequest)" />
+            <member name="T:Amazon.ElastiCache.Model.CreateSnapshotRequest" />
+            <member name="T:Amazon.ElastiCache.Model.CreateSnapshotResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Creates a snapshot of a non-clustered Redis cluster that has only one node.
+                </para>
+                <code
+                    title="CreateSnapshot - NonClustered Redis, no read-replicas"
+                    source=".\AWSSDKDocSamples\ElastiCache\ElastiCache.GeneratedSamples.cs"
+                    region="createsnapshot-1474999681024" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElastiCache.IAmazonElastiCache.CreateSnapshot(Amazon.ElastiCache.Model.CreateSnapshotRequest)" />
+            <member name="M:Amazon.ElastiCache.AmazonElastiCacheClient.CreateSnapshot(Amazon.ElastiCache.Model.CreateSnapshotRequest)" />
+            <member name="T:Amazon.ElastiCache.Model.CreateSnapshotRequest" />
+            <member name="T:Amazon.ElastiCache.Model.CreateSnapshotResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Creates a snapshot of a non-clustered Redis cluster that has only three nodes, primary and two read-replicas. CacheClusterId must be a specific node in the cluster.
+                </para>
+                <code
+                    title="CreateSnapshot - NonClustered Redis, 2 read-replicas"
+                    source=".\AWSSDKDocSamples\ElastiCache\ElastiCache.GeneratedSamples.cs"
+                    region="createsnapshot-1474999681024" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElastiCache.IAmazonElastiCache.CreateSnapshot(Amazon.ElastiCache.Model.CreateSnapshotRequest)" />
+            <member name="M:Amazon.ElastiCache.AmazonElastiCacheClient.CreateSnapshot(Amazon.ElastiCache.Model.CreateSnapshotRequest)" />
+            <member name="T:Amazon.ElastiCache.Model.CreateSnapshotRequest" />
+            <member name="T:Amazon.ElastiCache.Model.CreateSnapshotResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Creates a snapshot of a clustered Redis cluster that has 2 shards, each with a primary and 4 read-replicas.
+                </para>
+                <code
+                    title="CreateSnapshot-clustered Redis"
+                    source=".\AWSSDKDocSamples\ElastiCache\ElastiCache.GeneratedSamples.cs"
+                    region="createsnapshot-clustered-redis-1486144841758" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElastiCache.IAmazonElastiCache.DeleteCacheCluster(Amazon.ElastiCache.Model.DeleteCacheClusterRequest)" />
+            <member name="M:Amazon.ElastiCache.AmazonElastiCacheClient.DeleteCacheCluster(Amazon.ElastiCache.Model.DeleteCacheClusterRequest)" />
+            <member name="T:Amazon.ElastiCache.Model.DeleteCacheClusterRequest" />
+            <member name="T:Amazon.ElastiCache.Model.DeleteCacheClusterResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Deletes an Amazon ElastiCache cluster.
+                </para>
+                <code
+                    title="DeleteCacheCluster"
+                    source=".\AWSSDKDocSamples\ElastiCache\ElastiCache.GeneratedSamples.cs"
+                    region="deletecachecluster-1475010605291" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElastiCache.IAmazonElastiCache.DeleteCacheParameterGroup(Amazon.ElastiCache.Model.DeleteCacheParameterGroupRequest)" />
+            <member name="M:Amazon.ElastiCache.AmazonElastiCacheClient.DeleteCacheParameterGroup(Amazon.ElastiCache.Model.DeleteCacheParameterGroupRequest)" />
+            <member name="T:Amazon.ElastiCache.Model.DeleteCacheParameterGroupRequest" />
+            <member name="T:Amazon.ElastiCache.Model.DeleteCacheParameterGroupResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Deletes the Amazon ElastiCache parameter group custom-mem1-4.
+                </para>
+                <code
+                    title="DeleteCacheParameterGroup"
+                    source=".\AWSSDKDocSamples\ElastiCache\ElastiCache.GeneratedSamples.cs"
+                    region="deletecacheparametergroup-1475010933957" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElastiCache.IAmazonElastiCache.DeleteCacheSecurityGroup(Amazon.ElastiCache.Model.DeleteCacheSecurityGroupRequest)" />
+            <member name="M:Amazon.ElastiCache.AmazonElastiCacheClient.DeleteCacheSecurityGroup(Amazon.ElastiCache.Model.DeleteCacheSecurityGroupRequest)" />
+            <member name="T:Amazon.ElastiCache.Model.DeleteCacheSecurityGroupRequest" />
+            <member name="T:Amazon.ElastiCache.Model.DeleteCacheSecurityGroupResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Deletes a cache security group.
+                </para>
+                <code
+                    title="DeleteCacheSecurityGroup"
+                    source=".\AWSSDKDocSamples\ElastiCache\ElastiCache.GeneratedSamples.cs"
+                    region="deletecachesecuritygroup-1483046967507" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElastiCache.IAmazonElastiCache.DeleteCacheSubnetGroup(Amazon.ElastiCache.Model.DeleteCacheSubnetGroupRequest)" />
+            <member name="M:Amazon.ElastiCache.AmazonElastiCacheClient.DeleteCacheSubnetGroup(Amazon.ElastiCache.Model.DeleteCacheSubnetGroupRequest)" />
+            <member name="T:Amazon.ElastiCache.Model.DeleteCacheSubnetGroupRequest" />
+            <member name="T:Amazon.ElastiCache.Model.DeleteCacheSubnetGroupResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Deletes the Amazon ElastiCache subnet group my-subnet-group.
+                </para>
+                <code
+                    title="DeleteCacheSubnetGroup"
+                    source=".\AWSSDKDocSamples\ElastiCache\ElastiCache.GeneratedSamples.cs"
+                    region="deletecachesubnetgroup-1475011431325" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElastiCache.IAmazonElastiCache.DeleteReplicationGroup(Amazon.ElastiCache.Model.DeleteReplicationGroupRequest)" />
+            <member name="M:Amazon.ElastiCache.AmazonElastiCacheClient.DeleteReplicationGroup(Amazon.ElastiCache.Model.DeleteReplicationGroupRequest)" />
+            <member name="T:Amazon.ElastiCache.Model.DeleteReplicationGroupRequest" />
+            <member name="T:Amazon.ElastiCache.Model.DeleteReplicationGroupResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Deletes the Amazon ElastiCache replication group my-redis-rg.
+                </para>
+                <code
+                    title="DeleteReplicationGroup"
+                    source=".\AWSSDKDocSamples\ElastiCache\ElastiCache.GeneratedSamples.cs"
+                    region="deletereplicationgroup-1475011641804" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElastiCache.IAmazonElastiCache.DeleteSnapshot(Amazon.ElastiCache.Model.DeleteSnapshotRequest)" />
+            <member name="M:Amazon.ElastiCache.AmazonElastiCacheClient.DeleteSnapshot(Amazon.ElastiCache.Model.DeleteSnapshotRequest)" />
+            <member name="T:Amazon.ElastiCache.Model.DeleteSnapshotRequest" />
+            <member name="T:Amazon.ElastiCache.Model.DeleteSnapshotResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Deletes the Redis snapshot snapshot-20160822.
+                </para>
+                <code
+                    title="DeleteSnapshot"
+                    source=".\AWSSDKDocSamples\ElastiCache\ElastiCache.GeneratedSamples.cs"
+                    region="deletesnapshot-1475011945779" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElastiCache.IAmazonElastiCache.DescribeCacheClusters(Amazon.ElastiCache.Model.DescribeCacheClustersRequest)" />
+            <member name="M:Amazon.ElastiCache.AmazonElastiCacheClient.DescribeCacheClusters(Amazon.ElastiCache.Model.DescribeCacheClustersRequest)" />
+            <member name="T:Amazon.ElastiCache.Model.DescribeCacheClustersRequest" />
+            <member name="T:Amazon.ElastiCache.Model.DescribeCacheClustersResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Lists the details for up to 50 cache clusters.
+                </para>
+                <code
+                    title="DescribeCacheClusters"
+                    source=".\AWSSDKDocSamples\ElastiCache\ElastiCache.GeneratedSamples.cs"
+                    region="describecacheclusters-1475012269754" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElastiCache.IAmazonElastiCache.DescribeCacheClusters(Amazon.ElastiCache.Model.DescribeCacheClustersRequest)" />
+            <member name="M:Amazon.ElastiCache.AmazonElastiCacheClient.DescribeCacheClusters(Amazon.ElastiCache.Model.DescribeCacheClustersRequest)" />
+            <member name="T:Amazon.ElastiCache.Model.DescribeCacheClustersRequest" />
+            <member name="T:Amazon.ElastiCache.Model.DescribeCacheClustersResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Lists the details for the cache cluster my-mem-cluster.
+                </para>
+                <code
+                    title="DescribeCacheClusters"
+                    source=".\AWSSDKDocSamples\ElastiCache\ElastiCache.GeneratedSamples.cs"
+                    region="describecacheclusters-1475012269754" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElastiCache.IAmazonElastiCache.DescribeCacheEngineVersions(Amazon.ElastiCache.Model.DescribeCacheEngineVersionsRequest)" />
+            <member name="M:Amazon.ElastiCache.AmazonElastiCacheClient.DescribeCacheEngineVersions(Amazon.ElastiCache.Model.DescribeCacheEngineVersionsRequest)" />
+            <member name="T:Amazon.ElastiCache.Model.DescribeCacheEngineVersionsRequest" />
+            <member name="T:Amazon.ElastiCache.Model.DescribeCacheEngineVersionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Lists the details for up to 25 Memcached and Redis cache engine versions.
+                </para>
+                <code
+                    title="DescribeCacheEngineVersions"
+                    source=".\AWSSDKDocSamples\ElastiCache\ElastiCache.GeneratedSamples.cs"
+                    region="describecacheengineversions-1475012638790" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElastiCache.IAmazonElastiCache.DescribeCacheEngineVersions(Amazon.ElastiCache.Model.DescribeCacheEngineVersionsRequest)" />
+            <member name="M:Amazon.ElastiCache.AmazonElastiCacheClient.DescribeCacheEngineVersions(Amazon.ElastiCache.Model.DescribeCacheEngineVersionsRequest)" />
+            <member name="T:Amazon.ElastiCache.Model.DescribeCacheEngineVersionsRequest" />
+            <member name="T:Amazon.ElastiCache.Model.DescribeCacheEngineVersionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Lists the details for up to 50 Redis cache engine versions.
+                </para>
+                <code
+                    title="DescribeCacheEngineVersions"
+                    source=".\AWSSDKDocSamples\ElastiCache\ElastiCache.GeneratedSamples.cs"
+                    region="describecacheengineversions-1475012638790" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElastiCache.IAmazonElastiCache.DescribeCacheParameterGroups(Amazon.ElastiCache.Model.DescribeCacheParameterGroupsRequest)" />
+            <member name="M:Amazon.ElastiCache.AmazonElastiCacheClient.DescribeCacheParameterGroups(Amazon.ElastiCache.Model.DescribeCacheParameterGroupsRequest)" />
+            <member name="T:Amazon.ElastiCache.Model.DescribeCacheParameterGroupsRequest" />
+            <member name="T:Amazon.ElastiCache.Model.DescribeCacheParameterGroupsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Returns a list of cache parameter group descriptions. If a cache parameter group name is specified, the list contains only the descriptions for that group.
+                </para>
+                <code
+                    title="DescribeCacheParameterGroups"
+                    source=".\AWSSDKDocSamples\ElastiCache\ElastiCache.GeneratedSamples.cs"
+                    region="describecacheparametergroups-1483045457557" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElastiCache.IAmazonElastiCache.DescribeCacheParameters(Amazon.ElastiCache.Model.DescribeCacheParametersRequest)" />
+            <member name="M:Amazon.ElastiCache.AmazonElastiCacheClient.DescribeCacheParameters(Amazon.ElastiCache.Model.DescribeCacheParametersRequest)" />
+            <member name="T:Amazon.ElastiCache.Model.DescribeCacheParametersRequest" />
+            <member name="T:Amazon.ElastiCache.Model.DescribeCacheParametersResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Lists up to 100 user parameter values for the parameter group custom.redis2.8.
+                </para>
+                <code
+                    title="DescribeCacheParameters"
+                    source=".\AWSSDKDocSamples\ElastiCache\ElastiCache.GeneratedSamples.cs"
+                    region="describecacheparameters-1475013576900" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElastiCache.IAmazonElastiCache.DescribeCacheSecurityGroups(Amazon.ElastiCache.Model.DescribeCacheSecurityGroupsRequest)" />
+            <member name="M:Amazon.ElastiCache.AmazonElastiCacheClient.DescribeCacheSecurityGroups(Amazon.ElastiCache.Model.DescribeCacheSecurityGroupsRequest)" />
+            <member name="T:Amazon.ElastiCache.Model.DescribeCacheSecurityGroupsRequest" />
+            <member name="T:Amazon.ElastiCache.Model.DescribeCacheSecurityGroupsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Returns a list of cache security group descriptions. If a cache security group name is specified, the list contains only the description of that group.
+                </para>
+                <code
+                    title="DescribeCacheSecurityGroups"
+                    source=".\AWSSDKDocSamples\ElastiCache\ElastiCache.GeneratedSamples.cs"
+                    region="describecachesecuritygroups-1483047200801" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElastiCache.IAmazonElastiCache.DescribeCacheSubnetGroups(Amazon.ElastiCache.Model.DescribeCacheSubnetGroupsRequest)" />
+            <member name="M:Amazon.ElastiCache.AmazonElastiCacheClient.DescribeCacheSubnetGroups(Amazon.ElastiCache.Model.DescribeCacheSubnetGroupsRequest)" />
+            <member name="T:Amazon.ElastiCache.Model.DescribeCacheSubnetGroupsRequest" />
+            <member name="T:Amazon.ElastiCache.Model.DescribeCacheSubnetGroupsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Describes up to 25 cache subnet groups.
+                </para>
+                <code
+                    title="DescribeCacheSubnetGroups"
+                    source=".\AWSSDKDocSamples\ElastiCache\ElastiCache.GeneratedSamples.cs"
+                    region="describecachesubnetgroups-1482439214064" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElastiCache.IAmazonElastiCache.DescribeEngineDefaultParameters(Amazon.ElastiCache.Model.DescribeEngineDefaultParametersRequest)" />
+            <member name="M:Amazon.ElastiCache.AmazonElastiCacheClient.DescribeEngineDefaultParameters(Amazon.ElastiCache.Model.DescribeEngineDefaultParametersRequest)" />
+            <member name="T:Amazon.ElastiCache.Model.DescribeEngineDefaultParametersRequest" />
+            <member name="T:Amazon.ElastiCache.Model.DescribeEngineDefaultParametersResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Returns the default engine and system parameter information for the specified cache engine.
+                </para>
+                <code
+                    title="DescribeEngineDefaultParameters"
+                    source=".\AWSSDKDocSamples\ElastiCache\ElastiCache.GeneratedSamples.cs"
+                    region="describeenginedefaultparameters-1481738057686" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElastiCache.IAmazonElastiCache.DescribeEvents(Amazon.ElastiCache.Model.DescribeEventsRequest)" />
+            <member name="M:Amazon.ElastiCache.AmazonElastiCacheClient.DescribeEvents(Amazon.ElastiCache.Model.DescribeEventsRequest)" />
+            <member name="T:Amazon.ElastiCache.Model.DescribeEventsRequest" />
+            <member name="T:Amazon.ElastiCache.Model.DescribeEventsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Describes all the cache-cluster events for the past 120 minutes.
+                </para>
+                <code
+                    title="DescribeEvents"
+                    source=".\AWSSDKDocSamples\ElastiCache\ElastiCache.GeneratedSamples.cs"
+                    region="describeevents-1481843894757" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElastiCache.IAmazonElastiCache.DescribeEvents(Amazon.ElastiCache.Model.DescribeEventsRequest)" />
+            <member name="M:Amazon.ElastiCache.AmazonElastiCacheClient.DescribeEvents(Amazon.ElastiCache.Model.DescribeEventsRequest)" />
+            <member name="T:Amazon.ElastiCache.Model.DescribeEventsRequest" />
+            <member name="T:Amazon.ElastiCache.Model.DescribeEventsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Describes all the replication-group events from 3:00P to 5:00P on November 11, 2016.
+                </para>
+                <code
+                    title="DescribeEvents"
+                    source=".\AWSSDKDocSamples\ElastiCache\ElastiCache.GeneratedSamples.cs"
+                    region="describeevents-1481843894757" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElastiCache.IAmazonElastiCache.DescribeReplicationGroups(Amazon.ElastiCache.Model.DescribeReplicationGroupsRequest)" />
+            <member name="M:Amazon.ElastiCache.AmazonElastiCacheClient.DescribeReplicationGroups(Amazon.ElastiCache.Model.DescribeReplicationGroupsRequest)" />
+            <member name="T:Amazon.ElastiCache.Model.DescribeReplicationGroupsRequest" />
+            <member name="T:Amazon.ElastiCache.Model.DescribeReplicationGroupsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Returns information about the replication group myreplgroup.
+                </para>
+                <code
+                    title="DescribeReplicationGroups"
+                    source=".\AWSSDKDocSamples\ElastiCache\ElastiCache.GeneratedSamples.cs"
+                    region="describereplicationgroups-1481742639427" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElastiCache.IAmazonElastiCache.DescribeReservedCacheNodes(Amazon.ElastiCache.Model.DescribeReservedCacheNodesRequest)" />
+            <member name="M:Amazon.ElastiCache.AmazonElastiCacheClient.DescribeReservedCacheNodes(Amazon.ElastiCache.Model.DescribeReservedCacheNodesRequest)" />
+            <member name="T:Amazon.ElastiCache.Model.DescribeReservedCacheNodesRequest" />
+            <member name="T:Amazon.ElastiCache.Model.DescribeReservedCacheNodesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Returns information about reserved cache nodes for this account, or about a specified reserved cache node. If the account has no reserved cache nodes, the operation returns an empty list, as shown here.
+                </para>
+                <code
+                    title="DescribeReservedCacheNodes"
+                    source=".\AWSSDKDocSamples\ElastiCache\ElastiCache.GeneratedSamples.cs"
+                    region="describereservedcachenodes-1481742348045" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElastiCache.IAmazonElastiCache.DescribeReservedCacheNodesOfferings(Amazon.ElastiCache.Model.DescribeReservedCacheNodesOfferingsRequest)" />
+            <member name="M:Amazon.ElastiCache.AmazonElastiCacheClient.DescribeReservedCacheNodesOfferings(Amazon.ElastiCache.Model.DescribeReservedCacheNodesOfferingsRequest)" />
+            <member name="T:Amazon.ElastiCache.Model.DescribeReservedCacheNodesOfferingsRequest" />
+            <member name="T:Amazon.ElastiCache.Model.DescribeReservedCacheNodesOfferingsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Lists available reserved cache node offerings.
+                </para>
+                <code
+                    title="DescribeReseredCacheNodeOfferings"
+                    source=".\AWSSDKDocSamples\ElastiCache\ElastiCache.GeneratedSamples.cs"
+                    region="describereseredcachenodeofferings-1481742869998" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElastiCache.IAmazonElastiCache.DescribeReservedCacheNodesOfferings(Amazon.ElastiCache.Model.DescribeReservedCacheNodesOfferingsRequest)" />
+            <member name="M:Amazon.ElastiCache.AmazonElastiCacheClient.DescribeReservedCacheNodesOfferings(Amazon.ElastiCache.Model.DescribeReservedCacheNodesOfferingsRequest)" />
+            <member name="T:Amazon.ElastiCache.Model.DescribeReservedCacheNodesOfferingsRequest" />
+            <member name="T:Amazon.ElastiCache.Model.DescribeReservedCacheNodesOfferingsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Lists available reserved cache node offerings for cache.r3.large nodes with a 3 year commitment.
+                </para>
+                <code
+                    title="DescribeReseredCacheNodeOfferings"
+                    source=".\AWSSDKDocSamples\ElastiCache\ElastiCache.GeneratedSamples.cs"
+                    region="describereseredcachenodeofferings-1481742869998" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElastiCache.IAmazonElastiCache.DescribeReservedCacheNodesOfferings(Amazon.ElastiCache.Model.DescribeReservedCacheNodesOfferingsRequest)" />
+            <member name="M:Amazon.ElastiCache.AmazonElastiCacheClient.DescribeReservedCacheNodesOfferings(Amazon.ElastiCache.Model.DescribeReservedCacheNodesOfferingsRequest)" />
+            <member name="T:Amazon.ElastiCache.Model.DescribeReservedCacheNodesOfferingsRequest" />
+            <member name="T:Amazon.ElastiCache.Model.DescribeReservedCacheNodesOfferingsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Lists available reserved cache node offerings.
+                </para>
+                <code
+                    title="DescribeReseredCacheNodeOfferings"
+                    source=".\AWSSDKDocSamples\ElastiCache\ElastiCache.GeneratedSamples.cs"
+                    region="describereseredcachenodeofferings-1481742869998" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElastiCache.IAmazonElastiCache.DescribeSnapshots(Amazon.ElastiCache.Model.DescribeSnapshotsRequest)" />
+            <member name="M:Amazon.ElastiCache.AmazonElastiCacheClient.DescribeSnapshots(Amazon.ElastiCache.Model.DescribeSnapshotsRequest)" />
+            <member name="T:Amazon.ElastiCache.Model.DescribeSnapshotsRequest" />
+            <member name="T:Amazon.ElastiCache.Model.DescribeSnapshotsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Returns information about the snapshot mysnapshot. By default.
+                </para>
+                <code
+                    title="DescribeSnapshots"
+                    source=".\AWSSDKDocSamples\ElastiCache\ElastiCache.GeneratedSamples.cs"
+                    region="describesnapshots-1481743399584" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElastiCache.IAmazonElastiCache.ListAllowedNodeTypeModifications(Amazon.ElastiCache.Model.ListAllowedNodeTypeModificationsRequest)" />
+            <member name="M:Amazon.ElastiCache.AmazonElastiCacheClient.ListAllowedNodeTypeModifications(Amazon.ElastiCache.Model.ListAllowedNodeTypeModificationsRequest)" />
+            <member name="T:Amazon.ElastiCache.Model.ListAllowedNodeTypeModificationsRequest" />
+            <member name="T:Amazon.ElastiCache.Model.ListAllowedNodeTypeModificationsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Lists all available node types that you can scale your Redis cluster's or replication group's current node type up to.
+                </para>
+                <code
+                    title="ListAllowedNodeTypeModifications"
+                    source=".\AWSSDKDocSamples\ElastiCache\ElastiCache.GeneratedSamples.cs"
+                    region="listallowednodetypemodifications-1481748494872" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElastiCache.IAmazonElastiCache.ListAllowedNodeTypeModifications(Amazon.ElastiCache.Model.ListAllowedNodeTypeModificationsRequest)" />
+            <member name="M:Amazon.ElastiCache.AmazonElastiCacheClient.ListAllowedNodeTypeModifications(Amazon.ElastiCache.Model.ListAllowedNodeTypeModificationsRequest)" />
+            <member name="T:Amazon.ElastiCache.Model.ListAllowedNodeTypeModificationsRequest" />
+            <member name="T:Amazon.ElastiCache.Model.ListAllowedNodeTypeModificationsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Lists all available node types that you can scale your Redis cluster's or replication group's current node type up to.
+                </para>
+                <code
+                    title="ListAllowedNodeTypeModifications"
+                    source=".\AWSSDKDocSamples\ElastiCache\ElastiCache.GeneratedSamples.cs"
+                    region="listallowednodetypemodifications-1481748494872" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElastiCache.IAmazonElastiCache.ListTagsForResource(Amazon.ElastiCache.Model.ListTagsForResourceRequest)" />
+            <member name="M:Amazon.ElastiCache.AmazonElastiCacheClient.ListTagsForResource(Amazon.ElastiCache.Model.ListTagsForResourceRequest)" />
+            <member name="T:Amazon.ElastiCache.Model.ListTagsForResourceRequest" />
+            <member name="T:Amazon.ElastiCache.Model.ListTagsForResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Lists all cost allocation tags currently on the named resource. A cost allocation tag is a key-value pair where the key is case-sensitive and the value is optional. You can use cost allocation tags to categorize and track your AWS costs.
+                </para>
+                <code
+                    title="ListTagsForResource"
+                    source=".\AWSSDKDocSamples\ElastiCache\ElastiCache.GeneratedSamples.cs"
+                    region="listtagsforresource-1481748784584" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElastiCache.IAmazonElastiCache.ModifyCacheCluster(Amazon.ElastiCache.Model.ModifyCacheClusterRequest)" />
+            <member name="M:Amazon.ElastiCache.AmazonElastiCacheClient.ModifyCacheCluster(Amazon.ElastiCache.Model.ModifyCacheClusterRequest)" />
+            <member name="T:Amazon.ElastiCache.Model.ModifyCacheClusterRequest" />
+            <member name="T:Amazon.ElastiCache.Model.ModifyCacheClusterResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Copies a snapshot to a specified name.
+                </para>
+                <code
+                    title="ModifyCacheCluster"
+                    source=".\AWSSDKDocSamples\ElastiCache\ElastiCache.GeneratedSamples.cs"
+                    region="modifycachecluster-1482962725919" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElastiCache.IAmazonElastiCache.ModifyCacheParameterGroup(Amazon.ElastiCache.Model.ModifyCacheParameterGroupRequest)" />
+            <member name="M:Amazon.ElastiCache.AmazonElastiCacheClient.ModifyCacheParameterGroup(Amazon.ElastiCache.Model.ModifyCacheParameterGroupRequest)" />
+            <member name="T:Amazon.ElastiCache.Model.ModifyCacheParameterGroupRequest" />
+            <member name="T:Amazon.ElastiCache.Model.ModifyCacheParameterGroupResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Modifies one or more parameter values in the specified parameter group. You cannot modify any default parameter group.
+                </para>
+                <code
+                    title="ModifyCacheParameterGroup"
+                    source=".\AWSSDKDocSamples\ElastiCache\ElastiCache.GeneratedSamples.cs"
+                    region="modifycacheparametergroup-1482966746787" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElastiCache.IAmazonElastiCache.ModifyCacheSubnetGroup(Amazon.ElastiCache.Model.ModifyCacheSubnetGroupRequest)" />
+            <member name="M:Amazon.ElastiCache.AmazonElastiCacheClient.ModifyCacheSubnetGroup(Amazon.ElastiCache.Model.ModifyCacheSubnetGroupRequest)" />
+            <member name="T:Amazon.ElastiCache.Model.ModifyCacheSubnetGroupRequest" />
+            <member name="T:Amazon.ElastiCache.Model.ModifyCacheSubnetGroupResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Modifies an existing ElastiCache subnet group.
+                </para>
+                <code
+                    title="ModifyCacheSubnetGroup"
+                    source=".\AWSSDKDocSamples\ElastiCache\ElastiCache.GeneratedSamples.cs"
+                    region="modifycachesubnetgroup-1483043446226" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElastiCache.IAmazonElastiCache.ModifyReplicationGroup(Amazon.ElastiCache.Model.ModifyReplicationGroupRequest)" />
+            <member name="M:Amazon.ElastiCache.AmazonElastiCacheClient.ModifyReplicationGroup(Amazon.ElastiCache.Model.ModifyReplicationGroupRequest)" />
+            <member name="T:Amazon.ElastiCache.Model.ModifyReplicationGroupRequest" />
+            <member name="T:Amazon.ElastiCache.Model.ModifyReplicationGroupResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="ModifyReplicationGroup"
+                    source=".\AWSSDKDocSamples\ElastiCache\ElastiCache.GeneratedSamples.cs"
+                    region="modifyreplicationgroup-1483039689581" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElastiCache.IAmazonElastiCache.PurchaseReservedCacheNodesOffering(Amazon.ElastiCache.Model.PurchaseReservedCacheNodesOfferingRequest)" />
+            <member name="M:Amazon.ElastiCache.AmazonElastiCacheClient.PurchaseReservedCacheNodesOffering(Amazon.ElastiCache.Model.PurchaseReservedCacheNodesOfferingRequest)" />
+            <member name="T:Amazon.ElastiCache.Model.PurchaseReservedCacheNodesOfferingRequest" />
+            <member name="T:Amazon.ElastiCache.Model.PurchaseReservedCacheNodesOfferingResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Allows you to purchase a reserved cache node offering.
+                </para>
+                <code
+                    title="PurchaseReservedCacheNodesOfferings"
+                    source=".\AWSSDKDocSamples\ElastiCache\ElastiCache.GeneratedSamples.cs"
+                    region="purchasereservedcachenodesofferings-1483040798484" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElastiCache.IAmazonElastiCache.RebootCacheCluster(Amazon.ElastiCache.Model.RebootCacheClusterRequest)" />
+            <member name="M:Amazon.ElastiCache.AmazonElastiCacheClient.RebootCacheCluster(Amazon.ElastiCache.Model.RebootCacheClusterRequest)" />
+            <member name="T:Amazon.ElastiCache.Model.RebootCacheClusterRequest" />
+            <member name="T:Amazon.ElastiCache.Model.RebootCacheClusterResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Reboots the specified nodes in the names cluster.
+                </para>
+                <code
+                    title="RebootCacheCluster"
+                    source=".\AWSSDKDocSamples\ElastiCache\ElastiCache.GeneratedSamples.cs"
+                    region="rebootcachecluster-1482969019505" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElastiCache.IAmazonElastiCache.RemoveTagsFromResource(Amazon.ElastiCache.Model.RemoveTagsFromResourceRequest)" />
+            <member name="M:Amazon.ElastiCache.AmazonElastiCacheClient.RemoveTagsFromResource(Amazon.ElastiCache.Model.RemoveTagsFromResourceRequest)" />
+            <member name="T:Amazon.ElastiCache.Model.RemoveTagsFromResourceRequest" />
+            <member name="T:Amazon.ElastiCache.Model.RemoveTagsFromResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Removes tags identified by a list of tag keys from the list of tags on the specified resource.
+                </para>
+                <code
+                    title="RemoveTagsFromResource"
+                    source=".\AWSSDKDocSamples\ElastiCache\ElastiCache.GeneratedSamples.cs"
+                    region="removetagsfromresource-1483037920947" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElastiCache.IAmazonElastiCache.ResetCacheParameterGroup(Amazon.ElastiCache.Model.ResetCacheParameterGroupRequest)" />
+            <member name="M:Amazon.ElastiCache.AmazonElastiCacheClient.ResetCacheParameterGroup(Amazon.ElastiCache.Model.ResetCacheParameterGroupRequest)" />
+            <member name="T:Amazon.ElastiCache.Model.ResetCacheParameterGroupRequest" />
+            <member name="T:Amazon.ElastiCache.Model.ResetCacheParameterGroupResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Modifies the parameters of a cache parameter group to the engine or system default value.
+                </para>
+                <code
+                    title="ResetCacheParameterGroup"
+                    source=".\AWSSDKDocSamples\ElastiCache\ElastiCache.GeneratedSamples.cs"
+                    region="resetcacheparametergroup-1483038334014" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElastiCache.IAmazonElastiCache.RevokeCacheSecurityGroupIngress(Amazon.ElastiCache.Model.RevokeCacheSecurityGroupIngressRequest)" />
+            <member name="M:Amazon.ElastiCache.AmazonElastiCacheClient.RevokeCacheSecurityGroupIngress(Amazon.ElastiCache.Model.RevokeCacheSecurityGroupIngressRequest)" />
+            <member name="T:Amazon.ElastiCache.Model.RevokeCacheSecurityGroupIngressRequest" />
+            <member name="T:Amazon.ElastiCache.Model.RevokeCacheSecurityGroupIngressResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Returns a list of cache security group descriptions. If a cache security group name is specified, the list contains only the description of that group.
+                </para>
+                <code
+                    title="DescribeCacheSecurityGroups"
+                    source=".\AWSSDKDocSamples\ElastiCache\ElastiCache.GeneratedSamples.cs"
+                    region="describecachesecuritygroups-1483047200801" />
+            </example>
+        </value>
+    </doc>
+</docs>

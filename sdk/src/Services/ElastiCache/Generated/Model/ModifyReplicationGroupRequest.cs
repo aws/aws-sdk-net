@@ -51,6 +51,7 @@ namespace Amazon.ElastiCache.Model
         private string _cacheParameterGroupName;
         private List<string> _cacheSecurityGroupNames = new List<string>();
         private string _engineVersion;
+        private string _nodeGroupId;
         private string _notificationTopicArn;
         private string _notificationTopicStatus;
         private string _preferredMaintenanceWindow;
@@ -244,6 +245,24 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetEngineVersion()
         {
             return this._engineVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NodeGroupId. 
+        /// <para>
+        /// The name of the Node Group (called shard in the console).
+        /// </para>
+        /// </summary>
+        public string NodeGroupId
+        {
+            get { return this._nodeGroupId; }
+            set { this._nodeGroupId = value; }
+        }
+
+        // Check to see if NodeGroupId property is set
+        internal bool IsSetNodeGroupId()
+        {
+            return this._nodeGroupId != null;
         }
 
         /// <summary>

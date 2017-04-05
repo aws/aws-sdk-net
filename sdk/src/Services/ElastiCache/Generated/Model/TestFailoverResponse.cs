@@ -28,29 +28,25 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// Represents the output from the <code>AddTagsToResource</code>, <code>ListTagsForResource</code>,
-    /// and <code>RemoveTagsFromResource</code> operations.
+    /// This is the response object from the TestFailover operation.
     /// </summary>
-    public partial class AddTagsToResourceResponse : AmazonWebServiceResponse
+    public partial class TestFailoverResponse : AmazonWebServiceResponse
     {
-        private List<Tag> _tagList = new List<Tag>();
+        private ReplicationGroup _replicationGroup;
 
         /// <summary>
-        /// Gets and sets the property TagList. 
-        /// <para>
-        /// A list of cost allocation tags as key-value pairs.
-        /// </para>
+        /// Gets and sets the property ReplicationGroup.
         /// </summary>
-        public List<Tag> TagList
+        public ReplicationGroup ReplicationGroup
         {
-            get { return this._tagList; }
-            set { this._tagList = value; }
+            get { return this._replicationGroup; }
+            set { this._replicationGroup = value; }
         }
 
-        // Check to see if TagList property is set
-        internal bool IsSetTagList()
+        // Check to see if ReplicationGroup property is set
+        internal bool IsSetReplicationGroup()
         {
-            return this._tagList != null && this._tagList.Count > 0; 
+            return this._replicationGroup != null;
         }
 
     }

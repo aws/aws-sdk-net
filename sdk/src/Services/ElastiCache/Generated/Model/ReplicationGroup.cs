@@ -33,6 +33,8 @@ namespace Amazon.ElastiCache.Model
     public partial class ReplicationGroup
     {
         private AutomaticFailoverStatus _automaticFailover;
+        private string _cacheNodeType;
+        private bool? _clusterEnabled;
         private Endpoint _configurationEndpoint;
         private string _description;
         private List<string> _memberClusters = new List<string>();
@@ -77,6 +79,48 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetAutomaticFailover()
         {
             return this._automaticFailover != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CacheNodeType. 
+        /// <para>
+        /// The name of the compute and memory capacity node type for each node in the replication
+        /// group.
+        /// </para>
+        /// </summary>
+        public string CacheNodeType
+        {
+            get { return this._cacheNodeType; }
+            set { this._cacheNodeType = value; }
+        }
+
+        // Check to see if CacheNodeType property is set
+        internal bool IsSetCacheNodeType()
+        {
+            return this._cacheNodeType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ClusterEnabled. 
+        /// <para>
+        /// A flag indicating whether or not this replication group is cluster enabled; i.e.,
+        /// whether its data can be partitioned across multiple shards (API/CLI: node groups).
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values: <code>true</code> | <code>false</code> 
+        /// </para>
+        /// </summary>
+        public bool ClusterEnabled
+        {
+            get { return this._clusterEnabled.GetValueOrDefault(); }
+            set { this._clusterEnabled = value; }
+        }
+
+        // Check to see if ClusterEnabled property is set
+        internal bool IsSetClusterEnabled()
+        {
+            return this._clusterEnabled.HasValue; 
         }
 
         /// <summary>

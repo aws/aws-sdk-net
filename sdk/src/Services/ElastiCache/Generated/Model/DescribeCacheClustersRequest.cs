@@ -34,26 +34,27 @@ namespace Amazon.ElastiCache.Model
     /// 
     ///  
     /// <para>
-    /// By default, abbreviated information about the cache clusters are returned. You can
-    /// use the optional <code>ShowDetails</code> flag to retrieve detailed information about
+    /// By default, abbreviated information about the cache clusters is returned. You can
+    /// use the optional <i>ShowCacheNodeInfo</i> flag to retrieve detailed information about
     /// the cache nodes associated with the cache clusters. These details include the DNS
     /// address and port for the cache node endpoint.
     /// </para>
     ///  
     /// <para>
-    /// If the cluster is in the CREATING state, only cluster-level information is displayed
-    /// until all of the nodes are successfully provisioned.
+    /// If the cluster is in the <i>creating</i> state, only cluster-level information is
+    /// displayed until all of the nodes are successfully provisioned.
     /// </para>
     ///  
     /// <para>
-    /// If the cluster is in the DELETING state, only cluster-level information is displayed.
+    /// If the cluster is in the <i>deleting</i> state, only cluster-level information is
+    /// displayed.
     /// </para>
     ///  
     /// <para>
     /// If cache nodes are currently being added to the cache cluster, node endpoint information
     /// and creation time for the additional nodes are not displayed until they are completely
-    /// provisioned. When the cache cluster state is <code>available</code>, the cluster is
-    /// ready for use.
+    /// provisioned. When the cache cluster state is <i>available</i>, the cluster is ready
+    /// for use.
     /// </para>
     ///  
     /// <para>
@@ -66,6 +67,7 @@ namespace Amazon.ElastiCache.Model
         private string _cacheClusterId;
         private string _marker;
         private int? _maxRecords;
+        private bool? _showCacheClustersNotInReplicationGroups;
         private bool? _showCacheNodeInfo;
 
         /// <summary>
@@ -141,10 +143,30 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ShowCacheClustersNotInReplicationGroups. 
+        /// <para>
+        /// An optional flag that can be included in the <code>DescribeCacheCluster</code> request
+        /// to show only nodes (API/CLI: clusters) that are not members of a replication group.
+        /// In practice, this mean Memcached and single node Redis clusters.
+        /// </para>
+        /// </summary>
+        public bool ShowCacheClustersNotInReplicationGroups
+        {
+            get { return this._showCacheClustersNotInReplicationGroups.GetValueOrDefault(); }
+            set { this._showCacheClustersNotInReplicationGroups = value; }
+        }
+
+        // Check to see if ShowCacheClustersNotInReplicationGroups property is set
+        internal bool IsSetShowCacheClustersNotInReplicationGroups()
+        {
+            return this._showCacheClustersNotInReplicationGroups.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property ShowCacheNodeInfo. 
         /// <para>
-        /// An optional flag that can be included in the DescribeCacheCluster request to retrieve
-        /// information about the individual cache nodes.
+        /// An optional flag that can be included in the <code>DescribeCacheCluster</code> request
+        /// to retrieve information about the individual cache nodes.
         /// </para>
         /// </summary>
         public bool ShowCacheNodeInfo

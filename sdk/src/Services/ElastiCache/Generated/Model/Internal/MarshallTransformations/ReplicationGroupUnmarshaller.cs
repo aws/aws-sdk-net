@@ -60,6 +60,18 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                         unmarshalledObject.AutomaticFailover = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("CacheNodeType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.CacheNodeType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ClusterEnabled", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.ClusterEnabled = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("ConfigurationEndpoint", targetDepth))
                     {
                         var unmarshaller = EndpointUnmarshaller.Instance;

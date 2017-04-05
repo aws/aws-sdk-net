@@ -31,9 +31,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// DescribeCacheClusters Request Marshaller
+    /// TestFailover Request Marshaller
     /// </summary>       
-    public class DescribeCacheClustersRequestMarshaller : IMarshaller<IRequest, DescribeCacheClustersRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class TestFailoverRequestMarshaller : IMarshaller<IRequest, TestFailoverRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -42,7 +42,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((DescribeCacheClustersRequest)input);
+            return this.Marshall((TestFailoverRequest)input);
         }
     
         /// <summary>
@@ -50,33 +50,21 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(DescribeCacheClustersRequest publicRequest)
+        public IRequest Marshall(TestFailoverRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ElastiCache");
-            request.Parameters.Add("Action", "DescribeCacheClusters");
+            request.Parameters.Add("Action", "TestFailover");
             request.Parameters.Add("Version", "2015-02-02");
 
             if(publicRequest != null)
             {
-                if(publicRequest.IsSetCacheClusterId())
+                if(publicRequest.IsSetNodeGroupId())
                 {
-                    request.Parameters.Add("CacheClusterId", StringUtils.FromString(publicRequest.CacheClusterId));
+                    request.Parameters.Add("NodeGroupId", StringUtils.FromString(publicRequest.NodeGroupId));
                 }
-                if(publicRequest.IsSetMarker())
+                if(publicRequest.IsSetReplicationGroupId())
                 {
-                    request.Parameters.Add("Marker", StringUtils.FromString(publicRequest.Marker));
-                }
-                if(publicRequest.IsSetMaxRecords())
-                {
-                    request.Parameters.Add("MaxRecords", StringUtils.FromInt(publicRequest.MaxRecords));
-                }
-                if(publicRequest.IsSetShowCacheClustersNotInReplicationGroups())
-                {
-                    request.Parameters.Add("ShowCacheClustersNotInReplicationGroups", StringUtils.FromBool(publicRequest.ShowCacheClustersNotInReplicationGroups));
-                }
-                if(publicRequest.IsSetShowCacheNodeInfo())
-                {
-                    request.Parameters.Add("ShowCacheNodeInfo", StringUtils.FromBool(publicRequest.ShowCacheNodeInfo));
+                    request.Parameters.Add("ReplicationGroupId", StringUtils.FromString(publicRequest.ReplicationGroupId));
                 }
             }
             return request;

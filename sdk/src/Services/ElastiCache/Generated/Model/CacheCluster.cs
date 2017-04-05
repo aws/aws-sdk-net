@@ -300,7 +300,16 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ConfigurationEndpoint.
+        /// Gets and sets the property ConfigurationEndpoint. 
+        /// <para>
+        /// Represents a Memcached cluster endpoint which, if Automatic Discovery is enabled on
+        /// the cluster, can be used by an application to connect to any node in the cluster.
+        /// The configuration endpoint will always have <code>.cfg</code> in it.
+        /// </para>
+        ///  
+        /// <para>
+        /// Example: <code>mem-3.9dvc4r<u>.cfg</u>.usw2.cache.amazonaws.com:11211</code> 
+        /// </para>
         /// </summary>
         public Endpoint ConfigurationEndpoint
         {

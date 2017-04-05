@@ -748,26 +748,27 @@ namespace Amazon.ElastiCache
         /// 
         ///  
         /// <para>
-        /// By default, abbreviated information about the cache clusters are returned. You can
-        /// use the optional <code>ShowDetails</code> flag to retrieve detailed information about
+        /// By default, abbreviated information about the cache clusters is returned. You can
+        /// use the optional <i>ShowCacheNodeInfo</i> flag to retrieve detailed information about
         /// the cache nodes associated with the cache clusters. These details include the DNS
         /// address and port for the cache node endpoint.
         /// </para>
         ///  
         /// <para>
-        /// If the cluster is in the CREATING state, only cluster-level information is displayed
-        /// until all of the nodes are successfully provisioned.
+        /// If the cluster is in the <i>creating</i> state, only cluster-level information is
+        /// displayed until all of the nodes are successfully provisioned.
         /// </para>
         ///  
         /// <para>
-        /// If the cluster is in the DELETING state, only cluster-level information is displayed.
+        /// If the cluster is in the <i>deleting</i> state, only cluster-level information is
+        /// displayed.
         /// </para>
         ///  
         /// <para>
         /// If cache nodes are currently being added to the cache cluster, node endpoint information
         /// and creation time for the additional nodes are not displayed until they are completely
-        /// provisioned. When the cache cluster state is <code>available</code>, the cluster is
-        /// ready for use.
+        /// provisioned. When the cache cluster state is <i>available</i>, the cluster is ready
+        /// for use.
         /// </para>
         ///  
         /// <para>
@@ -1782,6 +1783,38 @@ namespace Amazon.ElastiCache
             var unmarshaller = RevokeCacheSecurityGroupIngressResponseUnmarshaller.Instance;
 
             return InvokeAsync<RevokeCacheSecurityGroupIngressRequest,RevokeCacheSecurityGroupIngressResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  TestFailover
+
+        internal TestFailoverResponse TestFailover(TestFailoverRequest request)
+        {
+            var marshaller = new TestFailoverRequestMarshaller();
+            var unmarshaller = TestFailoverResponseUnmarshaller.Instance;
+
+            return Invoke<TestFailoverRequest,TestFailoverResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TestFailover operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TestFailover operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/TestFailover">REST API Reference for TestFailover Operation</seealso>
+        public Task<TestFailoverResponse> TestFailoverAsync(TestFailoverRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new TestFailoverRequestMarshaller();
+            var unmarshaller = TestFailoverResponseUnmarshaller.Instance;
+
+            return InvokeAsync<TestFailoverRequest,TestFailoverResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

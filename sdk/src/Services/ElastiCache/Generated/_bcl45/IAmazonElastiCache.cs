@@ -58,7 +58,7 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// Adds up to 10 cost allocation tags to the named resource. A cost allocation tag is
+        /// Adds up to 50 cost allocation tags to the named resource. A cost allocation tag is
         /// a key-value pair where the key and value are case-sensitive. You can use cost allocation
         /// tags to categorize and track your AWS costs.
         /// 
@@ -87,7 +87,7 @@ namespace Amazon.ElastiCache
         /// <exception cref="Amazon.ElastiCache.Model.TagQuotaPerResourceExceededException">
         /// The request cannot be processed because it would cause the resource to have more than
         /// the allowed number of tags. The maximum number of tags permitted on a resource is
-        /// 10.
+        /// 50.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/AddTagsToResource">REST API Reference for AddTagsToResource Operation</seealso>
         AddTagsToResourceResponse AddTagsToResource(AddTagsToResourceRequest request);
@@ -373,7 +373,7 @@ namespace Amazon.ElastiCache
         /// <exception cref="Amazon.ElastiCache.Model.TagQuotaPerResourceExceededException">
         /// The request cannot be processed because it would cause the resource to have more than
         /// the allowed number of tags. The maximum number of tags permitted on a resource is
-        /// 10.
+        /// 50.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateCacheCluster">REST API Reference for CreateCacheCluster Operation</seealso>
         CreateCacheClusterResponse CreateCacheCluster(CreateCacheClusterRequest request);
@@ -397,8 +397,27 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// Creates a new cache parameter group. A cache parameter group is a collection of parameters
-        /// that you apply to all of the nodes in a cache cluster.
+        /// Creates a new Amazon ElastiCache cache parameter group. An ElastiCache cache parameter
+        /// group is a collection of parameters and their values that are applied to all of the
+        /// nodes in any cache cluster or replication group using the CacheParameterGroup.
+        /// 
+        ///  
+        /// <para>
+        /// A newly created CacheParameterGroup is an exact duplicate of the default parameter
+        /// group for the CacheParameterGroupFamily. To customize the newly created CacheParameterGroup
+        /// you can change the values of specific parameters. For more information, see:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_ModifyCacheParameterGroup.html">ModifyCacheParameterGroup</a>
+        /// in the ElastiCache API Reference.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/ParameterGroups.html">Parameters
+        /// and Parameter Groups</a> in the ElastiCache User Guide.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCacheParameterGroup service method.</param>
         /// 
@@ -560,6 +579,10 @@ namespace Amazon.ElastiCache
         /// When a Redis (cluster mode disabled) replication group has been successfully created,
         /// you can add one or more read replicas to it, up to a total of 5 read replicas. You
         /// cannot alter a Redis (cluster mode enabled) replication group after it has been created.
+        /// However, if you need to increase or decrease the number of node groups (console: shards),
+        /// you can avail yourself of ElastiCache for Redis' enhanced backup and restore. For
+        /// more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/backups-restoring.html">Restoring
+        /// From a Backup with Cluster Resizing</a> in the <i>ElastiCache User Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -621,7 +644,7 @@ namespace Amazon.ElastiCache
         /// <exception cref="Amazon.ElastiCache.Model.TagQuotaPerResourceExceededException">
         /// The request cannot be processed because it would cause the resource to have more than
         /// the allowed number of tags. The maximum number of tags permitted on a resource is
-        /// 10.
+        /// 50.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateReplicationGroup">REST API Reference for CreateReplicationGroup Operation</seealso>
         CreateReplicationGroupResponse CreateReplicationGroup(CreateReplicationGroupRequest request);
@@ -1053,26 +1076,27 @@ namespace Amazon.ElastiCache
         /// 
         ///  
         /// <para>
-        /// By default, abbreviated information about the cache clusters are returned. You can
-        /// use the optional <code>ShowDetails</code> flag to retrieve detailed information about
+        /// By default, abbreviated information about the cache clusters is returned. You can
+        /// use the optional <i>ShowCacheNodeInfo</i> flag to retrieve detailed information about
         /// the cache nodes associated with the cache clusters. These details include the DNS
         /// address and port for the cache node endpoint.
         /// </para>
         ///  
         /// <para>
-        /// If the cluster is in the CREATING state, only cluster-level information is displayed
-        /// until all of the nodes are successfully provisioned.
+        /// If the cluster is in the <i>creating</i> state, only cluster-level information is
+        /// displayed until all of the nodes are successfully provisioned.
         /// </para>
         ///  
         /// <para>
-        /// If the cluster is in the DELETING state, only cluster-level information is displayed.
+        /// If the cluster is in the <i>deleting</i> state, only cluster-level information is
+        /// displayed.
         /// </para>
         ///  
         /// <para>
         /// If cache nodes are currently being added to the cache cluster, node endpoint information
         /// and creation time for the additional nodes are not displayed until they are completely
-        /// provisioned. When the cache cluster state is <code>available</code>, the cluster is
-        /// ready for use.
+        /// provisioned. When the cache cluster state is <i>available</i>, the cluster is ready
+        /// for use.
         /// </para>
         ///  
         /// <para>
@@ -1101,26 +1125,27 @@ namespace Amazon.ElastiCache
         /// 
         ///  
         /// <para>
-        /// By default, abbreviated information about the cache clusters are returned. You can
-        /// use the optional <code>ShowDetails</code> flag to retrieve detailed information about
+        /// By default, abbreviated information about the cache clusters is returned. You can
+        /// use the optional <i>ShowCacheNodeInfo</i> flag to retrieve detailed information about
         /// the cache nodes associated with the cache clusters. These details include the DNS
         /// address and port for the cache node endpoint.
         /// </para>
         ///  
         /// <para>
-        /// If the cluster is in the CREATING state, only cluster-level information is displayed
-        /// until all of the nodes are successfully provisioned.
+        /// If the cluster is in the <i>creating</i> state, only cluster-level information is
+        /// displayed until all of the nodes are successfully provisioned.
         /// </para>
         ///  
         /// <para>
-        /// If the cluster is in the DELETING state, only cluster-level information is displayed.
+        /// If the cluster is in the <i>deleting</i> state, only cluster-level information is
+        /// displayed.
         /// </para>
         ///  
         /// <para>
         /// If cache nodes are currently being added to the cache cluster, node endpoint information
         /// and creation time for the additional nodes are not displayed until they are completely
-        /// provisioned. When the cache cluster state is <code>available</code>, the cluster is
-        /// ready for use.
+        /// provisioned. When the cache cluster state is <i>available</i>, the cluster is ready
+        /// for use.
         /// </para>
         ///  
         /// <para>
@@ -1150,26 +1175,27 @@ namespace Amazon.ElastiCache
         /// 
         ///  
         /// <para>
-        /// By default, abbreviated information about the cache clusters are returned. You can
-        /// use the optional <code>ShowDetails</code> flag to retrieve detailed information about
+        /// By default, abbreviated information about the cache clusters is returned. You can
+        /// use the optional <i>ShowCacheNodeInfo</i> flag to retrieve detailed information about
         /// the cache nodes associated with the cache clusters. These details include the DNS
         /// address and port for the cache node endpoint.
         /// </para>
         ///  
         /// <para>
-        /// If the cluster is in the CREATING state, only cluster-level information is displayed
-        /// until all of the nodes are successfully provisioned.
+        /// If the cluster is in the <i>creating</i> state, only cluster-level information is
+        /// displayed until all of the nodes are successfully provisioned.
         /// </para>
         ///  
         /// <para>
-        /// If the cluster is in the DELETING state, only cluster-level information is displayed.
+        /// If the cluster is in the <i>deleting</i> state, only cluster-level information is
+        /// displayed.
         /// </para>
         ///  
         /// <para>
         /// If cache nodes are currently being added to the cache cluster, node endpoint information
         /// and creation time for the additional nodes are not displayed until they are completely
-        /// provisioned. When the cache cluster state is <code>available</code>, the cluster is
-        /// ready for use.
+        /// provisioned. When the cache cluster state is <i>available</i>, the cluster is ready
+        /// for use.
         /// </para>
         ///  
         /// <para>
@@ -2054,7 +2080,7 @@ namespace Amazon.ElastiCache
         /// 
         ///  
         /// <para>
-        /// You can have a maximum of 10 cost allocation tags on an ElastiCache resource. For
+        /// You can have a maximum of 50 cost allocation tags on an ElastiCache resource. For
         /// more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/BestPractices.html">Using
         /// Cost Allocation Tags in Amazon ElastiCache</a>.
         /// </para>
@@ -2531,6 +2557,133 @@ namespace Amazon.ElastiCache
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/RevokeCacheSecurityGroupIngress">REST API Reference for RevokeCacheSecurityGroupIngress Operation</seealso>
         Task<RevokeCacheSecurityGroupIngressResponse> RevokeCacheSecurityGroupIngressAsync(RevokeCacheSecurityGroupIngressRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  TestFailover
+
+
+        /// <summary>
+        /// Represents the input of a <code>TestFailover</code> operation which test automatic
+        /// failover on a specified node group (called shard in the console) in a replication
+        /// group (called cluster in the console).
+        /// 
+        ///  <p class="title"> <b>Note the following</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// A customer can use this operation to test automatic failover on up to 5 shards (called
+        /// node groups in the ElastiCache API and AWS CLI) in any rolling 24-hour period.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If calling this operation on shards in different clusters (called replication groups
+        /// in the API and CLI), the calls can be made concurrently.
+        /// </para>
+        ///  
+        /// <para>
+        ///  
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If calling this operation multiple times on different shards in the same Redis (cluster
+        /// mode enabled) replication group, the first node replacement must complete before a
+        /// subsequent call can be made.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To determine whether the node replacement is complete you can check Events using the
+        /// Amazon ElastiCache console, the AWS CLI, or the ElastiCache API. Look for the following
+        /// automatic failover related events, listed here in order of occurrance:
+        /// </para>
+        ///  <ol> <li> 
+        /// <para>
+        /// Replication group message: <code>Test Failover API called for node group &lt;node-group-id&gt;</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cache cluster message: <code>Failover from master node &lt;primary-node-id&gt; to
+        /// replica node &lt;node-id&gt; completed</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Replication group message: <code>Failover from master node &lt;primary-node-id&gt;
+        /// to replica node &lt;node-id&gt; completed</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cache cluster message: <code>Recovering cache nodes &lt;node-id&gt;</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cache cluster message: <code>Finished recovery for cache nodes &lt;node-id&gt;</code>
+        /// 
+        /// </para>
+        ///  </li> </ol> 
+        /// <para>
+        /// For more information see:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/ECEvents.Viewing.html">Viewing
+        /// ElastiCache Events</a> in the <i>ElastiCache User Guide</i> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DescribeEvents.html">DescribeEvents</a>
+        /// in the ElastiCache API Reference
+        /// </para>
+        ///  </li> </ul> </li> </ul> 
+        /// <para>
+        /// Also see, <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/AutoFailover.html#auto-failover-test">Testing
+        /// Multi-AZ with Automatic Failover</a> in the <i>ElastiCache User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TestFailover service method.</param>
+        /// 
+        /// <returns>The response from the TestFailover service method, as returned by ElastiCache.</returns>
+        /// <exception cref="Amazon.ElastiCache.Model.APICallRateForCustomerExceededException">
+        /// The customer has exceeded the allowed rate of API calls.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidCacheClusterStateException">
+        /// The requested cache cluster is not in the <code>available</code> state.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidReplicationGroupStateException">
+        /// The requested replication group is not in the <code>available</code> state.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.NodeGroupNotFoundException">
+        /// The node group specified by the <code>NodeGroupId</code> parameter could not be found.
+        /// Please verify that the node group exists and that you spelled the <code>NodeGroupId</code>
+        /// value correctly.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.ReplicationGroupNotFoundException">
+        /// The specified replication group does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.TestFailoverNotAvailableException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/TestFailover">REST API Reference for TestFailover Operation</seealso>
+        TestFailoverResponse TestFailover(TestFailoverRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TestFailover operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TestFailover operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/TestFailover">REST API Reference for TestFailover Operation</seealso>
+        Task<TestFailoverResponse> TestFailoverAsync(TestFailoverRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

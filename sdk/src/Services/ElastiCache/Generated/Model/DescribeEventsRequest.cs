@@ -57,7 +57,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property Duration. 
         /// <para>
-        /// The number of minutes' worth of events to retrieve.
+        /// The number of minutes worth of events to retrieve.
         /// </para>
         /// </summary>
         public int Duration
@@ -76,6 +76,10 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property EndTime. 
         /// <para>
         /// The end of the time interval for which to retrieve events, specified in ISO 8601 format.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Example:</b> 2017-03-30T07:03:49.555Z
         /// </para>
         /// </summary>
         public DateTime EndTime
@@ -180,6 +184,10 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property StartTime. 
         /// <para>
         /// The beginning of the time interval to retrieve events for, specified in ISO 8601 format.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Example:</b> 2017-03-30T07:03:49.555Z
         /// </para>
         /// </summary>
         public DateTime StartTime

@@ -51,6 +51,10 @@ namespace Amazon.ElastiCache.Model
     /// When a Redis (cluster mode disabled) replication group has been successfully created,
     /// you can add one or more read replicas to it, up to a total of 5 read replicas. You
     /// cannot alter a Redis (cluster mode enabled) replication group after it has been created.
+    /// However, if you need to increase or decrease the number of node groups (console: shards),
+    /// you can avail yourself of ElastiCache for Redis' enhanced backup and restore. For
+    /// more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/backups-restoring.html">Restoring
+    /// From a Backup with Cluster Resizing</a> in the <i>ElastiCache User Guide</i>.
     /// </para>
     ///  <note> 
     /// <para>
@@ -409,8 +413,8 @@ namespace Amazon.ElastiCache.Model
         ///  
         /// <para>
         /// If you're creating a Redis (cluster mode disabled) or a Redis (cluster mode enabled)
-        /// replication group, you can use this parameter to configure one node group (shard)
-        /// or you can omit this parameter.
+        /// replication group, you can use this parameter to individually configure each node
+        /// group (shard), or you can omit this parameter.
         /// </para>
         /// </summary>
         public List<NodeGroupConfiguration> NodeGroupConfiguration
@@ -461,8 +465,10 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        /// If <code>Multi-AZ</code> is <code>enabled</code>, the value of this parameter must
-        /// be at least 2.
+        /// If <code>AutomaticFailoverEnabled</code> is <code>true</code>, the value of this parameter
+        /// must be at least 2. If <code>AutomaticFailoverEnabled</code> is <code>false</code>
+        /// you can omit this parameter (it will default to 1), or you can explicitly set it to
+        /// a value between 2 and 6.
         /// </para>
         ///  
         /// <para>
@@ -749,10 +755,11 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property SnapshotArns. 
         /// <para>
         /// A list of Amazon Resource Names (ARN) that uniquely identify the Redis RDB snapshot
-        /// files stored in Amazon S3. The snapshot files are used to populate the replication
-        /// group. The Amazon S3 object name in the ARN cannot contain any commas. The list must
-        /// match the number of node groups (shards) in the replication group, which means you
-        /// cannot repartition.
+        /// files stored in Amazon S3. The snapshot files are used to populate the new replication
+        /// group. The Amazon S3 object name in the ARN cannot contain any commas. The new replication
+        /// group will have the number of node groups (console: shards) specified by the parameter
+        /// <i>NumNodeGroups</i> or the number of node groups configured by <i>NodeGroupConfiguration</i>
+        /// regardless of the number of ARNs specified here.
         /// </para>
         ///  <note> 
         /// <para>

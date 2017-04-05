@@ -936,5 +936,29 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         }
 
         
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("ElastiCache")]
+        public void TestFailoverMarshallTest()
+        {
+            var operation = service_model.FindOperation("TestFailover");
+
+            var request = InstantiateClassGenerator.Execute<TestFailoverRequest>();
+            var marshaller = new TestFailoverRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = TestFailoverResponseUnmarshaller.Instance.Unmarshall(context)
+                as TestFailoverResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
     }
 }

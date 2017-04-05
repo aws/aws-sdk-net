@@ -98,8 +98,8 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property Slots. 
         /// <para>
-        /// A string that specifies the keyspaces as a series of comma separated values. Keyspaces
-        /// are 0 to 16,383. The string is in the format <code>startkey-endkey</code>.
+        /// A string that specifies the keyspace for a particular node group. Keyspaces range
+        /// from 0 to 16,383. The string is in the format <code>startkey-endkey</code>.
         /// </para>
         ///  
         /// <para>
