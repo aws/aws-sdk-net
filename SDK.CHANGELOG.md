@@ -1,3 +1,7 @@
+### 3.3.74.1 (2017-04-06 17:12 UTC)
+* ElasticLoadBalancingV2 (3.3.1.5)
+	* Adds supports a new condition for host-header conditions to CreateRule and ModifyRule
+
 ### 3.3.74.0 (2017-04-05 23:27 UTC)
 * ElastiCache (3.3.3.0)
 	* ElastiCache added support for testing the Elasticache Multi-AZ feature with Automatic Failover.
