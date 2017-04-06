@@ -128,3 +128,15 @@ See [Github Issue #369](https://github.com/aws/aws-sdk-unity/issues/369)
 #### DynamoDb DocumentModel difficult to create stubs
 
 See [Github Issue #604](https://github.com/aws/aws-sdk-net/issues/604)
+
+#### AWS SDK (Unity) Support for Windows Store (Hololens)
+
+See [Github Issue #337](https://github.com/aws/aws-sdk-net/issues/337)
+
+#### Support AmazonS3EncryptionClient in PCL
+
+Currently the ```AmazonS3EncryptionClient``` is not supported on the
+PCL platform. This is low-priority, as the PCL platform may be going
+away in the future.
+
+See [GitHub Issue #292](https://github.com/aws/aws-sdk-net/issues/292)
