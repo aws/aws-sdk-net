@@ -27,12 +27,54 @@ using Amazon.S3.Util;
 using Amazon.SecurityToken.SAML;
 using Amazon.DynamoDBv2;
 using Amazon.ElasticTranscoder;
+using System.Threading;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests
 {
     [TestClass]
     public class General
     {
+        [TestMethod]
+        [TestCategory("General")]
+        // Test exception parsing with selected services
+        public void TestDownloadStringContentWithTimeout()
+        {
+            var timeout = TimeSpan.FromSeconds(3);
+            var url = new Uri("https://httpbin.org/delay/10"); // server will delay for 10 seconds
+            string downloadedContent = null;
+            Exception caughtException = null;
+            var thread = new Thread(() =>
+            {
+                try
+                {
+                    downloadedContent = Amazon.Util.AWSSDKUtils.DownloadStringContent(url, timeout);
+                }
+                catch(Exception e)
+                {
+                    caughtException = e;
+                }
+            });
+
+            try
+            {
+                thread.IsBackground = true;
+                thread.Start();
+
+                Thread.Sleep(timeout + timeout);
+                Assert.IsNull(downloadedContent);
+                Assert.IsNotNull(caughtException);
+
+                var webException = caughtException as WebException;
+                Assert.IsNotNull(webException);
+                Console.WriteLine("Exception message = [{0}]", webException.Message);
+                Assert.AreEqual("The operation has timed out", webException.Message);
+            }
+            finally
+            {
+                thread.Abort();
+            }
+        }
+
         [TestMethod]
         [TestCategory("General")]
         // Test exception parsing with selected services
@@ -488,7 +530,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 MaxBackoffInMilliseconds = maxMilliseconds
             };
 
-            var context = new ExecutionContext(new RequestContext(false, new NullSigner()), null);
+            var context = new Amazon.Runtime.Internal.ExecutionContext(new RequestContext(false, new NullSigner()), null);
             for (int i = 0; i < maxRetries; i++)
             {
                 context.RequestContext.Retries = i;

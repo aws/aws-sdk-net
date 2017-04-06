@@ -891,8 +891,7 @@ namespace Amazon.Util
             HttpWebRequest request = HttpWebRequest.Create(uri) as HttpWebRequest;
             if (timeout > TimeSpan.Zero)
                 request.Timeout = (int)timeout.TotalMilliseconds;
-            var asyncResult = request.BeginGetResponse(null, null);
-            using (HttpWebResponse response = request.EndGetResponse(asyncResult) as HttpWebResponse)
+            using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
             using (StreamReader reader = new StreamReader(response.GetResponseStream()))
             {
                 return reader.ReadToEnd();
