@@ -290,13 +290,15 @@ namespace Amazon.Internal
 #else
         private const string ENDPOINT_JSON_RESOURCE = "Amazon.endpoints.json";
 #endif
+        private const string ENDPOINT_JSON = "endpoints.json";
+
         private JsonData _root;
         private Dictionary<string, IRegionEndpoint> _regionEndpointMap = new Dictionary<string, IRegionEndpoint>();
         private object _regionEndpointMapLock = new object();
 
         public RegionEndpointProviderV3()
         {
-            using (var stream = Amazon.Util.Internal.TypeFactory.GetTypeInfo(typeof(RegionEndpointProviderV3)).Assembly.GetManifestResourceStream(ENDPOINT_JSON_RESOURCE))
+            using (var stream = GetEndpointJsonSourceStream())
             using (StreamReader reader = new StreamReader(stream))
             {
                 _root = JsonMapper.ToObject(reader);
@@ -306,6 +308,24 @@ namespace Amazon.Internal
         public RegionEndpointProviderV3(JsonData root)
         {
             _root = root;
+        }
+
+        private static Stream GetEndpointJsonSourceStream()
+        {
+#if BCL
+            //
+            // If the endpoints.json file has been provided next to the assembly:
+            //
+            string endpointsPath = Path.Combine(Path.GetDirectoryName(typeof(RegionEndpointProviderV3).Assembly.Location), ENDPOINT_JSON);
+            if (File.Exists(endpointsPath))
+            {
+                return File.Open(endpointsPath, FileMode.Open, FileAccess.Read);
+            }
+#endif
+            //
+            // Default to endpoints.json file provided in the resource manifest:
+            //
+            return Amazon.Util.Internal.TypeFactory.GetTypeInfo(typeof(RegionEndpointProviderV3)).Assembly.GetManifestResourceStream(ENDPOINT_JSON_RESOURCE);
         }
 
         private object _allRegionEndpointsLock = new object();
