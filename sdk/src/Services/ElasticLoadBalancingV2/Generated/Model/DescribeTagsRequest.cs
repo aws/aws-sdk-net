@@ -29,7 +29,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeTags operation.
-    /// Describes the tags for the specified resources.
+    /// Describes the tags for the specified resources. You can describe the tags for one
+    /// or more Application Load Balancers and target groups.
     /// </summary>
     public partial class DescribeTagsRequest : AmazonElasticLoadBalancingV2Request
     {

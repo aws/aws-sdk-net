@@ -33,7 +33,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// 
     ///  
     /// <para>
-    /// Note that the only supported policy at this time is ELBSecurityPolicy-2015-05.
+    /// For more information, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security
+    /// Policies</a> in the <i>Application Load Balancers Guide</i>.
     /// </para>
     /// </summary>
     public partial class DescribeSSLPoliciesRequest : AmazonElasticLoadBalancingV2Request

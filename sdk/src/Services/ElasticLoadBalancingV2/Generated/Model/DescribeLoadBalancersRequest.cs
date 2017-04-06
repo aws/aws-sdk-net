@@ -48,7 +48,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property LoadBalancerArns. 
         /// <para>
-        /// The Amazon Resource Names (ARN) of the load balancers.
+        /// The Amazon Resource Names (ARN) of the load balancers. You can specify up to 20 load
+        /// balancers in a single call.
         /// </para>
         /// </summary>
         public List<string> LoadBalancerArns

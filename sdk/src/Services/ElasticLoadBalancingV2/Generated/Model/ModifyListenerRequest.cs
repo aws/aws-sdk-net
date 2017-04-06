@@ -35,7 +35,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// <para>
     /// Any properties that you do not specify retain their current values. However, changing
     /// the protocol from HTTPS to HTTP removes the security policy and SSL certificate properties.
-    /// If you change the protocol from HTTP to HTTPS, you must add the security policy.
+    /// If you change the protocol from HTTP to HTTPS, you must add the security policy and
+    /// server certificate.
     /// </para>
     /// </summary>
     public partial class ModifyListenerRequest : AmazonElasticLoadBalancingV2Request
@@ -140,7 +141,9 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property SslPolicy. 
         /// <para>
-        /// The security policy that defines which ciphers and protocols are supported.
+        /// The security policy that defines which protocols and ciphers are supported. For more
+        /// information, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security
+        /// Policies</a> in the <i>Application Load Balancers Guide</i>.
         /// </para>
         /// </summary>
         public string SslPolicy

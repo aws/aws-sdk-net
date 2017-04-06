@@ -38,7 +38,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property Field. 
         /// <para>
-        /// The only possible value is <code>path-pattern</code>.
+        /// The name of the field. The possible values are <code>host-header</code> and <code>path-pattern</code>.
         /// </para>
         /// </summary>
         public string Field
@@ -56,13 +56,37 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property Values. 
         /// <para>
-        /// The path pattern. You can specify a single path pattern.
+        /// The condition value.
         /// </para>
         ///  
         /// <para>
-        /// A path pattern is case sensitive, can be up to 128 characters in length, and can contain
-        /// any of the following characters. Note that you can include up to three wildcard characters
-        /// in a path pattern.
+        /// If the field name is <code>host-header</code>, you can specify a single host name
+        /// (for example, my.example.com). A host name is case insensitive, can be up to 128 characters
+        /// in length, and can contain any of the following characters. Note that you can include
+        /// up to three wildcard characters.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// A-Z, a-z, 0-9
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// - .
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// * (matches 0 or more characters)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ? (matches exactly 1 character)
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If the field name is <code>path-pattern</code>, you can specify a single path pattern
+        /// (for example, /img/*). A path pattern is case sensitive, can be up to 128 characters
+        /// in length, and can contain any of the following characters. Note that you can include
+        /// up to three wildcard characters.
         /// </para>
         ///  <ul> <li> 
         /// <para>

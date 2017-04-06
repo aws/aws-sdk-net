@@ -508,7 +508,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// 
         /// <returns>The response from the CreateLoadBalancer service method, as returned by ElasticLoadBalancingV2.</returns>
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.DuplicateLoadBalancerNameException">
-        /// A load balancer with the specified name already exists for this account.
+        /// A load balancer with the specified name already exists.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.DuplicateTagKeysException">
         /// A tag key was specified more than once.
@@ -1313,7 +1313,8 @@ namespace Amazon.ElasticLoadBalancingV2
         /// 
         ///  
         /// <para>
-        /// Note that the only supported policy at this time is ELBSecurityPolicy-2015-05.
+        /// For more information, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security
+        /// Policies</a> in the <i>Application Load Balancers Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSSLPolicies service method.</param>
@@ -1370,7 +1371,8 @@ namespace Amazon.ElasticLoadBalancingV2
         #region  DescribeTags
 
         /// <summary>
-        /// Describes the tags for the specified resources.
+        /// Describes the tags for the specified resources. You can describe the tags for one
+        /// or more Application Load Balancers and target groups.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeTags service method.</param>
         /// 
@@ -1627,7 +1629,8 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <para>
         /// Any properties that you do not specify retain their current values. However, changing
         /// the protocol from HTTPS to HTTP removes the security policy and SSL certificate properties.
-        /// If you change the protocol from HTTP to HTTPS, you must add the security policy.
+        /// If you change the protocol from HTTP to HTTPS, you must add the security policy and
+        /// server certificate.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyListener service method.</param>

@@ -207,6 +207,12 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <para>
         /// The name of the target group.
         /// </para>
+        ///  
+        /// <para>
+        /// This name must be unique per region per account, can have a maximum of 32 characters,
+        /// must contain only alphanumeric characters or hyphens, and must not begin or end with
+        /// a hyphen.
+        /// </para>
         /// </summary>
         public string Name
         {
