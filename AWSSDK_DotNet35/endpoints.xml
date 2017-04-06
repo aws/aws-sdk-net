@@ -315,6 +315,214 @@
         <Hostname>data.iot.us-east-1.amazonaws.com</Hostname>
       </Endpoint>
     </Region>
+
+    <Region>
+      <Name>us-east-2</Name>
+      <Endpoint>
+        <ServiceName>cloudhsm</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>cloudhsm.us-east-2.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>codedeploy</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>codedeploy.us-east-2.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>config</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>config.us-east-2.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>kms</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>kms.us-east-2.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>cloudformation</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>cloudformation.us-east-2.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>cloudfront</ServiceName>
+        <Http>true</Http>
+        <Https>true</Https>
+        <Hostname>cloudfront.amazonaws.com</Hostname>
+        <AuthRegion>us-east-1</AuthRegion>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>cloudsearch</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>cloudsearch.us-east-2.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>cloudtrail</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>cloudtrail.us-east-2.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>monitoring</ServiceName>
+        <Http>true</Http>
+        <Https>true</Https>
+        <Hostname>monitoring.us-east-2.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>logs</ServiceName>
+        <Http>true</Http>
+        <Https>true</Https>
+        <Hostname>logs.us-east-2.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>dynamodb</ServiceName>
+        <Http>true</Http>
+        <Https>true</Https>
+        <Hostname>dynamodb.us-east-2.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>streams.dynamodb</ServiceName>
+        <Http>true</Http>
+        <Https>true</Https>
+        <Hostname>streams.dynamodb.us-east-2.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>ec2</ServiceName>
+        <Http>true</Http>
+        <Https>true</Https>
+        <Hostname>ec2.us-east-2.amazonaws.com</Hostname>
+        <SignatureVersionOverride>4</SignatureVersionOverride>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>elasticmapreduce</ServiceName>
+        <Http>true</Http>
+        <Https>true</Https>
+        <Hostname>elasticmapreduce.us-east-2.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>elasticache</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>elasticache.us-east-2.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>rds</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>rds.us-east-2.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>route53</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>route53.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>route53domains</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>route53domains.us-east-1.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>sns</ServiceName>
+        <Http>true</Http>
+        <Https>true</Https>
+        <Hostname>sns.us-east-2.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>sqs</ServiceName>
+        <Http>true</Http>
+        <Https>true</Https>
+        <Hostname>sqs.us-east-2.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>s3</ServiceName>
+        <Http>true</Http>
+        <Https>true</Https>
+        <Hostname>s3.us-east-2.amazonaws.com</Hostname>
+        <SignatureVersionOverride>4</SignatureVersionOverride>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>autoscaling</ServiceName>
+        <Http>true</Http>
+        <Https>true</Https>
+        <Hostname>autoscaling.us-east-2.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>elasticbeanstalk</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>elasticbeanstalk.us-east-2.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>iam</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>iam.amazonaws.com</Hostname>
+        <AuthRegion>us-east-1</AuthRegion>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>sts</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>sts.amazonaws.com</Hostname>
+        <AuthRegion>us-east-1</AuthRegion>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>storagegateway</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>storagegateway.us-east-2.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>elasticloadbalancing</ServiceName>
+        <Http>true</Http>
+        <Https>true</Https>
+        <Hostname>elasticloadbalancing.us-east-2.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>swf</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>swf.us-east-2.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>glacier</ServiceName>
+        <Http>true</Http>
+        <Https>true</Https>
+        <Hostname>glacier.us-east-2.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>directconnect</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>directconnect.us-east-2.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>redshift</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>redshift.us-east-2.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>kinesis</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>kinesis.us-east-2.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>waf</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>waf.amazonaws.com</Hostname>
+        <AuthRegion>us-east-1</AuthRegion>
+      </Endpoint>
+    </Region>
     <Region>
       <Name>us-west-1</Name>
       <Endpoint>
@@ -2251,6 +2459,7 @@
         <AuthRegion>us-east-1</AuthRegion>
       </Endpoint>
     </Region>
+    
     <Region>
       <Name>cn-north-1</Name>
       <Domain>amazonaws.com.cn</Domain>
@@ -2677,6 +2886,7 @@
       <Name>cloudhsm</Name>
       <FullName>AWS CloudHSM</FullName>
       <RegionName>us-east-1</RegionName>
+      <RegionName>us-east-2</RegionName>
       <RegionName>us-west-2</RegionName>
       <RegionName>ap-northeast-1</RegionName>
       <RegionName>ap-southeast-1</RegionName>
@@ -2707,6 +2917,7 @@
       <Name>codedeploy</Name>
       <FullName>AWS CodeDeploy</FullName>
       <RegionName>us-east-1</RegionName>
+      <RegionName>us-east-2</RegionName>
       <RegionName>us-west-2</RegionName>
       <RegionName>ap-northeast-1</RegionName>
       <RegionName>ap-southeast-1</RegionName>
@@ -2718,6 +2929,7 @@
       <Name>config</Name>
       <FullName>AWS Config</FullName>
       <RegionName>us-east-1</RegionName>
+      <RegionName>us-east-2</RegionName>
       <RegionName>us-west-1</RegionName>
       <RegionName>us-west-2</RegionName>
       <RegionName>ap-northeast-1</RegionName>
@@ -2731,6 +2943,7 @@
       <Name>kms</Name>
       <FullName>AWS Key Management</FullName>
       <RegionName>us-east-1</RegionName>
+      <RegionName>us-east-2</RegionName>
       <RegionName>us-west-1</RegionName>
       <RegionName>us-west-2</RegionName>
       <RegionName>ap-northeast-1</RegionName>
@@ -2760,6 +2973,7 @@
       <Name>cloudformation</Name>
       <FullName>Amazon CloudFormation</FullName>
       <RegionName>us-east-1</RegionName>
+      <RegionName>us-east-2</RegionName>
       <RegionName>us-west-1</RegionName>
       <RegionName>us-west-2</RegionName>
       <RegionName>ap-northeast-1</RegionName>
@@ -2775,6 +2989,7 @@
       <Name>cloudfront</Name>
       <FullName>Amazon CloudFront</FullName>
       <RegionName>us-east-1</RegionName>
+      <RegionName>us-east-2</RegionName>
       <RegionName>us-west-1</RegionName>
       <RegionName>us-west-2</RegionName>
       <RegionName>ap-northeast-1</RegionName>
@@ -2789,6 +3004,7 @@
       <Name>cloudsearch</Name>
       <FullName>Amazon CloudSearch</FullName>
       <RegionName>us-east-1</RegionName>
+      <RegionName>us-east-2</RegionName>
       <RegionName>us-west-1</RegionName>
       <RegionName>us-west-2</RegionName>
       <RegionName>ap-northeast-1</RegionName>
@@ -2802,6 +3018,7 @@
       <Name>cloudtrail</Name>
       <FullName>AWS CloudTrail</FullName>
       <RegionName>us-east-1</RegionName>
+      <RegionName>us-east-2</RegionName>
       <RegionName>us-west-1</RegionName>
       <RegionName>us-west-2</RegionName>
       <RegionName>ap-northeast-1</RegionName>
@@ -2818,6 +3035,7 @@
       <Name>monitoring</Name>
       <FullName>Amazon CloudWatch</FullName>
       <RegionName>us-east-1</RegionName>
+      <RegionName>us-east-2</RegionName>
       <RegionName>us-west-1</RegionName>
       <RegionName>us-west-2</RegionName>
       <RegionName>ap-northeast-1</RegionName>
@@ -2834,6 +3052,7 @@
       <Name>logs</Name>
       <FullName>Amazon CloudWatch Logs</FullName>
       <RegionName>us-east-1</RegionName>
+      <RegionName>us-east-2</RegionName>
       <RegionName>us-west-1</RegionName>
       <RegionName>us-west-2</RegionName>
       <RegionName>ap-northeast-1</RegionName>
@@ -2847,6 +3066,7 @@
       <Name>dynamodb</Name>
       <FullName>Amazon DynamoDB</FullName>
       <RegionName>us-east-1</RegionName>
+      <RegionName>us-east-2</RegionName>
       <RegionName>us-west-1</RegionName>
       <RegionName>us-west-2</RegionName>
       <RegionName>ap-northeast-1</RegionName>
@@ -2863,6 +3083,7 @@
       <Name>streams.dynamodb</Name>
       <FullName>Amazon DynamoDB Streams</FullName>
       <RegionName>us-east-1</RegionName>
+      <RegionName>us-east-2</RegionName>
       <RegionName>us-west-1</RegionName>
       <RegionName>us-west-2</RegionName>
       <RegionName>ap-northeast-1</RegionName>
@@ -2879,6 +3100,7 @@
       <Name>ec2</Name>
       <FullName>Amazon Elastic Compute Cloud</FullName>
       <RegionName>us-east-1</RegionName>
+      <RegionName>us-east-2</RegionName>
       <RegionName>us-west-1</RegionName>
       <RegionName>us-west-2</RegionName>
       <RegionName>ap-northeast-1</RegionName>
@@ -2895,6 +3117,7 @@
       <Name>elasticmapreduce</Name>
       <FullName>Amazon Elastic MapReduce</FullName>
       <RegionName>us-east-1</RegionName>
+      <RegionName>us-east-2</RegionName>
       <RegionName>us-west-1</RegionName>
       <RegionName>us-west-2</RegionName>
       <RegionName>ap-northeast-1</RegionName>
@@ -2911,6 +3134,7 @@
       <Name>elasticache</Name>
       <FullName>Amazon ElastiCache</FullName>
       <RegionName>us-east-1</RegionName>
+      <RegionName>us-east-2</RegionName>
       <RegionName>us-west-1</RegionName>
       <RegionName>us-west-2</RegionName>
       <RegionName>ap-northeast-1</RegionName>
@@ -2926,6 +3150,7 @@
       <Name>rds</Name>
       <FullName>Amazon Relational Database Service</FullName>
       <RegionName>us-east-1</RegionName>
+      <RegionName>us-east-2</RegionName>
       <RegionName>us-west-1</RegionName>
       <RegionName>us-west-2</RegionName>
       <RegionName>ap-northeast-1</RegionName>
@@ -2942,6 +3167,7 @@
       <Name>route53</Name>
       <FullName>Amazon Route 53</FullName>
       <RegionName>us-east-1</RegionName>
+      <RegionName>us-east-2</RegionName>
       <RegionName>us-west-1</RegionName>
       <RegionName>us-west-2</RegionName>
       <RegionName>ap-northeast-1</RegionName>
@@ -2956,6 +3182,7 @@
       <Name>route53domains</Name>
       <FullName>Amazon Route 53 Domains</FullName>
       <RegionName>us-east-1</RegionName>
+      <RegionName>us-east-2</RegionName>
       <RegionName>us-west-1</RegionName>
       <RegionName>us-west-2</RegionName>
       <RegionName>ap-northeast-1</RegionName>
@@ -2988,6 +3215,7 @@
       <Name>sns</Name>
       <FullName>Amazon Simple Notification Service</FullName>
       <RegionName>us-east-1</RegionName>
+      <RegionName>us-east-2</RegionName>
       <RegionName>us-west-1</RegionName>
       <RegionName>us-west-2</RegionName>
       <RegionName>ap-northeast-1</RegionName>
@@ -3004,6 +3232,7 @@
       <Name>sqs</Name>
       <FullName>Amazon Simple Queue Service</FullName>
       <RegionName>us-east-1</RegionName>
+      <RegionName>us-east-2</RegionName>
       <RegionName>us-west-1</RegionName>
       <RegionName>us-west-2</RegionName>
       <RegionName>ap-northeast-1</RegionName>
@@ -3020,6 +3249,7 @@
       <Name>s3</Name>
       <FullName>Amazon Simple Storage Service</FullName>
       <RegionName>us-east-1</RegionName>
+      <RegionName>us-east-2</RegionName>
       <RegionName>us-west-1</RegionName>
       <RegionName>us-west-2</RegionName>
       <RegionName>ap-northeast-1</RegionName>
@@ -3036,6 +3266,7 @@
       <Name>autoscaling</Name>
       <FullName>Auto Scaling</FullName>
       <RegionName>us-east-1</RegionName>
+      <RegionName>us-east-2</RegionName>
       <RegionName>us-west-1</RegionName>
       <RegionName>us-west-2</RegionName>
       <RegionName>ap-northeast-1</RegionName>
@@ -3052,6 +3283,7 @@
       <Name>elasticbeanstalk</Name>
       <FullName>AWS Elastic Beanstalk</FullName>
       <RegionName>us-east-1</RegionName>
+      <RegionName>us-east-2</RegionName>
       <RegionName>us-west-1</RegionName>
       <RegionName>us-west-2</RegionName>
       <RegionName>ap-northeast-1</RegionName>
@@ -3067,6 +3299,7 @@
       <Name>iam</Name>
       <FullName>AWS Identity &amp; Access Management</FullName>
       <RegionName>us-east-1</RegionName>
+      <RegionName>us-east-2</RegionName>
       <RegionName>us-west-1</RegionName>
       <RegionName>us-west-2</RegionName>
       <RegionName>ap-northeast-1</RegionName>
@@ -3095,6 +3328,7 @@
       <Name>sts</Name>
       <FullName>AWS Security Token Service</FullName>
       <RegionName>us-east-1</RegionName>
+      <RegionName>us-east-2</RegionName>
       <RegionName>us-west-1</RegionName>
       <RegionName>us-west-2</RegionName>
       <RegionName>ap-northeast-1</RegionName>
@@ -3111,6 +3345,7 @@
       <Name>storagegateway</Name>
       <FullName>AWS Storage Gateway</FullName>
       <RegionName>us-east-1</RegionName>
+      <RegionName>us-east-2</RegionName>
       <RegionName>us-west-1</RegionName>
       <RegionName>us-west-2</RegionName>
       <RegionName>ap-northeast-1</RegionName>
@@ -3130,6 +3365,7 @@
       <Name>elasticloadbalancing</Name>
       <FullName>Elastic Load Balancing</FullName>
       <RegionName>us-east-1</RegionName>
+      <RegionName>us-east-2</RegionName>
       <RegionName>us-west-1</RegionName>
       <RegionName>us-west-2</RegionName>
       <RegionName>ap-northeast-1</RegionName>
@@ -3146,6 +3382,7 @@
       <Name>swf</Name>
       <FullName>Amazon Simple Workflow Service</FullName>
       <RegionName>us-east-1</RegionName>
+      <RegionName>us-east-2</RegionName>
       <RegionName>us-west-1</RegionName>
       <RegionName>us-west-2</RegionName>
       <RegionName>ap-northeast-1</RegionName>
@@ -3162,6 +3399,7 @@
       <Name>glacier</Name>
       <FullName>Amazon Glacier</FullName>
       <RegionName>us-east-1</RegionName>
+      <RegionName>us-east-2</RegionName>
       <RegionName>us-west-1</RegionName>
       <RegionName>us-west-2</RegionName>
       <RegionName>ap-northeast-1</RegionName>
@@ -3176,6 +3414,7 @@
       <Name>directconnect</Name>
       <FullName>AWS Direct Connect</FullName>
       <RegionName>us-east-1</RegionName>
+      <RegionName>us-east-2</RegionName>
       <RegionName>us-west-1</RegionName>
       <RegionName>us-west-2</RegionName>
       <RegionName>ap-northeast-1</RegionName>
@@ -3200,6 +3439,7 @@
       <Name>redshift</Name>
       <FullName>Amazon Redshift</FullName>
       <RegionName>us-east-1</RegionName>
+      <RegionName>us-east-2</RegionName>
       <RegionName>us-west-2</RegionName>
       <RegionName>ap-northeast-1</RegionName>
       <RegionName>ap-southeast-1</RegionName>
@@ -3213,6 +3453,7 @@
       <Name>kinesis</Name>
       <FullName>Amazon Kinesis</FullName>
       <RegionName>us-east-1</RegionName>
+      <RegionName>us-east-2</RegionName>
       <RegionName>us-west-1</RegionName>
       <RegionName>us-west-2</RegionName>
       <RegionName>ap-northeast-1</RegionName>
@@ -3296,6 +3537,7 @@
       <Name>waf</Name>
       <FullName>AWS WAF</FullName>
       <RegionName>us-east-1</RegionName>
+      <RegionName>us-east-2</RegionName>
       <RegionName>us-west-1</RegionName>
       <RegionName>us-west-2</RegionName>
       <RegionName>ap-northeast-1</RegionName>
