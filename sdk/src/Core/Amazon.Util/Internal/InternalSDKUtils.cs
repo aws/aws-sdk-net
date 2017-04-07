@@ -61,13 +61,25 @@ namespace Amazon.Util.Internal
             executionEnvironmentString = GetExecutionEnvironmentUserAgentString();
 #endif 
 
-            _customSdkUserAgent = string.Format(CultureInfo.InvariantCulture, "{0}/{1} {2} OS/{3} {4} {5}",
-                _userAgentBaseName,
-                _versionNumber,
-                environmentInfo.FrameworkUserAgent,
-                environmentInfo.PlatformUserAgent,
-                executionEnvironmentString,
-                _customData).Trim();
+            if (string.IsNullOrEmpty(executionEnvironmentString))
+            {
+                _customSdkUserAgent = string.Format(CultureInfo.InvariantCulture, "{0}/{1} {2} OS/{3} {4}",
+                    _userAgentBaseName,
+                    _versionNumber,
+                    environmentInfo.FrameworkUserAgent,
+                    environmentInfo.PlatformUserAgent,
+                    _customData).Trim();
+            }
+            else
+            {
+                _customSdkUserAgent = string.Format(CultureInfo.InvariantCulture, "{0}/{1} {2} OS/{3} {4} {5}",
+                    _userAgentBaseName,
+                    _versionNumber,
+                    environmentInfo.FrameworkUserAgent,
+                    environmentInfo.PlatformUserAgent,
+                    executionEnvironmentString,
+                    _customData).Trim();
+            }
         }
 
 
