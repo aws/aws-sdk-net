@@ -1,5 +1,5 @@
 ﻿/*******************************************************************************
- *  Copyright 2008-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ *  Copyright 2008-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  *  this file except in compliance with the License. A copy of the License is located at
  *
@@ -56,6 +56,7 @@ namespace Amazon.Util
         public const string XAmzRequestIdHeader = "x-amz-request-id";
         public const string XAmzDateHeader = "X-Amz-Date";
         public const string XAmzErrorType = "x-amzn-ErrorType";
+        public const string XAmznErrorMessage = "x-amzn-error-message";
         public const string XAmzSignedHeadersHeader = "X-Amz-SignedHeaders";
         public const string XAmzContentSha256Header = "X-Amz-Content-SHA256";
         public const string XAmzDecodedContentLengthHeader = "X-Amz-Decoded-Content-Length";

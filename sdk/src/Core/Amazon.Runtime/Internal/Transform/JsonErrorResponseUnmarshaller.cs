@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -84,6 +84,15 @@ namespace Amazon.Runtime.Internal.Transform
                         }
                         type = errorType;
                     }
+                }
+
+                // Check for the x-amzn-error-message header. This header is returned by rest-json services.
+                // If the header is present it is preferred over any value provided in the response body.
+                if (context.ResponseData.IsHeaderPresent(HeaderKeys.XAmznErrorMessage))
+                {
+                    var errorMessage = context.ResponseData.GetHeaderValue(HeaderKeys.XAmznErrorMessage);
+                    if (!string.IsNullOrEmpty(errorMessage))
+                        message = errorMessage;
                 }
 
                 // if both "__type" and HeaderKeys.XAmzErrorType were not specified, use "code" as type
