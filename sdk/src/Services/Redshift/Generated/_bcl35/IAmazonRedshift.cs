@@ -115,6 +115,7 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.InvalidClusterSecurityGroupStateException">
         /// The state of the cluster security group is not <code>available</code>.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AuthorizeClusterSecurityGroupIngress">REST API Reference for AuthorizeClusterSecurityGroupIngress Operation</seealso>
         AuthorizeClusterSecurityGroupIngressResponse AuthorizeClusterSecurityGroupIngress(AuthorizeClusterSecurityGroupIngressRequest request);
 
         /// <summary>
@@ -128,6 +129,7 @@ namespace Amazon.Redshift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAuthorizeClusterSecurityGroupIngress
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AuthorizeClusterSecurityGroupIngress">REST API Reference for AuthorizeClusterSecurityGroupIngress Operation</seealso>
         IAsyncResult BeginAuthorizeClusterSecurityGroupIngress(AuthorizeClusterSecurityGroupIngressRequest request, AsyncCallback callback, object state);
 
 
@@ -139,6 +141,7 @@ namespace Amazon.Redshift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAuthorizeClusterSecurityGroupIngress.</param>
         /// 
         /// <returns>Returns a  AuthorizeClusterSecurityGroupIngressResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AuthorizeClusterSecurityGroupIngress">REST API Reference for AuthorizeClusterSecurityGroupIngress Operation</seealso>
         AuthorizeClusterSecurityGroupIngressResponse EndAuthorizeClusterSecurityGroupIngress(IAsyncResult asyncResult);
 
         #endregion
@@ -179,6 +182,7 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.LimitExceededException">
         /// The encryption key has exceeded its grant limit in AWS KMS.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AuthorizeSnapshotAccess">REST API Reference for AuthorizeSnapshotAccess Operation</seealso>
         AuthorizeSnapshotAccessResponse AuthorizeSnapshotAccess(AuthorizeSnapshotAccessRequest request);
 
         /// <summary>
@@ -192,6 +196,7 @@ namespace Amazon.Redshift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAuthorizeSnapshotAccess
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AuthorizeSnapshotAccess">REST API Reference for AuthorizeSnapshotAccess Operation</seealso>
         IAsyncResult BeginAuthorizeSnapshotAccess(AuthorizeSnapshotAccessRequest request, AsyncCallback callback, object state);
 
 
@@ -203,6 +208,7 @@ namespace Amazon.Redshift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAuthorizeSnapshotAccess.</param>
         /// 
         /// <returns>Returns a  AuthorizeSnapshotAccessResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AuthorizeSnapshotAccess">REST API Reference for AuthorizeSnapshotAccess Operation</seealso>
         AuthorizeSnapshotAccessResponse EndAuthorizeSnapshotAccess(IAsyncResult asyncResult);
 
         #endregion
@@ -244,6 +250,7 @@ namespace Amazon.Redshift
         /// The specified cluster snapshot is not in the <code>available</code> state, or other
         /// accounts are authorized to access the snapshot.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CopyClusterSnapshot">REST API Reference for CopyClusterSnapshot Operation</seealso>
         CopyClusterSnapshotResponse CopyClusterSnapshot(CopyClusterSnapshotRequest request);
 
         /// <summary>
@@ -257,6 +264,7 @@ namespace Amazon.Redshift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCopyClusterSnapshot
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CopyClusterSnapshot">REST API Reference for CopyClusterSnapshot Operation</seealso>
         IAsyncResult BeginCopyClusterSnapshot(CopyClusterSnapshotRequest request, AsyncCallback callback, object state);
 
 
@@ -268,6 +276,7 @@ namespace Amazon.Redshift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCopyClusterSnapshot.</param>
         /// 
         /// <returns>Returns a  CopyClusterSnapshotResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CopyClusterSnapshot">REST API Reference for CopyClusterSnapshot Operation</seealso>
         CopyClusterSnapshotResponse EndCopyClusterSnapshot(IAsyncResult asyncResult);
 
         #endregion
@@ -352,6 +361,7 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.UnauthorizedOperationException">
         /// Your account is not authorized to perform the requested operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateCluster">REST API Reference for CreateCluster Operation</seealso>
         CreateClusterResponse CreateCluster(CreateClusterRequest request);
 
         /// <summary>
@@ -365,6 +375,7 @@ namespace Amazon.Redshift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateCluster
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateCluster">REST API Reference for CreateCluster Operation</seealso>
         IAsyncResult BeginCreateCluster(CreateClusterRequest request, AsyncCallback callback, object state);
 
 
@@ -376,6 +387,7 @@ namespace Amazon.Redshift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateCluster.</param>
         /// 
         /// <returns>Returns a  CreateClusterResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateCluster">REST API Reference for CreateCluster Operation</seealso>
         CreateClusterResponse EndCreateCluster(IAsyncResult asyncResult);
 
         #endregion
@@ -418,6 +430,7 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.TagLimitExceededException">
         /// The request exceeds the limit of 10 tags for the resource.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateClusterParameterGroup">REST API Reference for CreateClusterParameterGroup Operation</seealso>
         CreateClusterParameterGroupResponse CreateClusterParameterGroup(CreateClusterParameterGroupRequest request);
 
         /// <summary>
@@ -431,6 +444,7 @@ namespace Amazon.Redshift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateClusterParameterGroup
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateClusterParameterGroup">REST API Reference for CreateClusterParameterGroup Operation</seealso>
         IAsyncResult BeginCreateClusterParameterGroup(CreateClusterParameterGroupRequest request, AsyncCallback callback, object state);
 
 
@@ -442,6 +456,7 @@ namespace Amazon.Redshift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateClusterParameterGroup.</param>
         /// 
         /// <returns>Returns a  CreateClusterParameterGroupResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateClusterParameterGroup">REST API Reference for CreateClusterParameterGroup Operation</seealso>
         CreateClusterParameterGroupResponse EndCreateClusterParameterGroup(IAsyncResult asyncResult);
 
         #endregion
@@ -477,6 +492,7 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.TagLimitExceededException">
         /// The request exceeds the limit of 10 tags for the resource.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateClusterSecurityGroup">REST API Reference for CreateClusterSecurityGroup Operation</seealso>
         CreateClusterSecurityGroupResponse CreateClusterSecurityGroup(CreateClusterSecurityGroupRequest request);
 
         /// <summary>
@@ -490,6 +506,7 @@ namespace Amazon.Redshift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateClusterSecurityGroup
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateClusterSecurityGroup">REST API Reference for CreateClusterSecurityGroup Operation</seealso>
         IAsyncResult BeginCreateClusterSecurityGroup(CreateClusterSecurityGroupRequest request, AsyncCallback callback, object state);
 
 
@@ -501,6 +518,7 @@ namespace Amazon.Redshift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateClusterSecurityGroup.</param>
         /// 
         /// <returns>Returns a  CreateClusterSecurityGroupResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateClusterSecurityGroup">REST API Reference for CreateClusterSecurityGroup Operation</seealso>
         CreateClusterSecurityGroupResponse EndCreateClusterSecurityGroup(IAsyncResult asyncResult);
 
         #endregion
@@ -539,6 +557,7 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.TagLimitExceededException">
         /// The request exceeds the limit of 10 tags for the resource.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateClusterSnapshot">REST API Reference for CreateClusterSnapshot Operation</seealso>
         CreateClusterSnapshotResponse CreateClusterSnapshot(CreateClusterSnapshotRequest request);
 
         /// <summary>
@@ -552,6 +571,7 @@ namespace Amazon.Redshift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateClusterSnapshot
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateClusterSnapshot">REST API Reference for CreateClusterSnapshot Operation</seealso>
         IAsyncResult BeginCreateClusterSnapshot(CreateClusterSnapshotRequest request, AsyncCallback callback, object state);
 
 
@@ -563,6 +583,7 @@ namespace Amazon.Redshift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateClusterSnapshot.</param>
         /// 
         /// <returns>Returns a  CreateClusterSnapshotResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateClusterSnapshot">REST API Reference for CreateClusterSnapshot Operation</seealso>
         CreateClusterSnapshotResponse EndCreateClusterSnapshot(IAsyncResult asyncResult);
 
         #endregion
@@ -613,6 +634,7 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.UnauthorizedOperationException">
         /// Your account is not authorized to perform the requested operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateClusterSubnetGroup">REST API Reference for CreateClusterSubnetGroup Operation</seealso>
         CreateClusterSubnetGroupResponse CreateClusterSubnetGroup(CreateClusterSubnetGroupRequest request);
 
         /// <summary>
@@ -626,6 +648,7 @@ namespace Amazon.Redshift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateClusterSubnetGroup
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateClusterSubnetGroup">REST API Reference for CreateClusterSubnetGroup Operation</seealso>
         IAsyncResult BeginCreateClusterSubnetGroup(CreateClusterSubnetGroupRequest request, AsyncCallback callback, object state);
 
 
@@ -637,6 +660,7 @@ namespace Amazon.Redshift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateClusterSubnetGroup.</param>
         /// 
         /// <returns>Returns a  CreateClusterSubnetGroupResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateClusterSubnetGroup">REST API Reference for CreateClusterSubnetGroup Operation</seealso>
         CreateClusterSubnetGroupResponse EndCreateClusterSubnetGroup(IAsyncResult asyncResult);
 
         #endregion
@@ -713,6 +737,7 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.TagLimitExceededException">
         /// The request exceeds the limit of 10 tags for the resource.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateEventSubscription">REST API Reference for CreateEventSubscription Operation</seealso>
         CreateEventSubscriptionResponse CreateEventSubscription(CreateEventSubscriptionRequest request);
 
         /// <summary>
@@ -726,6 +751,7 @@ namespace Amazon.Redshift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateEventSubscription
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateEventSubscription">REST API Reference for CreateEventSubscription Operation</seealso>
         IAsyncResult BeginCreateEventSubscription(CreateEventSubscriptionRequest request, AsyncCallback callback, object state);
 
 
@@ -737,6 +763,7 @@ namespace Amazon.Redshift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateEventSubscription.</param>
         /// 
         /// <returns>Returns a  CreateEventSubscriptionResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateEventSubscription">REST API Reference for CreateEventSubscription Operation</seealso>
         CreateEventSubscriptionResponse EndCreateEventSubscription(IAsyncResult asyncResult);
 
         #endregion
@@ -776,6 +803,7 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.TagLimitExceededException">
         /// The request exceeds the limit of 10 tags for the resource.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateHsmClientCertificate">REST API Reference for CreateHsmClientCertificate Operation</seealso>
         CreateHsmClientCertificateResponse CreateHsmClientCertificate(CreateHsmClientCertificateRequest request);
 
         /// <summary>
@@ -789,6 +817,7 @@ namespace Amazon.Redshift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateHsmClientCertificate
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateHsmClientCertificate">REST API Reference for CreateHsmClientCertificate Operation</seealso>
         IAsyncResult BeginCreateHsmClientCertificate(CreateHsmClientCertificateRequest request, AsyncCallback callback, object state);
 
 
@@ -800,6 +829,7 @@ namespace Amazon.Redshift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateHsmClientCertificate.</param>
         /// 
         /// <returns>Returns a  CreateHsmClientCertificateResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateHsmClientCertificate">REST API Reference for CreateHsmClientCertificate Operation</seealso>
         CreateHsmClientCertificateResponse EndCreateHsmClientCertificate(IAsyncResult asyncResult);
 
         #endregion
@@ -838,6 +868,7 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.TagLimitExceededException">
         /// The request exceeds the limit of 10 tags for the resource.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateHsmConfiguration">REST API Reference for CreateHsmConfiguration Operation</seealso>
         CreateHsmConfigurationResponse CreateHsmConfiguration(CreateHsmConfigurationRequest request);
 
         /// <summary>
@@ -851,6 +882,7 @@ namespace Amazon.Redshift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateHsmConfiguration
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateHsmConfiguration">REST API Reference for CreateHsmConfiguration Operation</seealso>
         IAsyncResult BeginCreateHsmConfiguration(CreateHsmConfigurationRequest request, AsyncCallback callback, object state);
 
 
@@ -862,6 +894,7 @@ namespace Amazon.Redshift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateHsmConfiguration.</param>
         /// 
         /// <returns>Returns a  CreateHsmConfigurationResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateHsmConfiguration">REST API Reference for CreateHsmConfiguration Operation</seealso>
         CreateHsmConfigurationResponse EndCreateHsmConfiguration(IAsyncResult asyncResult);
 
         #endregion
@@ -904,6 +937,7 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.TagLimitExceededException">
         /// The request exceeds the limit of 10 tags for the resource.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateSnapshotCopyGrant">REST API Reference for CreateSnapshotCopyGrant Operation</seealso>
         CreateSnapshotCopyGrantResponse CreateSnapshotCopyGrant(CreateSnapshotCopyGrantRequest request);
 
         /// <summary>
@@ -917,6 +951,7 @@ namespace Amazon.Redshift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateSnapshotCopyGrant
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateSnapshotCopyGrant">REST API Reference for CreateSnapshotCopyGrant Operation</seealso>
         IAsyncResult BeginCreateSnapshotCopyGrant(CreateSnapshotCopyGrantRequest request, AsyncCallback callback, object state);
 
 
@@ -928,6 +963,7 @@ namespace Amazon.Redshift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateSnapshotCopyGrant.</param>
         /// 
         /// <returns>Returns a  CreateSnapshotCopyGrantResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateSnapshotCopyGrant">REST API Reference for CreateSnapshotCopyGrant Operation</seealso>
         CreateSnapshotCopyGrantResponse EndCreateSnapshotCopyGrant(IAsyncResult asyncResult);
 
         #endregion
@@ -961,6 +997,7 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.TagLimitExceededException">
         /// The request exceeds the limit of 10 tags for the resource.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateTags">REST API Reference for CreateTags Operation</seealso>
         CreateTagsResponse CreateTags(CreateTagsRequest request);
 
         /// <summary>
@@ -974,6 +1011,7 @@ namespace Amazon.Redshift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateTags
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateTags">REST API Reference for CreateTags Operation</seealso>
         IAsyncResult BeginCreateTags(CreateTagsRequest request, AsyncCallback callback, object state);
 
 
@@ -985,6 +1023,7 @@ namespace Amazon.Redshift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateTags.</param>
         /// 
         /// <returns>Returns a  CreateTagsResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateTags">REST API Reference for CreateTags Operation</seealso>
         CreateTagsResponse EndCreateTags(IAsyncResult asyncResult);
 
         #endregion
@@ -1029,6 +1068,7 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.InvalidClusterStateException">
         /// The specified cluster is not in the <code>available</code> state.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteCluster">REST API Reference for DeleteCluster Operation</seealso>
         DeleteClusterResponse DeleteCluster(DeleteClusterRequest request);
 
         /// <summary>
@@ -1042,6 +1082,7 @@ namespace Amazon.Redshift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteCluster
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteCluster">REST API Reference for DeleteCluster Operation</seealso>
         IAsyncResult BeginDeleteCluster(DeleteClusterRequest request, AsyncCallback callback, object state);
 
 
@@ -1053,6 +1094,7 @@ namespace Amazon.Redshift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteCluster.</param>
         /// 
         /// <returns>Returns a  DeleteClusterResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteCluster">REST API Reference for DeleteCluster Operation</seealso>
         DeleteClusterResponse EndDeleteCluster(IAsyncResult asyncResult);
 
         #endregion
@@ -1080,6 +1122,7 @@ namespace Amazon.Redshift
         /// progress that involves the parameter group. Wait a few moments and try the operation
         /// again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteClusterParameterGroup">REST API Reference for DeleteClusterParameterGroup Operation</seealso>
         DeleteClusterParameterGroupResponse DeleteClusterParameterGroup(DeleteClusterParameterGroupRequest request);
 
         /// <summary>
@@ -1093,6 +1136,7 @@ namespace Amazon.Redshift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteClusterParameterGroup
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteClusterParameterGroup">REST API Reference for DeleteClusterParameterGroup Operation</seealso>
         IAsyncResult BeginDeleteClusterParameterGroup(DeleteClusterParameterGroupRequest request, AsyncCallback callback, object state);
 
 
@@ -1104,6 +1148,7 @@ namespace Amazon.Redshift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteClusterParameterGroup.</param>
         /// 
         /// <returns>Returns a  DeleteClusterParameterGroupResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteClusterParameterGroup">REST API Reference for DeleteClusterParameterGroup Operation</seealso>
         DeleteClusterParameterGroupResponse EndDeleteClusterParameterGroup(IAsyncResult asyncResult);
 
         #endregion
@@ -1135,6 +1180,7 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.InvalidClusterSecurityGroupStateException">
         /// The state of the cluster security group is not <code>available</code>.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteClusterSecurityGroup">REST API Reference for DeleteClusterSecurityGroup Operation</seealso>
         DeleteClusterSecurityGroupResponse DeleteClusterSecurityGroup(DeleteClusterSecurityGroupRequest request);
 
         /// <summary>
@@ -1148,6 +1194,7 @@ namespace Amazon.Redshift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteClusterSecurityGroup
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteClusterSecurityGroup">REST API Reference for DeleteClusterSecurityGroup Operation</seealso>
         IAsyncResult BeginDeleteClusterSecurityGroup(DeleteClusterSecurityGroupRequest request, AsyncCallback callback, object state);
 
 
@@ -1159,6 +1206,7 @@ namespace Amazon.Redshift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteClusterSecurityGroup.</param>
         /// 
         /// <returns>Returns a  DeleteClusterSecurityGroupResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteClusterSecurityGroup">REST API Reference for DeleteClusterSecurityGroup Operation</seealso>
         DeleteClusterSecurityGroupResponse EndDeleteClusterSecurityGroup(IAsyncResult asyncResult);
 
         #endregion
@@ -1189,6 +1237,7 @@ namespace Amazon.Redshift
         /// The specified cluster snapshot is not in the <code>available</code> state, or other
         /// accounts are authorized to access the snapshot.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteClusterSnapshot">REST API Reference for DeleteClusterSnapshot Operation</seealso>
         DeleteClusterSnapshotResponse DeleteClusterSnapshot(DeleteClusterSnapshotRequest request);
 
         /// <summary>
@@ -1202,6 +1251,7 @@ namespace Amazon.Redshift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteClusterSnapshot
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteClusterSnapshot">REST API Reference for DeleteClusterSnapshot Operation</seealso>
         IAsyncResult BeginDeleteClusterSnapshot(DeleteClusterSnapshotRequest request, AsyncCallback callback, object state);
 
 
@@ -1213,6 +1263,7 @@ namespace Amazon.Redshift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteClusterSnapshot.</param>
         /// 
         /// <returns>Returns a  DeleteClusterSnapshotResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteClusterSnapshot">REST API Reference for DeleteClusterSnapshot Operation</seealso>
         DeleteClusterSnapshotResponse EndDeleteClusterSnapshot(IAsyncResult asyncResult);
 
         #endregion
@@ -1235,6 +1286,7 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.InvalidClusterSubnetStateException">
         /// The state of the subnet is invalid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteClusterSubnetGroup">REST API Reference for DeleteClusterSubnetGroup Operation</seealso>
         DeleteClusterSubnetGroupResponse DeleteClusterSubnetGroup(DeleteClusterSubnetGroupRequest request);
 
         /// <summary>
@@ -1248,6 +1300,7 @@ namespace Amazon.Redshift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteClusterSubnetGroup
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteClusterSubnetGroup">REST API Reference for DeleteClusterSubnetGroup Operation</seealso>
         IAsyncResult BeginDeleteClusterSubnetGroup(DeleteClusterSubnetGroupRequest request, AsyncCallback callback, object state);
 
 
@@ -1259,6 +1312,7 @@ namespace Amazon.Redshift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteClusterSubnetGroup.</param>
         /// 
         /// <returns>Returns a  DeleteClusterSubnetGroupResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteClusterSubnetGroup">REST API Reference for DeleteClusterSubnetGroup Operation</seealso>
         DeleteClusterSubnetGroupResponse EndDeleteClusterSubnetGroup(IAsyncResult asyncResult);
 
         #endregion
@@ -1280,6 +1334,7 @@ namespace Amazon.Redshift
         /// An Amazon Redshift event notification subscription with the specified name does not
         /// exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteEventSubscription">REST API Reference for DeleteEventSubscription Operation</seealso>
         DeleteEventSubscriptionResponse DeleteEventSubscription(DeleteEventSubscriptionRequest request);
 
         /// <summary>
@@ -1293,6 +1348,7 @@ namespace Amazon.Redshift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteEventSubscription
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteEventSubscription">REST API Reference for DeleteEventSubscription Operation</seealso>
         IAsyncResult BeginDeleteEventSubscription(DeleteEventSubscriptionRequest request, AsyncCallback callback, object state);
 
 
@@ -1304,6 +1360,7 @@ namespace Amazon.Redshift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteEventSubscription.</param>
         /// 
         /// <returns>Returns a  DeleteEventSubscriptionResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteEventSubscription">REST API Reference for DeleteEventSubscription Operation</seealso>
         DeleteEventSubscriptionResponse EndDeleteEventSubscription(IAsyncResult asyncResult);
 
         #endregion
@@ -1324,6 +1381,7 @@ namespace Amazon.Redshift
         /// The specified HSM client certificate is not in the <code>available</code> state, or
         /// it is still in use by one or more Amazon Redshift clusters.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteHsmClientCertificate">REST API Reference for DeleteHsmClientCertificate Operation</seealso>
         DeleteHsmClientCertificateResponse DeleteHsmClientCertificate(DeleteHsmClientCertificateRequest request);
 
         /// <summary>
@@ -1337,6 +1395,7 @@ namespace Amazon.Redshift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteHsmClientCertificate
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteHsmClientCertificate">REST API Reference for DeleteHsmClientCertificate Operation</seealso>
         IAsyncResult BeginDeleteHsmClientCertificate(DeleteHsmClientCertificateRequest request, AsyncCallback callback, object state);
 
 
@@ -1348,6 +1407,7 @@ namespace Amazon.Redshift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteHsmClientCertificate.</param>
         /// 
         /// <returns>Returns a  DeleteHsmClientCertificateResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteHsmClientCertificate">REST API Reference for DeleteHsmClientCertificate Operation</seealso>
         DeleteHsmClientCertificateResponse EndDeleteHsmClientCertificate(IAsyncResult asyncResult);
 
         #endregion
@@ -1368,6 +1428,7 @@ namespace Amazon.Redshift
         /// The specified HSM configuration is not in the <code>available</code> state, or it
         /// is still in use by one or more Amazon Redshift clusters.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteHsmConfiguration">REST API Reference for DeleteHsmConfiguration Operation</seealso>
         DeleteHsmConfigurationResponse DeleteHsmConfiguration(DeleteHsmConfigurationRequest request);
 
         /// <summary>
@@ -1381,6 +1442,7 @@ namespace Amazon.Redshift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteHsmConfiguration
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteHsmConfiguration">REST API Reference for DeleteHsmConfiguration Operation</seealso>
         IAsyncResult BeginDeleteHsmConfiguration(DeleteHsmConfigurationRequest request, AsyncCallback callback, object state);
 
 
@@ -1392,6 +1454,7 @@ namespace Amazon.Redshift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteHsmConfiguration.</param>
         /// 
         /// <returns>Returns a  DeleteHsmConfigurationResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteHsmConfiguration">REST API Reference for DeleteHsmConfiguration Operation</seealso>
         DeleteHsmConfigurationResponse EndDeleteHsmConfiguration(IAsyncResult asyncResult);
 
         #endregion
@@ -1412,6 +1475,7 @@ namespace Amazon.Redshift
         /// The specified snapshot copy grant can't be found. Make sure that the name is typed
         /// correctly and that the grant exists in the destination region.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteSnapshotCopyGrant">REST API Reference for DeleteSnapshotCopyGrant Operation</seealso>
         DeleteSnapshotCopyGrantResponse DeleteSnapshotCopyGrant(DeleteSnapshotCopyGrantRequest request);
 
         /// <summary>
@@ -1425,6 +1489,7 @@ namespace Amazon.Redshift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteSnapshotCopyGrant
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteSnapshotCopyGrant">REST API Reference for DeleteSnapshotCopyGrant Operation</seealso>
         IAsyncResult BeginDeleteSnapshotCopyGrant(DeleteSnapshotCopyGrantRequest request, AsyncCallback callback, object state);
 
 
@@ -1436,6 +1501,7 @@ namespace Amazon.Redshift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteSnapshotCopyGrant.</param>
         /// 
         /// <returns>Returns a  DeleteSnapshotCopyGrantResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteSnapshotCopyGrant">REST API Reference for DeleteSnapshotCopyGrant Operation</seealso>
         DeleteSnapshotCopyGrantResponse EndDeleteSnapshotCopyGrant(IAsyncResult asyncResult);
 
         #endregion
@@ -1456,6 +1522,7 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteTags">REST API Reference for DeleteTags Operation</seealso>
         DeleteTagsResponse DeleteTags(DeleteTagsRequest request);
 
         /// <summary>
@@ -1469,6 +1536,7 @@ namespace Amazon.Redshift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteTags
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteTags">REST API Reference for DeleteTags Operation</seealso>
         IAsyncResult BeginDeleteTags(DeleteTagsRequest request, AsyncCallback callback, object state);
 
 
@@ -1480,6 +1548,7 @@ namespace Amazon.Redshift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteTags.</param>
         /// 
         /// <returns>Returns a  DeleteTagsResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteTags">REST API Reference for DeleteTags Operation</seealso>
         DeleteTagsResponse EndDeleteTags(IAsyncResult asyncResult);
 
         #endregion
@@ -1520,6 +1589,7 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.InvalidTagException">
         /// The tag is invalid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterParameterGroups">REST API Reference for DescribeClusterParameterGroups Operation</seealso>
         DescribeClusterParameterGroupsResponse DescribeClusterParameterGroups();
 
         /// <summary>
@@ -1556,6 +1626,7 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.InvalidTagException">
         /// The tag is invalid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterParameterGroups">REST API Reference for DescribeClusterParameterGroups Operation</seealso>
         DescribeClusterParameterGroupsResponse DescribeClusterParameterGroups(DescribeClusterParameterGroupsRequest request);
 
         /// <summary>
@@ -1569,6 +1640,7 @@ namespace Amazon.Redshift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeClusterParameterGroups
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterParameterGroups">REST API Reference for DescribeClusterParameterGroups Operation</seealso>
         IAsyncResult BeginDescribeClusterParameterGroups(DescribeClusterParameterGroupsRequest request, AsyncCallback callback, object state);
 
 
@@ -1580,6 +1652,7 @@ namespace Amazon.Redshift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeClusterParameterGroups.</param>
         /// 
         /// <returns>Returns a  DescribeClusterParameterGroupsResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterParameterGroups">REST API Reference for DescribeClusterParameterGroups Operation</seealso>
         DescribeClusterParameterGroupsResponse EndDescribeClusterParameterGroups(IAsyncResult asyncResult);
 
         #endregion
@@ -1611,6 +1684,7 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.ClusterParameterGroupNotFoundException">
         /// The parameter group name does not refer to an existing parameter group.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterParameters">REST API Reference for DescribeClusterParameters Operation</seealso>
         DescribeClusterParametersResponse DescribeClusterParameters(DescribeClusterParametersRequest request);
 
         /// <summary>
@@ -1624,6 +1698,7 @@ namespace Amazon.Redshift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeClusterParameters
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterParameters">REST API Reference for DescribeClusterParameters Operation</seealso>
         IAsyncResult BeginDescribeClusterParameters(DescribeClusterParametersRequest request, AsyncCallback callback, object state);
 
 
@@ -1635,6 +1710,7 @@ namespace Amazon.Redshift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeClusterParameters.</param>
         /// 
         /// <returns>Returns a  DescribeClusterParametersResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterParameters">REST API Reference for DescribeClusterParameters Operation</seealso>
         DescribeClusterParametersResponse EndDescribeClusterParameters(IAsyncResult asyncResult);
 
         #endregion
@@ -1671,6 +1747,7 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.InvalidTagException">
         /// The tag is invalid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusters">REST API Reference for DescribeClusters Operation</seealso>
         DescribeClustersResponse DescribeClusters();
 
         /// <summary>
@@ -1703,6 +1780,7 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.InvalidTagException">
         /// The tag is invalid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusters">REST API Reference for DescribeClusters Operation</seealso>
         DescribeClustersResponse DescribeClusters(DescribeClustersRequest request);
 
         /// <summary>
@@ -1716,6 +1794,7 @@ namespace Amazon.Redshift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeClusters
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusters">REST API Reference for DescribeClusters Operation</seealso>
         IAsyncResult BeginDescribeClusters(DescribeClustersRequest request, AsyncCallback callback, object state);
 
 
@@ -1727,6 +1806,7 @@ namespace Amazon.Redshift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeClusters.</param>
         /// 
         /// <returns>Returns a  DescribeClustersResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusters">REST API Reference for DescribeClusters Operation</seealso>
         DescribeClustersResponse EndDescribeClusters(IAsyncResult asyncResult);
 
         #endregion
@@ -1767,6 +1847,7 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.InvalidTagException">
         /// The tag is invalid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterSecurityGroups">REST API Reference for DescribeClusterSecurityGroups Operation</seealso>
         DescribeClusterSecurityGroupsResponse DescribeClusterSecurityGroups();
 
         /// <summary>
@@ -1803,6 +1884,7 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.InvalidTagException">
         /// The tag is invalid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterSecurityGroups">REST API Reference for DescribeClusterSecurityGroups Operation</seealso>
         DescribeClusterSecurityGroupsResponse DescribeClusterSecurityGroups(DescribeClusterSecurityGroupsRequest request);
 
         /// <summary>
@@ -1816,6 +1898,7 @@ namespace Amazon.Redshift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeClusterSecurityGroups
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterSecurityGroups">REST API Reference for DescribeClusterSecurityGroups Operation</seealso>
         IAsyncResult BeginDescribeClusterSecurityGroups(DescribeClusterSecurityGroupsRequest request, AsyncCallback callback, object state);
 
 
@@ -1827,6 +1910,7 @@ namespace Amazon.Redshift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeClusterSecurityGroups.</param>
         /// 
         /// <returns>Returns a  DescribeClusterSecurityGroupsResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterSecurityGroups">REST API Reference for DescribeClusterSecurityGroups Operation</seealso>
         DescribeClusterSecurityGroupsResponse EndDescribeClusterSecurityGroups(IAsyncResult asyncResult);
 
         #endregion
@@ -1863,6 +1947,7 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.InvalidTagException">
         /// The tag is invalid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterSnapshots">REST API Reference for DescribeClusterSnapshots Operation</seealso>
         DescribeClusterSnapshotsResponse DescribeClusterSnapshots();
 
         /// <summary>
@@ -1895,6 +1980,7 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.InvalidTagException">
         /// The tag is invalid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterSnapshots">REST API Reference for DescribeClusterSnapshots Operation</seealso>
         DescribeClusterSnapshotsResponse DescribeClusterSnapshots(DescribeClusterSnapshotsRequest request);
 
         /// <summary>
@@ -1908,6 +1994,7 @@ namespace Amazon.Redshift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeClusterSnapshots
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterSnapshots">REST API Reference for DescribeClusterSnapshots Operation</seealso>
         IAsyncResult BeginDescribeClusterSnapshots(DescribeClusterSnapshotsRequest request, AsyncCallback callback, object state);
 
 
@@ -1919,6 +2006,7 @@ namespace Amazon.Redshift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeClusterSnapshots.</param>
         /// 
         /// <returns>Returns a  DescribeClusterSnapshotsResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterSnapshots">REST API Reference for DescribeClusterSnapshots Operation</seealso>
         DescribeClusterSnapshotsResponse EndDescribeClusterSnapshots(IAsyncResult asyncResult);
 
         #endregion
@@ -1953,6 +2041,7 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.InvalidTagException">
         /// The tag is invalid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterSubnetGroups">REST API Reference for DescribeClusterSubnetGroups Operation</seealso>
         DescribeClusterSubnetGroupsResponse DescribeClusterSubnetGroups();
 
         /// <summary>
@@ -1983,6 +2072,7 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.InvalidTagException">
         /// The tag is invalid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterSubnetGroups">REST API Reference for DescribeClusterSubnetGroups Operation</seealso>
         DescribeClusterSubnetGroupsResponse DescribeClusterSubnetGroups(DescribeClusterSubnetGroupsRequest request);
 
         /// <summary>
@@ -1996,6 +2086,7 @@ namespace Amazon.Redshift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeClusterSubnetGroups
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterSubnetGroups">REST API Reference for DescribeClusterSubnetGroups Operation</seealso>
         IAsyncResult BeginDescribeClusterSubnetGroups(DescribeClusterSubnetGroupsRequest request, AsyncCallback callback, object state);
 
 
@@ -2007,6 +2098,7 @@ namespace Amazon.Redshift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeClusterSubnetGroups.</param>
         /// 
         /// <returns>Returns a  DescribeClusterSubnetGroupsResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterSubnetGroups">REST API Reference for DescribeClusterSubnetGroups Operation</seealso>
         DescribeClusterSubnetGroupsResponse EndDescribeClusterSubnetGroups(IAsyncResult asyncResult);
 
         #endregion
@@ -2022,6 +2114,7 @@ namespace Amazon.Redshift
         /// </summary>
         /// 
         /// <returns>The response from the DescribeClusterVersions service method, as returned by Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterVersions">REST API Reference for DescribeClusterVersions Operation</seealso>
         DescribeClusterVersionsResponse DescribeClusterVersions();
 
         /// <summary>
@@ -2033,6 +2126,7 @@ namespace Amazon.Redshift
         /// <param name="request">Container for the necessary parameters to execute the DescribeClusterVersions service method.</param>
         /// 
         /// <returns>The response from the DescribeClusterVersions service method, as returned by Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterVersions">REST API Reference for DescribeClusterVersions Operation</seealso>
         DescribeClusterVersionsResponse DescribeClusterVersions(DescribeClusterVersionsRequest request);
 
         /// <summary>
@@ -2046,6 +2140,7 @@ namespace Amazon.Redshift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeClusterVersions
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterVersions">REST API Reference for DescribeClusterVersions Operation</seealso>
         IAsyncResult BeginDescribeClusterVersions(DescribeClusterVersionsRequest request, AsyncCallback callback, object state);
 
 
@@ -2057,6 +2152,7 @@ namespace Amazon.Redshift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeClusterVersions.</param>
         /// 
         /// <returns>Returns a  DescribeClusterVersionsResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterVersions">REST API Reference for DescribeClusterVersions Operation</seealso>
         DescribeClusterVersionsResponse EndDescribeClusterVersions(IAsyncResult asyncResult);
 
         #endregion
@@ -2076,6 +2172,7 @@ namespace Amazon.Redshift
         /// <param name="request">Container for the necessary parameters to execute the DescribeDefaultClusterParameters service method.</param>
         /// 
         /// <returns>The response from the DescribeDefaultClusterParameters service method, as returned by Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeDefaultClusterParameters">REST API Reference for DescribeDefaultClusterParameters Operation</seealso>
         DescribeDefaultClusterParametersResponse DescribeDefaultClusterParameters(DescribeDefaultClusterParametersRequest request);
 
         /// <summary>
@@ -2089,6 +2186,7 @@ namespace Amazon.Redshift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeDefaultClusterParameters
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeDefaultClusterParameters">REST API Reference for DescribeDefaultClusterParameters Operation</seealso>
         IAsyncResult BeginDescribeDefaultClusterParameters(DescribeDefaultClusterParametersRequest request, AsyncCallback callback, object state);
 
 
@@ -2100,6 +2198,7 @@ namespace Amazon.Redshift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeDefaultClusterParameters.</param>
         /// 
         /// <returns>Returns a  DescribeDefaultClusterParametersResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeDefaultClusterParameters">REST API Reference for DescribeDefaultClusterParameters Operation</seealso>
         DescribeDefaultClusterParametersResponse EndDescribeDefaultClusterParameters(IAsyncResult asyncResult);
 
         #endregion
@@ -2114,6 +2213,7 @@ namespace Amazon.Redshift
         /// </summary>
         /// 
         /// <returns>The response from the DescribeEventCategories service method, as returned by Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeEventCategories">REST API Reference for DescribeEventCategories Operation</seealso>
         DescribeEventCategoriesResponse DescribeEventCategories();
 
         /// <summary>
@@ -2124,6 +2224,7 @@ namespace Amazon.Redshift
         /// <param name="request">Container for the necessary parameters to execute the DescribeEventCategories service method.</param>
         /// 
         /// <returns>The response from the DescribeEventCategories service method, as returned by Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeEventCategories">REST API Reference for DescribeEventCategories Operation</seealso>
         DescribeEventCategoriesResponse DescribeEventCategories(DescribeEventCategoriesRequest request);
 
         /// <summary>
@@ -2137,6 +2238,7 @@ namespace Amazon.Redshift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeEventCategories
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeEventCategories">REST API Reference for DescribeEventCategories Operation</seealso>
         IAsyncResult BeginDescribeEventCategories(DescribeEventCategoriesRequest request, AsyncCallback callback, object state);
 
 
@@ -2148,6 +2250,7 @@ namespace Amazon.Redshift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeEventCategories.</param>
         /// 
         /// <returns>Returns a  DescribeEventCategoriesResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeEventCategories">REST API Reference for DescribeEventCategories Operation</seealso>
         DescribeEventCategoriesResponse EndDescribeEventCategories(IAsyncResult asyncResult);
 
         #endregion
@@ -2163,6 +2266,7 @@ namespace Amazon.Redshift
         /// </summary>
         /// 
         /// <returns>The response from the DescribeEvents service method, as returned by Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeEvents">REST API Reference for DescribeEvents Operation</seealso>
         DescribeEventsResponse DescribeEvents();
 
         /// <summary>
@@ -2174,6 +2278,7 @@ namespace Amazon.Redshift
         /// <param name="request">Container for the necessary parameters to execute the DescribeEvents service method.</param>
         /// 
         /// <returns>The response from the DescribeEvents service method, as returned by Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeEvents">REST API Reference for DescribeEvents Operation</seealso>
         DescribeEventsResponse DescribeEvents(DescribeEventsRequest request);
 
         /// <summary>
@@ -2187,6 +2292,7 @@ namespace Amazon.Redshift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeEvents
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeEvents">REST API Reference for DescribeEvents Operation</seealso>
         IAsyncResult BeginDescribeEvents(DescribeEventsRequest request, AsyncCallback callback, object state);
 
 
@@ -2198,6 +2304,7 @@ namespace Amazon.Redshift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeEvents.</param>
         /// 
         /// <returns>Returns a  DescribeEventsResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeEvents">REST API Reference for DescribeEvents Operation</seealso>
         DescribeEventsResponse EndDescribeEvents(IAsyncResult asyncResult);
 
         #endregion
@@ -2216,6 +2323,7 @@ namespace Amazon.Redshift
         /// An Amazon Redshift event notification subscription with the specified name does not
         /// exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeEventSubscriptions">REST API Reference for DescribeEventSubscriptions Operation</seealso>
         DescribeEventSubscriptionsResponse DescribeEventSubscriptions();
 
         /// <summary>
@@ -2230,6 +2338,7 @@ namespace Amazon.Redshift
         /// An Amazon Redshift event notification subscription with the specified name does not
         /// exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeEventSubscriptions">REST API Reference for DescribeEventSubscriptions Operation</seealso>
         DescribeEventSubscriptionsResponse DescribeEventSubscriptions(DescribeEventSubscriptionsRequest request);
 
         /// <summary>
@@ -2243,6 +2352,7 @@ namespace Amazon.Redshift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeEventSubscriptions
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeEventSubscriptions">REST API Reference for DescribeEventSubscriptions Operation</seealso>
         IAsyncResult BeginDescribeEventSubscriptions(DescribeEventSubscriptionsRequest request, AsyncCallback callback, object state);
 
 
@@ -2254,6 +2364,7 @@ namespace Amazon.Redshift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeEventSubscriptions.</param>
         /// 
         /// <returns>Returns a  DescribeEventSubscriptionsResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeEventSubscriptions">REST API Reference for DescribeEventSubscriptions Operation</seealso>
         DescribeEventSubscriptionsResponse EndDescribeEventSubscriptions(IAsyncResult asyncResult);
 
         #endregion
@@ -2288,6 +2399,7 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.InvalidTagException">
         /// The tag is invalid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeHsmClientCertificates">REST API Reference for DescribeHsmClientCertificates Operation</seealso>
         DescribeHsmClientCertificatesResponse DescribeHsmClientCertificates();
 
         /// <summary>
@@ -2318,6 +2430,7 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.InvalidTagException">
         /// The tag is invalid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeHsmClientCertificates">REST API Reference for DescribeHsmClientCertificates Operation</seealso>
         DescribeHsmClientCertificatesResponse DescribeHsmClientCertificates(DescribeHsmClientCertificatesRequest request);
 
         /// <summary>
@@ -2331,6 +2444,7 @@ namespace Amazon.Redshift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeHsmClientCertificates
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeHsmClientCertificates">REST API Reference for DescribeHsmClientCertificates Operation</seealso>
         IAsyncResult BeginDescribeHsmClientCertificates(DescribeHsmClientCertificatesRequest request, AsyncCallback callback, object state);
 
 
@@ -2342,6 +2456,7 @@ namespace Amazon.Redshift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeHsmClientCertificates.</param>
         /// 
         /// <returns>Returns a  DescribeHsmClientCertificatesResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeHsmClientCertificates">REST API Reference for DescribeHsmClientCertificates Operation</seealso>
         DescribeHsmClientCertificatesResponse EndDescribeHsmClientCertificates(IAsyncResult asyncResult);
 
         #endregion
@@ -2376,6 +2491,7 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.InvalidTagException">
         /// The tag is invalid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeHsmConfigurations">REST API Reference for DescribeHsmConfigurations Operation</seealso>
         DescribeHsmConfigurationsResponse DescribeHsmConfigurations();
 
         /// <summary>
@@ -2406,6 +2522,7 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.InvalidTagException">
         /// The tag is invalid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeHsmConfigurations">REST API Reference for DescribeHsmConfigurations Operation</seealso>
         DescribeHsmConfigurationsResponse DescribeHsmConfigurations(DescribeHsmConfigurationsRequest request);
 
         /// <summary>
@@ -2419,6 +2536,7 @@ namespace Amazon.Redshift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeHsmConfigurations
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeHsmConfigurations">REST API Reference for DescribeHsmConfigurations Operation</seealso>
         IAsyncResult BeginDescribeHsmConfigurations(DescribeHsmConfigurationsRequest request, AsyncCallback callback, object state);
 
 
@@ -2430,6 +2548,7 @@ namespace Amazon.Redshift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeHsmConfigurations.</param>
         /// 
         /// <returns>Returns a  DescribeHsmConfigurationsResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeHsmConfigurations">REST API Reference for DescribeHsmConfigurations Operation</seealso>
         DescribeHsmConfigurationsResponse EndDescribeHsmConfigurations(IAsyncResult asyncResult);
 
         #endregion
@@ -2447,6 +2566,7 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
         /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeLoggingStatus">REST API Reference for DescribeLoggingStatus Operation</seealso>
         DescribeLoggingStatusResponse DescribeLoggingStatus(DescribeLoggingStatusRequest request);
 
         /// <summary>
@@ -2460,6 +2580,7 @@ namespace Amazon.Redshift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeLoggingStatus
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeLoggingStatus">REST API Reference for DescribeLoggingStatus Operation</seealso>
         IAsyncResult BeginDescribeLoggingStatus(DescribeLoggingStatusRequest request, AsyncCallback callback, object state);
 
 
@@ -2471,6 +2592,7 @@ namespace Amazon.Redshift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeLoggingStatus.</param>
         /// 
         /// <returns>Returns a  DescribeLoggingStatusResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeLoggingStatus">REST API Reference for DescribeLoggingStatus Operation</seealso>
         DescribeLoggingStatusResponse EndDescribeLoggingStatus(IAsyncResult asyncResult);
 
         #endregion
@@ -2490,6 +2612,7 @@ namespace Amazon.Redshift
         /// </summary>
         /// 
         /// <returns>The response from the DescribeOrderableClusterOptions service method, as returned by Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeOrderableClusterOptions">REST API Reference for DescribeOrderableClusterOptions Operation</seealso>
         DescribeOrderableClusterOptionsResponse DescribeOrderableClusterOptions();
 
         /// <summary>
@@ -2505,6 +2628,7 @@ namespace Amazon.Redshift
         /// <param name="request">Container for the necessary parameters to execute the DescribeOrderableClusterOptions service method.</param>
         /// 
         /// <returns>The response from the DescribeOrderableClusterOptions service method, as returned by Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeOrderableClusterOptions">REST API Reference for DescribeOrderableClusterOptions Operation</seealso>
         DescribeOrderableClusterOptionsResponse DescribeOrderableClusterOptions(DescribeOrderableClusterOptionsRequest request);
 
         /// <summary>
@@ -2518,6 +2642,7 @@ namespace Amazon.Redshift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeOrderableClusterOptions
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeOrderableClusterOptions">REST API Reference for DescribeOrderableClusterOptions Operation</seealso>
         IAsyncResult BeginDescribeOrderableClusterOptions(DescribeOrderableClusterOptionsRequest request, AsyncCallback callback, object state);
 
 
@@ -2529,6 +2654,7 @@ namespace Amazon.Redshift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeOrderableClusterOptions.</param>
         /// 
         /// <returns>Returns a  DescribeOrderableClusterOptionsResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeOrderableClusterOptions">REST API Reference for DescribeOrderableClusterOptions Operation</seealso>
         DescribeOrderableClusterOptionsResponse EndDescribeOrderableClusterOptions(IAsyncResult asyncResult);
 
         #endregion
@@ -2552,12 +2678,17 @@ namespace Amazon.Redshift
         /// </summary>
         /// 
         /// <returns>The response from the DescribeReservedNodeOfferings service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.DependentServiceUnavailableException">
+        /// Your request cannot be completed because a dependent internal service is temporarily
+        /// unavailable. Wait 30 to 60 seconds and try again.
+        /// </exception>
         /// <exception cref="Amazon.Redshift.Model.ReservedNodeOfferingNotFoundException">
         /// Specified offering does not exist.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
         /// The requested operation isn't supported.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeReservedNodeOfferings">REST API Reference for DescribeReservedNodeOfferings Operation</seealso>
         DescribeReservedNodeOfferingsResponse DescribeReservedNodeOfferings();
 
         /// <summary>
@@ -2577,12 +2708,17 @@ namespace Amazon.Redshift
         /// <param name="request">Container for the necessary parameters to execute the DescribeReservedNodeOfferings service method.</param>
         /// 
         /// <returns>The response from the DescribeReservedNodeOfferings service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.DependentServiceUnavailableException">
+        /// Your request cannot be completed because a dependent internal service is temporarily
+        /// unavailable. Wait 30 to 60 seconds and try again.
+        /// </exception>
         /// <exception cref="Amazon.Redshift.Model.ReservedNodeOfferingNotFoundException">
         /// Specified offering does not exist.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
         /// The requested operation isn't supported.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeReservedNodeOfferings">REST API Reference for DescribeReservedNodeOfferings Operation</seealso>
         DescribeReservedNodeOfferingsResponse DescribeReservedNodeOfferings(DescribeReservedNodeOfferingsRequest request);
 
         /// <summary>
@@ -2596,6 +2732,7 @@ namespace Amazon.Redshift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeReservedNodeOfferings
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeReservedNodeOfferings">REST API Reference for DescribeReservedNodeOfferings Operation</seealso>
         IAsyncResult BeginDescribeReservedNodeOfferings(DescribeReservedNodeOfferingsRequest request, AsyncCallback callback, object state);
 
 
@@ -2607,6 +2744,7 @@ namespace Amazon.Redshift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeReservedNodeOfferings.</param>
         /// 
         /// <returns>Returns a  DescribeReservedNodeOfferingsResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeReservedNodeOfferings">REST API Reference for DescribeReservedNodeOfferings Operation</seealso>
         DescribeReservedNodeOfferingsResponse EndDescribeReservedNodeOfferings(IAsyncResult asyncResult);
 
         #endregion
@@ -2619,9 +2757,14 @@ namespace Amazon.Redshift
         /// </summary>
         /// 
         /// <returns>The response from the DescribeReservedNodes service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.DependentServiceUnavailableException">
+        /// Your request cannot be completed because a dependent internal service is temporarily
+        /// unavailable. Wait 30 to 60 seconds and try again.
+        /// </exception>
         /// <exception cref="Amazon.Redshift.Model.ReservedNodeNotFoundException">
         /// The specified reserved compute node not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeReservedNodes">REST API Reference for DescribeReservedNodes Operation</seealso>
         DescribeReservedNodesResponse DescribeReservedNodes();
 
         /// <summary>
@@ -2630,9 +2773,14 @@ namespace Amazon.Redshift
         /// <param name="request">Container for the necessary parameters to execute the DescribeReservedNodes service method.</param>
         /// 
         /// <returns>The response from the DescribeReservedNodes service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.DependentServiceUnavailableException">
+        /// Your request cannot be completed because a dependent internal service is temporarily
+        /// unavailable. Wait 30 to 60 seconds and try again.
+        /// </exception>
         /// <exception cref="Amazon.Redshift.Model.ReservedNodeNotFoundException">
         /// The specified reserved compute node not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeReservedNodes">REST API Reference for DescribeReservedNodes Operation</seealso>
         DescribeReservedNodesResponse DescribeReservedNodes(DescribeReservedNodesRequest request);
 
         /// <summary>
@@ -2646,6 +2794,7 @@ namespace Amazon.Redshift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeReservedNodes
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeReservedNodes">REST API Reference for DescribeReservedNodes Operation</seealso>
         IAsyncResult BeginDescribeReservedNodes(DescribeReservedNodesRequest request, AsyncCallback callback, object state);
 
 
@@ -2657,6 +2806,7 @@ namespace Amazon.Redshift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeReservedNodes.</param>
         /// 
         /// <returns>Returns a  DescribeReservedNodesResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeReservedNodes">REST API Reference for DescribeReservedNodes Operation</seealso>
         DescribeReservedNodesResponse EndDescribeReservedNodes(IAsyncResult asyncResult);
 
         #endregion
@@ -2685,6 +2835,7 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.ResizeNotFoundException">
         /// A resize operation for the specified cluster is not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeResize">REST API Reference for DescribeResize Operation</seealso>
         DescribeResizeResponse DescribeResize(DescribeResizeRequest request);
 
         /// <summary>
@@ -2698,6 +2849,7 @@ namespace Amazon.Redshift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeResize
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeResize">REST API Reference for DescribeResize Operation</seealso>
         IAsyncResult BeginDescribeResize(DescribeResizeRequest request, AsyncCallback callback, object state);
 
 
@@ -2709,6 +2861,7 @@ namespace Amazon.Redshift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeResize.</param>
         /// 
         /// <returns>Returns a  DescribeResizeResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeResize">REST API Reference for DescribeResize Operation</seealso>
         DescribeResizeResponse EndDescribeResize(IAsyncResult asyncResult);
 
         #endregion
@@ -2737,6 +2890,7 @@ namespace Amazon.Redshift
         /// The specified snapshot copy grant can't be found. Make sure that the name is typed
         /// correctly and that the grant exists in the destination region.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeSnapshotCopyGrants">REST API Reference for DescribeSnapshotCopyGrants Operation</seealso>
         DescribeSnapshotCopyGrantsResponse DescribeSnapshotCopyGrants(DescribeSnapshotCopyGrantsRequest request);
 
         /// <summary>
@@ -2750,6 +2904,7 @@ namespace Amazon.Redshift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeSnapshotCopyGrants
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeSnapshotCopyGrants">REST API Reference for DescribeSnapshotCopyGrants Operation</seealso>
         IAsyncResult BeginDescribeSnapshotCopyGrants(DescribeSnapshotCopyGrantsRequest request, AsyncCallback callback, object state);
 
 
@@ -2761,6 +2916,7 @@ namespace Amazon.Redshift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeSnapshotCopyGrants.</param>
         /// 
         /// <returns>Returns a  DescribeSnapshotCopyGrantsResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeSnapshotCopyGrants">REST API Reference for DescribeSnapshotCopyGrants Operation</seealso>
         DescribeSnapshotCopyGrantsResponse EndDescribeSnapshotCopyGrants(IAsyncResult asyncResult);
 
         #endregion
@@ -2785,6 +2941,7 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.TableRestoreNotFoundException">
         /// The specified <code>TableRestoreRequestId</code> value was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeTableRestoreStatus">REST API Reference for DescribeTableRestoreStatus Operation</seealso>
         DescribeTableRestoreStatusResponse DescribeTableRestoreStatus(DescribeTableRestoreStatusRequest request);
 
         /// <summary>
@@ -2798,6 +2955,7 @@ namespace Amazon.Redshift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeTableRestoreStatus
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeTableRestoreStatus">REST API Reference for DescribeTableRestoreStatus Operation</seealso>
         IAsyncResult BeginDescribeTableRestoreStatus(DescribeTableRestoreStatusRequest request, AsyncCallback callback, object state);
 
 
@@ -2809,6 +2967,7 @@ namespace Amazon.Redshift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeTableRestoreStatus.</param>
         /// 
         /// <returns>Returns a  DescribeTableRestoreStatusResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeTableRestoreStatus">REST API Reference for DescribeTableRestoreStatus Operation</seealso>
         DescribeTableRestoreStatusResponse EndDescribeTableRestoreStatus(IAsyncResult asyncResult);
 
         #endregion
@@ -2862,6 +3021,7 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeTags">REST API Reference for DescribeTags Operation</seealso>
         DescribeTagsResponse DescribeTags(DescribeTagsRequest request);
 
         /// <summary>
@@ -2875,6 +3035,7 @@ namespace Amazon.Redshift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeTags
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeTags">REST API Reference for DescribeTags Operation</seealso>
         IAsyncResult BeginDescribeTags(DescribeTagsRequest request, AsyncCallback callback, object state);
 
 
@@ -2886,6 +3047,7 @@ namespace Amazon.Redshift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeTags.</param>
         /// 
         /// <returns>Returns a  DescribeTagsResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeTags">REST API Reference for DescribeTags Operation</seealso>
         DescribeTagsResponse EndDescribeTags(IAsyncResult asyncResult);
 
         #endregion
@@ -2903,6 +3065,7 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
         /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DisableLogging">REST API Reference for DisableLogging Operation</seealso>
         DisableLoggingResponse DisableLogging(DisableLoggingRequest request);
 
         /// <summary>
@@ -2916,6 +3079,7 @@ namespace Amazon.Redshift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisableLogging
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DisableLogging">REST API Reference for DisableLogging Operation</seealso>
         IAsyncResult BeginDisableLogging(DisableLoggingRequest request, AsyncCallback callback, object state);
 
 
@@ -2927,6 +3091,7 @@ namespace Amazon.Redshift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisableLogging.</param>
         /// 
         /// <returns>Returns a  DisableLoggingResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DisableLogging">REST API Reference for DisableLogging Operation</seealso>
         DisableLoggingResponse EndDisableLogging(IAsyncResult asyncResult);
 
         #endregion
@@ -2960,6 +3125,7 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.UnauthorizedOperationException">
         /// Your account is not authorized to perform the requested operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DisableSnapshotCopy">REST API Reference for DisableSnapshotCopy Operation</seealso>
         DisableSnapshotCopyResponse DisableSnapshotCopy(DisableSnapshotCopyRequest request);
 
         /// <summary>
@@ -2973,6 +3139,7 @@ namespace Amazon.Redshift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisableSnapshotCopy
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DisableSnapshotCopy">REST API Reference for DisableSnapshotCopy Operation</seealso>
         IAsyncResult BeginDisableSnapshotCopy(DisableSnapshotCopyRequest request, AsyncCallback callback, object state);
 
 
@@ -2984,6 +3151,7 @@ namespace Amazon.Redshift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisableSnapshotCopy.</param>
         /// 
         /// <returns>Returns a  DisableSnapshotCopyResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DisableSnapshotCopy">REST API Reference for DisableSnapshotCopy Operation</seealso>
         DisableSnapshotCopyResponse EndDisableSnapshotCopy(IAsyncResult asyncResult);
 
         #endregion
@@ -3017,6 +3185,7 @@ namespace Amazon.Redshift
         /// The string specified for the logging S3 key prefix does not comply with the documented
         /// constraints.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/EnableLogging">REST API Reference for EnableLogging Operation</seealso>
         EnableLoggingResponse EnableLogging(EnableLoggingRequest request);
 
         /// <summary>
@@ -3030,6 +3199,7 @@ namespace Amazon.Redshift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndEnableLogging
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/EnableLogging">REST API Reference for EnableLogging Operation</seealso>
         IAsyncResult BeginEnableLogging(EnableLoggingRequest request, AsyncCallback callback, object state);
 
 
@@ -3041,6 +3211,7 @@ namespace Amazon.Redshift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginEnableLogging.</param>
         /// 
         /// <returns>Returns a  EnableLoggingResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/EnableLogging">REST API Reference for EnableLogging Operation</seealso>
         EnableLoggingResponse EndEnableLogging(IAsyncResult asyncResult);
 
         #endregion
@@ -3087,6 +3258,7 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.UnknownSnapshotCopyRegionException">
         /// The specified region is incorrect or does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/EnableSnapshotCopy">REST API Reference for EnableSnapshotCopy Operation</seealso>
         EnableSnapshotCopyResponse EnableSnapshotCopy(EnableSnapshotCopyRequest request);
 
         /// <summary>
@@ -3100,6 +3272,7 @@ namespace Amazon.Redshift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndEnableSnapshotCopy
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/EnableSnapshotCopy">REST API Reference for EnableSnapshotCopy Operation</seealso>
         IAsyncResult BeginEnableSnapshotCopy(EnableSnapshotCopyRequest request, AsyncCallback callback, object state);
 
 
@@ -3111,7 +3284,86 @@ namespace Amazon.Redshift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginEnableSnapshotCopy.</param>
         /// 
         /// <returns>Returns a  EnableSnapshotCopyResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/EnableSnapshotCopy">REST API Reference for EnableSnapshotCopy Operation</seealso>
         EnableSnapshotCopyResponse EndEnableSnapshotCopy(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetClusterCredentials
+
+
+        /// <summary>
+        /// Returns a database user name and temporary password with temporary authorization to
+        /// log in to an Amazon Redshift database. The action returns the database user name prefixed
+        /// with <code>IAM:</code> if <code>AutoCreate</code> is <code>False</code> or <code>IAMA:</code>
+        /// if <code>AutoCreate</code> is <code>True</code>. You can optionally specify one or
+        /// more database user groups that the user will join at log in. By default, the temporary
+        /// credentials expire in 900 seconds. You can optionally specify a duration between 900
+        /// seconds (15 minutes) and 3600 seconds (60 minutes). For more information, see Generating
+        /// IAM Database User Credentials in the Amazon Redshift Cluster Management Guide.
+        /// 
+        ///  
+        /// <para>
+        /// The IAM user or role that executes GetClusterCredentials must have an IAM policy attached
+        /// that allows the <code>redshift:GetClusterCredentials</code> action with access to
+        /// the <code>dbuser</code> resource on the cluster. The user name specified for <code>dbuser</code>
+        /// in the IAM policy and the user name specified for the <code>DbUser</code> parameter
+        /// must match.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the <code>DbGroups</code> parameter is specified, the IAM policy must allow the
+        /// <code>redshift:JoinGroup</code> action with access to the listed <code>dbgroups</code>.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// In addition, if the <code>AutoCreate</code> parameter is set to <code>True</code>,
+        /// then the policy must include the <code>redshift:CreateClusterUser</code> privilege.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the <code>DbName</code> parameter is specified, the IAM policy must allow access
+        /// to the resource <code>dbname</code> for the specified database name. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetClusterCredentials service method.</param>
+        /// 
+        /// <returns>The response from the GetClusterCredentials service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/GetClusterCredentials">REST API Reference for GetClusterCredentials Operation</seealso>
+        GetClusterCredentialsResponse GetClusterCredentials(GetClusterCredentialsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetClusterCredentials operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetClusterCredentials operation on AmazonRedshiftClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetClusterCredentials
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/GetClusterCredentials">REST API Reference for GetClusterCredentials Operation</seealso>
+        IAsyncResult BeginGetClusterCredentials(GetClusterCredentialsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetClusterCredentials operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetClusterCredentials.</param>
+        /// 
+        /// <returns>Returns a  GetClusterCredentialsResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/GetClusterCredentials">REST API Reference for GetClusterCredentials Operation</seealso>
+        GetClusterCredentialsResponse EndGetClusterCredentials(IAsyncResult asyncResult);
 
         #endregion
         
@@ -3174,6 +3426,9 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.LimitExceededException">
         /// The encryption key has exceeded its grant limit in AWS KMS.
         /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.NumberOfNodesPerClusterLimitExceededException">
+        /// The operation would exceed the number of nodes allowed for a cluster.
+        /// </exception>
         /// <exception cref="Amazon.Redshift.Model.NumberOfNodesQuotaExceededException">
         /// The operation would exceed the number of nodes allotted to the account. For information
         /// about increasing your quota, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits
@@ -3185,6 +3440,7 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.UnsupportedOptionException">
         /// A request option was specified that is not supported.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyCluster">REST API Reference for ModifyCluster Operation</seealso>
         ModifyClusterResponse ModifyCluster(ModifyClusterRequest request);
 
         /// <summary>
@@ -3198,6 +3454,7 @@ namespace Amazon.Redshift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyCluster
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyCluster">REST API Reference for ModifyCluster Operation</seealso>
         IAsyncResult BeginModifyCluster(ModifyClusterRequest request, AsyncCallback callback, object state);
 
 
@@ -3209,6 +3466,7 @@ namespace Amazon.Redshift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyCluster.</param>
         /// 
         /// <returns>Returns a  ModifyClusterResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyCluster">REST API Reference for ModifyCluster Operation</seealso>
         ModifyClusterResponse EndModifyCluster(IAsyncResult asyncResult);
 
         #endregion
@@ -3234,6 +3492,7 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.InvalidClusterStateException">
         /// The specified cluster is not in the <code>available</code> state.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyClusterIamRoles">REST API Reference for ModifyClusterIamRoles Operation</seealso>
         ModifyClusterIamRolesResponse ModifyClusterIamRoles(ModifyClusterIamRolesRequest request);
 
         /// <summary>
@@ -3247,6 +3506,7 @@ namespace Amazon.Redshift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyClusterIamRoles
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyClusterIamRoles">REST API Reference for ModifyClusterIamRoles Operation</seealso>
         IAsyncResult BeginModifyClusterIamRoles(ModifyClusterIamRolesRequest request, AsyncCallback callback, object state);
 
 
@@ -3258,6 +3518,7 @@ namespace Amazon.Redshift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyClusterIamRoles.</param>
         /// 
         /// <returns>Returns a  ModifyClusterIamRolesResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyClusterIamRoles">REST API Reference for ModifyClusterIamRoles Operation</seealso>
         ModifyClusterIamRolesResponse EndModifyClusterIamRoles(IAsyncResult asyncResult);
 
         #endregion
@@ -3285,6 +3546,7 @@ namespace Amazon.Redshift
         /// progress that involves the parameter group. Wait a few moments and try the operation
         /// again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyClusterParameterGroup">REST API Reference for ModifyClusterParameterGroup Operation</seealso>
         ModifyClusterParameterGroupResponse ModifyClusterParameterGroup(ModifyClusterParameterGroupRequest request);
 
         /// <summary>
@@ -3298,6 +3560,7 @@ namespace Amazon.Redshift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyClusterParameterGroup
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyClusterParameterGroup">REST API Reference for ModifyClusterParameterGroup Operation</seealso>
         IAsyncResult BeginModifyClusterParameterGroup(ModifyClusterParameterGroupRequest request, AsyncCallback callback, object state);
 
 
@@ -3309,6 +3572,7 @@ namespace Amazon.Redshift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyClusterParameterGroup.</param>
         /// 
         /// <returns>Returns a  ModifyClusterParameterGroupResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyClusterParameterGroup">REST API Reference for ModifyClusterParameterGroup Operation</seealso>
         ModifyClusterParameterGroupResponse EndModifyClusterParameterGroup(IAsyncResult asyncResult);
 
         #endregion
@@ -3344,6 +3608,7 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.UnauthorizedOperationException">
         /// Your account is not authorized to perform the requested operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyClusterSubnetGroup">REST API Reference for ModifyClusterSubnetGroup Operation</seealso>
         ModifyClusterSubnetGroupResponse ModifyClusterSubnetGroup(ModifyClusterSubnetGroupRequest request);
 
         /// <summary>
@@ -3357,6 +3622,7 @@ namespace Amazon.Redshift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyClusterSubnetGroup
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyClusterSubnetGroup">REST API Reference for ModifyClusterSubnetGroup Operation</seealso>
         IAsyncResult BeginModifyClusterSubnetGroup(ModifyClusterSubnetGroupRequest request, AsyncCallback callback, object state);
 
 
@@ -3368,6 +3634,7 @@ namespace Amazon.Redshift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyClusterSubnetGroup.</param>
         /// 
         /// <returns>Returns a  ModifyClusterSubnetGroupResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyClusterSubnetGroup">REST API Reference for ModifyClusterSubnetGroup Operation</seealso>
         ModifyClusterSubnetGroupResponse EndModifyClusterSubnetGroup(IAsyncResult asyncResult);
 
         #endregion
@@ -3414,6 +3681,7 @@ namespace Amazon.Redshift
         /// specified a severity that does not apply to the specified source type. The allowed
         /// values are ERROR and INFO.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyEventSubscription">REST API Reference for ModifyEventSubscription Operation</seealso>
         ModifyEventSubscriptionResponse ModifyEventSubscription(ModifyEventSubscriptionRequest request);
 
         /// <summary>
@@ -3427,6 +3695,7 @@ namespace Amazon.Redshift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyEventSubscription
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyEventSubscription">REST API Reference for ModifyEventSubscription Operation</seealso>
         IAsyncResult BeginModifyEventSubscription(ModifyEventSubscriptionRequest request, AsyncCallback callback, object state);
 
 
@@ -3438,6 +3707,7 @@ namespace Amazon.Redshift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyEventSubscription.</param>
         /// 
         /// <returns>Returns a  ModifyEventSubscriptionResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyEventSubscription">REST API Reference for ModifyEventSubscription Operation</seealso>
         ModifyEventSubscriptionResponse EndModifyEventSubscription(IAsyncResult asyncResult);
 
         #endregion
@@ -3464,6 +3734,7 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.UnauthorizedOperationException">
         /// Your account is not authorized to perform the requested operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifySnapshotCopyRetentionPeriod">REST API Reference for ModifySnapshotCopyRetentionPeriod Operation</seealso>
         ModifySnapshotCopyRetentionPeriodResponse ModifySnapshotCopyRetentionPeriod(ModifySnapshotCopyRetentionPeriodRequest request);
 
         /// <summary>
@@ -3477,6 +3748,7 @@ namespace Amazon.Redshift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifySnapshotCopyRetentionPeriod
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifySnapshotCopyRetentionPeriod">REST API Reference for ModifySnapshotCopyRetentionPeriod Operation</seealso>
         IAsyncResult BeginModifySnapshotCopyRetentionPeriod(ModifySnapshotCopyRetentionPeriodRequest request, AsyncCallback callback, object state);
 
 
@@ -3488,6 +3760,7 @@ namespace Amazon.Redshift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifySnapshotCopyRetentionPeriod.</param>
         /// 
         /// <returns>Returns a  ModifySnapshotCopyRetentionPeriodResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifySnapshotCopyRetentionPeriod">REST API Reference for ModifySnapshotCopyRetentionPeriod Operation</seealso>
         ModifySnapshotCopyRetentionPeriodResponse EndModifySnapshotCopyRetentionPeriod(IAsyncResult asyncResult);
 
         #endregion
@@ -3525,6 +3798,7 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
         /// The requested operation isn't supported.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/PurchaseReservedNodeOffering">REST API Reference for PurchaseReservedNodeOffering Operation</seealso>
         PurchaseReservedNodeOfferingResponse PurchaseReservedNodeOffering(PurchaseReservedNodeOfferingRequest request);
 
         /// <summary>
@@ -3538,6 +3812,7 @@ namespace Amazon.Redshift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPurchaseReservedNodeOffering
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/PurchaseReservedNodeOffering">REST API Reference for PurchaseReservedNodeOffering Operation</seealso>
         IAsyncResult BeginPurchaseReservedNodeOffering(PurchaseReservedNodeOfferingRequest request, AsyncCallback callback, object state);
 
 
@@ -3549,6 +3824,7 @@ namespace Amazon.Redshift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPurchaseReservedNodeOffering.</param>
         /// 
         /// <returns>Returns a  PurchaseReservedNodeOfferingResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/PurchaseReservedNodeOffering">REST API Reference for PurchaseReservedNodeOffering Operation</seealso>
         PurchaseReservedNodeOfferingResponse EndPurchaseReservedNodeOffering(IAsyncResult asyncResult);
 
         #endregion
@@ -3573,6 +3849,7 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.InvalidClusterStateException">
         /// The specified cluster is not in the <code>available</code> state.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RebootCluster">REST API Reference for RebootCluster Operation</seealso>
         RebootClusterResponse RebootCluster(RebootClusterRequest request);
 
         /// <summary>
@@ -3586,6 +3863,7 @@ namespace Amazon.Redshift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRebootCluster
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RebootCluster">REST API Reference for RebootCluster Operation</seealso>
         IAsyncResult BeginRebootCluster(RebootClusterRequest request, AsyncCallback callback, object state);
 
 
@@ -3597,6 +3875,7 @@ namespace Amazon.Redshift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRebootCluster.</param>
         /// 
         /// <returns>Returns a  RebootClusterResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RebootCluster">REST API Reference for RebootCluster Operation</seealso>
         RebootClusterResponse EndRebootCluster(IAsyncResult asyncResult);
 
         #endregion
@@ -3621,6 +3900,7 @@ namespace Amazon.Redshift
         /// progress that involves the parameter group. Wait a few moments and try the operation
         /// again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ResetClusterParameterGroup">REST API Reference for ResetClusterParameterGroup Operation</seealso>
         ResetClusterParameterGroupResponse ResetClusterParameterGroup(ResetClusterParameterGroupRequest request);
 
         /// <summary>
@@ -3634,6 +3914,7 @@ namespace Amazon.Redshift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndResetClusterParameterGroup
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ResetClusterParameterGroup">REST API Reference for ResetClusterParameterGroup Operation</seealso>
         IAsyncResult BeginResetClusterParameterGroup(ResetClusterParameterGroupRequest request, AsyncCallback callback, object state);
 
 
@@ -3645,6 +3926,7 @@ namespace Amazon.Redshift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginResetClusterParameterGroup.</param>
         /// 
         /// <returns>Returns a  ResetClusterParameterGroupResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ResetClusterParameterGroup">REST API Reference for ResetClusterParameterGroup Operation</seealso>
         ResetClusterParameterGroupResponse EndResetClusterParameterGroup(IAsyncResult asyncResult);
 
         #endregion
@@ -3745,6 +4027,7 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.UnauthorizedOperationException">
         /// Your account is not authorized to perform the requested operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RestoreFromClusterSnapshot">REST API Reference for RestoreFromClusterSnapshot Operation</seealso>
         RestoreFromClusterSnapshotResponse RestoreFromClusterSnapshot(RestoreFromClusterSnapshotRequest request);
 
         /// <summary>
@@ -3758,6 +4041,7 @@ namespace Amazon.Redshift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRestoreFromClusterSnapshot
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RestoreFromClusterSnapshot">REST API Reference for RestoreFromClusterSnapshot Operation</seealso>
         IAsyncResult BeginRestoreFromClusterSnapshot(RestoreFromClusterSnapshotRequest request, AsyncCallback callback, object state);
 
 
@@ -3769,6 +4053,7 @@ namespace Amazon.Redshift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRestoreFromClusterSnapshot.</param>
         /// 
         /// <returns>Returns a  RestoreFromClusterSnapshotResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RestoreFromClusterSnapshot">REST API Reference for RestoreFromClusterSnapshot Operation</seealso>
         RestoreFromClusterSnapshotResponse EndRestoreFromClusterSnapshot(IAsyncResult asyncResult);
 
         #endregion
@@ -3821,6 +4106,7 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
         /// The requested operation isn't supported.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RestoreTableFromClusterSnapshot">REST API Reference for RestoreTableFromClusterSnapshot Operation</seealso>
         RestoreTableFromClusterSnapshotResponse RestoreTableFromClusterSnapshot(RestoreTableFromClusterSnapshotRequest request);
 
         /// <summary>
@@ -3834,6 +4120,7 @@ namespace Amazon.Redshift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRestoreTableFromClusterSnapshot
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RestoreTableFromClusterSnapshot">REST API Reference for RestoreTableFromClusterSnapshot Operation</seealso>
         IAsyncResult BeginRestoreTableFromClusterSnapshot(RestoreTableFromClusterSnapshotRequest request, AsyncCallback callback, object state);
 
 
@@ -3845,6 +4132,7 @@ namespace Amazon.Redshift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRestoreTableFromClusterSnapshot.</param>
         /// 
         /// <returns>Returns a  RestoreTableFromClusterSnapshotResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RestoreTableFromClusterSnapshot">REST API Reference for RestoreTableFromClusterSnapshot Operation</seealso>
         RestoreTableFromClusterSnapshotResponse EndRestoreTableFromClusterSnapshot(IAsyncResult asyncResult);
 
         #endregion
@@ -3872,6 +4160,7 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.InvalidClusterSecurityGroupStateException">
         /// The state of the cluster security group is not <code>available</code>.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RevokeClusterSecurityGroupIngress">REST API Reference for RevokeClusterSecurityGroupIngress Operation</seealso>
         RevokeClusterSecurityGroupIngressResponse RevokeClusterSecurityGroupIngress(RevokeClusterSecurityGroupIngressRequest request);
 
         /// <summary>
@@ -3885,6 +4174,7 @@ namespace Amazon.Redshift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRevokeClusterSecurityGroupIngress
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RevokeClusterSecurityGroupIngress">REST API Reference for RevokeClusterSecurityGroupIngress Operation</seealso>
         IAsyncResult BeginRevokeClusterSecurityGroupIngress(RevokeClusterSecurityGroupIngressRequest request, AsyncCallback callback, object state);
 
 
@@ -3896,6 +4186,7 @@ namespace Amazon.Redshift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRevokeClusterSecurityGroupIngress.</param>
         /// 
         /// <returns>Returns a  RevokeClusterSecurityGroupIngressResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RevokeClusterSecurityGroupIngress">REST API Reference for RevokeClusterSecurityGroupIngress Operation</seealso>
         RevokeClusterSecurityGroupIngressResponse EndRevokeClusterSecurityGroupIngress(IAsyncResult asyncResult);
 
         #endregion
@@ -3928,6 +4219,7 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.ClusterSnapshotNotFoundException">
         /// The snapshot identifier does not refer to an existing cluster snapshot.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RevokeSnapshotAccess">REST API Reference for RevokeSnapshotAccess Operation</seealso>
         RevokeSnapshotAccessResponse RevokeSnapshotAccess(RevokeSnapshotAccessRequest request);
 
         /// <summary>
@@ -3941,6 +4233,7 @@ namespace Amazon.Redshift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRevokeSnapshotAccess
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RevokeSnapshotAccess">REST API Reference for RevokeSnapshotAccess Operation</seealso>
         IAsyncResult BeginRevokeSnapshotAccess(RevokeSnapshotAccessRequest request, AsyncCallback callback, object state);
 
 
@@ -3952,6 +4245,7 @@ namespace Amazon.Redshift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRevokeSnapshotAccess.</param>
         /// 
         /// <returns>Returns a  RevokeSnapshotAccessResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RevokeSnapshotAccess">REST API Reference for RevokeSnapshotAccess Operation</seealso>
         RevokeSnapshotAccessResponse EndRevokeSnapshotAccess(IAsyncResult asyncResult);
 
         #endregion
@@ -3975,6 +4269,7 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.InvalidClusterStateException">
         /// The specified cluster is not in the <code>available</code> state.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RotateEncryptionKey">REST API Reference for RotateEncryptionKey Operation</seealso>
         RotateEncryptionKeyResponse RotateEncryptionKey(RotateEncryptionKeyRequest request);
 
         /// <summary>
@@ -3988,6 +4283,7 @@ namespace Amazon.Redshift
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRotateEncryptionKey
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RotateEncryptionKey">REST API Reference for RotateEncryptionKey Operation</seealso>
         IAsyncResult BeginRotateEncryptionKey(RotateEncryptionKeyRequest request, AsyncCallback callback, object state);
 
 
@@ -3999,6 +4295,7 @@ namespace Amazon.Redshift
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRotateEncryptionKey.</param>
         /// 
         /// <returns>Returns a  RotateEncryptionKeyResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RotateEncryptionKey">REST API Reference for RotateEncryptionKey Operation</seealso>
         RotateEncryptionKeyResponse EndRotateEncryptionKey(IAsyncResult asyncResult);
 
         #endregion

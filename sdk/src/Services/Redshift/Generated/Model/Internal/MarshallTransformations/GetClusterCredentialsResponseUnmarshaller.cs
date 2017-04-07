@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DescribeReservedNodes operation
+    /// Response Unmarshaller for GetClusterCredentials operation
     /// </summary>  
-    public class DescribeReservedNodesResponseUnmarshaller : XmlResponseUnmarshaller
+    public class GetClusterCredentialsResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,7 +43,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
-            DescribeReservedNodesResponse response = new DescribeReservedNodesResponse();
+            GetClusterCredentialsResponse response = new GetClusterCredentialsResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
@@ -51,7 +51,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement)
                 {                    
-                    if(context.TestExpression("DescribeReservedNodesResult", 2))
+                    if(context.TestExpression("GetClusterCredentialsResult", 2))
                     {
                         UnmarshallResult(context, response);                        
                         continue;
@@ -67,7 +67,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             return response;
         }
 
-        private static void UnmarshallResult(XmlUnmarshallerContext context, DescribeReservedNodesResponse response)
+        private static void UnmarshallResult(XmlUnmarshallerContext context, GetClusterCredentialsResponse response)
         {
             
             int originalDepth = context.CurrentDepth;
@@ -81,17 +81,22 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
-                    if (context.TestExpression("Marker", targetDepth))
+                    if (context.TestExpression("DbPassword", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        response.Marker = unmarshaller.Unmarshall(context);
+                        response.DbPassword = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("ReservedNodes/ReservedNode", targetDepth))
+                    if (context.TestExpression("DbUser", targetDepth))
                     {
-                        var unmarshaller = ReservedNodeUnmarshaller.Instance;
-                        var item = unmarshaller.Unmarshall(context);
-                        response.ReservedNodes.Add(item);
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.DbUser = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Expiration", targetDepth))
+                    {
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        response.Expiration = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 } 
@@ -111,19 +116,19 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            if (errorResponse.Code != null && errorResponse.Code.Equals("DependentServiceUnavailableFault"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("ClusterNotFound"))
             {
-                return new DependentServiceUnavailableException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new ClusterNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("ReservedNodeNotFound"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("UnsupportedOperation"))
             {
-                return new ReservedNodeNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new UnsupportedOperationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             return new AmazonRedshiftException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        private static DescribeReservedNodesResponseUnmarshaller _instance = new DescribeReservedNodesResponseUnmarshaller();        
+        private static GetClusterCredentialsResponseUnmarshaller _instance = new GetClusterCredentialsResponseUnmarshaller();        
 
-        internal static DescribeReservedNodesResponseUnmarshaller GetInstance()
+        internal static GetClusterCredentialsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -131,7 +136,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeReservedNodesResponseUnmarshaller Instance
+        public static GetClusterCredentialsResponseUnmarshaller Instance
         {
             get
             {

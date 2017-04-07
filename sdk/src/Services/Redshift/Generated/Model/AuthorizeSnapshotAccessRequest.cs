@@ -48,6 +48,10 @@ namespace Amazon.Redshift.Model
         /// <para>
         /// The identifier of the AWS customer account authorized to restore the specified snapshot.
         /// </para>
+        ///  
+        /// <para>
+        /// To share a snapshot with AWS support, specify amazon-redshift-support.
+        /// </para>
         /// </summary>
         public string AccountWithRestoreAccess
         {

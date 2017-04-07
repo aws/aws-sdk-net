@@ -1,0 +1,687 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.Redshift.IAmazonRedshift.AuthorizeClusterSecurityGroupIngress(Amazon.Redshift.Model.AuthorizeClusterSecurityGroupIngressRequest)" />
+            <member name="M:Amazon.Redshift.AmazonRedshiftClient.AuthorizeClusterSecurityGroupIngress(Amazon.Redshift.Model.AuthorizeClusterSecurityGroupIngressRequest)" />
+            <member name="T:Amazon.Redshift.Model.AuthorizeClusterSecurityGroupIngressRequest" />
+            <member name="T:Amazon.Redshift.Model.AuthorizeClusterSecurityGroupIngressResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example authorizes access to a named Amazon EC2 security group.
+                </para>
+                <code
+                    title="To authorize access to an EC2 Security Group"
+                    source=".\AWSSDKDocSamples\Redshift\Redshift.GeneratedSamples.cs"
+                    region="authorizing-access-to-an-ec2-security-group-1481675923213" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Redshift.IAmazonRedshift.AuthorizeSnapshotAccess(Amazon.Redshift.Model.AuthorizeSnapshotAccessRequest)" />
+            <member name="M:Amazon.Redshift.AmazonRedshiftClient.AuthorizeSnapshotAccess(Amazon.Redshift.Model.AuthorizeSnapshotAccessRequest)" />
+            <member name="T:Amazon.Redshift.Model.AuthorizeSnapshotAccessRequest" />
+            <member name="T:Amazon.Redshift.Model.AuthorizeSnapshotAccessResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example authorizes the AWS account 444455556666 to restore the snapshot my-snapshot-id.
+                </para>
+                <code
+                    title="To authorize an AWS account to restore from snapshot"
+                    source=".\AWSSDKDocSamples\Redshift\Redshift.GeneratedSamples.cs"
+                    region="to-authorize-an-aws-account-to-restore-from-snapshot-1482368189016" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Redshift.IAmazonRedshift.CopyClusterSnapshot(Amazon.Redshift.Model.CopyClusterSnapshotRequest)" />
+            <member name="M:Amazon.Redshift.AmazonRedshiftClient.CopyClusterSnapshot(Amazon.Redshift.Model.CopyClusterSnapshotRequest)" />
+            <member name="T:Amazon.Redshift.Model.CopyClusterSnapshotRequest" />
+            <member name="T:Amazon.Redshift.Model.CopyClusterSnapshotResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates a copy of a snapshot.
+                </para>
+                <code
+                    title="To  creates a copy of a snapshot"
+                    source=".\AWSSDKDocSamples\Redshift\Redshift.GeneratedSamples.cs"
+                    region="to--creates-a-copy-of-a-snapshot-1482357194074" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Redshift.IAmazonRedshift.CreateCluster(Amazon.Redshift.Model.CreateClusterRequest)" />
+            <member name="M:Amazon.Redshift.AmazonRedshiftClient.CreateCluster(Amazon.Redshift.Model.CreateClusterRequest)" />
+            <member name="T:Amazon.Redshift.Model.CreateClusterRequest" />
+            <member name="T:Amazon.Redshift.Model.CreateClusterResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates a cluster with the minimal set of parameters. By default, the output is in JSON format.
+                </para>
+                <code
+                    title="To create a cluster with minimal parameters"
+                    source=".\AWSSDKDocSamples\Redshift\Redshift.GeneratedSamples.cs"
+                    region="to-create-a-cluster-with-minimal-parameters-1481678090203" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Redshift.IAmazonRedshift.CreateClusterParameterGroup(Amazon.Redshift.Model.CreateClusterParameterGroupRequest)" />
+            <member name="M:Amazon.Redshift.AmazonRedshiftClient.CreateClusterParameterGroup(Amazon.Redshift.Model.CreateClusterParameterGroupRequest)" />
+            <member name="T:Amazon.Redshift.Model.CreateClusterParameterGroupRequest" />
+            <member name="T:Amazon.Redshift.Model.CreateClusterParameterGroupResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates a new cluster snapshot. 
+                </para>
+                <code
+                    title="To create a cluster snapshot"
+                    source=".\AWSSDKDocSamples\Redshift\Redshift.GeneratedSamples.cs"
+                    region="to-create-a-cluster-snapshot-1481844657333" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Redshift.IAmazonRedshift.CreateClusterSecurityGroup(Amazon.Redshift.Model.CreateClusterSecurityGroupRequest)" />
+            <member name="M:Amazon.Redshift.AmazonRedshiftClient.CreateClusterSecurityGroup(Amazon.Redshift.Model.CreateClusterSecurityGroupRequest)" />
+            <member name="T:Amazon.Redshift.Model.CreateClusterSecurityGroupRequest" />
+            <member name="T:Amazon.Redshift.Model.CreateClusterSecurityGroupResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates a new cluster security group. 
+                </para>
+                <code
+                    title="To create a new cluster security group"
+                    source=".\AWSSDKDocSamples\Redshift\Redshift.GeneratedSamples.cs"
+                    region="to-create-a-new-cluster-security-group-1481844171608" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Redshift.IAmazonRedshift.CreateClusterSnapshot(Amazon.Redshift.Model.CreateClusterSnapshotRequest)" />
+            <member name="M:Amazon.Redshift.AmazonRedshiftClient.CreateClusterSnapshot(Amazon.Redshift.Model.CreateClusterSnapshotRequest)" />
+            <member name="T:Amazon.Redshift.Model.CreateClusterSnapshotRequest" />
+            <member name="T:Amazon.Redshift.Model.CreateClusterSnapshotResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates a new cluster snapshot.
+                </para>
+                <code
+                    title="To create a new cluster snapshot"
+                    source=".\AWSSDKDocSamples\Redshift\Redshift.GeneratedSamples.cs"
+                    region="to-create-a-new-cluster-snapshot-1482180269983" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Redshift.IAmazonRedshift.CreateClusterSubnetGroup(Amazon.Redshift.Model.CreateClusterSubnetGroupRequest)" />
+            <member name="M:Amazon.Redshift.AmazonRedshiftClient.CreateClusterSubnetGroup(Amazon.Redshift.Model.CreateClusterSubnetGroupRequest)" />
+            <member name="T:Amazon.Redshift.Model.CreateClusterSubnetGroupRequest" />
+            <member name="T:Amazon.Redshift.Model.CreateClusterSubnetGroupResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates a new cluster subnet group.
+                </para>
+                <code
+                    title="To \create a new cluster subnet group"
+                    source=".\AWSSDKDocSamples\Redshift\Redshift.GeneratedSamples.cs"
+                    region="to-create-a-new-cluster-subnet-group-1482357950701" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Redshift.IAmazonRedshift.CreateEventSubscription(Amazon.Redshift.Model.CreateEventSubscriptionRequest)" />
+            <member name="M:Amazon.Redshift.AmazonRedshiftClient.CreateEventSubscription(Amazon.Redshift.Model.CreateEventSubscriptionRequest)" />
+            <member name="T:Amazon.Redshift.Model.CreateEventSubscriptionRequest" />
+            <member name="T:Amazon.Redshift.Model.CreateEventSubscriptionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example shows how to create an event subscription.
+                </para>
+                <code
+                    title="To create an event subscription"
+                    source=".\AWSSDKDocSamples\Redshift\Redshift.GeneratedSamples.cs"
+                    region="to-create-an-event-subscription-1483132129428" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Redshift.IAmazonRedshift.CreateHsmClientCertificate(Amazon.Redshift.Model.CreateHsmClientCertificateRequest)" />
+            <member name="M:Amazon.Redshift.AmazonRedshiftClient.CreateHsmClientCertificate(Amazon.Redshift.Model.CreateHsmClientCertificateRequest)" />
+            <member name="T:Amazon.Redshift.Model.CreateHsmClientCertificateRequest" />
+            <member name="T:Amazon.Redshift.Model.CreateHsmClientCertificateResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates a new HSM certificate.
+                </para>
+                <code
+                    title="To create a new HSM certificate"
+                    source=".\AWSSDKDocSamples\Redshift\Redshift.GeneratedSamples.cs"
+                    region="to-create-a-new-hsm-certificate-1482359863292" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Redshift.IAmazonRedshift.CreateSnapshotCopyGrant(Amazon.Redshift.Model.CreateSnapshotCopyGrantRequest)" />
+            <member name="M:Amazon.Redshift.AmazonRedshiftClient.CreateSnapshotCopyGrant(Amazon.Redshift.Model.CreateSnapshotCopyGrantRequest)" />
+            <member name="T:Amazon.Redshift.Model.CreateSnapshotCopyGrantRequest" />
+            <member name="T:Amazon.Redshift.Model.CreateSnapshotCopyGrantResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates a new snapshot copy grant.
+                </para>
+                <code
+                    title="To create a snapshot copy grant"
+                    source=".\AWSSDKDocSamples\Redshift\Redshift.GeneratedSamples.cs"
+                    region="to-create-a-snapshot-copy-grant-1482180728699" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Redshift.IAmazonRedshift.CreateTags(Amazon.Redshift.Model.CreateTagsRequest)" />
+            <member name="M:Amazon.Redshift.AmazonRedshiftClient.CreateTags(Amazon.Redshift.Model.CreateTagsRequest)" />
+            <member name="T:Amazon.Redshift.Model.CreateTagsRequest" />
+            <member name="T:Amazon.Redshift.Model.CreateTagsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates tags for the specified cluster.
+                </para>
+                <code
+                    title="To create tags "
+                    source=".\AWSSDKDocSamples\Redshift\Redshift.GeneratedSamples.cs"
+                    region="to-create-tags--1482440094007" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Redshift.IAmazonRedshift.DeleteEventSubscription(Amazon.Redshift.Model.DeleteEventSubscriptionRequest)" />
+            <member name="M:Amazon.Redshift.AmazonRedshiftClient.DeleteEventSubscription(Amazon.Redshift.Model.DeleteEventSubscriptionRequest)" />
+            <member name="T:Amazon.Redshift.Model.DeleteEventSubscriptionRequest" />
+            <member name="T:Amazon.Redshift.Model.DeleteEventSubscriptionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example shows how to delete an event subscription.
+                </para>
+                <code
+                    title="To delete an event subscription"
+                    source=".\AWSSDKDocSamples\Redshift\Redshift.GeneratedSamples.cs"
+                    region="to-delete-an-event-subscription-1483134357677" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Redshift.IAmazonRedshift.DescribeClusterParameterGroups(Amazon.Redshift.Model.DescribeClusterParameterGroupsRequest)" />
+            <member name="M:Amazon.Redshift.AmazonRedshiftClient.DescribeClusterParameterGroups(Amazon.Redshift.Model.DescribeClusterParameterGroupsRequest)" />
+            <member name="T:Amazon.Redshift.Model.DescribeClusterParameterGroupsRequest" />
+            <member name="T:Amazon.Redshift.Model.DescribeClusterParameterGroupsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example returns a description of all cluster parameter groups for the account, with column headers.
+                </para>
+                <code
+                    title="To get a description of cluster parameter groups"
+                    source=".\AWSSDKDocSamples\Redshift\Redshift.GeneratedSamples.cs"
+                    region="to-get-a-description-of-cluster-parameter-groups-1482361865953" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Redshift.IAmazonRedshift.DescribeClusterParameters(Amazon.Redshift.Model.DescribeClusterParametersRequest)" />
+            <member name="M:Amazon.Redshift.AmazonRedshiftClient.DescribeClusterParameters(Amazon.Redshift.Model.DescribeClusterParametersRequest)" />
+            <member name="T:Amazon.Redshift.Model.DescribeClusterParametersRequest" />
+            <member name="T:Amazon.Redshift.Model.DescribeClusterParametersResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example retrieves the parameters for the named parameter group.
+                </para>
+                <code
+                    title="To get the parameters for a parameter group"
+                    source=".\AWSSDKDocSamples\Redshift\Redshift.GeneratedSamples.cs"
+                    region="to-get-the-parameters-for-a-parameter-group-1482362769122" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Redshift.IAmazonRedshift.DescribeClusters(Amazon.Redshift.Model.DescribeClustersRequest)" />
+            <member name="M:Amazon.Redshift.AmazonRedshiftClient.DescribeClusters(Amazon.Redshift.Model.DescribeClustersRequest)" />
+            <member name="T:Amazon.Redshift.Model.DescribeClustersRequest" />
+            <member name="T:Amazon.Redshift.Model.DescribeClustersResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example returns a description of all clusters for the account. By default, the output is in JSON format.
+                </para>
+                <code
+                    title="To get a description of all clusters"
+                    source=".\AWSSDKDocSamples\Redshift\Redshift.GeneratedSamples.cs"
+                    region="to-get-a-description-of-all-clusters-1475865512651" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Redshift.IAmazonRedshift.DescribeClusterSecurityGroups(Amazon.Redshift.Model.DescribeClusterSecurityGroupsRequest)" />
+            <member name="M:Amazon.Redshift.AmazonRedshiftClient.DescribeClusterSecurityGroups(Amazon.Redshift.Model.DescribeClusterSecurityGroupsRequest)" />
+            <member name="T:Amazon.Redshift.Model.DescribeClusterSecurityGroupsRequest" />
+            <member name="T:Amazon.Redshift.Model.DescribeClusterSecurityGroupsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example returns a description of all cluster security groups for the account.
+                </para>
+                <code
+                    title="To get a description of cluster security groups for the account."
+                    source=".\AWSSDKDocSamples\Redshift\Redshift.GeneratedSamples.cs"
+                    region="to-get-a-description-of-cluster-security-groups-for-the-account-1482363060704" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Redshift.IAmazonRedshift.DescribeClusterSnapshots(Amazon.Redshift.Model.DescribeClusterSnapshotsRequest)" />
+            <member name="M:Amazon.Redshift.AmazonRedshiftClient.DescribeClusterSnapshots(Amazon.Redshift.Model.DescribeClusterSnapshotsRequest)" />
+            <member name="T:Amazon.Redshift.Model.DescribeClusterSnapshotsRequest" />
+            <member name="T:Amazon.Redshift.Model.DescribeClusterSnapshotsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example returns a description of all cluster snapshots for the account. 
+                </para>
+                <code
+                    title="To get a description of all cluster snapshots"
+                    source=".\AWSSDKDocSamples\Redshift\Redshift.GeneratedSamples.cs"
+                    region="to-get-a-description-of-all-cluster-snapshots-1482181325771" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Redshift.IAmazonRedshift.DescribeClusterSubnetGroups(Amazon.Redshift.Model.DescribeClusterSubnetGroupsRequest)" />
+            <member name="M:Amazon.Redshift.AmazonRedshiftClient.DescribeClusterSubnetGroups(Amazon.Redshift.Model.DescribeClusterSubnetGroupsRequest)" />
+            <member name="T:Amazon.Redshift.Model.DescribeClusterSubnetGroupsRequest" />
+            <member name="T:Amazon.Redshift.Model.DescribeClusterSubnetGroupsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example returns a description of all cluster subnet groups.
+                </para>
+                <code
+                    title="To get a description of all cluster subnet groups"
+                    source=".\AWSSDKDocSamples\Redshift\Redshift.GeneratedSamples.cs"
+                    region="to-get-a-description-of-all-cluster-subnet-groups-1481847412769" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Redshift.IAmazonRedshift.DescribeClusterVersions(Amazon.Redshift.Model.DescribeClusterVersionsRequest)" />
+            <member name="M:Amazon.Redshift.AmazonRedshiftClient.DescribeClusterVersions(Amazon.Redshift.Model.DescribeClusterVersionsRequest)" />
+            <member name="T:Amazon.Redshift.Model.DescribeClusterVersionsRequest" />
+            <member name="T:Amazon.Redshift.Model.DescribeClusterVersionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example returns a description of all cluster versions.
+                </para>
+                <code
+                    title="To get a description of cluster versions"
+                    source=".\AWSSDKDocSamples\Redshift\Redshift.GeneratedSamples.cs"
+                    region="to-get-a-description-of-cluster-versions-1482363389639" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Redshift.IAmazonRedshift.DescribeDefaultClusterParameters(Amazon.Redshift.Model.DescribeDefaultClusterParametersRequest)" />
+            <member name="M:Amazon.Redshift.AmazonRedshiftClient.DescribeDefaultClusterParameters(Amazon.Redshift.Model.DescribeDefaultClusterParametersRequest)" />
+            <member name="T:Amazon.Redshift.Model.DescribeDefaultClusterParametersRequest" />
+            <member name="T:Amazon.Redshift.Model.DescribeDefaultClusterParametersResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example returns a description cluster default parameters.
+                </para>
+                <code
+                    title="To get a description of cluster default parameters"
+                    source=".\AWSSDKDocSamples\Redshift\Redshift.GeneratedSamples.cs"
+                    region="to-get-a-description-of-cluster-default-parameters-1482365915635" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Redshift.IAmazonRedshift.DescribeEventCategories(Amazon.Redshift.Model.DescribeEventCategoriesRequest)" />
+            <member name="M:Amazon.Redshift.AmazonRedshiftClient.DescribeEventCategories(Amazon.Redshift.Model.DescribeEventCategoriesRequest)" />
+            <member name="T:Amazon.Redshift.Model.DescribeEventCategoriesRequest" />
+            <member name="T:Amazon.Redshift.Model.DescribeEventCategoriesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example returns a description event categories for the "cluster" source type.
+                </para>
+                <code
+                    title="To get a description of event categories"
+                    source=".\AWSSDKDocSamples\Redshift\Redshift.GeneratedSamples.cs"
+                    region="to-get-a-description-of-event-categories-1482366442369" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Redshift.IAmazonRedshift.DescribeEvents(Amazon.Redshift.Model.DescribeEventsRequest)" />
+            <member name="M:Amazon.Redshift.AmazonRedshiftClient.DescribeEvents(Amazon.Redshift.Model.DescribeEventsRequest)" />
+            <member name="T:Amazon.Redshift.Model.DescribeEventsRequest" />
+            <member name="T:Amazon.Redshift.Model.DescribeEventsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example returns a description events for the last 10 hours (600 minutes).
+                </para>
+                <code
+                    title="To get a description of events"
+                    source=".\AWSSDKDocSamples\Redshift\Redshift.GeneratedSamples.cs"
+                    region="to-get-a-description-of-events-1482367106459" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Redshift.IAmazonRedshift.DescribeEventSubscriptions(Amazon.Redshift.Model.DescribeEventSubscriptionsRequest)" />
+            <member name="M:Amazon.Redshift.AmazonRedshiftClient.DescribeEventSubscriptions(Amazon.Redshift.Model.DescribeEventSubscriptionsRequest)" />
+            <member name="T:Amazon.Redshift.Model.DescribeEventSubscriptionsRequest" />
+            <member name="T:Amazon.Redshift.Model.DescribeEventSubscriptionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example shows how to describe event subscriptions.
+                </para>
+                <code
+                    title="To describe an event subscription"
+                    source=".\AWSSDKDocSamples\Redshift\Redshift.GeneratedSamples.cs"
+                    region="to-describe-an-event-subscription-1483133239054" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Redshift.IAmazonRedshift.DescribeHsmClientCertificates(Amazon.Redshift.Model.DescribeHsmClientCertificatesRequest)" />
+            <member name="M:Amazon.Redshift.AmazonRedshiftClient.DescribeHsmClientCertificates(Amazon.Redshift.Model.DescribeHsmClientCertificatesRequest)" />
+            <member name="T:Amazon.Redshift.Model.DescribeHsmClientCertificatesRequest" />
+            <member name="T:Amazon.Redshift.Model.DescribeHsmClientCertificatesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example returns a description of HSM client certificates
+                </para>
+                <code
+                    title="To get a description of HSM client certificates"
+                    source=".\AWSSDKDocSamples\Redshift\Redshift.GeneratedSamples.cs"
+                    region="to-get-a-description-of-hsm-certificates-1482367536680" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Redshift.IAmazonRedshift.DescribeLoggingStatus(Amazon.Redshift.Model.DescribeLoggingStatusRequest)" />
+            <member name="M:Amazon.Redshift.AmazonRedshiftClient.DescribeLoggingStatus(Amazon.Redshift.Model.DescribeLoggingStatusRequest)" />
+            <member name="T:Amazon.Redshift.Model.DescribeLoggingStatusRequest" />
+            <member name="T:Amazon.Redshift.Model.DescribeLoggingStatusResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example shows how to describe logging status.
+                </para>
+                <code
+                    title="To describe logging status"
+                    source=".\AWSSDKDocSamples\Redshift\Redshift.GeneratedSamples.cs"
+                    region="to-describe-logging-status-1483134803712" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Redshift.IAmazonRedshift.DescribeTags(Amazon.Redshift.Model.DescribeTagsRequest)" />
+            <member name="M:Amazon.Redshift.AmazonRedshiftClient.DescribeTags(Amazon.Redshift.Model.DescribeTagsRequest)" />
+            <member name="T:Amazon.Redshift.Model.DescribeTagsRequest" />
+            <member name="T:Amazon.Redshift.Model.DescribeTagsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example gets all available tags for an account.
+                </para>
+                <code
+                    title="To get tags for a resource"
+                    source=".\AWSSDKDocSamples\Redshift\Redshift.GeneratedSamples.cs"
+                    region="to-get-tags-for-a-resource-1482438593642" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Redshift.IAmazonRedshift.DisableLogging(Amazon.Redshift.Model.DisableLoggingRequest)" />
+            <member name="M:Amazon.Redshift.AmazonRedshiftClient.DisableLogging(Amazon.Redshift.Model.DisableLoggingRequest)" />
+            <member name="T:Amazon.Redshift.Model.DisableLoggingRequest" />
+            <member name="T:Amazon.Redshift.Model.DisableLoggingResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example shows how to disable logging.
+                </para>
+                <code
+                    title="To disable logging"
+                    source=".\AWSSDKDocSamples\Redshift\Redshift.GeneratedSamples.cs"
+                    region="to-disable-logging-1483135106459" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Redshift.IAmazonRedshift.DisableSnapshotCopy(Amazon.Redshift.Model.DisableSnapshotCopyRequest)" />
+            <member name="M:Amazon.Redshift.AmazonRedshiftClient.DisableSnapshotCopy(Amazon.Redshift.Model.DisableSnapshotCopyRequest)" />
+            <member name="T:Amazon.Redshift.Model.DisableSnapshotCopyRequest" />
+            <member name="T:Amazon.Redshift.Model.DisableSnapshotCopyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example disables snapshot copy for the cluster mycluster.
+                </para>
+                <code
+                    title="To disable snapshot copy"
+                    source=".\AWSSDKDocSamples\Redshift\Redshift.GeneratedSamples.cs"
+                    region="to-disable-snapshot-copy-1482435501112" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Redshift.IAmazonRedshift.EnableLogging(Amazon.Redshift.Model.EnableLoggingRequest)" />
+            <member name="M:Amazon.Redshift.AmazonRedshiftClient.EnableLogging(Amazon.Redshift.Model.EnableLoggingRequest)" />
+            <member name="T:Amazon.Redshift.Model.EnableLoggingRequest" />
+            <member name="T:Amazon.Redshift.Model.EnableLoggingResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example enables logging for the cluster mycluster using the Amazon S3 bucket aws-logs-112233445566-us-west-2.
+                </para>
+                <code
+                    title="To enable logging"
+                    source=".\AWSSDKDocSamples\Redshift\Redshift.GeneratedSamples.cs"
+                    region="to-enable-logging-1482434657633" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Redshift.IAmazonRedshift.EnableSnapshotCopy(Amazon.Redshift.Model.EnableSnapshotCopyRequest)" />
+            <member name="M:Amazon.Redshift.AmazonRedshiftClient.EnableSnapshotCopy(Amazon.Redshift.Model.EnableSnapshotCopyRequest)" />
+            <member name="T:Amazon.Redshift.Model.EnableSnapshotCopyRequest" />
+            <member name="T:Amazon.Redshift.Model.EnableSnapshotCopyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example enables snapshot copy for the cluster mycluster for region us-east-1.
+                </para>
+                <code
+                    title="To enable snapshot copy"
+                    source=".\AWSSDKDocSamples\Redshift\Redshift.GeneratedSamples.cs"
+                    region="to-enable-snapshot-copy-1482435074072" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Redshift.IAmazonRedshift.ModifyCluster(Amazon.Redshift.Model.ModifyClusterRequest)" />
+            <member name="M:Amazon.Redshift.AmazonRedshiftClient.ModifyCluster(Amazon.Redshift.Model.ModifyClusterRequest)" />
+            <member name="T:Amazon.Redshift.Model.ModifyClusterRequest" />
+            <member name="T:Amazon.Redshift.Model.ModifyClusterResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example shows how to associate a cluster security group with the specified cluster.
+                </para>
+                <code
+                    title="To modify a cluster"
+                    source=".\AWSSDKDocSamples\Redshift\Redshift.GeneratedSamples.cs"
+                    region="to-modify-a-cluster-1482436093526" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Redshift.IAmazonRedshift.ModifyClusterIamRoles(Amazon.Redshift.Model.ModifyClusterIamRolesRequest)" />
+            <member name="M:Amazon.Redshift.AmazonRedshiftClient.ModifyClusterIamRoles(Amazon.Redshift.Model.ModifyClusterIamRolesRequest)" />
+            <member name="T:Amazon.Redshift.Model.ModifyClusterIamRolesRequest" />
+            <member name="T:Amazon.Redshift.Model.ModifyClusterIamRolesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example adds an IAM role the specified cluster.
+                </para>
+                <code
+                    title="To modify a cluster IAM roles"
+                    source=".\AWSSDKDocSamples\Redshift\Redshift.GeneratedSamples.cs"
+                    region="to-modify-a-cluster-iam-roles-1482436895837" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Redshift.IAmazonRedshift.ModifyClusterParameterGroup(Amazon.Redshift.Model.ModifyClusterParameterGroupRequest)" />
+            <member name="M:Amazon.Redshift.AmazonRedshiftClient.ModifyClusterParameterGroup(Amazon.Redshift.Model.ModifyClusterParameterGroupRequest)" />
+            <member name="T:Amazon.Redshift.Model.ModifyClusterParameterGroupRequest" />
+            <member name="T:Amazon.Redshift.Model.ModifyClusterParameterGroupResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example shows how to modify the parameter group wlm_json_configuration parameter for workload management.
+                </para>
+                <code
+                    title="To modify a paramter group"
+                    source=".\AWSSDKDocSamples\Redshift\Redshift.GeneratedSamples.cs"
+                    region="to-modify-a-paramter-group-1483130143433" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Redshift.IAmazonRedshift.ModifyClusterSubnetGroup(Amazon.Redshift.Model.ModifyClusterSubnetGroupRequest)" />
+            <member name="M:Amazon.Redshift.AmazonRedshiftClient.ModifyClusterSubnetGroup(Amazon.Redshift.Model.ModifyClusterSubnetGroupRequest)" />
+            <member name="T:Amazon.Redshift.Model.ModifyClusterSubnetGroupRequest" />
+            <member name="T:Amazon.Redshift.Model.ModifyClusterSubnetGroupResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example shows how to modify a cluster subnet group.
+                </para>
+                <code
+                    title="To modify a subnet group"
+                    source=".\AWSSDKDocSamples\Redshift\Redshift.GeneratedSamples.cs"
+                    region="to-modify-a-paramter-group-1483130143433" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Redshift.IAmazonRedshift.ModifyEventSubscription(Amazon.Redshift.Model.ModifyEventSubscriptionRequest)" />
+            <member name="M:Amazon.Redshift.AmazonRedshiftClient.ModifyEventSubscription(Amazon.Redshift.Model.ModifyEventSubscriptionRequest)" />
+            <member name="T:Amazon.Redshift.Model.ModifyEventSubscriptionRequest" />
+            <member name="T:Amazon.Redshift.Model.ModifyEventSubscriptionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example shows how to modify an event subscription.
+                </para>
+                <code
+                    title="To modify an event subscription"
+                    source=".\AWSSDKDocSamples\Redshift\Redshift.GeneratedSamples.cs"
+                    region="to-modify-an-event-subscription-1483132220470" />
+            </example>
+        </value>
+    </doc>
+</docs>

@@ -54,6 +54,12 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("AccountAlias", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AccountAlias = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("AccountId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

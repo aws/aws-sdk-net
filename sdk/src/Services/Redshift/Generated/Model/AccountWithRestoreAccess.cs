@@ -32,7 +32,27 @@ namespace Amazon.Redshift.Model
     /// </summary>
     public partial class AccountWithRestoreAccess
     {
+        private string _accountAlias;
         private string _accountId;
+
+        /// <summary>
+        /// Gets and sets the property AccountAlias. 
+        /// <para>
+        /// The identifier of an AWS support account authorized to restore a snapshot. For AWS
+        /// support, the identifier is <code>amazon-redshift-support</code>. 
+        /// </para>
+        /// </summary>
+        public string AccountAlias
+        {
+            get { return this._accountAlias; }
+            set { this._accountAlias = value; }
+        }
+
+        // Check to see if AccountAlias property is set
+        internal bool IsSetAccountAlias()
+        {
+            return this._accountAlias != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AccountId. 

@@ -1,0 +1,1585 @@
+{
+  "version": "1.0",
+  "examples": {
+    "AuthorizeClusterSecurityGroupIngress": [
+      {
+        "input": {
+          "ClusterSecurityGroupName": "mysecuritygroup",
+          "EC2SecurityGroupName": "myec2securitygroup",
+          "EC2SecurityGroupOwnerId": "123445677890"
+        },
+        "output": {
+          "ClusterSecurityGroupName": "mysecuritygroup",
+          "Description": "This is my cluster security group",
+          "EC2SecurityGroups": [
+            {
+              "EC2SecurityGroupName": "myec2securitygroup",
+              "EC2SecurityGroupOwnerId": "123445677890",
+              "Status": "authorized"
+            }
+          ],
+          "IPRanges": [
+
+          ],
+          "Tags": [
+
+          ]
+        },
+        "comments": {
+          "input": {
+          },
+          "output": {
+          }
+        },
+        "description": "This example authorizes access to a named Amazon EC2 security group.",
+        "id": "authorizing-access-to-an-ec2-security-group-1481675923213",
+        "title": "To authorize access to an EC2 Security Group"
+      }
+    ],
+    "AuthorizeSnapshotAccess": [
+      {
+        "input": {
+          "AccountWithRestoreAccess": "444455556666",
+          "SnapshotIdentifier": "my-snapshot-id"
+        },
+        "output": {
+          "ActualIncrementalBackupSizeInMegaBytes": 8,
+          "AvailabilityZone": "us-west-2a",
+          "BackupProgressInMegaBytes": 8,
+          "ClusterCreateTime": "2016-12-15T02:30:29.078Z",
+          "ClusterIdentifier": "mycluster",
+          "ClusterVersion": "1.0",
+          "CurrentBackupRateInMegaBytesPerSecond": 4.9875,
+          "ElapsedTimeInSeconds": 1,
+          "Encrypted": false,
+          "EncryptedWithHSM": false,
+          "EstimatedSecondsToCompletion": 0,
+          "MasterUsername": "adminuser",
+          "NodeType": "ds1.xlarge",
+          "NumberOfNodes": 2,
+          "OwnerAccount": "644653688104",
+          "Port": 5439,
+          "SnapshotCreateTime": "2016-12-15T23:32:35.775Z",
+          "SnapshotIdentifier": "my-snapshot-id",
+          "SnapshotType": "manual",
+          "Status": "available",
+          "Tags": [
+
+          ],
+          "TotalBackupSizeInMegaBytes": 32
+        },
+        "comments": {
+          "input": {
+          },
+          "output": {
+          }
+        },
+        "description": "This example authorizes the AWS account 444455556666 to restore the snapshot my-snapshot-id.",
+        "id": "to-authorize-an-aws-account-to-restore-from-snapshot-1482368189016",
+        "title": "To authorize an AWS account to restore from snapshot"
+      }
+    ],
+    "CopyClusterSnapshot": [
+      {
+        "input": {
+          "SourceSnapshotIdentifier": "rs:mycluster-2016-12-21-20-40-51",
+          "TargetSnapshotIdentifier": "my-saved-snapshot-cop"
+        },
+        "output": {
+          "ActualIncrementalBackupSizeInMegaBytes": 8,
+          "AvailabilityZone": "us-west-2a",
+          "BackupProgressInMegaBytes": 8,
+          "ClusterCreateTime": "2016-12-15T02:30:29.078Z",
+          "ClusterIdentifier": "mycluster",
+          "ClusterVersion": "1.0",
+          "CurrentBackupRateInMegaBytesPerSecond": 0,
+          "ElapsedTimeInSeconds": 0,
+          "Encrypted": false,
+          "EncryptedWithHSM": false,
+          "EstimatedSecondsToCompletion": -1,
+          "MasterUsername": "adminuser",
+          "NodeType": "ds1.xlarge",
+          "NumberOfNodes": 2,
+          "OwnerAccount": "644653688104",
+          "Port": 5439,
+          "SnapshotCreateTime": "2016-12-21T20:40:51.594Z",
+          "SnapshotIdentifier": "my-saved-snapshot-copy",
+          "SnapshotType": "manual",
+          "Status": "available",
+          "Tags": [
+
+          ],
+          "TotalBackupSizeInMegaBytes": 41
+        },
+        "comments": {
+          "input": {
+          },
+          "output": {
+          }
+        },
+        "description": "This example creates a copy of a snapshot.",
+        "id": "to--creates-a-copy-of-a-snapshot-1482357194074",
+        "title": "To  creates a copy of a snapshot"
+      }
+    ],
+    "CreateCluster": [
+      {
+        "input": {
+          "ClusterIdentifier": "mycluster",
+          "MasterUserPassword": "TopSecret1",
+          "MasterUsername": "adminuser ",
+          "NodeType": "dw.hs1.xlarge"
+        },
+        "output": {
+          "AllowVersionUpgrade": true,
+          "AutomatedSnapshotRetentionPeriod": 1,
+          "ClusterIdentifier": "mycluster2",
+          "ClusterParameterGroups": [
+            {
+              "ParameterApplyStatus": "in-sync",
+              "ParameterGroupName": "default.redshift-1.0"
+            }
+          ],
+          "ClusterSecurityGroups": [
+            {
+              "ClusterSecurityGroupName": "default",
+              "Status": "active"
+            }
+          ],
+          "ClusterStatus": "creating",
+          "ClusterVersion": "1.0",
+          "Encrypted": false,
+          "IamRoles": [
+
+          ],
+          "MasterUsername": "adminuser",
+          "NodeType": "ds1.xlarge",
+          "NumberOfNodes": 2,
+          "PendingModifiedValues": {
+            "MasterUserPassword": "****"
+          },
+          "PreferredMaintenanceWindow": "thu:11:00-thu:11:30",
+          "PubliclyAccessible": true,
+          "Tags": [
+
+          ],
+          "VpcSecurityGroups": [
+
+          ]
+        },
+        "description": "This example creates a cluster with the minimal set of parameters. By default, the output is in JSON format.",
+        "id": "to-create-a-cluster-with-minimal-parameters-1481678090203",
+        "title": "To create a cluster with minimal parameters"
+      }
+    ],
+    "CreateClusterParameterGroup": [
+      {
+        "input": {
+          "Description": "My first cluster parameter group",
+          "ParameterGroupFamily": "redshift-1.0",
+          "ParameterGroupName": "myclusterparametergroup"
+        },
+        "output": {
+          "Description": "My first cluster parameter group",
+          "ParameterGroupFamily": "redshift-1.0",
+          "ParameterGroupName": "myclusterparametergroup",
+          "Tags": [
+
+          ]
+        },
+        "description": "This example creates a new cluster snapshot. ",
+        "id": "to-create-a-cluster-snapshot-1481844657333",
+        "title": "To create a cluster snapshot"
+      }
+    ],
+    "CreateClusterSecurityGroup": [
+      {
+        "input": {
+          "ClusterSecurityGroupName": "mysecuritygroup",
+          "Description": "This is my cluster security group"
+        },
+        "output": {
+          "ClusterSecurityGroupName": "mysecuritygroup",
+          "Description": "This is my cluster security group",
+          "EC2SecurityGroups": [
+
+          ],
+          "IPRanges": [
+
+          ],
+          "Tags": [
+
+          ]
+        },
+        "description": "This example creates a new cluster security group. ",
+        "id": "to-create-a-new-cluster-security-group-1481844171608",
+        "title": "To create a new cluster security group"
+      }
+    ],
+    "CreateClusterSnapshot": [
+      {
+        "input": {
+          "ClusterIdentifier": "mycluster",
+          "SnapshotIdentifier": "my-snapshot-id"
+        },
+        "output": {
+          "ActualIncrementalBackupSizeInMegaBytes": -1,
+          "AvailabilityZone": "us-west-2a",
+          "BackupProgressInMegaBytes": 0,
+          "ClusterCreateTime": "2016-12-15T02:30:29.078Z",
+          "ClusterIdentifier": "mycluster",
+          "ClusterVersion": "1.0",
+          "CurrentBackupRateInMegaBytesPerSecond": 0,
+          "ElapsedTimeInSeconds": 0,
+          "Encrypted": false,
+          "EncryptedWithHSM": false,
+          "EstimatedSecondsToCompletion": -1,
+          "MasterUsername": "adminuser",
+          "NodeType": "ds1.xlarge",
+          "NumberOfNodes": 2,
+          "OwnerAccount": "644653688104",
+          "Port": 5439,
+          "SnapshotCreateTime": "2016-12-19T20:39:10.746Z",
+          "SnapshotIdentifier": "my-snapshot-id2",
+          "SnapshotType": "manual",
+          "Status": "creating",
+          "Tags": [
+
+          ],
+          "TotalBackupSizeInMegaBytes": -1
+        },
+        "comments": {
+          "input": {
+          },
+          "output": {
+          }
+        },
+        "description": "This example creates a new cluster snapshot.",
+        "id": "to-create-a-new-cluster-snapshot-1482180269983",
+        "title": "To create a new cluster snapshot"
+      }
+    ],
+    "CreateClusterSubnetGroup": [
+      {
+        "input": {
+          "ClusterSubnetGroupName": "mysubnetgroup",
+          "Description": "My subnet group",
+          "SubnetIds": [
+            "subnet-abc12345"
+          ]
+        },
+        "output": {
+          "ClusterSubnetGroupName": "mysubnetgroup",
+          "Description": "My subnet group",
+          "SubnetGroupStatus": "Complete",
+          "Subnets": [
+            {
+              "SubnetAvailabilityZone": {
+                "Name": "us-west-2c"
+              },
+              "SubnetIdentifier": "subnet-abc12345",
+              "SubnetStatus": "Active"
+            }
+          ],
+          "Tags": [
+
+          ],
+          "VpcId": "vpc-9f94e5fb"
+        },
+        "comments": {
+          "input": {
+          },
+          "output": {
+          }
+        },
+        "description": "This example creates a new cluster subnet group.",
+        "id": "to-create-a-new-cluster-subnet-group-1482357950701",
+        "title": "To \\create a new cluster subnet group"
+      }
+    ],
+    "CreateEventSubscription": [
+      {
+        "input": {
+          "SnsTopicArn": "arn:aws:sns:us-west-2:123456789101:my-sns-topic",
+          "SubscriptionName": "mysubscription"
+        },
+        "output": {
+          "CustSubscriptionId": "mysubscription",
+          "CustomerAwsId": "123456789101",
+          "Enabled": true,
+          "EventCategoriesList": [
+
+          ],
+          "SnsTopicArn": "arn:aws:sns:us-west-2:123456789101:my-sns-topic",
+          "SourceIdsList": [
+
+          ],
+          "Status": "active",
+          "SubscriptionCreationTime": "2016-12-30T21:03:19.894Z"
+        },
+        "comments": {
+          "input": {
+          },
+          "output": {
+          }
+        },
+        "description": "This example shows how to create an event subscription.",
+        "id": "to-create-an-event-subscription-1483132129428",
+        "title": "To create an event subscription"
+      }
+    ],
+    "CreateHsmClientCertificate": [
+      {
+        "input": {
+          "HsmClientCertificateIdentifier": "my-hsm"
+        },
+        "output": {
+          "HsmClientCertificateIdentifier": "my-hsm",
+          "HsmClientCertificatePublicKey": "-----BEGIN CERTIFICATE-----\\hsmcertificateexampleGEwJDQTEQ\nMA4GA1UECBMHT250YXJpbzEPMA0GA1UEBxMGT3R0YXdhMRMwEQYDVQQKEwpNeSBj\nb21wYW55MRswGQYDVQQDExI2NDQ2NTM2ODgxMDRteS1oc20wHhcNMTYxMjIwMjIz\nMzA2WhcNMjYxMjE5MjIzMzA2WjBiMQswCQYDVQQGEwJDQTEQMA4GA1UECBMHT250\nYXJpbzEPMA0GA1UEBxMGT3R0YXdhMRMwEQYDVQQKEwpNeSBjb21wYW55MRswGQYD\nVQQDExI2NDQ2NTM2ODgxMDRteS1oc20wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAw\nggEKAoIBAQDWsqMLksVlQj58pyl3DvA/9Timk+hkZIdfzT60IHsABP8rYYgvW6ua\neMKSx5gaQBVkzjRfm33Wu1VzdgUBIYE8BgpADqDlqIopgDaZ2EiPgUTMu5KH2ZlE\nbSMC8kxoa/0bPEkAA0DTOhJw6nddLKVUfgLv7+k7JY0VJoXieAYPdGxwgT1LOHU1\nUe7iqVPn1q2LScKerAJ6pME6eEeIeyV7buqmselVXAKVcHcGR6BEqYdO8WQv7Eb0\nEH9mrbSSVYOCQn8DbkQSd34/0nO3fiKj9c48mcqhT3pPB4aq696rK2MP9mDkfNJG\njZuMqnoqNB4UZTv/AOULlyDaMrz2WCQ/AgMBAAEwDQYJKoZIhvcNAQELBQADggEB\nAGvaPy7Q7r57VS5q7Il/BSLTt/MQs9p2kWgNFtw5zh5vAWl208ghRgI3TD5QNBbF\nfPFgPjP3kHZadBHsOQ7jCa/1fPvrPmfDlmgEKZMi6D1iMdT5X0gTYLXjgEthxzDz\nBCABpfjkKnFqFBdEjZTFE17xOkNVOxRPDPm4JHcmr78CXfWPASoped1VGdAOnWvY\nrHe79Qbxw6HLTVl5wMCpFkS4rk5Bd1q5ZOojO075GcbdCsMuWndz3cPKhw/C/mCt\n3iReot2V3bx/GPaV7RYYNNteSPfVLm4W/TGA65jAuwyajHdZOAyqFLD/rCoKMYoY\\nil/E/19CMm00IklV9eR1+ps=\\n-----END CERTIFICATE-----\\n"
+        },
+        "comments": {
+          "input": {
+          },
+          "output": {
+          }
+        },
+        "description": "This example creates a new HSM certificate.",
+        "id": "to-create-a-new-hsm-certificate-1482359863292",
+        "title": "To create a new HSM certificate"
+      }
+    ],
+    "CreateSnapshotCopyGrant": [
+      {
+        "input": {
+          "SnapshotCopyGrantName": "mycopygrant"
+        },
+        "output": {
+          "KmsKeyId": "arn:aws:kms:us-west-2:344455555555:key/12345678-54ab-46a2-8906-b6cde0f11111",
+          "SnapshotCopyGrantName": "mycopygrant",
+          "Tags": [
+
+          ]
+        },
+        "comments": {
+          "input": {
+          },
+          "output": {
+          }
+        },
+        "description": "This example creates a new snapshot copy grant.",
+        "id": "to-create-a-snapshot-copy-grant-1482180728699",
+        "title": "To create a snapshot copy grant"
+      }
+    ],
+    "CreateTags": [
+      {
+        "input": {
+          "ResourceName": "arn:aws:redshift:us-west-2:644653688104:cluster:mycluster",
+          "Tags": [
+            {
+              "Key": "owner",
+              "Value": "admin"
+            },
+            {
+              "Key": "test",
+              "Value": "environment"
+            }
+          ]
+        },
+        "comments": {
+          "input": {
+          },
+          "output": {
+          }
+        },
+        "description": "This example creates tags for the specified cluster.",
+        "id": "to-create-tags--1482440094007",
+        "title": "To create tags "
+      }
+    ],
+    "DeleteEventSubscription": [
+      {
+        "input": {
+          "SubscriptionName": "mysubscription"
+        },
+        "description": "This example shows how to delete an event subscription.",
+        "id": "to-delete-an-event-subscription-1483134357677",
+        "title": "To delete an event subscription"
+      }
+    ],
+    "DescribeClusterParameterGroups": [
+      {
+        "input": {
+          "Marker": "",
+          "MaxRecords": 123,
+          "ParameterGroupName": "",
+          "TagKeys": [
+
+          ],
+          "TagValues": [
+
+          ]
+        },
+        "output": {
+          "ParameterGroups": [
+            {
+              "Description": "Default parameter group for redshift-1.0",
+              "ParameterGroupFamily": "redshift-1.0",
+              "ParameterGroupName": "default.redshift-1.0",
+              "Tags": [
+
+              ]
+            },
+            {
+              "Description": "deleteme",
+              "ParameterGroupFamily": "redshift-1.0",
+              "ParameterGroupName": "deleteme",
+              "Tags": [
+
+              ]
+            },
+            {
+              "Description": "My first cluster parameter group",
+              "ParameterGroupFamily": "redshift-1.0",
+              "ParameterGroupName": "myclusterparametergroup",
+              "Tags": [
+
+              ]
+            },
+            {
+              "Description": "test-wlm",
+              "ParameterGroupFamily": "redshift-1.0",
+              "ParameterGroupName": "test-wlm",
+              "Tags": [
+
+              ]
+            }
+          ]
+        },
+        "comments": {
+          "input": {
+          },
+          "output": {
+          }
+        },
+        "description": "This example returns a description of all cluster parameter groups for the account, with column headers.",
+        "id": "to-get-a-description-of-cluster-parameter-groups-1482361865953",
+        "title": "To get a description of cluster parameter groups"
+      }
+    ],
+    "DescribeClusterParameters": [
+      {
+        "input": {
+          "ParameterGroupName": "myclusterparametergroup"
+        },
+        "output": {
+          "Parameters": [
+            {
+              "ApplyType": "static",
+              "DataType": "string",
+              "Description": "Sets the display format for date and time values.",
+              "IsModifiable": true,
+              "ParameterName": "datestyle",
+              "ParameterValue": "ISO, MDY",
+              "Source": "engine-default"
+            },
+            {
+              "AllowedValues": "true,false",
+              "ApplyType": "static",
+              "DataType": "boolean",
+              "Description": "parameter for audit logging purpose",
+              "IsModifiable": true,
+              "ParameterName": "enable_user_activity_logging",
+              "ParameterValue": "false",
+              "Source": "engine-default"
+            },
+            {
+              "AllowedValues": "-15-2",
+              "ApplyType": "static",
+              "DataType": "integer",
+              "Description": "Sets the number of digits displayed for floating-point values",
+              "IsModifiable": true,
+              "ParameterName": "extra_float_digits",
+              "ParameterValue": "0",
+              "Source": "engine-default"
+            },
+            {
+              "AllowedValues": "0-14400000",
+              "ApplyType": "static",
+              "DataType": "integer",
+              "Description": "Sets the max cursor result set size",
+              "IsModifiable": true,
+              "ParameterName": "max_cursor_result_set_size",
+              "ParameterValue": "default",
+              "Source": "engine-default"
+            },
+            {
+              "ApplyType": "static",
+              "DataType": "string",
+              "Description": "This parameter applies a user-defined label to a group of queries that are run during the same session..",
+              "IsModifiable": true,
+              "ParameterName": "query_group",
+              "ParameterValue": "default",
+              "Source": "engine-default"
+            },
+            {
+              "AllowedValues": "true,false",
+              "ApplyType": "static",
+              "DataType": "boolean",
+              "Description": "require ssl for all databaseconnections",
+              "IsModifiable": true,
+              "ParameterName": "require_ssl",
+              "ParameterValue": "false",
+              "Source": "engine-default"
+            },
+            {
+              "ApplyType": "static",
+              "DataType": "string",
+              "Description": "Sets the schema search order for names that are not schema-qualified.",
+              "IsModifiable": true,
+              "ParameterName": "search_path",
+              "ParameterValue": "$user, public",
+              "Source": "engine-default"
+            },
+            {
+              "AllowedValues": "0,100-2147483647",
+              "ApplyType": "static",
+              "DataType": "integer",
+              "Description": "Aborts any statement that takes over the specified number of milliseconds.",
+              "IsModifiable": true,
+              "ParameterName": "statement_timeout",
+              "ParameterValue": "0",
+              "Source": "engine-default"
+            },
+            {
+              "ApplyType": "static",
+              "DataType": "string",
+              "Description": "wlm json configuration",
+              "IsModifiable": true,
+              "ParameterName": "wlm_json_configuration",
+              "ParameterValue": "[{\"query_concurrency\":5}]",
+              "Source": "engine-default"
+            }
+          ]
+        },
+        "comments": {
+          "input": {
+          },
+          "output": {
+          }
+        },
+        "description": "This example retrieves the parameters for the named parameter group.",
+        "id": "to-get-the-parameters-for-a-parameter-group-1482362769122",
+        "title": "To get the parameters for a parameter group"
+      }
+    ],
+    "DescribeClusterSecurityGroups": [
+      {
+        "input": {
+        },
+        "output": {
+          "ClusterSecurityGroups": [
+            {
+              "ClusterSecurityGroupName": "default",
+              "Description": "default",
+              "EC2SecurityGroups": [
+
+              ],
+              "IPRanges": [
+
+              ],
+              "Tags": [
+
+              ]
+            },
+            {
+              "ClusterSecurityGroupName": "mysecuritygroup",
+              "Description": "This is my cluster security group",
+              "EC2SecurityGroups": [
+                {
+                  "EC2SecurityGroupName": "myec2securitygroup",
+                  "EC2SecurityGroupOwnerId": "123445677890",
+                  "Status": "authorized",
+                  "Tags": [
+
+                  ]
+                }
+              ],
+              "IPRanges": [
+                {
+                  "CIDRIP": "192.168.100.100/32",
+                  "Status": "authorized",
+                  "Tags": [
+
+                  ]
+                }
+              ],
+              "Tags": [
+
+              ]
+            }
+          ]
+        },
+        "comments": {
+          "input": {
+          },
+          "output": {
+          }
+        },
+        "description": "This example returns a description of all cluster security groups for the account.",
+        "id": "to-get-a-description-of-cluster-security-groups-for-the-account-1482363060704",
+        "title": "To get a description of cluster security groups for the account."
+      }
+    ],
+    "DescribeClusterSnapshots": [
+      {
+        "input": {
+        },
+        "output": {
+          "Snapshots": [
+            {
+              "ActualIncrementalBackupSizeInMegaBytes": 8.0,
+              "AvailabilityZone": "us-west-2a",
+              "BackupProgressInMegaBytes": 8.0,
+              "ClusterCreateTime": "2016-12-15T02:30:29.078Z",
+              "ClusterIdentifier": "mycluster",
+              "ClusterVersion": "1.0",
+              "CurrentBackupRateInMegaBytesPerSecond": 7.0237,
+              "ElapsedTimeInSeconds": 1,
+              "Encrypted": false,
+              "EncryptedWithHSM": false,
+              "EstimatedSecondsToCompletion": 0,
+              "MasterUsername": "adminuser",
+              "NodeType": "ds1.xlarge",
+              "NumberOfNodes": 2,
+              "OwnerAccount": "644653688104",
+              "Port": 5439,
+              "RestorableNodeTypes": [
+                "ds2.xlarge",
+                "ds1.xlarge"
+              ],
+              "SnapshotCreateTime": "2016-12-19T20:39:25.291Z",
+              "SnapshotIdentifier": "my-snapshot-id2",
+              "SnapshotType": "manual",
+              "Status": "available",
+              "Tags": [
+
+              ],
+              "TotalBackupSizeInMegaBytes": 41.0
+            },
+            {
+              "ActualIncrementalBackupSizeInMegaBytes": 8.0,
+              "AvailabilityZone": "us-west-2a",
+              "BackupProgressInMegaBytes": 8.0,
+              "ClusterCreateTime": "2016-12-15T02:30:29.078Z",
+              "ClusterIdentifier": "mycluster",
+              "ClusterVersion": "1.0",
+              "CurrentBackupRateInMegaBytesPerSecond": 0.0,
+              "ElapsedTimeInSeconds": 1,
+              "Encrypted": false,
+              "EncryptedWithHSM": false,
+              "EstimatedSecondsToCompletion": -1,
+              "MasterUsername": "adminuser",
+              "NodeType": "ds1.xlarge",
+              "NumberOfNodes": 2,
+              "OwnerAccount": "644653688104",
+              "Port": 5439,
+              "RestorableNodeTypes": [
+                "ds2.xlarge",
+                "ds1.xlarge"
+              ],
+              "SnapshotCreateTime": "2016-12-19T15:35:26.412Z",
+              "SnapshotIdentifier": "rs:mycluster-2016-12-19-15-35-26",
+              "SnapshotType": "automated",
+              "Status": "available",
+              "Tags": [
+
+              ],
+              "TotalBackupSizeInMegaBytes": 41.0
+            }
+          ]
+        },
+        "comments": {
+          "input": {
+          },
+          "output": {
+          }
+        },
+        "description": "This example returns a description of all cluster snapshots for the account. ",
+        "id": "to-get-a-description-of-all-cluster-snapshots-1482181325771",
+        "title": "To get a description of all cluster snapshots"
+      }
+    ],
+    "DescribeClusterSubnetGroups": [
+      {
+        "input": {
+        },
+        "output": {
+          "ClusterSubnetGroups": [
+            {
+              "ClusterSubnetGroupName": "example-vpc-subnet",
+              "Description": "gute-vpc-subnet",
+              "SubnetGroupStatus": "Complete",
+              "Subnets": [
+                {
+                  "SubnetAvailabilityZone": {
+                    "Name": "us-west-2b"
+                  },
+                  "SubnetIdentifier": "subnet-xyz123a3",
+                  "SubnetStatus": "Active"
+                }
+              ],
+              "Tags": [
+
+              ],
+              "VpcId": "vpc-6b46f00e"
+            },
+            {
+              "ClusterSubnetGroupName": "example2-vpc-subnet",
+              "Description": "test-endpoints",
+              "SubnetGroupStatus": "Complete",
+              "Subnets": [
+                {
+                  "SubnetAvailabilityZone": {
+                    "Name": "us-west-2c"
+                  },
+                  "SubnetIdentifier": "subnet-abc123a3",
+                  "SubnetStatus": "Active"
+                }
+              ],
+              "Tags": [
+
+              ],
+              "VpcId": "vpc-abc123ab"
+            }
+          ]
+        },
+        "description": "This example returns a description of all cluster subnet groups.",
+        "id": "to-get-a-description-of-all-cluster-subnet-groups-1481847412769",
+        "title": "To get a description of all cluster subnet groups"
+      }
+    ],
+    "DescribeClusterVersions": [
+      {
+        "input": {
+        },
+        "output": {
+          "ClusterVersions": [
+            {
+              "ClusterParameterGroupFamily": "redshift-1.0",
+              "ClusterVersion": "1.0",
+              "Description": "release db engine 1.0.555"
+            }
+          ]
+        },
+        "comments": {
+          "input": {
+          },
+          "output": {
+          }
+        },
+        "description": "This example returns a description of all cluster versions.",
+        "id": "to-get-a-description-of-cluster-versions-1482363389639",
+        "title": "To get a description of cluster versions"
+      }
+    ],
+    "DescribeClusters": [
+      {
+        "input": {
+        },
+        "output": {
+          "Clusters": [
+            {
+              "AllowVersionUpgrade": true,
+              "AutomatedSnapshotRetentionPeriod": 1,
+              "AvailabilityZone": "us-west-2a",
+              "ClusterCreateTime": "2016-12-15T02:30:29.078Z",
+              "ClusterIdentifier": "mycluster",
+              "ClusterNodes": [
+                {
+                  "NodeRole": "LEADER",
+                  "PrivateIPAddress": "10.123.456.78",
+                  "PublicIPAddress": "54.123.456.79"
+                },
+                {
+                  "NodeRole": "COMPUTE-0",
+                  "PrivateIPAddress": "10.123.456.228",
+                  "PublicIPAddress": "54.123.456..2"
+                },
+                {
+                  "NodeRole": "COMPUTE-1",
+                  "PrivateIPAddress": "10.123.456.170",
+                  "PublicIPAddress": "54.123.456.172"
+                }
+              ],
+              "ClusterParameterGroups": [
+                {
+                  "ParameterApplyStatus": "in-sync",
+                  "ParameterGroupName": "default.redshift-1.0"
+                }
+              ],
+              "ClusterPublicKey": "***",
+              "ClusterRevisionNumber": "1141",
+              "ClusterSecurityGroups": [
+                {
+                  "ClusterSecurityGroupName": "default",
+                  "Status": "active"
+                }
+              ],
+              "ClusterStatus": "available",
+              "ClusterVersion": "1.0",
+              "Encrypted": false,
+              "Endpoint": {
+                "Address": "mycluster.zxy.us-west-2.redshift.amazonaws.com",
+                "Port": 5439
+              },
+              "IamRoles": [
+
+              ],
+              "MasterUsername": "adminuser",
+              "NodeType": "ds1.xlarge",
+              "NumberOfNodes": 2,
+              "PendingModifiedValues": {
+              },
+              "PreferredMaintenanceWindow": "sun:08:00-sun:08:30",
+              "PubliclyAccessible": true,
+              "Tags": [
+
+              ],
+              "VpcSecurityGroups": [
+
+              ]
+            }
+          ]
+        },
+        "comments": {
+          "input": {
+          },
+          "output": {
+          }
+        },
+        "description": "This example returns a description of all clusters for the account. By default, the output is in JSON format.",
+        "id": "to-get-a-description-of-all-clusters-1475865512651",
+        "title": "To get a description of all clusters"
+      }
+    ],
+    "DescribeDefaultClusterParameters": [
+      {
+        "input": {
+          "ParameterGroupFamily": "redshift-1.0"
+        },
+        "output": {
+          "Parameters": [
+            {
+              "ApplyType": "static",
+              "DataType": "string",
+              "Description": "Sets the display format for date and time values.",
+              "IsModifiable": true,
+              "ParameterName": "datestyle",
+              "ParameterValue": "ISO, MDY",
+              "Source": "engine-default"
+            },
+            {
+              "AllowedValues": "true,false",
+              "ApplyType": "static",
+              "DataType": "boolean",
+              "Description": "parameter for audit logging purpose",
+              "IsModifiable": true,
+              "ParameterName": "enable_user_activity_logging",
+              "ParameterValue": "false",
+              "Source": "engine-default"
+            },
+            {
+              "AllowedValues": "-15-2",
+              "ApplyType": "static",
+              "DataType": "integer",
+              "Description": "Sets the number of digits displayed for floating-point values",
+              "IsModifiable": true,
+              "ParameterName": "extra_float_digits",
+              "ParameterValue": "0",
+              "Source": "engine-default"
+            },
+            {
+              "AllowedValues": "0-14400000",
+              "ApplyType": "static",
+              "DataType": "integer",
+              "Description": "Sets the max cursor result set size ",
+              "IsModifiable": true,
+              "ParameterName": "max_cursor_result_set_size",
+              "ParameterValue": "default",
+              "Source": "engine-default"
+            },
+            {
+              "ApplyType": "static",
+              "DataType": "string",
+              "Description": "This parameter applies a user-defined label to a group of queries that are run during the same session..",
+              "IsModifiable": true,
+              "ParameterName": "query_group",
+              "ParameterValue": "default",
+              "Source": "engine-default"
+            },
+            {
+              "AllowedValues": "true,false",
+              "ApplyType": "static",
+              "DataType": "boolean",
+              "Description": "require ssl for all databaseconnections",
+              "IsModifiable": true,
+              "ParameterName": "require_ssl",
+              "ParameterValue": "false",
+              "Source": "engine-default"
+            },
+            {
+              "ApplyType": "static",
+              "DataType": "string",
+              "Description": "Sets the schema search order for names that are not schema-qualified.",
+              "IsModifiable": true,
+              "ParameterName": "search_path",
+              "ParameterValue": "$user, public",
+              "Source": "engine-default"
+            },
+            {
+              "AllowedValues": "0,100-2147483647",
+              "ApplyType": "static",
+              "DataType": "integer",
+              "Description": "Aborts any statement that takes over the specified number of milliseconds.",
+              "IsModifiable": true,
+              "ParameterName": "statement_timeout",
+              "ParameterValue": "0",
+              "Source": "engine-default"
+            },
+            {
+              "ApplyType": "static",
+              "DataType": "string",
+              "Description": "wlm json configuration",
+              "IsModifiable": true,
+              "ParameterName": "wlm_json_configuration",
+              "ParameterValue": "[{\"query_concurrency\":5}]",
+              "Source": "engine-default"
+            }
+          ]
+        },
+        "comments": {
+          "input": {
+          },
+          "output": {
+          }
+        },
+        "description": "This example returns a description cluster default parameters.",
+        "id": "to-get-a-description-of-cluster-default-parameters-1482365915635",
+        "title": "To get a description of cluster default parameters"
+      }
+    ],
+    "DescribeEventCategories": [
+      {
+        "input": {
+          "SourceType": "cluster"
+        },
+        "output": {
+          "EventCategoriesMapList": [
+            {
+              "Events": [
+                {
+                  "EventCategories": [
+                    "management"
+                  ],
+                  "EventDescription": "Cluster <cluster name> created at <time in UTC>.",
+                  "EventId": "REDSHIFT-EVENT-2000",
+                  "Severity": "INFO"
+                },
+                {
+                  "EventCategories": [
+                    "management"
+                  ],
+                  "EventDescription": "Cluster <cluster name> deleted at <time in UTC>.",
+                  "EventId": "REDSHIFT-EVENT-2001",
+                  "Severity": "INFO"
+                }
+              ],
+              "SourceType": "cluster"
+            }
+          ]
+        },
+        "comments": {
+          "input": {
+          },
+          "output": {
+          }
+        },
+        "description": "This example returns a description event categories for the \"cluster\" source type.",
+        "id": "to-get-a-description-of-event-categories-1482366442369",
+        "title": "To get a description of event categories"
+      }
+    ],
+    "DescribeEventSubscriptions": [
+      {
+        "input": {
+          "SubscriptionName": "mysubscription"
+        },
+        "output": {
+          "EventSubscriptionsList": [
+            {
+              "CustSubscriptionId": "mysubscription",
+              "CustomerAwsId": "123456789101",
+              "Enabled": false,
+              "EventCategoriesList": [
+
+              ],
+              "SnsTopicArn": "arn:aws:sns:us-west-2:123456789101:my-sns-topic",
+              "SourceIdsList": [
+
+              ],
+              "SourceType": "cluster",
+              "Status": "active",
+              "SubscriptionCreationTime": "2016-12-30T21:03:19.894Z"
+            }
+          ]
+        },
+        "comments": {
+          "input": {
+          },
+          "output": {
+          }
+        },
+        "description": "This example shows how to describe event subscriptions.",
+        "id": "to-describe-an-event-subscription-1483133239054",
+        "title": "To describe an event subscription"
+      }
+    ],
+    "DescribeEvents": [
+      {
+        "input": {
+          "Duration": 600
+        },
+        "output": {
+          "Events": [
+            {
+              "Date": "2016-12-21T21:11:53.137Z",
+              "EventCategories": [
+                "security"
+              ],
+              "EventId": "REDSHIFT-EVENT-4004",
+              "Message": "Cluster security group 'mysecuritygroup' was updated at 2016-12-21 21:11 UTC. Changes will be automatically applied to all associated clusters.",
+              "Severity": "INFO",
+              "SourceIdentifier": "mysecuritygroup",
+              "SourceType": "cluster-security-group"
+            },
+            {
+              "Date": "2016-12-21T21:26:48.309Z",
+              "EventCategories": [
+                "security"
+              ],
+              "EventId": "REDSHIFT-EVENT-4004",
+              "Message": "Cluster security group 'mysecuritygroup' was updated at 2016-12-21 21:26 UTC. Changes will be automatically applied to all associated clusters.",
+              "Severity": "INFO",
+              "SourceIdentifier": "mysecuritygroup",
+              "SourceType": "cluster-security-group"
+            }
+          ]
+        },
+        "comments": {
+          "input": {
+          },
+          "output": {
+          }
+        },
+        "description": "This example returns a description events for the last 10 hours (600 minutes).",
+        "id": "to-get-a-description-of-events-1482367106459",
+        "title": "To get a description of events"
+      }
+    ],
+    "DescribeHsmClientCertificates": [
+      {
+        "input": {
+        },
+        "output": {
+          "HsmClientCertificates": [
+            {
+              "HsmClientCertificateIdentifier": "my-hsm",
+              "HsmClientCertificatePublicKey": "-----BEGIN CERTIFICATE-----\nMIIDPTCCAiWgAw...+ps=\n-----END CERTIFICATE-----\n",
+              "Tags": [
+
+              ]
+            }
+          ]
+        },
+        "comments": {
+          "input": {
+          },
+          "output": {
+          }
+        },
+        "description": "This example returns a description of HSM client certificates",
+        "id": "to-get-a-description-of-hsm-certificates-1482367536680",
+        "title": "To get a description of HSM client certificates"
+      }
+    ],
+    "DescribeLoggingStatus": [
+      {
+        "input": {
+          "ClusterIdentifier": "mycluster"
+        },
+        "output": {
+          "BucketName": "aws-logs-123456789101-us-west-2",
+          "LastSuccessfulDeliveryTime": "2016-12-21T05:12:31Z",
+          "LoggingEnabled": true
+        },
+        "comments": {
+          "input": {
+          },
+          "output": {
+          }
+        },
+        "description": "This example shows how to describe logging status.",
+        "id": "to-describe-logging-status-1483134803712",
+        "title": "To describe logging status"
+      }
+    ],
+    "DescribeTags": [
+      {
+        "input": {
+        },
+        "output": {
+          "TaggedResources": [
+            {
+              "ResourceName": "arn:aws:redshift:us-west-2:644653688104:cluster:mycluster",
+              "ResourceType": "cluster",
+              "Tag": {
+                "Key": "owner",
+                "Value": "admin"
+              }
+            },
+            {
+              "ResourceName": "arn:aws:redshift:us-west-2:644653688104:cluster:mycluster",
+              "ResourceType": "cluster",
+              "Tag": {
+                "Key": "environment",
+                "Value": "test"
+              }
+            },
+            {
+              "ResourceName": "arn:aws:redshift:us-west-2:644653688104:cluster:mycluster",
+              "ResourceType": "cluster",
+              "Tag": {
+                "Key": "version",
+                "Value": "1.0"
+              }
+            }
+          ]
+        },
+        "comments": {
+          "input": {
+          },
+          "output": {
+          }
+        },
+        "description": "This example gets all available tags for an account.",
+        "id": "to-get-tags-for-a-resource-1482438593642",
+        "title": "To get tags for a resource"
+      }
+    ],
+    "DisableLogging": [
+      {
+        "input": {
+          "ClusterIdentifier": "mycluster"
+        },
+        "output": {
+          "BucketName": "aws-logs-644653688104-us-west-2",
+          "LastSuccessfulDeliveryTime": "2016-12-21T05:12:31Z",
+          "LoggingEnabled": false
+        },
+        "comments": {
+          "input": {
+          },
+          "output": {
+          }
+        },
+        "description": "This example shows how to disable logging.",
+        "id": "to-disable-logging-1483135106459",
+        "title": "To disable logging"
+      }
+    ],
+    "DisableSnapshotCopy": [
+      {
+        "input": {
+          "ClusterIdentifier": "mycluster"
+        },
+        "output": {
+          "AllowVersionUpgrade": true,
+          "AutomatedSnapshotRetentionPeriod": 1,
+          "AvailabilityZone": "us-west-2a",
+          "ClusterCreateTime": "2016-12-15T22:15:03.566Z",
+          "ClusterIdentifier": "mycluster2",
+          "ClusterParameterGroups": [
+            {
+              "ParameterApplyStatus": "in-sync",
+              "ParameterGroupName": "default.redshift-1.0"
+            }
+          ],
+          "ClusterSecurityGroups": [
+            {
+              "ClusterSecurityGroupName": "default",
+              "Status": "active"
+            }
+          ],
+          "ClusterStatus": "available",
+          "ClusterVersion": "1.0",
+          "Encrypted": false,
+          "Endpoint": {
+            "Address": "mycluster.xyz.us-west-2.redshift.amazonaws.com",
+            "Port": 5439
+          },
+          "IamRoles": [
+
+          ],
+          "MasterUsername": "adminuser",
+          "NodeType": "ds1.xlarge",
+          "NumberOfNodes": 2,
+          "PendingModifiedValues": {
+          },
+          "PreferredMaintenanceWindow": "thu:11:00-thu:11:30",
+          "PubliclyAccessible": true,
+          "Tags": [
+
+          ],
+          "VpcSecurityGroups": [
+
+          ]
+        },
+        "comments": {
+          "input": {
+          },
+          "output": {
+          }
+        },
+        "description": "This example disables snapshot copy for the cluster mycluster.",
+        "id": "to-disable-snapshot-copy-1482435501112",
+        "title": "To disable snapshot copy"
+      }
+    ],
+    "EnableLogging": [
+      {
+        "input": {
+          "BucketName": "aws-logs-112233445566-us-west-2",
+          "ClusterIdentifier": "mycluster"
+        },
+        "output": {
+          "BucketName": "aws-logs-644653688104-us-west-2",
+          "LoggingEnabled": true
+        },
+        "comments": {
+          "input": {
+          },
+          "output": {
+          }
+        },
+        "description": "This example enables logging for the cluster mycluster using the Amazon S3 bucket aws-logs-112233445566-us-west-2.",
+        "id": "to-enable-logging-1482434657633",
+        "title": "To enable logging"
+      }
+    ],
+    "EnableSnapshotCopy": [
+      {
+        "input": {
+          "ClusterIdentifier": "mycluster",
+          "DestinationRegion": "us-east-1"
+        },
+        "output": {
+          "AllowVersionUpgrade": true,
+          "AutomatedSnapshotRetentionPeriod": 1,
+          "AvailabilityZone": "us-west-2a",
+          "ClusterCreateTime": "2016-12-15T22:15:03.566Z",
+          "ClusterIdentifier": "mycluster2",
+          "ClusterParameterGroups": [
+            {
+              "ParameterApplyStatus": "in-sync",
+              "ParameterGroupName": "default.redshift-1.0"
+            }
+          ],
+          "ClusterSecurityGroups": [
+            {
+              "ClusterSecurityGroupName": "default",
+              "Status": "active"
+            }
+          ],
+          "ClusterSnapshotCopyStatus": {
+            "DestinationRegion": "us-east-1",
+            "RetentionPeriod": 7
+          },
+          "ClusterStatus": "available",
+          "ClusterVersion": "1.0",
+          "Encrypted": false,
+          "Endpoint": {
+            "Address": "mycluster.xyz.us-west-2.redshift.amazonaws.com",
+            "Port": 5439
+          },
+          "IamRoles": [
+
+          ],
+          "MasterUsername": "adminuser",
+          "NodeType": "ds1.xlarge",
+          "NumberOfNodes": 2,
+          "PendingModifiedValues": {
+          },
+          "PreferredMaintenanceWindow": "thu:11:00-thu:11:30",
+          "PubliclyAccessible": true,
+          "Tags": [
+
+          ],
+          "VpcSecurityGroups": [
+
+          ]
+        },
+        "comments": {
+          "input": {
+          },
+          "output": {
+          }
+        },
+        "description": "This example enables snapshot copy for the cluster mycluster for region us-east-1.",
+        "id": "to-enable-snapshot-copy-1482435074072",
+        "title": "To enable snapshot copy"
+      }
+    ],
+    "ModifyCluster": [
+      {
+        "input": {
+          "ClusterIdentifier": "mycluster",
+          "ClusterSecurityGroups": [
+            "mysecuritygroup"
+          ]
+        },
+        "output": {
+          "AllowVersionUpgrade": true,
+          "AutomatedSnapshotRetentionPeriod": 1,
+          "AvailabilityZone": "us-west-2a",
+          "ClusterCreateTime": "2016-12-15T22:15:03.566Z",
+          "ClusterIdentifier": "mycluster2",
+          "ClusterParameterGroups": [
+            {
+              "ParameterApplyStatus": "in-sync",
+              "ParameterGroupName": "default.redshift-1.0"
+            }
+          ],
+          "ClusterSecurityGroups": [
+            {
+              "ClusterSecurityGroupName": "mysecuritygroup",
+              "Status": "active"
+            }
+          ],
+          "ClusterStatus": "available",
+          "ClusterVersion": "1.0",
+          "Encrypted": false,
+          "Endpoint": {
+            "Address": "mycluster.xyz.us-west-2.redshift.amazonaws.com",
+            "Port": 5439
+          },
+          "IamRoles": [
+
+          ],
+          "MasterUsername": "adminuser",
+          "NodeType": "ds1.xlarge",
+          "NumberOfNodes": 2,
+          "PendingModifiedValues": {
+          },
+          "PreferredMaintenanceWindow": "thu:11:00-thu:11:30",
+          "PubliclyAccessible": true,
+          "Tags": [
+
+          ],
+          "VpcSecurityGroups": [
+
+          ]
+        },
+        "comments": {
+          "input": {
+          },
+          "output": {
+          }
+        },
+        "description": "This example shows how to associate a cluster security group with the specified cluster.",
+        "id": "to-modify-a-cluster-1482436093526",
+        "title": "To modify a cluster"
+      }
+    ],
+    "ModifyClusterIamRoles": [
+      {
+        "input": {
+          "AddIamRoles": [
+            "arn:aws:iam::112233445566:role/myRedshiftRole"
+          ],
+          "ClusterIdentifier": "mycluster"
+        },
+        "output": {
+          "AllowVersionUpgrade": true,
+          "AutomatedSnapshotRetentionPeriod": 1,
+          "AvailabilityZone": "us-west-2a",
+          "ClusterCreateTime": "2016-12-15T02:30:29.078Z",
+          "ClusterIdentifier": "mycluster",
+          "ClusterParameterGroups": [
+            {
+              "ParameterApplyStatus": "in-sync",
+              "ParameterGroupName": "default.redshift-1.0"
+            }
+          ],
+          "ClusterSecurityGroups": [
+            {
+              "ClusterSecurityGroupName": "mysecuritygroup",
+              "Status": "active"
+            }
+          ],
+          "ClusterStatus": "modifying",
+          "ClusterVersion": "1.0",
+          "Encrypted": false,
+          "Endpoint": {
+            "Address": "mycluster.czqnp7zcqnxv.us-west-2.redshift.amazonaws.com",
+            "Port": 5439
+          },
+          "IamRoles": [
+            {
+              "ApplyStatus": "adding",
+              "IamRoleArn": "arn:aws:iam::112233445566:role/myRedshiftRole"
+            }
+          ],
+          "MasterUsername": "adminuser",
+          "NodeType": "ds1.xlarge",
+          "NumberOfNodes": 2,
+          "PendingModifiedValues": {
+          },
+          "PreferredMaintenanceWindow": "sun:08:00-sun:08:30",
+          "PubliclyAccessible": true,
+          "Tags": [
+            {
+              "Key": "owner",
+              "Value": "admin"
+            },
+            {
+              "Key": "environment",
+              "Value": "test"
+            },
+            {
+              "Key": "version",
+              "Value": "1.0"
+            }
+          ],
+          "VpcSecurityGroups": [
+
+          ]
+        },
+        "comments": {
+          "input": {
+          },
+          "output": {
+          }
+        },
+        "description": "This example adds an IAM role the specified cluster.",
+        "id": "to-modify-a-cluster-iam-roles-1482436895837",
+        "title": "To modify a cluster IAM roles"
+      }
+    ],
+    "ModifyClusterParameterGroup": [
+      {
+        "input": {
+          "ParameterGroupName": "myclusterparametergroup",
+          "Parameters": [
+            {
+              "ApplyType": "dynamic",
+              "ParameterName": "wlm_json_configuration",
+              "ParameterValue": "[{\"query_group\":[\"report\"], \"query_group_wild_card\":1, \"query_concurrency\":4, \"max_execution_time\":20000, \"memory_percent_to_use\":25, \"rules\": [{\"rule_name\": \"rule_1\", \"predicate\": [{\"metric_name\": \"query_cpu_time\", \"operator\": \">\", \"value\": 1000000}, {\"metric_name\": \"query_blocks_read\", \"operator\": \">\", \"value\": 1000}], \"action\": \"log\"}] }, {\"user_group\":[\"admin\",\"dba\"], \"user_group_wild_card\":0, \"query_concurrency\":5, \"memory_percent_to_use\":40, \"rules\": [{\"rule_name\": \"rule_2\", \"predicate\": [{\"metric_name\": \"query_execution_time\", \"operator\": \">\", \"value\": 10000}, {\"metric_name\": \"scan_row_count\", \"operator\": \">\", \"value\": 1000000000}], \"action\": \"hop\"}] }, {\"query_concurrency\":5, \"memory_percent_to_use\":35 } ]"
+            }
+          ]
+        },
+        "output": {
+          "ParameterGroupName": "test-qmr",
+          "ParameterGroupStatus": "Your parameter group has been updated. Updates to dynamic parameters will be applied immediately. Updates to static parameters will be applied when you reboot the associated Clusters."
+        },
+        "comments": {
+          "input": {
+          },
+          "output": {
+          }
+        },
+        "description": "This example shows how to modify the parameter group wlm_json_configuration parameter for workload management.",
+        "id": "to-modify-a-paramter-group-1483130143433",
+        "title": "To modify a paramter group"
+      }
+    ],
+    "ModifyClusterSubnetGroup": [
+      {
+        "input": {
+          "ClusterSubnetGroupName": "mysubnetgroup",
+          "Description": "My subnet group",
+          "SubnetIds": [
+            "subnet-4632f321",
+            "subnet-11312a67"
+          ]
+        },
+        "output": {
+          "ClusterSubnetGroupName": "mysubnetgroup",
+          "Description": "My subnet group",
+          "SubnetGroupStatus": "Complete",
+          "Subnets": [
+            {
+              "SubnetAvailabilityZone": {
+                "Name": "us-west-2b"
+              },
+              "SubnetIdentifier": "subnet-4632f321",
+              "SubnetStatus": "Active"
+            },
+            {
+              "SubnetAvailabilityZone": {
+                "Name": "us-west-2a"
+              },
+              "SubnetIdentifier": "subnet-11312a67",
+              "SubnetStatus": "Active"
+            }
+          ],
+          "Tags": [
+
+          ],
+          "VpcId": "vpc-9f94e5fb"
+        },
+        "comments": {
+          "input": {
+          },
+          "output": {
+          }
+        },
+        "description": "This example shows how to modify a cluster subnet group.",
+        "id": "to-modify-a-paramter-group-1483130143433",
+        "title": "To modify a subnet group"
+      }
+    ],
+    "ModifyEventSubscription": [
+      {
+        "input": {
+          "SourceType": "cluster",
+          "SubscriptionName": "mysubscription"
+        },
+        "output": {
+          "CustSubscriptionId": "mysubscription",
+          "CustomerAwsId": "123456789101",
+          "Enabled": false,
+          "EventCategoriesList": [
+
+          ],
+          "SnsTopicArn": "arn:aws:sns:us-west-2:123456789101:my-sns-topic",
+          "SourceIdsList": [
+
+          ],
+          "SourceType": "cluster",
+          "Status": "active",
+          "SubscriptionCreationTime": "2016-12-30T21:03:19.894Z"
+        },
+        "comments": {
+          "input": {
+          },
+          "output": {
+          }
+        },
+        "description": "This example shows how to modify an event subscription.",
+        "id": "to-modify-an-event-subscription-1483132220470",
+        "title": "To modify an event subscription"
+      }
+    ]
+  }
+}
