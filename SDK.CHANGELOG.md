@@ -1,3 +1,9 @@
+### 3.3.75.0 (2017-04-07 22:20 UTC)
+* Redshift (3.3.2.0)
+	* This update adds the GetClusterCredentials API which is used to get temporary login credentials to the cluster. AccountWithRestoreAccess now has a new member AccountAlias, this is the identifier of the AWS support account authorized to restore the specified snapshot. This is added to support the feature where the customer can share their snapshot with the Amazon Redshift Support Account without having to manually specify the AWS Redshift Service account ID on the AWS Console/API.
+* Core 3.3.10.6
+	* Support side-loading endpoints.json file and fix timeout issue with AWSSDKUtils.DownloadStringContent
+
 ### 3.3.74.1 (2017-04-06 17:12 UTC)
 * ElasticLoadBalancingV2 (3.3.1.5)
 	* Adds supports a new condition for host-header conditions to CreateRule and ModifyRule
