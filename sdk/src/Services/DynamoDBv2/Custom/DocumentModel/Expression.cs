@@ -73,7 +73,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// DynamoDBEntry contains many common implicit cast operations so assignment can be done with the basic .NET types.
         /// In the price example shown above the value to be used for the expression can be provided using the following code snippet:
         /// <code>
-        /// expression.ExpressionAttributeNames[":price"] = 3.99;
+        /// expression.ExpressionAttributeValues[":price"] = 3.99;
         /// </code>
         /// </para>
         /// </summary>
