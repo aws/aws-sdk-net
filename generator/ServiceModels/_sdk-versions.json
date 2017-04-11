@@ -1,7 +1,7 @@
 
 {
-    "ProductVersion" : "3.3.75.0",
-    "CoreVersion"    : "3.3.10.6",
+    "ProductVersion" : "3.3.76.0",
+    "CoreVersion"    : "3.3.11.0",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
         "CloudHSM" : {
@@ -126,7 +126,7 @@
             "InPreview"    : false
         },
         "DynamoDBv2"        : {
-            "Version" : "3.3.4.4",
+            "Version" : "3.3.4.5",
             "Dependencies" : {
                 "Core" : "3.3.10.3"
             },
@@ -240,7 +240,7 @@
             "InPreview"    : false
         },
         "OpsWorks"             : {
-            "Version" : "3.3.0.12",
+            "Version" : "3.3.1.0",
             "Dependencies" : {
                 "Core" : "3.3.10.3"
             },
@@ -422,7 +422,7 @@
             "InPreview"    : false
         },
         "APIGateway"                      : {
-            "Version" : "3.3.5.4",
+            "Version" : "3.3.6.0",
             "Dependencies" : {
                 "Core" : "3.3.10.3"
             },
@@ -450,7 +450,7 @@
             "InPreview"    : false
         },
         "GameLift"                        : {
-            "Version" : "3.3.3.4",
+            "Version" : "3.3.4.0",
             "Dependencies" : {
                 "Core" : "3.3.10.3"
             },
@@ -618,7 +618,7 @@
             "InPreview"    : false
         },
         "Batch"                           : {
-            "Version" : "3.3.1.1",
+            "Version" : "3.3.2.0",
             "Dependencies" : {
                 "Core" : "3.3.10.3"
             },

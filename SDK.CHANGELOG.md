@@ -1,3 +1,17 @@
+### 3.3.76.0 (2017-04-11 21:24 UTC)
+* APIGateway (3.3.6.0)
+	* API Gateway request validators
+* Batch (3.3.2.0)
+	* API Update for AWS Batch: Customer provided AMI for MANAGED Compute Environment 
+* DynamoDBv2 (3.3.4.5)
+	* Documentation update.
+* GameLift (3.3.4.0)
+	* Allows developers to utilize an improved workflow when calling our Queues API and introduces a new feature that allows developers to specify a maximum allowable latency per Queue.
+* OpsWorks (3.3.1.0)
+	* Cloudwatch Logs agent configuration can now be attached to OpsWorks Layers using CreateLayer and UpdateLayer. OpsWorks will then automatically install and manage the CloudWatch Logs agent on the instances part of the OpsWorks Layer.
+* Core 3.3.11.0
+	* Fix issue with user agent header when calling S3 CopyObject API.
+
 ### 3.3.75.0 (2017-04-07 22:20 UTC)
 * Redshift (3.3.2.0)
 	* This update adds the GetClusterCredentials API which is used to get temporary login credentials to the cluster. AccountWithRestoreAccess now has a new member AccountAlias, this is the identifier of the AWS support account authorized to restore the specified snapshot. This is added to support the feature where the customer can share their snapshot with the Amazon Redshift Support Account without having to manually specify the AWS Redshift Service account ID on the AWS Console/API.
