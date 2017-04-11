@@ -65,24 +65,25 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property AgentVersion. 
         /// <para>
-        /// The default AWS OpsWorks agent version. You have the following options:
+        /// The default AWS OpsWorks Stacks agent version. You have the following options:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Auto-update - Set this parameter to <code>LATEST</code>. AWS OpsWorks automatically
+        /// Auto-update - Set this parameter to <code>LATEST</code>. AWS OpsWorks Stacks automatically
         /// installs new agent versions on the stack's instances as soon as they are available.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// Fixed version - Set this parameter to your preferred agent version. To update the
         /// agent version, you must edit the stack configuration and specify a new version. AWS
-        /// OpsWorks then automatically installs that version on the stack's instances.
+        /// OpsWorks Stacks then automatically installs that version on the stack's instances.
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// The default setting is the most recent release of the agent. To specify an agent version,
         /// you must use the complete version number, not the abbreviated number shown on the
         /// console. For a list of available agent version numbers, call <a>DescribeAgentVersions</a>.
+        /// AgentVersion cannot be set to Chef 12.2.
         /// </para>
         ///  <note> 
         /// <para>
@@ -257,7 +258,8 @@ namespace Amazon.OpsWorks.Model
         ///  <ul> <li> 
         /// <para>
         /// A supported Linux operating system: An Amazon Linux version, such as <code>Amazon
-        /// Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.
+        /// Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>,
+        /// or <code>Amazon Linux 2015.03</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -266,7 +268,7 @@ namespace Amazon.OpsWorks.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CentOS 7</code> 
+        ///  <code>CentOS Linux 7</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -289,7 +291,7 @@ namespace Amazon.OpsWorks.Model
         /// <para>
         /// The default option is the current Amazon Linux version. For more information on the
         /// supported operating systems, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
-        /// OpsWorks Operating Systems</a>.
+        /// OpsWorks Stacks Operating Systems</a>.
         /// </para>
         /// </summary>
         public string DefaultOs
@@ -485,9 +487,9 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property ServiceRoleArn. 
         /// <para>
         /// The stack's AWS Identity and Access Management (IAM) role, which allows AWS OpsWorks
-        /// to work with AWS resources on your behalf. You must set this parameter to the Amazon
-        /// Resource Name (ARN) for an existing IAM role. For more information about IAM ARNs,
-        /// see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+        /// Stacks to work with AWS resources on your behalf. You must set this parameter to the
+        /// Amazon Resource Name (ARN) for an existing IAM role. For more information about IAM
+        /// ARNs, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
         /// Identifiers</a>.
         /// </para>
         /// </summary>
@@ -524,26 +526,27 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property UseOpsworksSecurityGroups. 
         /// <para>
-        /// Whether to associate the AWS OpsWorks built-in security groups with the stack's layers.
+        /// Whether to associate the AWS OpsWorks Stacks built-in security groups with the stack's
+        /// layers.
         /// </para>
         ///  
         /// <para>
-        /// AWS OpsWorks provides a standard set of built-in security groups, one for each layer,
-        /// which are associated with layers by default. With <code>UseOpsworksSecurityGroups</code>
+        /// AWS OpsWorks Stacks provides a standard set of built-in security groups, one for each
+        /// layer, which are associated with layers by default. With <code>UseOpsworksSecurityGroups</code>
         /// you can instead provide your own custom security groups. <code>UseOpsworksSecurityGroups</code>
         /// has the following settings: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// True - AWS OpsWorks automatically associates the appropriate built-in security group
-        /// with each layer (default setting). You can associate additional security groups with
-        /// a layer after you create it, but you cannot delete the built-in security group.
+        /// True - AWS OpsWorks Stacks automatically associates the appropriate built-in security
+        /// group with each layer (default setting). You can associate additional security groups
+        /// with a layer after you create it, but you cannot delete the built-in security group.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// False - AWS OpsWorks does not associate built-in security groups with layers. You
-        /// must create appropriate EC2 security groups and associate a security group with each
-        /// layer that you create. However, you can still manually associate a built-in security
+        /// False - AWS OpsWorks Stacks does not associate built-in security groups with layers.
+        /// You must create appropriate EC2 security groups and associate a security group with
+        /// each layer that you create. However, you can still manually associate a built-in security
         /// group with a layer on creation; custom security groups are required only for those
         /// layers that need custom settings.
         /// </para>
@@ -583,10 +586,10 @@ namespace Amazon.OpsWorks.Model
         ///  </li> </ul> 
         /// <para>
         /// If the VPC ID corresponds to a default VPC and you have specified either the <code>DefaultAvailabilityZone</code>
-        /// or the <code>DefaultSubnetId</code> parameter only, AWS OpsWorks infers the value
-        /// of the other parameter. If you specify neither parameter, AWS OpsWorks sets these
-        /// parameters to the first valid Availability Zone for the specified region and the corresponding
-        /// default VPC subnet ID, respectively.
+        /// or the <code>DefaultSubnetId</code> parameter only, AWS OpsWorks Stacks infers the
+        /// value of the other parameter. If you specify neither parameter, AWS OpsWorks Stacks
+        /// sets these parameters to the first valid Availability Zone for the specified region
+        /// and the corresponding default VPC subnet ID, respectively.
         /// </para>
         ///  
         /// <para>
@@ -602,7 +605,7 @@ namespace Amazon.OpsWorks.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information on how to use AWS OpsWorks with a VPC, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running
+        /// For more information on how to use AWS OpsWorks Stacks with a VPC, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running
         /// a Stack in a VPC</a>. For more information on default VPC and EC2-Classic, see <a
         /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
         /// Platforms</a>. 

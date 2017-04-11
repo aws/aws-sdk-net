@@ -29,7 +29,7 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeServiceErrors operation.
-    /// Describes AWS OpsWorks service errors.
+    /// Describes AWS OpsWorks Stacks service errors.
     /// 
     ///  
     /// <para>
@@ -37,6 +37,10 @@ namespace Amazon.OpsWorks.Model
     /// or Manage permissions level for the stack, or an attached policy that explicitly grants
     /// permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
     /// User Permissions</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// This call accepts only one resource-identifying parameter.
     /// </para>
     /// </summary>
     public partial class DescribeServiceErrorsRequest : AmazonOpsWorksRequest

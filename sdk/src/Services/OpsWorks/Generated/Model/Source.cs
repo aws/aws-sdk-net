@@ -62,8 +62,8 @@ namespace Amazon.OpsWorks.Model
         /// </para>
         ///  
         /// <para>
-        /// In responses, AWS OpsWorks returns <code>*****FILTERED*****</code> instead of the
-        /// actual value.
+        /// In responses, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead
+        /// of the actual value.
         /// </para>
         /// </summary>
         public string Password
@@ -81,7 +81,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property Revision. 
         /// <para>
-        /// The application's version. AWS OpsWorks enables you to easily deploy new versions
+        /// The application's version. AWS OpsWorks Stacks enables you to easily deploy new versions
         /// of an application. One of the simplest approaches is to have branches or revisions
         /// in your repository that represent different versions that can potentially be deployed.
         /// </para>
@@ -105,8 +105,8 @@ namespace Amazon.OpsWorks.Model
         /// </para>
         ///  
         /// <para>
-        /// In responses, AWS OpsWorks returns <code>*****FILTERED*****</code> instead of the
-        /// actual value.
+        /// In responses, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead
+        /// of the actual value.
         /// </para>
         /// </summary>
         public string SshKey

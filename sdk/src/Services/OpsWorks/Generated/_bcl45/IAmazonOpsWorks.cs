@@ -33,16 +33,16 @@ namespace Amazon.OpsWorks
     ///
     /// AWS OpsWorks 
     /// <para>
-    /// Welcome to the <i>AWS OpsWorks API Reference</i>. This guide provides descriptions,
-    /// syntax, and usage examples for AWS OpsWorks actions and data types, including common
-    /// parameters and error codes. 
+    /// Welcome to the <i>AWS OpsWorks Stacks API Reference</i>. This guide provides descriptions,
+    /// syntax, and usage examples for AWS OpsWorks Stacks actions and data types, including
+    /// common parameters and error codes. 
     /// </para>
     ///  
     /// <para>
-    /// AWS OpsWorks is an application management service that provides an integrated experience
-    /// for overseeing the complete application lifecycle. For information about this product,
-    /// go to the <a href="http://aws.amazon.com/opsworks/">AWS OpsWorks</a> details page.
-    /// 
+    /// AWS OpsWorks Stacks is an application management service that provides an integrated
+    /// experience for overseeing the complete application lifecycle. For information about
+    /// this product, go to the <a href="http://aws.amazon.com/opsworks/">AWS OpsWorks</a>
+    /// details page. 
     /// </para>
     ///  
     /// <para>
@@ -50,9 +50,9 @@ namespace Amazon.OpsWorks
     /// </para>
     ///  
     /// <para>
-    /// The most common way to use the AWS OpsWorks API is by using the AWS Command Line Interface
-    /// (CLI) or by using one of the AWS SDKs to implement applications in your preferred
-    /// language. For more information, see:
+    /// The most common way to use the AWS OpsWorks Stacks API is by using the AWS Command
+    /// Line Interface (CLI) or by using one of the AWS SDKs to implement applications in
+    /// your preferred language. For more information, see:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -94,13 +94,17 @@ namespace Amazon.OpsWorks
     /// </para>
     ///  
     /// <para>
-    /// AWS OpsWorks supports the following endpoints, all HTTPS. You must connect to one
-    /// of the following endpoints. Stacks can only be accessed or managed within the endpoint
-    /// in which they are created.
+    /// AWS OpsWorks Stacks supports the following endpoints, all HTTPS. You must connect
+    /// to one of the following endpoints. Stacks can only be accessed or managed within the
+    /// endpoint in which they are created.
     /// </para>
     ///  <ul> <li> 
     /// <para>
     /// opsworks.us-east-1.amazonaws.com
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// opsworks.us-east-2.amazonaws.com
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -113,6 +117,10 @@ namespace Amazon.OpsWorks
     ///  </li> <li> 
     /// <para>
     /// opsworks.eu-west-1.amazonaws.com
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// opsworks.eu-west-2.amazonaws.com
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -181,7 +189,7 @@ namespace Amazon.OpsWorks
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You cannot use this action with instances that were created with AWS OpsWorks.
+        /// You cannot use this action with instances that were created with AWS OpsWorks Stacks.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -201,6 +209,7 @@ namespace Amazon.OpsWorks
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/AssignInstance">REST API Reference for AssignInstance Operation</seealso>
         AssignInstanceResponse AssignInstance(AssignInstanceRequest request);
 
 
@@ -213,6 +222,7 @@ namespace Amazon.OpsWorks
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/AssignInstance">REST API Reference for AssignInstance Operation</seealso>
         Task<AssignInstanceResponse> AssignInstanceAsync(AssignInstanceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -244,6 +254,7 @@ namespace Amazon.OpsWorks
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/AssignVolume">REST API Reference for AssignVolume Operation</seealso>
         AssignVolumeResponse AssignVolume(AssignVolumeRequest request);
 
 
@@ -256,6 +267,7 @@ namespace Amazon.OpsWorks
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/AssignVolume">REST API Reference for AssignVolume Operation</seealso>
         Task<AssignVolumeResponse> AssignVolumeAsync(AssignVolumeRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -286,6 +298,7 @@ namespace Amazon.OpsWorks
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/AssociateElasticIp">REST API Reference for AssociateElasticIp Operation</seealso>
         AssociateElasticIpResponse AssociateElasticIp(AssociateElasticIpRequest request);
 
 
@@ -298,6 +311,7 @@ namespace Amazon.OpsWorks
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/AssociateElasticIp">REST API Reference for AssociateElasticIp Operation</seealso>
         Task<AssociateElasticIpResponse> AssociateElasticIpAsync(AssociateElasticIpRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -333,6 +347,7 @@ namespace Amazon.OpsWorks
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/AttachElasticLoadBalancer">REST API Reference for AttachElasticLoadBalancer Operation</seealso>
         AttachElasticLoadBalancerResponse AttachElasticLoadBalancer(AttachElasticLoadBalancerRequest request);
 
 
@@ -345,6 +360,7 @@ namespace Amazon.OpsWorks
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/AttachElasticLoadBalancer">REST API Reference for AttachElasticLoadBalancer Operation</seealso>
         Task<AttachElasticLoadBalancerResponse> AttachElasticLoadBalancerAsync(AttachElasticLoadBalancerRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -373,6 +389,7 @@ namespace Amazon.OpsWorks
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CloneStack">REST API Reference for CloneStack Operation</seealso>
         CloneStackResponse CloneStack(CloneStackRequest request);
 
 
@@ -385,6 +402,7 @@ namespace Amazon.OpsWorks
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CloneStack">REST API Reference for CloneStack Operation</seealso>
         Task<CloneStackResponse> CloneStackAsync(CloneStackRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -413,6 +431,7 @@ namespace Amazon.OpsWorks
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CreateApp">REST API Reference for CreateApp Operation</seealso>
         CreateAppResponse CreateApp(CreateAppRequest request);
 
 
@@ -425,6 +444,7 @@ namespace Amazon.OpsWorks
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CreateApp">REST API Reference for CreateApp Operation</seealso>
         Task<CreateAppResponse> CreateAppAsync(CreateAppRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -454,6 +474,7 @@ namespace Amazon.OpsWorks
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CreateDeployment">REST API Reference for CreateDeployment Operation</seealso>
         CreateDeploymentResponse CreateDeployment(CreateDeploymentRequest request);
 
 
@@ -466,6 +487,7 @@ namespace Amazon.OpsWorks
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CreateDeployment">REST API Reference for CreateDeployment Operation</seealso>
         Task<CreateDeploymentResponse> CreateDeploymentAsync(CreateDeploymentRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -494,6 +516,7 @@ namespace Amazon.OpsWorks
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CreateInstance">REST API Reference for CreateInstance Operation</seealso>
         CreateInstanceResponse CreateInstance(CreateInstanceRequest request);
 
 
@@ -506,6 +529,7 @@ namespace Amazon.OpsWorks
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CreateInstance">REST API Reference for CreateInstance Operation</seealso>
         Task<CreateInstanceResponse> CreateInstanceAsync(CreateInstanceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -542,6 +566,7 @@ namespace Amazon.OpsWorks
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CreateLayer">REST API Reference for CreateLayer Operation</seealso>
         CreateLayerResponse CreateLayer(CreateLayerRequest request);
 
 
@@ -554,6 +579,7 @@ namespace Amazon.OpsWorks
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CreateLayer">REST API Reference for CreateLayer Operation</seealso>
         Task<CreateLayerResponse> CreateLayerAsync(CreateLayerRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -579,6 +605,7 @@ namespace Amazon.OpsWorks
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CreateStack">REST API Reference for CreateStack Operation</seealso>
         CreateStackResponse CreateStack(CreateStackRequest request);
 
 
@@ -591,6 +618,7 @@ namespace Amazon.OpsWorks
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CreateStack">REST API Reference for CreateStack Operation</seealso>
         Task<CreateStackResponse> CreateStackAsync(CreateStackRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -615,6 +643,7 @@ namespace Amazon.OpsWorks
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CreateUserProfile">REST API Reference for CreateUserProfile Operation</seealso>
         CreateUserProfileResponse CreateUserProfile(CreateUserProfileRequest request);
 
 
@@ -627,6 +656,7 @@ namespace Amazon.OpsWorks
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CreateUserProfile">REST API Reference for CreateUserProfile Operation</seealso>
         Task<CreateUserProfileResponse> CreateUserProfileAsync(CreateUserProfileRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -654,6 +684,7 @@ namespace Amazon.OpsWorks
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeleteApp">REST API Reference for DeleteApp Operation</seealso>
         DeleteAppResponse DeleteApp(DeleteAppRequest request);
 
 
@@ -666,6 +697,7 @@ namespace Amazon.OpsWorks
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeleteApp">REST API Reference for DeleteApp Operation</seealso>
         Task<DeleteAppResponse> DeleteAppAsync(DeleteAppRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -699,6 +731,7 @@ namespace Amazon.OpsWorks
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeleteInstance">REST API Reference for DeleteInstance Operation</seealso>
         DeleteInstanceResponse DeleteInstance(DeleteInstanceRequest request);
 
 
@@ -711,6 +744,7 @@ namespace Amazon.OpsWorks
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeleteInstance">REST API Reference for DeleteInstance Operation</seealso>
         Task<DeleteInstanceResponse> DeleteInstanceAsync(DeleteInstanceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -740,6 +774,7 @@ namespace Amazon.OpsWorks
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeleteLayer">REST API Reference for DeleteLayer Operation</seealso>
         DeleteLayerResponse DeleteLayer(DeleteLayerRequest request);
 
 
@@ -752,6 +787,7 @@ namespace Amazon.OpsWorks
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeleteLayer">REST API Reference for DeleteLayer Operation</seealso>
         Task<DeleteLayerResponse> DeleteLayerAsync(DeleteLayerRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -781,6 +817,7 @@ namespace Amazon.OpsWorks
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeleteStack">REST API Reference for DeleteStack Operation</seealso>
         DeleteStackResponse DeleteStack(DeleteStackRequest request);
 
 
@@ -793,6 +830,7 @@ namespace Amazon.OpsWorks
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeleteStack">REST API Reference for DeleteStack Operation</seealso>
         Task<DeleteStackResponse> DeleteStackAsync(DeleteStackRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -820,6 +858,7 @@ namespace Amazon.OpsWorks
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeleteUserProfile">REST API Reference for DeleteUserProfile Operation</seealso>
         DeleteUserProfileResponse DeleteUserProfile(DeleteUserProfileRequest request);
 
 
@@ -832,6 +871,7 @@ namespace Amazon.OpsWorks
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeleteUserProfile">REST API Reference for DeleteUserProfile Operation</seealso>
         Task<DeleteUserProfileResponse> DeleteUserProfileAsync(DeleteUserProfileRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -860,6 +900,7 @@ namespace Amazon.OpsWorks
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeregisterEcsCluster">REST API Reference for DeregisterEcsCluster Operation</seealso>
         DeregisterEcsClusterResponse DeregisterEcsCluster(DeregisterEcsClusterRequest request);
 
 
@@ -872,6 +913,7 @@ namespace Amazon.OpsWorks
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeregisterEcsCluster">REST API Reference for DeregisterEcsCluster Operation</seealso>
         Task<DeregisterEcsClusterResponse> DeregisterEcsClusterAsync(DeregisterEcsClusterRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -901,6 +943,7 @@ namespace Amazon.OpsWorks
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeregisterElasticIp">REST API Reference for DeregisterElasticIp Operation</seealso>
         DeregisterElasticIpResponse DeregisterElasticIp(DeregisterElasticIpRequest request);
 
 
@@ -913,6 +956,7 @@ namespace Amazon.OpsWorks
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeregisterElasticIp">REST API Reference for DeregisterElasticIp Operation</seealso>
         Task<DeregisterElasticIpResponse> DeregisterElasticIpAsync(DeregisterElasticIpRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -923,7 +967,7 @@ namespace Amazon.OpsWorks
         /// <summary>
         /// Deregister a registered Amazon EC2 or on-premises instance. This action removes the
         /// instance from the stack and returns it to your control. This action can not be used
-        /// with instances that were created with AWS OpsWorks.
+        /// with instances that were created with AWS OpsWorks Stacks.
         /// 
         ///  
         /// <para>
@@ -942,6 +986,7 @@ namespace Amazon.OpsWorks
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeregisterInstance">REST API Reference for DeregisterInstance Operation</seealso>
         DeregisterInstanceResponse DeregisterInstance(DeregisterInstanceRequest request);
 
 
@@ -954,6 +999,7 @@ namespace Amazon.OpsWorks
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeregisterInstance">REST API Reference for DeregisterInstance Operation</seealso>
         Task<DeregisterInstanceResponse> DeregisterInstanceAsync(DeregisterInstanceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -981,6 +1027,7 @@ namespace Amazon.OpsWorks
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeregisterRdsDbInstance">REST API Reference for DeregisterRdsDbInstance Operation</seealso>
         DeregisterRdsDbInstanceResponse DeregisterRdsDbInstance(DeregisterRdsDbInstanceRequest request);
 
 
@@ -993,6 +1040,7 @@ namespace Amazon.OpsWorks
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeregisterRdsDbInstance">REST API Reference for DeregisterRdsDbInstance Operation</seealso>
         Task<DeregisterRdsDbInstanceResponse> DeregisterRdsDbInstanceAsync(DeregisterRdsDbInstanceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1022,6 +1070,7 @@ namespace Amazon.OpsWorks
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeregisterVolume">REST API Reference for DeregisterVolume Operation</seealso>
         DeregisterVolumeResponse DeregisterVolume(DeregisterVolumeRequest request);
 
 
@@ -1034,6 +1083,7 @@ namespace Amazon.OpsWorks
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeregisterVolume">REST API Reference for DeregisterVolume Operation</seealso>
         Task<DeregisterVolumeResponse> DeregisterVolumeAsync(DeregisterVolumeRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1042,9 +1092,9 @@ namespace Amazon.OpsWorks
 
 
         /// <summary>
-        /// Describes the available AWS OpsWorks agent versions. You must specify a stack ID or
-        /// a configuration manager. <code>DescribeAgentVersions</code> returns a list of available
-        /// agent versions for the specified stack or configuration manager.
+        /// Describes the available AWS OpsWorks Stacks agent versions. You must specify a stack
+        /// ID or a configuration manager. <code>DescribeAgentVersions</code> returns a list of
+        /// available agent versions for the specified stack or configuration manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAgentVersions service method.</param>
         /// 
@@ -1055,6 +1105,7 @@ namespace Amazon.OpsWorks
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeAgentVersions">REST API Reference for DescribeAgentVersions Operation</seealso>
         DescribeAgentVersionsResponse DescribeAgentVersions(DescribeAgentVersionsRequest request);
 
 
@@ -1067,6 +1118,7 @@ namespace Amazon.OpsWorks
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeAgentVersions">REST API Reference for DescribeAgentVersions Operation</seealso>
         Task<DescribeAgentVersionsResponse> DescribeAgentVersionsAsync(DescribeAgentVersionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1079,7 +1131,7 @@ namespace Amazon.OpsWorks
         /// 
         ///  <note> 
         /// <para>
-        /// You must specify at least one of the parameters.
+        /// This call accepts only one resource-identifying parameter.
         /// </para>
         ///  </note> 
         /// <para>
@@ -1098,6 +1150,7 @@ namespace Amazon.OpsWorks
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeApps">REST API Reference for DescribeApps Operation</seealso>
         DescribeAppsResponse DescribeApps(DescribeAppsRequest request);
 
 
@@ -1110,6 +1163,7 @@ namespace Amazon.OpsWorks
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeApps">REST API Reference for DescribeApps Operation</seealso>
         Task<DescribeAppsResponse> DescribeAppsAsync(DescribeAppsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1122,7 +1176,7 @@ namespace Amazon.OpsWorks
         /// 
         ///  <note> 
         /// <para>
-        /// You must specify at least one of the parameters.
+        /// This call accepts only one resource-identifying parameter.
         /// </para>
         ///  </note> 
         /// <para>
@@ -1141,6 +1195,7 @@ namespace Amazon.OpsWorks
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeCommands">REST API Reference for DescribeCommands Operation</seealso>
         DescribeCommandsResponse DescribeCommands(DescribeCommandsRequest request);
 
 
@@ -1153,6 +1208,7 @@ namespace Amazon.OpsWorks
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeCommands">REST API Reference for DescribeCommands Operation</seealso>
         Task<DescribeCommandsResponse> DescribeCommandsAsync(DescribeCommandsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1165,7 +1221,7 @@ namespace Amazon.OpsWorks
         /// 
         ///  <note> 
         /// <para>
-        /// You must specify at least one of the parameters.
+        /// This call accepts only one resource-identifying parameter.
         /// </para>
         ///  </note> 
         /// <para>
@@ -1184,6 +1240,7 @@ namespace Amazon.OpsWorks
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeDeployments">REST API Reference for DescribeDeployments Operation</seealso>
         DescribeDeploymentsResponse DescribeDeployments(DescribeDeploymentsRequest request);
 
 
@@ -1196,6 +1253,7 @@ namespace Amazon.OpsWorks
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeDeployments">REST API Reference for DescribeDeployments Operation</seealso>
         Task<DescribeDeploymentsResponse> DescribeDeploymentsAsync(DescribeDeploymentsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1206,8 +1264,8 @@ namespace Amazon.OpsWorks
         /// <summary>
         /// Describes Amazon ECS clusters that are registered with a stack. If you specify only
         /// a stack ID, you can use the <code>MaxResults</code> and <code>NextToken</code> parameters
-        /// to paginate the response. However, AWS OpsWorks currently supports only one cluster
-        /// per layer, so the result set has a maximum of one element.
+        /// to paginate the response. However, AWS OpsWorks Stacks currently supports only one
+        /// cluster per layer, so the result set has a maximum of one element.
         /// 
         ///  
         /// <para>
@@ -1215,6 +1273,10 @@ namespace Amazon.OpsWorks
         /// or Manage permissions level for the stack or an attached policy that explicitly grants
         /// permission. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This call accepts only one resource-identifying parameter.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEcsClusters service method.</param>
@@ -1226,6 +1288,7 @@ namespace Amazon.OpsWorks
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeEcsClusters">REST API Reference for DescribeEcsClusters Operation</seealso>
         DescribeEcsClustersResponse DescribeEcsClusters(DescribeEcsClustersRequest request);
 
 
@@ -1238,6 +1301,7 @@ namespace Amazon.OpsWorks
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeEcsClusters">REST API Reference for DescribeEcsClusters Operation</seealso>
         Task<DescribeEcsClustersResponse> DescribeEcsClustersAsync(DescribeEcsClustersRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1251,7 +1315,7 @@ namespace Amazon.OpsWorks
         /// 
         ///  <note> 
         /// <para>
-        /// You must specify at least one of the parameters.
+        /// This call accepts only one resource-identifying parameter.
         /// </para>
         ///  </note> 
         /// <para>
@@ -1270,6 +1334,7 @@ namespace Amazon.OpsWorks
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeElasticIps">REST API Reference for DescribeElasticIps Operation</seealso>
         DescribeElasticIpsResponse DescribeElasticIps(DescribeElasticIpsRequest request);
 
 
@@ -1282,6 +1347,7 @@ namespace Amazon.OpsWorks
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeElasticIps">REST API Reference for DescribeElasticIps Operation</seealso>
         Task<DescribeElasticIpsResponse> DescribeElasticIpsAsync(DescribeElasticIpsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1294,7 +1360,7 @@ namespace Amazon.OpsWorks
         /// 
         ///  <note> 
         /// <para>
-        /// You must specify at least one of the parameters.
+        /// This call accepts only one resource-identifying parameter.
         /// </para>
         ///  </note> 
         /// <para>
@@ -1312,6 +1378,7 @@ namespace Amazon.OpsWorks
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeElasticLoadBalancers">REST API Reference for DescribeElasticLoadBalancers Operation</seealso>
         DescribeElasticLoadBalancersResponse DescribeElasticLoadBalancers();
 
 
@@ -1320,7 +1387,7 @@ namespace Amazon.OpsWorks
         /// 
         ///  <note> 
         /// <para>
-        /// You must specify at least one of the parameters.
+        /// This call accepts only one resource-identifying parameter.
         /// </para>
         ///  </note> 
         /// <para>
@@ -1339,6 +1406,7 @@ namespace Amazon.OpsWorks
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeElasticLoadBalancers">REST API Reference for DescribeElasticLoadBalancers Operation</seealso>
         DescribeElasticLoadBalancersResponse DescribeElasticLoadBalancers(DescribeElasticLoadBalancersRequest request);
 
 
@@ -1347,7 +1415,7 @@ namespace Amazon.OpsWorks
         /// 
         ///  <note> 
         /// <para>
-        /// You must specify at least one of the parameters.
+        /// This call accepts only one resource-identifying parameter.
         /// </para>
         ///  </note> 
         /// <para>
@@ -1368,6 +1436,7 @@ namespace Amazon.OpsWorks
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeElasticLoadBalancers">REST API Reference for DescribeElasticLoadBalancers Operation</seealso>
         Task<DescribeElasticLoadBalancersResponse> DescribeElasticLoadBalancersAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -1380,6 +1449,7 @@ namespace Amazon.OpsWorks
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeElasticLoadBalancers">REST API Reference for DescribeElasticLoadBalancers Operation</seealso>
         Task<DescribeElasticLoadBalancersResponse> DescribeElasticLoadBalancersAsync(DescribeElasticLoadBalancersRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1392,7 +1462,7 @@ namespace Amazon.OpsWorks
         /// 
         ///  <note> 
         /// <para>
-        /// You must specify at least one of the parameters.
+        /// This call accepts only one resource-identifying parameter.
         /// </para>
         ///  </note> 
         /// <para>
@@ -1411,6 +1481,7 @@ namespace Amazon.OpsWorks
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeInstances">REST API Reference for DescribeInstances Operation</seealso>
         DescribeInstancesResponse DescribeInstances(DescribeInstancesRequest request);
 
 
@@ -1423,6 +1494,7 @@ namespace Amazon.OpsWorks
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeInstances">REST API Reference for DescribeInstances Operation</seealso>
         Task<DescribeInstancesResponse> DescribeInstancesAsync(DescribeInstancesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1435,7 +1507,7 @@ namespace Amazon.OpsWorks
         /// 
         ///  <note> 
         /// <para>
-        /// You must specify at least one of the parameters.
+        /// This call accepts only one resource-identifying parameter.
         /// </para>
         ///  </note> 
         /// <para>
@@ -1454,6 +1526,7 @@ namespace Amazon.OpsWorks
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeLayers">REST API Reference for DescribeLayers Operation</seealso>
         DescribeLayersResponse DescribeLayers(DescribeLayersRequest request);
 
 
@@ -1466,6 +1539,7 @@ namespace Amazon.OpsWorks
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeLayers">REST API Reference for DescribeLayers Operation</seealso>
         Task<DescribeLayersResponse> DescribeLayersAsync(DescribeLayersRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1497,6 +1571,7 @@ namespace Amazon.OpsWorks
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeLoadBasedAutoScaling">REST API Reference for DescribeLoadBasedAutoScaling Operation</seealso>
         DescribeLoadBasedAutoScalingResponse DescribeLoadBasedAutoScaling(DescribeLoadBasedAutoScalingRequest request);
 
 
@@ -1509,6 +1584,7 @@ namespace Amazon.OpsWorks
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeLoadBasedAutoScaling">REST API Reference for DescribeLoadBasedAutoScaling Operation</seealso>
         Task<DescribeLoadBasedAutoScalingResponse> DescribeLoadBasedAutoScalingAsync(DescribeLoadBasedAutoScalingRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1529,6 +1605,7 @@ namespace Amazon.OpsWorks
         /// </summary>
         /// 
         /// <returns>The response from the DescribeMyUserProfile service method, as returned by OpsWorks.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeMyUserProfile">REST API Reference for DescribeMyUserProfile Operation</seealso>
         DescribeMyUserProfileResponse DescribeMyUserProfile();
 
 
@@ -1546,6 +1623,7 @@ namespace Amazon.OpsWorks
         /// <param name="request">Container for the necessary parameters to execute the DescribeMyUserProfile service method.</param>
         /// 
         /// <returns>The response from the DescribeMyUserProfile service method, as returned by OpsWorks.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeMyUserProfile">REST API Reference for DescribeMyUserProfile Operation</seealso>
         DescribeMyUserProfileResponse DescribeMyUserProfile(DescribeMyUserProfileRequest request);
 
 
@@ -1565,6 +1643,7 @@ namespace Amazon.OpsWorks
         /// </param>
         /// 
         /// <returns>The response from the DescribeMyUserProfile service method, as returned by OpsWorks.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeMyUserProfile">REST API Reference for DescribeMyUserProfile Operation</seealso>
         Task<DescribeMyUserProfileResponse> DescribeMyUserProfileAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -1577,6 +1656,7 @@ namespace Amazon.OpsWorks
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeMyUserProfile">REST API Reference for DescribeMyUserProfile Operation</seealso>
         Task<DescribeMyUserProfileResponse> DescribeMyUserProfileAsync(DescribeMyUserProfileRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1604,6 +1684,7 @@ namespace Amazon.OpsWorks
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribePermissions">REST API Reference for DescribePermissions Operation</seealso>
         DescribePermissionsResponse DescribePermissions(DescribePermissionsRequest request);
 
 
@@ -1616,6 +1697,7 @@ namespace Amazon.OpsWorks
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribePermissions">REST API Reference for DescribePermissions Operation</seealso>
         Task<DescribePermissionsResponse> DescribePermissionsAsync(DescribePermissionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1628,7 +1710,7 @@ namespace Amazon.OpsWorks
         /// 
         ///  <note> 
         /// <para>
-        /// You must specify at least one of the parameters.
+        /// This call accepts only one resource-identifying parameter.
         /// </para>
         ///  </note> 
         /// <para>
@@ -1647,6 +1729,7 @@ namespace Amazon.OpsWorks
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeRaidArrays">REST API Reference for DescribeRaidArrays Operation</seealso>
         DescribeRaidArraysResponse DescribeRaidArrays(DescribeRaidArraysRequest request);
 
 
@@ -1659,6 +1742,7 @@ namespace Amazon.OpsWorks
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeRaidArrays">REST API Reference for DescribeRaidArrays Operation</seealso>
         Task<DescribeRaidArraysResponse> DescribeRaidArraysAsync(DescribeRaidArraysRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1676,6 +1760,10 @@ namespace Amazon.OpsWorks
         /// permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
         /// </para>
+        ///  
+        /// <para>
+        /// This call accepts only one resource-identifying parameter.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeRdsDbInstances service method.</param>
         /// 
@@ -1686,6 +1774,7 @@ namespace Amazon.OpsWorks
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeRdsDbInstances">REST API Reference for DescribeRdsDbInstances Operation</seealso>
         DescribeRdsDbInstancesResponse DescribeRdsDbInstances(DescribeRdsDbInstancesRequest request);
 
 
@@ -1698,6 +1787,7 @@ namespace Amazon.OpsWorks
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeRdsDbInstances">REST API Reference for DescribeRdsDbInstances Operation</seealso>
         Task<DescribeRdsDbInstancesResponse> DescribeRdsDbInstancesAsync(DescribeRdsDbInstancesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1706,7 +1796,7 @@ namespace Amazon.OpsWorks
 
 
         /// <summary>
-        /// Describes AWS OpsWorks service errors.
+        /// Describes AWS OpsWorks Stacks service errors.
         /// 
         ///  
         /// <para>
@@ -1714,6 +1804,10 @@ namespace Amazon.OpsWorks
         /// or Manage permissions level for the stack, or an attached policy that explicitly grants
         /// permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This call accepts only one resource-identifying parameter.
         /// </para>
         /// </summary>
         /// 
@@ -1724,11 +1818,12 @@ namespace Amazon.OpsWorks
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeServiceErrors">REST API Reference for DescribeServiceErrors Operation</seealso>
         DescribeServiceErrorsResponse DescribeServiceErrors();
 
 
         /// <summary>
-        /// Describes AWS OpsWorks service errors.
+        /// Describes AWS OpsWorks Stacks service errors.
         /// 
         ///  
         /// <para>
@@ -1736,6 +1831,10 @@ namespace Amazon.OpsWorks
         /// or Manage permissions level for the stack, or an attached policy that explicitly grants
         /// permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This call accepts only one resource-identifying parameter.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeServiceErrors service method.</param>
@@ -1747,11 +1846,12 @@ namespace Amazon.OpsWorks
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeServiceErrors">REST API Reference for DescribeServiceErrors Operation</seealso>
         DescribeServiceErrorsResponse DescribeServiceErrors(DescribeServiceErrorsRequest request);
 
 
         /// <summary>
-        /// Describes AWS OpsWorks service errors.
+        /// Describes AWS OpsWorks Stacks service errors.
         /// 
         ///  
         /// <para>
@@ -1759,6 +1859,10 @@ namespace Amazon.OpsWorks
         /// or Manage permissions level for the stack, or an attached policy that explicitly grants
         /// permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
         /// User Permissions</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This call accepts only one resource-identifying parameter.
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">
@@ -1772,6 +1876,7 @@ namespace Amazon.OpsWorks
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeServiceErrors">REST API Reference for DescribeServiceErrors Operation</seealso>
         Task<DescribeServiceErrorsResponse> DescribeServiceErrorsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -1784,6 +1889,7 @@ namespace Amazon.OpsWorks
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeServiceErrors">REST API Reference for DescribeServiceErrors Operation</seealso>
         Task<DescribeServiceErrorsResponse> DescribeServiceErrorsAsync(DescribeServiceErrorsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1811,6 +1917,7 @@ namespace Amazon.OpsWorks
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeStackProvisioningParameters">REST API Reference for DescribeStackProvisioningParameters Operation</seealso>
         DescribeStackProvisioningParametersResponse DescribeStackProvisioningParameters(DescribeStackProvisioningParametersRequest request);
 
 
@@ -1823,6 +1930,7 @@ namespace Amazon.OpsWorks
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeStackProvisioningParameters">REST API Reference for DescribeStackProvisioningParameters Operation</seealso>
         Task<DescribeStackProvisioningParametersResponse> DescribeStackProvisioningParametersAsync(DescribeStackProvisioningParametersRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1849,6 +1957,7 @@ namespace Amazon.OpsWorks
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeStacks">REST API Reference for DescribeStacks Operation</seealso>
         DescribeStacksResponse DescribeStacks();
 
 
@@ -1872,6 +1981,7 @@ namespace Amazon.OpsWorks
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeStacks">REST API Reference for DescribeStacks Operation</seealso>
         DescribeStacksResponse DescribeStacks(DescribeStacksRequest request);
 
 
@@ -1897,6 +2007,7 @@ namespace Amazon.OpsWorks
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeStacks">REST API Reference for DescribeStacks Operation</seealso>
         Task<DescribeStacksResponse> DescribeStacksAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -1909,6 +2020,7 @@ namespace Amazon.OpsWorks
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeStacks">REST API Reference for DescribeStacks Operation</seealso>
         Task<DescribeStacksResponse> DescribeStacksAsync(DescribeStacksRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1937,6 +2049,7 @@ namespace Amazon.OpsWorks
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeStackSummary">REST API Reference for DescribeStackSummary Operation</seealso>
         DescribeStackSummaryResponse DescribeStackSummary(DescribeStackSummaryRequest request);
 
 
@@ -1949,6 +2062,7 @@ namespace Amazon.OpsWorks
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeStackSummary">REST API Reference for DescribeStackSummary Operation</seealso>
         Task<DescribeStackSummaryResponse> DescribeStackSummaryAsync(DescribeStackSummaryRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1980,6 +2094,7 @@ namespace Amazon.OpsWorks
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeTimeBasedAutoScaling">REST API Reference for DescribeTimeBasedAutoScaling Operation</seealso>
         DescribeTimeBasedAutoScalingResponse DescribeTimeBasedAutoScaling(DescribeTimeBasedAutoScalingRequest request);
 
 
@@ -1992,6 +2107,7 @@ namespace Amazon.OpsWorks
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeTimeBasedAutoScaling">REST API Reference for DescribeTimeBasedAutoScaling Operation</seealso>
         Task<DescribeTimeBasedAutoScalingResponse> DescribeTimeBasedAutoScalingAsync(DescribeTimeBasedAutoScalingRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2018,6 +2134,7 @@ namespace Amazon.OpsWorks
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeUserProfiles">REST API Reference for DescribeUserProfiles Operation</seealso>
         DescribeUserProfilesResponse DescribeUserProfiles();
 
 
@@ -2041,6 +2158,7 @@ namespace Amazon.OpsWorks
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeUserProfiles">REST API Reference for DescribeUserProfiles Operation</seealso>
         DescribeUserProfilesResponse DescribeUserProfiles(DescribeUserProfilesRequest request);
 
 
@@ -2066,6 +2184,7 @@ namespace Amazon.OpsWorks
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeUserProfiles">REST API Reference for DescribeUserProfiles Operation</seealso>
         Task<DescribeUserProfilesResponse> DescribeUserProfilesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -2078,6 +2197,7 @@ namespace Amazon.OpsWorks
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeUserProfiles">REST API Reference for DescribeUserProfiles Operation</seealso>
         Task<DescribeUserProfilesResponse> DescribeUserProfilesAsync(DescribeUserProfilesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2090,7 +2210,7 @@ namespace Amazon.OpsWorks
         /// 
         ///  <note> 
         /// <para>
-        /// You must specify at least one of the parameters.
+        /// This call accepts only one resource-identifying parameter.
         /// </para>
         ///  </note> 
         /// <para>
@@ -2109,6 +2229,7 @@ namespace Amazon.OpsWorks
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeVolumes">REST API Reference for DescribeVolumes Operation</seealso>
         DescribeVolumesResponse DescribeVolumes(DescribeVolumesRequest request);
 
 
@@ -2121,6 +2242,7 @@ namespace Amazon.OpsWorks
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeVolumes">REST API Reference for DescribeVolumes Operation</seealso>
         Task<DescribeVolumesResponse> DescribeVolumesAsync(DescribeVolumesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2145,6 +2267,7 @@ namespace Amazon.OpsWorks
         /// <exception cref="Amazon.OpsWorks.Model.ResourceNotFoundException">
         /// Indicates that a resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DetachElasticLoadBalancer">REST API Reference for DetachElasticLoadBalancer Operation</seealso>
         DetachElasticLoadBalancerResponse DetachElasticLoadBalancer(DetachElasticLoadBalancerRequest request);
 
 
@@ -2157,6 +2280,7 @@ namespace Amazon.OpsWorks
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DetachElasticLoadBalancer">REST API Reference for DetachElasticLoadBalancer Operation</seealso>
         Task<DetachElasticLoadBalancerResponse> DetachElasticLoadBalancerAsync(DetachElasticLoadBalancerRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2186,6 +2310,7 @@ namespace Amazon.OpsWorks
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DisassociateElasticIp">REST API Reference for DisassociateElasticIp Operation</seealso>
         DisassociateElasticIpResponse DisassociateElasticIp(DisassociateElasticIpRequest request);
 
 
@@ -2198,6 +2323,7 @@ namespace Amazon.OpsWorks
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DisassociateElasticIp">REST API Reference for DisassociateElasticIp Operation</seealso>
         Task<DisassociateElasticIpResponse> DisassociateElasticIpAsync(DisassociateElasticIpRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2226,6 +2352,7 @@ namespace Amazon.OpsWorks
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/GetHostnameSuggestion">REST API Reference for GetHostnameSuggestion Operation</seealso>
         GetHostnameSuggestionResponse GetHostnameSuggestion(GetHostnameSuggestionRequest request);
 
 
@@ -2238,6 +2365,7 @@ namespace Amazon.OpsWorks
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/GetHostnameSuggestion">REST API Reference for GetHostnameSuggestion Operation</seealso>
         Task<GetHostnameSuggestionResponse> GetHostnameSuggestionAsync(GetHostnameSuggestionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2264,6 +2392,7 @@ namespace Amazon.OpsWorks
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/GrantAccess">REST API Reference for GrantAccess Operation</seealso>
         GrantAccessResponse GrantAccess(GrantAccessRequest request);
 
 
@@ -2276,6 +2405,7 @@ namespace Amazon.OpsWorks
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/GrantAccess">REST API Reference for GrantAccess Operation</seealso>
         Task<GrantAccessResponse> GrantAccessAsync(GrantAccessRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2304,6 +2434,7 @@ namespace Amazon.OpsWorks
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/RebootInstance">REST API Reference for RebootInstance Operation</seealso>
         RebootInstanceResponse RebootInstance(RebootInstanceRequest request);
 
 
@@ -2316,6 +2447,7 @@ namespace Amazon.OpsWorks
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/RebootInstance">REST API Reference for RebootInstance Operation</seealso>
         Task<RebootInstanceResponse> RebootInstanceAsync(RebootInstanceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2346,6 +2478,7 @@ namespace Amazon.OpsWorks
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/RegisterEcsCluster">REST API Reference for RegisterEcsCluster Operation</seealso>
         RegisterEcsClusterResponse RegisterEcsCluster(RegisterEcsClusterRequest request);
 
 
@@ -2358,6 +2491,7 @@ namespace Amazon.OpsWorks
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/RegisterEcsCluster">REST API Reference for RegisterEcsCluster Operation</seealso>
         Task<RegisterEcsClusterResponse> RegisterEcsClusterAsync(RegisterEcsClusterRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2389,6 +2523,7 @@ namespace Amazon.OpsWorks
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/RegisterElasticIp">REST API Reference for RegisterElasticIp Operation</seealso>
         RegisterElasticIpResponse RegisterElasticIp(RegisterElasticIpRequest request);
 
 
@@ -2401,6 +2536,7 @@ namespace Amazon.OpsWorks
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/RegisterElasticIp">REST API Reference for RegisterElasticIp Operation</seealso>
         Task<RegisterElasticIpResponse> RegisterElasticIpAsync(RegisterElasticIpRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2409,18 +2545,28 @@ namespace Amazon.OpsWorks
 
 
         /// <summary>
-        /// Registers instances with a specified stack that were created outside of AWS OpsWorks.
+        /// Registers instances that were created outside of AWS OpsWorks Stacks with a specified
+        /// stack.
         /// 
         ///  <note> 
         /// <para>
         /// We do not recommend using this action to register instances. The complete registration
-        /// operation has two primary steps, installing the AWS OpsWorks agent on the instance
+        /// operation includes two tasks: installing the AWS OpsWorks Stacks agent on the instance,
         /// and registering the instance with the stack. <code>RegisterInstance</code> handles
         /// only the second step. You should instead use the AWS CLI <code>register</code> command,
         /// which performs the entire registration operation. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/registered-instances-register.html">
-        /// Registering an Instance with an AWS OpsWorks Stack</a>.
+        /// Registering an Instance with an AWS OpsWorks Stacks Stack</a>.
         /// </para>
         ///  </note> 
+        /// <para>
+        /// Registered instances have the same requirements as instances that are created by using
+        /// the <a>CreateInstance</a> API. For example, registered instances must be running a
+        /// supported Linux-based operating system, and they must have a supported instance type.
+        /// For more information about requirements for instances that you want to register, see
+        /// <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/registered-instances-register-registering-preparer.html">
+        /// Preparing the Instance</a>.
+        /// </para>
+        ///  
         /// <para>
         ///  <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions
         /// level for the stack or an attached policy that explicitly grants permissions. For
@@ -2437,6 +2583,7 @@ namespace Amazon.OpsWorks
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/RegisterInstance">REST API Reference for RegisterInstance Operation</seealso>
         RegisterInstanceResponse RegisterInstance(RegisterInstanceRequest request);
 
 
@@ -2449,6 +2596,7 @@ namespace Amazon.OpsWorks
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/RegisterInstance">REST API Reference for RegisterInstance Operation</seealso>
         Task<RegisterInstanceResponse> RegisterInstanceAsync(RegisterInstanceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2476,6 +2624,7 @@ namespace Amazon.OpsWorks
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/RegisterRdsDbInstance">REST API Reference for RegisterRdsDbInstance Operation</seealso>
         RegisterRdsDbInstanceResponse RegisterRdsDbInstance(RegisterRdsDbInstanceRequest request);
 
 
@@ -2488,6 +2637,7 @@ namespace Amazon.OpsWorks
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/RegisterRdsDbInstance">REST API Reference for RegisterRdsDbInstance Operation</seealso>
         Task<RegisterRdsDbInstanceResponse> RegisterRdsDbInstanceAsync(RegisterRdsDbInstanceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2518,6 +2668,7 @@ namespace Amazon.OpsWorks
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/RegisterVolume">REST API Reference for RegisterVolume Operation</seealso>
         RegisterVolumeResponse RegisterVolume(RegisterVolumeRequest request);
 
 
@@ -2530,6 +2681,7 @@ namespace Amazon.OpsWorks
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/RegisterVolume">REST API Reference for RegisterVolume Operation</seealso>
         Task<RegisterVolumeResponse> RegisterVolumeAsync(RegisterVolumeRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2565,6 +2717,7 @@ namespace Amazon.OpsWorks
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/SetLoadBasedAutoScaling">REST API Reference for SetLoadBasedAutoScaling Operation</seealso>
         SetLoadBasedAutoScalingResponse SetLoadBasedAutoScaling(SetLoadBasedAutoScalingRequest request);
 
 
@@ -2577,6 +2730,7 @@ namespace Amazon.OpsWorks
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/SetLoadBasedAutoScaling">REST API Reference for SetLoadBasedAutoScaling Operation</seealso>
         Task<SetLoadBasedAutoScalingResponse> SetLoadBasedAutoScalingAsync(SetLoadBasedAutoScalingRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2605,6 +2759,7 @@ namespace Amazon.OpsWorks
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/SetPermission">REST API Reference for SetPermission Operation</seealso>
         SetPermissionResponse SetPermission(SetPermissionRequest request);
 
 
@@ -2617,6 +2772,7 @@ namespace Amazon.OpsWorks
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/SetPermission">REST API Reference for SetPermission Operation</seealso>
         Task<SetPermissionResponse> SetPermissionAsync(SetPermissionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2646,6 +2802,7 @@ namespace Amazon.OpsWorks
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/SetTimeBasedAutoScaling">REST API Reference for SetTimeBasedAutoScaling Operation</seealso>
         SetTimeBasedAutoScalingResponse SetTimeBasedAutoScaling(SetTimeBasedAutoScalingRequest request);
 
 
@@ -2658,6 +2815,7 @@ namespace Amazon.OpsWorks
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/SetTimeBasedAutoScaling">REST API Reference for SetTimeBasedAutoScaling Operation</seealso>
         Task<SetTimeBasedAutoScalingResponse> SetTimeBasedAutoScalingAsync(SetTimeBasedAutoScalingRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2686,6 +2844,7 @@ namespace Amazon.OpsWorks
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/StartInstance">REST API Reference for StartInstance Operation</seealso>
         StartInstanceResponse StartInstance(StartInstanceRequest request);
 
 
@@ -2698,6 +2857,7 @@ namespace Amazon.OpsWorks
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/StartInstance">REST API Reference for StartInstance Operation</seealso>
         Task<StartInstanceResponse> StartInstanceAsync(StartInstanceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2725,6 +2885,7 @@ namespace Amazon.OpsWorks
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/StartStack">REST API Reference for StartStack Operation</seealso>
         StartStackResponse StartStack(StartStackRequest request);
 
 
@@ -2737,6 +2898,7 @@ namespace Amazon.OpsWorks
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/StartStack">REST API Reference for StartStack Operation</seealso>
         Task<StartStackResponse> StartStackAsync(StartStackRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2767,6 +2929,7 @@ namespace Amazon.OpsWorks
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/StopInstance">REST API Reference for StopInstance Operation</seealso>
         StopInstanceResponse StopInstance(StopInstanceRequest request);
 
 
@@ -2779,6 +2942,7 @@ namespace Amazon.OpsWorks
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/StopInstance">REST API Reference for StopInstance Operation</seealso>
         Task<StopInstanceResponse> StopInstanceAsync(StopInstanceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2806,6 +2970,7 @@ namespace Amazon.OpsWorks
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/StopStack">REST API Reference for StopStack Operation</seealso>
         StopStackResponse StopStack(StopStackRequest request);
 
 
@@ -2818,6 +2983,7 @@ namespace Amazon.OpsWorks
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/StopStack">REST API Reference for StopStack Operation</seealso>
         Task<StopStackResponse> StopStackAsync(StopStackRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2828,7 +2994,7 @@ namespace Amazon.OpsWorks
         /// <summary>
         /// Unassigns a registered instance from all of it's layers. The instance remains in the
         /// stack as an unassigned instance and can be assigned to another layer, as needed. You
-        /// cannot use this action with instances that were created with AWS OpsWorks.
+        /// cannot use this action with instances that were created with AWS OpsWorks Stacks.
         /// 
         ///  
         /// <para>
@@ -2847,6 +3013,7 @@ namespace Amazon.OpsWorks
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UnassignInstance">REST API Reference for UnassignInstance Operation</seealso>
         UnassignInstanceResponse UnassignInstance(UnassignInstanceRequest request);
 
 
@@ -2859,6 +3026,7 @@ namespace Amazon.OpsWorks
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UnassignInstance">REST API Reference for UnassignInstance Operation</seealso>
         Task<UnassignInstanceResponse> UnassignInstanceAsync(UnassignInstanceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2888,6 +3056,7 @@ namespace Amazon.OpsWorks
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UnassignVolume">REST API Reference for UnassignVolume Operation</seealso>
         UnassignVolumeResponse UnassignVolume(UnassignVolumeRequest request);
 
 
@@ -2900,6 +3069,7 @@ namespace Amazon.OpsWorks
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UnassignVolume">REST API Reference for UnassignVolume Operation</seealso>
         Task<UnassignVolumeResponse> UnassignVolumeAsync(UnassignVolumeRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2927,6 +3097,7 @@ namespace Amazon.OpsWorks
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateApp">REST API Reference for UpdateApp Operation</seealso>
         UpdateAppResponse UpdateApp(UpdateAppRequest request);
 
 
@@ -2939,6 +3110,7 @@ namespace Amazon.OpsWorks
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateApp">REST API Reference for UpdateApp Operation</seealso>
         Task<UpdateAppResponse> UpdateAppAsync(UpdateAppRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2967,6 +3139,7 @@ namespace Amazon.OpsWorks
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateElasticIp">REST API Reference for UpdateElasticIp Operation</seealso>
         UpdateElasticIpResponse UpdateElasticIp(UpdateElasticIpRequest request);
 
 
@@ -2979,6 +3152,7 @@ namespace Amazon.OpsWorks
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateElasticIp">REST API Reference for UpdateElasticIp Operation</seealso>
         Task<UpdateElasticIpResponse> UpdateElasticIpAsync(UpdateElasticIpRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3006,6 +3180,7 @@ namespace Amazon.OpsWorks
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateInstance">REST API Reference for UpdateInstance Operation</seealso>
         UpdateInstanceResponse UpdateInstance(UpdateInstanceRequest request);
 
 
@@ -3018,6 +3193,7 @@ namespace Amazon.OpsWorks
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateInstance">REST API Reference for UpdateInstance Operation</seealso>
         Task<UpdateInstanceResponse> UpdateInstanceAsync(UpdateInstanceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3045,6 +3221,7 @@ namespace Amazon.OpsWorks
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateLayer">REST API Reference for UpdateLayer Operation</seealso>
         UpdateLayerResponse UpdateLayer(UpdateLayerRequest request);
 
 
@@ -3057,6 +3234,7 @@ namespace Amazon.OpsWorks
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateLayer">REST API Reference for UpdateLayer Operation</seealso>
         Task<UpdateLayerResponse> UpdateLayerAsync(UpdateLayerRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3080,6 +3258,7 @@ namespace Amazon.OpsWorks
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateMyUserProfile">REST API Reference for UpdateMyUserProfile Operation</seealso>
         UpdateMyUserProfileResponse UpdateMyUserProfile();
 
 
@@ -3100,6 +3279,7 @@ namespace Amazon.OpsWorks
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateMyUserProfile">REST API Reference for UpdateMyUserProfile Operation</seealso>
         UpdateMyUserProfileResponse UpdateMyUserProfile(UpdateMyUserProfileRequest request);
 
 
@@ -3122,6 +3302,7 @@ namespace Amazon.OpsWorks
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateMyUserProfile">REST API Reference for UpdateMyUserProfile Operation</seealso>
         Task<UpdateMyUserProfileResponse> UpdateMyUserProfileAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -3134,6 +3315,7 @@ namespace Amazon.OpsWorks
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateMyUserProfile">REST API Reference for UpdateMyUserProfile Operation</seealso>
         Task<UpdateMyUserProfileResponse> UpdateMyUserProfileAsync(UpdateMyUserProfileRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3161,6 +3343,7 @@ namespace Amazon.OpsWorks
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateRdsDbInstance">REST API Reference for UpdateRdsDbInstance Operation</seealso>
         UpdateRdsDbInstanceResponse UpdateRdsDbInstance(UpdateRdsDbInstanceRequest request);
 
 
@@ -3173,6 +3356,7 @@ namespace Amazon.OpsWorks
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateRdsDbInstance">REST API Reference for UpdateRdsDbInstance Operation</seealso>
         Task<UpdateRdsDbInstanceResponse> UpdateRdsDbInstanceAsync(UpdateRdsDbInstanceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3200,6 +3384,7 @@ namespace Amazon.OpsWorks
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateStack">REST API Reference for UpdateStack Operation</seealso>
         UpdateStackResponse UpdateStack(UpdateStackRequest request);
 
 
@@ -3212,6 +3397,7 @@ namespace Amazon.OpsWorks
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateStack">REST API Reference for UpdateStack Operation</seealso>
         Task<UpdateStackResponse> UpdateStackAsync(UpdateStackRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3239,6 +3425,7 @@ namespace Amazon.OpsWorks
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateUserProfile">REST API Reference for UpdateUserProfile Operation</seealso>
         UpdateUserProfileResponse UpdateUserProfile(UpdateUserProfileRequest request);
 
 
@@ -3251,6 +3438,7 @@ namespace Amazon.OpsWorks
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateUserProfile">REST API Reference for UpdateUserProfile Operation</seealso>
         Task<UpdateUserProfileResponse> UpdateUserProfileAsync(UpdateUserProfileRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3279,6 +3467,7 @@ namespace Amazon.OpsWorks
         /// <exception cref="Amazon.OpsWorks.Model.ValidationException">
         /// Indicates that a request was not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateVolume">REST API Reference for UpdateVolume Operation</seealso>
         UpdateVolumeResponse UpdateVolume(UpdateVolumeRequest request);
 
 
@@ -3291,6 +3480,7 @@ namespace Amazon.OpsWorks
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateVolume">REST API Reference for UpdateVolume Operation</seealso>
         Task<UpdateVolumeResponse> UpdateVolumeAsync(UpdateVolumeRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion

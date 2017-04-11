@@ -439,8 +439,8 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property UseOpsworksSecurityGroups. 
         /// <para>
-        /// Whether the stack automatically associates the AWS OpsWorks built-in security groups
-        /// with the stack's layers.
+        /// Whether the stack automatically associates the AWS OpsWorks Stacks built-in security
+        /// groups with the stack's layers.
         /// </para>
         /// </summary>
         public bool UseOpsworksSecurityGroups

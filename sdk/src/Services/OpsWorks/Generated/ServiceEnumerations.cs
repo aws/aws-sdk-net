@@ -253,6 +253,516 @@ namespace Amazon.OpsWorks
 
 
     /// <summary>
+    /// Constants used for properties of type CloudWatchLogsEncoding.
+    /// </summary>
+    public class CloudWatchLogsEncoding : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Ascii for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Ascii = new CloudWatchLogsEncoding("ascii");
+        /// <summary>
+        /// Constant Big5 for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Big5 = new CloudWatchLogsEncoding("big5");
+        /// <summary>
+        /// Constant Big5hkscs for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Big5hkscs = new CloudWatchLogsEncoding("big5hkscs");
+        /// <summary>
+        /// Constant Cp037 for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Cp037 = new CloudWatchLogsEncoding("cp037");
+        /// <summary>
+        /// Constant Cp1006 for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Cp1006 = new CloudWatchLogsEncoding("cp1006");
+        /// <summary>
+        /// Constant Cp1026 for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Cp1026 = new CloudWatchLogsEncoding("cp1026");
+        /// <summary>
+        /// Constant Cp1140 for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Cp1140 = new CloudWatchLogsEncoding("cp1140");
+        /// <summary>
+        /// Constant Cp1250 for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Cp1250 = new CloudWatchLogsEncoding("cp1250");
+        /// <summary>
+        /// Constant Cp1251 for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Cp1251 = new CloudWatchLogsEncoding("cp1251");
+        /// <summary>
+        /// Constant Cp1252 for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Cp1252 = new CloudWatchLogsEncoding("cp1252");
+        /// <summary>
+        /// Constant Cp1253 for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Cp1253 = new CloudWatchLogsEncoding("cp1253");
+        /// <summary>
+        /// Constant Cp1254 for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Cp1254 = new CloudWatchLogsEncoding("cp1254");
+        /// <summary>
+        /// Constant Cp1255 for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Cp1255 = new CloudWatchLogsEncoding("cp1255");
+        /// <summary>
+        /// Constant Cp1256 for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Cp1256 = new CloudWatchLogsEncoding("cp1256");
+        /// <summary>
+        /// Constant Cp1257 for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Cp1257 = new CloudWatchLogsEncoding("cp1257");
+        /// <summary>
+        /// Constant Cp1258 for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Cp1258 = new CloudWatchLogsEncoding("cp1258");
+        /// <summary>
+        /// Constant Cp424 for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Cp424 = new CloudWatchLogsEncoding("cp424");
+        /// <summary>
+        /// Constant Cp437 for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Cp437 = new CloudWatchLogsEncoding("cp437");
+        /// <summary>
+        /// Constant Cp500 for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Cp500 = new CloudWatchLogsEncoding("cp500");
+        /// <summary>
+        /// Constant Cp720 for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Cp720 = new CloudWatchLogsEncoding("cp720");
+        /// <summary>
+        /// Constant Cp737 for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Cp737 = new CloudWatchLogsEncoding("cp737");
+        /// <summary>
+        /// Constant Cp775 for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Cp775 = new CloudWatchLogsEncoding("cp775");
+        /// <summary>
+        /// Constant Cp850 for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Cp850 = new CloudWatchLogsEncoding("cp850");
+        /// <summary>
+        /// Constant Cp852 for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Cp852 = new CloudWatchLogsEncoding("cp852");
+        /// <summary>
+        /// Constant Cp855 for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Cp855 = new CloudWatchLogsEncoding("cp855");
+        /// <summary>
+        /// Constant Cp856 for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Cp856 = new CloudWatchLogsEncoding("cp856");
+        /// <summary>
+        /// Constant Cp857 for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Cp857 = new CloudWatchLogsEncoding("cp857");
+        /// <summary>
+        /// Constant Cp858 for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Cp858 = new CloudWatchLogsEncoding("cp858");
+        /// <summary>
+        /// Constant Cp860 for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Cp860 = new CloudWatchLogsEncoding("cp860");
+        /// <summary>
+        /// Constant Cp861 for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Cp861 = new CloudWatchLogsEncoding("cp861");
+        /// <summary>
+        /// Constant Cp862 for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Cp862 = new CloudWatchLogsEncoding("cp862");
+        /// <summary>
+        /// Constant Cp863 for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Cp863 = new CloudWatchLogsEncoding("cp863");
+        /// <summary>
+        /// Constant Cp864 for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Cp864 = new CloudWatchLogsEncoding("cp864");
+        /// <summary>
+        /// Constant Cp865 for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Cp865 = new CloudWatchLogsEncoding("cp865");
+        /// <summary>
+        /// Constant Cp866 for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Cp866 = new CloudWatchLogsEncoding("cp866");
+        /// <summary>
+        /// Constant Cp869 for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Cp869 = new CloudWatchLogsEncoding("cp869");
+        /// <summary>
+        /// Constant Cp874 for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Cp874 = new CloudWatchLogsEncoding("cp874");
+        /// <summary>
+        /// Constant Cp875 for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Cp875 = new CloudWatchLogsEncoding("cp875");
+        /// <summary>
+        /// Constant Cp932 for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Cp932 = new CloudWatchLogsEncoding("cp932");
+        /// <summary>
+        /// Constant Cp949 for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Cp949 = new CloudWatchLogsEncoding("cp949");
+        /// <summary>
+        /// Constant Cp950 for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Cp950 = new CloudWatchLogsEncoding("cp950");
+        /// <summary>
+        /// Constant Euc_jis_2004 for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Euc_jis_2004 = new CloudWatchLogsEncoding("euc_jis_2004");
+        /// <summary>
+        /// Constant Euc_jisx0213 for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Euc_jisx0213 = new CloudWatchLogsEncoding("euc_jisx0213");
+        /// <summary>
+        /// Constant Euc_jp for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Euc_jp = new CloudWatchLogsEncoding("euc_jp");
+        /// <summary>
+        /// Constant Euc_kr for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Euc_kr = new CloudWatchLogsEncoding("euc_kr");
+        /// <summary>
+        /// Constant Gb18030 for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Gb18030 = new CloudWatchLogsEncoding("gb18030");
+        /// <summary>
+        /// Constant Gb2312 for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Gb2312 = new CloudWatchLogsEncoding("gb2312");
+        /// <summary>
+        /// Constant Gbk for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Gbk = new CloudWatchLogsEncoding("gbk");
+        /// <summary>
+        /// Constant Hz for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Hz = new CloudWatchLogsEncoding("hz");
+        /// <summary>
+        /// Constant Iso2022_jp for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Iso2022_jp = new CloudWatchLogsEncoding("iso2022_jp");
+        /// <summary>
+        /// Constant Iso2022_jp_1 for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Iso2022_jp_1 = new CloudWatchLogsEncoding("iso2022_jp_1");
+        /// <summary>
+        /// Constant Iso2022_jp_2 for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Iso2022_jp_2 = new CloudWatchLogsEncoding("iso2022_jp_2");
+        /// <summary>
+        /// Constant Iso2022_jp_2004 for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Iso2022_jp_2004 = new CloudWatchLogsEncoding("iso2022_jp_2004");
+        /// <summary>
+        /// Constant Iso2022_jp_3 for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Iso2022_jp_3 = new CloudWatchLogsEncoding("iso2022_jp_3");
+        /// <summary>
+        /// Constant Iso2022_jp_ext for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Iso2022_jp_ext = new CloudWatchLogsEncoding("iso2022_jp_ext");
+        /// <summary>
+        /// Constant Iso2022_kr for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Iso2022_kr = new CloudWatchLogsEncoding("iso2022_kr");
+        /// <summary>
+        /// Constant Iso8859_10 for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Iso8859_10 = new CloudWatchLogsEncoding("iso8859_10");
+        /// <summary>
+        /// Constant Iso8859_13 for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Iso8859_13 = new CloudWatchLogsEncoding("iso8859_13");
+        /// <summary>
+        /// Constant Iso8859_14 for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Iso8859_14 = new CloudWatchLogsEncoding("iso8859_14");
+        /// <summary>
+        /// Constant Iso8859_15 for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Iso8859_15 = new CloudWatchLogsEncoding("iso8859_15");
+        /// <summary>
+        /// Constant Iso8859_16 for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Iso8859_16 = new CloudWatchLogsEncoding("iso8859_16");
+        /// <summary>
+        /// Constant Iso8859_2 for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Iso8859_2 = new CloudWatchLogsEncoding("iso8859_2");
+        /// <summary>
+        /// Constant Iso8859_3 for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Iso8859_3 = new CloudWatchLogsEncoding("iso8859_3");
+        /// <summary>
+        /// Constant Iso8859_4 for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Iso8859_4 = new CloudWatchLogsEncoding("iso8859_4");
+        /// <summary>
+        /// Constant Iso8859_5 for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Iso8859_5 = new CloudWatchLogsEncoding("iso8859_5");
+        /// <summary>
+        /// Constant Iso8859_6 for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Iso8859_6 = new CloudWatchLogsEncoding("iso8859_6");
+        /// <summary>
+        /// Constant Iso8859_7 for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Iso8859_7 = new CloudWatchLogsEncoding("iso8859_7");
+        /// <summary>
+        /// Constant Iso8859_8 for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Iso8859_8 = new CloudWatchLogsEncoding("iso8859_8");
+        /// <summary>
+        /// Constant Iso8859_9 for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Iso8859_9 = new CloudWatchLogsEncoding("iso8859_9");
+        /// <summary>
+        /// Constant Johab for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Johab = new CloudWatchLogsEncoding("johab");
+        /// <summary>
+        /// Constant Koi8_r for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Koi8_r = new CloudWatchLogsEncoding("koi8_r");
+        /// <summary>
+        /// Constant Koi8_u for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Koi8_u = new CloudWatchLogsEncoding("koi8_u");
+        /// <summary>
+        /// Constant Latin_1 for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Latin_1 = new CloudWatchLogsEncoding("latin_1");
+        /// <summary>
+        /// Constant Mac_cyrillic for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Mac_cyrillic = new CloudWatchLogsEncoding("mac_cyrillic");
+        /// <summary>
+        /// Constant Mac_greek for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Mac_greek = new CloudWatchLogsEncoding("mac_greek");
+        /// <summary>
+        /// Constant Mac_iceland for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Mac_iceland = new CloudWatchLogsEncoding("mac_iceland");
+        /// <summary>
+        /// Constant Mac_latin2 for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Mac_latin2 = new CloudWatchLogsEncoding("mac_latin2");
+        /// <summary>
+        /// Constant Mac_roman for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Mac_roman = new CloudWatchLogsEncoding("mac_roman");
+        /// <summary>
+        /// Constant Mac_turkish for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Mac_turkish = new CloudWatchLogsEncoding("mac_turkish");
+        /// <summary>
+        /// Constant Ptcp154 for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Ptcp154 = new CloudWatchLogsEncoding("ptcp154");
+        /// <summary>
+        /// Constant Shift_jis for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Shift_jis = new CloudWatchLogsEncoding("shift_jis");
+        /// <summary>
+        /// Constant Shift_jis_2004 for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Shift_jis_2004 = new CloudWatchLogsEncoding("shift_jis_2004");
+        /// <summary>
+        /// Constant Shift_jisx0213 for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Shift_jisx0213 = new CloudWatchLogsEncoding("shift_jisx0213");
+        /// <summary>
+        /// Constant Utf_16 for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Utf_16 = new CloudWatchLogsEncoding("utf_16");
+        /// <summary>
+        /// Constant Utf_16_be for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Utf_16_be = new CloudWatchLogsEncoding("utf_16_be");
+        /// <summary>
+        /// Constant Utf_16_le for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Utf_16_le = new CloudWatchLogsEncoding("utf_16_le");
+        /// <summary>
+        /// Constant Utf_32 for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Utf_32 = new CloudWatchLogsEncoding("utf_32");
+        /// <summary>
+        /// Constant Utf_32_be for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Utf_32_be = new CloudWatchLogsEncoding("utf_32_be");
+        /// <summary>
+        /// Constant Utf_32_le for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Utf_32_le = new CloudWatchLogsEncoding("utf_32_le");
+        /// <summary>
+        /// Constant Utf_7 for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Utf_7 = new CloudWatchLogsEncoding("utf_7");
+        /// <summary>
+        /// Constant Utf_8 for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Utf_8 = new CloudWatchLogsEncoding("utf_8");
+        /// <summary>
+        /// Constant Utf_8_sig for CloudWatchLogsEncoding
+        /// </summary>
+        public static readonly CloudWatchLogsEncoding Utf_8_sig = new CloudWatchLogsEncoding("utf_8_sig");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CloudWatchLogsEncoding(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CloudWatchLogsEncoding FindValue(string value)
+        {
+            return FindValue<CloudWatchLogsEncoding>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CloudWatchLogsEncoding(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CloudWatchLogsInitialPosition.
+    /// </summary>
+    public class CloudWatchLogsInitialPosition : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant End_of_file for CloudWatchLogsInitialPosition
+        /// </summary>
+        public static readonly CloudWatchLogsInitialPosition End_of_file = new CloudWatchLogsInitialPosition("end_of_file");
+        /// <summary>
+        /// Constant Start_of_file for CloudWatchLogsInitialPosition
+        /// </summary>
+        public static readonly CloudWatchLogsInitialPosition Start_of_file = new CloudWatchLogsInitialPosition("start_of_file");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CloudWatchLogsInitialPosition(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CloudWatchLogsInitialPosition FindValue(string value)
+        {
+            return FindValue<CloudWatchLogsInitialPosition>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CloudWatchLogsInitialPosition(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CloudWatchLogsTimeZone.
+    /// </summary>
+    public class CloudWatchLogsTimeZone : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant LOCAL for CloudWatchLogsTimeZone
+        /// </summary>
+        public static readonly CloudWatchLogsTimeZone LOCAL = new CloudWatchLogsTimeZone("LOCAL");
+        /// <summary>
+        /// Constant UTC for CloudWatchLogsTimeZone
+        /// </summary>
+        public static readonly CloudWatchLogsTimeZone UTC = new CloudWatchLogsTimeZone("UTC");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CloudWatchLogsTimeZone(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CloudWatchLogsTimeZone FindValue(string value)
+        {
+            return FindValue<CloudWatchLogsTimeZone>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CloudWatchLogsTimeZone(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DeploymentCommandName.
     /// </summary>
     public class DeploymentCommandName : ConstantClass

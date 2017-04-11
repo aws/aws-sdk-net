@@ -33,7 +33,7 @@ namespace Amazon.OpsWorks.Model
     /// 
     ///  <note> 
     /// <para>
-    /// You must specify at least one of the parameters.
+    /// This call accepts only one resource-identifying parameter.
     /// </para>
     ///  </note> 
     /// <para>

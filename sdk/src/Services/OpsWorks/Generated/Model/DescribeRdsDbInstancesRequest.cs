@@ -38,6 +38,10 @@ namespace Amazon.OpsWorks.Model
     /// permissions. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
     /// User Permissions</a>.
     /// </para>
+    ///  
+    /// <para>
+    /// This call accepts only one resource-identifying parameter.
+    /// </para>
     /// </summary>
     public partial class DescribeRdsDbInstancesRequest : AmazonOpsWorksRequest
     {

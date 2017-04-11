@@ -35,6 +35,7 @@ namespace Amazon.OpsWorks.Model
         private Dictionary<string, string> _attributes = new Dictionary<string, string>();
         private bool? _autoAssignElasticIps;
         private bool? _autoAssignPublicIps;
+        private CloudWatchLogsConfiguration _cloudWatchLogsConfiguration;
         private string _createdAt;
         private string _customInstanceProfileArn;
         private string _customJson;
@@ -62,13 +63,13 @@ namespace Amazon.OpsWorks.Model
         ///  
         /// <para>
         /// For the <code>HaproxyStatsPassword</code>, <code>MysqlRootPassword</code>, and <code>GangliaPassword</code>
-        /// attributes, AWS OpsWorks returns <code>*****FILTERED*****</code> instead of the actual
-        /// value
+        /// attributes, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of
+        /// the actual value
         /// </para>
         ///  
         /// <para>
-        /// For an ECS Cluster layer, AWS OpsWorks the <code>EcsClusterArn</code> attribute is
-        /// set to the cluster's ARN.
+        /// For an ECS Cluster layer, AWS OpsWorks Stacks the <code>EcsClusterArn</code> attribute
+        /// is set to the cluster's ARN.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Attributes
@@ -121,6 +122,24 @@ namespace Amazon.OpsWorks.Model
         internal bool IsSetAutoAssignPublicIps()
         {
             return this._autoAssignPublicIps.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CloudWatchLogsConfiguration. 
+        /// <para>
+        /// The Amazon CloudWatch Logs configuration settings for the layer.
+        /// </para>
+        /// </summary>
+        public CloudWatchLogsConfiguration CloudWatchLogsConfiguration
+        {
+            get { return this._cloudWatchLogsConfiguration; }
+            set { this._cloudWatchLogsConfiguration = value; }
+        }
+
+        // Check to see if CloudWatchLogsConfiguration property is set
+        internal bool IsSetCloudWatchLogsConfiguration()
+        {
+            return this._cloudWatchLogsConfiguration != null;
         }
 
         /// <summary>

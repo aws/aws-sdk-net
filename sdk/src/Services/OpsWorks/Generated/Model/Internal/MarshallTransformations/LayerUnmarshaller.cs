@@ -82,6 +82,12 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                     unmarshalledObject.AutoAssignPublicIps = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CloudWatchLogsConfiguration", targetDepth))
+                {
+                    var unmarshaller = CloudWatchLogsConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.CloudWatchLogsConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CreatedAt", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

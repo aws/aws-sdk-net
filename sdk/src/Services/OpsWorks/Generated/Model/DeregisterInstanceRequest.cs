@@ -31,7 +31,7 @@ namespace Amazon.OpsWorks.Model
     /// Container for the parameters to the DeregisterInstance operation.
     /// Deregister a registered Amazon EC2 or on-premises instance. This action removes the
     /// instance from the stack and returns it to your control. This action can not be used
-    /// with instances that were created with AWS OpsWorks.
+    /// with instances that were created with AWS OpsWorks Stacks.
     /// 
     ///  
     /// <para>

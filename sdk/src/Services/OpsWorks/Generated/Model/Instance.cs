@@ -579,7 +579,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property ReportedAgentVersion. 
         /// <para>
-        /// The instance's reported AWS OpsWorks agent version.
+        /// The instance's reported AWS OpsWorks Stacks agent version.
         /// </para>
         /// </summary>
         public string ReportedAgentVersion

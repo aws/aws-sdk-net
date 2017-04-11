@@ -93,6 +93,17 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.AutoAssignPublicIps);
                 }
 
+                if(publicRequest.IsSetCloudWatchLogsConfiguration())
+                {
+                    context.Writer.WritePropertyName("CloudWatchLogsConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CloudWatchLogsConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.CloudWatchLogsConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetCustomInstanceProfileArn())
                 {
                     context.Writer.WritePropertyName("CustomInstanceProfileArn");

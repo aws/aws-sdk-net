@@ -41,7 +41,7 @@ namespace Amazon.OpsWorks.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// You cannot use this action with instances that were created with AWS OpsWorks.
+    /// You cannot use this action with instances that were created with AWS OpsWorks Stacks.
     /// </para>
     ///  </li> </ul> 
     /// <para>

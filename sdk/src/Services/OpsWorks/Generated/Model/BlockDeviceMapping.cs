@@ -44,7 +44,8 @@ namespace Amazon.OpsWorks.Model
         /// <para>
         /// The device name that is exposed to the instance, such as <code>/dev/sdh</code>. For
         /// the root device, you can use the explicit device name or you can set this parameter
-        /// to <code>ROOT_DEVICE</code> and AWS OpsWorks will provide the correct device name.
+        /// to <code>ROOT_DEVICE</code> and AWS OpsWorks Stacks will provide the correct device
+        /// name.
         /// </para>
         /// </summary>
         public string DeviceName

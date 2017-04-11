@@ -28,47 +28,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// Contains the response to a <code>DescribeStackProvisioningParameters</code> request.
+    /// Describes the Amazon CloudWatch logs configuration for a layer.
     /// </summary>
-    public partial class DescribeStackProvisioningParametersResponse : AmazonWebServiceResponse
+    public partial class CloudWatchLogsConfiguration
     {
-        private string _agentInstallerUrl;
-        private Dictionary<string, string> _parameters = new Dictionary<string, string>();
+        private bool? _enabled;
+        private List<CloudWatchLogsLogStream> _logStreams = new List<CloudWatchLogsLogStream>();
 
         /// <summary>
-        /// Gets and sets the property AgentInstallerUrl. 
+        /// Gets and sets the property Enabled. 
         /// <para>
-        /// The AWS OpsWorks Stacks agent installer's URL.
+        /// Whether CloudWatch Logs is enabled for a layer.
         /// </para>
         /// </summary>
-        public string AgentInstallerUrl
+        public bool Enabled
         {
-            get { return this._agentInstallerUrl; }
-            set { this._agentInstallerUrl = value; }
+            get { return this._enabled.GetValueOrDefault(); }
+            set { this._enabled = value; }
         }
 
-        // Check to see if AgentInstallerUrl property is set
-        internal bool IsSetAgentInstallerUrl()
+        // Check to see if Enabled property is set
+        internal bool IsSetEnabled()
         {
-            return this._agentInstallerUrl != null;
+            return this._enabled.HasValue; 
         }
 
         /// <summary>
-        /// Gets and sets the property Parameters. 
+        /// Gets and sets the property LogStreams. 
         /// <para>
-        /// An embedded object that contains the provisioning parameters.
+        /// A list of configuration options for CloudWatch Logs.
         /// </para>
         /// </summary>
-        public Dictionary<string, string> Parameters
+        public List<CloudWatchLogsLogStream> LogStreams
         {
-            get { return this._parameters; }
-            set { this._parameters = value; }
+            get { return this._logStreams; }
+            set { this._logStreams = value; }
         }
 
-        // Check to see if Parameters property is set
-        internal bool IsSetParameters()
+        // Check to see if LogStreams property is set
+        internal bool IsSetLogStreams()
         {
-            return this._parameters != null && this._parameters.Count > 0; 
+            return this._logStreams != null && this._logStreams.Count > 0; 
         }
 
     }

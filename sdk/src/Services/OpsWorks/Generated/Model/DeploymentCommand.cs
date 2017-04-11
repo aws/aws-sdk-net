@@ -58,9 +58,9 @@ namespace Amazon.OpsWorks.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>allow_reboot</code> - Specifies whether to allow AWS OpsWorks to reboot the
-        /// instances if necessary, after installing the updates. This argument can be set to
-        /// either <code>true</code> or <code>false</code>. The default value is <code>false</code>.
+        ///  <code>allow_reboot</code> - Specifies whether to allow AWS OpsWorks Stacks to reboot
+        /// the instances if necessary, after installing the updates. This argument can be set
+        /// to either <code>true</code> or <code>false</code>. The default value is <code>false</code>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -132,7 +132,7 @@ namespace Amazon.OpsWorks.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>rollback</code> Roll the app back to the previous version. When you update
-        /// an app, AWS OpsWorks stores the previous version, up to a maximum of five versions.
+        /// an app, AWS OpsWorks Stacks stores the previous version, up to a maximum of five versions.
         /// You can use this command to roll an app back as many as four versions.
         /// </para>
         ///  </li> <li> 

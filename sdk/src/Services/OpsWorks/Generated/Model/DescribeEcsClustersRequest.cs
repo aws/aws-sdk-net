@@ -31,8 +31,8 @@ namespace Amazon.OpsWorks.Model
     /// Container for the parameters to the DescribeEcsClusters operation.
     /// Describes Amazon ECS clusters that are registered with a stack. If you specify only
     /// a stack ID, you can use the <code>MaxResults</code> and <code>NextToken</code> parameters
-    /// to paginate the response. However, AWS OpsWorks currently supports only one cluster
-    /// per layer, so the result set has a maximum of one element.
+    /// to paginate the response. However, AWS OpsWorks Stacks currently supports only one
+    /// cluster per layer, so the result set has a maximum of one element.
     /// 
     ///  
     /// <para>
@@ -40,6 +40,10 @@ namespace Amazon.OpsWorks.Model
     /// or Manage permissions level for the stack or an attached policy that explicitly grants
     /// permission. For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
     /// User Permissions</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// This call accepts only one resource-identifying parameter.
     /// </para>
     /// </summary>
     public partial class DescribeEcsClustersRequest : AmazonOpsWorksRequest

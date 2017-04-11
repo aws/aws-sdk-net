@@ -53,6 +53,7 @@ namespace Amazon.OpsWorks.Model
         private Dictionary<string, string> _attributes = new Dictionary<string, string>();
         private bool? _autoAssignElasticIps;
         private bool? _autoAssignPublicIps;
+        private CloudWatchLogsConfiguration _cloudWatchLogsConfiguration;
         private string _customInstanceProfileArn;
         private string _customJson;
         private Recipes _customRecipes;
@@ -129,6 +130,25 @@ namespace Amazon.OpsWorks.Model
         internal bool IsSetAutoAssignPublicIps()
         {
             return this._autoAssignPublicIps.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CloudWatchLogsConfiguration. 
+        /// <para>
+        /// Specifies CloudWatch Logs configuration options for the layer. For more information,
+        /// see <a>CloudWatchLogsLogStream</a>.
+        /// </para>
+        /// </summary>
+        public CloudWatchLogsConfiguration CloudWatchLogsConfiguration
+        {
+            get { return this._cloudWatchLogsConfiguration; }
+            set { this._cloudWatchLogsConfiguration = value; }
+        }
+
+        // Check to see if CloudWatchLogsConfiguration property is set
+        internal bool IsSetCloudWatchLogsConfiguration()
+        {
+            return this._cloudWatchLogsConfiguration != null;
         }
 
         /// <summary>
@@ -315,14 +335,14 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property Shortname. 
         /// <para>
         /// For custom layers only, use this parameter to specify the layer's short name, which
-        /// is used internally by AWS OpsWorks and by Chef recipes. The short name is also used
-        /// as the name for the directory where your app files are installed. It can have a maximum
-        /// of 200 characters, which are limited to the alphanumeric characters, '-', '_', and
-        /// '.'.
+        /// is used internally by AWS OpsWorks Stacks and by Chef recipes. The short name is also
+        /// used as the name for the directory where your app files are installed. It can have
+        /// a maximum of 200 characters, which are limited to the alphanumeric characters, '-',
+        /// '_', and '.'.
         /// </para>
         ///  
         /// <para>
-        /// The built-in layers' short names are defined by AWS OpsWorks. For more information,
+        /// The built-in layers' short names are defined by AWS OpsWorks Stacks. For more information,
         /// see the <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer
         /// Reference</a>.
         /// </para>

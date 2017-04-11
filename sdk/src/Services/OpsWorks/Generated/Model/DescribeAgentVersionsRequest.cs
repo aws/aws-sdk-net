@@ -29,9 +29,9 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeAgentVersions operation.
-    /// Describes the available AWS OpsWorks agent versions. You must specify a stack ID or
-    /// a configuration manager. <code>DescribeAgentVersions</code> returns a list of available
-    /// agent versions for the specified stack or configuration manager.
+    /// Describes the available AWS OpsWorks Stacks agent versions. You must specify a stack
+    /// ID or a configuration manager. <code>DescribeAgentVersions</code> returns a list of
+    /// available agent versions for the specified stack or configuration manager.
     /// </summary>
     public partial class DescribeAgentVersionsRequest : AmazonOpsWorksRequest
     {
