@@ -118,6 +118,12 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                     unmarshalledObject.RequestParameters = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("requestValidatorId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RequestValidatorId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

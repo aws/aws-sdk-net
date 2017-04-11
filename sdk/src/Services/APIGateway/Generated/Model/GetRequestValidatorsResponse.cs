@@ -28,38 +28,42 @@ using Amazon.Runtime.Internal;
 namespace Amazon.APIGateway.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetRestApis operation.
-    /// Lists the <a>RestApis</a> resources for your collection.
+    /// A collection of <a>RequestValidator</a> resources of a given <a>RestApi</a>.
+    /// 
+    ///  <div class="remarks"> 
+    /// <para>
+    /// In Swagger, the <a>RequestValidators</a> of an API is defined by the <a href="http://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-swagger-extensions.html#api-gateway-swagger-extensions-request-validators.html">x-amazon-apigateway-request-validators</a>
+    /// extension.
+    /// </para>
+    ///  </div> <div class="seeAlso"><a href="http://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-method-request-validation.html">Enable
+    /// Basic Request Validation in API Gateway</a></div>
     /// </summary>
-    public partial class GetRestApisRequest : AmazonAPIGatewayRequest
+    public partial class GetRequestValidatorsResponse : AmazonWebServiceResponse
     {
-        private int? _limit;
+        private List<RequestValidator> _items = new List<RequestValidator>();
         private string _position;
 
         /// <summary>
-        /// Gets and sets the property Limit. 
+        /// Gets and sets the property Items. 
         /// <para>
-        /// The maximum number of returned results per page. The value is 25 by default and could
-        /// be between 1 - 500.
+        /// The current page of <a>RequestValidator</a> resources in the <a>RequestValidators</a>
+        /// collection.
         /// </para>
         /// </summary>
-        public int Limit
+        public List<RequestValidator> Items
         {
-            get { return this._limit.GetValueOrDefault(); }
-            set { this._limit = value; }
+            get { return this._items; }
+            set { this._items = value; }
         }
 
-        // Check to see if Limit property is set
-        internal bool IsSetLimit()
+        // Check to see if Items property is set
+        internal bool IsSetItems()
         {
-            return this._limit.HasValue; 
+            return this._items != null && this._items.Count > 0; 
         }
 
         /// <summary>
-        /// Gets and sets the property Position. 
-        /// <para>
-        /// The current pagination position in the paged result set.
-        /// </para>
+        /// Gets and sets the property Position.
         /// </summary>
         public string Position
         {

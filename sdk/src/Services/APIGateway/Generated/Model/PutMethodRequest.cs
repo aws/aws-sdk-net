@@ -40,6 +40,7 @@ namespace Amazon.APIGateway.Model
         private string _operationName;
         private Dictionary<string, string> _requestModels = new Dictionary<string, string>();
         private Dictionary<string, bool> _requestParameters = new Dictionary<string, bool>();
+        private string _requestValidatorId;
         private string _resourceId;
         private string _restApiId;
 
@@ -64,7 +65,9 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property AuthorizationType. 
         /// <para>
-        /// Specifies the type of authorization used for the method.
+        /// The method's authorization type. Valid values are <code>NONE</code> for open access,
+        /// <code>AWS_IAM</code> for using AWS IAM permissions, <code>CUSTOM</code> for using
+        /// a custom authorizer, or <code>COGNITO_USER_POOLS</code> for using a Cognito user pool.
         /// </para>
         /// </summary>
         public string AuthorizationType
@@ -181,6 +184,24 @@ namespace Amazon.APIGateway.Model
         internal bool IsSetRequestParameters()
         {
             return this._requestParameters != null && this._requestParameters.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RequestValidatorId. 
+        /// <para>
+        /// The identifier of a <a>RequestValidator</a> for validating the method request.
+        /// </para>
+        /// </summary>
+        public string RequestValidatorId
+        {
+            get { return this._requestValidatorId; }
+            set { this._requestValidatorId = value; }
+        }
+
+        // Check to see if RequestValidatorId property is set
+        internal bool IsSetRequestValidatorId()
+        {
+            return this._requestValidatorId != null;
         }
 
         /// <summary>

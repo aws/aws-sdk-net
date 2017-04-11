@@ -42,8 +42,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
-        /// A query parameter specifying the maximum number usage plan keys returned by the GET
-        /// request.
+        /// The maximum number of returned results per page.
         /// </para>
         /// </summary>
         public int Limit
@@ -79,8 +78,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Position. 
         /// <para>
-        /// A query parameter specifying the zero-based index specifying the position of a usage
-        /// plan key.
+        /// The current pagination position in the paged result set.
         /// </para>
         /// </summary>
         public string Position

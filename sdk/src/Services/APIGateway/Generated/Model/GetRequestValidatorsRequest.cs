@@ -28,19 +28,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.APIGateway.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetRestApis operation.
-    /// Lists the <a>RestApis</a> resources for your collection.
+    /// Container for the parameters to the GetRequestValidators operation.
+    /// Gets the <a>RequestValidators</a> collection of a given <a>RestApi</a>.
     /// </summary>
-    public partial class GetRestApisRequest : AmazonAPIGatewayRequest
+    public partial class GetRequestValidatorsRequest : AmazonAPIGatewayRequest
     {
         private int? _limit;
         private string _position;
+        private string _restApiId;
 
         /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
-        /// The maximum number of returned results per page. The value is 25 by default and could
-        /// be between 1 - 500.
+        /// The maximum number of returned results per page.
         /// </para>
         /// </summary>
         public int Limit
@@ -71,6 +71,25 @@ namespace Amazon.APIGateway.Model
         internal bool IsSetPosition()
         {
             return this._position != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RestApiId. 
+        /// <para>
+        /// [Required] The identifier of a <a>RestApi</a> to which the <a>RequestValidators</a>
+        /// collection belongs.
+        /// </para>
+        /// </summary>
+        public string RestApiId
+        {
+            get { return this._restApiId; }
+            set { this._restApiId = value; }
+        }
+
+        // Check to see if RestApiId property is set
+        internal bool IsSetRestApiId()
+        {
+            return this._restApiId != null;
         }
 
     }

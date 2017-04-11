@@ -56,7 +56,9 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property AuthorizationType. 
         /// <para>
-        /// Specifies the type of authorization used for the method.
+        /// The method's authorization type. Valid values are <code>NONE</code> for open access,
+        /// <code>AWS_IAM</code> for using AWS IAM permissions, <code>CUSTOM</code> for using
+        /// a custom authorizer, or <code>COGNITO_USER_POOLS</code> for using a Cognito user pool.
         /// </para>
         /// </summary>
         public string AuthorizationType

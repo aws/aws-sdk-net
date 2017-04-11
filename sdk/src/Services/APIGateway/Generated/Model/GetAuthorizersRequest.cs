@@ -43,7 +43,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
-        /// Limit the number of <a>Authorizer</a> resources in the response.
+        /// The maximum number of returned results per page.
         /// </para>
         /// </summary>
         public int Limit
@@ -61,8 +61,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Position. 
         /// <para>
-        /// If not all <a>Authorizer</a> resources in the response were present, the position
-        /// will specify where to start the next page of results.
+        /// The current pagination position in the paged result set.
         /// </para>
         /// </summary>
         public string Position

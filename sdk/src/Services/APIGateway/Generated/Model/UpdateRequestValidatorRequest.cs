@@ -28,57 +28,57 @@ using Amazon.Runtime.Internal;
 namespace Amazon.APIGateway.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetDeployments operation.
-    /// Gets information about a <a>Deployments</a> collection.
+    /// Container for the parameters to the UpdateRequestValidator operation.
+    /// Updates a <a>RequestValidator</a> of a given <a>RestApi</a>.
     /// </summary>
-    public partial class GetDeploymentsRequest : AmazonAPIGatewayRequest
+    public partial class UpdateRequestValidatorRequest : AmazonAPIGatewayRequest
     {
-        private int? _limit;
-        private string _position;
+        private List<PatchOperation> _patchOperations = new List<PatchOperation>();
+        private string _requestValidatorId;
         private string _restApiId;
 
         /// <summary>
-        /// Gets and sets the property Limit. 
+        /// Gets and sets the property PatchOperations. 
         /// <para>
-        /// The maximum number of returned results per page. The value is 25 by default and could
-        /// be between 1 - 500.
+        /// A list of update operations to be applied to the specified resource and in the order
+        /// specified in this list.
         /// </para>
         /// </summary>
-        public int Limit
+        public List<PatchOperation> PatchOperations
         {
-            get { return this._limit.GetValueOrDefault(); }
-            set { this._limit = value; }
+            get { return this._patchOperations; }
+            set { this._patchOperations = value; }
         }
 
-        // Check to see if Limit property is set
-        internal bool IsSetLimit()
+        // Check to see if PatchOperations property is set
+        internal bool IsSetPatchOperations()
         {
-            return this._limit.HasValue; 
+            return this._patchOperations != null && this._patchOperations.Count > 0; 
         }
 
         /// <summary>
-        /// Gets and sets the property Position. 
+        /// Gets and sets the property RequestValidatorId. 
         /// <para>
-        /// The current pagination position in the paged result set.
+        /// [Required] The identifier of <a>RequestValidator</a> to be updated.
         /// </para>
         /// </summary>
-        public string Position
+        public string RequestValidatorId
         {
-            get { return this._position; }
-            set { this._position = value; }
+            get { return this._requestValidatorId; }
+            set { this._requestValidatorId = value; }
         }
 
-        // Check to see if Position property is set
-        internal bool IsSetPosition()
+        // Check to see if RequestValidatorId property is set
+        internal bool IsSetRequestValidatorId()
         {
-            return this._position != null;
+            return this._requestValidatorId != null;
         }
 
         /// <summary>
         /// Gets and sets the property RestApiId. 
         /// <para>
-        /// The identifier of the <a>RestApi</a> resource for the collection of <a>Deployment</a>
-        /// resources to get information about.
+        /// [Required] The identifier of the <a>RestApi</a> for which the given <a>RequestValidator</a>
+        /// is updated.
         /// </para>
         /// </summary>
         public string RestApiId

@@ -479,6 +479,58 @@ namespace Amazon.APIGateway
 
         #endregion
         
+        #region  CreateRequestValidator
+
+
+        /// <summary>
+        /// Creates a <a>ReqeustValidator</a> of a given <a>RestApi</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRequestValidator service method.</param>
+        /// 
+        /// <returns>The response from the CreateRequestValidator service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        CreateRequestValidatorResponse CreateRequestValidator(CreateRequestValidatorRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateRequestValidator operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateRequestValidator operation on AmazonAPIGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateRequestValidator
+        ///         operation.</returns>
+        IAsyncResult BeginCreateRequestValidator(CreateRequestValidatorRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateRequestValidator operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateRequestValidator.</param>
+        /// 
+        /// <returns>Returns a  CreateRequestValidatorResult from APIGateway.</returns>
+        CreateRequestValidatorResponse EndCreateRequestValidator(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateResource
 
 
@@ -1394,6 +1446,58 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>Returns a  DeleteModelResult from APIGateway.</returns>
         DeleteModelResponse EndDeleteModel(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteRequestValidator
+
+
+        /// <summary>
+        /// Deletes a <a>RequestValidator</a> of a given <a>RestApi</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRequestValidator service method.</param>
+        /// 
+        /// <returns>The response from the DeleteRequestValidator service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        DeleteRequestValidatorResponse DeleteRequestValidator(DeleteRequestValidatorRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteRequestValidator operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRequestValidator operation on AmazonAPIGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteRequestValidator
+        ///         operation.</returns>
+        IAsyncResult BeginDeleteRequestValidator(DeleteRequestValidatorRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteRequestValidator operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteRequestValidator.</param>
+        /// 
+        /// <returns>Returns a  DeleteRequestValidatorResult from APIGateway.</returns>
+        DeleteRequestValidatorResponse EndDeleteRequestValidator(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2975,6 +3079,101 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>Returns a  GetModelTemplateResult from APIGateway.</returns>
         GetModelTemplateResponse EndGetModelTemplate(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetRequestValidator
+
+
+        /// <summary>
+        /// Gets a <a>RequestValidator</a> of a given <a>RestApi</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRequestValidator service method.</param>
+        /// 
+        /// <returns>The response from the GetRequestValidator service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        GetRequestValidatorResponse GetRequestValidator(GetRequestValidatorRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetRequestValidator operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetRequestValidator operation on AmazonAPIGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetRequestValidator
+        ///         operation.</returns>
+        IAsyncResult BeginGetRequestValidator(GetRequestValidatorRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetRequestValidator operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetRequestValidator.</param>
+        /// 
+        /// <returns>Returns a  GetRequestValidatorResult from APIGateway.</returns>
+        GetRequestValidatorResponse EndGetRequestValidator(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetRequestValidators
+
+
+        /// <summary>
+        /// Gets the <a>RequestValidators</a> collection of a given <a>RestApi</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRequestValidators service method.</param>
+        /// 
+        /// <returns>The response from the GetRequestValidators service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        GetRequestValidatorsResponse GetRequestValidators(GetRequestValidatorsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetRequestValidators operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetRequestValidators operation on AmazonAPIGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetRequestValidators
+        ///         operation.</returns>
+        IAsyncResult BeginGetRequestValidators(GetRequestValidatorsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetRequestValidators operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetRequestValidators.</param>
+        /// 
+        /// <returns>Returns a  GetRequestValidatorsResult from APIGateway.</returns>
+        GetRequestValidatorsResponse EndGetRequestValidators(IAsyncResult asyncResult);
 
         #endregion
         
@@ -4906,6 +5105,55 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>Returns a  UpdateModelResult from APIGateway.</returns>
         UpdateModelResponse EndUpdateModel(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateRequestValidator
+
+
+        /// <summary>
+        /// Updates a <a>RequestValidator</a> of a given <a>RestApi</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRequestValidator service method.</param>
+        /// 
+        /// <returns>The response from the UpdateRequestValidator service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        UpdateRequestValidatorResponse UpdateRequestValidator(UpdateRequestValidatorRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateRequestValidator operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRequestValidator operation on AmazonAPIGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateRequestValidator
+        ///         operation.</returns>
+        IAsyncResult BeginUpdateRequestValidator(UpdateRequestValidatorRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateRequestValidator operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateRequestValidator.</param>
+        /// 
+        /// <returns>Returns a  UpdateRequestValidatorResult from APIGateway.</returns>
+        UpdateRequestValidatorResponse EndUpdateRequestValidator(IAsyncResult asyncResult);
 
         #endregion
         

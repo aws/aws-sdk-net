@@ -492,6 +492,37 @@ namespace Amazon.APIGateway
 
         #endregion
         
+        #region  CreateRequestValidator
+
+        internal CreateRequestValidatorResponse CreateRequestValidator(CreateRequestValidatorRequest request)
+        {
+            var marshaller = new CreateRequestValidatorRequestMarshaller();
+            var unmarshaller = CreateRequestValidatorResponseUnmarshaller.Instance;
+
+            return Invoke<CreateRequestValidatorRequest,CreateRequestValidatorResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateRequestValidator operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateRequestValidator operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<CreateRequestValidatorResponse> CreateRequestValidatorAsync(CreateRequestValidatorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateRequestValidatorRequestMarshaller();
+            var unmarshaller = CreateRequestValidatorResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateRequestValidatorRequest,CreateRequestValidatorResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateResource
 
         internal CreateResourceResponse CreateResource(CreateResourceRequest request)
@@ -1045,6 +1076,37 @@ namespace Amazon.APIGateway
             var unmarshaller = DeleteModelResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteModelRequest,DeleteModelResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteRequestValidator
+
+        internal DeleteRequestValidatorResponse DeleteRequestValidator(DeleteRequestValidatorRequest request)
+        {
+            var marshaller = new DeleteRequestValidatorRequestMarshaller();
+            var unmarshaller = DeleteRequestValidatorResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteRequestValidatorRequest,DeleteRequestValidatorResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteRequestValidator operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRequestValidator operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteRequestValidatorResponse> DeleteRequestValidatorAsync(DeleteRequestValidatorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteRequestValidatorRequestMarshaller();
+            var unmarshaller = DeleteRequestValidatorResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteRequestValidatorRequest,DeleteRequestValidatorResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -2068,6 +2130,68 @@ namespace Amazon.APIGateway
             var unmarshaller = GetModelTemplateResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetModelTemplateRequest,GetModelTemplateResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetRequestValidator
+
+        internal GetRequestValidatorResponse GetRequestValidator(GetRequestValidatorRequest request)
+        {
+            var marshaller = new GetRequestValidatorRequestMarshaller();
+            var unmarshaller = GetRequestValidatorResponseUnmarshaller.Instance;
+
+            return Invoke<GetRequestValidatorRequest,GetRequestValidatorResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetRequestValidator operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetRequestValidator operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetRequestValidatorResponse> GetRequestValidatorAsync(GetRequestValidatorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetRequestValidatorRequestMarshaller();
+            var unmarshaller = GetRequestValidatorResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetRequestValidatorRequest,GetRequestValidatorResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetRequestValidators
+
+        internal GetRequestValidatorsResponse GetRequestValidators(GetRequestValidatorsRequest request)
+        {
+            var marshaller = new GetRequestValidatorsRequestMarshaller();
+            var unmarshaller = GetRequestValidatorsResponseUnmarshaller.Instance;
+
+            return Invoke<GetRequestValidatorsRequest,GetRequestValidatorsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetRequestValidators operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetRequestValidators operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetRequestValidatorsResponse> GetRequestValidatorsAsync(GetRequestValidatorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetRequestValidatorsRequestMarshaller();
+            var unmarshaller = GetRequestValidatorsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetRequestValidatorsRequest,GetRequestValidatorsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -3246,6 +3370,37 @@ namespace Amazon.APIGateway
             var unmarshaller = UpdateModelResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateModelRequest,UpdateModelResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateRequestValidator
+
+        internal UpdateRequestValidatorResponse UpdateRequestValidator(UpdateRequestValidatorRequest request)
+        {
+            var marshaller = new UpdateRequestValidatorRequestMarshaller();
+            var unmarshaller = UpdateRequestValidatorResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateRequestValidatorRequest,UpdateRequestValidatorResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateRequestValidator operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRequestValidator operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<UpdateRequestValidatorResponse> UpdateRequestValidatorAsync(UpdateRequestValidatorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateRequestValidatorRequestMarshaller();
+            var unmarshaller = UpdateRequestValidatorResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateRequestValidatorRequest,UpdateRequestValidatorResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

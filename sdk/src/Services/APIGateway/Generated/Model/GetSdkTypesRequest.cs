@@ -39,7 +39,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
-        /// The maximum number of <a>SdkType</a> instances to be returned. 
+        /// The maximum number of returned results per page.
         /// </para>
         /// </summary>
         public int Limit
@@ -57,7 +57,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Position. 
         /// <para>
-        /// The position of the last fetched element in the <a>SdkTypes</a> collection.
+        /// The current pagination position in the paged result set.
         /// </para>
         /// </summary>
         public string Position

@@ -40,7 +40,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
-        /// The page size of the returned documentation versions.
+        /// The maximum number of returned results per page.
         /// </para>
         /// </summary>
         public int Limit
@@ -58,8 +58,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Position. 
         /// <para>
-        /// The position of the returned <code>DocumentationVersion</code> in the <a>DocumentationVersions</a>
-        /// collection.
+        /// The current pagination position in the paged result set.
         /// </para>
         /// </summary>
         public string Position

@@ -28,49 +28,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.APIGateway.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetRestApis operation.
-    /// Lists the <a>RestApis</a> resources for your collection.
+    /// Container for the parameters to the GetRequestValidator operation.
+    /// Gets a <a>RequestValidator</a> of a given <a>RestApi</a>.
     /// </summary>
-    public partial class GetRestApisRequest : AmazonAPIGatewayRequest
+    public partial class GetRequestValidatorRequest : AmazonAPIGatewayRequest
     {
-        private int? _limit;
-        private string _position;
+        private string _requestValidatorId;
+        private string _restApiId;
 
         /// <summary>
-        /// Gets and sets the property Limit. 
+        /// Gets and sets the property RequestValidatorId. 
         /// <para>
-        /// The maximum number of returned results per page. The value is 25 by default and could
-        /// be between 1 - 500.
+        /// [Required] The identifier of the <a>RequestValidator</a> to be retrieved.
         /// </para>
         /// </summary>
-        public int Limit
+        public string RequestValidatorId
         {
-            get { return this._limit.GetValueOrDefault(); }
-            set { this._limit = value; }
+            get { return this._requestValidatorId; }
+            set { this._requestValidatorId = value; }
         }
 
-        // Check to see if Limit property is set
-        internal bool IsSetLimit()
+        // Check to see if RequestValidatorId property is set
+        internal bool IsSetRequestValidatorId()
         {
-            return this._limit.HasValue; 
+            return this._requestValidatorId != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Position. 
+        /// Gets and sets the property RestApiId. 
         /// <para>
-        /// The current pagination position in the paged result set.
+        /// [Required] The identifier of the <a>RestApi</a> to which the specified <a>RequestValidator</a>
+        /// belongs.
         /// </para>
         /// </summary>
-        public string Position
+        public string RestApiId
         {
-            get { return this._position; }
-            set { this._position = value; }
+            get { return this._restApiId; }
+            set { this._restApiId = value; }
         }
 
-        // Check to see if Position property is set
-        internal bool IsSetPosition()
+        // Check to see if RestApiId property is set
+        internal bool IsSetRestApiId()
         {
-            return this._position != null;
+            return this._restApiId != null;
         }
 
     }

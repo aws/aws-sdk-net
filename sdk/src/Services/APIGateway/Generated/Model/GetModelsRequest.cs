@@ -40,8 +40,8 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
-        /// The maximum number of models in the collection to get information about. The default
-        /// limit is 25. It should be an integer between 1 - 500.
+        /// The maximum number of returned results per page. The value is 25 by default and could
+        /// be between 1 - 500.
         /// </para>
         /// </summary>
         public int Limit
@@ -59,8 +59,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Position. 
         /// <para>
-        /// The position of the next set of results in the <a>Models</a> resource to get information
-        /// about.
+        /// The current pagination position in the paged result set.
         /// </para>
         /// </summary>
         public string Position

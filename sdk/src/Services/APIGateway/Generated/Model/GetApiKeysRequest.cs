@@ -116,7 +116,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Position. 
         /// <para>
-        /// The position of the current <a>ApiKeys</a> resource to get information about.
+        /// The current pagination position in the paged result set.
         /// </para>
         /// </summary>
         public string Position

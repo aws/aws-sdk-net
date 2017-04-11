@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetMethod operation
+    /// Response Unmarshaller for GetRequestValidator operation
     /// </summary>  
-    public class GetMethodResponseUnmarshaller : JsonResponseUnmarshaller
+    public class GetRequestValidatorResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,70 +45,34 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetMethodResponse response = new GetMethodResponse();
+            GetRequestValidatorResponse response = new GetRequestValidatorResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("apiKeyRequired", targetDepth))
+                if (context.TestExpression("id", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Id = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("name", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Name = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("validateRequestBody", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
-                    response.ApiKeyRequired = unmarshaller.Unmarshall(context);
+                    response.ValidateRequestBody = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("authorizationType", targetDepth))
+                if (context.TestExpression("validateRequestParameters", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.AuthorizationType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("authorizerId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.AuthorizerId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("httpMethod", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.HttpMethod = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("methodIntegration", targetDepth))
-                {
-                    var unmarshaller = IntegrationUnmarshaller.Instance;
-                    response.MethodIntegration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("methodResponses", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, MethodResponse, StringUnmarshaller, MethodResponseUnmarshaller>(StringUnmarshaller.Instance, MethodResponseUnmarshaller.Instance);
-                    response.MethodResponses = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("operationName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.OperationName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("requestModels", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    response.RequestModels = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("requestParameters", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, bool, StringUnmarshaller, BoolUnmarshaller>(StringUnmarshaller.Instance, BoolUnmarshaller.Instance);
-                    response.RequestParameters = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("requestValidatorId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.RequestValidatorId = unmarshaller.Unmarshall(context);
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    response.ValidateRequestParameters = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -141,9 +105,9 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             return new AmazonAPIGatewayException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static GetMethodResponseUnmarshaller _instance = new GetMethodResponseUnmarshaller();        
+        private static GetRequestValidatorResponseUnmarshaller _instance = new GetRequestValidatorResponseUnmarshaller();        
 
-        internal static GetMethodResponseUnmarshaller GetInstance()
+        internal static GetRequestValidatorResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -151,7 +115,7 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetMethodResponseUnmarshaller Instance
+        public static GetRequestValidatorResponseUnmarshaller Instance
         {
             get
             {

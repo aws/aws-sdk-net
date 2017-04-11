@@ -126,6 +126,12 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetRequestValidatorId())
+                {
+                    context.Writer.WritePropertyName("requestValidatorId");
+                    context.Writer.Write(publicRequest.RequestValidatorId);
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
