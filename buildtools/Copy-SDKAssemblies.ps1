@@ -5,7 +5,10 @@ Param
 
     # The build type. If not specified defaults to 'release'.
     [Parameter()]
-    [string]$BuildType = "release"
+    [string]$BuildType = "release",
+
+    [Parameter()]
+    [string[]]$ServiceList = ""
 )
 
 # Functions
@@ -70,7 +73,11 @@ Function Copy-SdkAssemblies
 		#added to support unity assemblies
 		[Parameter()]
 		[bool]
-		$ValidatePublicKeyToken = $true
+		$ValidatePublicKeyToken = $true,
+
+        [Parameter()]
+        [string[]]
+        $PackageList = @()
     )
 
     Process
@@ -193,6 +200,27 @@ Function Copy-CoreClrSdkAssemblies
 	}
 }
 
+$builtservices = New-Object System.Collections.ArrayList
+if (![string]::IsNullOrEmpty($ServiceList))
+{
+    foreach($service in $ServiceList.split(@(';',',')))
+    {
+        if ($service -eq "Core")
+        {
+            $builtservices = $null
+            break
+        }
+        else
+        {
+            $builtservices.Add($service.ToLower())
+        }
+    }
+}
+else
+{
+    $builtservices = $null
+}
+
 Write-Verbose "Copying $BuildType SDK assemblies to deployment folders for BCL/PCL platforms"
 $args = @{
 	"Destination" = "..\Deployment\assemblies"
@@ -208,8 +236,11 @@ Copy-SDKAssemblies -SourceRoot ..\sdk\src\Core -Destination ..\Deployment\assemb
 $services = gci ..\sdk\src\services
 foreach ($s in $services)
 {
-    Copy-SDKAssemblies -SourceRoot $s.FullName -Destination ..\Deployment\assemblies -PublicKeyToken $PublicKeyTokenToCheck  -BuildType $BuildType
-	Copy-SDKAssemblies -SourceRoot $s.FullName -Destination ..\Deployment\assemblies -Platforms @("unity", "netstandard1.3") -ValidatePublicKeyToken $false  -BuildType $BuildType
+    if ($builtservices -eq $null -Or $builtservices.contains($s.Name.ToLower()))
+    {
+        Copy-SDKAssemblies -SourceRoot $s.FullName -Destination ..\Deployment\assemblies -PublicKeyToken $PublicKeyTokenToCheck  -BuildType $BuildType
+        Copy-SDKAssemblies -SourceRoot $s.FullName -Destination ..\Deployment\assemblies -Platforms @("unity", "netstandard1.3") -ValidatePublicKeyToken $false  -BuildType $BuildType
+    }
 }
 
 Write-Verbose "Copying $BuildType SDK assemblies to deployment folders for CoreCLR platforms"

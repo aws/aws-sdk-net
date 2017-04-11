@@ -45,23 +45,25 @@
                 <DesktopSolutionsFile>AWSSDK.Desktop.sln</DesktopSolutionsFile>
                 <PCLSolutionsFile>AWSSDK.PCL.sln</PCLSolutionsFile>
                 <UnitySolutionsFile>AWSSDK.Unity.sln</UnitySolutionsFile>
-                <CoreCLRSolutionsFile>AWSSDK.CoreCLR.sln</CoreCLRSolutionsFile>
                 <GeneratorPartialBuildArgument></GeneratorPartialBuildArgument>
                 <ReferenceServiceDLLs>false</ReferenceServiceDLLs>
                 <FxCop35TargetFileName>SDK-3.5.FxCop</FxCop35TargetFileName>
                 <FxCop45TargetFileName>SDK-4.5.FxCop</FxCop45TargetFileName>
+                <BCLUnitTestCategories></BCLUnitTestCategories>
+                <CoreCLRTestCategories></CoreCLRTestCategories>
             </PropertyGroup>
         </When>
         <Otherwise>
             <PropertyGroup>
-                <DesktopSolutionsFile>AWSSDK.Desktop.partial.sln</DesktopSolutionsFile>
-                <PCLSolutionsFile>AWSSDK.PCL.partial.sln</PCLSolutionsFile>
+                <DesktopSolutionsFile>Build.Desktop.partial.sln</DesktopSolutionsFile>
+                <PCLSolutionsFile>Build.PCL.partial.sln</PCLSolutionsFile>
                 <UnitySolutionsFile>AWSSDK.Unity.sln</UnitySolutionsFile>
-                <CoreCLRSolutionsFile>AWSSDK.CoreCLR.partial.sln</CoreCLRSolutionsFile>
                 <GeneratorPartialBuildArgument>--partial-build-list $(PartialBuildList)</GeneratorPartialBuildArgument>
                 <ReferenceServiceDLLs>true</ReferenceServiceDLLs>
                 <FxCop35TargetFileName>SDK-3.5.partial.FxCop</FxCop35TargetFileName>
                 <FxCop45TargetFileName>SDK-4.5.partial.FxCop</FxCop45TargetFileName>
+                <BCLUnitTestCategories>Runtime,$(PartialBuildList)</BCLUnitTestCategories>
+                <CoreCLRTestCategories>Core,$(PartialBuildList)</CoreCLRTestCategories>
             </PropertyGroup>
         </Otherwise>
     </Choose>
@@ -140,7 +142,7 @@
             WorkingDirectory="..\generator\ServiceClientGenerator\bin\Release"/>
     </Target>
 
-    <Target Name="build-sdk" DependsOnTargets="populate-deployment;build-sdk-desktop;build-code-analysis;build-sdk-pcl;build-sdk-unity;build-sdk-coreclr">
+    <Target Name="build-sdk" DependsOnTargets="populate-deployment;build-sdk-desktop;build-code-analysis;build-sdk-pcl;build-sdk-unity;build-sdk-coreclr;copy-assemblies">
         <Copy
             SourceFiles="..\generator\ServiceModels\_sdk-versions.json"
             DestinationFolder="$(Deployment)" />
@@ -200,25 +202,31 @@
             />
     </Target>
 
-    <Target Name="run-unit-tests" DependsOnTargets="init;build-sdk;build-test-wrapper;GetSDKToolingInfoTarget" >
+    <Target Name="build-tests" Condition="'$(PartialBuildList)'!=''">
+        <MSBuild 
+            Projects="..\sdk\Build.UnitTests.partial.sln"
+            Targets="Clean; Build"
+            Properties="Configuration=$(Configuration);AWSKeyFile=$(CustomSnkFileLocation);ResolveNuGetPackages=false;ReferenceServiceDLLs=$(ReferenceServiceDLLs)"/>
+    </Target>
+
+    <Target Name="run-unit-tests" DependsOnTargets="init;build-sdk;build-tests;build-test-wrapper;GetSDKToolingInfoTarget" >
         <MsTestWrapperTask
             TestSuiteRunner="$(mstest2013exe)"
             TestContainer="..\sdk\test\UnitTests\bin\$(Configuration)\net35\AWSSDK.UnitTests.Net35.dll"
             ResultsOutputDir="$(Deployment)"
-            Categories="$(PartialBuildList)"
-            WaitForDebugger="false"
+            Categories="$(BCLUnitTestCategories)"
             />
         <MsTestWrapperTask
             TestSuiteRunner="$(mstest2013exe)"
             TestContainer="..\sdk\test\UnitTests\bin\$(Configuration)\net45\AWSSDK.UnitTests.Net45.dll"
             ResultsOutputDir="$(Deployment)"
-            Categories="$(PartialBuildList)"
+            Categories="$(BCLUnitTestCategories)"
             />
         <XUnitWrapperTask
             TestSuiteRunner="$(SDKToolingExe)"
             TestContainer="..\sdk\test\CoreCLR\UnitTests\project.json"
             Configuration="$(Configuration)"
-            Categories="$(PartialBuildList)"
+            Categories="$(CoreCLRTestCategories)"
             />
     </Target>
 
@@ -239,7 +247,7 @@
             />
     </Target>
 
-    <Target Name="nuget-pack" DependsOnTargets="build-sdk" Condition="'$(Configuration)' == 'Release'">
+    <Target Name="nuget-pack" Condition="'$(Configuration)' == 'Release'">
         <Exec LogStandardErrorAsError="true"
               Command="$(powershell) -ExecutionPolicy Unrestricted -NoProfile -File create-nuget-packages.ps1 -PackageList &quot;$(PartialBuildList)&quot;"/>
     </Target>
@@ -366,7 +374,7 @@
             <CustomSnkPublicKeyToken Condition="'$(CustomSnkPublicKeyToken)' == '' ">71c852f8be1c371d</CustomSnkPublicKeyToken>
         </PropertyGroup>
         <Exec LogStandardErrorAsError="true"
-              Command="$(powershell) -ExecutionPolicy Unrestricted -NoProfile -File copy-sdkassemblies.ps1 -PublicKeyTokenToCheck $(CustomSnkPublicKeyToken) -BuildType $(Configuration)" />
+              Command="$(powershell) -ExecutionPolicy Unrestricted -NoProfile -File copy-sdkassemblies.ps1 -PublicKeyTokenToCheck $(CustomSnkPublicKeyToken) -BuildType $(Configuration) -ServiceList &quot;$(PartialBuildList)&quot;"/>
     </Target>
 
     <Target Name="copy-service-models" DependsOnTargets="copy-assemblies">
@@ -455,7 +463,7 @@
         <PrepopulateDeploymentFolder
             BuildArtifactType="sdk"
             DeploymentFolder="$(Deployment)"
-            GitBranch="staged-release"/>
+            GitBranch="last-release"/>
     </Target>
 
     <Target Name="prepare-tests" Condition="'$(TestSettingsFile)' != ''">

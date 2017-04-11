@@ -19,14 +19,32 @@ namespace ServiceClientGenerator
             _options = options;
             _configurations = configurations;
         }
-        public void Execute(string unitTestRoot, IEnumerable<ServiceConfiguration> serviceConfigurations)
+        public void Execute(string unitTestRoot, IEnumerable<ServiceConfiguration> serviceConfigurations, bool useDllReference)
         {
             foreach (var configuration in _configurations)
             {
                 string projectName = string.Format("AWSSDK.UnitTests.{0}.csproj", configuration.Name);
+                string projectGuid = Utils.GetProjectGuid(Path.Combine(unitTestRoot, projectName));
+                IList<ProjectFileCreator.ProjectReference> commonReferences;
+                IList<ProjectFileCreator.ProjectReference> serviceProjectReferences;
+                IList<ProjectFileCreator.Reference> dllProjectReferences;
+
+                if (useDllReference)
+                {
+                    projectName = string.Format("AWSSDK.UnitTests.{0}.partial.csproj", configuration.Name);
+                    serviceProjectReferences = null;
+                    dllProjectReferences = ServiceDllReferences(unitTestRoot, serviceConfigurations, configuration.Name);
+                }
+                else
+                {
+                    serviceProjectReferences = ServiceProjectReferences(unitTestRoot, serviceConfigurations, configuration.Name);
+                    dllProjectReferences = null;
+                }
+                commonReferences = GetCommonReferences(unitTestRoot, configuration.Name, useDllReference);
+
                 var session = new Dictionary<string, object>
                 {
-                    {"ProjectGuid",             Utils.GetProjectGuid(Path.Combine(unitTestRoot, projectName))},
+                    {"ProjectGuid",             projectGuid},
                     {"RootNamespace",           string.Format("AWSSDK_Dot{0}.UnitTests", configuration.Name)},
                     {"AssemblyName",            string.Format("AWSSDK.UnitTests.{0}", configuration.Name)},
                     {"DebugOutputPath",         string.Format(@"bin\Debug\{0}", configuration.Name.ToLower())},
@@ -35,37 +53,43 @@ namespace ServiceClientGenerator
                     {"DebugDefineConstants",    "DEBUG;" + configuration.DefineConstants},
                     {"Reference",               configuration.References},
                     {"CompileInclude",          configuration.CompileInclude},
-                    {"CommonReferences",        GetCommonReferences(unitTestRoot, configuration.Name)},
-                    {"ServiceProjectReferences",ServiceProjectReferences(unitTestRoot, serviceConfigurations, configuration.Name)},
-                    {"ServiceDllReferences",    ServiceDllReferences(unitTestRoot, serviceConfigurations, configuration.Name)},
+                    {"CommonReferences",        commonReferences},
+                    {"ServiceProjectReferences",serviceProjectReferences},
+                    {"ServiceDllReferences",    dllProjectReferences},
                 };
 
                 GenerateProjectFile(session, unitTestRoot, projectName);
             }
         }
 
-        private IList<ProjectFileCreator.ProjectReference> GetCommonReferences(string unitTestRoot, string projectType)
+        private IList<ProjectFileCreator.ProjectReference> GetCommonReferences(string unitTestRoot, string projectType, bool useDllReference)
         {
             IList<ProjectFileCreator.ProjectReference> references = new List<ProjectFileCreator.ProjectReference>();
-
+            
             //
             // Core project reference
             //
-            string coreProjectName = string.Format("AWSSDK.Core.{0}", projectType);
-            string coreIncludePath = Path.Combine("..", "..", "src", "Core", coreProjectName + ".csproj");
-            string coreProjectPath = Path.Combine(unitTestRoot, coreIncludePath);
-
-            references.Add(new ProjectFileCreator.ProjectReference
+            if (!useDllReference)
             {
-                Name = coreProjectName,
-                IncludePath = coreIncludePath,
-                ProjectGuid = Utils.GetProjectGuid(coreProjectPath)
-            });
+                string coreProjectName = string.Format("AWSSDK.Core.{0}", projectType);
+                string coreIncludePath = Path.Combine("..", "..", "src", "Core", coreProjectName + ".csproj");
+                string coreProjectPath = Path.Combine(unitTestRoot, coreIncludePath);
+
+                references.Add(new ProjectFileCreator.ProjectReference
+                {
+                    Name = coreProjectName,
+                    IncludePath = coreIncludePath,
+                    ProjectGuid = Utils.GetProjectGuid(coreProjectPath)
+                });
+            }
+            else
+            {
+                // if adding all serices as dll refernece, add core dll as a dll reference in ServiceDllReferences()
+            }
 
             //
             // CommonTest project reference
             //
-
             string commonTestProjectName = string.Format("AWSSDK.CommonTest.{0}", projectType);
             string commonTestIncludePath = Path.Combine("..", "Common", commonTestProjectName + ".csproj");
             string commonTestPath = Path.Combine(unitTestRoot, commonTestIncludePath);
@@ -120,6 +144,14 @@ namespace ServiceClientGenerator
         {
             HashSet<string> nameSet = new HashSet<string>();
             List<ProjectFileCreator.Reference> references = new List<ProjectFileCreator.Reference>();
+
+            // Technically not a service dll, but we can add it here to avoid recompiling core dll.
+            string coreAssemblyTitle = "AWSSDK.Core";
+            references.Add(new ProjectFileCreator.Reference
+            {
+                Name = coreAssemblyTitle,
+                HintPath = Path.Combine(@"..\..\..\Deployment\assemblies", projectType.ToLower(), coreAssemblyTitle + ".dll")
+            });
 
             foreach (var configuration in serviceConfigurations)
             {

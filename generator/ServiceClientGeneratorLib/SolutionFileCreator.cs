@@ -29,6 +29,7 @@ namespace ServiceClientGenerator
             public const string Android = "Android";
             public const string IOS = "iOS";
             public const string Unity = "Unity";
+            public const string Partial = "partial";
 
         }
 
@@ -113,7 +114,7 @@ namespace ServiceClientGenerator
             GenerateCombinedSolution("AWSSDK.Unity.sln", false, unityProjectConfigs);
 
             GenerateCoreCLRSolution("AWSSDK.CoreCLR.sln", true);
-
+                
             // Include solutions that Travis CI can build
             GeneratePlatformSpecificSolution(GetProjectConfig(ProjectTypes.Net35), false, true, "AWSSDK.Net35.Travis.sln");
             GeneratePlatformSpecificSolution(GetProjectConfig(ProjectTypes.Net45), false, true, "AWSSDK.Net45.Travis.sln");
@@ -127,10 +128,10 @@ namespace ServiceClientGenerator
                     projectsForPartialBuild = null;
                 }
 
-                GenerateCombinedSolution("AWSSDK.Desktop.partial.sln", true, desktopProjectConfigs, projectsForPartialBuild);
-                GenerateCombinedSolution("AWSSDK.PCL.partial.sln", false, pclProjectConfigs, projectsForPartialBuild);
+                GenerateCombinedSolution("Build.Desktop.partial.sln", false, desktopProjectConfigs, projectsForPartialBuild);
+                GenerateCombinedSolution("Build.PCL.partial.sln", false, pclProjectConfigs, projectsForPartialBuild);
 
-                GenerateCoreCLRSolution("AWSSDK.CoreCLR.partial.sln", false, projectsForPartialBuild);
+                GenerateBuildUnitTestSolution("Build.UnitTests.partial.sln", desktopProjectConfigs, projectsForPartialBuild);
             }
         }
 
@@ -230,6 +231,7 @@ namespace ServiceClientGenerator
                 case ProjectTypes.Android:
                 case ProjectTypes.IOS:
                 case ProjectTypes.Unity:
+                case ProjectTypes.Partial:
                     return StandardPlatformConfigurations;
             }
 
@@ -281,7 +283,11 @@ namespace ServiceClientGenerator
                 var testsFolder = Path.Combine(sdkTestsFolder, testFoldername);
                 foreach (var projectFile in Directory.GetFiles(testsFolder, awssdkProjectFileNamePattern, SearchOption.TopDirectoryOnly))
                 {
-                    testProjects.Add(TestProjectFromFile(testFoldername, projectFile));
+                    // omit adding partial projects to the All solution
+                    if (!projectFile.ToLower().Contains("partial"))
+                    {
+                        testProjects.Add(TestProjectFromFile(testFoldername, projectFile));
+                    }
                 }
             }
 
@@ -472,8 +478,6 @@ namespace ServiceClientGenerator
             var projectType = projectConfig.Name;
             Console.WriteLine("...generating platform-specific solution file AWSSDK.{0}.sln", projectType);
 
-            var session = new Dictionary<string, object>();
-
             var buildConfigurations = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
             var solutionProjects = new Dictionary<string, ProjectFileCreator.ProjectConfigurationData>();
 
@@ -538,6 +542,7 @@ namespace ServiceClientGenerator
             var configurationsList = buildConfigurations.ToList();
             configurationsList.Sort();
 
+            var session = new Dictionary<string, object>();
             session["AllProjects"] = solutionProjects;
             session["CoreProjects"] = coreProjects;
             session["ServiceSolutionFolders"] = serviceSolutionFolders;
@@ -549,6 +554,75 @@ namespace ServiceClientGenerator
             if (string.IsNullOrEmpty(solutionFileName))
                 solutionFileName = string.Format("AWSSDK.{0}.sln", projectType);
             GeneratorDriver.WriteFile(Options.SdkRootFolder, null, solutionFileName, content, true, false);
+        }
+
+        private void GenerateBuildUnitTestSolution(string solutionFileName, IEnumerable<ProjectFileConfiguration> projectFileConfigurations, ICollection<string> serviceProjectsForPartialBuild = null)
+        {
+            var buildConfigurations = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+
+            // AllProjects
+            var solutionProjects = new Dictionary<string, ProjectFileCreator.ProjectConfigurationData>();
+
+            // CoreProjects
+            var coreProjects = new List<Project>();
+
+            // TestProjects
+            var testProjects = new List<Project>
+            {
+                GeneratorLibProject
+            };
+            foreach (var pfc in projectFileConfigurations)
+            {
+                var projectType = pfc.Name;
+                var sdkTestsFolder = Path.Combine(Options.SdkRootFolder, GeneratorDriver.TestsSubFoldername);
+
+                // Add partial project files
+                var projectTypeWildCard = string.Format("AWSSDK.*.{0}.partial.csproj", pfc.Name);
+                var testFolder = Path.Combine(sdkTestsFolder, GeneratorDriver.UnitTestsSubFoldername);
+                foreach (var projectFile in Directory.GetFiles(testFolder, projectTypeWildCard, SearchOption.TopDirectoryOnly))
+                {
+                    testProjects.Add(TestProjectFromFile(GeneratorDriver.UnitTestsSubFoldername, projectFile));
+                                                
+                    var projectKey = Path.GetFileNameWithoutExtension(projectFile);
+                    solutionProjects.Add(projectKey, _allProjects[projectKey]);
+                    SelectBuildConfigurationsForProject(projectKey, buildConfigurations);
+                }
+
+                // Add common test project files
+                projectTypeWildCard = string.Format("AWSSDK.*.{0}.csproj", pfc.Name);
+                testFolder = Path.Combine(sdkTestsFolder, GeneratorDriver.CommonTestSubFoldername);
+                foreach (var projectFile in Directory.GetFiles(testFolder, projectTypeWildCard, SearchOption.TopDirectoryOnly))
+                {
+                    testProjects.Add(TestProjectFromFile(GeneratorDriver.CommonTestSubFoldername, projectFile));
+
+                    var projectKey = Path.GetFileNameWithoutExtension(projectFile);
+                    solutionProjects.Add(projectKey, _allProjects[projectKey]);
+                    SelectBuildConfigurationsForProject(projectKey, buildConfigurations);
+                }
+
+                if (projectType.Equals(ProjectTypes.Net35, StringComparison.Ordinal) || projectType.Equals(ProjectTypes.Net45, StringComparison.Ordinal) &&
+                    !solutionProjects.ContainsKey(GeneratorLibProjectName))
+                {
+                    solutionProjects.Add(GeneratorLibProjectName, GeneratorLibProjectConfig);
+                    SelectBuildConfigurationsForProject(GeneratorLibProjectName, buildConfigurations);
+                }
+
+                AddExtraTestProjects(pfc, solutionProjects, testProjects);
+            }
+
+            var configurationsList = buildConfigurations.ToList();
+            configurationsList.Sort();
+
+            var session = new Dictionary<string, object>();
+            session["AllProjects"] = solutionProjects;
+            session["CoreProjects"] = coreProjects;
+            session["ServiceSolutionFolders"] = new List<ServiceSolutionFolder>();
+            session["TestProjects"] = testProjects;
+            session["Configurations"] = configurationsList;
+
+            var generator = new SolutionFileGenerator { Session = session };
+            var content = generator.TransformText();
+            GeneratorDriver.WriteFile(Options.SdkRootFolder, null, "Build.UnitTests.partial.sln", content, true, false);
         }
 
         private void AddExtraTestProjects(ProjectFileConfiguration projectConfig, Dictionary<string, ProjectFileCreator.ProjectConfigurationData> solutionProjects, List<Project> testProjects)
@@ -611,7 +685,7 @@ namespace ServiceClientGenerator
                 ProjectPath = string.Format(@"test\{0}\{1}", folderName, fi.Name)
             };
         }
-
+        
         Project ServiceProjectFromFile(string folderName, string projectFile)
         {
             var fi = new FileInfo(projectFile);

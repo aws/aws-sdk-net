@@ -27,7 +27,7 @@ if (![string]::IsNullOrEmpty($PackageList))
     $buildAll = $false
     foreach($nuspec in $allNuspecs)
     {
-        foreach($package in $PackageList.split(';'))
+        foreach($package in $PackageList.split(@(';',',')))
         {
             if ($package -eq "Core")
             {

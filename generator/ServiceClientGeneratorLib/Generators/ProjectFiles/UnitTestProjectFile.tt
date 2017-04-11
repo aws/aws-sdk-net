@@ -83,11 +83,13 @@
 	}
 #>
   </ItemGroup>
-  <ItemGroup>
 <#
 	IList<ProjectFileCreator.ProjectReference> commonReferences = this.Session["CommonReferences"] as IList<ProjectFileCreator.ProjectReference>;
 	if (commonReferences != null)
 	{
+#>
+  <ItemGroup>
+<#
 		foreach(var reference in commonReferences)
 		{
 #>
@@ -97,48 +99,48 @@
     </ProjectReference>
 <#
 		}
-	}
 #>
   </ItemGroup>
-  <Choose>
-    <When Condition="$(ReferenceServiceDLLs)">
-      <ItemGroup>
 <#
+	}
 	IList<ProjectFileCreator.Reference> dllReferences = this.Session["ServiceDllReferences"] as IList<ProjectFileCreator.Reference>;
-	if (commonReferences != null)
+	if (dllReferences != null)
 	{
+#>
+  <ItemGroup>
+<#
 		foreach(var reference in dllReferences)
 		{
 #>
-        <Reference Include="<#=reference.Name#>">
-          <HintPath><#=reference.HintPath#></HintPath>
-        </Reference>
+    <Reference Include="<#=reference.Name#>">
+      <HintPath><#=reference.HintPath#></HintPath>
+    </Reference>
 <#
 		}
-	}
 #>
-      </ItemGroup>
-    </When>
-    <When Condition="!$(ReferenceServiceDLLs)">
-      <ItemGroup>
+  </ItemGroup>
 <#
+	}
 	IList<ProjectFileCreator.ProjectReference> serviceReferences = this.Session["ServiceProjectReferences"] as IList<ProjectFileCreator.ProjectReference>;
-	if (commonReferences != null)
+	if (serviceReferences != null)
 	{
+#>
+  <ItemGroup>
+<#
 		foreach(var reference in serviceReferences)
 		{
 #>
-        <ProjectReference Include="<#=reference.IncludePath#>">
-          <Project><#=reference.ProjectGuid#></Project>
-          <Name><#=reference.Name#></Name>
-        </ProjectReference>
+    <ProjectReference Include="<#=reference.IncludePath#>">
+      <Project><#=reference.ProjectGuid#></Project>
+      <Name><#=reference.Name#></Name>
+    </ProjectReference>
 <#
 		}
+#>
+  </ItemGroup>
+<#
 	}
 #>
-       </ItemGroup>
-    </When>
-  </Choose>
   <ItemGroup>
     <ProjectReference Include="..\..\..\generator\ServiceClientGeneratorLib\ServiceClientGeneratorLib.csproj">
       <Project>{7BEE7C44-BE12-43CC-AFB9-B5852A1F43C8}</Project>
