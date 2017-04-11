@@ -29,29 +29,47 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateGameSessionQueue operation.
-    /// Establishes a new queue for processing requests for new game sessions. A queue identifies
-    /// where new game sessions can be hosted--by specifying a list of fleet destinations--and
-    /// how long a request can remain in the queue waiting to be placed before timing out.
-    /// Requests for new game sessions are added to a queue by calling <a>StartGameSessionPlacement</a>
-    /// and referencing the queue name.
+    /// Establishes a new queue for processing requests to place new game sessions. A queue
+    /// identifies where new game sessions can be hosted -- by specifying a list of destinations
+    /// (fleets or aliases) -- and how long requests can wait in the queue before timing out.
+    /// You can set up a queue to try to place game sessions on fleets in multiple regions.
+    /// To add placement requests to a queue, call <a>StartGameSessionPlacement</a> and reference
+    /// the queue name.
     /// 
     ///  
     /// <para>
-    /// When processing a request for a game session, Amazon GameLift tries each destination
-    /// in order until it finds one with available resources to host the new game session.
-    /// A queue's default order is determined by how destinations are listed. This default
-    /// order can be overridden in a game session placement request.
+    ///  <b>Destination order.</b> When processing a request for a game session, Amazon GameLift
+    /// tries each destination in order until it finds one with available resources to host
+    /// the new game session. A queue's default order is determined by how destinations are
+    /// listed. The default order is overridden when a game session placement request provides
+    /// player latency information. Player latency information enables Amazon GameLift to
+    /// prioritize destinations where players report the lowest average latency, as a result
+    /// placing the new game session where the majority of players will have the best possible
+    /// gameplay experience.
     /// </para>
     ///  
     /// <para>
-    /// To create a new queue, provide a name, timeout value, and a list of destinations.
-    /// If successful, a new queue object is returned.
+    ///  <b>Player latency policies.</b> For placement requests containing player latency
+    /// information, use player latency policies to protect individual players from very high
+    /// latencies. With a latency cap, even when a destination can deliver a low latency for
+    /// most players, the game is not placed where any individual player is reporting latency
+    /// higher than a policy's maximum. A queue can have multiple latency policies, which
+    /// are enforced consecutively starting with the policy with the lowest latency cap. Use
+    /// multiple policies to gradually relax latency controls; for example, you might set
+    /// a policy with a low latency cap for the first 60 seconds, a second policy with a higher
+    /// cap for the next 60 seconds, etc. 
+    /// </para>
+    ///  
+    /// <para>
+    /// To create a new queue, provide a name, timeout value, a list of destinations and,
+    /// if desired, a set of latency policies. If successful, a new queue object is returned.
     /// </para>
     /// </summary>
     public partial class CreateGameSessionQueueRequest : AmazonGameLiftRequest
     {
         private List<GameSessionQueueDestination> _destinations = new List<GameSessionQueueDestination>();
         private string _name;
+        private List<PlayerLatencyPolicy> _playerLatencyPolicies = new List<PlayerLatencyPolicy>();
         private int? _timeoutInSeconds;
 
         /// <summary>
@@ -91,6 +109,32 @@ namespace Amazon.GameLift.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PlayerLatencyPolicies. 
+        /// <para>
+        /// Collection of latency policies to apply when processing game sessions placement requests
+        /// with player latency information. Multiple policies are evaluated in order of the maximum
+        /// latency value, starting with the lowest latency values. With just one policy, it is
+        /// enforced at the start of the game session placement for the duration period. With
+        /// multiple policies, each policy is enforced consecutively for its duration period.
+        /// For example, a queue might enforce a 60-second policy followed by a 120-second policy,
+        /// and then no policy for the remainder of the placement. A player latency policy must
+        /// set a value for MaximumIndividualPlayerLatencyMilliseconds; if none is set, this API
+        /// requests will fail.
+        /// </para>
+        /// </summary>
+        public List<PlayerLatencyPolicy> PlayerLatencyPolicies
+        {
+            get { return this._playerLatencyPolicies; }
+            set { this._playerLatencyPolicies = value; }
+        }
+
+        // Check to see if PlayerLatencyPolicies property is set
+        internal bool IsSetPlayerLatencyPolicies()
+        {
+            return this._playerLatencyPolicies != null && this._playerLatencyPolicies.Count > 0; 
         }
 
         /// <summary>

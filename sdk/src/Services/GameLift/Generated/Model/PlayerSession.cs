@@ -122,7 +122,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property IpAddress. 
         /// <para>
-        /// Game session IP address. All player sessions reference the game session location.
+        /// IP address of the game session. To connect to a Amazon GameLift game server, an app
+        /// needs both the IP address and port number.
         /// </para>
         /// </summary>
         public string IpAddress

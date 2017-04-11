@@ -55,19 +55,23 @@ namespace Amazon.GameLift.Model
         private DateTime? _endTime;
         private List<GameProperty> _gameProperties = new List<GameProperty>();
         private string _gameSessionArn;
+        private string _gameSessionId;
         private string _gameSessionName;
         private string _gameSessionQueueName;
         private string _gameSessionRegion;
+        private string _ipAddress;
         private int? _maximumPlayerSessionCount;
+        private List<PlacedPlayerSession> _placedPlayerSessions = new List<PlacedPlayerSession>();
         private string _placementId;
         private List<PlayerLatency> _playerLatencies = new List<PlayerLatency>();
+        private int? _port;
         private DateTime? _startTime;
         private GameSessionPlacementState _status;
 
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        /// Time stamp indicating when this request was completed, cancelled, or timed out.
+        /// Time stamp indicating when this request was completed, canceled, or timed out.
         /// </para>
         /// </summary>
         public DateTime EndTime
@@ -104,9 +108,10 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property GameSessionArn. 
         /// <para>
-        /// Identifier for the game session created by this placement request. This value exists
-        /// only if the game session placement status is Completed. This identifier is unique
-        /// across all regions.
+        /// Identifier for the game session created by this placement request. This value is set
+        /// once the new game session is placed (placement status is Fulfilled). This identifier
+        /// is unique across all regions. You can use this value as a <code>GameSessionId</code>
+        /// value as needed.
         /// </para>
         /// </summary>
         public string GameSessionArn
@@ -119,6 +124,25 @@ namespace Amazon.GameLift.Model
         internal bool IsSetGameSessionArn()
         {
             return this._gameSessionArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GameSessionId. 
+        /// <para>
+        /// Unique identifier for the game session. This value is set once the new game session
+        /// is placed (placement status is Fulfilled).
+        /// </para>
+        /// </summary>
+        public string GameSessionId
+        {
+            get { return this._gameSessionId; }
+            set { this._gameSessionId = value; }
+        }
+
+        // Check to see if GameSessionId property is set
+        internal bool IsSetGameSessionId()
+        {
+            return this._gameSessionId != null;
         }
 
         /// <summary>
@@ -163,7 +187,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property GameSessionRegion. 
         /// <para>
         /// Name of the region where the game session created by this placement request is running.
-        /// This value exists only if the game session placement status is Completed.
+        /// This value is set once the new game session is placed (placement status is Fulfilled).
         /// </para>
         /// </summary>
         public string GameSessionRegion
@@ -176,6 +200,26 @@ namespace Amazon.GameLift.Model
         internal bool IsSetGameSessionRegion()
         {
             return this._gameSessionRegion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IpAddress. 
+        /// <para>
+        /// IP address of the game session. To connect to a Amazon GameLift game server, an app
+        /// needs both the IP address and port number. This value is set once the new game session
+        /// is placed (placement status is Fulfilled). 
+        /// </para>
+        /// </summary>
+        public string IpAddress
+        {
+            get { return this._ipAddress; }
+            set { this._ipAddress = value; }
+        }
+
+        // Check to see if IpAddress property is set
+        internal bool IsSetIpAddress()
+        {
+            return this._ipAddress != null;
         }
 
         /// <summary>
@@ -194,6 +238,29 @@ namespace Amazon.GameLift.Model
         internal bool IsSetMaximumPlayerSessionCount()
         {
             return this._maximumPlayerSessionCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PlacedPlayerSessions. 
+        /// <para>
+        /// Collection of information on player sessions created in response to the game session
+        /// placement request. These player sessions are created only once a new game session
+        /// is successfully placed (placement status is Fulfilled). This information includes
+        /// the player ID (as provided in the placement request) and the corresponding player
+        /// session ID. Retrieve full player sessions by calling <a>DescribePlayerSessions</a>
+        /// with the player session ID.
+        /// </para>
+        /// </summary>
+        public List<PlacedPlayerSession> PlacedPlayerSessions
+        {
+            get { return this._placedPlayerSessions; }
+            set { this._placedPlayerSessions = value; }
+        }
+
+        // Check to see if PlacedPlayerSessions property is set
+        internal bool IsSetPlacedPlayerSessions()
+        {
+            return this._placedPlayerSessions != null && this._placedPlayerSessions.Count > 0; 
         }
 
         /// <summary>
@@ -218,7 +285,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property PlayerLatencies. 
         /// <para>
         /// Set of values, expressed in milliseconds, indicating the amount of latency that players
-        /// experience when connected to AWS regions.
+        /// are experiencing when connected to AWS regions.
         /// </para>
         /// </summary>
         public List<PlayerLatency> PlayerLatencies
@@ -231,6 +298,26 @@ namespace Amazon.GameLift.Model
         internal bool IsSetPlayerLatencies()
         {
             return this._playerLatencies != null && this._playerLatencies.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Port. 
+        /// <para>
+        /// Port number for the game session. To connect to a Amazon GameLift game server, an
+        /// app needs both the IP address and port number. This value is set once the new game
+        /// session is placed (placement status is Fulfilled).
+        /// </para>
+        /// </summary>
+        public int Port
+        {
+            get { return this._port.GetValueOrDefault(); }
+            set { this._port = value; }
+        }
+
+        // Check to see if Port property is set
+        internal bool IsSetPort()
+        {
+            return this._port.HasValue; 
         }
 
         /// <summary>
@@ -269,7 +356,7 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>CANCELLED</b> – The placement request was cancelled with a call to <a>StopGameSessionPlacement</a>.
+        ///  <b>CANCELLED</b> – The placement request was canceled with a call to <a>StopGameSessionPlacement</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>

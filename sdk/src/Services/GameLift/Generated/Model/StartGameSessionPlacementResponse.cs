@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// This is the response object from the StartGameSessionPlacement operation.
+    /// Represents the returned data in response to a request action.
     /// </summary>
     public partial class StartGameSessionPlacementResponse : AmazonWebServiceResponse
     {

@@ -41,8 +41,8 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <b>gameSessionId</b> -- ID value assigned to a game session. This unique value is
-    /// returned in a <a>GameSession</a> object when a new game session is created. 
+    ///  <b>gameSessionId</b> -- Unique identifier for the game session. You can use either
+    /// a <code>GameSessionId</code> or <code>GameSessionArn</code> value. 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -88,7 +88,10 @@ namespace Amazon.GameLift.Model
     /// a snapshot in time. Be sure to refresh search results often, and handle sessions that
     /// fill up before a player can join. 
     /// </para>
-    ///  </note>
+    ///  </note> 
+    /// <para>
+    ///  <i>Available in Amazon GameLift Local.</i> 
+    /// </para>
     /// </summary>
     public partial class SearchGameSessionsRequest : AmazonGameLiftRequest
     {

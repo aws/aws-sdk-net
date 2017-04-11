@@ -38,6 +38,7 @@ namespace Amazon.GameLift.Model
     {
         private List<GameSessionQueueDestination> _destinations = new List<GameSessionQueueDestination>();
         private string _name;
+        private List<PlayerLatencyPolicy> _playerLatencyPolicies = new List<PlayerLatencyPolicy>();
         private int? _timeoutInSeconds;
 
         /// <summary>
@@ -45,7 +46,8 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// List of fleets that can be used to fulfill game session placement requests in the
         /// queue. Fleets are identified by either a fleet ARN or a fleet alias ARN. Destinations
-        /// are listed in default preference order.
+        /// are listed in default preference order. When updating this list, provide a complete
+        /// list of destinations.
         /// </para>
         /// </summary>
         public List<GameSessionQueueDestination> Destinations
@@ -77,6 +79,31 @@ namespace Amazon.GameLift.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PlayerLatencyPolicies. 
+        /// <para>
+        /// Collection of latency policies to apply when processing game sessions placement requests
+        /// with player latency information. Multiple policies are evaluated in order of the maximum
+        /// latency value, starting with the lowest latency values. With just one policy, it is
+        /// enforced at the start of the game session placement for the duration period. With
+        /// multiple policies, each policy is enforced consecutively for its duration period.
+        /// For example, a queue might enforce a 60-second policy followed by a 120-second policy,
+        /// and then no policy for the remainder of the placement. When updating policies, provide
+        /// a complete collection of policies.
+        /// </para>
+        /// </summary>
+        public List<PlayerLatencyPolicy> PlayerLatencyPolicies
+        {
+            get { return this._playerLatencyPolicies; }
+            set { this._playerLatencyPolicies = value; }
+        }
+
+        // Check to see if PlayerLatencyPolicies property is set
+        internal bool IsSetPlayerLatencyPolicies()
+        {
+            return this._playerLatencyPolicies != null && this._playerLatencyPolicies.Count > 0; 
         }
 
         /// <summary>

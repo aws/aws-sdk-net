@@ -30,10 +30,10 @@ namespace Amazon.GameLift.Model
     /// <summary>
     /// Container for the parameters to the DescribePlayerSessions operation.
     /// Retrieves properties for one or more player sessions. This action can be used in several
-    /// ways: (1) provide a <code>PlayerSessionId</code> parameter to request properties for
-    /// a specific player session; (2) provide a <code>GameSessionId</code> parameter to request
-    /// properties for all player sessions in the specified game session; (3) provide a <code>PlayerId</code>
-    /// parameter to request properties for all player sessions of a specified player. 
+    /// ways: (1) provide a <code>PlayerSessionId</code> to request properties for a specific
+    /// player session; (2) provide a <code>GameSessionId</code> to request properties for
+    /// all player sessions in the specified game session; (3) provide a <code>PlayerId</code>
+    /// to request properties for all player sessions of a specified player. 
     /// 
     ///  
     /// <para>
@@ -42,6 +42,10 @@ namespace Amazon.GameLift.Model
     /// status. Use the pagination parameters to retrieve results as a set of sequential pages.
     /// If successful, a <a>PlayerSession</a> object is returned for each session matching
     /// the request.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <i>Available in Amazon GameLift Local.</i> 
     /// </para>
     /// </summary>
     public partial class DescribePlayerSessionsRequest : AmazonGameLiftRequest

@@ -89,6 +89,22 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
+                if(publicRequest.IsSetPlayerLatencyPolicies())
+                {
+                    context.Writer.WritePropertyName("PlayerLatencyPolicies");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestPlayerLatencyPoliciesListValue in publicRequest.PlayerLatencyPolicies)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = PlayerLatencyPolicyMarshaller.Instance;
+                        marshaller.Marshall(publicRequestPlayerLatencyPoliciesListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetTimeoutInSeconds())
                 {
                     context.Writer.WritePropertyName("TimeoutInSeconds");

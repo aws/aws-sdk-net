@@ -29,7 +29,7 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Fleet designated in a game session queue. Requests for new game sessions in the queue
-    /// are fulfilled by starting a new game session on any destination listed for a queue.
+    /// are fulfilled by starting a new game session on any destination configured for a queue.
     /// </summary>
     public partial class GameSessionQueueDestination
     {

@@ -143,7 +143,8 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property GameSessionId. 
         /// <para>
         /// Unique identifier for the game session. A game session ID has the following format:
-        /// "arn:aws:gamelift:&lt;region&gt;::gamesession/&lt;fleet ID&gt;/&lt;game session ID&gt;".
+        /// <code>arn:aws:gamelift:&lt;region&gt;::gamesession/&lt;fleet ID&gt;/&lt;custom ID
+        /// string or idempotency token&gt;</code>.
         /// </para>
         /// </summary>
         public string GameSessionId
@@ -161,8 +162,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property IpAddress. 
         /// <para>
-        /// IP address of the game session. To connect to a Amazon GameLift server process, an
-        /// app needs both the IP address and port number.
+        /// IP address of the game session. To connect to a Amazon GameLift game server, an app
+        /// needs both the IP address and port number.
         /// </para>
         /// </summary>
         public string IpAddress
@@ -235,8 +236,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Port. 
         /// <para>
-        /// Port number for the game session. To connect to a Amazon GameLift server process,
-        /// an app needs both the IP address and port number.
+        /// Port number for the game session. To connect to a Amazon GameLift game server, an
+        /// app needs both the IP address and port number.
         /// </para>
         /// </summary>
         public int Port

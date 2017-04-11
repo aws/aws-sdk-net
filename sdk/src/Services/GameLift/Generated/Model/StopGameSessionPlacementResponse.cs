@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// This is the response object from the StopGameSessionPlacement operation.
+    /// Represents the returned data in response to a request action.
     /// </summary>
     public partial class StopGameSessionPlacementResponse : AmazonWebServiceResponse
     {
@@ -37,8 +37,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property GameSessionPlacement. 
         /// <para>
-        /// Object that describes the cancelled game session placement, with cancelled status
-        /// and an end time stamp. 
+        /// Object that describes the canceled game session placement, with Cancelled status and
+        /// an end time stamp. 
         /// </para>
         /// </summary>
         public GameSessionPlacement GameSessionPlacement

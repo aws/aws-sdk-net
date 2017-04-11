@@ -41,6 +41,10 @@ namespace Amazon.GameLift.Model
     /// to retrieve results as a set of sequential pages. If successful, a <a>GameSession</a>
     /// object is returned for each game session matching the request.
     /// </para>
+    ///  
+    /// <para>
+    ///  <i>Available in Amazon GameLift Local.</i> 
+    /// </para>
     /// </summary>
     public partial class DescribeGameSessionsRequest : AmazonGameLiftRequest
     {
@@ -91,7 +95,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property GameSessionId. 
         /// <para>
-        /// Unique identifier for the game session to retrieve.
+        /// Unique identifier for the game session to retrieve. You can use either a <code>GameSessionId</code>
+        /// or <code>GameSessionArn</code> value. 
         /// </para>
         /// </summary>
         public string GameSessionId

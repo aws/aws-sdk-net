@@ -30,12 +30,11 @@ namespace Amazon.GameLift.Model
     /// <summary>
     /// Container for the parameters to the StartGameSessionPlacement operation.
     /// Places a request for a new game session in a queue (see <a>CreateGameSessionQueue</a>).
-    /// When processing a placement request, Amazon GameLift attempts to create a new game
-    /// session on one of the fleets associated with the queue. If no resources are available,
-    /// Amazon GameLift tries again with another and so on until resources are found or the
-    /// placement request times out. A game session placement request can also request player
-    /// sessions. When a new game session is successfully created, Amazon GameLift creates
-    /// a player session for each player included in the request.
+    /// When processing a placement request, Amazon GameLift searches for available resources
+    /// on the queue's destinations, scanning each until it finds resources or the placement
+    /// request times out. A game session placement request can also request player sessions.
+    /// When a new game session is successfully created, Amazon GameLift creates a player
+    /// session for each player included in the request.
     /// 
     ///  
     /// <para>
@@ -170,7 +169,7 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// Unique identifier to assign to the new game session placement. This value is developer-defined.
         /// The value must be unique across all regions and cannot be reused unless you are resubmitting
-        /// a cancelled or timed-out placement request.
+        /// a canceled or timed-out placement request.
         /// </para>
         /// </summary>
         public string PlacementId
@@ -189,9 +188,9 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property PlayerLatencies. 
         /// <para>
         /// Set of values, expressed in milliseconds, indicating the amount of latency that players
-        /// experience when connected to AWS regions. This information is relevant when requesting
-        /// player sessions. Latency information provided for player IDs not included in <i>DesiredPlayerSessions</i>
-        /// are ignored.
+        /// are experiencing when connected to AWS regions. This information is used to try to
+        /// place the new game session where it can offer the best possible gameplay experience
+        /// for the players. 
         /// </para>
         /// </summary>
         public List<PlayerLatency> PlayerLatencies

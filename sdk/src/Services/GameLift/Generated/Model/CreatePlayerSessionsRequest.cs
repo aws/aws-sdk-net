@@ -41,6 +41,10 @@ namespace Amazon.GameLift.Model
     /// and a set of new <a>PlayerSession</a> objects is returned. Player sessions cannot
     /// be updated.
     /// </para>
+    ///  
+    /// <para>
+    ///  <i>Available in Amazon GameLift Local.</i> 
+    /// </para>
     /// </summary>
     public partial class CreatePlayerSessionsRequest : AmazonGameLiftRequest
     {

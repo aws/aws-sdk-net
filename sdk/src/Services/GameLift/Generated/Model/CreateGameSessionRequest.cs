@@ -36,18 +36,35 @@ namespace Amazon.GameLift.Model
     /// 
     ///  
     /// <para>
-    /// To create a game session, specify either fleet ID or alias ID, and indicate a maximum
+    /// To create a game session, specify either fleet ID or alias ID and indicate a maximum
     /// number of players to allow in the game session. You can also provide a name and game-specific
     /// properties for this game session. If successful, a <a>GameSession</a> object is returned
-    /// containing session properties, including an IP address. By default, newly created
-    /// game sessions allow new players to join. Use <a>UpdateGameSession</a> to change the
-    /// game session's player session creation policy.
+    /// containing game session properties, including a game session ID with the custom string
+    /// you provided.
     /// </para>
     ///  
     /// <para>
-    /// When creating a game session on a fleet with a resource limit creation policy, the
-    /// request should include a creator ID. If none is provided, Amazon GameLift does not
-    /// evaluate the fleet's resource limit creation policy.
+    ///  <b>Idempotency tokens.</b> You can add a token that uniquely identifies game session
+    /// requests. This is useful for ensuring that game session requests are idempotent. Multiple
+    /// requests with the same idempotency token are processed only once; subsequent requests
+    /// return the original result. All response values are the same with the exception of
+    /// game session status, which may change.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Resource creation limits.</b> If you are creating a game session on a fleet with
+    /// a resource creation limit policy in force, then you must specify a creator ID. Without
+    /// this ID, Amazon GameLift has no way to evaluate the policy for this new game session
+    /// request.
+    /// </para>
+    ///  
+    /// <para>
+    ///  By default, newly created game sessions allow new players to join. Use <a>UpdateGameSession</a>
+    /// to change the game session's player session creation policy.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <i>Available in Amazon GameLift Local.</i> 
     /// </para>
     /// </summary>
     public partial class CreateGameSessionRequest : AmazonGameLiftRequest
@@ -57,6 +74,7 @@ namespace Amazon.GameLift.Model
         private string _fleetId;
         private List<GameProperty> _gameProperties = new List<GameProperty>();
         private string _gameSessionId;
+        private string _idempotencyToken;
         private int? _maximumPlayerSessionCount;
         private string _name;
 
@@ -82,9 +100,9 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property CreatorId. 
         /// <para>
-        /// $player-id; or entity creating the game session. This ID is used to enforce a resource
-        /// protection policy (if one exists) that limits the number of concurrent active game
-        /// sessions one player can have.
+        /// Unique identifier for a player or entity creating the game session. This ID is used
+        /// to enforce a resource protection policy (if one exists) that limits the number of
+        /// concurrent active game sessions one player can have.
         /// </para>
         /// </summary>
         public string CreatorId
@@ -140,10 +158,11 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property GameSessionId. 
         /// <para>
-        /// Custom string to include in the game session ID, with a maximum length of 48 characters.
-        /// A game session ID has the following format: "arn:aws:gamelift:&lt;region&gt;::gamesession/&lt;fleet
-        /// ID&gt;/&lt;game session ID&gt;". If provided, the custom string is used for the game
-        /// session ID string. This value cannot be updated once a game session is created.
+        ///  <i>This parameter is no longer preferred. Please use <code>IdempotencyToken</code>
+        /// instead.</i> Custom string that uniquely identifies a request for a new game session.
+        /// Maximum token length is 48 characters. If provided, this string is included in the
+        /// new game session's ID. (A game session ID has the following format: <code>arn:aws:gamelift:&lt;region&gt;::gamesession/&lt;fleet
+        /// ID&gt;/&lt;custom ID string or idempotency token&gt;</code>.) 
         /// </para>
         /// </summary>
         public string GameSessionId
@@ -156,6 +175,27 @@ namespace Amazon.GameLift.Model
         internal bool IsSetGameSessionId()
         {
             return this._gameSessionId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IdempotencyToken. 
+        /// <para>
+        /// Custom string that uniquely identifies a request for a new game session. Maximum token
+        /// length is 48 characters. If provided, this string is included in the new game session's
+        /// ID. (A game session ID has the following format: <code>arn:aws:gamelift:&lt;region&gt;::gamesession/&lt;fleet
+        /// ID&gt;/&lt;custom ID string or idempotency token&gt;</code>.) 
+        /// </para>
+        /// </summary>
+        public string IdempotencyToken
+        {
+            get { return this._idempotencyToken; }
+            set { this._idempotencyToken = value; }
+        }
+
+        // Check to see if IdempotencyToken property is set
+        internal bool IsSetIdempotencyToken()
+        {
+            return this._idempotencyToken != null;
         }
 
         /// <summary>

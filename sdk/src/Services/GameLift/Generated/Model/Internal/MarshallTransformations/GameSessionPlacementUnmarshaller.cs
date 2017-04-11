@@ -82,6 +82,12 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     unmarshalledObject.GameSessionArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("GameSessionId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.GameSessionId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("GameSessionName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -100,10 +106,22 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     unmarshalledObject.GameSessionRegion = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("IpAddress", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.IpAddress = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("MaximumPlayerSessionCount", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
                     unmarshalledObject.MaximumPlayerSessionCount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PlacedPlayerSessions", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<PlacedPlayerSession, PlacedPlayerSessionUnmarshaller>(PlacedPlayerSessionUnmarshaller.Instance);
+                    unmarshalledObject.PlacedPlayerSessions = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("PlacementId", targetDepth))
@@ -116,6 +134,12 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<PlayerLatency, PlayerLatencyUnmarshaller>(PlayerLatencyUnmarshaller.Instance);
                     unmarshalledObject.PlayerLatencies = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Port", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.Port = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("StartTime", targetDepth))

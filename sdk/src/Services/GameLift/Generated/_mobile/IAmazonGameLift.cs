@@ -35,12 +35,12 @@ namespace Amazon.GameLift
     /// <para>
     ///  Amazon GameLift is a managed service for developers who need a scalable, dedicated
     /// server solution for their multiplayer games. Amazon GameLift provides tools to acquire
-    /// computing resources and deploy game servers, scale game server capacity to meed player
+    /// computing resources and deploy game servers, scale game server capacity to meet player
     /// demand, and track in-depth metrics on player usage and server performance.
     /// </para>
     ///  
     /// <para>
-    /// The Amazon GameLift service API includes important functionality to:
+    /// The Amazon GameLift service API includes important features:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -60,6 +60,15 @@ namespace Amazon.GameLift
     /// command-line interface</a> (CLI) tool. Both of these align with the low-level service
     /// API. In addition, you can use the <a href="https://console.aws.amazon.com/gamelift/home">AWS
     /// Management Console</a> for Amazon GameLift for many administrative actions.
+    /// </para>
+    ///  
+    /// <para>
+    /// You can use some API actions with Amazon GameLift Local, a testing tool that lets
+    /// you test your game integration locally before deploying on Amazon GameLift. You can
+    /// call these APIs from the AWS CLI or programmatically; API calls to Amazon GameLift
+    /// Local servers perform exactly as they do when calling Amazon GameLift web servers.
+    /// For more information on using Amazon GameLift Local, see <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/integration-testing-local.html">Testing
+    /// an Integration</a>.
     /// </para>
     ///  
     /// <para>
@@ -118,7 +127,7 @@ namespace Amazon.GameLift
     ///  <ul> <li> 
     /// <para>
     ///  <a>SearchGameSessions</a> – Get all available game sessions or search for game sessions
-    /// that match a set of criteria. 
+    /// that match a set of criteria. <i>Available in Amazon GameLift Local.</i> 
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>
@@ -145,7 +154,8 @@ namespace Amazon.GameLift
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>
-    ///  <a>CreateGameSession</a> – Start a new game session on a specific fleet.
+    ///  <a>CreateGameSession</a> – Start a new game session on a specific fleet. <i>Available
+    /// in Amazon GameLift Local.</i> 
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>
@@ -153,9 +163,14 @@ namespace Amazon.GameLift
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>DescribeGameSessionDetails</a> – Retrieve metadata and protection policies associated
-    /// with one or more game sessions, including length of time active and current player
-    /// count.
+    ///  <a>DescribeGameSessions</a> – Retrieve metadata for one or more game sessions, including
+    /// length of time active and current player count. <i>Available in Amazon GameLift Local.</i>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeGameSessionDetails</a> – Retrieve metadata and the game session protection
+    /// setting for one or more game sessions.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -173,16 +188,17 @@ namespace Amazon.GameLift
     ///  <ul> <li> 
     /// <para>
     ///  <a>CreatePlayerSession</a> – Send a request for a player to join a game session.
+    /// <i>Available in Amazon GameLift Local.</i> 
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <a>CreatePlayerSessions</a> – Send a request for multiple players to join a game
-    /// session.
+    /// session. <i>Available in Amazon GameLift Local.</i> 
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <a>DescribePlayerSessions</a> – Get details on player activity, including status,
-    /// playing time, and player data. 
+    /// playing time, and player data. <i>Available in Amazon GameLift Local.</i> 
     /// </para>
     ///  </li> </ul> </li> </ul> 
     /// <para>
@@ -321,7 +337,7 @@ namespace Amazon.GameLift
     ///  <ul> <li> 
     /// <para>
     ///  <a>GetInstanceAccess</a> – Request access credentials needed to remotely connect
-    /// to a specified instance on a fleet.
+    /// to a specified instance in a fleet.
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>
@@ -480,6 +496,10 @@ namespace Amazon.GameLift
         /// a new <a>PlayerSession</a> object is returned. Player sessions cannot be updated.
         /// 
         /// </para>
+        ///  
+        /// <para>
+        ///  <i>Available in Amazon GameLift Local.</i> 
+        /// </para>
         /// </summary>
         /// <param name="gameSessionId">Unique identifier for the game session to add a player to.</param>
         /// <param name="playerId">Unique identifier for a player. Player IDs are developer-defined.</param>
@@ -550,6 +570,10 @@ namespace Amazon.GameLift
         /// a set of player data strings. If successful, the players are added to the game session
         /// and a set of new <a>PlayerSession</a> objects is returned. Player sessions cannot
         /// be updated.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <i>Available in Amazon GameLift Local.</i> 
         /// </para>
         /// </summary>
         /// <param name="gameSessionId">Unique identifier for the game session to add players to.</param>

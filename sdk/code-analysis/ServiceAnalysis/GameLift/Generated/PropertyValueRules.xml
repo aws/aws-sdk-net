@@ -65,6 +65,12 @@
     <pattern>[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GameLift.Model.CreateGameSessionRequest.IdempotencyToken</property>
+    <min>1</min>
+    <max>48</max>
+    <pattern>[a-zA-Z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GameLift.Model.CreateGameSessionRequest.MaximumPlayerSessionCount</property>
     <min>0</min>
   </property-value-rule>
@@ -838,6 +844,11 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GameLift.Model.GameSessionPlacement.GameSessionId</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GameLift.Model.GameSessionPlacement.GameSessionName</property>
     <min>1</min>
     <max>1024</max>
@@ -862,6 +873,17 @@
     <min>1</min>
     <max>48</max>
     <pattern>[a-zA-Z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.GameSessionPlacement.Port</property>
+    <min>1</min>
+    <max>60000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.GameSessionQueue.GameSessionQueueArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9:/-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.GameSessionQueue.Name</property>
@@ -946,6 +968,15 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GameLift.Model.PlacedPlayerSession.PlayerId</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.PlacedPlayerSession.PlayerSessionId</property>
+    <pattern>^psess-\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GameLift.Model.PlayerLatency.PlayerId</property>
     <min>1</min>
     <max>1024</max>
@@ -954,6 +985,14 @@
     <property>Amazon.GameLift.Model.PlayerLatency.RegionIdentifier</property>
     <min>1</min>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.PlayerLatencyPolicy.MaximumIndividualPlayerLatencyMilliseconds</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.PlayerLatencyPolicy.PolicyDurationSeconds</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.PlayerSession.FleetId</property>
