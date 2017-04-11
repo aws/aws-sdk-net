@@ -82,6 +82,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                     unmarshalledObject.Ec2KeyPair = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("imageId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ImageId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("instanceRole", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

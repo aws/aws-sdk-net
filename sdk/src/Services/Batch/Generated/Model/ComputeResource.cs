@@ -35,6 +35,7 @@ namespace Amazon.Batch.Model
         private int? _bidPercentage;
         private int? _desiredvCpus;
         private string _ec2KeyPair;
+        private string _imageId;
         private string _instanceRole;
         private List<string> _instanceTypes = new List<string>();
         private int? _maxvCpus;
@@ -100,6 +101,24 @@ namespace Amazon.Batch.Model
         internal bool IsSetEc2KeyPair()
         {
             return this._ec2KeyPair != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImageId. 
+        /// <para>
+        /// The Amazon Machine Image (AMI) ID used for instances launched in the compute environment.
+        /// </para>
+        /// </summary>
+        public string ImageId
+        {
+            get { return this._imageId; }
+            set { this._imageId = value; }
+        }
+
+        // Check to see if ImageId property is set
+        internal bool IsSetImageId()
+        {
+            return this._imageId != null;
         }
 
         /// <summary>

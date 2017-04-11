@@ -63,6 +63,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Ec2KeyPair);
             }
 
+            if(requestObject.IsSetImageId())
+            {
+                context.Writer.WritePropertyName("imageId");
+                context.Writer.Write(requestObject.ImageId);
+            }
+
             if(requestObject.IsSetInstanceRole())
             {
                 context.Writer.WritePropertyName("instanceRole");
