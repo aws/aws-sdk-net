@@ -16,7 +16,7 @@ namespace AWSSDK.IntegrationTests.SNS
 {
     [TestFixture(TestOf = typeof(SNSTests))]
     [Category("Integration")]
-    public class SNSTests : TestBase<AmazonSimpleNotificationServiceClient>
+    public class SNSTests : TestBase<AmazonSimpleNotificationServiceClient, AmazonSimpleNotificationServiceConfig>
     {
         [Test]
         [Category("WWW")]

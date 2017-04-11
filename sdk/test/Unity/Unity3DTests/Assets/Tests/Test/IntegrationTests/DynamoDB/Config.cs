@@ -7,7 +7,7 @@ using Amazon;
 
 namespace AWSSDK.IntegrationTests.DynamoDB
 {
-    public partial class DynamoDBTests : TestBase<AmazonDynamoDBClient>
+    public partial class DynamoDBTests : TestBase<AmazonDynamoDBClient, AmazonDynamoDBConfig>
     {
         private static void ConfigureContext()
         {

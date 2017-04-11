@@ -16,9 +16,9 @@ namespace AWSSDK.IntegrationTests.Lambda
 {
     [TestFixture(TestOf = typeof(LambdaTests))]
     [Category("Integration")]
-    class LambdaTests : TestBase<AmazonLambdaClient>
+    class LambdaTests : TestBase<AmazonLambdaClient, AmazonLambdaConfig>
     {
-        IAmazonIdentityManagementService iamClient = TestBase.CreateClient<AmazonIdentityManagementServiceClient>();
+        IAmazonIdentityManagementService iamClient = TestBase.CreateClient<AmazonIdentityManagementServiceClient, AmazonIdentityManagementServiceConfig>();
         List<string> createdFunctionNames = new List<string>();
 
         static readonly string FunctionHandleName = "unitytest-helloworld";

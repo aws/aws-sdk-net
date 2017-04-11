@@ -17,7 +17,7 @@ namespace AWSSDK.IntegrationTests.S3
 {
     [TestFixture(TestOf = typeof(MultipartTests))]
     [Category("Integration")]
-    public class MultipartTests : TestBase<AmazonS3Client>
+    public class MultipartTests : TestBase<AmazonS3Client, AmazonS3Config>
     {
         private string BucketName;
         [OneTimeSetUp]

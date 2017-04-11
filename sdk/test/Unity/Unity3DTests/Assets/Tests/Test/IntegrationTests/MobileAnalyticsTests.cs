@@ -21,7 +21,7 @@ namespace AWSSDK.IntegrationTests.MobileAnalytics
 {
     [TestFixture(TestOf = typeof(MobileAnalyticsTests))]
     [Category("Integration")]
-    class MobileAnalyticsTests : TestBase<AmazonMobileAnalyticsClient>
+    class MobileAnalyticsTests : TestBase<AmazonMobileAnalyticsClient, AmazonMobileAnalyticsConfig>
     {
         private const String dbFileName = "mobile_analytic_event.db";
 

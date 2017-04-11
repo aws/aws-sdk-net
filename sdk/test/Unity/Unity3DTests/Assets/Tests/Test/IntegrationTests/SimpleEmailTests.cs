@@ -11,7 +11,7 @@ namespace AWSSDK.IntegrationTests.SimpleEmail
 {
     [TestFixture(TestOf = typeof(SimpleEmailTests))]
     [Category("Integration")]
-    public class SimpleEmailTests : TestBase<AmazonSimpleEmailServiceClient>
+    public class SimpleEmailTests : TestBase<AmazonSimpleEmailServiceClient, AmazonSimpleEmailServiceConfig>
     {
         // Replace these email with valid emails.
         private const string sourceAddress = "nobody@example.com";

@@ -13,7 +13,7 @@ using ThirdParty.Json.LitJson;
 namespace AWSSDK.IntegrationTests.DynamoDB
 {
 
-    public partial class DynamoDBTests : TestBase<AmazonDynamoDBClient>
+    public partial class DynamoDBTests : TestBase<AmazonDynamoDBClient, AmazonDynamoDBConfig>
     {
         const string sampleJson = @"{
 ""Name"" : ""Alan"" ,

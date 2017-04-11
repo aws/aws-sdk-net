@@ -9,7 +9,7 @@ using System.Threading;
 namespace AWSSDK.IntegrationTests.CognitoIdentity
 {
     [TestFixture]
-    public class CognitoIdentityTests : TestBase<AmazonCognitoIdentityClient>
+    public class CognitoIdentityTests : TestBase<AmazonCognitoIdentityClient, AmazonCognitoIdentityConfig>
     {
         public static int MaxResults = 15;
         private string poolName = null;

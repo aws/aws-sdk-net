@@ -15,7 +15,7 @@ namespace AWSSDK.IntegrationTests.S3
 {
     [TestFixture(TestOf = typeof(MetadataTests))]
     [Category("Integration")]
-    public class MetadataTests : TestBase<AmazonS3Client>
+    public class MetadataTests : TestBase<AmazonS3Client, AmazonS3Config>
     {
         private static readonly Dictionary<string, string> Metadata = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
         {

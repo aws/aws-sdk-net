@@ -31,7 +31,7 @@ namespace AWSSDK.IntegrationTests.S3
                 {
                     Bucket = bucketName,
                     Key = key,
-                    InputStream = stream
+                    InputStream = stream,
                 };
                 if (manipulator != null)
                 {

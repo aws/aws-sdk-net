@@ -16,7 +16,7 @@ namespace AWSSDK.IntegrationTests.S3
 {
     [TestFixture(TestOf = typeof(PostObjectTests))]
     [Category("Integration")]
-    class PostObjectTests : TestBase<AmazonS3Client>
+    class PostObjectTests : TestBase<AmazonS3Client, AmazonS3Config>
     {
         private static readonly string FileNamePrefix = "UnityTestFile";
         private static readonly string FileNameFormat = FileNamePrefix + "{0}.txt";
@@ -46,23 +46,12 @@ namespace AWSSDK.IntegrationTests.S3
             S3TestUtils.CleanBucket(Client, VersionedBucketName);
             MissingAPILambdaFunctions.DeleteBucket(VersionedBucketName, TestRunner.RegionEndpoint);
         }
-
+        
         [Test]
         [Category("WWW")]
         public void SimplePostTest()
         {
-            string originalSigV = Client.Config.SignatureVersion;
-            try
-            {
-                Client.Config.SignatureVersion = "4";
-                SimplePostTestInner();
-                Client.Config.SignatureVersion = "2";
-                SimplePostTestInner();
-            }
-            finally
-            {
-                Client.Config.SignatureVersion = originalSigV;
-            }
+            SimplePostTestInner();
         }
 
         private void SimplePostTestInner()
@@ -107,18 +96,7 @@ namespace AWSSDK.IntegrationTests.S3
         [Category("WWW")]
         public void HeadersPostTest()
         {
-            string originalSigV = Client.Config.SignatureVersion;
-            try
-            {
-                Client.Config.SignatureVersion = "4";
-                HeadersPostTestInner();
-                Client.Config.SignatureVersion = "2";
-                HeadersPostTestInner();
-            }
-            finally
-            {
-                Client.Config.SignatureVersion = originalSigV;
-            }
+            HeadersPostTestInner();
         }
 
         private void HeadersPostTestInner()
@@ -151,18 +129,7 @@ namespace AWSSDK.IntegrationTests.S3
         [Category("WWW")]
         public void GzipPostTest()
         {
-            string originalSigV = Client.Config.SignatureVersion;
-            try
-            {
-                Client.Config.SignatureVersion = "4";
-                GzipPostTestInner();
-                Client.Config.SignatureVersion = "2";
-                GzipPostTestInner();
-            }
-            finally
-            {
-                Client.Config.SignatureVersion = originalSigV;
-            }
+            GzipPostTestInner();
         }
 
         private void GzipPostTestInner()
@@ -246,25 +213,13 @@ namespace AWSSDK.IntegrationTests.S3
             Utils.AssertFalse(string.IsNullOrEmpty(version3));
             Utils.AssertTrue(version1 != version3);
             Utils.AssertTrue(version2 != version3);
-
         }
-
+        
         [Test]
         [Category("WWW")]
         public void TestPostCannedACL()
         {
-            string originalSigV = Client.Config.SignatureVersion;
-            try
-            {
-                Client.Config.SignatureVersion = "4";
-                TestPostCannedACLInner();
-                Client.Config.SignatureVersion = "2";
-                TestPostCannedACLInner();
-            }
-            finally
-            {
-                Client.Config.SignatureVersion = originalSigV;
-            }
+            TestPostCannedACLInner();
         }
 
         public void TestPostCannedACLInner()
@@ -343,9 +298,6 @@ namespace AWSSDK.IntegrationTests.S3
             Assert.IsNull(responseException);
         }
 
-
-
-
         [Test]
         [Category("WWW")]
         public void PostObjectKMSTest()
@@ -355,8 +307,6 @@ namespace AWSSDK.IntegrationTests.S3
             try
             {
                 // KMS only allowed for sigv4
-                Client.Config.SignatureVersion = "4";
-
                 var key = string.Format(FileNameFormat, DateTime.Now.Ticks);
                 S3TestUtils.PostObjectHelper(Client, BucketName, key, (request) =>
                 {
@@ -385,9 +335,7 @@ namespace AWSSDK.IntegrationTests.S3
             }
             finally
             {
-                Client.Config.SignatureVersion = originalSigV;
             }
-
         }
 
         [Test]

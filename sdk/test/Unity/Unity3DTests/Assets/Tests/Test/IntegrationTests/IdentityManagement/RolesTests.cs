@@ -12,7 +12,7 @@ namespace AWSSDK.IntegrationTests.IdentityManagement
     [TestFixture(TestOf = typeof(RolesTests))]
     [Category("Integration")]
 
-    class RolesTests : TestBase<AmazonIdentityManagementServiceClient>
+    class RolesTests : TestBase<AmazonIdentityManagementServiceClient, AmazonIdentityManagementServiceConfig>
     {
         public static string roleName = "UnityTestRole";
         public static string policyName = "UnityTestPolicy";
