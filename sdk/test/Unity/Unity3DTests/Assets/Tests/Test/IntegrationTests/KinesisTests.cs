@@ -12,7 +12,7 @@ namespace AWSSDK.IntegrationTests.Kinesis
     [TestFixture(TestOf = typeof(KinesisTests))]
     [Category("Integration")]
     [Category("K")]
-    public class KinesisTests : TestBase<AmazonKinesisClient>
+    public class KinesisTests : TestBase<AmazonKinesisClient, AmazonKinesisConfig>
     {
         // Time to wait for status change, in seconds
         private static readonly int WaitForPhaseExitTimeout = 60;

@@ -12,7 +12,7 @@ using System.Threading;
 namespace AWSSDK.IntegrationTests.SecurityToken
 {
     [TestFixture]
-    public class GetSessionToken : TestBase<AmazonSecurityTokenServiceClient>
+    public class GetSessionToken : TestBase<AmazonSecurityTokenServiceClient, AmazonSecurityTokenServiceConfig>
     {
         [Test]
         [Category("SecurityTokenService")]
@@ -55,7 +55,7 @@ namespace AWSSDK.IntegrationTests.SecurityToken
         [Category("WWW")]
         public void TestGetSessionTokenRegional()
         {
-            using (var uswest2Client = TestBase.CreateClient<AmazonSecurityTokenServiceClient>(endpoint: RegionEndpoint.USWest2))
+            using (var uswest2Client = TestBase.CreateClient<AmazonSecurityTokenServiceClient, AmazonSecurityTokenServiceConfig> (endpoint: RegionEndpoint.USWest2))
             {
                 var gstRequest = new GetSessionTokenRequest()
                 {

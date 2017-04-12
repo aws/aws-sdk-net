@@ -15,7 +15,7 @@ namespace AWSSDK.IntegrationTests.SyncManager
     [TestFixture(TestOf = typeof(SyncManagerTests))]
     [Category("SyncManager")]
     [Category("Integration")]
-    public class SyncManagerTests : TestBase<AmazonCognitoIdentityClient>
+    public class SyncManagerTests : TestBase<AmazonCognitoIdentityClient, AmazonCognitoIdentityConfig>
     {
 
         //tests that require facebook app id and secret are currently disabled.

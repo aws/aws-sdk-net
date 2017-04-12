@@ -234,7 +234,7 @@ namespace AWSSDK.Tests
 
                     count++;
                     AWSConfigs.HttpClient = httpClient;
-
+                    
                     if (httpClient == AWSConfigs.HttpClientOption.UnityWWW)
                     {
                         runner.HttpClient = httpClient;
@@ -265,8 +265,5 @@ namespace AWSSDK.Tests
                 action.Invoke();
             }
         }
-
-
-
     }
 }

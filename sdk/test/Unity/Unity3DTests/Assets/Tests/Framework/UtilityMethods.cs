@@ -209,7 +209,7 @@ namespace AWSSDK.Tests.Framework
                             ZipFile = GetScriptStream(code)
                         },
                         Handler = functionHandlerName + ".handler",
-                        Runtime = Runtime.Nodejs,
+                        Runtime = Runtime.Nodejs43,
                         Description = "Feel free to delete this function. The tests will recreate it when needed.",
                         Role = iamRoleArn
                     }, (response) =>

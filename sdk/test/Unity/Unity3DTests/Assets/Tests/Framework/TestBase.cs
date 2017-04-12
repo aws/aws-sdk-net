@@ -14,18 +14,22 @@ namespace AWSSDK.Tests.Framework
         {
         }
 
-        public static TClient CreateClient<TClient>(AWSCredentials credentials = null, RegionEndpoint endpoint = null)
+        public static TClient CreateClient<TClient, TConfig>(AWSCredentials credentials = null, RegionEndpoint endpoint = null)
             where TClient : AmazonServiceClient
+            where TConfig : ClientConfig
         {
             credentials = credentials ?? TestRunner.Credentials;
             endpoint = endpoint ?? TestRunner.RegionEndpoint;
+            TConfig config = (TConfig)Activator.CreateInstance(typeof(TConfig), null);
 
+            config.RegionEndpoint = endpoint;
+            config.SignatureVersion = "4";
             return (TClient)Activator.CreateInstance(typeof(TClient),
-                    new object[] { TestRunner.Credentials, endpoint });
+                    new object[] { TestRunner.Credentials, config });
         }
     }
 
-    public abstract class TestBase<T> : TestBase where T : AmazonServiceClient, IDisposable
+    public abstract class TestBase<T, R> : TestBase where T : AmazonServiceClient, IDisposable where R: ClientConfig
     {
         private bool _disposed = false;
         protected static AsyncOptions options = new AsyncOptions() { ExecuteCallbackOnMainThread = false };
@@ -37,7 +41,7 @@ namespace AWSSDK.Tests.Framework
             {
                 if (_client == null)
                 {
-                    _client = CreateClient<T>(endpoint: ActualEndpoint);
+                    _client = CreateClient<T, R>(endpoint: ActualEndpoint);
                 }
                 return _client;
             }

@@ -15,7 +15,7 @@ namespace AWSSDK.IntegrationTests.S3
 {
     [TestFixture(TestOf = typeof(PutObjectTests))]
     [Category("Integration")]
-    public class PutObjectTests : TestBase<AmazonS3Client>
+    public class PutObjectTests : TestBase<AmazonS3Client, AmazonS3Config>
     {
         public static readonly long MEG_SIZE = (int)Math.Pow(2, 20);
 

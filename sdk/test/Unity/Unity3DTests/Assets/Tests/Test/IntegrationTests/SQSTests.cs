@@ -14,7 +14,7 @@ namespace AWSSDK.IntegrationTests.SQS
 {
     [TestFixture(TestOf = typeof(SQSTests))]
     [Category("Integration")]
-    public class SQSTests : TestBase<AmazonSQSClient>
+    public class SQSTests : TestBase<AmazonSQSClient, AmazonSQSConfig>
     {
 
         private const string prefix = "TestQueue";

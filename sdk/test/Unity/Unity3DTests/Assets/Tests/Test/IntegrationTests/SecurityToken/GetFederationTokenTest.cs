@@ -11,7 +11,7 @@ using System.Threading;
 namespace AWSSDK.IntegrationTests.SecurityToken
 {
     [TestFixture]
-    public class GetFederationTokenTest : TestBase<AmazonSecurityTokenServiceClient>
+    public class GetFederationTokenTest : TestBase<AmazonSecurityTokenServiceClient, AmazonSecurityTokenServiceConfig>
     {
 
         [Test]

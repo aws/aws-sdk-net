@@ -67,7 +67,6 @@ namespace AWSSDK.Tests.Framework
             },
         };
 
-
         private static AmazonLambdaClient LambdaClient;
         private static IAmazonIdentityManagementService IAMClient;
         private static string RoleArn;

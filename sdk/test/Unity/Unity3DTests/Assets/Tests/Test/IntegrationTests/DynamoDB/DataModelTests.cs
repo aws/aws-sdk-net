@@ -13,7 +13,7 @@ using System.Threading;
 
 namespace AWSSDK.IntegrationTests.DynamoDB
 {
-    public partial class DynamoDBTests : TestBase<AmazonDynamoDBClient>
+    public partial class DynamoDBTests : TestBase<AmazonDynamoDBClient, AmazonDynamoDBConfig>
     {
         [Test]
         [Category("DynamoDB")]

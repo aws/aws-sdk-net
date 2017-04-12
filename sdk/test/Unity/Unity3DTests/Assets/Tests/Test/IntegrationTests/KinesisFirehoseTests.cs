@@ -14,10 +14,10 @@ namespace AWSSDK.IntegrationTests.KinesisFirehose
     [TestFixture(TestOf = typeof(KinesisFirehoseTests))]
     [Category("KinesisFirehose")]
     [Category("Integration")]
-    public class KinesisFirehoseTests : TestBase<AmazonKinesisFirehoseClient>
+    public class KinesisFirehoseTests : TestBase<AmazonKinesisFirehoseClient, AmazonKinesisFirehoseConfig>
     {
 
-        IAmazonIdentityManagementService iamClient = TestBase.CreateClient<AmazonIdentityManagementServiceClient>();
+        IAmazonIdentityManagementService iamClient = TestBase.CreateClient<AmazonIdentityManagementServiceClient, AmazonKinesisFirehoseConfig>();
 
         private string BucketName = null;
         private string RoleName = null;
@@ -170,7 +170,7 @@ namespace AWSSDK.IntegrationTests.KinesisFirehose
             Utils.AssertExceptionIsNull(responseException);
 
             // Delete Bucket
-            S3.S3TestUtils.CleanBucket(TestBase.CreateClient<Amazon.S3.AmazonS3Client>(), BucketName);
+            S3.S3TestUtils.CleanBucket(TestBase.CreateClient<Amazon.S3.AmazonS3Client, Amazon.S3.AmazonS3Config>(), BucketName);
             MissingAPILambdaFunctions.DeleteBucket(BucketName, TestRunner.RegionEndpoint);
         }
 
