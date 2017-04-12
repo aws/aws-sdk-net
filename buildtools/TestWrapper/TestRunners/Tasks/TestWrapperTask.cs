@@ -47,7 +47,28 @@ namespace TestWrapper
         {
             CheckWaitForDebugger();
             PrepareRunner();
-            return Runner.RunTests();
+
+            IList<string> failedTestNames;
+            Exception testRunException;
+
+            if (Runner.RunTests(out failedTestNames, out testRunException))
+                return true;
+            else
+            {
+                var loggingHelper = new TaskLoggingHelper(this);
+                if (failedTestNames.Count > 0)
+                {
+                    foreach (var name in failedTestNames)
+                    {
+                        loggingHelper.LogError(string.Format("Test failure in {0}: {1}", Runner.RunnerName, name));
+                    }
+                }
+
+                if (testRunException != null)
+                    loggingHelper.LogErrorFromException(testRunException, true, true, null);
+
+                return false;
+            }
         }
 
         protected void CheckWaitForDebugger()

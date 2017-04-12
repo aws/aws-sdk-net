@@ -44,14 +44,22 @@ namespace TestWrapper.TestRunners
         public DirectoryInfo WorkingDirectory { get; private set; }
         public string[] Categories { get; set; }
 
-        public bool RunTests()
+        /// <summary>
+        /// Run the tests for this test runner.
+        /// </summary>
+        /// <param name="failedTestNames">A list of the names of failed tests, if any.</param>
+        /// <param name="exception">The exception that occurred while running tests, or null.</param>
+        /// <returns>True if all tests passed, false otherwise.</returns>
+        public bool RunTests(out IList<string> failedTestNames, out Exception exception)
         {
             bool allTestsPassed = false;
+            exception = null;
+            failedTestNames = new List<string>();
+
             try
             {
                 int prevFailedTestCount = Int32.MaxValue;
                 int consecutiveFailureCount = 0;
-                IList<string> failedTestNames = new List<string>();
 
                 for (int runCount = 1; runCount < MaxTestRuns; runCount++)
                 {
@@ -92,6 +100,7 @@ namespace TestWrapper.TestRunners
             catch (Exception e)
             {
                 Console.WriteLine("Exception occurred running tests:\n {0}", e.ToString());
+                exception = e;
                 allTestsPassed = false;
             }
 
