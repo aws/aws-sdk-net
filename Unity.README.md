@@ -59,11 +59,11 @@ You can also do this configuration in a script
 			<!-- if you are using AWSConfigs.HttpClient.UnityWebRequest option-->
 
 		<assembly fullname="UnityEngine">
-			<type fullname="UnityEngine.Experimental.Networking.UnityWebRequest" preserve="all" />
-			<type fullname="UnityEngine.Experimental.Networking.UploadHandlerRaw" preserve="all" />
-			<type fullname="UnityEngine.Experimental.Networking.UploadHandler" preserve="all" />
-			<type fullname="UnityEngine.Experimental.Networking.DownloadHandler" preserve="all" />
-			<type fullname="UnityEngine.Experimental.Networking.DownloadHandlerBuffer" preserve="all" />
+			<type fullname="UnityEngine.Networking.UnityWebRequest" preserve="all" />
+			<type fullname="UnityEngine.Networking.UploadHandlerRaw" preserve="all" />
+			<type fullname="UnityEngine.Networking.UploadHandler" preserve="all" />
+			<type fullname="UnityEngine.Networking.DownloadHandler" preserve="all" />
+			<type fullname="UnityEngine.Networking.DownloadHandlerBuffer" preserve="all" />
 		</assembly>
 		
 		<assembly fullname="mscorlib">
