@@ -18,6 +18,7 @@ namespace AWSSDK_DotNet35.UnitTests
     public class DynamoDBEntryTests
     {
         [TestMethod]
+        [TestCategory("DynamoDB")]
         public void TestDynamoDBEqualsOverrides()
         {
             var ddbeType = typeof(DynamoDBEntry);
@@ -32,6 +33,7 @@ namespace AWSSDK_DotNet35.UnitTests
         }
 
         [TestMethod]
+        [TestCategory("DynamoDB")]
         public void TestContextConfig()
         {
             // Test in response to GitHub issue
@@ -60,6 +62,7 @@ namespace AWSSDK_DotNet35.UnitTests
         }
 
         [TestMethod]
+        [TestCategory("DynamoDB")]
         public void DocumentFromJsonTest()
         {
             string jsonDocument =

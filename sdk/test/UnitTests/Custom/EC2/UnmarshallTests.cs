@@ -14,6 +14,7 @@ namespace AWSSDK_DotNet35.UnitTests.EC2
     {
         [TestMethod]
         [TestCategory("UnitTest")]
+        [TestCategory("EC2")]
         public void TestDescribeImages()
         {
             const string payloadResponse = @"<?xml version='1.0' encoding='UTF-8'?>
@@ -89,6 +90,7 @@ namespace AWSSDK_DotNet35.UnitTests.EC2
 
         [TestMethod]
         [TestCategory("UnitTest")]
+        [TestCategory("EC2")]
         public void TestDescribeSpotInstances()
         {
             const string payloadResponse = @"<?xml version='1.0' encoding='UTF-8'?>
@@ -171,6 +173,7 @@ namespace AWSSDK_DotNet35.UnitTests.EC2
 
         [TestMethod]
         [TestCategory("UnitTest")]
+        [TestCategory("EC2")]
         public void TestDescribeVolumes()
         {
             const string payloadResponse = @"<?xml version='1.0' encoding='UTF-8'?>
@@ -225,6 +228,7 @@ namespace AWSSDK_DotNet35.UnitTests.EC2
 
         [TestMethod]
         [TestCategory("UnitTest")]
+        [TestCategory("EC2")]
         public void TestRegisterImage()
         {
             const string payloadResponse = @"<?xml version='1.0' encoding='UTF-8'?>
@@ -242,6 +246,7 @@ namespace AWSSDK_DotNet35.UnitTests.EC2
 
         [TestMethod]
         [TestCategory("UnitTest")]
+        [TestCategory("EC2")]
         public void TestRunInstances()
         {
             const string payloadResponse = @"<?xml version='1.0' encoding='UTF-8'?>
@@ -389,6 +394,7 @@ namespace AWSSDK_DotNet35.UnitTests.EC2
 
         [TestMethod]
         [TestCategory("UnitTest")]
+        [TestCategory("EC2")]
         public void TestDescribeImageAttribute()
         {
             const string payloadResponse = @"<?xml version=""1.0"" encoding=""UTF-8""?>
@@ -411,6 +417,7 @@ namespace AWSSDK_DotNet35.UnitTests.EC2
 
         [TestMethod]
         [TestCategory("UnitTest")]
+        [TestCategory("EC2")]
         public void TestAssignPrivateIpAddresses()
         {
             const string payloadResponse = @"<?xml version='1.0' encoding='UTF-8'?>
@@ -428,6 +435,7 @@ namespace AWSSDK_DotNet35.UnitTests.EC2
 
         [TestMethod]
         [TestCategory("UnitTest")]
+        [TestCategory("EC2")]
         public void TestUnassignPrivateIpAddresses()
         {
             const string payloadResponse = @"<?xml version='1.0' encoding='UTF-8'?>
@@ -445,6 +453,7 @@ namespace AWSSDK_DotNet35.UnitTests.EC2
 
         [TestMethod]
         [TestCategory("UnitTest")]
+        [TestCategory("EC2")]
         public void TestCreateNetworkInterface()
         {
             const string payloadResponse = @"<?xml version='1.0' encoding='UTF-8'?>
@@ -510,6 +519,7 @@ namespace AWSSDK_DotNet35.UnitTests.EC2
 
         [TestMethod]
         [TestCategory("UnitTest")]
+        [TestCategory("EC2")]
         public void TestDescribeVolumeAttribute()
         {
             const string payloadResponse = @"<?xml version=""1.0"" encoding=""UTF-8""?>
@@ -532,6 +542,7 @@ namespace AWSSDK_DotNet35.UnitTests.EC2
 
         [TestMethod]
         [TestCategory("UnitTest")]
+        [TestCategory("EC2")]
         public void TestModifyVolumeAttribute()
         {
             const string payloadResponse = @"<?xml version=""1.0"" encoding=""UTF-8""?>
@@ -549,6 +560,7 @@ namespace AWSSDK_DotNet35.UnitTests.EC2
 
         [TestMethod]
         [TestCategory("UnitTest")]
+        [TestCategory("EC2")]
         public void TestEnableVolumeIO()
         {
             const string payloadResponse = @"<?xml version=""1.0"" encoding=""UTF-8""?>
@@ -566,6 +578,7 @@ namespace AWSSDK_DotNet35.UnitTests.EC2
 
         [TestMethod]
         [TestCategory("UnitTest")]
+        [TestCategory("EC2")]
         public void TestDescribeVolumeStatus()
         {
             const string payloadResponse = @"<?xml version=""1.0"" encoding=""UTF-8""?>

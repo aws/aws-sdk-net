@@ -12,6 +12,7 @@ namespace AWSSDK_DotNet35.UnitTests.EC2
         // Test an issue with certain combination of private key and encrypted passwords that were causing a encoding issue while decrypting the password.
         [TestMethod]
         [TestCategory("UnitTest")]
+        [TestCategory("EC2")]
         public void TestMissingLeadingZeroIssue()
         {
             string encryptedPassword = "Oxaop1Qz5TWS3U4J82qZSVX9WHrA7zaheUugP/Fsa2iq/9XjEPzAWRcnYCZ4icBeS/az/adyOb3b5nLYVMcr2yFANnEYNPWTtypISbuXfrBdqalG6+E45T/yu+Ti3iJo3zaMXvtcR3qQwQ2bFdt8Xo7W9wXwwTjisQbUKe7dHMfjYa/c6knEz+nVj4qyOG5QaLGhkbH7XBnekd/xpatuH4wtgfdvcOlYWeBnxWCmFigaKdhkEXmZavIU05sV5CIvsgiW79LorLpeat3i+pyrJ/x7349f6SyFSS2uOnbDei1nr1JiO4erkJjN6py6RxSsKmNzBCUo8q0+EXTVg5g6SA==";

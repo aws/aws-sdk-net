@@ -12,6 +12,7 @@ namespace AWSSDK.UnitTests
     {
         [TestMethod]
         [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
         public void EmptyListTest()
         {
             string emptyListJson =
@@ -28,6 +29,7 @@ namespace AWSSDK.UnitTests
 
         [TestMethod]
         [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
         public void IntLongConversionTest()
         {
             string numberJson =
@@ -55,6 +57,7 @@ namespace AWSSDK.UnitTests
 
         [TestMethod]
         [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
         public void IsNumberTypeTest()
         {
             string numberJson =
@@ -90,6 +93,7 @@ namespace AWSSDK.UnitTests
 
         [TestMethod]
         [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
         public void MapAndCompareTest()
     
         {
@@ -124,6 +128,7 @@ namespace AWSSDK.UnitTests
 
         [TestMethod]
         [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
         public void ConstructorAndEqualTest()
         {
             int signedInteger = 47472;

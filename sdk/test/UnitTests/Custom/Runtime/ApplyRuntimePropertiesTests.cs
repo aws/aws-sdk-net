@@ -22,6 +22,7 @@ namespace AWSSDK.UnitTests.Runtime
     public class ApplyRuntimePropertiesTests
     {
         [TestMethod]
+        [TestCategory("Runtime")]
         public void SetHttpVerb()
         {
             var request = new GetPreSignedUrlRequest();
@@ -33,6 +34,7 @@ namespace AWSSDK.UnitTests.Runtime
         }
 
         [TestMethod]
+        [TestCategory("Runtime")]
         public void SetAutoCloseStream()
         {
             var request = new PutObjectRequest();

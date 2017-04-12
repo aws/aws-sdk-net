@@ -14,6 +14,7 @@ namespace AWSSDK_DotNet35.UnitTests
     public class PolicyTests
     {
         [TestMethod]
+        [TestCategory("Runtime")]
         public void TestIfStatementAlreadyExists()
         {
             var policy = new Policy();

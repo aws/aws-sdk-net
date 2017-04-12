@@ -27,6 +27,7 @@ namespace AWSSDK.UnitTests
         private static readonly string OriginalOtherValue = Guid.NewGuid().ToString();
 
         [TestMethod]
+        [TestCategory("RDS")]
         public void HandleNonPreSignedUrlRequest()
         {
             var request = new NonPreSignedUrlRequest()
@@ -38,6 +39,7 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
+        [TestCategory("RDS")]
         public void HandlePreSignedUrlRequestNoSourceRegion()
         {
             var request = new PreSignedUrlRequest();
@@ -46,6 +48,7 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
+        [TestCategory("RDS")]
         public void HandlePreSignedUrlRequestPresignedUrlHasValue()
         {
             var request = new PreSignedUrlRequest()
@@ -63,6 +66,7 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
+        [TestCategory("RDS")]
         public void HandlePreSignedUrlRequest()
         {
             var request = new PreSignedUrlRequest()

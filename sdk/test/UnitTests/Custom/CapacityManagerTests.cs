@@ -33,6 +33,7 @@ namespace AWSSDK_DotNet35.UnitTests
         /// </summary>
         [TestMethod]
         [TestCategory("CapacityManagerUnitTest")]
+        [TestCategory("Runtime")]
         public void AcquireCapacityUnitTest()
         {
             int throttleRetryCount = 5; 
@@ -54,6 +55,7 @@ namespace AWSSDK_DotNet35.UnitTests
         /// </summary>
         [TestMethod]
         [TestCategory("CapacityManagerUnitTest")]
+        [TestCategory("Runtime")]
         public void AcquireCapacityInvalidUnitTest()
         {
             int throttleRetryCount = 0;
@@ -75,6 +77,7 @@ namespace AWSSDK_DotNet35.UnitTests
         /// </summary>
         [TestMethod]
         [TestCategory("CapacityManagerUnitTest")]
+        [TestCategory("Runtime")]
         public void ReleaseCapacityUnitTest()
         {
             int throttleRetryCount = 5;
@@ -103,6 +106,7 @@ namespace AWSSDK_DotNet35.UnitTests
         /// </summary>
         [TestMethod]
         [TestCategory("CapacityManagerUnitTest")]
+        [TestCategory("Runtime")]
         public void ReleaseCapacityInvalidUnitTest()
         {
             int throttleRetryCount = 5;

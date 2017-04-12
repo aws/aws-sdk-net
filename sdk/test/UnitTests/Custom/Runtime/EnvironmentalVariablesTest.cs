@@ -26,6 +26,7 @@ namespace AWSSDK_DotNet35.UnitTests.Custom.Runtime
     public class EnvironmentalVariableTest
     {
         [TestMethod]
+        [TestCategory("Runtime")]
         public void EnvironmentalVariablesAWSCredentialsTest()
         {
             SetEnvironmentVariable("testKeyId", "testSecretAccessKey", "testSessionToken");

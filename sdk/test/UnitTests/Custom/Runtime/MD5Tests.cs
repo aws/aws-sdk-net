@@ -21,6 +21,7 @@ namespace AWSSDK.UnitTests
     public class MD5Tests
     {
         [TestMethod]
+        [TestCategory("Runtime")]
         public void TestMD5Managed()
         {
 

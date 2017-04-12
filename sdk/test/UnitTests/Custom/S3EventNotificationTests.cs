@@ -50,6 +50,7 @@ namespace AWSSDK_DotNet35.UnitTests
 "}";
 
         [TestMethod]
+        [TestCategory("S3")]
         public void ParseS3EventTest()
         {
             var eventRecords = S3EventNotification.ParseJson(SAMPLE_EVENT_JSON);

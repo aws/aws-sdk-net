@@ -34,22 +34,23 @@ namespace AWSSDK.UnitTests
                 });
         }
 
-        [TestMethod]
-        [TestCategory("UnitTest")]
+        [TestMethod][TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
         public void TestSuccessfulCall()
         {
             var presets = _client.ListPresets();
         }
 
 #if BCL45
-        [TestMethod]
-        [TestCategory("UnitTest")]
+        [TestMethod][TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
         public async Task TestSuccessfulCallAsync()
         {
             var presets = await _client.ListPresetsAsync(new ListPresetsRequest());
         }
 #elif !BCL45 && BCL
         [TestMethod][TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
         public void TestSuccessfulCallAsync()
         {
             var asyncResult = _client.BeginListPresets(new ListPresetsRequest(),null,null);
