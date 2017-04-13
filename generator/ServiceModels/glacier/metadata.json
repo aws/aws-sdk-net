@@ -1,13 +1,8 @@
 {
-    "base-name": "Glacier", 
-    "service-url": "https://glacier.us-east-1.amazonaws.com", 
-    "region-lookup-name": "glacier", 
-    "authentication-service-name": "glacier", 
-    "synopsis": "Amazon Glacier is a secure, durable, and extremely low-cost storage service for data archiving and online backup.", 
+    "active": true, 
     "dependencies": [
         "SQS", 
         "SimpleNotificationService"
     ], 
-    "active": true, 
-    "model": "glacier"
+    "synopsis": "Amazon Glacier is a secure, durable, and extremely low-cost storage service for data archiving and online backup."
 }

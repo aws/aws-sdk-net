@@ -1,8 +1,4 @@
 {
-    "base-name": "Lightsail", 
-    "region-lookup-name": "lightsail", 
-    "authentication-service-name": "lightsail", 
-    "synopsis": "An extremely simplified VM creation and management service.", 
     "active": true, 
-    "model": "lightsail"
+    "synopsis": "An extremely simplified VM creation and management service."
 }

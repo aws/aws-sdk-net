@@ -1,8 +1,4 @@
 {
-  "model": "resourcegroupstaggingapi",
-  "base-name": "ResourceGroupsTaggingAPI",
-  "authentication-service-name": "tagging",
-  "region-lookup-name": "tagging",
-  "synopsis": "Resource Groups Tagging APIs can help you organize your resources and enable you to simplify resource management, access management, and cost allocation.",
-  "active": true
+    "active": true, 
+    "synopsis": "Resource Groups Tagging APIs can help you organize your resources and enable you to simplify resource management, access management, and cost allocation."
 }

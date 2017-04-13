@@ -1,9 +1,4 @@
 {
-    "base-name": "AutoScaling", 
-    "service-url": "https://autoscaling.us-east-1.amazonaws.com", 
-    "region-lookup-name": "autoscaling", 
-    "authentication-service-name": "autoscaling", 
-    "synopsis": "Auto Scaling helps you maintain application availability and allows you to scale your capacity up or down automatically according to conditions you define.", 
     "active": true, 
-    "model": "autoscaling"
+    "synopsis": "Auto Scaling helps you maintain application availability and allows you to scale your capacity up or down automatically according to conditions you define."
 }

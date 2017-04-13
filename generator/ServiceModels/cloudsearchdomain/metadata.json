@@ -1,9 +1,5 @@
 {
-    "base-name": "CloudSearchDomain", 
-    "region-lookup-name": "cloudsearchdomain", 
-    "authentication-service-name": "cloudsearch", 
-    "synopsis": "Amazon CloudSearch is a managed service in the AWS Cloud that makes it simple and cost-effective to set up, manage, and scale a search solution for your website or application.", 
-    "generate-client-constructors": false, 
     "active": true, 
-    "model": "cloudsearchdomain"
+    "generate-client-constructors": false, 
+    "synopsis": "Amazon CloudSearch is a managed service in the AWS Cloud that makes it simple and cost-effective to set up, manage, and scale a search solution for your website or application."
 }

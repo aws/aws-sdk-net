@@ -1,15 +1,10 @@
 {
-    "base-name": "DynamoDB", 
+    "active": true, 
     "enable-xamarin-component": true, 
     "max-retries": 10, 
-    "service-url": "https://dynamodb.us-east-1.amazonaws.com/", 
-    "region-lookup-name": "dynamodb", 
     "namespace": "Amazon.DynamoDBv2", 
-    "authentication-service-name": "dynamodb", 
     "platforms": [
         "Unity"
     ], 
-    "synopsis": "Amazon DynamoDB is a fast and flexible NoSQL database service for all applications that need consistent, single-digit millisecond latency at any scale.", 
-    "active": true, 
-    "model": "dynamodb-"
+    "synopsis": "Amazon DynamoDB is a fast and flexible NoSQL database service for all applications that need consistent, single-digit millisecond latency at any scale."
 }

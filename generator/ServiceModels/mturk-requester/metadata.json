@@ -1,8 +1,4 @@
 {
-    "active" : true,
-    "model" : "mturk-requester",
-    "base-name": "MTurk",
-    "region-lookup-name": "mturk-requester",
-    "authentication-service-name": "mturk-requester",
-    "synopsis" : "Amazon MTurk is a web service that provides an on-demand, scalable, human workforce to complete jobs that humans can do better than computers, for example, recognizing objects in photos."
+    "active": true, 
+    "synopsis": "Amazon MTurk is a web service that provides an on-demand, scalable, human workforce to complete jobs that humans can do better than computers, for example, recognizing objects in photos."
 }

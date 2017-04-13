@@ -1,8 +1,4 @@
 {
-    "base-name": "Route53", 
-    "service-url": "https://route53.amazonaws.com", 
-    "region-lookup-name": "route53", 
-    "synopsis": "Amazon Route 53 is a highly available and scalable cloud Domain Name System (DNS) web service.", 
     "active": true, 
-    "model": "route53-"
+    "synopsis": "Amazon Route 53 is a highly available and scalable cloud Domain Name System (DNS) web service."
 }

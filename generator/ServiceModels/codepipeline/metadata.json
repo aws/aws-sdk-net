@@ -1,9 +1,4 @@
 {
-    "base-name": "CodePipeline", 
-    "service-url": "http://codepipeline.us-east-1.amazonaws.com", 
-    "region-lookup-name": "codepipeline", 
-    "authentication-service-name": "codepipeline", 
-    "synopsis": "AWS CodePipeline is a continuous delivery service for fast and reliable application updates.", 
     "active": true, 
-    "model": "codepipeline"
+    "synopsis": "AWS CodePipeline is a continuous delivery service for fast and reliable application updates."
 }

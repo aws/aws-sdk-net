@@ -1,9 +1,4 @@
 {
-    "base-name": "CodeCommit", 
-    "service-url": "http://codecommit.us-east-1.amazonaws.com", 
-    "region-lookup-name": "codecommit", 
-    "authentication-service-name": "codecommit", 
-    "synopsis": "AWS CodeCommit is a fully-managed source control service that makes it easy for companies to host secure and highly scalable private Git repositories.", 
     "active": true, 
-    "model": "codecommit"
+    "synopsis": "AWS CodeCommit is a fully-managed source control service that makes it easy for companies to host secure and highly scalable private Git repositories."
 }

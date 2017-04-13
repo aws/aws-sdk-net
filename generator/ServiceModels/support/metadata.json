@@ -1,9 +1,5 @@
 {
     "base-name": "AWSSupport", 
-    "service-url": "https://support.us-east-1.amazonaws.com", 
-    "region-lookup-name": "support", 
-    "authentication-service-name": "support", 
-    "synopsis": "The AWS Support API provides methods for creating and managing AWS Support cases and for retrieving the results of AWS Trusted Advisor checks.", 
     "active": true, 
-    "model": "support"
+    "synopsis": "The AWS Support API provides methods for creating and managing AWS Support cases and for retrieving the results of AWS Trusted Advisor checks."
 }

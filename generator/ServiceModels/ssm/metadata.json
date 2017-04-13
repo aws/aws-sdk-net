@@ -1,9 +1,5 @@
 {
     "base-name": "SimpleSystemsManagement", 
-    "service-url": "https://ssm.us-east-1.amazonaws.com", 
-    "region-lookup-name": "ssm", 
-    "authentication-service-name": "ssm", 
-    "synopsis": "Amazon EC2 Simple Systems Manager (SSM) enables you to manage a number of administrative and configuration tasks on your instances.", 
     "active": true, 
-    "model": "ssm"
+    "synopsis": "Amazon EC2 Simple Systems Manager (SSM) enables you to manage a number of administrative and configuration tasks on your instances."
 }

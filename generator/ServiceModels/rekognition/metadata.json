@@ -1,8 +1,4 @@
 {
-    "base-name": "Rekognition", 
-    "region-lookup-name": "rekognition", 
-    "authentication-service-name": "rekognition", 
-    "synopsis": "AWS Rekognition service does image processing and concept recognition, face detection and identification, face verification, similar face search and face clustering.", 
     "active": true, 
-    "model": "rekognition"
+    "synopsis": "AWS Rekognition service does image processing and concept recognition, face detection and identification, face verification, similar face search and face clustering."
 }

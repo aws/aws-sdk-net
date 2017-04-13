@@ -1,7 +1,5 @@
 {
     "active": true, 
     "base-name": "SimpleWorkflow", 
-    "model": "swf", 
-    "region-lookup-name": "swf", 
     "synopsis": "Amazon SWF helps developers build, run, and scale background jobs that have parallel or sequential steps. You can think of Amazon SWF as a fully-managed state tracker and task coordinator in the Cloud."
 }

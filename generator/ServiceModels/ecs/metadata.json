@@ -1,9 +1,4 @@
 {
-    "base-name": "ECS", 
-    "service-url": "https://ecs.us-east-1.amazonaws.com", 
-    "region-lookup-name": "ecs", 
-    "authentication-service-name": "ecs", 
-    "synopsis": "Amazon EC2 Container Service is a highly scalable, high performance container management service that supports Docker containers and allows you to easily run distributed applications on a managed cluster of Amazon EC2 instances.", 
     "active": true, 
-    "model": "ecs"
+    "synopsis": "Amazon EC2 Container Service is a highly scalable, high performance container management service that supports Docker containers and allows you to easily run distributed applications on a managed cluster of Amazon EC2 instances."
 }

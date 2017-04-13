@@ -1,18 +1,13 @@
 {
-    "base-name": "IdentityManagement", 
+    "active": true,
+    "base-name": "IdentityManagementService", 
     "default-region": "USEast1", 
-    "tags": [
-        "IAM"
-    ], 
-    "append-service": true, 
-    "service-url": "https://iam.amazonaws.com", 
-    "region-lookup-name": "iam", 
     "namespace": "Amazon.IdentityManagement", 
-    "authentication-service-name": "iam", 
     "platforms": [
         "Unity"
     ], 
     "synopsis": "AWS Identity and Access Management (IAM) enables you to securely control access to AWS services and resources for your users. Using IAM, you can create and manage AWS users and groups, and use permissions to allow and deny their access to AWS resources.", 
-    "active": true, 
-    "model": "iam"
+    "tags": [
+        "IAM"
+    ]
 }

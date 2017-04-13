@@ -1,9 +1,4 @@
 {
-    "base-name": "Snowball", 
-    "service-url": "https://snowball.us-east-1.amazonaws.com", 
-    "region-lookup-name": "snowball", 
-    "authentication-service-name": "snowball", 
-    "synopsis": "Amazon Snowball is a petabyte-scale data transport solution that uses secure appliances to transfer large amounts of data into and out of the AWS cloud", 
     "active": true, 
-    "model": "snowball"
+    "synopsis": "Amazon Snowball is a petabyte-scale data transport solution that uses secure appliances to transfer large amounts of data into and out of the AWS cloud"
 }

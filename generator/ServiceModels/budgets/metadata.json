@@ -1,8 +1,4 @@
 {
-    "base-name": "Budgets", 
-    "region-lookup-name": "budgets", 
-    "authentication-service-name": "budgets", 
-    "synopsis": "AWS Budget service will provide create/get/list/update/delete budgets for cost management. ", 
     "active": true, 
-    "model": "budgets"
+    "synopsis": "AWS Budget service will provide create/get/list/update/delete budgets for cost management. "
 }

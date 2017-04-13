@@ -1,9 +1,4 @@
 {
-    "base-name": "EC2", 
-    "service-url": "https://ec2.us-east-1.amazonaws.com", 
-    "region-lookup-name": "ec2", 
-    "authentication-service-name": "ec2", 
-    "synopsis": "Amazon Elastic Compute Cloud (Amazon EC2) is a web service that provides resizable compute capacity in the cloud. It is designed to make web-scale cloud computing easier for developers.", 
     "active": true, 
-    "model": "ec2"
+    "synopsis": "Amazon Elastic Compute Cloud (Amazon EC2) is a web service that provides resizable compute capacity in the cloud. It is designed to make web-scale cloud computing easier for developers."
 }

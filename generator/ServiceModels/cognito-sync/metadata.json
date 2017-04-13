@@ -1,17 +1,68 @@
 {
-    "base-name": "CognitoSync", 
+    "active": true, 
+    "dependencies": [
+        "CognitoIdentity"
+    ], 
     "enable-xamarin-component": true, 
+    "license-url": "http://aws.amazon.com/asl/", 
+    "nuget-dependencies": {
+        "Net35": [
+            {
+                "name": "System.Data.SQLite", 
+                "version": "1.0.97.0"
+            }
+        ], 
+        "Net45": [
+            {
+                "name": "System.Data.SQLite", 
+                "version": "1.0.97.0"
+            }
+        ], 
+        "PCL": [
+            {
+                "name": "SQLitePCLRaw.bundle_green", 
+                "version": "1.0.1"
+            }
+        ]
+    }, 
+    "platforms": [
+        "Unity"
+    ], 
     "reference-dependencies": {
         "Net35": [
             {
                 "hint-path": "System.Data.SQLite.Core.1.0.97.0\\lib\\net20\\System.Data.SQLite.dll", 
-                "version": "1.0.97.0", 
-                "name": "System.Data.SQLite.Core"
+                "name": "System.Data.SQLite.Core", 
+                "version": "1.0.97.0"
             }, 
             {
                 "hint-path": "System.Data.SQLite.Linq.1.0.97.0\\lib\\net20\\System.Data.SQLite.Linq.dll", 
-                "version": "1.0.97.0", 
-                "name": "System.Data.SQLite.Linq"
+                "name": "System.Data.SQLite.Linq", 
+                "version": "1.0.97.0"
+            }
+        ], 
+        "Net45": [
+            {
+                "hint-path": "System.Data.SQLite.Core.1.0.97.0\\lib\\net45\\System.Data.SQLite.dll", 
+                "name": "System.Data.SQLite.Core", 
+                "version": "1.0.97.0"
+            }, 
+            {
+                "hint-path": "System.Data.SQLite.EF6.1.0.97.0\\lib\\net45\\System.Data.SQLite.EF6.dll", 
+                "name": "System.Data.SQLite.EF6", 
+                "version": "1.0.97.0"
+            }
+        ], 
+        "PCL": [
+            {
+                "hint-path": "SQLitePCLRaw.core.1.0.1\\lib\\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\\SQLitePCLRaw.core.dll", 
+                "name": "SQLitePCLRaw.core", 
+                "version": "1.0.1"
+            }, 
+            {
+                "hint-path": "SQLitePCLRaw.bundle_green.1.0.1\\lib\\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\\SQLitePCLRaw.batteries_green.dll", 
+                "name": "SQLitePCLRaw.batteries_green", 
+                "version": "1.0.1"
             }
         ], 
         "Unity": [
@@ -23,64 +74,8 @@
                 "hint-path": "Editor\\Data\\Mono\\lib\\mono\\2.0\\Mono.Data.SQLite.dll", 
                 "name": "Mono.Data.SQLite"
             }
-        ], 
-        "Net45": [
-            {
-                "hint-path": "System.Data.SQLite.Core.1.0.97.0\\lib\\net45\\System.Data.SQLite.dll", 
-                "version": "1.0.97.0", 
-                "name": "System.Data.SQLite.Core"
-            }, 
-            {
-                "hint-path": "System.Data.SQLite.EF6.1.0.97.0\\lib\\net45\\System.Data.SQLite.EF6.dll", 
-                "version": "1.0.97.0", 
-                "name": "System.Data.SQLite.EF6"
-            }
-        ], 
-        "PCL": [
-            {
-                "hint-path": "SQLitePCLRaw.core.1.0.1\\lib\\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\\SQLitePCLRaw.core.dll", 
-                "version": "1.0.1", 
-                "name": "SQLitePCLRaw.core"
-            }, 
-            {
-                "hint-path": "SQLitePCLRaw.bundle_green.1.0.1\\lib\\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\\SQLitePCLRaw.batteries_green.dll", 
-                "version": "1.0.1", 
-                "name": "SQLitePCLRaw.batteries_green"
-            }
         ]
     }, 
-    "service-url": "http://cognito-sync.us-east-1.amazonaws.com", 
-    "region-lookup-name": "cognito-sync", 
-    "authentication-service-name": "cognito-sync", 
-    "platforms": [
-        "Unity"
-    ], 
     "synopsis": "Amazon Cognito is a service that makes it easy to save user data, such as app preferences or game state, in the AWS Cloud without writing any backend code or managing any infrastructure. With Amazon Cognito, you can focus on creating great app experiences instead of having to worry about building and managing a backend solution to handle identity management, network state, storage, and sync.", 
-    "dependencies": [
-        "CognitoIdentity"
-    ], 
-    "active": true, 
-    "model": "cognito-sync", 
-    "nuget-dependencies": {
-        "Net35": [
-            {
-                "version": "1.0.97.0", 
-                "name": "System.Data.SQLite"
-            }
-        ], 
-        "Net45": [
-            {
-                "version": "1.0.97.0", 
-                "name": "System.Data.SQLite"
-            }
-        ], 
-        "PCL": [
-            {
-                "version": "1.0.1", 
-                "name": "SQLitePCLRaw.bundle_green"
-            }
-        ]
-    }, 
-    "license-url": "http://aws.amazon.com/asl/", 
     "use-pcl-project-dependencies": true
 }

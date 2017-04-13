@@ -1,15 +1,12 @@
 {
     "base-name": "SimpleEmailService", 
-    "tags": [
-        "SES"
-    ], 
-    "service-url": "https://email.us-east-1.amazonaws.com/", 
-    "region-lookup-name": "email", 
+    "active": true, 
     "namespace": "Amazon.SimpleEmail", 
     "platforms": [
         "Unity"
     ], 
     "synopsis": "Amazon SES is an outbound-only email-sending service that provides an easy, cost-effective way for you to send email.", 
-    "active": true, 
-    "model": "email"
+    "tags": [
+        "SES"
+    ]
 }

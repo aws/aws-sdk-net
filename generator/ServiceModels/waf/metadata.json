@@ -1,9 +1,4 @@
 {
-    "base-name": "WAF", 
-    "service-url": "https://waf.amazonaws.com", 
-    "region-lookup-name": "waf", 
-    "authentication-service-name": "waf", 
-    "synopsis": "AWS WAF (Web Application Firewall) protects web applications from attack by allowing customers to block bad actors and provides filters against common web exploits like SQL injection.", 
     "active": true, 
-    "model": "waf-2015-08-24"
+    "synopsis": "AWS WAF (Web Application Firewall) protects web applications from attack by allowing customers to block bad actors and provides filters against common web exploits like SQL injection."
 }

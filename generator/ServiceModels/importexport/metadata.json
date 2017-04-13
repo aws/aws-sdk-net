@@ -1,8 +1,4 @@
 {
-    "base-name": "ImportExport", 
-    "service-url": "https://importexport.amazonaws.com/", 
-    "region-lookup-name": "importexport", 
-    "synopsis": "AWS Import/Export accelerates moving large amounts of data into and out of the AWS cloud using portable storage devices for transport.", 
     "active": true, 
-    "model": "importexport"
+    "synopsis": "AWS Import/Export accelerates moving large amounts of data into and out of the AWS cloud using portable storage devices for transport."
 }

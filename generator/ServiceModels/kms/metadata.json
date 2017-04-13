@@ -1,8 +1,5 @@
 {
     "base-name": "KeyManagementService", 
-    "region-lookup-name": "kms", 
-    "authentication-service-name": "kms", 
-    "synopsis": "AWS Key Management Service (KMS) is a managed service that makes it easy for you to create and control the encryption keys used to encrypt your data, and uses Hardware Security Modules (HSMs) to protect the security of your keys.", 
     "active": true, 
-    "model": "kms"
+    "synopsis": "AWS Key Management Service (KMS) is a managed service that makes it easy for you to create and control the encryption keys used to encrypt your data, and uses Hardware Security Modules (HSMs) to protect the security of your keys."
 }

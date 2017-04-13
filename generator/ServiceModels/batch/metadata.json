@@ -1,9 +1,4 @@
 {
-    "base-name": "Batch", 
-    "service-url": "https://batch.us-east-1.amazonaws.com", 
-    "region-lookup-name": "batch", 
-    "authentication-service-name": "batch", 
-    "synopsis": "AWS Batch enables developers, scientists, and engineers to easily and efficiently run hundreds of thousands of batch computing jobs on AWS. ", 
     "active": true, 
-    "model": "batch"
+    "synopsis": "AWS Batch enables developers, scientists, and engineers to easily and efficiently run hundreds of thousands of batch computing jobs on AWS. "
 }

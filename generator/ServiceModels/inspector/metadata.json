@@ -1,8 +1,4 @@
 {
-    "base-name": "Inspector", 
-    "service-url": "https://inspector.us-east-1.amazonaws.com/", 
-    "region-lookup-name": "inspector", 
-    "synopsis": "Amazon Inspector identifies security issues in your application deployments.", 
     "active": true, 
-    "model": "inspector"
+    "synopsis": "Amazon Inspector identifies security issues in your application deployments."
 }

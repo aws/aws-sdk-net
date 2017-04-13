@@ -1,9 +1,5 @@
 {
-    "base-name": "ElasticLoadBalancingV2", 
-    "service-url": "https://elasticloadbalancing.us-east-1.amazonaws.com", 
-    "region-lookup-name": "elasticloadbalancing", 
-    "authentication-service-name": "elasticloadbalancing", 
+    "base-name": "ElasticLoadBalancingV2",
     "synopsis": "Elastic Load Balancing automatically distributes incoming application traffic across multiple compute instances in the cloud.", 
-    "active": true, 
-    "model": "elasticloadbalancingv2-"
+    "active": true,
 }

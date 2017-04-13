@@ -1,8 +1,4 @@
 {
-    "base-name": "XRay", 
-    "region-lookup-name": "xray", 
-    "authentication-service-name": "xray", 
-    "synopsis": "AWS X-Ray helps developers analyze and debug distributed applications. With X-Ray, you can understand how your application and its underlying services are performing to identify and troubleshoot the root cause of performance issues and errors.", 
     "active": true, 
-    "model": "xray"
+    "synopsis": "AWS X-Ray helps developers analyze and debug distributed applications. With X-Ray, you can understand how your application and its underlying services are performing to identify and troubleshoot the root cause of performance issues and errors."
 }
