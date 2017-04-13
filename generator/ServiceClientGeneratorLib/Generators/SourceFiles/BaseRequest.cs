@@ -46,14 +46,14 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("\r\n{\r\n    /// <summary>\r\n    /// Base class for ");
             
             #line 15 "C:\codebase\v3-master\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BaseRequest.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
             this.Write(" operation requests.\r\n    /// </summary>\r\n    public partial class Amazon");
             
             #line 17 "C:\codebase\v3-master\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BaseRequest.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden

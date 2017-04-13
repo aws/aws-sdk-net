@@ -69,14 +69,14 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("\tpublic partial class Amazon");
             
             #line 24 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
             this.Write("Client : AmazonServiceClient, IAmazon");
             
             #line 24 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
@@ -95,7 +95,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                     "zon");
             
             #line 34 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
@@ -103,14 +103,14 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                     "dentials\">AWS Credentials</param>\r\n        public Amazon");
             
             #line 37 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
             this.Write("Client(AWSCredentials credentials)\r\n            : this(credentials, new Amazon");
             
             #line 38 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
@@ -118,7 +118,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                     "Amazon");
             
             #line 43 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
@@ -127,7 +127,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                     "o connect.</param>\r\n        public Amazon");
             
             #line 47 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
@@ -135,7 +135,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                     "dentials, new Amazon");
             
             #line 48 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
@@ -143,14 +143,14 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                     "        /// Constructs Amazon");
             
             #line 53 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
             this.Write("Client with AWS Credentials and an\r\n        /// Amazon");
             
             #line 54 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
@@ -159,21 +159,21 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                     "mazon");
             
             #line 57 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
             this.Write("Client Configuration Object</param>\r\n        public Amazon");
             
             #line 58 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
             this.Write("Client(AWSCredentials credentials, Amazon");
             
             #line 58 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
@@ -181,7 +181,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                     "       }\r\n\r\n        /// <summary>\r\n        /// Constructs Amazon");
             
             #line 64 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
@@ -190,7 +190,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                     "name=\"awsSecretAccessKey\">AWS Secret Access Key</param>\r\n        public Amazon");
             
             #line 68 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
@@ -198,7 +198,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                     "ccessKeyId, awsSecretAccessKey, new Amazon");
             
             #line 69 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
@@ -206,7 +206,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                     "Amazon");
             
             #line 74 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
@@ -218,7 +218,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
         public Amazon");
             
             #line 79 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
@@ -226,7 +226,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                     "            : this(awsAccessKeyId, awsSecretAccessKey, new Amazon");
             
             #line 80 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
@@ -234,14 +234,14 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                     "\n        /// Constructs Amazon");
             
             #line 85 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
             this.Write("Client with AWS Access Key ID, AWS Secret Key and an\r\n        /// Amazon");
             
             #line 86 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
@@ -251,21 +251,21 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                     " Amazon");
             
             #line 90 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
             this.Write("Client Configuration Object</param>\r\n        public Amazon");
             
             #line 91 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
             this.Write("Client(string awsAccessKeyId, string awsSecretAccessKey, Amazon");
             
             #line 91 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
@@ -274,7 +274,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                     " Amazon");
             
             #line 97 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
@@ -286,7 +286,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
         public Amazon");
             
             #line 102 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
@@ -295,7 +295,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                     "zon");
             
             #line 103 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
@@ -303,7 +303,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                     "Amazon");
             
             #line 108 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
@@ -316,7 +316,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
         public Amazon");
             
             #line 114 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
@@ -325,7 +325,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                     "wsSessionToken, new Amazon");
             
             #line 115 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
@@ -333,14 +333,14 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                     "        /// Constructs Amazon");
             
             #line 120 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
             this.Write("Client with AWS Access Key ID, AWS Secret Key and an\r\n        /// Amazon");
             
             #line 121 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
@@ -352,14 +352,14 @@ namespace ServiceClientGenerator.Generators.SourceFiles
         /// <param name=""clientConfig"">The Amazon");
             
             #line 126 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
             this.Write("Client Configuration Object</param>\r\n        public Amazon");
             
             #line 127 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
@@ -367,7 +367,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                     "Amazon");
             
             #line 127 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
@@ -386,7 +386,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                     "gner CreateSigner()\r\n        {\r\n            return new ");
             
             #line 144 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientUnity.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(GeneratorHelpers.DetermineSigner(this.Config.ServiceModel.SignatureVersion, this.Config.BaseName)));
+            this.Write(this.ToStringHelper.ToStringWithCulture(GeneratorHelpers.DetermineSigner(this.Config.ServiceModel.SignatureVersion, this.Config.ClassName)));
             
             #line default
             #line hidden

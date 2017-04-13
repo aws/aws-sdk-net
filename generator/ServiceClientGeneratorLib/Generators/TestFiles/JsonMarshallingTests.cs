@@ -65,7 +65,7 @@ namespace ServiceClientGenerator.Generators.TestFiles
                     "lic class ");
             
             #line 29 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\JsonMarshallingTests.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
@@ -91,7 +91,7 @@ namespace ServiceClientGenerator.Generators.TestFiles
                     "\t[TestCategory(\"");
             
             #line 40 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\JsonMarshallingTests.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden

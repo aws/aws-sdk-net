@@ -46,7 +46,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write(".Model\r\n{\r\n    ///<summary>\r\n    /// ");
             
             #line 16 "C:\codebase\v3-master\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ExceptionClass.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden

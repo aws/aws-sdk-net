@@ -56,7 +56,7 @@ namespace ServiceClientGenerator.Generators.TestFiles
                     "c class ");
             
             #line 22 "C:\codebase\v3-master\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\SimpleMethodTests.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
@@ -64,14 +64,14 @@ namespace ServiceClientGenerator.Generators.TestFiles
                     "\")]\r\n        [TestCategory(\"SimpleMethods\"), TestCategory(\"");
             
             #line 26 "C:\codebase\v3-master\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\SimpleMethodTests.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
             this.Write("\")]\r\n        public void ");
             
             #line 27 "C:\codebase\v3-master\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\SimpleMethodTests.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
@@ -103,7 +103,7 @@ namespace ServiceClientGenerator.Generators.TestFiles
             this.Write(".Amazon");
             
             #line 41 "C:\codebase\v3-master\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\SimpleMethodTests.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden

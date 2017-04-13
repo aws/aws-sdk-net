@@ -26,7 +26,7 @@ using AWSSDK_DotNet35.UnitTests.TestTools;
 namespace AWSSDK_DotNet35.UnitTests.Marshalling
 {
     [TestClass]
-    public class <#=this.Config.LockedApiVersion != null ? this.Config.BaseName + "_" + this.Config.LockedApiVersion.Replace('-', '_') + "_" : this.Config.BaseName#>MarshallingTests
+    public class <#=this.Config.ClassName#>MarshallingTests
     {
         static readonly ServiceModel service_model = Utils.LoadServiceModel("<#= this.Config.ServiceDirectoryName #>");
 		<#
@@ -38,7 +38,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
 		[TestCategory("UnitTest")]
 		[TestCategory("Query")]
-		[TestCategory("<#=this.Config.BaseName#>")]
+		[TestCategory("<#=this.Config.ClassName#>")]
         public void <#=operation.Name#>MarshallTest()
         {
             var operation = service_model.FindOperation("<#=operation.Name#>");

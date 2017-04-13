@@ -72,7 +72,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
     public partial class ");
             
             #line 30 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
@@ -104,7 +104,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             this.Write("\")]\r\n\t\t[TestCategory(\"");
             
             #line 41 "C:\Codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\RestMarshallingTests.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden

@@ -263,7 +263,7 @@ this.Write(" operation on Amazon");
         #line hidden
         
         #line 76 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
+this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
 
         
         #line default
@@ -374,7 +374,7 @@ this.Write(" operation on Amazon");
         #line hidden
         
         #line 97 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
+this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
 
         
         #line default
@@ -514,7 +514,7 @@ this.Write("Result from ");
         #line hidden
         
         #line 123 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
+this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
 
         
         #line default
@@ -593,7 +593,7 @@ this.Write("    /// <summary>\r\n    /// Implementation for accessing ");
         #line hidden
         
         #line 139 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
+this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
 
         
         #line default
@@ -642,7 +642,7 @@ this.Write("    /// <summary>\r\n    /// Interface for accessing ");
         #line hidden
         
         #line 154 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
+this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
 
         
         #line default
@@ -955,7 +955,7 @@ this.Write(" service method, as returned by ");
         #line hidden
         
         #line 273 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
+this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
 
         
         #line default
@@ -1172,7 +1172,7 @@ this.Write(" service method, as returned by ");
         #line hidden
         
         #line 328 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
+this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
 
         
         #line default
@@ -1366,7 +1366,7 @@ this.Write(" service method, as returned by ");
         #line hidden
         
         #line 374 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\BaseGenerator.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
+this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
 
         
         #line default

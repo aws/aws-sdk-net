@@ -61,7 +61,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("\tpublic partial interface IAmazon");
             
             #line 22 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceMobile.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden

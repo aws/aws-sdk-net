@@ -47,7 +47,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("\r\n{\r\n    ///<summary>\r\n    /// Common exception for the ");
             
             #line 19 "C:\codebase\v3-master\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BaseServiceException.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
@@ -55,7 +55,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                     "    public class Amazon");
             
             #line 24 "C:\codebase\v3-master\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BaseServiceException.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
@@ -63,7 +63,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                     "struct instance of Amazon");
             
             #line 27 "C:\codebase\v3-master\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BaseServiceException.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
@@ -71,7 +71,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                     "      public Amazon");
             
             #line 30 "C:\codebase\v3-master\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BaseServiceException.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
@@ -79,7 +79,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                     "       /// <summary>\r\n        /// Construct instance of Amazon");
             
             #line 36 "C:\codebase\v3-master\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BaseServiceException.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
@@ -87,7 +87,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                     "      /// <param name=\"innerException\"></param>\r\n        public Amazon");
             
             #line 40 "C:\codebase\v3-master\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BaseServiceException.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
@@ -96,7 +96,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                     "truct instance of Amazon");
             
             #line 46 "C:\codebase\v3-master\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BaseServiceException.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
@@ -104,7 +104,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                     "am>\r\n        public Amazon");
             
             #line 49 "C:\codebase\v3-master\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BaseServiceException.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
@@ -113,7 +113,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                     "ruct instance of Amazon");
             
             #line 55 "C:\codebase\v3-master\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BaseServiceException.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
@@ -127,7 +127,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
         public Amazon");
             
             #line 62 "C:\codebase\v3-master\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BaseServiceException.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
@@ -140,7 +140,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
         /// Construct instance of Amazon");
             
             #line 68 "C:\codebase\v3-master\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BaseServiceException.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
@@ -155,7 +155,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
         public Amazon");
             
             #line 76 "C:\codebase\v3-master\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BaseServiceException.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
@@ -169,7 +169,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
         /// Constructs a new instance of the Amazon");
             
             #line 83 "C:\codebase\v3-master\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BaseServiceException.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
@@ -182,7 +182,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
         protected Amazon");
             
             #line 89 "C:\codebase\v3-master\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BaseServiceException.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden

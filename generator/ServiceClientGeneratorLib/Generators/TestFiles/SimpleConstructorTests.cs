@@ -55,7 +55,7 @@ namespace ServiceClientGenerator.Generators.TestFiles
                     " public class ");
             
             #line 18 "C:\codebase\v3-master\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\SimpleConstructorTests.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
@@ -75,7 +75,7 @@ namespace ServiceClientGenerator.Generators.TestFiles
                     "uctors\"), TestCategory(\"");
             
             #line 28 "C:\codebase\v3-master\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\SimpleConstructorTests.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden

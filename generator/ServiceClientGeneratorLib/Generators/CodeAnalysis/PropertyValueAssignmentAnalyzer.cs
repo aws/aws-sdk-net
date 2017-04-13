@@ -54,7 +54,7 @@ namespace ");
                     "lic override string GetServiceName()\r\n\t\t{\r\n\t\t\treturn \"");
             
             #line 27 "C:\codebase\v3-master\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\PropertyValueAssignmentAnalyzer.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseName));
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
