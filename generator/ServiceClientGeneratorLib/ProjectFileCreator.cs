@@ -202,7 +202,7 @@ namespace ServiceClientGenerator
             if (serviceConfiguration.CoreCLRSupport)
                 GenerateCoreCLRProjectFiles(serviceFilesRoot, serviceConfiguration, assemblyName);
             else
-                Console.WriteLine("Skipping CoreCLR support for {0}", serviceConfiguration.BaseName);
+                Console.WriteLine("Skipping CoreCLR support for {0}", serviceConfiguration.ClassName);
         }
 
         /// <summary>

@@ -149,24 +149,24 @@ namespace ServiceClientGenerator
             }
 
             // .NET Framework 3.5 version
-            ExecuteGenerator(new ServiceClients(), "Amazon" + Configuration.BaseName + "Client.cs", Bcl35SubFolder);
-            ExecuteGenerator(new ServiceInterface(), "IAmazon" + Configuration.BaseName + ".cs", Bcl35SubFolder);
+            ExecuteGenerator(new ServiceClients(), "Amazon" + Configuration.ClassName + "Client.cs", Bcl35SubFolder);
+            ExecuteGenerator(new ServiceInterface(), "IAmazon" + Configuration.ClassName + ".cs", Bcl35SubFolder);
 
             // .NET Framework 4.5 version
-            ExecuteGenerator(new ServiceClients45(), "Amazon" + Configuration.BaseName + "Client.cs", Bcl45SubFolder);
-            ExecuteGenerator(new ServiceInterface45(), "IAmazon" + Configuration.BaseName + ".cs", Bcl45SubFolder);
+            ExecuteGenerator(new ServiceClients45(), "Amazon" + Configuration.ClassName + "Client.cs", Bcl45SubFolder);
+            ExecuteGenerator(new ServiceInterface45(), "IAmazon" + Configuration.ClassName + ".cs", Bcl45SubFolder);
 
             // Phone/Rt/Portable version
-            ExecuteGenerator(new ServiceClientsMobile(), "Amazon" + Configuration.BaseName + "Client.cs", MobileSubFolder);
-            ExecuteGenerator(new ServiceInterfaceMobile(), "IAmazon" + Configuration.BaseName + ".cs", MobileSubFolder);
+            ExecuteGenerator(new ServiceClientsMobile(), "Amazon" + Configuration.ClassName + "Client.cs", MobileSubFolder);
+            ExecuteGenerator(new ServiceInterfaceMobile(), "IAmazon" + Configuration.ClassName + ".cs", MobileSubFolder);
 
             if (string.IsNullOrEmpty(Options.SelfServiceModel))
             {
                 //unity version
                 if (Configuration.SupportedInUnity)
                 {
-                    ExecuteGenerator(new ServiceInterfaceUnity(), "IAmazon" + Configuration.BaseName + ".cs", UnitySubFolder);
-                    ExecuteGenerator(new ServiceClientUnity(), "Amazon" + Configuration.BaseName + "Client.cs", UnitySubFolder);
+                    ExecuteGenerator(new ServiceInterfaceUnity(), "IAmazon" + Configuration.ClassName + ".cs", UnitySubFolder);
+                    ExecuteGenerator(new ServiceClientUnity(), "Amazon" + Configuration.ClassName + "Client.cs", UnitySubFolder);
                 }
                 // Do not generate AssemblyInfo.cs and nuspec file for child model.
                 // Use the one generated for the parent model.
@@ -187,7 +187,7 @@ namespace ServiceClientGenerator
             }
 
             // Client config object
-            ExecuteGenerator(new ServiceConfig(), "Amazon" + Configuration.BaseName + "Config.cs");
+            ExecuteGenerator(new ServiceConfig(), "Amazon" + Configuration.ClassName + "Config.cs");
 
             if (Configuration.Namespace == "Amazon.S3")
             {
@@ -197,10 +197,10 @@ namespace ServiceClientGenerator
 
 
             // The top level request that all operation requests are children of
-            ExecuteGenerator(new BaseRequest(), "Amazon" + Configuration.BaseName + "Request.cs", "Model");
+            ExecuteGenerator(new BaseRequest(), "Amazon" + Configuration.ClassName + "Request.cs", "Model");
 
             var enumFileName = this.Configuration.IsChildConfig ?
-                string.Format("ServiceEnumerations.{0}.cs", Configuration.BaseName) : "ServiceEnumerations.cs";
+                string.Format("ServiceEnumerations.{0}.cs", Configuration.ClassName) : "ServiceEnumerations.cs";
 
             // Any enumerations for the service
             this.ExecuteGenerator(new ServiceEnumerations(), enumFileName);
@@ -209,7 +209,7 @@ namespace ServiceClientGenerator
             // We use the base exceptions generated for the parent model.
             if (!this.Configuration.IsChildConfig)
             {
-                this.ExecuteGenerator(new BaseServiceException(), "Amazon" + this.Configuration.BaseName + "Exception.cs");
+                this.ExecuteGenerator(new BaseServiceException(), "Amazon" + this.Configuration.ClassName + "Exception.cs");
             }
 
             // Generates the Request, Responce, Marshaller, Unmarshaller, and Exception objects for a given client operation
@@ -230,9 +230,7 @@ namespace ServiceClientGenerator
             // Generate any missed structures that are not defined or referenced by a request, response, marshaller, unmarshaller, or exception of an operation
             GenerateStructures();
 
-            var fileName = Configuration.LockedApiVersion != null
-                ? string.Format("{0}_{1}_MarshallingTests.cs", Configuration.BaseName, Configuration.LockedApiVersion)
-                : string.Format("{0}MarshallingTests.cs", Configuration.BaseName);
+            var fileName = string.Format("{0}MarshallingTests.cs", Configuration.ClassName);
 
             // Generate tests based on the type of request it is
             if (Configuration.ServiceModel.Type == ServiceType.Json)
@@ -267,7 +265,7 @@ namespace ServiceClientGenerator
             var requestGenerator = new StructureGenerator
             {
                 ClassName = operation.Name + "Request",
-                BaseClass = string.Format("Amazon{0}Request", Configuration.BaseName),
+                BaseClass = string.Format("Amazon{0}Request", Configuration.ClassName),
                 StructureType = StructureType.Request,
                 Operation = operation
             };
@@ -540,7 +538,7 @@ namespace ServiceClientGenerator
             {
                 var baseException = string.Format("Amazon{0}Exception",
                         this.Configuration.IsChildConfig ?
-                        this.Configuration.ParentConfig.BaseName : this.Configuration.BaseName);
+                        this.Configuration.ParentConfig.ClassName : this.Configuration.ClassName);
 
                 var generator = GetResponseUnmarshaller();
                 generator.Operation = operation;
@@ -683,14 +681,14 @@ namespace ServiceClientGenerator
         public static void UpdateNuGetPackagesInReadme(GenerationManifest manifest, GeneratorOptions options)
         {
             var nugetPackages = new Dictionary<string, string>();
-            foreach (var service in manifest.ServiceConfigurations.OrderBy(x => x.BaseName))
+            foreach (var service in manifest.ServiceConfigurations.OrderBy(x => x.ClassName))
             {
                 // Service like DynamoDB streams are included in a parent service.
                 if (service.ParentConfig != null)
                     continue;
 
                 if (string.IsNullOrEmpty(service.Synopsis))
-                    throw new Exception(string.Format("{0} is missing a synopsis in the manifest.", service.BaseName));
+                    throw new Exception(string.Format("{0} is missing a synopsis in the manifest.", service.ClassName));
                 var assemblyName = service.Namespace.Replace("Amazon.", "AWSSDK.");
                 nugetPackages[assemblyName] = service.Synopsis;
             }
@@ -916,7 +914,7 @@ namespace ServiceClientGenerator
                 { "AssemblyDescription", Configuration.AssemblyDescription },
                 { "AssemblyVersion", assemblyVersion },
                 { "AWSDependencies", awsDependencies },
-                { "BaseName", this.Configuration.BaseName },
+                { "BaseName", this.Configuration.ClassName },
                 { "ProjectFileConfigurations", this.ProjectFileConfigurations},
                 { "Documentation",string.IsNullOrEmpty(Configuration.ServiceModel.Documentation)?Configuration.Synopsis:Configuration.ServiceModel.Documentation },
                 { "SolutionFilePath", string.IsNullOrEmpty(Configuration.ServiceModel.Customizations.XamarinSolutionSamplePath)?"":Path.Combine(SampleFilesRoot,Configuration.ServiceModel.Customizations.XamarinSolutionSamplePath) },
@@ -1032,7 +1030,7 @@ namespace ServiceClientGenerator
                 { "AssemblyDescription", Configuration.AssemblyDescription },
                 { "AssemblyVersion", assemblyVersion },
                 { "AWSDependencies", awsDependencies },
-                { "BaseName", this.Configuration.BaseName },
+                { "BaseName", this.Configuration.ClassName },
                 { "CodeAnalysisServiceFolder", this.Configuration.Namespace.Replace("Amazon.", "") },
                 { "ProjectFileConfigurations", this.ProjectFileConfigurations},
                 { "ExtraTags", Configuration.Tags == null || Configuration.Tags.Count == 0 ? string.Empty : " " + string.Join(" ", Configuration.Tags) },
@@ -1076,7 +1074,7 @@ namespace ServiceClientGenerator
                     Config = this.Configuration
                 };
 
-                ExecuteCustomizationTestGenerator(constructorTests, this.Configuration.BaseName + "ConstructorTests.cs", "Constructors");
+                ExecuteCustomizationTestGenerator(constructorTests, this.Configuration.ClassName + "ConstructorTests.cs", "Constructors");
             }
 
             if (this.Configuration.ServiceModel.Customizations.SimpleMethodsModel.SimpleMethods.Count > 0)
@@ -1086,7 +1084,7 @@ namespace ServiceClientGenerator
                     Config = this.Configuration
                 };
 
-                ExecuteCustomizationTestGenerator(methodTests, this.Configuration.BaseName + "MethodTests.cs", "SimpleMethods");
+                ExecuteCustomizationTestGenerator(methodTests, this.Configuration.ClassName + "MethodTests.cs", "SimpleMethods");
             }
         }
 

@@ -20,18 +20,12 @@ namespace ServiceClientGenerator
         {
             public const string ModelsKey = "models";
             public const string ActiveKey = "active";
-            public const string ModelKey = "model";
             public const string NamespaceKey = "namespace";
-            public const string LockedApiVersionKey = "locked-api-version";
             public const string BaseNameKey = "base-name";
-            public const string RegionLookupNameKey = "region-lookup-name";
             public const string NugetPackageTitleSuffix = "nuget-package-title-suffix";
-            public const string AuthenticationServiceNameKey = "authentication-service-name";
-            public const string ServiceUrlKey = "service-url";
             public const string DefaultRegionKey = "default-region";
             public const string GenerateClientConstructorsKey = "generate-client-constructors";
             public const string CustomizationFileKey = "customization-file";
-            public const string AppendServiceKey = "append-service";
             public const string MaxRetriesKey = "max-retries";
             public const string SynopsisKey = "synopsis";
             public const string CoreCLRSupportKey = "coreclr-support";
@@ -191,18 +185,18 @@ namespace ServiceClientGenerator
                 var modelNode = modelConfig.Item1;
                 var config = modelConfig.Item2;
 
-                var parentModelName = modelNode[ModelsSectionKeys.ParentBaseNameKey] != null ? modelNode[ModelsSectionKeys.ParentBaseNameKey].ToString() : null;
-                if (parentModelName != null)
+                var parentClassName = modelNode[ModelsSectionKeys.ParentBaseNameKey] != null ? modelNode[ModelsSectionKeys.ParentBaseNameKey].ToString() : null;
+                if (parentClassName != null)
                 {
                     try
                     {
-                        config.ParentConfig = serviceConfigurations.Single(c => c.BaseName.Equals(parentModelName));
+                        config.ParentConfig = serviceConfigurations.Single(c => c.ClassName.Equals(parentClassName));
                     }
                     catch (KeyNotFoundException exception)
                     {
                         // Note : the parent model should be defined in the manifest before being referred by a child model
                         throw new KeyNotFoundException(
-                            string.Format("A parent model with name {0} is not defined in the manifest", parentModelName),
+                            string.Format("A parent model with name {0} is not defined in the manifest", parentClassName),
                             exception); ;
                     }
                 }
@@ -234,19 +228,19 @@ namespace ServiceClientGenerator
 
         private ServiceConfiguration CreateServiceConfiguration(JsonData modelNode, JsonData serviceVersions, string serviceDirectoryPath, string serviceModelFileName)
         {
-            // A new config that the api generates from
-            var modelName = modelNode[ModelsSectionKeys.ModelKey].ToString();
+            var modelFullPath = Path.Combine(serviceDirectoryPath, serviceModelFileName);
+
+            JsonData metadata = JsonMapper.ToObject(File.ReadAllText(modelFullPath))[ServiceModel.MetadataKey];
+
+            // A new config that the api generates from            
+            var modelName = Path.GetFileName(serviceDirectoryPath);
             var config = new ServiceConfiguration
             {
                 ModelName = modelName,
-                ModelPath = Path.Combine(serviceDirectoryPath, serviceModelFileName),
-                Namespace = modelNode[ModelsSectionKeys.NamespaceKey] != null ? modelNode[ModelsSectionKeys.NamespaceKey].ToString() : null, // Namespace of the service if it's different from basename
-                LockedApiVersion = modelNode[ModelsSectionKeys.LockedApiVersionKey] != null ? modelNode[ModelsSectionKeys.LockedApiVersionKey].ToString() : null,
-                BaseName = modelNode[ModelsSectionKeys.BaseNameKey].ToString(), // The name that is used as the client name and base request name
-                RegionLookupName = modelNode[ModelsSectionKeys.RegionLookupNameKey].ToString(),
-                AuthenticationServiceName = modelNode[ModelsSectionKeys.AuthenticationServiceNameKey] != null ? modelNode[ModelsSectionKeys.AuthenticationServiceNameKey].ToString() : null,
-                ServiceUrl = modelNode[ModelsSectionKeys.ServiceUrlKey] != null ? modelNode[ModelsSectionKeys.ServiceUrlKey].ToString() : null,
-                DefaultRegion = modelNode[ModelsSectionKeys.DefaultRegionKey] != null ? modelNode[ModelsSectionKeys.DefaultRegionKey].ToString() : null,
+                ModelPath = modelFullPath,
+                Namespace = Utils.JsonDataToString(modelNode[ModelsSectionKeys.NamespaceKey]), // Namespace of the service if it's different from basename
+                ClassNameOverride = Utils.JsonDataToString(modelNode[ModelsSectionKeys.BaseNameKey]),
+                DefaultRegion = Utils.JsonDataToString(modelNode[ModelsSectionKeys.DefaultRegionKey]),
                 GenerateConstructors = modelNode[ModelsSectionKeys.GenerateClientConstructorsKey] == null || (bool)modelNode[ModelsSectionKeys.GenerateClientConstructorsKey], // A way to prevent generating basic constructors
                 SupportedMobilePlatforms = modelNode[ModelsSectionKeys.PlatformsKey] == null ? new List<string>() : (from object pcf in modelNode[ModelsSectionKeys.PlatformsKey]
                                                                                                                         select pcf.ToString()).ToList(),
@@ -315,9 +309,6 @@ namespace ServiceClientGenerator
             config.CustomizationsPath = modelNode[ModelsSectionKeys.CustomizationFileKey] == null
                 ? DetermineCustomizationsPath(config.ServiceDirectoryName)
                 : Path.Combine(serviceDirectoryPath, modelNode[ModelsSectionKeys.CustomizationFileKey].ToString());
-
-            if (modelNode[ModelsSectionKeys.AppendServiceKey] != null && (bool)modelNode[ModelsSectionKeys.AppendServiceKey])
-                config.BaseName += "Service";
 
             if (modelNode[ModelsSectionKeys.MaxRetriesKey] != null && modelNode[ModelsSectionKeys.MaxRetriesKey].IsInt)
                 config.OverrideMaxRetries = Convert.ToInt32(modelNode[ModelsSectionKeys.MaxRetriesKey].ToString());

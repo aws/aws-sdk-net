@@ -70,9 +70,6 @@ namespace ServiceClientGenerator
                     var serviceConfig = new ServiceConfiguration
                     {
                         ModelPath = options.SelfServiceModel,
-                        BaseName = options.SelfServiceBaseName,
-                        AuthenticationServiceName = options.SelfServiceSigV4Name ?? options.SelfServiceBaseName.ToLower(),
-                        RegionLookupName = options.SelfServiceEndpointPrefix ?? options.SelfServiceBaseName.ToLower(),
                         ServiceFileVersion = "3.1.0.0"
                     };
                     serviceConfig.ModelName = Path.GetFileName(serviceConfig.ModelPath);
@@ -92,7 +89,7 @@ namespace ServiceClientGenerator
                     driver.Execute();
 
                     // Skip orphan clean for DynamoDB because of the complex nature of DynamDB and DynamoDB Streams
-                    if(!serviceConfig.BaseName.StartsWith("DynamoDB"))
+                    if(!serviceConfig.ClassName.StartsWith("DynamoDB"))
                     {
                         GeneratorDriver.RemoveOrphanedShapes(driver.FilesWrittenToGeneratorFolder, driver.GeneratedFilesRoot);
                     }

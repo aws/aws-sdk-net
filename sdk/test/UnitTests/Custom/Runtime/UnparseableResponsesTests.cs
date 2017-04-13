@@ -77,7 +77,7 @@ namespace AWSSDK.UnitTests
 
             foreach(var config in configs)
             {
-                var clientTypeName = config.Namespace + ".Amazon" + config.BaseName + "Client";
+                var clientTypeName = config.Namespace + ".Amazon" + config.ClassName + "Client";
                 var clientType = baseClientType.Assembly.GetType(clientTypeName);
                 Assert.IsNotNull(clientType);
 

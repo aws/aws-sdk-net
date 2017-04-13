@@ -122,5 +122,12 @@ namespace ServiceClientGenerator
             return self.Where(m => m.ModeledName.Equals(name, StringComparison.OrdinalIgnoreCase))
                        .SingleOrDefault();
         }
+
+        public static string JsonDataToString(JsonData data)
+        {
+            return (data == null)
+                ? null
+                : data.ToString();
+        }
     }
 }

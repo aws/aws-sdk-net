@@ -46,11 +46,6 @@ namespace ServiceClientGenerator
                 if (this._serviceModel == null)
                 {
                     this._serviceModel = new ServiceModel(this.ModelPath, this.CustomizationsPath);
-
-                    if (this.IsChildConfig)
-                    {
-                        _serviceModel.ParentModel = ParentConfig.ServiceModel;
-                    }
                 }
 
                 return this._serviceModel;
@@ -74,22 +69,73 @@ namespace ServiceClientGenerator
             }
         }
 
+        private static string SanitizeStringForClassName(string name)
+        {
+            string className = name;
+            className = className.Replace("AWS", "");
+            className = className.Replace("Amazon", "");
+
+            // concatenate all the words by removing whitespace.
+            className = System.Text.RegularExpressions.Regex.Replace(className, @"[^a-zA-Z0-9]", "");
+
+            return className;
+        }
+
+
+        private string _className;
+
         /// <summary>
         /// The base name used in the client and the top level request class for a service
         /// </summary>
-        public string BaseName { get; set; }
+        public string ClassName
+        {
+            get
+            {
+                if (!string.IsNullOrEmpty(_className))
+                {
+                    return _className;
+                }
+
+                if (ClassNameOverride != null)
+                {
+                    _className = ClassNameOverride;
+                }
+                else
+                {
+                    if (this.ServiceModel.ServiceAbbreviation != null)
+                    {
+                        _className = SanitizeStringForClassName(_serviceModel.ServiceAbbreviation);
+                    }
+                    else if (this.ServiceModel.ServiceFullName != null)
+                    {
+                        _className = SanitizeStringForClassName(_serviceModel.ServiceFullName);
+                    }
+                    else
+                    {
+                        throw new InvalidDataException("Generator was not able to determine the ClassName for a service.");
+                    }
+                }
+
+                return _className;
+            }
+        }
+
+        /// <summary>
+        /// Classname can be overriden by setting "base-name" in metadata.json
+        /// </summary>
+        public string ClassNameOverride { get; set; }
 
         string _namespace;
 
         /// <summary>
-        /// The namespace of the service, if not specified it is Amazon.BASENAME
+        /// The namespace of the service, if not specified it is Amazon.ClassName
         /// </summary>
         public string Namespace 
         {
             get
             {
                 if (string.IsNullOrEmpty(this._namespace))
-                    return amazonDotPrefix + this.BaseName;
+                    return amazonDotPrefix + this.ClassName;
 
                 return this._namespace;
             }
@@ -130,7 +176,7 @@ namespace ServiceClientGenerator
             {
                 var baseException = string.Format("Amazon{0}Exception",
                                         this.IsChildConfig ?
-                                        this.ParentConfig.BaseName : this.BaseName);
+                                        this.ParentConfig.ClassName : this.ClassName);
                 return baseException;
             }
         }
@@ -158,12 +204,11 @@ namespace ServiceClientGenerator
         public bool InPreview {get; set;}
 
         public bool HasOverrideNamespace { get { return !string.IsNullOrEmpty(this._namespace); } }
-        public string RegionLookupName { get; set; }
-        public string AuthenticationServiceName { get; set; }
+        public string RegionLookupName { get { return this.ServiceModel.EndpointPrefix; } }
+        public string AuthenticationServiceName { get { return this.ServiceModel.SigningName != null ? this.ServiceModel.SigningName : this.ServiceModel.EndpointPrefix; } }
         public int? OverrideMaxRetries { get; set; }
-        public string ServiceUrl { get; set; }
         public string DefaultRegion { get; set; }
-		public bool GenerateConstructors { get; set; }
+        public bool GenerateConstructors { get; set; }
         public string LockedApiVersion { get; set; }
         public string Synopsis { get; set; }
         public Dictionary<string, string> ServiceDependencies { get; set; }
@@ -221,7 +266,19 @@ namespace ServiceClientGenerator
             }
         }
 
-        public ServiceConfiguration ParentConfig { get; set; }
+        private ServiceConfiguration _parentConfig;
+        public ServiceConfiguration ParentConfig
+        {
+            get
+            {
+                return _parentConfig;
+            }
+            set
+            {
+                _parentConfig = value;
+                ServiceModel.ParentModel = value.ServiceModel;
+            }
+        }
 
         public string ServiceDirectoryName
         {

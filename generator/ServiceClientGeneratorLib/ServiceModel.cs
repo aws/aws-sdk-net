@@ -17,32 +17,43 @@ namespace ServiceClientGenerator
     /// </summary>
     public class ServiceModel
     {
-        public const string TargetPrefixKey = "targetPrefix";
-        public const string JsonVersionKey = "jsonVersion";
-        public const string ApiVersionKey = "apiVersion";
+        // metadata properties
         public const string MetadataKey = "metadata";
-        public const string SignatureVersionKey = "signatureVersion";
+        public const string ApiVersionKey = "apiVersion";
+        public const string EndpointPrefixKey = "endpointPrefix";
+        public const string JsonVersionKey = "jsonVersion";
         public const string ProtocolKey = "protocol";
-        public const string DocumentationKey = "documentation";
         public const string ServiceFullNameKey = "serviceFullName";
+        public const string SignatureVersionKey = "signatureVersion";
+        public const string TargetPrefixKey = "targetPrefix";
+        public const string UidKey = "uid";
+        public const string ServiceAbbreviationKey = "serviceAbbreviation";
+        public const string SigningNameKey = "signingName";
+
+        // operations
         public const string OperationsKey = "operations";
-        public const string ShapesKey = "shapes";
-        public const string ShapeKey = "shape";
-        public const string LocationNameKey = "locationName";
-        public const string XmlNamespaceKey = "xmlNamespace";
-        public const string XmlNamespaceUriKey = "uri";
         public const string HttpKey = "http";
         public const string MethodKey = "method";
         public const string RequestUriKey = "requestUri";
         public const string InputKey = "input";
         public const string OutputKey = "output";
-        public const string ResultWrapperKey = "resultWrapper";
         public const string ErrorsKey = "errors";
-        public const string WrapperKey = "wrapper";
-        public const string DeprecatedKey = "deprecated";
-        public const string IdempotencyTokenKey = "idempotencyToken";
-        public const string UidKey = "uid";
+        public const string ResultWrapperKey = "resultWrapper";
         public const string AuthTypeKey = "authtype";
+
+        // shapes
+        public const string ShapesKey = "shapes";
+        public const string ShapeKey = "shape";
+        public const string IdempotencyTokenKey = "idempotencyToken";
+        public const string DeprecatedKey = "deprecated";
+        public const string WrapperKey = "wrapper";
+        public const string LocationNameKey = "locationName";
+        public const string XmlNamespaceUriKey = "uri";
+        public const string XmlNamespaceKey = "xmlNamespace";
+
+        // documentation
+        public const string DocumentationKey = "documentation";
+        
 
         /// <summary>
         /// This model contains information about customizations needed during the generation process
@@ -206,11 +217,35 @@ namespace ServiceClientGenerator
         }
 
         /// <summary>
+        /// Returns the abbreviation name of a service
+        /// </summary>
+        public string ServiceAbbreviation
+        {
+            get { return Utils.JsonDataToString(this._metadata[ServiceAbbreviationKey]); }
+        }
+
+        /// <summary>
         /// Returns the public name of a service
         /// </summary>
         public string ServiceFullName
         {
-            get { return (string)this._metadata[ServiceFullNameKey]; }
+            get { return Utils.JsonDataToString(this._metadata[ServiceFullNameKey]); }
+        }
+
+        /// <summary>
+        /// Returns the endpoint prefix of a service
+        /// </summary>
+        public string EndpointPrefix
+        {
+            get { return Utils.JsonDataToString(this._metadata[EndpointPrefixKey]); }
+        }
+
+        /// <summary>
+        /// Returns the signing name of a service
+        /// </summary>
+        public string SigningName
+        {
+            get { return Utils.JsonDataToString(this._metadata[SigningNameKey]); }
         }
 
         /// <summary>

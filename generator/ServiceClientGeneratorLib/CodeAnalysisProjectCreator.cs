@@ -77,7 +77,7 @@ namespace ServiceClientGenerator
             {
                 writer.WriteStartElement("property-value-rules");
 
-                if (!string.Equals(serviceConfiguration.BaseName, "S3", StringComparison.InvariantCultureIgnoreCase))
+                if (!string.Equals(serviceConfiguration.ClassName, "S3", StringComparison.InvariantCultureIgnoreCase))
                 {
 
                     HashSet<string> requestAndResponseShapes = new HashSet<string>();
