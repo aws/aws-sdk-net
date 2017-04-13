@@ -41,6 +41,7 @@ namespace Amazon.SimpleEmail
         /// </summary>
         public AmazonSimpleEmailServiceConfig()
         {
+            this.AuthenticationServiceName = "ses";
         }
 
         /// <summary>

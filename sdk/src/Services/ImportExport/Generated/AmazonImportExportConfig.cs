@@ -41,6 +41,7 @@ namespace Amazon.ImportExport
         /// </summary>
         public AmazonImportExportConfig()
         {
+            this.AuthenticationServiceName = "importexport";
         }
 
         /// <summary>

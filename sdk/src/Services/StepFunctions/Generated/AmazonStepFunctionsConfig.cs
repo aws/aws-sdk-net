@@ -41,6 +41,7 @@ namespace Amazon.StepFunctions
         /// </summary>
         public AmazonStepFunctionsConfig()
         {
+            this.AuthenticationServiceName = "states";
         }
 
         /// <summary>

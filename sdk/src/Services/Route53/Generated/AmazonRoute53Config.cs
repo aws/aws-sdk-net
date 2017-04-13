@@ -41,6 +41,7 @@ namespace Amazon.Route53
         /// </summary>
         public AmazonRoute53Config()
         {
+            this.AuthenticationServiceName = "route53";
         }
 
         /// <summary>

@@ -41,6 +41,7 @@ namespace Amazon.StorageGateway
         /// </summary>
         public AmazonStorageGatewayConfig()
         {
+            this.AuthenticationServiceName = "storagegateway";
         }
 
         /// <summary>

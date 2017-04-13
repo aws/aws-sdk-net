@@ -41,6 +41,7 @@ namespace Amazon.CloudDirectory
         /// </summary>
         public AmazonCloudDirectoryConfig()
         {
+            this.AuthenticationServiceName = "clouddirectory";
         }
 
         /// <summary>

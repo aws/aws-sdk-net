@@ -41,6 +41,7 @@ namespace Amazon.SimpleDB
         /// </summary>
         public AmazonSimpleDBConfig()
         {
+            this.AuthenticationServiceName = "sdb";
         }
 
         /// <summary>

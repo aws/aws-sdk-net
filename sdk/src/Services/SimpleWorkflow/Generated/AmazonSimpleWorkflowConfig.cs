@@ -41,6 +41,7 @@ namespace Amazon.SimpleWorkflow
         /// </summary>
         public AmazonSimpleWorkflowConfig()
         {
+            this.AuthenticationServiceName = "swf";
         }
 
         /// <summary>

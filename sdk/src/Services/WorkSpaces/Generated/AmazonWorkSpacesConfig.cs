@@ -41,6 +41,7 @@ namespace Amazon.WorkSpaces
         /// </summary>
         public AmazonWorkSpacesConfig()
         {
+            this.AuthenticationServiceName = "workspaces";
         }
 
         /// <summary>

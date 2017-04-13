@@ -41,6 +41,7 @@ namespace Amazon.Inspector
         /// </summary>
         public AmazonInspectorConfig()
         {
+            this.AuthenticationServiceName = "inspector";
         }
 
         /// <summary>
