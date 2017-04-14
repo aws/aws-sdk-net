@@ -509,7 +509,7 @@ namespace Amazon.CloudFront
         {
             using (SHA1 cryptoSHA1 = GetSHA1Provider())
             {
-                RSACryptoServiceProvider providerRSA = new RSACryptoServiceProvider();
+                var providerRSA = RSA.Create();
                 providerRSA.ImportParameters(rsaParameters);
 
                 byte[] hashedData = cryptoSHA1.ComputeHash(dataToSign);
@@ -529,7 +529,7 @@ namespace Amazon.CloudFront
                 throw new AmazonClientException("Invalid RSA Private Key", e);
             }
 
-            RSACryptoServiceProvider rsa = new RSACryptoServiceProvider();
+            var rsa = RSA.Create();
             rsa.ImportParameters(rsaParams);
             return rsaParams;
         }

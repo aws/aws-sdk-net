@@ -30,10 +30,12 @@ namespace AWSSDK_CoreCLR.UnitTests
         [Trait("Category", "CloudFront")]
         public void SignURLCannedValidation()
         {
-            string expectedSignedURL = @"http://awesome.dot.com/amazing/uri/?Expires=-6106035600"
-                                    + @"&Signature=RezrUdl1C4O4LiHnK2orurG-KjuAoPb3wcJr7R0wrvaERJ7H4FVv4OtNxT2QcY~m7KmAXOJEL6aR6Xs3CujxAb2rMOeIev6yy6C~YVkMQQucBDof6HiFdfCZD-aZr7IQxiap6Kd9uqwR9tTp9rKBENzvI3hHyKtCY8Rn~SzwpGU_"
-                                    + @"&Key-Pair-Id=amazingKeyPairId";
-            string signedURL = AmazonCloudFrontUrlSigner.SignUrlCanned("http://awesome.dot.com/amazing/uri/", "amazingKeyPairId", privateRSAKeyStreamReader, new DateTime(1776, 7, 4));
+            string expectedSignedURL = @"http://awesome.dot.com/amazing/uri/?Expires=1492153200" +
+                @"&Signature=XSFtfQPkZ3SgEulXvGpBH7L~Bfh3wv4kPtrYHkFA2yubVZ9tibq0Cz4HDaA-TVkuPOw0ipC4AmzOX8tjrtoD1U1N" +
+                @"MsnnA3H4SQJI4Pe9AXjJwARrbFegGmCLoMmun2FxbOZqo2zb1ltBMOx7HtXBF5lQVkdukQsam4B6g3Mm9ec_&Key-Pair-Id=amazingKeyPairId";
+
+            string signedURL = AmazonCloudFrontUrlSigner.SignUrlCanned("http://awesome.dot.com/amazing/uri/",
+                "amazingKeyPairId", privateRSAKeyStreamReader, new DateTime(2017, 4, 14));
 
             Assert.Equal(expectedSignedURL, signedURL);
         }
