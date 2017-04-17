@@ -260,9 +260,8 @@
             DestinationFolder="$(Deployment)\xamarin-components"/>
     </Target>
 
-	<Target Name="unity-pack" DependsOnTargets="build-custom-tasks;nuget-pack;copy-assemblies;pdb-mdb" Condition="!$(DisableUnitySupport)">
-
-		<UnityPackage
+    <Target Name="unity-pack" DependsOnTargets="build-custom-tasks;nuget-pack;copy-assemblies;pdb-mdb" Condition="!$(DisableUnitySupport) And $(SmokeBuild) == ''">
+        <UnityPackage
             DeploymentPath="$([System.IO.Path]::GetFullPath(..\Deployment\))"
             ServiceName="@(XamFiles)"
             ToolsPath="$([System.IO.Path]::GetFullPath(UnityTools))"
