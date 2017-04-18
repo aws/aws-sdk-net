@@ -32,7 +32,6 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
     public partial class BackgroundRunner
     {
         private int _startFlag = 0;
-        private static bool _shouldStop = false;
         /// <summary>
         /// Starts the Mobile Analytics Manager background thread.
         /// </summary>
@@ -45,18 +44,13 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
             }
         }
 
-        public static void AbortBackgroundRunner()
-        {
-            _shouldStop = true;
-        }
-
         private async Task DoWorkAsync(int millisecondsDelay)
         {
-            while (!_shouldStop)
+            while (!ShouldStop)
             {
                 await Task.Delay(millisecondsDelay).ConfigureAwait(false);
 
-                if (_shouldStop) break;
+                if (ShouldStop) break;
                 
                 try
                 {

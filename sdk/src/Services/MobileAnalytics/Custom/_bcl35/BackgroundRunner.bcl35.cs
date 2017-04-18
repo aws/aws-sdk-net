@@ -43,6 +43,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
                 if (!IsAlive())
                 {
                     _thread = new System.Threading.Thread(DoWork);
+                    _thread.IsBackground = true;
                     _thread.Start();
                 }
             }
@@ -59,7 +60,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
 
         private void DoWork()
         {
-            while (true)
+            while (!ShouldStop)
             {
                 try
                 {

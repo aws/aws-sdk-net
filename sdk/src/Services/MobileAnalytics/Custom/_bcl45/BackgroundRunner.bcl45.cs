@@ -47,9 +47,11 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
 
         private async Task DoWorkAsync(int millisecondsDelay)
         {
-            while (true)
+            while (!ShouldStop)
             {
                 await Task.Delay(millisecondsDelay).ConfigureAwait(false);
+
+                if (ShouldStop) break;
 
                 try
                 {

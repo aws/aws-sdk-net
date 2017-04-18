@@ -32,12 +32,23 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
     /// </summary>
     public partial class BackgroundRunner
     {
+        private static volatile bool ShouldStop = false;
+
         private Logger _logger = Logger.GetLogger(typeof(BackgroundRunner));
         private object _lock = new object();
+
 
         // Background thread wait time. Thread will sleep for the interval mention. Value is in Seconds.
         // Default 60 seconds.
         private const int BackgroundSubmissionWaitTime = 60;
+
+        /// <summary>
+        /// Instruct any running BackgroundRunner instances that they should stop running.
+        /// </summary>
+        public static void AbortBackgroundRunner()
+        {
+            ShouldStop = true;
+        }
     }
 }
 
