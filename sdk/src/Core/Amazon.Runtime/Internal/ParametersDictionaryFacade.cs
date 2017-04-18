@@ -48,7 +48,7 @@ namespace Amazon.Runtime.Internal
         }
 
         // Converts ParameterValue to a string representation
-        private string ParameterValueToString(ParameterValue pv)
+        private static string ParameterValueToString(ParameterValue pv)
         {
             if (pv == null)
                 throw new ArgumentNullException("pv");
@@ -67,7 +67,7 @@ namespace Amazon.Runtime.Internal
                 throw new AmazonClientException("Unexpected parameter value type " + pv.GetType().FullName);
         }
         // Update a ParameterValue with a string representation of its value
-        private void UpdateParameterValue(ParameterValue pv, string newValue)
+        private static void UpdateParameterValue(ParameterValue pv, string newValue)
         {
             if (pv == null)
                 throw new ArgumentNullException("pv");
