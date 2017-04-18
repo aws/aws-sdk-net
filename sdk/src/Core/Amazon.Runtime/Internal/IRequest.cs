@@ -65,6 +65,14 @@ namespace Amazon.Runtime.Internal
         }
 
         /// <summary>
+        /// Collection of parameters included in this request.
+        /// </summary>
+        ParameterCollection ParametersCollection
+        {
+            get;
+        }
+
+        /// <summary>
         /// Returns the subresources that should be appended to the resource path.
         /// This is used primarily for Amazon S3, where object keys can contain '?'
         /// characters, making string-splitting of a resource path potentially 

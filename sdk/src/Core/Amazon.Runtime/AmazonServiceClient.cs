@@ -491,7 +491,7 @@ namespace Amazon.Runtime
 
             if (iRequest.UseQueryString && iRequest.Parameters.Count > 0)
             {
-                var queryString = AWSSDKUtils.GetParametersAsString(iRequest.Parameters);
+                var queryString = AWSSDKUtils.GetParametersAsString(iRequest);
                 sb.AppendFormat("{0}{1}", delim, queryString);
             }
 

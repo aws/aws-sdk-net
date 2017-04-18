@@ -163,7 +163,8 @@ namespace Amazon.Polly
 
             if (iRequest.UseQueryString && iRequest.Parameters.Count > 0)
             {
-                var queryString = SynthesizeSpeechPresignedUrlSigner.CanonicalizeQueryParametersForSynthesizeSpeech(iRequest.Parameters, true);
+                var parameters = iRequest.ParametersCollection.GetSortedParametersList();
+                var queryString = SynthesizeSpeechPresignedUrlSigner.CanonicalizeQueryParametersForSynthesizeSpeech(parameters, true);
                 sb.AppendFormat("{0}{1}", delim, queryString);
             }
 
@@ -267,17 +268,17 @@ namespace Amazon.Polly
                 var canonicalizedHeaderNames = CanonicalizeHeaderNames(sortedHeaders);
 
                 var parametersToCanonicalize = GetParametersToCanonicalize(request);
-                parametersToCanonicalize.Add(XAmzAlgorithm, AWS4AlgorithmTag);
-                parametersToCanonicalize.Add(XAmzCredential,
-                                             string.Format(CultureInfo.InvariantCulture, "{0}/{1}/{2}/{3}/{4}",
+                parametersToCanonicalize.Add(new KeyValuePair<string,string>(XAmzAlgorithm, AWS4AlgorithmTag));
+                var xAmzCredentialValue = string.Format(CultureInfo.InvariantCulture, "{0}/{1}/{2}/{3}/{4}",
                                                            awsAccessKeyId,
                                                            FormatDateTime(signedAt, AWSSDKUtils.ISO8601BasicDateFormat),
                                                            region,
                                                            service,
-                                                           Terminator));
+                                                           Terminator);
+                parametersToCanonicalize.Add(new KeyValuePair<string,string>(XAmzCredential,xAmzCredentialValue));
 
-                parametersToCanonicalize.Add(HeaderKeys.XAmzDateHeader, FormatDateTime(signedAt, AWSSDKUtils.ISO8601BasicDateTimeFormat));
-                parametersToCanonicalize.Add(HeaderKeys.XAmzSignedHeadersHeader, canonicalizedHeaderNames);
+                parametersToCanonicalize.Add(new KeyValuePair<string,string>(HeaderKeys.XAmzDateHeader, FormatDateTime(signedAt, AWSSDKUtils.ISO8601BasicDateTimeFormat)));
+                parametersToCanonicalize.Add(new KeyValuePair<string,string>(HeaderKeys.XAmzSignedHeadersHeader, canonicalizedHeaderNames));
 
                 var canonicalQueryParams = CanonicalizeQueryParametersForSynthesizeSpeech(parametersToCanonicalize, true);
 
@@ -306,14 +307,14 @@ namespace Amazon.Polly
             /// <param name="parameters"></param>
             /// <param name="uriEncodeParameters"></param>
             /// <returns></returns>
-            public static string CanonicalizeQueryParametersForSynthesizeSpeech(IDictionary<string, string> parameters,
+            public static string CanonicalizeQueryParametersForSynthesizeSpeech(List<KeyValuePair<string, string>> parameters,
                 bool uriEncodeParameters)
             {
                 if (parameters == null || parameters.Count == 0)
                     return string.Empty;
 
                 var canonicalQueryString = new StringBuilder();
-                var queryParams = new SortedDictionary<string, string>(parameters, StringComparer.Ordinal);
+                var queryParams = parameters.OrderBy(kvp => kvp.Key, StringComparer.Ordinal).ToList();
                 foreach (var p in queryParams)
                 {
                     if (canonicalQueryString.Length > 0)

@@ -41,7 +41,9 @@ namespace Amazon.Runtime
         #region Properties
 
         public IDictionary<string, string> Headers { get; protected set; }
+        [Obsolete("Parameters property has been deprecated in favor of the ParameterCollection property")]
         public IDictionary<string, string> Parameters { get; protected set; }
+        public ParameterCollection ParameterCollection { get; protected set; }
         public string ServiceName { get; protected set; }
         public Uri Endpoint { get; protected set; }
         public AmazonWebServiceRequest Request { get; protected set; }
@@ -58,6 +60,7 @@ namespace Amazon.Runtime
             {
                 Headers = request.Headers,
                 Parameters = request.Parameters,
+                ParameterCollection = request.ParametersCollection,
                 ServiceName = request.ServiceName,
                 Request = request.OriginalRequest,
                 Endpoint = request.Endpoint

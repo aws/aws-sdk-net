@@ -34,11 +34,11 @@ namespace AWSSDK.UnitTests
             AmazonServiceClient client,
             string content, string requestId, bool isOK)
         {
-            var response = Create(content, requestId, isOK);
+            var response = CreateResponseCreator(content, requestId, isOK);
             SetResponse(client, response);
         }
 
-        private static Func<HttpHandlerTests.MockHttpRequest, HttpWebResponse> Create(
+        public static Func<HttpHandlerTests.MockHttpRequest, HttpWebResponse> CreateResponseCreator(
             string content, string requestId, bool isOK)
         {
             var status = isOK ? HttpStatusCode.OK : HttpStatusCode.NotFound;
@@ -61,16 +61,29 @@ namespace AWSSDK.UnitTests
             AmazonServiceClient client,
             Func<HttpHandlerTests.MockHttpRequest, HttpWebResponse> responseCreator)
         {
+            var requestFactory = new HttpHandlerTests.MockHttpRequestFactory();
+            requestFactory.ResponseCreator = responseCreator;
+            ReplaceHttpRequestHandler(client, requestFactory);
+        }
+
+        public static void ReplaceHttpRequestHandler<T>(
+            AmazonServiceClient client,
+            IHttpRequestFactory<T> httpRequestFactory)
+        {
+            var httpHandler = new HttpHandler<T>(httpRequestFactory, client);
+            ReplaceHttpHandler(client, httpHandler);
+        }
+
+        public static void ReplaceHttpHandler<T>(
+            AmazonServiceClient client,
+            HttpHandler<T> httpHandler)
+        {
             var pipeline = client
                 .GetType()
                 .GetProperty("RuntimePipeline", System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic)
                 .GetValue(client, null)
                 as RuntimePipeline;
-
-            var requestFactory = new HttpHandlerTests.MockHttpRequestFactory();
-            requestFactory.ResponseCreator = responseCreator;
-            var httpHandler = new HttpHandler<Stream>(requestFactory, client);
-            pipeline.ReplaceHandler<HttpHandler<Stream>>(httpHandler);
+            pipeline.ReplaceHandler<HttpHandler<T>>(httpHandler);
         }
     }
 }

@@ -34,7 +34,8 @@ namespace Amazon.Runtime.Internal
     /// </summary>
     public class DefaultRequest : IRequest
     {
-        readonly IDictionary<string, string> parameters = new Dictionary<string, string>(StringComparer.Ordinal);
+        readonly ParameterCollection parametersCollection;
+        readonly IDictionary<string,string> parametersFacade;
         readonly IDictionary<string, string> headers = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
         readonly IDictionary<string, string> subResources = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
 
@@ -67,6 +68,9 @@ namespace Amazon.Runtime.Internal
             this.originalRequest = request;
             this.requestName = this.originalRequest.GetType().Name;
             this.UseSigV4 = ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)this.originalRequest).UseSigV4;
+
+            parametersCollection = new ParameterCollection();
+            parametersFacade = new ParametersDictionaryFacade(parametersCollection);
         }
 
 
@@ -142,7 +146,18 @@ namespace Amazon.Runtime.Internal
         {
             get
             {
-                return this.parameters;
+                return this.parametersFacade;
+            }
+        }
+
+        /// <summary>
+        /// Collection of parameters included in this request.
+        /// </summary>
+        public ParameterCollection ParametersCollection
+        {
+            get
+            {
+                return this.parametersCollection;
             }
         }
 

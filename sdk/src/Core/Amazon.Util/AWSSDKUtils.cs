@@ -26,6 +26,7 @@ using System.IO;
 using System.Text;
 using System.Linq;
 using System.Net;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.Util
 {
@@ -190,11 +191,10 @@ namespace Amazon.Util
          * Determines the string to be signed based on the input parameters for
          * AWS Signature Version 2
          */
-        internal static string CalculateStringToSignV2(IDictionary<string, string> parameters, string serviceUrl)
+        internal static string CalculateStringToSignV2(ParameterCollection parameterCollection, string serviceUrl)
         {
             StringBuilder data = new StringBuilder("POST\n", 512);
-            IDictionary<string, string> sorted =
-                  new SortedDictionary<string, string>(parameters, StringComparer.Ordinal);
+            var sortedParameters = parameterCollection.GetSortedParametersList();
             Uri endpoint = new Uri(serviceUrl);
 
             data.Append(endpoint.Host);
@@ -207,7 +207,7 @@ namespace Amazon.Util
 
             data.Append(AWSSDKUtils.UrlEncode(uri, true));
             data.Append("\n");
-            foreach (KeyValuePair<string, string> pair in sorted)
+            foreach (KeyValuePair<string, string> pair in sortedParameters)
             {
                 if (pair.Value != null)
                 {
@@ -223,18 +223,25 @@ namespace Amazon.Util
         }
 
         /**
-         * Convert Dictionary of paremeters to Url encoded query string
+         * Convert request parameters to Url encoded query string
          */
-        internal static string GetParametersAsString(IDictionary<string, string> parameters)
+        internal static string GetParametersAsString(IRequest request)
         {
-            string[] keys = new string[parameters.Keys.Count];
-            parameters.Keys.CopyTo(keys, 0);
-            Array.Sort<string>(keys);
+            return GetParametersAsString(request.ParametersCollection);
+        }
+
+        /**
+         * Convert Dictionary of parameters to Url encoded query string
+         */
+        internal static string GetParametersAsString(ParameterCollection parameterCollection)
+        {
+            var sortedParameters = parameterCollection.GetSortedParametersList();
 
             StringBuilder data = new StringBuilder(512);
-            foreach (string key in keys)
+            foreach (var kvp in sortedParameters)
             {
-                string value = parameters[key];
+                var key = kvp.Key;
+                var value = kvp.Value;
                 if (value != null)
                 {
                     data.Append(key);

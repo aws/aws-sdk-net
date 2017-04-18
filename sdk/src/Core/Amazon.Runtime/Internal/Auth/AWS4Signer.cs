@@ -725,23 +725,24 @@ namespace Amazon.Runtime.Internal.Auth
         /// </summary>
         /// <param name="request">The in-flight request being signed</param>
         /// <returns>The fused set of parameters</returns>
-        protected static IDictionary<string, string> GetParametersToCanonicalize(IRequest request)
+        protected static List<KeyValuePair<string, string>> GetParametersToCanonicalize(IRequest request)
         {
-            var parametersToCanonicalize = new Dictionary<string, string>();
+            var parametersToCanonicalize = new List<KeyValuePair<string, string>>();
 
             if (request.SubResources != null && request.SubResources.Count > 0)
             {
                 foreach (var subResource in request.SubResources)
                 {
-                    parametersToCanonicalize.Add(subResource.Key, subResource.Value);
+                    parametersToCanonicalize.Add(new KeyValuePair<string,string>(subResource.Key, subResource.Value));
                 }
             }
 
             if (request.UseQueryString && request.Parameters != null && request.Parameters.Count > 0)
             {
-                foreach (var queryParameter in request.Parameters.Where(queryParameter => queryParameter.Value != null))
+                var requestParameters = request.ParametersCollection.GetSortedParametersList();
+                foreach (var queryParameter in requestParameters.Where(queryParameter => queryParameter.Value != null))
                 {
-                    parametersToCanonicalize.Add(queryParameter.Key, queryParameter.Value);
+                    parametersToCanonicalize.Add(new KeyValuePair<string,string>(queryParameter.Key, queryParameter.Value));
                 }
             }
 
@@ -803,10 +804,10 @@ namespace Amazon.Runtime.Internal.Auth
                     index = qs.Length;
             }
 
-            return CanonicalizeQueryParameters(queryParams, uriEncodeParameters);
+            return CanonicalizeQueryParameters(queryParams, uriEncodeParameters: uriEncodeParameters);
         }
 
-        protected static string CanonicalizeQueryParameters(IDictionary<string, string> parameters)
+        protected static string CanonicalizeQueryParameters(IEnumerable<KeyValuePair<string, string>> parameters)
         {
             return CanonicalizeQueryParameters(parameters, true);
         }
@@ -822,31 +823,35 @@ namespace Amazon.Runtime.Internal.Auth
         /// done prior to signer entry.
         /// </param>
         /// <returns>The uri encoded query string parameters in canonical ordering</returns>
-        protected static string CanonicalizeQueryParameters(IDictionary<string, string> parameters, 
-                                                            bool uriEncodeParameters)
+        protected static string CanonicalizeQueryParameters(
+            IEnumerable<KeyValuePair<string, string>> parameters,
+            bool uriEncodeParameters)
         {
-            if (parameters == null || parameters.Count == 0)
+            if (parameters == null)
                 return string.Empty;
 
+            var sortedParameters = parameters.OrderBy(kvp => kvp.Key, StringComparer.Ordinal).ToList();
             var canonicalQueryString = new StringBuilder();
-            var queryParams = new SortedDictionary<string, string>(parameters, StringComparer.Ordinal);
-            foreach (var p in queryParams)
+            foreach (var param in sortedParameters)
             {
+                var key = param.Key;
+                var value = param.Value;
+
                 if (canonicalQueryString.Length > 0)
                     canonicalQueryString.Append("&");
                 if (uriEncodeParameters)
                 {
-                    if (string.IsNullOrEmpty(p.Value))
-                        canonicalQueryString.AppendFormat("{0}=", AWSSDKUtils.UrlEncode(p.Key, false));
+                    if (string.IsNullOrEmpty(value))
+                        canonicalQueryString.AppendFormat("{0}=", AWSSDKUtils.UrlEncode(key, false));
                     else
-                        canonicalQueryString.AppendFormat("{0}={1}", AWSSDKUtils.UrlEncode(p.Key, false), AWSSDKUtils.UrlEncode(p.Value, false));
+                        canonicalQueryString.AppendFormat("{0}={1}", AWSSDKUtils.UrlEncode(key, false), AWSSDKUtils.UrlEncode(value, false));
                 }
                 else
                 {
-                    if (string.IsNullOrEmpty(p.Value))
-                        canonicalQueryString.AppendFormat("{0}=", p.Key);
+                    if (string.IsNullOrEmpty(value))
+                        canonicalQueryString.AppendFormat("{0}=", key);
                     else
-                        canonicalQueryString.AppendFormat("{0}={1}", p.Key, p.Value);
+                        canonicalQueryString.AppendFormat("{0}={1}", key, value);
                 }
             }
 
@@ -872,7 +877,7 @@ namespace Amazon.Runtime.Internal.Auth
             if (request.Content != null)
                 return request.Content;
 
-            var content = request.UseQueryString ? string.Empty : AWSSDKUtils.GetParametersAsString(request.Parameters);
+            var content = request.UseQueryString ? string.Empty : AWSSDKUtils.GetParametersAsString(request);
             return Encoding.UTF8.GetBytes(content);
         }
         #endregion
@@ -1034,17 +1039,17 @@ namespace Amazon.Runtime.Internal.Auth
             var canonicalizedHeaderNames = CanonicalizeHeaderNames(sortedHeaders);
 
             var parametersToCanonicalize = GetParametersToCanonicalize(request);
-            parametersToCanonicalize.Add(XAmzAlgorithm, AWS4AlgorithmTag);
-            parametersToCanonicalize.Add(XAmzCredential,
-                                         string.Format(CultureInfo.InvariantCulture, "{0}/{1}/{2}/{3}/{4}",
+            parametersToCanonicalize.Add(new KeyValuePair<string,string>(XAmzAlgorithm, AWS4AlgorithmTag));
+            var xAmzCredentialValue = string.Format(CultureInfo.InvariantCulture, "{0}/{1}/{2}/{3}/{4}",
                                                        awsAccessKeyId,
                                                        FormatDateTime(signedAt, AWSSDKUtils.ISO8601BasicDateFormat),
                                                        region,
                                                        service,
-                                                       Terminator));
+                                                       Terminator);
+            parametersToCanonicalize.Add(new KeyValuePair<string,string>(XAmzCredential, xAmzCredentialValue));
 
-            parametersToCanonicalize.Add(HeaderKeys.XAmzDateHeader, FormatDateTime(signedAt, AWSSDKUtils.ISO8601BasicDateTimeFormat));
-            parametersToCanonicalize.Add(HeaderKeys.XAmzSignedHeadersHeader, canonicalizedHeaderNames);
+            parametersToCanonicalize.Add(new KeyValuePair<string,string>(HeaderKeys.XAmzDateHeader, FormatDateTime(signedAt, AWSSDKUtils.ISO8601BasicDateTimeFormat)));
+            parametersToCanonicalize.Add(new KeyValuePair<string,string>(HeaderKeys.XAmzSignedHeadersHeader, canonicalizedHeaderNames));
 
             var canonicalQueryParams = CanonicalizeQueryParameters(parametersToCanonicalize);
 
