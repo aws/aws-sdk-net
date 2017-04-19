@@ -28,30 +28,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// The parent object that contains the target ARN (Amazon Resource Name) of an Amazon
-    /// SQS queue or Amazon SNS topic.
+    /// Parent object of the tracing information associated with your Lambda function.
     /// </summary>
-    public partial class DeadLetterConfig
+    public partial class TracingConfigResponse
     {
-        private string _targetArn;
+        private TracingMode _mode;
 
         /// <summary>
-        /// Gets and sets the property TargetArn. 
+        /// Gets and sets the property Mode. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic you specify
-        /// as your Dead Letter Queue (DLQ).
+        /// The tracing mode associated with your Lambda function.
         /// </para>
         /// </summary>
-        public string TargetArn
+        public TracingMode Mode
         {
-            get { return this._targetArn; }
-            set { this._targetArn = value; }
+            get { return this._mode; }
+            set { this._mode = value; }
         }
 
-        // Check to see if TargetArn property is set
-        internal bool IsSetTargetArn()
+        // Check to see if Mode property is set
+        internal bool IsSetMode()
         {
-            return this._targetArn != null;
+            return this._mode != null;
         }
 
     }

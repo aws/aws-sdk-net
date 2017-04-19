@@ -28,30 +28,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// The parent object that contains the target ARN (Amazon Resource Name) of an Amazon
-    /// SQS queue or Amazon SNS topic.
+    /// The parent object that contains your function's tracing settings.
     /// </summary>
-    public partial class DeadLetterConfig
+    public partial class TracingConfig
     {
-        private string _targetArn;
+        private TracingMode _mode;
 
         /// <summary>
-        /// Gets and sets the property TargetArn. 
+        /// Gets and sets the property Mode. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic you specify
-        /// as your Dead Letter Queue (DLQ).
+        /// Can be either PassThrough or Active. If PassThrough, Lambda will only trace the request
+        /// from an upstream service if it contains a tracing header with "sampled=1". If Active,
+        /// Lambda will respect any tracing header it receives from an upstream service. If no
+        /// tracing header is received, Lambda will call X-Ray for a tracing decision.
         /// </para>
         /// </summary>
-        public string TargetArn
+        public TracingMode Mode
         {
-            get { return this._targetArn; }
-            set { this._targetArn = value; }
+            get { return this._mode; }
+            set { this._mode = value; }
         }
 
-        // Check to see if TargetArn property is set
-        internal bool IsSetTargetArn()
+        // Check to see if Mode property is set
+        internal bool IsSetMode()
         {
-            return this._targetArn != null;
+            return this._mode != null;
         }
 
     }

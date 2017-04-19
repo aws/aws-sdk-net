@@ -135,6 +135,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     response.Timeout = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("TracingConfig", targetDepth))
+                {
+                    var unmarshaller = TracingConfigResponseUnmarshaller.Instance;
+                    response.TracingConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Version", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -59,12 +59,13 @@ namespace Amazon.Lambda.Model
         private string _role;
         private Runtime _runtime;
         private int? _timeout;
+        private TracingConfig _tracingConfig;
         private VpcConfig _vpcConfig;
 
         /// <summary>
         /// Gets and sets the property DeadLetterConfig. 
         /// <para>
-        /// The parent object that contains the target Amazon Resource Name (ARN) of an Amazon
+        /// The parent object that contains the target ARN (Amazon Resource Name) of an Amazon
         /// SQS queue or Amazon SNS topic.
         /// </para>
         /// </summary>
@@ -273,6 +274,24 @@ namespace Amazon.Lambda.Model
         internal bool IsSetTimeout()
         {
             return this._timeout.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TracingConfig. 
+        /// <para>
+        /// The parent object that contains your function's tracing settings.
+        /// </para>
+        /// </summary>
+        public TracingConfig TracingConfig
+        {
+            get { return this._tracingConfig; }
+            set { this._tracingConfig = value; }
+        }
+
+        // Check to see if TracingConfig property is set
+        internal bool IsSetTracingConfig()
+        {
+            return this._tracingConfig != null;
         }
 
         /// <summary>

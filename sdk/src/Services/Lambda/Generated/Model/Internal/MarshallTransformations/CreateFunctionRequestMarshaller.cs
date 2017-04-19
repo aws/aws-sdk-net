@@ -166,6 +166,17 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Timeout);
                 }
 
+                if(publicRequest.IsSetTracingConfig())
+                {
+                    context.Writer.WritePropertyName("TracingConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = TracingConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.TracingConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetVpcConfig())
                 {
                     context.Writer.WritePropertyName("VpcConfig");
