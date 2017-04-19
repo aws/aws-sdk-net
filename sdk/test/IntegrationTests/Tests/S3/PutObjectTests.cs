@@ -676,7 +676,19 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
         [TestMethod]
         [TestCategory("S3")]
-        public void PutObjectWithContentEncoding()
+        public void PutObjectWithContentEncodingTests()
+        {
+            S3TestUtils.TestWithVariableSigV4(PutObjectWithContentEncoding, useSigV4: true);
+            S3TestUtils.TestWithVariableSigV4(PutObjectWithContentEncoding, useSigV4: false);
+
+            S3TestUtils.TestWithVariableSigV4(PutObjectWithContentEncodingIdentity, useSigV4: true);
+            S3TestUtils.TestWithVariableSigV4(PutObjectWithContentEncodingIdentity, useSigV4: false);
+
+            S3TestUtils.TestWithVariableSigV4(PutObjectWithoutContentEncoding, useSigV4: true);
+            S3TestUtils.TestWithVariableSigV4(PutObjectWithoutContentEncoding, useSigV4: false);
+        }
+
+        private void PutObjectWithContentEncoding()
         {
             var request = CreatePutObjectRequest();
             request.Headers.ContentEncoding = "gzip";
@@ -686,9 +698,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             Assert.AreEqual("disposition", headers.ContentDisposition);
             Assert.AreEqual("gzip", headers.ContentEncoding);
         }
-        [TestMethod]
-        [TestCategory("S3")]
-        public void PutObjectWithContentEncodingIdentity()
+        private void PutObjectWithContentEncodingIdentity()
         {
             var request = CreatePutObjectRequest();
             request.Headers.ContentEncoding = "identity";
@@ -698,16 +708,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             Assert.AreEqual("disposition", headers.ContentDisposition);
             Assert.AreEqual("identity", headers.ContentEncoding);
         }
-        [TestMethod]
-        [TestCategory("S3")]
-        public void PutObjectWithoutContentEncoding()
+        private void PutObjectWithoutContentEncoding()
         {
             var request = CreatePutObjectRequest();
             request.Headers.ContentDisposition = "disposition";
 
             var headers = TestPutAndGet(request);
             Assert.AreEqual("disposition", headers.ContentDisposition);
-            Assert.AreEqual(string.Empty, headers.ContentEncoding);
+            Assert.IsNull(headers.ContentEncoding);
         }
 
         private HeadersCollection TestPutAndGet(PutObjectRequest request)

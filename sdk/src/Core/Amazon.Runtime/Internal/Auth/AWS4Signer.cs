@@ -434,8 +434,6 @@ namespace Amazon.Runtime.Internal.Auth
                         = string.Concat(originalEncoding, ", ", AWSChunkedEncoding);
                     }
                 }
-                else
-                    request.Headers[HeaderKeys.ContentEncodingHeader] = AWSChunkedEncoding;
             }
             else
             {

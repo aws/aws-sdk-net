@@ -9,6 +9,7 @@ using Amazon.S3;
 using Amazon.S3.Model;
 using Amazon.S3.Util;
 using System.Threading;
+using Amazon;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
@@ -38,6 +39,35 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         {
             var sleeper = new UtilityMethods.ListSleeper(500, 1000, 2000, 5000);
             UtilityMethods.WaitUntilSuccess(() => { client.GetObject(bucketName, key); }, sleeper, 30);
+        }
+
+        public static IDisposable UseSignatureVersion4(bool newValue)
+        {
+            return new SigV4Disposable(newValue);
+        }
+
+        public static void TestWithVariableSigV4(Action action, bool useSigV4)
+        {
+            using(var sigv4 = UseSignatureVersion4(useSigV4))
+            {
+                action();
+            }
+        }
+
+
+        private class SigV4Disposable : IDisposable
+        {
+            private bool OldSigV4;
+            public SigV4Disposable(bool newSigV4)
+            {
+                OldSigV4 = AWSConfigsS3.UseSignatureVersion4;
+                AWSConfigsS3.UseSignatureVersion4 = newSigV4;
+            }
+
+            public void Dispose()
+            {
+                AWSConfigsS3.UseSignatureVersion4 = OldSigV4;
+            }
         }
     }
 }
