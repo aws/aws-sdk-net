@@ -154,6 +154,14 @@ namespace ServiceClientGenerator
             }
         }
 
+        public string TestCategory
+        {
+            get
+            {
+                return ServiceFolderName;
+            }
+        }
+
         public string AssemblyTitle
         {
             get

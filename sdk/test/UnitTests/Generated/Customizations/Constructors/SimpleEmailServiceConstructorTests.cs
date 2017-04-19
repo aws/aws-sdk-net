@@ -29,7 +29,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
     {
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Constructors"), TestCategory("SimpleEmailService")]
+        [TestCategory("Constructors"), TestCategory("SimpleEmail")]
         public void SendEmailRequestConstructorTests()
         {
             EnsureConstructorExists(typeof(Amazon.SimpleEmail.Model.SendEmailRequest), new System.Type[] { typeof(string), typeof(Destination), typeof(Message), });
@@ -37,7 +37,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Constructors"), TestCategory("SimpleEmailService")]
+        [TestCategory("Constructors"), TestCategory("SimpleEmail")]
         public void SendRawEmailRequestConstructorTests()
         {
             EnsureConstructorExists(typeof(Amazon.SimpleEmail.Model.SendRawEmailRequest), new System.Type[] { typeof(RawMessage), });

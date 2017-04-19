@@ -29,7 +29,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
     {
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Constructors"), TestCategory("SecurityTokenService")]
+        [TestCategory("Constructors"), TestCategory("SecurityToken")]
         public void GetFederationTokenRequestConstructorTests()
         {
             EnsureConstructorExists(typeof(Amazon.SecurityToken.Model.GetFederationTokenRequest), new System.Type[] { typeof(string), });
@@ -37,7 +37,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Constructors"), TestCategory("SecurityTokenService")]
+        [TestCategory("Constructors"), TestCategory("SecurityToken")]
         public void GetSessionTokenRequestConstructorTests()
         {
         }

@@ -43,7 +43,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("SecurityTokenService")]
+        [TestCategory("SecurityToken")]
         public void AssumeRoleMarshallTest()
         {
             var operation = service_model.FindOperation("AssumeRole");
@@ -67,7 +67,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("SecurityTokenService")]
+        [TestCategory("SecurityToken")]
         public void AssumeRoleWithSAMLMarshallTest()
         {
             var operation = service_model.FindOperation("AssumeRoleWithSAML");
@@ -91,7 +91,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("SecurityTokenService")]
+        [TestCategory("SecurityToken")]
         public void AssumeRoleWithWebIdentityMarshallTest()
         {
             var operation = service_model.FindOperation("AssumeRoleWithWebIdentity");
@@ -115,7 +115,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("SecurityTokenService")]
+        [TestCategory("SecurityToken")]
         public void DecodeAuthorizationMessageMarshallTest()
         {
             var operation = service_model.FindOperation("DecodeAuthorizationMessage");
@@ -139,7 +139,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("SecurityTokenService")]
+        [TestCategory("SecurityToken")]
         public void GetCallerIdentityMarshallTest()
         {
             var operation = service_model.FindOperation("GetCallerIdentity");
@@ -163,7 +163,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("SecurityTokenService")]
+        [TestCategory("SecurityToken")]
         public void GetFederationTokenMarshallTest()
         {
             var operation = service_model.FindOperation("GetFederationToken");
@@ -187,7 +187,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("SecurityTokenService")]
+        [TestCategory("SecurityToken")]
         public void GetSessionTokenMarshallTest()
         {
             var operation = service_model.FindOperation("GetSessionToken");

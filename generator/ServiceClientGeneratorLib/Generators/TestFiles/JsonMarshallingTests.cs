@@ -90,8 +90,8 @@ namespace ServiceClientGenerator.Generators.TestFiles
             this.Write("\r\n        [TestMethod]\r\n\t\t[TestCategory(\"UnitTest\")]\r\n\t\t[TestCategory(\"Json\")]\r\n\t" +
                     "\t[TestCategory(\"");
             
-            #line 40 "C:\code\dotnet\sdk\generator\ServiceClientGeneratorLib\Generators\TestFiles\JsonMarshallingTests.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
+            #line 40 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\JsonMarshallingTests.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.TestCategory));
             
             #line default
             #line hidden

@@ -43,7 +43,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void AddClientIDToOpenIDConnectProviderMarshallTest()
         {
             var operation = service_model.FindOperation("AddClientIDToOpenIDConnectProvider");
@@ -62,7 +62,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void AddRoleToInstanceProfileMarshallTest()
         {
             var operation = service_model.FindOperation("AddRoleToInstanceProfile");
@@ -81,7 +81,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void AddUserToGroupMarshallTest()
         {
             var operation = service_model.FindOperation("AddUserToGroup");
@@ -100,7 +100,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void AttachGroupPolicyMarshallTest()
         {
             var operation = service_model.FindOperation("AttachGroupPolicy");
@@ -119,7 +119,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void AttachRolePolicyMarshallTest()
         {
             var operation = service_model.FindOperation("AttachRolePolicy");
@@ -138,7 +138,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void AttachUserPolicyMarshallTest()
         {
             var operation = service_model.FindOperation("AttachUserPolicy");
@@ -157,7 +157,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void ChangePasswordMarshallTest()
         {
             var operation = service_model.FindOperation("ChangePassword");
@@ -176,7 +176,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void CreateAccessKeyMarshallTest()
         {
             var operation = service_model.FindOperation("CreateAccessKey");
@@ -200,7 +200,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void CreateAccountAliasMarshallTest()
         {
             var operation = service_model.FindOperation("CreateAccountAlias");
@@ -219,7 +219,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void CreateGroupMarshallTest()
         {
             var operation = service_model.FindOperation("CreateGroup");
@@ -243,7 +243,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void CreateInstanceProfileMarshallTest()
         {
             var operation = service_model.FindOperation("CreateInstanceProfile");
@@ -267,7 +267,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void CreateLoginProfileMarshallTest()
         {
             var operation = service_model.FindOperation("CreateLoginProfile");
@@ -291,7 +291,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void CreateOpenIDConnectProviderMarshallTest()
         {
             var operation = service_model.FindOperation("CreateOpenIDConnectProvider");
@@ -315,7 +315,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void CreatePolicyMarshallTest()
         {
             var operation = service_model.FindOperation("CreatePolicy");
@@ -339,7 +339,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void CreatePolicyVersionMarshallTest()
         {
             var operation = service_model.FindOperation("CreatePolicyVersion");
@@ -363,7 +363,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void CreateRoleMarshallTest()
         {
             var operation = service_model.FindOperation("CreateRole");
@@ -387,7 +387,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void CreateSAMLProviderMarshallTest()
         {
             var operation = service_model.FindOperation("CreateSAMLProvider");
@@ -411,7 +411,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void CreateServiceLinkedRoleMarshallTest()
         {
             var operation = service_model.FindOperation("CreateServiceLinkedRole");
@@ -435,7 +435,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void CreateServiceSpecificCredentialMarshallTest()
         {
             var operation = service_model.FindOperation("CreateServiceSpecificCredential");
@@ -459,7 +459,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void CreateUserMarshallTest()
         {
             var operation = service_model.FindOperation("CreateUser");
@@ -483,7 +483,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void CreateVirtualMFADeviceMarshallTest()
         {
             var operation = service_model.FindOperation("CreateVirtualMFADevice");
@@ -507,7 +507,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void DeactivateMFADeviceMarshallTest()
         {
             var operation = service_model.FindOperation("DeactivateMFADevice");
@@ -526,7 +526,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void DeleteAccessKeyMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteAccessKey");
@@ -545,7 +545,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void DeleteAccountAliasMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteAccountAlias");
@@ -564,7 +564,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void DeleteAccountPasswordPolicyMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteAccountPasswordPolicy");
@@ -583,7 +583,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void DeleteGroupMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteGroup");
@@ -602,7 +602,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void DeleteGroupPolicyMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteGroupPolicy");
@@ -621,7 +621,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void DeleteInstanceProfileMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteInstanceProfile");
@@ -640,7 +640,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void DeleteLoginProfileMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteLoginProfile");
@@ -659,7 +659,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void DeleteOpenIDConnectProviderMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteOpenIDConnectProvider");
@@ -678,7 +678,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void DeletePolicyMarshallTest()
         {
             var operation = service_model.FindOperation("DeletePolicy");
@@ -697,7 +697,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void DeletePolicyVersionMarshallTest()
         {
             var operation = service_model.FindOperation("DeletePolicyVersion");
@@ -716,7 +716,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void DeleteRoleMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteRole");
@@ -735,7 +735,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void DeleteRolePolicyMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteRolePolicy");
@@ -754,7 +754,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void DeleteSAMLProviderMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteSAMLProvider");
@@ -773,7 +773,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void DeleteServerCertificateMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteServerCertificate");
@@ -792,7 +792,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void DeleteServiceSpecificCredentialMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteServiceSpecificCredential");
@@ -811,7 +811,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void DeleteSigningCertificateMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteSigningCertificate");
@@ -830,7 +830,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void DeleteSSHPublicKeyMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteSSHPublicKey");
@@ -849,7 +849,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void DeleteUserMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteUser");
@@ -868,7 +868,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void DeleteUserPolicyMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteUserPolicy");
@@ -887,7 +887,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void DeleteVirtualMFADeviceMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteVirtualMFADevice");
@@ -906,7 +906,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void DetachGroupPolicyMarshallTest()
         {
             var operation = service_model.FindOperation("DetachGroupPolicy");
@@ -925,7 +925,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void DetachRolePolicyMarshallTest()
         {
             var operation = service_model.FindOperation("DetachRolePolicy");
@@ -944,7 +944,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void DetachUserPolicyMarshallTest()
         {
             var operation = service_model.FindOperation("DetachUserPolicy");
@@ -963,7 +963,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void EnableMFADeviceMarshallTest()
         {
             var operation = service_model.FindOperation("EnableMFADevice");
@@ -982,7 +982,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void GenerateCredentialReportMarshallTest()
         {
             var operation = service_model.FindOperation("GenerateCredentialReport");
@@ -1006,7 +1006,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void GetAccessKeyLastUsedMarshallTest()
         {
             var operation = service_model.FindOperation("GetAccessKeyLastUsed");
@@ -1030,7 +1030,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void GetAccountAuthorizationDetailsMarshallTest()
         {
             var operation = service_model.FindOperation("GetAccountAuthorizationDetails");
@@ -1054,7 +1054,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void GetAccountPasswordPolicyMarshallTest()
         {
             var operation = service_model.FindOperation("GetAccountPasswordPolicy");
@@ -1078,7 +1078,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void GetAccountSummaryMarshallTest()
         {
             var operation = service_model.FindOperation("GetAccountSummary");
@@ -1102,7 +1102,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void GetContextKeysForCustomPolicyMarshallTest()
         {
             var operation = service_model.FindOperation("GetContextKeysForCustomPolicy");
@@ -1126,7 +1126,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void GetContextKeysForPrincipalPolicyMarshallTest()
         {
             var operation = service_model.FindOperation("GetContextKeysForPrincipalPolicy");
@@ -1150,7 +1150,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void GetCredentialReportMarshallTest()
         {
             var operation = service_model.FindOperation("GetCredentialReport");
@@ -1174,7 +1174,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void GetGroupMarshallTest()
         {
             var operation = service_model.FindOperation("GetGroup");
@@ -1198,7 +1198,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void GetGroupPolicyMarshallTest()
         {
             var operation = service_model.FindOperation("GetGroupPolicy");
@@ -1222,7 +1222,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void GetInstanceProfileMarshallTest()
         {
             var operation = service_model.FindOperation("GetInstanceProfile");
@@ -1246,7 +1246,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void GetLoginProfileMarshallTest()
         {
             var operation = service_model.FindOperation("GetLoginProfile");
@@ -1270,7 +1270,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void GetOpenIDConnectProviderMarshallTest()
         {
             var operation = service_model.FindOperation("GetOpenIDConnectProvider");
@@ -1294,7 +1294,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void GetPolicyMarshallTest()
         {
             var operation = service_model.FindOperation("GetPolicy");
@@ -1318,7 +1318,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void GetPolicyVersionMarshallTest()
         {
             var operation = service_model.FindOperation("GetPolicyVersion");
@@ -1342,7 +1342,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void GetRoleMarshallTest()
         {
             var operation = service_model.FindOperation("GetRole");
@@ -1366,7 +1366,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void GetRolePolicyMarshallTest()
         {
             var operation = service_model.FindOperation("GetRolePolicy");
@@ -1390,7 +1390,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void GetSAMLProviderMarshallTest()
         {
             var operation = service_model.FindOperation("GetSAMLProvider");
@@ -1414,7 +1414,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void GetServerCertificateMarshallTest()
         {
             var operation = service_model.FindOperation("GetServerCertificate");
@@ -1438,7 +1438,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void GetSSHPublicKeyMarshallTest()
         {
             var operation = service_model.FindOperation("GetSSHPublicKey");
@@ -1462,7 +1462,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void GetUserMarshallTest()
         {
             var operation = service_model.FindOperation("GetUser");
@@ -1486,7 +1486,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void GetUserPolicyMarshallTest()
         {
             var operation = service_model.FindOperation("GetUserPolicy");
@@ -1510,7 +1510,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void ListAccessKeysMarshallTest()
         {
             var operation = service_model.FindOperation("ListAccessKeys");
@@ -1534,7 +1534,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void ListAccountAliasesMarshallTest()
         {
             var operation = service_model.FindOperation("ListAccountAliases");
@@ -1558,7 +1558,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void ListAttachedGroupPoliciesMarshallTest()
         {
             var operation = service_model.FindOperation("ListAttachedGroupPolicies");
@@ -1582,7 +1582,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void ListAttachedRolePoliciesMarshallTest()
         {
             var operation = service_model.FindOperation("ListAttachedRolePolicies");
@@ -1606,7 +1606,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void ListAttachedUserPoliciesMarshallTest()
         {
             var operation = service_model.FindOperation("ListAttachedUserPolicies");
@@ -1630,7 +1630,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void ListEntitiesForPolicyMarshallTest()
         {
             var operation = service_model.FindOperation("ListEntitiesForPolicy");
@@ -1654,7 +1654,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void ListGroupPoliciesMarshallTest()
         {
             var operation = service_model.FindOperation("ListGroupPolicies");
@@ -1678,7 +1678,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void ListGroupsMarshallTest()
         {
             var operation = service_model.FindOperation("ListGroups");
@@ -1702,7 +1702,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void ListGroupsForUserMarshallTest()
         {
             var operation = service_model.FindOperation("ListGroupsForUser");
@@ -1726,7 +1726,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void ListInstanceProfilesMarshallTest()
         {
             var operation = service_model.FindOperation("ListInstanceProfiles");
@@ -1750,7 +1750,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void ListInstanceProfilesForRoleMarshallTest()
         {
             var operation = service_model.FindOperation("ListInstanceProfilesForRole");
@@ -1774,7 +1774,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void ListMFADevicesMarshallTest()
         {
             var operation = service_model.FindOperation("ListMFADevices");
@@ -1798,7 +1798,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void ListOpenIDConnectProvidersMarshallTest()
         {
             var operation = service_model.FindOperation("ListOpenIDConnectProviders");
@@ -1822,7 +1822,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void ListPoliciesMarshallTest()
         {
             var operation = service_model.FindOperation("ListPolicies");
@@ -1846,7 +1846,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void ListPolicyVersionsMarshallTest()
         {
             var operation = service_model.FindOperation("ListPolicyVersions");
@@ -1870,7 +1870,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void ListRolePoliciesMarshallTest()
         {
             var operation = service_model.FindOperation("ListRolePolicies");
@@ -1894,7 +1894,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void ListRolesMarshallTest()
         {
             var operation = service_model.FindOperation("ListRoles");
@@ -1918,7 +1918,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void ListSAMLProvidersMarshallTest()
         {
             var operation = service_model.FindOperation("ListSAMLProviders");
@@ -1942,7 +1942,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void ListServerCertificatesMarshallTest()
         {
             var operation = service_model.FindOperation("ListServerCertificates");
@@ -1966,7 +1966,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void ListServiceSpecificCredentialsMarshallTest()
         {
             var operation = service_model.FindOperation("ListServiceSpecificCredentials");
@@ -1990,7 +1990,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void ListSigningCertificatesMarshallTest()
         {
             var operation = service_model.FindOperation("ListSigningCertificates");
@@ -2014,7 +2014,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void ListSSHPublicKeysMarshallTest()
         {
             var operation = service_model.FindOperation("ListSSHPublicKeys");
@@ -2038,7 +2038,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void ListUserPoliciesMarshallTest()
         {
             var operation = service_model.FindOperation("ListUserPolicies");
@@ -2062,7 +2062,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void ListUsersMarshallTest()
         {
             var operation = service_model.FindOperation("ListUsers");
@@ -2086,7 +2086,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void ListVirtualMFADevicesMarshallTest()
         {
             var operation = service_model.FindOperation("ListVirtualMFADevices");
@@ -2110,7 +2110,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void PutGroupPolicyMarshallTest()
         {
             var operation = service_model.FindOperation("PutGroupPolicy");
@@ -2129,7 +2129,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void PutRolePolicyMarshallTest()
         {
             var operation = service_model.FindOperation("PutRolePolicy");
@@ -2148,7 +2148,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void PutUserPolicyMarshallTest()
         {
             var operation = service_model.FindOperation("PutUserPolicy");
@@ -2167,7 +2167,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void RemoveClientIDFromOpenIDConnectProviderMarshallTest()
         {
             var operation = service_model.FindOperation("RemoveClientIDFromOpenIDConnectProvider");
@@ -2186,7 +2186,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void RemoveRoleFromInstanceProfileMarshallTest()
         {
             var operation = service_model.FindOperation("RemoveRoleFromInstanceProfile");
@@ -2205,7 +2205,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void RemoveUserFromGroupMarshallTest()
         {
             var operation = service_model.FindOperation("RemoveUserFromGroup");
@@ -2224,7 +2224,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void ResetServiceSpecificCredentialMarshallTest()
         {
             var operation = service_model.FindOperation("ResetServiceSpecificCredential");
@@ -2248,7 +2248,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void ResyncMFADeviceMarshallTest()
         {
             var operation = service_model.FindOperation("ResyncMFADevice");
@@ -2267,7 +2267,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void SetDefaultPolicyVersionMarshallTest()
         {
             var operation = service_model.FindOperation("SetDefaultPolicyVersion");
@@ -2286,7 +2286,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void SimulateCustomPolicyMarshallTest()
         {
             var operation = service_model.FindOperation("SimulateCustomPolicy");
@@ -2310,7 +2310,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void SimulatePrincipalPolicyMarshallTest()
         {
             var operation = service_model.FindOperation("SimulatePrincipalPolicy");
@@ -2334,7 +2334,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void UpdateAccessKeyMarshallTest()
         {
             var operation = service_model.FindOperation("UpdateAccessKey");
@@ -2353,7 +2353,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void UpdateAccountPasswordPolicyMarshallTest()
         {
             var operation = service_model.FindOperation("UpdateAccountPasswordPolicy");
@@ -2372,7 +2372,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void UpdateAssumeRolePolicyMarshallTest()
         {
             var operation = service_model.FindOperation("UpdateAssumeRolePolicy");
@@ -2391,7 +2391,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void UpdateGroupMarshallTest()
         {
             var operation = service_model.FindOperation("UpdateGroup");
@@ -2410,7 +2410,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void UpdateLoginProfileMarshallTest()
         {
             var operation = service_model.FindOperation("UpdateLoginProfile");
@@ -2429,7 +2429,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void UpdateOpenIDConnectProviderThumbprintMarshallTest()
         {
             var operation = service_model.FindOperation("UpdateOpenIDConnectProviderThumbprint");
@@ -2448,7 +2448,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void UpdateRoleDescriptionMarshallTest()
         {
             var operation = service_model.FindOperation("UpdateRoleDescription");
@@ -2472,7 +2472,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void UpdateSAMLProviderMarshallTest()
         {
             var operation = service_model.FindOperation("UpdateSAMLProvider");
@@ -2496,7 +2496,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void UpdateServerCertificateMarshallTest()
         {
             var operation = service_model.FindOperation("UpdateServerCertificate");
@@ -2515,7 +2515,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void UpdateServiceSpecificCredentialMarshallTest()
         {
             var operation = service_model.FindOperation("UpdateServiceSpecificCredential");
@@ -2534,7 +2534,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void UpdateSigningCertificateMarshallTest()
         {
             var operation = service_model.FindOperation("UpdateSigningCertificate");
@@ -2553,7 +2553,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void UpdateSSHPublicKeyMarshallTest()
         {
             var operation = service_model.FindOperation("UpdateSSHPublicKey");
@@ -2572,7 +2572,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void UpdateUserMarshallTest()
         {
             var operation = service_model.FindOperation("UpdateUser");
@@ -2591,7 +2591,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void UploadServerCertificateMarshallTest()
         {
             var operation = service_model.FindOperation("UploadServerCertificate");
@@ -2615,7 +2615,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void UploadSigningCertificateMarshallTest()
         {
             var operation = service_model.FindOperation("UploadSigningCertificate");
@@ -2639,7 +2639,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("IdentityManagementService")]
+        [TestCategory("IdentityManagement")]
         public void UploadSSHPublicKeyMarshallTest()
         {
             var operation = service_model.FindOperation("UploadSSHPublicKey");

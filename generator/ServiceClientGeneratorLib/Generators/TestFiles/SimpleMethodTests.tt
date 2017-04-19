@@ -23,7 +23,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
     {
         [TestMethod]
 		[TestCategory("UnitTest")]
-        [TestCategory("SimpleMethods"), TestCategory("<#=this.Config.ClassName#>")]
+        [TestCategory("SimpleMethods"), TestCategory("<#=this.Config.TestCategory#>")]
         public void <#=this.Config.ClassName#>SimpleMethodTests()
         {
 <#

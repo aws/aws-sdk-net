@@ -33,7 +33,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
     {
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("SimpleMethods"), TestCategory("DynamoDBStreams")]
+        [TestCategory("SimpleMethods"), TestCategory("DynamoDBv2")]
         public void DynamoDBStreamsSimpleMethodTests()
         {
             EnsureSimpleMethodExists(typeof(Amazon.DynamoDBv2.AmazonDynamoDBStreamsClient), "DescribeStream", new Type[] { typeof(string), });

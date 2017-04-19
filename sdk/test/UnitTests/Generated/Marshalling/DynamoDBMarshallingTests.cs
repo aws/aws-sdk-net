@@ -42,7 +42,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
-        [TestCategory("DynamoDB")]
+        [TestCategory("DynamoDBv2")]
         public void BatchGetItemMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<BatchGetItemRequest>();
@@ -71,7 +71,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
-        [TestCategory("DynamoDB")]
+        [TestCategory("DynamoDBv2")]
         public void BatchWriteItemMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<BatchWriteItemRequest>();
@@ -100,7 +100,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
-        [TestCategory("DynamoDB")]
+        [TestCategory("DynamoDBv2")]
         public void CreateTableMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<CreateTableRequest>();
@@ -129,7 +129,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
-        [TestCategory("DynamoDB")]
+        [TestCategory("DynamoDBv2")]
         public void DeleteItemMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<DeleteItemRequest>();
@@ -158,7 +158,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
-        [TestCategory("DynamoDB")]
+        [TestCategory("DynamoDBv2")]
         public void DeleteTableMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<DeleteTableRequest>();
@@ -187,7 +187,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
-        [TestCategory("DynamoDB")]
+        [TestCategory("DynamoDBv2")]
         public void DescribeLimitsMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<DescribeLimitsRequest>();
@@ -216,7 +216,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
-        [TestCategory("DynamoDB")]
+        [TestCategory("DynamoDBv2")]
         public void DescribeTableMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<DescribeTableRequest>();
@@ -245,7 +245,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
-        [TestCategory("DynamoDB")]
+        [TestCategory("DynamoDBv2")]
         public void DescribeTimeToLiveMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<DescribeTimeToLiveRequest>();
@@ -274,7 +274,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
-        [TestCategory("DynamoDB")]
+        [TestCategory("DynamoDBv2")]
         public void GetItemMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<GetItemRequest>();
@@ -303,7 +303,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
-        [TestCategory("DynamoDB")]
+        [TestCategory("DynamoDBv2")]
         public void ListTablesMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<ListTablesRequest>();
@@ -332,7 +332,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
-        [TestCategory("DynamoDB")]
+        [TestCategory("DynamoDBv2")]
         public void ListTagsOfResourceMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<ListTagsOfResourceRequest>();
@@ -361,7 +361,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
-        [TestCategory("DynamoDB")]
+        [TestCategory("DynamoDBv2")]
         public void PutItemMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<PutItemRequest>();
@@ -390,7 +390,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
-        [TestCategory("DynamoDB")]
+        [TestCategory("DynamoDBv2")]
         public void QueryMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<QueryRequest>();
@@ -419,7 +419,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
-        [TestCategory("DynamoDB")]
+        [TestCategory("DynamoDBv2")]
         public void ScanMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<ScanRequest>();
@@ -448,7 +448,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
-        [TestCategory("DynamoDB")]
+        [TestCategory("DynamoDBv2")]
         public void TagResourceMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
@@ -464,7 +464,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
-        [TestCategory("DynamoDB")]
+        [TestCategory("DynamoDBv2")]
         public void UntagResourceMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
@@ -480,7 +480,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
-        [TestCategory("DynamoDB")]
+        [TestCategory("DynamoDBv2")]
         public void UpdateItemMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<UpdateItemRequest>();
@@ -509,7 +509,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
-        [TestCategory("DynamoDB")]
+        [TestCategory("DynamoDBv2")]
         public void UpdateTableMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<UpdateTableRequest>();
@@ -538,7 +538,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
-        [TestCategory("DynamoDB")]
+        [TestCategory("DynamoDBv2")]
         public void UpdateTimeToLiveMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<UpdateTimeToLiveRequest>();

@@ -29,7 +29,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
     {
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Constructors"), TestCategory("DynamoDB")]
+        [TestCategory("Constructors"), TestCategory("DynamoDBv2")]
         public void BatchGetItemRequestConstructorTests()
         {
             EnsureConstructorExists(typeof(Amazon.DynamoDBv2.Model.BatchGetItemRequest), new System.Type[] { typeof(Dictionary<string, KeysAndAttributes>), });
@@ -38,7 +38,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Constructors"), TestCategory("DynamoDB")]
+        [TestCategory("Constructors"), TestCategory("DynamoDBv2")]
         public void BatchWriteItemRequestConstructorTests()
         {
             EnsureConstructorExists(typeof(Amazon.DynamoDBv2.Model.BatchWriteItemRequest), new System.Type[] { typeof(Dictionary<string, List<WriteRequest>>), });
@@ -46,7 +46,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Constructors"), TestCategory("DynamoDB")]
+        [TestCategory("Constructors"), TestCategory("DynamoDBv2")]
         public void CreateTableRequestConstructorTests()
         {
             EnsureConstructorExists(typeof(Amazon.DynamoDBv2.Model.CreateTableRequest), new System.Type[] { typeof(string), typeof(List<KeySchemaElement>), });
@@ -55,7 +55,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Constructors"), TestCategory("DynamoDB")]
+        [TestCategory("Constructors"), TestCategory("DynamoDBv2")]
         public void DeleteItemRequestConstructorTests()
         {
             EnsureConstructorExists(typeof(Amazon.DynamoDBv2.Model.DeleteItemRequest), new System.Type[] { typeof(string), typeof(Dictionary<string, AttributeValue>), });
@@ -64,7 +64,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Constructors"), TestCategory("DynamoDB")]
+        [TestCategory("Constructors"), TestCategory("DynamoDBv2")]
         public void DeleteTableRequestConstructorTests()
         {
             EnsureConstructorExists(typeof(Amazon.DynamoDBv2.Model.DeleteTableRequest), new System.Type[] { typeof(string), });
@@ -72,7 +72,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Constructors"), TestCategory("DynamoDB")]
+        [TestCategory("Constructors"), TestCategory("DynamoDBv2")]
         public void DescribeTableRequestConstructorTests()
         {
             EnsureConstructorExists(typeof(Amazon.DynamoDBv2.Model.DescribeTableRequest), new System.Type[] { typeof(string), });
@@ -80,7 +80,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Constructors"), TestCategory("DynamoDB")]
+        [TestCategory("Constructors"), TestCategory("DynamoDBv2")]
         public void GetItemRequestConstructorTests()
         {
             EnsureConstructorExists(typeof(Amazon.DynamoDBv2.Model.GetItemRequest), new System.Type[] { typeof(string), typeof(Dictionary<string, AttributeValue>), });
@@ -89,7 +89,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Constructors"), TestCategory("DynamoDB")]
+        [TestCategory("Constructors"), TestCategory("DynamoDBv2")]
         public void ListTablesRequestConstructorTests()
         {
             EnsureConstructorExists(typeof(Amazon.DynamoDBv2.Model.ListTablesRequest), new System.Type[] { typeof(string), });
@@ -98,7 +98,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Constructors"), TestCategory("DynamoDB")]
+        [TestCategory("Constructors"), TestCategory("DynamoDBv2")]
         public void PutItemRequestConstructorTests()
         {
             EnsureConstructorExists(typeof(Amazon.DynamoDBv2.Model.PutItemRequest), new System.Type[] { typeof(string), typeof(Dictionary<string, AttributeValue>), });
@@ -107,7 +107,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Constructors"), TestCategory("DynamoDB")]
+        [TestCategory("Constructors"), TestCategory("DynamoDBv2")]
         public void QueryRequestConstructorTests()
         {
             EnsureConstructorExists(typeof(Amazon.DynamoDBv2.Model.QueryRequest), new System.Type[] { typeof(string), });
@@ -115,7 +115,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Constructors"), TestCategory("DynamoDB")]
+        [TestCategory("Constructors"), TestCategory("DynamoDBv2")]
         public void ScanRequestConstructorTests()
         {
             EnsureConstructorExists(typeof(Amazon.DynamoDBv2.Model.ScanRequest), new System.Type[] { typeof(string), });
@@ -123,7 +123,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Constructors"), TestCategory("DynamoDB")]
+        [TestCategory("Constructors"), TestCategory("DynamoDBv2")]
         public void UpdateItemRequestConstructorTests()
         {
             EnsureConstructorExists(typeof(Amazon.DynamoDBv2.Model.UpdateItemRequest), new System.Type[] { typeof(string), typeof(Dictionary<string, AttributeValue>), typeof(Dictionary<string, AttributeValueUpdate>), });
@@ -132,7 +132,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Constructors"), TestCategory("DynamoDB")]
+        [TestCategory("Constructors"), TestCategory("DynamoDBv2")]
         public void UpdateTableRequestConstructorTests()
         {
             EnsureConstructorExists(typeof(Amazon.DynamoDBv2.Model.UpdateTableRequest), new System.Type[] { typeof(string), typeof(ProvisionedThroughput), });

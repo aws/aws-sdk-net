@@ -42,7 +42,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
-        [TestCategory("DynamoDBStreams")]
+        [TestCategory("DynamoDBv2")]
         public void DescribeStreamMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<DescribeStreamRequest>();
@@ -71,7 +71,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
-        [TestCategory("DynamoDBStreams")]
+        [TestCategory("DynamoDBv2")]
         public void GetRecordsMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<GetRecordsRequest>();
@@ -100,7 +100,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
-        [TestCategory("DynamoDBStreams")]
+        [TestCategory("DynamoDBv2")]
         public void GetShardIteratorMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<GetShardIteratorRequest>();
@@ -129,7 +129,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
-        [TestCategory("DynamoDBStreams")]
+        [TestCategory("DynamoDBv2")]
         public void ListStreamsMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<ListStreamsRequest>();

@@ -33,7 +33,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
     {
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("SimpleMethods"), TestCategory("IdentityManagementService")]
+        [TestCategory("SimpleMethods"), TestCategory("IdentityManagement")]
         public void IdentityManagementServiceSimpleMethodTests()
         {
             EnsureSimpleMethodExists(typeof(Amazon.IdentityManagement.AmazonIdentityManagementServiceClient), "GetContextKeysForCustomPolicy", new Type[] { typeof(List<string>), });

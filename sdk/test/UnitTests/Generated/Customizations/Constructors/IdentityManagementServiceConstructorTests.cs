@@ -29,7 +29,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
     {
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Constructors"), TestCategory("IdentityManagementService")]
+        [TestCategory("Constructors"), TestCategory("IdentityManagement")]
         public void AddUserToGroupRequestConstructorTests()
         {
             EnsureConstructorExists(typeof(Amazon.IdentityManagement.Model.AddUserToGroupRequest), new System.Type[] { typeof(string), typeof(string), });
@@ -37,14 +37,14 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Constructors"), TestCategory("IdentityManagementService")]
+        [TestCategory("Constructors"), TestCategory("IdentityManagement")]
         public void CreateAccessKeyRequestConstructorTests()
         {
         }
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Constructors"), TestCategory("IdentityManagementService")]
+        [TestCategory("Constructors"), TestCategory("IdentityManagement")]
         public void CreateAccountAliasRequestConstructorTests()
         {
             EnsureConstructorExists(typeof(Amazon.IdentityManagement.Model.CreateAccountAliasRequest), new System.Type[] { typeof(string), });
@@ -52,7 +52,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Constructors"), TestCategory("IdentityManagementService")]
+        [TestCategory("Constructors"), TestCategory("IdentityManagement")]
         public void CreateGroupRequestConstructorTests()
         {
             EnsureConstructorExists(typeof(Amazon.IdentityManagement.Model.CreateGroupRequest), new System.Type[] { typeof(string), });
@@ -60,7 +60,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Constructors"), TestCategory("IdentityManagementService")]
+        [TestCategory("Constructors"), TestCategory("IdentityManagement")]
         public void CreateLoginProfileRequestConstructorTests()
         {
             EnsureConstructorExists(typeof(Amazon.IdentityManagement.Model.CreateLoginProfileRequest), new System.Type[] { typeof(string), typeof(string), });
@@ -68,7 +68,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Constructors"), TestCategory("IdentityManagementService")]
+        [TestCategory("Constructors"), TestCategory("IdentityManagement")]
         public void CreateUserRequestConstructorTests()
         {
             EnsureConstructorExists(typeof(Amazon.IdentityManagement.Model.CreateUserRequest), new System.Type[] { typeof(string), });
@@ -76,7 +76,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Constructors"), TestCategory("IdentityManagementService")]
+        [TestCategory("Constructors"), TestCategory("IdentityManagement")]
         public void DeactivateMFADeviceRequestConstructorTests()
         {
             EnsureConstructorExists(typeof(Amazon.IdentityManagement.Model.DeactivateMFADeviceRequest), new System.Type[] { typeof(string), typeof(string), });
@@ -84,7 +84,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Constructors"), TestCategory("IdentityManagementService")]
+        [TestCategory("Constructors"), TestCategory("IdentityManagement")]
         public void DeleteAccessKeyRequestConstructorTests()
         {
             EnsureConstructorExists(typeof(Amazon.IdentityManagement.Model.DeleteAccessKeyRequest), new System.Type[] { typeof(string), });
@@ -92,7 +92,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Constructors"), TestCategory("IdentityManagementService")]
+        [TestCategory("Constructors"), TestCategory("IdentityManagement")]
         public void DeleteAccountAliasRequestConstructorTests()
         {
             EnsureConstructorExists(typeof(Amazon.IdentityManagement.Model.DeleteAccountAliasRequest), new System.Type[] { typeof(string), });
@@ -100,7 +100,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Constructors"), TestCategory("IdentityManagementService")]
+        [TestCategory("Constructors"), TestCategory("IdentityManagement")]
         public void DeleteGroupRequestConstructorTests()
         {
             EnsureConstructorExists(typeof(Amazon.IdentityManagement.Model.DeleteGroupRequest), new System.Type[] { typeof(string), });
@@ -108,7 +108,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Constructors"), TestCategory("IdentityManagementService")]
+        [TestCategory("Constructors"), TestCategory("IdentityManagement")]
         public void DeleteGroupPolicyRequestConstructorTests()
         {
             EnsureConstructorExists(typeof(Amazon.IdentityManagement.Model.DeleteGroupPolicyRequest), new System.Type[] { typeof(string), typeof(string), });
@@ -116,7 +116,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Constructors"), TestCategory("IdentityManagementService")]
+        [TestCategory("Constructors"), TestCategory("IdentityManagement")]
         public void DeleteLoginProfileRequestConstructorTests()
         {
             EnsureConstructorExists(typeof(Amazon.IdentityManagement.Model.DeleteLoginProfileRequest), new System.Type[] { typeof(string), });
@@ -124,7 +124,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Constructors"), TestCategory("IdentityManagementService")]
+        [TestCategory("Constructors"), TestCategory("IdentityManagement")]
         public void DeleteServerCertificateRequestConstructorTests()
         {
             EnsureConstructorExists(typeof(Amazon.IdentityManagement.Model.DeleteServerCertificateRequest), new System.Type[] { typeof(string), });
@@ -132,7 +132,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Constructors"), TestCategory("IdentityManagementService")]
+        [TestCategory("Constructors"), TestCategory("IdentityManagement")]
         public void DeleteSigningCertificateRequestConstructorTests()
         {
             EnsureConstructorExists(typeof(Amazon.IdentityManagement.Model.DeleteSigningCertificateRequest), new System.Type[] { typeof(string), });
@@ -140,7 +140,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Constructors"), TestCategory("IdentityManagementService")]
+        [TestCategory("Constructors"), TestCategory("IdentityManagement")]
         public void DeleteUserRequestConstructorTests()
         {
             EnsureConstructorExists(typeof(Amazon.IdentityManagement.Model.DeleteUserRequest), new System.Type[] { typeof(string), });
@@ -148,7 +148,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Constructors"), TestCategory("IdentityManagementService")]
+        [TestCategory("Constructors"), TestCategory("IdentityManagement")]
         public void DeleteUserPolicyRequestConstructorTests()
         {
             EnsureConstructorExists(typeof(Amazon.IdentityManagement.Model.DeleteUserPolicyRequest), new System.Type[] { typeof(string), typeof(string), });
@@ -156,7 +156,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Constructors"), TestCategory("IdentityManagementService")]
+        [TestCategory("Constructors"), TestCategory("IdentityManagement")]
         public void GetGroupRequestConstructorTests()
         {
             EnsureConstructorExists(typeof(Amazon.IdentityManagement.Model.GetGroupRequest), new System.Type[] { typeof(string), });
@@ -164,7 +164,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Constructors"), TestCategory("IdentityManagementService")]
+        [TestCategory("Constructors"), TestCategory("IdentityManagement")]
         public void GetGroupPolicyRequestConstructorTests()
         {
             EnsureConstructorExists(typeof(Amazon.IdentityManagement.Model.GetGroupPolicyRequest), new System.Type[] { typeof(string), typeof(string), });
@@ -172,7 +172,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Constructors"), TestCategory("IdentityManagementService")]
+        [TestCategory("Constructors"), TestCategory("IdentityManagement")]
         public void GetLoginProfileRequestConstructorTests()
         {
             EnsureConstructorExists(typeof(Amazon.IdentityManagement.Model.GetLoginProfileRequest), new System.Type[] { typeof(string), });
@@ -180,7 +180,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Constructors"), TestCategory("IdentityManagementService")]
+        [TestCategory("Constructors"), TestCategory("IdentityManagement")]
         public void GetServerCertificateRequestConstructorTests()
         {
             EnsureConstructorExists(typeof(Amazon.IdentityManagement.Model.GetServerCertificateRequest), new System.Type[] { typeof(string), });
@@ -188,14 +188,14 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Constructors"), TestCategory("IdentityManagementService")]
+        [TestCategory("Constructors"), TestCategory("IdentityManagement")]
         public void GetUserRequestConstructorTests()
         {
         }
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Constructors"), TestCategory("IdentityManagementService")]
+        [TestCategory("Constructors"), TestCategory("IdentityManagement")]
         public void GetUserPolicyRequestConstructorTests()
         {
             EnsureConstructorExists(typeof(Amazon.IdentityManagement.Model.GetUserPolicyRequest), new System.Type[] { typeof(string), typeof(string), });
@@ -203,21 +203,21 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Constructors"), TestCategory("IdentityManagementService")]
+        [TestCategory("Constructors"), TestCategory("IdentityManagement")]
         public void ListAccessKeysRequestConstructorTests()
         {
         }
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Constructors"), TestCategory("IdentityManagementService")]
+        [TestCategory("Constructors"), TestCategory("IdentityManagement")]
         public void ListAccountAliasesRequestConstructorTests()
         {
         }
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Constructors"), TestCategory("IdentityManagementService")]
+        [TestCategory("Constructors"), TestCategory("IdentityManagement")]
         public void ListGroupPoliciesRequestConstructorTests()
         {
             EnsureConstructorExists(typeof(Amazon.IdentityManagement.Model.ListGroupPoliciesRequest), new System.Type[] { typeof(string), });
@@ -225,14 +225,14 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Constructors"), TestCategory("IdentityManagementService")]
+        [TestCategory("Constructors"), TestCategory("IdentityManagement")]
         public void ListGroupsRequestConstructorTests()
         {
         }
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Constructors"), TestCategory("IdentityManagementService")]
+        [TestCategory("Constructors"), TestCategory("IdentityManagement")]
         public void ListGroupsForUserRequestConstructorTests()
         {
             EnsureConstructorExists(typeof(Amazon.IdentityManagement.Model.ListGroupsForUserRequest), new System.Type[] { typeof(string), });
@@ -240,7 +240,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Constructors"), TestCategory("IdentityManagementService")]
+        [TestCategory("Constructors"), TestCategory("IdentityManagement")]
         public void ListMFADevicesRequestConstructorTests()
         {
             EnsureConstructorExists(typeof(Amazon.IdentityManagement.Model.ListMFADevicesRequest), new System.Type[] { typeof(string), });
@@ -248,21 +248,21 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Constructors"), TestCategory("IdentityManagementService")]
+        [TestCategory("Constructors"), TestCategory("IdentityManagement")]
         public void ListServerCertificatesRequestConstructorTests()
         {
         }
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Constructors"), TestCategory("IdentityManagementService")]
+        [TestCategory("Constructors"), TestCategory("IdentityManagement")]
         public void ListSigningCertificatesRequestConstructorTests()
         {
         }
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Constructors"), TestCategory("IdentityManagementService")]
+        [TestCategory("Constructors"), TestCategory("IdentityManagement")]
         public void ListUserPoliciesRequestConstructorTests()
         {
             EnsureConstructorExists(typeof(Amazon.IdentityManagement.Model.ListUserPoliciesRequest), new System.Type[] { typeof(string), });
@@ -270,14 +270,14 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Constructors"), TestCategory("IdentityManagementService")]
+        [TestCategory("Constructors"), TestCategory("IdentityManagement")]
         public void ListUsersRequestConstructorTests()
         {
         }
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Constructors"), TestCategory("IdentityManagementService")]
+        [TestCategory("Constructors"), TestCategory("IdentityManagement")]
         public void PutGroupPolicyRequestConstructorTests()
         {
             EnsureConstructorExists(typeof(Amazon.IdentityManagement.Model.PutGroupPolicyRequest), new System.Type[] { typeof(string), typeof(string), typeof(string), });
@@ -285,7 +285,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Constructors"), TestCategory("IdentityManagementService")]
+        [TestCategory("Constructors"), TestCategory("IdentityManagement")]
         public void PutUserPolicyRequestConstructorTests()
         {
             EnsureConstructorExists(typeof(Amazon.IdentityManagement.Model.PutUserPolicyRequest), new System.Type[] { typeof(string), typeof(string), typeof(string), });
@@ -293,7 +293,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Constructors"), TestCategory("IdentityManagementService")]
+        [TestCategory("Constructors"), TestCategory("IdentityManagement")]
         public void RemoveUserFromGroupRequestConstructorTests()
         {
             EnsureConstructorExists(typeof(Amazon.IdentityManagement.Model.RemoveUserFromGroupRequest), new System.Type[] { typeof(string), typeof(string), });
@@ -301,7 +301,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Constructors"), TestCategory("IdentityManagementService")]
+        [TestCategory("Constructors"), TestCategory("IdentityManagement")]
         public void UpdateAccessKeyRequestConstructorTests()
         {
             EnsureConstructorExists(typeof(Amazon.IdentityManagement.Model.UpdateAccessKeyRequest), new System.Type[] { typeof(string), typeof(StatusType), });
@@ -309,7 +309,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Constructors"), TestCategory("IdentityManagementService")]
+        [TestCategory("Constructors"), TestCategory("IdentityManagement")]
         public void UpdateGroupRequestConstructorTests()
         {
             EnsureConstructorExists(typeof(Amazon.IdentityManagement.Model.UpdateGroupRequest), new System.Type[] { typeof(string), });
@@ -317,7 +317,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Constructors"), TestCategory("IdentityManagementService")]
+        [TestCategory("Constructors"), TestCategory("IdentityManagement")]
         public void UpdateLoginProfileRequestConstructorTests()
         {
             EnsureConstructorExists(typeof(Amazon.IdentityManagement.Model.UpdateLoginProfileRequest), new System.Type[] { typeof(string), });
@@ -325,7 +325,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Constructors"), TestCategory("IdentityManagementService")]
+        [TestCategory("Constructors"), TestCategory("IdentityManagement")]
         public void UpdateServerCertificateRequestConstructorTests()
         {
             EnsureConstructorExists(typeof(Amazon.IdentityManagement.Model.UpdateServerCertificateRequest), new System.Type[] { typeof(string), });
@@ -333,7 +333,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Constructors"), TestCategory("IdentityManagementService")]
+        [TestCategory("Constructors"), TestCategory("IdentityManagement")]
         public void UpdateSigningCertificateRequestConstructorTests()
         {
             EnsureConstructorExists(typeof(Amazon.IdentityManagement.Model.UpdateSigningCertificateRequest), new System.Type[] { typeof(string), typeof(StatusType), });
@@ -341,7 +341,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Constructors"), TestCategory("IdentityManagementService")]
+        [TestCategory("Constructors"), TestCategory("IdentityManagement")]
         public void UpdateUserRequestConstructorTests()
         {
             EnsureConstructorExists(typeof(Amazon.IdentityManagement.Model.UpdateUserRequest), new System.Type[] { typeof(string), });
@@ -349,7 +349,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Constructors"), TestCategory("IdentityManagementService")]
+        [TestCategory("Constructors"), TestCategory("IdentityManagement")]
         public void UploadServerCertificateRequestConstructorTests()
         {
             EnsureConstructorExists(typeof(Amazon.IdentityManagement.Model.UploadServerCertificateRequest), new System.Type[] { typeof(string), typeof(string), typeof(string), });
@@ -357,7 +357,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Constructors"), TestCategory("IdentityManagementService")]
+        [TestCategory("Constructors"), TestCategory("IdentityManagement")]
         public void UploadSigningCertificateRequestConstructorTests()
         {
             EnsureConstructorExists(typeof(Amazon.IdentityManagement.Model.UploadSigningCertificateRequest), new System.Type[] { typeof(string), });

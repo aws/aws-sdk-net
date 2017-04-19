@@ -43,7 +43,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("SimpleEmailService")]
+        [TestCategory("SimpleEmail")]
         public void CloneReceiptRuleSetMarshallTest()
         {
             var operation = service_model.FindOperation("CloneReceiptRuleSet");
@@ -67,7 +67,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("SimpleEmailService")]
+        [TestCategory("SimpleEmail")]
         public void CreateConfigurationSetMarshallTest()
         {
             var operation = service_model.FindOperation("CreateConfigurationSet");
@@ -91,7 +91,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("SimpleEmailService")]
+        [TestCategory("SimpleEmail")]
         public void CreateConfigurationSetEventDestinationMarshallTest()
         {
             var operation = service_model.FindOperation("CreateConfigurationSetEventDestination");
@@ -115,7 +115,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("SimpleEmailService")]
+        [TestCategory("SimpleEmail")]
         public void CreateReceiptFilterMarshallTest()
         {
             var operation = service_model.FindOperation("CreateReceiptFilter");
@@ -139,7 +139,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("SimpleEmailService")]
+        [TestCategory("SimpleEmail")]
         public void CreateReceiptRuleMarshallTest()
         {
             var operation = service_model.FindOperation("CreateReceiptRule");
@@ -163,7 +163,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("SimpleEmailService")]
+        [TestCategory("SimpleEmail")]
         public void CreateReceiptRuleSetMarshallTest()
         {
             var operation = service_model.FindOperation("CreateReceiptRuleSet");
@@ -187,7 +187,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("SimpleEmailService")]
+        [TestCategory("SimpleEmail")]
         public void DeleteConfigurationSetMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteConfigurationSet");
@@ -211,7 +211,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("SimpleEmailService")]
+        [TestCategory("SimpleEmail")]
         public void DeleteConfigurationSetEventDestinationMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteConfigurationSetEventDestination");
@@ -235,7 +235,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("SimpleEmailService")]
+        [TestCategory("SimpleEmail")]
         public void DeleteIdentityMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteIdentity");
@@ -259,7 +259,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("SimpleEmailService")]
+        [TestCategory("SimpleEmail")]
         public void DeleteIdentityPolicyMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteIdentityPolicy");
@@ -283,7 +283,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("SimpleEmailService")]
+        [TestCategory("SimpleEmail")]
         public void DeleteReceiptFilterMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteReceiptFilter");
@@ -307,7 +307,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("SimpleEmailService")]
+        [TestCategory("SimpleEmail")]
         public void DeleteReceiptRuleMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteReceiptRule");
@@ -331,7 +331,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("SimpleEmailService")]
+        [TestCategory("SimpleEmail")]
         public void DeleteReceiptRuleSetMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteReceiptRuleSet");
@@ -355,7 +355,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("SimpleEmailService")]
+        [TestCategory("SimpleEmail")]
         public void DeleteVerifiedEmailAddressMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteVerifiedEmailAddress");
@@ -374,7 +374,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("SimpleEmailService")]
+        [TestCategory("SimpleEmail")]
         public void DescribeActiveReceiptRuleSetMarshallTest()
         {
             var operation = service_model.FindOperation("DescribeActiveReceiptRuleSet");
@@ -398,7 +398,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("SimpleEmailService")]
+        [TestCategory("SimpleEmail")]
         public void DescribeConfigurationSetMarshallTest()
         {
             var operation = service_model.FindOperation("DescribeConfigurationSet");
@@ -422,7 +422,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("SimpleEmailService")]
+        [TestCategory("SimpleEmail")]
         public void DescribeReceiptRuleMarshallTest()
         {
             var operation = service_model.FindOperation("DescribeReceiptRule");
@@ -446,7 +446,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("SimpleEmailService")]
+        [TestCategory("SimpleEmail")]
         public void DescribeReceiptRuleSetMarshallTest()
         {
             var operation = service_model.FindOperation("DescribeReceiptRuleSet");
@@ -470,7 +470,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("SimpleEmailService")]
+        [TestCategory("SimpleEmail")]
         public void GetIdentityDkimAttributesMarshallTest()
         {
             var operation = service_model.FindOperation("GetIdentityDkimAttributes");
@@ -494,7 +494,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("SimpleEmailService")]
+        [TestCategory("SimpleEmail")]
         public void GetIdentityMailFromDomainAttributesMarshallTest()
         {
             var operation = service_model.FindOperation("GetIdentityMailFromDomainAttributes");
@@ -518,7 +518,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("SimpleEmailService")]
+        [TestCategory("SimpleEmail")]
         public void GetIdentityNotificationAttributesMarshallTest()
         {
             var operation = service_model.FindOperation("GetIdentityNotificationAttributes");
@@ -542,7 +542,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("SimpleEmailService")]
+        [TestCategory("SimpleEmail")]
         public void GetIdentityPoliciesMarshallTest()
         {
             var operation = service_model.FindOperation("GetIdentityPolicies");
@@ -566,7 +566,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("SimpleEmailService")]
+        [TestCategory("SimpleEmail")]
         public void GetIdentityVerificationAttributesMarshallTest()
         {
             var operation = service_model.FindOperation("GetIdentityVerificationAttributes");
@@ -590,7 +590,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("SimpleEmailService")]
+        [TestCategory("SimpleEmail")]
         public void GetSendQuotaMarshallTest()
         {
             var operation = service_model.FindOperation("GetSendQuota");
@@ -614,7 +614,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("SimpleEmailService")]
+        [TestCategory("SimpleEmail")]
         public void GetSendStatisticsMarshallTest()
         {
             var operation = service_model.FindOperation("GetSendStatistics");
@@ -638,7 +638,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("SimpleEmailService")]
+        [TestCategory("SimpleEmail")]
         public void ListConfigurationSetsMarshallTest()
         {
             var operation = service_model.FindOperation("ListConfigurationSets");
@@ -662,7 +662,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("SimpleEmailService")]
+        [TestCategory("SimpleEmail")]
         public void ListIdentitiesMarshallTest()
         {
             var operation = service_model.FindOperation("ListIdentities");
@@ -686,7 +686,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("SimpleEmailService")]
+        [TestCategory("SimpleEmail")]
         public void ListIdentityPoliciesMarshallTest()
         {
             var operation = service_model.FindOperation("ListIdentityPolicies");
@@ -710,7 +710,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("SimpleEmailService")]
+        [TestCategory("SimpleEmail")]
         public void ListReceiptFiltersMarshallTest()
         {
             var operation = service_model.FindOperation("ListReceiptFilters");
@@ -734,7 +734,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("SimpleEmailService")]
+        [TestCategory("SimpleEmail")]
         public void ListReceiptRuleSetsMarshallTest()
         {
             var operation = service_model.FindOperation("ListReceiptRuleSets");
@@ -758,7 +758,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("SimpleEmailService")]
+        [TestCategory("SimpleEmail")]
         public void ListVerifiedEmailAddressesMarshallTest()
         {
             var operation = service_model.FindOperation("ListVerifiedEmailAddresses");
@@ -782,7 +782,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("SimpleEmailService")]
+        [TestCategory("SimpleEmail")]
         public void PutIdentityPolicyMarshallTest()
         {
             var operation = service_model.FindOperation("PutIdentityPolicy");
@@ -806,7 +806,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("SimpleEmailService")]
+        [TestCategory("SimpleEmail")]
         public void ReorderReceiptRuleSetMarshallTest()
         {
             var operation = service_model.FindOperation("ReorderReceiptRuleSet");
@@ -830,7 +830,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("SimpleEmailService")]
+        [TestCategory("SimpleEmail")]
         public void SendBounceMarshallTest()
         {
             var operation = service_model.FindOperation("SendBounce");
@@ -854,7 +854,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("SimpleEmailService")]
+        [TestCategory("SimpleEmail")]
         public void SendEmailMarshallTest()
         {
             var operation = service_model.FindOperation("SendEmail");
@@ -878,7 +878,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("SimpleEmailService")]
+        [TestCategory("SimpleEmail")]
         public void SendRawEmailMarshallTest()
         {
             var operation = service_model.FindOperation("SendRawEmail");
@@ -902,7 +902,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("SimpleEmailService")]
+        [TestCategory("SimpleEmail")]
         public void SetActiveReceiptRuleSetMarshallTest()
         {
             var operation = service_model.FindOperation("SetActiveReceiptRuleSet");
@@ -926,7 +926,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("SimpleEmailService")]
+        [TestCategory("SimpleEmail")]
         public void SetIdentityDkimEnabledMarshallTest()
         {
             var operation = service_model.FindOperation("SetIdentityDkimEnabled");
@@ -950,7 +950,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("SimpleEmailService")]
+        [TestCategory("SimpleEmail")]
         public void SetIdentityFeedbackForwardingEnabledMarshallTest()
         {
             var operation = service_model.FindOperation("SetIdentityFeedbackForwardingEnabled");
@@ -974,7 +974,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("SimpleEmailService")]
+        [TestCategory("SimpleEmail")]
         public void SetIdentityHeadersInNotificationsEnabledMarshallTest()
         {
             var operation = service_model.FindOperation("SetIdentityHeadersInNotificationsEnabled");
@@ -998,7 +998,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("SimpleEmailService")]
+        [TestCategory("SimpleEmail")]
         public void SetIdentityMailFromDomainMarshallTest()
         {
             var operation = service_model.FindOperation("SetIdentityMailFromDomain");
@@ -1022,7 +1022,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("SimpleEmailService")]
+        [TestCategory("SimpleEmail")]
         public void SetIdentityNotificationTopicMarshallTest()
         {
             var operation = service_model.FindOperation("SetIdentityNotificationTopic");
@@ -1046,7 +1046,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("SimpleEmailService")]
+        [TestCategory("SimpleEmail")]
         public void SetReceiptRulePositionMarshallTest()
         {
             var operation = service_model.FindOperation("SetReceiptRulePosition");
@@ -1070,7 +1070,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("SimpleEmailService")]
+        [TestCategory("SimpleEmail")]
         public void UpdateConfigurationSetEventDestinationMarshallTest()
         {
             var operation = service_model.FindOperation("UpdateConfigurationSetEventDestination");
@@ -1094,7 +1094,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("SimpleEmailService")]
+        [TestCategory("SimpleEmail")]
         public void UpdateReceiptRuleMarshallTest()
         {
             var operation = service_model.FindOperation("UpdateReceiptRule");
@@ -1118,7 +1118,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("SimpleEmailService")]
+        [TestCategory("SimpleEmail")]
         public void VerifyDomainDkimMarshallTest()
         {
             var operation = service_model.FindOperation("VerifyDomainDkim");
@@ -1142,7 +1142,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("SimpleEmailService")]
+        [TestCategory("SimpleEmail")]
         public void VerifyDomainIdentityMarshallTest()
         {
             var operation = service_model.FindOperation("VerifyDomainIdentity");
@@ -1166,7 +1166,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("SimpleEmailService")]
+        [TestCategory("SimpleEmail")]
         public void VerifyEmailAddressMarshallTest()
         {
             var operation = service_model.FindOperation("VerifyEmailAddress");
@@ -1185,7 +1185,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
-        [TestCategory("SimpleEmailService")]
+        [TestCategory("SimpleEmail")]
         public void VerifyEmailIdentityMarshallTest()
         {
             var operation = service_model.FindOperation("VerifyEmailIdentity");

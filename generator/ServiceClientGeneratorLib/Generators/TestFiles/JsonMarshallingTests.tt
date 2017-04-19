@@ -37,7 +37,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
 		[TestCategory("UnitTest")]
 		[TestCategory("Json")]
-		[TestCategory("<#=this.Config.ClassName#>")]
+		[TestCategory("<#=this.Config.TestCategory#>")]
         public void <#=operation.Name#>MarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<<#=operation.Name#>Request>();

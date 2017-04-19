@@ -25,7 +25,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
 #>
         [TestMethod]
 		[TestCategory("UnitTest")]
-        [TestCategory("Constructors"), TestCategory("<#=this.Config.ClassName#>")]
+        [TestCategory("Constructors"), TestCategory("<#=this.Config.TestCategory#>")]
         public void <#=operation.Name#>RequestConstructorTests()
         {
 <#

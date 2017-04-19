@@ -38,7 +38,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
 		[TestCategory("UnitTest")]
 		[TestCategory("Query")]
-		[TestCategory("<#=this.Config.ClassName#>")]
+		[TestCategory("<#=this.Config.TestCategory#>")]
         public void <#=operation.Name#>MarshallTest()
         {
             var operation = service_model.FindOperation("<#=operation.Name#>");
