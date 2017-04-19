@@ -41,10 +41,6 @@ namespace Amazon.Lambda.Model
     /// </para>
     ///  
     /// <para>
-    /// For information about adding permissions, see <a>AddPermission</a>.
-    /// </para>
-    ///  
-    /// <para>
     /// You need permission for the <code>lambda:GetPolicy action.</code> 
     /// </para>
     /// </summary>
@@ -66,8 +62,8 @@ namespace Amazon.Lambda.Model
         /// is qualified with function version or alias name as suffix). AWS Lambda also allows
         /// you to specify only the function name with the account ID qualifier (for example,
         /// <code>account-id:Thumbnail</code>). Note that the length constraint applies only to
-        /// the ARN. If you specify only the function name, it is limited to 64 character in length.
-        /// 
+        /// the ARN. If you specify only the function name, it is limited to 64 characters in
+        /// length. 
         /// </para>
         /// </summary>
         public string FunctionName

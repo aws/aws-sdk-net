@@ -28,48 +28,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// This response contains the object for the Lambda function location (see <a>FunctionCodeLocation</a>.
+    /// This is the response object from the ListTags operation.
     /// </summary>
-    public partial class GetFunctionResponse : AmazonWebServiceResponse
+    public partial class ListTagsResponse : AmazonWebServiceResponse
     {
-        private FunctionCodeLocation _code;
-        private FunctionConfiguration _configuration;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
-
-        /// <summary>
-        /// Gets and sets the property Code.
-        /// </summary>
-        public FunctionCodeLocation Code
-        {
-            get { return this._code; }
-            set { this._code = value; }
-        }
-
-        // Check to see if Code property is set
-        internal bool IsSetCode()
-        {
-            return this._code != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Configuration.
-        /// </summary>
-        public FunctionConfiguration Configuration
-        {
-            get { return this._configuration; }
-            set { this._configuration = value; }
-        }
-
-        // Check to see if Configuration property is set
-        internal bool IsSetConfiguration()
-        {
-            return this._configuration != null;
-        }
 
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Returns the list of tags associated with the function.
+        /// The list of tags assigned to the function.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Tags

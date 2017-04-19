@@ -161,7 +161,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property FunctionName. 
         /// <para>
-        /// The name of the function.
+        /// The name of the function. Note that the length constraint applies only to the ARN.
+        /// If you specify only the function name, it is limited to 64 characters in length.
         /// </para>
         /// </summary>
         public string FunctionName
@@ -273,11 +274,6 @@ namespace Amazon.Lambda.Model
         /// Gets and sets the property Runtime. 
         /// <para>
         /// The runtime environment for the Lambda function.
-        /// </para>
-        ///  
-        /// <para>
-        /// To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime
-        /// (v0.10.42), set the value to "nodejs".
         /// </para>
         /// </summary>
         public Runtime Runtime

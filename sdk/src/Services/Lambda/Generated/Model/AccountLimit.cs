@@ -100,8 +100,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property TotalCodeSize. 
         /// <para>
-        /// Maximum size, in megabytes, of a code package you can upload per region. The default
-        /// size is 75 GB. 
+        /// Maximum size, in bytes, of a code package you can upload per region. The default size
+        /// is 75 GB. 
         /// </para>
         /// </summary>
         public long TotalCodeSize

@@ -66,7 +66,9 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property FunctionName. 
         /// <para>
-        /// The function name for which the alias is created.
+        /// The function name for which the alias is created. Note that the length constraint
+        /// applies only to the ARN. If you specify only the function name, it is limited to 64
+        /// characters in length.
         /// </para>
         /// </summary>
         public string FunctionName

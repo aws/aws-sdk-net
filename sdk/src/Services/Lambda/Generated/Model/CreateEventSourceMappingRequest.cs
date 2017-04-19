@@ -38,7 +38,7 @@ namespace Amazon.Lambda.Model
     /// This association between a stream source and a Lambda function is called the event
     /// source mapping.
     /// </para>
-    ///  <important>
+    ///  <important> 
     /// <para>
     /// This event source mapping is relevant only in the AWS Lambda pull model, where AWS
     /// Lambda invokes the function. For more information, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">AWS
@@ -162,7 +162,7 @@ namespace Amazon.Lambda.Model
         ///  
         /// <para>
         /// Note that the length constraint applies only to the ARN. If you specify only the function
-        /// name, it is limited to 64 character in length.
+        /// name, it is limited to 64 characters in length.
         /// </para>
         /// </summary>
         public string FunctionName

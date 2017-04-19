@@ -230,8 +230,11 @@ namespace Amazon.Lambda.Model
         /// </para>
         ///  
         /// <para>
-        /// To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime
-        /// (v0.10.42), set the value to "nodejs".
+        /// To use the Python runtime v3.6, set the value to "python3.6". To use the Python runtime
+        /// v2.7, set the value to "python2.7". To use the Node.js runtime v6.10, set the value
+        /// to "nodejs6.10". To use the Node.js runtime v4.3, set the value to "nodejs4.3". To
+        /// use the Python runtime v3.6, set the value to "python3.6". To use the Python runtime
+        /// v2.7, set the value to "python2.7".
         /// </para>
         ///  <note> 
         /// <para>

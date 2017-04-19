@@ -47,7 +47,7 @@ namespace Amazon.Lambda.Model
         /// (for example, <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>).
         /// AWS Lambda also allows you to specify a partial ARN (for example, <code>account-id:Thumbnail</code>).
         /// Note that the length constraint applies only to the ARN. If you specify only the function
-        /// name, it is limited to 64 character in length. 
+        /// name, it is limited to 64 characters in length. 
         /// </para>
         /// </summary>
         public string FunctionName

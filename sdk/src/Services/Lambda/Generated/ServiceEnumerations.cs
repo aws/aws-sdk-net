@@ -216,6 +216,10 @@ namespace Amazon.Lambda
         /// Constant Python27 for Runtime
         /// </summary>
         public static readonly Runtime Python27 = new Runtime("python2.7");
+        /// <summary>
+        /// Constant Python36 for Runtime
+        /// </summary>
+        public static readonly Runtime Python36 = new Runtime("python3.6");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

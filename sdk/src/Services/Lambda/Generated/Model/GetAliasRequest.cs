@@ -48,7 +48,8 @@ namespace Amazon.Lambda.Model
         /// <para>
         /// Function name for which the alias is created. An alias is a subresource that exists
         /// only in the context of an existing Lambda function so you must specify the function
-        /// name.
+        /// name. Note that the length constraint applies only to the ARN. If you specify only
+        /// the function name, it is limited to 64 characters in length.
         /// </para>
         /// </summary>
         public string FunctionName

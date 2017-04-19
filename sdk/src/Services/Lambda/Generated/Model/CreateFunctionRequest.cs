@@ -59,6 +59,7 @@ namespace Amazon.Lambda.Model
         private bool? _publish;
         private string _role;
         private Runtime _runtime;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private int? _timeout;
         private VpcConfig _vpcConfig;
 
@@ -139,7 +140,8 @@ namespace Amazon.Lambda.Model
         /// The name you want to assign to the function you are uploading. The function names
         /// appear in the console and are returned in the <a>ListFunctions</a> API. Function names
         /// are used to specify functions to other AWS Lambda API operations, such as <a>Invoke</a>.
-        /// 
+        /// Note that the length constraint applies only to the ARN. If you specify only the function
+        /// name, it is limited to 64 characters in length. 
         /// </para>
         /// </summary>
         public string FunctionName
@@ -264,14 +266,15 @@ namespace Amazon.Lambda.Model
         /// </para>
         ///  
         /// <para>
-        /// To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime
-        /// (v0.10.42), set the value to "nodejs".
+        /// To use the Python runtime v3.6, set the value to "python3.6". To use the Python runtime
+        /// v2.7, set the value to "python2.7". To use the Node.js runtime v6.10, set the value
+        /// to "nodejs6.10". To use the Node.js runtime v4.3, set the value to "nodejs4.3".
         /// </para>
         ///  <note> 
         /// <para>
         /// You can no longer create functions using the v0.10.42 runtime version as of November,
         /// 2016. Existing functions will be supported until early 2017, but we recommend you
-        /// migrate them to nodejs4.3 runtime version as soon as possible.
+        /// migrate them to either nodejs6.10 or nodejs4.3 runtime version as soon as possible.
         /// </para>
         ///  </note>
         /// </summary>
@@ -285,6 +288,24 @@ namespace Amazon.Lambda.Model
         internal bool IsSetRuntime()
         {
             return this._runtime != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The list of tags (key-value pairs) assigned to the new function.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

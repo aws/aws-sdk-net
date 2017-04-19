@@ -29,7 +29,7 @@ namespace Amazon.Lambda.Model
 {
     /// <summary>
     /// Container for the parameters to the InvokeAsync operation.
-    /// <important>
+    /// <important> 
     /// <para>
     /// This API is deprecated. We recommend you use <code>Invoke</code> API (see <a>Invoke</a>).
     /// </para>
@@ -52,7 +52,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property FunctionName. 
         /// <para>
-        /// The Lambda function name.
+        /// The Lambda function name. Note that the length constraint applies only to the ARN.
+        /// If you specify only the function name, it is limited to 64 characters in length.
         /// </para>
         /// </summary>
         public string FunctionName

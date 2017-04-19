@@ -28,48 +28,38 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// This response contains the object for the Lambda function location (see <a>FunctionCodeLocation</a>.
+    /// Container for the parameters to the TagResource operation.
+    /// Creates a list of tags (key-value pairs) on the Lambda function. Requires the Lambda
+    /// function ARN (Amazon Resource Name). If a key is specified without a value, Lambda
+    /// creates a tag with the specified key and a value of null.
     /// </summary>
-    public partial class GetFunctionResponse : AmazonWebServiceResponse
+    public partial class TagResourceRequest : AmazonLambdaRequest
     {
-        private FunctionCodeLocation _code;
-        private FunctionConfiguration _configuration;
+        private string _resource;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
-        /// Gets and sets the property Code.
+        /// Gets and sets the property Resource. 
+        /// <para>
+        /// The ARN (Amazon Resource Name) of the Lambda function.
+        /// </para>
         /// </summary>
-        public FunctionCodeLocation Code
+        public string Resource
         {
-            get { return this._code; }
-            set { this._code = value; }
+            get { return this._resource; }
+            set { this._resource = value; }
         }
 
-        // Check to see if Code property is set
-        internal bool IsSetCode()
+        // Check to see if Resource property is set
+        internal bool IsSetResource()
         {
-            return this._code != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Configuration.
-        /// </summary>
-        public FunctionConfiguration Configuration
-        {
-            get { return this._configuration; }
-            set { this._configuration = value; }
-        }
-
-        // Check to see if Configuration property is set
-        internal bool IsSetConfiguration()
-        {
-            return this._configuration != null;
+            return this._resource != null;
         }
 
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Returns the list of tags associated with the function.
+        /// The list of tags (key-value pairs) you are assigning to the Lambda function.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Tags
