@@ -31,9 +31,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateRole Request Marshaller
+    /// CreateServiceLinkedRole Request Marshaller
     /// </summary>       
-    public class CreateRoleRequestMarshaller : IMarshaller<IRequest, CreateRoleRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class CreateServiceLinkedRoleRequestMarshaller : IMarshaller<IRequest, CreateServiceLinkedRoleRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -42,7 +42,7 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateRoleRequest)input);
+            return this.Marshall((CreateServiceLinkedRoleRequest)input);
         }
     
         /// <summary>
@@ -50,29 +50,25 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateRoleRequest publicRequest)
+        public IRequest Marshall(CreateServiceLinkedRoleRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.IdentityManagement");
-            request.Parameters.Add("Action", "CreateRole");
+            request.Parameters.Add("Action", "CreateServiceLinkedRole");
             request.Parameters.Add("Version", "2010-05-08");
 
             if(publicRequest != null)
             {
-                if(publicRequest.IsSetAssumeRolePolicyDocument())
+                if(publicRequest.IsSetAWSServiceName())
                 {
-                    request.Parameters.Add("AssumeRolePolicyDocument", StringUtils.FromString(publicRequest.AssumeRolePolicyDocument));
+                    request.Parameters.Add("AWSServiceName", StringUtils.FromString(publicRequest.AWSServiceName));
+                }
+                if(publicRequest.IsSetCustomSuffix())
+                {
+                    request.Parameters.Add("CustomSuffix", StringUtils.FromString(publicRequest.CustomSuffix));
                 }
                 if(publicRequest.IsSetDescription())
                 {
                     request.Parameters.Add("Description", StringUtils.FromString(publicRequest.Description));
-                }
-                if(publicRequest.IsSetPath())
-                {
-                    request.Parameters.Add("Path", StringUtils.FromString(publicRequest.Path));
-                }
-                if(publicRequest.IsSetRoleName())
-                {
-                    request.Parameters.Add("RoleName", StringUtils.FromString(publicRequest.RoleName));
                 }
             }
             return request;

@@ -118,7 +118,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property User. 
         /// <para>
-        /// The user to whom the MFA device is assigned.
+        /// The IAM user associated with this virtual MFA device.
         /// </para>
         /// </summary>
         public User User

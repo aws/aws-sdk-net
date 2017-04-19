@@ -1,0 +1,1048 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.AddClientIDToOpenIDConnectProvider(Amazon.IdentityManagement.Model.AddClientIDToOpenIDConnectProviderRequest)" />
+            <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.AddClientIDToOpenIDConnectProvider(Amazon.IdentityManagement.Model.AddClientIDToOpenIDConnectProviderRequest)" />
+            <member name="T:Amazon.IdentityManagement.Model.AddClientIDToOpenIDConnectProviderRequest" />
+            <member name="T:Amazon.IdentityManagement.Model.AddClientIDToOpenIDConnectProviderResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following add-client-id-to-open-id-connect-provider command adds the client ID my-application-ID to the OIDC provider named server.example.com:
+                </para>
+                <code
+                    title="To add a client ID (audience) to an Open-ID Connect (OIDC) provider"
+                    source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs"
+                    region="028e91f4-e2a6-4d59-9e3b-4965a3fb19be" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.AddRoleToInstanceProfile(Amazon.IdentityManagement.Model.AddRoleToInstanceProfileRequest)" />
+            <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.AddRoleToInstanceProfile(Amazon.IdentityManagement.Model.AddRoleToInstanceProfileRequest)" />
+            <member name="T:Amazon.IdentityManagement.Model.AddRoleToInstanceProfileRequest" />
+            <member name="T:Amazon.IdentityManagement.Model.AddRoleToInstanceProfileResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following command adds the role named S3Access to the instance profile named Webserver:
+                </para>
+                <code
+                    title="To add a role to an instance profile"
+                    source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs"
+                    region="c107fac3-edb6-4827-8a71-8863ec91c81f" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.AddUserToGroup(Amazon.IdentityManagement.Model.AddUserToGroupRequest)" />
+            <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.AddUserToGroup(Amazon.IdentityManagement.Model.AddUserToGroupRequest)" />
+            <member name="T:Amazon.IdentityManagement.Model.AddUserToGroupRequest" />
+            <member name="T:Amazon.IdentityManagement.Model.AddUserToGroupResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following command adds an IAM user named Bob to the IAM group named Admins:
+                </para>
+                <code
+                    title="To add a user to an IAM group"
+                    source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs"
+                    region="619c7e6b-09f8-4036-857b-51a6ea5027ca" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.AttachGroupPolicy(Amazon.IdentityManagement.Model.AttachGroupPolicyRequest)" />
+            <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.AttachGroupPolicy(Amazon.IdentityManagement.Model.AttachGroupPolicyRequest)" />
+            <member name="T:Amazon.IdentityManagement.Model.AttachGroupPolicyRequest" />
+            <member name="T:Amazon.IdentityManagement.Model.AttachGroupPolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following command attaches the AWS managed policy named ReadOnlyAccess to the IAM group named Finance.
+                </para>
+                <code
+                    title="To attach a managed policy to an IAM group"
+                    source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs"
+                    region="87551489-86f0-45db-9889-759936778f2b" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.AttachRolePolicy(Amazon.IdentityManagement.Model.AttachRolePolicyRequest)" />
+            <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.AttachRolePolicy(Amazon.IdentityManagement.Model.AttachRolePolicyRequest)" />
+            <member name="T:Amazon.IdentityManagement.Model.AttachRolePolicyRequest" />
+            <member name="T:Amazon.IdentityManagement.Model.AttachRolePolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following command attaches the AWS managed policy named ReadOnlyAccess to the IAM role named ReadOnlyRole.
+                </para>
+                <code
+                    title="To attach a managed policy to an IAM role"
+                    source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs"
+                    region="3e1b8c7c-99c8-4fc4-a20c-131fe3f22c7e" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.AttachUserPolicy(Amazon.IdentityManagement.Model.AttachUserPolicyRequest)" />
+            <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.AttachUserPolicy(Amazon.IdentityManagement.Model.AttachUserPolicyRequest)" />
+            <member name="T:Amazon.IdentityManagement.Model.AttachUserPolicyRequest" />
+            <member name="T:Amazon.IdentityManagement.Model.AttachUserPolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following command attaches the AWS managed policy named AdministratorAccess to the IAM user named Alice.
+                </para>
+                <code
+                    title="To attach a managed policy to an IAM user"
+                    source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs"
+                    region="1372ebd8-9475-4b1a-a479-23b6fd4b8b3e" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.ChangePassword(Amazon.IdentityManagement.Model.ChangePasswordRequest)" />
+            <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.ChangePassword(Amazon.IdentityManagement.Model.ChangePasswordRequest)" />
+            <member name="T:Amazon.IdentityManagement.Model.ChangePasswordRequest" />
+            <member name="T:Amazon.IdentityManagement.Model.ChangePasswordResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following command changes the password for the current IAM user.
+                </para>
+                <code
+                    title="To change the password for your IAM user"
+                    source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs"
+                    region="3a80c66f-bffb-46df-947c-1e8fa583b470" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.CreateAccessKey(Amazon.IdentityManagement.Model.CreateAccessKeyRequest)" />
+            <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.CreateAccessKey(Amazon.IdentityManagement.Model.CreateAccessKeyRequest)" />
+            <member name="T:Amazon.IdentityManagement.Model.CreateAccessKeyRequest" />
+            <member name="T:Amazon.IdentityManagement.Model.CreateAccessKeyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following command creates an access key (access key ID and secret access key) for the IAM user named Bob.
+                </para>
+                <code
+                    title="To create an access key for an IAM user"
+                    source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs"
+                    region="1fbb3211-4cf2-41db-8c20-ba58d9f5802d" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.CreateAccountAlias(Amazon.IdentityManagement.Model.CreateAccountAliasRequest)" />
+            <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.CreateAccountAlias(Amazon.IdentityManagement.Model.CreateAccountAliasRequest)" />
+            <member name="T:Amazon.IdentityManagement.Model.CreateAccountAliasRequest" />
+            <member name="T:Amazon.IdentityManagement.Model.CreateAccountAliasResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following command associates the alias examplecorp to your AWS account.
+                </para>
+                <code
+                    title="To create an account alias"
+                    source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs"
+                    region="5adaf6fb-94fc-4ca2-b825-2fbc2062add1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.CreateGroup(Amazon.IdentityManagement.Model.CreateGroupRequest)" />
+            <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.CreateGroup(Amazon.IdentityManagement.Model.CreateGroupRequest)" />
+            <member name="T:Amazon.IdentityManagement.Model.CreateGroupRequest" />
+            <member name="T:Amazon.IdentityManagement.Model.CreateGroupResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following command creates an IAM group named Admins.
+                </para>
+                <code
+                    title="To create an IAM group"
+                    source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs"
+                    region="d5da2a90-5e69-4ef7-8ae8-4c33dc21fd21" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.CreateInstanceProfile(Amazon.IdentityManagement.Model.CreateInstanceProfileRequest)" />
+            <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.CreateInstanceProfile(Amazon.IdentityManagement.Model.CreateInstanceProfileRequest)" />
+            <member name="T:Amazon.IdentityManagement.Model.CreateInstanceProfileRequest" />
+            <member name="T:Amazon.IdentityManagement.Model.CreateInstanceProfileResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following command creates an instance profile named Webserver that is ready to have a role attached and then be associated with an EC2 instance.
+                </para>
+                <code
+                    title="To create an instance profile"
+                    source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs"
+                    region="5d84e6ae-5921-4e39-8454-10232cd9ff9a" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.CreateLoginProfile(Amazon.IdentityManagement.Model.CreateLoginProfileRequest)" />
+            <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.CreateLoginProfile(Amazon.IdentityManagement.Model.CreateLoginProfileRequest)" />
+            <member name="T:Amazon.IdentityManagement.Model.CreateLoginProfileRequest" />
+            <member name="T:Amazon.IdentityManagement.Model.CreateLoginProfileResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following command changes IAM user Bob's password and sets the flag that required Bob to change the password the next time he signs in.
+                </para>
+                <code
+                    title="To create an instance profile"
+                    source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs"
+                    region="c63795bc-3444-40b3-89df-83c474ef88be" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.CreateOpenIDConnectProvider(Amazon.IdentityManagement.Model.CreateOpenIDConnectProviderRequest)" />
+            <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.CreateOpenIDConnectProvider(Amazon.IdentityManagement.Model.CreateOpenIDConnectProviderRequest)" />
+            <member name="T:Amazon.IdentityManagement.Model.CreateOpenIDConnectProviderRequest" />
+            <member name="T:Amazon.IdentityManagement.Model.CreateOpenIDConnectProviderResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example defines a new OIDC provider in IAM with a client ID of my-application-id and pointing at the server with a URL of https://server.example.com.
+                </para>
+                <code
+                    title="To create an instance profile"
+                    source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs"
+                    region="4e4a6bff-cc97-4406-922e-0ab4a82cdb63" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.CreateRole(Amazon.IdentityManagement.Model.CreateRoleRequest)" />
+            <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.CreateRole(Amazon.IdentityManagement.Model.CreateRoleRequest)" />
+            <member name="T:Amazon.IdentityManagement.Model.CreateRoleRequest" />
+            <member name="T:Amazon.IdentityManagement.Model.CreateRoleResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following command creates a role named Test-Role and attaches a trust policy to it that is provided as a URL-encoded JSON string.
+                </para>
+                <code
+                    title="To create an IAM role"
+                    source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs"
+                    region="eaaa4b5f-51f1-4f73-b0d3-30127040eff8" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.CreateUser(Amazon.IdentityManagement.Model.CreateUserRequest)" />
+            <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.CreateUser(Amazon.IdentityManagement.Model.CreateUserRequest)" />
+            <member name="T:Amazon.IdentityManagement.Model.CreateUserRequest" />
+            <member name="T:Amazon.IdentityManagement.Model.CreateUserResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following create-user command creates an IAM user named Bob in the current account.
+                </para>
+                <code
+                    title="To create an IAM user"
+                    source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs"
+                    region="eb15f90b-e5f5-4af8-a594-e4e82b181a62" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.DeleteAccessKey(Amazon.IdentityManagement.Model.DeleteAccessKeyRequest)" />
+            <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.DeleteAccessKey(Amazon.IdentityManagement.Model.DeleteAccessKeyRequest)" />
+            <member name="T:Amazon.IdentityManagement.Model.DeleteAccessKeyRequest" />
+            <member name="T:Amazon.IdentityManagement.Model.DeleteAccessKeyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following command deletes one access key (access key ID and secret access key) assigned to the IAM user named Bob.
+                </para>
+                <code
+                    title="To delete an access key for an IAM user"
+                    source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs"
+                    region="61a785a7-d30a-415a-ae18-ab9236e56871" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.DeleteAccountAlias(Amazon.IdentityManagement.Model.DeleteAccountAliasRequest)" />
+            <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.DeleteAccountAlias(Amazon.IdentityManagement.Model.DeleteAccountAliasRequest)" />
+            <member name="T:Amazon.IdentityManagement.Model.DeleteAccountAliasRequest" />
+            <member name="T:Amazon.IdentityManagement.Model.DeleteAccountAliasResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following command removes the alias mycompany from the current AWS account:
+                </para>
+                <code
+                    title="To delete an account alias"
+                    source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs"
+                    region="7abeca65-04a8-4500-a890-47f1092bf766" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.DeleteAccountPasswordPolicy(Amazon.IdentityManagement.Model.DeleteAccountPasswordPolicyRequest)" />
+            <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.DeleteAccountPasswordPolicy(Amazon.IdentityManagement.Model.DeleteAccountPasswordPolicyRequest)" />
+            <member name="T:Amazon.IdentityManagement.Model.DeleteAccountPasswordPolicyRequest" />
+            <member name="T:Amazon.IdentityManagement.Model.DeleteAccountPasswordPolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following command removes the password policy from the current AWS account:
+                </para>
+                <code
+                    title="To delete the current account password policy"
+                    source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs"
+                    region="9ddf755e-495c-49bc-ae3b-ea6cc9b8ebcf" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.DeleteGroupPolicy(Amazon.IdentityManagement.Model.DeleteGroupPolicyRequest)" />
+            <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.DeleteGroupPolicy(Amazon.IdentityManagement.Model.DeleteGroupPolicyRequest)" />
+            <member name="T:Amazon.IdentityManagement.Model.DeleteGroupPolicyRequest" />
+            <member name="T:Amazon.IdentityManagement.Model.DeleteGroupPolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following command deletes the policy named ExamplePolicy from the group named Admins:
+                </para>
+                <code
+                    title="To delete a policy from an IAM group"
+                    source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs"
+                    region="e683f2bd-98a4-4fe0-bb66-33169c692d4a" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.DeleteInstanceProfile(Amazon.IdentityManagement.Model.DeleteInstanceProfileRequest)" />
+            <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.DeleteInstanceProfile(Amazon.IdentityManagement.Model.DeleteInstanceProfileRequest)" />
+            <member name="T:Amazon.IdentityManagement.Model.DeleteInstanceProfileRequest" />
+            <member name="T:Amazon.IdentityManagement.Model.DeleteInstanceProfileResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following command deletes the instance profile named ExampleInstanceProfile
+                </para>
+                <code
+                    title="To delete an instance profile"
+                    source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs"
+                    region="12d74fb8-3433-49db-8171-a1fc764e354d" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.DeleteLoginProfile(Amazon.IdentityManagement.Model.DeleteLoginProfileRequest)" />
+            <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.DeleteLoginProfile(Amazon.IdentityManagement.Model.DeleteLoginProfileRequest)" />
+            <member name="T:Amazon.IdentityManagement.Model.DeleteLoginProfileRequest" />
+            <member name="T:Amazon.IdentityManagement.Model.DeleteLoginProfileResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following command deletes the password for the IAM user named Bob.
+                </para>
+                <code
+                    title="To delete a password for an IAM user"
+                    source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs"
+                    region="1fe57059-fc73-42e2-b992-517b7d573b5c" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.DeleteRole(Amazon.IdentityManagement.Model.DeleteRoleRequest)" />
+            <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.DeleteRole(Amazon.IdentityManagement.Model.DeleteRoleRequest)" />
+            <member name="T:Amazon.IdentityManagement.Model.DeleteRoleRequest" />
+            <member name="T:Amazon.IdentityManagement.Model.DeleteRoleResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following command removes the role named Test-Role.
+                </para>
+                <code
+                    title="To delete an IAM role"
+                    source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs"
+                    region="053cdf74-9bda-44b8-bdbb-140fd5a32603" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.DeleteRolePolicy(Amazon.IdentityManagement.Model.DeleteRolePolicyRequest)" />
+            <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.DeleteRolePolicy(Amazon.IdentityManagement.Model.DeleteRolePolicyRequest)" />
+            <member name="T:Amazon.IdentityManagement.Model.DeleteRolePolicyRequest" />
+            <member name="T:Amazon.IdentityManagement.Model.DeleteRolePolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following command removes the policy named ExamplePolicy from the role named Test-Role.
+                </para>
+                <code
+                    title="To remove a policy from an IAM role"
+                    source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs"
+                    region="9c667336-fde3-462c-b8f3-950800821e27" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.DeleteSigningCertificate(Amazon.IdentityManagement.Model.DeleteSigningCertificateRequest)" />
+            <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.DeleteSigningCertificate(Amazon.IdentityManagement.Model.DeleteSigningCertificateRequest)" />
+            <member name="T:Amazon.IdentityManagement.Model.DeleteSigningCertificateRequest" />
+            <member name="T:Amazon.IdentityManagement.Model.DeleteSigningCertificateResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following command deletes the specified signing certificate for the IAM user named Anika.
+                </para>
+                <code
+                    title="To delete a signing certificate for an IAM user"
+                    source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs"
+                    region="e3357586-ba9c-4070-b35b-d1a899b71987" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.DeleteUser(Amazon.IdentityManagement.Model.DeleteUserRequest)" />
+            <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.DeleteUser(Amazon.IdentityManagement.Model.DeleteUserRequest)" />
+            <member name="T:Amazon.IdentityManagement.Model.DeleteUserRequest" />
+            <member name="T:Amazon.IdentityManagement.Model.DeleteUserResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following command removes the IAM user named Bob from the current account.
+                </para>
+                <code
+                    title="To delete an IAM user"
+                    source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs"
+                    region="a13dc3f9-59fe-42d9-abbb-fb98b204fdf0" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.DeleteUserPolicy(Amazon.IdentityManagement.Model.DeleteUserPolicyRequest)" />
+            <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.DeleteUserPolicy(Amazon.IdentityManagement.Model.DeleteUserPolicyRequest)" />
+            <member name="T:Amazon.IdentityManagement.Model.DeleteUserPolicyRequest" />
+            <member name="T:Amazon.IdentityManagement.Model.DeleteUserPolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following delete-user-policy command removes the specified policy from the IAM user named Juan:
+                </para>
+                <code
+                    title="To remove a policy from an IAM user"
+                    source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs"
+                    region="34f07ddc-9bc1-4f52-bc59-cd0a3ccd06c8" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.DeleteVirtualMFADevice(Amazon.IdentityManagement.Model.DeleteVirtualMFADeviceRequest)" />
+            <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.DeleteVirtualMFADevice(Amazon.IdentityManagement.Model.DeleteVirtualMFADeviceRequest)" />
+            <member name="T:Amazon.IdentityManagement.Model.DeleteVirtualMFADeviceRequest" />
+            <member name="T:Amazon.IdentityManagement.Model.DeleteVirtualMFADeviceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following delete-virtual-mfa-device command removes the specified MFA device from the current AWS account.
+                </para>
+                <code
+                    title="To remove a virtual MFA device"
+                    source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs"
+                    region="2933b08b-dbe7-4b89-b8c1-fdf75feea1ee" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.GetAccountPasswordPolicy(Amazon.IdentityManagement.Model.GetAccountPasswordPolicyRequest)" />
+            <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.GetAccountPasswordPolicy(Amazon.IdentityManagement.Model.GetAccountPasswordPolicyRequest)" />
+            <member name="T:Amazon.IdentityManagement.Model.GetAccountPasswordPolicyRequest" />
+            <member name="T:Amazon.IdentityManagement.Model.GetAccountPasswordPolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following command displays details about the password policy for the current AWS account.
+                </para>
+                <code
+                    title="To see the current account password policy"
+                    source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs"
+                    region="5e4598c7-c425-431f-8af1-19073b3c4a5f" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.GetAccountSummary(Amazon.IdentityManagement.Model.GetAccountSummaryRequest)" />
+            <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.GetAccountSummary(Amazon.IdentityManagement.Model.GetAccountSummaryRequest)" />
+            <member name="T:Amazon.IdentityManagement.Model.GetAccountSummaryRequest" />
+            <member name="T:Amazon.IdentityManagement.Model.GetAccountSummaryResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following command returns information about the IAM entity quotas and usage in the current AWS account.
+                </para>
+                <code
+                    title="To get information about IAM entity quotas and usage in the current account"
+                    source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs"
+                    region="9d8447af-f344-45de-8219-2cebc3cce7f2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.GetInstanceProfile(Amazon.IdentityManagement.Model.GetInstanceProfileRequest)" />
+            <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.GetInstanceProfile(Amazon.IdentityManagement.Model.GetInstanceProfileRequest)" />
+            <member name="T:Amazon.IdentityManagement.Model.GetInstanceProfileRequest" />
+            <member name="T:Amazon.IdentityManagement.Model.GetInstanceProfileResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following command gets information about the instance profile named ExampleInstanceProfile.
+                </para>
+                <code
+                    title="To get information about an instance profile"
+                    source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs"
+                    region="463b9ba5-18cc-4608-9ccb-5a7c6b6e5fe7" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.GetLoginProfile(Amazon.IdentityManagement.Model.GetLoginProfileRequest)" />
+            <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.GetLoginProfile(Amazon.IdentityManagement.Model.GetLoginProfileRequest)" />
+            <member name="T:Amazon.IdentityManagement.Model.GetLoginProfileRequest" />
+            <member name="T:Amazon.IdentityManagement.Model.GetLoginProfileResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following command gets information about the password for the IAM user named Anika.
+                </para>
+                <code
+                    title="To get password information for an IAM user"
+                    source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs"
+                    region="d6b580cc-909f-4925-9caa-d425cbc1ad47" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.GetRole(Amazon.IdentityManagement.Model.GetRoleRequest)" />
+            <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.GetRole(Amazon.IdentityManagement.Model.GetRoleRequest)" />
+            <member name="T:Amazon.IdentityManagement.Model.GetRoleRequest" />
+            <member name="T:Amazon.IdentityManagement.Model.GetRoleResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following command gets information about the role named Test-Role.
+                </para>
+                <code
+                    title="To get information about an IAM role"
+                    source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs"
+                    region="5b7d03a6-340c-472d-aa77-56425950d8b0" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.GetUser(Amazon.IdentityManagement.Model.GetUserRequest)" />
+            <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.GetUser(Amazon.IdentityManagement.Model.GetUserRequest)" />
+            <member name="T:Amazon.IdentityManagement.Model.GetUserRequest" />
+            <member name="T:Amazon.IdentityManagement.Model.GetUserResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following command gets information about the IAM user named Bob.
+                </para>
+                <code
+                    title="To get information about an IAM user"
+                    source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs"
+                    region="ede000a1-9e4c-40db-bd0a-d4f95e41a6ab" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.ListAccessKeys(Amazon.IdentityManagement.Model.ListAccessKeysRequest)" />
+            <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.ListAccessKeys(Amazon.IdentityManagement.Model.ListAccessKeysRequest)" />
+            <member name="T:Amazon.IdentityManagement.Model.ListAccessKeysRequest" />
+            <member name="T:Amazon.IdentityManagement.Model.ListAccessKeysResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following command lists the access keys IDs for the IAM user named Alice.
+                </para>
+                <code
+                    title="To list the access key IDs for an IAM user"
+                    source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs"
+                    region="15571463-ebea-411a-a021-1c76bd2a3625" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.ListAccountAliases(Amazon.IdentityManagement.Model.ListAccountAliasesRequest)" />
+            <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.ListAccountAliases(Amazon.IdentityManagement.Model.ListAccountAliasesRequest)" />
+            <member name="T:Amazon.IdentityManagement.Model.ListAccountAliasesRequest" />
+            <member name="T:Amazon.IdentityManagement.Model.ListAccountAliasesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following command lists the aliases for the current account.
+                </para>
+                <code
+                    title="To list account aliases"
+                    source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs"
+                    region="e27b457a-16f9-4e05-a006-3df7b3472741" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.ListGroupPolicies(Amazon.IdentityManagement.Model.ListGroupPoliciesRequest)" />
+            <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.ListGroupPolicies(Amazon.IdentityManagement.Model.ListGroupPoliciesRequest)" />
+            <member name="T:Amazon.IdentityManagement.Model.ListGroupPoliciesRequest" />
+            <member name="T:Amazon.IdentityManagement.Model.ListGroupPoliciesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following command lists the names of in-line policies that are embedded in the IAM group named Admins.
+                </para>
+                <code
+                    title="To list the in-line policies for an IAM group"
+                    source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs"
+                    region="02de5095-2410-4d3a-ac1b-cc40234af68f" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.ListGroups(Amazon.IdentityManagement.Model.ListGroupsRequest)" />
+            <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.ListGroups(Amazon.IdentityManagement.Model.ListGroupsRequest)" />
+            <member name="T:Amazon.IdentityManagement.Model.ListGroupsRequest" />
+            <member name="T:Amazon.IdentityManagement.Model.ListGroupsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following command lists the IAM groups in the current account:
+                </para>
+                <code
+                    title="To list the IAM groups for the current account"
+                    source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs"
+                    region="b3ab1380-2a21-42fb-8e85-503f65512c66" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.ListGroupsForUser(Amazon.IdentityManagement.Model.ListGroupsForUserRequest)" />
+            <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.ListGroupsForUser(Amazon.IdentityManagement.Model.ListGroupsForUserRequest)" />
+            <member name="T:Amazon.IdentityManagement.Model.ListGroupsForUserRequest" />
+            <member name="T:Amazon.IdentityManagement.Model.ListGroupsForUserResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following command displays the groups that the IAM user named Bob belongs to.
+                </para>
+                <code
+                    title="To list the groups that an IAM user belongs to"
+                    source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs"
+                    region="278ec2ee-fc28-4136-83fb-433af0ae46a2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.ListSigningCertificates(Amazon.IdentityManagement.Model.ListSigningCertificatesRequest)" />
+            <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.ListSigningCertificates(Amazon.IdentityManagement.Model.ListSigningCertificatesRequest)" />
+            <member name="T:Amazon.IdentityManagement.Model.ListSigningCertificatesRequest" />
+            <member name="T:Amazon.IdentityManagement.Model.ListSigningCertificatesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following command lists the signing certificates for the IAM user named Bob.
+                </para>
+                <code
+                    title="To list the signing certificates for an IAM user"
+                    source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs"
+                    region="b4c10256-4fc9-457e-b3fd-4a110d4d73dc" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.ListUsers(Amazon.IdentityManagement.Model.ListUsersRequest)" />
+            <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.ListUsers(Amazon.IdentityManagement.Model.ListUsersRequest)" />
+            <member name="T:Amazon.IdentityManagement.Model.ListUsersRequest" />
+            <member name="T:Amazon.IdentityManagement.Model.ListUsersResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following command lists the IAM users in the current account.
+                </para>
+                <code
+                    title="To list IAM users"
+                    source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs"
+                    region="9edfbd73-03d8-4d8a-9a79-76c85e8c8298" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.ListVirtualMFADevices(Amazon.IdentityManagement.Model.ListVirtualMFADevicesRequest)" />
+            <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.ListVirtualMFADevices(Amazon.IdentityManagement.Model.ListVirtualMFADevicesRequest)" />
+            <member name="T:Amazon.IdentityManagement.Model.ListVirtualMFADevicesRequest" />
+            <member name="T:Amazon.IdentityManagement.Model.ListVirtualMFADevicesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following command lists the virtual MFA devices that have been configured for the current account.
+                </para>
+                <code
+                    title="To list virtual MFA devices"
+                    source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs"
+                    region="54f9ac18-5100-4070-bec4-fe5f612710d5" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.PutGroupPolicy(Amazon.IdentityManagement.Model.PutGroupPolicyRequest)" />
+            <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.PutGroupPolicy(Amazon.IdentityManagement.Model.PutGroupPolicyRequest)" />
+            <member name="T:Amazon.IdentityManagement.Model.PutGroupPolicyRequest" />
+            <member name="T:Amazon.IdentityManagement.Model.PutGroupPolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following command adds a policy named AllPerms to the IAM group named Admins.
+                </para>
+                <code
+                    title="To add a policy to a group"
+                    source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs"
+                    region="4bc17418-758f-4d0f-ab0c-4d00265fec2e" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.PutRolePolicy(Amazon.IdentityManagement.Model.PutRolePolicyRequest)" />
+            <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.PutRolePolicy(Amazon.IdentityManagement.Model.PutRolePolicyRequest)" />
+            <member name="T:Amazon.IdentityManagement.Model.PutRolePolicyRequest" />
+            <member name="T:Amazon.IdentityManagement.Model.PutRolePolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following command adds a permissions policy to the role named Test-Role.
+                </para>
+                <code
+                    title="To attach a permissions policy to an IAM role"
+                    source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs"
+                    region="de62fd00-46c7-4601-9e0d-71d5fbb11ecb" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.PutUserPolicy(Amazon.IdentityManagement.Model.PutUserPolicyRequest)" />
+            <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.PutUserPolicy(Amazon.IdentityManagement.Model.PutUserPolicyRequest)" />
+            <member name="T:Amazon.IdentityManagement.Model.PutUserPolicyRequest" />
+            <member name="T:Amazon.IdentityManagement.Model.PutUserPolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following command attaches a policy to the IAM user named Bob.
+                </para>
+                <code
+                    title="To attach a policy to an IAM user"
+                    source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs"
+                    region="2551ffc6-3576-4d39-823f-30b60bffc2c7" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.RemoveRoleFromInstanceProfile(Amazon.IdentityManagement.Model.RemoveRoleFromInstanceProfileRequest)" />
+            <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.RemoveRoleFromInstanceProfile(Amazon.IdentityManagement.Model.RemoveRoleFromInstanceProfileRequest)" />
+            <member name="T:Amazon.IdentityManagement.Model.RemoveRoleFromInstanceProfileRequest" />
+            <member name="T:Amazon.IdentityManagement.Model.RemoveRoleFromInstanceProfileResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following command removes the role named Test-Role from the instance profile named ExampleInstanceProfile.
+                </para>
+                <code
+                    title="To remove a role from an instance profile"
+                    source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs"
+                    region="6d9f46f1-9f4a-4873-b403-51a85c5c627c" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.RemoveUserFromGroup(Amazon.IdentityManagement.Model.RemoveUserFromGroupRequest)" />
+            <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.RemoveUserFromGroup(Amazon.IdentityManagement.Model.RemoveUserFromGroupRequest)" />
+            <member name="T:Amazon.IdentityManagement.Model.RemoveUserFromGroupRequest" />
+            <member name="T:Amazon.IdentityManagement.Model.RemoveUserFromGroupResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following command removes the user named Bob from the IAM group named Admins.
+                </para>
+                <code
+                    title="To remove a user from an IAM group"
+                    source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs"
+                    region="fb54d5b4-0caf-41d8-af0e-10a84413f174" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.UpdateAccessKey(Amazon.IdentityManagement.Model.UpdateAccessKeyRequest)" />
+            <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.UpdateAccessKey(Amazon.IdentityManagement.Model.UpdateAccessKeyRequest)" />
+            <member name="T:Amazon.IdentityManagement.Model.UpdateAccessKeyRequest" />
+            <member name="T:Amazon.IdentityManagement.Model.UpdateAccessKeyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following command deactivates the specified access key (access key ID and secret access key) for the IAM user named Bob.
+                </para>
+                <code
+                    title="To activate or deactivate an access key for an IAM user"
+                    source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs"
+                    region="02b556fd-e673-49b7-ab6b-f2f9035967d0" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.UpdateAccountPasswordPolicy(Amazon.IdentityManagement.Model.UpdateAccountPasswordPolicyRequest)" />
+            <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.UpdateAccountPasswordPolicy(Amazon.IdentityManagement.Model.UpdateAccountPasswordPolicyRequest)" />
+            <member name="T:Amazon.IdentityManagement.Model.UpdateAccountPasswordPolicyRequest" />
+            <member name="T:Amazon.IdentityManagement.Model.UpdateAccountPasswordPolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following command sets the password policy to require a minimum length of eight characters and to require one or more numbers in the password:
+                </para>
+                <code
+                    title="To set or change the current account password policy"
+                    source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs"
+                    region="c263a1af-37dc-4423-8dba-9790284ef5e0" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.UpdateAssumeRolePolicy(Amazon.IdentityManagement.Model.UpdateAssumeRolePolicyRequest)" />
+            <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.UpdateAssumeRolePolicy(Amazon.IdentityManagement.Model.UpdateAssumeRolePolicyRequest)" />
+            <member name="T:Amazon.IdentityManagement.Model.UpdateAssumeRolePolicyRequest" />
+            <member name="T:Amazon.IdentityManagement.Model.UpdateAssumeRolePolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following command updates the role trust policy for the role named Test-Role:
+                </para>
+                <code
+                    title="To update the trust policy for an IAM role"
+                    source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs"
+                    region="c9150063-d953-4e99-9576-9685872006c6" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.UpdateGroup(Amazon.IdentityManagement.Model.UpdateGroupRequest)" />
+            <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.UpdateGroup(Amazon.IdentityManagement.Model.UpdateGroupRequest)" />
+            <member name="T:Amazon.IdentityManagement.Model.UpdateGroupRequest" />
+            <member name="T:Amazon.IdentityManagement.Model.UpdateGroupResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following command changes the name of the IAM group Test to Test-1.
+                </para>
+                <code
+                    title="To rename an IAM group"
+                    source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs"
+                    region="f0cf1662-91ae-4278-a80e-7db54256ccba" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.UpdateLoginProfile(Amazon.IdentityManagement.Model.UpdateLoginProfileRequest)" />
+            <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.UpdateLoginProfile(Amazon.IdentityManagement.Model.UpdateLoginProfileRequest)" />
+            <member name="T:Amazon.IdentityManagement.Model.UpdateLoginProfileRequest" />
+            <member name="T:Amazon.IdentityManagement.Model.UpdateLoginProfileResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following command creates or changes the password for the IAM user named Bob.
+                </para>
+                <code
+                    title="To change the password for an IAM user"
+                    source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs"
+                    region="036d9498-ecdb-4ed6-a8d8-366c383d1487" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.UpdateSigningCertificate(Amazon.IdentityManagement.Model.UpdateSigningCertificateRequest)" />
+            <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.UpdateSigningCertificate(Amazon.IdentityManagement.Model.UpdateSigningCertificateRequest)" />
+            <member name="T:Amazon.IdentityManagement.Model.UpdateSigningCertificateRequest" />
+            <member name="T:Amazon.IdentityManagement.Model.UpdateSigningCertificateResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following command changes the status of a signing certificate for a user named Bob to Inactive.
+                </para>
+                <code
+                    title="To change the active status of a signing certificate for an IAM user"
+                    source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs"
+                    region="829aee7b-efc5-4b3b-84a5-7f899b38018d" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.UpdateUser(Amazon.IdentityManagement.Model.UpdateUserRequest)" />
+            <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.UpdateUser(Amazon.IdentityManagement.Model.UpdateUserRequest)" />
+            <member name="T:Amazon.IdentityManagement.Model.UpdateUserRequest" />
+            <member name="T:Amazon.IdentityManagement.Model.UpdateUserResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following command changes the name of the IAM user Bob to Robert. It does not change the user's path.
+                </para>
+                <code
+                    title="To change an IAM user's name"
+                    source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs"
+                    region="275d53ed-347a-44e6-b7d0-a96276154352" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.UploadServerCertificate(Amazon.IdentityManagement.Model.UploadServerCertificateRequest)" />
+            <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.UploadServerCertificate(Amazon.IdentityManagement.Model.UploadServerCertificateRequest)" />
+            <member name="T:Amazon.IdentityManagement.Model.UploadServerCertificateRequest" />
+            <member name="T:Amazon.IdentityManagement.Model.UploadServerCertificateResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following upload-server-certificate command uploads a server certificate to your AWS account:
+                </para>
+                <code
+                    title="To upload a server certificate to your AWS account"
+                    source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs"
+                    region="06eab6d1-ebf2-4bd9-839d-f7508b9a38b6" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.UploadSigningCertificate(Amazon.IdentityManagement.Model.UploadSigningCertificateRequest)" />
+            <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.UploadSigningCertificate(Amazon.IdentityManagement.Model.UploadSigningCertificateRequest)" />
+            <member name="T:Amazon.IdentityManagement.Model.UploadSigningCertificateRequest" />
+            <member name="T:Amazon.IdentityManagement.Model.UploadSigningCertificateResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following command uploads a signing certificate for the IAM user named Bob.
+                </para>
+                <code
+                    title="To upload a signing certificate for an IAM user"
+                    source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs"
+                    region="e67489b6-7b73-4e30-9ed3-9a9e0231e458" />
+            </example>
+        </value>
+    </doc>
+</docs>

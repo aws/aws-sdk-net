@@ -28,36 +28,36 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetRole operation.
-    /// Retrieves information about the specified role, including the role's path, GUID, ARN,
-    /// and the role's trust policy that grants permission to assume the role. For more information
-    /// about roles, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
-    /// with Roles</a>.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// Policies returned by this API are URL-encoded compliant with <a href="https://tools.ietf.org/html/rfc3986">RFC
-    /// 3986</a>. You can use a URL decoding method to convert the policy back to plain JSON
-    /// text. For example, if you use Java, you can use the <code>decode</code> method of
-    /// the <code>java.net.URLDecoder</code> utility class in the Java SDK. Other languages
-    /// and SDKs provide similar functionality.
-    /// </para>
-    ///  </note>
+    /// Container for the parameters to the UpdateRoleDescription operation.
+    /// Modifies the description of a role.
     /// </summary>
-    public partial class GetRoleRequest : AmazonIdentityManagementServiceRequest
+    public partial class UpdateRoleDescriptionRequest : AmazonIdentityManagementServiceRequest
     {
+        private string _description;
         private string _roleName;
+
+        /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// The new description that you want to apply to the specified role.
+        /// </para>
+        /// </summary>
+        public string Description
+        {
+            get { return this._description; }
+            set { this._description = value; }
+        }
+
+        // Check to see if Description property is set
+        internal bool IsSetDescription()
+        {
+            return this._description != null;
+        }
 
         /// <summary>
         /// Gets and sets the property RoleName. 
         /// <para>
-        /// The name of the IAM role to get information about.
-        /// </para>
-        ///  
-        /// <para>
-        /// This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
-        /// a string of characters consisting of upper and lowercase alphanumeric characters with
-        /// no spaces. You can also include any of the following characters: _+=,.@-
+        /// The name of the role that you want to modify.
         /// </para>
         /// </summary>
         public string RoleName

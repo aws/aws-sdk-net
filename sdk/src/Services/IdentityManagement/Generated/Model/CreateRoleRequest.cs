@@ -38,6 +38,7 @@ namespace Amazon.IdentityManagement.Model
     public partial class CreateRoleRequest : AmazonIdentityManagementServiceRequest
     {
         private string _assumeRolePolicyDocument;
+        private string _description;
         private string _path;
         private string _roleName;
 
@@ -67,6 +68,24 @@ namespace Amazon.IdentityManagement.Model
         internal bool IsSetAssumeRolePolicyDocument()
         {
             return this._assumeRolePolicyDocument != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// A customer-provided description of the role.
+        /// </para>
+        /// </summary>
+        public string Description
+        {
+            get { return this._description; }
+            set { this._description = value; }
+        }
+
+        // Check to see if Description property is set
+        internal bool IsSetDescription()
+        {
+            return this._description != null;
         }
 
         /// <summary>
@@ -109,9 +128,12 @@ namespace Amazon.IdentityManagement.Model
         /// <para>
         /// This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
         /// a string of characters consisting of upper and lowercase alphanumeric characters with
-        /// no spaces. You can also include any of the following characters: =,.@-. Role names
-        /// are not distinguished by case. For example, you cannot create roles named both "PRODROLE"
-        /// and "prodrole".
+        /// no spaces. You can also include any of the following characters: _+=,.@-
+        /// </para>
+        ///  
+        /// <para>
+        /// Role names are not distinguished by case. For example, you cannot create roles named
+        /// both "PRODROLE" and "prodrole".
         /// </para>
         /// </summary>
         public string RoleName

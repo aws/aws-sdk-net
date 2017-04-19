@@ -53,7 +53,7 @@ namespace Amazon.IdentityManagement.Model
         /// Instantiates DeactivateMFADeviceRequest with the parameterized properties
         /// </summary>
         /// <param name="userName">The name of the user whose MFA device you want to deactivate. This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: =,.@-</param>
-        /// <param name="serialNumber">The serial number that uniquely identifies the MFA device. For virtual MFA devices, the serial number is the device ARN. This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: =/:,.@-</param>
+        /// <param name="serialNumber">The serial number that uniquely identifies the MFA device. For virtual MFA devices, the serial number is the device ARN. This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: =,.@:/-</param>
         public DeactivateMFADeviceRequest(string userName, string serialNumber)
         {
             _userName = userName;
@@ -70,7 +70,7 @@ namespace Amazon.IdentityManagement.Model
         /// <para>
         /// This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
         /// a string of characters consisting of upper and lowercase alphanumeric characters with
-        /// no spaces. You can also include any of the following characters: =/:,.@-
+        /// no spaces. You can also include any of the following characters: =,.@:/-
         /// </para>
         /// </summary>
         public string SerialNumber

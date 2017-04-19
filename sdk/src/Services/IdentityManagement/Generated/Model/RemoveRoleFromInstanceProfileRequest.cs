@@ -35,7 +35,8 @@ namespace Amazon.IdentityManagement.Model
     /// <para>
     /// Make sure you do not have any Amazon EC2 instances running with the role you are about
     /// to remove from the instance profile. Removing a role from an instance profile that
-    /// is associated with a running instance break any applications running on the instance.
+    /// is associated with a running instance might break any applications running on the
+    /// instance.
     /// </para>
     ///  </important> 
     /// <para>
@@ -82,7 +83,7 @@ namespace Amazon.IdentityManagement.Model
         /// <para>
         /// This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
         /// a string of characters consisting of upper and lowercase alphanumeric characters with
-        /// no spaces. You can also include any of the following characters: =,.@-
+        /// no spaces. You can also include any of the following characters: _+=,.@-
         /// </para>
         /// </summary>
         public string RoleName

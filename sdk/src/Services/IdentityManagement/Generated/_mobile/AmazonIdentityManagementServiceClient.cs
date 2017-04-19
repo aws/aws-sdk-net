@@ -901,6 +901,38 @@ namespace Amazon.IdentityManagement
 
         #endregion
         
+        #region  CreateServiceLinkedRole
+
+        internal CreateServiceLinkedRoleResponse CreateServiceLinkedRole(CreateServiceLinkedRoleRequest request)
+        {
+            var marshaller = new CreateServiceLinkedRoleRequestMarshaller();
+            var unmarshaller = CreateServiceLinkedRoleResponseUnmarshaller.Instance;
+
+            return Invoke<CreateServiceLinkedRoleRequest,CreateServiceLinkedRoleResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateServiceLinkedRole operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateServiceLinkedRole operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateServiceLinkedRole">REST API Reference for CreateServiceLinkedRole Operation</seealso>
+        public Task<CreateServiceLinkedRoleResponse> CreateServiceLinkedRoleAsync(CreateServiceLinkedRoleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateServiceLinkedRoleRequestMarshaller();
+            var unmarshaller = CreateServiceLinkedRoleResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateServiceLinkedRoleRequest,CreateServiceLinkedRoleResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateServiceSpecificCredential
 
         internal CreateServiceSpecificCredentialResponse CreateServiceSpecificCredential(CreateServiceSpecificCredentialRequest request)
@@ -4601,6 +4633,38 @@ namespace Amazon.IdentityManagement
             var unmarshaller = UpdateOpenIDConnectProviderThumbprintResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateOpenIDConnectProviderThumbprintRequest,UpdateOpenIDConnectProviderThumbprintResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateRoleDescription
+
+        internal UpdateRoleDescriptionResponse UpdateRoleDescription(UpdateRoleDescriptionRequest request)
+        {
+            var marshaller = new UpdateRoleDescriptionRequestMarshaller();
+            var unmarshaller = UpdateRoleDescriptionResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateRoleDescriptionRequest,UpdateRoleDescriptionResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateRoleDescription operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRoleDescription operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateRoleDescription">REST API Reference for UpdateRoleDescription Operation</seealso>
+        public Task<UpdateRoleDescriptionResponse> UpdateRoleDescriptionAsync(UpdateRoleDescriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateRoleDescriptionRequestMarshaller();
+            var unmarshaller = UpdateRoleDescriptionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateRoleDescriptionRequest,UpdateRoleDescriptionResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

@@ -412,6 +412,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("IdentityManagementService")]
+        public void CreateServiceLinkedRoleMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateServiceLinkedRole");
+
+            var request = InstantiateClassGenerator.Execute<CreateServiceLinkedRoleRequest>();
+            var marshaller = new CreateServiceLinkedRoleRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = CreateServiceLinkedRoleResponseUnmarshaller.Instance.Unmarshall(context)
+                as CreateServiceLinkedRoleResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("IdentityManagementService")]
         public void CreateServiceSpecificCredentialMarshallTest()
         {
             var operation = service_model.FindOperation("CreateServiceSpecificCredential");
@@ -2417,6 +2441,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             validator.Validate();
 
 
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("IdentityManagementService")]
+        public void UpdateRoleDescriptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateRoleDescription");
+
+            var request = InstantiateClassGenerator.Execute<UpdateRoleDescriptionRequest>();
+            var marshaller = new UpdateRoleDescriptionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = UpdateRoleDescriptionResponseUnmarshaller.Instance.Unmarshall(context)
+                as UpdateRoleDescriptionResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
         

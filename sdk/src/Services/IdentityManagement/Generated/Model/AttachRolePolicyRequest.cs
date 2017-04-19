@@ -29,16 +29,17 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the AttachRolePolicy operation.
-    /// Attaches the specified managed policy to the specified IAM role.
+    /// Attaches the specified managed policy to the specified IAM role. When you attach a
+    /// managed policy to a role, the managed policy becomes part of the role's permission
+    /// (access) policy.
     /// 
-    ///  
+    ///  <note> 
     /// <para>
-    /// When you attach a managed policy to a role, the managed policy becomes part of the
-    /// role's permission (access) policy. You cannot use a managed policy as the role's trust
-    /// policy. The role's trust policy is created at the same time as the role, using <a>CreateRole</a>.
-    /// You can update a role's trust policy using <a>UpdateAssumeRolePolicy</a>.
+    /// You cannot use a managed policy as the role's trust policy. The role's trust policy
+    /// is created at the same time as the role, using <a>CreateRole</a>. You can update a
+    /// role's trust policy using <a>UpdateAssumeRolePolicy</a>.
     /// </para>
-    ///  
+    ///  </note> 
     /// <para>
     /// Use this API to attach a <i>managed</i> policy to a role. To embed an inline policy
     /// in a role, use <a>PutRolePolicy</a>. For more information about policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
@@ -82,7 +83,7 @@ namespace Amazon.IdentityManagement.Model
         /// <para>
         /// This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
         /// a string of characters consisting of upper and lowercase alphanumeric characters with
-        /// no spaces. You can also include any of the following characters: =,.@-
+        /// no spaces. You can also include any of the following characters: _+=,.@-
         /// </para>
         /// </summary>
         public string RoleName

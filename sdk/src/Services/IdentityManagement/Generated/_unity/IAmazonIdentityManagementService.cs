@@ -398,6 +398,23 @@ namespace Amazon.IdentityManagement
 
         #endregion
         
+        #region  CreateServiceLinkedRole
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateServiceLinkedRole operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateServiceLinkedRole operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateServiceLinkedRole">REST API Reference for CreateServiceLinkedRole Operation</seealso>
+        void CreateServiceLinkedRoleAsync(CreateServiceLinkedRoleRequest request, AmazonServiceCallback<CreateServiceLinkedRoleRequest, CreateServiceLinkedRoleResponse> callback, AsyncOptions options = null);
+
+
+        #endregion
+        
         #region  CreateServiceSpecificCredential
 
 
@@ -2079,6 +2096,23 @@ namespace Amazon.IdentityManagement
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateOpenIDConnectProviderThumbprint">REST API Reference for UpdateOpenIDConnectProviderThumbprint Operation</seealso>
         void UpdateOpenIDConnectProviderThumbprintAsync(UpdateOpenIDConnectProviderThumbprintRequest request, AmazonServiceCallback<UpdateOpenIDConnectProviderThumbprintRequest, UpdateOpenIDConnectProviderThumbprintResponse> callback, AsyncOptions options = null);
+
+
+        #endregion
+        
+        #region  UpdateRoleDescription
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateRoleDescription operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRoleDescription operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateRoleDescription">REST API Reference for UpdateRoleDescription Operation</seealso>
+        void UpdateRoleDescriptionAsync(UpdateRoleDescriptionRequest request, AmazonServiceCallback<UpdateRoleDescriptionRequest, UpdateRoleDescriptionResponse> callback, AsyncOptions options = null);
 
 
         #endregion

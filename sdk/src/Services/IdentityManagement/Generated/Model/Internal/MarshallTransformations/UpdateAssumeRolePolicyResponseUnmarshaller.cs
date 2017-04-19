@@ -115,6 +115,10 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
             {
                 return new ServiceFailureException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("UnmodifiableEntity"))
+            {
+                return new UnmodifiableEntityException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             return new AmazonIdentityManagementServiceException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
         private static UpdateAssumeRolePolicyResponseUnmarshaller _instance = new UpdateAssumeRolePolicyResponseUnmarshaller();        

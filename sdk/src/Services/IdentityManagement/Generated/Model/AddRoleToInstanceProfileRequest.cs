@@ -29,7 +29,8 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the AddRoleToInstanceProfile operation.
-    /// Adds the specified IAM role to the specified instance profile.
+    /// Adds the specified IAM role to the specified instance profile. An instance profile
+    /// can contain only one role, and this limit cannot be increased.
     /// 
     ///  <note> 
     /// <para>
@@ -81,7 +82,7 @@ namespace Amazon.IdentityManagement.Model
         /// <para>
         /// This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
         /// a string of characters consisting of upper and lowercase alphanumeric characters with
-        /// no spaces. You can also include any of the following characters: =,.@-
+        /// no spaces. You can also include any of the following characters: _+=,.@-
         /// </para>
         /// </summary>
         public string RoleName

@@ -28,31 +28,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// Contains information about an IAM role.
-    /// 
-    ///  
-    /// <para>
-    /// This data type is used as a response element in the following actions:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a>CreateRole</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>GetRole</a> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a>ListRoles</a> 
-    /// </para>
-    ///  </li> </ul>
+    /// Contains information about an IAM role. This structure is returned as a response element
+    /// in several APIs that interact with roles.
     /// </summary>
     public partial class Role
     {
         private string _arn;
         private string _assumeRolePolicyDocument;
         private DateTime? _createDate;
+        private string _description;
         private string _path;
         private string _roleId;
         private string _roleName;
@@ -62,7 +46,7 @@ namespace Amazon.IdentityManagement.Model
         /// <para>
         ///  The Amazon Resource Name (ARN) specifying the role. For more information about ARNs
         /// and how to use them in policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-        /// Identifiers</a> in the <i>Using IAM</i> guide. 
+        /// Identifiers</a> in the <i>IAM User Guide</i> guide. 
         /// </para>
         /// </summary>
         public string Arn
@@ -112,6 +96,24 @@ namespace Amazon.IdentityManagement.Model
         internal bool IsSetCreateDate()
         {
             return this._createDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// A description of the role that you provide.
+        /// </para>
+        /// </summary>
+        public string Description
+        {
+            get { return this._description; }
+            set { this._description = value; }
+        }
+
+        // Check to see if Description property is set
+        internal bool IsSetDescription()
+        {
+            return this._description != null;
         }
 
         /// <summary>

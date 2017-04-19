@@ -767,6 +767,34 @@ namespace Amazon.IdentityManagement
 
         #endregion
         
+        #region  CreateServiceLinkedRole
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateServiceLinkedRole operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateServiceLinkedRole operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateServiceLinkedRole">REST API Reference for CreateServiceLinkedRole Operation</seealso>
+        public void CreateServiceLinkedRoleAsync(CreateServiceLinkedRoleRequest request, AmazonServiceCallback<CreateServiceLinkedRoleRequest, CreateServiceLinkedRoleResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var marshaller = new CreateServiceLinkedRoleRequestMarshaller();
+            var unmarshaller = CreateServiceLinkedRoleResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<CreateServiceLinkedRoleRequest,CreateServiceLinkedRoleResponse> responseObject 
+                            = new AmazonServiceResult<CreateServiceLinkedRoleRequest,CreateServiceLinkedRoleResponse>((CreateServiceLinkedRoleRequest)req, (CreateServiceLinkedRoleResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<CreateServiceLinkedRoleRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
         #region  CreateServiceSpecificCredential
 
         /// <summary>
@@ -4087,6 +4115,34 @@ namespace Amazon.IdentityManagement
                         callback(responseObject); 
                 };
             BeginInvoke<UpdateOpenIDConnectProviderThumbprintRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
+        #region  UpdateRoleDescription
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateRoleDescription operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRoleDescription operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateRoleDescription">REST API Reference for UpdateRoleDescription Operation</seealso>
+        public void UpdateRoleDescriptionAsync(UpdateRoleDescriptionRequest request, AmazonServiceCallback<UpdateRoleDescriptionRequest, UpdateRoleDescriptionResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var marshaller = new UpdateRoleDescriptionRequestMarshaller();
+            var unmarshaller = UpdateRoleDescriptionResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<UpdateRoleDescriptionRequest,UpdateRoleDescriptionResponse> responseObject 
+                            = new AmazonServiceResult<UpdateRoleDescriptionRequest,UpdateRoleDescriptionResponse>((UpdateRoleDescriptionRequest)req, (UpdateRoleDescriptionResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<UpdateRoleDescriptionRequest>(request, marshaller, unmarshaller, options, callbackHelper);
         }
 
         #endregion

@@ -28,28 +28,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// Contains the response to a successful <a>GetAccountPasswordPolicy</a> request.
+    /// This is the response object from the UpdateRoleDescription operation.
     /// </summary>
-    public partial class GetAccountPasswordPolicyResponse : AmazonWebServiceResponse
+    public partial class UpdateRoleDescriptionResponse : AmazonWebServiceResponse
     {
-        private PasswordPolicy _passwordPolicy;
+        private Role _role;
 
         /// <summary>
-        /// Gets and sets the property PasswordPolicy. 
+        /// Gets and sets the property Role. 
         /// <para>
-        /// A structure that contains details about the account's password policy.
+        /// A structure that contains details about the modified role.
         /// </para>
         /// </summary>
-        public PasswordPolicy PasswordPolicy
+        public Role Role
         {
-            get { return this._passwordPolicy; }
-            set { this._passwordPolicy = value; }
+            get { return this._role; }
+            set { this._role = value; }
         }
 
-        // Check to see if PasswordPolicy property is set
-        internal bool IsSetPasswordPolicy()
+        // Check to see if Role property is set
+        internal bool IsSetRole()
         {
-            return this._passwordPolicy != null;
+            return this._role != null;
         }
 
     }

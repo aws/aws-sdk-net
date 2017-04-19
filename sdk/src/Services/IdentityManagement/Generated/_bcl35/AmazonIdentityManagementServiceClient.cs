@@ -376,7 +376,8 @@ namespace Amazon.IdentityManagement
         #region  AddRoleToInstanceProfile
 
         /// <summary>
-        /// Adds the specified IAM role to the specified instance profile.
+        /// Adds the specified IAM role to the specified instance profile. An instance profile
+        /// can contain only one role, and this limit cannot be increased.
         /// 
         ///  <note> 
         /// <para>
@@ -406,6 +407,12 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.UnmodifiableEntityException">
+        /// The request was rejected because only the service that depends on the service-linked
+        /// role can modify or delete the role on your behalf. The error message includes the
+        /// name of the service that depends on this service-linked role. You must request the
+        /// change through that service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AddRoleToInstanceProfile">REST API Reference for AddRoleToInstanceProfile Operation</seealso>
         public AddRoleToInstanceProfileResponse AddRoleToInstanceProfile(AddRoleToInstanceProfileRequest request)
@@ -598,16 +605,17 @@ namespace Amazon.IdentityManagement
         #region  AttachRolePolicy
 
         /// <summary>
-        /// Attaches the specified managed policy to the specified IAM role.
+        /// Attaches the specified managed policy to the specified IAM role. When you attach a
+        /// managed policy to a role, the managed policy becomes part of the role's permission
+        /// (access) policy.
         /// 
-        ///  
+        ///  <note> 
         /// <para>
-        /// When you attach a managed policy to a role, the managed policy becomes part of the
-        /// role's permission (access) policy. You cannot use a managed policy as the role's trust
-        /// policy. The role's trust policy is created at the same time as the role, using <a>CreateRole</a>.
-        /// You can update a role's trust policy using <a>UpdateAssumeRolePolicy</a>.
+        /// You cannot use a managed policy as the role's trust policy. The role's trust policy
+        /// is created at the same time as the role, using <a>CreateRole</a>. You can update a
+        /// role's trust policy using <a>UpdateAssumeRolePolicy</a>.
         /// </para>
-        ///  
+        ///  </note> 
         /// <para>
         /// Use this API to attach a <i>managed</i> policy to a role. To embed an inline policy
         /// in a role, use <a>PutRolePolicy</a>. For more information about policies, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
@@ -631,6 +639,12 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.UnmodifiableEntityException">
+        /// The request was rejected because only the service that depends on the service-linked
+        /// role can modify or delete the role on your behalf. The error message includes the
+        /// name of the service that depends on this service-linked role. You must request the
+        /// change through that service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AttachRolePolicy">REST API Reference for AttachRolePolicy Operation</seealso>
         public AttachRolePolicyResponse AttachRolePolicy(AttachRolePolicyRequest request)
@@ -1529,6 +1543,10 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.EntityAlreadyExistsException">
         /// The request was rejected because it attempted to create a resource that already exists.
         /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
         /// AWS account limits. The error message describes the limit exceeded.
@@ -1676,6 +1694,92 @@ namespace Amazon.IdentityManagement
         public  CreateSAMLProviderResponse EndCreateSAMLProvider(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateSAMLProviderResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateServiceLinkedRole
+
+        /// <summary>
+        /// Creates an IAM role that is linked to a specific AWS service. The service controls
+        /// the attached policies and when the role can be deleted. This helps ensure that the
+        /// service is not broken by an unexpectedly changed or deleted role, which could put
+        /// your AWS resources into an unknown state. Allowing the service to control the role
+        /// helps improve service stability and proper cleanup when a service and its role are
+        /// no longer needed.
+        /// 
+        ///  
+        /// <para>
+        /// The name of the role is autogenerated by combining the string that you specify for
+        /// the <code>AWSServiceName</code> parameter with the string that you specify for the
+        /// <code>CustomSuffix</code> parameter. The resulting name must be unique in your account
+        /// or the request fails.
+        /// </para>
+        ///  
+        /// <para>
+        /// To attach a policy to this service-linked role, you must make the request using the
+        /// AWS service that depends on this role.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateServiceLinkedRole service method.</param>
+        /// 
+        /// <returns>The response from the CreateServiceLinkedRole service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error message describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateServiceLinkedRole">REST API Reference for CreateServiceLinkedRole Operation</seealso>
+        public CreateServiceLinkedRoleResponse CreateServiceLinkedRole(CreateServiceLinkedRoleRequest request)
+        {
+            var marshaller = new CreateServiceLinkedRoleRequestMarshaller();
+            var unmarshaller = CreateServiceLinkedRoleResponseUnmarshaller.Instance;
+
+            return Invoke<CreateServiceLinkedRoleRequest,CreateServiceLinkedRoleResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateServiceLinkedRole operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateServiceLinkedRole operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateServiceLinkedRole
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateServiceLinkedRole">REST API Reference for CreateServiceLinkedRole Operation</seealso>
+        public IAsyncResult BeginCreateServiceLinkedRole(CreateServiceLinkedRoleRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new CreateServiceLinkedRoleRequestMarshaller();
+            var unmarshaller = CreateServiceLinkedRoleResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateServiceLinkedRoleRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateServiceLinkedRole operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateServiceLinkedRole.</param>
+        /// 
+        /// <returns>Returns a  CreateServiceLinkedRoleResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateServiceLinkedRole">REST API Reference for CreateServiceLinkedRole Operation</seealso>
+        public  CreateServiceLinkedRoleResponse EndCreateServiceLinkedRole(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateServiceLinkedRoleResponse>(asyncResult);
         }
 
         #endregion
@@ -2820,6 +2924,12 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.UnmodifiableEntityException">
+        /// The request was rejected because only the service that depends on the service-linked
+        /// role can modify or delete the role on your behalf. The error message includes the
+        /// name of the service that depends on this service-linked role. You must request the
+        /// change through that service.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteRole">REST API Reference for DeleteRole Operation</seealso>
         public DeleteRoleResponse DeleteRole(DeleteRoleRequest request)
         {
@@ -2891,6 +3001,12 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.UnmodifiableEntityException">
+        /// The request was rejected because only the service that depends on the service-linked
+        /// role can modify or delete the role on your behalf. The error message includes the
+        /// name of the service that depends on this service-linked role. You must request the
+        /// change through that service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteRolePolicy">REST API Reference for DeleteRolePolicy Operation</seealso>
         public DeleteRolePolicyResponse DeleteRolePolicy(DeleteRolePolicyRequest request)
@@ -3618,6 +3734,12 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.UnmodifiableEntityException">
+        /// The request was rejected because only the service that depends on the service-linked
+        /// role can modify or delete the role on your behalf. The error message includes the
+        /// name of the service that depends on this service-linked role. You must request the
+        /// change through that service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DetachRolePolicy">REST API Reference for DetachRolePolicy Operation</seealso>
         public DetachRolePolicyResponse DetachRolePolicy(DetachRolePolicyRequest request)
@@ -7802,6 +7924,12 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.UnmodifiableEntityException">
+        /// The request was rejected because only the service that depends on the service-linked
+        /// role can modify or delete the role on your behalf. The error message includes the
+        /// name of the service that depends on this service-linked role. You must request the
+        /// change through that service.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/PutRolePolicy">REST API Reference for PutRolePolicy Operation</seealso>
         public PutRolePolicyResponse PutRolePolicy(PutRolePolicyRequest request)
         {
@@ -8017,7 +8145,8 @@ namespace Amazon.IdentityManagement
         /// <para>
         /// Make sure you do not have any Amazon EC2 instances running with the role you are about
         /// to remove from the instance profile. Removing a role from an instance profile that
-        /// is associated with a running instance break any applications running on the instance.
+        /// is associated with a running instance might break any applications running on the
+        /// instance.
         /// </para>
         ///  </important> 
         /// <para>
@@ -8039,6 +8168,12 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.UnmodifiableEntityException">
+        /// The request was rejected because only the service that depends on the service-linked
+        /// role can modify or delete the role on your behalf. The error message includes the
+        /// name of the service that depends on this service-linked role. You must request the
+        /// change through that service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/RemoveRoleFromInstanceProfile">REST API Reference for RemoveRoleFromInstanceProfile Operation</seealso>
         public RemoveRoleFromInstanceProfileResponse RemoveRoleFromInstanceProfile(RemoveRoleFromInstanceProfileRequest request)
@@ -8776,6 +8911,12 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.UnmodifiableEntityException">
+        /// The request was rejected because only the service that depends on the service-linked
+        /// role can modify or delete the role on your behalf. The error message includes the
+        /// name of the service that depends on this service-linked role. You must request the
+        /// change through that service.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateAssumeRolePolicy">REST API Reference for UpdateAssumeRolePolicy Operation</seealso>
         public UpdateAssumeRolePolicyResponse UpdateAssumeRolePolicy(UpdateAssumeRolePolicyRequest request)
         {
@@ -9067,6 +9208,72 @@ namespace Amazon.IdentityManagement
         public  UpdateOpenIDConnectProviderThumbprintResponse EndUpdateOpenIDConnectProviderThumbprint(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateOpenIDConnectProviderThumbprintResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateRoleDescription
+
+        /// <summary>
+        /// Modifies the description of a role.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRoleDescription service method.</param>
+        /// 
+        /// <returns>The response from the UpdateRoleDescription service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.UnmodifiableEntityException">
+        /// The request was rejected because only the service that depends on the service-linked
+        /// role can modify or delete the role on your behalf. The error message includes the
+        /// name of the service that depends on this service-linked role. You must request the
+        /// change through that service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateRoleDescription">REST API Reference for UpdateRoleDescription Operation</seealso>
+        public UpdateRoleDescriptionResponse UpdateRoleDescription(UpdateRoleDescriptionRequest request)
+        {
+            var marshaller = new UpdateRoleDescriptionRequestMarshaller();
+            var unmarshaller = UpdateRoleDescriptionResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateRoleDescriptionRequest,UpdateRoleDescriptionResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateRoleDescription operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRoleDescription operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateRoleDescription
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateRoleDescription">REST API Reference for UpdateRoleDescription Operation</seealso>
+        public IAsyncResult BeginUpdateRoleDescription(UpdateRoleDescriptionRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new UpdateRoleDescriptionRequestMarshaller();
+            var unmarshaller = UpdateRoleDescriptionResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateRoleDescriptionRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateRoleDescription operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateRoleDescription.</param>
+        /// 
+        /// <returns>Returns a  UpdateRoleDescriptionResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateRoleDescription">REST API Reference for UpdateRoleDescription Operation</seealso>
+        public  UpdateRoleDescriptionResponse EndUpdateRoleDescription(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateRoleDescriptionResponse>(asyncResult);
         }
 
         #endregion

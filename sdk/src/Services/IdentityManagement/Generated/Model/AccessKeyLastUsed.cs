@@ -77,7 +77,8 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
-        /// The AWS region where this access key was most recently used. This field is null when:
+        /// The AWS region where this access key was most recently used. This field is displays
+        /// "N/A" when:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -114,7 +115,7 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property ServiceName. 
         /// <para>
         /// The name of the AWS service with which this access key was most recently used. This
-        /// field is null when:
+        /// field displays "N/A" when:
         /// </para>
         ///  <ul> <li> 
         /// <para>

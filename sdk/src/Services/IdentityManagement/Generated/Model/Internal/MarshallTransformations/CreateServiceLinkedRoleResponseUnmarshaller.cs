@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CreateRole operation
+    /// Response Unmarshaller for CreateServiceLinkedRole operation
     /// </summary>  
-    public class CreateRoleResponseUnmarshaller : XmlResponseUnmarshaller
+    public class CreateServiceLinkedRoleResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,7 +43,7 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
-            CreateRoleResponse response = new CreateRoleResponse();
+            CreateServiceLinkedRoleResponse response = new CreateServiceLinkedRoleResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
@@ -51,7 +51,7 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement)
                 {                    
-                    if(context.TestExpression("CreateRoleResult", 2))
+                    if(context.TestExpression("CreateServiceLinkedRoleResult", 2))
                     {
                         UnmarshallResult(context, response);                        
                         continue;
@@ -67,7 +67,7 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
             return response;
         }
 
-        private static void UnmarshallResult(XmlUnmarshallerContext context, CreateRoleResponse response)
+        private static void UnmarshallResult(XmlUnmarshallerContext context, CreateServiceLinkedRoleResponse response)
         {
             
             int originalDepth = context.CurrentDepth;
@@ -104,10 +104,6 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            if (errorResponse.Code != null && errorResponse.Code.Equals("EntityAlreadyExists"))
-            {
-                return new EntityAlreadyExistsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidInput"))
             {
                 return new InvalidInputException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
@@ -116,9 +112,9 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
             {
                 return new LimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("MalformedPolicyDocument"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("NoSuchEntity"))
             {
-                return new MalformedPolicyDocumentException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new NoSuchEntityException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceFailure"))
             {
@@ -126,9 +122,9 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
             }
             return new AmazonIdentityManagementServiceException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        private static CreateRoleResponseUnmarshaller _instance = new CreateRoleResponseUnmarshaller();        
+        private static CreateServiceLinkedRoleResponseUnmarshaller _instance = new CreateServiceLinkedRoleResponseUnmarshaller();        
 
-        internal static CreateRoleResponseUnmarshaller GetInstance()
+        internal static CreateServiceLinkedRoleResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -136,7 +132,7 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateRoleResponseUnmarshaller Instance
+        public static CreateServiceLinkedRoleResponseUnmarshaller Instance
         {
             get
             {
