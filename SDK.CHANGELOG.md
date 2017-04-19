@@ -1,3 +1,10 @@
+### 3.3.77.0 (2017-04-19 00:42 UTC)
+* Lambda (3.3.4.0)
+	* You can use tags to group and filter your Lambda functions, making it easier to analyze them for billing allocation purposes. For more information, see Tagging Lambda Functions.  You can now write or upgrade your Lambda functions using Python version 3.6. For more information, see Programming Model for Authoring Lambda Functions in Python. Note: Features will be rolled out in the US regions on 4/19.
+* Core 3.3.12.0
+	* Added support for a list of strings in query.
+	* all services packages updated to require new core
+
 ### 3.3.76.0 (2017-04-11 21:24 UTC)
 * APIGateway (3.3.6.0)
 	* API Gateway request validators
