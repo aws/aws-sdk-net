@@ -1,3 +1,23 @@
+### 3.3.78.0 (2017-04-19 23:02 UTC)
+* APIGateway (3.3.7.0)
+	* Updated to use new Core, version 3.3.12.0
+	* Add support for "embed" property.
+* CodeStar (3.3.0.0)
+	* AWS CodeStar is a cloud-based service for creating, managing, and working with software development projects on AWS. An AWS CodeStar project creates and integrates AWS services for your project development toolchain. AWS CodeStar also manages the permissions required for project users.
+* EC2 (3.3.13.0)
+	* Adds support for creating an Amazon FPGA Image (AFI) from a specified design checkpoint (DCP).
+* IdentityManagement (3.3.3.0)
+	* This changes introduces a new IAM role type, Service Linked Role, which works like a normal role but must be managed via services' control. 
+* Lambda (3.3.5.0)
+	* Lambda integration with CloudDebugger service to enable customers to enable tracing for the Lambda functions and send trace information to the CloudDebugger service.
+* LexModelBuildingService (3.3.0.0)
+	* Amazon Lex is a service for building conversational interfaces into any application using voice and text.
+* Polly (3.3.1.0)
+	* Updated to use new Core, version 3.3.12.0
+	* API Update for Amazon Polly: Add support for speech marks
+* Rekognition (3.3.2.0)
+	* Given an image, the API detects explicit or suggestive adult content in the image and returns a list of corresponding labels with confidence scores, as well as a taxonomy (parent-child relation) for each label.
+
 ### 3.3.77.0 (2017-04-19 00:42 UTC)
 * Lambda (3.3.4.0)
 	* You can use tags to group and filter your Lambda functions, making it easier to analyze them for billing allocation purposes. For more information, see Tagging Lambda Functions.  You can now write or upgrade your Lambda functions using Python version 3.6. For more information, see Programming Model for Authoring Lambda Functions in Python. Note: Features will be rolled out in the US regions on 4/19.
