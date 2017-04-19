@@ -304,6 +304,10 @@
       <Project>{2865E7E9-509D-4FFC-8669-3D6609465B5A}</Project>
       <Name>AWSSDK.Lex.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/LexModelBuildingService/AWSSDK.LexModelBuildingService.CodeAnalysis.csproj">
+      <Project>{7A497D75-9C82-4CB9-B4FC-26D8C8B1F131}</Project>
+      <Name>AWSSDK.LexModelBuildingService.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/Lightsail/AWSSDK.Lightsail.CodeAnalysis.csproj">
       <Project>{ABBB2FF8-E155-49A8-8EAB-44CF91B36B0E}</Project>
       <Name>AWSSDK.Lightsail.CodeAnalysis</Name>

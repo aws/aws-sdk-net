@@ -255,6 +255,9 @@
         <Reference Include="AWSSDK.Lex">
           <HintPath>..\..\..\Deployment\assemblies\net45\AWSSDK.Lex.dll</HintPath>
         </Reference>
+        <Reference Include="AWSSDK.LexModelBuildingService">
+          <HintPath>..\..\..\Deployment\assemblies\net45\AWSSDK.LexModelBuildingService.dll</HintPath>
+        </Reference>
         <Reference Include="AWSSDK.Lightsail">
           <HintPath>..\..\..\Deployment\assemblies\net45\AWSSDK.Lightsail.dll</HintPath>
         </Reference>
@@ -608,6 +611,10 @@
         <ProjectReference Include="..\..\src\Services\Lex\AWSSDK.Lex.Net45.csproj">
           <Project>{BFABC9DF-3256-49E0-A91E-A59D1AA7096A}</Project>
           <Name>AWSSDK.Lex.Net45</Name>
+        </ProjectReference>
+        <ProjectReference Include="..\..\src\Services\LexModelBuildingService\AWSSDK.LexModelBuildingService.Net45.csproj">
+          <Project>{5829C413-7651-4888-9893-60A414E189BB}</Project>
+          <Name>AWSSDK.LexModelBuildingService.Net45</Name>
         </ProjectReference>
         <ProjectReference Include="..\..\src\Services\Lightsail\AWSSDK.Lightsail.Net45.csproj">
           <Project>{D1319EA5-D8E2-486E-B08F-0B44A01D303F}</Project>

@@ -112,7 +112,8 @@
         "MTurk"                           : "1.0.0-*",
         "WorkDocs"                        : "1.0.0-*",
         "ResourceGroupsTaggingAPI"        : "1.0.0-*",
-        "CodeStar"                        : "1.0.0-*"
+        "CodeStar"                        : "1.0.0-*",
+        "LexModelBuildingService"         : "1.0.0-*"
     },
     "testRunner"   : "xunit",
     "frameworks"   : {
