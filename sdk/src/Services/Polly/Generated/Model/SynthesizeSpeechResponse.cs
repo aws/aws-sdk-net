@@ -76,6 +76,11 @@ namespace Amazon.Polly.Model
         /// returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format.
         /// 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you request <code>json</code> as the <code>OutputFormat</code>, the <code>ContentType</code>
+        /// returned is audio/json.
+        /// </para>
         ///  </li> </ul> 
         /// <para>
         ///  

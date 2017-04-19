@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.Polly.IAmazonPolly.DeleteLexicon(Amazon.Polly.Model.DeleteLexiconRequest)" />
+            <member name="M:Amazon.Polly.AmazonPollyClient.DeleteLexicon(Amazon.Polly.Model.DeleteLexiconRequest)" />
+            <member name="T:Amazon.Polly.Model.DeleteLexiconRequest" />
+            <member name="T:Amazon.Polly.Model.DeleteLexiconResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Deletes a specified pronunciation lexicon stored in an AWS Region.
+                </para>
+                <code
+                    title="To delete a lexicon"
+                    source=".\AWSSDKDocSamples\Polly\Polly.GeneratedSamples.cs"
+                    region="to-delete-a-lexicon-1481922498332" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Polly.IAmazonPolly.DescribeVoices(Amazon.Polly.Model.DescribeVoicesRequest)" />
+            <member name="M:Amazon.Polly.AmazonPollyClient.DescribeVoices(Amazon.Polly.Model.DescribeVoicesRequest)" />
+            <member name="T:Amazon.Polly.Model.DescribeVoicesRequest" />
+            <member name="T:Amazon.Polly.Model.DescribeVoicesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Returns the list of voices that are available for use when requesting speech synthesis. Displayed languages are those within the specified language code. If no language code is specified, voices for all available languages are displayed.
+                </para>
+                <code
+                    title="To describe available voices"
+                    source=".\AWSSDKDocSamples\Polly\Polly.GeneratedSamples.cs"
+                    region="to-describe-available-voices-1482180557753" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Polly.IAmazonPolly.GetLexicon(Amazon.Polly.Model.GetLexiconRequest)" />
+            <member name="M:Amazon.Polly.AmazonPollyClient.GetLexicon(Amazon.Polly.Model.GetLexiconRequest)" />
+            <member name="T:Amazon.Polly.Model.GetLexiconRequest" />
+            <member name="T:Amazon.Polly.Model.GetLexiconResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Returns the content of the specified pronunciation lexicon stored in an AWS Region.
+                </para>
+                <code
+                    title="To retrieve a lexicon"
+                    source=".\AWSSDKDocSamples\Polly\Polly.GeneratedSamples.cs"
+                    region="to-retrieve-a-lexicon-1481912870836" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Polly.IAmazonPolly.ListLexicons(Amazon.Polly.Model.ListLexiconsRequest)" />
+            <member name="M:Amazon.Polly.AmazonPollyClient.ListLexicons(Amazon.Polly.Model.ListLexiconsRequest)" />
+            <member name="T:Amazon.Polly.Model.ListLexiconsRequest" />
+            <member name="T:Amazon.Polly.Model.ListLexiconsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Returns a list of pronunciation lexicons stored in an AWS Region.
+                </para>
+                <code
+                    title="To list all lexicons in a region"
+                    source=".\AWSSDKDocSamples\Polly\Polly.GeneratedSamples.cs"
+                    region="to-list-all-lexicons-in-a-region-1481842106487" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Polly.IAmazonPolly.PutLexicon(Amazon.Polly.Model.PutLexiconRequest)" />
+            <member name="M:Amazon.Polly.AmazonPollyClient.PutLexicon(Amazon.Polly.Model.PutLexiconRequest)" />
+            <member name="T:Amazon.Polly.Model.PutLexiconRequest" />
+            <member name="T:Amazon.Polly.Model.PutLexiconResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Stores a pronunciation lexicon in an AWS Region.
+                </para>
+                <code
+                    title="To save a lexicon"
+                    source=".\AWSSDKDocSamples\Polly\Polly.GeneratedSamples.cs"
+                    region="to-save-a-lexicon-1482272584088" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Polly.IAmazonPolly.SynthesizeSpeech(Amazon.Polly.Model.SynthesizeSpeechRequest)" />
+            <member name="M:Amazon.Polly.AmazonPollyClient.SynthesizeSpeech(Amazon.Polly.Model.SynthesizeSpeechRequest)" />
+            <member name="T:Amazon.Polly.Model.SynthesizeSpeechRequest" />
+            <member name="T:Amazon.Polly.Model.SynthesizeSpeechResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Synthesizes plain text or SSML into a file of human-like speech.
+                </para>
+                <code
+                    title="To synthesize speech"
+                    source=".\AWSSDKDocSamples\Polly\Polly.GeneratedSamples.cs"
+                    region="to-synthesize-speech-1482186064046" />
+            </example>
+        </value>
+    </doc>
+</docs>

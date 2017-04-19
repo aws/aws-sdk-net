@@ -88,6 +88,17 @@ namespace Amazon.Polly.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.SampleRate);
                 }
 
+                if(publicRequest.IsSetSpeechMarkTypes())
+                {
+                    context.Writer.WritePropertyName("SpeechMarkTypes");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestSpeechMarkTypesListValue in publicRequest.SpeechMarkTypes)
+                    {
+                            context.Writer.Write(publicRequestSpeechMarkTypesListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetText())
                 {
                     context.Writer.WritePropertyName("Text");

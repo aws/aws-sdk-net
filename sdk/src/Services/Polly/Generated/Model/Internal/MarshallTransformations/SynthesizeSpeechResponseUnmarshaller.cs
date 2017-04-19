@@ -78,9 +78,17 @@ namespace Amazon.Polly.Model.Internal.MarshallTransformations
             {
                 return new LexiconNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("MarksNotSupportedForFormatException"))
+            {
+                return new MarksNotSupportedForFormatException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceFailureException"))
             {
                 return new ServiceFailureException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("SsmlMarksNotSupportedForTextTypeException"))
+            {
+                return new SsmlMarksNotSupportedForTextTypeException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("TextLengthExceededException"))
             {

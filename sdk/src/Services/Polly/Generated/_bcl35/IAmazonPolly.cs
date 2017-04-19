@@ -384,8 +384,15 @@ namespace Amazon.Polly
         /// you spelled its name is spelled correctly. Then try again.
         /// </para>
         /// </exception>
+        /// <exception cref="Amazon.Polly.Model.MarksNotSupportedForFormatException">
+        /// Speech marks are not supported for the <code>OutputFormat</code> selected. Speech
+        /// marks are only available for content in <code>json</code> format.
+        /// </exception>
         /// <exception cref="Amazon.Polly.Model.ServiceFailureException">
         /// An unknown condition has caused a service failure.
+        /// </exception>
+        /// <exception cref="Amazon.Polly.Model.SsmlMarksNotSupportedForTextTypeException">
+        /// SSML speech marks are not supported for plain text-type input.
         /// </exception>
         /// <exception cref="Amazon.Polly.Model.TextLengthExceededException">
         /// The value of the "Text" parameter is longer than the accepted limits. The limit for

@@ -219,6 +219,10 @@ namespace Amazon.Polly
     {
 
         /// <summary>
+        /// Constant Json for OutputFormat
+        /// </summary>
+        public static readonly OutputFormat Json = new OutputFormat("json");
+        /// <summary>
         /// Constant Mp3 for OutputFormat
         /// </summary>
         public static readonly OutputFormat Mp3 = new OutputFormat("mp3");
@@ -260,6 +264,64 @@ namespace Amazon.Polly
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator OutputFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SpeechMarkType.
+    /// </summary>
+    public class SpeechMarkType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Sentence for SpeechMarkType
+        /// </summary>
+        public static readonly SpeechMarkType Sentence = new SpeechMarkType("sentence");
+        /// <summary>
+        /// Constant Ssml for SpeechMarkType
+        /// </summary>
+        public static readonly SpeechMarkType Ssml = new SpeechMarkType("ssml");
+        /// <summary>
+        /// Constant Viseme for SpeechMarkType
+        /// </summary>
+        public static readonly SpeechMarkType Viseme = new SpeechMarkType("viseme");
+        /// <summary>
+        /// Constant Word for SpeechMarkType
+        /// </summary>
+        public static readonly SpeechMarkType Word = new SpeechMarkType("word");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SpeechMarkType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SpeechMarkType FindValue(string value)
+        {
+            return FindValue<SpeechMarkType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SpeechMarkType(string value)
         {
             return FindValue(value);
         }

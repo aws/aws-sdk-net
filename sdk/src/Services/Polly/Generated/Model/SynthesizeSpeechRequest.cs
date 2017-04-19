@@ -40,6 +40,7 @@ namespace Amazon.Polly.Model
         private List<string> _lexiconNames = new List<string>();
         private OutputFormat _outputFormat;
         private string _sampleRate;
+        private List<string> _speechMarkTypes = new List<string>();
         private string _text;
         private TextType _textType;
         private VoiceId _voiceId;
@@ -67,7 +68,8 @@ namespace Amazon.Polly.Model
         /// <summary>
         /// Gets and sets the property OutputFormat. 
         /// <para>
-        ///  The audio format in which the resulting stream will be encoded. 
+        ///  The format in which the returned output will be encoded. For audio stream, this will
+        /// be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. 
         /// </para>
         /// </summary>
         public OutputFormat OutputFormat
@@ -108,6 +110,24 @@ namespace Amazon.Polly.Model
         internal bool IsSetSampleRate()
         {
             return this._sampleRate != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SpeechMarkTypes. 
+        /// <para>
+        /// The type of speech marks returned for the input text.
+        /// </para>
+        /// </summary>
+        public List<string> SpeechMarkTypes
+        {
+            get { return this._speechMarkTypes; }
+            set { this._speechMarkTypes = value; }
+        }
+
+        // Check to see if SpeechMarkTypes property is set
+        internal bool IsSetSpeechMarkTypes()
+        {
+            return this._speechMarkTypes != null && this._speechMarkTypes.Count > 0; 
         }
 
         /// <summary>
