@@ -151,7 +151,7 @@ namespace Amazon.Rekognition.Model
         /// </para>
         ///  
         /// <para>
-        /// If <code>minConfidence</code> is not specified, the operation returns labels with
+        /// If <code>MinConfidence</code> is not specified, the operation returns labels with
         /// a confidence values greater than or equal to 50 percent.
         /// </para>
         /// </summary>

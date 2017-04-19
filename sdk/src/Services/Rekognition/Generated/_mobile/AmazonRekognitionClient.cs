@@ -416,6 +416,37 @@ namespace Amazon.Rekognition
 
         #endregion
         
+        #region  DetectModerationLabels
+
+        internal DetectModerationLabelsResponse DetectModerationLabels(DetectModerationLabelsRequest request)
+        {
+            var marshaller = new DetectModerationLabelsRequestMarshaller();
+            var unmarshaller = DetectModerationLabelsResponseUnmarshaller.Instance;
+
+            return Invoke<DetectModerationLabelsRequest,DetectModerationLabelsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DetectModerationLabels operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DetectModerationLabels operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DetectModerationLabelsResponse> DetectModerationLabelsAsync(DetectModerationLabelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DetectModerationLabelsRequestMarshaller();
+            var unmarshaller = DetectModerationLabelsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DetectModerationLabelsRequest,DetectModerationLabelsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  IndexFaces
 
         internal IndexFacesResponse IndexFaces(IndexFacesRequest request)

@@ -828,6 +828,89 @@ namespace Amazon.Rekognition
 
         #endregion
         
+        #region  DetectModerationLabels
+
+        /// <summary>
+        /// Detects explicit or suggestive adult content in a specified .jpeg or .png image. Use
+        /// <code>DetectModerationLabels</code> to moderate images depending on your requirements.
+        /// For example, you might want to filter images that contain nudity, but not images containing
+        /// suggestive content.
+        /// 
+        ///  
+        /// <para>
+        /// To filter images, use the labels returned by <code>DetectModerationLabels</code> to
+        /// determine which types of content are appropriate. For information about moderation
+        /// labels, see <a>howitworks-moderateimage</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DetectModerationLabels service method.</param>
+        /// 
+        /// <returns>The response from the DetectModerationLabels service method, as returned by Rekognition.</returns>
+        /// <exception cref="Amazon.Rekognition.Model.AccessDeniedException">
+        /// You are not authorized to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ImageTooLargeException">
+        /// The input image size exceeds the allowed limit. For more information, see <a>limits</a>.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InternalServerErrorException">
+        /// Amazon Rekognition experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InvalidParameterException">
+        /// Input parameter violated a constraint. Validate your parameter before calling the
+        /// API operation again.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InvalidS3ObjectException">
+        /// Amazon Rekognition is unable to access the S3 object specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ProvisionedThroughputExceededException">
+        /// The number of requests exceeded your throughput limit. If you want to increase this
+        /// limit, contact Amazon Rekognition.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
+        /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        public DetectModerationLabelsResponse DetectModerationLabels(DetectModerationLabelsRequest request)
+        {
+            var marshaller = new DetectModerationLabelsRequestMarshaller();
+            var unmarshaller = DetectModerationLabelsResponseUnmarshaller.Instance;
+
+            return Invoke<DetectModerationLabelsRequest,DetectModerationLabelsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DetectModerationLabels operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DetectModerationLabels operation on AmazonRekognitionClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDetectModerationLabels
+        ///         operation.</returns>
+        public IAsyncResult BeginDetectModerationLabels(DetectModerationLabelsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DetectModerationLabelsRequestMarshaller();
+            var unmarshaller = DetectModerationLabelsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DetectModerationLabelsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DetectModerationLabels operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDetectModerationLabels.</param>
+        /// 
+        /// <returns>Returns a  DetectModerationLabelsResult from Rekognition.</returns>
+        public  DetectModerationLabelsResponse EndDetectModerationLabels(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DetectModerationLabelsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  IndexFaces
 
         /// <summary>
