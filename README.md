@@ -116,6 +116,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* AWS CodeDeploy is a service that automates code deployments. AWS CodeDeploy makes it easier for you to rapidly release new features, helps you avoid downtime during deployment, and handles the complexity of updating your applications.
 * [AWSSDK.CodePipeline](https://www.nuget.org/packages/AWSSDK.CodePipeline/)
 	* AWS CodePipeline is a continuous delivery service for fast and reliable application updates.
+* [AWSSDK.CodeStar](https://www.nuget.org/packages/AWSSDK.CodeStar/)
+	* AWS CodeStar is a cloud-based service for creating, managing, and working with software development projects on AWS. An AWS CodeStar project creates and integrates AWS services for your project development toolchain. AWS CodeStar also manages the permissions required for project users.
 * [AWSSDK.CognitoIdentity](https://www.nuget.org/packages/AWSSDK.CognitoIdentity/)
 	* Amazon Cognito is a service that makes it easy to save user data, such as app preferences or game state, in the AWS Cloud without writing any backend code or managing any infrastructure. With Amazon Cognito, you can focus on creating great app experiences instead of having to worry about building and managing a backend solution to handle identity management, network state, storage, and sync.
 * [AWSSDK.CognitoIdentityProvider](https://www.nuget.org/packages/AWSSDK.CognitoIdentityProvider/)

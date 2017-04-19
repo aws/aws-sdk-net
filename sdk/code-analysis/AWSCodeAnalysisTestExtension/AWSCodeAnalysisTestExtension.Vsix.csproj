@@ -156,6 +156,10 @@
       <Project>{248F1FBE-1690-4C43-A76E-A135D674AEAC}</Project>
       <Name>AWSSDK.CodePipeline.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/CodeStar/AWSSDK.CodeStar.CodeAnalysis.csproj">
+      <Project>{57676728-2C35-44E9-8990-0CD0EE3A6E2E}</Project>
+      <Name>AWSSDK.CodeStar.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/CognitoIdentity/AWSSDK.CognitoIdentity.CodeAnalysis.csproj">
       <Project>{B0147093-B0FF-4BD3-A648-247307EA1230}</Project>
       <Name>AWSSDK.CognitoIdentity.CodeAnalysis</Name>

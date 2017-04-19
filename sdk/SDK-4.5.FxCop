@@ -48,6 +48,7 @@
       <Directory>$(ProjectDir)/src/Services/codecommit/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/codedeploy/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/codepipeline/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/codestar/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/cognitoidentity/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/cognitoidentityprovider/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/cognitosync/bin/Release/net45/</Directory>
@@ -145,6 +146,7 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.CodeCommit.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.CodeDeploy.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.CodePipeline.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.CodeStar.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.CognitoIdentity.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.CognitoIdentityProvider.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.CognitoSync.dll" Analyze="True" AnalyzeAllChildren="True" />

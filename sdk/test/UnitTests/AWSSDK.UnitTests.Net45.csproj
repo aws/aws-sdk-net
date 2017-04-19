@@ -147,6 +147,9 @@
         <Reference Include="AWSSDK.CodePipeline">
           <HintPath>..\..\..\Deployment\assemblies\net45\AWSSDK.CodePipeline.dll</HintPath>
         </Reference>
+        <Reference Include="AWSSDK.CodeStar">
+          <HintPath>..\..\..\Deployment\assemblies\net45\AWSSDK.CodeStar.dll</HintPath>
+        </Reference>
         <Reference Include="AWSSDK.CognitoIdentity">
           <HintPath>..\..\..\Deployment\assemblies\net45\AWSSDK.CognitoIdentity.dll</HintPath>
         </Reference>
@@ -461,6 +464,10 @@
         <ProjectReference Include="..\..\src\Services\CodePipeline\AWSSDK.CodePipeline.Net45.csproj">
           <Project>{C37C4303-B362-4AAB-BABC-EC00C0D371C8}</Project>
           <Name>AWSSDK.CodePipeline.Net45</Name>
+        </ProjectReference>
+        <ProjectReference Include="..\..\src\Services\CodeStar\AWSSDK.CodeStar.Net45.csproj">
+          <Project>{A543417C-6735-4C1D-A00E-E811CA518049}</Project>
+          <Name>AWSSDK.CodeStar.Net45</Name>
         </ProjectReference>
         <ProjectReference Include="..\..\src\Services\CognitoIdentity\AWSSDK.CognitoIdentity.Net45.csproj">
           <Project>{C58BC670-0ACB-42BF-B141-4A949EF71099}</Project>
