@@ -64,7 +64,11 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetRestApiId())
                 throw new AmazonAPIGatewayException("Request object does not have required field RestApiId set");
             uriResourcePath = uriResourcePath.Replace("{restapi_id}", StringUtils.FromString(publicRequest.RestApiId));
+            
+            if (publicRequest.IsSetEmbed())
+                request.ParametersCollection.Add("embed", publicRequest.Embed);
             request.ResourcePath = uriResourcePath;
+            request.UseQueryString = true;
 
             return request;
         }

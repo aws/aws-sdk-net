@@ -34,6 +34,7 @@ namespace Amazon.APIGateway.Model
     public partial class GetDeploymentRequest : AmazonAPIGatewayRequest
     {
         private string _deploymentId;
+        private List<string> _embed = new List<string>();
         private string _restApiId;
 
         /// <summary>
@@ -52,6 +53,30 @@ namespace Amazon.APIGateway.Model
         internal bool IsSetDeploymentId()
         {
             return this._deploymentId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Embed. 
+        /// <para>
+        /// A query parameter to retrieve the specified embedded resources of the returned <a>Deployment</a>
+        /// resource in the response. In a REST API call, this <code>embed</code> parameter value
+        /// is a list of comma-separated strings, as in <code>GET /restapis/{restapi_id}/deployments/{deployment_id}?embed=var1,var2</code>.
+        /// The SDK and other platform-dependent libraries might use a different format for the
+        /// list. Currently, this request supports only retrieval of the embedded API summary
+        /// this way. Hence, the parameter value must be a single-valued list containing only
+        /// the <code>"apisummary"</code> string. For example, <code>GET /restapis/{restapi_id}/deployments/{deployment_id}?embed=apisummary</code>.
+        /// </para>
+        /// </summary>
+        public List<string> Embed
+        {
+            get { return this._embed; }
+            set { this._embed = value; }
+        }
+
+        // Check to see if Embed property is set
+        internal bool IsSetEmbed()
+        {
+            return this._embed != null && this._embed.Count > 0; 
         }
 
         /// <summary>

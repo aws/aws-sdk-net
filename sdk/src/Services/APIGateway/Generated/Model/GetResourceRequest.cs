@@ -33,8 +33,31 @@ namespace Amazon.APIGateway.Model
     /// </summary>
     public partial class GetResourceRequest : AmazonAPIGatewayRequest
     {
+        private List<string> _embed = new List<string>();
         private string _resourceId;
         private string _restApiId;
+
+        /// <summary>
+        /// Gets and sets the property Embed. 
+        /// <para>
+        /// A query parameter to retrieve the specified resources embedded in the returned <a>Resource</a>
+        /// representation in the response. This <code>embed</code> parameter value is a list
+        /// of comma-separated strings. Currently, the request supports only retrieval of the
+        /// embedded <a>Method</a> resources this way. The query parameter value must be a single-valued
+        /// list and contain the <code>"methods"</code> string. For example, <code>GET /restapis/{restapi_id}/resources/{resource_id}?embed=methods</code>.
+        /// </para>
+        /// </summary>
+        public List<string> Embed
+        {
+            get { return this._embed; }
+            set { this._embed = value; }
+        }
+
+        // Check to see if Embed property is set
+        internal bool IsSetEmbed()
+        {
+            return this._embed != null && this._embed.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property ResourceId. 
