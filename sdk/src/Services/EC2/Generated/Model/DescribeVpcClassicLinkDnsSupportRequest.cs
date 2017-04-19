@@ -33,8 +33,8 @@ namespace Amazon.EC2.Model
     /// DNS hostname of a linked EC2-Classic instance resolves to its private IP address when
     /// addressed from an instance in the VPC to which it's linked. Similarly, the DNS hostname
     /// of an instance in a VPC resolves to its private IP address when addressed from a linked
-    /// EC2-Classic instance. For more information about ClassicLink, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-    /// in the Amazon Elastic Compute Cloud User Guide.
+    /// EC2-Classic instance. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
+    /// in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </summary>
     public partial class DescribeVpcClassicLinkDnsSupportRequest : AmazonEC2Request
     {

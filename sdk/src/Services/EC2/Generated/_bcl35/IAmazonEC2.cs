@@ -87,8 +87,8 @@ namespace Amazon.EC2
         /// <summary>
         /// Accept a VPC peering connection request. To accept a request, the VPC peering connection
         /// must be in the <code>pending-acceptance</code> state, and you must be the owner of
-        /// the peer VPC. Use the <code>DescribeVpcPeeringConnections</code> request to view your
-        /// outstanding VPC peering connection requests.
+        /// the peer VPC. Use <a>DescribeVpcPeeringConnections</a> to view your outstanding VPC
+        /// peering connection requests.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AcceptVpcPeeringConnection service method.</param>
         /// 
@@ -341,14 +341,17 @@ namespace Amazon.EC2
         /// <para>
         /// [EC2-Classic, VPC in an EC2-VPC-only account] If the Elastic IP address is already
         /// associated with a different instance, it is disassociated from that instance and associated
-        /// with the specified instance.
+        /// with the specified instance. If you associate an Elastic IP address with an instance
+        /// that has an existing Elastic IP address, the existing address is disassociated from
+        /// the instance, but remains allocated to your account.
         /// </para>
         ///  
         /// <para>
         /// [VPC in an EC2-Classic account] If you don't specify a private IP address, the Elastic
         /// IP address is associated with the primary IP address. If the Elastic IP address is
         /// already associated with a different instance or a network interface, you get an error
-        /// unless you allow reassociation.
+        /// unless you allow reassociation. You cannot associate an Elastic IP address with an
+        /// instance or network interface that has an existing Elastic IP address.
         /// </para>
         ///  <important> 
         /// <para>
@@ -1641,15 +1644,15 @@ namespace Amazon.EC2
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>domain-name</code> - If you're using AmazonProvidedDNS in "us-east-1", specify
-        /// "ec2.internal". If you're using AmazonProvidedDNS in another region, specify "region.compute.internal"
-        /// (for example, "ap-northeast-1.compute.internal"). Otherwise, specify a domain name
-        /// (for example, "MyCompany.com"). This value is used to complete unqualified DNS hostnames.
-        /// <b>Important</b>: Some Linux operating systems accept multiple domain names separated
-        /// by spaces. However, Windows and other Linux operating systems treat the value as a
-        /// single domain, which results in unexpected behavior. If your DHCP options set is associated
-        /// with a VPC that has instances with multiple operating systems, specify only one domain
-        /// name.
+        ///  <code>domain-name</code> - If you're using AmazonProvidedDNS in <code>us-east-1</code>,
+        /// specify <code>ec2.internal</code>. If you're using AmazonProvidedDNS in another region,
+        /// specify <code>region.compute.internal</code> (for example, <code>ap-northeast-1.compute.internal</code>).
+        /// Otherwise, specify a domain name (for example, <code>MyCompany.com</code>). This value
+        /// is used to complete unqualified DNS hostnames. <b>Important</b>: Some Linux operating
+        /// systems accept multiple domain names separated by spaces. However, Windows and other
+        /// Linux operating systems treat the value as a single domain, which results in unexpected
+        /// behavior. If your DHCP options set is associated with a VPC that has instances with
+        /// multiple operating systems, specify only one domain name.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1802,6 +1805,58 @@ namespace Amazon.EC2
         /// <returns>Returns a  CreateFlowLogsResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateFlowLogs">REST API Reference for CreateFlowLogs Operation</seealso>
         CreateFlowLogsResponse EndCreateFlowLogs(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateFpgaImage
+
+
+        /// <summary>
+        /// Creates an Amazon FPGA Image (AFI) from the specified design checkpoint (DCP).
+        /// 
+        ///  
+        /// <para>
+        /// The create operation is asynchronous. To verify that the AFI is ready for use, check
+        /// the output logs.
+        /// </para>
+        ///  
+        /// <para>
+        /// An AFI contains the FPGA bitstream that is ready to download to an FPGA. You can securely
+        /// deploy an AFI on one or more FPGA-accelerated instances. For more information, see
+        /// the <a href="https://github.com/aws/aws-fpga/">AWS FPGA Hardware Development Kit</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateFpgaImage service method.</param>
+        /// 
+        /// <returns>The response from the CreateFpgaImage service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateFpgaImage">REST API Reference for CreateFpgaImage Operation</seealso>
+        CreateFpgaImageResponse CreateFpgaImage(CreateFpgaImageRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateFpgaImage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateFpgaImage operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateFpgaImage
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateFpgaImage">REST API Reference for CreateFpgaImage Operation</seealso>
+        IAsyncResult BeginCreateFpgaImage(CreateFpgaImageRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateFpgaImage operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateFpgaImage.</param>
+        /// 
+        /// <returns>Returns a  CreateFpgaImageResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateFpgaImage">REST API Reference for CreateFpgaImage Operation</seealso>
+        CreateFpgaImageResponse EndCreateFpgaImage(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2682,7 +2737,7 @@ namespace Amazon.EC2
         /// </para>
         ///  <important> 
         /// <para>
-        /// AWS reserves both the first four and the last IP address in each subnet's CIDR block.
+        /// AWS reserves both the first four and the last IPv4 address in each subnet's CIDR block.
         /// They're not available for use.
         /// </para>
         ///  </important> 
@@ -2985,8 +3040,8 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// A <code>CreateVpcPeeringConnection</code> request between VPCs with overlapping CIDR
-        /// blocks results in the VPC peering connection having a status of <code>failed</code>.
+        /// If you try to create a VPC peering connection between VPCs that have overlapping CIDR
+        /// blocks, the VPC peering connection status goes to <code>failed</code>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateVpcPeeringConnection service method.</param>
@@ -7908,8 +7963,8 @@ namespace Amazon.EC2
         /// DNS hostname of a linked EC2-Classic instance resolves to its private IP address when
         /// addressed from an instance in the VPC to which it's linked. Similarly, the DNS hostname
         /// of an instance in a VPC resolves to its private IP address when addressed from a linked
-        /// EC2-Classic instance. For more information about ClassicLink, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-        /// in the Amazon Elastic Compute Cloud User Guide.
+        /// EC2-Classic instance. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
+        /// in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeVpcClassicLinkDnsSupport service method.</param>
         /// 
@@ -8292,7 +8347,8 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Detaches an Internet gateway from a VPC, disabling connectivity between the Internet
-        /// and the VPC. The VPC must not contain any running instances with Elastic IP addresses.
+        /// and the VPC. The VPC must not contain any running instances with Elastic IP addresses
+        /// or public IPv4 addresses.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DetachInternetGateway service method.</param>
         /// 
@@ -8563,7 +8619,7 @@ namespace Amazon.EC2
         /// Disables ClassicLink DNS support for a VPC. If disabled, DNS hostnames resolve to
         /// public IP addresses when addressed between a linked EC2-Classic instance and instances
         /// in the VPC to which it's linked. For more information about ClassicLink, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-        /// in the Amazon Elastic Compute Cloud User Guide.
+        /// in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableVpcClassicLinkDnsSupport service method.</param>
         /// 
@@ -8921,7 +8977,7 @@ namespace Amazon.EC2
         /// within the <code>10.0.0.0/8</code> IP address range, excluding local routes for VPCs
         /// in the <code>10.0.0.0/16</code> and <code>10.1.0.0/16</code> IP address ranges. For
         /// more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-        /// in the Amazon Elastic Compute Cloud User Guide.
+        /// in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableVpcClassicLink service method.</param>
         /// 

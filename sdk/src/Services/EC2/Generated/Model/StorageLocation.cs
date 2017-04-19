@@ -28,32 +28,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Container for the parameters to the AcceptVpcPeeringConnection operation.
-    /// Accept a VPC peering connection request. To accept a request, the VPC peering connection
-    /// must be in the <code>pending-acceptance</code> state, and you must be the owner of
-    /// the peer VPC. Use <a>DescribeVpcPeeringConnections</a> to view your outstanding VPC
-    /// peering connection requests.
+    /// Describes a storage location in Amazon S3.
     /// </summary>
-    public partial class AcceptVpcPeeringConnectionRequest : AmazonEC2Request
+    public partial class StorageLocation
     {
-        private string _vpcPeeringConnectionId;
+        private string _bucket;
+        private string _key;
 
         /// <summary>
-        /// Gets and sets the property VpcPeeringConnectionId. 
+        /// Gets and sets the property Bucket. 
         /// <para>
-        /// The ID of the VPC peering connection.
+        /// The name of the S3 bucket.
         /// </para>
         /// </summary>
-        public string VpcPeeringConnectionId
+        public string Bucket
         {
-            get { return this._vpcPeeringConnectionId; }
-            set { this._vpcPeeringConnectionId = value; }
+            get { return this._bucket; }
+            set { this._bucket = value; }
         }
 
-        // Check to see if VpcPeeringConnectionId property is set
-        internal bool IsSetVpcPeeringConnectionId()
+        // Check to see if Bucket property is set
+        internal bool IsSetBucket()
         {
-            return this._vpcPeeringConnectionId != null;
+            return this._bucket != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Key. 
+        /// <para>
+        /// The key.
+        /// </para>
+        /// </summary>
+        public string Key
+        {
+            get { return this._key; }
+            set { this._key = value; }
+        }
+
+        // Check to see if Key property is set
+        internal bool IsSetKey()
+        {
+            return this._key != null;
         }
 
     }

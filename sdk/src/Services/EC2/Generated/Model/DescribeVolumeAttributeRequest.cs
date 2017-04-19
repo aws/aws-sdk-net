@@ -46,7 +46,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Attribute. 
         /// <para>
-        /// The instance attribute.
+        /// The attribute of the volume. This parameter is required.
         /// </para>
         /// </summary>
         public VolumeAttributeName Attribute

@@ -48,7 +48,7 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  <important> 
     /// <para>
-    /// AWS reserves both the first four and the last IP address in each subnet's CIDR block.
+    /// AWS reserves both the first four and the last IPv4 address in each subnet's CIDR block.
     /// They're not available for use.
     /// </para>
     ///  </important> 

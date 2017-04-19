@@ -826,6 +826,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void CreateFpgaImageMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateFpgaImage");
+
+            var request = InstantiateClassGenerator.Execute<CreateFpgaImageRequest>();
+            var marshaller = new CreateFpgaImageRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = CreateFpgaImageResponseUnmarshaller.Instance.Unmarshall(context)
+                as CreateFpgaImageResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void CreateImageMarshallTest()
         {
             var operation = service_model.FindOperation("CreateImage");

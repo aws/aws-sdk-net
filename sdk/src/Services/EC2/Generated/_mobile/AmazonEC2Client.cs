@@ -1359,6 +1359,38 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  CreateFpgaImage
+
+        internal CreateFpgaImageResponse CreateFpgaImage(CreateFpgaImageRequest request)
+        {
+            var marshaller = new CreateFpgaImageRequestMarshaller();
+            var unmarshaller = CreateFpgaImageResponseUnmarshaller.Instance;
+
+            return Invoke<CreateFpgaImageRequest,CreateFpgaImageResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateFpgaImage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateFpgaImage operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateFpgaImage">REST API Reference for CreateFpgaImage Operation</seealso>
+        public Task<CreateFpgaImageResponse> CreateFpgaImageAsync(CreateFpgaImageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateFpgaImageRequestMarshaller();
+            var unmarshaller = CreateFpgaImageResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateFpgaImageRequest,CreateFpgaImageResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateImage
 
         internal CreateImageResponse CreateImage(CreateImageRequest request)

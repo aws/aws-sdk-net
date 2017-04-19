@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model
     /// within the <code>10.0.0.0/8</code> IP address range, excluding local routes for VPCs
     /// in the <code>10.0.0.0/16</code> and <code>10.1.0.0/16</code> IP address ranges. For
     /// more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-    /// in the Amazon Elastic Compute Cloud User Guide.
+    /// in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </summary>
     public partial class EnableVpcClassicLinkRequest : AmazonEC2Request
     {

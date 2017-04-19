@@ -28,48 +28,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeNetworkInterfaceAttribute operation.
-    /// Describes a network interface attribute. You can specify only one attribute at a time.
+    /// This is the response object from the CreateFpgaImage operation.
     /// </summary>
-    public partial class DescribeNetworkInterfaceAttributeRequest : AmazonEC2Request
+    public partial class CreateFpgaImageResponse : AmazonWebServiceResponse
     {
-        private NetworkInterfaceAttribute _attribute;
-        private string _networkInterfaceId;
+        private string _fpgaImageGlobalId;
+        private string _fpgaImageId;
 
         /// <summary>
-        /// Gets and sets the property Attribute. 
+        /// Gets and sets the property FpgaImageGlobalId. 
         /// <para>
-        /// The attribute of the network interface. This parameter is required.
+        /// The global FPGA image identifier (AGFI ID).
         /// </para>
         /// </summary>
-        public NetworkInterfaceAttribute Attribute
+        public string FpgaImageGlobalId
         {
-            get { return this._attribute; }
-            set { this._attribute = value; }
+            get { return this._fpgaImageGlobalId; }
+            set { this._fpgaImageGlobalId = value; }
         }
 
-        // Check to see if Attribute property is set
-        internal bool IsSetAttribute()
+        // Check to see if FpgaImageGlobalId property is set
+        internal bool IsSetFpgaImageGlobalId()
         {
-            return this._attribute != null;
+            return this._fpgaImageGlobalId != null;
         }
 
         /// <summary>
-        /// Gets and sets the property NetworkInterfaceId. 
+        /// Gets and sets the property FpgaImageId. 
         /// <para>
-        /// The ID of the network interface.
+        /// The FPGA image identifier (AFI ID).
         /// </para>
         /// </summary>
-        public string NetworkInterfaceId
+        public string FpgaImageId
         {
-            get { return this._networkInterfaceId; }
-            set { this._networkInterfaceId = value; }
+            get { return this._fpgaImageId; }
+            set { this._fpgaImageId = value; }
         }
 
-        // Check to see if NetworkInterfaceId property is set
-        internal bool IsSetNetworkInterfaceId()
+        // Check to see if FpgaImageId property is set
+        internal bool IsSetFpgaImageId()
         {
-            return this._networkInterfaceId != null;
+            return this._fpgaImageId != null;
         }
 
     }

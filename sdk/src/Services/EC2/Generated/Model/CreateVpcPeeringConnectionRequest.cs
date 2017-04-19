@@ -41,8 +41,8 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  
     /// <para>
-    /// A <code>CreateVpcPeeringConnection</code> request between VPCs with overlapping CIDR
-    /// blocks results in the VPC peering connection having a status of <code>failed</code>.
+    /// If you try to create a VPC peering connection between VPCs that have overlapping CIDR
+    /// blocks, the VPC peering connection status goes to <code>failed</code>.
     /// </para>
     /// </summary>
     public partial class CreateVpcPeeringConnectionRequest : AmazonEC2Request

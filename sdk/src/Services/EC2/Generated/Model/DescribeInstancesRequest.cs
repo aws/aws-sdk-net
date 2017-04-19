@@ -75,26 +75,6 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>association.public-ip</code> - The address of the Elastic IP address (IPv4)
-        /// bound to the network interface.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>association.ip-owner-id</code> - The owner of the Elastic IP address (IPv4)
-        /// associated with the network interface.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>association.allocation-id</code> - The allocation ID returned when you allocated
-        /// the Elastic IP address (IPv4) for your network interface.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>association.association-id</code> - The association ID returned when the network
-        /// interface was associated with an IPv4 address.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         ///  <code>availability-zone</code> - The Availability Zone of the instance.
         /// </para>
         ///  </li> <li> 
@@ -239,6 +219,26 @@ namespace Amazon.EC2.Model
         /// <para>
         ///  <code>network-interface.addresses.association.ip-owner-id</code> - The owner ID of
         /// the private IPv4 address associated with the network interface.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>network-interface.association.public-ip</code> - The address of the Elastic
+        /// IP address (IPv4) bound to the network interface.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>network-interface.association.ip-owner-id</code> - The owner of the Elastic
+        /// IP address (IPv4) associated with the network interface.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>network-interface.association.allocation-id</code> - The allocation ID returned
+        /// when you allocated the Elastic IP address (IPv4) for your network interface.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>network-interface.association.association-id</code> - The association ID returned
+        /// when the network interface was associated with an IPv4 address.
         /// </para>
         ///  </li> <li> 
         /// <para>
