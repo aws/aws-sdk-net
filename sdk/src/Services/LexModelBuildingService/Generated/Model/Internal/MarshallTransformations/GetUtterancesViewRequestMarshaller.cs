@@ -64,7 +64,7 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
             uriResourcePath = uriResourcePath.Replace("{botname}", StringUtils.FromString(publicRequest.BotName));
             
             if (publicRequest.IsSetBotVersions())
-                request.ParametersCollection.Add("bot_versions", publicRequest.BotVersions);
+                request.ParameterCollection.Add("bot_versions", publicRequest.BotVersions);
             
             if (publicRequest.IsSetStatusType())
                 request.Parameters.Add("status_type", StringUtils.FromString(publicRequest.StatusType));

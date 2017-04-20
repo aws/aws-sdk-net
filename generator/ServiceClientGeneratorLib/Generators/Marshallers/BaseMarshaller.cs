@@ -18,7 +18,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+    #line 1 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "14.0.0.0")]
     public partial class BaseMarshaller : Generators.BaseGenerator
     {
@@ -32,7 +32,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 7 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 7 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
     // Adds the neccesary namespaces for the marshaller
 protected void AddCommonUsingStatements()
@@ -42,7 +42,7 @@ protected void AddCommonUsingStatements()
         #line default
         #line hidden
         
-        #line 11 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 11 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("using System;\r\nusing System.Collections.Generic;\r\nusing System.Globalization;\r\nus" +
         "ing System.IO;\r\nusing System.Text;\r\nusing System.Xml.Serialization;\r\n\r\nusing ");
 
@@ -50,14 +50,14 @@ this.Write("using System;\r\nusing System.Collections.Generic;\r\nusing System.G
         #line default
         #line hidden
         
-        #line 19 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 19 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
 
         
         #line default
         #line hidden
         
-        #line 19 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 19 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".Model;\r\nusing Amazon.Runtime;\r\nusing Amazon.Runtime.Internal;\r\nusing Amazon.Runt" +
         "ime.Internal.Transform;\r\nusing Amazon.Runtime.Internal.Util;\r\n");
 
@@ -65,7 +65,7 @@ this.Write(".Model;\r\nusing Amazon.Runtime;\r\nusing Amazon.Runtime.Internal;\r
         #line default
         #line hidden
         
-        #line 24 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 24 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
     }
 
@@ -73,7 +73,7 @@ this.Write(".Model;\r\nusing Amazon.Runtime;\r\nusing Amazon.Runtime.Internal;\r
         #line default
         #line hidden
         
-        #line 28 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 28 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
     // Generates code to add members to the header of the request
     // If it's a custom marshaller then it calls the custom marshaller first
@@ -86,42 +86,42 @@ this.Write(".Model;\r\nusing Amazon.Runtime;\r\nusing Amazon.Runtime.Internal;\r
         #line default
         #line hidden
         
-        #line 35 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 35 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\t\t\r\n\t\t\tif(");
 
         
         #line default
         #line hidden
         
-        #line 36 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 36 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 36 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 36 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".IsSet");
 
         
         #line default
         #line hidden
         
-        #line 36 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 36 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 36 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 36 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("())\r\n");
 
         
         #line default
         #line hidden
         
-        #line 37 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 37 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
             if (member.CustomMarshallerTransformation != null)
             {
@@ -130,70 +130,70 @@ this.Write("())\r\n");
         #line default
         #line hidden
         
-        #line 40 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 40 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\t\t\t\trequest.Headers[\"");
 
         
         #line default
         #line hidden
         
-        #line 41 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 41 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
 
         
         #line default
         #line hidden
         
-        #line 41 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 41 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\"] = ");
 
         
         #line default
         #line hidden
         
-        #line 41 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 41 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.CustomMarshallerTransformation));
 
         
         #line default
         #line hidden
         
-        #line 41 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 41 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("(");
 
         
         #line default
         #line hidden
         
-        #line 41 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 41 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 41 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 41 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".");
 
         
         #line default
         #line hidden
         
-        #line 41 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 41 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 41 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 41 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(");\r\n");
 
         
         #line default
         #line hidden
         
-        #line 42 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 42 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
         
             }
             else if (member.IsJsonValue)
@@ -203,56 +203,56 @@ this.Write(");\r\n");
         #line default
         #line hidden
         
-        #line 46 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 46 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\t\t\t\trequest.Headers[\"");
 
         
         #line default
         #line hidden
         
-        #line 47 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 47 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
 
         
         #line default
         #line hidden
         
-        #line 47 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 47 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\"] = Convert.ToBase64String(Encoding.UTF8.GetBytes(");
 
         
         #line default
         #line hidden
         
-        #line 47 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 47 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 47 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 47 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".");
 
         
         #line default
         #line hidden
         
-        #line 47 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 47 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 47 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 47 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("));\r\n");
 
         
         #line default
         #line hidden
         
-        #line 48 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 48 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
             }
             else
@@ -262,56 +262,56 @@ this.Write("));\r\n");
         #line default
         #line hidden
         
-        #line 52 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 52 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\t\t\t\trequest.Headers[\"");
 
         
         #line default
         #line hidden
         
-        #line 53 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 53 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
 
         
         #line default
         #line hidden
         
-        #line 53 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 53 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\"] = ");
 
         
         #line default
         #line hidden
         
-        #line 53 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 53 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 53 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 53 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".");
 
         
         #line default
         #line hidden
         
-        #line 53 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 53 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 53 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 53 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(";\r\n");
 
         
         #line default
         #line hidden
         
-        #line 54 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 54 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 			
 		    }
         }
@@ -329,98 +329,98 @@ this.Write(";\r\n");
         #line default
         #line hidden
         
-        #line 66 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 66 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\t\t\turiResourcePath = uriResourcePath.Replace(\"{");
 
         
         #line default
         #line hidden
         
-        #line 67 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 67 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
 
         
         #line default
         #line hidden
         
-        #line 67 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 67 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("}\", ");
 
         
         #line default
         #line hidden
         
-        #line 67 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 67 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 67 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 67 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".IsSet");
 
         
         #line default
         #line hidden
         
-        #line 67 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 67 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 67 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 67 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("() ? StringUtils.From");
 
         
         #line default
         #line hidden
         
-        #line 67 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 67 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.GetPrimitiveType()));
 
         
         #line default
         #line hidden
         
-        #line 67 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 67 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("(");
 
         
         #line default
         #line hidden
         
-        #line 67 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 67 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 67 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 67 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".");
 
         
         #line default
         #line hidden
         
-        #line 67 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 67 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 67 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 67 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(") : string.Empty);\r\n");
 
         
         #line default
         #line hidden
         
-        #line 68 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 68 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
             }
             else
@@ -430,126 +430,126 @@ this.Write(") : string.Empty);\r\n");
         #line default
         #line hidden
         
-        #line 72 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 72 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("            if (!");
 
         
         #line default
         #line hidden
         
-        #line 73 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 73 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 73 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 73 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".IsSet");
 
         
         #line default
         #line hidden
         
-        #line 73 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 73 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 73 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 73 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("())\r\n                throw new ");
 
         
         #line default
         #line hidden
         
-        #line 74 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 74 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseException));
 
         
         #line default
         #line hidden
         
-        #line 74 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 74 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("(\"Request object does not have required field ");
 
         
         #line default
         #line hidden
         
-        #line 74 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 74 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 74 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 74 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(" set\");\r\n\t\t\turiResourcePath = uriResourcePath.Replace(\"{");
 
         
         #line default
         #line hidden
         
-        #line 75 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 75 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
 
         
         #line default
         #line hidden
         
-        #line 75 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 75 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("}\", StringUtils.From");
 
         
         #line default
         #line hidden
         
-        #line 75 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 75 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.GetPrimitiveType()));
 
         
         #line default
         #line hidden
         
-        #line 75 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 75 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("(");
 
         
         #line default
         #line hidden
         
-        #line 75 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 75 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 75 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 75 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".");
 
         
         #line default
         #line hidden
         
-        #line 75 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 75 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 75 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 75 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("));\r\n");
 
         
         #line default
         #line hidden
         
-        #line 76 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 76 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 			
             }
 		}
@@ -562,28 +562,28 @@ this.Write("));\r\n");
         #line default
         #line hidden
         
-        #line 83 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 83 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\t\t\tstring uriResourcePath = \"");
 
         
         #line default
         #line hidden
         
-        #line 84 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 84 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.RequestUri));
 
         
         #line default
         #line hidden
         
-        #line 84 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 84 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\";\r\n");
 
         
         #line default
         #line hidden
         
-        #line 85 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 85 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
 		foreach(var staticQueryParam in operation.StaticQueryParameters)
 		{
@@ -594,42 +594,42 @@ this.Write("\";\r\n");
         #line default
         #line hidden
         
-        #line 90 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 90 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\t\t\trequest.AddSubResource(\"");
 
         
         #line default
         #line hidden
         
-        #line 91 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 91 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(staticQueryParam.Key));
 
         
         #line default
         #line hidden
         
-        #line 91 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 91 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\", \"");
 
         
         #line default
         #line hidden
         
-        #line 91 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 91 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(staticQueryParam.Value));
 
         
         #line default
         #line hidden
         
-        #line 91 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 91 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\");\r\n");
 
         
         #line default
         #line hidden
         
-        #line 92 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 92 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 			
 			}
 			else
@@ -639,28 +639,28 @@ this.Write("\");\r\n");
         #line default
         #line hidden
         
-        #line 96 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 96 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\t\t\trequest.AddSubResource(\"");
 
         
         #line default
         #line hidden
         
-        #line 97 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 97 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(staticQueryParam.Key));
 
         
         #line default
         #line hidden
         
-        #line 97 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 97 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\");\r\n");
 
         
         #line default
         #line hidden
         
-        #line 98 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 98 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 						
 			}
 		}
@@ -679,42 +679,42 @@ this.Write("\");\r\n");
         #line default
         #line hidden
         
-        #line 111 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 111 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\t\t\t\r\n\t\t\tif (");
 
         
         #line default
         #line hidden
         
-        #line 112 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 112 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 112 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 112 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".IsSet");
 
         
         #line default
         #line hidden
         
-        #line 112 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 112 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 112 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 112 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("())\r\n");
 
         
         #line default
         #line hidden
         
-        #line 113 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 113 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
                 if (member.CustomMarshallerTransformation != null)
                 {
@@ -723,70 +723,70 @@ this.Write("())\r\n");
         #line default
         #line hidden
         
-        #line 116 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 116 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\t\t\t\trequest.Parameters.Add(\"");
 
         
         #line default
         #line hidden
         
-        #line 117 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 117 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
 
         
         #line default
         #line hidden
         
-        #line 117 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 117 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\", ");
 
         
         #line default
         #line hidden
         
-        #line 117 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 117 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.CustomMarshallerTransformation));
 
         
         #line default
         #line hidden
         
-        #line 117 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 117 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("(");
 
         
         #line default
         #line hidden
         
-        #line 117 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 117 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 117 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 117 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".");
 
         
         #line default
         #line hidden
         
-        #line 117 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 117 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 117 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 117 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("));\r\n");
 
         
         #line default
         #line hidden
         
-        #line 118 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 118 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
         
                 }
                 else if (member.IsMap)
@@ -796,35 +796,35 @@ this.Write("));\r\n");
         #line default
         #line hidden
         
-        #line 122 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 122 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("            {\r\n                foreach(var kvp in ");
 
         
         #line default
         #line hidden
         
-        #line 124 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 124 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 124 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 124 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".");
 
         
         #line default
         #line hidden
         
-        #line 124 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 124 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 124 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 124 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(")\r\n                {\r\n                    request.Parameters.Add(kvp.Key, kvp.Val" +
         "ue);\r\n                }\r\n            }\r\n");
 
@@ -832,7 +832,7 @@ this.Write(")\r\n                {\r\n                    request.Parameters.Add
         #line default
         #line hidden
         
-        #line 129 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 129 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
                 }
                 else if (member.IsList)
@@ -842,56 +842,56 @@ this.Write(")\r\n                {\r\n                    request.Parameters.Add
         #line default
         #line hidden
         
-        #line 133 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write("                request.ParametersCollection.Add(\"");
+        #line 133 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write("                request.ParameterCollection.Add(\"");
 
         
         #line default
         #line hidden
         
-        #line 134 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 134 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
 
         
         #line default
         #line hidden
         
-        #line 134 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 134 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\", ");
 
         
         #line default
         #line hidden
         
-        #line 134 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 134 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 134 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 134 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".");
 
         
         #line default
         #line hidden
         
-        #line 134 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 134 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 134 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 134 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(");\r\n");
 
         
         #line default
         #line hidden
         
-        #line 135 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 135 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
                 }
                 else
@@ -901,70 +901,70 @@ this.Write(");\r\n");
         #line default
         #line hidden
         
-        #line 139 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 139 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\t\t\t\trequest.Parameters.Add(\"");
 
         
         #line default
         #line hidden
         
-        #line 140 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 140 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
 
         
         #line default
         #line hidden
         
-        #line 140 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 140 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\", StringUtils.From");
 
         
         #line default
         #line hidden
         
-        #line 140 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 140 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.GetPrimitiveType()));
 
         
         #line default
         #line hidden
         
-        #line 140 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 140 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("(");
 
         
         #line default
         #line hidden
         
-        #line 140 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 140 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 140 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 140 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".");
 
         
         #line default
         #line hidden
         
-        #line 140 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 140 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 140 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 140 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("));\r\n");
 
         
         #line default
         #line hidden
         
-        #line 141 "C:\code\dotnet\sdk-CLEAN\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 141 "C:\code\dotnet\sdk-CONTENT-ENCODING-AND-RENAMES\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 			
 				}
 			}

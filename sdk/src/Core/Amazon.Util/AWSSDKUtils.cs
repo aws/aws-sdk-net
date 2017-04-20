@@ -227,7 +227,7 @@ namespace Amazon.Util
          */
         internal static string GetParametersAsString(IRequest request)
         {
-            return GetParametersAsString(request.ParametersCollection);
+            return GetParametersAsString(request.ParameterCollection);
         }
 
         /**

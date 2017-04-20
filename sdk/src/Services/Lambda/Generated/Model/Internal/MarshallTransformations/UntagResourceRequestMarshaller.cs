@@ -63,7 +63,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             uriResourcePath = uriResourcePath.Replace("{ARN}", StringUtils.FromString(publicRequest.Resource));
             
             if (publicRequest.IsSetTagKeys())
-                request.ParametersCollection.Add("tagKeys", publicRequest.TagKeys);
+                request.ParameterCollection.Add("tagKeys", publicRequest.TagKeys);
             request.ResourcePath = uriResourcePath;
             request.UseQueryString = true;
 

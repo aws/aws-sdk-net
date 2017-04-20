@@ -40,11 +40,11 @@ namespace AWSSDK.UnitTests
             var irequest = new DefaultRequest(testRequest, testServiceName);
 
             irequest.Parameters.Add("param1", "paramValue1");
-            irequest.ParametersCollection.Add("param2", "paramValue2");
-            irequest.ParametersCollection.Add("param3", new List<string> { "listValue1", "listValue2" });
-            irequest.ParametersCollection.Add("param4", new List<string> { "listValue4", "listValue3" });
+            irequest.ParameterCollection.Add("param2", "paramValue2");
+            irequest.ParameterCollection.Add("param3", new List<string> { "listValue1", "listValue2" });
+            irequest.ParameterCollection.Add("param4", new List<string> { "listValue4", "listValue3" });
 
-            var collection = irequest.ParametersCollection;
+            var collection = irequest.ParameterCollection;
             var dictionary = irequest.Parameters as ParametersDictionaryFacade;
             Assert.IsNotNull(dictionary);
 

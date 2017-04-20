@@ -131,7 +131,7 @@ using Amazon.Runtime.Internal.Util;
                 else if (member.IsList)
                 {
 #>
-                request.ParametersCollection.Add("<#=member.MarshallLocationName#>", <#=variableName#>.<#=member.PropertyName#>);
+                request.ParameterCollection.Add("<#=member.MarshallLocationName#>", <#=variableName#>.<#=member.PropertyName#>);
 <#+
                 }
                 else

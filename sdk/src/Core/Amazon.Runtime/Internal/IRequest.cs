@@ -67,7 +67,7 @@ namespace Amazon.Runtime.Internal
         /// <summary>
         /// Collection of parameters included in this request.
         /// </summary>
-        ParameterCollection ParametersCollection
+        ParameterCollection ParameterCollection
         {
             get;
         }

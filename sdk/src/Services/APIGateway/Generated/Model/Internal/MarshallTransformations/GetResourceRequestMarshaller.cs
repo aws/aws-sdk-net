@@ -66,7 +66,7 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             uriResourcePath = uriResourcePath.Replace("{restapi_id}", StringUtils.FromString(publicRequest.RestApiId));
             
             if (publicRequest.IsSetEmbed())
-                request.ParametersCollection.Add("embed", publicRequest.Embed);
+                request.ParameterCollection.Add("embed", publicRequest.Embed);
             request.ResourcePath = uriResourcePath;
             request.UseQueryString = true;
 

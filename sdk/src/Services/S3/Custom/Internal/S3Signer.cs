@@ -208,7 +208,7 @@ namespace Amazon.S3.Internal
 
             if (request.Parameters.Count > 0)
             {
-                var parameters = request.ParametersCollection.GetSortedParametersList();
+                var parameters = request.ParameterCollection.GetSortedParametersList();
                 foreach (var parameter in parameters)
                 {
                     if (parameter.Value != null && SignableParameters.Contains(parameter.Key))

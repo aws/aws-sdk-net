@@ -737,7 +737,7 @@ namespace Amazon.Runtime.Internal.Auth
 
             if (request.UseQueryString && request.Parameters != null && request.Parameters.Count > 0)
             {
-                var requestParameters = request.ParametersCollection.GetSortedParametersList();
+                var requestParameters = request.ParameterCollection.GetSortedParametersList();
                 foreach (var queryParameter in requestParameters.Where(queryParameter => queryParameter.Value != null))
                 {
                     parametersToCanonicalize.Add(new KeyValuePair<string,string>(queryParameter.Key, queryParameter.Value));

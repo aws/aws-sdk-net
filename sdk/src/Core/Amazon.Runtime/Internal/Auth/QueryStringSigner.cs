@@ -58,7 +58,7 @@ namespace Amazon.Runtime.Internal.Auth
             // remove Signature parameter, in case this is a retry
             request.Parameters.Remove("Signature");
 
-            string toSign = AWSSDKUtils.CalculateStringToSignV2(request.ParametersCollection, request.Endpoint.AbsoluteUri);
+            string toSign = AWSSDKUtils.CalculateStringToSignV2(request.ParameterCollection, request.Endpoint.AbsoluteUri);
             metrics.AddProperty(Metric.StringToSign, toSign);
             string auth = ComputeHash(toSign, awsSecretAccessKey, clientConfig.SignatureMethod);
             request.Parameters["Signature"] = auth;

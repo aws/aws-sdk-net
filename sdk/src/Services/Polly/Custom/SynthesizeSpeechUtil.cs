@@ -74,7 +74,7 @@ namespace Amazon.Polly
             iRequest.Parameters[XAmzExpires] = ((int)FifteenMinutes.TotalSeconds).ToString(CultureInfo.InvariantCulture);
 
             if (request.IsSetLexiconNames())
-                iRequest.ParametersCollection.Add("LexiconNames", request.LexiconNames);
+                iRequest.ParameterCollection.Add("LexiconNames", request.LexiconNames);
 
             if (request.IsSetOutputFormat())
                 iRequest.Parameters["OutputFormat"] = request.OutputFormat.ToString();
@@ -92,7 +92,7 @@ namespace Amazon.Polly
                 iRequest.Parameters["VoiceId"] = request.VoiceId;
 
             if (request.IsSetSpeechMarkTypes())
-                iRequest.ParametersCollection.Add("SpeechMarkTypes", request.SpeechMarkTypes);
+                iRequest.ParameterCollection.Add("SpeechMarkTypes", request.SpeechMarkTypes);
 
             var immutableCredentials = credentials.GetCredentials();
             if (immutableCredentials.UseToken)

@@ -60,7 +60,7 @@ namespace Amazon.Runtime
             {
                 Headers = request.Headers,
                 Parameters = request.Parameters,
-                ParameterCollection = request.ParametersCollection,
+                ParameterCollection = request.ParameterCollection,
                 ServiceName = request.ServiceName,
                 Request = request.OriginalRequest,
                 Endpoint = request.Endpoint
