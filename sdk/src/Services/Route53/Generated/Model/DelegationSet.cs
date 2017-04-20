@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// A complex type that describes the name servers for this hosted zone.
+    /// A complex type that lists the name servers in a delegation set, as well as the <code>CallerReference</code>
+    /// and the <code>ID</code> for the delegation set.
     /// </summary>
     public partial class DelegationSet
     {
@@ -44,7 +45,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Instantiates DelegationSet with the parameterized properties
         /// </summary>
-        /// <param name="nameServers">A complex type that contains a list of the authoritative name servers for the hosted zone.</param>
+        /// <param name="nameServers">A complex type that contains a list of the authoritative name servers for a hosted zone or for a reusable delegation set.</param>
         public DelegationSet(List<string> nameServers)
         {
             _nameServers = nameServers;
@@ -71,11 +72,8 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property CallerReference. 
         /// <para>
-        /// A unique string that identifies the request, and that allows you to retry failed <code>CreateReusableDelegationSet</code>
-        /// requests without the risk of executing the operation twice. You must use a unique
-        /// <code>CallerReference</code> string every time you submit a <code>CreateReusableDelegationSet</code>
-        /// request. <code>CallerReference</code> can be any unique string, for example, a date/time
-        /// stamp.
+        /// The value that you specified for <code>CallerReference</code> when you created the
+        /// reusable delegation set.
         /// </para>
         /// </summary>
         public string CallerReference
@@ -93,8 +91,8 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property NameServers. 
         /// <para>
-        /// A complex type that contains a list of the authoritative name servers for the hosted
-        /// zone.
+        /// A complex type that contains a list of the authoritative name servers for a hosted
+        /// zone or for a reusable delegation set.
         /// </para>
         /// </summary>
         public List<string> NameServers

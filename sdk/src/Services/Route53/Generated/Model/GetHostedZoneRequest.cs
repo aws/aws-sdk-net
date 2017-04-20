@@ -29,9 +29,8 @@ namespace Amazon.Route53.Model
 {
     /// <summary>
     /// Container for the parameters to the GetHostedZone operation.
-    /// Retrieves the delegation set for a hosted zone, including the four name servers assigned
-    /// to the hosted zone. Send a <code>GET</code> request to the <code>/<i>Amazon Route
-    /// 53 API version</i>/hostedzone/<i>hosted zone ID</i> </code> resource.
+    /// Gets information about a specified hosted zone including the four name servers assigned
+    /// to the hosted zone.
     /// </summary>
     public partial class GetHostedZoneRequest : AmazonRoute53Request
     {
@@ -45,7 +44,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Instantiates GetHostedZoneRequest with the parameterized properties
         /// </summary>
-        /// <param name="id">The ID of the hosted zone for which you want to get a list of the name servers in the delegation set.</param>
+        /// <param name="id">The ID of the hosted zone that you want to get information about.</param>
         public GetHostedZoneRequest(string id)
         {
             _id = id;
@@ -54,8 +53,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The ID of the hosted zone for which you want to get a list of the name servers in
-        /// the delegation set.
+        /// The ID of the hosted zone that you want to get information about.
         /// </para>
         /// </summary>
         public string Id

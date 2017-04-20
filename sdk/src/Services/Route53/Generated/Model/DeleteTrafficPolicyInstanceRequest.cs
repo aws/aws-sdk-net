@@ -32,11 +32,6 @@ namespace Amazon.Route53.Model
     /// Deletes a traffic policy instance and all of the resource record sets that Amazon
     /// Route 53 created when you created the instance.
     /// 
-    ///  
-    /// <para>
-    /// Send a <code>DELETE</code> request to the <code>/<i>Amazon Route 53 API version</i>/trafficpolicy/<i>traffic
-    /// policy instance ID</i> </code> resource.
-    /// </para>
     ///  <note> 
     /// <para>
     /// In the Amazon Route 53 console, traffic policy instances are known as policy records.

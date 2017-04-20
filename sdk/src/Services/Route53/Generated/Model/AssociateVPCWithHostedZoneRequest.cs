@@ -36,15 +36,7 @@ namespace Amazon.Route53.Model
     /// To perform the association, the VPC and the private hosted zone must already exist.
     /// You can't convert a public hosted zone into a private hosted zone.
     /// </para>
-    ///  </important> 
-    /// <para>
-    /// Send a <code>POST</code> request to the <code>/2013-04-01/hostedzone/<i>hosted zone
-    /// ID</i>/associatevpc</code> resource. The request body must include a document with
-    /// an <code>AssociateVPCWithHostedZoneRequest</code> element. The response contains a
-    /// <code>ChangeInfo</code> data type that you can use to track the progress of the request.
-    /// 
-    /// </para>
-    ///  <note> 
+    ///  </important> <note> 
     /// <para>
     /// If you want to associate a VPC that was created by using one AWS account with a private
     /// hosted zone that was created by using a different account, the AWS account that created

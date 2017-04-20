@@ -29,14 +29,12 @@ namespace Amazon.Route53.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateHealthCheck operation.
-    /// Updates an existing health check.
+    /// Updates an existing health check. Note that some values can't be updated. 
     /// 
     ///  
     /// <para>
-    /// Send a <code>POST</code> request to the <code>/2013-04-01/healthcheck/<i>health check
-    /// ID</i> </code> resource. The request body must include a document with an <code>UpdateHealthCheckRequest</code>
-    /// element. For more information about updating health checks, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/health-checks-creating-deleting.html">Creating,
-    /// Updating, and Deleting Health Checks</a> in the Amazon Route 53 Developer Guide.
+    /// For more information about updating health checks, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/health-checks-creating-deleting.html">Creating,
+    /// Updating, and Deleting Health Checks</a> in the <i>Amazon Route 53 Developer Guide</i>.
     /// </para>
     /// </summary>
     public partial class UpdateHealthCheckRequest : AmazonRoute53Request
@@ -81,8 +79,7 @@ namespace Amazon.Route53.Model
         /// Gets and sets the property HealthCheckVersion. 
         /// <para>
         /// A sequential counter that Amazon Route 53 sets to <code>1</code> when you create a
-        /// health check and increments by <code>1</code> each time you update settings for the
-        /// health check.
+        /// health check and increments by 1 each time you update settings for the health check.
         /// </para>
         ///  
         /// <para>
@@ -93,7 +90,7 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// f the value in the <code>UpdateHealthCheck</code> request matches the value of <code>HealthCheckVersion</code>
+        /// If the value in the <code>UpdateHealthCheck</code> request matches the value of <code>HealthCheckVersion</code>
         /// in the health check, Amazon Route 53 updates the health check with the new settings.
         /// </para>
         ///  </li> <li> 
@@ -146,10 +143,19 @@ namespace Amazon.Route53.Model
         /// If the endpoint is an EC2 instance, we recommend that you create an Elastic IP address,
         /// associate it with your EC2 instance, and specify the Elastic IP address for <code>IPAddress</code>.
         /// This ensures that the IP address of your instance never changes. For more information,
-        /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
-        /// IP Addresses (EIP)</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+        /// see the applicable documentation:
         /// </para>
-        ///  <note> 
+        ///  <ul> <li> 
+        /// <para>
+        /// Linux: <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+        /// IP Addresses (EIP)</a> in the <i>Amazon EC2 User Guide for Linux Instances</i> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Windows: <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-ip-addresses-eip.html">Elastic
+        /// IP Addresses (EIP)</a> in the <i>Amazon EC2 User Guide for Windows Instances</i> 
+        /// </para>
+        ///  </li> </ul> <note> 
         /// <para>
         /// If a health check already has a value for <code>IPAddress</code>, you can change the
         /// value. However, you can't update an existing health check to add or remove the value
@@ -276,13 +282,14 @@ namespace Amazon.Route53.Model
         /// <para>
         /// If you specify a value of <code>443</code> for <code>Port</code> and <code>HTTPS</code>
         /// or <code>HTTPS_STR_MATCH</code> for <code>Type</code>, Amazon Route 53 passes the
-        /// value of <code>FullyQualifiedDomainName</code> to the endpoint in the Host header.
+        /// value of <code>FullyQualifiedDomainName</code> to the endpoint in the <code>Host</code>
+        /// header.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// If you specify another value for <code>Port</code> and any value except <code>TCP</code>
         /// for <code>Type</code>, Amazon Route 53 passes <i> <code>FullyQualifiedDomainName</code>:<code>Port</code>
-        /// </i> to the endpoint in the Host header.
+        /// </i> to the endpoint in the <code>Host</code> header.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -513,8 +520,8 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property Regions. 
         /// <para>
-        /// A complex type that contains one Region element for each region from which you want
-        /// Amazon Route 53 health checkers to check the specified endpoint.
+        /// A complex type that contains one <code>Region</code> element for each region that
+        /// you want Amazon Route 53 health checkers to check the specified endpoint from.
         /// </para>
         /// </summary>
         public List<string> Regions

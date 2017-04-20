@@ -40,7 +40,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
-        /// The region of the Amazon Route 53 health checker that provided the status in StatusReport.
+        /// The region of the Amazon Route 53 health checker that provided the status in <code>StatusReport</code>.
         /// </para>
         /// </summary>
         public HealthCheckRegion Region

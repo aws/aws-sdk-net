@@ -31,12 +31,6 @@ namespace Amazon.Route53.Model
     /// Container for the parameters to the GetTrafficPolicyInstanceCount operation.
     /// Gets the number of traffic policy instances that are associated with the current AWS
     /// account.
-    /// 
-    ///  
-    /// <para>
-    /// To get the number of traffic policy instances, send a <code>GET</code> request to
-    /// the <code>/2013-04-01/trafficpolicyinstancecount</code> resource.
-    /// </para>
     /// </summary>
     public partial class GetTrafficPolicyInstanceCountRequest : AmazonRoute53Request
     {

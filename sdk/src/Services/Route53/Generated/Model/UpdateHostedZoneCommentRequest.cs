@@ -29,8 +29,7 @@ namespace Amazon.Route53.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateHostedZoneComment operation.
-    /// Updates the hosted zone comment. Send a <code>POST</code> request to the <code>/2013-04-01/hostedzone/<i>hosted
-    /// zone ID</i> </code> resource.
+    /// Updates the comment for a specified hosted zone.
     /// </summary>
     public partial class UpdateHostedZoneCommentRequest : AmazonRoute53Request
     {
@@ -40,7 +39,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The ID for the hosted zone for which you want to update the comment.
+        /// The ID for the hosted zone that you want to update the comment for.
         /// </para>
         /// </summary>
         public string Id

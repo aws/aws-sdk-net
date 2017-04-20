@@ -33,12 +33,12 @@ namespace Amazon.Route53.Model
     /// 
     ///  
     /// <para>
-    /// To create a new health check, send a <code>POST</code> request to the <code>/2013-04-01/healthcheck</code>
-    /// resource. The request body must include a document with a <code>CreateHealthCheckRequest</code>
-    /// element. The response returns the <code>CreateHealthCheckResponse</code> element,
-    /// containing the health check ID specified when adding health check to a resource record
-    /// set. For information about adding health checks to resource record sets, see <a>ResourceRecordSet$HealthCheckId</a>
+    /// For information about adding health checks to resource record sets, see <a>ResourceRecordSet$HealthCheckId</a>
     /// in <a>ChangeResourceRecordSets</a>. 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>ELB Load Balancers</b> 
     /// </para>
     ///  
     /// <para>
@@ -46,6 +46,10 @@ namespace Amazon.Route53.Model
     /// do not create Amazon Route 53 health checks for the EC2 instances. When you register
     /// an EC2 instance with a load balancer, you configure settings for an ELB health check,
     /// which performs a similar function to an Amazon Route 53 health check.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Private Hosted Zones</b> 
     /// </para>
     ///  
     /// <para>
@@ -83,10 +87,36 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property CallerReference. 
         /// <para>
-        /// A unique string that identifies the request and that allows failed <code>CreateHealthCheck</code>
-        /// requests to be retried without the risk of executing the operation twice. You must
-        /// use a unique <code>CallerReference</code> string every time you create a health check.
+        /// A unique string that identifies the request and that allows you to retry a failed
+        /// <code>CreateHealthCheck</code> request without the risk of creating two identical
+        /// health checks:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If you send a <code>CreateHealthCheck</code> request with the same <code>CallerReference</code>
+        /// and settings as a previous request, and if the health check doesn't exist, Amazon
+        /// Route 53 creates the health check. If the health check does exist, Amazon Route 53
+        /// returns the settings for the existing health check.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you send a <code>CreateHealthCheck</code> request with the same <code>CallerReference</code>
+        /// as a deleted health check, regardless of the settings, Amazon Route 53 returns a <code>HealthCheckAlreadyExists</code>
+        /// error.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you send a <code>CreateHealthCheck</code> request with the same <code>CallerReference</code>
+        /// as an existing health check but with different settings, Amazon Route 53 returns a
+        /// <code>HealthCheckAlreadyExists</code> error.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you send a <code>CreateHealthCheck</code> request with a unique <code>CallerReference</code>
+        /// but settings identical to an existing health check, Amazon Route 53 creates the health
+        /// check.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string CallerReference
         {

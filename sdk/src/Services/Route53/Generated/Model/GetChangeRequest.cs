@@ -34,13 +34,13 @@ namespace Amazon.Route53.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    ///  <code>PENDING</code> indicates that the changes in this request have not replicated
+    ///  <code>PENDING</code> indicates that the changes in this request have not propagated
     /// to all Amazon Route 53 DNS servers. This is the initial status of all change batch
     /// requests.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>INSYNC</code> indicates that the changes have replicated to all Amazon Route
+    ///  <code>INSYNC</code> indicates that the changes have propagated to all Amazon Route
     /// 53 DNS servers. 
     /// </para>
     ///  </li> </ul>
@@ -57,7 +57,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Instantiates GetChangeRequest with the parameterized properties
         /// </summary>
-        /// <param name="id">The ID of the change batch request. The value that you specify here is the value that <code>ChangeResourceRecordSets</code> returned in the Id element when you submitted the request.</param>
+        /// <param name="id">The ID of the change batch request. The value that you specify here is the value that <code>ChangeResourceRecordSets</code> returned in the <code>Id</code> element when you submitted the request.</param>
         public GetChangeRequest(string id)
         {
             _id = id;
@@ -67,8 +67,8 @@ namespace Amazon.Route53.Model
         /// Gets and sets the property Id. 
         /// <para>
         /// The ID of the change batch request. The value that you specify here is the value that
-        /// <code>ChangeResourceRecordSets</code> returned in the Id element when you submitted
-        /// the request.
+        /// <code>ChangeResourceRecordSets</code> returned in the <code>Id</code> element when
+        /// you submitted the request.
         /// </para>
         /// </summary>
         public string Id

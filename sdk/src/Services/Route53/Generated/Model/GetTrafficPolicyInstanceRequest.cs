@@ -31,11 +31,6 @@ namespace Amazon.Route53.Model
     /// Container for the parameters to the GetTrafficPolicyInstance operation.
     /// Gets information about a specified traffic policy instance.
     /// 
-    ///  
-    /// <para>
-    /// Send a <code>GET</code> request to the <code>/<i>Amazon Route 53 API version</i>/trafficpolicyinstance</code>
-    /// resource.
-    /// </para>
     ///  <note> 
     /// <para>
     /// After you submit a <code>CreateTrafficPolicyInstance</code> or an <code>UpdateTrafficPolicyInstance</code>

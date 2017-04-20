@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.Route53.IAmazonRoute53.AssociateVPCWithHostedZone(Amazon.Route53.Model.AssociateVPCWithHostedZoneRequest)" />
+            <member name="M:Amazon.Route53.AmazonRoute53Client.AssociateVPCWithHostedZone(Amazon.Route53.Model.AssociateVPCWithHostedZoneRequest)" />
+            <member name="T:Amazon.Route53.Model.AssociateVPCWithHostedZoneRequest" />
+            <member name="T:Amazon.Route53.Model.AssociateVPCWithHostedZoneResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example associates the VPC with ID vpc-1a2b3c4d with the hosted zone with ID Z3M3LMPEXAMPLE.
+                </para>
+                <code
+                    title="To associate a VPC with a hosted zone"
+                    source=".\AWSSDKDocSamples\Route53\Route53.GeneratedSamples.cs"
+                    region="to-associate-a-vpc-with-a-hosted-zone-1484069228699" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Route53.IAmazonRoute53.ChangeResourceRecordSets(Amazon.Route53.Model.ChangeResourceRecordSetsRequest)" />
+            <member name="M:Amazon.Route53.AmazonRoute53Client.ChangeResourceRecordSets(Amazon.Route53.Model.ChangeResourceRecordSetsRequest)" />
+            <member name="T:Amazon.Route53.Model.ChangeResourceRecordSetsRequest" />
+            <member name="T:Amazon.Route53.Model.ChangeResourceRecordSetsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates a resource record set that routes Internet traffic to a resource with an IP address of 192.0.2.44.
+                </para>
+                <code
+                    title="To create a basic resource record set"
+                    source=".\AWSSDKDocSamples\Route53\Route53.GeneratedSamples.cs"
+                    region="to-create-update-or-delete-resource-record-sets-1484344703668" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Route53.IAmazonRoute53.ChangeResourceRecordSets(Amazon.Route53.Model.ChangeResourceRecordSetsRequest)" />
+            <member name="M:Amazon.Route53.AmazonRoute53Client.ChangeResourceRecordSets(Amazon.Route53.Model.ChangeResourceRecordSetsRequest)" />
+            <member name="T:Amazon.Route53.Model.ChangeResourceRecordSetsRequest" />
+            <member name="T:Amazon.Route53.Model.ChangeResourceRecordSetsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates two weighted resource record sets. The resource with a Weight of 100 will get 1/3rd of traffic (100/100+200), and the other resource will get the rest of the traffic for example.com.
+                </para>
+                <code
+                    title="To create weighted resource record sets"
+                    source=".\AWSSDKDocSamples\Route53\Route53.GeneratedSamples.cs"
+                    region="to-create-weighted-resource-record-sets-1484348208522" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Route53.IAmazonRoute53.ChangeResourceRecordSets(Amazon.Route53.Model.ChangeResourceRecordSetsRequest)" />
+            <member name="M:Amazon.Route53.AmazonRoute53Client.ChangeResourceRecordSets(Amazon.Route53.Model.ChangeResourceRecordSetsRequest)" />
+            <member name="T:Amazon.Route53.Model.ChangeResourceRecordSetsRequest" />
+            <member name="T:Amazon.Route53.Model.ChangeResourceRecordSetsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates an alias resource record set that routes traffic to a CloudFront distribution.
+                </para>
+                <code
+                    title="To create an alias resource record set"
+                    source=".\AWSSDKDocSamples\Route53\Route53.GeneratedSamples.cs"
+                    region="to-create-an-alias-resource-record-set-1484348404062" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Route53.IAmazonRoute53.ChangeResourceRecordSets(Amazon.Route53.Model.ChangeResourceRecordSetsRequest)" />
+            <member name="M:Amazon.Route53.AmazonRoute53Client.ChangeResourceRecordSets(Amazon.Route53.Model.ChangeResourceRecordSetsRequest)" />
+            <member name="T:Amazon.Route53.Model.ChangeResourceRecordSetsRequest" />
+            <member name="T:Amazon.Route53.Model.ChangeResourceRecordSetsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates two weighted alias resource record sets that route traffic to ELB load balancers. The resource with a Weight of 100 will get 1/3rd of traffic (100/100+200), and the other resource will get the rest of the traffic for example.com.
+                </para>
+                <code
+                    title="To create weighted alias resource record sets"
+                    source=".\AWSSDKDocSamples\Route53\Route53.GeneratedSamples.cs"
+                    region="to-create-weighted-alias-resource-record-sets-1484349467416" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Route53.IAmazonRoute53.ChangeResourceRecordSets(Amazon.Route53.Model.ChangeResourceRecordSetsRequest)" />
+            <member name="M:Amazon.Route53.AmazonRoute53Client.ChangeResourceRecordSets(Amazon.Route53.Model.ChangeResourceRecordSetsRequest)" />
+            <member name="T:Amazon.Route53.Model.ChangeResourceRecordSetsRequest" />
+            <member name="T:Amazon.Route53.Model.ChangeResourceRecordSetsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates two latency resource record sets that route traffic to EC2 instances. Traffic for example.com is routed either to the Ohio region or the Oregon region, depending on the latency between the user and those regions.
+                </para>
+                <code
+                    title="To create latency resource record sets"
+                    source=".\AWSSDKDocSamples\Route53\Route53.GeneratedSamples.cs"
+                    region="to-create-latency-resource-record-sets-1484350219917" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Route53.IAmazonRoute53.ChangeResourceRecordSets(Amazon.Route53.Model.ChangeResourceRecordSetsRequest)" />
+            <member name="M:Amazon.Route53.AmazonRoute53Client.ChangeResourceRecordSets(Amazon.Route53.Model.ChangeResourceRecordSetsRequest)" />
+            <member name="T:Amazon.Route53.Model.ChangeResourceRecordSetsRequest" />
+            <member name="T:Amazon.Route53.Model.ChangeResourceRecordSetsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates two latency alias resource record sets that route traffic for example.com to ELB load balancers. Requests are routed either to the Ohio region or the Oregon region, depending on the latency between the user and those regions.
+                </para>
+                <code
+                    title="To create latency alias resource record sets"
+                    source=".\AWSSDKDocSamples\Route53\Route53.GeneratedSamples.cs"
+                    region="to-create-latency-alias-resource-record-sets-1484601774179" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Route53.IAmazonRoute53.ChangeResourceRecordSets(Amazon.Route53.Model.ChangeResourceRecordSetsRequest)" />
+            <member name="M:Amazon.Route53.AmazonRoute53Client.ChangeResourceRecordSets(Amazon.Route53.Model.ChangeResourceRecordSetsRequest)" />
+            <member name="T:Amazon.Route53.Model.ChangeResourceRecordSetsRequest" />
+            <member name="T:Amazon.Route53.Model.ChangeResourceRecordSetsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates primary and secondary failover resource record sets that route traffic to EC2 instances. Traffic is generally routed to the primary resource, in the Ohio region. If that resource is unavailable, traffic is routed to the secondary resource, in the Oregon region.
+                </para>
+                <code
+                    title="To create failover resource record sets"
+                    source=".\AWSSDKDocSamples\Route53\Route53.GeneratedSamples.cs"
+                    region="to-create-failover-resource-record-sets-1484604541740" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Route53.IAmazonRoute53.ChangeResourceRecordSets(Amazon.Route53.Model.ChangeResourceRecordSetsRequest)" />
+            <member name="M:Amazon.Route53.AmazonRoute53Client.ChangeResourceRecordSets(Amazon.Route53.Model.ChangeResourceRecordSetsRequest)" />
+            <member name="T:Amazon.Route53.Model.ChangeResourceRecordSetsRequest" />
+            <member name="T:Amazon.Route53.Model.ChangeResourceRecordSetsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates primary and secondary failover alias resource record sets that route traffic to ELB load balancers. Traffic is generally routed to the primary resource, in the Ohio region. If that resource is unavailable, traffic is routed to the secondary resource, in the Oregon region.
+                </para>
+                <code
+                    title="To create failover alias resource record sets"
+                    source=".\AWSSDKDocSamples\Route53\Route53.GeneratedSamples.cs"
+                    region="to-create-failover-alias-resource-record-sets-1484607497724" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Route53.IAmazonRoute53.ChangeResourceRecordSets(Amazon.Route53.Model.ChangeResourceRecordSetsRequest)" />
+            <member name="M:Amazon.Route53.AmazonRoute53Client.ChangeResourceRecordSets(Amazon.Route53.Model.ChangeResourceRecordSetsRequest)" />
+            <member name="T:Amazon.Route53.Model.ChangeResourceRecordSetsRequest" />
+            <member name="T:Amazon.Route53.Model.ChangeResourceRecordSetsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates four geolocation resource record sets that use IPv4 addresses to route traffic to resources such as web servers running on EC2 instances. Traffic is routed to one of four IP addresses, for North America (NA), for South America (SA), for Europe (EU), and for all other locations (*).
+                </para>
+                <code
+                    title="To create geolocation resource record sets"
+                    source=".\AWSSDKDocSamples\Route53\Route53.GeneratedSamples.cs"
+                    region="to-create-geolocation-resource-record-sets-1484612462466" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Route53.IAmazonRoute53.ChangeResourceRecordSets(Amazon.Route53.Model.ChangeResourceRecordSetsRequest)" />
+            <member name="M:Amazon.Route53.AmazonRoute53Client.ChangeResourceRecordSets(Amazon.Route53.Model.ChangeResourceRecordSetsRequest)" />
+            <member name="T:Amazon.Route53.Model.ChangeResourceRecordSetsRequest" />
+            <member name="T:Amazon.Route53.Model.ChangeResourceRecordSetsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates four geolocation alias resource record sets that route traffic to ELB load balancers. Traffic is routed to one of four IP addresses, for North America (NA), for South America (SA), for Europe (EU), and for all other locations (*).
+                </para>
+                <code
+                    title="To create geolocation alias resource record sets"
+                    source=".\AWSSDKDocSamples\Route53\Route53.GeneratedSamples.cs"
+                    region="to-create-geolocation-alias-resource-record-sets-1484612871203" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Route53.IAmazonRoute53.ChangeTagsForResource(Amazon.Route53.Model.ChangeTagsForResourceRequest)" />
+            <member name="M:Amazon.Route53.AmazonRoute53Client.ChangeTagsForResource(Amazon.Route53.Model.ChangeTagsForResourceRequest)" />
+            <member name="T:Amazon.Route53.Model.ChangeTagsForResourceRequest" />
+            <member name="T:Amazon.Route53.Model.ChangeTagsForResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example adds two tags and removes one tag from the hosted zone with ID Z3M3LMPEXAMPLE.
+                </para>
+                <code
+                    title="To add or remove tags from a hosted zone or health check"
+                    source=".\AWSSDKDocSamples\Route53\Route53.GeneratedSamples.cs"
+                    region="to-add-or-remove-tags-from-a-hosted-zone-or-health-check-1484084752409" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Route53.IAmazonRoute53.GetHostedZone(Amazon.Route53.Model.GetHostedZoneRequest)" />
+            <member name="M:Amazon.Route53.AmazonRoute53Client.GetHostedZone(Amazon.Route53.Model.GetHostedZoneRequest)" />
+            <member name="T:Amazon.Route53.Model.GetHostedZoneRequest" />
+            <member name="T:Amazon.Route53.Model.GetHostedZoneResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example gets information about the Z3M3LMPEXAMPLE hosted zone.
+                </para>
+                <code
+                    title="To get information about a hosted zone"
+                    source=".\AWSSDKDocSamples\Route53\Route53.GeneratedSamples.cs"
+                    region="to-get-information-about-a-hosted-zone-1481752361124" />
+            </example>
+        </value>
+    </doc>
+</docs>

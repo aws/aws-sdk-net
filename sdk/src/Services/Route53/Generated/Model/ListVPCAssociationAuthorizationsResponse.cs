@@ -60,13 +60,8 @@ namespace Amazon.Route53.Model
         /// When the response includes a <code>NextToken</code> element, there are more VPCs that
         /// can be associated with the specified hosted zone. To get the next page of VPCs, submit
         /// another <code>ListVPCAssociationAuthorizations</code> request, and include the value
-        /// of the <code>NextToken</code> element from the response in the <code>NextToken</code>
-        /// request parameter:
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>/2013-04-01/hostedzone/<i>hosted zone ID</i>/authorizevpcassociation?MaxItems=<i>VPCs
-        /// per page</i>&amp;NextToken=<i/> </code> 
+        /// of the <code>NextToken</code> element from the response in the <code>nexttoken</code>
+        /// request parameter.
         /// </para>
         /// </summary>
         public string NextToken

@@ -29,17 +29,17 @@ namespace Amazon.Route53.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteReusableDelegationSet operation.
-    /// Deletes a reusable delegation set. Send a <code>DELETE</code> request to the <code>/2013-04-01/delegationset/<i>delegation
-    /// set ID</i> </code> resource.
+    /// Deletes a reusable delegation set.
     /// 
     ///  <important> 
     /// <para>
-    ///  You can delete a reusable delegation set only if there are no associated hosted zones.
+    /// You can delete a reusable delegation set only if it isn't associated with any hosted
+    /// zones.
     /// </para>
     ///  </important> 
     /// <para>
     /// To verify that the reusable delegation set is not associated with any hosted zones,
-    /// run the <a>GetReusableDelegationSet</a> action and specify the ID of the reusable
+    /// submit a <a>GetReusableDelegationSet</a> request and specify the ID of the reusable
     /// delegation set that you want to delete.
     /// </para>
     /// </summary>
@@ -50,7 +50,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The ID of the reusable delegation set you want to delete.
+        /// The ID of the reusable delegation set that you want to delete.
         /// </para>
         /// </summary>
         public string Id

@@ -29,8 +29,8 @@ namespace Amazon.Route53.Model
 {
     /// <summary>
     /// Container for the parameters to the GetReusableDelegationSet operation.
-    /// Retrieves the reusable delegation set. Send a <code>GET</code> request to the <code>/2013-04-01/delegationset/<i>delegation
-    /// set ID</i> </code> resource.
+    /// Retrieves information about a specified reusable delegation set, including the four
+    /// name servers that are assigned to the delegation set.
     /// </summary>
     public partial class GetReusableDelegationSetRequest : AmazonRoute53Request
     {
@@ -39,8 +39,8 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The ID of the reusable delegation set for which you want to get a list of the name
-        /// server.
+        /// The ID of the reusable delegation set that you want to get a list of name servers
+        /// for.
         /// </para>
         /// </summary>
         public string Id

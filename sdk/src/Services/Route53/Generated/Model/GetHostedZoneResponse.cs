@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// A complex type containing the response information for the hosted zone.
+    /// A complex type that contain the response to a <code>GetHostedZone</code> request.
     /// </summary>
     public partial class GetHostedZoneResponse : AmazonWebServiceResponse
     {
@@ -39,7 +39,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property HostedZone. 
         /// <para>
-        /// A complex type that contains general information about the hosted zone.
+        /// A complex type that contains general information about the specified hosted zone.
         /// </para>
         /// </summary>
         public HostedZone HostedZone
@@ -57,7 +57,8 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property DelegationSet. 
         /// <para>
-        /// A complex type that describes the name servers for this hosted zone.
+        /// A complex type that lists the Amazon Route 53 name servers for the specified hosted
+        /// zone.
         /// </para>
         /// </summary>
         public DelegationSet DelegationSet
@@ -75,8 +76,8 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property VPCs. 
         /// <para>
-        /// A complex type that contains information about VPCs associated with the specified
-        /// hosted zone.
+        /// A complex type that contains information about the VPCs that are associated with the
+        /// specified hosted zone.
         /// </para>
         /// </summary>
         public List<VPC> VPCs

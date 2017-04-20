@@ -63,7 +63,7 @@ namespace Amazon.Route53.Model
         /// <para>
         /// If <code>IsTruncated</code> is <code>true</code>, <code>HostedZoneIdMarker</code>
         /// is the ID of the hosted zone of the first traffic policy instance in the next group
-        /// of <code>MaxItems</code> traffic policy instances.
+        /// of traffic policy instances.
         /// </para>
         /// </summary>
         public string HostedZoneIdMarker
@@ -122,9 +122,9 @@ namespace Amazon.Route53.Model
         /// Gets and sets the property IsTruncated. 
         /// <para>
         /// A flag that indicates whether there are more traffic policy instances to be listed.
-        /// If the response was truncated, you can get the next group of <code>MaxItems</code>
-        /// traffic policy instances by calling <code>ListTrafficPolicyInstancesByPolicy</code>
-        /// again and specifying the values of the <code>HostedZoneIdMarker</code>, <code>TrafficPolicyInstanceNameMarker</code>,
+        /// If the response was truncated, you can get the next group of traffic policy instances
+        /// by calling <code>ListTrafficPolicyInstancesByPolicy</code> again and specifying the
+        /// values of the <code>HostedZoneIdMarker</code>, <code>TrafficPolicyInstanceNameMarker</code>,
         /// and <code>TrafficPolicyInstanceTypeMarker</code> elements in the corresponding request
         /// parameters.
         /// </para>

@@ -465,8 +465,7 @@ namespace Amazon.Route53
 
 
         /// <summary>
-        /// Retrieves a count of all your hosted zones. Send a <code>GET</code> request to the
-        /// <code>/2013-04-01/hostedzonecount</code> resource.
+        /// Retrieves the number of hosted zones that are associated with the current AWS account.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -566,17 +565,14 @@ namespace Amazon.Route53
 
 
         /// <summary>
-        /// Retrieves a list of supported geo locations. Send a <code>GET</code> request to the
-        /// <code>/2013-04-01/geolocations</code> resource. The response to this request includes
-        /// a <code>GeoLocationDetailsList</code> element for each location that Amazon Route
-        /// 53 supports.
+        /// Retrieves a list of supported geo locations.
         /// 
         ///  
         /// <para>
         /// Countries are listed first, and continents are listed last. If Amazon Route 53 supports
         /// subdivisions for a country (for example, states or provinces), the subdivisions for
         /// that country are listed in alphabetical order immediately after the corresponding
-        /// country. 
+        /// country.
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">
@@ -609,19 +605,7 @@ namespace Amazon.Route53
 
 
         /// <summary>
-        /// Retrieve a list of your health checks. Send a <code>GET</code> request to the <code>/2013-04-01/healthcheck</code>
-        /// resource. The response to this request includes a <code>HealthChecks</code> element
-        /// with zero or more <code>HealthCheck</code> child elements. By default, the list of
-        /// health checks is displayed on a single page. You can control the length of the page
-        /// that is displayed by using the <code>MaxItems</code> parameter. You can use the <code>Marker</code>
-        /// parameter to control the health check that the list begins with.
-        /// 
-        ///  
-        /// <para>
-        /// For information about listing health checks using the Amazon Route 53 console, see
-        /// <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Amazon
-        /// Route 53 Health Checks and DNS Failover</a>.
-        /// </para>
+        /// Retrieve a list of the health checks that are associated with the current AWS account.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -656,47 +640,16 @@ namespace Amazon.Route53
 
 
         /// <summary>
-        /// To retrieve a list of your public and private hosted zones, send a <code>GET</code>
-        /// request to the <code>/2013-04-01/hostedzone</code> resource. The response to this
-        /// request includes a <code>HostedZones</code> child element for each hosted zone created
-        /// by the current AWS account.
+        /// Retrieves a list of the public and private hosted zones that are associated with the
+        /// current AWS account. The response includes a <code>HostedZones</code> child element
+        /// for each hosted zone.
         /// 
         ///  
         /// <para>
         /// Amazon Route 53 returns a maximum of 100 items in each response. If you have a lot
         /// of hosted zones, you can use the <code>maxitems</code> parameter to list them in groups
-        /// of up to 100. The response includes four values that help navigate from one group
-        /// of <code>maxitems</code> hosted zones to the next:
+        /// of up to 100.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>MaxItems</code> is the value specified for the <code>maxitems</code> parameter
-        /// in the request that produced the current response.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// If the value of <code>IsTruncated</code> in the response is true, there are more hosted
-        /// zones associated with the current AWS account. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>NextMarker</code> is the hosted zone ID of the next hosted zone that is associated
-        /// with the current AWS account. If you want to list more hosted zones, make another
-        /// call to <code>ListHostedZones</code>, and specify the value of the <code>NextMarker</code>
-        /// element in the marker parameter. 
-        /// </para>
-        ///  
-        /// <para>
-        /// If <code>IsTruncated</code> is false, the <code>NextMarker</code> element is omitted
-        /// from the response.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// If you're making the second or subsequent call to <code>ListHostedZones</code>, the
-        /// <code>Marker</code> element matches the value that you specified in the <code>marker</code>
-        /// parameter in the previous request.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -768,20 +721,8 @@ namespace Amazon.Route53
 
 
         /// <summary>
-        /// To retrieve a list of your reusable delegation sets, send a <code>GET</code> request
-        /// to the <code>/2013-04-01/delegationset</code> resource. The response to this request
-        /// includes a <code>DelegationSets</code> element with zero, one, or multiple <code>DelegationSet</code>
-        /// child elements. By default, the list of delegation sets is displayed on a single page.
-        /// You can control the length of the page that is displayed by using the <code>MaxItems</code>
-        /// parameter. You can use the <code>Marker</code> parameter to control the delegation
-        /// set that the list begins with. 
-        /// 
-        ///  <note> 
-        /// <para>
-        ///  Amazon Route 53 returns a maximum of 100 items. If you set MaxItems to a value greater
-        /// than 100, Amazon Route 53 returns only the first 100.
-        /// </para>
-        ///  </note>
+        /// Retrieves a list of the reusable delegation sets that are associated with the current
+        /// AWS account.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.

@@ -41,61 +41,10 @@ namespace Amazon.Route53.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// Send a <code>GET</code> request to the <code>/<i>Route 53 API version</i>/trafficpolicyinstance</code>
-    /// resource and include the ID and version of the traffic policy.
-    /// </para>
-    ///  
-    /// <para>
     /// Amazon Route 53 returns a maximum of 100 items in each response. If you have a lot
     /// of traffic policy instances, you can use the <code>MaxItems</code> parameter to list
     /// them in groups of up to 100.
     /// </para>
-    ///  
-    /// <para>
-    /// The response includes five values that help you navigate from one group of <code>MaxItems</code>
-    /// traffic policy instances to the next:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <b>IsTruncated</b> 
-    /// </para>
-    ///  
-    /// <para>
-    /// If the value of <code>IsTruncated</code> in the response is <code>true</code>, there
-    /// are more traffic policy instances associated with the specified traffic policy.
-    /// </para>
-    ///  
-    /// <para>
-    /// If <code>IsTruncated</code> is <code>false</code>, this response includes the last
-    /// traffic policy instance that is associated with the specified traffic policy.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <b>MaxItems</b> 
-    /// </para>
-    ///  
-    /// <para>
-    /// The value that you specified for the <code>MaxItems</code> parameter in the request
-    /// that produced the current response.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <b>HostedZoneIdMarker</b>, <b>TrafficPolicyInstanceNameMarker</b>, and <b>TrafficPolicyInstanceTypeMarker</b>
-    /// 
-    /// </para>
-    ///  
-    /// <para>
-    /// If <code>IsTruncated</code> is <code>true</code>, these values in the response represent
-    /// the first traffic policy instance in the next group of <code>MaxItems</code> traffic
-    /// policy instances. To list more traffic policy instances, make another call to <code>ListTrafficPolicyInstancesByPolicy</code>,
-    /// and specify these values in the corresponding request parameters.
-    /// </para>
-    ///  
-    /// <para>
-    /// If <code>IsTruncated</code> is <code>false</code>, all three elements are omitted
-    /// from the response.
-    /// </para>
-    ///  </li> </ul>
     /// </summary>
     public partial class ListTrafficPolicyInstancesByPolicyRequest : AmazonRoute53Request
     {
@@ -146,24 +95,20 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property HostedZoneIdMarker. 
         /// <para>
-        /// For the first request to <code>ListTrafficPolicyInstancesByPolicy</code>, omit this
-        /// value.
-        /// </para>
-        ///  
-        /// <para>
         /// If the value of <code>IsTruncated</code> in the previous response was <code>true</code>,
-        /// <code>HostedZoneIdMarker</code> is the ID of the hosted zone for the first traffic
-        /// policy instance in the next group of <code>MaxItems</code> traffic policy instances.
+        /// you have more traffic policy instances. To get more traffic policy instances, submit
+        /// another <code>ListTrafficPolicyInstancesByPolicy</code> request. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For the value of <code>hostedzoneid</code>, specify the value of <code>HostedZoneIdMarker</code>
+        /// from the previous response, which is the hosted zone ID of the first traffic policy
+        /// instance that Amazon Route 53 will return if you submit another request.
         /// </para>
         ///  
         /// <para>
         /// If the value of <code>IsTruncated</code> in the previous response was <code>false</code>,
-        /// there are no more traffic policy instances to get for this hosted zone.
-        /// </para>
-        ///  
-        /// <para>
-        /// If the value of <code>IsTruncated</code> in the previous response was <code>false</code>,
-        /// omit this value.
+        /// there are no more traffic policy instances to get.
         /// </para>
         /// </summary>
         public string HostedZoneIdMarker
@@ -181,24 +126,20 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property TrafficPolicyInstanceNameMarker. 
         /// <para>
-        /// For the first request to <code>ListTrafficPolicyInstancesByPolicy</code>, omit this
-        /// value.
-        /// </para>
-        ///  
-        /// <para>
         /// If the value of <code>IsTruncated</code> in the previous response was <code>true</code>,
-        /// <code>TrafficPolicyInstanceNameMarker</code> is the name of the first traffic policy
-        /// instance in the next group of <code>MaxItems</code> traffic policy instances.
+        /// you have more traffic policy instances. To get more traffic policy instances, submit
+        /// another <code>ListTrafficPolicyInstancesByPolicy</code> request.
+        /// </para>
+        ///  
+        /// <para>
+        /// For the value of <code>trafficpolicyinstancename</code>, specify the value of <code>TrafficPolicyInstanceNameMarker</code>
+        /// from the previous response, which is the name of the first traffic policy instance
+        /// that Amazon Route 53 will return if you submit another request.
         /// </para>
         ///  
         /// <para>
         /// If the value of <code>IsTruncated</code> in the previous response was <code>false</code>,
-        /// there are no more traffic policy instances to get for this hosted zone.
-        /// </para>
-        ///  
-        /// <para>
-        /// If the value of <code>IsTruncated</code> in the previous response was <code>false</code>,
-        /// omit this value.
+        /// there are no more traffic policy instances to get.
         /// </para>
         /// </summary>
         public string TrafficPolicyInstanceNameMarker
@@ -216,19 +157,20 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property TrafficPolicyInstanceTypeMarker. 
         /// <para>
-        /// For the first request to <code>ListTrafficPolicyInstancesByPolicy</code>, omit this
-        /// value.
+        /// If the value of <code>IsTruncated</code> in the previous response was <code>true</code>,
+        /// you have more traffic policy instances. To get more traffic policy instances, submit
+        /// another <code>ListTrafficPolicyInstancesByPolicy</code> request.
         /// </para>
         ///  
         /// <para>
-        /// If the value of <code>IsTruncated</code> in the previous response was <code>true</code>,
-        /// <code>TrafficPolicyInstanceTypeMarker</code> is the DNS type of the first traffic
-        /// policy instance in the next group of <code>MaxItems</code> traffic policy instances.
+        /// For the value of <code>trafficpolicyinstancetype</code>, specify the value of <code>TrafficPolicyInstanceTypeMarker</code>
+        /// from the previous response, which is the name of the first traffic policy instance
+        /// that Amazon Route 53 will return if you submit another request.
         /// </para>
         ///  
         /// <para>
         /// If the value of <code>IsTruncated</code> in the previous response was <code>false</code>,
-        /// there are no more traffic policy instances to get for this hosted zone.
+        /// there are no more traffic policy instances to get.
         /// </para>
         /// </summary>
         public RRType TrafficPolicyInstanceTypeMarker
@@ -251,7 +193,7 @@ namespace Amazon.Route53.Model
         /// the value of the <code>IsTruncated</code> element in the response is <code>true</code>,
         /// and the values of <code>HostedZoneIdMarker</code>, <code>TrafficPolicyInstanceNameMarker</code>,
         /// and <code>TrafficPolicyInstanceTypeMarker</code> represent the first traffic policy
-        /// instance in the next group of <code>MaxItems</code> traffic policy instances.
+        /// instance that Amazon Route 53 will return if you submit another request.
         /// </para>
         /// </summary>
         public string MaxItems

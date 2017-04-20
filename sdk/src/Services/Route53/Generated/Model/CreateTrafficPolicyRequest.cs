@@ -31,14 +31,6 @@ namespace Amazon.Route53.Model
     /// Container for the parameters to the CreateTrafficPolicy operation.
     /// Creates a traffic policy, which you use to create multiple DNS resource record sets
     /// for one domain name (such as example.com) or one subdomain name (such as www.example.com).
-    /// 
-    ///  
-    /// <para>
-    /// Send a <code>POST</code> request to the <code>/2013-04-01/trafficpolicy</code> resource.
-    /// The request body must include a document with a <code>CreateTrafficPolicyRequest</code>
-    /// element. The response includes the <code>CreateTrafficPolicyResponse</code> element,
-    /// which contains information about the new traffic policy.
-    /// </para>
     /// </summary>
     public partial class CreateTrafficPolicyRequest : AmazonRoute53Request
     {

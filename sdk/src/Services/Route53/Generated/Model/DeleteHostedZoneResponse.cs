@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// A complex type containing the response information for the request.
+    /// A complex type that contains the response to a <code>DeleteHostedZone</code> request.
     /// </summary>
     public partial class DeleteHostedZoneResponse : AmazonWebServiceResponse
     {
@@ -37,8 +37,8 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property ChangeInfo. 
         /// <para>
-        /// A complex type that contains the ID, the status, and the date and time of your delete
-        /// request.
+        /// A complex type that contains the ID, the status, and the date and time of a request
+        /// to delete a hosted zone.
         /// </para>
         /// </summary>
         public ChangeInfo ChangeInfo

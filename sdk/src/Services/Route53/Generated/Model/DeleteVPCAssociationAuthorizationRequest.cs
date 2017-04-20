@@ -42,12 +42,7 @@ namespace Amazon.Route53.Model
     /// disassociate the VPC from the hosted zone. If you want to delete an existing association,
     /// use <code>DisassociateVPCFromHostedZone</code>.
     /// </para>
-    ///  </important> 
-    /// <para>
-    /// Send a <code>DELETE</code> request to the <code>/2013-04-01/hostedzone/<i>hosted zone
-    /// ID</i>/deauthorizevpcassociation</code> resource. The request body must include a
-    /// document with a <code>DeleteVPCAssociationAuthorizationRequest</code> element.
-    /// </para>
+    ///  </important>
     /// </summary>
     public partial class DeleteVPCAssociationAuthorizationRequest : AmazonRoute53Request
     {

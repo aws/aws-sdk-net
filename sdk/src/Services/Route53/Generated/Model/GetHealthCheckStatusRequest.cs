@@ -29,9 +29,7 @@ namespace Amazon.Route53.Model
 {
     /// <summary>
     /// Container for the parameters to the GetHealthCheckStatus operation.
-    /// Gets status of a specified health check. Send a <code>GET</code> request to the <code>/2013-04-01/healthcheck/<i>health
-    /// check ID</i>/status</code> resource. You can use this call to get a health check's
-    /// current status.
+    /// Gets status of a specified health check.
     /// </summary>
     public partial class GetHealthCheckStatusRequest : AmazonRoute53Request
     {
@@ -40,7 +38,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property HealthCheckId. 
         /// <para>
-        /// The ID for the health check for which you want the current status. When you created
+        /// The ID for the health check that you want the current status for. When you created
         /// the health check, <code>CreateHealthCheck</code> returned the ID in the response,
         /// in the <code>HealthCheckId</code> element.
         /// </para>

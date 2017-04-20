@@ -42,13 +42,7 @@ namespace Amazon.Route53.Model
     /// a hosted zone that you created by using a different account, you must submit one authorization
     /// request for each VPC.
     /// </para>
-    ///  </note> 
-    /// <para>
-    /// Send a <code>POST</code> request to the <code>/2013-04-01/hostedzone/<i>hosted zone
-    /// ID</i>/authorizevpcassociation</code> resource. The request body must include a document
-    /// with a <code>CreateVPCAssociationAuthorizationRequest</code> element. The response
-    /// contains information about the authorization.
-    /// </para>
+    ///  </note>
     /// </summary>
     public partial class CreateVPCAssociationAuthorizationRequest : AmazonRoute53Request
     {

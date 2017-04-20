@@ -62,8 +62,8 @@ namespace Amazon.Route53.Model
         /// Gets and sets the property Marker. 
         /// <para>
         /// For the second and subsequent calls to <code>ListReusableDelegationSets</code>, <code>Marker</code>
-        /// is the value that you specified for the marker parameter in the request that produced
-        /// the current response.
+        /// is the value that you specified for the <code>marker</code> parameter in the request
+        /// that produced the current response.
         /// </para>
         /// </summary>
         public string Marker
@@ -82,10 +82,6 @@ namespace Amazon.Route53.Model
         /// Gets and sets the property IsTruncated. 
         /// <para>
         /// A flag that indicates whether there are more reusable delegation sets to be listed.
-        /// If the response is truncated, you can get the next group of <code>maxitems</code>
-        /// reusable delegation sets by calling <code>ListReusableDelegationSets</code> again
-        /// and specifying the value of the <code>NextMarker</code> element in the <code>marker</code>
-        /// parameter.
         /// </para>
         /// </summary>
         public bool IsTruncated
@@ -104,9 +100,9 @@ namespace Amazon.Route53.Model
         /// Gets and sets the property NextMarker. 
         /// <para>
         /// If <code>IsTruncated</code> is <code>true</code>, the value of <code>NextMarker</code>
-        /// identifies the first reusable delegation set in the next group of <code>maxitems</code>
-        /// reusable delegation sets. Call <code>ListReusableDelegationSets</code> again and specify
-        /// the value of <code>NextMarker</code> in the <code>marker</code> parameter.
+        /// identifies the next reusable delegation set that Amazon Route 53 will return if you
+        /// submit another <code>ListReusableDelegationSets</code> request and specify the value
+        /// of <code>NextMarker</code> in the <code>marker</code> parameter.
         /// </para>
         /// </summary>
         public string NextMarker

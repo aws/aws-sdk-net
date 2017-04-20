@@ -60,8 +60,8 @@ namespace Amazon.Route53.Model
         /// Gets and sets the property Marker. 
         /// <para>
         /// For the second and subsequent calls to <code>ListHostedZones</code>, <code>Marker</code>
-        /// is the value that you specified for the marker parameter in the request that produced
-        /// the current response.
+        /// is the value that you specified for the <code>marker</code> parameter in the request
+        /// that produced the current response.
         /// </para>
         /// </summary>
         public string Marker
@@ -80,9 +80,9 @@ namespace Amazon.Route53.Model
         /// Gets and sets the property IsTruncated. 
         /// <para>
         /// A flag indicating whether there are more hosted zones to be listed. If the response
-        /// was truncated, you can get the next group of <code>maxitems</code> hosted zones by
-        /// calling <code>ListHostedZones</code> again and specifying the value of the <code>NextMarker</code>
-        /// element in the marker parameter.
+        /// was truncated, you can get more hosted zones by submitting another <code>ListHostedZones</code>
+        /// request and specifying the value of <code>NextMarker</code> in the <code>marker</code>
+        /// parameter.
         /// </para>
         /// </summary>
         public bool IsTruncated
@@ -101,9 +101,9 @@ namespace Amazon.Route53.Model
         /// Gets and sets the property NextMarker. 
         /// <para>
         /// If <code>IsTruncated</code> is <code>true</code>, the value of <code>NextMarker</code>
-        /// identifies the first hosted zone in the next group of <code>maxitems</code> hosted
-        /// zones. Call <code>ListHostedZones</code> again and specify the value of <code>NextMarker</code>
-        /// in the <code>marker</code> parameter.
+        /// identifies the first hosted zone in the next group of hosted zones. Submit another
+        /// <code>ListHostedZones</code> request, and specify the value of <code>NextMarker</code>
+        /// from the response in the <code>marker</code> parameter.
         /// </para>
         ///  
         /// <para>

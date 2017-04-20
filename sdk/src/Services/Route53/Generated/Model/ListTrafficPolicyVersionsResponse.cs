@@ -60,9 +60,9 @@ namespace Amazon.Route53.Model
         /// Gets and sets the property IsTruncated. 
         /// <para>
         /// A flag that indicates whether there are more traffic policies to be listed. If the
-        /// response was truncated, you can get the next group of <code>maxitems</code> traffic
-        /// policies by calling <code>ListTrafficPolicyVersions</code> again and specifying the
-        /// value of the <code>NextMarker</code> element in the <code>marker</code> parameter.
+        /// response was truncated, you can get the next group of traffic policies by submitting
+        /// another <code>ListTrafficPolicyVersions</code> request and specifying the value of
+        /// <code>NextMarker</code> in the <code>marker</code> parameter.
         /// </para>
         /// </summary>
         public bool IsTruncated
@@ -81,9 +81,9 @@ namespace Amazon.Route53.Model
         /// Gets and sets the property TrafficPolicyVersionMarker. 
         /// <para>
         /// If <code>IsTruncated</code> is <code>true</code>, the value of <code>TrafficPolicyVersionMarker</code>
-        /// identifies the first traffic policy in the next group of <code>MaxItems</code> traffic
-        /// policies. Call <code>ListTrafficPolicyVersions</code> again and specify the value
-        /// of <code>TrafficPolicyVersionMarker</code> in the <code>TrafficPolicyVersionMarker</code>
+        /// identifies the first traffic policy that Amazon Route 53 will return if you submit
+        /// another request. Call <code>ListTrafficPolicyVersions</code> again and specify the
+        /// value of <code>TrafficPolicyVersionMarker</code> in the <code>TrafficPolicyVersionMarker</code>
         /// request parameter.
         /// </para>
         ///  
@@ -106,8 +106,8 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property MaxItems. 
         /// <para>
-        /// The value that you specified for the <code>maxitems</code> parameter in the call to
-        /// <code>ListTrafficPolicyVersions</code> that produced the current response.
+        /// The value that you specified for the <code>maxitems</code> parameter in the <code>ListTrafficPolicyVersions</code>
+        /// request that produced the current response.
         /// </para>
         /// </summary>
         public string MaxItems

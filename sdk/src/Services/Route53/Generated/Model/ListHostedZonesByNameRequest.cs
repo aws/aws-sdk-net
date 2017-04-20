@@ -29,8 +29,7 @@ namespace Amazon.Route53.Model
 {
     /// <summary>
     /// Container for the parameters to the ListHostedZonesByName operation.
-    /// Retrieves a list of your hosted zones in lexicographic order. Send a <code>GET</code>
-    /// request to the <code>/2013-04-01/hostedzonesbyname</code> resource. The response includes
+    /// Retrieves a list of your hosted zones in lexicographic order. The response includes
     /// a <code>HostedZones</code> child element for each hosted zone created by the current
     /// AWS account. 
     /// 
@@ -39,11 +38,11 @@ namespace Amazon.Route53.Model
     ///  <code>ListHostedZonesByName</code> sorts hosted zones by name with the labels reversed.
     /// For example:
     /// </para>
-    ///  <ul> <li> 
+    ///  
     /// <para>
     ///  <code>com.example.www.</code> 
     /// </para>
-    ///  </li> </ul> 
+    ///  
     /// <para>
     /// Note the trailing dot, which can change the sort order in some circumstances.
     /// </para>
@@ -52,19 +51,19 @@ namespace Amazon.Route53.Model
     /// If the domain name includes escape characters or Punycode, <code>ListHostedZonesByName</code>
     /// alphabetizes the domain name using the escaped or Punycoded value, which is the format
     /// that Amazon Route 53 saves in its database. For example, to create a hosted zone for
-    /// example.com, specify ex\344mple.com for the domain name. <code>ListHostedZonesByName</code>
+    /// exämple.com, you specify ex\344mple.com for the domain name. <code>ListHostedZonesByName</code>
     /// alphabetizes it as:
     /// </para>
-    ///  <ul> <li> 
+    ///  
     /// <para>
     ///  <code>com.ex\344mple.</code> 
     /// </para>
-    ///  </li> </ul> 
+    ///  
     /// <para>
     /// The labels are reversed and alphabetized using the escaped value. For more information
     /// about valid domain name formats, including internationalized domain names, see <a
     /// href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS
-    /// Domain Name Format</a> in the Amazon Route 53 Developer Guide.
+    /// Domain Name Format</a> in the <i>Amazon Route 53 Developer Guide</i>.
     /// </para>
     ///  
     /// <para>

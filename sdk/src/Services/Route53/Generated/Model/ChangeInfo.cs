@@ -48,7 +48,7 @@ namespace Amazon.Route53.Model
         /// </summary>
         /// <param name="id">The ID of the request.</param>
         /// <param name="status">The current state of the request. <code>PENDING</code> indicates that this request has not yet been applied to all Amazon Route 53 DNS servers.</param>
-        /// <param name="submittedAt">The date and time the change request was submitted, in Coordinated Universal Time (UTC) format: <code>YYYY-MM-DDThh:mm:ssZ</code>. For more information, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a>.</param>
+        /// <param name="submittedAt">The date and time that the change request was submitted in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> and Coordinated Universal Time (UTC). For example, the value <code>2017-03-27T17:48:16.751Z</code> represents March 27, 2017 at 17:48:16.751 UTC.</param>
         public ChangeInfo(string id, ChangeStatus status, DateTime submittedAt)
         {
             _id = id;
@@ -96,9 +96,9 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property SubmittedAt. 
         /// <para>
-        /// The date and time the change request was submitted, in Coordinated Universal Time
-        /// (UTC) format: <code>YYYY-MM-DDThh:mm:ssZ</code>. For more information, see the Wikipedia
-        /// entry <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a>.
+        /// The date and time that the change request was submitted in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO
+        /// 8601 format</a> and Coordinated Universal Time (UTC). For example, the value <code>2017-03-27T17:48:16.751Z</code>
+        /// represents March 27, 2017 at 17:48:16.751 UTC.
         /// </para>
         /// </summary>
         public DateTime SubmittedAt

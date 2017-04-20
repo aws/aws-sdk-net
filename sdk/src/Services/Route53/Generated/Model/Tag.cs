@@ -48,8 +48,8 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Edit a tag</b>: <code>Key</code> is the name of the tag whose <code>Value</code>
-        /// element you want to remove.
+        ///  <b>Edit a tag</b>: <code>Key</code> is the name of the tag that you want to change
+        /// the <code>Value</code> for.
         /// </para>
         ///  </li> <li> 
         /// <para>

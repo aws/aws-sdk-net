@@ -126,7 +126,7 @@ namespace Amazon.Route53.Model
         /// Gets and sets the property Port. 
         /// <para>
         /// The port on the endpoint on which you want Amazon Route 53 to perform health checks.
-        /// Specify a value for Port only when you specify a value for <code>IPAddress</code>.
+        /// Specify a value for <code>Port</code> only when you specify a value for <code>IPAddress</code>.
         /// </para>
         /// </summary>
         public int Port
@@ -206,8 +206,9 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information about how Amazon Route 53 determines whether an endpoint is healthy,
-        /// see the introduction to this topic.
+        /// For more information, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
+        /// Amazon Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route
+        /// 53 Developer Guide</i>.
         /// </para>
         /// </summary>
         public HealthCheckType Type
@@ -638,9 +639,9 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>LastKnownStatus</code>: Amazon Route 53uses the status of the health check
-        /// from the last time CloudWatch had sufficient data to determine the alarm state. For
-        /// new health checks that have no last known status, the default status for the health
+        ///  <code>LastKnownStatus</code>: Amazon Route 53 uses the status of the health check
+        /// from the last time that CloudWatch had sufficient data to determine the alarm state.
+        /// For new health checks that have no last known status, the default status for the health
         /// check is healthy.
         /// </para>
         ///  </li> </ul>

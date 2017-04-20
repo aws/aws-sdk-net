@@ -60,14 +60,9 @@ namespace Amazon.Route53.Model
         /// Gets and sets the property IsTruncated. 
         /// <para>
         /// A flag that indicates whether there are more traffic policies to be listed. If the
-        /// response was truncated, you can get the next group of <code>MaxItems</code> traffic
-        /// policies by calling <code>ListTrafficPolicies</code> again and specifying the value
-        /// of the <code>TrafficPolicyIdMarker</code> element in the <code>TrafficPolicyIdMarker</code>
-        /// request parameter.
-        /// </para>
-        ///  
-        /// <para>
-        /// Valid Values: <code>true</code> | <code>false</code> 
+        /// response was truncated, you can get the next group of traffic policies by submitting
+        /// another <code>ListTrafficPolicies</code> request and specifying the value of <code>TrafficPolicyIdMarker</code>
+        /// in the <code>TrafficPolicyIdMarker</code> request parameter.
         /// </para>
         /// </summary>
         public bool IsTruncated
@@ -105,8 +100,8 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property MaxItems. 
         /// <para>
-        /// The value that you specified for the <code>MaxItems</code> parameter in the call to
-        /// <code>ListTrafficPolicies</code> that produced the current response.
+        /// The value that you specified for the <code>MaxItems</code> parameter in the <code>ListTrafficPolicies</code>
+        /// request that produced the current response.
         /// </para>
         /// </summary>
         public string MaxItems

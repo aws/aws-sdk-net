@@ -30,16 +30,6 @@ namespace Amazon.Route53.Model
     /// <summary>
     /// Container for the parameters to the UpdateTrafficPolicyComment operation.
     /// Updates the comment for a specified traffic policy version.
-    /// 
-    ///  
-    /// <para>
-    /// Send a <code>POST</code> request to the <code>/2013-04-01/trafficpolicy/</code> resource.
-    /// </para>
-    ///  
-    /// <para>
-    /// The request body must include a document with an <code>UpdateTrafficPolicyCommentRequest</code>
-    /// element.
-    /// </para>
     /// </summary>
     public partial class UpdateTrafficPolicyCommentRequest : AmazonRoute53Request
     {
@@ -50,8 +40,8 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The value of <code>Id</code> for the traffic policy for which you want to update the
-        /// comment.
+        /// The value of <code>Id</code> for the traffic policy that you want to update the comment
+        /// for.
         /// </para>
         /// </summary>
         public string Id
@@ -69,8 +59,8 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
-        /// The value of <code>Version</code> for the traffic policy for which you want to update
-        /// the comment.
+        /// The value of <code>Version</code> for the traffic policy that you want to update the
+        /// comment for.
         /// </para>
         /// </summary>
         public int Version

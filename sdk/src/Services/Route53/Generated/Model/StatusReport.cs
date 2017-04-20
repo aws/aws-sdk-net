@@ -58,9 +58,9 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property CheckedTime. 
         /// <para>
-        /// The time at which the health checker performed the health check in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO
-        /// 8601 format</a> and Coordinated Universal Time (UTC). For example, the value <code>2014-10-27T17:48:16.751Z</code>
-        /// represents October 27, 2014 at 17:48:16.751 UTC.
+        /// The date and time that the health checker performed the health check in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO
+        /// 8601 format</a> and Coordinated Universal Time (UTC). For example, the value <code>2017-03-27T17:48:16.751Z</code>
+        /// represents March 27, 2017 at 17:48:16.751 UTC.
         /// </para>
         /// </summary>
         public DateTime CheckedTime

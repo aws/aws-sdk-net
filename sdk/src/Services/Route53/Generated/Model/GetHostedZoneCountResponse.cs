@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// A complex type that contains the response to a <code>hostedzonecount</code> request.
+    /// A complex type that contains the response to a <code>GetHostedZoneCount</code> request.
     /// </summary>
     public partial class GetHostedZoneCountResponse : AmazonWebServiceResponse
     {
@@ -37,8 +37,8 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property HostedZoneCount. 
         /// <para>
-        /// The total number of public and private hosted zones associated with the current AWS
-        /// account.
+        /// The total number of public and private hosted zones that are associated with the current
+        /// AWS account.
         /// </para>
         /// </summary>
         public long HostedZoneCount

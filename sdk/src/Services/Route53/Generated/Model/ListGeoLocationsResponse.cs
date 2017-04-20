@@ -85,7 +85,7 @@ namespace Amazon.Route53.Model
         /// <para>
         /// If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request
         /// to display more locations. Enter the value of <code>NextContinentCode</code> in the
-        /// <code>StartContinentCode</code> parameter in another <code>GET</code> <code>ListGeoLocations</code>
+        /// <code>StartContinentCode</code> parameter in another <code>ListGeoLocations</code>
         /// request.
         /// </para>
         /// </summary>
@@ -106,8 +106,7 @@ namespace Amazon.Route53.Model
         /// <para>
         /// If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request
         /// to display more locations. Enter the value of <code>NextCountryCode</code> in the
-        /// <code>StartCountryCode</code> parameter in another <code>GET</code> <code>ListGeoLocations</code>
-        /// request.
+        /// <code>StartCountryCode</code> parameter in another <code>ListGeoLocations</code> request.
         /// </para>
         /// </summary>
         public string NextCountryCode
@@ -127,7 +126,7 @@ namespace Amazon.Route53.Model
         /// <para>
         /// If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request
         /// to display more locations. Enter the value of <code>NextSubdivisionCode</code> in
-        /// the <code>StartSubdivisionCode</code> parameter in another <code>GET</code> <code>ListGeoLocations</code>
+        /// the <code>StartSubdivisionCode</code> parameter in another <code>ListGeoLocations</code>
         /// request.
         /// </para>
         /// </summary>

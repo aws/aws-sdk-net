@@ -61,7 +61,8 @@ namespace Amazon.Route53.Model
         /// Gets and sets the property Marker. 
         /// <para>
         /// For the second and subsequent calls to <code>ListHealthChecks</code>, <code>Marker</code>
-        /// is the value that you specified for the marker parameter in the previous request.
+        /// is the value that you specified for the <code>marker</code> parameter in the previous
+        /// request.
         /// </para>
         /// </summary>
         public string Marker
@@ -80,13 +81,9 @@ namespace Amazon.Route53.Model
         /// Gets and sets the property IsTruncated. 
         /// <para>
         /// A flag that indicates whether there are more health checks to be listed. If the response
-        /// was truncated, you can get the next group of <code>maxitems</code> health checks by
-        /// calling <code>ListHealthChecks</code> again and specifying the value of the <code>NextMarker</code>
-        /// element in the marker parameter.
-        /// </para>
-        ///  
-        /// <para>
-        /// Valid Values: <code>true</code> | <code>false</code> 
+        /// was truncated, you can get the next group of health checks by submitting another <code>ListHealthChecks</code>
+        /// request and specifying the value of <code>NextMarker</code> in the <code>marker</code>
+        /// parameter.
         /// </para>
         /// </summary>
         public bool IsTruncated
@@ -105,9 +102,9 @@ namespace Amazon.Route53.Model
         /// Gets and sets the property NextMarker. 
         /// <para>
         /// If <code>IsTruncated</code> is <code>true</code>, the value of <code>NextMarker</code>
-        /// identifies the first health check in the next group of <code>maxitems</code> health
-        /// checks. Call <code>ListHealthChecks</code> again and specify the value of <code>NextMarker</code>
-        /// in the marker parameter.
+        /// identifies the first health check that Amazon Route 53 returns if you submit another
+        /// <code>ListHealthChecks</code> request and specify the value of <code>NextMarker</code>
+        /// in the <code>marker</code> parameter.
         /// </para>
         /// </summary>
         public string NextMarker
