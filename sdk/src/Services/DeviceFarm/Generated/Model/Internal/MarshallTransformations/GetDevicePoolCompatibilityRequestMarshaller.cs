@@ -79,6 +79,17 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DevicePoolArn);
                 }
 
+                if(publicRequest.IsSetTest())
+                {
+                    context.Writer.WritePropertyName("test");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ScheduleRunTestMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Test, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetTestType())
                 {
                     context.Writer.WritePropertyName("testType");

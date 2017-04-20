@@ -1680,6 +1680,51 @@ namespace Amazon.DeviceFarm
 
         #endregion
         
+        #region  ListOfferingPromotions
+
+
+        /// <summary>
+        /// Returns a list of offering promotions. Each offering promotion record contains the
+        /// ID and description of the promotion. The API returns a <code>NotEligible</code> error
+        /// if the caller is not permitted to invoke the operation. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>
+        /// if you believe that you should be able to invoke this operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListOfferingPromotions service method.</param>
+        /// 
+        /// <returns>The response from the ListOfferingPromotions service method, as returned by DeviceFarm.</returns>
+        /// <exception cref="Amazon.DeviceFarm.Model.ArgumentException">
+        /// An invalid argument was specified.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.LimitExceededException">
+        /// A limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.NotEligibleException">
+        /// Exception gets thrown when a user is not eligible to perform the specified transaction.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.NotFoundException">
+        /// The specified entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.ServiceAccountException">
+        /// There was a problem with the service account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListOfferingPromotions">REST API Reference for ListOfferingPromotions Operation</seealso>
+        ListOfferingPromotionsResponse ListOfferingPromotions(ListOfferingPromotionsRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListOfferingPromotions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListOfferingPromotions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListOfferingPromotions">REST API Reference for ListOfferingPromotions Operation</seealso>
+        Task<ListOfferingPromotionsResponse> ListOfferingPromotionsAsync(ListOfferingPromotionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListOfferings
 
 

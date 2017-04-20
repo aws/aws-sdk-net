@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for OfferingTransaction Object
+    /// Response Unmarshaller for OfferingPromotion Object
     /// </summary>  
-    public class OfferingTransactionUnmarshaller : IUnmarshaller<OfferingTransaction, XmlUnmarshallerContext>, IUnmarshaller<OfferingTransaction, JsonUnmarshallerContext>
+    public class OfferingPromotionUnmarshaller : IUnmarshaller<OfferingPromotion, XmlUnmarshallerContext>, IUnmarshaller<OfferingPromotion, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        OfferingTransaction IUnmarshaller<OfferingTransaction, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        OfferingPromotion IUnmarshaller<OfferingPromotion, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,27 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public OfferingTransaction Unmarshall(JsonUnmarshallerContext context)
+        public OfferingPromotion Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            OfferingTransaction unmarshalledObject = new OfferingTransaction();
+            OfferingPromotion unmarshalledObject = new OfferingPromotion();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("cost", targetDepth))
-                {
-                    var unmarshaller = MonetaryAmountUnmarshaller.Instance;
-                    unmarshalledObject.Cost = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("createdOn", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreatedOn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("offeringPromotionId", targetDepth))
+                if (context.TestExpression("description", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OfferingPromotionId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("offeringStatus", targetDepth))
-                {
-                    var unmarshaller = OfferingStatusUnmarshaller.Instance;
-                    unmarshalledObject.OfferingStatus = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("transactionId", targetDepth))
+                if (context.TestExpression("id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TransactionId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Id = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +82,12 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
         }
 
 
-        private static OfferingTransactionUnmarshaller _instance = new OfferingTransactionUnmarshaller();        
+        private static OfferingPromotionUnmarshaller _instance = new OfferingPromotionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static OfferingTransactionUnmarshaller Instance
+        public static OfferingPromotionUnmarshaller Instance
         {
             get
             {

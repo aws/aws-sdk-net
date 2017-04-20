@@ -323,6 +323,10 @@ namespace Amazon.DeviceFarm
     {
 
         /// <summary>
+        /// Constant APPIUM_VERSION for DeviceAttribute
+        /// </summary>
+        public static readonly DeviceAttribute APPIUM_VERSION = new DeviceAttribute("APPIUM_VERSION");
+        /// <summary>
         /// Constant ARN for DeviceAttribute
         /// </summary>
         public static readonly DeviceAttribute ARN = new DeviceAttribute("ARN");
@@ -878,6 +882,10 @@ namespace Amazon.DeviceFarm
     public class RuleOperator : ConstantClass
     {
 
+        /// <summary>
+        /// Constant CONTAINS for RuleOperator
+        /// </summary>
+        public static readonly RuleOperator CONTAINS = new RuleOperator("CONTAINS");
         /// <summary>
         /// Constant EQUALS_TO for RuleOperator
         /// </summary>

@@ -58,8 +58,143 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property Parameters. 
         /// <para>
-        /// The test's parameters, such as test framework parameters and fixture settings.
+        /// The test's parameters, such as the following test framework parameters and fixture
+        /// settings:
         /// </para>
+        ///  
+        /// <para>
+        /// For Calabash tests:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// profile: A cucumber profile, for example, "my_profile_name".
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// tags: You can limit execution to features or scenarios that have (or don't have) certain
+        /// tags, for example, "@smoke" or "@smoke,~@wip".
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For Appium tests (all types):
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// appium_version: The Appium version. Currently supported values are "1.4.16", "1.6.3",
+        /// "latest", and "default".
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// “latest” will run the latest Appium version supported by Device Farm (1.6.3).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For “default”, Device Farm will choose a compatible version of Appium for the device.
+        /// The current behavior is to run 1.4.16 on Android devices and iOS 9 and earlier, 1.6.3
+        /// for iOS 10 and later.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// This behavior is subject to change.
+        /// </para>
+        ///  </li> </ul> </li> </ul> 
+        /// <para>
+        /// For Fuzz tests (Android only):
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// event_count: The number of events, between 1 and 10000, that the UI fuzz test should
+        /// perform.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// throttle: The time, in ms, between 0 and 1000, that the UI fuzz test should wait between
+        /// events.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// seed: A seed to use for randomizing the UI fuzz test. Using the same seed value between
+        /// tests ensures identical event sequences.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For Explorer tests:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// username: A username to use if the Explorer encounters a login form. If not supplied,
+        /// no username will be inserted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// password: A password to use if the Explorer encounters a login form. If not supplied,
+        /// no password will be inserted.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For Instrumentation:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// filter: A test filter string. Examples:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Running a single test case: "com.android.abc.Test1"
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Running a single test: "com.android.abc.Test1#smoke"
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Running multiple tests: "com.android.abc.Test1,com.android.abc.Test2"
+        /// </para>
+        ///  </li> </ul> </li> </ul> 
+        /// <para>
+        /// For XCTest and XCTestUI:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// filter: A test filter string. Examples:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Running a single test class: "LoginTests"
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Running a multiple test classes: "LoginTests,SmokeTests"
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Running a single test: "LoginTests/testValid"
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Running multiple tests: "LoginTests/testValid,LoginTests/testInvalid"
+        /// </para>
+        ///  </li> </ul> </li> </ul> 
+        /// <para>
+        /// For UIAutomator:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// filter: A test filter string. Examples:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Running a single test case: "com.android.abc.Test1"
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Running a single test: "com.android.abc.Test1#smoke"
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Running multiple tests: "com.android.abc.Test1,com.android.abc.Test2"
+        /// </para>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         public Dictionary<string, string> Parameters
         {

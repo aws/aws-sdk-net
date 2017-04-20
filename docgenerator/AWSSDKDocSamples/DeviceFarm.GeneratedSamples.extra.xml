@@ -1,0 +1,801 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.DeviceFarm.IAmazonDeviceFarm.CreateDevicePool(Amazon.DeviceFarm.Model.CreateDevicePoolRequest)" />
+            <member name="M:Amazon.DeviceFarm.AmazonDeviceFarmClient.CreateDevicePool(Amazon.DeviceFarm.Model.CreateDevicePoolRequest)" />
+            <member name="T:Amazon.DeviceFarm.Model.CreateDevicePoolRequest" />
+            <member name="T:Amazon.DeviceFarm.Model.CreateDevicePoolResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates a new device pool named MyDevicePool inside an existing project.
+                </para>
+                <code
+                    title="To create a new device pool"
+                    source=".\AWSSDKDocSamples\DeviceFarm\DeviceFarm.GeneratedSamples.cs"
+                    region="createdevicepool-example-1470862210860" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DeviceFarm.IAmazonDeviceFarm.CreateProject(Amazon.DeviceFarm.Model.CreateProjectRequest)" />
+            <member name="M:Amazon.DeviceFarm.AmazonDeviceFarmClient.CreateProject(Amazon.DeviceFarm.Model.CreateProjectRequest)" />
+            <member name="T:Amazon.DeviceFarm.Model.CreateProjectRequest" />
+            <member name="T:Amazon.DeviceFarm.Model.CreateProjectResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates a new project named MyProject.
+                </para>
+                <code
+                    title="To create a new project"
+                    source=".\AWSSDKDocSamples\DeviceFarm\DeviceFarm.GeneratedSamples.cs"
+                    region="createproject-example-1470862210860" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DeviceFarm.IAmazonDeviceFarm.CreateRemoteAccessSession(Amazon.DeviceFarm.Model.CreateRemoteAccessSessionRequest)" />
+            <member name="M:Amazon.DeviceFarm.AmazonDeviceFarmClient.CreateRemoteAccessSession(Amazon.DeviceFarm.Model.CreateRemoteAccessSessionRequest)" />
+            <member name="T:Amazon.DeviceFarm.Model.CreateRemoteAccessSessionRequest" />
+            <member name="T:Amazon.DeviceFarm.Model.CreateRemoteAccessSessionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates a remote access session named MySession.
+                </para>
+                <code
+                    title="To create a remote access session"
+                    source=".\AWSSDKDocSamples\DeviceFarm\DeviceFarm.GeneratedSamples.cs"
+                    region="to-create-a-remote-access-session-1470970668274" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DeviceFarm.IAmazonDeviceFarm.CreateUpload(Amazon.DeviceFarm.Model.CreateUploadRequest)" />
+            <member name="M:Amazon.DeviceFarm.AmazonDeviceFarmClient.CreateUpload(Amazon.DeviceFarm.Model.CreateUploadRequest)" />
+            <member name="T:Amazon.DeviceFarm.Model.CreateUploadRequest" />
+            <member name="T:Amazon.DeviceFarm.Model.CreateUploadResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates a new Appium Python test package upload inside an existing project.
+                </para>
+                <code
+                    title="To create a new test package upload"
+                    source=".\AWSSDKDocSamples\DeviceFarm\DeviceFarm.GeneratedSamples.cs"
+                    region="createupload-example-1470864711775" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DeviceFarm.IAmazonDeviceFarm.DeleteDevicePool(Amazon.DeviceFarm.Model.DeleteDevicePoolRequest)" />
+            <member name="M:Amazon.DeviceFarm.AmazonDeviceFarmClient.DeleteDevicePool(Amazon.DeviceFarm.Model.DeleteDevicePoolRequest)" />
+            <member name="T:Amazon.DeviceFarm.Model.DeleteDevicePoolRequest" />
+            <member name="T:Amazon.DeviceFarm.Model.DeleteDevicePoolResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes a specific device pool.
+                </para>
+                <code
+                    title="To delete a device pool"
+                    source=".\AWSSDKDocSamples\DeviceFarm\DeviceFarm.GeneratedSamples.cs"
+                    region="deletedevicepool-example-1470866975494" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DeviceFarm.IAmazonDeviceFarm.DeleteProject(Amazon.DeviceFarm.Model.DeleteProjectRequest)" />
+            <member name="M:Amazon.DeviceFarm.AmazonDeviceFarmClient.DeleteProject(Amazon.DeviceFarm.Model.DeleteProjectRequest)" />
+            <member name="T:Amazon.DeviceFarm.Model.DeleteProjectRequest" />
+            <member name="T:Amazon.DeviceFarm.Model.DeleteProjectResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes a specific project.
+                </para>
+                <code
+                    title="To delete a project"
+                    source=".\AWSSDKDocSamples\DeviceFarm\DeviceFarm.GeneratedSamples.cs"
+                    region="deleteproject-example-1470867374212" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DeviceFarm.IAmazonDeviceFarm.DeleteRemoteAccessSession(Amazon.DeviceFarm.Model.DeleteRemoteAccessSessionRequest)" />
+            <member name="M:Amazon.DeviceFarm.AmazonDeviceFarmClient.DeleteRemoteAccessSession(Amazon.DeviceFarm.Model.DeleteRemoteAccessSessionRequest)" />
+            <member name="T:Amazon.DeviceFarm.Model.DeleteRemoteAccessSessionRequest" />
+            <member name="T:Amazon.DeviceFarm.Model.DeleteRemoteAccessSessionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes a specific remote access session.
+                </para>
+                <code
+                    title="To delete a specific remote access session"
+                    source=".\AWSSDKDocSamples\DeviceFarm\DeviceFarm.GeneratedSamples.cs"
+                    region="to-delete-a-specific-remote-access-session-1470971431677" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DeviceFarm.IAmazonDeviceFarm.DeleteRun(Amazon.DeviceFarm.Model.DeleteRunRequest)" />
+            <member name="M:Amazon.DeviceFarm.AmazonDeviceFarmClient.DeleteRun(Amazon.DeviceFarm.Model.DeleteRunRequest)" />
+            <member name="T:Amazon.DeviceFarm.Model.DeleteRunRequest" />
+            <member name="T:Amazon.DeviceFarm.Model.DeleteRunResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes a specific test run.
+                </para>
+                <code
+                    title="To delete a run"
+                    source=".\AWSSDKDocSamples\DeviceFarm\DeviceFarm.GeneratedSamples.cs"
+                    region="deleterun-example-1470867905129" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DeviceFarm.IAmazonDeviceFarm.DeleteUpload(Amazon.DeviceFarm.Model.DeleteUploadRequest)" />
+            <member name="M:Amazon.DeviceFarm.AmazonDeviceFarmClient.DeleteUpload(Amazon.DeviceFarm.Model.DeleteUploadRequest)" />
+            <member name="T:Amazon.DeviceFarm.Model.DeleteUploadRequest" />
+            <member name="T:Amazon.DeviceFarm.Model.DeleteUploadResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes a specific upload.
+                </para>
+                <code
+                    title="To delete a specific upload"
+                    source=".\AWSSDKDocSamples\DeviceFarm\DeviceFarm.GeneratedSamples.cs"
+                    region="deleteupload-example-1470868363942" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DeviceFarm.IAmazonDeviceFarm.GetAccountSettings(Amazon.DeviceFarm.Model.GetAccountSettingsRequest)" />
+            <member name="M:Amazon.DeviceFarm.AmazonDeviceFarmClient.GetAccountSettings(Amazon.DeviceFarm.Model.GetAccountSettingsRequest)" />
+            <member name="T:Amazon.DeviceFarm.Model.GetAccountSettingsRequest" />
+            <member name="T:Amazon.DeviceFarm.Model.GetAccountSettingsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns information about your Device Farm account settings.
+                </para>
+                <code
+                    title="To get information about account settings"
+                    source=".\AWSSDKDocSamples\DeviceFarm\DeviceFarm.GeneratedSamples.cs"
+                    region="to-get-information-about-account-settings-1472567568189" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DeviceFarm.IAmazonDeviceFarm.GetDevice(Amazon.DeviceFarm.Model.GetDeviceRequest)" />
+            <member name="M:Amazon.DeviceFarm.AmazonDeviceFarmClient.GetDevice(Amazon.DeviceFarm.Model.GetDeviceRequest)" />
+            <member name="T:Amazon.DeviceFarm.Model.GetDeviceRequest" />
+            <member name="T:Amazon.DeviceFarm.Model.GetDeviceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns information about a specific device.
+                </para>
+                <code
+                    title="To get information about a device"
+                    source=".\AWSSDKDocSamples\DeviceFarm\DeviceFarm.GeneratedSamples.cs"
+                    region="getdevice-example-1470870602173" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DeviceFarm.IAmazonDeviceFarm.GetDevicePool(Amazon.DeviceFarm.Model.GetDevicePoolRequest)" />
+            <member name="M:Amazon.DeviceFarm.AmazonDeviceFarmClient.GetDevicePool(Amazon.DeviceFarm.Model.GetDevicePoolRequest)" />
+            <member name="T:Amazon.DeviceFarm.Model.GetDevicePoolRequest" />
+            <member name="T:Amazon.DeviceFarm.Model.GetDevicePoolResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns information about a specific device pool, given a project ARN.
+                </para>
+                <code
+                    title="To get information about a device pool"
+                    source=".\AWSSDKDocSamples\DeviceFarm\DeviceFarm.GeneratedSamples.cs"
+                    region="getdevicepool-example-1470870873136" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DeviceFarm.IAmazonDeviceFarm.GetDevicePoolCompatibility(Amazon.DeviceFarm.Model.GetDevicePoolCompatibilityRequest)" />
+            <member name="M:Amazon.DeviceFarm.AmazonDeviceFarmClient.GetDevicePoolCompatibility(Amazon.DeviceFarm.Model.GetDevicePoolCompatibilityRequest)" />
+            <member name="T:Amazon.DeviceFarm.Model.GetDevicePoolCompatibilityRequest" />
+            <member name="T:Amazon.DeviceFarm.Model.GetDevicePoolCompatibilityResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns information about the compatibility of a specific device pool, given its ARN.
+                </para>
+                <code
+                    title="To get information about the compatibility of a device pool"
+                    source=".\AWSSDKDocSamples\DeviceFarm\DeviceFarm.GeneratedSamples.cs"
+                    region="getdevicepoolcompatibility-example-1470925003466" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DeviceFarm.IAmazonDeviceFarm.GetJob(Amazon.DeviceFarm.Model.GetJobRequest)" />
+            <member name="M:Amazon.DeviceFarm.AmazonDeviceFarmClient.GetJob(Amazon.DeviceFarm.Model.GetJobRequest)" />
+            <member name="T:Amazon.DeviceFarm.Model.GetJobRequest" />
+            <member name="T:Amazon.DeviceFarm.Model.GetJobResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns information about a specific job.
+                </para>
+                <code
+                    title="To get information about a job"
+                    source=".\AWSSDKDocSamples\DeviceFarm\DeviceFarm.GeneratedSamples.cs"
+                    region="getjob-example-1470928294268" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DeviceFarm.IAmazonDeviceFarm.GetOfferingStatus(Amazon.DeviceFarm.Model.GetOfferingStatusRequest)" />
+            <member name="M:Amazon.DeviceFarm.AmazonDeviceFarmClient.GetOfferingStatus(Amazon.DeviceFarm.Model.GetOfferingStatusRequest)" />
+            <member name="T:Amazon.DeviceFarm.Model.GetOfferingStatusRequest" />
+            <member name="T:Amazon.DeviceFarm.Model.GetOfferingStatusResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns information about Device Farm offerings available to your account.
+                </para>
+                <code
+                    title="To get status information about device offerings"
+                    source=".\AWSSDKDocSamples\DeviceFarm\DeviceFarm.GeneratedSamples.cs"
+                    region="to-get-status-information-about-device-offerings-1472568124402" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DeviceFarm.IAmazonDeviceFarm.GetProject(Amazon.DeviceFarm.Model.GetProjectRequest)" />
+            <member name="M:Amazon.DeviceFarm.AmazonDeviceFarmClient.GetProject(Amazon.DeviceFarm.Model.GetProjectRequest)" />
+            <member name="T:Amazon.DeviceFarm.Model.GetProjectRequest" />
+            <member name="T:Amazon.DeviceFarm.Model.GetProjectResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example gets information about a specific project.
+                </para>
+                <code
+                    title="To get information about a project"
+                    source=".\AWSSDKDocSamples\DeviceFarm\DeviceFarm.GeneratedSamples.cs"
+                    region="to-get-a-project-1470975038449" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DeviceFarm.IAmazonDeviceFarm.GetRemoteAccessSession(Amazon.DeviceFarm.Model.GetRemoteAccessSessionRequest)" />
+            <member name="M:Amazon.DeviceFarm.AmazonDeviceFarmClient.GetRemoteAccessSession(Amazon.DeviceFarm.Model.GetRemoteAccessSessionRequest)" />
+            <member name="T:Amazon.DeviceFarm.Model.GetRemoteAccessSessionRequest" />
+            <member name="T:Amazon.DeviceFarm.Model.GetRemoteAccessSessionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example gets a specific remote access session.
+                </para>
+                <code
+                    title="To get a remote access session"
+                    source=".\AWSSDKDocSamples\DeviceFarm\DeviceFarm.GeneratedSamples.cs"
+                    region="to-get-a-remote-access-session-1471014119414" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DeviceFarm.IAmazonDeviceFarm.GetRun(Amazon.DeviceFarm.Model.GetRunRequest)" />
+            <member name="M:Amazon.DeviceFarm.AmazonDeviceFarmClient.GetRun(Amazon.DeviceFarm.Model.GetRunRequest)" />
+            <member name="T:Amazon.DeviceFarm.Model.GetRunRequest" />
+            <member name="T:Amazon.DeviceFarm.Model.GetRunResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example gets information about a specific test run.
+                </para>
+                <code
+                    title="To get information about a test run"
+                    source=".\AWSSDKDocSamples\DeviceFarm\DeviceFarm.GeneratedSamples.cs"
+                    region="to-get-a-test-run-1471015895657" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DeviceFarm.IAmazonDeviceFarm.GetSuite(Amazon.DeviceFarm.Model.GetSuiteRequest)" />
+            <member name="M:Amazon.DeviceFarm.AmazonDeviceFarmClient.GetSuite(Amazon.DeviceFarm.Model.GetSuiteRequest)" />
+            <member name="T:Amazon.DeviceFarm.Model.GetSuiteRequest" />
+            <member name="T:Amazon.DeviceFarm.Model.GetSuiteResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example gets information about a specific test suite.
+                </para>
+                <code
+                    title="To get information about a test suite"
+                    source=".\AWSSDKDocSamples\DeviceFarm\DeviceFarm.GeneratedSamples.cs"
+                    region="to-get-information-about-a-test-suite-1471016525008" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DeviceFarm.IAmazonDeviceFarm.GetTest(Amazon.DeviceFarm.Model.GetTestRequest)" />
+            <member name="M:Amazon.DeviceFarm.AmazonDeviceFarmClient.GetTest(Amazon.DeviceFarm.Model.GetTestRequest)" />
+            <member name="T:Amazon.DeviceFarm.Model.GetTestRequest" />
+            <member name="T:Amazon.DeviceFarm.Model.GetTestResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example gets information about a specific test.
+                </para>
+                <code
+                    title="To get information about a specific test"
+                    source=".\AWSSDKDocSamples\DeviceFarm\DeviceFarm.GeneratedSamples.cs"
+                    region="to-get-information-about-a-specific-test-1471025744238" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DeviceFarm.IAmazonDeviceFarm.GetUpload(Amazon.DeviceFarm.Model.GetUploadRequest)" />
+            <member name="M:Amazon.DeviceFarm.AmazonDeviceFarmClient.GetUpload(Amazon.DeviceFarm.Model.GetUploadRequest)" />
+            <member name="T:Amazon.DeviceFarm.Model.GetUploadRequest" />
+            <member name="T:Amazon.DeviceFarm.Model.GetUploadResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example gets information about a specific upload.
+                </para>
+                <code
+                    title="To get information about a specific upload"
+                    source=".\AWSSDKDocSamples\DeviceFarm\DeviceFarm.GeneratedSamples.cs"
+                    region="to-get-information-about-a-specific-upload-1471025996221" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DeviceFarm.IAmazonDeviceFarm.InstallToRemoteAccessSession(Amazon.DeviceFarm.Model.InstallToRemoteAccessSessionRequest)" />
+            <member name="M:Amazon.DeviceFarm.AmazonDeviceFarmClient.InstallToRemoteAccessSession(Amazon.DeviceFarm.Model.InstallToRemoteAccessSessionRequest)" />
+            <member name="T:Amazon.DeviceFarm.Model.InstallToRemoteAccessSessionRequest" />
+            <member name="T:Amazon.DeviceFarm.Model.InstallToRemoteAccessSessionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example installs a specific app to a device in a specific remote access session.
+                </para>
+                <code
+                    title="To install to a remote access session"
+                    source=".\AWSSDKDocSamples\DeviceFarm\DeviceFarm.GeneratedSamples.cs"
+                    region="to-install-to-a-remote-access-session-1471634453818" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DeviceFarm.IAmazonDeviceFarm.ListArtifacts(Amazon.DeviceFarm.Model.ListArtifactsRequest)" />
+            <member name="M:Amazon.DeviceFarm.AmazonDeviceFarmClient.ListArtifacts(Amazon.DeviceFarm.Model.ListArtifactsRequest)" />
+            <member name="T:Amazon.DeviceFarm.Model.ListArtifactsRequest" />
+            <member name="T:Amazon.DeviceFarm.Model.ListArtifactsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example lists screenshot artifacts for a specific run.
+                </para>
+                <code
+                    title="To list artifacts for a resource"
+                    source=".\AWSSDKDocSamples\DeviceFarm\DeviceFarm.GeneratedSamples.cs"
+                    region="to-list-artifacts-for-a-resource-1471635409527" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DeviceFarm.IAmazonDeviceFarm.ListDevicePools(Amazon.DeviceFarm.Model.ListDevicePoolsRequest)" />
+            <member name="M:Amazon.DeviceFarm.AmazonDeviceFarmClient.ListDevicePools(Amazon.DeviceFarm.Model.ListDevicePoolsRequest)" />
+            <member name="T:Amazon.DeviceFarm.Model.ListDevicePoolsRequest" />
+            <member name="T:Amazon.DeviceFarm.Model.ListDevicePoolsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns information about the private device pools in a specific project.
+                </para>
+                <code
+                    title="To get information about device pools"
+                    source=".\AWSSDKDocSamples\DeviceFarm\DeviceFarm.GeneratedSamples.cs"
+                    region="to-get-information-about-device-pools-1471635745170" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DeviceFarm.IAmazonDeviceFarm.ListDevices(Amazon.DeviceFarm.Model.ListDevicesRequest)" />
+            <member name="M:Amazon.DeviceFarm.AmazonDeviceFarmClient.ListDevices(Amazon.DeviceFarm.Model.ListDevicesRequest)" />
+            <member name="T:Amazon.DeviceFarm.Model.ListDevicesRequest" />
+            <member name="T:Amazon.DeviceFarm.Model.ListDevicesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns information about the available devices in a specific project.
+                </para>
+                <code
+                    title="To get information about devices"
+                    source=".\AWSSDKDocSamples\DeviceFarm\DeviceFarm.GeneratedSamples.cs"
+                    region="to-get-information-about-devices-1471641699344" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DeviceFarm.IAmazonDeviceFarm.ListJobs(Amazon.DeviceFarm.Model.ListJobsRequest)" />
+            <member name="M:Amazon.DeviceFarm.AmazonDeviceFarmClient.ListJobs(Amazon.DeviceFarm.Model.ListJobsRequest)" />
+            <member name="T:Amazon.DeviceFarm.Model.ListJobsRequest" />
+            <member name="T:Amazon.DeviceFarm.Model.ListJobsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns information about jobs in a specific project.
+                </para>
+                <code
+                    title="To get information about jobs"
+                    source=".\AWSSDKDocSamples\DeviceFarm\DeviceFarm.GeneratedSamples.cs"
+                    region="to-get-information-about-jobs-1471642228071" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DeviceFarm.IAmazonDeviceFarm.ListOfferings(Amazon.DeviceFarm.Model.ListOfferingsRequest)" />
+            <member name="M:Amazon.DeviceFarm.AmazonDeviceFarmClient.ListOfferings(Amazon.DeviceFarm.Model.ListOfferingsRequest)" />
+            <member name="T:Amazon.DeviceFarm.Model.ListOfferingsRequest" />
+            <member name="T:Amazon.DeviceFarm.Model.ListOfferingsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns information about available device offerings.
+                </para>
+                <code
+                    title="To get information about device offerings"
+                    source=".\AWSSDKDocSamples\DeviceFarm\DeviceFarm.GeneratedSamples.cs"
+                    region="to-get-information-about-device-offerings-1472562810999" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DeviceFarm.IAmazonDeviceFarm.ListOfferingTransactions(Amazon.DeviceFarm.Model.ListOfferingTransactionsRequest)" />
+            <member name="M:Amazon.DeviceFarm.AmazonDeviceFarmClient.ListOfferingTransactions(Amazon.DeviceFarm.Model.ListOfferingTransactionsRequest)" />
+            <member name="T:Amazon.DeviceFarm.Model.ListOfferingTransactionsRequest" />
+            <member name="T:Amazon.DeviceFarm.Model.ListOfferingTransactionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns information about Device Farm offering transactions.
+                </para>
+                <code
+                    title="To get information about device offering transactions"
+                    source=".\AWSSDKDocSamples\DeviceFarm\DeviceFarm.GeneratedSamples.cs"
+                    region="to-get-information-about-device-offering-transactions-1472561712315" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DeviceFarm.IAmazonDeviceFarm.ListProjects(Amazon.DeviceFarm.Model.ListProjectsRequest)" />
+            <member name="M:Amazon.DeviceFarm.AmazonDeviceFarmClient.ListProjects(Amazon.DeviceFarm.Model.ListProjectsRequest)" />
+            <member name="T:Amazon.DeviceFarm.Model.ListProjectsRequest" />
+            <member name="T:Amazon.DeviceFarm.Model.ListProjectsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns information about the specified project in Device Farm.
+                </para>
+                <code
+                    title="To get information about a Device Farm project"
+                    source=".\AWSSDKDocSamples\DeviceFarm\DeviceFarm.GeneratedSamples.cs"
+                    region="to-get-information-about-a-device-farm-project-1472564014388" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DeviceFarm.IAmazonDeviceFarm.ListRemoteAccessSessions(Amazon.DeviceFarm.Model.ListRemoteAccessSessionsRequest)" />
+            <member name="M:Amazon.DeviceFarm.AmazonDeviceFarmClient.ListRemoteAccessSessions(Amazon.DeviceFarm.Model.ListRemoteAccessSessionsRequest)" />
+            <member name="T:Amazon.DeviceFarm.Model.ListRemoteAccessSessionsRequest" />
+            <member name="T:Amazon.DeviceFarm.Model.ListRemoteAccessSessionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns information about a specific Device Farm remote access session.
+                </para>
+                <code
+                    title="To get information about a remote access session"
+                    source=".\AWSSDKDocSamples\DeviceFarm\DeviceFarm.GeneratedSamples.cs"
+                    region="to-get-information-about-a-remote-access-session-1472581144803" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DeviceFarm.IAmazonDeviceFarm.ListRuns(Amazon.DeviceFarm.Model.ListRunsRequest)" />
+            <member name="M:Amazon.DeviceFarm.AmazonDeviceFarmClient.ListRuns(Amazon.DeviceFarm.Model.ListRunsRequest)" />
+            <member name="T:Amazon.DeviceFarm.Model.ListRunsRequest" />
+            <member name="T:Amazon.DeviceFarm.Model.ListRunsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns information about a specific test run.
+                </para>
+                <code
+                    title="To get information about a test run"
+                    source=".\AWSSDKDocSamples\DeviceFarm\DeviceFarm.GeneratedSamples.cs"
+                    region="to-get-information-about-test-runs-1472582711069" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DeviceFarm.IAmazonDeviceFarm.ListSamples(Amazon.DeviceFarm.Model.ListSamplesRequest)" />
+            <member name="M:Amazon.DeviceFarm.AmazonDeviceFarmClient.ListSamples(Amazon.DeviceFarm.Model.ListSamplesRequest)" />
+            <member name="T:Amazon.DeviceFarm.Model.ListSamplesRequest" />
+            <member name="T:Amazon.DeviceFarm.Model.ListSamplesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns information about samples, given a specific Device Farm project.
+                </para>
+                <code
+                    title="To get information about samples"
+                    source=".\AWSSDKDocSamples\DeviceFarm\DeviceFarm.GeneratedSamples.cs"
+                    region="to-get-information-about-samples-1472582847534" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DeviceFarm.IAmazonDeviceFarm.ListSuites(Amazon.DeviceFarm.Model.ListSuitesRequest)" />
+            <member name="M:Amazon.DeviceFarm.AmazonDeviceFarmClient.ListSuites(Amazon.DeviceFarm.Model.ListSuitesRequest)" />
+            <member name="T:Amazon.DeviceFarm.Model.ListSuitesRequest" />
+            <member name="T:Amazon.DeviceFarm.Model.ListSuitesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns information about suites, given a specific Device Farm project.
+                </para>
+                <code
+                    title="To get information about suites"
+                    source=".\AWSSDKDocSamples\DeviceFarm\DeviceFarm.GeneratedSamples.cs"
+                    region="to-get-information-about-suites-1472583038218" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DeviceFarm.IAmazonDeviceFarm.ListTests(Amazon.DeviceFarm.Model.ListTestsRequest)" />
+            <member name="M:Amazon.DeviceFarm.AmazonDeviceFarmClient.ListTests(Amazon.DeviceFarm.Model.ListTestsRequest)" />
+            <member name="T:Amazon.DeviceFarm.Model.ListTestsRequest" />
+            <member name="T:Amazon.DeviceFarm.Model.ListTestsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns information about tests, given a specific Device Farm project.
+                </para>
+                <code
+                    title="To get information about tests"
+                    source=".\AWSSDKDocSamples\DeviceFarm\DeviceFarm.GeneratedSamples.cs"
+                    region="to-get-information-about-tests-1472617372212" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DeviceFarm.IAmazonDeviceFarm.ListUniqueProblems(Amazon.DeviceFarm.Model.ListUniqueProblemsRequest)" />
+            <member name="M:Amazon.DeviceFarm.AmazonDeviceFarmClient.ListUniqueProblems(Amazon.DeviceFarm.Model.ListUniqueProblemsRequest)" />
+            <member name="T:Amazon.DeviceFarm.Model.ListUniqueProblemsRequest" />
+            <member name="T:Amazon.DeviceFarm.Model.ListUniqueProblemsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns information about unique problems, given a specific Device Farm project.
+                </para>
+                <code
+                    title="To get information about unique problems"
+                    source=".\AWSSDKDocSamples\DeviceFarm\DeviceFarm.GeneratedSamples.cs"
+                    region="to-get-information-about-unique-problems-1472617781008" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DeviceFarm.IAmazonDeviceFarm.ListUploads(Amazon.DeviceFarm.Model.ListUploadsRequest)" />
+            <member name="M:Amazon.DeviceFarm.AmazonDeviceFarmClient.ListUploads(Amazon.DeviceFarm.Model.ListUploadsRequest)" />
+            <member name="T:Amazon.DeviceFarm.Model.ListUploadsRequest" />
+            <member name="T:Amazon.DeviceFarm.Model.ListUploadsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns information about uploads, given a specific Device Farm project.
+                </para>
+                <code
+                    title="To get information about uploads"
+                    source=".\AWSSDKDocSamples\DeviceFarm\DeviceFarm.GeneratedSamples.cs"
+                    region="to-get-information-about-uploads-1472617943090" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DeviceFarm.IAmazonDeviceFarm.PurchaseOffering(Amazon.DeviceFarm.Model.PurchaseOfferingRequest)" />
+            <member name="M:Amazon.DeviceFarm.AmazonDeviceFarmClient.PurchaseOffering(Amazon.DeviceFarm.Model.PurchaseOfferingRequest)" />
+            <member name="T:Amazon.DeviceFarm.Model.PurchaseOfferingRequest" />
+            <member name="T:Amazon.DeviceFarm.Model.PurchaseOfferingResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example purchases a specific device slot offering.
+                </para>
+                <code
+                    title="To purchase a device slot offering"
+                    source=".\AWSSDKDocSamples\DeviceFarm\DeviceFarm.GeneratedSamples.cs"
+                    region="to-purchase-a-device-slot-offering-1472648146343" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DeviceFarm.IAmazonDeviceFarm.RenewOffering(Amazon.DeviceFarm.Model.RenewOfferingRequest)" />
+            <member name="M:Amazon.DeviceFarm.AmazonDeviceFarmClient.RenewOffering(Amazon.DeviceFarm.Model.RenewOfferingRequest)" />
+            <member name="T:Amazon.DeviceFarm.Model.RenewOfferingRequest" />
+            <member name="T:Amazon.DeviceFarm.Model.RenewOfferingResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example renews a specific device slot offering.
+                </para>
+                <code
+                    title="To renew a device slot offering"
+                    source=".\AWSSDKDocSamples\DeviceFarm\DeviceFarm.GeneratedSamples.cs"
+                    region="to-renew-a-device-slot-offering-1472648899785" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DeviceFarm.IAmazonDeviceFarm.ScheduleRun(Amazon.DeviceFarm.Model.ScheduleRunRequest)" />
+            <member name="M:Amazon.DeviceFarm.AmazonDeviceFarmClient.ScheduleRun(Amazon.DeviceFarm.Model.ScheduleRunRequest)" />
+            <member name="T:Amazon.DeviceFarm.Model.ScheduleRunRequest" />
+            <member name="T:Amazon.DeviceFarm.Model.ScheduleRunResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example schedules a test run named MyRun.
+                </para>
+                <code
+                    title="To schedule a test run"
+                    source=".\AWSSDKDocSamples\DeviceFarm\DeviceFarm.GeneratedSamples.cs"
+                    region="to-schedule-a-test-run-1472652429636" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DeviceFarm.IAmazonDeviceFarm.StopRun(Amazon.DeviceFarm.Model.StopRunRequest)" />
+            <member name="M:Amazon.DeviceFarm.AmazonDeviceFarmClient.StopRun(Amazon.DeviceFarm.Model.StopRunRequest)" />
+            <member name="T:Amazon.DeviceFarm.Model.StopRunRequest" />
+            <member name="T:Amazon.DeviceFarm.Model.StopRunResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example stops a specific test run.
+                </para>
+                <code
+                    title="To stop a test run"
+                    source=".\AWSSDKDocSamples\DeviceFarm\DeviceFarm.GeneratedSamples.cs"
+                    region="to-stop-a-test-run-1472653770340" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DeviceFarm.IAmazonDeviceFarm.UpdateDevicePool(Amazon.DeviceFarm.Model.UpdateDevicePoolRequest)" />
+            <member name="M:Amazon.DeviceFarm.AmazonDeviceFarmClient.UpdateDevicePool(Amazon.DeviceFarm.Model.UpdateDevicePoolRequest)" />
+            <member name="T:Amazon.DeviceFarm.Model.UpdateDevicePoolRequest" />
+            <member name="T:Amazon.DeviceFarm.Model.UpdateDevicePoolResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example updates the specified device pool with a new name and description. It also enables remote access of devices in the device pool.
+                </para>
+                <code
+                    title="To update a device pool"
+                    source=".\AWSSDKDocSamples\DeviceFarm\DeviceFarm.GeneratedSamples.cs"
+                    region="to-update-a-device-pool-1472653887677" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DeviceFarm.IAmazonDeviceFarm.UpdateProject(Amazon.DeviceFarm.Model.UpdateProjectRequest)" />
+            <member name="M:Amazon.DeviceFarm.AmazonDeviceFarmClient.UpdateProject(Amazon.DeviceFarm.Model.UpdateProjectRequest)" />
+            <member name="T:Amazon.DeviceFarm.Model.UpdateProjectRequest" />
+            <member name="T:Amazon.DeviceFarm.Model.UpdateProjectResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example updates the specified project with a new name.
+                </para>
+                <code
+                    title="To update a device pool"
+                    source=".\AWSSDKDocSamples\DeviceFarm\DeviceFarm.GeneratedSamples.cs"
+                    region="to-update-a-device-pool-1472653887677" />
+            </example>
+        </value>
+    </doc>
+</docs>

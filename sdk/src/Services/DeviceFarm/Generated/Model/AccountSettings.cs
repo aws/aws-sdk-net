@@ -35,6 +35,8 @@ namespace Amazon.DeviceFarm.Model
         private string _awsAccountNumber;
         private int? _defaultJobTimeoutMinutes;
         private int? _maxJobTimeoutMinutes;
+        private Dictionary<string, int> _maxSlots = new Dictionary<string, int>();
+        private TrialMinutes _trialMinutes;
         private Dictionary<string, int> _unmeteredDevices = new Dictionary<string, int>();
         private Dictionary<string, int> _unmeteredRemoteAccessDevices = new Dictionary<string, int>();
 
@@ -91,6 +93,44 @@ namespace Amazon.DeviceFarm.Model
         internal bool IsSetMaxJobTimeoutMinutes()
         {
             return this._maxJobTimeoutMinutes.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxSlots. 
+        /// <para>
+        /// The maximum number of device slots that the AWS account can purchase. Each maximum
+        /// is expressed as an <code>offering-id:number</code> pair, where the <code>offering-id</code>
+        /// represents one of the IDs returned by the <code>ListOfferings</code> command.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, int> MaxSlots
+        {
+            get { return this._maxSlots; }
+            set { this._maxSlots = value; }
+        }
+
+        // Check to see if MaxSlots property is set
+        internal bool IsSetMaxSlots()
+        {
+            return this._maxSlots != null && this._maxSlots.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TrialMinutes. 
+        /// <para>
+        /// Information about an AWS account's usage of free trial device minutes.
+        /// </para>
+        /// </summary>
+        public TrialMinutes TrialMinutes
+        {
+            get { return this._trialMinutes; }
+            set { this._trialMinutes = value; }
+        }
+
+        // Check to see if TrialMinutes property is set
+        internal bool IsSetTrialMinutes()
+        {
+            return this._trialMinutes != null;
         }
 
         /// <summary>

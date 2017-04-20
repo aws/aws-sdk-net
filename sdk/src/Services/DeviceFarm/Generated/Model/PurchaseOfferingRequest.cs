@@ -38,6 +38,7 @@ namespace Amazon.DeviceFarm.Model
     public partial class PurchaseOfferingRequest : AmazonDeviceFarmRequest
     {
         private string _offeringId;
+        private string _offeringPromotionId;
         private int? _quantity;
 
         /// <summary>
@@ -56,6 +57,24 @@ namespace Amazon.DeviceFarm.Model
         internal bool IsSetOfferingId()
         {
             return this._offeringId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OfferingPromotionId. 
+        /// <para>
+        /// The ID of the offering promotion to be applied to the purchase.
+        /// </para>
+        /// </summary>
+        public string OfferingPromotionId
+        {
+            get { return this._offeringPromotionId; }
+            set { this._offeringPromotionId = value; }
+        }
+
+        // Check to see if OfferingPromotionId property is set
+        internal bool IsSetOfferingPromotionId()
+        {
+            return this._offeringPromotionId != null;
         }
 
         /// <summary>

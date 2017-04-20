@@ -61,6 +61,14 @@ namespace Amazon.DeviceFarm.Model
         /// <para>
         /// PLATFORM: The platform (for example, Android or iOS).
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// APPIUM_VERSION: The Appium version for the test.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public DeviceAttribute Attribute
@@ -99,6 +107,10 @@ namespace Amazon.DeviceFarm.Model
         ///  </li> <li> 
         /// <para>
         /// NOT_IN: The not-in operator.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CONTAINS: The contains operator.
         /// </para>
         ///  </li> </ul>
         /// </summary>

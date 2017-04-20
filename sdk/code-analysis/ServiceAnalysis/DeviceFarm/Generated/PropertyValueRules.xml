@@ -231,6 +231,16 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DeviceFarm.Model.ListOfferingPromotionsRequest.NextToken</property>
+    <min>4</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DeviceFarm.Model.ListOfferingPromotionsResponse.NextToken</property>
+    <min>4</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DeviceFarm.Model.ListOfferingsRequest.NextToken</property>
     <min>4</min>
     <max>1024</max>
@@ -365,6 +375,10 @@
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.PurchaseOfferingRequest.OfferingId</property>
     <min>32</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DeviceFarm.Model.PurchaseOfferingRequest.OfferingPromotionId</property>
+    <min>4</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.RenewOfferingRequest.OfferingId</property>
@@ -560,6 +574,19 @@
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.Offering.Id</property>
     <min>32</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DeviceFarm.Model.OfferingPromotion.Description</property>
+    <min>0</min>
+    <max>16384</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DeviceFarm.Model.OfferingPromotion.Id</property>
+    <min>4</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DeviceFarm.Model.OfferingTransaction.OfferingPromotionId</property>
+    <min>4</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DeviceFarm.Model.OfferingTransaction.TransactionId</property>

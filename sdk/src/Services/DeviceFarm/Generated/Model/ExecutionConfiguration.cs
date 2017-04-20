@@ -33,7 +33,45 @@ namespace Amazon.DeviceFarm.Model
     /// </summary>
     public partial class ExecutionConfiguration
     {
+        private bool? _accountsCleanup;
+        private bool? _appPackagesCleanup;
         private int? _jobTimeoutMinutes;
+
+        /// <summary>
+        /// Gets and sets the property AccountsCleanup. 
+        /// <para>
+        /// True if account cleanup is enabled at the beginning of the test; otherwise, false.
+        /// </para>
+        /// </summary>
+        public bool AccountsCleanup
+        {
+            get { return this._accountsCleanup.GetValueOrDefault(); }
+            set { this._accountsCleanup = value; }
+        }
+
+        // Check to see if AccountsCleanup property is set
+        internal bool IsSetAccountsCleanup()
+        {
+            return this._accountsCleanup.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AppPackagesCleanup. 
+        /// <para>
+        /// True if app package cleanup is enabled at the beginning of the test; otherwise, false.
+        /// </para>
+        /// </summary>
+        public bool AppPackagesCleanup
+        {
+            get { return this._appPackagesCleanup.GetValueOrDefault(); }
+            set { this._appPackagesCleanup = value; }
+        }
+
+        // Check to see if AppPackagesCleanup property is set
+        internal bool IsSetAppPackagesCleanup()
+        {
+            return this._appPackagesCleanup.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property JobTimeoutMinutes. 

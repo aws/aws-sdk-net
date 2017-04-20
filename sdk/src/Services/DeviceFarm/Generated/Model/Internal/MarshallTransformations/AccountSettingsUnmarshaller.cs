@@ -82,6 +82,18 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                     unmarshalledObject.MaxJobTimeoutMinutes = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("maxSlots", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, int, StringUnmarshaller, IntUnmarshaller>(StringUnmarshaller.Instance, IntUnmarshaller.Instance);
+                    unmarshalledObject.MaxSlots = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("trialMinutes", targetDepth))
+                {
+                    var unmarshaller = TrialMinutesUnmarshaller.Instance;
+                    unmarshalledObject.TrialMinutes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("unmeteredDevices", targetDepth))
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, int, StringUnmarshaller, IntUnmarshaller>(StringUnmarshaller.Instance, IntUnmarshaller.Instance);

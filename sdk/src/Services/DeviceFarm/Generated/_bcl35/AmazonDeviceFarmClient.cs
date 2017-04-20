@@ -2461,6 +2461,77 @@ namespace Amazon.DeviceFarm
 
         #endregion
         
+        #region  ListOfferingPromotions
+
+        /// <summary>
+        /// Returns a list of offering promotions. Each offering promotion record contains the
+        /// ID and description of the promotion. The API returns a <code>NotEligible</code> error
+        /// if the caller is not permitted to invoke the operation. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>
+        /// if you believe that you should be able to invoke this operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListOfferingPromotions service method.</param>
+        /// 
+        /// <returns>The response from the ListOfferingPromotions service method, as returned by DeviceFarm.</returns>
+        /// <exception cref="Amazon.DeviceFarm.Model.ArgumentException">
+        /// An invalid argument was specified.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.LimitExceededException">
+        /// A limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.NotEligibleException">
+        /// Exception gets thrown when a user is not eligible to perform the specified transaction.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.NotFoundException">
+        /// The specified entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.DeviceFarm.Model.ServiceAccountException">
+        /// There was a problem with the service account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListOfferingPromotions">REST API Reference for ListOfferingPromotions Operation</seealso>
+        public ListOfferingPromotionsResponse ListOfferingPromotions(ListOfferingPromotionsRequest request)
+        {
+            var marshaller = new ListOfferingPromotionsRequestMarshaller();
+            var unmarshaller = ListOfferingPromotionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListOfferingPromotionsRequest,ListOfferingPromotionsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListOfferingPromotions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListOfferingPromotions operation on AmazonDeviceFarmClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListOfferingPromotions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListOfferingPromotions">REST API Reference for ListOfferingPromotions Operation</seealso>
+        public IAsyncResult BeginListOfferingPromotions(ListOfferingPromotionsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new ListOfferingPromotionsRequestMarshaller();
+            var unmarshaller = ListOfferingPromotionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListOfferingPromotionsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListOfferingPromotions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListOfferingPromotions.</param>
+        /// 
+        /// <returns>Returns a  ListOfferingPromotionsResult from DeviceFarm.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListOfferingPromotions">REST API Reference for ListOfferingPromotions Operation</seealso>
+        public  ListOfferingPromotionsResponse EndListOfferingPromotions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListOfferingPromotionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListOfferings
 
         /// <summary>

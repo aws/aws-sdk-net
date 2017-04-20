@@ -45,6 +45,18 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ExecutionConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAccountsCleanup())
+            {
+                context.Writer.WritePropertyName("accountsCleanup");
+                context.Writer.Write(requestObject.AccountsCleanup);
+            }
+
+            if(requestObject.IsSetAppPackagesCleanup())
+            {
+                context.Writer.WritePropertyName("appPackagesCleanup");
+                context.Writer.Write(requestObject.AppPackagesCleanup);
+            }
+
             if(requestObject.IsSetJobTimeoutMinutes())
             {
                 context.Writer.WritePropertyName("jobTimeoutMinutes");

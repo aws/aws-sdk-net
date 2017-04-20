@@ -35,6 +35,7 @@ namespace Amazon.DeviceFarm.Model
     {
         private string _appArn;
         private string _devicePoolArn;
+        private ScheduleRunTest _test;
         private TestType _testType;
 
         /// <summary>
@@ -71,6 +72,24 @@ namespace Amazon.DeviceFarm.Model
         internal bool IsSetDevicePoolArn()
         {
             return this._devicePoolArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Test. 
+        /// <para>
+        /// Information about the uploaded test to be run against the device pool.
+        /// </para>
+        /// </summary>
+        public ScheduleRunTest Test
+        {
+            get { return this._test; }
+            set { this._test = value; }
+        }
+
+        // Check to see if Test property is set
+        internal bool IsSetTest()
+        {
+            return this._test != null;
         }
 
         /// <summary>
