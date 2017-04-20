@@ -19,12 +19,12 @@ using <#=this.Config.Namespace#>;
 namespace AWSSDK_DotNet35.UnitTests.TestTools
 {
     [TestClass]
-    public class <#=this.Config.BaseName#>MethodCustomizationsTests
+    public class <#=this.Config.ClassName#>MethodCustomizationsTests
     {
         [TestMethod]
 		[TestCategory("UnitTest")]
-        [TestCategory("SimpleMethods"), TestCategory("<#=this.Config.BaseName#>")]
-        public void <#=this.Config.BaseName#>SimpleMethodTests()
+        [TestCategory("SimpleMethods"), TestCategory("<#=this.Config.ClassName#>")]
+        public void <#=this.Config.ClassName#>SimpleMethodTests()
         {
 <#
         foreach(var operation in this.Config.ServiceModel.Operations)
@@ -38,7 +38,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
                 {
                     var docMembers = this.Config.ServiceModel.Customizations.SimpleMethodsModel.GetFormMembers(form, members);
 #>
-            EnsureSimpleMethodExists(typeof(<#=this.Config.Namespace#>.Amazon<#=this.Config.BaseName#>Client), "<#=operation.Name#>", new Type[] { <#foreach (var member in docMembers) { #>typeof(<#=member.DetermineType()#>), <# }#>});
+            EnsureSimpleMethodExists(typeof(<#=this.Config.Namespace#>.Amazon<#=this.Config.ClassName#>Client), "<#=operation.Name#>", new Type[] { <#foreach (var member in docMembers) { #>typeof(<#=member.DetermineType()#>), <# }#>});
 <#
                 }
             }

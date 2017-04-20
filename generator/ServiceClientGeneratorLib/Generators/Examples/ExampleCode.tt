@@ -14,16 +14,16 @@ using <#=this.Config.Namespace#>.Model;
 
 namespace AWSSDKDocSamples.<#=this.Config.Namespace#>.Generated
 {
-	class <#=this.Config.BaseName#>Samples : ISample
+	class <#=this.Config.ClassName#>Samples : ISample
 	{
-		static IAmazon<#=this.Config.BaseName#> client = new Amazon<#=this.Config.BaseName#>Client();
+		static IAmazon<#=this.Config.ClassName#> client = new Amazon<#=this.Config.ClassName#>Client();
 <#
 	foreach(var operation in this.Config.ServiceModel.Operations)
 	{
 		foreach(var example in operation.Examples)
 		{
 #>
-		public void <#=this.Config.BaseName#><#=operation.Name#>()
+		public void <#=this.Config.ClassName#><#=operation.Name#>()
 		{
 			#region <#=example.Id#>
 

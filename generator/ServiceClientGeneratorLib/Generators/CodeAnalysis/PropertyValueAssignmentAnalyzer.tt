@@ -24,7 +24,7 @@ namespace <#=this.Config.Namespace#>.CodeAnalysis
 	{
 		public override string GetServiceName()
 		{
-			return "<#=this.Config.BaseName#>";
+			return "<#=this.Config.ClassName#>";
 		}
 	}
 }

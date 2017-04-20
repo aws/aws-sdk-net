@@ -12,9 +12,9 @@ using Amazon.Runtime;
 namespace <#=this.Config.Namespace#>
 {
     /// <summary>
-    /// Base class for <#=this.Config.BaseName#> operation requests.
+    /// Base class for <#=this.Config.ClassName#> operation requests.
     /// </summary>
-    public partial class Amazon<#=this.Config.BaseName#>Request : AmazonWebServiceRequest
+    public partial class Amazon<#=this.Config.ClassName#>Request : AmazonWebServiceRequest
     {
     }
 }

@@ -13,7 +13,7 @@ using Amazon.Runtime;
 namespace <#=this.Config.Namespace#>.Model
 {
     ///<summary>
-    /// <#= this.Config.BaseName#> exception
+    /// <#= this.Config.ClassName#> exception
     /// </summary>
 #if !PCL && !CORECLR
     [Serializable]

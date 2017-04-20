@@ -15,7 +15,7 @@ using <#=this.Config.Namespace#>.Model;
 namespace AWSSDK_DotNet35.UnitTests.TestTools
 {
     [TestClass]
-    public class <#=this.Config.BaseName#>ConstructorCustomizationsTests
+    public class <#=this.Config.ClassName#>ConstructorCustomizationsTests
     {
 <#
     foreach (var operation in this.Config.ServiceModel.Operations)
@@ -25,7 +25,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
 #>
         [TestMethod]
 		[TestCategory("UnitTest")]
-        [TestCategory("Constructors"), TestCategory("<#=this.Config.BaseName#>")]
+        [TestCategory("Constructors"), TestCategory("<#=this.Config.ClassName#>")]
         public void <#=operation.Name#>RequestConstructorTests()
         {
 <#

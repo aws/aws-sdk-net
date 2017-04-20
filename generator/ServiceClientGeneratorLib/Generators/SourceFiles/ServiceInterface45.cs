@@ -18,7 +18,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterface45.tt"
+    #line 1 "C:\code\dotnet\sdk\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterface45.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "14.0.0.0")]
     public partial class ServiceInterface45 : BaseGenerator
     {
@@ -29,7 +29,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
         public override string TransformText()
         {
             
-            #line 6 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterface45.tt"
+            #line 6 "C:\code\dotnet\sdk\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterface45.tt"
 
 	AddLicenseHeader();
 
@@ -39,35 +39,35 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("\r\n\r\nusing System;\r\nusing System.Threading;\r\nusing System.Threading.Tasks;\r\nusing " +
                     "System.Collections.Generic;\r\n\r\nusing Amazon.Runtime;\r\nusing ");
             
-            #line 17 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterface45.tt"
+            #line 17 "C:\code\dotnet\sdk\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterface45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
             #line hidden
             this.Write(".Model;\r\n\r\nnamespace ");
             
-            #line 19 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterface45.tt"
+            #line 19 "C:\code\dotnet\sdk\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterface45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
             #line hidden
             this.Write("\r\n{\r\n");
             
-            #line 21 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterface45.tt"
+            #line 21 "C:\code\dotnet\sdk\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterface45.tt"
     this.FormatServiceInterfaceDocumentation(this.Config.ServiceModel.Documentation); 
             
             #line default
             #line hidden
             this.Write("\tpublic partial interface IAmazon");
             
-            #line 22 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterface45.tt"
+            #line 22 "C:\code\dotnet\sdk\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterface45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
             this.Write(" : IAmazonService, IDisposable\r\n\t{\r\n\r\n\t\t");
             
-            #line 25 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterface45.tt"
+            #line 25 "C:\code\dotnet\sdk\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterface45.tt"
 
     // Generates definitions for each operation in the service model
 		foreach(var operation in this.Config.ServiceModel.Operations)
@@ -80,14 +80,14 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("\r\n\t\t#region  ");
             
-            #line 33 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterface45.tt"
+            #line 33 "C:\code\dotnet\sdk\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterface45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("\r\n\r\n");
             
-            #line 35 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterface45.tt"
+            #line 35 "C:\code\dotnet\sdk\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterface45.tt"
 
         // Creates a parameterless definition of the operation if specified in the customizations file
         if (this.Config.ServiceModel.Customizations.CreateNoArgOverload(operation.Name))
@@ -97,7 +97,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line default
             #line hidden
             
-            #line 40 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterface45.tt"
+            #line 40 "C:\code\dotnet\sdk\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterface45.tt"
 
 this.FormatOperationDocumentationSync(operation, false);
 		if(operation.IsDeprecated)
@@ -108,14 +108,14 @@ this.FormatOperationDocumentationSync(operation, false);
             #line hidden
             this.Write("\t\t[Obsolete(\"");
             
-            #line 45 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterface45.tt"
+            #line 45 "C:\code\dotnet\sdk\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterface45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.DeprecationMessage));
             
             #line default
             #line hidden
             this.Write("\")]\r\n");
             
-            #line 46 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterface45.tt"
+            #line 46 "C:\code\dotnet\sdk\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterface45.tt"
 		
 		}
 
@@ -124,21 +124,21 @@ this.FormatOperationDocumentationSync(operation, false);
             #line hidden
             this.Write("        ");
             
-            #line 49 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterface45.tt"
+            #line 49 "C:\code\dotnet\sdk\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterface45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Response ");
             
-            #line 49 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterface45.tt"
+            #line 49 "C:\code\dotnet\sdk\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterface45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("();\r\n\r\n");
             
-            #line 51 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterface45.tt"
+            #line 51 "C:\code\dotnet\sdk\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterface45.tt"
 
         }
         // Adds simple method forms defined in the customizations file
@@ -148,7 +148,7 @@ this.FormatOperationDocumentationSync(operation, false);
             #line default
             #line hidden
             
-            #line 56 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterface45.tt"
+            #line 56 "C:\code\dotnet\sdk\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterface45.tt"
 
 this.FormatOperationDocumentationSync(operation, true);
 		if(operation.IsDeprecated)
@@ -159,14 +159,14 @@ this.FormatOperationDocumentationSync(operation, true);
             #line hidden
             this.Write("\t\t[Obsolete(\"");
             
-            #line 61 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterface45.tt"
+            #line 61 "C:\code\dotnet\sdk\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterface45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.DeprecationMessage));
             
             #line default
             #line hidden
             this.Write("\")]\r\n");
             
-            #line 62 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterface45.tt"
+            #line 62 "C:\code\dotnet\sdk\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterface45.tt"
 		
 		}
 
@@ -175,28 +175,28 @@ this.FormatOperationDocumentationSync(operation, true);
             #line hidden
             this.Write("        ");
             
-            #line 65 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterface45.tt"
+            #line 65 "C:\code\dotnet\sdk\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterface45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Response ");
             
-            #line 65 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterface45.tt"
+            #line 65 "C:\code\dotnet\sdk\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterface45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("(");
             
-            #line 65 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterface45.tt"
+            #line 65 "C:\code\dotnet\sdk\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterface45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Request request);\r\n\r\n");
             
-            #line 67 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterface45.tt"
+            #line 67 "C:\code\dotnet\sdk\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterface45.tt"
 
         // Creates a parameterless definition of the operation if specified in the customizations file
         if (this.Config.ServiceModel.Customizations.CreateNoArgOverload(operation.Name))
@@ -206,7 +206,7 @@ this.FormatOperationDocumentationSync(operation, true);
             #line default
             #line hidden
             
-            #line 72 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterface45.tt"
+            #line 72 "C:\code\dotnet\sdk\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterface45.tt"
 
 			this.FormatOperationDocumentationAsync(operation, false);
 			if(operation.IsDeprecated)
@@ -217,14 +217,14 @@ this.FormatOperationDocumentationSync(operation, true);
             #line hidden
             this.Write("\t\t[Obsolete(\"");
             
-            #line 77 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterface45.tt"
+            #line 77 "C:\code\dotnet\sdk\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterface45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.DeprecationMessage));
             
             #line default
             #line hidden
             this.Write("\")]\r\n");
             
-            #line 78 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterface45.tt"
+            #line 78 "C:\code\dotnet\sdk\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterface45.tt"
 		
 			}
 
@@ -233,14 +233,14 @@ this.FormatOperationDocumentationSync(operation, true);
             #line hidden
             this.Write("        Task<");
             
-            #line 81 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterface45.tt"
+            #line 81 "C:\code\dotnet\sdk\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterface45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Response> ");
             
-            #line 81 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterface45.tt"
+            #line 81 "C:\code\dotnet\sdk\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterface45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
@@ -248,7 +248,7 @@ this.FormatOperationDocumentationSync(operation, true);
             this.Write("Async(System.Threading.CancellationToken cancellationToken = default(Cancellation" +
                     "Token));\r\n\r\n");
             
-            #line 83 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterface45.tt"
+            #line 83 "C:\code\dotnet\sdk\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterface45.tt"
 
         }
 
@@ -259,7 +259,7 @@ this.FormatOperationDocumentationSync(operation, true);
             #line hidden
             this.Write("\r\n");
             
-            #line 89 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterface45.tt"
+            #line 89 "C:\code\dotnet\sdk\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterface45.tt"
 
 			AddAsyncDocumentation(operation);
 			if(operation.IsDeprecated)
@@ -270,14 +270,14 @@ this.FormatOperationDocumentationSync(operation, true);
             #line hidden
             this.Write("\t\t[Obsolete(\"");
             
-            #line 94 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterface45.tt"
+            #line 94 "C:\code\dotnet\sdk\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterface45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.DeprecationMessage));
             
             #line default
             #line hidden
             this.Write("\")]\r\n");
             
-            #line 95 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterface45.tt"
+            #line 95 "C:\code\dotnet\sdk\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterface45.tt"
 		
 			}
 
@@ -286,21 +286,21 @@ this.FormatOperationDocumentationSync(operation, true);
             #line hidden
             this.Write("        Task<");
             
-            #line 98 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterface45.tt"
+            #line 98 "C:\code\dotnet\sdk\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterface45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Response> ");
             
-            #line 98 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterface45.tt"
+            #line 98 "C:\code\dotnet\sdk\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterface45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Async(");
             
-            #line 98 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterface45.tt"
+            #line 98 "C:\code\dotnet\sdk\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterface45.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
@@ -308,7 +308,7 @@ this.FormatOperationDocumentationSync(operation, true);
             this.Write("Request request, CancellationToken cancellationToken = default(CancellationToken)" +
                     ");\r\n\r\n\t\t#endregion\r\n\t\t");
             
-            #line 101 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterface45.tt"
+            #line 101 "C:\code\dotnet\sdk\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterface45.tt"
 
 		}
 		

@@ -73,7 +73,7 @@
 #>
         /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the <#=operation.Name#> operation on Amazon<#=this.Config.BaseName#>Client.</param>
+        /// <param name="request">Container for the necessary parameters to execute the <#=operation.Name#> operation on Amazon<#=this.Config.ClassName#>Client.</param>
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
@@ -94,7 +94,7 @@
         /// Initiates the asynchronous execution of the <#=operation.Name#> operation.
         /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the <#=operation.Name#> operation on Amazon<#=this.Config.BaseName#>Client.</param>
+        /// <param name="request">Container for the necessary parameters to execute the <#=operation.Name#> operation on Amazon<#=this.Config.ClassName#>Client.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
@@ -120,7 +120,7 @@
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to Begin<#=operation.Name#>.</param>
         /// 
-        /// <returns>Returns a  <#=operation.Name#>Result from <#=this.Config.BaseName#>.</returns>
+        /// <returns>Returns a  <#=operation.Name#>Result from <#=this.Config.ClassName#>.</returns>
 <#+
         if(!string.IsNullOrEmpty(operation.RestAPIDocUrl))
         {
@@ -136,7 +136,7 @@
         documentation = CleanupDocumentation(documentation);
 #>
     /// <summary>
-    /// Implementation for accessing <#= this.Config.BaseName #>
+    /// Implementation for accessing <#= this.Config.ClassName #>
     ///
 <#+
         WriteCommentBlock("    ", documentation);
@@ -151,7 +151,7 @@
         documentation = CleanupDocumentation(documentation);
 #>
     /// <summary>
-    /// Interface for accessing <#= this.Config.BaseName #>
+    /// Interface for accessing <#= this.Config.ClassName #>
     ///
 <#+
         WriteCommentBlock("    ", documentation);
@@ -270,7 +270,7 @@
     }
 #>
         /// 
-        /// <returns>The response from the <#=operation.Name#> service method, as returned by <#=this.Config.BaseName#>.</returns>
+        /// <returns>The response from the <#=operation.Name#> service method, as returned by <#=this.Config.ClassName#>.</returns>
 <#+
         // Skip adding exceptions in the ndoc because we are not generating exceptions from the service model.
         if(this.Config.Namespace != "Amazon.S3")
@@ -325,7 +325,7 @@
     }
 #>
         /// 
-        /// <returns>The response from the <#=operation.Name#> service method, as returned by <#=this.Config.BaseName#>.</returns>
+        /// <returns>The response from the <#=operation.Name#> service method, as returned by <#=this.Config.ClassName#>.</returns>
 <#+
 		if (!this.Config.ServiceModel.Customizations.SuppressSimpleMethodExceptionDocs)
 		{
@@ -371,7 +371,7 @@
     }
 #>
         /// 
-        /// <returns>The response from the <#=operation.Name#> service method, as returned by <#=this.Config.BaseName#>.</returns>
+        /// <returns>The response from the <#=operation.Name#> service method, as returned by <#=this.Config.ClassName#>.</returns>
 <#+
 		if (!this.Config.ServiceModel.Customizations.SuppressSimpleMethodExceptionDocs)
 		{

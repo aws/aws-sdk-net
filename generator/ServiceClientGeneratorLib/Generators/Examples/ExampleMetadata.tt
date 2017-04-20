@@ -14,8 +14,8 @@
 #>
 	<doc>
 		<members>
-			<member name="M:<#=this.Config.Namespace#>.IAmazon<#=this.Config.BaseName#>.<#=operation.Name#>(<#=this.Config.Namespace#>.Model.<#=operation.Name#>Request)" />
-			<member name="M:<#=this.Config.Namespace#>.Amazon<#=this.Config.BaseName#>Client.<#=operation.Name#>(<#=this.Config.Namespace#>.Model.<#=operation.Name#>Request)" />
+			<member name="M:<#=this.Config.Namespace#>.IAmazon<#=this.Config.ClassName#>.<#=operation.Name#>(<#=this.Config.Namespace#>.Model.<#=operation.Name#>Request)" />
+			<member name="M:<#=this.Config.Namespace#>.Amazon<#=this.Config.ClassName#>Client.<#=operation.Name#>(<#=this.Config.Namespace#>.Model.<#=operation.Name#>Request)" />
 			<member name="T:<#=this.Config.Namespace#>.Model.<#=operation.Name#>Request" />
 			<member name="T:<#=this.Config.Namespace#>.Model.<#=operation.Name#>Response" />
 		</members>

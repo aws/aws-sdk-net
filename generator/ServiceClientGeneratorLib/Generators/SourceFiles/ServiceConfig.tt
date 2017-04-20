@@ -17,9 +17,9 @@ using Amazon.Util.Internal;
 namespace <#=this.Config.Namespace#>
 {
     /// <summary>
-    /// Configuration for accessing Amazon <#=this.Config.BaseName#> service
+    /// Configuration for accessing Amazon <#=this.Config.ClassName#> service
     /// </summary>
-	public partial class Amazon<#=this.Config.BaseName#>Config : ClientConfig
+	public partial class Amazon<#=this.Config.ClassName#>Config : ClientConfig
 	{
 		private static readonly string UserAgentString =
             InternalSDKUtils.BuildUserAgentString("<#=this.Config.ServiceFileVersion #>");
@@ -29,7 +29,7 @@ namespace <#=this.Config.Namespace#>
         /// <summary>
         /// Default constructor
         /// </summary>
-        public Amazon<#=this.Config.BaseName#>Config()
+        public Amazon<#=this.Config.ClassName#>Config()
         {
 <#
             if(!string.IsNullOrEmpty(this.Config.AuthenticationServiceName))

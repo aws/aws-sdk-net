@@ -18,7 +18,7 @@ namespace ServiceClientGenerator.Generators.CodeAnalysis
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\codebase\v3-master\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\PropertyValueAssignmentAnalyzer.tt"
+    #line 1 "C:\code\dotnet\sdk\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\PropertyValueAssignmentAnalyzer.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "14.0.0.0")]
     public partial class PropertyValueAssignmentAnalyzer : BaseGenerator
     {
@@ -44,7 +44,7 @@ using Amazon.CodeAnalysis.Shared;
 
 namespace ");
             
-            #line 20 "C:\codebase\v3-master\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\PropertyValueAssignmentAnalyzer.tt"
+            #line 20 "C:\code\dotnet\sdk\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\PropertyValueAssignmentAnalyzer.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
@@ -53,7 +53,7 @@ namespace ");
                     "ertyValueAssignmentAnalyzer : AbstractPropertyValueAssignmentAnalyzer\r\n\t{\r\n\t\tpub" +
                     "lic override string GetServiceName()\r\n\t\t{\r\n\t\t\treturn \"");
             
-            #line 27 "C:\codebase\v3-master\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\PropertyValueAssignmentAnalyzer.tt"
+            #line 27 "C:\code\dotnet\sdk\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\PropertyValueAssignmentAnalyzer.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default

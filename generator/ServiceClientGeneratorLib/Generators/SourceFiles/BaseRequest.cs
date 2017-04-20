@@ -18,7 +18,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\codebase\v3-master\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BaseRequest.tt"
+    #line 1 "C:\code\dotnet\sdk\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BaseRequest.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "14.0.0.0")]
     public partial class BaseRequest : BaseGenerator
     {
@@ -29,7 +29,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
         public override string TransformText()
         {
             
-            #line 6 "C:\codebase\v3-master\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BaseRequest.tt"
+            #line 6 "C:\code\dotnet\sdk\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BaseRequest.tt"
 
 	AddLicenseHeader();
 
@@ -38,21 +38,21 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("\r\nusing Amazon.Runtime;\r\n\r\nnamespace ");
             
-            #line 12 "C:\codebase\v3-master\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BaseRequest.tt"
+            #line 12 "C:\code\dotnet\sdk\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BaseRequest.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
             #line hidden
             this.Write("\r\n{\r\n    /// <summary>\r\n    /// Base class for ");
             
-            #line 15 "C:\codebase\v3-master\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BaseRequest.tt"
+            #line 15 "C:\code\dotnet\sdk\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BaseRequest.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
             this.Write(" operation requests.\r\n    /// </summary>\r\n    public partial class Amazon");
             
-            #line 17 "C:\codebase\v3-master\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BaseRequest.tt"
+            #line 17 "C:\code\dotnet\sdk\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BaseRequest.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default

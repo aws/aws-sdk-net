@@ -27,7 +27,7 @@ using AWSSDK_DotNet35.UnitTests.TestTools;
 namespace AWSSDK_DotNet35.UnitTests.Marshalling
 {
     [TestClass]
-    public partial class <#=this.Config.BaseName#>MarshallingTests
+    public partial class <#=this.Config.ClassName#>MarshallingTests
     {
         static readonly ServiceModel service_model = Utils.LoadServiceModel("<#= this.Config.ServiceDirectoryName #>");
 		<#
@@ -38,7 +38,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestMethod]
 		[TestCategory("UnitTest")]
 		[TestCategory("<#=this.Config.ServiceModel.Type#>")]
-		[TestCategory("<#=this.Config.BaseName#>")]
+		[TestCategory("<#=this.Config.ClassName#>")]
         public void <#=operation.Name#>MarshallTest()
         {
 			var operation = service_model.FindOperation("<#=operation.Name#>");

@@ -18,7 +18,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceMobile.tt"
+    #line 1 "C:\code\dotnet\sdk\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceMobile.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "14.0.0.0")]
     public partial class ServiceInterfaceMobile : BaseGenerator
     {
@@ -29,7 +29,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
         public override string TransformText()
         {
             
-            #line 6 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceMobile.tt"
+            #line 6 "C:\code\dotnet\sdk\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceMobile.tt"
 
 	AddLicenseHeader();
 
@@ -39,35 +39,35 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("\r\n\r\nusing System;\r\nusing System.Threading;\r\nusing System.Threading.Tasks;\r\nusing " +
                     "System.Collections.Generic;\r\n\r\nusing Amazon.Runtime;\r\nusing ");
             
-            #line 17 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceMobile.tt"
+            #line 17 "C:\code\dotnet\sdk\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
             #line hidden
             this.Write(".Model;\r\n\r\nnamespace ");
             
-            #line 19 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceMobile.tt"
+            #line 19 "C:\code\dotnet\sdk\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
             #line hidden
             this.Write("\r\n{\r\n");
             
-            #line 21 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceMobile.tt"
+            #line 21 "C:\code\dotnet\sdk\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceMobile.tt"
     this.FormatServiceInterfaceDocumentation(this.Config.ServiceModel.Documentation); 
             
             #line default
             #line hidden
             this.Write("\tpublic partial interface IAmazon");
             
-            #line 22 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceMobile.tt"
+            #line 22 "C:\code\dotnet\sdk\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
             this.Write(" : IAmazonService, IDisposable\r\n\t{\r\n\t\t");
             
-            #line 24 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceMobile.tt"
+            #line 24 "C:\code\dotnet\sdk\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceMobile.tt"
 
     // Generates definitions for each operation in the service model
 		foreach(var operation in this.Config.ServiceModel.Operations)
@@ -80,14 +80,14 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("\t\t\r\n\t\t#region  ");
             
-            #line 32 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceMobile.tt"
+            #line 32 "C:\code\dotnet\sdk\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("\r\n\r\n");
             
-            #line 34 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceMobile.tt"
+            #line 34 "C:\code\dotnet\sdk\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceMobile.tt"
 
         // Creates a parameterless definition of the operation if specified in the customizations file
         if (this.Config.ServiceModel.Customizations.CreateNoArgOverload(operation.Name))
@@ -97,7 +97,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line default
             #line hidden
             
-            #line 39 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceMobile.tt"
+            #line 39 "C:\code\dotnet\sdk\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceMobile.tt"
 
 		this.FormatOperationDocumentationAsync(operation, false);
 		if(operation.IsDeprecated)
@@ -108,14 +108,14 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("\t\t[Obsolete(\"");
             
-            #line 44 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceMobile.tt"
+            #line 44 "C:\code\dotnet\sdk\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.DeprecationMessage));
             
             #line default
             #line hidden
             this.Write("\")]\r\n");
             
-            #line 45 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceMobile.tt"
+            #line 45 "C:\code\dotnet\sdk\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceMobile.tt"
 		
 		}
 
@@ -124,14 +124,14 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("        Task<");
             
-            #line 48 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceMobile.tt"
+            #line 48 "C:\code\dotnet\sdk\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Response> ");
             
-            #line 48 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceMobile.tt"
+            #line 48 "C:\code\dotnet\sdk\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
@@ -139,7 +139,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("Async(System.Threading.CancellationToken cancellationToken = default(Cancellation" +
                     "Token));\r\n\r\n");
             
-            #line 50 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceMobile.tt"
+            #line 50 "C:\code\dotnet\sdk\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceMobile.tt"
 
         }
 
@@ -150,7 +150,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("\r\n");
             
-            #line 56 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceMobile.tt"
+            #line 56 "C:\code\dotnet\sdk\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceMobile.tt"
         
         AddAsyncDocumentation(operation);
 		if(operation.IsDeprecated)
@@ -161,14 +161,14 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("\t\t[Obsolete(\"");
             
-            #line 61 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceMobile.tt"
+            #line 61 "C:\code\dotnet\sdk\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.DeprecationMessage));
             
             #line default
             #line hidden
             this.Write("\")]\r\n");
             
-            #line 62 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceMobile.tt"
+            #line 62 "C:\code\dotnet\sdk\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceMobile.tt"
 		
 		}
 
@@ -177,21 +177,21 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             #line hidden
             this.Write("        Task<");
             
-            #line 65 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceMobile.tt"
+            #line 65 "C:\code\dotnet\sdk\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Response> ");
             
-            #line 65 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceMobile.tt"
+            #line 65 "C:\code\dotnet\sdk\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Async(");
             
-            #line 65 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceMobile.tt"
+            #line 65 "C:\code\dotnet\sdk\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceMobile.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
@@ -199,7 +199,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("Request request, System.Threading.CancellationToken cancellationToken = default(C" +
                     "ancellationToken));\r\n\r\n\t\t#endregion\r\n\t\t");
             
-            #line 68 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceMobile.tt"
+            #line 68 "C:\code\dotnet\sdk\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceMobile.tt"
 
 		}
 		

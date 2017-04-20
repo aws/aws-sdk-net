@@ -19,7 +19,7 @@ using <#=this.Config.Namespace#>.Model;
 namespace <#=this.Config.Namespace#>
 {
 <#    this.FormatServiceInterfaceDocumentation(this.Config.ServiceModel.Documentation); #>
-	public partial interface IAmazon<#=this.Config.BaseName#> : IAmazonService, IDisposable
+	public partial interface IAmazon<#=this.Config.ClassName#> : IAmazonService, IDisposable
 	{
 
 		<#
