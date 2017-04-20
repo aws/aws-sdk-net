@@ -82,7 +82,7 @@ namespace Amazon.KeyManagementService.Model
     ///  </li> </ol> 
     /// <para>
     /// To return only an encrypted copy of the data key, use <a>GenerateDataKeyWithoutPlaintext</a>.
-    /// To return an arbitrary unpredictable byte string, use <a>GenerateRandom</a>.
+    /// To return a random byte string that is cryptographically secure, use <a>GenerateRandom</a>.
     /// </para>
     ///  
     /// <para>

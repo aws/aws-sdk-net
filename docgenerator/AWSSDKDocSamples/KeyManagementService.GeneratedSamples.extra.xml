@@ -1,0 +1,668 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.KeyManagementService.IAmazonKeyManagementService.CancelKeyDeletion(Amazon.KeyManagementService.Model.CancelKeyDeletionRequest)" />
+            <member name="M:Amazon.KeyManagementService.AmazonKeyManagementServiceClient.CancelKeyDeletion(Amazon.KeyManagementService.Model.CancelKeyDeletionRequest)" />
+            <member name="T:Amazon.KeyManagementService.Model.CancelKeyDeletionRequest" />
+            <member name="T:Amazon.KeyManagementService.Model.CancelKeyDeletionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example cancels deletion of the specified CMK.
+                </para>
+                <code
+                    title="To cancel deletion of a customer master key (CMK)"
+                    source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
+                    region="to-cancel-deletion-of-a-cmk-1477428535102" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.KeyManagementService.IAmazonKeyManagementService.CreateAlias(Amazon.KeyManagementService.Model.CreateAliasRequest)" />
+            <member name="M:Amazon.KeyManagementService.AmazonKeyManagementServiceClient.CreateAlias(Amazon.KeyManagementService.Model.CreateAliasRequest)" />
+            <member name="T:Amazon.KeyManagementService.Model.CreateAliasRequest" />
+            <member name="T:Amazon.KeyManagementService.Model.CreateAliasResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates an alias for the specified customer master key (CMK).
+                </para>
+                <code
+                    title="To create an alias"
+                    source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
+                    region="to-create-an-alias-1477505685119" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.KeyManagementService.IAmazonKeyManagementService.CreateGrant(Amazon.KeyManagementService.Model.CreateGrantRequest)" />
+            <member name="M:Amazon.KeyManagementService.AmazonKeyManagementServiceClient.CreateGrant(Amazon.KeyManagementService.Model.CreateGrantRequest)" />
+            <member name="T:Amazon.KeyManagementService.Model.CreateGrantRequest" />
+            <member name="T:Amazon.KeyManagementService.Model.CreateGrantResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates a grant that allows the specified IAM role to encrypt data with the specified customer master key (CMK).
+                </para>
+                <code
+                    title="To create a grant"
+                    source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
+                    region="to-create-a-grant-1477972226782" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.KeyManagementService.IAmazonKeyManagementService.CreateKey(Amazon.KeyManagementService.Model.CreateKeyRequest)" />
+            <member name="M:Amazon.KeyManagementService.AmazonKeyManagementServiceClient.CreateKey(Amazon.KeyManagementService.Model.CreateKeyRequest)" />
+            <member name="T:Amazon.KeyManagementService.Model.CreateKeyRequest" />
+            <member name="T:Amazon.KeyManagementService.Model.CreateKeyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates a CMK.
+                </para>
+                <code
+                    title="To create a customer master key (CMK)"
+                    source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
+                    region="to-create-a-cmk-1478028992966" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.KeyManagementService.IAmazonKeyManagementService.Decrypt(Amazon.KeyManagementService.Model.DecryptRequest)" />
+            <member name="M:Amazon.KeyManagementService.AmazonKeyManagementServiceClient.Decrypt(Amazon.KeyManagementService.Model.DecryptRequest)" />
+            <member name="T:Amazon.KeyManagementService.Model.DecryptRequest" />
+            <member name="T:Amazon.KeyManagementService.Model.DecryptResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example decrypts data that was encrypted with a customer master key (CMK) in AWS KMS.
+                </para>
+                <code
+                    title="To decrypt data"
+                    source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
+                    region="to-decrypt-data-1478281622886" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.KeyManagementService.IAmazonKeyManagementService.DeleteAlias(Amazon.KeyManagementService.Model.DeleteAliasRequest)" />
+            <member name="M:Amazon.KeyManagementService.AmazonKeyManagementServiceClient.DeleteAlias(Amazon.KeyManagementService.Model.DeleteAliasRequest)" />
+            <member name="T:Amazon.KeyManagementService.Model.DeleteAliasRequest" />
+            <member name="T:Amazon.KeyManagementService.Model.DeleteAliasResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes the specified alias.
+                </para>
+                <code
+                    title="To delete an alias"
+                    source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
+                    region="to-delete-an-alias-1478285209338" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.KeyManagementService.IAmazonKeyManagementService.DeleteImportedKeyMaterial(Amazon.KeyManagementService.Model.DeleteImportedKeyMaterialRequest)" />
+            <member name="M:Amazon.KeyManagementService.AmazonKeyManagementServiceClient.DeleteImportedKeyMaterial(Amazon.KeyManagementService.Model.DeleteImportedKeyMaterialRequest)" />
+            <member name="T:Amazon.KeyManagementService.Model.DeleteImportedKeyMaterialRequest" />
+            <member name="T:Amazon.KeyManagementService.Model.DeleteImportedKeyMaterialResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes the imported key material from the specified customer master key (CMK).
+                </para>
+                <code
+                    title="To delete imported key material"
+                    source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
+                    region="to-delete-imported-key-material-1478561674507" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.KeyManagementService.IAmazonKeyManagementService.DescribeKey(Amazon.KeyManagementService.Model.DescribeKeyRequest)" />
+            <member name="M:Amazon.KeyManagementService.AmazonKeyManagementServiceClient.DescribeKey(Amazon.KeyManagementService.Model.DescribeKeyRequest)" />
+            <member name="T:Amazon.KeyManagementService.Model.DescribeKeyRequest" />
+            <member name="T:Amazon.KeyManagementService.Model.DescribeKeyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns information (metadata) about the specified CMK.
+                </para>
+                <code
+                    title="To obtain information about a customer master key (CMK)"
+                    source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
+                    region="to-obtain-information-about-a-cmk-1478565820907" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.KeyManagementService.IAmazonKeyManagementService.DisableKey(Amazon.KeyManagementService.Model.DisableKeyRequest)" />
+            <member name="M:Amazon.KeyManagementService.AmazonKeyManagementServiceClient.DisableKey(Amazon.KeyManagementService.Model.DisableKeyRequest)" />
+            <member name="T:Amazon.KeyManagementService.Model.DisableKeyRequest" />
+            <member name="T:Amazon.KeyManagementService.Model.DisableKeyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example disables the specified CMK.
+                </para>
+                <code
+                    title="To disable a customer master key (CMK)"
+                    source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
+                    region="to-disable-a-cmk-1478566583659" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.KeyManagementService.IAmazonKeyManagementService.DisableKeyRotation(Amazon.KeyManagementService.Model.DisableKeyRotationRequest)" />
+            <member name="M:Amazon.KeyManagementService.AmazonKeyManagementServiceClient.DisableKeyRotation(Amazon.KeyManagementService.Model.DisableKeyRotationRequest)" />
+            <member name="T:Amazon.KeyManagementService.Model.DisableKeyRotationRequest" />
+            <member name="T:Amazon.KeyManagementService.Model.DisableKeyRotationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example disables automatic annual rotation of the key material for the specified CMK.
+                </para>
+                <code
+                    title="To disable automatic rotation of key material"
+                    source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
+                    region="to-disable-automatic-rotation-of-key-material-1478624396092" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.KeyManagementService.IAmazonKeyManagementService.EnableKey(Amazon.KeyManagementService.Model.EnableKeyRequest)" />
+            <member name="M:Amazon.KeyManagementService.AmazonKeyManagementServiceClient.EnableKey(Amazon.KeyManagementService.Model.EnableKeyRequest)" />
+            <member name="T:Amazon.KeyManagementService.Model.EnableKeyRequest" />
+            <member name="T:Amazon.KeyManagementService.Model.EnableKeyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example enables the specified CMK.
+                </para>
+                <code
+                    title="To enable a customer master key (CMK)"
+                    source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
+                    region="to-enable-a-cmk-1478627501129" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.KeyManagementService.IAmazonKeyManagementService.EnableKeyRotation(Amazon.KeyManagementService.Model.EnableKeyRotationRequest)" />
+            <member name="M:Amazon.KeyManagementService.AmazonKeyManagementServiceClient.EnableKeyRotation(Amazon.KeyManagementService.Model.EnableKeyRotationRequest)" />
+            <member name="T:Amazon.KeyManagementService.Model.EnableKeyRotationRequest" />
+            <member name="T:Amazon.KeyManagementService.Model.EnableKeyRotationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example enables automatic annual rotation of the key material for the specified CMK.
+                </para>
+                <code
+                    title="To enable automatic rotation of key material"
+                    source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
+                    region="to-enable-automatic-rotation-of-key-material-1478629109677" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.KeyManagementService.IAmazonKeyManagementService.Encrypt(Amazon.KeyManagementService.Model.EncryptRequest)" />
+            <member name="M:Amazon.KeyManagementService.AmazonKeyManagementServiceClient.Encrypt(Amazon.KeyManagementService.Model.EncryptRequest)" />
+            <member name="T:Amazon.KeyManagementService.Model.EncryptRequest" />
+            <member name="T:Amazon.KeyManagementService.Model.EncryptResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example encrypts data with the specified customer master key (CMK).
+                </para>
+                <code
+                    title="To encrypt data"
+                    source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
+                    region="to-encrypt-data-1478906026012" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.KeyManagementService.IAmazonKeyManagementService.GenerateDataKey(Amazon.KeyManagementService.Model.GenerateDataKeyRequest)" />
+            <member name="M:Amazon.KeyManagementService.AmazonKeyManagementServiceClient.GenerateDataKey(Amazon.KeyManagementService.Model.GenerateDataKeyRequest)" />
+            <member name="T:Amazon.KeyManagementService.Model.GenerateDataKeyRequest" />
+            <member name="T:Amazon.KeyManagementService.Model.GenerateDataKeyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example generates a 256-bit symmetric data encryption key (data key) in two formats. One is the unencrypted (plainext) data key, and the other is the data key encrypted with the specified customer master key (CMK).
+                </para>
+                <code
+                    title="To generate a data key"
+                    source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
+                    region="to-generate-a-data-key-1478912956062" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.KeyManagementService.IAmazonKeyManagementService.GenerateDataKeyWithoutPlaintext(Amazon.KeyManagementService.Model.GenerateDataKeyWithoutPlaintextRequest)" />
+            <member name="M:Amazon.KeyManagementService.AmazonKeyManagementServiceClient.GenerateDataKeyWithoutPlaintext(Amazon.KeyManagementService.Model.GenerateDataKeyWithoutPlaintextRequest)" />
+            <member name="T:Amazon.KeyManagementService.Model.GenerateDataKeyWithoutPlaintextRequest" />
+            <member name="T:Amazon.KeyManagementService.Model.GenerateDataKeyWithoutPlaintextResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example generates an encrypted copy of a 256-bit symmetric data encryption key (data key). The data key is encrypted with the specified customer master key (CMK).
+                </para>
+                <code
+                    title="To generate an encrypted data key"
+                    source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
+                    region="to-generate-an-encrypted-data-key-1478914121134" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.KeyManagementService.IAmazonKeyManagementService.GenerateRandom(Amazon.KeyManagementService.Model.GenerateRandomRequest)" />
+            <member name="M:Amazon.KeyManagementService.AmazonKeyManagementServiceClient.GenerateRandom(Amazon.KeyManagementService.Model.GenerateRandomRequest)" />
+            <member name="T:Amazon.KeyManagementService.Model.GenerateRandomRequest" />
+            <member name="T:Amazon.KeyManagementService.Model.GenerateRandomResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example uses AWS KMS to generate 32 bytes of random data.
+                </para>
+                <code
+                    title="To generate random data"
+                    source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
+                    region="to-generate-random-data-1479163645600" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.KeyManagementService.IAmazonKeyManagementService.GetKeyPolicy(Amazon.KeyManagementService.Model.GetKeyPolicyRequest)" />
+            <member name="M:Amazon.KeyManagementService.AmazonKeyManagementServiceClient.GetKeyPolicy(Amazon.KeyManagementService.Model.GetKeyPolicyRequest)" />
+            <member name="T:Amazon.KeyManagementService.Model.GetKeyPolicyRequest" />
+            <member name="T:Amazon.KeyManagementService.Model.GetKeyPolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves the key policy for the specified customer master key (CMK).
+                </para>
+                <code
+                    title="To retrieve a key policy"
+                    source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
+                    region="to-retrieve-a-key-policy-1479170128325" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.KeyManagementService.IAmazonKeyManagementService.GetKeyRotationStatus(Amazon.KeyManagementService.Model.GetKeyRotationStatusRequest)" />
+            <member name="M:Amazon.KeyManagementService.AmazonKeyManagementServiceClient.GetKeyRotationStatus(Amazon.KeyManagementService.Model.GetKeyRotationStatusRequest)" />
+            <member name="T:Amazon.KeyManagementService.Model.GetKeyRotationStatusRequest" />
+            <member name="T:Amazon.KeyManagementService.Model.GetKeyRotationStatusResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves the status of automatic annual rotation of the key material for the specified CMK.
+                </para>
+                <code
+                    title="To retrieve the rotation status for a customer master key (CMK)"
+                    source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
+                    region="to-retrieve-the-rotation-status-for-a-cmk-1479172287408" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.KeyManagementService.IAmazonKeyManagementService.GetParametersForImport(Amazon.KeyManagementService.Model.GetParametersForImportRequest)" />
+            <member name="M:Amazon.KeyManagementService.AmazonKeyManagementServiceClient.GetParametersForImport(Amazon.KeyManagementService.Model.GetParametersForImportRequest)" />
+            <member name="T:Amazon.KeyManagementService.Model.GetParametersForImportRequest" />
+            <member name="T:Amazon.KeyManagementService.Model.GetParametersForImportResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves the public key and import token for the specified CMK.
+                </para>
+                <code
+                    title="To retrieve the public key and import token for a customer master key (CMK)"
+                    source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
+                    region="to-retrieve-the-public-key-and-import-token-for-a-cmk-1480626483211" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.KeyManagementService.IAmazonKeyManagementService.ImportKeyMaterial(Amazon.KeyManagementService.Model.ImportKeyMaterialRequest)" />
+            <member name="M:Amazon.KeyManagementService.AmazonKeyManagementServiceClient.ImportKeyMaterial(Amazon.KeyManagementService.Model.ImportKeyMaterialRequest)" />
+            <member name="T:Amazon.KeyManagementService.Model.ImportKeyMaterialRequest" />
+            <member name="T:Amazon.KeyManagementService.Model.ImportKeyMaterialResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example imports key material into the specified CMK.
+                </para>
+                <code
+                    title="To import key material into a customer master key (CMK)"
+                    source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
+                    region="to-import-key-material-into-a-cmk-1480630551969" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.KeyManagementService.IAmazonKeyManagementService.ListAliases(Amazon.KeyManagementService.Model.ListAliasesRequest)" />
+            <member name="M:Amazon.KeyManagementService.AmazonKeyManagementServiceClient.ListAliases(Amazon.KeyManagementService.Model.ListAliasesRequest)" />
+            <member name="T:Amazon.KeyManagementService.Model.ListAliasesRequest" />
+            <member name="T:Amazon.KeyManagementService.Model.ListAliasesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example lists aliases.
+                </para>
+                <code
+                    title="To list aliases"
+                    source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
+                    region="to-list-aliases-1480729693349" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.KeyManagementService.IAmazonKeyManagementService.ListGrants(Amazon.KeyManagementService.Model.ListGrantsRequest)" />
+            <member name="M:Amazon.KeyManagementService.AmazonKeyManagementServiceClient.ListGrants(Amazon.KeyManagementService.Model.ListGrantsRequest)" />
+            <member name="T:Amazon.KeyManagementService.Model.ListGrantsRequest" />
+            <member name="T:Amazon.KeyManagementService.Model.ListGrantsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example lists grants for the specified CMK.
+                </para>
+                <code
+                    title="To list grants for a customer master key (CMK)"
+                    source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
+                    region="to-list-grants-for-a-cmk-1481067365389" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.KeyManagementService.IAmazonKeyManagementService.ListKeyPolicies(Amazon.KeyManagementService.Model.ListKeyPoliciesRequest)" />
+            <member name="M:Amazon.KeyManagementService.AmazonKeyManagementServiceClient.ListKeyPolicies(Amazon.KeyManagementService.Model.ListKeyPoliciesRequest)" />
+            <member name="T:Amazon.KeyManagementService.Model.ListKeyPoliciesRequest" />
+            <member name="T:Amazon.KeyManagementService.Model.ListKeyPoliciesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example lists key policies for the specified CMK.
+                </para>
+                <code
+                    title="To list key policies for a customer master key (CMK)"
+                    source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
+                    region="to-list-key-policies-for-a-cmk-1481069780998" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.KeyManagementService.IAmazonKeyManagementService.ListKeys(Amazon.KeyManagementService.Model.ListKeysRequest)" />
+            <member name="M:Amazon.KeyManagementService.AmazonKeyManagementServiceClient.ListKeys(Amazon.KeyManagementService.Model.ListKeysRequest)" />
+            <member name="T:Amazon.KeyManagementService.Model.ListKeysRequest" />
+            <member name="T:Amazon.KeyManagementService.Model.ListKeysResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example lists CMKs.
+                </para>
+                <code
+                    title="To list customer master keys (CMKs)"
+                    source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
+                    region="to-list-cmks-1481071643069" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.KeyManagementService.IAmazonKeyManagementService.ListResourceTags(Amazon.KeyManagementService.Model.ListResourceTagsRequest)" />
+            <member name="M:Amazon.KeyManagementService.AmazonKeyManagementServiceClient.ListResourceTags(Amazon.KeyManagementService.Model.ListResourceTagsRequest)" />
+            <member name="T:Amazon.KeyManagementService.Model.ListResourceTagsRequest" />
+            <member name="T:Amazon.KeyManagementService.Model.ListResourceTagsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example lists tags for a CMK.
+                </para>
+                <code
+                    title="To list tags for a customer master key (CMK)"
+                    source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
+                    region="to-list-tags-for-a-cmk-1483996855796" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.KeyManagementService.IAmazonKeyManagementService.ListRetirableGrants(Amazon.KeyManagementService.Model.ListRetirableGrantsRequest)" />
+            <member name="M:Amazon.KeyManagementService.AmazonKeyManagementServiceClient.ListRetirableGrants(Amazon.KeyManagementService.Model.ListRetirableGrantsRequest)" />
+            <member name="T:Amazon.KeyManagementService.Model.ListRetirableGrantsRequest" />
+            <member name="T:Amazon.KeyManagementService.Model.ListRetirableGrantsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example lists the grants that the specified principal (identity) can retire.
+                </para>
+                <code
+                    title="To list grants that the specified principal can retire"
+                    source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
+                    region="to-list-grants-that-the-specified-principal-can-retire-1481140499620" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.KeyManagementService.IAmazonKeyManagementService.PutKeyPolicy(Amazon.KeyManagementService.Model.PutKeyPolicyRequest)" />
+            <member name="M:Amazon.KeyManagementService.AmazonKeyManagementServiceClient.PutKeyPolicy(Amazon.KeyManagementService.Model.PutKeyPolicyRequest)" />
+            <member name="T:Amazon.KeyManagementService.Model.PutKeyPolicyRequest" />
+            <member name="T:Amazon.KeyManagementService.Model.PutKeyPolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example attaches a key policy to the specified CMK.
+                </para>
+                <code
+                    title="To attach a key policy to a customer master key (CMK)"
+                    source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
+                    region="to-attach-a-key-policy-to-a-cmk-1481147345018" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.KeyManagementService.IAmazonKeyManagementService.ReEncrypt(Amazon.KeyManagementService.Model.ReEncryptRequest)" />
+            <member name="M:Amazon.KeyManagementService.AmazonKeyManagementServiceClient.ReEncrypt(Amazon.KeyManagementService.Model.ReEncryptRequest)" />
+            <member name="T:Amazon.KeyManagementService.Model.ReEncryptRequest" />
+            <member name="T:Amazon.KeyManagementService.Model.ReEncryptResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example reencrypts data with the specified CMK.
+                </para>
+                <code
+                    title="To reencrypt data"
+                    source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
+                    region="to-reencrypt-data-1481230358001" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.KeyManagementService.IAmazonKeyManagementService.RetireGrant(Amazon.KeyManagementService.Model.RetireGrantRequest)" />
+            <member name="M:Amazon.KeyManagementService.AmazonKeyManagementServiceClient.RetireGrant(Amazon.KeyManagementService.Model.RetireGrantRequest)" />
+            <member name="T:Amazon.KeyManagementService.Model.RetireGrantRequest" />
+            <member name="T:Amazon.KeyManagementService.Model.RetireGrantResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retires a grant.
+                </para>
+                <code
+                    title="To retire a grant"
+                    source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
+                    region="to-retire-a-grant-1481327028297" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.KeyManagementService.IAmazonKeyManagementService.RevokeGrant(Amazon.KeyManagementService.Model.RevokeGrantRequest)" />
+            <member name="M:Amazon.KeyManagementService.AmazonKeyManagementServiceClient.RevokeGrant(Amazon.KeyManagementService.Model.RevokeGrantRequest)" />
+            <member name="T:Amazon.KeyManagementService.Model.RevokeGrantRequest" />
+            <member name="T:Amazon.KeyManagementService.Model.RevokeGrantResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example revokes a grant.
+                </para>
+                <code
+                    title="To revoke a grant"
+                    source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
+                    region="to-revoke-a-grant-1481329549302" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.KeyManagementService.IAmazonKeyManagementService.ScheduleKeyDeletion(Amazon.KeyManagementService.Model.ScheduleKeyDeletionRequest)" />
+            <member name="M:Amazon.KeyManagementService.AmazonKeyManagementServiceClient.ScheduleKeyDeletion(Amazon.KeyManagementService.Model.ScheduleKeyDeletionRequest)" />
+            <member name="T:Amazon.KeyManagementService.Model.ScheduleKeyDeletionRequest" />
+            <member name="T:Amazon.KeyManagementService.Model.ScheduleKeyDeletionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example schedules the specified CMK for deletion.
+                </para>
+                <code
+                    title="To schedule a customer master key (CMK) for deletion"
+                    source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
+                    region="to-schedule-a-cmk-for-deletion-1481331111094" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.KeyManagementService.IAmazonKeyManagementService.TagResource(Amazon.KeyManagementService.Model.TagResourceRequest)" />
+            <member name="M:Amazon.KeyManagementService.AmazonKeyManagementServiceClient.TagResource(Amazon.KeyManagementService.Model.TagResourceRequest)" />
+            <member name="T:Amazon.KeyManagementService.Model.TagResourceRequest" />
+            <member name="T:Amazon.KeyManagementService.Model.TagResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example tags a CMK.
+                </para>
+                <code
+                    title="To tag a customer master key (CMK)"
+                    source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
+                    region="to-tag-a-cmk-1483997246518" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.KeyManagementService.IAmazonKeyManagementService.UntagResource(Amazon.KeyManagementService.Model.UntagResourceRequest)" />
+            <member name="M:Amazon.KeyManagementService.AmazonKeyManagementServiceClient.UntagResource(Amazon.KeyManagementService.Model.UntagResourceRequest)" />
+            <member name="T:Amazon.KeyManagementService.Model.UntagResourceRequest" />
+            <member name="T:Amazon.KeyManagementService.Model.UntagResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example removes tags from a CMK.
+                </para>
+                <code
+                    title="To remove tags from a customer master key (CMK)"
+                    source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
+                    region="to-remove-tags-from-a-cmk-1483997590962" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.KeyManagementService.IAmazonKeyManagementService.UpdateAlias(Amazon.KeyManagementService.Model.UpdateAliasRequest)" />
+            <member name="M:Amazon.KeyManagementService.AmazonKeyManagementServiceClient.UpdateAlias(Amazon.KeyManagementService.Model.UpdateAliasRequest)" />
+            <member name="T:Amazon.KeyManagementService.Model.UpdateAliasRequest" />
+            <member name="T:Amazon.KeyManagementService.Model.UpdateAliasResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example updates the specified alias to refer to the specified customer master key (CMK).
+                </para>
+                <code
+                    title="To update an alias"
+                    source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
+                    region="to-update-an-alias-1481572726920" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.KeyManagementService.IAmazonKeyManagementService.UpdateKeyDescription(Amazon.KeyManagementService.Model.UpdateKeyDescriptionRequest)" />
+            <member name="M:Amazon.KeyManagementService.AmazonKeyManagementServiceClient.UpdateKeyDescription(Amazon.KeyManagementService.Model.UpdateKeyDescriptionRequest)" />
+            <member name="T:Amazon.KeyManagementService.Model.UpdateKeyDescriptionRequest" />
+            <member name="T:Amazon.KeyManagementService.Model.UpdateKeyDescriptionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example updates the description of the specified CMK.
+                </para>
+                <code
+                    title="To update the description of a customer master key (CMK)"
+                    source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
+                    region="to-update-the-description-of-a-cmk-1481574808619" />
+            </example>
+        </value>
+    </doc>
+</docs>

@@ -45,7 +45,8 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property Constraints. 
         /// <para>
-        /// The conditions under which the grant's operations are allowed.
+        /// A list of key-value pairs that must be present in the encryption context of certain
+        /// subsequent operations that the grant allows.
         /// </para>
         /// </summary>
         public GrantConstraints Constraints

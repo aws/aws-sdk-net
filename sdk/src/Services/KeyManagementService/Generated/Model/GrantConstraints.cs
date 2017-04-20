@@ -28,15 +28,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
-    /// A structure for specifying the conditions under which the operations permitted by
-    /// the grant are allowed.
+    /// A structure that you can use to allow certain operations in the grant only when the
+    /// desired encryption context is present. For more information about encryption context,
+    /// see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
+    /// Context</a> in the <i>AWS Key Management Service Developer Guide</i>.
     /// 
     ///  
     /// <para>
-    /// You can use this structure to allow the operations permitted by the grant only when
-    /// a specified encryption context is present. For more information about encryption context,
-    /// see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
-    /// Context</a> in the <i>AWS Key Management Service Developer Guide</i>.
+    /// Grant constraints apply only to operations that accept encryption context as input.
+    /// For example, the <code> <a>DescribeKey</a> </code> operation does not accept encryption
+    /// context as input. A grant that allows the <code>DescribeKey</code> operation does
+    /// so regardless of the grant constraints. In constrast, the <code> <a>Encrypt</a> </code>
+    /// operation accepts encryption context as input. A grant that allows the <code>Encrypt</code>
+    /// operation does so only when the encryption context of the <code>Encrypt</code> operation
+    /// satisfies the grant constraints.
     /// </para>
     /// </summary>
     public partial class GrantConstraints
@@ -47,10 +52,10 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property EncryptionContextEquals. 
         /// <para>
-        /// Contains a list of key-value pairs that must be present in the encryption context
-        /// of a subsequent operation permitted by the grant. When a subsequent operation permitted
-        /// by the grant includes an encryption context that matches this list, the grant allows
-        /// the operation. Otherwise, the operation is not allowed.
+        /// A list of key-value pairs that must be present in the encryption context of certain
+        /// subsequent operations that the grant allows. When certain subsequent operations allowed
+        /// by the grant include encryption context that matches this list, the grant allows the
+        /// operation. Otherwise, the grant does not allow the operation.
         /// </para>
         /// </summary>
         public Dictionary<string, string> EncryptionContextEquals
@@ -68,11 +73,11 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property EncryptionContextSubset. 
         /// <para>
-        /// Contains a list of key-value pairs, a subset of which must be present in the encryption
-        /// context of a subsequent operation permitted by the grant. When a subsequent operation
-        /// permitted by the grant includes an encryption context that matches this list or is
-        /// a subset of this list, the grant allows the operation. Otherwise, the operation is
-        /// not allowed.
+        /// A list of key-value pairs, all of which must be present in the encryption context
+        /// of certain subsequent operations that the grant allows. When certain subsequent operations
+        /// allowed by the grant include encryption context that matches this list or is a superset
+        /// of this list, the grant allows the operation. Otherwise, the grant does not allow
+        /// the operation.
         /// </para>
         /// </summary>
         public Dictionary<string, string> EncryptionContextSubset

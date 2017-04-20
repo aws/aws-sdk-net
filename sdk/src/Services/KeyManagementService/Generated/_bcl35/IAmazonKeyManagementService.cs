@@ -1508,7 +1508,7 @@ namespace Amazon.KeyManagementService
         ///  </li> </ol> 
         /// <para>
         /// To return only an encrypted copy of the data key, use <a>GenerateDataKeyWithoutPlaintext</a>.
-        /// To return an arbitrary unpredictable byte string, use <a>GenerateRandom</a>.
+        /// To return a random byte string that is cryptographically secure, use <a>GenerateRandom</a>.
         /// </para>
         ///  
         /// <para>
@@ -1683,7 +1683,13 @@ namespace Amazon.KeyManagementService
 
 
         /// <summary>
-        /// Generates an unpredictable byte string.
+        /// Returns a random byte string that is cryptographically secure.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about entropy and random number generation, see the <a href="https://d0.awsstatic.com/whitepapers/KMS-Cryptographic-Details.pdf">AWS
+        /// Key Management Service Cryptographic Details</a> whitepaper.
+        /// </para>
         /// </summary>
         /// <param name="numberOfBytes">The length of the byte string.</param>
         /// 
@@ -1699,7 +1705,13 @@ namespace Amazon.KeyManagementService
         GenerateRandomResponse GenerateRandom(int numberOfBytes);
 
         /// <summary>
-        /// Generates an unpredictable byte string.
+        /// Returns a random byte string that is cryptographically secure.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about entropy and random number generation, see the <a href="https://d0.awsstatic.com/whitepapers/KMS-Cryptographic-Details.pdf">AWS
+        /// Key Management Service Cryptographic Details</a> whitepaper.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GenerateRandom service method.</param>
         /// 

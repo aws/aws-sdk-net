@@ -51,12 +51,9 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property Constraints. 
         /// <para>
-        /// The conditions under which the operations permitted by the grant are allowed.
-        /// </para>
-        ///  
-        /// <para>
-        /// You can use this value to allow the operations permitted by the grant only when a
-        /// specified encryption context is present. For more information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
+        /// A structure that you can use to allow certain operations in the grant only when the
+        /// desired encryption context is present. For more information about encryption context,
+        /// see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
         /// Context</a> in the <i>AWS Key Management Service Developer Guide</i>.
         /// </para>
         /// </summary>
