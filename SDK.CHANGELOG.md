@@ -1,3 +1,16 @@
+### 3.3.79.0 (2017-04-20 21:36 UTC)
+* DeviceFarm (3.3.2.0)
+	* API Update for AWS Device Farm: Support for Deals and Promotions 
+* DirectConnect (3.3.4.3)
+	* Documentation updates for AWS Direct Connect.
+* KeyManagementService (3.3.2.6)
+	* Doc-only update for Key Management Service (KMS): Update docs for GrantConstraints and GenerateRandom
+* Route53 (3.3.5.6)
+	* Release notes: SDK documentation now includes examples for ChangeResourceRecordSets for all types of resource record set, such as weighted, alias, and failover.
+
+* Route53Domains (3.3.0.13)
+	* Adding examples and other documentation updates.
+
 ### 3.3.78.0 (2017-04-19 23:02 UTC)
 * APIGateway (3.3.7.0)
 	* Updated to use new Core, version 3.3.12.0
