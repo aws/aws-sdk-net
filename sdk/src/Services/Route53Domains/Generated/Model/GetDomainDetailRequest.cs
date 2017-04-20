@@ -29,8 +29,9 @@ namespace Amazon.Route53Domains.Model
 {
     /// <summary>
     /// Container for the parameters to the GetDomainDetail operation.
-    /// This operation returns detailed information about the domain. The domain's contact
-    /// information is also returned as part of the output.
+    /// This operation returns detailed information about a specified domain that is associated
+    /// with the current AWS account. Contact information for the domain is also returned
+    /// as part of the output.
     /// </summary>
     public partial class GetDomainDetailRequest : AmazonRoute53DomainsRequest
     {
@@ -39,24 +40,7 @@ namespace Amazon.Route53Domains.Model
         /// <summary>
         /// Gets and sets the property DomainName. 
         /// <para>
-        /// The name of a domain.
-        /// </para>
-        ///  
-        /// <para>
-        /// Type: String
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: None
-        /// </para>
-        ///  
-        /// <para>
-        /// Constraints: The domain name can contain only the letters a through z, the numbers
-        /// 0 through 9, and hyphen (-). Internationalized Domain Names are not supported.
-        /// </para>
-        ///  
-        /// <para>
-        /// Required: Yes
+        /// The name of the domain that you want to get detailed information about.
         /// </para>
         /// </summary>
         public string DomainName

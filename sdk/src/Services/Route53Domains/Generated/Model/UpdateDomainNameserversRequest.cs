@@ -31,7 +31,7 @@ namespace Amazon.Route53Domains.Model
     /// Container for the parameters to the UpdateDomainNameservers operation.
     /// This operation replaces the current set of name servers for the domain with the specified
     /// set of name servers. If you use Amazon Route 53 as your DNS service, specify the four
-    /// name servers in the delegation set for the hosted zone for the domain. 
+    /// name servers in the delegation set for the hosted zone for the domain.
     /// 
     ///  
     /// <para>
@@ -49,24 +49,7 @@ namespace Amazon.Route53Domains.Model
         /// <summary>
         /// Gets and sets the property DomainName. 
         /// <para>
-        /// The name of a domain.
-        /// </para>
-        ///  
-        /// <para>
-        /// Type: String
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: None
-        /// </para>
-        ///  
-        /// <para>
-        /// Constraints: The domain name can contain only the letters a through z, the numbers
-        /// 0 through 9, and hyphen (-). Internationalized Domain Names are not supported.
-        /// </para>
-        ///  
-        /// <para>
-        /// Required: Yes
+        /// The name of the domain that you want to change name servers for.
         /// </para>
         /// </summary>
         public string DomainName
@@ -103,18 +86,6 @@ namespace Amazon.Route53Domains.Model
         /// Gets and sets the property Nameservers. 
         /// <para>
         /// A list of new name servers for the domain.
-        /// </para>
-        ///  
-        /// <para>
-        /// Type: Complex
-        /// </para>
-        ///  
-        /// <para>
-        /// Children: <code>Name</code>, <code>GlueIps</code>
-        /// </para>
-        ///  
-        /// <para>
-        /// Required: Yes
         /// </para>
         /// </summary>
         public List<Nameserver> Nameservers

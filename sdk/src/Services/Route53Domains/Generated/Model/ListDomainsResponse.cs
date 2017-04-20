@@ -40,14 +40,6 @@ namespace Amazon.Route53Domains.Model
         /// <para>
         /// A summary of domains.
         /// </para>
-        ///  
-        /// <para>
-        /// Type: Complex type containing a list of domain summaries.
-        /// </para>
-        ///  
-        /// <para>
-        /// Children: <code>AutoRenew</code>, <code>DomainName</code>, <code>Expiry</code>, <code>TransferLock</code>
-        /// </para>
         /// </summary>
         public List<DomainSummary> Domains
         {
@@ -67,14 +59,6 @@ namespace Amazon.Route53Domains.Model
         /// If there are more domains than you specified for <code>MaxItems</code> in the request,
         /// submit another request and include the value of <code>NextPageMarker</code> in the
         /// value of <code>Marker</code>.
-        /// </para>
-        ///  
-        /// <para>
-        /// Type: String
-        /// </para>
-        ///  
-        /// <para>
-        /// Parent: <code>Operations</code>
         /// </para>
         /// </summary>
         public string NextPageMarker

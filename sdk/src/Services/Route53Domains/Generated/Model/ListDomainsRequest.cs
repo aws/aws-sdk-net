@@ -49,19 +49,7 @@ namespace Amazon.Route53Domains.Model
         /// </para>
         ///  
         /// <para>
-        /// Type: String
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: None
-        /// </para>
-        ///  
-        /// <para>
-        /// Constraints: The marker must match the value specified in the previous request. 
-        /// </para>
-        ///  
-        /// <para>
-        /// Required: No
+        /// Constraints: The marker must match the value specified in the previous request.
         /// </para>
         /// </summary>
         public string Marker
@@ -83,19 +71,7 @@ namespace Amazon.Route53Domains.Model
         /// </para>
         ///  
         /// <para>
-        /// Type: Integer
-        /// </para>
-        ///  
-        /// <para>
         /// Default: 20
-        /// </para>
-        ///  
-        /// <para>
-        /// Constraints: A numeral between 1 and 100.
-        /// </para>
-        ///  
-        /// <para>
-        /// Required: No
         /// </para>
         /// </summary>
         public int MaxItems

@@ -39,39 +39,6 @@ namespace Amazon.Route53Domains.Model
         /// <para>
         /// A list of the tags that are associated with the specified domain.
         /// </para>
-        ///  
-        /// <para>
-        /// Type: A complex type containing a list of tags
-        /// </para>
-        ///  
-        /// <para>
-        /// Each tag includes the following elements.
-        /// </para>
-        ///  <ul> <li>
-        /// <para>
-        /// Key
-        /// </para>
-        ///  
-        /// <para>
-        /// The key (name) of a tag.
-        /// </para>
-        ///  
-        /// <para>
-        /// Type: String
-        /// </para>
-        ///  </li> <li>
-        /// <para>
-        /// Value
-        /// </para>
-        ///  
-        /// <para>
-        /// The value of a tag.
-        /// </para>
-        ///  
-        /// <para>
-        /// Type: String
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public List<Tag> TagList
         {

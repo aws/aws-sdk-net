@@ -47,7 +47,10 @@ namespace Amazon.Route53Domains.Model
         private string _domainName;
 
         /// <summary>
-        /// Gets and sets the property DomainName.
+        /// Gets and sets the property DomainName. 
+        /// <para>
+        /// The name of the domain that you want to enable automatic renewal for.
+        /// </para>
         /// </summary>
         public string DomainName
         {

@@ -43,18 +43,6 @@ namespace Amazon.Route53Domains.Model
         /// The name of the domain for which you want Amazon Route 53 to resend a confirmation
         /// email to the registrant contact.
         /// </para>
-        ///  
-        /// <para>
-        /// Type: String
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: None
-        /// </para>
-        ///  
-        /// <para>
-        /// Required: Yes
-        /// </para>
         /// </summary>
         public string DomainName
         {

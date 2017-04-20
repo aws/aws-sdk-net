@@ -42,23 +42,11 @@ namespace Amazon.Route53Domains.Model
         /// </para>
         ///  
         /// <para>
-        /// Type: String
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: None
-        /// </para>
-        ///  
-        /// <para>
         /// Valid values: A-Z, a-z, 0-9, space, ".:/=+\-@"
         /// </para>
         ///  
         /// <para>
         /// Constraints: Each key can be 1-128 characters long.
-        /// </para>
-        ///  
-        /// <para>
-        /// Required: Yes
         /// </para>
         /// </summary>
         public string Key
@@ -80,23 +68,11 @@ namespace Amazon.Route53Domains.Model
         /// </para>
         ///  
         /// <para>
-        /// Type: String
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: None
-        /// </para>
-        ///  
-        /// <para>
         /// Valid values: A-Z, a-z, 0-9, space, ".:/=+\-@"
         /// </para>
         ///  
         /// <para>
         /// Constraints: Each value can be 0-256 characters long.
-        /// </para>
-        ///  
-        /// <para>
-        /// Required: Yes
         /// </para>
         /// </summary>
         public string Value

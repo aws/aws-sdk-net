@@ -42,10 +42,6 @@ namespace Amazon.Route53Domains.Model
         /// <para>
         /// Identifier returned to track the requested action.
         /// </para>
-        ///  
-        /// <para>
-        /// Type: String
-        /// </para>
         /// </summary>
         public string OperationId
         {
@@ -63,10 +59,6 @@ namespace Amazon.Route53Domains.Model
         /// Gets and sets the property Status. 
         /// <para>
         /// The current status of the requested operation in the system.
-        /// </para>
-        ///  
-        /// <para>
-        /// Type: String
         /// </para>
         /// </summary>
         public OperationStatus Status
@@ -103,16 +95,6 @@ namespace Amazon.Route53Domains.Model
         /// Gets and sets the property Type. 
         /// <para>
         /// Type of the action requested.
-        /// </para>
-        ///  
-        /// <para>
-        /// Type: String
-        /// </para>
-        ///  
-        /// <para>
-        /// Valid values: <code>REGISTER_DOMAIN</code> | <code>DELETE_DOMAIN</code> | <code>TRANSFER_IN_DOMAIN</code>
-        /// | <code>UPDATE_DOMAIN_CONTACT</code> | <code>UPDATE_NAMESERVER</code> | <code>CHANGE_PRIVACY_PROTECTION</code>
-        /// | <code>DOMAIN_LOCK</code>
         /// </para>
         /// </summary>
         public OperationType Type

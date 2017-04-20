@@ -31,7 +31,7 @@ namespace Amazon.Route53Domains
     /// <summary>
     /// Interface for accessing Route53Domains
     ///
-    /// 
+    /// Amazon Route 53 API actions let you register domain names and perform related operations.
     /// </summary>
     public partial interface IAmazonRoute53Domains : IAmazonService, IDisposable
     {
@@ -56,6 +56,7 @@ namespace Amazon.Route53Domains
         /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
         /// Amazon Route 53 does not support this top-level domain.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/CheckDomainAvailability">REST API Reference for CheckDomainAvailability Operation</seealso>
         CheckDomainAvailabilityResponse CheckDomainAvailability(CheckDomainAvailabilityRequest request);
 
 
@@ -68,6 +69,7 @@ namespace Amazon.Route53Domains
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/CheckDomainAvailability">REST API Reference for CheckDomainAvailability Operation</seealso>
         Task<CheckDomainAvailabilityResponse> CheckDomainAvailabilityAsync(CheckDomainAvailabilityRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -84,8 +86,8 @@ namespace Amazon.Route53Domains
         /// represent all issued operations.
         /// </para>
         /// </summary>
-        /// <param name="domainName">The domain for which you want to delete one or more tags. The name of a domain. Type: String Default: None Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and hyphen (-). Hyphens are allowed only when they&apos;re surrounded by letters, numbers, or other hyphens. You can&apos;t specify a hyphen at the beginning or end of a label. To specify an Internationalized Domain Name, you must convert the name to Punycode. Required: Yes</param>
-        /// <param name="tagsToDelete">A list of tag keys to delete. Type: A list that contains the keys of the tags that you want to delete. Default: None Required: No'></param>
+        /// <param name="domainName">The domain for which you want to delete one or more tags.</param>
+        /// <param name="tagsToDelete">A list of tag keys to delete.</param>
         /// 
         /// <returns>The response from the DeleteTagsForDomain service method, as returned by Route53Domains.</returns>
         /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
@@ -99,6 +101,7 @@ namespace Amazon.Route53Domains
         /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
         /// Amazon Route 53 does not support this top-level domain.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/DeleteTagsForDomain">REST API Reference for DeleteTagsForDomain Operation</seealso>
         DeleteTagsForDomainResponse DeleteTagsForDomain(string domainName, List<string> tagsToDelete);
 
         /// <summary>
@@ -124,6 +127,7 @@ namespace Amazon.Route53Domains
         /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
         /// Amazon Route 53 does not support this top-level domain.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/DeleteTagsForDomain">REST API Reference for DeleteTagsForDomain Operation</seealso>
         DeleteTagsForDomainResponse DeleteTagsForDomain(DeleteTagsForDomainRequest request);
 
 
@@ -136,8 +140,8 @@ namespace Amazon.Route53Domains
         /// represent all issued operations.
         /// </para>
         /// </summary>
-        /// <param name="domainName">The domain for which you want to delete one or more tags. The name of a domain. Type: String Default: None Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and hyphen (-). Hyphens are allowed only when they&apos;re surrounded by letters, numbers, or other hyphens. You can&apos;t specify a hyphen at the beginning or end of a label. To specify an Internationalized Domain Name, you must convert the name to Punycode. Required: Yes</param>
-        /// <param name="tagsToDelete">A list of tag keys to delete. Type: A list that contains the keys of the tags that you want to delete. Default: None Required: No'></param>
+        /// <param name="domainName">The domain for which you want to delete one or more tags.</param>
+        /// <param name="tagsToDelete">A list of tag keys to delete.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -154,6 +158,7 @@ namespace Amazon.Route53Domains
         /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
         /// Amazon Route 53 does not support this top-level domain.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/DeleteTagsForDomain">REST API Reference for DeleteTagsForDomain Operation</seealso>
         Task<DeleteTagsForDomainResponse> DeleteTagsForDomainAsync(string domainName, List<string> tagsToDelete, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
@@ -165,6 +170,7 @@ namespace Amazon.Route53Domains
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/DeleteTagsForDomain">REST API Reference for DeleteTagsForDomain Operation</seealso>
         Task<DeleteTagsForDomainResponse> DeleteTagsForDomainAsync(DeleteTagsForDomainRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -187,6 +193,7 @@ namespace Amazon.Route53Domains
         /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
         /// Amazon Route 53 does not support this top-level domain.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/DisableDomainAutoRenew">REST API Reference for DisableDomainAutoRenew Operation</seealso>
         DisableDomainAutoRenewResponse DisableDomainAutoRenew(DisableDomainAutoRenewRequest request);
 
 
@@ -199,6 +206,7 @@ namespace Amazon.Route53Domains
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/DisableDomainAutoRenew">REST API Reference for DisableDomainAutoRenew Operation</seealso>
         Task<DisableDomainAutoRenewResponse> DisableDomainAutoRenewAsync(DisableDomainAutoRenewRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -234,6 +242,7 @@ namespace Amazon.Route53Domains
         /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
         /// Amazon Route 53 does not support this top-level domain.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/DisableDomainTransferLock">REST API Reference for DisableDomainTransferLock Operation</seealso>
         DisableDomainTransferLockResponse DisableDomainTransferLock(DisableDomainTransferLockRequest request);
 
 
@@ -246,6 +255,7 @@ namespace Amazon.Route53Domains
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/DisableDomainTransferLock">REST API Reference for DisableDomainTransferLock Operation</seealso>
         Task<DisableDomainTransferLockResponse> DisableDomainTransferLockAsync(DisableDomainTransferLockRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -281,6 +291,7 @@ namespace Amazon.Route53Domains
         /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
         /// Amazon Route 53 does not support this top-level domain.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/EnableDomainAutoRenew">REST API Reference for EnableDomainAutoRenew Operation</seealso>
         EnableDomainAutoRenewResponse EnableDomainAutoRenew(EnableDomainAutoRenewRequest request);
 
 
@@ -293,6 +304,7 @@ namespace Amazon.Route53Domains
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/EnableDomainAutoRenew">REST API Reference for EnableDomainAutoRenew Operation</seealso>
         Task<EnableDomainAutoRenewResponse> EnableDomainAutoRenewAsync(EnableDomainAutoRenewRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -326,6 +338,7 @@ namespace Amazon.Route53Domains
         /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
         /// Amazon Route 53 does not support this top-level domain.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/EnableDomainTransferLock">REST API Reference for EnableDomainTransferLock Operation</seealso>
         EnableDomainTransferLockResponse EnableDomainTransferLock(EnableDomainTransferLockRequest request);
 
 
@@ -338,6 +351,7 @@ namespace Amazon.Route53Domains
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/EnableDomainTransferLock">REST API Reference for EnableDomainTransferLock Operation</seealso>
         Task<EnableDomainTransferLockResponse> EnableDomainTransferLockAsync(EnableDomainTransferLockRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -370,6 +384,7 @@ namespace Amazon.Route53Domains
         /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
         /// Amazon Route 53 does not support this top-level domain.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/GetContactReachabilityStatus">REST API Reference for GetContactReachabilityStatus Operation</seealso>
         GetContactReachabilityStatusResponse GetContactReachabilityStatus(GetContactReachabilityStatusRequest request);
 
 
@@ -382,6 +397,7 @@ namespace Amazon.Route53Domains
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/GetContactReachabilityStatus">REST API Reference for GetContactReachabilityStatus Operation</seealso>
         Task<GetContactReachabilityStatusResponse> GetContactReachabilityStatusAsync(GetContactReachabilityStatusRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -390,8 +406,9 @@ namespace Amazon.Route53Domains
 
 
         /// <summary>
-        /// This operation returns detailed information about the domain. The domain's contact
-        /// information is also returned as part of the output.
+        /// This operation returns detailed information about a specified domain that is associated
+        /// with the current AWS account. Contact information for the domain is also returned
+        /// as part of the output.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDomainDetail service method.</param>
         /// 
@@ -404,6 +421,7 @@ namespace Amazon.Route53Domains
         /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
         /// Amazon Route 53 does not support this top-level domain.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/GetDomainDetail">REST API Reference for GetDomainDetail Operation</seealso>
         GetDomainDetailResponse GetDomainDetail(GetDomainDetailRequest request);
 
 
@@ -416,6 +434,7 @@ namespace Amazon.Route53Domains
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/GetDomainDetail">REST API Reference for GetDomainDetail Operation</seealso>
         Task<GetDomainDetailResponse> GetDomainDetailAsync(GetDomainDetailRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -426,17 +445,6 @@ namespace Amazon.Route53Domains
         /// <summary>
         /// The GetDomainSuggestions operation returns a list of suggested domain names given
         /// a string, which can either be a domain name or simply a word or phrase (without spaces).
-        /// 
-        ///  
-        /// <para>
-        ///  Parameters: <ul><li>DomainName (string): The basis for your domain suggestion search,
-        /// a string with (or without) top-level domain specified.</li> <li>SuggestionCount (int):
-        /// The number of domain suggestions to be returned, maximum 50, minimum 1.</li> <li>OnlyAvailable
-        /// (bool): If true, availability check will be performed on suggestion results, and only
-        /// available domains will be returned. If false, suggestions will be returned without
-        /// checking whether the domain is actually available, and caller will have to call checkDomainAvailability
-        /// for each suggestion to determine availability for registration.</li> </ul> 
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDomainSuggestions service method.</param>
         /// 
@@ -449,6 +457,7 @@ namespace Amazon.Route53Domains
         /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
         /// Amazon Route 53 does not support this top-level domain.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/GetDomainSuggestions">REST API Reference for GetDomainSuggestions Operation</seealso>
         GetDomainSuggestionsResponse GetDomainSuggestions(GetDomainSuggestionsRequest request);
 
 
@@ -461,6 +470,7 @@ namespace Amazon.Route53Domains
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/GetDomainSuggestions">REST API Reference for GetDomainSuggestions Operation</seealso>
         Task<GetDomainSuggestionsResponse> GetDomainSuggestionsAsync(GetDomainSuggestionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -479,6 +489,7 @@ namespace Amazon.Route53Domains
         /// to the ID of an operation that is already completed. For a domain name, it may not
         /// be a valid domain name or belong to the requester account.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/GetOperationDetail">REST API Reference for GetOperationDetail Operation</seealso>
         GetOperationDetailResponse GetOperationDetail(GetOperationDetailRequest request);
 
 
@@ -491,6 +502,7 @@ namespace Amazon.Route53Domains
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/GetOperationDetail">REST API Reference for GetOperationDetail Operation</seealso>
         Task<GetOperationDetailResponse> GetOperationDetailAsync(GetOperationDetailRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -509,6 +521,7 @@ namespace Amazon.Route53Domains
         /// to the ID of an operation that is already completed. For a domain name, it may not
         /// be a valid domain name or belong to the requester account.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ListDomains">REST API Reference for ListDomains Operation</seealso>
         ListDomainsResponse ListDomains();
 
 
@@ -524,6 +537,7 @@ namespace Amazon.Route53Domains
         /// to the ID of an operation that is already completed. For a domain name, it may not
         /// be a valid domain name or belong to the requester account.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ListDomains">REST API Reference for ListDomains Operation</seealso>
         ListDomainsResponse ListDomains(ListDomainsRequest request);
 
 
@@ -541,6 +555,7 @@ namespace Amazon.Route53Domains
         /// to the ID of an operation that is already completed. For a domain name, it may not
         /// be a valid domain name or belong to the requester account.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ListDomains">REST API Reference for ListDomains Operation</seealso>
         Task<ListDomainsResponse> ListDomainsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -553,6 +568,7 @@ namespace Amazon.Route53Domains
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ListDomains">REST API Reference for ListDomains Operation</seealso>
         Task<ListDomainsResponse> ListDomainsAsync(ListDomainsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -570,6 +586,7 @@ namespace Amazon.Route53Domains
         /// to the ID of an operation that is already completed. For a domain name, it may not
         /// be a valid domain name or belong to the requester account.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ListOperations">REST API Reference for ListOperations Operation</seealso>
         ListOperationsResponse ListOperations();
 
 
@@ -584,6 +601,7 @@ namespace Amazon.Route53Domains
         /// to the ID of an operation that is already completed. For a domain name, it may not
         /// be a valid domain name or belong to the requester account.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ListOperations">REST API Reference for ListOperations Operation</seealso>
         ListOperationsResponse ListOperations(ListOperationsRequest request);
 
 
@@ -600,6 +618,7 @@ namespace Amazon.Route53Domains
         /// to the ID of an operation that is already completed. For a domain name, it may not
         /// be a valid domain name or belong to the requester account.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ListOperations">REST API Reference for ListOperations Operation</seealso>
         Task<ListOperationsResponse> ListOperationsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -612,6 +631,7 @@ namespace Amazon.Route53Domains
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ListOperations">REST API Reference for ListOperations Operation</seealso>
         Task<ListOperationsResponse> ListOperationsAsync(ListOperationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -642,6 +662,7 @@ namespace Amazon.Route53Domains
         /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
         /// Amazon Route 53 does not support this top-level domain.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ListTagsForDomain">REST API Reference for ListTagsForDomain Operation</seealso>
         ListTagsForDomainResponse ListTagsForDomain(string domainName);
 
         /// <summary>
@@ -667,6 +688,7 @@ namespace Amazon.Route53Domains
         /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
         /// Amazon Route 53 does not support this top-level domain.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ListTagsForDomain">REST API Reference for ListTagsForDomain Operation</seealso>
         ListTagsForDomainResponse ListTagsForDomain(ListTagsForDomainRequest request);
 
 
@@ -696,6 +718,7 @@ namespace Amazon.Route53Domains
         /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
         /// Amazon Route 53 does not support this top-level domain.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ListTagsForDomain">REST API Reference for ListTagsForDomain Operation</seealso>
         Task<ListTagsForDomainResponse> ListTagsForDomainAsync(string domainName, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
@@ -707,6 +730,7 @@ namespace Amazon.Route53Domains
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ListTagsForDomain">REST API Reference for ListTagsForDomain Operation</seealso>
         Task<ListTagsForDomainResponse> ListTagsForDomainAsync(ListTagsForDomainRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -722,19 +746,36 @@ namespace Amazon.Route53Domains
         /// <para>
         /// When you register a domain, Amazon Route 53 does the following:
         /// </para>
-        ///  <ul> <li>Creates a Amazon Route 53 hosted zone that has the same name as the domain.
-        /// Amazon Route 53 assigns four name servers to your hosted zone and automatically updates
-        /// your domain registration with the names of these name servers.</li> <li>Enables autorenew,
-        /// so your domain registration will renew automatically each year. We'll notify you in
-        /// advance of the renewal date so you can choose whether to renew the registration.</li>
-        /// <li>Optionally enables privacy protection, so WHOIS queries return contact information
+        ///  <ul> <li> 
+        /// <para>
+        /// Creates a Amazon Route 53 hosted zone that has the same name as the domain. Amazon
+        /// Route 53 assigns four name servers to your hosted zone and automatically updates your
+        /// domain registration with the names of these name servers.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Enables autorenew, so your domain registration will renew automatically each year.
+        /// We'll notify you in advance of the renewal date so you can choose whether to renew
+        /// the registration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Optionally enables privacy protection, so WHOIS queries return contact information
         /// for our registrar partner, Gandi, instead of the information you entered for registrant,
-        /// admin, and tech contacts.</li> <li>If registration is successful, returns an operation
-        /// ID that you can use to track the progress and completion of the action. If the request
-        /// is not completed successfully, the domain registrant is notified by email.</li> <li>Charges
-        /// your AWS account an amount based on the top-level domain. For more information, see
-        /// <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53 Pricing</a>.</li>
-        /// </ul>
+        /// admin, and tech contacts.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If registration is successful, returns an operation ID that you can use to track the
+        /// progress and completion of the action. If the request is not completed successfully,
+        /// the domain registrant is notified by email.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Charges your AWS account an amount based on the top-level domain. For more information,
+        /// see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53 Pricing</a>.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterDomain service method.</param>
         /// 
@@ -759,6 +800,7 @@ namespace Amazon.Route53Domains
         /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
         /// Amazon Route 53 does not support this top-level domain.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/RegisterDomain">REST API Reference for RegisterDomain Operation</seealso>
         RegisterDomainResponse RegisterDomain(RegisterDomainRequest request);
 
 
@@ -771,6 +813,7 @@ namespace Amazon.Route53Domains
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/RegisterDomain">REST API Reference for RegisterDomain Operation</seealso>
         Task<RegisterDomainResponse> RegisterDomainAsync(RegisterDomainRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -787,8 +830,8 @@ namespace Amazon.Route53Domains
         /// We recommend that you renew your domain several weeks before the expiration date.
         /// Some TLD registries delete domains before the expiration date if you haven't renewed
         /// far enough in advance. For more information about renewing domain registration, see
-        /// <a href="http://docs.aws.amazon.com/console/route53/domain-renew">Renewing Registration
-        /// for a Domain</a> in the Amazon Route 53 documentation.
+        /// <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-renew.html">Renewing
+        /// Registration for a Domain</a> in the Amazon Route 53 Developer Guide.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RenewDomain service method.</param>
@@ -811,6 +854,7 @@ namespace Amazon.Route53Domains
         /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
         /// Amazon Route 53 does not support this top-level domain.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/RenewDomain">REST API Reference for RenewDomain Operation</seealso>
         RenewDomainResponse RenewDomain(RenewDomainRequest request);
 
 
@@ -823,6 +867,7 @@ namespace Amazon.Route53Domains
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/RenewDomain">REST API Reference for RenewDomain Operation</seealso>
         Task<RenewDomainResponse> RenewDomainAsync(RenewDomainRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -849,6 +894,7 @@ namespace Amazon.Route53Domains
         /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
         /// Amazon Route 53 does not support this top-level domain.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ResendContactReachabilityEmail">REST API Reference for ResendContactReachabilityEmail Operation</seealso>
         ResendContactReachabilityEmailResponse ResendContactReachabilityEmail(ResendContactReachabilityEmailRequest request);
 
 
@@ -861,6 +907,7 @@ namespace Amazon.Route53Domains
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ResendContactReachabilityEmail">REST API Reference for ResendContactReachabilityEmail Operation</seealso>
         Task<ResendContactReachabilityEmailResponse> ResendContactReachabilityEmailAsync(ResendContactReachabilityEmailRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -883,6 +930,7 @@ namespace Amazon.Route53Domains
         /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
         /// Amazon Route 53 does not support this top-level domain.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/RetrieveDomainAuthCode">REST API Reference for RetrieveDomainAuthCode Operation</seealso>
         RetrieveDomainAuthCodeResponse RetrieveDomainAuthCode(RetrieveDomainAuthCodeRequest request);
 
 
@@ -895,6 +943,7 @@ namespace Amazon.Route53Domains
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/RetrieveDomainAuthCode">REST API Reference for RetrieveDomainAuthCode Operation</seealso>
         Task<RetrieveDomainAuthCodeResponse> RetrieveDomainAuthCodeAsync(RetrieveDomainAuthCodeRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -911,8 +960,8 @@ namespace Amazon.Route53Domains
         /// <para>
         /// For transfer requirements, a detailed procedure, and information about viewing the
         /// status of a domain transfer, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-transfer-to-route-53.html">Transferring
-        /// Registration for a Domain to Amazon Route 53</a> in the Amazon Route 53 Developer
-        /// Guide.
+        /// Registration for a Domain to Amazon Route 53</a> in the <i>Amazon Route 53 Developer
+        /// Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -923,10 +972,13 @@ namespace Amazon.Route53Domains
         /// you transfer the registration, the previous registrar will not renew your domain registration
         /// and could end your DNS service at any time.
         /// </para>
-        ///  <note>Caution! If the registrar for your domain is also the DNS service provider
-        /// for the domain and you don't transfer DNS service to another provider, your website,
-        /// email, and the web applications associated with the domain might become unavailable.</note>
-        /// 
+        ///  <important> 
+        /// <para>
+        /// If the registrar for your domain is also the DNS service provider for the domain and
+        /// you don't transfer DNS service to another provider, your website, email, and the web
+        /// applications associated with the domain might become unavailable.
+        /// </para>
+        ///  </important> 
         /// <para>
         /// If the transfer is successful, this method returns an operation ID that you can use
         /// to track the progress and completion of the action. If the transfer doesn't complete
@@ -956,6 +1008,7 @@ namespace Amazon.Route53Domains
         /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
         /// Amazon Route 53 does not support this top-level domain.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/TransferDomain">REST API Reference for TransferDomain Operation</seealso>
         TransferDomainResponse TransferDomain(TransferDomainRequest request);
 
 
@@ -968,6 +1021,7 @@ namespace Amazon.Route53Domains
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/TransferDomain">REST API Reference for TransferDomain Operation</seealso>
         Task<TransferDomainResponse> TransferDomainAsync(TransferDomainRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1007,6 +1061,7 @@ namespace Amazon.Route53Domains
         /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
         /// Amazon Route 53 does not support this top-level domain.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateDomainContact">REST API Reference for UpdateDomainContact Operation</seealso>
         UpdateDomainContactResponse UpdateDomainContact(UpdateDomainContactRequest request);
 
 
@@ -1019,6 +1074,7 @@ namespace Amazon.Route53Domains
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateDomainContact">REST API Reference for UpdateDomainContact Operation</seealso>
         Task<UpdateDomainContactResponse> UpdateDomainContactAsync(UpdateDomainContactRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1037,8 +1093,8 @@ namespace Amazon.Route53Domains
         /// <para>
         /// This operation only affects the privacy of the specified contact type (registrant,
         /// administrator, or tech). Successful acceptance returns an operation ID that you can
-        /// use with GetOperationDetail to track the progress and completion of the action. If
-        /// the request is not completed successfully, the domain registrant will be notified
+        /// use with <a>GetOperationDetail</a> to track the progress and completion of the action.
+        /// If the request is not completed successfully, the domain registrant will be notified
         /// by email.
         /// </para>
         /// </summary>
@@ -1062,6 +1118,7 @@ namespace Amazon.Route53Domains
         /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
         /// Amazon Route 53 does not support this top-level domain.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateDomainContactPrivacy">REST API Reference for UpdateDomainContactPrivacy Operation</seealso>
         UpdateDomainContactPrivacyResponse UpdateDomainContactPrivacy(UpdateDomainContactPrivacyRequest request);
 
 
@@ -1074,6 +1131,7 @@ namespace Amazon.Route53Domains
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateDomainContactPrivacy">REST API Reference for UpdateDomainContactPrivacy Operation</seealso>
         Task<UpdateDomainContactPrivacyResponse> UpdateDomainContactPrivacyAsync(UpdateDomainContactPrivacyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1084,7 +1142,7 @@ namespace Amazon.Route53Domains
         /// <summary>
         /// This operation replaces the current set of name servers for the domain with the specified
         /// set of name servers. If you use Amazon Route 53 as your DNS service, specify the four
-        /// name servers in the delegation set for the hosted zone for the domain. 
+        /// name servers in the delegation set for the hosted zone for the domain.
         /// 
         ///  
         /// <para>
@@ -1113,6 +1171,7 @@ namespace Amazon.Route53Domains
         /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
         /// Amazon Route 53 does not support this top-level domain.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateDomainNameservers">REST API Reference for UpdateDomainNameservers Operation</seealso>
         UpdateDomainNameserversResponse UpdateDomainNameservers(UpdateDomainNameserversRequest request);
 
 
@@ -1125,6 +1184,7 @@ namespace Amazon.Route53Domains
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateDomainNameservers">REST API Reference for UpdateDomainNameservers Operation</seealso>
         Task<UpdateDomainNameserversResponse> UpdateDomainNameserversAsync(UpdateDomainNameserversRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1141,8 +1201,8 @@ namespace Amazon.Route53Domains
         /// represent all issued operations.
         /// </para>
         /// </summary>
-        /// <param name="domainName">The domain for which you want to add or update tags. The name of a domain. Type: String Default: None Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and hyphen (-). Hyphens are allowed only when they&apos;re surrounded by letters, numbers, or other hyphens. You can&apos;t specify a hyphen at the beginning or end of a label. To specify an Internationalized Domain Name, you must convert the name to Punycode. Required: Yes</param>
-        /// <param name="tagsToUpdate">A list of the tag keys and values that you want to add or update. If you specify a key that already exists, the corresponding value will be replaced. Type: A complex type containing a list of tags Default: None Required: No'> Each tag includes the following elements: <ul> <li>Key The key (name) of a tag. Type: String Default: None Valid values: Unicode characters including alphanumeric, space, and ".:/=+\-@" Constraints: Each key can be 1-128 characters long. Required: Yes </li> <li>Value The value of a tag. Type: String Default: None Valid values: Unicode characters including alphanumeric, space, and ".:/=+\-@" Constraints: Each value can be 0-256 characters long. Required: Yes </li> </ul></param>
+        /// <param name="domainName">The domain for which you want to add or update tags.</param>
+        /// <param name="tagsToUpdate">A list of the tag keys and values that you want to add or update. If you specify a key that already exists, the corresponding value will be replaced.</param>
         /// 
         /// <returns>The response from the UpdateTagsForDomain service method, as returned by Route53Domains.</returns>
         /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
@@ -1156,6 +1216,7 @@ namespace Amazon.Route53Domains
         /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
         /// Amazon Route 53 does not support this top-level domain.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateTagsForDomain">REST API Reference for UpdateTagsForDomain Operation</seealso>
         UpdateTagsForDomainResponse UpdateTagsForDomain(string domainName, List<Tag> tagsToUpdate);
 
         /// <summary>
@@ -1181,6 +1242,7 @@ namespace Amazon.Route53Domains
         /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
         /// Amazon Route 53 does not support this top-level domain.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateTagsForDomain">REST API Reference for UpdateTagsForDomain Operation</seealso>
         UpdateTagsForDomainResponse UpdateTagsForDomain(UpdateTagsForDomainRequest request);
 
 
@@ -1193,8 +1255,8 @@ namespace Amazon.Route53Domains
         /// represent all issued operations.
         /// </para>
         /// </summary>
-        /// <param name="domainName">The domain for which you want to add or update tags. The name of a domain. Type: String Default: None Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and hyphen (-). Hyphens are allowed only when they&apos;re surrounded by letters, numbers, or other hyphens. You can&apos;t specify a hyphen at the beginning or end of a label. To specify an Internationalized Domain Name, you must convert the name to Punycode. Required: Yes</param>
-        /// <param name="tagsToUpdate">A list of the tag keys and values that you want to add or update. If you specify a key that already exists, the corresponding value will be replaced. Type: A complex type containing a list of tags Default: None Required: No'> Each tag includes the following elements: <ul> <li>Key The key (name) of a tag. Type: String Default: None Valid values: Unicode characters including alphanumeric, space, and ".:/=+\-@" Constraints: Each key can be 1-128 characters long. Required: Yes </li> <li>Value The value of a tag. Type: String Default: None Valid values: Unicode characters including alphanumeric, space, and ".:/=+\-@" Constraints: Each value can be 0-256 characters long. Required: Yes </li> </ul></param>
+        /// <param name="domainName">The domain for which you want to add or update tags.</param>
+        /// <param name="tagsToUpdate">A list of the tag keys and values that you want to add or update. If you specify a key that already exists, the corresponding value will be replaced.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -1211,6 +1273,7 @@ namespace Amazon.Route53Domains
         /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
         /// Amazon Route 53 does not support this top-level domain.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateTagsForDomain">REST API Reference for UpdateTagsForDomain Operation</seealso>
         Task<UpdateTagsForDomainResponse> UpdateTagsForDomainAsync(string domainName, List<Tag> tagsToUpdate, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
@@ -1222,6 +1285,7 @@ namespace Amazon.Route53Domains
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateTagsForDomain">REST API Reference for UpdateTagsForDomain Operation</seealso>
         Task<UpdateTagsForDomainResponse> UpdateTagsForDomainAsync(UpdateTagsForDomainRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1230,8 +1294,8 @@ namespace Amazon.Route53Domains
 
 
         /// <summary>
-        /// This operation returns all the domain-related billing records for the current AWS
-        /// account for a specified period
+        /// Returns all the domain-related billing records for the current AWS account for a specified
+        /// period
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ViewBilling service method.</param>
         /// 
@@ -1241,6 +1305,7 @@ namespace Amazon.Route53Domains
         /// to the ID of an operation that is already completed. For a domain name, it may not
         /// be a valid domain name or belong to the requester account.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ViewBilling">REST API Reference for ViewBilling Operation</seealso>
         ViewBillingResponse ViewBilling(ViewBillingRequest request);
 
 
@@ -1253,6 +1318,7 @@ namespace Amazon.Route53Domains
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ViewBilling">REST API Reference for ViewBilling Operation</seealso>
         Task<ViewBillingResponse> ViewBillingAsync(ViewBillingRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion

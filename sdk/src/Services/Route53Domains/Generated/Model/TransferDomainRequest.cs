@@ -37,8 +37,8 @@ namespace Amazon.Route53Domains.Model
     /// <para>
     /// For transfer requirements, a detailed procedure, and information about viewing the
     /// status of a domain transfer, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-transfer-to-route-53.html">Transferring
-    /// Registration for a Domain to Amazon Route 53</a> in the Amazon Route 53 Developer
-    /// Guide.
+    /// Registration for a Domain to Amazon Route 53</a> in the <i>Amazon Route 53 Developer
+    /// Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -49,10 +49,13 @@ namespace Amazon.Route53Domains.Model
     /// you transfer the registration, the previous registrar will not renew your domain registration
     /// and could end your DNS service at any time.
     /// </para>
-    ///  <note>Caution! If the registrar for your domain is also the DNS service provider
-    /// for the domain and you don't transfer DNS service to another provider, your website,
-    /// email, and the web applications associated with the domain might become unavailable.</note>
-    /// 
+    ///  <important> 
+    /// <para>
+    /// If the registrar for your domain is also the DNS service provider for the domain and
+    /// you don't transfer DNS service to another provider, your website, email, and the web
+    /// applications associated with the domain might become unavailable.
+    /// </para>
+    ///  </important> 
     /// <para>
     /// If the transfer is successful, this method returns an operation ID that you can use
     /// to track the progress and completion of the action. If the transfer doesn't complete
@@ -79,22 +82,6 @@ namespace Amazon.Route53Domains.Model
         /// <para>
         /// Provides detailed contact information.
         /// </para>
-        ///  
-        /// <para>
-        /// Type: Complex
-        /// </para>
-        ///  
-        /// <para>
-        /// Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>,
-        /// <code>ContactType</code>, <code>OrganizationName</code>, <code>AddressLine1</code>,
-        /// <code>AddressLine2</code>, <code>City</code>, <code>State</code>, <code>CountryCode</code>,
-        /// <code>ZipCode</code>, <code>PhoneNumber</code>, <code>Email</code>, <code>Fax</code>,
-        /// <code>ExtraParams</code>
-        /// </para>
-        ///  
-        /// <para>
-        /// Required: Yes
-        /// </para>
         /// </summary>
         public ContactDetail AdminContact
         {
@@ -112,14 +99,6 @@ namespace Amazon.Route53Domains.Model
         /// Gets and sets the property AuthCode. 
         /// <para>
         /// The authorization code for the domain. You get this value from the current registrar.
-        /// </para>
-        ///  
-        /// <para>
-        /// Type: String
-        /// </para>
-        ///  
-        /// <para>
-        /// Required: Yes
         /// </para>
         /// </summary>
         public string AuthCode
@@ -142,19 +121,7 @@ namespace Amazon.Route53Domains.Model
         /// </para>
         ///  
         /// <para>
-        /// Type: Boolean
-        /// </para>
-        ///  
-        /// <para>
-        /// Valid values: <code>true</code> | <code>false</code>
-        /// </para>
-        ///  
-        /// <para>
         /// Default: true
-        /// </para>
-        ///  
-        /// <para>
-        /// Required: No
         /// </para>
         /// </summary>
         public bool AutoRenew
@@ -172,24 +139,12 @@ namespace Amazon.Route53Domains.Model
         /// <summary>
         /// Gets and sets the property DomainName. 
         /// <para>
-        /// The name of a domain.
-        /// </para>
-        ///  
-        /// <para>
-        /// Type: String
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: None
+        /// The name of the domain that you want to transfer to Amazon Route 53.
         /// </para>
         ///  
         /// <para>
         /// Constraints: The domain name can contain only the letters a through z, the numbers
         /// 0 through 9, and hyphen (-). Internationalized Domain Names are not supported.
-        /// </para>
-        ///  
-        /// <para>
-        /// Required: Yes
         /// </para>
         /// </summary>
         public string DomainName
@@ -207,24 +162,12 @@ namespace Amazon.Route53Domains.Model
         /// <summary>
         /// Gets and sets the property DurationInYears. 
         /// <para>
-        /// The number of years the domain will be registered. Domains are registered for a minimum
-        /// of one year. The maximum period depends on the top-level domain.
-        /// </para>
-        ///  
-        /// <para>
-        /// Type: Integer
+        /// The number of years that you want to register the domain for. Domains are registered
+        /// for a minimum of one year. The maximum period depends on the top-level domain.
         /// </para>
         ///  
         /// <para>
         /// Default: 1
-        /// </para>
-        ///  
-        /// <para>
-        /// Valid values: Integer from 1 to 10
-        /// </para>
-        ///  
-        /// <para>
-        /// Required: Yes
         /// </para>
         /// </summary>
         public int DurationInYears
@@ -262,18 +205,6 @@ namespace Amazon.Route53Domains.Model
         /// <para>
         /// Contains details for the host and glue IP addresses.
         /// </para>
-        ///  
-        /// <para>
-        /// Type: Complex
-        /// </para>
-        ///  
-        /// <para>
-        /// Children: <code>GlueIps</code>, <code>Name</code>
-        /// </para>
-        ///  
-        /// <para>
-        /// Required: No
-        /// </para>
         /// </summary>
         public List<Nameserver> Nameservers
         {
@@ -291,24 +222,12 @@ namespace Amazon.Route53Domains.Model
         /// Gets and sets the property PrivacyProtectAdminContact. 
         /// <para>
         /// Whether you want to conceal contact information from WHOIS queries. If you specify
-        /// true, WHOIS ("who is") queries will return contact information for our registrar partner,
-        /// Gandi, instead of the contact information that you enter.
+        /// <code>true</code>, WHOIS ("who is") queries will return contact information for our
+        /// registrar partner, Gandi, instead of the contact information that you enter.
         /// </para>
         ///  
         /// <para>
-        /// Type: Boolean
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: <code>true</code>
-        /// </para>
-        ///  
-        /// <para>
-        /// Valid values: <code>true</code> | <code>false</code>
-        /// </para>
-        ///  
-        /// <para>
-        /// Required: No
+        /// Default: <code>true</code> 
         /// </para>
         /// </summary>
         public bool PrivacyProtectAdminContact
@@ -327,24 +246,12 @@ namespace Amazon.Route53Domains.Model
         /// Gets and sets the property PrivacyProtectRegistrantContact. 
         /// <para>
         /// Whether you want to conceal contact information from WHOIS queries. If you specify
-        /// true, WHOIS ("who is") queries will return contact information for our registrar partner,
-        /// Gandi, instead of the contact information that you enter.
+        /// <code>true</code>, WHOIS ("who is") queries will return contact information for our
+        /// registrar partner, Gandi, instead of the contact information that you enter.
         /// </para>
         ///  
         /// <para>
-        /// Type: Boolean
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: <code>true</code>
-        /// </para>
-        ///  
-        /// <para>
-        /// Valid values: <code>true</code> | <code>false</code>
-        /// </para>
-        ///  
-        /// <para>
-        /// Required: No
+        /// Default: <code>true</code> 
         /// </para>
         /// </summary>
         public bool PrivacyProtectRegistrantContact
@@ -363,24 +270,12 @@ namespace Amazon.Route53Domains.Model
         /// Gets and sets the property PrivacyProtectTechContact. 
         /// <para>
         /// Whether you want to conceal contact information from WHOIS queries. If you specify
-        /// true, WHOIS ("who is") queries will return contact information for our registrar partner,
-        /// Gandi, instead of the contact information that you enter.
+        /// <code>true</code>, WHOIS ("who is") queries will return contact information for our
+        /// registrar partner, Gandi, instead of the contact information that you enter.
         /// </para>
         ///  
         /// <para>
-        /// Type: Boolean
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: <code>true</code>
-        /// </para>
-        ///  
-        /// <para>
-        /// Valid values: <code>true</code> | <code>false</code>
-        /// </para>
-        ///  
-        /// <para>
-        /// Required: No
+        /// Default: <code>true</code> 
         /// </para>
         /// </summary>
         public bool PrivacyProtectTechContact
@@ -400,22 +295,6 @@ namespace Amazon.Route53Domains.Model
         /// <para>
         /// Provides detailed contact information.
         /// </para>
-        ///  
-        /// <para>
-        /// Type: Complex
-        /// </para>
-        ///  
-        /// <para>
-        /// Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>,
-        /// <code>ContactType</code>, <code>OrganizationName</code>, <code>AddressLine1</code>,
-        /// <code>AddressLine2</code>, <code>City</code>, <code>State</code>, <code>CountryCode</code>,
-        /// <code>ZipCode</code>, <code>PhoneNumber</code>, <code>Email</code>, <code>Fax</code>,
-        /// <code>ExtraParams</code>
-        /// </para>
-        ///  
-        /// <para>
-        /// Required: Yes
-        /// </para>
         /// </summary>
         public ContactDetail RegistrantContact
         {
@@ -433,22 +312,6 @@ namespace Amazon.Route53Domains.Model
         /// Gets and sets the property TechContact. 
         /// <para>
         /// Provides detailed contact information.
-        /// </para>
-        ///  
-        /// <para>
-        /// Type: Complex
-        /// </para>
-        ///  
-        /// <para>
-        /// Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>,
-        /// <code>ContactType</code>, <code>OrganizationName</code>, <code>AddressLine1</code>,
-        /// <code>AddressLine2</code>, <code>City</code>, <code>State</code>, <code>CountryCode</code>,
-        /// <code>ZipCode</code>, <code>PhoneNumber</code>, <code>Email</code>, <code>Fax</code>,
-        /// <code>ExtraParams</code>
-        /// </para>
-        ///  
-        /// <para>
-        /// Required: Yes
         /// </para>
         /// </summary>
         public ContactDetail TechContact

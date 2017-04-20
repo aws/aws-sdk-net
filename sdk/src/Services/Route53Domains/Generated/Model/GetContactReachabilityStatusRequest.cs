@@ -49,18 +49,6 @@ namespace Amazon.Route53Domains.Model
         /// The name of the domain for which you want to know whether the registrant contact has
         /// confirmed that the email address is valid.
         /// </para>
-        ///  
-        /// <para>
-        /// Type: String
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: None
-        /// </para>
-        ///  
-        /// <para>
-        /// Required: Yes
-        /// </para>
         /// </summary>
         public string DomainName
         {

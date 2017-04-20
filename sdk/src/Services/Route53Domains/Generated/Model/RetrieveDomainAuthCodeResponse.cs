@@ -39,10 +39,6 @@ namespace Amazon.Route53Domains.Model
         /// <para>
         /// The authorization code for the domain.
         /// </para>
-        ///  
-        /// <para>
-        /// Type: String
-        /// </para>
         /// </summary>
         public string AuthCode
         {

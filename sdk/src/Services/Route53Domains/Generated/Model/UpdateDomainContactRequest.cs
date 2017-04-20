@@ -52,22 +52,6 @@ namespace Amazon.Route53Domains.Model
         /// <para>
         /// Provides detailed contact information.
         /// </para>
-        ///  
-        /// <para>
-        /// Type: Complex
-        /// </para>
-        ///  
-        /// <para>
-        /// Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>,
-        /// <code>ContactType</code>, <code>OrganizationName</code>, <code>AddressLine1</code>,
-        /// <code>AddressLine2</code>, <code>City</code>, <code>State</code>, <code>CountryCode</code>,
-        /// <code>ZipCode</code>, <code>PhoneNumber</code>, <code>Email</code>, <code>Fax</code>,
-        /// <code>ExtraParams</code>
-        /// </para>
-        ///  
-        /// <para>
-        /// Required: Yes
-        /// </para>
         /// </summary>
         public ContactDetail AdminContact
         {
@@ -84,24 +68,7 @@ namespace Amazon.Route53Domains.Model
         /// <summary>
         /// Gets and sets the property DomainName. 
         /// <para>
-        /// The name of a domain.
-        /// </para>
-        ///  
-        /// <para>
-        /// Type: String
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: None
-        /// </para>
-        ///  
-        /// <para>
-        /// Constraints: The domain name can contain only the letters a through z, the numbers
-        /// 0 through 9, and hyphen (-). Internationalized Domain Names are not supported.
-        /// </para>
-        ///  
-        /// <para>
-        /// Required: Yes
+        /// The name of the domain that you want to update contact information for.
         /// </para>
         /// </summary>
         public string DomainName
@@ -121,22 +88,6 @@ namespace Amazon.Route53Domains.Model
         /// <para>
         /// Provides detailed contact information.
         /// </para>
-        ///  
-        /// <para>
-        /// Type: Complex
-        /// </para>
-        ///  
-        /// <para>
-        /// Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>,
-        /// <code>ContactType</code>, <code>OrganizationName</code>, <code>AddressLine1</code>,
-        /// <code>AddressLine2</code>, <code>City</code>, <code>State</code>, <code>CountryCode</code>,
-        /// <code>ZipCode</code>, <code>PhoneNumber</code>, <code>Email</code>, <code>Fax</code>,
-        /// <code>ExtraParams</code>
-        /// </para>
-        ///  
-        /// <para>
-        /// Required: Yes
-        /// </para>
         /// </summary>
         public ContactDetail RegistrantContact
         {
@@ -154,22 +105,6 @@ namespace Amazon.Route53Domains.Model
         /// Gets and sets the property TechContact. 
         /// <para>
         /// Provides detailed contact information.
-        /// </para>
-        ///  
-        /// <para>
-        /// Type: Complex
-        /// </para>
-        ///  
-        /// <para>
-        /// Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>,
-        /// <code>ContactType</code>, <code>OrganizationName</code>, <code>AddressLine1</code>,
-        /// <code>AddressLine2</code>, <code>City</code>, <code>State</code>, <code>CountryCode</code>,
-        /// <code>ZipCode</code>, <code>PhoneNumber</code>, <code>Email</code>, <code>Fax</code>,
-        /// <code>ExtraParams</code>
-        /// </para>
-        ///  
-        /// <para>
-        /// Required: Yes
         /// </para>
         /// </summary>
         public ContactDetail TechContact

@@ -29,8 +29,8 @@ namespace Amazon.Route53Domains.Model
 {
     /// <summary>
     /// Container for the parameters to the ViewBilling operation.
-    /// This operation returns all the domain-related billing records for the current AWS
-    /// account for a specified period
+    /// Returns all the domain-related billing records for the current AWS account for a specified
+    /// period
     /// </summary>
     public partial class ViewBillingRequest : AmazonRoute53DomainsRequest
     {
@@ -44,18 +44,6 @@ namespace Amazon.Route53Domains.Model
         /// <para>
         /// The end date and time for the time period for which you want a list of billing records.
         /// Specify the date in Unix time format.
-        /// </para>
-        ///  
-        /// <para>
-        /// Type: Double
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: None
-        /// </para>
-        ///  
-        /// <para>
-        /// Required: Yes
         /// </para>
         /// </summary>
         public DateTime End
@@ -83,20 +71,8 @@ namespace Amazon.Route53Domains.Model
         /// </para>
         ///  
         /// <para>
-        /// Type: String
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: None
-        /// </para>
-        ///  
-        /// <para>
         /// Constraints: The marker must match the value of <code>NextPageMarker</code> that was
         /// returned in the previous response.
-        /// </para>
-        ///  
-        /// <para>
-        /// Required: No
         /// </para>
         /// </summary>
         public string Marker
@@ -118,19 +94,7 @@ namespace Amazon.Route53Domains.Model
         /// </para>
         ///  
         /// <para>
-        /// Type: Integer
-        /// </para>
-        ///  
-        /// <para>
         /// Default: 20
-        /// </para>
-        ///  
-        /// <para>
-        /// Constraints: A value between 1 and 100.
-        /// </para>
-        ///  
-        /// <para>
-        /// Required: No
         /// </para>
         /// </summary>
         public int MaxItems
@@ -150,18 +114,6 @@ namespace Amazon.Route53Domains.Model
         /// <para>
         /// The beginning date and time for the time period for which you want a list of billing
         /// records. Specify the date in Unix time format.
-        /// </para>
-        ///  
-        /// <para>
-        /// Type: Double
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: None
-        /// </para>
-        ///  
-        /// <para>
-        /// Required: Yes
         /// </para>
         /// </summary>
         public DateTime Start

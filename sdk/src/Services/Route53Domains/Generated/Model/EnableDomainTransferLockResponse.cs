@@ -40,18 +40,6 @@ namespace Amazon.Route53Domains.Model
         /// Identifier for tracking the progress of the request. To use this ID to query the operation
         /// status, use GetOperationDetail.
         /// </para>
-        ///  
-        /// <para>
-        /// Type: String
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: None
-        /// </para>
-        ///  
-        /// <para>
-        /// Constraints: Maximum 255 characters.
-        /// </para>
         /// </summary>
         public string OperationId
         {

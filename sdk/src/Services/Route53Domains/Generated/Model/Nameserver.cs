@@ -45,15 +45,7 @@ namespace Amazon.Route53Domains.Model
         /// </para>
         ///  
         /// <para>
-        /// Type: List of IP addresses.
-        /// </para>
-        ///  
-        /// <para>
         /// Constraints: The list can contain only one IPv4 and one IPv6 address.
-        /// </para>
-        ///  
-        /// <para>
-        /// Parent: <code>Nameservers</code>
         /// </para>
         /// </summary>
         public List<string> GlueIps
@@ -75,15 +67,7 @@ namespace Amazon.Route53Domains.Model
         /// </para>
         ///  
         /// <para>
-        /// Type: String
-        /// </para>
-        ///  
-        /// <para>
-        /// Constraint: Maximum 255 characterss
-        /// </para>
-        ///  
-        /// <para>
-        /// Parent: <code>Nameservers</code>
+        /// Constraint: Maximum 255 characters
         /// </para>
         /// </summary>
         public string Name

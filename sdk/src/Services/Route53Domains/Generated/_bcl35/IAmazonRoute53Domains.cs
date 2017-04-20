@@ -29,7 +29,7 @@ namespace Amazon.Route53Domains
     /// <summary>
     /// Interface for accessing Route53Domains
     ///
-    /// 
+    /// Amazon Route 53 API actions let you register domain names and perform related operations.
     /// </summary>
     public partial interface IAmazonRoute53Domains : IAmazonService, IDisposable
     {
@@ -54,6 +54,7 @@ namespace Amazon.Route53Domains
         /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
         /// Amazon Route 53 does not support this top-level domain.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/CheckDomainAvailability">REST API Reference for CheckDomainAvailability Operation</seealso>
         CheckDomainAvailabilityResponse CheckDomainAvailability(CheckDomainAvailabilityRequest request);
 
         /// <summary>
@@ -67,6 +68,7 @@ namespace Amazon.Route53Domains
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCheckDomainAvailability
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/CheckDomainAvailability">REST API Reference for CheckDomainAvailability Operation</seealso>
         IAsyncResult BeginCheckDomainAvailability(CheckDomainAvailabilityRequest request, AsyncCallback callback, object state);
 
 
@@ -78,6 +80,7 @@ namespace Amazon.Route53Domains
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCheckDomainAvailability.</param>
         /// 
         /// <returns>Returns a  CheckDomainAvailabilityResult from Route53Domains.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/CheckDomainAvailability">REST API Reference for CheckDomainAvailability Operation</seealso>
         CheckDomainAvailabilityResponse EndCheckDomainAvailability(IAsyncResult asyncResult);
 
         #endregion
@@ -94,8 +97,8 @@ namespace Amazon.Route53Domains
         /// represent all issued operations.
         /// </para>
         /// </summary>
-        /// <param name="domainName">The domain for which you want to delete one or more tags. The name of a domain. Type: String Default: None Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and hyphen (-). Hyphens are allowed only when they&apos;re surrounded by letters, numbers, or other hyphens. You can&apos;t specify a hyphen at the beginning or end of a label. To specify an Internationalized Domain Name, you must convert the name to Punycode. Required: Yes</param>
-        /// <param name="tagsToDelete">A list of tag keys to delete. Type: A list that contains the keys of the tags that you want to delete. Default: None Required: No'></param>
+        /// <param name="domainName">The domain for which you want to delete one or more tags.</param>
+        /// <param name="tagsToDelete">A list of tag keys to delete.</param>
         /// 
         /// <returns>The response from the DeleteTagsForDomain service method, as returned by Route53Domains.</returns>
         /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
@@ -109,6 +112,7 @@ namespace Amazon.Route53Domains
         /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
         /// Amazon Route 53 does not support this top-level domain.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/DeleteTagsForDomain">REST API Reference for DeleteTagsForDomain Operation</seealso>
         DeleteTagsForDomainResponse DeleteTagsForDomain(string domainName, List<string> tagsToDelete);
 
         /// <summary>
@@ -134,6 +138,7 @@ namespace Amazon.Route53Domains
         /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
         /// Amazon Route 53 does not support this top-level domain.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/DeleteTagsForDomain">REST API Reference for DeleteTagsForDomain Operation</seealso>
         DeleteTagsForDomainResponse DeleteTagsForDomain(DeleteTagsForDomainRequest request);
 
         /// <summary>
@@ -147,6 +152,7 @@ namespace Amazon.Route53Domains
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteTagsForDomain
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/DeleteTagsForDomain">REST API Reference for DeleteTagsForDomain Operation</seealso>
         IAsyncResult BeginDeleteTagsForDomain(DeleteTagsForDomainRequest request, AsyncCallback callback, object state);
 
 
@@ -158,6 +164,7 @@ namespace Amazon.Route53Domains
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteTagsForDomain.</param>
         /// 
         /// <returns>Returns a  DeleteTagsForDomainResult from Route53Domains.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/DeleteTagsForDomain">REST API Reference for DeleteTagsForDomain Operation</seealso>
         DeleteTagsForDomainResponse EndDeleteTagsForDomain(IAsyncResult asyncResult);
 
         #endregion
@@ -180,6 +187,7 @@ namespace Amazon.Route53Domains
         /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
         /// Amazon Route 53 does not support this top-level domain.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/DisableDomainAutoRenew">REST API Reference for DisableDomainAutoRenew Operation</seealso>
         DisableDomainAutoRenewResponse DisableDomainAutoRenew(DisableDomainAutoRenewRequest request);
 
         /// <summary>
@@ -193,6 +201,7 @@ namespace Amazon.Route53Domains
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisableDomainAutoRenew
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/DisableDomainAutoRenew">REST API Reference for DisableDomainAutoRenew Operation</seealso>
         IAsyncResult BeginDisableDomainAutoRenew(DisableDomainAutoRenewRequest request, AsyncCallback callback, object state);
 
 
@@ -204,6 +213,7 @@ namespace Amazon.Route53Domains
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisableDomainAutoRenew.</param>
         /// 
         /// <returns>Returns a  DisableDomainAutoRenewResult from Route53Domains.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/DisableDomainAutoRenew">REST API Reference for DisableDomainAutoRenew Operation</seealso>
         DisableDomainAutoRenewResponse EndDisableDomainAutoRenew(IAsyncResult asyncResult);
 
         #endregion
@@ -239,6 +249,7 @@ namespace Amazon.Route53Domains
         /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
         /// Amazon Route 53 does not support this top-level domain.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/DisableDomainTransferLock">REST API Reference for DisableDomainTransferLock Operation</seealso>
         DisableDomainTransferLockResponse DisableDomainTransferLock(DisableDomainTransferLockRequest request);
 
         /// <summary>
@@ -252,6 +263,7 @@ namespace Amazon.Route53Domains
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisableDomainTransferLock
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/DisableDomainTransferLock">REST API Reference for DisableDomainTransferLock Operation</seealso>
         IAsyncResult BeginDisableDomainTransferLock(DisableDomainTransferLockRequest request, AsyncCallback callback, object state);
 
 
@@ -263,6 +275,7 @@ namespace Amazon.Route53Domains
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisableDomainTransferLock.</param>
         /// 
         /// <returns>Returns a  DisableDomainTransferLockResult from Route53Domains.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/DisableDomainTransferLock">REST API Reference for DisableDomainTransferLock Operation</seealso>
         DisableDomainTransferLockResponse EndDisableDomainTransferLock(IAsyncResult asyncResult);
 
         #endregion
@@ -298,6 +311,7 @@ namespace Amazon.Route53Domains
         /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
         /// Amazon Route 53 does not support this top-level domain.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/EnableDomainAutoRenew">REST API Reference for EnableDomainAutoRenew Operation</seealso>
         EnableDomainAutoRenewResponse EnableDomainAutoRenew(EnableDomainAutoRenewRequest request);
 
         /// <summary>
@@ -311,6 +325,7 @@ namespace Amazon.Route53Domains
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndEnableDomainAutoRenew
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/EnableDomainAutoRenew">REST API Reference for EnableDomainAutoRenew Operation</seealso>
         IAsyncResult BeginEnableDomainAutoRenew(EnableDomainAutoRenewRequest request, AsyncCallback callback, object state);
 
 
@@ -322,6 +337,7 @@ namespace Amazon.Route53Domains
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginEnableDomainAutoRenew.</param>
         /// 
         /// <returns>Returns a  EnableDomainAutoRenewResult from Route53Domains.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/EnableDomainAutoRenew">REST API Reference for EnableDomainAutoRenew Operation</seealso>
         EnableDomainAutoRenewResponse EndEnableDomainAutoRenew(IAsyncResult asyncResult);
 
         #endregion
@@ -355,6 +371,7 @@ namespace Amazon.Route53Domains
         /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
         /// Amazon Route 53 does not support this top-level domain.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/EnableDomainTransferLock">REST API Reference for EnableDomainTransferLock Operation</seealso>
         EnableDomainTransferLockResponse EnableDomainTransferLock(EnableDomainTransferLockRequest request);
 
         /// <summary>
@@ -368,6 +385,7 @@ namespace Amazon.Route53Domains
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndEnableDomainTransferLock
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/EnableDomainTransferLock">REST API Reference for EnableDomainTransferLock Operation</seealso>
         IAsyncResult BeginEnableDomainTransferLock(EnableDomainTransferLockRequest request, AsyncCallback callback, object state);
 
 
@@ -379,6 +397,7 @@ namespace Amazon.Route53Domains
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginEnableDomainTransferLock.</param>
         /// 
         /// <returns>Returns a  EnableDomainTransferLockResult from Route53Domains.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/EnableDomainTransferLock">REST API Reference for EnableDomainTransferLock Operation</seealso>
         EnableDomainTransferLockResponse EndEnableDomainTransferLock(IAsyncResult asyncResult);
 
         #endregion
@@ -411,6 +430,7 @@ namespace Amazon.Route53Domains
         /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
         /// Amazon Route 53 does not support this top-level domain.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/GetContactReachabilityStatus">REST API Reference for GetContactReachabilityStatus Operation</seealso>
         GetContactReachabilityStatusResponse GetContactReachabilityStatus(GetContactReachabilityStatusRequest request);
 
         /// <summary>
@@ -424,6 +444,7 @@ namespace Amazon.Route53Domains
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetContactReachabilityStatus
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/GetContactReachabilityStatus">REST API Reference for GetContactReachabilityStatus Operation</seealso>
         IAsyncResult BeginGetContactReachabilityStatus(GetContactReachabilityStatusRequest request, AsyncCallback callback, object state);
 
 
@@ -435,6 +456,7 @@ namespace Amazon.Route53Domains
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetContactReachabilityStatus.</param>
         /// 
         /// <returns>Returns a  GetContactReachabilityStatusResult from Route53Domains.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/GetContactReachabilityStatus">REST API Reference for GetContactReachabilityStatus Operation</seealso>
         GetContactReachabilityStatusResponse EndGetContactReachabilityStatus(IAsyncResult asyncResult);
 
         #endregion
@@ -443,8 +465,9 @@ namespace Amazon.Route53Domains
 
 
         /// <summary>
-        /// This operation returns detailed information about the domain. The domain's contact
-        /// information is also returned as part of the output.
+        /// This operation returns detailed information about a specified domain that is associated
+        /// with the current AWS account. Contact information for the domain is also returned
+        /// as part of the output.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDomainDetail service method.</param>
         /// 
@@ -457,6 +480,7 @@ namespace Amazon.Route53Domains
         /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
         /// Amazon Route 53 does not support this top-level domain.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/GetDomainDetail">REST API Reference for GetDomainDetail Operation</seealso>
         GetDomainDetailResponse GetDomainDetail(GetDomainDetailRequest request);
 
         /// <summary>
@@ -470,6 +494,7 @@ namespace Amazon.Route53Domains
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDomainDetail
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/GetDomainDetail">REST API Reference for GetDomainDetail Operation</seealso>
         IAsyncResult BeginGetDomainDetail(GetDomainDetailRequest request, AsyncCallback callback, object state);
 
 
@@ -481,6 +506,7 @@ namespace Amazon.Route53Domains
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDomainDetail.</param>
         /// 
         /// <returns>Returns a  GetDomainDetailResult from Route53Domains.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/GetDomainDetail">REST API Reference for GetDomainDetail Operation</seealso>
         GetDomainDetailResponse EndGetDomainDetail(IAsyncResult asyncResult);
 
         #endregion
@@ -491,17 +517,6 @@ namespace Amazon.Route53Domains
         /// <summary>
         /// The GetDomainSuggestions operation returns a list of suggested domain names given
         /// a string, which can either be a domain name or simply a word or phrase (without spaces).
-        /// 
-        ///  
-        /// <para>
-        ///  Parameters: <ul><li>DomainName (string): The basis for your domain suggestion search,
-        /// a string with (or without) top-level domain specified.</li> <li>SuggestionCount (int):
-        /// The number of domain suggestions to be returned, maximum 50, minimum 1.</li> <li>OnlyAvailable
-        /// (bool): If true, availability check will be performed on suggestion results, and only
-        /// available domains will be returned. If false, suggestions will be returned without
-        /// checking whether the domain is actually available, and caller will have to call checkDomainAvailability
-        /// for each suggestion to determine availability for registration.</li> </ul> 
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDomainSuggestions service method.</param>
         /// 
@@ -514,6 +529,7 @@ namespace Amazon.Route53Domains
         /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
         /// Amazon Route 53 does not support this top-level domain.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/GetDomainSuggestions">REST API Reference for GetDomainSuggestions Operation</seealso>
         GetDomainSuggestionsResponse GetDomainSuggestions(GetDomainSuggestionsRequest request);
 
         /// <summary>
@@ -527,6 +543,7 @@ namespace Amazon.Route53Domains
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDomainSuggestions
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/GetDomainSuggestions">REST API Reference for GetDomainSuggestions Operation</seealso>
         IAsyncResult BeginGetDomainSuggestions(GetDomainSuggestionsRequest request, AsyncCallback callback, object state);
 
 
@@ -538,6 +555,7 @@ namespace Amazon.Route53Domains
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDomainSuggestions.</param>
         /// 
         /// <returns>Returns a  GetDomainSuggestionsResult from Route53Domains.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/GetDomainSuggestions">REST API Reference for GetDomainSuggestions Operation</seealso>
         GetDomainSuggestionsResponse EndGetDomainSuggestions(IAsyncResult asyncResult);
 
         #endregion
@@ -556,6 +574,7 @@ namespace Amazon.Route53Domains
         /// to the ID of an operation that is already completed. For a domain name, it may not
         /// be a valid domain name or belong to the requester account.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/GetOperationDetail">REST API Reference for GetOperationDetail Operation</seealso>
         GetOperationDetailResponse GetOperationDetail(GetOperationDetailRequest request);
 
         /// <summary>
@@ -569,6 +588,7 @@ namespace Amazon.Route53Domains
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetOperationDetail
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/GetOperationDetail">REST API Reference for GetOperationDetail Operation</seealso>
         IAsyncResult BeginGetOperationDetail(GetOperationDetailRequest request, AsyncCallback callback, object state);
 
 
@@ -580,6 +600,7 @@ namespace Amazon.Route53Domains
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetOperationDetail.</param>
         /// 
         /// <returns>Returns a  GetOperationDetailResult from Route53Domains.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/GetOperationDetail">REST API Reference for GetOperationDetail Operation</seealso>
         GetOperationDetailResponse EndGetOperationDetail(IAsyncResult asyncResult);
 
         #endregion
@@ -598,6 +619,7 @@ namespace Amazon.Route53Domains
         /// to the ID of an operation that is already completed. For a domain name, it may not
         /// be a valid domain name or belong to the requester account.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ListDomains">REST API Reference for ListDomains Operation</seealso>
         ListDomainsResponse ListDomains();
 
         /// <summary>
@@ -612,6 +634,7 @@ namespace Amazon.Route53Domains
         /// to the ID of an operation that is already completed. For a domain name, it may not
         /// be a valid domain name or belong to the requester account.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ListDomains">REST API Reference for ListDomains Operation</seealso>
         ListDomainsResponse ListDomains(ListDomainsRequest request);
 
         /// <summary>
@@ -625,6 +648,7 @@ namespace Amazon.Route53Domains
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDomains
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ListDomains">REST API Reference for ListDomains Operation</seealso>
         IAsyncResult BeginListDomains(ListDomainsRequest request, AsyncCallback callback, object state);
 
 
@@ -636,6 +660,7 @@ namespace Amazon.Route53Domains
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDomains.</param>
         /// 
         /// <returns>Returns a  ListDomainsResult from Route53Domains.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ListDomains">REST API Reference for ListDomains Operation</seealso>
         ListDomainsResponse EndListDomains(IAsyncResult asyncResult);
 
         #endregion
@@ -653,6 +678,7 @@ namespace Amazon.Route53Domains
         /// to the ID of an operation that is already completed. For a domain name, it may not
         /// be a valid domain name or belong to the requester account.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ListOperations">REST API Reference for ListOperations Operation</seealso>
         ListOperationsResponse ListOperations();
 
         /// <summary>
@@ -666,6 +692,7 @@ namespace Amazon.Route53Domains
         /// to the ID of an operation that is already completed. For a domain name, it may not
         /// be a valid domain name or belong to the requester account.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ListOperations">REST API Reference for ListOperations Operation</seealso>
         ListOperationsResponse ListOperations(ListOperationsRequest request);
 
         /// <summary>
@@ -679,6 +706,7 @@ namespace Amazon.Route53Domains
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListOperations
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ListOperations">REST API Reference for ListOperations Operation</seealso>
         IAsyncResult BeginListOperations(ListOperationsRequest request, AsyncCallback callback, object state);
 
 
@@ -690,6 +718,7 @@ namespace Amazon.Route53Domains
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListOperations.</param>
         /// 
         /// <returns>Returns a  ListOperationsResult from Route53Domains.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ListOperations">REST API Reference for ListOperations Operation</seealso>
         ListOperationsResponse EndListOperations(IAsyncResult asyncResult);
 
         #endregion
@@ -720,6 +749,7 @@ namespace Amazon.Route53Domains
         /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
         /// Amazon Route 53 does not support this top-level domain.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ListTagsForDomain">REST API Reference for ListTagsForDomain Operation</seealso>
         ListTagsForDomainResponse ListTagsForDomain(string domainName);
 
         /// <summary>
@@ -745,6 +775,7 @@ namespace Amazon.Route53Domains
         /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
         /// Amazon Route 53 does not support this top-level domain.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ListTagsForDomain">REST API Reference for ListTagsForDomain Operation</seealso>
         ListTagsForDomainResponse ListTagsForDomain(ListTagsForDomainRequest request);
 
         /// <summary>
@@ -758,6 +789,7 @@ namespace Amazon.Route53Domains
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTagsForDomain
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ListTagsForDomain">REST API Reference for ListTagsForDomain Operation</seealso>
         IAsyncResult BeginListTagsForDomain(ListTagsForDomainRequest request, AsyncCallback callback, object state);
 
 
@@ -769,6 +801,7 @@ namespace Amazon.Route53Domains
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTagsForDomain.</param>
         /// 
         /// <returns>Returns a  ListTagsForDomainResult from Route53Domains.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ListTagsForDomain">REST API Reference for ListTagsForDomain Operation</seealso>
         ListTagsForDomainResponse EndListTagsForDomain(IAsyncResult asyncResult);
 
         #endregion
@@ -784,19 +817,36 @@ namespace Amazon.Route53Domains
         /// <para>
         /// When you register a domain, Amazon Route 53 does the following:
         /// </para>
-        ///  <ul> <li>Creates a Amazon Route 53 hosted zone that has the same name as the domain.
-        /// Amazon Route 53 assigns four name servers to your hosted zone and automatically updates
-        /// your domain registration with the names of these name servers.</li> <li>Enables autorenew,
-        /// so your domain registration will renew automatically each year. We'll notify you in
-        /// advance of the renewal date so you can choose whether to renew the registration.</li>
-        /// <li>Optionally enables privacy protection, so WHOIS queries return contact information
+        ///  <ul> <li> 
+        /// <para>
+        /// Creates a Amazon Route 53 hosted zone that has the same name as the domain. Amazon
+        /// Route 53 assigns four name servers to your hosted zone and automatically updates your
+        /// domain registration with the names of these name servers.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Enables autorenew, so your domain registration will renew automatically each year.
+        /// We'll notify you in advance of the renewal date so you can choose whether to renew
+        /// the registration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Optionally enables privacy protection, so WHOIS queries return contact information
         /// for our registrar partner, Gandi, instead of the information you entered for registrant,
-        /// admin, and tech contacts.</li> <li>If registration is successful, returns an operation
-        /// ID that you can use to track the progress and completion of the action. If the request
-        /// is not completed successfully, the domain registrant is notified by email.</li> <li>Charges
-        /// your AWS account an amount based on the top-level domain. For more information, see
-        /// <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53 Pricing</a>.</li>
-        /// </ul>
+        /// admin, and tech contacts.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If registration is successful, returns an operation ID that you can use to track the
+        /// progress and completion of the action. If the request is not completed successfully,
+        /// the domain registrant is notified by email.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Charges your AWS account an amount based on the top-level domain. For more information,
+        /// see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53 Pricing</a>.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterDomain service method.</param>
         /// 
@@ -821,6 +871,7 @@ namespace Amazon.Route53Domains
         /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
         /// Amazon Route 53 does not support this top-level domain.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/RegisterDomain">REST API Reference for RegisterDomain Operation</seealso>
         RegisterDomainResponse RegisterDomain(RegisterDomainRequest request);
 
         /// <summary>
@@ -834,6 +885,7 @@ namespace Amazon.Route53Domains
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRegisterDomain
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/RegisterDomain">REST API Reference for RegisterDomain Operation</seealso>
         IAsyncResult BeginRegisterDomain(RegisterDomainRequest request, AsyncCallback callback, object state);
 
 
@@ -845,6 +897,7 @@ namespace Amazon.Route53Domains
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRegisterDomain.</param>
         /// 
         /// <returns>Returns a  RegisterDomainResult from Route53Domains.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/RegisterDomain">REST API Reference for RegisterDomain Operation</seealso>
         RegisterDomainResponse EndRegisterDomain(IAsyncResult asyncResult);
 
         #endregion
@@ -861,8 +914,8 @@ namespace Amazon.Route53Domains
         /// We recommend that you renew your domain several weeks before the expiration date.
         /// Some TLD registries delete domains before the expiration date if you haven't renewed
         /// far enough in advance. For more information about renewing domain registration, see
-        /// <a href="http://docs.aws.amazon.com/console/route53/domain-renew">Renewing Registration
-        /// for a Domain</a> in the Amazon Route 53 documentation.
+        /// <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-renew.html">Renewing
+        /// Registration for a Domain</a> in the Amazon Route 53 Developer Guide.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RenewDomain service method.</param>
@@ -885,6 +938,7 @@ namespace Amazon.Route53Domains
         /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
         /// Amazon Route 53 does not support this top-level domain.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/RenewDomain">REST API Reference for RenewDomain Operation</seealso>
         RenewDomainResponse RenewDomain(RenewDomainRequest request);
 
         /// <summary>
@@ -898,6 +952,7 @@ namespace Amazon.Route53Domains
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRenewDomain
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/RenewDomain">REST API Reference for RenewDomain Operation</seealso>
         IAsyncResult BeginRenewDomain(RenewDomainRequest request, AsyncCallback callback, object state);
 
 
@@ -909,6 +964,7 @@ namespace Amazon.Route53Domains
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRenewDomain.</param>
         /// 
         /// <returns>Returns a  RenewDomainResult from Route53Domains.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/RenewDomain">REST API Reference for RenewDomain Operation</seealso>
         RenewDomainResponse EndRenewDomain(IAsyncResult asyncResult);
 
         #endregion
@@ -935,6 +991,7 @@ namespace Amazon.Route53Domains
         /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
         /// Amazon Route 53 does not support this top-level domain.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ResendContactReachabilityEmail">REST API Reference for ResendContactReachabilityEmail Operation</seealso>
         ResendContactReachabilityEmailResponse ResendContactReachabilityEmail(ResendContactReachabilityEmailRequest request);
 
         /// <summary>
@@ -948,6 +1005,7 @@ namespace Amazon.Route53Domains
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndResendContactReachabilityEmail
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ResendContactReachabilityEmail">REST API Reference for ResendContactReachabilityEmail Operation</seealso>
         IAsyncResult BeginResendContactReachabilityEmail(ResendContactReachabilityEmailRequest request, AsyncCallback callback, object state);
 
 
@@ -959,6 +1017,7 @@ namespace Amazon.Route53Domains
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginResendContactReachabilityEmail.</param>
         /// 
         /// <returns>Returns a  ResendContactReachabilityEmailResult from Route53Domains.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ResendContactReachabilityEmail">REST API Reference for ResendContactReachabilityEmail Operation</seealso>
         ResendContactReachabilityEmailResponse EndResendContactReachabilityEmail(IAsyncResult asyncResult);
 
         #endregion
@@ -981,6 +1040,7 @@ namespace Amazon.Route53Domains
         /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
         /// Amazon Route 53 does not support this top-level domain.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/RetrieveDomainAuthCode">REST API Reference for RetrieveDomainAuthCode Operation</seealso>
         RetrieveDomainAuthCodeResponse RetrieveDomainAuthCode(RetrieveDomainAuthCodeRequest request);
 
         /// <summary>
@@ -994,6 +1054,7 @@ namespace Amazon.Route53Domains
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRetrieveDomainAuthCode
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/RetrieveDomainAuthCode">REST API Reference for RetrieveDomainAuthCode Operation</seealso>
         IAsyncResult BeginRetrieveDomainAuthCode(RetrieveDomainAuthCodeRequest request, AsyncCallback callback, object state);
 
 
@@ -1005,6 +1066,7 @@ namespace Amazon.Route53Domains
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRetrieveDomainAuthCode.</param>
         /// 
         /// <returns>Returns a  RetrieveDomainAuthCodeResult from Route53Domains.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/RetrieveDomainAuthCode">REST API Reference for RetrieveDomainAuthCode Operation</seealso>
         RetrieveDomainAuthCodeResponse EndRetrieveDomainAuthCode(IAsyncResult asyncResult);
 
         #endregion
@@ -1021,8 +1083,8 @@ namespace Amazon.Route53Domains
         /// <para>
         /// For transfer requirements, a detailed procedure, and information about viewing the
         /// status of a domain transfer, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-transfer-to-route-53.html">Transferring
-        /// Registration for a Domain to Amazon Route 53</a> in the Amazon Route 53 Developer
-        /// Guide.
+        /// Registration for a Domain to Amazon Route 53</a> in the <i>Amazon Route 53 Developer
+        /// Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -1033,10 +1095,13 @@ namespace Amazon.Route53Domains
         /// you transfer the registration, the previous registrar will not renew your domain registration
         /// and could end your DNS service at any time.
         /// </para>
-        ///  <note>Caution! If the registrar for your domain is also the DNS service provider
-        /// for the domain and you don't transfer DNS service to another provider, your website,
-        /// email, and the web applications associated with the domain might become unavailable.</note>
-        /// 
+        ///  <important> 
+        /// <para>
+        /// If the registrar for your domain is also the DNS service provider for the domain and
+        /// you don't transfer DNS service to another provider, your website, email, and the web
+        /// applications associated with the domain might become unavailable.
+        /// </para>
+        ///  </important> 
         /// <para>
         /// If the transfer is successful, this method returns an operation ID that you can use
         /// to track the progress and completion of the action. If the transfer doesn't complete
@@ -1066,6 +1131,7 @@ namespace Amazon.Route53Domains
         /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
         /// Amazon Route 53 does not support this top-level domain.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/TransferDomain">REST API Reference for TransferDomain Operation</seealso>
         TransferDomainResponse TransferDomain(TransferDomainRequest request);
 
         /// <summary>
@@ -1079,6 +1145,7 @@ namespace Amazon.Route53Domains
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTransferDomain
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/TransferDomain">REST API Reference for TransferDomain Operation</seealso>
         IAsyncResult BeginTransferDomain(TransferDomainRequest request, AsyncCallback callback, object state);
 
 
@@ -1090,6 +1157,7 @@ namespace Amazon.Route53Domains
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTransferDomain.</param>
         /// 
         /// <returns>Returns a  TransferDomainResult from Route53Domains.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/TransferDomain">REST API Reference for TransferDomain Operation</seealso>
         TransferDomainResponse EndTransferDomain(IAsyncResult asyncResult);
 
         #endregion
@@ -1129,6 +1197,7 @@ namespace Amazon.Route53Domains
         /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
         /// Amazon Route 53 does not support this top-level domain.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateDomainContact">REST API Reference for UpdateDomainContact Operation</seealso>
         UpdateDomainContactResponse UpdateDomainContact(UpdateDomainContactRequest request);
 
         /// <summary>
@@ -1142,6 +1211,7 @@ namespace Amazon.Route53Domains
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateDomainContact
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateDomainContact">REST API Reference for UpdateDomainContact Operation</seealso>
         IAsyncResult BeginUpdateDomainContact(UpdateDomainContactRequest request, AsyncCallback callback, object state);
 
 
@@ -1153,6 +1223,7 @@ namespace Amazon.Route53Domains
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateDomainContact.</param>
         /// 
         /// <returns>Returns a  UpdateDomainContactResult from Route53Domains.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateDomainContact">REST API Reference for UpdateDomainContact Operation</seealso>
         UpdateDomainContactResponse EndUpdateDomainContact(IAsyncResult asyncResult);
 
         #endregion
@@ -1171,8 +1242,8 @@ namespace Amazon.Route53Domains
         /// <para>
         /// This operation only affects the privacy of the specified contact type (registrant,
         /// administrator, or tech). Successful acceptance returns an operation ID that you can
-        /// use with GetOperationDetail to track the progress and completion of the action. If
-        /// the request is not completed successfully, the domain registrant will be notified
+        /// use with <a>GetOperationDetail</a> to track the progress and completion of the action.
+        /// If the request is not completed successfully, the domain registrant will be notified
         /// by email.
         /// </para>
         /// </summary>
@@ -1196,6 +1267,7 @@ namespace Amazon.Route53Domains
         /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
         /// Amazon Route 53 does not support this top-level domain.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateDomainContactPrivacy">REST API Reference for UpdateDomainContactPrivacy Operation</seealso>
         UpdateDomainContactPrivacyResponse UpdateDomainContactPrivacy(UpdateDomainContactPrivacyRequest request);
 
         /// <summary>
@@ -1209,6 +1281,7 @@ namespace Amazon.Route53Domains
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateDomainContactPrivacy
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateDomainContactPrivacy">REST API Reference for UpdateDomainContactPrivacy Operation</seealso>
         IAsyncResult BeginUpdateDomainContactPrivacy(UpdateDomainContactPrivacyRequest request, AsyncCallback callback, object state);
 
 
@@ -1220,6 +1293,7 @@ namespace Amazon.Route53Domains
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateDomainContactPrivacy.</param>
         /// 
         /// <returns>Returns a  UpdateDomainContactPrivacyResult from Route53Domains.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateDomainContactPrivacy">REST API Reference for UpdateDomainContactPrivacy Operation</seealso>
         UpdateDomainContactPrivacyResponse EndUpdateDomainContactPrivacy(IAsyncResult asyncResult);
 
         #endregion
@@ -1230,7 +1304,7 @@ namespace Amazon.Route53Domains
         /// <summary>
         /// This operation replaces the current set of name servers for the domain with the specified
         /// set of name servers. If you use Amazon Route 53 as your DNS service, specify the four
-        /// name servers in the delegation set for the hosted zone for the domain. 
+        /// name servers in the delegation set for the hosted zone for the domain.
         /// 
         ///  
         /// <para>
@@ -1259,6 +1333,7 @@ namespace Amazon.Route53Domains
         /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
         /// Amazon Route 53 does not support this top-level domain.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateDomainNameservers">REST API Reference for UpdateDomainNameservers Operation</seealso>
         UpdateDomainNameserversResponse UpdateDomainNameservers(UpdateDomainNameserversRequest request);
 
         /// <summary>
@@ -1272,6 +1347,7 @@ namespace Amazon.Route53Domains
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateDomainNameservers
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateDomainNameservers">REST API Reference for UpdateDomainNameservers Operation</seealso>
         IAsyncResult BeginUpdateDomainNameservers(UpdateDomainNameserversRequest request, AsyncCallback callback, object state);
 
 
@@ -1283,6 +1359,7 @@ namespace Amazon.Route53Domains
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateDomainNameservers.</param>
         /// 
         /// <returns>Returns a  UpdateDomainNameserversResult from Route53Domains.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateDomainNameservers">REST API Reference for UpdateDomainNameservers Operation</seealso>
         UpdateDomainNameserversResponse EndUpdateDomainNameservers(IAsyncResult asyncResult);
 
         #endregion
@@ -1299,8 +1376,8 @@ namespace Amazon.Route53Domains
         /// represent all issued operations.
         /// </para>
         /// </summary>
-        /// <param name="domainName">The domain for which you want to add or update tags. The name of a domain. Type: String Default: None Constraints: The domain name can contain only the letters a through z, the numbers 0 through 9, and hyphen (-). Hyphens are allowed only when they&apos;re surrounded by letters, numbers, or other hyphens. You can&apos;t specify a hyphen at the beginning or end of a label. To specify an Internationalized Domain Name, you must convert the name to Punycode. Required: Yes</param>
-        /// <param name="tagsToUpdate">A list of the tag keys and values that you want to add or update. If you specify a key that already exists, the corresponding value will be replaced. Type: A complex type containing a list of tags Default: None Required: No'> Each tag includes the following elements: <ul> <li>Key The key (name) of a tag. Type: String Default: None Valid values: Unicode characters including alphanumeric, space, and ".:/=+\-@" Constraints: Each key can be 1-128 characters long. Required: Yes </li> <li>Value The value of a tag. Type: String Default: None Valid values: Unicode characters including alphanumeric, space, and ".:/=+\-@" Constraints: Each value can be 0-256 characters long. Required: Yes </li> </ul></param>
+        /// <param name="domainName">The domain for which you want to add or update tags.</param>
+        /// <param name="tagsToUpdate">A list of the tag keys and values that you want to add or update. If you specify a key that already exists, the corresponding value will be replaced.</param>
         /// 
         /// <returns>The response from the UpdateTagsForDomain service method, as returned by Route53Domains.</returns>
         /// <exception cref="Amazon.Route53Domains.Model.InvalidInputException">
@@ -1314,6 +1391,7 @@ namespace Amazon.Route53Domains
         /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
         /// Amazon Route 53 does not support this top-level domain.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateTagsForDomain">REST API Reference for UpdateTagsForDomain Operation</seealso>
         UpdateTagsForDomainResponse UpdateTagsForDomain(string domainName, List<Tag> tagsToUpdate);
 
         /// <summary>
@@ -1339,6 +1417,7 @@ namespace Amazon.Route53Domains
         /// <exception cref="Amazon.Route53Domains.Model.UnsupportedTLDException">
         /// Amazon Route 53 does not support this top-level domain.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateTagsForDomain">REST API Reference for UpdateTagsForDomain Operation</seealso>
         UpdateTagsForDomainResponse UpdateTagsForDomain(UpdateTagsForDomainRequest request);
 
         /// <summary>
@@ -1352,6 +1431,7 @@ namespace Amazon.Route53Domains
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateTagsForDomain
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateTagsForDomain">REST API Reference for UpdateTagsForDomain Operation</seealso>
         IAsyncResult BeginUpdateTagsForDomain(UpdateTagsForDomainRequest request, AsyncCallback callback, object state);
 
 
@@ -1363,6 +1443,7 @@ namespace Amazon.Route53Domains
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateTagsForDomain.</param>
         /// 
         /// <returns>Returns a  UpdateTagsForDomainResult from Route53Domains.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateTagsForDomain">REST API Reference for UpdateTagsForDomain Operation</seealso>
         UpdateTagsForDomainResponse EndUpdateTagsForDomain(IAsyncResult asyncResult);
 
         #endregion
@@ -1371,8 +1452,8 @@ namespace Amazon.Route53Domains
 
 
         /// <summary>
-        /// This operation returns all the domain-related billing records for the current AWS
-        /// account for a specified period
+        /// Returns all the domain-related billing records for the current AWS account for a specified
+        /// period
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ViewBilling service method.</param>
         /// 
@@ -1382,6 +1463,7 @@ namespace Amazon.Route53Domains
         /// to the ID of an operation that is already completed. For a domain name, it may not
         /// be a valid domain name or belong to the requester account.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ViewBilling">REST API Reference for ViewBilling Operation</seealso>
         ViewBillingResponse ViewBilling(ViewBillingRequest request);
 
         /// <summary>
@@ -1395,6 +1477,7 @@ namespace Amazon.Route53Domains
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndViewBilling
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ViewBilling">REST API Reference for ViewBilling Operation</seealso>
         IAsyncResult BeginViewBilling(ViewBillingRequest request, AsyncCallback callback, object state);
 
 
@@ -1406,6 +1489,7 @@ namespace Amazon.Route53Domains
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginViewBilling.</param>
         /// 
         /// <returns>Returns a  ViewBillingResult from Route53Domains.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ViewBilling">REST API Reference for ViewBilling Operation</seealso>
         ViewBillingResponse EndViewBilling(IAsyncResult asyncResult);
 
         #endregion

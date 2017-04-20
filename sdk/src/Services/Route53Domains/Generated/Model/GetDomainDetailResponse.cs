@@ -59,11 +59,7 @@ namespace Amazon.Route53Domains.Model
         /// <para>
         /// Email address to contact to report incorrect contact information for a domain, to
         /// report that the domain is being used to send spam, to report that someone is cybersquatting
-        /// on a domain name, or report some other type of abuse. 
-        /// </para>
-        ///  
-        /// <para>
-        /// Type: String
+        /// on a domain name, or report some other type of abuse.
         /// </para>
         /// </summary>
         public string AbuseContactEmail
@@ -81,11 +77,7 @@ namespace Amazon.Route53Domains.Model
         /// <summary>
         /// Gets and sets the property AbuseContactPhone. 
         /// <para>
-        /// Phone number for reporting abuse. 
-        /// </para>
-        ///  
-        /// <para>
-        /// Type: String
+        /// Phone number for reporting abuse.
         /// </para>
         /// </summary>
         public string AbuseContactPhone
@@ -103,19 +95,7 @@ namespace Amazon.Route53Domains.Model
         /// <summary>
         /// Gets and sets the property AdminContact. 
         /// <para>
-        /// Provides details about the domain administrative contact. 
-        /// </para>
-        ///  
-        /// <para>
-        /// Type: Complex
-        /// </para>
-        ///  
-        /// <para>
-        /// Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>,
-        /// <code>ContactType</code>, <code>OrganizationName</code>, <code>AddressLine1</code>,
-        /// <code>AddressLine2</code>, <code>City</code>, <code>State</code>, <code>CountryCode</code>,
-        /// <code>ZipCode</code>, <code>PhoneNumber</code>, <code>Email</code>, <code>Fax</code>,
-        /// <code>ExtraParams</code>
+        /// Provides details about the domain administrative contact.
         /// </para>
         /// </summary>
         public ContactDetail AdminContact
@@ -138,10 +118,6 @@ namespace Amazon.Route53Domains.Model
         /// information for our registrar partner, Gandi, instead of the contact information that
         /// you enter.
         /// </para>
-        ///  
-        /// <para>
-        /// Type: Boolean
-        /// </para>
         /// </summary>
         public bool AdminPrivacy
         {
@@ -159,10 +135,6 @@ namespace Amazon.Route53Domains.Model
         /// Gets and sets the property AutoRenew. 
         /// <para>
         /// Specifies whether the domain registration is set to renew automatically.
-        /// </para>
-        ///  
-        /// <para>
-        /// Type: Boolean
         /// </para>
         /// </summary>
         public bool AutoRenew
@@ -219,10 +191,6 @@ namespace Amazon.Route53Domains.Model
         /// <para>
         /// The name of a domain.
         /// </para>
-        ///  
-        /// <para>
-        /// Type: String
-        /// </para>
         /// </summary>
         public string DomainName
         {
@@ -260,10 +228,6 @@ namespace Amazon.Route53Domains.Model
         /// <para>
         /// The name of the domain.
         /// </para>
-        ///  
-        /// <para>
-        /// Type: String
-        /// </para>
         /// </summary>
         public List<Nameserver> Nameservers
         {
@@ -280,19 +244,7 @@ namespace Amazon.Route53Domains.Model
         /// <summary>
         /// Gets and sets the property RegistrantContact. 
         /// <para>
-        /// Provides details about the domain registrant. 
-        /// </para>
-        ///  
-        /// <para>
-        /// Type: Complex
-        /// </para>
-        ///  
-        /// <para>
-        /// Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>,
-        /// <code>ContactType</code>, <code>OrganizationName</code>, <code>AddressLine1</code>,
-        /// <code>AddressLine2</code>, <code>City</code>, <code>State</code>, <code>CountryCode</code>,
-        /// <code>ZipCode</code>, <code>PhoneNumber</code>, <code>Email</code>, <code>Fax</code>,
-        /// <code>ExtraParams</code>
+        /// Provides details about the domain registrant.
         /// </para>
         /// </summary>
         public ContactDetail RegistrantContact
@@ -315,10 +267,6 @@ namespace Amazon.Route53Domains.Model
         /// contact information for our registrar partner, Gandi, instead of the contact information
         /// that you enter.
         /// </para>
-        ///  
-        /// <para>
-        /// Type: Boolean
-        /// </para>
         /// </summary>
         public bool RegistrantPrivacy
         {
@@ -339,10 +287,6 @@ namespace Amazon.Route53Domains.Model
         /// domains are registered by registrar Gandi. The value is <code>"GANDI SAS"</code>.
         /// 
         /// </para>
-        ///  
-        /// <para>
-        /// Type: String
-        /// </para>
         /// </summary>
         public string RegistrarName
         {
@@ -360,10 +304,6 @@ namespace Amazon.Route53Domains.Model
         /// Gets and sets the property RegistrarUrl. 
         /// <para>
         /// Web address of the registrar.
-        /// </para>
-        ///  
-        /// <para>
-        /// Type: String
         /// </para>
         /// </summary>
         public string RegistrarUrl
@@ -402,10 +342,6 @@ namespace Amazon.Route53Domains.Model
         /// Reseller of the domain. Domains registered or transferred using Amazon Route 53 domains
         /// will have <code>"Amazon"</code> as the reseller. 
         /// </para>
-        ///  
-        /// <para>
-        /// Type: String
-        /// </para>
         /// </summary>
         public string Reseller
         {
@@ -440,10 +376,6 @@ namespace Amazon.Route53Domains.Model
         /// <code>epp status codes</code>. (Search on the ICANN website; web searches sometimes
         /// return an old version of the document.)
         /// </para>
-        ///  
-        /// <para>
-        /// Type: Array of String
-        /// </para>
         /// </summary>
         public List<string> StatusList
         {
@@ -461,18 +393,6 @@ namespace Amazon.Route53Domains.Model
         /// Gets and sets the property TechContact. 
         /// <para>
         /// Provides details about the domain technical contact.
-        /// </para>
-        ///  
-        /// <para>
-        /// Type: Complex
-        /// </para>
-        ///  
-        /// <para>
-        /// Children: <code>FirstName</code>, <code>MiddleName</code>, <code>LastName</code>,
-        /// <code>ContactType</code>, <code>OrganizationName</code>, <code>AddressLine1</code>,
-        /// <code>AddressLine2</code>, <code>City</code>, <code>State</code>, <code>CountryCode</code>,
-        /// <code>ZipCode</code>, <code>PhoneNumber</code>, <code>Email</code>, <code>Fax</code>,
-        /// <code>ExtraParams</code>
         /// </para>
         /// </summary>
         public ContactDetail TechContact
@@ -494,10 +414,6 @@ namespace Amazon.Route53Domains.Model
         /// queries. If the value is <code>true</code>, WHOIS ("who is") queries will return contact
         /// information for our registrar partner, Gandi, instead of the contact information that
         /// you enter.
-        /// </para>
-        ///  
-        /// <para>
-        /// Type: Boolean
         /// </para>
         /// </summary>
         public bool TechPrivacy
@@ -536,10 +452,6 @@ namespace Amazon.Route53Domains.Model
         /// <para>
         /// The fully qualified name of the WHOIS server that can answer the WHOIS query for the
         /// domain.
-        /// </para>
-        ///  
-        /// <para>
-        /// Type: String
         /// </para>
         /// </summary>
         public string WhoIsServer

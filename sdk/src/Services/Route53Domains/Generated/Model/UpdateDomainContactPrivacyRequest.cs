@@ -39,8 +39,8 @@ namespace Amazon.Route53Domains.Model
     /// <para>
     /// This operation only affects the privacy of the specified contact type (registrant,
     /// administrator, or tech). Successful acceptance returns an operation ID that you can
-    /// use with GetOperationDetail to track the progress and completion of the action. If
-    /// the request is not completed successfully, the domain registrant will be notified
+    /// use with <a>GetOperationDetail</a> to track the progress and completion of the action.
+    /// If the request is not completed successfully, the domain registrant will be notified
     /// by email.
     /// </para>
     /// </summary>
@@ -55,24 +55,8 @@ namespace Amazon.Route53Domains.Model
         /// Gets and sets the property AdminPrivacy. 
         /// <para>
         /// Whether you want to conceal contact information from WHOIS queries. If you specify
-        /// true, WHOIS ("who is") queries will return contact information for our registrar partner,
-        /// Gandi, instead of the contact information that you enter.
-        /// </para>
-        ///  
-        /// <para>
-        /// Type: Boolean
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: None
-        /// </para>
-        ///  
-        /// <para>
-        /// Valid values: <code>true</code> | <code>false</code>
-        /// </para>
-        ///  
-        /// <para>
-        /// Required: No
+        /// <code>true</code>, WHOIS ("who is") queries will return contact information for our
+        /// registrar partner, Gandi, instead of the contact information that you enter.
         /// </para>
         /// </summary>
         public bool AdminPrivacy
@@ -90,24 +74,7 @@ namespace Amazon.Route53Domains.Model
         /// <summary>
         /// Gets and sets the property DomainName. 
         /// <para>
-        /// The name of a domain.
-        /// </para>
-        ///  
-        /// <para>
-        /// Type: String
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: None
-        /// </para>
-        ///  
-        /// <para>
-        /// Constraints: The domain name can contain only the letters a through z, the numbers
-        /// 0 through 9, and hyphen (-). Internationalized Domain Names are not supported.
-        /// </para>
-        ///  
-        /// <para>
-        /// Required: Yes
+        /// The name of the domain that you want to update the privacy setting for.
         /// </para>
         /// </summary>
         public string DomainName
@@ -126,24 +93,8 @@ namespace Amazon.Route53Domains.Model
         /// Gets and sets the property RegistrantPrivacy. 
         /// <para>
         /// Whether you want to conceal contact information from WHOIS queries. If you specify
-        /// true, WHOIS ("who is") queries will return contact information for our registrar partner,
-        /// Gandi, instead of the contact information that you enter.
-        /// </para>
-        ///  
-        /// <para>
-        /// Type: Boolean
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: None
-        /// </para>
-        ///  
-        /// <para>
-        /// Valid values: <code>true</code> | <code>false</code>
-        /// </para>
-        ///  
-        /// <para>
-        /// Required: No
+        /// <code>true</code>, WHOIS ("who is") queries will return contact information for our
+        /// registrar partner, Gandi, instead of the contact information that you enter.
         /// </para>
         /// </summary>
         public bool RegistrantPrivacy
@@ -162,24 +113,8 @@ namespace Amazon.Route53Domains.Model
         /// Gets and sets the property TechPrivacy. 
         /// <para>
         /// Whether you want to conceal contact information from WHOIS queries. If you specify
-        /// true, WHOIS ("who is") queries will return contact information for our registrar partner,
-        /// Gandi, instead of the contact information that you enter.
-        /// </para>
-        ///  
-        /// <para>
-        /// Type: Boolean
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: None
-        /// </para>
-        ///  
-        /// <para>
-        /// Valid values: <code>true</code> | <code>false</code>
-        /// </para>
-        ///  
-        /// <para>
-        /// Required: No
+        /// <code>true</code>, WHOIS ("who is") queries will return contact information for our
+        /// registrar partner, Gandi, instead of the contact information that you enter.
         /// </para>
         /// </summary>
         public bool TechPrivacy

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53Domains.Model
 {
     /// <summary>
-    /// 
+    /// Information for one billing record.
     /// </summary>
     public partial class BillingRecord
     {
@@ -42,10 +42,6 @@ namespace Amazon.Route53Domains.Model
         /// Gets and sets the property BillDate. 
         /// <para>
         /// The date that the operation was billed, in Unix format.
-        /// </para>
-        ///  
-        /// <para>
-        /// Type: Double
         /// </para>
         /// </summary>
         public DateTime BillDate
@@ -63,11 +59,10 @@ namespace Amazon.Route53Domains.Model
         /// <summary>
         /// Gets and sets the property DomainName. 
         /// <para>
-        /// The name of a domain.
-        /// </para>
-        ///  
-        /// <para>
-        /// Type: String
+        /// The name of the domain that the billing record applies to. If the domain name contains
+        /// characters other than a-z, 0-9, and - (hyphen), such as an internationalized domain
+        /// name, then this value is in Punycode. For more information, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS
+        /// Domain Name Format</a> in the <i>Amazon Route 53 Developer Guidezzz</i>.
         /// </para>
         /// </summary>
         public string DomainName
@@ -87,10 +82,6 @@ namespace Amazon.Route53Domains.Model
         /// <para>
         /// The ID of the invoice that is associated with the billing record.
         /// </para>
-        ///  
-        /// <para>
-        /// Type: String
-        /// </para>
         /// </summary>
         public string InvoiceId
         {
@@ -109,16 +100,6 @@ namespace Amazon.Route53Domains.Model
         /// <para>
         /// The operation that you were charged for.
         /// </para>
-        ///  
-        /// <para>
-        /// Type: String
-        /// </para>
-        ///  
-        /// <para>
-        /// Valid values: <ul> <li><code>REGISTER_DOMAIN</code></li> <li><code>TRANSFER_IN_DOMAIN</code></li>
-        /// <li><code>RENEW_DOMAIN</code></li> <li><code>CHANGE_DOMAIN_OWNER</code></li> </ul>
-        /// 
-        /// </para>
         /// </summary>
         public OperationType Operation
         {
@@ -136,10 +117,6 @@ namespace Amazon.Route53Domains.Model
         /// Gets and sets the property Price. 
         /// <para>
         /// The price that you were charged for the operation, in US dollars.
-        /// </para>
-        ///  
-        /// <para>
-        /// Type: Double
         /// </para>
         ///  
         /// <para>

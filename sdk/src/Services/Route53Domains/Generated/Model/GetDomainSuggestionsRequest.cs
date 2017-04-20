@@ -31,17 +31,6 @@ namespace Amazon.Route53Domains.Model
     /// Container for the parameters to the GetDomainSuggestions operation.
     /// The GetDomainSuggestions operation returns a list of suggested domain names given
     /// a string, which can either be a domain name or simply a word or phrase (without spaces).
-    /// 
-    ///  
-    /// <para>
-    ///  Parameters: <ul><li>DomainName (string): The basis for your domain suggestion search,
-    /// a string with (or without) top-level domain specified.</li> <li>SuggestionCount (int):
-    /// The number of domain suggestions to be returned, maximum 50, minimum 1.</li> <li>OnlyAvailable
-    /// (bool): If true, availability check will be performed on suggestion results, and only
-    /// available domains will be returned. If false, suggestions will be returned without
-    /// checking whether the domain is actually available, and caller will have to call checkDomainAvailability
-    /// for each suggestion to determine availability for registration.</li> </ul> 
-    /// </para>
     /// </summary>
     public partial class GetDomainSuggestionsRequest : AmazonRoute53DomainsRequest
     {
@@ -50,7 +39,14 @@ namespace Amazon.Route53Domains.Model
         private int? _suggestionCount;
 
         /// <summary>
-        /// Gets and sets the property DomainName.
+        /// Gets and sets the property DomainName. 
+        /// <para>
+        /// A domain name that you want to use as the basis for a list of possible domain names.
+        /// The domain name must contain a top-level domain (TLD), such as .com, that Amazon Route
+        /// 53 supports. For a list of TLDs, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains
+        /// that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer
+        /// Guide</i>.
+        /// </para>
         /// </summary>
         public string DomainName
         {
@@ -65,7 +61,14 @@ namespace Amazon.Route53Domains.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OnlyAvailable.
+        /// Gets and sets the property OnlyAvailable. 
+        /// <para>
+        /// If <code>OnlyAvailable</code> is <code>true</code>, Amazon Route 53 returns only domain
+        /// names that are available. If <code>OnlyAvailable</code> is <code>false</code>, Amazon
+        /// Route 53 returns domain names without checking whether they're available to be registered.
+        /// To determine whether the domain is available, you can call <code>checkDomainAvailability</code>
+        /// for each suggestion.
+        /// </para>
         /// </summary>
         public bool OnlyAvailable
         {
@@ -80,7 +83,10 @@ namespace Amazon.Route53Domains.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SuggestionCount.
+        /// Gets and sets the property SuggestionCount. 
+        /// <para>
+        /// The number of suggested domain names that you want Amazon Route 53 to return.
+        /// </para>
         /// </summary>
         public int SuggestionCount
         {

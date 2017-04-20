@@ -40,15 +40,6 @@ namespace Amazon.Route53Domains.Model
         /// <para>
         /// A summary of billing records.
         /// </para>
-        ///  
-        /// <para>
-        /// Type: Complex type containing a list of billing record summaries.
-        /// </para>
-        ///  
-        /// <para>
-        /// Children: <code>DomainName</code>, <code>Operation</code>, <code>InvoiceId</code>,
-        /// <code>BillDate</code> and <code>Price</code>
-        /// </para>
         /// </summary>
         public List<BillingRecord> BillingRecords
         {
@@ -68,14 +59,6 @@ namespace Amazon.Route53Domains.Model
         /// If there are more billing records than you specified for <code>MaxItems</code> in
         /// the request, submit another request and include the value of <code>NextPageMarker</code>
         /// in the value of <code>Marker</code>.
-        /// </para>
-        ///  
-        /// <para>
-        /// Type: String
-        /// </para>
-        ///  
-        /// <para>
-        /// Parent: <code>BillingRecords</code>
         /// </para>
         /// </summary>
         public string NextPageMarker

@@ -42,14 +42,6 @@ namespace Amazon.Route53Domains.Model
         /// submit another request and include the value of <code>NextPageMarker</code> in the
         /// value of <code>Marker</code>.
         /// </para>
-        ///  
-        /// <para>
-        /// Type: String
-        /// </para>
-        ///  
-        /// <para>
-        /// Parent: <code>Operations</code>
-        /// </para>
         /// </summary>
         public string NextPageMarker
         {
@@ -67,15 +59,6 @@ namespace Amazon.Route53Domains.Model
         /// Gets and sets the property Operations. 
         /// <para>
         /// Lists summaries of the operations.
-        /// </para>
-        ///  
-        /// <para>
-        /// Type: Complex type containing a list of operation summaries
-        /// </para>
-        ///  
-        /// <para>
-        /// Children: <code>OperationId</code>, <code>Status</code>, <code>SubmittedDate</code>,
-        /// <code>Type</code>
         /// </para>
         /// </summary>
         public List<OperationSummary> Operations

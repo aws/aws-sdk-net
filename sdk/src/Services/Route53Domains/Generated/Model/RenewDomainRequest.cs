@@ -37,8 +37,8 @@ namespace Amazon.Route53Domains.Model
     /// We recommend that you renew your domain several weeks before the expiration date.
     /// Some TLD registries delete domains before the expiration date if you haven't renewed
     /// far enough in advance. For more information about renewing domain registration, see
-    /// <a href="http://docs.aws.amazon.com/console/route53/domain-renew">Renewing Registration
-    /// for a Domain</a> in the Amazon Route 53 documentation.
+    /// <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-renew.html">Renewing
+    /// Registration for a Domain</a> in the Amazon Route 53 Developer Guide.
     /// </para>
     /// </summary>
     public partial class RenewDomainRequest : AmazonRoute53DomainsRequest
@@ -52,22 +52,6 @@ namespace Amazon.Route53Domains.Model
         /// <para>
         /// The year when the registration for the domain is set to expire. This value must match
         /// the current expiration date for the domain.
-        /// </para>
-        ///  
-        /// <para>
-        /// Type: Integer
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: None
-        /// </para>
-        ///  
-        /// <para>
-        /// Valid values: Integer
-        /// </para>
-        ///  
-        /// <para>
-        /// Required: Yes
         /// </para>
         /// </summary>
         public int CurrentExpiryYear
@@ -83,7 +67,10 @@ namespace Amazon.Route53Domains.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DomainName.
+        /// Gets and sets the property DomainName. 
+        /// <para>
+        /// The name of the domain that you want to renew.
+        /// </para>
         /// </summary>
         public string DomainName
         {
@@ -102,24 +89,13 @@ namespace Amazon.Route53Domains.Model
         /// <para>
         /// The number of years that you want to renew the domain for. The maximum number of years
         /// depends on the top-level domain. For the range of valid values for your domain, see
-        /// <a href="http://docs.aws.amazon.com/console/route53/domain-tld-list">Domains that
-        /// You Can Register with Amazon Route 53</a> in the Amazon Route 53 documentation.
-        /// </para>
-        ///  
-        /// <para>
-        /// Type: Integer
+        /// <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains
+        /// that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer
+        /// Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// Default: 1
-        /// </para>
-        ///  
-        /// <para>
-        /// Valid values: Integer from 1 to 10
-        /// </para>
-        ///  
-        /// <para>
-        /// Required: No
         /// </para>
         /// </summary>
         public int DurationInYears

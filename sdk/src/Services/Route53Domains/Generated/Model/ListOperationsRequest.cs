@@ -46,18 +46,6 @@ namespace Amazon.Route53Domains.Model
         /// another request that includes the value of <code>NextPageMarker</code> in the <code>Marker</code>
         /// element.
         /// </para>
-        ///  
-        /// <para>
-        /// Type: String
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: None
-        /// </para>
-        ///  
-        /// <para>
-        /// Required: No
-        /// </para>
         /// </summary>
         public string Marker
         {
@@ -78,19 +66,7 @@ namespace Amazon.Route53Domains.Model
         /// </para>
         ///  
         /// <para>
-        /// Type: Integer
-        /// </para>
-        ///  
-        /// <para>
         /// Default: 20
-        /// </para>
-        ///  
-        /// <para>
-        /// Constraints: A value between 1 and 100.
-        /// </para>
-        ///  
-        /// <para>
-        /// Required: No
         /// </para>
         /// </summary>
         public int MaxItems

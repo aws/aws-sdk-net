@@ -50,27 +50,7 @@ namespace Amazon.Route53Domains.Model
         /// <summary>
         /// Gets and sets the property AddressLine1. 
         /// <para>
-        /// First line of the contact&apos;s address.
-        /// </para>
-        ///  
-        /// <para>
-        /// Type: String
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: None
-        /// </para>
-        ///  
-        /// <para>
-        /// Constraints: Maximum 255 characters.
-        /// </para>
-        ///  
-        /// <para>
-        /// Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-        /// </para>
-        ///  
-        /// <para>
-        /// Required: Yes
+        /// First line of the contact's address.
         /// </para>
         /// </summary>
         public string AddressLine1
@@ -88,27 +68,7 @@ namespace Amazon.Route53Domains.Model
         /// <summary>
         /// Gets and sets the property AddressLine2. 
         /// <para>
-        /// Second line of contact&apos;s address, if any.
-        /// </para>
-        ///  
-        /// <para>
-        /// Type: String
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: None
-        /// </para>
-        ///  
-        /// <para>
-        /// Constraints: Maximum 255 characters.
-        /// </para>
-        ///  
-        /// <para>
-        /// Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-        /// </para>
-        ///  
-        /// <para>
-        /// Required: No
+        /// Second line of contact's address, if any.
         /// </para>
         /// </summary>
         public string AddressLine2
@@ -126,27 +86,7 @@ namespace Amazon.Route53Domains.Model
         /// <summary>
         /// Gets and sets the property City. 
         /// <para>
-        /// The city of the contact&apos;s address.
-        /// </para>
-        ///  
-        /// <para>
-        /// Type: String
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: None
-        /// </para>
-        ///  
-        /// <para>
-        /// Constraints: Maximum 255 characters.
-        /// </para>
-        ///  
-        /// <para>
-        /// Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-        /// </para>
-        ///  
-        /// <para>
-        /// Required: Yes
+        /// The city of the contact's address.
         /// </para>
         /// </summary>
         public string City
@@ -166,33 +106,7 @@ namespace Amazon.Route53Domains.Model
         /// <para>
         /// Indicates whether the contact is a person, company, association, or public organization.
         /// If you choose an option other than <code>PERSON</code>, you must enter an organization
-        /// name, and you can&apos;t enable privacy protection for the contact.
-        /// </para>
-        ///  
-        /// <para>
-        /// Type: String
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: None
-        /// </para>
-        ///  
-        /// <para>
-        /// Constraints: Maximum 255 characters.
-        /// </para>
-        ///  
-        /// <para>
-        /// Valid values: <code>PERSON</code> | <code>COMPANY</code> | <code>ASSOCIATION</code>
-        /// | <code>PUBLIC_BODY</code>
-        /// </para>
-        ///  
-        /// <para>
-        /// Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-        /// 
-        /// </para>
-        ///  
-        /// <para>
-        /// Required: Yes
+        /// name, and you can't enable privacy protection for the contact.
         /// </para>
         /// </summary>
         public ContactType ContactType
@@ -210,27 +124,7 @@ namespace Amazon.Route53Domains.Model
         /// <summary>
         /// Gets and sets the property CountryCode. 
         /// <para>
-        /// Code for the country of the contact&apos;s address.
-        /// </para>
-        ///  
-        /// <para>
-        /// Type: String
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: None
-        /// </para>
-        ///  
-        /// <para>
-        /// Constraints: Maximum 255 characters.
-        /// </para>
-        ///  
-        /// <para>
-        /// Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-        /// </para>
-        ///  
-        /// <para>
-        /// Required: Yes
+        /// Code for the country of the contact's address.
         /// </para>
         /// </summary>
         public CountryCode CountryCode
@@ -250,27 +144,6 @@ namespace Amazon.Route53Domains.Model
         /// <para>
         /// Email address of the contact.
         /// </para>
-        ///  
-        /// <para>
-        /// Type: String
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: None
-        /// </para>
-        ///  
-        /// <para>
-        /// Constraints: Maximum 254 characters.
-        /// </para>
-        ///  
-        /// <para>
-        /// Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-        /// 
-        /// </para>
-        ///  
-        /// <para>
-        /// Required: Yes
-        /// </para>
         /// </summary>
         public string Email
         {
@@ -288,26 +161,6 @@ namespace Amazon.Route53Domains.Model
         /// Gets and sets the property ExtraParams. 
         /// <para>
         /// A list of name-value pairs for parameters required by certain top-level domains.
-        /// </para>
-        ///  
-        /// <para>
-        /// Type: Complex
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: None
-        /// </para>
-        ///  
-        /// <para>
-        /// Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-        /// </para>
-        ///  
-        /// <para>
-        /// Children: <code>Name</code>, <code>Value</code>
-        /// </para>
-        ///  
-        /// <para>
-        /// Required: No
         /// </para>
         /// </summary>
         public List<ExtraParam> ExtraParams
@@ -329,24 +182,8 @@ namespace Amazon.Route53Domains.Model
         /// </para>
         ///  
         /// <para>
-        /// Type: String
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: None
-        /// </para>
-        ///  
-        /// <para>
         /// Constraints: Phone number must be specified in the format "+[country dialing code].[number
         /// including any area code]". For example, a US phone number might appear as <code>"+1.1234567890"</code>.
-        /// </para>
-        ///  
-        /// <para>
-        /// Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-        /// </para>
-        ///  
-        /// <para>
-        /// Required: No
         /// </para>
         /// </summary>
         public string Fax
@@ -366,27 +203,6 @@ namespace Amazon.Route53Domains.Model
         /// <para>
         /// First name of contact.
         /// </para>
-        ///  
-        /// <para>
-        /// Type: String
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: None
-        /// </para>
-        ///  
-        /// <para>
-        /// Constraints: Maximum 255 characters.
-        /// </para>
-        ///  
-        /// <para>
-        /// Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-        /// 
-        /// </para>
-        ///  
-        /// <para>
-        /// Required: Yes
-        /// </para>
         /// </summary>
         public string FirstName
         {
@@ -405,26 +221,6 @@ namespace Amazon.Route53Domains.Model
         /// <para>
         /// Last name of contact.
         /// </para>
-        ///  
-        /// <para>
-        /// Type: String
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: None
-        /// </para>
-        ///  
-        /// <para>
-        /// Constraints: Maximum 255 characters.
-        /// </para>
-        ///  
-        /// <para>
-        /// Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-        /// </para>
-        ///  
-        /// <para>
-        /// Required: Yes
-        /// </para>
         /// </summary>
         public string LastName
         {
@@ -442,26 +238,6 @@ namespace Amazon.Route53Domains.Model
         /// Gets and sets the property OrganizationName. 
         /// <para>
         /// Name of the organization for contact types other than <code>PERSON</code>.
-        /// </para>
-        ///  
-        /// <para>
-        /// Type: String
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: None
-        /// </para>
-        ///  
-        /// <para>
-        /// Constraints: Maximum 255 characters. Contact type must not be <code>PERSON</code>.
-        /// </para>
-        ///  
-        /// <para>
-        /// Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-        /// </para>
-        ///  
-        /// <para>
-        /// Required: No
         /// </para>
         /// </summary>
         public string OrganizationName
@@ -483,24 +259,8 @@ namespace Amazon.Route53Domains.Model
         /// </para>
         ///  
         /// <para>
-        /// Type: String
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: None
-        /// </para>
-        ///  
-        /// <para>
         /// Constraints: Phone number must be specified in the format "+[country dialing code].[number
-        /// including any area code>]". For example, a US phone number might appear as <code>"+1.1234567890"</code>.
-        /// </para>
-        ///  
-        /// <para>
-        /// Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-        /// </para>
-        ///  
-        /// <para>
-        /// Required: Yes
+        /// including any area code&gt;]". For example, a US phone number might appear as <code>"+1.1234567890"</code>.
         /// </para>
         /// </summary>
         public string PhoneNumber
@@ -518,27 +278,7 @@ namespace Amazon.Route53Domains.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The state or province of the contact&apos;s city.
-        /// </para>
-        ///  
-        /// <para>
-        /// Type: String
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: None
-        /// </para>
-        ///  
-        /// <para>
-        /// Constraints: Maximum 255 characters.
-        /// </para>
-        ///  
-        /// <para>
-        /// Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-        /// </para>
-        ///  
-        /// <para>
-        /// Required: No
+        /// The state or province of the contact's city.
         /// </para>
         /// </summary>
         public string State
@@ -556,27 +296,7 @@ namespace Amazon.Route53Domains.Model
         /// <summary>
         /// Gets and sets the property ZipCode. 
         /// <para>
-        /// The zip or postal code of the contact&apos;s address.
-        /// </para>
-        ///  
-        /// <para>
-        /// Type: String
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: None
-        /// </para>
-        ///  
-        /// <para>
-        /// Constraints: Maximum 255 characters.
-        /// </para>
-        ///  
-        /// <para>
-        /// Parents: <code>RegistrantContact</code>, <code>AdminContact</code>, <code>TechContact</code>
-        /// </para>
-        ///  
-        /// <para>
-        /// Required: No
+        /// The zip or postal code of the contact's address.
         /// </para>
         /// </summary>
         public string ZipCode

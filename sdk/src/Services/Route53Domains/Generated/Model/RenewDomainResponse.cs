@@ -35,7 +35,11 @@ namespace Amazon.Route53Domains.Model
         private string _operationId;
 
         /// <summary>
-        /// Gets and sets the property OperationId.
+        /// Gets and sets the property OperationId. 
+        /// <para>
+        /// The identifier for tracking the progress of the request. To use this ID to query the
+        /// operation status, use <a>GetOperationDetail</a>.
+        /// </para>
         /// </summary>
         public string OperationId
         {

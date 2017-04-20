@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53Domains.Model
 {
     /// <summary>
-    /// 
+    /// Summary information about one domain.
     /// </summary>
     public partial class DomainSummary
     {
@@ -41,14 +41,6 @@ namespace Amazon.Route53Domains.Model
         /// Gets and sets the property AutoRenew. 
         /// <para>
         /// Indicates whether the domain is automatically renewed upon expiration.
-        /// </para>
-        ///  
-        /// <para>
-        /// Type: Boolean
-        /// </para>
-        ///  
-        /// <para>
-        /// Valid values: <code>True</code> | <code>False</code>
         /// </para>
         /// </summary>
         public bool AutoRenew
@@ -66,11 +58,7 @@ namespace Amazon.Route53Domains.Model
         /// <summary>
         /// Gets and sets the property DomainName. 
         /// <para>
-        /// The name of a domain.
-        /// </para>
-        ///  
-        /// <para>
-        /// Type: String
+        /// The name of the domain that the summary information applies to.
         /// </para>
         /// </summary>
         public string DomainName
@@ -90,10 +78,6 @@ namespace Amazon.Route53Domains.Model
         /// <para>
         /// Expiration date of the domain in Coordinated Universal Time (UTC).
         /// </para>
-        ///  
-        /// <para>
-        /// Type: Long
-        /// </para>
         /// </summary>
         public DateTime Expiry
         {
@@ -111,14 +95,6 @@ namespace Amazon.Route53Domains.Model
         /// Gets and sets the property TransferLock. 
         /// <para>
         /// Indicates whether a domain is locked from unauthorized transfer to another party.
-        /// </para>
-        ///  
-        /// <para>
-        /// Type: Boolean
-        /// </para>
-        ///  
-        /// <para>
-        /// Valid values: <code>True</code> | <code>False</code>
         /// </para>
         /// </summary>
         public bool TransferLock

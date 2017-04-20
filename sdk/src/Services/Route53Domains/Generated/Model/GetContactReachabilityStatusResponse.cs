@@ -56,20 +56,21 @@ namespace Amazon.Route53Domains.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Whether the registrant contact has responded. <code>PENDING</code> indicates that
-        /// we sent the confirmation email and haven't received a response yet, <code>DONE</code>
-        /// indicates that we sent the email and got confirmation from the registrant contact,
-        /// and <code>EXPIRED</code> indicates that the time limit expired before the registrant
-        /// contact responded. 
+        /// Whether the registrant contact has responded. Values include the following:
         /// </para>
-        ///  
+        ///  <dl> <dt>PENDING</dt> <dd> 
         /// <para>
-        /// Type: String
+        /// We sent the confirmation email and haven't received a response yet.
         /// </para>
-        ///  
+        ///  </dd> <dt>DONE</dt> <dd> 
         /// <para>
-        /// Valid values: <code>PENDING</code>, <code>DONE</code>, <code>EXPIRED</code>
+        /// We sent the email and got confirmation from the registrant contact.
         /// </para>
+        ///  </dd> <dt>EXPIRED</dt> <dd> 
+        /// <para>
+        /// The time limit expired before the registrant contact responded.
+        /// </para>
+        ///  </dd> </dl>
         /// </summary>
         public ReachabilityStatus Status
         {

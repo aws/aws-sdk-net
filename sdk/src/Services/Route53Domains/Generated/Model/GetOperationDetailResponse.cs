@@ -44,10 +44,6 @@ namespace Amazon.Route53Domains.Model
         /// <para>
         /// The name of a domain.
         /// </para>
-        ///  
-        /// <para>
-        /// Type: String
-        /// </para>
         /// </summary>
         public string DomainName
         {
@@ -65,10 +61,6 @@ namespace Amazon.Route53Domains.Model
         /// Gets and sets the property Message. 
         /// <para>
         /// Detailed information on the status including possible errors.
-        /// </para>
-        ///  
-        /// <para>
-        /// Type: String
         /// </para>
         /// </summary>
         public string Message
@@ -88,10 +80,6 @@ namespace Amazon.Route53Domains.Model
         /// <para>
         /// The identifier for the operation.
         /// </para>
-        ///  
-        /// <para>
-        /// Type: String
-        /// </para>
         /// </summary>
         public string OperationId
         {
@@ -109,10 +97,6 @@ namespace Amazon.Route53Domains.Model
         /// Gets and sets the property Status. 
         /// <para>
         /// The current status of the requested operation in the system.
-        /// </para>
-        ///  
-        /// <para>
-        /// Type: String
         /// </para>
         /// </summary>
         public OperationStatus Status
@@ -149,10 +133,6 @@ namespace Amazon.Route53Domains.Model
         /// Gets and sets the property Type. 
         /// <para>
         /// The type of operation that was requested.
-        /// </para>
-        ///  
-        /// <para>
-        /// Type: String
         /// </para>
         /// </summary>
         public OperationType Type

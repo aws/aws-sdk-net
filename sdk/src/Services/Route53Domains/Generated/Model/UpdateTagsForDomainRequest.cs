@@ -47,30 +47,6 @@ namespace Amazon.Route53Domains.Model
         /// <para>
         /// The domain for which you want to add or update tags.
         /// </para>
-        ///  
-        /// <para>
-        /// The name of a domain.
-        /// </para>
-        ///  
-        /// <para>
-        /// Type: String
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: None
-        /// </para>
-        ///  
-        /// <para>
-        /// Constraints: The domain name can contain only the letters a through z, the numbers
-        /// 0 through 9, and hyphen (-). Hyphens are allowed only when they&apos;re surrounded
-        /// by letters, numbers, or other hyphens. You can&apos;t specify a hyphen at the beginning
-        /// or end of a label. To specify an Internationalized Domain Name, you must convert the
-        /// name to Punycode.
-        /// </para>
-        ///  
-        /// <para>
-        /// Required: Yes
-        /// </para>
         /// </summary>
         public string DomainName
         {
@@ -90,79 +66,6 @@ namespace Amazon.Route53Domains.Model
         /// A list of the tag keys and values that you want to add or update. If you specify a
         /// key that already exists, the corresponding value will be replaced.
         /// </para>
-        ///  
-        /// <para>
-        /// Type: A complex type containing a list of tags
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: None
-        /// </para>
-        ///  
-        /// <para>
-        /// Required: No
-        /// </para>
-        /// '> 
-        /// <para>
-        /// Each tag includes the following elements:
-        /// </para>
-        ///  <ul> <li>
-        /// <para>
-        /// Key
-        /// </para>
-        ///  
-        /// <para>
-        /// The key (name) of a tag.
-        /// </para>
-        ///  
-        /// <para>
-        /// Type: String
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: None
-        /// </para>
-        ///  
-        /// <para>
-        /// Valid values: Unicode characters including alphanumeric, space, and ".:/=+\-@"
-        /// </para>
-        ///  
-        /// <para>
-        /// Constraints: Each key can be 1-128 characters long.
-        /// </para>
-        ///  
-        /// <para>
-        /// Required: Yes
-        /// </para>
-        ///  </li> <li>
-        /// <para>
-        /// Value
-        /// </para>
-        ///  
-        /// <para>
-        /// The value of a tag.
-        /// </para>
-        ///  
-        /// <para>
-        /// Type: String
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: None
-        /// </para>
-        ///  
-        /// <para>
-        /// Valid values: Unicode characters including alphanumeric, space, and ".:/=+\-@"
-        /// </para>
-        ///  
-        /// <para>
-        /// Constraints: Each value can be 0-256 characters long.
-        /// </para>
-        ///  
-        /// <para>
-        /// Required: Yes
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public List<Tag> TagsToUpdate
         {
