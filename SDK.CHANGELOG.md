@@ -1,3 +1,9 @@
+### 3.3.81.0 (2017-04-21 20:15 UTC)
+* AppStream (3.3.1.0)
+	* The new feature named "Default Internet Access" will enable Internet access from AppStream 2.0 instances - image builders and fleet instances. Admins will check a flag either through AWS management console for AppStream 2.0 or through API while creating an image builder or while creating/updating a fleet.
+* Kinesis (3.3.2.0)
+	* Adds a new waiter, StreamNotExists, to Kinesis.
+
 ### 3.3.80.0 (2017-04-21 18:02 UTC)
 * CloudFront (3.3.3.2)
 	* Updated to use new Core, version 3.3.13.0
