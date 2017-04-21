@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppStream.Model
 {
     /// <summary>
-    /// The VPC in which the fleet is launched.
+    /// VPC configuration information.
     /// </summary>
     public partial class VpcConfig
     {
@@ -37,7 +37,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property SubnetIds. 
         /// <para>
-        /// The list of subnets in which the fleet is launched.
+        /// The list of subnets to which a network interface is established from the fleet instance.
         /// </para>
         /// </summary>
         public List<string> SubnetIds

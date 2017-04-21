@@ -29,7 +29,10 @@ namespace Amazon.AppStream
     /// <summary>
     /// Interface for accessing AppStream
     ///
-    /// API documentation for AppStream
+    /// Amazon AppStream 2.0 
+    /// <para>
+    /// API documentation for Amazon AppStream 2.0.
+    /// </para>
     /// </summary>
     public partial interface IAmazonAppStream : IAmazonService, IDisposable
     {
@@ -39,11 +42,14 @@ namespace Amazon.AppStream
 
 
         /// <summary>
-        /// Attach a fleet to a Stack.
+        /// Associate a fleet to a stack.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateFleet service method.</param>
         /// 
         /// <returns>The response from the AssociateFleet service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
+        /// An API error occurred, please try again.
+        /// </exception>
         /// <exception cref="Amazon.AppStream.Model.LimitExceededException">
         /// The requested limit exceeds the permitted limit for an account.
         /// </exception>
@@ -90,6 +96,9 @@ namespace Amazon.AppStream
         /// <param name="request">Container for the necessary parameters to execute the CreateFleet service method.</param>
         /// 
         /// <returns>The response from the CreateFleet service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
+        /// An API error occurred, please try again.
+        /// </exception>
         /// <exception cref="Amazon.AppStream.Model.InvalidRoleException">
         /// The specified role is invalid.
         /// </exception>
@@ -145,6 +154,9 @@ namespace Amazon.AppStream
         /// <param name="request">Container for the necessary parameters to execute the CreateStack service method.</param>
         /// 
         /// <returns>The response from the CreateStack service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
+        /// An API error occurred, please try again.
+        /// </exception>
         /// <exception cref="Amazon.AppStream.Model.LimitExceededException">
         /// The requested limit exceeds the permitted limit for an account.
         /// </exception>
@@ -186,12 +198,18 @@ namespace Amazon.AppStream
 
 
         /// <summary>
-        /// Gives a URL to start a AppStream stream for a user. The URL is valid only for 1 minute
-        /// from the time that it is generated.
+        /// Creates a URL to start an AppStream 2.0 streaming session for a user. By default,
+        /// the URL is valid only for 1 minute from the time that it is generated.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateStreamingURL service method.</param>
         /// 
         /// <returns>The response from the CreateStreamingURL service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.InvalidParameterCombinationException">
+        /// Indicates an incorrect combination of parameters, or a missing parameter.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
+        /// </exception>
         /// <exception cref="Amazon.AppStream.Model.ResourceNotAvailableException">
         /// The specified resource exists and is not in use, but isn't available.
         /// </exception>
@@ -238,6 +256,9 @@ namespace Amazon.AppStream
         /// <param name="request">Container for the necessary parameters to execute the DeleteFleet service method.</param>
         /// 
         /// <returns>The response from the DeleteFleet service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
+        /// An API error occurred, please try again.
+        /// </exception>
         /// <exception cref="Amazon.AppStream.Model.ResourceInUseException">
         /// The specified resource is in use.
         /// </exception>
@@ -280,11 +301,14 @@ namespace Amazon.AppStream
 
         /// <summary>
         /// Deletes the stack. After this operation completes, the environment can no longer be
-        /// activated, and the alias reservation is released.
+        /// activated, and any reservations made for the stack are released.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteStack service method.</param>
         /// 
         /// <returns>The response from the DeleteStack service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
+        /// An API error occurred, please try again.
+        /// </exception>
         /// <exception cref="Amazon.AppStream.Model.ResourceInUseException">
         /// The specified resource is in use.
         /// </exception>
@@ -326,10 +350,8 @@ namespace Amazon.AppStream
 
 
         /// <summary>
-        /// Describes the fleets. If a fleet name is provided, this operation describes that environment.
-        /// If name is not provided, this operation describes all the fleets for the AWS account.
-        /// This operation returns a paginated list of results; use the <code>nextToken</code>
-        /// to get the next page.
+        /// If fleet names are provided, this operation describes the specified fleets; otherwise,
+        /// all the fleets in the account are described.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeFleets service method.</param>
         /// 
@@ -372,8 +394,8 @@ namespace Amazon.AppStream
 
 
         /// <summary>
-        /// Gets the images. If a list of names is not provided, all images in your account are
-        /// returned. This operation does not return a paginated result.
+        /// Describes the images. If a list of names is not provided, all images in your account
+        /// are returned. This operation does not return a paginated result.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeImages service method.</param>
         /// 
@@ -416,13 +438,18 @@ namespace Amazon.AppStream
 
 
         /// <summary>
-        /// Describes the streaming sessions for a stack and fleet. If a user ID is provided,
-        /// this operation returns streaming sessions for only that user. This operation returns
-        /// a paginated list of results; use the <code>nextToken</code> to get the next page.
+        /// Describes the streaming sessions for a stack and a fleet. If a user ID is provided,
+        /// this operation returns streaming sessions for only that user. Pass this value for
+        /// the <code>nextToken</code> parameter in a subsequent call to this operation to retrieve
+        /// the next set of items. If an authentication type is not provided, the operation defaults
+        /// to users authenticated using a streaming url.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSessions service method.</param>
         /// 
         /// <returns>The response from the DescribeSessions service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.InvalidParameterCombinationException">
+        /// Indicates an incorrect combination of parameters, or a missing parameter.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeSessions">REST API Reference for DescribeSessions Operation</seealso>
         DescribeSessionsResponse DescribeSessions(DescribeSessionsRequest request);
 
@@ -458,10 +485,9 @@ namespace Amazon.AppStream
 
 
         /// <summary>
-        /// Describes the stack. If a stack name is provided, this operation describes that environment.
-        /// If name is not provided, this operation describes all the stacks for the AWS account.
-        /// This operation returns a paginated list of results; use the <code>nextToken</code>
-        /// to get the next page.
+        /// If stack names are not provided, this operation describes the specified stacks; otherwise,
+        /// all stacks in the account are described. Pass the <code>nextToken</code> value in
+        /// a subsequent call to this operation to retrieve the next set of items.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeStacks service method.</param>
         /// 
@@ -504,11 +530,14 @@ namespace Amazon.AppStream
 
 
         /// <summary>
-        /// Detach a fleet from a stack.
+        /// Disassociates a fleet from a stack.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateFleet service method.</param>
         /// 
         /// <returns>The response from the DisassociateFleet service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
+        /// An API error occurred, please try again.
+        /// </exception>
         /// <exception cref="Amazon.AppStream.Model.ResourceInUseException">
         /// The specified resource is in use.
         /// </exception>
@@ -590,7 +619,7 @@ namespace Amazon.AppStream
 
 
         /// <summary>
-        /// Lists all fleets attached to the specified resource.
+        /// Lists all fleets associated with the stack.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAssociatedFleets service method.</param>
         /// 
@@ -630,7 +659,7 @@ namespace Amazon.AppStream
 
 
         /// <summary>
-        /// Lists all stacks attached to the specified resource.
+        /// Lists all stacks to which the specified fleet is associated.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAssociatedStacks service method.</param>
         /// 
@@ -670,13 +699,19 @@ namespace Amazon.AppStream
 
 
         /// <summary>
-        /// Activates a fleet.
+        /// Starts a fleet.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartFleet service method.</param>
         /// 
         /// <returns>The response from the StartFleet service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
+        /// An API error occurred, please try again.
+        /// </exception>
         /// <exception cref="Amazon.AppStream.Model.LimitExceededException">
         /// The requested limit exceeds the permitted limit for an account.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.OperationNotPermittedException">
+        /// The attempted operation is not permitted.
         /// </exception>
         /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -716,11 +751,14 @@ namespace Amazon.AppStream
 
 
         /// <summary>
-        /// Deactivates a fleet.
+        /// Stops a fleet.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopFleet service method.</param>
         /// 
         /// <returns>The response from the StopFleet service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
+        /// An API error occurred, please try again.
+        /// </exception>
         /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
@@ -760,12 +798,19 @@ namespace Amazon.AppStream
 
         /// <summary>
         /// Updates an existing fleet. All the attributes except the fleet name can be updated
-        /// in the INACTIVE state. Only ComputeResourceCapacity and imageName can be updated in
-        /// any other state.
+        /// in the <b>STOPPED</b> state. When a fleet is in the <b>RUNNING</b> state, only <code>DisplayName</code>
+        /// and <code>ComputeCapacity</code> can be updated. A fleet cannot be updated in a status
+        /// of <b>STARTING</b> or <b>STOPPING</b>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateFleet service method.</param>
         /// 
         /// <returns>The response from the UpdateFleet service method, as returned by AppStream.</returns>
+        /// <exception cref="Amazon.AppStream.Model.ConcurrentModificationException">
+        /// An API error occurred, please try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.InvalidParameterCombinationException">
+        /// Indicates an incorrect combination of parameters, or a missing parameter.
+        /// </exception>
         /// <exception cref="Amazon.AppStream.Model.InvalidRoleException">
         /// The specified role is invalid.
         /// </exception>
@@ -774,6 +819,9 @@ namespace Amazon.AppStream
         /// </exception>
         /// <exception cref="Amazon.AppStream.Model.ResourceInUseException">
         /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.ResourceNotAvailableException">
+        /// The specified resource exists and is not in use, but isn't available.
         /// </exception>
         /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
         /// The specified resource was not found.

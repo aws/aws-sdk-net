@@ -30,7 +30,7 @@ namespace Amazon.AppStream.Model
     /// <summary>
     /// Container for the parameters to the DeleteStack operation.
     /// Deletes the stack. After this operation completes, the environment can no longer be
-    /// activated, and the alias reservation is released.
+    /// activated, and any reservations made for the stack are released.
     /// </summary>
     public partial class DeleteStackRequest : AmazonAppStreamRequest
     {

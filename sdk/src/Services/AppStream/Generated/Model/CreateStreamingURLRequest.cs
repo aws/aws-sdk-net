@@ -29,8 +29,8 @@ namespace Amazon.AppStream.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateStreamingURL operation.
-    /// Gives a URL to start a AppStream stream for a user. The URL is valid only for 1 minute
-    /// from the time that it is generated.
+    /// Creates a URL to start an AppStream 2.0 streaming session for a user. By default,
+    /// the URL is valid only for 1 minute from the time that it is generated.
     /// </summary>
     public partial class CreateStreamingURLRequest : AmazonAppStreamRequest
     {
@@ -44,7 +44,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property ApplicationId. 
         /// <para>
-        /// ID of the application that must be launched after the session starts.
+        /// The ID of the application that must be launched after the session starts.
         /// </para>
         /// </summary>
         public string ApplicationId
@@ -80,7 +80,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property SessionContext. 
         /// <para>
-        /// The sessionContext of the AppStream stream.
+        /// The sessionContext of the streaming URL.
         /// </para>
         /// </summary>
         public string SessionContext
@@ -116,7 +116,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property UserId. 
         /// <para>
-        /// A unique user ID for which the URL is generated.
+        /// A unique user ID for whom the URL is generated.
         /// </para>
         /// </summary>
         public string UserId
@@ -134,7 +134,8 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property Validity. 
         /// <para>
-        /// The validity duration of the URL in seconds.
+        /// The validity duration of the URL in seconds. After this duration, the URL returned
+        /// by this operation becomes invalid.
         /// </para>
         /// </summary>
         public long Validity

@@ -38,7 +38,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the fleet to delete.
+        /// The name of the fleet to be deleted.
         /// </para>
         /// </summary>
         public string Name

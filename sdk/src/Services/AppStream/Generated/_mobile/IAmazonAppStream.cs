@@ -31,7 +31,10 @@ namespace Amazon.AppStream
     /// <summary>
     /// Interface for accessing AppStream
     ///
-    /// API documentation for AppStream
+    /// Amazon AppStream 2.0 
+    /// <para>
+    /// API documentation for Amazon AppStream 2.0.
+    /// </para>
     /// </summary>
     public partial interface IAmazonAppStream : IAmazonService, IDisposable
     {

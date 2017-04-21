@@ -32,6 +32,7 @@ namespace Amazon.AppStream.Model
     /// </summary>
     public partial class Session
     {
+        private AuthenticationType _authenticationType;
         private string _fleetName;
         private string _id;
         private string _stackName;
@@ -39,9 +40,29 @@ namespace Amazon.AppStream.Model
         private string _userId;
 
         /// <summary>
+        /// Gets and sets the property AuthenticationType. 
+        /// <para>
+        /// The authentication method of the user for whom the session was created. It can be
+        /// <code>API</code> for a user authenticated using a streaming url or <code>SAML</code>
+        /// for a SAML federated user.
+        /// </para>
+        /// </summary>
+        public AuthenticationType AuthenticationType
+        {
+            get { return this._authenticationType; }
+            set { this._authenticationType = value; }
+        }
+
+        // Check to see if AuthenticationType property is set
+        internal bool IsSetAuthenticationType()
+        {
+            return this._authenticationType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property FleetName. 
         /// <para>
-        /// The name of the fleet in which the streaming session was created.
+        /// The name of the fleet for which the streaming session was created.
         /// </para>
         /// </summary>
         public string FleetName
@@ -77,7 +98,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property StackName. 
         /// <para>
-        /// The name of the stack in which the streaming session was created.
+        /// The name of the stack for which the streaming session was created.
         /// </para>
         /// </summary>
         public string StackName
@@ -113,7 +134,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property UserId. 
         /// <para>
-        /// The identifier of the user for whom the session was requested.
+        /// The identifier of the user for whom the session was created.
         /// </para>
         /// </summary>
         public string UserId

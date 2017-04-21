@@ -36,7 +36,10 @@ namespace Amazon.AppStream
     /// <summary>
     /// Implementation for accessing AppStream
     ///
-    /// API documentation for AppStream
+    /// Amazon AppStream 2.0 
+    /// <para>
+    /// API documentation for Amazon AppStream 2.0.
+    /// </para>
     /// </summary>
     public partial class AmazonAppStreamClient : AmazonServiceClient, IAmazonAppStream
     {

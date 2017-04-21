@@ -38,7 +38,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property Names. 
         /// <para>
-        /// The names of attached fleets.
+        /// The names of associated fleets.
         /// </para>
         /// </summary>
         public List<string> Names
@@ -56,8 +56,8 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If this value is not null, more results are available. Pass this value for the <code>nextToken</code>
-        /// parameter in a subsequent call to this operation to retrieve the next set of items.
+        /// The pagination token to use to retrieve the next page of results for this operation.
+        /// If there are no more pages, this value is null.
         /// </para>
         /// </summary>
         public string NextToken

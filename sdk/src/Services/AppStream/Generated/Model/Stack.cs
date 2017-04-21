@@ -41,7 +41,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Arn of the stack.
+        /// The ARN of the stack.
         /// </para>
         /// </summary>
         public string Arn
@@ -77,7 +77,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description displayed to end users on the AppStream portal.
+        /// A meaningful description for the stack.
         /// </para>
         /// </summary>
         public string Description
@@ -95,7 +95,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property DisplayName. 
         /// <para>
-        /// The name displayed to end users on the AppStream portal.
+        /// A display name for the stack.
         /// </para>
         /// </summary>
         public string DisplayName
@@ -113,7 +113,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Name of the stack.
+        /// The unique identifier of the stack.
         /// </para>
         /// </summary>
         public string Name

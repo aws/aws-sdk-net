@@ -39,6 +39,7 @@ namespace Amazon.AppStream.Model
         private DateTime? _createdTime;
         private string _description;
         private string _displayName;
+        private bool? _imageBuilderSupported;
         private string _name;
         private PlatformType _platform;
         private ImageState _state;
@@ -48,7 +49,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property Applications. 
         /// <para>
-        /// The applications associated with an Image.
+        /// The applications associated with an image.
         /// </para>
         /// </summary>
         public List<Application> Applications
@@ -84,8 +85,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property BaseImageArn. 
         /// <para>
-        /// Either <code>copy-image.source-image</code> or <code>create-image.image-builder.image</code>
-        /// depending on how this image was created.
+        /// The source image ARN from which this image was created.
         /// </para>
         /// </summary>
         public string BaseImageArn
@@ -121,7 +121,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// User information.
+        /// A meaningful description for the image.
         /// </para>
         /// </summary>
         public string Description
@@ -139,7 +139,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property DisplayName. 
         /// <para>
-        /// The name displayed to end users on the AppStream portal.
+        /// The display name for the image.
         /// </para>
         /// </summary>
         public string DisplayName
@@ -152,6 +152,24 @@ namespace Amazon.AppStream.Model
         internal bool IsSetDisplayName()
         {
             return this._displayName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImageBuilderSupported. 
+        /// <para>
+        /// Indicates whether an image builder can be launched from this image.
+        /// </para>
+        /// </summary>
+        public bool ImageBuilderSupported
+        {
+            get { return this._imageBuilderSupported.GetValueOrDefault(); }
+            set { this._imageBuilderSupported = value; }
+        }
+
+        // Check to see if ImageBuilderSupported property is set
+        internal bool IsSetImageBuilderSupported()
+        {
+            return this._imageBuilderSupported.HasValue; 
         }
 
         /// <summary>
@@ -175,7 +193,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property Platform. 
         /// <para>
-        /// The Platform where the image is launched.
+        /// The operating system platform of the image.
         /// </para>
         /// </summary>
         public PlatformType Platform
@@ -194,7 +212,7 @@ namespace Amazon.AppStream.Model
         /// Gets and sets the property State. 
         /// <para>
         /// The image starts in the <b>PENDING</b> state, and then moves to <b>AVAILABLE</b> if
-        /// image creation succeeds and <b>FAILED</b> if it has failed.
+        /// image creation succeeds and <b>FAILED</b> if image creation has failed.
         /// </para>
         /// </summary>
         public ImageState State
@@ -230,7 +248,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property Visibility. 
         /// <para>
-        /// The visibility of an Image to the user, it can be Public/Private.
+        /// The visibility of an image to the user; images can be public or private.
         /// </para>
         /// </summary>
         public VisibilityType Visibility

@@ -100,6 +100,12 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                     unmarshalledObject.DisplayName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EnableDefaultInternetAccess", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.EnableDefaultInternetAccess = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("FleetErrors", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<FleetError, FleetErrorUnmarshaller>(FleetErrorUnmarshaller.Instance);

@@ -29,8 +29,8 @@ namespace Amazon.AppStream.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeImages operation.
-    /// Gets the images. If a list of names is not provided, all images in your account are
-    /// returned. This operation does not return a paginated result.
+    /// Describes the images. If a list of names is not provided, all images in your account
+    /// are returned. This operation does not return a paginated result.
     /// </summary>
     public partial class DescribeImagesRequest : AmazonAppStreamRequest
     {
@@ -39,7 +39,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property Names. 
         /// <para>
-        /// A specific list of images to return.
+        /// A specific list of images to describe.
         /// </para>
         /// </summary>
         public List<string> Names

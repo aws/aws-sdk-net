@@ -29,10 +29,8 @@ namespace Amazon.AppStream.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeFleets operation.
-    /// Describes the fleets. If a fleet name is provided, this operation describes that environment.
-    /// If name is not provided, this operation describes all the fleets for the AWS account.
-    /// This operation returns a paginated list of results; use the <code>nextToken</code>
-    /// to get the next page.
+    /// If fleet names are provided, this operation describes the specified fleets; otherwise,
+    /// all the fleets in the account are described.
     /// </summary>
     public partial class DescribeFleetsRequest : AmazonAppStreamRequest
     {
@@ -60,8 +58,8 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The next token to iterate the list. If a name is specified in the request or the request
-        /// is for the first page, this value should be null.
+        /// The pagination token to use to retrieve the next page of results for this operation.
+        /// If this value is null, it retrieves the first page.
         /// </para>
         /// </summary>
         public string NextToken

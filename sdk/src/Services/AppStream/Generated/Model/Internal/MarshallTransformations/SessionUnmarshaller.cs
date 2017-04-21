@@ -64,6 +64,12 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AuthenticationType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AuthenticationType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("FleetName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

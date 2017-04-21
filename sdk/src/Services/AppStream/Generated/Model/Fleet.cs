@@ -38,6 +38,7 @@ namespace Amazon.AppStream.Model
         private string _description;
         private int? _disconnectTimeoutInSeconds;
         private string _displayName;
+        private bool? _enableDefaultInternetAccess;
         private List<FleetError> _fleetErrors = new List<FleetError>();
         private string _imageName;
         private string _instanceType;
@@ -103,7 +104,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description displayed to end users on the AppStream portal.
+        /// The description displayed to end users on the AppStream 2.0 portal.
         /// </para>
         /// </summary>
         public string Description
@@ -121,7 +122,9 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property DisconnectTimeoutInSeconds. 
         /// <para>
-        /// The time after disconnection when a session is considered to have ended.
+        /// The time after disconnection when a session is considered to have ended. When a user
+        /// reconnects after a disconnection, the user is connected to the same session and instance
+        /// within this time interval.
         /// </para>
         /// </summary>
         public int DisconnectTimeoutInSeconds
@@ -139,7 +142,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property DisplayName. 
         /// <para>
-        /// The name displayed to end users on the AppStream portal.
+        /// The name displayed to end users on the AppStream 2.0 portal.
         /// </para>
         /// </summary>
         public string DisplayName
@@ -155,9 +158,27 @@ namespace Amazon.AppStream.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EnableDefaultInternetAccess. 
+        /// <para>
+        /// Default Internet access from the fleet. True (Enabled), False (Disabled).
+        /// </para>
+        /// </summary>
+        public bool EnableDefaultInternetAccess
+        {
+            get { return this._enableDefaultInternetAccess.GetValueOrDefault(); }
+            set { this._enableDefaultInternetAccess = value; }
+        }
+
+        // Check to see if EnableDefaultInternetAccess property is set
+        internal bool IsSetEnableDefaultInternetAccess()
+        {
+            return this._enableDefaultInternetAccess.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property FleetErrors. 
         /// <para>
-        /// The list of Fleet errors is appended to this list.
+        /// The list of fleet errors is appended to this list.
         /// </para>
         /// </summary>
         public List<FleetError> FleetErrors
@@ -175,7 +196,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property ImageName. 
         /// <para>
-        /// The image from which a Fleet is created.
+        /// The image used by the fleet.
         /// </para>
         /// </summary>
         public string ImageName
@@ -193,7 +214,8 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
-        /// The instance type of compute resources for the fleet.
+        /// The instance type of compute resources for the fleet. The fleet instances are launched
+        /// from this instance type. 
         /// </para>
         /// </summary>
         public string InstanceType

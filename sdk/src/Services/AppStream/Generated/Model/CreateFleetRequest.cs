@@ -37,6 +37,7 @@ namespace Amazon.AppStream.Model
         private string _description;
         private int? _disconnectTimeoutInSeconds;
         private string _displayName;
+        private bool? _enableDefaultInternetAccess;
         private string _imageName;
         private string _instanceType;
         private int? _maxUserDurationInSeconds;
@@ -46,7 +47,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property ComputeCapacity. 
         /// <para>
-        /// Parameters for the capacity allocated to the fleet.
+        /// The parameters for the capacity allocated to the fleet.
         /// </para>
         /// </summary>
         public ComputeCapacity ComputeCapacity
@@ -82,7 +83,9 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property DisconnectTimeoutInSeconds. 
         /// <para>
-        /// The time after disconnection when a session is considered to have ended.
+        /// The time after disconnection when a session is considered to have ended. If a user
+        /// who got disconnected reconnects within this timeout interval, the user is connected
+        /// back to his/her previous session. 
         /// </para>
         /// </summary>
         public int DisconnectTimeoutInSeconds
@@ -116,9 +119,27 @@ namespace Amazon.AppStream.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EnableDefaultInternetAccess. 
+        /// <para>
+        /// Enable/Disable default Internet access from fleet.
+        /// </para>
+        /// </summary>
+        public bool EnableDefaultInternetAccess
+        {
+            get { return this._enableDefaultInternetAccess.GetValueOrDefault(); }
+            set { this._enableDefaultInternetAccess = value; }
+        }
+
+        // Check to see if EnableDefaultInternetAccess property is set
+        internal bool IsSetEnableDefaultInternetAccess()
+        {
+            return this._enableDefaultInternetAccess.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property ImageName. 
         /// <para>
-        /// The image name to use.
+        /// Unique name of the image used by the fleet.
         /// </para>
         /// </summary>
         public string ImageName
@@ -136,7 +157,8 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
-        /// The instance type of compute resources for the fleet.
+        /// The instance type of compute resources for the fleet. Fleet instances are launched
+        /// from this instance type.
         /// </para>
         /// </summary>
         public string InstanceType
@@ -154,7 +176,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property MaxUserDurationInSeconds. 
         /// <para>
-        /// The maximum time during which a streaming session can run.
+        /// The maximum time up to which a streaming session can run.
         /// </para>
         /// </summary>
         public int MaxUserDurationInSeconds
@@ -172,7 +194,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the fleet.
+        /// A unique identifier for the fleet.
         /// </para>
         /// </summary>
         public string Name

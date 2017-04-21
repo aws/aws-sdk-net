@@ -25,55 +25,105 @@ namespace Amazon.AppStream
 {
 
     /// <summary>
+    /// Constants used for properties of type AuthenticationType.
+    /// </summary>
+    public class AuthenticationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant API for AuthenticationType
+        /// </summary>
+        public static readonly AuthenticationType API = new AuthenticationType("API");
+        /// <summary>
+        /// Constant SAML for AuthenticationType
+        /// </summary>
+        public static readonly AuthenticationType SAML = new AuthenticationType("SAML");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AuthenticationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AuthenticationType FindValue(string value)
+        {
+            return FindValue<AuthenticationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AuthenticationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type FleetErrorCode.
     /// </summary>
     public class FleetErrorCode : ConstantClass
     {
 
         /// <summary>
-        /// Constant INSUFFICIENT_AVAILABLE_IP_ADDRESSES for FleetErrorCode
+        /// Constant IAM_SERVICE_ROLE_IS_MISSING for FleetErrorCode
         /// </summary>
-        public static readonly FleetErrorCode INSUFFICIENT_AVAILABLE_IP_ADDRESSES = new FleetErrorCode("INSUFFICIENT_AVAILABLE_IP_ADDRESSES");
+        public static readonly FleetErrorCode IAM_SERVICE_ROLE_IS_MISSING = new FleetErrorCode("IAM_SERVICE_ROLE_IS_MISSING");
+        /// <summary>
+        /// Constant IAM_SERVICE_ROLE_MISSING_DESCRIBE_SUBNET_ACTION for FleetErrorCode
+        /// </summary>
+        public static readonly FleetErrorCode IAM_SERVICE_ROLE_MISSING_DESCRIBE_SUBNET_ACTION = new FleetErrorCode("IAM_SERVICE_ROLE_MISSING_DESCRIBE_SUBNET_ACTION");
+        /// <summary>
+        /// Constant IAM_SERVICE_ROLE_MISSING_ENI_CREATE_ACTION for FleetErrorCode
+        /// </summary>
+        public static readonly FleetErrorCode IAM_SERVICE_ROLE_MISSING_ENI_CREATE_ACTION = new FleetErrorCode("IAM_SERVICE_ROLE_MISSING_ENI_CREATE_ACTION");
+        /// <summary>
+        /// Constant IAM_SERVICE_ROLE_MISSING_ENI_DELETE_ACTION for FleetErrorCode
+        /// </summary>
+        public static readonly FleetErrorCode IAM_SERVICE_ROLE_MISSING_ENI_DELETE_ACTION = new FleetErrorCode("IAM_SERVICE_ROLE_MISSING_ENI_DELETE_ACTION");
+        /// <summary>
+        /// Constant IAM_SERVICE_ROLE_MISSING_ENI_DESCRIBE_ACTION for FleetErrorCode
+        /// </summary>
+        public static readonly FleetErrorCode IAM_SERVICE_ROLE_MISSING_ENI_DESCRIBE_ACTION = new FleetErrorCode("IAM_SERVICE_ROLE_MISSING_ENI_DESCRIBE_ACTION");
+        /// <summary>
+        /// Constant IMAGE_NOT_FOUND for FleetErrorCode
+        /// </summary>
+        public static readonly FleetErrorCode IMAGE_NOT_FOUND = new FleetErrorCode("IMAGE_NOT_FOUND");
         /// <summary>
         /// Constant INTERNAL_SERVICE_ERROR for FleetErrorCode
         /// </summary>
         public static readonly FleetErrorCode INTERNAL_SERVICE_ERROR = new FleetErrorCode("INTERNAL_SERVICE_ERROR");
         /// <summary>
-        /// Constant INVALID_PHOTON_ROLE_MISSING_ENI_CREATE_ACTION for FleetErrorCode
-        /// </summary>
-        public static readonly FleetErrorCode INVALID_PHOTON_ROLE_MISSING_ENI_CREATE_ACTION = new FleetErrorCode("INVALID_PHOTON_ROLE_MISSING_ENI_CREATE_ACTION");
-        /// <summary>
-        /// Constant INVALID_PHOTON_ROLE_MISSING_ENI_DELETE_ACTION for FleetErrorCode
-        /// </summary>
-        public static readonly FleetErrorCode INVALID_PHOTON_ROLE_MISSING_ENI_DELETE_ACTION = new FleetErrorCode("INVALID_PHOTON_ROLE_MISSING_ENI_DELETE_ACTION");
-        /// <summary>
-        /// Constant INVALID_PHOTON_ROLE_MISSING_ENI_DESCRIBE_ACTION for FleetErrorCode
-        /// </summary>
-        public static readonly FleetErrorCode INVALID_PHOTON_ROLE_MISSING_ENI_DESCRIBE_ACTION = new FleetErrorCode("INVALID_PHOTON_ROLE_MISSING_ENI_DESCRIBE_ACTION");
-        /// <summary>
-        /// Constant INVALID_PHOTON_ROLE_MISSING_SUBNET_DESCRIBE_ACTION for FleetErrorCode
-        /// </summary>
-        public static readonly FleetErrorCode INVALID_PHOTON_ROLE_MISSING_SUBNET_DESCRIBE_ACTION = new FleetErrorCode("INVALID_PHOTON_ROLE_MISSING_SUBNET_DESCRIBE_ACTION");
-        /// <summary>
         /// Constant INVALID_SUBNET_CONFIGURATION for FleetErrorCode
         /// </summary>
         public static readonly FleetErrorCode INVALID_SUBNET_CONFIGURATION = new FleetErrorCode("INVALID_SUBNET_CONFIGURATION");
         /// <summary>
-        /// Constant MISSING_IMAGE for FleetErrorCode
-        /// </summary>
-        public static readonly FleetErrorCode MISSING_IMAGE = new FleetErrorCode("MISSING_IMAGE");
-        /// <summary>
-        /// Constant MISSING_ROLE for FleetErrorCode
-        /// </summary>
-        public static readonly FleetErrorCode MISSING_ROLE = new FleetErrorCode("MISSING_ROLE");
-        /// <summary>
-        /// Constant MISSING_SUBNET for FleetErrorCode
-        /// </summary>
-        public static readonly FleetErrorCode MISSING_SUBNET = new FleetErrorCode("MISSING_SUBNET");
-        /// <summary>
         /// Constant NETWORK_INTERFACE_LIMIT_EXCEEDED for FleetErrorCode
         /// </summary>
         public static readonly FleetErrorCode NETWORK_INTERFACE_LIMIT_EXCEEDED = new FleetErrorCode("NETWORK_INTERFACE_LIMIT_EXCEEDED");
+        /// <summary>
+        /// Constant SUBNET_HAS_INSUFFICIENT_IP_ADDRESSES for FleetErrorCode
+        /// </summary>
+        public static readonly FleetErrorCode SUBNET_HAS_INSUFFICIENT_IP_ADDRESSES = new FleetErrorCode("SUBNET_HAS_INSUFFICIENT_IP_ADDRESSES");
+        /// <summary>
+        /// Constant SUBNET_NOT_FOUND for FleetErrorCode
+        /// </summary>
+        public static readonly FleetErrorCode SUBNET_NOT_FOUND = new FleetErrorCode("SUBNET_NOT_FOUND");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

@@ -38,8 +38,8 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The next token to iterate the list. If there are no more entries left to iterate,
-        /// this value is null.
+        /// The pagination token to use to retrieve the next page of results for this operation.
+        /// If there are no more pages, this value is null.
         /// </para>
         /// </summary>
         public string NextToken

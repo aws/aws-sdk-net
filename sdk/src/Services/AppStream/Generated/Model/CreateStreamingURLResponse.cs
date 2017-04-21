@@ -56,7 +56,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property StreamingURL. 
         /// <para>
-        /// The URL to start the AppStream stream.
+        /// The URL to start the AppStream 2.0 streaming session.
         /// </para>
         /// </summary>
         public string StreamingURL

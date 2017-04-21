@@ -29,10 +29,9 @@ namespace Amazon.AppStream.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeStacks operation.
-    /// Describes the stack. If a stack name is provided, this operation describes that environment.
-    /// If name is not provided, this operation describes all the stacks for the AWS account.
-    /// This operation returns a paginated list of results; use the <code>nextToken</code>
-    /// to get the next page.
+    /// If stack names are not provided, this operation describes the specified stacks; otherwise,
+    /// all stacks in the account are described. Pass the <code>nextToken</code> value in
+    /// a subsequent call to this operation to retrieve the next set of items.
     /// </summary>
     public partial class DescribeStacksRequest : AmazonAppStreamRequest
     {
@@ -60,8 +59,8 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The next token to iterate the list. If a name is specified in the request or the request
-        /// is for the first page, this value should be null.
+        /// The pagination token to use to retrieve the next page of results for this operation.
+        /// If this value is null, it retrieves the first page.
         /// </para>
         /// </summary>
         public string NextToken

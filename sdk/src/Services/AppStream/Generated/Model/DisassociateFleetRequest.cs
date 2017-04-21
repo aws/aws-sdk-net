@@ -29,7 +29,7 @@ namespace Amazon.AppStream.Model
 {
     /// <summary>
     /// Container for the parameters to the DisassociateFleet operation.
-    /// Detach a fleet from a stack.
+    /// Disassociates a fleet from a stack.
     /// </summary>
     public partial class DisassociateFleetRequest : AmazonAppStreamRequest
     {
@@ -39,7 +39,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property FleetName. 
         /// <para>
-        /// The name of the fleet to detach.
+        /// The name of the fleet to disassociate.
         /// </para>
         /// </summary>
         public string FleetName
@@ -55,7 +55,10 @@ namespace Amazon.AppStream.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StackName.
+        /// Gets and sets the property StackName. 
+        /// <para>
+        /// The name of the stack with which the fleet is associated.
+        /// </para>
         /// </summary>
         public string StackName
         {

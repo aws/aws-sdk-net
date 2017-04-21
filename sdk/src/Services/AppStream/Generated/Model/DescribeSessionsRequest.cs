@@ -29,17 +29,41 @@ namespace Amazon.AppStream.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeSessions operation.
-    /// Describes the streaming sessions for a stack and fleet. If a user ID is provided,
-    /// this operation returns streaming sessions for only that user. This operation returns
-    /// a paginated list of results; use the <code>nextToken</code> to get the next page.
+    /// Describes the streaming sessions for a stack and a fleet. If a user ID is provided,
+    /// this operation returns streaming sessions for only that user. Pass this value for
+    /// the <code>nextToken</code> parameter in a subsequent call to this operation to retrieve
+    /// the next set of items. If an authentication type is not provided, the operation defaults
+    /// to users authenticated using a streaming url.
     /// </summary>
     public partial class DescribeSessionsRequest : AmazonAppStreamRequest
     {
+        private AuthenticationType _authenticationType;
         private string _fleetName;
         private int? _limit;
         private string _nextToken;
         private string _stackName;
         private string _userId;
+
+        /// <summary>
+        /// Gets and sets the property AuthenticationType. 
+        /// <para>
+        /// The authentication method of the user. It can be <code>API</code> for a user authenticated
+        /// using a streaming url or <code>SAML</code> for a SAML federated user. If an authentication
+        /// type is not provided, the operation defaults to users authenticated using a streaming
+        /// url.
+        /// </para>
+        /// </summary>
+        public AuthenticationType AuthenticationType
+        {
+            get { return this._authenticationType; }
+            set { this._authenticationType = value; }
+        }
+
+        // Check to see if AuthenticationType property is set
+        internal bool IsSetAuthenticationType()
+        {
+            return this._authenticationType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property FleetName. 
@@ -81,8 +105,8 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The next token to iterate the list. If the request is for the first page, this value
-        /// should be null.
+        /// The pagination token to use to retrieve the next page of results for this operation.
+        /// If this value is null, it retrieves the first page.
         /// </para>
         /// </summary>
         public string NextToken

@@ -43,7 +43,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property DisplayName. 
         /// <para>
-        /// The name of the application shown to end users.
+        /// The name of the application shown to the end users.
         /// </para>
         /// </summary>
         public string DisplayName
@@ -115,7 +115,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property LaunchPath. 
         /// <para>
-        /// The path to the application executable.
+        /// The path to the application executable in the instance.
         /// </para>
         /// </summary>
         public string LaunchPath
@@ -133,7 +133,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property Metadata. 
         /// <para>
-        /// Attributes that are not necessary for standard use are added to this map.
+        /// Additional attributes that describes the application.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Metadata
@@ -151,8 +151,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The unique identifier for the application. The format of the identifier is currently
-        /// undefined, but may contain any of the following symbols: <code>:/._</code> 
+        /// The unique identifier for the application.
         /// </para>
         /// </summary>
         public string Name

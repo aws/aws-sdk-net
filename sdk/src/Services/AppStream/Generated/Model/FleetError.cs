@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppStream.Model
 {
     /// <summary>
-    /// The deatils for fleet error.
+    /// The details of the fleet error.
     /// </summary>
     public partial class FleetError
     {

@@ -30,8 +30,9 @@ namespace Amazon.AppStream.Model
     /// <summary>
     /// Container for the parameters to the UpdateFleet operation.
     /// Updates an existing fleet. All the attributes except the fleet name can be updated
-    /// in the INACTIVE state. Only ComputeResourceCapacity and imageName can be updated in
-    /// any other state.
+    /// in the <b>STOPPED</b> state. When a fleet is in the <b>RUNNING</b> state, only <code>DisplayName</code>
+    /// and <code>ComputeCapacity</code> can be updated. A fleet cannot be updated in a status
+    /// of <b>STARTING</b> or <b>STOPPING</b>.
     /// </summary>
     public partial class UpdateFleetRequest : AmazonAppStreamRequest
     {
@@ -40,6 +41,7 @@ namespace Amazon.AppStream.Model
         private string _description;
         private int? _disconnectTimeoutInSeconds;
         private string _displayName;
+        private bool? _enableDefaultInternetAccess;
         private string _imageName;
         private string _instanceType;
         private int? _maxUserDurationInSeconds;
@@ -49,7 +51,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property ComputeCapacity. 
         /// <para>
-        /// Parameters for the capacity allocated to the fleet. 
+        /// The parameters for the capacity allocated to the fleet. 
         /// </para>
         /// </summary>
         public ComputeCapacity ComputeCapacity
@@ -67,8 +69,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property DeleteVpcConfig. 
         /// <para>
-        /// Delete Vpc Config, if the parameter is set and the fleet has Vpc Config, it can be
-        /// deleted.
+        /// Delete the VPC association for the specified fleet.
         /// </para>
         /// </summary>
         public bool DeleteVpcConfig
@@ -84,7 +85,10 @@ namespace Amazon.AppStream.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Description.
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// The description displayed to end users on the AppStream 2.0 portal.
+        /// </para>
         /// </summary>
         public string Description
         {
@@ -101,7 +105,9 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property DisconnectTimeoutInSeconds. 
         /// <para>
-        /// The time after disconnection when a session is considered to have ended. 
+        /// The time after disconnection when a session is considered to have ended. When the
+        /// user reconnects after a disconnection, the user is connected to the same instance
+        /// within this time interval.
         /// </para>
         /// </summary>
         public int DisconnectTimeoutInSeconds
@@ -117,7 +123,10 @@ namespace Amazon.AppStream.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DisplayName.
+        /// Gets and sets the property DisplayName. 
+        /// <para>
+        /// The name displayed to end users on the AppStream 2.0 portal.
+        /// </para>
         /// </summary>
         public string DisplayName
         {
@@ -129,6 +138,24 @@ namespace Amazon.AppStream.Model
         internal bool IsSetDisplayName()
         {
             return this._displayName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnableDefaultInternetAccess. 
+        /// <para>
+        /// Enable/Disable default Internet access from fleet.
+        /// </para>
+        /// </summary>
+        public bool EnableDefaultInternetAccess
+        {
+            get { return this._enableDefaultInternetAccess.GetValueOrDefault(); }
+            set { this._enableDefaultInternetAccess = value; }
+        }
+
+        // Check to see if EnableDefaultInternetAccess property is set
+        internal bool IsSetEnableDefaultInternetAccess()
+        {
+            return this._enableDefaultInternetAccess.HasValue; 
         }
 
         /// <summary>
@@ -152,7 +179,8 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
-        /// The instance type of compute resources for the fleet.
+        /// The instance type of compute resources for the fleet. Fleet instances are launched
+        /// from this instance type.
         /// </para>
         /// </summary>
         public string InstanceType

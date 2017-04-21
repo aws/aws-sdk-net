@@ -40,7 +40,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description displayed to end users on the AppStream portal.
+        /// The description displayed to end users on the AppStream 2.0 portal.
         /// </para>
         /// </summary>
         public string Description
@@ -58,7 +58,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property DisplayName. 
         /// <para>
-        /// The name displayed to end users on the AppStream portal.
+        /// The name displayed to end users on the AppStream 2.0 portal.
         /// </para>
         /// </summary>
         public string DisplayName
@@ -76,7 +76,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The unique name for this stack.
+        /// The unique identifier for this stack.
         /// </para>
         /// </summary>
         public string Name

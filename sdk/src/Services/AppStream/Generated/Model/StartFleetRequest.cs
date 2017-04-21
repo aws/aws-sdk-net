@@ -29,7 +29,7 @@ namespace Amazon.AppStream.Model
 {
     /// <summary>
     /// Container for the parameters to the StartFleet operation.
-    /// Activates a fleet.
+    /// Starts a fleet.
     /// </summary>
     public partial class StartFleetRequest : AmazonAppStreamRequest
     {
@@ -38,7 +38,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the fleet to activate.
+        /// The name of the fleet to start.
         /// </para>
         /// </summary>
         public string Name
