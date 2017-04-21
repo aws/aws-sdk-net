@@ -1,3 +1,13 @@
+### 3.3.80.0 (2017-04-21 18:02 UTC)
+* CloudFront (3.3.3.2)
+	* Updated to use new Core, version 3.3.13.0
+	* Fix AmazonCloudFrontUrlSigner bug in Linux/Mac.
+* MobileAnalytics (3.3.1.13)
+	* Fix BackgroundRunner to allow smooth application shutdown, and manual abort.
+* Core 3.3.13.0
+	* Implement support for x-amzn-error-message header. Fix issue with S3 chunk encoding and Content-Encoding header.
+	* all services packages updated to require new core
+
 ### 3.3.79.0 (2017-04-20 21:36 UTC)
 * DeviceFarm (3.3.2.0)
 	* API Update for AWS Device Farm: Support for Deals and Promotions 
