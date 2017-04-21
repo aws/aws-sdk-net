@@ -63,11 +63,11 @@ namespace Amazon.Kinesis.Model
     /// You receive a <code>LimitExceededException</code> when making a <code>CreateStream</code>
     /// request if you try to do one of the following:
     /// </para>
-    ///  <ul> <li>
+    ///  <ul> <li> 
     /// <para>
     /// Have more than five streams in the <code>CREATING</code> state at any point in time.
     /// </para>
-    ///  </li> <li>
+    ///  </li> <li> 
     /// <para>
     /// Create more shards than are authorized for your account.
     /// </para>

@@ -257,6 +257,7 @@ namespace Amazon.Kinesis
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. The stream might not be specified correctly.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/AddTagsToStream">REST API Reference for AddTagsToStream Operation</seealso>
         public AddTagsToStreamResponse AddTagsToStream(AddTagsToStreamRequest request)
         {
             var marshaller = new AddTagsToStreamRequestMarshaller();
@@ -276,6 +277,7 @@ namespace Amazon.Kinesis
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAddTagsToStream
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/AddTagsToStream">REST API Reference for AddTagsToStream Operation</seealso>
         public IAsyncResult BeginAddTagsToStream(AddTagsToStreamRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AddTagsToStreamRequestMarshaller();
@@ -292,6 +294,7 @@ namespace Amazon.Kinesis
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAddTagsToStream.</param>
         /// 
         /// <returns>Returns a  AddTagsToStreamResult from Kinesis.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/AddTagsToStream">REST API Reference for AddTagsToStream Operation</seealso>
         public  AddTagsToStreamResponse EndAddTagsToStream(IAsyncResult asyncResult)
         {
             return EndInvoke<AddTagsToStreamResponse>(asyncResult);
@@ -336,11 +339,11 @@ namespace Amazon.Kinesis
         /// You receive a <code>LimitExceededException</code> when making a <code>CreateStream</code>
         /// request if you try to do one of the following:
         /// </para>
-        ///  <ul> <li>
+        ///  <ul> <li> 
         /// <para>
         /// Have more than five streams in the <code>CREATING</code> state at any point in time.
         /// </para>
-        ///  </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// Create more shards than are authorized for your account.
         /// </para>
@@ -376,6 +379,7 @@ namespace Amazon.Kinesis
         /// The resource is not available for this operation. For successful operation, the resource
         /// needs to be in the <code>ACTIVE</code> state.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/CreateStream">REST API Reference for CreateStream Operation</seealso>
         public CreateStreamResponse CreateStream(CreateStreamRequest request)
         {
             var marshaller = new CreateStreamRequestMarshaller();
@@ -395,6 +399,7 @@ namespace Amazon.Kinesis
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateStream
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/CreateStream">REST API Reference for CreateStream Operation</seealso>
         public IAsyncResult BeginCreateStream(CreateStreamRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateStreamRequestMarshaller();
@@ -411,6 +416,7 @@ namespace Amazon.Kinesis
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateStream.</param>
         /// 
         /// <returns>Returns a  CreateStreamResult from Kinesis.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/CreateStream">REST API Reference for CreateStream Operation</seealso>
         public  CreateStreamResponse EndCreateStream(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateStreamResponse>(asyncResult);
@@ -447,6 +453,7 @@ namespace Amazon.Kinesis
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. The stream might not be specified correctly.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DecreaseStreamRetentionPeriod">REST API Reference for DecreaseStreamRetentionPeriod Operation</seealso>
         public DecreaseStreamRetentionPeriodResponse DecreaseStreamRetentionPeriod(string streamName, int retentionPeriodHours)
         {
             var request = new DecreaseStreamRetentionPeriodRequest();
@@ -482,6 +489,7 @@ namespace Amazon.Kinesis
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. The stream might not be specified correctly.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DecreaseStreamRetentionPeriod">REST API Reference for DecreaseStreamRetentionPeriod Operation</seealso>
         public DecreaseStreamRetentionPeriodResponse DecreaseStreamRetentionPeriod(DecreaseStreamRetentionPeriodRequest request)
         {
             var marshaller = new DecreaseStreamRetentionPeriodRequestMarshaller();
@@ -501,6 +509,7 @@ namespace Amazon.Kinesis
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDecreaseStreamRetentionPeriod
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DecreaseStreamRetentionPeriod">REST API Reference for DecreaseStreamRetentionPeriod Operation</seealso>
         public IAsyncResult BeginDecreaseStreamRetentionPeriod(DecreaseStreamRetentionPeriodRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DecreaseStreamRetentionPeriodRequestMarshaller();
@@ -517,6 +526,7 @@ namespace Amazon.Kinesis
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDecreaseStreamRetentionPeriod.</param>
         /// 
         /// <returns>Returns a  DecreaseStreamRetentionPeriodResult from Kinesis.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DecreaseStreamRetentionPeriod">REST API Reference for DecreaseStreamRetentionPeriod Operation</seealso>
         public  DecreaseStreamRetentionPeriodResponse EndDecreaseStreamRetentionPeriod(IAsyncResult asyncResult)
         {
             return EndInvoke<DecreaseStreamRetentionPeriodResponse>(asyncResult);
@@ -569,6 +579,7 @@ namespace Amazon.Kinesis
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. The stream might not be specified correctly.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DeleteStream">REST API Reference for DeleteStream Operation</seealso>
         public DeleteStreamResponse DeleteStream(DeleteStreamRequest request)
         {
             var marshaller = new DeleteStreamRequestMarshaller();
@@ -588,6 +599,7 @@ namespace Amazon.Kinesis
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteStream
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DeleteStream">REST API Reference for DeleteStream Operation</seealso>
         public IAsyncResult BeginDeleteStream(DeleteStreamRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteStreamRequestMarshaller();
@@ -604,6 +616,7 @@ namespace Amazon.Kinesis
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteStream.</param>
         /// 
         /// <returns>Returns a  DeleteStreamResult from Kinesis.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DeleteStream">REST API Reference for DeleteStream Operation</seealso>
         public  DeleteStreamResponse EndDeleteStream(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteStreamResponse>(asyncResult);
@@ -632,6 +645,7 @@ namespace Amazon.Kinesis
         /// The requested resource exceeds the maximum number allowed, or the number of concurrent
         /// stream requests exceeds the maximum number allowed (5).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DescribeLimits">REST API Reference for DescribeLimits Operation</seealso>
         public DescribeLimitsResponse DescribeLimits(DescribeLimitsRequest request)
         {
             var marshaller = new DescribeLimitsRequestMarshaller();
@@ -651,6 +665,7 @@ namespace Amazon.Kinesis
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeLimits
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DescribeLimits">REST API Reference for DescribeLimits Operation</seealso>
         public IAsyncResult BeginDescribeLimits(DescribeLimitsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeLimitsRequestMarshaller();
@@ -667,6 +682,7 @@ namespace Amazon.Kinesis
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeLimits.</param>
         /// 
         /// <returns>Returns a  DescribeLimitsResult from Kinesis.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DescribeLimits">REST API Reference for DescribeLimits Operation</seealso>
         public  DescribeLimitsResponse EndDescribeLimits(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeLimitsResponse>(asyncResult);
@@ -715,6 +731,7 @@ namespace Amazon.Kinesis
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. The stream might not be specified correctly.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DescribeStream">REST API Reference for DescribeStream Operation</seealso>
         public DescribeStreamResponse DescribeStream(DescribeStreamRequest request)
         {
             var marshaller = new DescribeStreamRequestMarshaller();
@@ -734,6 +751,7 @@ namespace Amazon.Kinesis
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeStream
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DescribeStream">REST API Reference for DescribeStream Operation</seealso>
         public IAsyncResult BeginDescribeStream(DescribeStreamRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeStreamRequestMarshaller();
@@ -750,6 +768,7 @@ namespace Amazon.Kinesis
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeStream.</param>
         /// 
         /// <returns>Returns a  DescribeStreamResult from Kinesis.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DescribeStream">REST API Reference for DescribeStream Operation</seealso>
         public  DescribeStreamResponse EndDescribeStream(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeStreamResponse>(asyncResult);
@@ -780,6 +799,7 @@ namespace Amazon.Kinesis
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. The stream might not be specified correctly.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DisableEnhancedMonitoring">REST API Reference for DisableEnhancedMonitoring Operation</seealso>
         public DisableEnhancedMonitoringResponse DisableEnhancedMonitoring(DisableEnhancedMonitoringRequest request)
         {
             var marshaller = new DisableEnhancedMonitoringRequestMarshaller();
@@ -799,6 +819,7 @@ namespace Amazon.Kinesis
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisableEnhancedMonitoring
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DisableEnhancedMonitoring">REST API Reference for DisableEnhancedMonitoring Operation</seealso>
         public IAsyncResult BeginDisableEnhancedMonitoring(DisableEnhancedMonitoringRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DisableEnhancedMonitoringRequestMarshaller();
@@ -815,6 +836,7 @@ namespace Amazon.Kinesis
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisableEnhancedMonitoring.</param>
         /// 
         /// <returns>Returns a  DisableEnhancedMonitoringResult from Kinesis.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DisableEnhancedMonitoring">REST API Reference for DisableEnhancedMonitoring Operation</seealso>
         public  DisableEnhancedMonitoringResponse EndDisableEnhancedMonitoring(IAsyncResult asyncResult)
         {
             return EndInvoke<DisableEnhancedMonitoringResponse>(asyncResult);
@@ -845,6 +867,7 @@ namespace Amazon.Kinesis
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. The stream might not be specified correctly.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/EnableEnhancedMonitoring">REST API Reference for EnableEnhancedMonitoring Operation</seealso>
         public EnableEnhancedMonitoringResponse EnableEnhancedMonitoring(EnableEnhancedMonitoringRequest request)
         {
             var marshaller = new EnableEnhancedMonitoringRequestMarshaller();
@@ -864,6 +887,7 @@ namespace Amazon.Kinesis
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndEnableEnhancedMonitoring
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/EnableEnhancedMonitoring">REST API Reference for EnableEnhancedMonitoring Operation</seealso>
         public IAsyncResult BeginEnableEnhancedMonitoring(EnableEnhancedMonitoringRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new EnableEnhancedMonitoringRequestMarshaller();
@@ -880,6 +904,7 @@ namespace Amazon.Kinesis
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginEnableEnhancedMonitoring.</param>
         /// 
         /// <returns>Returns a  EnableEnhancedMonitoringResult from Kinesis.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/EnableEnhancedMonitoring">REST API Reference for EnableEnhancedMonitoring Operation</seealso>
         public  EnableEnhancedMonitoringResponse EndEnableEnhancedMonitoring(IAsyncResult asyncResult)
         {
             return EndInvoke<EnableEnhancedMonitoringResponse>(asyncResult);
@@ -975,6 +1000,7 @@ namespace Amazon.Kinesis
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. The stream might not be specified correctly.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/GetRecords">REST API Reference for GetRecords Operation</seealso>
         public GetRecordsResponse GetRecords(GetRecordsRequest request)
         {
             var marshaller = new GetRecordsRequestMarshaller();
@@ -994,6 +1020,7 @@ namespace Amazon.Kinesis
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetRecords
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/GetRecords">REST API Reference for GetRecords Operation</seealso>
         public IAsyncResult BeginGetRecords(GetRecordsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetRecordsRequestMarshaller();
@@ -1010,6 +1037,7 @@ namespace Amazon.Kinesis
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetRecords.</param>
         /// 
         /// <returns>Returns a  GetRecordsResult from Kinesis.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/GetRecords">REST API Reference for GetRecords Operation</seealso>
         public  GetRecordsResponse EndGetRecords(IAsyncResult asyncResult)
         {
             return EndInvoke<GetRecordsResponse>(asyncResult);
@@ -1089,6 +1117,7 @@ namespace Amazon.Kinesis
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. The stream might not be specified correctly.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/GetShardIterator">REST API Reference for GetShardIterator Operation</seealso>
         public GetShardIteratorResponse GetShardIterator(GetShardIteratorRequest request)
         {
             var marshaller = new GetShardIteratorRequestMarshaller();
@@ -1108,6 +1137,7 @@ namespace Amazon.Kinesis
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetShardIterator
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/GetShardIterator">REST API Reference for GetShardIterator Operation</seealso>
         public IAsyncResult BeginGetShardIterator(GetShardIteratorRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetShardIteratorRequestMarshaller();
@@ -1124,6 +1154,7 @@ namespace Amazon.Kinesis
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetShardIterator.</param>
         /// 
         /// <returns>Returns a  GetShardIteratorResult from Kinesis.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/GetShardIterator">REST API Reference for GetShardIterator Operation</seealso>
         public  GetShardIteratorResponse EndGetShardIterator(IAsyncResult asyncResult)
         {
             return EndInvoke<GetShardIteratorResponse>(asyncResult);
@@ -1163,6 +1194,7 @@ namespace Amazon.Kinesis
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. The stream might not be specified correctly.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/IncreaseStreamRetentionPeriod">REST API Reference for IncreaseStreamRetentionPeriod Operation</seealso>
         public IncreaseStreamRetentionPeriodResponse IncreaseStreamRetentionPeriod(string streamName, int retentionPeriodHours)
         {
             var request = new IncreaseStreamRetentionPeriodRequest();
@@ -1201,6 +1233,7 @@ namespace Amazon.Kinesis
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. The stream might not be specified correctly.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/IncreaseStreamRetentionPeriod">REST API Reference for IncreaseStreamRetentionPeriod Operation</seealso>
         public IncreaseStreamRetentionPeriodResponse IncreaseStreamRetentionPeriod(IncreaseStreamRetentionPeriodRequest request)
         {
             var marshaller = new IncreaseStreamRetentionPeriodRequestMarshaller();
@@ -1220,6 +1253,7 @@ namespace Amazon.Kinesis
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndIncreaseStreamRetentionPeriod
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/IncreaseStreamRetentionPeriod">REST API Reference for IncreaseStreamRetentionPeriod Operation</seealso>
         public IAsyncResult BeginIncreaseStreamRetentionPeriod(IncreaseStreamRetentionPeriodRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new IncreaseStreamRetentionPeriodRequestMarshaller();
@@ -1236,6 +1270,7 @@ namespace Amazon.Kinesis
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginIncreaseStreamRetentionPeriod.</param>
         /// 
         /// <returns>Returns a  IncreaseStreamRetentionPeriodResult from Kinesis.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/IncreaseStreamRetentionPeriod">REST API Reference for IncreaseStreamRetentionPeriod Operation</seealso>
         public  IncreaseStreamRetentionPeriodResponse EndIncreaseStreamRetentionPeriod(IAsyncResult asyncResult)
         {
             return EndInvoke<IncreaseStreamRetentionPeriodResponse>(asyncResult);
@@ -1276,6 +1311,7 @@ namespace Amazon.Kinesis
         /// The requested resource exceeds the maximum number allowed, or the number of concurrent
         /// stream requests exceeds the maximum number allowed (5).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/ListStreams">REST API Reference for ListStreams Operation</seealso>
         public ListStreamsResponse ListStreams()
         {
             return ListStreams(new ListStreamsRequest());
@@ -1313,6 +1349,7 @@ namespace Amazon.Kinesis
         /// The requested resource exceeds the maximum number allowed, or the number of concurrent
         /// stream requests exceeds the maximum number allowed (5).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/ListStreams">REST API Reference for ListStreams Operation</seealso>
         public ListStreamsResponse ListStreams(ListStreamsRequest request)
         {
             var marshaller = new ListStreamsRequestMarshaller();
@@ -1332,6 +1369,7 @@ namespace Amazon.Kinesis
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListStreams
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/ListStreams">REST API Reference for ListStreams Operation</seealso>
         public IAsyncResult BeginListStreams(ListStreamsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListStreamsRequestMarshaller();
@@ -1348,6 +1386,7 @@ namespace Amazon.Kinesis
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListStreams.</param>
         /// 
         /// <returns>Returns a  ListStreamsResult from Kinesis.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/ListStreams">REST API Reference for ListStreams Operation</seealso>
         public  ListStreamsResponse EndListStreams(IAsyncResult asyncResult)
         {
             return EndInvoke<ListStreamsResponse>(asyncResult);
@@ -1374,6 +1413,7 @@ namespace Amazon.Kinesis
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. The stream might not be specified correctly.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/ListTagsForStream">REST API Reference for ListTagsForStream Operation</seealso>
         public ListTagsForStreamResponse ListTagsForStream(ListTagsForStreamRequest request)
         {
             var marshaller = new ListTagsForStreamRequestMarshaller();
@@ -1393,6 +1433,7 @@ namespace Amazon.Kinesis
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTagsForStream
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/ListTagsForStream">REST API Reference for ListTagsForStream Operation</seealso>
         public IAsyncResult BeginListTagsForStream(ListTagsForStreamRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListTagsForStreamRequestMarshaller();
@@ -1409,6 +1450,7 @@ namespace Amazon.Kinesis
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTagsForStream.</param>
         /// 
         /// <returns>Returns a  ListTagsForStreamResult from Kinesis.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/ListTagsForStream">REST API Reference for ListTagsForStream Operation</seealso>
         public  ListTagsForStreamResponse EndListTagsForStream(IAsyncResult asyncResult)
         {
             return EndInvoke<ListTagsForStreamResponse>(asyncResult);
@@ -1491,6 +1533,7 @@ namespace Amazon.Kinesis
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. The stream might not be specified correctly.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/MergeShards">REST API Reference for MergeShards Operation</seealso>
         public MergeShardsResponse MergeShards(MergeShardsRequest request)
         {
             var marshaller = new MergeShardsRequestMarshaller();
@@ -1510,6 +1553,7 @@ namespace Amazon.Kinesis
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndMergeShards
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/MergeShards">REST API Reference for MergeShards Operation</seealso>
         public IAsyncResult BeginMergeShards(MergeShardsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new MergeShardsRequestMarshaller();
@@ -1526,6 +1570,7 @@ namespace Amazon.Kinesis
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginMergeShards.</param>
         /// 
         /// <returns>Returns a  MergeShardsResult from Kinesis.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/MergeShards">REST API Reference for MergeShards Operation</seealso>
         public  MergeShardsResponse EndMergeShards(IAsyncResult asyncResult)
         {
             return EndInvoke<MergeShardsResponse>(asyncResult);
@@ -1610,6 +1655,7 @@ namespace Amazon.Kinesis
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. The stream might not be specified correctly.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/PutRecord">REST API Reference for PutRecord Operation</seealso>
         public PutRecordResponse PutRecord(PutRecordRequest request)
         {
             var marshaller = new PutRecordRequestMarshaller();
@@ -1629,6 +1675,7 @@ namespace Amazon.Kinesis
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutRecord
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/PutRecord">REST API Reference for PutRecord Operation</seealso>
         public IAsyncResult BeginPutRecord(PutRecordRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new PutRecordRequestMarshaller();
@@ -1645,6 +1692,7 @@ namespace Amazon.Kinesis
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutRecord.</param>
         /// 
         /// <returns>Returns a  PutRecordResult from Kinesis.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/PutRecord">REST API Reference for PutRecord Operation</seealso>
         public  PutRecordResponse EndPutRecord(IAsyncResult asyncResult)
         {
             return EndInvoke<PutRecordResponse>(asyncResult);
@@ -1751,6 +1799,7 @@ namespace Amazon.Kinesis
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. The stream might not be specified correctly.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/PutRecords">REST API Reference for PutRecords Operation</seealso>
         public PutRecordsResponse PutRecords(PutRecordsRequest request)
         {
             var marshaller = new PutRecordsRequestMarshaller();
@@ -1770,6 +1819,7 @@ namespace Amazon.Kinesis
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutRecords
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/PutRecords">REST API Reference for PutRecords Operation</seealso>
         public IAsyncResult BeginPutRecords(PutRecordsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new PutRecordsRequestMarshaller();
@@ -1786,6 +1836,7 @@ namespace Amazon.Kinesis
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutRecords.</param>
         /// 
         /// <returns>Returns a  PutRecordsResult from Kinesis.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/PutRecords">REST API Reference for PutRecords Operation</seealso>
         public  PutRecordsResponse EndPutRecords(IAsyncResult asyncResult)
         {
             return EndInvoke<PutRecordsResponse>(asyncResult);
@@ -1822,6 +1873,7 @@ namespace Amazon.Kinesis
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. The stream might not be specified correctly.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/RemoveTagsFromStream">REST API Reference for RemoveTagsFromStream Operation</seealso>
         public RemoveTagsFromStreamResponse RemoveTagsFromStream(RemoveTagsFromStreamRequest request)
         {
             var marshaller = new RemoveTagsFromStreamRequestMarshaller();
@@ -1841,6 +1893,7 @@ namespace Amazon.Kinesis
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRemoveTagsFromStream
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/RemoveTagsFromStream">REST API Reference for RemoveTagsFromStream Operation</seealso>
         public IAsyncResult BeginRemoveTagsFromStream(RemoveTagsFromStreamRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RemoveTagsFromStreamRequestMarshaller();
@@ -1857,6 +1910,7 @@ namespace Amazon.Kinesis
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRemoveTagsFromStream.</param>
         /// 
         /// <returns>Returns a  RemoveTagsFromStreamResult from Kinesis.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/RemoveTagsFromStream">REST API Reference for RemoveTagsFromStream Operation</seealso>
         public  RemoveTagsFromStreamResponse EndRemoveTagsFromStream(IAsyncResult asyncResult)
         {
             return EndInvoke<RemoveTagsFromStreamResponse>(asyncResult);
@@ -1953,6 +2007,7 @@ namespace Amazon.Kinesis
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. The stream might not be specified correctly.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/SplitShard">REST API Reference for SplitShard Operation</seealso>
         public SplitShardResponse SplitShard(SplitShardRequest request)
         {
             var marshaller = new SplitShardRequestMarshaller();
@@ -1972,6 +2027,7 @@ namespace Amazon.Kinesis
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSplitShard
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/SplitShard">REST API Reference for SplitShard Operation</seealso>
         public IAsyncResult BeginSplitShard(SplitShardRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new SplitShardRequestMarshaller();
@@ -1988,6 +2044,7 @@ namespace Amazon.Kinesis
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSplitShard.</param>
         /// 
         /// <returns>Returns a  SplitShardResult from Kinesis.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/SplitShard">REST API Reference for SplitShard Operation</seealso>
         public  SplitShardResponse EndSplitShard(IAsyncResult asyncResult)
         {
             return EndInvoke<SplitShardResponse>(asyncResult);
@@ -2048,6 +2105,7 @@ namespace Amazon.Kinesis
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. The stream might not be specified correctly.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/UpdateShardCount">REST API Reference for UpdateShardCount Operation</seealso>
         public UpdateShardCountResponse UpdateShardCount(UpdateShardCountRequest request)
         {
             var marshaller = new UpdateShardCountRequestMarshaller();
@@ -2067,6 +2125,7 @@ namespace Amazon.Kinesis
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateShardCount
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/UpdateShardCount">REST API Reference for UpdateShardCount Operation</seealso>
         public IAsyncResult BeginUpdateShardCount(UpdateShardCountRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateShardCountRequestMarshaller();
@@ -2083,6 +2142,7 @@ namespace Amazon.Kinesis
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateShardCount.</param>
         /// 
         /// <returns>Returns a  UpdateShardCountResult from Kinesis.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/UpdateShardCount">REST API Reference for UpdateShardCount Operation</seealso>
         public  UpdateShardCountResponse EndUpdateShardCount(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateShardCountResponse>(asyncResult);
