@@ -29,8 +29,8 @@ namespace Amazon.S3.Model
         private StorageClassAnalysisDataExport storageClassAnalysisDataExport;
 
         /// <summary>
-        // A container used to describe how data related to the storage class analysis should be exported.
-        /// <summary>
+        /// A container used to describe how data related to the storage class analysis should be exported.
+        /// </summary>
         public StorageClassAnalysisDataExport DataExport
         {
             get { return this.storageClassAnalysisDataExport; }

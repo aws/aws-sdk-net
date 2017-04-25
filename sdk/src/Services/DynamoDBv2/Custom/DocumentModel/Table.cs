@@ -543,6 +543,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <summary>
         /// Creates a map of attribute names mapped to AttributeValueUpdate objects.
         /// </summary>
+        /// <param name="doc"></param>
         /// <param name="changedAttributesOnly">If true, only attributes that have been changed will be in the map.</param>
         /// <returns></returns>
         public Dictionary<string, AttributeValueUpdate> ToAttributeUpdateMap(Document doc, bool changedAttributesOnly)

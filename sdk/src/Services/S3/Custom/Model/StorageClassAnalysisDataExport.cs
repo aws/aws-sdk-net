@@ -30,8 +30,8 @@ namespace Amazon.S3.Model
         private AnalyticsExportDestination analyticsExportDestination;
 
         /// <summary>
-        // The version of the output schema to use when exporting data. Must be V_1.
-        /// <summary>
+        /// The version of the output schema to use when exporting data. Must be V_1.
+        /// </summary>
         public StorageClassAnalysisSchemaVersion OutputSchemaVersion
         {
             get { return this.storageClassAnalysisSchemaVersion; }
@@ -45,8 +45,8 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        // The place to store the data for an analysis.
-        /// <summary>
+        /// The place to store the data for an analysis.
+        /// </summary>
         public AnalyticsExportDestination Destination
         {
             get { return this.analyticsExportDestination; }

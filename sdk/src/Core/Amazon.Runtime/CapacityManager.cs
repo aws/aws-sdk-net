@@ -55,7 +55,6 @@ namespace Amazon.Runtime.Internal
         /// This method acquires a said retry capacity if the container has the capacity.
         /// </summary>
         /// <param name="retryCapacity">Contains the RetryCapacity object for the said ServiceURL.</param>
-        /// <param name="capacity">The retry capacity that needs to be acquired for a retry request.</returns>
         public bool TryAcquireCapacity(RetryCapacity retryCapacity)
         {
             if (THROTTLE_RETRY_REQUEST_COST < 0)
@@ -80,8 +79,8 @@ namespace Amazon.Runtime.Internal
         /// This method calls a method to release capacity back 
         /// based on whether it was a successful response or a successful retry response. This is invoked by a retry request response.
         /// </summary>
+        /// <param name="isRetryRequest">if this request is a retry, use a different capacity cost</param>
         /// <param name="retryCapacity">Contains the RetryCapacity object for the said ServiceURL.</param>
-        /// <param name="capacity">The capacity that needs to be released based on whether it was a successful response or a successful retry response.</returns>
         public void TryReleaseCapacity(bool isRetryRequest,RetryCapacity retryCapacity) 
         {
             if(isRetryRequest)
@@ -173,7 +172,7 @@ namespace Amazon.Runtime.Internal
         /// This method releases capacity back. This is invoked by the TryReleaseCapacity method.
         /// </summary>
         /// <param name="retryCapacity">Contains the RetryCapacity object for the said ServiceURL.</param>
-        /// <param name="capacity">The capacity that needs to be released based on whether it was a successful response or a successful retry response.</returns>
+        /// <param name="capacity">The capacity that needs to be released based on whether it was a successful response or a successful retry response.</param>
         private static void ReleaseCapacity(int capacity, RetryCapacity retryCapacity)
         {
             if (retryCapacity.AvailableCapacity >= 0 && retryCapacity.AvailableCapacity < retryCapacity.MaxCapacity)

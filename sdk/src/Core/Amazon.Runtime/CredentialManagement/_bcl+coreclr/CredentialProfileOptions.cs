@@ -17,6 +17,7 @@ using Amazon.Util;
 
 namespace Amazon.Runtime.CredentialManagement
 {
+#if BCL
     /// <summary>
     /// The options that are available for creating AWSCredentials with the AWSCredentialsFactory.
     /// The type of AWSCredentials that are created depends on which Options are set.
@@ -27,10 +28,21 @@ namespace Amazon.Runtime.CredentialManagement
     /// BasicAWSCredentials         AccessKey SecretKey
     /// SessionAWSCredentials       AccessKey SecretKey Token
     /// AssmeRoleAWSCredentials     SourceProfile RoleArn [ExternalID] [MfaSerial]
-#if BCL
     /// FederatedAWSCredentials     EndpointName RoleArn [UserIdentity]
-#endif
     /// </summary>
+#else
+    /// <summary>
+    /// The options that are available for creating AWSCredentials with the AWSCredentialsFactory.
+    /// The type of AWSCredentials that are created depends on which Options are set.
+    ///
+    /// Below are the different types of credentials returned, along with the options that are used to obtain them.
+    /// ([] denotes options that are not required)
+    ///
+    /// BasicAWSCredentials         AccessKey SecretKey
+    /// SessionAWSCredentials       AccessKey SecretKey Token
+    /// AssmeRoleAWSCredentials     SourceProfile RoleArn [ExternalID] [MfaSerial]
+    /// </summary>
+#endif
     public class CredentialProfileOptions
     {
         /// <summary>
@@ -51,13 +63,11 @@ namespace Amazon.Runtime.CredentialManagement
         /// The serial number of the MFA to use in assume role AWSCredentials.
         /// </summary>
         public string MfaSerial { get; set; }
-        /// <summary>
 #if BCL
-        /// The role ARN to use when creating assume role or federated AWSCredentials.
+        /// <summary>The role ARN to use when creating assume role or federated AWSCredentials.</summary>
 #else
-        /// The role ARN to use when creating assume role AWSCredentials.
+        /// <summary>The role ARN to use when creating assume role AWSCredentials.</summary>
 #endif
-        /// </summary>
         public string RoleArn { get; set; }
         /// <summary>
         /// The secret key to use when creating AWSCredentials.

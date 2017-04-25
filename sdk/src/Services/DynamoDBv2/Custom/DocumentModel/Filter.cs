@@ -94,6 +94,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             /// </summary>
             /// <param name="conversion"></param>
             /// <param name="shouldConvertToEpochSeconds"></param>
+            /// <param name="attributeName"></param>
             /// <returns></returns>
             public Condition ToCondition(DynamoDBEntryConversion conversion, bool shouldConvertToEpochSeconds, string attributeName)
             {

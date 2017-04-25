@@ -101,13 +101,13 @@ namespace Amazon.DNXCore.IntegrationTests
                 attachmentId = GetAttachmentId(comms, attachmentId);
                 Assert.NotNull(attachmentId);
 
-                VerifyAttachment(attachmentData, filename, attachmentId);
+                await VerifyAttachment(attachmentData, filename, attachmentId);
 
                 cases = (await Client.DescribeCasesAsync(new DescribeCasesRequest { Language = LANGUAGE, CaseIdList = new List<string> { caseId }, IncludeCommunications = true })).Cases;
                 Assert.Equal(1, cases.Count);
                 var communications = cases[0].RecentCommunications;
                 attachmentId = GetAttachmentId(communications.Communications, attachmentId);
-                VerifyAttachment(attachmentData, filename, attachmentId);
+                await VerifyAttachment(attachmentData, filename, attachmentId);
             }
             finally
             {

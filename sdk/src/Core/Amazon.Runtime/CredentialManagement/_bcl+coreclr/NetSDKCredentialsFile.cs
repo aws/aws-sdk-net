@@ -35,6 +35,7 @@ namespace Amazon.Runtime.CredentialManagement
     /// <para>
     /// This class is not threadsafe.
     /// </para>
+    /// </summary>
     public class NetSDKCredentialsFile : ICredentialProfileStore
     {
         public const string DefaultProfileName = "Default";

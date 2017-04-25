@@ -353,16 +353,22 @@ namespace Amazon.Runtime
         {
         }
 
+#if UNITY
         /// <summary>
         /// Overrides the default request timeout value.
-#if UNITY
         /// Unity HTTP client does not support timeouts, so this value is not used.
-#elif BCL35
-        /// This field does not impact Begin*/End* calls. A manual timeout must be implemented.
-#elif BCL45
-        /// This field does not impact *Async calls. A manual timeout (for instance, using CancellationToken) must be implemented.
-#endif
         /// </summary>
+#elif BCL35
+        /// <summary>
+        /// Overrides the default request timeout value.
+        /// This field does not impact Begin*/End* calls. A manual timeout must be implemented.
+        /// </summary>
+#elif BCL45
+        /// <summary>
+        /// Overrides the default request timeout value.
+        /// This field does not impact *Async calls. A manual timeout (for instance, using CancellationToken) must be implemented.
+        /// </summary>
+#endif
         /// <remarks>
         /// <para>
         /// If the value is set, the value is assigned to the Timeout property of the HttpWebRequest/HttpClient object used

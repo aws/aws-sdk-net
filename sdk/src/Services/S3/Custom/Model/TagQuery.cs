@@ -155,7 +155,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        // Object's verisonId
+        /// Object's verisonId
         /// </summary>
         public string VersionId
         {

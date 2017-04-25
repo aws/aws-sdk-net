@@ -54,7 +54,7 @@ namespace Amazon.S3
         /// <param name="request">The GetPreSignedUrlRequest that defines the
         /// parameters of the operation.</param>
         /// <param name="useSigV2Fallback">determines if signing will fall back to SigV2 if the
-        /// signing region is us-east-1
+        /// signing region is us-east-1</param>
         /// <returns>A string that is the signed http request.</returns>
         /// <exception cref="T:System.ArgumentException" />
         /// <exception cref="T:System.ArgumentNullException" />

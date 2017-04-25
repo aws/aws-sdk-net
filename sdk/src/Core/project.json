@@ -40,7 +40,8 @@
   "frameworks": {
     "netstandard1.3": {
       "buildOptions": {
-        "define": [ "ADD_SUPPORT_IORDERED_DICTIONARY", "ADD_SUPPORT_ICLONEABLE" ]
+        "define": [ "ADD_SUPPORT_IORDERED_DICTIONARY", "ADD_SUPPORT_ICLONEABLE" ],
+        "nowarn" : ["CS1591"]
       },
       "dependencies": {
         "System.Collections": "4.0.11",
