@@ -1,3 +1,7 @@
+### 3.3.82.0 (2017-04-26 17:29 UTC)
+* RDS (3.3.9.0)
+	* With Amazon Relational Database Service (Amazon RDS) running MySQL or Amazon Aurora, you can now authenticate to your DB instance using IAM database authentication.
+
 ### 3.3.81.1 (2017-04-26 14:09 UTC)
 * DynamoDBv2 (3.3.4.8)
 	* Fixed xml doc errors
