@@ -1,3 +1,11 @@
+### 3.3.81.1 (2017-04-26 14:09 UTC)
+* DynamoDBv2 (3.3.4.8)
+	* Fixed xml doc errors
+* S3 (3.3.5.14)
+	* Fixed xml doc errors, made all unmarshallers public
+* Core 3.3.13.1
+	* Fixed xml doc errors
+
 ### 3.3.81.0 (2017-04-21 20:15 UTC)
 * AppStream (3.3.1.0)
 	* The new feature named "Default Internet Access" will enable Internet access from AppStream 2.0 instances - image builders and fleet instances. Admins will check a flag either through AWS management console for AppStream 2.0 or through API while creating an image builder or while creating/updating a fleet.
