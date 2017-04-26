@@ -22,7 +22,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
      /// <summary>
      ///   Initiator Unmarshaller
      /// </summary>
-    internal class InitiatorUnmarshaller : IUnmarshaller<Initiator, XmlUnmarshallerContext>, IUnmarshaller<Initiator, JsonUnmarshallerContext> 
+    public class InitiatorUnmarshaller : IUnmarshaller<Initiator, XmlUnmarshallerContext>, IUnmarshaller<Initiator, JsonUnmarshallerContext> 
     {
         public Initiator Unmarshall(XmlUnmarshallerContext context) 
         {

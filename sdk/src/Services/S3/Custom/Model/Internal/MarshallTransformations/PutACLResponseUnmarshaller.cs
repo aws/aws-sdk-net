@@ -25,7 +25,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     ///    Response Unmarshaller for PutObjectAcl operation
     /// </summary>
-    internal class PutACLResponseUnmarshaller : S3ReponseUnmarshaller
+    public class PutACLResponseUnmarshaller : S3ReponseUnmarshaller
     {
 
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 

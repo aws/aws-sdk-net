@@ -26,7 +26,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     ///    Response Unmarshaller for GetObjectTorrent operation
     /// </summary>
-    internal class GetObjectTorrentResponseUnmarshaller : S3ReponseUnmarshaller
+    public class GetObjectTorrentResponseUnmarshaller : S3ReponseUnmarshaller
     {
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
         {   

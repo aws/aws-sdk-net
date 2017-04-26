@@ -26,7 +26,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     ///    Response Unmarshaller for CopyPart operation
     /// </summary>
-    internal class CopyPartResponseUnmarshaller : S3ReponseUnmarshaller
+    public class CopyPartResponseUnmarshaller : S3ReponseUnmarshaller
     {
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
         {   

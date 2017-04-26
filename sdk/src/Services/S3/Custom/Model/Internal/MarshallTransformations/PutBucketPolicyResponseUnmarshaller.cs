@@ -25,7 +25,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     ///    Response Unmarshaller for PutBucketPolicy operation
     /// </summary>
-    internal class PutBucketPolicyResponseUnmarshaller : S3ReponseUnmarshaller
+    public class PutBucketPolicyResponseUnmarshaller : S3ReponseUnmarshaller
     {
 
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 

@@ -20,7 +20,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for GetObjectTagging operation
     /// </summary>
-    internal class GetObjectTaggingResponseUnmarshaller : S3ReponseUnmarshaller
+    public class GetObjectTaggingResponseUnmarshaller : S3ReponseUnmarshaller
     {
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
         {

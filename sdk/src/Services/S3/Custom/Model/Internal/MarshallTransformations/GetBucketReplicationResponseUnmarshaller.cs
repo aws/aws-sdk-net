@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal.Transform;
 
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
-    internal class GetBucketReplicationResponseUnmarshaller : S3ReponseUnmarshaller
+    public class GetBucketReplicationResponseUnmarshaller : S3ReponseUnmarshaller
     {
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {

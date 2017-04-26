@@ -25,7 +25,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     ///    Response Unmarshaller for GetACL operation
     /// </summary>
-    internal class GetBucketAccelerateConfigurationResponseUnmarshaller : S3ReponseUnmarshaller
+    public class GetBucketAccelerateConfigurationResponseUnmarshaller : S3ReponseUnmarshaller
     {
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
         {

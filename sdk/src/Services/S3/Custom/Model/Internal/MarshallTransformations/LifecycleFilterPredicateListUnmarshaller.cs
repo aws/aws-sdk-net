@@ -22,7 +22,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// LifecycleFilterPredicate Unmarshaller
     /// </summary>
-    internal class LifecycleFilterPredicateListUnmarshaller : IUnmarshaller<List<LifecycleFilterPredicate>, XmlUnmarshallerContext>,
+    public class LifecycleFilterPredicateListUnmarshaller : IUnmarshaller<List<LifecycleFilterPredicate>, XmlUnmarshallerContext>,
         IUnmarshaller<List<LifecycleFilterPredicate>, JsonUnmarshallerContext>
     {
         public List<LifecycleFilterPredicate> Unmarshall(XmlUnmarshallerContext context)

@@ -22,7 +22,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// TaggedResource Unmarshaller
     /// </summary>
-    internal class TaggedResourceUnmarshaller : IUnmarshaller<TaggedResource, XmlUnmarshallerContext>
+    public class TaggedResourceUnmarshaller : IUnmarshaller<TaggedResource, XmlUnmarshallerContext>
     {
         public TaggedResource Unmarshall(XmlUnmarshallerContext context)
         {

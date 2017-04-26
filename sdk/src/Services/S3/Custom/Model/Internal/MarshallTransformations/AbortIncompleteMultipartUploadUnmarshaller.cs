@@ -22,7 +22,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
      /// <summary>
      ///   AbortIncompleteMultipartUpload Unmarshaller
      /// </summary>
-    internal class AbortIncompleteMultipartUploadUnmarshaller : IUnmarshaller<LifecycleRuleAbortIncompleteMultipartUpload, XmlUnmarshallerContext>, IUnmarshaller<LifecycleRuleAbortIncompleteMultipartUpload, JsonUnmarshallerContext> 
+    public class AbortIncompleteMultipartUploadUnmarshaller : IUnmarshaller<LifecycleRuleAbortIncompleteMultipartUpload, XmlUnmarshallerContext>, IUnmarshaller<LifecycleRuleAbortIncompleteMultipartUpload, JsonUnmarshallerContext> 
     {
         public LifecycleRuleAbortIncompleteMultipartUpload Unmarshall(XmlUnmarshallerContext context) 
         {

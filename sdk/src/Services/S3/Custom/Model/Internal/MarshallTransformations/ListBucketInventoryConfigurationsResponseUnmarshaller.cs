@@ -27,7 +27,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     ///    Response Unmarshaller for ListInventoryConfiguration operation
     /// </summary>
-    internal class ListBucketInventoryConfigurationsResponseUnmarshaller : S3ReponseUnmarshaller
+    public class ListBucketInventoryConfigurationsResponseUnmarshaller : S3ReponseUnmarshaller
     {
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {

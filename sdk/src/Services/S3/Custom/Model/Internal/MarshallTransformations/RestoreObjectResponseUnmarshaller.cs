@@ -26,7 +26,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     ///    Response Unmarshaller for RestoreObject operation
     /// </summary>
-    internal class RestoreObjectResponseUnmarshaller : S3ReponseUnmarshaller
+    public class RestoreObjectResponseUnmarshaller : S3ReponseUnmarshaller
     {
 
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 

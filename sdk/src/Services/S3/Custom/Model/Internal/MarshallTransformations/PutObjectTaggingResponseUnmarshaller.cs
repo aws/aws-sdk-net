@@ -20,7 +20,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DeleteObjectTagging operation
     /// </summary>
-    internal class PutObjectTaggingResponseUnmarshaller : S3ReponseUnmarshaller
+    public class PutObjectTaggingResponseUnmarshaller : S3ReponseUnmarshaller
     {
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
         {

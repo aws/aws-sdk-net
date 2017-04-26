@@ -22,7 +22,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
      /// <summary>
      ///   Transition Unmarshaller
      /// </summary>
-    internal class TransitionUnmarshaller : IUnmarshaller<LifecycleTransition, XmlUnmarshallerContext>, IUnmarshaller<LifecycleTransition, JsonUnmarshallerContext> 
+    public class TransitionUnmarshaller : IUnmarshaller<LifecycleTransition, XmlUnmarshallerContext>, IUnmarshaller<LifecycleTransition, JsonUnmarshallerContext> 
     {
         public LifecycleTransition Unmarshall(XmlUnmarshallerContext context) 
         {

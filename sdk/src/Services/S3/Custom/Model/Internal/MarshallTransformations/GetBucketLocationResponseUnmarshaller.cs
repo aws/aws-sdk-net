@@ -25,7 +25,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     ///    Response Unmarshaller for GetBucketLocation operation
     /// </summary>
-    internal class GetBucketLocationResponseUnmarshaller : S3ReponseUnmarshaller
+    public class GetBucketLocationResponseUnmarshaller : S3ReponseUnmarshaller
     {
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
         {   

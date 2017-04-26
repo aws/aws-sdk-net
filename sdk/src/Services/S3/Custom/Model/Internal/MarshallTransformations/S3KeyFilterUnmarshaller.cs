@@ -22,7 +22,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
      /// <summary>
      ///   Grant Unmarshaller
      /// </summary>
-    internal class S3KeyFilterUnmarshaller : IUnmarshaller<S3KeyFilter, XmlUnmarshallerContext>, IUnmarshaller<S3KeyFilter, JsonUnmarshallerContext> 
+    public class S3KeyFilterUnmarshaller : IUnmarshaller<S3KeyFilter, XmlUnmarshallerContext>, IUnmarshaller<S3KeyFilter, JsonUnmarshallerContext> 
     {
         public S3KeyFilter Unmarshall(XmlUnmarshallerContext context) 
         {

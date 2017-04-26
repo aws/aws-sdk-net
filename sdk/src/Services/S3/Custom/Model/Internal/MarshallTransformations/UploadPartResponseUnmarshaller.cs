@@ -26,7 +26,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     ///    Response Unmarshaller for UploadPart operation
     /// </summary>
-    internal class UploadPartResponseUnmarshaller : S3ReponseUnmarshaller
+    public class UploadPartResponseUnmarshaller : S3ReponseUnmarshaller
     {
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
         {   

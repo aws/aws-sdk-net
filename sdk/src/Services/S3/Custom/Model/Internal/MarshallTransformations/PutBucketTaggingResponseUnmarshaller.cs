@@ -25,7 +25,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     ///    Response Unmarshaller for PutBucketTagging operation
     /// </summary>
-    internal class PutBucketTaggingResponseUnmarshaller : S3ReponseUnmarshaller
+    public class PutBucketTaggingResponseUnmarshaller : S3ReponseUnmarshaller
     {
 
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 

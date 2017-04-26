@@ -22,7 +22,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
      /// <summary>
      ///   VersionsItem Unmarshaller
      /// </summary>
-    internal class VersionsItemUnmarshaller : IUnmarshaller<S3ObjectVersion, XmlUnmarshallerContext>, IUnmarshaller<S3ObjectVersion, JsonUnmarshallerContext> 
+    public class VersionsItemUnmarshaller : IUnmarshaller<S3ObjectVersion, XmlUnmarshallerContext>, IUnmarshaller<S3ObjectVersion, JsonUnmarshallerContext> 
     {
         public S3ObjectVersion Unmarshall(XmlUnmarshallerContext context) 
         {

@@ -24,7 +24,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
      /// <summary>
      ///   RulesItem Unmarshaller
      /// </summary>
-    internal class RulesItemUnmarshaller : IUnmarshaller<LifecycleRule, XmlUnmarshallerContext>, IUnmarshaller<LifecycleRule, JsonUnmarshallerContext> 
+    public class RulesItemUnmarshaller : IUnmarshaller<LifecycleRule, XmlUnmarshallerContext>, IUnmarshaller<LifecycleRule, JsonUnmarshallerContext> 
     {
         public LifecycleRule Unmarshall(XmlUnmarshallerContext context) 
         {

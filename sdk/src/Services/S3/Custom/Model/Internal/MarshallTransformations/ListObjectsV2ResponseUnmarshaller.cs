@@ -25,7 +25,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     ///    Response Unmarshaller for ListObjects operation
     /// </summary>
-    internal class ListObjectsV2ResponseUnmarshaller : S3ReponseUnmarshaller
+    public class ListObjectsV2ResponseUnmarshaller : S3ReponseUnmarshaller
     {
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
         {

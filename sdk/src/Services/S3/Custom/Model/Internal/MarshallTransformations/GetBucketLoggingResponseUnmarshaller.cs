@@ -25,7 +25,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     ///    Response Unmarshaller for GetBucketLogging operation
     /// </summary>
-    internal class GetBucketLoggingResponseUnmarshaller : S3ReponseUnmarshaller
+    public class GetBucketLoggingResponseUnmarshaller : S3ReponseUnmarshaller
     {
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
         {   

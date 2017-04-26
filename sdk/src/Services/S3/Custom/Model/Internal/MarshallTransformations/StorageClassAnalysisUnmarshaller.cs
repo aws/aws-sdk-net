@@ -22,7 +22,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     ///  StorageClassAnalysisUnmarshaller
     /// </summary>
-    internal class StorageClassAnalysisUnmarshaller : IUnmarshaller<StorageClassAnalysis, XmlUnmarshallerContext>, IUnmarshaller<StorageClassAnalysis, JsonUnmarshallerContext>
+    public class StorageClassAnalysisUnmarshaller : IUnmarshaller<StorageClassAnalysis, XmlUnmarshallerContext>, IUnmarshaller<StorageClassAnalysis, JsonUnmarshallerContext>
     {
         public StorageClassAnalysis Unmarshall(XmlUnmarshallerContext context)
         {

@@ -29,7 +29,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     ///    Response Unmarshaller for GetObjectMetadata operation
     /// </summary>
-    internal class GetObjectMetadataResponseUnmarshaller : S3ReponseUnmarshaller
+    public class GetObjectMetadataResponseUnmarshaller : S3ReponseUnmarshaller
     {
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
         {   

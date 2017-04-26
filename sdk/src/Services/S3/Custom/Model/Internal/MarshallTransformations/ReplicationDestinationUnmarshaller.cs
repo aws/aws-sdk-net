@@ -19,7 +19,7 @@ using Amazon.Runtime.Internal.Transform;
 
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
-    internal class ReplicationDestinationUnmarshaller : IUnmarshaller<ReplicationDestination, XmlUnmarshallerContext>, IUnmarshaller<ReplicationDestination, JsonUnmarshallerContext>
+    public class ReplicationDestinationUnmarshaller : IUnmarshaller<ReplicationDestination, XmlUnmarshallerContext>, IUnmarshaller<ReplicationDestination, JsonUnmarshallerContext>
     {
 
         public ReplicationDestination Unmarshall(XmlUnmarshallerContext context)

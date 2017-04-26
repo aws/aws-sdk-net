@@ -22,7 +22,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
      /// <summary>
     ///   DeletedObject Unmarshaller
      /// </summary>
-    internal class DeletedObjectUnmarshaller : IUnmarshaller<DeletedObject, XmlUnmarshallerContext>, IUnmarshaller<DeletedObject, JsonUnmarshallerContext> 
+    public class DeletedObjectUnmarshaller : IUnmarshaller<DeletedObject, XmlUnmarshallerContext>, IUnmarshaller<DeletedObject, JsonUnmarshallerContext> 
     {
         public DeletedObject Unmarshall(XmlUnmarshallerContext context) 
         {

@@ -26,7 +26,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     ///    Response Unmarshaller for DeleteObject operation
     /// </summary>
-    internal class DeleteObjectResponseUnmarshaller : S3ReponseUnmarshaller
+    public class DeleteObjectResponseUnmarshaller : S3ReponseUnmarshaller
     {
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
         {   

@@ -22,7 +22,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
      /// <summary>
      ///   Filter Unmarshaller
      /// </summary>
-    internal class FilterUnmarshaller : IUnmarshaller<Filter, XmlUnmarshallerContext>, IUnmarshaller<Filter, JsonUnmarshallerContext> 
+    public class FilterUnmarshaller : IUnmarshaller<Filter, XmlUnmarshallerContext>, IUnmarshaller<Filter, JsonUnmarshallerContext> 
     {
         public Filter Unmarshall(XmlUnmarshallerContext context) 
         {

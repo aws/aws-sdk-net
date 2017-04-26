@@ -22,7 +22,7 @@ using Amazon.Runtime.Internal.Transform;
 
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
-    class DeleteBucketReplicationResponseUnmarshaller : S3ReponseUnmarshaller
+    public class DeleteBucketReplicationResponseUnmarshaller : S3ReponseUnmarshaller
     {
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {

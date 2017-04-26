@@ -25,7 +25,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     ///    Response Unmarshaller for GetBucketRequestPayment operation
     /// </summary>
-    internal class GetBucketRequestPaymentResponseUnmarshaller : S3ReponseUnmarshaller
+    public class GetBucketRequestPaymentResponseUnmarshaller : S3ReponseUnmarshaller
     {
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
         {   
