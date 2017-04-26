@@ -394,10 +394,18 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 Assert.AreEqual(product.CompanyInfo.AllProducts[1].Id, retrieved.CompanyInfo.AllProducts[1].Id);
                 Assert.AreEqual(product.Map.Count, retrieved.Map.Count);
                 Assert.AreEqual(product.CompanyInfo.CompetitorProducts.Count, retrieved.CompanyInfo.CompetitorProducts.Count);
-                Assert.AreEqual(product.CompanyInfo.CompetitorProducts.ElementAt(0).Key, retrieved.CompanyInfo.CompetitorProducts.ElementAt(0).Key);
-                Assert.AreEqual(product.CompanyInfo.CompetitorProducts.ElementAt(0).Value.Count, retrieved.CompanyInfo.CompetitorProducts.ElementAt(0).Value.Count);
-                Assert.AreEqual(product.CompanyInfo.CompetitorProducts.ElementAt(1).Key, retrieved.CompanyInfo.CompetitorProducts.ElementAt(1).Key);
-                Assert.AreEqual(product.CompanyInfo.CompetitorProducts.ElementAt(1).Value.Count, retrieved.CompanyInfo.CompetitorProducts.ElementAt(1).Value.Count);
+                
+                var productCloudsAreOkay = product.CompanyInfo.CompetitorProducts["CloudsAreOK"];
+                var retrievedCloudsAreOkay = retrieved.CompanyInfo.CompetitorProducts["CloudsAreOK"];
+                Assert.IsNotNull(productCloudsAreOkay);
+                Assert.IsNotNull(retrievedCloudsAreOkay);
+                Assert.AreEqual(productCloudsAreOkay.Count, retrievedCloudsAreOkay.Count);
+
+                var productCloudsAreBetter = product.CompanyInfo.CompetitorProducts["CloudsAreBetter"];
+                var retrievedCloudsAreBetter = product.CompanyInfo.CompetitorProducts["CloudsAreBetter"];
+                Assert.IsNotNull(productCloudsAreBetter);
+                Assert.IsNotNull(retrievedCloudsAreBetter);
+                Assert.AreEqual(productCloudsAreBetter.Count, retrievedCloudsAreBetter.Count);
 
                 Assert.IsNotNull(retrieved.FullProductDescription);
                 using(var stream = retrieved.FullProductDescription.OpenStream())
