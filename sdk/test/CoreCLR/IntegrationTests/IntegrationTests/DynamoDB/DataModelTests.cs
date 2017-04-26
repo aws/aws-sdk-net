@@ -390,10 +390,18 @@ namespace Amazon.DNXCore.IntegrationTests.DynamoDB
                 Assert.Equal(product.CompanyInfo.AllProducts[1].Id, retrieved.CompanyInfo.AllProducts[1].Id);
                 Assert.Equal(product.Map.Count, retrieved.Map.Count);
                 Assert.Equal(product.CompanyInfo.CompetitorProducts.Count, retrieved.CompanyInfo.CompetitorProducts.Count);
-                Assert.Equal(product.CompanyInfo.CompetitorProducts.ElementAt(0).Key, retrieved.CompanyInfo.CompetitorProducts.ElementAt(0).Key);
-                Assert.Equal(product.CompanyInfo.CompetitorProducts.ElementAt(0).Value.Count, retrieved.CompanyInfo.CompetitorProducts.ElementAt(0).Value.Count);
-                Assert.Equal(product.CompanyInfo.CompetitorProducts.ElementAt(1).Key, retrieved.CompanyInfo.CompetitorProducts.ElementAt(1).Key);
-                Assert.Equal(product.CompanyInfo.CompetitorProducts.ElementAt(1).Value.Count, retrieved.CompanyInfo.CompetitorProducts.ElementAt(1).Value.Count);
+
+                var productCloudsAreOkay = product.CompanyInfo.CompetitorProducts["CloudsAreOK"];
+                var retrievedCloudsAreOkay = retrieved.CompanyInfo.CompetitorProducts["CloudsAreOK"];
+                Assert.NotNull(productCloudsAreOkay);
+                Assert.NotNull(retrievedCloudsAreOkay);
+                Assert.Equal(productCloudsAreOkay.Count, retrievedCloudsAreOkay.Count);
+
+                var productCloudsAreBetter = product.CompanyInfo.CompetitorProducts["CloudsAreBetter"];
+                var retrievedCloudsAreBetter = product.CompanyInfo.CompetitorProducts["CloudsAreBetter"];
+                Assert.NotNull(productCloudsAreBetter);
+                Assert.NotNull(retrievedCloudsAreBetter);
+                Assert.Equal(productCloudsAreBetter.Count, retrievedCloudsAreBetter.Count);
 
                 Assert.NotNull(retrieved.FullProductDescription);
                 /*using(var stream = retrieved.FullProductDescription.OpenStream())
