@@ -109,6 +109,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.SupportsEnhancedMonitoring = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("SupportsIAMDatabaseAuthentication", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.SupportsIAMDatabaseAuthentication = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("SupportsIops", targetDepth))
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;

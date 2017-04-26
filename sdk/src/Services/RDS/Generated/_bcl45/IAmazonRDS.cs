@@ -39,7 +39,7 @@ namespace Amazon.RDS
     /// <para>
     /// Amazon Relational Database Service (Amazon RDS) is a web service that makes it easier
     /// to set up, operate, and scale a relational database in the cloud. It provides cost-efficient,
-    /// resizeable capacity for an industry-standard relational database and manages common
+    /// resizable capacity for an industry-standard relational database and manages common
     /// database administration tasks, freeing up developers to focus on what makes their
     /// applications and businesses unique.
     /// </para>
@@ -533,7 +533,7 @@ namespace Amazon.RDS
         /// </para>
         ///  
         /// <para>
-        /// You can copy an encrypted DB snapshot from another AWS Region. In that case, the region
+        /// You can copy an encrypted DB snapshot from another AWS region. In that case, the region
         /// where you call the <code>CopyDBSnapshot</code> action is the destination region for
         /// the encrypted DB snapshot to be copied to. To copy an encrypted DB snapshot from another
         /// region, you must provide the following values:
@@ -606,8 +606,8 @@ namespace Amazon.RDS
         ///  </li> </ul> 
         /// <para>
         /// For more information on copying encrypted snapshots from one region to another, see
-        /// <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopySnapshot.Encrypted.CrossRegion">
-        /// Copying an Encrypted DB Snapshot to Another Region</a> in the Amazon RDS User Guide.
+        /// <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopyDBSnapshot">
+        /// Copying a DB Snapshot</a> in the Amazon RDS User Guide.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CopyDBSnapshot service method.</param>
@@ -984,7 +984,12 @@ namespace Amazon.RDS
         /// Creates a DB instance for a DB instance running MySQL, MariaDB, or PostgreSQL that
         /// acts as a Read Replica of a source DB instance.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// Amazon Aurora does not support this action. You must call the <code>CreateDBInstance</code>
+        /// action to create a DB instance for an Aurora DB cluster.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// All Read Replica DB instances are created as Single-AZ deployments with backups disabled.
         /// All other DB instance attributes (including DB security groups and DB parameter groups)
@@ -1508,7 +1513,9 @@ namespace Amazon.RDS
         /// <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBParameterGroupStateException">
-        /// The DB parameter group cannot be deleted because it is in use.
+        /// The DB parameter group is in use or is in an invalid state. If you are attempting
+        /// to delete the parameter group, you cannot delete it when the parameter group is in
+        /// this state.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBClusterParameterGroup">REST API Reference for DeleteDBClusterParameterGroup Operation</seealso>
         DeleteDBClusterParameterGroupResponse DeleteDBClusterParameterGroup(DeleteDBClusterParameterGroupRequest request);
@@ -1665,7 +1672,9 @@ namespace Amazon.RDS
         /// <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBParameterGroupStateException">
-        /// The DB parameter group cannot be deleted because it is in use.
+        /// The DB parameter group is in use or is in an invalid state. If you are attempting
+        /// to delete the parameter group, you cannot delete it when the parameter group is in
+        /// this state.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBParameterGroup">REST API Reference for DeleteDBParameterGroup Operation</seealso>
         DeleteDBParameterGroupResponse DeleteDBParameterGroup(DeleteDBParameterGroupRequest request);
@@ -3416,7 +3425,9 @@ namespace Amazon.RDS
         /// <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBParameterGroupStateException">
-        /// The DB parameter group cannot be deleted because it is in use.
+        /// The DB parameter group is in use or is in an invalid state. If you are attempting
+        /// to delete the parameter group, you cannot delete it when the parameter group is in
+        /// this state.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBClusterParameterGroup">REST API Reference for ModifyDBClusterParameterGroup Operation</seealso>
         ModifyDBClusterParameterGroupResponse ModifyDBClusterParameterGroup(ModifyDBClusterParameterGroupRequest request);
@@ -3451,17 +3462,16 @@ namespace Amazon.RDS
         /// cluster snapshot. Use the value <code>all</code> to make the manual DB cluster snapshot
         /// public, which means that it can be copied or restored by all AWS accounts. Do not
         /// add the <code>all</code> value for any manual DB cluster snapshots that contain private
-        /// information that you don't want available to all AWS accounts.
+        /// information that you don't want available to all AWS accounts. If a manual DB cluster
+        /// snapshot is encrypted, it can be shared, but only by specifying a list of authorized
+        /// AWS account IDs for the <code>ValuesToAdd</code> parameter. You can't use <code>all</code>
+        /// as a value for that parameter in this case.
         /// </para>
         ///  
         /// <para>
         /// To view which AWS accounts have access to copy or restore a manual DB cluster snapshot,
         /// or whether a manual DB cluster snapshot public or private, use the <a>DescribeDBClusterSnapshotAttributes</a>
         /// API action.
-        /// </para>
-        ///  
-        /// <para>
-        /// If a manual DB cluster snapshot is encrypted, it cannot be shared.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyDBClusterSnapshotAttribute service method.</param>
@@ -3615,7 +3625,9 @@ namespace Amazon.RDS
         /// <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBParameterGroupStateException">
-        /// The DB parameter group cannot be deleted because it is in use.
+        /// The DB parameter group is in use or is in an invalid state. If you are attempting
+        /// to delete the parameter group, you cannot delete it when the parameter group is in
+        /// this state.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBParameterGroup">REST API Reference for ModifyDBParameterGroup Operation</seealso>
         ModifyDBParameterGroupResponse ModifyDBParameterGroup(ModifyDBParameterGroupRequest request);
@@ -3687,17 +3699,15 @@ namespace Amazon.RDS
         /// snapshot. Uses the value <code>all</code> to make the manual DB snapshot public, which
         /// means it can be copied or restored by all AWS accounts. Do not add the <code>all</code>
         /// value for any manual DB snapshots that contain private information that you don't
-        /// want available to all AWS accounts.
+        /// want available to all AWS accounts. If the manual DB snapshot is encrypted, it can
+        /// be shared, but only by specifying a list of authorized AWS account IDs for the <code>ValuesToAdd</code>
+        /// parameter. You can't use <code>all</code> as a value for that parameter in this case.
         /// </para>
         ///  
         /// <para>
         /// To view which AWS accounts have access to copy or restore a manual DB snapshot, or
         /// whether a manual DB snapshot public or private, use the <a>DescribeDBSnapshotAttributes</a>
         /// API action.
-        /// </para>
-        ///  
-        /// <para>
-        /// If the manual DB snapshot is encrypted, it cannot be shared.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyDBSnapshotAttribute service method.</param>
@@ -4174,7 +4184,9 @@ namespace Amazon.RDS
         /// <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBParameterGroupStateException">
-        /// The DB parameter group cannot be deleted because it is in use.
+        /// The DB parameter group is in use or is in an invalid state. If you are attempting
+        /// to delete the parameter group, you cannot delete it when the parameter group is in
+        /// this state.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ResetDBClusterParameterGroup">REST API Reference for ResetDBClusterParameterGroup Operation</seealso>
         ResetDBClusterParameterGroupResponse ResetDBClusterParameterGroup(ResetDBClusterParameterGroupRequest request);
@@ -4199,7 +4211,7 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Modifies the parameters of a DB parameter group to the engine/system default value.
-        /// To reset specific parameters submit a list of the following: <code>ParameterName</code>
+        /// To reset specific parameters, provide a list of the following: <code>ParameterName</code>
         /// and <code>ApplyMethod</code>. To reset the entire DB parameter group, specify the
         /// <code>DBParameterGroup</code> name and <code>ResetAllParameters</code> parameters.
         /// When resetting the entire group, dynamic parameters are updated immediately and static
@@ -4213,7 +4225,9 @@ namespace Amazon.RDS
         /// <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBParameterGroupStateException">
-        /// The DB parameter group cannot be deleted because it is in use.
+        /// The DB parameter group is in use or is in an invalid state. If you are attempting
+        /// to delete the parameter group, you cannot delete it when the parameter group is in
+        /// this state.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ResetDBParameterGroup">REST API Reference for ResetDBParameterGroup Operation</seealso>
         ResetDBParameterGroupResponse ResetDBParameterGroup(ResetDBParameterGroupRequest request);
@@ -4239,7 +4253,7 @@ namespace Amazon.RDS
         /// <summary>
         /// Creates an Amazon Aurora DB cluster from data stored in an Amazon S3 bucket. Amazon
         /// RDS must be authorized to access the Amazon S3 bucket and the data must be created
-        /// using the Percona XtraBackup utility as described in <a href="AmazonRDS/latest/UserGuide/Aurora.Migrate.MySQL.html#Aurora.Migrate.MySQL.S3">Migrating
+        /// using the Percona XtraBackup utility as described in <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Migrate.MySQL.html#Aurora.Migrate.MySQL.S3">Migrating
         /// Data from MySQL by Using an Amazon S3 Bucket</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RestoreDBClusterFromS3 service method.</param>
@@ -4440,9 +4454,6 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBSubnetGroupNotFoundException">
         /// <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.
         /// </exception>
-        /// <exception cref="Amazon.RDS.Model.DBSubnetGroupNotFoundException">
-        /// <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.
-        /// </exception>
         /// <exception cref="Amazon.RDS.Model.InsufficientDBClusterCapacityException">
         /// The DB cluster does not have enough capacity for the current operation.
         /// </exception>
@@ -4453,6 +4464,9 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBClusterSnapshotStateException">
         /// The supplied value is not a valid DB cluster snapshot state.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
+        /// The DB cluster is not in a valid state.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBSnapshotStateException">
         /// The state of the DB snapshot does not allow deletion.
@@ -4473,10 +4487,6 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.OptionGroupNotFoundException">
         /// The specified option group could not be found.
-        /// </exception>
-        /// <exception cref="Amazon.RDS.Model.StorageQuotaExceededException">
-        /// Request would result in user exceeding the allowed amount of storage available across
-        /// all DB instances.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.StorageQuotaExceededException">
         /// Request would result in user exceeding the allowed amount of storage available across

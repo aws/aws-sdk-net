@@ -41,7 +41,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBClusterIdentifier. 
         /// <para>
-        /// The name of the DB cluster to disassociate the IAM role rom.
+        /// The name of the DB cluster to disassociate the IAM role from.
         /// </para>
         /// </summary>
         public string DBClusterIdentifier

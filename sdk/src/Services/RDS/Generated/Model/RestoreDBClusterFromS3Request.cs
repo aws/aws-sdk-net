@@ -31,7 +31,7 @@ namespace Amazon.RDS.Model
     /// Container for the parameters to the RestoreDBClusterFromS3 operation.
     /// Creates an Amazon Aurora DB cluster from data stored in an Amazon S3 bucket. Amazon
     /// RDS must be authorized to access the Amazon S3 bucket and the data must be created
-    /// using the Percona XtraBackup utility as described in <a href="AmazonRDS/latest/UserGuide/Aurora.Migrate.MySQL.html#Aurora.Migrate.MySQL.S3">Migrating
+    /// using the Percona XtraBackup utility as described in <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Migrate.MySQL.html#Aurora.Migrate.MySQL.S3">Migrating
     /// Data from MySQL by Using an Amazon S3 Bucket</a>.
     /// </summary>
     public partial class RestoreDBClusterFromS3Request : AmazonRDSRequest
@@ -43,6 +43,7 @@ namespace Amazon.RDS.Model
         private string _dbClusterIdentifier;
         private string _dbClusterParameterGroupName;
         private string _dbSubnetGroupName;
+        private bool? _enableIAMDatabaseAuthentication;
         private string _engine;
         private string _engineVersion;
         private string _kmsKeyId;
@@ -249,6 +250,29 @@ namespace Amazon.RDS.Model
         internal bool IsSetDBSubnetGroupName()
         {
             return this._dbSubnetGroupName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnableIAMDatabaseAuthentication. 
+        /// <para>
+        /// A Boolean value that is true to enable mapping of AWS Identity and Access Management
+        /// (IAM) accounts to database accounts, and otherwise false.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <code>false</code> 
+        /// </para>
+        /// </summary>
+        public bool EnableIAMDatabaseAuthentication
+        {
+            get { return this._enableIAMDatabaseAuthentication.GetValueOrDefault(); }
+            set { this._enableIAMDatabaseAuthentication = value; }
+        }
+
+        // Check to see if EnableIAMDatabaseAuthentication property is set
+        internal bool IsSetEnableIAMDatabaseAuthentication()
+        {
+            return this._enableIAMDatabaseAuthentication.HasValue; 
         }
 
         /// <summary>

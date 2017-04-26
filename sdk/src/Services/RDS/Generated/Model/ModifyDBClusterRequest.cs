@@ -40,6 +40,7 @@ namespace Amazon.RDS.Model
         private int? _backupRetentionPeriod;
         private string _dbClusterIdentifier;
         private string _dbClusterParameterGroupName;
+        private bool? _enableIAMDatabaseAuthentication;
         private string _masterUserPassword;
         private string _newDBClusterIdentifier;
         private string _optionGroupName;
@@ -169,6 +170,29 @@ namespace Amazon.RDS.Model
         internal bool IsSetDBClusterParameterGroupName()
         {
             return this._dbClusterParameterGroupName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnableIAMDatabaseAuthentication. 
+        /// <para>
+        /// A Boolean value that is true to enable mapping of AWS Identity and Access Management
+        /// (IAM) accounts to database accounts, and otherwise false.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <code>false</code> 
+        /// </para>
+        /// </summary>
+        public bool EnableIAMDatabaseAuthentication
+        {
+            get { return this._enableIAMDatabaseAuthentication.GetValueOrDefault(); }
+            set { this._enableIAMDatabaseAuthentication = value; }
+        }
+
+        // Check to see if EnableIAMDatabaseAuthentication property is set
+        internal bool IsSetEnableIAMDatabaseAuthentication()
+        {
+            return this._enableIAMDatabaseAuthentication.HasValue; 
         }
 
         /// <summary>
@@ -376,7 +400,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property VpcSecurityGroupIds. 
         /// <para>
-        /// A lst of VPC security groups that the DB cluster will belong to.
+        /// A list of VPC security groups that the DB cluster will belong to.
         /// </para>
         /// </summary>
         public List<string> VpcSecurityGroupIds

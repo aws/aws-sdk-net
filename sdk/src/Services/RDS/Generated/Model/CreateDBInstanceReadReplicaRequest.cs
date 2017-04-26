@@ -32,7 +32,12 @@ namespace Amazon.RDS.Model
     /// Creates a DB instance for a DB instance running MySQL, MariaDB, or PostgreSQL that
     /// acts as a Read Replica of a source DB instance.
     /// 
-    ///  
+    ///  <note> 
+    /// <para>
+    /// Amazon Aurora does not support this action. You must call the <code>CreateDBInstance</code>
+    /// action to create a DB instance for an Aurora DB cluster.
+    /// </para>
+    ///  </note> 
     /// <para>
     /// All Read Replica DB instances are created as Single-AZ deployments with backups disabled.
     /// All other DB instance attributes (including DB security groups and DB parameter groups)
@@ -131,6 +136,7 @@ namespace Amazon.RDS.Model
         private string _dbInstanceClass;
         private string _dbInstanceIdentifier;
         private string _dbSubnetGroupName;
+        private bool? _enableIAMDatabaseAuthentication;
         private int? _iops;
         private string _kmsKeyId;
         private int? _monitoringInterval;
@@ -333,6 +339,45 @@ namespace Amazon.RDS.Model
         internal bool IsSetDBSubnetGroupName()
         {
             return this._dbSubnetGroupName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnableIAMDatabaseAuthentication. 
+        /// <para>
+        /// True to enable mapping of AWS Identity and Access Management (IAM) accounts to database
+        /// accounts; otherwise false.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can enable IAM database authentication for the following database engines
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// For MySQL 5.6, minor version 5.6.34 or higher
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For MySQL 5.7, minor version 5.7.16 or higher
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Aurora 5.6 or higher.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Default: <code>false</code> 
+        /// </para>
+        /// </summary>
+        public bool EnableIAMDatabaseAuthentication
+        {
+            get { return this._enableIAMDatabaseAuthentication.GetValueOrDefault(); }
+            set { this._enableIAMDatabaseAuthentication = value; }
+        }
+
+        // Check to see if EnableIAMDatabaseAuthentication property is set
+        internal bool IsSetEnableIAMDatabaseAuthentication()
+        {
+            return this._enableIAMDatabaseAuthentication.HasValue; 
         }
 
         /// <summary>

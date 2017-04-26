@@ -49,6 +49,7 @@ namespace Amazon.RDS.Model
         private string _dbSubnetGroupName;
         private string _domain;
         private string _domainIAMRoleName;
+        private bool? _enableIAMDatabaseAuthentication;
         private string _engineVersion;
         private int? _iops;
         private string _licenseModel;
@@ -703,6 +704,41 @@ namespace Amazon.RDS.Model
         internal bool IsSetDomainIAMRoleName()
         {
             return this._domainIAMRoleName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnableIAMDatabaseAuthentication. 
+        /// <para>
+        /// True to enable mapping of AWS Identity and Access Management (IAM) accounts to database
+        /// accounts; otherwise false.
+        /// </para>
+        ///  
+        /// <para>
+        ///  You can enable IAM database authentication for the following database engines
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// For MySQL 5.6, minor version 5.6.34 or higher
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For MySQL 5.7, minor version 5.7.16 or higher
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Default: <code>false</code> 
+        /// </para>
+        /// </summary>
+        public bool EnableIAMDatabaseAuthentication
+        {
+            get { return this._enableIAMDatabaseAuthentication.GetValueOrDefault(); }
+            set { this._enableIAMDatabaseAuthentication = value; }
+        }
+
+        // Check to see if EnableIAMDatabaseAuthentication property is set
+        internal bool IsSetEnableIAMDatabaseAuthentication()
+        {
+            return this._enableIAMDatabaseAuthentication.HasValue; 
         }
 
         /// <summary>

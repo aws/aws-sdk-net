@@ -39,7 +39,7 @@ namespace Amazon.RDS.Model
     /// </para>
     ///  
     /// <para>
-    /// You can copy an encrypted DB snapshot from another AWS Region. In that case, the region
+    /// You can copy an encrypted DB snapshot from another AWS region. In that case, the region
     /// where you call the <code>CopyDBSnapshot</code> action is the destination region for
     /// the encrypted DB snapshot to be copied to. To copy an encrypted DB snapshot from another
     /// region, you must provide the following values:
@@ -112,8 +112,8 @@ namespace Amazon.RDS.Model
     ///  </li> </ul> 
     /// <para>
     /// For more information on copying encrypted snapshots from one region to another, see
-    /// <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopySnapshot.Encrypted.CrossRegion">
-    /// Copying an Encrypted DB Snapshot to Another Region</a> in the Amazon RDS User Guide.
+    /// <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopyDBSnapshot">
+    /// Copying a DB Snapshot</a> in the Amazon RDS User Guide.
     /// </para>
     /// </summary>
     public partial class CopyDBSnapshotRequest : AmazonRDSRequest
@@ -232,8 +232,8 @@ namespace Amazon.RDS.Model
         ///  <code>SourceDBSnapshotIdentifier</code> - The DB snapshot identifier for the encrypted
         /// snapshot to be copied. This identifier must be in the Amazon Resource Name (ARN) format
         /// for the source region. For example, if you are copying an encrypted DB snapshot from
-        /// the us-west-2 region, then your <code>SourceDBSnapshotIdentifier</code> would look
-        /// like Example: <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20161115</code>.
+        /// the us-west-2 region, then your <code>SourceDBSnapshotIdentifier</code> looks like
+        /// the following example: <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20161115</code>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -286,7 +286,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// If the source snapshot is in a different region than the copy, specify a valid DB
         /// snapshot ARN. For more information, go to <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html">
-        /// Copying a DB Snapshot</a>.
+        /// Copying a DB Snapshot or DB Cluster Snapshot</a>.
         /// </para>
         ///  </li> </ul> 
         /// <para>

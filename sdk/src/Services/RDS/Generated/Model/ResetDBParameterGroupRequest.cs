@@ -30,7 +30,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// Container for the parameters to the ResetDBParameterGroup operation.
     /// Modifies the parameters of a DB parameter group to the engine/system default value.
-    /// To reset specific parameters submit a list of the following: <code>ParameterName</code>
+    /// To reset specific parameters, provide a list of the following: <code>ParameterName</code>
     /// and <code>ApplyMethod</code>. To reset the entire DB parameter group, specify the
     /// <code>DBParameterGroup</code> name and <code>ResetAllParameters</code> parameters.
     /// When resetting the entire group, dynamic parameters are updated immediately and static
@@ -95,9 +95,10 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Parameters. 
         /// <para>
-        /// An array of parameter names, values, and the apply method for the parameter update.
-        /// At least one parameter name, value, and apply method must be supplied; subsequent
-        /// arguments are optional. A maximum of 20 parameters can be modified in a single request.
+        /// To reset the entire DB parameter group, specify the <code>DBParameterGroup</code>
+        /// name and <code>ResetAllParameters</code> parameters. To reset specific parameters,
+        /// provide a list of the following: <code>ParameterName</code> and <code>ApplyMethod</code>.
+        /// A maximum of 20 parameters can be modified in a single request.
         /// </para>
         ///  
         /// <para>

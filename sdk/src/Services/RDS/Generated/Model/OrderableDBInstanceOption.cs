@@ -47,6 +47,7 @@ namespace Amazon.RDS.Model
         private bool? _readReplicaCapable;
         private string _storageType;
         private bool? _supportsEnhancedMonitoring;
+        private bool? _supportsIAMDatabaseAuthentication;
         private bool? _supportsIops;
         private bool? _supportsStorageEncryption;
         private bool? _vpc;
@@ -212,6 +213,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetSupportsEnhancedMonitoring()
         {
             return this._supportsEnhancedMonitoring.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportsIAMDatabaseAuthentication. 
+        /// <para>
+        /// Indicates whether this orderable DB instance supports IAM database authentication.
+        /// </para>
+        /// </summary>
+        public bool SupportsIAMDatabaseAuthentication
+        {
+            get { return this._supportsIAMDatabaseAuthentication.GetValueOrDefault(); }
+            set { this._supportsIAMDatabaseAuthentication = value; }
+        }
+
+        // Check to see if SupportsIAMDatabaseAuthentication property is set
+        internal bool IsSetSupportsIAMDatabaseAuthentication()
+        {
+            return this._supportsIAMDatabaseAuthentication.HasValue; 
         }
 
         /// <summary>

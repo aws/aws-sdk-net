@@ -53,6 +53,7 @@ namespace Amazon.RDS.Model
         private string _dbClusterIdentifier;
         private string _dbClusterParameterGroupName;
         private string _dbSubnetGroupName;
+        private bool? _enableIAMDatabaseAuthentication;
         private string _engine;
         private string _engineVersion;
         private string _kmsKeyId;
@@ -257,6 +258,29 @@ namespace Amazon.RDS.Model
         internal bool IsSetDBSubnetGroupName()
         {
             return this._dbSubnetGroupName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnableIAMDatabaseAuthentication. 
+        /// <para>
+        /// A Boolean value that is true to enable mapping of AWS Identity and Access Management
+        /// (IAM) accounts to database accounts, and otherwise false.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <code>false</code> 
+        /// </para>
+        /// </summary>
+        public bool EnableIAMDatabaseAuthentication
+        {
+            get { return this._enableIAMDatabaseAuthentication.GetValueOrDefault(); }
+            set { this._enableIAMDatabaseAuthentication = value; }
+        }
+
+        // Check to see if EnableIAMDatabaseAuthentication property is set
+        internal bool IsSetEnableIAMDatabaseAuthentication()
+        {
+            return this._enableIAMDatabaseAuthentication.HasValue; 
         }
 
         /// <summary>

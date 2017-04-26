@@ -72,6 +72,7 @@ namespace Amazon.RDS.Model
         private string _engine;
         private string _engineVersion;
         private string _enhancedMonitoringResourceArn;
+        private bool? _iamDatabaseAuthenticationEnabled;
         private DateTime? _instanceCreateTime;
         private int? _iops;
         private string _kmsKeyId;
@@ -365,7 +366,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  <b>MySQL, MariaDB, SQL Server, PostgreSQL, Amazon Aurora</b> 
+        ///  <b>MySQL, MariaDB, SQL Server, PostgreSQL</b> 
         /// </para>
         ///  
         /// <para>
@@ -544,6 +545,43 @@ namespace Amazon.RDS.Model
         internal bool IsSetEnhancedMonitoringResourceArn()
         {
             return this._enhancedMonitoringResourceArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IAMDatabaseAuthenticationEnabled. 
+        /// <para>
+        /// True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts
+        /// is enabled; otherwise false.
+        /// </para>
+        ///  
+        /// <para>
+        /// IAM database authentication can be enabled for the following database engines
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// For MySQL 5.6, minor version 5.6.34 or higher
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For MySQL 5.7, minor version 5.7.16 or higher
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Aurora 5.6 or higher. To enable IAM database authentication for Aurora, see DBCluster
+        /// Type.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public bool IAMDatabaseAuthenticationEnabled
+        {
+            get { return this._iamDatabaseAuthenticationEnabled.GetValueOrDefault(); }
+            set { this._iamDatabaseAuthenticationEnabled = value; }
+        }
+
+        // Check to see if IAMDatabaseAuthenticationEnabled property is set
+        internal bool IsSetIAMDatabaseAuthenticationEnabled()
+        {
+            return this._iamDatabaseAuthenticationEnabled.HasValue; 
         }
 
         /// <summary>

@@ -80,6 +80,7 @@ namespace Amazon.RDS.Model
         private string _engine;
         private string _engineVersion;
         private string _hostedZoneId;
+        private bool? _iamDatabaseAuthenticationEnabled;
         private string _kmsKeyId;
         private DateTime? _latestRestorableTime;
         private string _masterUsername;
@@ -98,7 +99,10 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property AllocatedStorage. 
         /// <para>
-        /// Specifies the allocated storage size in gigabytes (GB).
+        /// For all database engines except Amazon Aurora, <code>AllocatedStorage</code> specifies
+        /// the allocated storage size in gigabytes (GB). For Aurora, <code>AllocatedStorage</code>
+        /// always returns 1, because Aurora DB cluster storage size is not fixed, but instead
+        /// automatically adjusts as needed.
         /// </para>
         /// </summary>
         public int AllocatedStorage
@@ -449,6 +453,25 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IAMDatabaseAuthenticationEnabled. 
+        /// <para>
+        /// True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts
+        /// is enabled; otherwise false.
+        /// </para>
+        /// </summary>
+        public bool IAMDatabaseAuthenticationEnabled
+        {
+            get { return this._iamDatabaseAuthenticationEnabled.GetValueOrDefault(); }
+            set { this._iamDatabaseAuthenticationEnabled = value; }
+        }
+
+        // Check to see if IAMDatabaseAuthenticationEnabled property is set
+        internal bool IsSetIAMDatabaseAuthenticationEnabled()
+        {
+            return this._iamDatabaseAuthenticationEnabled.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
         /// If <code>StorageEncrypted</code> is true, the KMS key identifier for the encrypted
@@ -608,7 +631,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// If a failover occurs, and the Aurora Replica that you are connected to is promoted
         /// to be the primary instance, your connection will be dropped. To continue sending your
-        /// read workload to other Aurora Replicas in the cluster, you can then recoonect to the
+        /// read workload to other Aurora Replicas in the cluster, you can then reconnect to the
         /// reader endpoint.
         /// </para>
         /// </summary>

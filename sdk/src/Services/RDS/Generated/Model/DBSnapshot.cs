@@ -53,6 +53,7 @@ namespace Amazon.RDS.Model
         private bool? _encrypted;
         private string _engine;
         private string _engineVersion;
+        private bool? _iamDatabaseAuthenticationEnabled;
         private DateTime? _instanceCreateTime;
         private int? _iops;
         private string _kmsKeyId;
@@ -215,6 +216,25 @@ namespace Amazon.RDS.Model
         internal bool IsSetEngineVersion()
         {
             return this._engineVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IAMDatabaseAuthenticationEnabled. 
+        /// <para>
+        /// True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts
+        /// is enabled; otherwise false.
+        /// </para>
+        /// </summary>
+        public bool IAMDatabaseAuthenticationEnabled
+        {
+            get { return this._iamDatabaseAuthenticationEnabled.GetValueOrDefault(); }
+            set { this._iamDatabaseAuthenticationEnabled = value; }
+        }
+
+        // Check to see if IAMDatabaseAuthenticationEnabled property is set
+        internal bool IsSetIAMDatabaseAuthenticationEnabled()
+        {
+            return this._iamDatabaseAuthenticationEnabled.HasValue; 
         }
 
         /// <summary>
