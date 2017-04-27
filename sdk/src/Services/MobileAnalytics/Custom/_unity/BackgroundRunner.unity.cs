@@ -104,9 +104,9 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
                     }
                     Thread.Sleep(BackgroundSubmissionWaitTime * 1000);
                 }
-                catch(ThreadAbortException)
+                catch(ThreadAbortException tae)
                 {
-                  // handle thread aports more greacefully in unity
+                  _logger.Debug("Mobile Analytics Manager thread aborted");
                 }
                 catch (System.Exception e)
                 {
