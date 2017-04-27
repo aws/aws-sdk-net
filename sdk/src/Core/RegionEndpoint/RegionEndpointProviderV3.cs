@@ -316,10 +316,14 @@ namespace Amazon.Internal
             //
             // If the endpoints.json file has been provided next to the assembly:
             //
-            string endpointsPath = Path.Combine(Path.GetDirectoryName(typeof(RegionEndpointProviderV3).Assembly.Location), ENDPOINT_JSON);
-            if (File.Exists(endpointsPath))
+            string assemblyLocation = typeof(RegionEndpointProviderV3).Assembly.Location;
+            if (!string.IsNullOrEmpty(assemblyLocation))
             {
-                return File.Open(endpointsPath, FileMode.Open, FileAccess.Read);
+                string endpointsPath = Path.Combine(Path.GetDirectoryName(assemblyLocation), ENDPOINT_JSON);
+                if (File.Exists(endpointsPath))
+                {
+                    return File.Open(endpointsPath, FileMode.Open, FileAccess.Read);
+                }
             }
 #endif
             //
