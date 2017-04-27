@@ -129,6 +129,10 @@ See [Github Issue #369](https://github.com/aws/aws-sdk-unity/issues/369)
 
 See [Github Issue #604](https://github.com/aws/aws-sdk-net/issues/604)
 
+#### Add interfaces for classes with internal constructors as returned by IDynamoDBContext methods
+
+See [Github Issue #632](https://github.com/aws/aws-sdk-net/issues/632)
+
 #### AWS SDK (Unity) Support for Windows Store (Hololens)
 
 See [Github Issue #337](https://github.com/aws/aws-sdk-net/issues/337)
