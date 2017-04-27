@@ -106,7 +106,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
                 }
                 catch(ThreadAbortException tae)
                 {
-                  _logger.Debug("Mobile Analytics Manager thread aborted");
+                  _logger.DebugFormat("Mobile Analytics Manager thread aborted");
                 }
                 catch (System.Exception e)
                 {
