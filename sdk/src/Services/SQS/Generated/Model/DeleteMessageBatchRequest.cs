@@ -30,7 +30,7 @@ namespace Amazon.SQS.Model
     /// <summary>
     /// Container for the parameters to the DeleteMessageBatch operation.
     /// Deletes up to ten messages from the specified queue. This is a batch version of <code>
-    /// <a>DeleteMessage</a> </code>. The result of the action on each message is reported
+    /// <a>DeleteMessage</a>.</code> The result of the action on each message is reported
     /// individually in the response.
     /// 
     ///  <important> 

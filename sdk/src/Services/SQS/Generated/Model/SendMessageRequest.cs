@@ -33,37 +33,19 @@ namespace Amazon.SQS.Model
     /// 
     ///  <important> 
     /// <para>
-    /// The following list shows the characters (in Unicode) that are allowed in your message,
-    /// according to the W3C XML specification:
+    /// A message can include only XML, JSON, and unformatted text. The following Unicode
+    /// characters are allowed:
     /// </para>
-    ///  <ul> <li> 
+    ///  
     /// <para>
-    ///  <code>#x9</code> 
+    ///  <code>#x9</code> | <code>#xA</code> | <code>#xD</code> | <code>#x20</code> to <code>#xD7FF</code>
+    /// | <code>#xE000</code> to <code>#xFFFD</code> | <code>#x10000</code> to <code>#x10FFFF</code>
+    /// 
     /// </para>
-    ///  </li> <li> 
+    ///  
     /// <para>
-    ///  <code>#xA</code> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <code>#xD</code> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <code>#x20</code> to <code>#xD7FF</code> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <code>#xE000</code> to <code>#xFFFD</code> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <code>#x10000</code> to <code>#x10FFFF</code> 
-    /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    /// For more information, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.
-    /// If you send any characters that aren't included in this list, your request is rejected.
+    /// Any characters not included in this list will be rejected. For more information, see
+    /// the <a href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for characters</a>.
     /// </para>
     ///  </important>
     /// </summary>
@@ -85,7 +67,7 @@ namespace Amazon.SQS.Model
         /// Instantiates SendMessageRequest with the parameterized properties
         /// </summary>
         /// <param name="queueUrl">The URL of the Amazon SQS queue to which a message is sent. Queue URLs are case-sensitive.</param>
-        /// <param name="messageBody">The message to send. The maximum string size is 256 KB. <important> The following list shows the characters (in Unicode) that are allowed in your message, according to the W3C XML specification: <ul> <li>  <code>#x9</code>  </li> <li>  <code>#xA</code>  </li> <li>  <code>#xD</code>  </li> <li>  <code>#x20</code> to <code>#xD7FF</code>  </li> <li>  <code>#xE000</code> to <code>#xFFFD</code>  </li> <li>  <code>#x10000</code> to <code>#x10FFFF</code>  </li> </ul> For more information, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>. If you send any characters that aren't included in this list, your request is rejected. </important></param>
+        /// <param name="messageBody">The message to send. The maximum string size is 256 KB. <important> A message can include only XML, JSON, and unformatted text. The following Unicode characters are allowed:  <code>#x9</code> | <code>#xA</code> | <code>#xD</code> | <code>#x20</code> to <code>#xD7FF</code> | <code>#xE000</code> to <code>#xFFFD</code> | <code>#x10000</code> to <code>#x10FFFF</code>  Any characters not included in this list will be rejected. For more information, see the <a href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for characters</a>. </important></param>
         public SendMessageRequest(string queueUrl, string messageBody)
         {
             _queueUrl = queueUrl;
@@ -95,10 +77,10 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Gets and sets the property DelaySeconds. 
         /// <para>
-        ///  The number of seconds to delay a specific message. Valid values: 0 to 900. Maximum:
-        /// 15 minutes. Messages with a positive <code>DelaySeconds</code> value become available
-        /// for processing after the delay period is finished. If you don't specify a value, the
-        /// default value for the queue applies. 
+        ///  The length of time, in seconds, for which to delay a specific message. Valid values:
+        /// 0 to 900. Maximum: 15 minutes. Messages with a positive <code>DelaySeconds</code>
+        /// value become available for processing after the delay period is finished. If you don't
+        /// specify a value, the default value for the queue applies. 
         /// </para>
         ///  <note> 
         /// <para>
@@ -146,37 +128,19 @@ namespace Amazon.SQS.Model
         /// </para>
         ///  <important> 
         /// <para>
-        /// The following list shows the characters (in Unicode) that are allowed in your message,
-        /// according to the W3C XML specification:
+        /// A message can include only XML, JSON, and unformatted text. The following Unicode
+        /// characters are allowed:
         /// </para>
-        ///  <ul> <li> 
+        ///  
         /// <para>
-        ///  <code>#x9</code> 
+        ///  <code>#x9</code> | <code>#xA</code> | <code>#xD</code> | <code>#x20</code> to <code>#xD7FF</code>
+        /// | <code>#xE000</code> to <code>#xFFFD</code> | <code>#x10000</code> to <code>#x10FFFF</code>
+        /// 
         /// </para>
-        ///  </li> <li> 
+        ///  
         /// <para>
-        ///  <code>#xA</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>#xD</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>#x20</code> to <code>#xD7FF</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>#xE000</code> to <code>#xFFFD</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>#x10000</code> to <code>#x10FFFF</code> 
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// For more information, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.
-        /// If you send any characters that aren't included in this list, your request is rejected.
+        /// Any characters not included in this list will be rejected. For more information, see
+        /// the <a href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for characters</a>.
         /// </para>
         ///  </important>
         /// </summary>
@@ -235,11 +199,6 @@ namespace Amazon.SQS.Model
         /// When <code>ContentBasedDeduplication</code> is in effect, messages with identical
         /// content sent within the deduplication interval are treated as duplicates and only
         /// one copy of the message is delivered.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// You can also use <code>ContentBasedDeduplication</code> for messages with identical
-        /// content to be treated as duplicates.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -319,6 +278,12 @@ namespace Amazon.SQS.Model
         /// For best practices of using <code>MessageGroupId</code>, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queue-recommendations.html#using-messagegroupid-property">Using
         /// the MessageGroupId Property</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
         /// </para>
+        ///  <important> 
+        /// <para>
+        ///  <code>MessageGroupId</code> is required for FIFO queues. You can't use it for Standard
+        /// queues.
+        /// </para>
+        ///  </important>
         /// </summary>
         public string MessageGroupId
         {

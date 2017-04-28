@@ -30,7 +30,7 @@ namespace Amazon.SQS.Model
     /// <summary>
     /// Container for the parameters to the ChangeMessageVisibilityBatch operation.
     /// Changes the visibility timeout of multiple messages. This is a batch version of <code>
-    /// <a>ChangeMessageVisibility</a> </code>. The result of the action on each message is
+    /// <a>ChangeMessageVisibility</a>.</code> The result of the action on each message is
     /// reported individually in the response. You can send up to 10 <code> <a>ChangeMessageVisibility</a>
     /// </code> requests with each <code>ChangeMessageVisibilityBatch</code> action.
     /// 

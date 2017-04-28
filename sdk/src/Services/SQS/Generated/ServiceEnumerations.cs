@@ -133,6 +133,14 @@ namespace Amazon.SQS
         /// </summary>
         public static readonly QueueAttributeName FifoQueue = new QueueAttributeName("FifoQueue");
         /// <summary>
+        /// Constant KmsDataKeyReusePeriodSeconds for QueueAttributeName
+        /// </summary>
+        public static readonly QueueAttributeName KmsDataKeyReusePeriodSeconds = new QueueAttributeName("KmsDataKeyReusePeriodSeconds");
+        /// <summary>
+        /// Constant KmsMasterKeyId for QueueAttributeName
+        /// </summary>
+        public static readonly QueueAttributeName KmsMasterKeyId = new QueueAttributeName("KmsMasterKeyId");
+        /// <summary>
         /// Constant LastModifiedTimestamp for QueueAttributeName
         /// </summary>
         public static readonly QueueAttributeName LastModifiedTimestamp = new QueueAttributeName("LastModifiedTimestamp");

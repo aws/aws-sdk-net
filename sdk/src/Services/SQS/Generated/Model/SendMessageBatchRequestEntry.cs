@@ -58,10 +58,10 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Gets and sets the property DelaySeconds. 
         /// <para>
-        /// The number of seconds for which a specific message is delayed. Valid values: 0 to
-        /// 900. Maximum: 15 minutes. Messages with a positive <code>DelaySeconds</code> value
-        /// become available for processing after the delay period is finished. If you don't specify
-        /// a value, the default value for the queue is applied. 
+        /// The length of time, in seconds, for which a specific message is delayed. Valid values:
+        /// 0 to 900. Maximum: 15 minutes. Messages with a positive <code>DelaySeconds</code>
+        /// value become available for processing after the delay period is finished. If you don't
+        /// specify a value, the default value for the queue is applied. 
         /// </para>
         ///  <note> 
         /// <para>
@@ -189,11 +189,6 @@ namespace Amazon.SQS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You can also use <code>ContentBasedDeduplication</code> for messages with identical
-        /// content to be treated as duplicates.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// If you send one message with <code>ContentBasedDeduplication</code> enabled and then
         /// another message with a <code>MessageDeduplicationId</code> that is the same as the
         /// one generated for the first <code>MessageDeduplicationId</code>, the two messages
@@ -270,6 +265,12 @@ namespace Amazon.SQS.Model
         /// For best practices of using <code>MessageGroupId</code>, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queue-recommendations.html#using-messagegroupid-property">Using
         /// the MessageGroupId Property</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
         /// </para>
+        ///  <important> 
+        /// <para>
+        ///  <code>MessageGroupId</code> is required for FIFO queues. You can't use it for Standard
+        /// queues.
+        /// </para>
+        ///  </important>
         /// </summary>
         public string MessageGroupId
         {

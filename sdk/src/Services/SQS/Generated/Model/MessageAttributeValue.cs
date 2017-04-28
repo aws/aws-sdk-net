@@ -30,7 +30,7 @@ namespace Amazon.SQS.Model
     /// <summary>
     /// The user-specified message attribute value. For string data types, the <code>Value</code>
     /// attribute has the same restrictions on the content as the message body. For more information,
-    /// see <code> <a>SendMessage</a> </code>.
+    /// see <code> <a>SendMessage</a>.</code> 
     /// 
     ///  
     /// <para>

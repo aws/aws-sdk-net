@@ -30,7 +30,7 @@ namespace Amazon.SQS.Model
     /// <summary>
     /// Container for the parameters to the SendMessageBatch operation.
     /// Delivers up to ten messages to the specified queue. This is a batch version of <code>
-    /// <a>SendMessage</a> </code>. For a FIFO queue, multiple messages within a single batch
+    /// <a>SendMessage</a>.</code> For a FIFO queue, multiple messages within a single batch
     /// are enqueued in the order they are sent.
     /// 
     ///  
@@ -48,37 +48,19 @@ namespace Amazon.SQS.Model
     /// </para>
     ///  <important> 
     /// <para>
-    /// The following list shows the characters (in Unicode) that are allowed in your message,
-    /// according to the W3C XML specification:
+    /// A message can include only XML, JSON, and unformatted text. The following Unicode
+    /// characters are allowed:
     /// </para>
-    ///  <ul> <li> 
+    ///  
     /// <para>
-    ///  <code>#x9</code> 
+    ///  <code>#x9</code> | <code>#xA</code> | <code>#xD</code> | <code>#x20</code> to <code>#xD7FF</code>
+    /// | <code>#xE000</code> to <code>#xFFFD</code> | <code>#x10000</code> to <code>#x10FFFF</code>
+    /// 
     /// </para>
-    ///  </li> <li> 
+    ///  
     /// <para>
-    ///  <code>#xA</code> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <code>#xD</code> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <code>#x20</code> to <code>#xD7FF</code> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <code>#xE000</code> to <code>#xFFFD</code> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <code>#x10000</code> to <code>#x10FFFF</code> 
-    /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    /// For more information, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.
-    /// If you send any characters that aren't included in this list, your request is rejected.
+    /// Any characters not included in this list will be rejected. For more information, see
+    /// the <a href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for characters</a>.
     /// </para>
     ///  </important> 
     /// <para>

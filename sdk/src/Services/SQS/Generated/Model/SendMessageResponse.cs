@@ -42,7 +42,7 @@ namespace Amazon.SQS.Model
         /// <para>
         /// An MD5 digest of the non-URL-encoded message attribute string. You can use this attribute
         /// to verify that Amazon SQS received the message correctly. Amazon SQS URL-decodes the
-        /// message before creating the MD5 digest. For information on MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.
+        /// message before creating the MD5 digest. For information about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.
         /// </para>
         /// </summary>
         public string MD5OfMessageAttributes
@@ -62,7 +62,7 @@ namespace Amazon.SQS.Model
         /// <para>
         /// An MD5 digest of the non-URL-encoded message attribute string. You can use this attribute
         /// to verify that Amazon SQS received the message correctly. Amazon SQS URL-decodes the
-        /// message before creating the MD5 digest. For information on MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.
+        /// message before creating the MD5 digest. For information about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.
         /// </para>
         /// </summary>
         public string MD5OfMessageBody
@@ -104,7 +104,7 @@ namespace Amazon.SQS.Model
         /// </para>
         ///  
         /// <para>
-        /// A large, non-consecutive number that Amazon SQS assigns to each message.
+        /// The large, non-consecutive number that Amazon SQS assigns to each message.
         /// </para>
         ///  
         /// <para>
