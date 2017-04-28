@@ -1,3 +1,10 @@
+### 3.3.82.1 (2017-04-27 23:30 UTC)
+* MobileAnalytics (3.3.1.14)
+	* Log ThreadAbortException in Unity
+* Core 3.3.13.2
+	* Fixed a bug where loading Core assembly will result in failed endpoint file path resolution.
+	* All services packages updated to require new Core
+
 ### 3.3.82.0 (2017-04-26 17:29 UTC)
 * RDS (3.3.9.0)
 	* With Amazon Relational Database Service (Amazon RDS) running MySQL or Amazon Aurora, you can now authenticate to your DB instance using IAM database authentication.
