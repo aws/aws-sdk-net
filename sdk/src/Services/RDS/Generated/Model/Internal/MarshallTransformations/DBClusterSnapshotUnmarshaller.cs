@@ -151,6 +151,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.SnapshotType = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("SourceDBClusterSnapshotArn", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.SourceDBClusterSnapshotArn = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Status", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

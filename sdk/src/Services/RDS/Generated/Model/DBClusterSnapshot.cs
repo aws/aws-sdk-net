@@ -62,6 +62,7 @@ namespace Amazon.RDS.Model
         private int? _port;
         private DateTime? _snapshotCreateTime;
         private string _snapshotType;
+        private string _sourceDBClusterSnapshotArn;
         private string _status;
         private bool? _storageEncrypted;
         private string _vpcId;
@@ -357,6 +358,25 @@ namespace Amazon.RDS.Model
         internal bool IsSetSnapshotType()
         {
             return this._snapshotType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceDBClusterSnapshotArn. 
+        /// <para>
+        /// If the DB cluster snapshot was copied from a source DB cluster snapshot, the Amazon
+        /// Resource Name (ARN) for the source DB cluster snapshot; otherwise, a null value.
+        /// </para>
+        /// </summary>
+        public string SourceDBClusterSnapshotArn
+        {
+            get { return this._sourceDBClusterSnapshotArn; }
+            set { this._sourceDBClusterSnapshotArn = value; }
+        }
+
+        // Check to see if SourceDBClusterSnapshotArn property is set
+        internal bool IsSetSourceDBClusterSnapshotArn()
+        {
+            return this._sourceDBClusterSnapshotArn != null;
         }
 
         /// <summary>
