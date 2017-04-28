@@ -590,6 +590,9 @@ namespace Amazon.Rekognition
         /// <exception cref="Amazon.Rekognition.Model.InternalServerErrorException">
         /// Amazon Rekognition experienced a service issue. Try your call again.
         /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InvalidImageFormatException">
+        /// The provided image format is not supported.
+        /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.InvalidParameterException">
         /// Input parameter violated a constraint. Validate your parameter before calling the
         /// API operation again.
