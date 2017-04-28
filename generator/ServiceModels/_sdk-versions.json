@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.82.1",
+    "ProductVersion" : "3.3.83.0",
     "CoreVersion"    : "3.3.13.2",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -26,7 +26,7 @@
             "InPreview"    : false
         },
         "CloudFormation" : {
-            "Version" : "3.3.4.3",
+            "Version" : "3.3.5.0",
             "Dependencies" : {
                 "Core" : "3.3.13.2"
             },
@@ -247,7 +247,7 @@
             "InPreview"    : false
         },
         "RDS"                  : {
-            "Version" : "3.3.9.1",
+            "Version" : "3.3.10.0",
             "Dependencies" : {
                 "Core" : "3.3.13.2"
             },
@@ -317,7 +317,7 @@
             "InPreview"    : false
         },
         "SQS"                       : {
-            "Version" : "3.3.1.14",
+            "Version" : "3.3.2.0",
             "Dependencies" : {
                 "Core" : "3.3.13.2"
             },
@@ -513,7 +513,7 @@
             "InPreview"    : false
         },
         "Snowball"                        : {
-            "Version" : "3.3.1.12",
+            "Version" : "3.3.2.0",
             "Dependencies" : {
                 "Core" : "3.3.13.2"
             },
@@ -534,7 +534,7 @@
             "InPreview"    : false
         },
         "Rekognition"                     : {
-            "Version" : "3.3.2.2",
+            "Version" : "3.3.3.0",
             "Dependencies" : {
                 "Core" : "3.3.13.2"
             },

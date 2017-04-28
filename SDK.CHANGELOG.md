@@ -1,3 +1,15 @@
+### 3.3.83.0 (2017-04-28 21:28 UTC)
+* CloudFormation (3.3.5.0)
+	* API update for CloudFormation: New optional parameter ClientRequestToken which can be used as an idempotency token to safely retry certain operations as well as tagging StackEvents.
+* RDS (3.3.10.0)
+	* The DescribeDBClusterSnapshots API now returns a SourceDBClusterSnapshotArn field which identifies the source DB cluster snapshot of a copied snapshot.
+* Rekognition (3.3.3.0)
+	* Fix for missing file type check
+* Snowball (3.3.2.0)
+	* The Snowball API has a new exception that can be thrown for list operation requests.
+* SQS (3.3.2.0)
+	* Adding server-side encryption (SSE) support to SQS by integrating with AWS KMS; adding new queue attributes to SQS CreateQueue, SetQueueAttributes and GetQueueAttributes APIs to support SSE.
+
 ### 3.3.82.1 (2017-04-27 23:30 UTC)
 * MobileAnalytics (3.3.1.14)
 	* Log ThreadAbortException in Unity
