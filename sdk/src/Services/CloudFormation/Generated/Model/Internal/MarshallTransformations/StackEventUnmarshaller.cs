@@ -54,6 +54,12 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("ClientRequestToken", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ClientRequestToken = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("EventId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

@@ -36,6 +36,7 @@ namespace Amazon.CloudFormation.Model
     public partial class CreateStackRequest : AmazonCloudFormationRequest
     {
         private List<string> _capabilities = new List<string>();
+        private string _clientRequestToken;
         private bool? _disableRollback;
         private List<string> _notificationARNs = new List<string>();
         private OnFailure _onFailure;
@@ -99,6 +100,27 @@ namespace Amazon.CloudFormation.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ClientRequestToken. 
+        /// <para>
+        /// A unique identifier for this <code>CreateStack</code> request. Specify this token
+        /// if you plan to retry requests so that AWS CloudFormation knows that you're not attempting
+        /// to create a stack with the same name. You might retry <code>CreateStack</code> requests
+        /// to ensure that AWS CloudFormation successfully received them.
+        /// </para>
+        /// </summary>
+        public string ClientRequestToken
+        {
+            get { return this._clientRequestToken; }
+            set { this._clientRequestToken = value; }
+        }
+
+        // Check to see if ClientRequestToken property is set
+        internal bool IsSetClientRequestToken()
+        {
+            return this._clientRequestToken != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DisableRollback. 
         /// <para>
         /// Set to <code>true</code> to disable rollback of the stack if stack creation failed.
@@ -126,8 +148,8 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property NotificationARNs. 
         /// <para>
         /// The Simple Notification Service (SNS) topic ARNs to publish stack related events.
-        /// You can find your SNS topic ARNs using the <a href="https://console.aws.amazon.com/sns">SNS
-        /// console</a> or your Command Line Interface (CLI).
+        /// You can find your SNS topic ARNs using the SNS console or your Command Line Interface
+        /// (CLI).
         /// </para>
         /// </summary>
         public List<string> NotificationARNs

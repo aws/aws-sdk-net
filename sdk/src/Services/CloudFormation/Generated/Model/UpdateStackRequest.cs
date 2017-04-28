@@ -48,6 +48,7 @@ namespace Amazon.CloudFormation.Model
     public partial class UpdateStackRequest : AmazonCloudFormationRequest
     {
         private List<string> _capabilities = new List<string>();
+        private string _clientRequestToken;
         private List<string> _notificationARNs = new List<string>();
         private List<Parameter> _parameters = new List<Parameter>();
         private List<string> _resourceTypes = new List<string>();
@@ -108,6 +109,27 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetCapabilities()
         {
             return this._capabilities != null && this._capabilities.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ClientRequestToken. 
+        /// <para>
+        /// A unique identifier for this <code>UpdateStack</code> request. Specify this token
+        /// if you plan to retry requests so that AWS CloudFormation knows that you're not attempting
+        /// to update a stack with the same name. You might retry <code>UpdateStack</code> requests
+        /// to ensure that AWS CloudFormation successfully received them.
+        /// </para>
+        /// </summary>
+        public string ClientRequestToken
+        {
+            get { return this._clientRequestToken; }
+            set { this._clientRequestToken = value; }
+        }
+
+        // Check to see if ClientRequestToken property is set
+        internal bool IsSetClientRequestToken()
+        {
+            return this._clientRequestToken != null;
         }
 
         /// <summary>
@@ -362,8 +384,8 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// Conditional: You must specify either the <code>TemplateBody</code> or the <code>TemplateURL</code>
-        /// parameter, but not both.
+        /// Conditional: You must specify only one of the following parameters: <code>TemplateBody</code>,
+        /// <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to <code>true</code>.
         /// </para>
         /// </summary>
         public string TemplateBody
@@ -387,8 +409,8 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// Conditional: You must specify either the <code>TemplateBody</code> or the <code>TemplateURL</code>
-        /// parameter, but not both.
+        /// Conditional: You must specify only one of the following parameters: <code>TemplateBody</code>,
+        /// <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to <code>true</code>.
         /// </para>
         /// </summary>
         public string TemplateURL
@@ -407,6 +429,11 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property UsePreviousTemplate. 
         /// <para>
         /// Reuse the existing template that is associated with the stack that you are updating.
+        /// </para>
+        ///  
+        /// <para>
+        /// Conditional: You must specify only one of the following parameters: <code>TemplateBody</code>,
+        /// <code>TemplateURL</code>, or set the <code>UsePreviousTemplate</code> to <code>true</code>.
         /// </para>
         /// </summary>
         public bool UsePreviousTemplate

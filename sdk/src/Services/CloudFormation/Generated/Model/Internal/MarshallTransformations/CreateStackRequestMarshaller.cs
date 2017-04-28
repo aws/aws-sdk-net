@@ -67,6 +67,10 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+                if(publicRequest.IsSetClientRequestToken())
+                {
+                    request.Parameters.Add("ClientRequestToken", StringUtils.FromString(publicRequest.ClientRequestToken));
+                }
                 if(publicRequest.IsSetDisableRollback())
                 {
                     request.Parameters.Add("DisableRollback", StringUtils.FromBool(publicRequest.DisableRollback));

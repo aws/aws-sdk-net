@@ -108,6 +108,10 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
             {
                 return new InsufficientCapabilitiesException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("TokenAlreadyExistsException"))
+            {
+                return new TokenAlreadyExistsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             return new AmazonCloudFormationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
         private static UpdateStackResponseUnmarshaller _instance = new UpdateStackResponseUnmarshaller();        

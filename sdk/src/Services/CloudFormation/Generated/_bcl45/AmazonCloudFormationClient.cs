@@ -59,9 +59,9 @@ namespace Amazon.CloudFormation
     /// </para>
     ///  
     /// <para>
-    /// Amazon CloudFormation makes use of other AWS products. For additional technical information
-    /// about a specific AWS product, see its <a href="http://docs.aws.amazon.com/">technical
-    /// documentation</a>.
+    /// Amazon CloudFormation makes use of other AWS products. If you need additional technical
+    /// information about a specific AWS product, you can find the product's technical documentation
+    /// at <a href="http://docs.aws.amazon.com/">docs.aws.amazon.com</a>.
     /// </para>
     /// </summary>
     public partial class AmazonCloudFormationClient : AmazonServiceClient, IAmazonCloudFormation
@@ -275,6 +275,9 @@ namespace Amazon.CloudFormation
         /// <param name="request">Container for the necessary parameters to execute the CancelUpdateStack service method.</param>
         /// 
         /// <returns>The response from the CancelUpdateStack service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.TokenAlreadyExistsException">
+        /// A client request token already exists.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CancelUpdateStack">REST API Reference for CancelUpdateStack Operation</seealso>
         public CancelUpdateStackResponse CancelUpdateStack(CancelUpdateStackRequest request)
         {
@@ -329,6 +332,9 @@ namespace Amazon.CloudFormation
         /// <param name="request">Container for the necessary parameters to execute the ContinueUpdateRollback service method.</param>
         /// 
         /// <returns>The response from the ContinueUpdateRollback service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.TokenAlreadyExistsException">
+        /// A client request token already exists.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ContinueUpdateRollback">REST API Reference for ContinueUpdateRollback Operation</seealso>
         public ContinueUpdateRollbackResponse ContinueUpdateRollback(ContinueUpdateRollbackRequest request)
         {
@@ -363,22 +369,30 @@ namespace Amazon.CloudFormation
 
 
         /// <summary>
-        /// Creates a list of changes for a stack. AWS CloudFormation generates the change set
-        /// by comparing the template's information with the information that you submit. A change
-        /// set can help you understand which resources AWS CloudFormation will change, and how
-        /// it will change them, before you update your stack. Change sets allow you to check
-        /// before making a change to avoid deleting or replacing critical resources.
+        /// Creates a list of changes that will be applied to a stack so that you can review the
+        /// changes before executing them. You can create a change set for a stack that doesn't
+        /// exist or an existing stack. If you create a change set for a stack that doesn't exist,
+        /// the change set shows all of the resources that AWS CloudFormation will create. If
+        /// you create a change set for an existing stack, AWS CloudFormation compares the stack's
+        /// information with the information that you submit in the change set and lists the differences.
+        /// Use change sets to understand which resources AWS CloudFormation will create or change,
+        /// and how it will change resources in an existing stack, before you create or update
+        /// a stack.
         /// 
         ///  
         /// <para>
-        /// AWS CloudFormation doesn't make any changes to the stack when you create a change
-        /// set. To make the specified changes, you must execute the change set by using the <a>ExecuteChangeSet</a>
-        /// action.
+        /// To create a change set for a stack that doesn't exist, for the <code>ChangeSetType</code>
+        /// parameter, specify <code>CREATE</code>. To create a change set for an existing stack,
+        /// specify <code>UPDATE</code> for the <code>ChangeSetType</code> parameter. After the
+        /// <code>CreateChangeSet</code> call successfully completes, AWS CloudFormation starts
+        /// creating the change set. To check the status of the change set or to review it, use
+        /// the <a>DescribeChangeSet</a> action.
         /// </para>
         ///  
         /// <para>
-        /// After the call successfully completes, AWS CloudFormation starts creating the change
-        /// set. To check the status of the change set, use the <a>DescribeChangeSet</a> action.
+        /// When you are satisfied with the changes the change set will make, execute the change
+        /// set by using the <a>ExecuteChangeSet</a> action. AWS CloudFormation doesn't make changes
+        /// until you execute the change set.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateChangeSet service method.</param>
@@ -444,6 +458,9 @@ namespace Amazon.CloudFormation
         /// </exception>
         /// <exception cref="Amazon.CloudFormation.Model.LimitExceededException">
         /// Quota for the resource has already been reached.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.TokenAlreadyExistsException">
+        /// A client request token already exists.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateStack">REST API Reference for CreateStack Operation</seealso>
         public CreateStackResponse CreateStack(CreateStackRequest request)
@@ -536,6 +553,9 @@ namespace Amazon.CloudFormation
         /// <param name="request">Container for the necessary parameters to execute the DeleteStack service method.</param>
         /// 
         /// <returns>The response from the DeleteStack service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.TokenAlreadyExistsException">
+        /// A client request token already exists.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeleteStack">REST API Reference for DeleteStack Operation</seealso>
         public DeleteStackResponse DeleteStack(DeleteStackRequest request)
         {
@@ -973,6 +993,9 @@ namespace Amazon.CloudFormation
         /// <exception cref="Amazon.CloudFormation.Model.InvalidChangeSetStatusException">
         /// The specified change set cannot be used to update the stack. For example, the change
         /// set status might be <code>CREATE_IN_PROGRESS</code> or the stack status might be <code>UPDATE_IN_PROGRESS</code>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.TokenAlreadyExistsException">
+        /// A client request token already exists.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ExecuteChangeSet">REST API Reference for ExecuteChangeSet Operation</seealso>
         public ExecuteChangeSetResponse ExecuteChangeSet(ExecuteChangeSetRequest request)
@@ -1516,6 +1539,9 @@ namespace Amazon.CloudFormation
         /// <exception cref="Amazon.CloudFormation.Model.InsufficientCapabilitiesException">
         /// The template contains resources with capabilities that were not specified in the Capabilities
         /// parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.TokenAlreadyExistsException">
+        /// A client request token already exists.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/UpdateStack">REST API Reference for UpdateStack Operation</seealso>
         public UpdateStackResponse UpdateStack(UpdateStackRequest request)

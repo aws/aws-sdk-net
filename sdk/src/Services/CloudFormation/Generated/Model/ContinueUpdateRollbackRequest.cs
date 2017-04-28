@@ -48,9 +48,32 @@ namespace Amazon.CloudFormation.Model
     /// </summary>
     public partial class ContinueUpdateRollbackRequest : AmazonCloudFormationRequest
     {
+        private string _clientRequestToken;
         private List<string> _resourcesToSkip = new List<string>();
         private string _roleARN;
         private string _stackName;
+
+        /// <summary>
+        /// Gets and sets the property ClientRequestToken. 
+        /// <para>
+        /// A unique identifier for this <code>ContinueUpdateRollback</code> request. Specify
+        /// this token if you plan to retry requests so that AWS CloudFormation knows that you're
+        /// not attempting to continue the rollback to a stack with the same name. You might retry
+        /// <code>ContinueUpdateRollback</code> requests to ensure that AWS CloudFormation successfully
+        /// received them.
+        /// </para>
+        /// </summary>
+        public string ClientRequestToken
+        {
+            get { return this._clientRequestToken; }
+            set { this._clientRequestToken = value; }
+        }
+
+        // Check to see if ClientRequestToken property is set
+        internal bool IsSetClientRequestToken()
+        {
+            return this._clientRequestToken != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ResourcesToSkip. 
@@ -83,9 +106,9 @@ namespace Amazon.CloudFormation.Model
         ///  
         /// <para>
         /// To specify resources in a nested stack, use the following format: <code>NestedStackName.ResourceLogicalID</code>.
-        /// You can specify a nested stack resource (the logical ID of an <code>AWS::CloudFormation::Stack</code>
-        /// resource) only if it's in one of the following states: <code>DELETE_IN_PROGRESS</code>,
-        /// <code>DELETE_COMPLETE</code>, or <code>DELETE_FAILED</code>. 
+        /// If the <code>ResourceLogicalID</code> is a stack resource (<code>Type: AWS::CloudFormation::Stack</code>),
+        /// it must be in one of the following states: <code>DELETE_IN_PROGRESS</code>, <code>DELETE_COMPLETE</code>,
+        /// or <code>DELETE_FAILED</code>. 
         /// </para>
         /// </summary>
         public List<string> ResourcesToSkip

@@ -111,6 +111,10 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
             {
                 return new InvalidChangeSetStatusException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("TokenAlreadyExistsException"))
+            {
+                return new TokenAlreadyExistsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             return new AmazonCloudFormationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
         private static ExecuteChangeSetResponseUnmarshaller _instance = new ExecuteChangeSetResponseUnmarshaller();        

@@ -58,6 +58,10 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
 
             if(publicRequest != null)
             {
+                if(publicRequest.IsSetClientRequestToken())
+                {
+                    request.Parameters.Add("ClientRequestToken", StringUtils.FromString(publicRequest.ClientRequestToken));
+                }
                 if(publicRequest.IsSetRetainResources())
                 {
                     int publicRequestlistValueIndex = 1;
