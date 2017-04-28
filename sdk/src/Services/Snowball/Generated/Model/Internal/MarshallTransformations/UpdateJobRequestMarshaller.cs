@@ -79,6 +79,12 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Description);
                 }
 
+                if(publicRequest.IsSetForwardingAddressId())
+                {
+                    context.Writer.WritePropertyName("ForwardingAddressId");
+                    context.Writer.Write(publicRequest.ForwardingAddressId);
+                }
+
                 if(publicRequest.IsSetJobId())
                 {
                     context.Writer.WritePropertyName("JobId");

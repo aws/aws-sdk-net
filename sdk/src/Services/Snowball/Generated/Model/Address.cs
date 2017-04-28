@@ -40,6 +40,7 @@ namespace Amazon.Snowball.Model
         private string _city;
         private string _company;
         private string _country;
+        private bool? _isRestricted;
         private string _landmark;
         private string _name;
         private string _phoneNumber;
@@ -123,9 +124,28 @@ namespace Amazon.Snowball.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IsRestricted. 
+        /// <para>
+        /// If the address you are creating is a primary address, then set this option to true.
+        /// This field is not supported in most regions.
+        /// </para>
+        /// </summary>
+        public bool IsRestricted
+        {
+            get { return this._isRestricted.GetValueOrDefault(); }
+            set { this._isRestricted = value; }
+        }
+
+        // Check to see if IsRestricted property is set
+        internal bool IsSetIsRestricted()
+        {
+            return this._isRestricted.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Landmark. 
         /// <para>
-        /// The landmark identifying the address that the appliance will be shipped to.
+        /// This field is no longer used and the value is ignored.
         /// </para>
         /// </summary>
         public string Landmark
@@ -197,7 +217,7 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property PrefectureOrDistrict. 
         /// <para>
-        /// The prefecture or district that the appliance will be shipped to.
+        /// This field is no longer used and the value is ignored.
         /// </para>
         /// </summary>
         public string PrefectureOrDistrict

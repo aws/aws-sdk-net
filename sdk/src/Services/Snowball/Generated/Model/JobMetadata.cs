@@ -39,6 +39,7 @@ namespace Amazon.Snowball.Model
         private DateTime? _creationDate;
         private DataTransfer _dataTransferProgress;
         private string _description;
+        private string _forwardingAddressId;
         private string _jobId;
         private JobLogs _jobLogInfo;
         private JobState _jobState;
@@ -144,6 +145,25 @@ namespace Amazon.Snowball.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ForwardingAddressId. 
+        /// <para>
+        /// The ID of the address that you want a job shipped to, after it will be shipped to
+        /// its primary address. This field is not supported in most regions.
+        /// </para>
+        /// </summary>
+        public string ForwardingAddressId
+        {
+            get { return this._forwardingAddressId; }
+            set { this._forwardingAddressId = value; }
+        }
+
+        // Check to see if ForwardingAddressId property is set
+        internal bool IsSetForwardingAddressId()
+        {
+            return this._forwardingAddressId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property JobId. 
         /// <para>
         /// The automatically generated ID for a job, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.
@@ -222,8 +242,8 @@ namespace Amazon.Snowball.Model
         /// Gets and sets the property KmsKeyARN. 
         /// <para>
         /// The Amazon Resource Name (ARN) for the AWS Key Management Service (AWS KMS) key associated
-        /// with this job. This ARN was created using the <code>CreateKey</code> API action in
-        /// AWS KMS.
+        /// with this job. This ARN was created using the <a href="http://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a>
+        /// API action in AWS KMS.
         /// </para>
         /// </summary>
         public string KmsKeyARN
@@ -281,7 +301,7 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property RoleARN. 
         /// <para>
-        /// The role ARN associated with this job. This ARN was created using the <code>CreateRole</code>
+        /// The role ARN associated with this job. This ARN was created using the <a href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
         /// API action in AWS Identity and Access Management (IAM).
         /// </para>
         /// </summary>

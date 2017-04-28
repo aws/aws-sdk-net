@@ -38,6 +38,7 @@ namespace Amazon.Snowball.Model
     {
         private string _addressId;
         private string _description;
+        private string _forwardingAddressId;
         private string _jobId;
         private Notification _notification;
         private JobResource _resources;
@@ -79,6 +80,25 @@ namespace Amazon.Snowball.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ForwardingAddressId. 
+        /// <para>
+        /// The updated ID for the forwarding address for a job. This field is not supported in
+        /// most regions.
+        /// </para>
+        /// </summary>
+        public string ForwardingAddressId
+        {
+            get { return this._forwardingAddressId; }
+            set { this._forwardingAddressId = value; }
+        }
+
+        // Check to see if ForwardingAddressId property is set
+        internal bool IsSetForwardingAddressId()
+        {
+            return this._forwardingAddressId != null;
         }
 
         /// <summary>
@@ -140,8 +160,8 @@ namespace Amazon.Snowball.Model
         /// Gets and sets the property RoleARN. 
         /// <para>
         /// The new role Amazon Resource Name (ARN) that you want to associate with this job.
-        /// To create a role ARN, use the <a href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
-        /// AWS Identity and Access Management (IAM) API action.
+        /// To create a role ARN, use the <a href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>AWS
+        /// Identity and Access Management (IAM) API action.
         /// </para>
         /// </summary>
         public string RoleARN

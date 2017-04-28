@@ -69,6 +69,12 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Country);
             }
 
+            if(requestObject.IsSetIsRestricted())
+            {
+                context.Writer.WritePropertyName("IsRestricted");
+                context.Writer.Write(requestObject.IsRestricted);
+            }
+
             if(requestObject.IsSetLandmark())
             {
                 context.Writer.WritePropertyName("Landmark");

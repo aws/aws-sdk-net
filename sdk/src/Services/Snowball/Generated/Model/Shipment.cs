@@ -39,8 +39,7 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Status information for a shipment. Valid statuses include <code>NEW</code>, <code>IN_TRANSIT</code>,
-        /// and <code>DELIVERED</code>.
+        /// Status information for a shipment.
         /// </para>
         /// </summary>
         public string Status

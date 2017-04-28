@@ -37,6 +37,7 @@ namespace Amazon.Snowball.Model
     {
         private string _addressId;
         private string _description;
+        private string _forwardingAddressId;
         private JobType _jobType;
         private string _kmsKeyARN;
         private Notification _notification;
@@ -80,6 +81,24 @@ namespace Amazon.Snowball.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ForwardingAddressId. 
+        /// <para>
+        /// The forwarding address ID for a cluster. This field is not supported in most regions.
+        /// </para>
+        /// </summary>
+        public string ForwardingAddressId
+        {
+            get { return this._forwardingAddressId; }
+            set { this._forwardingAddressId = value; }
+        }
+
+        // Check to see if ForwardingAddressId property is set
+        internal bool IsSetForwardingAddressId()
+        {
+            return this._forwardingAddressId != null;
         }
 
         /// <summary>

@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.Snowball.IAmazonSnowball.CancelCluster(Amazon.Snowball.Model.CancelClusterRequest)" />
+            <member name="M:Amazon.Snowball.AmazonSnowballClient.CancelCluster(Amazon.Snowball.Model.CancelClusterRequest)" />
+            <member name="T:Amazon.Snowball.Model.CancelClusterRequest" />
+            <member name="T:Amazon.Snowball.Model.CancelClusterResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation cancels a cluster job. You can only cancel a cluster job while it's in the AwaitingQuorum status.
+                </para>
+                <code
+                    title="To cancel a cluster job"
+                    source=".\AWSSDKDocSamples\Snowball\Snowball.GeneratedSamples.cs"
+                    region="to-cancel-a-cluster-job-1482533760554" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Snowball.IAmazonSnowball.CancelJob(Amazon.Snowball.Model.CancelJobRequest)" />
+            <member name="M:Amazon.Snowball.AmazonSnowballClient.CancelJob(Amazon.Snowball.Model.CancelJobRequest)" />
+            <member name="T:Amazon.Snowball.Model.CancelJobRequest" />
+            <member name="T:Amazon.Snowball.Model.CancelJobResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation cancels a job. You can only cancel a job before its JobState value changes to PreparingAppliance.
+                </para>
+                <code
+                    title="To cancel a job for a Snowball device"
+                    source=".\AWSSDKDocSamples\Snowball\Snowball.GeneratedSamples.cs"
+                    region="to-cancel-a-job-for-a-snowball-device-1482534699477" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Snowball.IAmazonSnowball.CreateAddress(Amazon.Snowball.Model.CreateAddressRequest)" />
+            <member name="M:Amazon.Snowball.AmazonSnowballClient.CreateAddress(Amazon.Snowball.Model.CreateAddressRequest)" />
+            <member name="T:Amazon.Snowball.Model.CreateAddressRequest" />
+            <member name="T:Amazon.Snowball.Model.CreateAddressResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation creates an address for a job. Addresses are validated at the time of creation. The address you provide must be located within the serviceable area of your region. If the address is invalid or unsupported, then an exception is thrown.
+                </para>
+                <code
+                    title="To create an address for a job"
+                    source=".\AWSSDKDocSamples\Snowball\Snowball.GeneratedSamples.cs"
+                    region="to-create-an-address-for-a-job-1482535416294" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Snowball.IAmazonSnowball.CreateCluster(Amazon.Snowball.Model.CreateClusterRequest)" />
+            <member name="M:Amazon.Snowball.AmazonSnowballClient.CreateCluster(Amazon.Snowball.Model.CreateClusterRequest)" />
+            <member name="T:Amazon.Snowball.Model.CreateClusterRequest" />
+            <member name="T:Amazon.Snowball.Model.CreateClusterResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Creates an empty cluster. Each cluster supports five nodes. You use the CreateJob action separately to create the jobs for each of these nodes. The cluster does not ship until these five node jobs have been created.
+                </para>
+                <code
+                    title="To create a cluster"
+                    source=".\AWSSDKDocSamples\Snowball\Snowball.GeneratedSamples.cs"
+                    region="to-create-a-cluster-1482864724077" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Snowball.IAmazonSnowball.CreateJob(Amazon.Snowball.Model.CreateJobRequest)" />
+            <member name="M:Amazon.Snowball.AmazonSnowballClient.CreateJob(Amazon.Snowball.Model.CreateJobRequest)" />
+            <member name="T:Amazon.Snowball.Model.CreateJobRequest" />
+            <member name="T:Amazon.Snowball.Model.CreateJobResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Creates a job to import or export data between Amazon S3 and your on-premises data center. Your AWS account must have the right trust policies and permissions in place to create a job for Snowball. If you're creating a job for a node in a cluster, you only need to provide the clusterId value; the other job attributes are inherited from the cluster.
+                </para>
+                <code
+                    title="To create a job"
+                    source=".\AWSSDKDocSamples\Snowball\Snowball.GeneratedSamples.cs"
+                    region="to-create-a-job-1482864834886" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Snowball.IAmazonSnowball.DescribeAddress(Amazon.Snowball.Model.DescribeAddressRequest)" />
+            <member name="M:Amazon.Snowball.AmazonSnowballClient.DescribeAddress(Amazon.Snowball.Model.DescribeAddressRequest)" />
+            <member name="T:Amazon.Snowball.Model.DescribeAddressRequest" />
+            <member name="T:Amazon.Snowball.Model.DescribeAddressResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation describes an address for a job.
+                </para>
+                <code
+                    title="To describe an address for a job"
+                    source=".\AWSSDKDocSamples\Snowball\Snowball.GeneratedSamples.cs"
+                    region="to-describe-an-address-for-a-job-1482538608745" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Snowball.IAmazonSnowball.DescribeAddresses(Amazon.Snowball.Model.DescribeAddressesRequest)" />
+            <member name="M:Amazon.Snowball.AmazonSnowballClient.DescribeAddresses(Amazon.Snowball.Model.DescribeAddressesRequest)" />
+            <member name="T:Amazon.Snowball.Model.DescribeAddressesRequest" />
+            <member name="T:Amazon.Snowball.Model.DescribeAddressesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation describes all the addresses that you've created for AWS Snowball. Calling this API in one of the US regions will return addresses from the list of all addresses associated with this account in all US regions.
+                </para>
+                <code
+                    title="To describe all the addresses you've created for AWS Snowball"
+                    source=".\AWSSDKDocSamples\Snowball\Snowball.GeneratedSamples.cs"
+                    region="to-describe-all-the-addresses-youve-created-for-aws-snowball-1482538936603" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Snowball.IAmazonSnowball.DescribeCluster(Amazon.Snowball.Model.DescribeClusterRequest)" />
+            <member name="M:Amazon.Snowball.AmazonSnowballClient.DescribeCluster(Amazon.Snowball.Model.DescribeClusterRequest)" />
+            <member name="T:Amazon.Snowball.Model.DescribeClusterRequest" />
+            <member name="T:Amazon.Snowball.Model.DescribeClusterResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Returns information about a specific cluster including shipping information, cluster status, and other important metadata.
+                </para>
+                <code
+                    title="To describe a cluster"
+                    source=".\AWSSDKDocSamples\Snowball\Snowball.GeneratedSamples.cs"
+                    region="to-describe-a-cluster-1482864218396" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Snowball.IAmazonSnowball.DescribeJob(Amazon.Snowball.Model.DescribeJobRequest)" />
+            <member name="M:Amazon.Snowball.AmazonSnowballClient.DescribeJob(Amazon.Snowball.Model.DescribeJobRequest)" />
+            <member name="T:Amazon.Snowball.Model.DescribeJobRequest" />
+            <member name="T:Amazon.Snowball.Model.DescribeJobResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation describes a job you've created for AWS Snowball.
+                </para>
+                <code
+                    title="To describe a job you've created for AWS Snowball"
+                    source=".\AWSSDKDocSamples\Snowball\Snowball.GeneratedSamples.cs"
+                    region="to-describe-a-job-youve-created-for-aws-snowball-1482539500180" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Snowball.IAmazonSnowball.GetJobManifest(Amazon.Snowball.Model.GetJobManifestRequest)" />
+            <member name="M:Amazon.Snowball.AmazonSnowballClient.GetJobManifest(Amazon.Snowball.Model.GetJobManifestRequest)" />
+            <member name="T:Amazon.Snowball.Model.GetJobManifestRequest" />
+            <member name="T:Amazon.Snowball.Model.GetJobManifestResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Returns a link to an Amazon S3 presigned URL for the manifest file associated with the specified JobId value. You can access the manifest file for up to 60 minutes after this request has been made. To access the manifest file after 60 minutes have passed, you'll have to make another call to the GetJobManifest action.
+
+The manifest is an encrypted file that you can download after your job enters the WithCustomer status. The manifest is decrypted by using the UnlockCode code value, when you pass both values to the Snowball through the Snowball client when the client is started for the first time.
+
+As a best practice, we recommend that you don't save a copy of an UnlockCode value in the same location as the manifest file for that job. Saving these separately helps prevent unauthorized parties from gaining access to the Snowball associated with that job.
+
+The credentials of a given job, including its manifest file and unlock code, expire 90 days after the job is created.
+                </para>
+                <code
+                    title="To get the manifest for a job you've created for AWS Snowball"
+                    source=".\AWSSDKDocSamples\Snowball\Snowball.GeneratedSamples.cs"
+                    region="to-get-the-manifest-for-a-job-youve-created-for-aws-snowball-1482540389246" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Snowball.IAmazonSnowball.GetJobUnlockCode(Amazon.Snowball.Model.GetJobUnlockCodeRequest)" />
+            <member name="M:Amazon.Snowball.AmazonSnowballClient.GetJobUnlockCode(Amazon.Snowball.Model.GetJobUnlockCodeRequest)" />
+            <member name="T:Amazon.Snowball.Model.GetJobUnlockCodeRequest" />
+            <member name="T:Amazon.Snowball.Model.GetJobUnlockCodeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Returns the UnlockCode code value for the specified job. A particular UnlockCode value can be accessed for up to 90 days after the associated job has been created.
+
+The UnlockCode value is a 29-character code with 25 alphanumeric characters and 4 hyphens. This code is used to decrypt the manifest file when it is passed along with the manifest to the Snowball through the Snowball client when the client is started for the first time.
+
+As a best practice, we recommend that you don't save a copy of the UnlockCode in the same location as the manifest file for that job. Saving these separately helps prevent unauthorized parties from gaining access to the Snowball associated with that job.
+                </para>
+                <code
+                    title="To get the unlock code for a job you've created for AWS Snowball"
+                    source=".\AWSSDKDocSamples\Snowball\Snowball.GeneratedSamples.cs"
+                    region="to-get-the-unlock-code-for-a-job-youve-created-for-aws-snowball-1482541987286" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Snowball.IAmazonSnowball.GetSnowballUsage(Amazon.Snowball.Model.GetSnowballUsageRequest)" />
+            <member name="M:Amazon.Snowball.AmazonSnowballClient.GetSnowballUsage(Amazon.Snowball.Model.GetSnowballUsageRequest)" />
+            <member name="T:Amazon.Snowball.Model.GetSnowballUsageRequest" />
+            <member name="T:Amazon.Snowball.Model.GetSnowballUsageResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Returns information about the Snowball service limit for your account, and also the number of Snowballs your account has in use.
+
+The default service limit for the number of Snowballs that you can have at one time is 1. If you want to increase your service limit, contact AWS Support.
+                </para>
+                <code
+                    title="To see your Snowball service limit and the number of Snowballs you have in use"
+                    source=".\AWSSDKDocSamples\Snowball\Snowball.GeneratedSamples.cs"
+                    region="to-see-your-snowball-service-limit-and-the-number-of-snowballs-you-have-in-use-1482863394588" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Snowball.IAmazonSnowball.ListClusterJobs(Amazon.Snowball.Model.ListClusterJobsRequest)" />
+            <member name="M:Amazon.Snowball.AmazonSnowballClient.ListClusterJobs(Amazon.Snowball.Model.ListClusterJobsRequest)" />
+            <member name="T:Amazon.Snowball.Model.ListClusterJobsRequest" />
+            <member name="T:Amazon.Snowball.Model.ListClusterJobsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Returns an array of JobListEntry objects of the specified length. Each JobListEntry object is for a job in the specified cluster and contains a job's state, a job's ID, and other information.
+                </para>
+                <code
+                    title="To get a list of jobs in a cluster that you've created for AWS Snowball"
+                    source=".\AWSSDKDocSamples\Snowball\Snowball.GeneratedSamples.cs"
+                    region="to-get-a-list-of-jobs-in-a-cluster-that-youve-created-for-aws-snowball-1482863105773" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Snowball.IAmazonSnowball.ListClusters(Amazon.Snowball.Model.ListClustersRequest)" />
+            <member name="M:Amazon.Snowball.AmazonSnowballClient.ListClusters(Amazon.Snowball.Model.ListClustersRequest)" />
+            <member name="T:Amazon.Snowball.Model.ListClustersRequest" />
+            <member name="T:Amazon.Snowball.Model.ListClustersResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Returns an array of ClusterListEntry objects of the specified length. Each ClusterListEntry object contains a cluster's state, a cluster's ID, and other important status information.
+                </para>
+                <code
+                    title="To get a list of clusters that you've created for AWS Snowball"
+                    source=".\AWSSDKDocSamples\Snowball\Snowball.GeneratedSamples.cs"
+                    region="to-get-a-list-of-clusters-that-youve-created-for-aws-snowball-1482862223003" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Snowball.IAmazonSnowball.ListJobs(Amazon.Snowball.Model.ListJobsRequest)" />
+            <member name="M:Amazon.Snowball.AmazonSnowballClient.ListJobs(Amazon.Snowball.Model.ListJobsRequest)" />
+            <member name="T:Amazon.Snowball.Model.ListJobsRequest" />
+            <member name="T:Amazon.Snowball.Model.ListJobsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Returns an array of JobListEntry objects of the specified length. Each JobListEntry object contains a job's state, a job's ID, and a value that indicates whether the job is a job part, in the case of export jobs. Calling this API action in one of the US regions will return jobs from the list of all jobs associated with this account in all US regions.
+                </para>
+                <code
+                    title="To get a list of jobs that you've created for AWS Snowball"
+                    source=".\AWSSDKDocSamples\Snowball\Snowball.GeneratedSamples.cs"
+                    region="to-get-a-list-of-jobs-that-youve-created-for-aws-snowball-1482542167627" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Snowball.IAmazonSnowball.UpdateCluster(Amazon.Snowball.Model.UpdateClusterRequest)" />
+            <member name="M:Amazon.Snowball.AmazonSnowballClient.UpdateCluster(Amazon.Snowball.Model.UpdateClusterRequest)" />
+            <member name="T:Amazon.Snowball.Model.UpdateClusterRequest" />
+            <member name="T:Amazon.Snowball.Model.UpdateClusterResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This action allows you to update certain parameters for a cluster. Once the cluster changes to a different state, usually within 60 minutes of it being created, this action is no longer available.
+                </para>
+                <code
+                    title="To update a cluster"
+                    source=".\AWSSDKDocSamples\Snowball\Snowball.GeneratedSamples.cs"
+                    region="to-update-a-cluster-1482863900595" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Snowball.IAmazonSnowball.UpdateJob(Amazon.Snowball.Model.UpdateJobRequest)" />
+            <member name="M:Amazon.Snowball.AmazonSnowballClient.UpdateJob(Amazon.Snowball.Model.UpdateJobRequest)" />
+            <member name="T:Amazon.Snowball.Model.UpdateJobRequest" />
+            <member name="T:Amazon.Snowball.Model.UpdateJobResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This action allows you to update certain parameters for a job. Once the job changes to a different job state, usually within 60 minutes of the job being created, this action is no longer available.
+                </para>
+                <code
+                    title="To update a job"
+                    source=".\AWSSDKDocSamples\Snowball\Snowball.GeneratedSamples.cs"
+                    region="to-update-a-job-1482863556886" />
+            </example>
+        </value>
+    </doc>
+</docs>

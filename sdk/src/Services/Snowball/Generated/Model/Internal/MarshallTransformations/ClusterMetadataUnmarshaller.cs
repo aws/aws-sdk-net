@@ -94,6 +94,12 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ForwardingAddressId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ForwardingAddressId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("JobType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

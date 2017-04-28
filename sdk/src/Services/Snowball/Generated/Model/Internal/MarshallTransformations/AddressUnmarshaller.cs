@@ -88,6 +88,12 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
                     unmarshalledObject.Country = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("IsRestricted", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.IsRestricted = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Landmark", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

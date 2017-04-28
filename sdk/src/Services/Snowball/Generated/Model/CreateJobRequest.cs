@@ -33,13 +33,14 @@ namespace Amazon.Snowball.Model
     /// center. Your AWS account must have the right trust policies and permissions in place
     /// to create a job for Snowball. If you're creating a job for a node in a cluster, you
     /// only need to provide the <code>clusterId</code> value; the other job attributes are
-    /// inherited from the cluster. .
+    /// inherited from the cluster.
     /// </summary>
     public partial class CreateJobRequest : AmazonSnowballRequest
     {
         private string _addressId;
         private string _clusterId;
         private string _description;
+        private string _forwardingAddressId;
         private JobType _jobType;
         private string _kmsKeyARN;
         private Notification _notification;
@@ -104,6 +105,24 @@ namespace Amazon.Snowball.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ForwardingAddressId. 
+        /// <para>
+        /// The forwarding address ID for a job. This field is not supported in most regions.
+        /// </para>
+        /// </summary>
+        public string ForwardingAddressId
+        {
+            get { return this._forwardingAddressId; }
+            set { this._forwardingAddressId = value; }
+        }
+
+        // Check to see if ForwardingAddressId property is set
+        internal bool IsSetForwardingAddressId()
+        {
+            return this._forwardingAddressId != null;
         }
 
         /// <summary>

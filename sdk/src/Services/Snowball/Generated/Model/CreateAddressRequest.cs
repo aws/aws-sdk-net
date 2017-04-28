@@ -29,14 +29,10 @@ namespace Amazon.Snowball.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateAddress operation.
-    /// Creates an address for a Snowball to be shipped to. 
-    /// 
-    ///  
-    /// <para>
-    /// Addresses are validated at the time of creation. The address you provide must be located
-    /// within the serviceable area of your region. If the address is invalid or unsupported,
-    /// then an exception is thrown.
-    /// </para>
+    /// Creates an address for a Snowball to be shipped to. In most regions, addresses are
+    /// validated at the time of creation. The address you provide must be located within
+    /// the serviceable area of your region. If the address is invalid or unsupported, then
+    /// an exception is thrown.
     /// </summary>
     public partial class CreateAddressRequest : AmazonSnowballRequest
     {

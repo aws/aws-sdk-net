@@ -342,14 +342,10 @@ namespace Amazon.Snowball
 
 
         /// <summary>
-        /// Creates an address for a Snowball to be shipped to. 
-        /// 
-        ///  
-        /// <para>
-        /// Addresses are validated at the time of creation. The address you provide must be located
-        /// within the serviceable area of your region. If the address is invalid or unsupported,
-        /// then an exception is thrown.
-        /// </para>
+        /// Creates an address for a Snowball to be shipped to. In most regions, addresses are
+        /// validated at the time of creation. The address you provide must be located within
+        /// the serviceable area of your region. If the address is invalid or unsupported, then
+        /// an exception is thrown.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAddress service method.</param>
         /// 
@@ -455,7 +451,7 @@ namespace Amazon.Snowball
         /// center. Your AWS account must have the right trust policies and permissions in place
         /// to create a job for Snowball. If you're creating a job for a node in a cluster, you
         /// only need to provide the <code>clusterId</code> value; the other job attributes are
-        /// inherited from the cluster. .
+        /// inherited from the cluster.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateJob service method.</param>
         /// 
@@ -563,6 +559,11 @@ namespace Amazon.Snowball
         /// <param name="request">Container for the necessary parameters to execute the DescribeAddresses service method.</param>
         /// 
         /// <returns>The response from the DescribeAddresses service method, as returned by Snowball.</returns>
+        /// <exception cref="Amazon.Snowball.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> string was altered unexpectedly, and the operation has
+        /// stopped. Run the operation without changing the <code>NextToken</code> string, and
+        /// try again.
+        /// </exception>
         /// <exception cref="Amazon.Snowball.Model.InvalidResourceException">
         /// The specified resource can't be found. Check the information you provided in your
         /// last request, and try again.
@@ -646,7 +647,7 @@ namespace Amazon.Snowball
 
         /// <summary>
         /// Returns information about a specific job including shipping information, job status,
-        /// and other important metadata. .
+        /// and other important metadata.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeJob service method.</param>
         /// 
@@ -877,6 +878,11 @@ namespace Amazon.Snowball
         /// <param name="request">Container for the necessary parameters to execute the ListClusterJobs service method.</param>
         /// 
         /// <returns>The response from the ListClusterJobs service method, as returned by Snowball.</returns>
+        /// <exception cref="Amazon.Snowball.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> string was altered unexpectedly, and the operation has
+        /// stopped. Run the operation without changing the <code>NextToken</code> string, and
+        /// try again.
+        /// </exception>
         /// <exception cref="Amazon.Snowball.Model.InvalidResourceException">
         /// The specified resource can't be found. Check the information you provided in your
         /// last request, and try again.
@@ -922,6 +928,11 @@ namespace Amazon.Snowball
         /// <param name="request">Container for the necessary parameters to execute the ListClusters service method.</param>
         /// 
         /// <returns>The response from the ListClusters service method, as returned by Snowball.</returns>
+        /// <exception cref="Amazon.Snowball.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> string was altered unexpectedly, and the operation has
+        /// stopped. Run the operation without changing the <code>NextToken</code> string, and
+        /// try again.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListClusters">REST API Reference for ListClusters Operation</seealso>
         public ListClustersResponse ListClusters(ListClustersRequest request)
         {
@@ -965,6 +976,11 @@ namespace Amazon.Snowball
         /// <param name="request">Container for the necessary parameters to execute the ListJobs service method.</param>
         /// 
         /// <returns>The response from the ListJobs service method, as returned by Snowball.</returns>
+        /// <exception cref="Amazon.Snowball.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> string was altered unexpectedly, and the operation has
+        /// stopped. Run the operation without changing the <code>NextToken</code> string, and
+        /// try again.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListJobs">REST API Reference for ListJobs Operation</seealso>
         public ListJobsResponse ListJobs(ListJobsRequest request)
         {
