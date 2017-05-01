@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright 2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@ using System.Reflection;
 using Microsoft.Extensions.DependencyInjection;
 
 using Amazon.Runtime;
+using Amazon.Runtime.CredentialManagement;
 
 namespace Amazon.Extensions.NETCore.Setup
 {
@@ -106,13 +107,18 @@ namespace Amazon.Extensions.NETCore.Setup
         {
             if (options != null)
             {
-                if(options.Credentials != null)
+                if (options.Credentials != null)
                 {
                     return options.Credentials;
                 }
-                if(!string.IsNullOrEmpty(options.Profile) && StoredProfileAWSCredentials.IsProfileKnown(options.Profile, options.ProfilesLocation))
+                if (!string.IsNullOrEmpty(options.Profile))
                 {
-                    return new StoredProfileAWSCredentials(options.Profile, options.ProfilesLocation);
+                    var chain = new CredentialProfileStoreChain(options.ProfilesLocation);
+                    AWSCredentials result;
+                    if (chain.TryGetAWSCredentials(options.Profile, out result))
+                    {
+                        return result;
+                    }
                 }
             }
 
