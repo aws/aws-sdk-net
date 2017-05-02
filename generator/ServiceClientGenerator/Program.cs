@@ -62,6 +62,7 @@ namespace ServiceClientGenerator
                     GeneratorDriver.UpdateSolutionFiles(generationManifest, options);
                     GeneratorDriver.UpdateAssemblyVersionInfo(generationManifest, options);
                     GeneratorDriver.UpdateNuGetPackagesInReadme(generationManifest, options);
+                    GeneratorDriver.UpdateCoreCLRTestDependencies(generationManifest, options);
                     GeneratorDriver.UpdateCodeAnalysisSoltion(generationManifest, options);
                 }
                 else

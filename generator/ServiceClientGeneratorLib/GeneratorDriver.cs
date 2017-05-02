@@ -1094,6 +1094,47 @@ namespace ServiceClientGenerator
             }
         }
 
+        public static void UpdateCoreCLRTestDependencies(GenerationManifest manifest, GeneratorOptions options)
+        {
+            var projectJsonPath = Path.Combine(options.SdkRootFolder, "test/CoreCLR/IntegrationTests/project.json");
+            var originalProjectJson = File.ReadAllText(projectJsonPath);
+
+            var rootData = JsonMapper.ToObject(originalProjectJson);
+            var dependency = rootData["dependencies"] as JsonData;
+
+            foreach (var service in manifest.ServiceConfigurations.OrderBy(x => x.ServiceFolderName))
+            {
+                if (service.ParentConfig != null)
+                    continue;
+
+                if(service.CoreCLRSupport && dependency[service.ServiceFolderName] == null)
+                {
+                    dependency[service.ServiceFolderName] = "1.0.0-*";
+                }
+            }
+
+            //
+            // Sort the dependencies list to avoid merge conflicts
+            //
+            {
+                List<string> sortedPropertyNames = dependency.PropertyNames.OrderBy(key => key).ToList<string>();
+
+                JsonData sortedDependencies = new JsonData();
+                foreach (var propertyName in sortedPropertyNames)
+                {
+                    sortedDependencies[propertyName] = dependency[propertyName];
+                }
+                rootData["dependencies"] = sortedDependencies;
+            }
+
+            using (FileStream stream = new FileStream(projectJsonPath, FileMode.Create))
+            using (var newContent = new System.IO.StreamWriter(stream))
+            {
+                JsonWriter writer = new JsonWriter(newContent) { PrettyPrint = true };
+                rootData.ToJson(writer);
+            }
+        }
+
         /// <summary>
         /// Runs the generator and saves the content into _bcl35 directory under the generated files root.
         /// </summary>
