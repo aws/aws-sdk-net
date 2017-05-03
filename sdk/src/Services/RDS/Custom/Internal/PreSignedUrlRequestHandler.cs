@@ -117,7 +117,8 @@ namespace Amazon.RDS.Internal
                 var immutableCredentials = _credentials.GetCredentials();
                 if (immutableCredentials.UseToken)
                 {
-                    iRequest.Parameters[HeaderKeys.XAmzSecurityTokenHeader] = immutableCredentials.Token;
+                    // Don't use HeaderKeys.XAmzSecurityTokenHeader because RDS treats this as case-sensitive
+                    iRequest.Parameters["X-Amz-Security-Token"] = immutableCredentials.Token;
                 }
 
                 // Create presigned URL and assign it
