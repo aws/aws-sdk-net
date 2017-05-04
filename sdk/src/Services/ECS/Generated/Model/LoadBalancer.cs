@@ -79,7 +79,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property LoadBalancerName. 
         /// <para>
-        /// The name of the load balancer.
+        /// The name of a Classic load balancer.
         /// </para>
         /// </summary>
         public string LoadBalancerName

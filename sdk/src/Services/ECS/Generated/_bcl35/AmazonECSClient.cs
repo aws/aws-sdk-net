@@ -330,13 +330,14 @@ namespace Amazon.ECS
         /// service's tasks that must remain in the <code>RUNNING</code> state during a deployment,
         /// as a percentage of the <code>desiredCount</code> (rounded up to the nearest integer).
         /// This parameter enables you to deploy without using additional cluster capacity. For
-        /// example, if <code>desiredCount</code> is four tasks and the minimum is 50%, the scheduler
-        /// can stop two existing tasks to free up cluster capacity before starting two new tasks.
-        /// Tasks for services that do not use a load balancer are considered healthy if they
-        /// are in the <code>RUNNING</code> state. Tasks for services that use a load balancer
-        /// are considered healthy if they are in the <code>RUNNING</code> state and the container
-        /// instance they are hosted on is reported as healthy by the load balancer. The default
-        /// value is 50% in the console and 100% for the AWS CLI, the AWS SDKs, and the APIs.
+        /// example, if your service has a <code>desiredCount</code> of four tasks and a <code>minimumHealthyPercent</code>
+        /// of 50%, the scheduler can stop two existing tasks to free up cluster capacity before
+        /// starting two new tasks. Tasks for services that <i>do not</i> use a load balancer
+        /// are considered healthy if they are in the <code>RUNNING</code> state. Tasks for services
+        /// that <i>do</i> use a load balancer are considered healthy if they are in the <code>RUNNING</code>
+        /// state and the container instance they are hosted on is reported as healthy by the
+        /// load balancer. The default value for <code>minimumHealthyPercent</code> is 50% in
+        /// the console and 100% for the AWS CLI, the AWS SDKs, and the APIs.
         /// </para>
         ///  
         /// <para>
@@ -344,10 +345,10 @@ namespace Amazon.ECS
         /// of your service's tasks that are allowed in the <code>RUNNING</code> or <code>PENDING</code>
         /// state during a deployment, as a percentage of the <code>desiredCount</code> (rounded
         /// down to the nearest integer). This parameter enables you to define the deployment
-        /// batch size. For example, if <code>desiredCount</code> is four tasks and the maximum
-        /// is 200%, the scheduler can start four new tasks before stopping the four older tasks
-        /// (provided that the cluster resources required to do this are available). The default
-        /// value is 200%.
+        /// batch size. For example, if your service has a <code>desiredCount</code> of four tasks
+        /// and a <code>maximumPercent</code> value of 200%, the scheduler can start four new
+        /// tasks before stopping the four older tasks (provided that the cluster resources required
+        /// to do this are available). The default value for <code>maximumPercent</code> is 200%.
         /// </para>
         ///  
         /// <para>
@@ -363,7 +364,8 @@ namespace Amazon.ECS
         ///  </li> <li> 
         /// <para>
         /// By default, the service scheduler attempts to balance tasks across Availability Zones
-        /// in this manner (although you can choose a different placement strategy):
+        /// in this manner (although you can choose a different placement strategy) with the <code>placementStrategy</code>
+        /// parameter):
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -782,6 +784,14 @@ namespace Amazon.ECS
         /// task definition (although there may be up to a 10 minute window following deregistration
         /// where these restrictions have not yet taken effect).
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// At this time, <code>INACTIVE</code> task definitions remain discoverable in your account
+        /// indefinitely; however, this behavior is subject to change in the future, so you should
+        /// not rely on <code>INACTIVE</code> task definitions persisting beyond the life cycle
+        /// of any associated tasks and services.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeregisterTaskDefinition service method.</param>
         /// 
@@ -1188,11 +1198,11 @@ namespace Amazon.ECS
 
         /// <summary>
         /// Lists the attributes for Amazon ECS resources within a specified target type and cluster.
-        /// When you specify a target type and cluster, <code>LisAttributes</code> returns a list
-        /// of attribute objects, one for each attribute on each resource. You can filter the
-        /// list of results to a single attribute name to only return results that have that name.
-        /// You can also filter the results by attribute name and value, for example, to see which
-        /// container instances in a cluster are running a Linux AMI (<code>ecs.os-type=linux</code>).
+        /// When you specify a target type and cluster, <code>ListAttributes</code> returns a
+        /// list of attribute objects, one for each attribute on each resource. You can filter
+        /// the list of results to a single attribute name to only return results that have that
+        /// name. You can also filter the results by attribute name and value, for example, to
+        /// see which container instances in a cluster are running a Linux AMI (<code>ecs.os-type=linux</code>).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAttributes service method.</param>
         /// 
@@ -1996,10 +2006,20 @@ namespace Amazon.ECS
         /// <para>
         /// When <a>StopTask</a> is called on a task, the equivalent of <code>docker stop</code>
         /// is issued to the containers running in the task. This results in a <code>SIGTERM</code>
-        /// and a 30-second timeout, after which <code>SIGKILL</code> is sent and the containers
-        /// are forcibly stopped. If the container handles the <code>SIGTERM</code> gracefully
-        /// and exits within 30 seconds from receiving it, no <code>SIGKILL</code> is sent.
+        /// and a default 30-second timeout, after which <code>SIGKILL</code> is sent and the
+        /// containers are forcibly stopped. If the container handles the <code>SIGTERM</code>
+        /// gracefully and exits within 30 seconds from receiving it, no <code>SIGKILL</code>
+        /// is sent.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The default 30-second timeout can be configured on the Amazon ECS container agent
+        /// with the <code>ECS_CONTAINER_STOP_TIMEOUT</code> variable. For more information, see
+        /// <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
+        /// ECS Container Agent Configuration</a> in the <i>Amazon EC2 Container Service Developer
+        /// Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopTask service method.</param>
         /// 

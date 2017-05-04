@@ -56,8 +56,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Cluster. 
         /// <para>
-        /// The name of the cluster that hosts the service to delete. If you do not specify a
-        /// cluster, the default cluster is assumed.
+        /// The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service
+        /// to delete. If you do not specify a cluster, the default cluster is assumed.
         /// </para>
         /// </summary>
         public string Cluster

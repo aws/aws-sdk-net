@@ -40,7 +40,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Command. 
         /// <para>
         /// The command to send to the container that overrides the default command from the Docker
-        /// image or the task definition.
+        /// image or the task definition. You must also specify a container name.
         /// </para>
         /// </summary>
         public List<string> Command
@@ -60,7 +60,8 @@ namespace Amazon.ECS.Model
         /// <para>
         /// The environment variables to send to the container. You can add new environment variables,
         /// which are added to the container at launch, or you can override the existing environment
-        /// variables from the Docker image or the task definition.
+        /// variables from the Docker image or the task definition. You must also specify a container
+        /// name.
         /// </para>
         /// </summary>
         public List<KeyValuePair> Environment
@@ -78,7 +79,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the container that receives the override.
+        /// The name of the container that receives the override. This parameter is required if
+        /// a command or environment variable is specified.
         /// </para>
         /// </summary>
         public string Name

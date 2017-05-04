@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECS.IAmazonECS.CreateCluster(Amazon.ECS.Model.CreateClusterRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.CreateCluster(Amazon.ECS.Model.CreateClusterRequest)" />
+            <member name="T:Amazon.ECS.Model.CreateClusterRequest" />
+            <member name="T:Amazon.ECS.Model.CreateClusterResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates a cluster in your default region.
+                </para>
+                <code
+                    title="To create a new cluster"
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="to-create-a-new-cluster-1472514079365" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECS.IAmazonECS.CreateService(Amazon.ECS.Model.CreateServiceRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.CreateService(Amazon.ECS.Model.CreateServiceRequest)" />
+            <member name="T:Amazon.ECS.Model.CreateServiceRequest" />
+            <member name="T:Amazon.ECS.Model.CreateServiceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates a service in your default region called ``ecs-simple-service``. The service uses the ``hello_world`` task definition and it maintains 10 copies of that task.
+                </para>
+                <code
+                    title="To create a new service"
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="to-create-a-new-service-1472512584282" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECS.IAmazonECS.CreateService(Amazon.ECS.Model.CreateServiceRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.CreateService(Amazon.ECS.Model.CreateServiceRequest)" />
+            <member name="T:Amazon.ECS.Model.CreateServiceRequest" />
+            <member name="T:Amazon.ECS.Model.CreateServiceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates a service in your default region called ``ecs-simple-service-elb``. The service uses the ``ecs-demo`` task definition and it maintains 10 copies of that task. You must reference an existing load balancer in the same region by its name.
+                </para>
+                <code
+                    title="To create a new service behind a load balancer"
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="to-create-a-new-service-behind-a-load-balancer-1472512484823" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECS.IAmazonECS.DeleteCluster(Amazon.ECS.Model.DeleteClusterRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.DeleteCluster(Amazon.ECS.Model.DeleteClusterRequest)" />
+            <member name="T:Amazon.ECS.Model.DeleteClusterRequest" />
+            <member name="T:Amazon.ECS.Model.DeleteClusterResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example deletes an empty cluster in your default region.
+                </para>
+                <code
+                    title="To delete an empty cluster"
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="to-delete-an-empty-cluster-1472512705352" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECS.IAmazonECS.DeleteService(Amazon.ECS.Model.DeleteServiceRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.DeleteService(Amazon.ECS.Model.DeleteServiceRequest)" />
+            <member name="T:Amazon.ECS.Model.DeleteServiceRequest" />
+            <member name="T:Amazon.ECS.Model.DeleteServiceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example deletes the my-http-service service. The service must have a desired count and running count of 0 before you can delete it.
+                </para>
+                <code
+                    title="To delete a service"
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="e8183e38-f86e-4390-b811-f74f30a6007d" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECS.IAmazonECS.DeregisterContainerInstance(Amazon.ECS.Model.DeregisterContainerInstanceRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.DeregisterContainerInstance(Amazon.ECS.Model.DeregisterContainerInstanceRequest)" />
+            <member name="T:Amazon.ECS.Model.DeregisterContainerInstanceRequest" />
+            <member name="T:Amazon.ECS.Model.DeregisterContainerInstanceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example deregisters a container instance from the specified cluster in your default region. If there are still tasks running on the container instance, you must either stop those tasks before deregistering, or use the force option.
+                </para>
+                <code
+                    title="To deregister a container instance from a cluster"
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="bf624927-cf64-4f4b-8b7e-c024a4e682f6" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECS.IAmazonECS.DescribeClusters(Amazon.ECS.Model.DescribeClustersRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.DescribeClusters(Amazon.ECS.Model.DescribeClustersRequest)" />
+            <member name="T:Amazon.ECS.Model.DescribeClustersRequest" />
+            <member name="T:Amazon.ECS.Model.DescribeClustersResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example provides a description of the specified cluster in your default region.
+                </para>
+                <code
+                    title="To describe a cluster"
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="ba88d100-9672-4231-80da-a4bd210bf728" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECS.IAmazonECS.DescribeContainerInstances(Amazon.ECS.Model.DescribeContainerInstancesRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.DescribeContainerInstances(Amazon.ECS.Model.DescribeContainerInstancesRequest)" />
+            <member name="T:Amazon.ECS.Model.DescribeContainerInstancesRequest" />
+            <member name="T:Amazon.ECS.Model.DescribeContainerInstancesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example provides a description of the specified container instance in your default region, using the container instance UUID as an identifier.
+                </para>
+                <code
+                    title="To describe container instance"
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="c8f439de-eb27-4269-8ca7-2c0a7ba75ab0" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECS.IAmazonECS.DescribeServices(Amazon.ECS.Model.DescribeServicesRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.DescribeServices(Amazon.ECS.Model.DescribeServicesRequest)" />
+            <member name="T:Amazon.ECS.Model.DescribeServicesRequest" />
+            <member name="T:Amazon.ECS.Model.DescribeServicesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example provides descriptive information about the service named ``ecs-simple-service``.
+                </para>
+                <code
+                    title="To describe a service"
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="to-describe-a-service-1472513256350" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECS.IAmazonECS.DescribeTaskDefinition(Amazon.ECS.Model.DescribeTaskDefinitionRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.DescribeTaskDefinition(Amazon.ECS.Model.DescribeTaskDefinitionRequest)" />
+            <member name="T:Amazon.ECS.Model.DescribeTaskDefinitionRequest" />
+            <member name="T:Amazon.ECS.Model.DescribeTaskDefinitionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example provides a description of the specified task definition.
+                </para>
+                <code
+                    title="To describe a task definition"
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="4c21eeb1-f1da-4a08-8c44-297fc8d0ea88" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECS.IAmazonECS.DescribeTasks(Amazon.ECS.Model.DescribeTasksRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.DescribeTasks(Amazon.ECS.Model.DescribeTasksRequest)" />
+            <member name="T:Amazon.ECS.Model.DescribeTasksRequest" />
+            <member name="T:Amazon.ECS.Model.DescribeTasksResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example provides a description of the specified task, using the task UUID as an identifier.
+                </para>
+                <code
+                    title="To describe a task"
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="a90b0cde-f965-4946-b55e-cfd8cc54e827" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECS.IAmazonECS.ListClusters(Amazon.ECS.Model.ListClustersRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.ListClusters(Amazon.ECS.Model.ListClustersRequest)" />
+            <member name="T:Amazon.ECS.Model.ListClustersRequest" />
+            <member name="T:Amazon.ECS.Model.ListClustersResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example lists all of your available clusters in your default region.
+                </para>
+                <code
+                    title="To list your available clusters"
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="e337d059-134f-4125-ba8e-4f499139facf" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECS.IAmazonECS.ListContainerInstances(Amazon.ECS.Model.ListContainerInstancesRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.ListContainerInstances(Amazon.ECS.Model.ListContainerInstancesRequest)" />
+            <member name="T:Amazon.ECS.Model.ListContainerInstancesRequest" />
+            <member name="T:Amazon.ECS.Model.ListContainerInstancesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example lists all of your available container instances in the specified cluster in your default region.
+                </para>
+                <code
+                    title="To list your available container instances in a cluster"
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="62a82a94-713c-4e18-8420-1d2b2ba9d484" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECS.IAmazonECS.ListServices(Amazon.ECS.Model.ListServicesRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.ListServices(Amazon.ECS.Model.ListServicesRequest)" />
+            <member name="T:Amazon.ECS.Model.ListServicesRequest" />
+            <member name="T:Amazon.ECS.Model.ListServicesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example lists the services running in the default cluster for an account.
+                </para>
+                <code
+                    title="To list the services in a cluster"
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="1d9a8037-4e0e-4234-a528-609656809a3a" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECS.IAmazonECS.ListTaskDefinitionFamilies(Amazon.ECS.Model.ListTaskDefinitionFamiliesRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.ListTaskDefinitionFamilies(Amazon.ECS.Model.ListTaskDefinitionFamiliesRequest)" />
+            <member name="T:Amazon.ECS.Model.ListTaskDefinitionFamiliesRequest" />
+            <member name="T:Amazon.ECS.Model.ListTaskDefinitionFamiliesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example lists all of your registered task definition families.
+                </para>
+                <code
+                    title="To list your registered task definition families"
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="b5c89769-1d94-4ca2-a79e-8069103c7f75" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECS.IAmazonECS.ListTaskDefinitionFamilies(Amazon.ECS.Model.ListTaskDefinitionFamiliesRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.ListTaskDefinitionFamilies(Amazon.ECS.Model.ListTaskDefinitionFamiliesRequest)" />
+            <member name="T:Amazon.ECS.Model.ListTaskDefinitionFamiliesRequest" />
+            <member name="T:Amazon.ECS.Model.ListTaskDefinitionFamiliesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example lists the task definition revisions that start with "hpcc".
+                </para>
+                <code
+                    title="To filter your registered task definition families"
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="8a4cf9a6-42c1-4fe3-852d-99ac8968e11b" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECS.IAmazonECS.ListTaskDefinitions(Amazon.ECS.Model.ListTaskDefinitionsRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.ListTaskDefinitions(Amazon.ECS.Model.ListTaskDefinitionsRequest)" />
+            <member name="T:Amazon.ECS.Model.ListTaskDefinitionsRequest" />
+            <member name="T:Amazon.ECS.Model.ListTaskDefinitionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example lists all of your registered task definitions.
+                </para>
+                <code
+                    title="To list your registered task definitions"
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="b381ebaf-7eba-4d60-b99b-7f6ae49d3d60" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECS.IAmazonECS.ListTaskDefinitions(Amazon.ECS.Model.ListTaskDefinitionsRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.ListTaskDefinitions(Amazon.ECS.Model.ListTaskDefinitionsRequest)" />
+            <member name="T:Amazon.ECS.Model.ListTaskDefinitionsRequest" />
+            <member name="T:Amazon.ECS.Model.ListTaskDefinitionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example lists the task definition revisions of a specified family.
+                </para>
+                <code
+                    title="To list the registered task definitions in a family"
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="734e7afd-753a-4bc2-85d0-badddce10910" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECS.IAmazonECS.ListTasks(Amazon.ECS.Model.ListTasksRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.ListTasks(Amazon.ECS.Model.ListTasksRequest)" />
+            <member name="T:Amazon.ECS.Model.ListTasksRequest" />
+            <member name="T:Amazon.ECS.Model.ListTasksResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example lists all of the tasks in a cluster.
+                </para>
+                <code
+                    title="To list the tasks in a cluster"
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="9a6ec707-1a77-45d0-b2eb-516b5dd9e924" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECS.IAmazonECS.ListTasks(Amazon.ECS.Model.ListTasksRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.ListTasks(Amazon.ECS.Model.ListTasksRequest)" />
+            <member name="T:Amazon.ECS.Model.ListTasksRequest" />
+            <member name="T:Amazon.ECS.Model.ListTasksResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example lists the tasks of a specified container instance. Specifying a ``containerInstance`` value limits  the  results  to  tasks  that belong to that container instance.
+                </para>
+                <code
+                    title="To list the tasks on a particular container instance"
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="024bf3b7-9cbb-44e3-848f-9d074e1fecce" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECS.IAmazonECS.RegisterTaskDefinition(Amazon.ECS.Model.RegisterTaskDefinitionRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.RegisterTaskDefinition(Amazon.ECS.Model.RegisterTaskDefinitionRequest)" />
+            <member name="T:Amazon.ECS.Model.RegisterTaskDefinitionRequest" />
+            <member name="T:Amazon.ECS.Model.RegisterTaskDefinitionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example registers a task definition to the specified family.
+                </para>
+                <code
+                    title="To register a task definition"
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="to-register-a-task-definition-1470764550877" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECS.IAmazonECS.RunTask(Amazon.ECS.Model.RunTaskRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.RunTask(Amazon.ECS.Model.RunTaskRequest)" />
+            <member name="T:Amazon.ECS.Model.RunTaskRequest" />
+            <member name="T:Amazon.ECS.Model.RunTaskResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example runs the specified task definition on your default cluster.
+                </para>
+                <code
+                    title="To run a task on your default cluster"
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="6f238c83-a133-42cd-ab3d-abeca0560445" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECS.IAmazonECS.UpdateService(Amazon.ECS.Model.UpdateServiceRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.UpdateService(Amazon.ECS.Model.UpdateServiceRequest)" />
+            <member name="T:Amazon.ECS.Model.UpdateServiceRequest" />
+            <member name="T:Amazon.ECS.Model.UpdateServiceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example updates the my-http-service service to use the amazon-ecs-sample task definition.
+                </para>
+                <code
+                    title="To change the task definition used in a service"
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="cc9e8900-0cc2-44d2-8491-64d1d3d37887" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECS.IAmazonECS.UpdateService(Amazon.ECS.Model.UpdateServiceRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.UpdateService(Amazon.ECS.Model.UpdateServiceRequest)" />
+            <member name="T:Amazon.ECS.Model.UpdateServiceRequest" />
+            <member name="T:Amazon.ECS.Model.UpdateServiceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example updates the desired count of the my-http-service service to 10.
+                </para>
+                <code
+                    title="To change the number of tasks in a service"
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="9581d6c5-02e3-4140-8cc1-5a4301586633" />
+            </example>
+        </value>
+    </doc>
+</docs>

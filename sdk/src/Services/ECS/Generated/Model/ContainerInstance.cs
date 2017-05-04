@@ -39,6 +39,7 @@ namespace Amazon.ECS.Model
         private string _containerInstanceArn;
         private string _ec2InstanceId;
         private int? _pendingTasksCount;
+        private DateTime? _registeredAt;
         private List<Resource> _registeredResources = new List<Resource>();
         private List<Resource> _remainingResources = new List<Resource>();
         private int? _runningTasksCount;
@@ -164,6 +165,24 @@ namespace Amazon.ECS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RegisteredAt. 
+        /// <para>
+        /// The Unix timestamp for when the container instance was registered.
+        /// </para>
+        /// </summary>
+        public DateTime RegisteredAt
+        {
+            get { return this._registeredAt.GetValueOrDefault(); }
+            set { this._registeredAt = value; }
+        }
+
+        // Check to see if RegisteredAt property is set
+        internal bool IsSetRegisteredAt()
+        {
+            return this._registeredAt.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property RegisteredResources. 
         /// <para>
         /// For most resource types, this parameter describes the registered resources on the
@@ -228,9 +247,12 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the container instance. The valid values are <code>ACTIVE</code> or
-        /// <code>INACTIVE</code>. <code>ACTIVE</code> indicates that the container instance can
-        /// accept tasks.
+        /// The status of the container instance. The valid values are <code>ACTIVE</code>, <code>INACTIVE</code>,
+        /// or <code>DRAINING</code>. <code>ACTIVE</code> indicates that the container instance
+        /// can accept tasks. <code>DRAINING</code> indicates that new tasks are not placed on
+        /// the container instance and any service tasks running on the container instance are
+        /// removed if possible. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container
+        /// Instance Draining</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
         /// </para>
         /// </summary>
         public string Status

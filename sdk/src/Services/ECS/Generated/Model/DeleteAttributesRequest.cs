@@ -61,7 +61,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Cluster. 
         /// <para>
         /// The short name or full Amazon Resource Name (ARN) of the cluster that contains the
-        /// resource to apply attributes. If you do not specify a cluster, the default cluster
+        /// resource to delete attributes. If you do not specify a cluster, the default cluster
         /// is assumed.
         /// </para>
         /// </summary>

@@ -38,8 +38,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Clusters. 
         /// <para>
-        /// A space-separated list of up to 100 cluster names or full cluster Amazon Resource
-        /// Name (ARN) entries. If you do not specify a cluster, the default cluster is assumed.
+        /// A list of up to 100 cluster names or full cluster Amazon Resource Name (ARN) entries.
+        /// If you do not specify a cluster, the default cluster is assumed.
         /// </para>
         /// </summary>
         public List<string> Clusters

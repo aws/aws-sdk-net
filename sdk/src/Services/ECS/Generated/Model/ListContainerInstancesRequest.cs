@@ -136,10 +136,10 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The container instance status with which to filter the <code>ListContainerInstances</code>
-        /// results. Specifying a container instance status of <code>DRAINING</code> limits the
-        /// results to container instances that have been set to drain with the <a>UpdateContainerInstancesState</a>
-        /// operation.
+        /// Filters the container instances by status. For example, if you specify the <code>DRAINING</code>
+        /// status, the results include only container instances that have been set to <code>DRAINING</code>
+        /// using <a>UpdateContainerInstancesState</a>. If you do not specify this parameter,
+        /// the default is to include container instances set to <code>ACTIVE</code> and <code>DRAINING</code>.
         /// </para>
         /// </summary>
         public ContainerInstanceStatus Status

@@ -100,6 +100,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.PendingTasksCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("registeredAt", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.RegisteredAt = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("registeredResources", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<Resource, ResourceUnmarshaller>(ResourceUnmarshaller.Instance);

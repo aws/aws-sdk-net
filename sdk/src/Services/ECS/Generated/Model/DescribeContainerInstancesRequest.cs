@@ -59,8 +59,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property ContainerInstances. 
         /// <para>
-        /// A space-separated list of container instance IDs or full Amazon Resource Name (ARN)
-        /// entries.
+        /// A list of container instance IDs or full Amazon Resource Name (ARN) entries.
         /// </para>
         /// </summary>
         public List<string> ContainerInstances

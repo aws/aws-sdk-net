@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// Details on a data volume from another container.
+    /// Details on a data volume from another container in the same task definition.
     /// </summary>
     public partial class VolumeFrom
     {
@@ -58,7 +58,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property SourceContainer. 
         /// <para>
-        /// The name of the container to mount volumes from.
+        /// The name of another container within the same task definition to mount volumes from.
         /// </para>
         /// </summary>
         public string SourceContainer
