@@ -148,3 +148,7 @@ See [GitHub Issue #292](https://github.com/aws/aws-sdk-net/issues/292)
 #### Refactor and make signing code public, for direct use by SDK consumers.
 
 See [GitHub Issue #397](https://github.com/aws/aws-sdk-net/issues/397)
+
+#### Support SAML profiles in .NET Core
+
+See [GitHub Issue #496](https://github.com/aws/aws-sdk-net/issues/496)
