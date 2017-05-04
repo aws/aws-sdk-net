@@ -194,6 +194,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* An extremely simplified VM creation and management service.
 * [AWSSDK.MachineLearning](https://www.nuget.org/packages/AWSSDK.MachineLearning/)
 	* Amazon Machine Learning is a service that makes it easy for developers of all skill levels to use machine learning technology.
+* [AWSSDK.MarketplaceEntitlementService](https://www.nuget.org/packages/AWSSDK.MarketplaceEntitlementService/)
+	* AWS Marketplace Entitlement Service enables AWS Marketplace sellers to determine the capacity purchased by their customers.
 * [AWSSDK.MobileAnalytics](https://www.nuget.org/packages/AWSSDK.MobileAnalytics/)
 	* Amazon Mobile Analytics is a service that lets you simply and cost effectively collect and analyze your application usage data. In addition to providing usage summary charts that are available for quick reference, Amazon Mobile Analytics enables you to set up automatic export of your data to Amazon S3 for use with other data analytics tools such as Amazon Redshift, Amazon Elastic MapReduce (EMR), Extract, Transform and Load (ETL) software, or your own data warehouse.
 * [AWSSDK.MTurk](https://www.nuget.org/packages/AWSSDK.MTurk/)

@@ -78,6 +78,7 @@
         "LexModelBuildingService"         : "1.0.0-*",
         "Lightsail"                       : "1.0.0-*",
         "MachineLearning"                 : "1.0.0-*",
+        "MarketplaceEntitlementService"   : "1.0.0-*",
         "Microsoft.NETCore.App"           : {
             "type" : "platform",
             "version" : "1.0.0-*"

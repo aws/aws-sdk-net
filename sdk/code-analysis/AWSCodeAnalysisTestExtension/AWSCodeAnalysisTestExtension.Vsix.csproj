@@ -316,6 +316,10 @@
       <Project>{A3EEC74B-542C-44A8-9585-F514B8396D56}</Project>
       <Name>AWSSDK.MachineLearning.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/MarketplaceEntitlementService/AWSSDK.MarketplaceEntitlementService.CodeAnalysis.csproj">
+      <Project>{0FDE26C8-DEB7-4466-8A1F-6072943EFEB6}</Project>
+      <Name>AWSSDK.MarketplaceEntitlementService.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/MobileAnalytics/AWSSDK.MobileAnalytics.CodeAnalysis.csproj">
       <Project>{C2F1BD96-3D53-4927-B608-17B154666D00}</Project>
       <Name>AWSSDK.MobileAnalytics.CodeAnalysis</Name>

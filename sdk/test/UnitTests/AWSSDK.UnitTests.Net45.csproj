@@ -327,6 +327,10 @@
       <Project>{39BC41FA-A4ED-4C24-AEA1-A3CD3556F21A}</Project>
       <Name>AWSSDK.MachineLearning.Net45</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\MarketplaceEntitlementService\AWSSDK.MarketplaceEntitlementService.Net45.csproj">
+      <Project>{A8BE0EF0-521F-428C-AC27-5A0989801E8F}</Project>
+      <Name>AWSSDK.MarketplaceEntitlementService.Net45</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\MobileAnalytics\AWSSDK.MobileAnalytics.Net45.csproj">
       <Project>{0701A0D6-DF61-47D7-B89D-73FB88A5FAB7}</Project>
       <Name>AWSSDK.MobileAnalytics.Net45</Name>
