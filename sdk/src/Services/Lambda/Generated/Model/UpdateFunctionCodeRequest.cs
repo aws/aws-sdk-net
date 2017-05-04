@@ -47,12 +47,35 @@ namespace Amazon.Lambda.Model
     /// </summary>
     public partial class UpdateFunctionCodeRequest : AmazonLambdaRequest
     {
+        private bool? _dryRun;
         private string _functionName;
         private bool? _publish;
         private string _s3Bucket;
         private string _s3Key;
         private string _s3ObjectVersion;
         private MemoryStream _zipFile;
+
+        /// <summary>
+        /// Gets and sets the property DryRun. 
+        /// <para>
+        /// This boolean parameter can be used to test your request to AWS Lambda to update the
+        /// Lambda function and publish a version as an atomic operation. It will do all necessary
+        /// computation and validation of your code but will not upload it or a publish a version.
+        /// Each time this operation is invoked, the <code>CodeSha256</code> hash value the provided
+        /// code will also be computed and returned in the response.
+        /// </para>
+        /// </summary>
+        public bool DryRun
+        {
+            get { return this._dryRun.GetValueOrDefault(); }
+            set { this._dryRun = value; }
+        }
+
+        // Check to see if DryRun property is set
+        internal bool IsSetDryRun()
+        {
+            return this._dryRun.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property FunctionName. 

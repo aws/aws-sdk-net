@@ -37,8 +37,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Variables. 
         /// <para>
-        /// The key-value pairs that represent your environment's configuration settings. The
-        /// value you specify cannot contain a ",".
+        /// The key-value pairs that represent your environment's configuration settings.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Variables
