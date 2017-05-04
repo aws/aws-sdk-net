@@ -144,3 +144,7 @@ PCL platform. This is low-priority, as the PCL platform may be going
 away in the future.
 
 See [GitHub Issue #292](https://github.com/aws/aws-sdk-net/issues/292)
+
+#### Refactor and make signing code public, for direct use by SDK consumers.
+
+See [GitHub Issue #397](https://github.com/aws/aws-sdk-net/issues/397)
