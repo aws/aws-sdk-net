@@ -1,3 +1,16 @@
+### 3.3.84.0 (2017-05-04 23:45 UTC)
+* ECS (3.3.4.0)
+	* Exposes container instance registration time in ECS:DescribeContainerInstances.
+* Lambda (3.3.6.0)
+	* Support for UpdateFunctionCode DryRun option
+* MarketplaceEntitlementService (3.3.0.0)
+	* AWS Marketplace Entitlement Service enables AWS Marketplace sellers to determine the capacity purchased by their customers.
+* RDS (3.3.10.1)
+	* Fix PreSignedUrl generation for RDS CopyDBSnapshot operation.
+* Core 3.3.13.3
+	* Added retries for WebExceptionStatus.SendFailure.
+	* All services packages updated to require new Core
+
 ### 3.3.83.0 (2017-04-28 21:28 UTC)
 * CloudFormation (3.3.5.0)
 	* API update for CloudFormation: New optional parameter ClientRequestToken which can be used as an idempotency token to safely retry certain operations as well as tagging StackEvents.
