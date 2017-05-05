@@ -188,6 +188,25 @@
   </doc>
   <doc>
     <members>
+      <member name="M:Amazon.S3.IAmazonS3.GetObject(Amazon.S3.Model.GetObjectRequest)" />
+      <member name="M:Amazon.S3.AmazonS3Client.GetObject(Amazon.S3.Model.GetObjectRequest)" />
+      <member name="T:Amazon.S3.Model.GetObjectRequest" />
+      <member name="T:Amazon.S3.Model.GetObjectResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          This example shows how to get an object and write it to a local file.
+        </para>
+        <code
+          title="GetObject WriteResponseStreamToFile Sample" lang="cs"
+          source=".\AWSSDKDocSamples\S3\BaseS3Samples.cs"
+          region="GetObject WriteResponseStreamToFile Sample" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
       <member name="M:Amazon.S3.IAmazonS3.PutObject(Amazon.S3.Model.PutObjectRequest)" />
       <member name="M:Amazon.S3.AmazonS3Client.PutObject(Amazon.S3.Model.PutObjectRequest)" />
       <member name="T:Amazon.S3.Model.PutObjectRequest" />

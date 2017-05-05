@@ -320,6 +320,29 @@ namespace AWSSDKDocSamples.S3
             }
 
             {
+                #region GetObject WriteResponseStreamToFile Sample
+
+                // Create a client
+                AmazonS3Client client = new AmazonS3Client();
+
+                // Create a GetObject request
+                GetObjectRequest request = new GetObjectRequest
+                {
+                    BucketName = "SampleBucket",
+                    Key = "Item1"
+                };
+
+                // Issue request and remember to dispose of the response
+                using (GetObjectResponse response = client.GetObject(request))
+                {
+                    // Save object to local file
+                    response.WriteResponseStreamToFile("Item1.txt");
+                }
+
+                #endregion
+            }
+
+            {
                 #region GetObjectMetadata Sample
 
                 // Create a client
