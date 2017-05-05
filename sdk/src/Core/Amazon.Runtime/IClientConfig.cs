@@ -1,9 +1,25 @@
+/*
+ * Copyright 2016-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ *
+ *  http://aws.amazon.com/apache2.0
+ *
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
 using System;
 using System.Net;
 
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Util;
-
+#if CORECLR
+using System.Net.Http;
+#endif
 
 namespace Amazon.Runtime
 {
@@ -193,6 +209,15 @@ namespace Amazon.Runtime
         /// </summary>
         /// <exception cref="Amazon.Runtime.AmazonClientException">The timeout specified is null.</exception>
         void Validate();
+
+#if CORECLR
+        /// <summary>
+        /// Get the value to use for <see cref="HttpClientHandler.MaxConnectionsPerServer"/> on requests.
+        /// If this property is null, <see cref="HttpClientHandler.MaxConnectionsPerServer"/>
+        /// will be left at its default value of <see cref="int.MaxValue"/>.
+        /// </summary>
+        int? MaxConnectionsPerServer { get; }
+#endif
 
 #if CORECLR || PCL
 

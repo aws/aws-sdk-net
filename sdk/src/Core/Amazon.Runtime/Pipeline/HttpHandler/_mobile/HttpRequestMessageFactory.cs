@@ -1,5 +1,5 @@
 ﻿/*  
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -173,6 +173,10 @@ namespace Amazon.Runtime
         private static HttpClient CreateHttpClient(IClientConfig clientConfig)
         {
             var httpMessageHandler = new HttpClientHandler();
+#if CORECLR
+            if (clientConfig.MaxConnectionsPerServer.HasValue)
+                httpMessageHandler.MaxConnectionsPerServer = clientConfig.MaxConnectionsPerServer.Value;
+#endif
 
             // If HttpClientHandler.AllowAutoRedirect is set to true (default value),
             // redirects for GET requests are automatically followed and redirects for POST
@@ -217,9 +221,12 @@ namespace Amazon.Runtime
             uniqueString = string.Concat("AllowAutoRedirect:", clientConfig.AllowAutoRedirect.ToString());
 
             if (clientConfig.Timeout.HasValue)
-            {
                 uniqueString = string.Concat(uniqueString, "Timeout:", clientConfig.Timeout.Value.ToString());
-            }
+
+#if CORECLR
+            if (clientConfig.MaxConnectionsPerServer.HasValue)
+                uniqueString = string.Concat(uniqueString, "MaxConnectionsPerServer:", clientConfig.MaxConnectionsPerServer.Value.ToString());
+#endif
 
             return uniqueString;
         }

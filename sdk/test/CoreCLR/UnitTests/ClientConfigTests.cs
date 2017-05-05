@@ -39,7 +39,8 @@ namespace UnitTests
             "ProxyHost",
             "ProxyPort",
             "CacheHttpClient",
-            "ThrottleRetries"
+            "ThrottleRetries",
+            "MaxConnectionsPerServer",
         };
 
         [Fact]

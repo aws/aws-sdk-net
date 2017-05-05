@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -17,7 +17,7 @@ using System.Net;
 using Amazon.Util;
 using System.Globalization;
 using Amazon.Runtime.Internal.Util;
-
+using System.Net.Http;
 
 namespace Amazon.Runtime
 {
@@ -30,6 +30,7 @@ namespace Amazon.Runtime
         private IWebProxy proxy = null;
         private string proxyHost;
         private int proxyPort = -1;
+
         private static RegionEndpoint GetDefaultRegionEndpoint()
         {
             return FallbackRegionFactory.GetRegionEndpoint();
@@ -99,5 +100,17 @@ namespace Amazon.Runtime
             }
         }
 
+#if CORECLR
+        /// <summary>
+        /// Get or set the value to use for <see cref="HttpClientHandler.MaxConnectionsPerServer"/> on requests.
+        /// If this property is null, <see cref="HttpClientHandler.MaxConnectionsPerServer"/>
+        /// will be left at its default value of <see cref="int.MaxValue"/>.
+        /// </summary>
+        public int? MaxConnectionsPerServer
+        {
+            get;
+            set;
+        }
+#endif
     }
 }
