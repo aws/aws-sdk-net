@@ -207,7 +207,7 @@ namespace SDKDocGenerator.Writers
                                 writer.WriteLine("<option value=\"code\">Sample Code &amp; Libraries</option>");
                             writer.WriteLine("</select>");
                             writer.WriteLine("<input type=\"text\" name=\"searchQuery\" id=\"sq\">");
-                            writer.WriteLine("<input type=\"image\" alt=\"Go\" src=\"../resources/search-button.png\" id=\"sb\">");
+                            writer.WriteLine("<input type=\"image\" alt=\"Go\" src=\"{0}/resources/search-button.png\" id=\"sb\">", RootRelativePath);
                         writer.WriteLine("</div>");
                         writer.WriteLine("<input id=\"this_doc_product\" type=\"hidden\" value=\"AWS SDK Version 3 for .NET\" name=\"this_doc_product\">");
                         writer.WriteLine("<input id=\"this_doc_guide\" type=\"hidden\" value=\"API Reference\" name=\"this_doc_guide\">");
