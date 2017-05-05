@@ -34,6 +34,8 @@ namespace Amazon.Util
 {
     /// <summary>
     /// Provides access to EC2 instance metadata when running on an EC2 instance.
+    /// If this class is used on a non-EC2 instance, the properties in this class
+    /// will return null.
     /// </summary>
     /// <remarks>
     /// <para>
@@ -281,10 +283,11 @@ namespace Amazon.Util
         {
             get
             {
-                var creds = new Dictionary<string, IAMSecurityCredentialMetadata>();
-
                 var list = GetItems("/iam/security-credentials");
+                if (list == null)
+                    return null;
 
+                var creds = new Dictionary<string, IAMSecurityCredentialMetadata>();
                 foreach (var item in list)
                 {
                     var json = GetData("/iam/security-credentials/" + item);
@@ -314,9 +317,11 @@ namespace Amazon.Util
         {
             get
             {
-                var mapping = new Dictionary<string, string>();
-
                 var keys = GetItems("/block-device-mapping");
+                if (keys == null)
+                    return null;
+
+                var mapping = new Dictionary<string, string>();
                 foreach (var key in keys)
                 {
                     mapping[key] = GetData("/block-device-mapping/" + key);
@@ -333,8 +338,11 @@ namespace Amazon.Util
         {
             get
             {
-                var interfaces = new List<NetworkInterfaceMetadata>();
                 var macs = GetItems("/network/interfaces/macs/");
+                if (macs == null)
+                    return null;
+
+                var interfaces = new List<NetworkInterfaceMetadata>();
                 foreach (var mac in macs)
                 {
                     interfaces.Add(new NetworkInterfaceMetadata(mac.Trim('/')));
