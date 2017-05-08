@@ -1,3 +1,12 @@
+### 3.3.84.1 (2017-05-08 20:59 UTC)
+* Core 3.3.13.4
+	* Re-compute region endpoint when ClientConfig.RegionEndpoint is set to null.
+Added .Net Core connection error case to the list of retry able exceptions.
+Fixed IAMSecurityCredentials, BlockDeviceMapping, and NetworkInterfaces properties of EC2InstanceMetadata to return null instead of throwing NullReferenceException when accessed in non-EC2 environments.
+Make HttpClientHandler.MaxConnectionsPerServer configurable for .NET Core via IClientConfig.
+
+	* All services packages updated to require new Core
+
 ### 3.3.84.0 (2017-05-04 23:45 UTC)
 * ECS (3.3.4.0)
 	* Exposes container instance registration time in ECS:DescribeContainerInstances.
