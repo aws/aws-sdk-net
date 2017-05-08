@@ -92,11 +92,13 @@ namespace Amazon.Runtime
         public abstract string UserAgent { get; }
 
         /// <summary>
-        /// Gets and sets the RegionEndpoint property.  The region constant to use that 
-        /// determines the endpoint to use.  If this is not set then the client will fallback 
-        /// to the value of ServiceURL.
-        /// </summary>
+        /// Gets and sets the RegionEndpoint property.  The region constant that 
+        /// determines the endpoint to use.
         /// 
+        /// Setting this property to null will force the SDK to recaculate the
+        /// RegionEndpoint value based on App/WebConfig, environment ariables,
+        /// profile, etc.
+        /// </summary>
         public RegionEndpoint RegionEndpoint
         {
             get
@@ -105,6 +107,7 @@ namespace Amazon.Runtime
                 if (probeForRegionEndpoint)
                 {
                     RegionEndpoint = GetDefaultRegionEndpoint();
+                    this.probeForRegionEndpoint = false;
                 }
 #endif
                 return this.regionEndpoint;
@@ -112,15 +115,19 @@ namespace Amazon.Runtime
             set
             {
                 this.serviceURL = null;
-
                 this.regionEndpoint = value;
-                this.probeForRegionEndpoint = false;
 
                 if (this.regionEndpoint != null)
                 {
+                    this.probeForRegionEndpoint = false;
+
                     var endpoint = this.regionEndpoint.GetEndpointForService(RegionEndpointServiceName, this.UseDualstackEndpoint);
                     if (endpoint != null && endpoint.SignatureVersionOverride != null)
                         this.SignatureVersion = endpoint.SignatureVersionOverride;
+                }
+                else
+                {
+                    this.probeForRegionEndpoint = true;
                 }
             }
         }
