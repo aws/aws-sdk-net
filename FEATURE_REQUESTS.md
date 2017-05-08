@@ -152,3 +152,7 @@ See [GitHub Issue #397](https://github.com/aws/aws-sdk-net/issues/397)
 #### Support SAML profiles in .NET Core
 
 See [GitHub Issue #496](https://github.com/aws/aws-sdk-net/issues/496)
+
+#### ASP.NET Data Protection Support
+
+See [GitHub Issue #371](https://github.com/aws/aws-sdk-net/issues/371)
