@@ -75,7 +75,8 @@ namespace Amazon.Runtime.Internal
         {
             "The server returned an invalid or unrecognized response",
             "The connection with the server was terminated abnormally",
-            "An error occurred while sending the request."
+            "An error occurred while sending the request.",
+            "Failed sending data to the peer"
         };
 
         // Set of AWS error codes to retry on.
