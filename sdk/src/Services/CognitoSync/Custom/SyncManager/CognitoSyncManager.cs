@@ -49,9 +49,11 @@ namespace Amazon.CognitoSync.SyncManager
     /// playerInfo.Put(&quot;high_score&quot;, &quot;90&quot;);
     /// playerInfo.Put(&quot;name&quot;, &quot;John&quot;);
     /// // push changes to remote if needed
-    /// playerInfo.synchronize();
+    /// playerInfo.Synchronize();
     /// </code>
+    /// Note: Some platforms may only expose async methods such as SynchronizeAsync().
     /// </summary>
+    /// <seealso href="http://docs.aws.amazon.com/cognito/latest/developerguide/synchronizing-data.html">Amazon Cognito Sync Dev. Guide - Synchronizing Data</seealso>
     public partial class CognitoSyncManager : IDisposable
     {
         private Logger _logger;
@@ -73,6 +75,7 @@ namespace Amazon.CognitoSync.SyncManager
         /// </code>
         /// </summary>
         /// <param name="cognitoCredentials"><see cref="Amazon.CognitoIdentity.CognitoAWSCredentials"/></param>
+        /// <seealso href="http://docs.aws.amazon.com/cognito/latest/developerguide/synchronizing-data.html#initializing-client">Amazon Cognito Sync Dev. Guide - Initializing Client</seealso>
         public CognitoSyncManager(CognitoAWSCredentials cognitoCredentials) : this(cognitoCredentials, new AmazonCognitoSyncConfig()) { }
 
         /// <summary>
@@ -83,6 +86,7 @@ namespace Amazon.CognitoSync.SyncManager
         /// </summary>
         /// <param name="cognitoCredentials"><see cref="Amazon.CognitoIdentity.CognitoAWSCredentials"/></param>
         /// <param name="endpoint"><see cref="Amazon.RegionEndpoint"/></param>
+        /// <seealso href="http://docs.aws.amazon.com/cognito/latest/developerguide/synchronizing-data.html#initializing-client">Amazon Cognito Sync Dev. Guide - Initializing Client</seealso>
         public CognitoSyncManager(CognitoAWSCredentials cognitoCredentials, RegionEndpoint endpoint)
             : this(cognitoCredentials, new AmazonCognitoSyncConfig
             {
@@ -98,6 +102,7 @@ namespace Amazon.CognitoSync.SyncManager
         /// </summary>
         /// <param name="cognitoCredentials"><see cref="Amazon.CognitoIdentity.CognitoAWSCredentials"/></param>
         /// <param name="config"><see cref="Amazon.CognitoSync.AmazonCognitoSyncConfig"/></param>
+        /// <seealso href="http://docs.aws.amazon.com/cognito/latest/developerguide/synchronizing-data.html#initializing-client">Amazon Cognito Sync Dev. Guide - Initializing Client</seealso>
         public CognitoSyncManager(CognitoAWSCredentials cognitoCredentials, AmazonCognitoSyncConfig config)
         {
             if (cognitoCredentials == null)
@@ -164,6 +169,7 @@ namespace Amazon.CognitoSync.SyncManager
         /// </summary>
         /// <returns>Dataset loaded from local storage</returns>
         /// <param name="datasetName">DatasetName, must be [a-zA-Z0=9_.:-]+</param>
+        /// <seealso href="http://docs.aws.amazon.com/cognito/latest/developerguide/synchronizing-data.html#understanding-datasets">Amazon Cognito Sync Dev. Guide - Understanding Datasets</seealso>
         public Dataset OpenOrCreateDataset(string datasetName)
         {
             DatasetUtils.ValidateDatasetName(datasetName);

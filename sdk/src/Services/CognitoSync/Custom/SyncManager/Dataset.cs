@@ -49,9 +49,10 @@ namespace Amazon.CognitoSync.SyncManager
     /// dataset.Put(&quot;high_score&quot;, &quot;90&quot;);
     /// dataset.Put(&quot;name&quot;, &quot;John&quot;);
     /// // push changes to remote if needed
-    /// dataset.synchronize();
+    /// dataset.Synchronize();
     /// </code>
     /// </summary>
+    /// <seealso href="http://docs.aws.amazon.com/cognito/latest/developerguide/synchronizing-data.html#understanding-datasets">Amazon Cognito Sync Dev. Guide - Understanding Datasets</seealso>
     public partial class Dataset : IDisposable
     {
         /// <summary>
@@ -193,6 +194,7 @@ namespace Amazon.CognitoSync.SyncManager
         /// <see cref="Amazon.CognitoSync.SyncManager.Record"/> doesn't exist or is marked deleted, null will be returned.
         /// </summary>
         /// <param name="key">Key of the record in the dataset.</param>
+        /// <seealso href="http://docs.aws.amazon.com/cognito/latest/developerguide/synchronizing-data.html#reading-and-writing-data">Amazon Cognito Sync Dev. Guide - Reading and Writing Data</seealso>
         public string Get(string key)
         {
             return Local.GetValue(IdentityId, DatasetName,
@@ -300,6 +302,7 @@ namespace Amazon.CognitoSync.SyncManager
         /// <param name="key">Key of the record</param>
         /// <param name="value">String value of a <see cref="Amazon.CognitoSync.SyncManager.Record"/> to be put into the
         /// <see cref="Amazon.CognitoSync.SyncManager.Dataset"/></param>
+        /// <seealso href="http://docs.aws.amazon.com/cognito/latest/developerguide/synchronizing-data.html#reading-and-writing-data">Amazon Cognito Sync Dev. Guide - Reading and Writing Data</seealso>
         public void Put(string key, string value)
         {
             Local.PutValue(IdentityId, DatasetName,
@@ -324,6 +327,7 @@ namespace Amazon.CognitoSync.SyncManager
         /// the <see cref="Amazon.CognitoSync.SyncManager.Record"/> doesn't exist or is deleted already.
         /// </summary>
         /// <param name="key">Key identifying the Record</param>
+        /// <seealso href="http://docs.aws.amazon.com/cognito/latest/developerguide/synchronizing-data.html#reading-and-writing-data">Amazon Cognito Sync Dev. Guide - Reading and Writing Data</seealso>
         public void Remove(string key)
         {
             Local.PutValue(IdentityId, DatasetName, DatasetUtils.ValidateRecordKey(key), null);

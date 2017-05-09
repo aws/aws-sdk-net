@@ -55,6 +55,7 @@ namespace Amazon.CognitoSync.SyncManager
         /// <summary>
         /// Synchronize <see cref="Dataset"/> between local storage and remote storage.
         /// </summary>
+        /// <seealso href="http://docs.aws.amazon.com/cognito/latest/developerguide/synchronizing-data.html#synchronizing-local-data">Amazon Cognito Sync Dev. Guide - Synchronizing Local Data with the Sync Store</seealso>
         public virtual void Synchronize()
         {
             if (!NetworkInterface.GetIsNetworkAvailable())
