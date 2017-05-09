@@ -29,7 +29,7 @@ namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyWorkspaceProperties operation.
-    /// Modifies the WorkSpace properties, including the RunningMode and AutoStop time.
+    /// Modifies the WorkSpace properties, including the running mode and AutoStop time.
     /// </summary>
     public partial class ModifyWorkspacePropertiesRequest : AmazonWorkSpacesRequest
     {

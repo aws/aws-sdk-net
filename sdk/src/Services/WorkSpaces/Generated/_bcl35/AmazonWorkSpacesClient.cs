@@ -243,6 +243,7 @@ namespace Amazon.WorkSpaces
         /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateTags">REST API Reference for CreateTags Operation</seealso>
         public CreateTagsResponse CreateTags(CreateTagsRequest request)
         {
             var marshaller = new CreateTagsRequestMarshaller();
@@ -262,6 +263,7 @@ namespace Amazon.WorkSpaces
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateTags
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateTags">REST API Reference for CreateTags Operation</seealso>
         public IAsyncResult BeginCreateTags(CreateTagsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateTagsRequestMarshaller();
@@ -278,6 +280,7 @@ namespace Amazon.WorkSpaces
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateTags.</param>
         /// 
         /// <returns>Returns a  CreateTagsResult from WorkSpaces.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateTags">REST API Reference for CreateTags Operation</seealso>
         public  CreateTagsResponse EndCreateTags(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateTagsResponse>(asyncResult);
@@ -305,6 +308,7 @@ namespace Amazon.WorkSpaces
         /// <exception cref="Amazon.WorkSpaces.Model.ResourceLimitExceededException">
         /// Your resource limits have been exceeded.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateWorkspaces">REST API Reference for CreateWorkspaces Operation</seealso>
         public CreateWorkspacesResponse CreateWorkspaces(CreateWorkspacesRequest request)
         {
             var marshaller = new CreateWorkspacesRequestMarshaller();
@@ -324,6 +328,7 @@ namespace Amazon.WorkSpaces
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateWorkspaces
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateWorkspaces">REST API Reference for CreateWorkspaces Operation</seealso>
         public IAsyncResult BeginCreateWorkspaces(CreateWorkspacesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateWorkspacesRequestMarshaller();
@@ -340,6 +345,7 @@ namespace Amazon.WorkSpaces
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateWorkspaces.</param>
         /// 
         /// <returns>Returns a  CreateWorkspacesResult from WorkSpaces.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateWorkspaces">REST API Reference for CreateWorkspaces Operation</seealso>
         public  CreateWorkspacesResponse EndCreateWorkspaces(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateWorkspacesResponse>(asyncResult);
@@ -361,6 +367,7 @@ namespace Amazon.WorkSpaces
         /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteTags">REST API Reference for DeleteTags Operation</seealso>
         public DeleteTagsResponse DeleteTags(DeleteTagsRequest request)
         {
             var marshaller = new DeleteTagsRequestMarshaller();
@@ -380,6 +387,7 @@ namespace Amazon.WorkSpaces
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteTags
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteTags">REST API Reference for DeleteTags Operation</seealso>
         public IAsyncResult BeginDeleteTags(DeleteTagsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteTagsRequestMarshaller();
@@ -396,6 +404,7 @@ namespace Amazon.WorkSpaces
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteTags.</param>
         /// 
         /// <returns>Returns a  DeleteTagsResult from WorkSpaces.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteTags">REST API Reference for DeleteTags Operation</seealso>
         public  DeleteTagsResponse EndDeleteTags(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteTagsResponse>(asyncResult);
@@ -414,6 +423,7 @@ namespace Amazon.WorkSpaces
         /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeTags">REST API Reference for DescribeTags Operation</seealso>
         public DescribeTagsResponse DescribeTags(DescribeTagsRequest request)
         {
             var marshaller = new DescribeTagsRequestMarshaller();
@@ -433,6 +443,7 @@ namespace Amazon.WorkSpaces
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeTags
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeTags">REST API Reference for DescribeTags Operation</seealso>
         public IAsyncResult BeginDescribeTags(DescribeTagsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeTagsRequestMarshaller();
@@ -449,6 +460,7 @@ namespace Amazon.WorkSpaces
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeTags.</param>
         /// 
         /// <returns>Returns a  DescribeTagsResult from WorkSpaces.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeTags">REST API Reference for DescribeTags Operation</seealso>
         public  DescribeTagsResponse EndDescribeTags(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeTagsResponse>(asyncResult);
@@ -480,6 +492,7 @@ namespace Amazon.WorkSpaces
         /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
         /// One or more parameter values are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceBundles">REST API Reference for DescribeWorkspaceBundles Operation</seealso>
         public DescribeWorkspaceBundlesResponse DescribeWorkspaceBundles()
         {
             var request = new DescribeWorkspaceBundlesRequest();
@@ -510,6 +523,7 @@ namespace Amazon.WorkSpaces
         /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
         /// One or more parameter values are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceBundles">REST API Reference for DescribeWorkspaceBundles Operation</seealso>
         public DescribeWorkspaceBundlesResponse DescribeWorkspaceBundles(DescribeWorkspaceBundlesRequest request)
         {
             var marshaller = new DescribeWorkspaceBundlesRequestMarshaller();
@@ -529,6 +543,7 @@ namespace Amazon.WorkSpaces
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeWorkspaceBundles
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceBundles">REST API Reference for DescribeWorkspaceBundles Operation</seealso>
         public IAsyncResult BeginDescribeWorkspaceBundles(DescribeWorkspaceBundlesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeWorkspaceBundlesRequestMarshaller();
@@ -545,6 +560,7 @@ namespace Amazon.WorkSpaces
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeWorkspaceBundles.</param>
         /// 
         /// <returns>Returns a  DescribeWorkspaceBundlesResult from WorkSpaces.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceBundles">REST API Reference for DescribeWorkspaceBundles Operation</seealso>
         public  DescribeWorkspaceBundlesResponse EndDescribeWorkspaceBundles(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeWorkspaceBundlesResponse>(asyncResult);
@@ -571,6 +587,7 @@ namespace Amazon.WorkSpaces
         /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
         /// One or more parameter values are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceDirectories">REST API Reference for DescribeWorkspaceDirectories Operation</seealso>
         public DescribeWorkspaceDirectoriesResponse DescribeWorkspaceDirectories()
         {
             var request = new DescribeWorkspaceDirectoriesRequest();
@@ -596,6 +613,7 @@ namespace Amazon.WorkSpaces
         /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
         /// One or more parameter values are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceDirectories">REST API Reference for DescribeWorkspaceDirectories Operation</seealso>
         public DescribeWorkspaceDirectoriesResponse DescribeWorkspaceDirectories(DescribeWorkspaceDirectoriesRequest request)
         {
             var marshaller = new DescribeWorkspaceDirectoriesRequestMarshaller();
@@ -615,6 +633,7 @@ namespace Amazon.WorkSpaces
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeWorkspaceDirectories
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceDirectories">REST API Reference for DescribeWorkspaceDirectories Operation</seealso>
         public IAsyncResult BeginDescribeWorkspaceDirectories(DescribeWorkspaceDirectoriesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeWorkspaceDirectoriesRequestMarshaller();
@@ -631,6 +650,7 @@ namespace Amazon.WorkSpaces
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeWorkspaceDirectories.</param>
         /// 
         /// <returns>Returns a  DescribeWorkspaceDirectoriesResult from WorkSpaces.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceDirectories">REST API Reference for DescribeWorkspaceDirectories Operation</seealso>
         public  DescribeWorkspaceDirectoriesResponse EndDescribeWorkspaceDirectories(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeWorkspaceDirectoriesResponse>(asyncResult);
@@ -664,6 +684,7 @@ namespace Amazon.WorkSpaces
         /// <exception cref="Amazon.WorkSpaces.Model.ResourceUnavailableException">
         /// The specified resource is not available.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaces">REST API Reference for DescribeWorkspaces Operation</seealso>
         public DescribeWorkspacesResponse DescribeWorkspaces()
         {
             var request = new DescribeWorkspacesRequest();
@@ -696,6 +717,7 @@ namespace Amazon.WorkSpaces
         /// <exception cref="Amazon.WorkSpaces.Model.ResourceUnavailableException">
         /// The specified resource is not available.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaces">REST API Reference for DescribeWorkspaces Operation</seealso>
         public DescribeWorkspacesResponse DescribeWorkspaces(DescribeWorkspacesRequest request)
         {
             var marshaller = new DescribeWorkspacesRequestMarshaller();
@@ -715,6 +737,7 @@ namespace Amazon.WorkSpaces
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeWorkspaces
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaces">REST API Reference for DescribeWorkspaces Operation</seealso>
         public IAsyncResult BeginDescribeWorkspaces(DescribeWorkspacesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeWorkspacesRequestMarshaller();
@@ -731,6 +754,7 @@ namespace Amazon.WorkSpaces
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeWorkspaces.</param>
         /// 
         /// <returns>Returns a  DescribeWorkspacesResult from WorkSpaces.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaces">REST API Reference for DescribeWorkspaces Operation</seealso>
         public  DescribeWorkspacesResponse EndDescribeWorkspaces(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeWorkspacesResponse>(asyncResult);
@@ -749,6 +773,7 @@ namespace Amazon.WorkSpaces
         /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
         /// One or more parameter values are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspacesConnectionStatus">REST API Reference for DescribeWorkspacesConnectionStatus Operation</seealso>
         public DescribeWorkspacesConnectionStatusResponse DescribeWorkspacesConnectionStatus(DescribeWorkspacesConnectionStatusRequest request)
         {
             var marshaller = new DescribeWorkspacesConnectionStatusRequestMarshaller();
@@ -768,6 +793,7 @@ namespace Amazon.WorkSpaces
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeWorkspacesConnectionStatus
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspacesConnectionStatus">REST API Reference for DescribeWorkspacesConnectionStatus Operation</seealso>
         public IAsyncResult BeginDescribeWorkspacesConnectionStatus(DescribeWorkspacesConnectionStatusRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeWorkspacesConnectionStatusRequestMarshaller();
@@ -784,6 +810,7 @@ namespace Amazon.WorkSpaces
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeWorkspacesConnectionStatus.</param>
         /// 
         /// <returns>Returns a  DescribeWorkspacesConnectionStatusResult from WorkSpaces.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspacesConnectionStatus">REST API Reference for DescribeWorkspacesConnectionStatus Operation</seealso>
         public  DescribeWorkspacesConnectionStatusResponse EndDescribeWorkspacesConnectionStatus(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeWorkspacesConnectionStatusResponse>(asyncResult);
@@ -794,19 +821,19 @@ namespace Amazon.WorkSpaces
         #region  ModifyWorkspaceProperties
 
         /// <summary>
-        /// Modifies the WorkSpace properties, including the RunningMode and AutoStop time.
+        /// Modifies the WorkSpace properties, including the running mode and AutoStop time.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyWorkspaceProperties service method.</param>
         /// 
         /// <returns>The response from the ModifyWorkspaceProperties service method, as returned by WorkSpaces.</returns>
         /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
-        /// 
+        /// The user is not authorized to access a resource.
         /// </exception>
         /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
         /// One or more parameter values are not valid.
         /// </exception>
         /// <exception cref="Amazon.WorkSpaces.Model.InvalidResourceStateException">
-        /// The specified WorkSpace has an invalid state for this operation.
+        /// The state of the WorkSpace is not valid for this operation.
         /// </exception>
         /// <exception cref="Amazon.WorkSpaces.Model.OperationInProgressException">
         /// The properties of this WorkSpace are currently being modified. Try again in a moment.
@@ -818,10 +845,11 @@ namespace Amazon.WorkSpaces
         /// The specified resource is not available.
         /// </exception>
         /// <exception cref="Amazon.WorkSpaces.Model.UnsupportedWorkspaceConfigurationException">
-        /// The WorkSpace does not have the supported configuration for this operation. For more
-        /// information, see the <a href="http://docs.aws.amazon.com/workspaces/latest/adminguide">Amazon
+        /// The configuration of this WorkSpace is not supported for this operation. For more
+        /// information, see the <a href="http://docs.aws.amazon.com/workspaces/latest/adminguide/">Amazon
         /// WorkSpaces Administration Guide</a>.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyWorkspaceProperties">REST API Reference for ModifyWorkspaceProperties Operation</seealso>
         public ModifyWorkspacePropertiesResponse ModifyWorkspaceProperties(ModifyWorkspacePropertiesRequest request)
         {
             var marshaller = new ModifyWorkspacePropertiesRequestMarshaller();
@@ -841,6 +869,7 @@ namespace Amazon.WorkSpaces
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyWorkspaceProperties
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyWorkspaceProperties">REST API Reference for ModifyWorkspaceProperties Operation</seealso>
         public IAsyncResult BeginModifyWorkspaceProperties(ModifyWorkspacePropertiesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ModifyWorkspacePropertiesRequestMarshaller();
@@ -857,6 +886,7 @@ namespace Amazon.WorkSpaces
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyWorkspaceProperties.</param>
         /// 
         /// <returns>Returns a  ModifyWorkspacePropertiesResult from WorkSpaces.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyWorkspaceProperties">REST API Reference for ModifyWorkspaceProperties Operation</seealso>
         public  ModifyWorkspacePropertiesResponse EndModifyWorkspaceProperties(IAsyncResult asyncResult)
         {
             return EndInvoke<ModifyWorkspacePropertiesResponse>(asyncResult);
@@ -883,6 +913,7 @@ namespace Amazon.WorkSpaces
         /// <param name="request">Container for the necessary parameters to execute the RebootWorkspaces service method.</param>
         /// 
         /// <returns>The response from the RebootWorkspaces service method, as returned by WorkSpaces.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RebootWorkspaces">REST API Reference for RebootWorkspaces Operation</seealso>
         public RebootWorkspacesResponse RebootWorkspaces(RebootWorkspacesRequest request)
         {
             var marshaller = new RebootWorkspacesRequestMarshaller();
@@ -902,6 +933,7 @@ namespace Amazon.WorkSpaces
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRebootWorkspaces
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RebootWorkspaces">REST API Reference for RebootWorkspaces Operation</seealso>
         public IAsyncResult BeginRebootWorkspaces(RebootWorkspacesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RebootWorkspacesRequestMarshaller();
@@ -918,6 +950,7 @@ namespace Amazon.WorkSpaces
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRebootWorkspaces.</param>
         /// 
         /// <returns>Returns a  RebootWorkspacesResult from WorkSpaces.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RebootWorkspaces">REST API Reference for RebootWorkspaces Operation</seealso>
         public  RebootWorkspacesResponse EndRebootWorkspaces(IAsyncResult asyncResult)
         {
             return EndInvoke<RebootWorkspacesResponse>(asyncResult);
@@ -963,6 +996,7 @@ namespace Amazon.WorkSpaces
         /// <param name="request">Container for the necessary parameters to execute the RebuildWorkspaces service method.</param>
         /// 
         /// <returns>The response from the RebuildWorkspaces service method, as returned by WorkSpaces.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RebuildWorkspaces">REST API Reference for RebuildWorkspaces Operation</seealso>
         public RebuildWorkspacesResponse RebuildWorkspaces(RebuildWorkspacesRequest request)
         {
             var marshaller = new RebuildWorkspacesRequestMarshaller();
@@ -982,6 +1016,7 @@ namespace Amazon.WorkSpaces
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRebuildWorkspaces
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RebuildWorkspaces">REST API Reference for RebuildWorkspaces Operation</seealso>
         public IAsyncResult BeginRebuildWorkspaces(RebuildWorkspacesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RebuildWorkspacesRequestMarshaller();
@@ -998,6 +1033,7 @@ namespace Amazon.WorkSpaces
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRebuildWorkspaces.</param>
         /// 
         /// <returns>Returns a  RebuildWorkspacesResult from WorkSpaces.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RebuildWorkspaces">REST API Reference for RebuildWorkspaces Operation</seealso>
         public  RebuildWorkspacesResponse EndRebuildWorkspaces(IAsyncResult asyncResult)
         {
             return EndInvoke<RebuildWorkspacesResponse>(asyncResult);
@@ -1008,12 +1044,13 @@ namespace Amazon.WorkSpaces
         #region  StartWorkspaces
 
         /// <summary>
-        /// Starts the specified WorkSpaces. The API only works with WorkSpaces that have RunningMode
-        /// configured as AutoStop and the State set to “STOPPED.”
+        /// Starts the specified WorkSpaces. The WorkSpaces must have a running mode of AutoStop
+        /// and a state of STOPPED.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartWorkspaces service method.</param>
         /// 
         /// <returns>The response from the StartWorkspaces service method, as returned by WorkSpaces.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/StartWorkspaces">REST API Reference for StartWorkspaces Operation</seealso>
         public StartWorkspacesResponse StartWorkspaces(StartWorkspacesRequest request)
         {
             var marshaller = new StartWorkspacesRequestMarshaller();
@@ -1033,6 +1070,7 @@ namespace Amazon.WorkSpaces
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartWorkspaces
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/StartWorkspaces">REST API Reference for StartWorkspaces Operation</seealso>
         public IAsyncResult BeginStartWorkspaces(StartWorkspacesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new StartWorkspacesRequestMarshaller();
@@ -1049,6 +1087,7 @@ namespace Amazon.WorkSpaces
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartWorkspaces.</param>
         /// 
         /// <returns>Returns a  StartWorkspacesResult from WorkSpaces.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/StartWorkspaces">REST API Reference for StartWorkspaces Operation</seealso>
         public  StartWorkspacesResponse EndStartWorkspaces(IAsyncResult asyncResult)
         {
             return EndInvoke<StartWorkspacesResponse>(asyncResult);
@@ -1059,12 +1098,13 @@ namespace Amazon.WorkSpaces
         #region  StopWorkspaces
 
         /// <summary>
-        /// Stops the specified WorkSpaces. The API only works with WorkSpaces that have RunningMode
-        /// configured as AutoStop and the State set to AVAILABLE, IMPAIRED, UNHEALTHY, or ERROR.
+        /// Stops the specified WorkSpaces. The WorkSpaces must have a running mode of AutoStop
+        /// and a state of AVAILABLE, IMPAIRED, UNHEALTHY, or ERROR.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopWorkspaces service method.</param>
         /// 
         /// <returns>The response from the StopWorkspaces service method, as returned by WorkSpaces.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/StopWorkspaces">REST API Reference for StopWorkspaces Operation</seealso>
         public StopWorkspacesResponse StopWorkspaces(StopWorkspacesRequest request)
         {
             var marshaller = new StopWorkspacesRequestMarshaller();
@@ -1084,6 +1124,7 @@ namespace Amazon.WorkSpaces
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopWorkspaces
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/StopWorkspaces">REST API Reference for StopWorkspaces Operation</seealso>
         public IAsyncResult BeginStopWorkspaces(StopWorkspacesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new StopWorkspacesRequestMarshaller();
@@ -1100,6 +1141,7 @@ namespace Amazon.WorkSpaces
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopWorkspaces.</param>
         /// 
         /// <returns>Returns a  StopWorkspacesResult from WorkSpaces.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/StopWorkspaces">REST API Reference for StopWorkspaces Operation</seealso>
         public  StopWorkspacesResponse EndStopWorkspaces(IAsyncResult asyncResult)
         {
             return EndInvoke<StopWorkspacesResponse>(asyncResult);
@@ -1132,6 +1174,7 @@ namespace Amazon.WorkSpaces
         /// <param name="request">Container for the necessary parameters to execute the TerminateWorkspaces service method.</param>
         /// 
         /// <returns>The response from the TerminateWorkspaces service method, as returned by WorkSpaces.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/TerminateWorkspaces">REST API Reference for TerminateWorkspaces Operation</seealso>
         public TerminateWorkspacesResponse TerminateWorkspaces(TerminateWorkspacesRequest request)
         {
             var marshaller = new TerminateWorkspacesRequestMarshaller();
@@ -1151,6 +1194,7 @@ namespace Amazon.WorkSpaces
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTerminateWorkspaces
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/TerminateWorkspaces">REST API Reference for TerminateWorkspaces Operation</seealso>
         public IAsyncResult BeginTerminateWorkspaces(TerminateWorkspacesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new TerminateWorkspacesRequestMarshaller();
@@ -1167,6 +1211,7 @@ namespace Amazon.WorkSpaces
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTerminateWorkspaces.</param>
         /// 
         /// <returns>Returns a  TerminateWorkspacesResult from WorkSpaces.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/TerminateWorkspaces">REST API Reference for TerminateWorkspaces Operation</seealso>
         public  TerminateWorkspacesResponse EndTerminateWorkspaces(IAsyncResult asyncResult)
         {
             return EndInvoke<TerminateWorkspacesResponse>(asyncResult);

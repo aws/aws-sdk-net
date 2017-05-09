@@ -58,6 +58,7 @@ namespace Amazon.WorkSpaces
         /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateTags">REST API Reference for CreateTags Operation</seealso>
         CreateTagsResponse CreateTags(CreateTagsRequest request);
 
 
@@ -70,6 +71,7 @@ namespace Amazon.WorkSpaces
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateTags">REST API Reference for CreateTags Operation</seealso>
         Task<CreateTagsResponse> CreateTagsAsync(CreateTagsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -95,6 +97,7 @@ namespace Amazon.WorkSpaces
         /// <exception cref="Amazon.WorkSpaces.Model.ResourceLimitExceededException">
         /// Your resource limits have been exceeded.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateWorkspaces">REST API Reference for CreateWorkspaces Operation</seealso>
         CreateWorkspacesResponse CreateWorkspaces(CreateWorkspacesRequest request);
 
 
@@ -107,6 +110,7 @@ namespace Amazon.WorkSpaces
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateWorkspaces">REST API Reference for CreateWorkspaces Operation</seealso>
         Task<CreateWorkspacesResponse> CreateWorkspacesAsync(CreateWorkspacesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -126,6 +130,7 @@ namespace Amazon.WorkSpaces
         /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteTags">REST API Reference for DeleteTags Operation</seealso>
         DeleteTagsResponse DeleteTags(DeleteTagsRequest request);
 
 
@@ -138,6 +143,7 @@ namespace Amazon.WorkSpaces
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteTags">REST API Reference for DeleteTags Operation</seealso>
         Task<DeleteTagsResponse> DeleteTagsAsync(DeleteTagsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -154,6 +160,7 @@ namespace Amazon.WorkSpaces
         /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeTags">REST API Reference for DescribeTags Operation</seealso>
         DescribeTagsResponse DescribeTags(DescribeTagsRequest request);
 
 
@@ -166,6 +173,7 @@ namespace Amazon.WorkSpaces
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeTags">REST API Reference for DescribeTags Operation</seealso>
         Task<DescribeTagsResponse> DescribeTagsAsync(DescribeTagsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -195,6 +203,7 @@ namespace Amazon.WorkSpaces
         /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
         /// One or more parameter values are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceBundles">REST API Reference for DescribeWorkspaceBundles Operation</seealso>
         DescribeWorkspaceBundlesResponse DescribeWorkspaceBundles();
 
         /// <summary>
@@ -220,6 +229,7 @@ namespace Amazon.WorkSpaces
         /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
         /// One or more parameter values are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceBundles">REST API Reference for DescribeWorkspaceBundles Operation</seealso>
         DescribeWorkspaceBundlesResponse DescribeWorkspaceBundles(DescribeWorkspaceBundlesRequest request);
 
 
@@ -248,6 +258,7 @@ namespace Amazon.WorkSpaces
         /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
         /// One or more parameter values are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceBundles">REST API Reference for DescribeWorkspaceBundles Operation</seealso>
         Task<DescribeWorkspaceBundlesResponse> DescribeWorkspaceBundlesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
@@ -259,6 +270,7 @@ namespace Amazon.WorkSpaces
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceBundles">REST API Reference for DescribeWorkspaceBundles Operation</seealso>
         Task<DescribeWorkspaceBundlesResponse> DescribeWorkspaceBundlesAsync(DescribeWorkspaceBundlesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -283,6 +295,7 @@ namespace Amazon.WorkSpaces
         /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
         /// One or more parameter values are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceDirectories">REST API Reference for DescribeWorkspaceDirectories Operation</seealso>
         DescribeWorkspaceDirectoriesResponse DescribeWorkspaceDirectories();
 
         /// <summary>
@@ -303,6 +316,7 @@ namespace Amazon.WorkSpaces
         /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
         /// One or more parameter values are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceDirectories">REST API Reference for DescribeWorkspaceDirectories Operation</seealso>
         DescribeWorkspaceDirectoriesResponse DescribeWorkspaceDirectories(DescribeWorkspaceDirectoriesRequest request);
 
 
@@ -326,6 +340,7 @@ namespace Amazon.WorkSpaces
         /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
         /// One or more parameter values are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceDirectories">REST API Reference for DescribeWorkspaceDirectories Operation</seealso>
         Task<DescribeWorkspaceDirectoriesResponse> DescribeWorkspaceDirectoriesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
@@ -337,6 +352,7 @@ namespace Amazon.WorkSpaces
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceDirectories">REST API Reference for DescribeWorkspaceDirectories Operation</seealso>
         Task<DescribeWorkspaceDirectoriesResponse> DescribeWorkspaceDirectoriesAsync(DescribeWorkspaceDirectoriesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -368,6 +384,7 @@ namespace Amazon.WorkSpaces
         /// <exception cref="Amazon.WorkSpaces.Model.ResourceUnavailableException">
         /// The specified resource is not available.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaces">REST API Reference for DescribeWorkspaces Operation</seealso>
         DescribeWorkspacesResponse DescribeWorkspaces();
 
         /// <summary>
@@ -395,6 +412,7 @@ namespace Amazon.WorkSpaces
         /// <exception cref="Amazon.WorkSpaces.Model.ResourceUnavailableException">
         /// The specified resource is not available.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaces">REST API Reference for DescribeWorkspaces Operation</seealso>
         DescribeWorkspacesResponse DescribeWorkspaces(DescribeWorkspacesRequest request);
 
 
@@ -425,6 +443,7 @@ namespace Amazon.WorkSpaces
         /// <exception cref="Amazon.WorkSpaces.Model.ResourceUnavailableException">
         /// The specified resource is not available.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaces">REST API Reference for DescribeWorkspaces Operation</seealso>
         Task<DescribeWorkspacesResponse> DescribeWorkspacesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
@@ -436,6 +455,7 @@ namespace Amazon.WorkSpaces
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaces">REST API Reference for DescribeWorkspaces Operation</seealso>
         Task<DescribeWorkspacesResponse> DescribeWorkspacesAsync(DescribeWorkspacesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -452,6 +472,7 @@ namespace Amazon.WorkSpaces
         /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
         /// One or more parameter values are not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspacesConnectionStatus">REST API Reference for DescribeWorkspacesConnectionStatus Operation</seealso>
         DescribeWorkspacesConnectionStatusResponse DescribeWorkspacesConnectionStatus(DescribeWorkspacesConnectionStatusRequest request);
 
 
@@ -464,6 +485,7 @@ namespace Amazon.WorkSpaces
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspacesConnectionStatus">REST API Reference for DescribeWorkspacesConnectionStatus Operation</seealso>
         Task<DescribeWorkspacesConnectionStatusResponse> DescribeWorkspacesConnectionStatusAsync(DescribeWorkspacesConnectionStatusRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -472,19 +494,19 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
-        /// Modifies the WorkSpace properties, including the RunningMode and AutoStop time.
+        /// Modifies the WorkSpace properties, including the running mode and AutoStop time.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyWorkspaceProperties service method.</param>
         /// 
         /// <returns>The response from the ModifyWorkspaceProperties service method, as returned by WorkSpaces.</returns>
         /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
-        /// 
+        /// The user is not authorized to access a resource.
         /// </exception>
         /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
         /// One or more parameter values are not valid.
         /// </exception>
         /// <exception cref="Amazon.WorkSpaces.Model.InvalidResourceStateException">
-        /// The specified WorkSpace has an invalid state for this operation.
+        /// The state of the WorkSpace is not valid for this operation.
         /// </exception>
         /// <exception cref="Amazon.WorkSpaces.Model.OperationInProgressException">
         /// The properties of this WorkSpace are currently being modified. Try again in a moment.
@@ -496,10 +518,11 @@ namespace Amazon.WorkSpaces
         /// The specified resource is not available.
         /// </exception>
         /// <exception cref="Amazon.WorkSpaces.Model.UnsupportedWorkspaceConfigurationException">
-        /// The WorkSpace does not have the supported configuration for this operation. For more
-        /// information, see the <a href="http://docs.aws.amazon.com/workspaces/latest/adminguide">Amazon
+        /// The configuration of this WorkSpace is not supported for this operation. For more
+        /// information, see the <a href="http://docs.aws.amazon.com/workspaces/latest/adminguide/">Amazon
         /// WorkSpaces Administration Guide</a>.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyWorkspaceProperties">REST API Reference for ModifyWorkspaceProperties Operation</seealso>
         ModifyWorkspacePropertiesResponse ModifyWorkspaceProperties(ModifyWorkspacePropertiesRequest request);
 
 
@@ -512,6 +535,7 @@ namespace Amazon.WorkSpaces
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyWorkspaceProperties">REST API Reference for ModifyWorkspaceProperties Operation</seealso>
         Task<ModifyWorkspacePropertiesResponse> ModifyWorkspacePropertiesAsync(ModifyWorkspacePropertiesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -536,6 +560,7 @@ namespace Amazon.WorkSpaces
         /// <param name="request">Container for the necessary parameters to execute the RebootWorkspaces service method.</param>
         /// 
         /// <returns>The response from the RebootWorkspaces service method, as returned by WorkSpaces.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RebootWorkspaces">REST API Reference for RebootWorkspaces Operation</seealso>
         RebootWorkspacesResponse RebootWorkspaces(RebootWorkspacesRequest request);
 
 
@@ -548,6 +573,7 @@ namespace Amazon.WorkSpaces
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RebootWorkspaces">REST API Reference for RebootWorkspaces Operation</seealso>
         Task<RebootWorkspacesResponse> RebootWorkspacesAsync(RebootWorkspacesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -591,6 +617,7 @@ namespace Amazon.WorkSpaces
         /// <param name="request">Container for the necessary parameters to execute the RebuildWorkspaces service method.</param>
         /// 
         /// <returns>The response from the RebuildWorkspaces service method, as returned by WorkSpaces.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RebuildWorkspaces">REST API Reference for RebuildWorkspaces Operation</seealso>
         RebuildWorkspacesResponse RebuildWorkspaces(RebuildWorkspacesRequest request);
 
 
@@ -603,6 +630,7 @@ namespace Amazon.WorkSpaces
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RebuildWorkspaces">REST API Reference for RebuildWorkspaces Operation</seealso>
         Task<RebuildWorkspacesResponse> RebuildWorkspacesAsync(RebuildWorkspacesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -611,12 +639,13 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
-        /// Starts the specified WorkSpaces. The API only works with WorkSpaces that have RunningMode
-        /// configured as AutoStop and the State set to “STOPPED.”
+        /// Starts the specified WorkSpaces. The WorkSpaces must have a running mode of AutoStop
+        /// and a state of STOPPED.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartWorkspaces service method.</param>
         /// 
         /// <returns>The response from the StartWorkspaces service method, as returned by WorkSpaces.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/StartWorkspaces">REST API Reference for StartWorkspaces Operation</seealso>
         StartWorkspacesResponse StartWorkspaces(StartWorkspacesRequest request);
 
 
@@ -629,6 +658,7 @@ namespace Amazon.WorkSpaces
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/StartWorkspaces">REST API Reference for StartWorkspaces Operation</seealso>
         Task<StartWorkspacesResponse> StartWorkspacesAsync(StartWorkspacesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -637,12 +667,13 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
-        /// Stops the specified WorkSpaces. The API only works with WorkSpaces that have RunningMode
-        /// configured as AutoStop and the State set to AVAILABLE, IMPAIRED, UNHEALTHY, or ERROR.
+        /// Stops the specified WorkSpaces. The WorkSpaces must have a running mode of AutoStop
+        /// and a state of AVAILABLE, IMPAIRED, UNHEALTHY, or ERROR.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopWorkspaces service method.</param>
         /// 
         /// <returns>The response from the StopWorkspaces service method, as returned by WorkSpaces.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/StopWorkspaces">REST API Reference for StopWorkspaces Operation</seealso>
         StopWorkspacesResponse StopWorkspaces(StopWorkspacesRequest request);
 
 
@@ -655,6 +686,7 @@ namespace Amazon.WorkSpaces
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/StopWorkspaces">REST API Reference for StopWorkspaces Operation</seealso>
         Task<StopWorkspacesResponse> StopWorkspacesAsync(StopWorkspacesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -685,6 +717,7 @@ namespace Amazon.WorkSpaces
         /// <param name="request">Container for the necessary parameters to execute the TerminateWorkspaces service method.</param>
         /// 
         /// <returns>The response from the TerminateWorkspaces service method, as returned by WorkSpaces.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/TerminateWorkspaces">REST API Reference for TerminateWorkspaces Operation</seealso>
         TerminateWorkspacesResponse TerminateWorkspaces(TerminateWorkspacesRequest request);
 
 
@@ -697,6 +730,7 @@ namespace Amazon.WorkSpaces
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/TerminateWorkspaces">REST API Reference for TerminateWorkspaces Operation</seealso>
         Task<TerminateWorkspacesResponse> TerminateWorkspacesAsync(TerminateWorkspacesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion

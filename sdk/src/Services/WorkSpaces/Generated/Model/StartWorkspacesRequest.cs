@@ -29,8 +29,8 @@ namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
     /// Container for the parameters to the StartWorkspaces operation.
-    /// Starts the specified WorkSpaces. The API only works with WorkSpaces that have RunningMode
-    /// configured as AutoStop and the State set to “STOPPED.”
+    /// Starts the specified WorkSpaces. The WorkSpaces must have a running mode of AutoStop
+    /// and a state of STOPPED.
     /// </summary>
     public partial class StartWorkspacesRequest : AmazonWorkSpacesRequest
     {
