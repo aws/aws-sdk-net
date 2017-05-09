@@ -1,4 +1,4 @@
-### 3.3.84.1 (2017-05-08 20:59 UTC)
+﻿### 3.3.84.1 (2017-05-08 20:59 UTC)
 * Core 3.3.13.4
 	* Re-compute region endpoint when ClientConfig.RegionEndpoint is set to null.
 Added .Net Core connection error case to the list of retry able exceptions.
@@ -19,6 +19,8 @@ Make HttpClientHandler.MaxConnectionsPerServer configurable for .NET Core via IC
 * Core 3.3.13.3
 	* Added retries for WebExceptionStatus.SendFailure.
 	* All services packages updated to require new Core
+* AWSSDK.Extensions.NETCore.Setup (3.3.1)
+	* Use new CredentialManagement namespace classes in AWSSDK.Extensions.NETCore.Setup.
 
 ### 3.3.83.0 (2017-04-28 21:28 UTC)
 * CloudFormation (3.3.5.0)
