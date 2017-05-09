@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.84.1",
+    "ProductVersion" : "3.3.84.2",
     "CoreVersion"    : "3.3.13.4",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -338,7 +338,7 @@
             "InPreview"    : false
         },
         "WorkSpaces"                : {
-            "Version" : "3.3.0.16",
+            "Version" : "3.3.0.17",
             "Dependencies" : {
                 "Core" : "3.3.13.4"
             },
@@ -674,7 +674,7 @@
             "InPreview"    : false
         },
         "CodeStar"                        : {
-            "Version" : "3.3.0.4",
+            "Version" : "3.3.0.5",
             "Dependencies" : {
                 "Core" : "3.3.13.4"
             },

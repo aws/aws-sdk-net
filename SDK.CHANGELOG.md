@@ -1,4 +1,10 @@
-﻿### 3.3.84.1 (2017-05-08 20:59 UTC)
+### 3.3.84.2 (2017-05-09 17:49 UTC)
+* CodeStar (3.3.0.5)
+	* Updated documentation for AWS CodeStar.
+* WorkSpaces (3.3.0.17)
+	* Doc-only Update for WorkSpaces
+
+### 3.3.84.1 (2017-05-08 20:59 UTC)
 * Core 3.3.13.4
 	* Re-compute region endpoint when ClientConfig.RegionEndpoint is set to null.
 Added .Net Core connection error case to the list of retry able exceptions.
