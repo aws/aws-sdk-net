@@ -34,6 +34,53 @@ namespace Amazon.S3
 {
     public partial class AmazonS3Client
     {
+        #region GetPreSignedURL
+
+        /// <summary>
+        /// Create a signed URL allowing access to a resource that would 
+        /// usually require authentication.
+        /// </summary>
+        /// <remarks>
+        /// <para>
+        /// When using query string authentication you create a query,
+        /// specify an expiration time for the query, sign it with your
+        /// signature, place the data in an HTTP request, and distribute
+        /// the request to a user or embed the request in a web page.
+        /// </para>
+        /// <para>
+        /// A PreSigned URL can be generated for GET, PUT, DELETE and HEAD
+        /// operations on your bucketName, keys, and versions.
+        /// </para>
+        /// </remarks>
+        /// <param name="request">The GetPreSignedUrlRequest that defines the
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <exception cref="T:System.ArgumentNullException" />   
+        public void GetPreSignedURLAsync(GetPreSignedUrlRequest request, AmazonServiceCallback<GetPreSignedUrlRequest, GetPreSignedUrlResponse> callback, AsyncOptions options = null)
+        {
+            options = options ?? new AsyncOptions();
+            
+            if (callback == null)
+            {
+                throw new ArgumentNullException("callback");
+            }
+
+            ThreadPool.QueueUserWorkItem(new WaitCallback(delegate
+            {
+                // Provide a default policy if user doesn't set it.
+                try
+                {
+                    callback(new AmazonServiceResult<GetPreSignedUrlRequest, GetPreSignedUrlResponse>(request, new GetPreSignedUrlResponse(GetPreSignedURLInternal(request)), null, options.State));
+                }
+                catch (Exception e)
+                {
+                    callback(new AmazonServiceResult<GetPreSignedUrlRequest, GetPreSignedUrlResponse>(request, null, e, options.State));
+                }
+            }));
+        }
+
+        #endregion 
 
         #region Post Object
 
@@ -49,7 +96,7 @@ namespace Amazon.S3
         ///          procedure using the AsyncState property.</param>
         public void PostObjectAsync(PostObjectRequest request, AmazonServiceCallback<PostObjectRequest, PostObjectResponse> callback, AsyncOptions options = null)
         {
-            options = options == null ? new AsyncOptions() : options;
+            options = options ?? new AsyncOptions();
 
             Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper
                 = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) =>
@@ -92,7 +139,6 @@ namespace Amazon.S3
                     request.Headers.ContentType = "application/octet-stream";
             }
         }
-
         private void CreateSignedPolicy(PostObjectRequest request)
         {
             StringBuilder metadataPolicy = new StringBuilder();
