@@ -8,6 +8,7 @@ using Amazon.ECR.Model;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Amazon.CloudDirectory;
 using Amazon.CloudDirectory.Model;
+using AWSSDK_DotNet.CommonTest.Utils;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests
 {

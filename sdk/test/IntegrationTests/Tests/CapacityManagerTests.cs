@@ -27,6 +27,7 @@ using Amazon.S3.Model;
 using System.IO;
 
 using AWSSDK_DotNet.IntegrationTests.Utils;
+using AWSSDK_DotNet.CommonTest.Utils;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {

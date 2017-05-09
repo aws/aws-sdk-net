@@ -10,6 +10,7 @@ using System.IO;
 using System.Net;
 using System.Diagnostics;
 using System.Reflection;
+using AWSSDK_DotNet.CommonTest.Utils;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests
 {

@@ -7,12 +7,9 @@ using System.Text;
 using System.Threading;
 using System.IO;
 using System.Collections.Specialized;
-using Amazon;
 using System.Globalization;
-using Amazon.Runtime;
-using Amazon.Util;
 
-namespace AWSSDK_DotNet.IntegrationTests.Tests
+namespace AWSSDK_DotNet.CommonTest.Utils
 {
     public abstract class Servlet : IDisposable
     {
@@ -311,7 +308,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             set
             {
                 _response = value;
-                Headers[HeaderKeys.ContentLengthHeader]
+                Headers["Content-Length"]
                     = (_response == null ? 0 : _response.Length).ToString(CultureInfo.InvariantCulture);
             }
         }
