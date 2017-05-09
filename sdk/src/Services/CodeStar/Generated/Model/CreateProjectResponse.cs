@@ -40,7 +40,7 @@ namespace Amazon.CodeStar.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) for the project.
+        /// Reserved for future use.
         /// </para>
         /// </summary>
         public string Arn
@@ -58,9 +58,7 @@ namespace Amazon.CodeStar.Model
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
         /// <para>
-        /// The user- or system-generated token from the initial request that can be used to repeat
-        /// the request. It can also be used to identify which user or system made the request
-        /// in DescribeProject and ListProjects.
+        /// Reserved for future use.
         /// </para>
         /// </summary>
         public string ClientRequestToken
@@ -78,7 +76,7 @@ namespace Amazon.CodeStar.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The ID for the project.
+        /// Reserved for future use.
         /// </para>
         /// </summary>
         public string Id
@@ -96,7 +94,7 @@ namespace Amazon.CodeStar.Model
         /// <summary>
         /// Gets and sets the property ProjectTemplateId. 
         /// <para>
-        /// The ID for the AWS CodeStar project template used to create the project.
+        /// Reserved for future use.
         /// </para>
         /// </summary>
         public string ProjectTemplateId

@@ -48,10 +48,6 @@ namespace Amazon.CodeStar
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>CreateProject</a>, which creates an empty project in AWS CodeStar with no resources.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
     ///  <a>DeleteProject</a>, which deletes a project in AWS CodeStar.
     /// </para>
     ///  </li> <li> 
@@ -384,7 +380,7 @@ namespace Amazon.CodeStar
         #region  CreateProject
 
         /// <summary>
-        /// Creates a project in AWS CodeStar with minimal structure and no resources.
+        /// Reserved for future use. To create a project, use the AWS CodeStar console.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateProject service method.</param>
         /// 

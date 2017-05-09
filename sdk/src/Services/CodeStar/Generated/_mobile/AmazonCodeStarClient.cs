@@ -51,10 +51,6 @@ namespace Amazon.CodeStar
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>CreateProject</a>, which creates an empty project in AWS CodeStar with no resources.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
     ///  <a>DeleteProject</a>, which deletes a project in AWS CodeStar.
     /// </para>
     ///  </li> <li> 
