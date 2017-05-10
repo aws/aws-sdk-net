@@ -30,6 +30,11 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// <summary>
     /// Container for the parameters to the AdminSetUserSettings operation.
     /// Sets all the user settings for a specified user name. Works on any user.
+    /// 
+    ///  
+    /// <para>
+    /// Requires developer credentials.
+    /// </para>
     /// </summary>
     public partial class AdminSetUserSettingsRequest : AmazonCognitoIdentityProviderRequest
     {

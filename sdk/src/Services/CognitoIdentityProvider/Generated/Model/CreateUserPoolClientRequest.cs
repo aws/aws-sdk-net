@@ -117,7 +117,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property RefreshTokenValidity. 
         /// <para>
-        /// Refreshes the token validity.
+        /// The validity of the refresh token, in days.
         /// </para>
         /// </summary>
         public int RefreshTokenValidity

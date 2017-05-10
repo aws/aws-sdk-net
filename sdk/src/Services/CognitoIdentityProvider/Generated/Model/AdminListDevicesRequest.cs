@@ -30,6 +30,11 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// <summary>
     /// Container for the parameters to the AdminListDevices operation.
     /// Lists devices, as an administrator.
+    /// 
+    ///  
+    /// <para>
+    /// Requires developer credentials.
+    /// </para>
     /// </summary>
     public partial class AdminListDevicesRequest : AmazonCognitoIdentityProviderRequest
     {

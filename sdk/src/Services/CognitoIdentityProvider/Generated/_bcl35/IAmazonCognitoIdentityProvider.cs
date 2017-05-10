@@ -76,6 +76,7 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when you are trying to modify a user pool while a user import
         /// job is in progress for that pool.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AddCustomAttributes">REST API Reference for AddCustomAttributes Operation</seealso>
         AddCustomAttributesResponse AddCustomAttributes(AddCustomAttributesRequest request);
 
         /// <summary>
@@ -89,6 +90,7 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAddCustomAttributes
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AddCustomAttributes">REST API Reference for AddCustomAttributes Operation</seealso>
         IAsyncResult BeginAddCustomAttributes(AddCustomAttributesRequest request, AsyncCallback callback, object state);
 
 
@@ -100,7 +102,72 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAddCustomAttributes.</param>
         /// 
         /// <returns>Returns a  AddCustomAttributesResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AddCustomAttributes">REST API Reference for AddCustomAttributes Operation</seealso>
         AddCustomAttributesResponse EndAddCustomAttributes(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  AdminAddUserToGroup
+
+
+        /// <summary>
+        /// Adds the specified user to the specified group.
+        /// 
+        ///  
+        /// <para>
+        /// Requires developer credentials.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AdminAddUserToGroup service method.</param>
+        /// 
+        /// <returns>The response from the AdminAddUserToGroup service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception gets thrown when a user is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service cannot find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
+        /// This exception is thrown when a user is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminAddUserToGroup">REST API Reference for AdminAddUserToGroup Operation</seealso>
+        AdminAddUserToGroupResponse AdminAddUserToGroup(AdminAddUserToGroupRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AdminAddUserToGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AdminAddUserToGroup operation on AmazonCognitoIdentityProviderClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAdminAddUserToGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminAddUserToGroup">REST API Reference for AdminAddUserToGroup Operation</seealso>
+        IAsyncResult BeginAdminAddUserToGroup(AdminAddUserToGroupRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AdminAddUserToGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAdminAddUserToGroup.</param>
+        /// 
+        /// <returns>Returns a  AdminAddUserToGroupResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminAddUserToGroup">REST API Reference for AdminAddUserToGroup Operation</seealso>
+        AdminAddUserToGroupResponse EndAdminAddUserToGroup(IAsyncResult asyncResult);
 
         #endregion
         
@@ -110,6 +177,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <summary>
         /// Confirms user registration as an admin without using a confirmation code. Works on
         /// any user.
+        /// 
+        ///  
+        /// <para>
+        /// Requires developer credentials.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AdminConfirmSignUp service method.</param>
         /// 
@@ -152,6 +224,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminConfirmSignUp">REST API Reference for AdminConfirmSignUp Operation</seealso>
         AdminConfirmSignUpResponse AdminConfirmSignUp(AdminConfirmSignUpRequest request);
 
         /// <summary>
@@ -165,6 +238,7 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAdminConfirmSignUp
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminConfirmSignUp">REST API Reference for AdminConfirmSignUp Operation</seealso>
         IAsyncResult BeginAdminConfirmSignUp(AdminConfirmSignUpRequest request, AsyncCallback callback, object state);
 
 
@@ -176,6 +250,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAdminConfirmSignUp.</param>
         /// 
         /// <returns>Returns a  AdminConfirmSignUpResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminConfirmSignUp">REST API Reference for AdminConfirmSignUp Operation</seealso>
         AdminConfirmSignUpResponse EndAdminConfirmSignUp(IAsyncResult asyncResult);
 
         #endregion
@@ -254,6 +329,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminCreateUser">REST API Reference for AdminCreateUser Operation</seealso>
         AdminCreateUserResponse AdminCreateUser(AdminCreateUserRequest request);
 
         /// <summary>
@@ -267,6 +343,7 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAdminCreateUser
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminCreateUser">REST API Reference for AdminCreateUser Operation</seealso>
         IAsyncResult BeginAdminCreateUser(AdminCreateUserRequest request, AsyncCallback callback, object state);
 
 
@@ -278,6 +355,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAdminCreateUser.</param>
         /// 
         /// <returns>Returns a  AdminCreateUserResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminCreateUser">REST API Reference for AdminCreateUser Operation</seealso>
         AdminCreateUserResponse EndAdminCreateUser(IAsyncResult asyncResult);
 
         #endregion
@@ -287,6 +365,11 @@ namespace Amazon.CognitoIdentityProvider
 
         /// <summary>
         /// Deletes a user as an administrator. Works on any user.
+        /// 
+        ///  
+        /// <para>
+        /// Requires developer credentials.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AdminDeleteUser service method.</param>
         /// 
@@ -310,6 +393,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminDeleteUser">REST API Reference for AdminDeleteUser Operation</seealso>
         AdminDeleteUserResponse AdminDeleteUser(AdminDeleteUserRequest request);
 
         /// <summary>
@@ -323,6 +407,7 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAdminDeleteUser
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminDeleteUser">REST API Reference for AdminDeleteUser Operation</seealso>
         IAsyncResult BeginAdminDeleteUser(AdminDeleteUserRequest request, AsyncCallback callback, object state);
 
 
@@ -334,6 +419,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAdminDeleteUser.</param>
         /// 
         /// <returns>Returns a  AdminDeleteUserResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminDeleteUser">REST API Reference for AdminDeleteUser Operation</seealso>
         AdminDeleteUserResponse EndAdminDeleteUser(IAsyncResult asyncResult);
 
         #endregion
@@ -343,6 +429,11 @@ namespace Amazon.CognitoIdentityProvider
 
         /// <summary>
         /// Deletes the user attributes in a user pool as an administrator. Works on any user.
+        /// 
+        ///  
+        /// <para>
+        /// Requires developer credentials.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AdminDeleteUserAttributes service method.</param>
         /// 
@@ -366,6 +457,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminDeleteUserAttributes">REST API Reference for AdminDeleteUserAttributes Operation</seealso>
         AdminDeleteUserAttributesResponse AdminDeleteUserAttributes(AdminDeleteUserAttributesRequest request);
 
         /// <summary>
@@ -379,6 +471,7 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAdminDeleteUserAttributes
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminDeleteUserAttributes">REST API Reference for AdminDeleteUserAttributes Operation</seealso>
         IAsyncResult BeginAdminDeleteUserAttributes(AdminDeleteUserAttributesRequest request, AsyncCallback callback, object state);
 
 
@@ -390,6 +483,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAdminDeleteUserAttributes.</param>
         /// 
         /// <returns>Returns a  AdminDeleteUserAttributesResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminDeleteUserAttributes">REST API Reference for AdminDeleteUserAttributes Operation</seealso>
         AdminDeleteUserAttributesResponse EndAdminDeleteUserAttributes(IAsyncResult asyncResult);
 
         #endregion
@@ -399,6 +493,11 @@ namespace Amazon.CognitoIdentityProvider
 
         /// <summary>
         /// Disables the specified user as an administrator. Works on any user.
+        /// 
+        ///  
+        /// <para>
+        /// Requires developer credentials.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AdminDisableUser service method.</param>
         /// 
@@ -422,6 +521,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminDisableUser">REST API Reference for AdminDisableUser Operation</seealso>
         AdminDisableUserResponse AdminDisableUser(AdminDisableUserRequest request);
 
         /// <summary>
@@ -435,6 +535,7 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAdminDisableUser
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminDisableUser">REST API Reference for AdminDisableUser Operation</seealso>
         IAsyncResult BeginAdminDisableUser(AdminDisableUserRequest request, AsyncCallback callback, object state);
 
 
@@ -446,6 +547,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAdminDisableUser.</param>
         /// 
         /// <returns>Returns a  AdminDisableUserResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminDisableUser">REST API Reference for AdminDisableUser Operation</seealso>
         AdminDisableUserResponse EndAdminDisableUser(IAsyncResult asyncResult);
 
         #endregion
@@ -455,6 +557,11 @@ namespace Amazon.CognitoIdentityProvider
 
         /// <summary>
         /// Enables the specified user as an administrator. Works on any user.
+        /// 
+        ///  
+        /// <para>
+        /// Requires developer credentials.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AdminEnableUser service method.</param>
         /// 
@@ -478,6 +585,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminEnableUser">REST API Reference for AdminEnableUser Operation</seealso>
         AdminEnableUserResponse AdminEnableUser(AdminEnableUserRequest request);
 
         /// <summary>
@@ -491,6 +599,7 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAdminEnableUser
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminEnableUser">REST API Reference for AdminEnableUser Operation</seealso>
         IAsyncResult BeginAdminEnableUser(AdminEnableUserRequest request, AsyncCallback callback, object state);
 
 
@@ -502,6 +611,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAdminEnableUser.</param>
         /// 
         /// <returns>Returns a  AdminEnableUserResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminEnableUser">REST API Reference for AdminEnableUser Operation</seealso>
         AdminEnableUserResponse EndAdminEnableUser(IAsyncResult asyncResult);
 
         #endregion
@@ -511,6 +621,11 @@ namespace Amazon.CognitoIdentityProvider
 
         /// <summary>
         /// Forgets the device, as an administrator.
+        /// 
+        ///  
+        /// <para>
+        /// Requires developer credentials.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AdminForgetDevice service method.</param>
         /// 
@@ -537,6 +652,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminForgetDevice">REST API Reference for AdminForgetDevice Operation</seealso>
         AdminForgetDeviceResponse AdminForgetDevice(AdminForgetDeviceRequest request);
 
         /// <summary>
@@ -550,6 +666,7 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAdminForgetDevice
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminForgetDevice">REST API Reference for AdminForgetDevice Operation</seealso>
         IAsyncResult BeginAdminForgetDevice(AdminForgetDeviceRequest request, AsyncCallback callback, object state);
 
 
@@ -561,6 +678,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAdminForgetDevice.</param>
         /// 
         /// <returns>Returns a  AdminForgetDeviceResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminForgetDevice">REST API Reference for AdminForgetDevice Operation</seealso>
         AdminForgetDeviceResponse EndAdminForgetDevice(IAsyncResult asyncResult);
 
         #endregion
@@ -570,6 +688,11 @@ namespace Amazon.CognitoIdentityProvider
 
         /// <summary>
         /// Gets the device, as an administrator.
+        /// 
+        ///  
+        /// <para>
+        /// Requires developer credentials.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AdminGetDevice service method.</param>
         /// 
@@ -593,6 +716,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
         /// This exception gets thrown when the user has made too many requests for a given operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminGetDevice">REST API Reference for AdminGetDevice Operation</seealso>
         AdminGetDeviceResponse AdminGetDevice(AdminGetDeviceRequest request);
 
         /// <summary>
@@ -606,6 +730,7 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAdminGetDevice
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminGetDevice">REST API Reference for AdminGetDevice Operation</seealso>
         IAsyncResult BeginAdminGetDevice(AdminGetDeviceRequest request, AsyncCallback callback, object state);
 
 
@@ -617,6 +742,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAdminGetDevice.</param>
         /// 
         /// <returns>Returns a  AdminGetDeviceResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminGetDevice">REST API Reference for AdminGetDevice Operation</seealso>
         AdminGetDeviceResponse EndAdminGetDevice(IAsyncResult asyncResult);
 
         #endregion
@@ -627,6 +753,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <summary>
         /// Gets the specified user by user name in a user pool as an administrator. Works on
         /// any user.
+        /// 
+        ///  
+        /// <para>
+        /// Requires developer credentials.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AdminGetUser service method.</param>
         /// 
@@ -650,6 +781,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminGetUser">REST API Reference for AdminGetUser Operation</seealso>
         AdminGetUserResponse AdminGetUser(AdminGetUserRequest request);
 
         /// <summary>
@@ -663,6 +795,7 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAdminGetUser
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminGetUser">REST API Reference for AdminGetUser Operation</seealso>
         IAsyncResult BeginAdminGetUser(AdminGetUserRequest request, AsyncCallback callback, object state);
 
 
@@ -674,6 +807,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAdminGetUser.</param>
         /// 
         /// <returns>Returns a  AdminGetUserResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminGetUser">REST API Reference for AdminGetUser Operation</seealso>
         AdminGetUserResponse EndAdminGetUser(IAsyncResult asyncResult);
 
         #endregion
@@ -683,6 +817,11 @@ namespace Amazon.CognitoIdentityProvider
 
         /// <summary>
         /// Initiates the authentication flow, as an administrator.
+        /// 
+        ///  
+        /// <para>
+        /// Requires developer credentials.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AdminInitiateAuth service method.</param>
         /// 
@@ -741,6 +880,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminInitiateAuth">REST API Reference for AdminInitiateAuth Operation</seealso>
         AdminInitiateAuthResponse AdminInitiateAuth(AdminInitiateAuthRequest request);
 
         /// <summary>
@@ -754,6 +894,7 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAdminInitiateAuth
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminInitiateAuth">REST API Reference for AdminInitiateAuth Operation</seealso>
         IAsyncResult BeginAdminInitiateAuth(AdminInitiateAuthRequest request, AsyncCallback callback, object state);
 
 
@@ -765,6 +906,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAdminInitiateAuth.</param>
         /// 
         /// <returns>Returns a  AdminInitiateAuthResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminInitiateAuth">REST API Reference for AdminInitiateAuth Operation</seealso>
         AdminInitiateAuthResponse EndAdminInitiateAuth(IAsyncResult asyncResult);
 
         #endregion
@@ -774,6 +916,11 @@ namespace Amazon.CognitoIdentityProvider
 
         /// <summary>
         /// Lists devices, as an administrator.
+        /// 
+        ///  
+        /// <para>
+        /// Requires developer credentials.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AdminListDevices service method.</param>
         /// 
@@ -797,6 +944,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
         /// This exception gets thrown when the user has made too many requests for a given operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminListDevices">REST API Reference for AdminListDevices Operation</seealso>
         AdminListDevicesResponse AdminListDevices(AdminListDevicesRequest request);
 
         /// <summary>
@@ -810,6 +958,7 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAdminListDevices
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminListDevices">REST API Reference for AdminListDevices Operation</seealso>
         IAsyncResult BeginAdminListDevices(AdminListDevicesRequest request, AsyncCallback callback, object state);
 
 
@@ -821,7 +970,136 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAdminListDevices.</param>
         /// 
         /// <returns>Returns a  AdminListDevicesResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminListDevices">REST API Reference for AdminListDevices Operation</seealso>
         AdminListDevicesResponse EndAdminListDevices(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  AdminListGroupsForUser
+
+
+        /// <summary>
+        /// Lists the groups that the user belongs to.
+        /// 
+        ///  
+        /// <para>
+        /// Requires developer credentials.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AdminListGroupsForUser service method.</param>
+        /// 
+        /// <returns>The response from the AdminListGroupsForUser service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception gets thrown when a user is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service cannot find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
+        /// This exception is thrown when a user is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminListGroupsForUser">REST API Reference for AdminListGroupsForUser Operation</seealso>
+        AdminListGroupsForUserResponse AdminListGroupsForUser(AdminListGroupsForUserRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AdminListGroupsForUser operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AdminListGroupsForUser operation on AmazonCognitoIdentityProviderClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAdminListGroupsForUser
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminListGroupsForUser">REST API Reference for AdminListGroupsForUser Operation</seealso>
+        IAsyncResult BeginAdminListGroupsForUser(AdminListGroupsForUserRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AdminListGroupsForUser operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAdminListGroupsForUser.</param>
+        /// 
+        /// <returns>Returns a  AdminListGroupsForUserResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminListGroupsForUser">REST API Reference for AdminListGroupsForUser Operation</seealso>
+        AdminListGroupsForUserResponse EndAdminListGroupsForUser(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  AdminRemoveUserFromGroup
+
+
+        /// <summary>
+        /// Removes the specified user from the specified group.
+        /// 
+        ///  
+        /// <para>
+        /// Requires developer credentials.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AdminRemoveUserFromGroup service method.</param>
+        /// 
+        /// <returns>The response from the AdminRemoveUserFromGroup service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception gets thrown when a user is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service cannot find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
+        /// This exception is thrown when a user is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminRemoveUserFromGroup">REST API Reference for AdminRemoveUserFromGroup Operation</seealso>
+        AdminRemoveUserFromGroupResponse AdminRemoveUserFromGroup(AdminRemoveUserFromGroupRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AdminRemoveUserFromGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AdminRemoveUserFromGroup operation on AmazonCognitoIdentityProviderClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAdminRemoveUserFromGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminRemoveUserFromGroup">REST API Reference for AdminRemoveUserFromGroup Operation</seealso>
+        IAsyncResult BeginAdminRemoveUserFromGroup(AdminRemoveUserFromGroupRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AdminRemoveUserFromGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAdminRemoveUserFromGroup.</param>
+        /// 
+        /// <returns>Returns a  AdminRemoveUserFromGroupResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminRemoveUserFromGroup">REST API Reference for AdminRemoveUserFromGroup Operation</seealso>
+        AdminRemoveUserFromGroupResponse EndAdminRemoveUserFromGroup(IAsyncResult asyncResult);
 
         #endregion
         
@@ -841,6 +1119,10 @@ namespace Amazon.CognitoIdentityProvider
         /// selected and a verified phone number exists for the user, or if email verification
         /// is selected and a verified email exists for the user, calling this API will also result
         /// in sending a message to the end user with the code to change their password.
+        /// </para>
+        ///  
+        /// <para>
+        /// Requires developer credentials.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AdminResetUserPassword service method.</param>
@@ -880,6 +1162,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminResetUserPassword">REST API Reference for AdminResetUserPassword Operation</seealso>
         AdminResetUserPasswordResponse AdminResetUserPassword(AdminResetUserPasswordRequest request);
 
         /// <summary>
@@ -893,6 +1176,7 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAdminResetUserPassword
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminResetUserPassword">REST API Reference for AdminResetUserPassword Operation</seealso>
         IAsyncResult BeginAdminResetUserPassword(AdminResetUserPasswordRequest request, AsyncCallback callback, object state);
 
 
@@ -904,6 +1188,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAdminResetUserPassword.</param>
         /// 
         /// <returns>Returns a  AdminResetUserPasswordResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminResetUserPassword">REST API Reference for AdminResetUserPassword Operation</seealso>
         AdminResetUserPasswordResponse EndAdminResetUserPassword(IAsyncResult asyncResult);
 
         #endregion
@@ -913,6 +1198,11 @@ namespace Amazon.CognitoIdentityProvider
 
         /// <summary>
         /// Responds to an authentication challenge, as an administrator.
+        /// 
+        ///  
+        /// <para>
+        /// Requires developer credentials.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AdminRespondToAuthChallenge service method.</param>
         /// 
@@ -985,6 +1275,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminRespondToAuthChallenge">REST API Reference for AdminRespondToAuthChallenge Operation</seealso>
         AdminRespondToAuthChallengeResponse AdminRespondToAuthChallenge(AdminRespondToAuthChallengeRequest request);
 
         /// <summary>
@@ -998,6 +1289,7 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAdminRespondToAuthChallenge
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminRespondToAuthChallenge">REST API Reference for AdminRespondToAuthChallenge Operation</seealso>
         IAsyncResult BeginAdminRespondToAuthChallenge(AdminRespondToAuthChallengeRequest request, AsyncCallback callback, object state);
 
 
@@ -1009,6 +1301,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAdminRespondToAuthChallenge.</param>
         /// 
         /// <returns>Returns a  AdminRespondToAuthChallengeResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminRespondToAuthChallenge">REST API Reference for AdminRespondToAuthChallenge Operation</seealso>
         AdminRespondToAuthChallengeResponse EndAdminRespondToAuthChallenge(IAsyncResult asyncResult);
 
         #endregion
@@ -1018,6 +1311,11 @@ namespace Amazon.CognitoIdentityProvider
 
         /// <summary>
         /// Sets all the user settings for a specified user name. Works on any user.
+        /// 
+        ///  
+        /// <para>
+        /// Requires developer credentials.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AdminSetUserSettings service method.</param>
         /// 
@@ -1038,6 +1336,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminSetUserSettings">REST API Reference for AdminSetUserSettings Operation</seealso>
         AdminSetUserSettingsResponse AdminSetUserSettings(AdminSetUserSettingsRequest request);
 
         /// <summary>
@@ -1051,6 +1350,7 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAdminSetUserSettings
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminSetUserSettings">REST API Reference for AdminSetUserSettings Operation</seealso>
         IAsyncResult BeginAdminSetUserSettings(AdminSetUserSettingsRequest request, AsyncCallback callback, object state);
 
 
@@ -1062,6 +1362,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAdminSetUserSettings.</param>
         /// 
         /// <returns>Returns a  AdminSetUserSettingsResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminSetUserSettings">REST API Reference for AdminSetUserSettings Operation</seealso>
         AdminSetUserSettingsResponse EndAdminSetUserSettings(IAsyncResult asyncResult);
 
         #endregion
@@ -1071,6 +1372,11 @@ namespace Amazon.CognitoIdentityProvider
 
         /// <summary>
         /// Updates the device status as an administrator.
+        /// 
+        ///  
+        /// <para>
+        /// Requires developer credentials.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AdminUpdateDeviceStatus service method.</param>
         /// 
@@ -1097,6 +1403,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminUpdateDeviceStatus">REST API Reference for AdminUpdateDeviceStatus Operation</seealso>
         AdminUpdateDeviceStatusResponse AdminUpdateDeviceStatus(AdminUpdateDeviceStatusRequest request);
 
         /// <summary>
@@ -1110,6 +1417,7 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAdminUpdateDeviceStatus
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminUpdateDeviceStatus">REST API Reference for AdminUpdateDeviceStatus Operation</seealso>
         IAsyncResult BeginAdminUpdateDeviceStatus(AdminUpdateDeviceStatusRequest request, AsyncCallback callback, object state);
 
 
@@ -1121,6 +1429,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAdminUpdateDeviceStatus.</param>
         /// 
         /// <returns>Returns a  AdminUpdateDeviceStatusResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminUpdateDeviceStatus">REST API Reference for AdminUpdateDeviceStatus Operation</seealso>
         AdminUpdateDeviceStatusResponse EndAdminUpdateDeviceStatus(IAsyncResult asyncResult);
 
         #endregion
@@ -1131,6 +1440,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <summary>
         /// Updates the specified user's attributes, including developer attributes, as an administrator.
         /// Works on any user.
+        /// 
+        ///  
+        /// <para>
+        /// Requires developer credentials.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AdminUpdateUserAttributes service method.</param>
         /// 
@@ -1171,6 +1485,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminUpdateUserAttributes">REST API Reference for AdminUpdateUserAttributes Operation</seealso>
         AdminUpdateUserAttributesResponse AdminUpdateUserAttributes(AdminUpdateUserAttributesRequest request);
 
         /// <summary>
@@ -1184,6 +1499,7 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAdminUpdateUserAttributes
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminUpdateUserAttributes">REST API Reference for AdminUpdateUserAttributes Operation</seealso>
         IAsyncResult BeginAdminUpdateUserAttributes(AdminUpdateUserAttributesRequest request, AsyncCallback callback, object state);
 
 
@@ -1195,6 +1511,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAdminUpdateUserAttributes.</param>
         /// 
         /// <returns>Returns a  AdminUpdateUserAttributesResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminUpdateUserAttributes">REST API Reference for AdminUpdateUserAttributes Operation</seealso>
         AdminUpdateUserAttributesResponse EndAdminUpdateUserAttributes(IAsyncResult asyncResult);
 
         #endregion
@@ -1204,6 +1521,11 @@ namespace Amazon.CognitoIdentityProvider
 
         /// <summary>
         /// Signs out users from all devices, as an administrator.
+        /// 
+        ///  
+        /// <para>
+        /// Requires developer credentials.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AdminUserGlobalSignOut service method.</param>
         /// 
@@ -1227,6 +1549,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminUserGlobalSignOut">REST API Reference for AdminUserGlobalSignOut Operation</seealso>
         AdminUserGlobalSignOutResponse AdminUserGlobalSignOut(AdminUserGlobalSignOutRequest request);
 
         /// <summary>
@@ -1240,6 +1563,7 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAdminUserGlobalSignOut
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminUserGlobalSignOut">REST API Reference for AdminUserGlobalSignOut Operation</seealso>
         IAsyncResult BeginAdminUserGlobalSignOut(AdminUserGlobalSignOutRequest request, AsyncCallback callback, object state);
 
 
@@ -1251,6 +1575,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAdminUserGlobalSignOut.</param>
         /// 
         /// <returns>Returns a  AdminUserGlobalSignOutResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminUserGlobalSignOut">REST API Reference for AdminUserGlobalSignOut Operation</seealso>
         AdminUserGlobalSignOutResponse EndAdminUserGlobalSignOut(IAsyncResult asyncResult);
 
         #endregion
@@ -1295,6 +1620,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ChangePassword">REST API Reference for ChangePassword Operation</seealso>
         ChangePasswordResponse ChangePassword(ChangePasswordRequest request);
 
         /// <summary>
@@ -1308,6 +1634,7 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndChangePassword
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ChangePassword">REST API Reference for ChangePassword Operation</seealso>
         IAsyncResult BeginChangePassword(ChangePasswordRequest request, AsyncCallback callback, object state);
 
 
@@ -1319,6 +1646,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginChangePassword.</param>
         /// 
         /// <returns>Returns a  ChangePasswordResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ChangePassword">REST API Reference for ChangePassword Operation</seealso>
         ChangePasswordResponse EndChangePassword(IAsyncResult asyncResult);
 
         #endregion
@@ -1371,6 +1699,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ConfirmDevice">REST API Reference for ConfirmDevice Operation</seealso>
         ConfirmDeviceResponse ConfirmDevice(ConfirmDeviceRequest request);
 
         /// <summary>
@@ -1384,6 +1713,7 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndConfirmDevice
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ConfirmDevice">REST API Reference for ConfirmDevice Operation</seealso>
         IAsyncResult BeginConfirmDevice(ConfirmDeviceRequest request, AsyncCallback callback, object state);
 
 
@@ -1395,6 +1725,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginConfirmDevice.</param>
         /// 
         /// <returns>Returns a  ConfirmDeviceResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ConfirmDevice">REST API Reference for ConfirmDevice Operation</seealso>
         ConfirmDeviceResponse EndConfirmDevice(IAsyncResult asyncResult);
 
         #endregion
@@ -1459,6 +1790,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ConfirmForgotPassword">REST API Reference for ConfirmForgotPassword Operation</seealso>
         ConfirmForgotPasswordResponse ConfirmForgotPassword(ConfirmForgotPasswordRequest request);
 
         /// <summary>
@@ -1472,6 +1804,7 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndConfirmForgotPassword
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ConfirmForgotPassword">REST API Reference for ConfirmForgotPassword Operation</seealso>
         IAsyncResult BeginConfirmForgotPassword(ConfirmForgotPasswordRequest request, AsyncCallback callback, object state);
 
 
@@ -1483,6 +1816,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginConfirmForgotPassword.</param>
         /// 
         /// <returns>Returns a  ConfirmForgotPasswordResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ConfirmForgotPassword">REST API Reference for ConfirmForgotPassword Operation</seealso>
         ConfirmForgotPasswordResponse EndConfirmForgotPassword(IAsyncResult asyncResult);
 
         #endregion
@@ -1545,6 +1879,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ConfirmSignUp">REST API Reference for ConfirmSignUp Operation</seealso>
         ConfirmSignUpResponse ConfirmSignUp(ConfirmSignUpRequest request);
 
         /// <summary>
@@ -1558,6 +1893,7 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndConfirmSignUp
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ConfirmSignUp">REST API Reference for ConfirmSignUp Operation</seealso>
         IAsyncResult BeginConfirmSignUp(ConfirmSignUpRequest request, AsyncCallback callback, object state);
 
 
@@ -1569,7 +1905,76 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginConfirmSignUp.</param>
         /// 
         /// <returns>Returns a  ConfirmSignUpResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ConfirmSignUp">REST API Reference for ConfirmSignUp Operation</seealso>
         ConfirmSignUpResponse EndConfirmSignUp(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateGroup
+
+
+        /// <summary>
+        /// Creates a new group in the specified user pool.
+        /// 
+        ///  
+        /// <para>
+        /// Requires developer credentials.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateGroup service method.</param>
+        /// 
+        /// <returns>The response from the CreateGroup service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.GroupExistsException">
+        /// This exception is thrown when Amazon Cognito encounters a group that already exists
+        /// in the user pool.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.LimitExceededException">
+        /// This exception is thrown when a user exceeds the limit for a requested AWS resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception gets thrown when a user is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service cannot find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateGroup">REST API Reference for CreateGroup Operation</seealso>
+        CreateGroupResponse CreateGroup(CreateGroupRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateGroup operation on AmazonCognitoIdentityProviderClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateGroup">REST API Reference for CreateGroup Operation</seealso>
+        IAsyncResult BeginCreateGroup(CreateGroupRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateGroup.</param>
+        /// 
+        /// <returns>Returns a  CreateGroupResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateGroup">REST API Reference for CreateGroup Operation</seealso>
+        CreateGroupResponse EndCreateGroup(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1604,6 +2009,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
         /// This exception gets thrown when the user has made too many requests for a given operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateUserImportJob">REST API Reference for CreateUserImportJob Operation</seealso>
         CreateUserImportJobResponse CreateUserImportJob(CreateUserImportJobRequest request);
 
         /// <summary>
@@ -1617,6 +2023,7 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateUserImportJob
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateUserImportJob">REST API Reference for CreateUserImportJob Operation</seealso>
         IAsyncResult BeginCreateUserImportJob(CreateUserImportJobRequest request, AsyncCallback callback, object state);
 
 
@@ -1628,6 +2035,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateUserImportJob.</param>
         /// 
         /// <returns>Returns a  CreateUserImportJobResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateUserImportJob">REST API Reference for CreateUserImportJob Operation</seealso>
         CreateUserImportJobResponse EndCreateUserImportJob(IAsyncResult asyncResult);
 
         #endregion
@@ -1670,6 +2078,10 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
         /// This exception gets thrown when the user has made too many requests for a given operation.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserPoolTaggingException">
+        /// This exception gets thrown when a user pool tag cannot be set or updated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateUserPool">REST API Reference for CreateUserPool Operation</seealso>
         CreateUserPoolResponse CreateUserPool(CreateUserPoolRequest request);
 
         /// <summary>
@@ -1683,6 +2095,7 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateUserPool
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateUserPool">REST API Reference for CreateUserPool Operation</seealso>
         IAsyncResult BeginCreateUserPool(CreateUserPoolRequest request, AsyncCallback callback, object state);
 
 
@@ -1694,6 +2107,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateUserPool.</param>
         /// 
         /// <returns>Returns a  CreateUserPoolResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateUserPool">REST API Reference for CreateUserPool Operation</seealso>
         CreateUserPoolResponse EndCreateUserPool(IAsyncResult asyncResult);
 
         #endregion
@@ -1726,6 +2140,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
         /// This exception gets thrown when the user has made too many requests for a given operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateUserPoolClient">REST API Reference for CreateUserPoolClient Operation</seealso>
         CreateUserPoolClientResponse CreateUserPoolClient(CreateUserPoolClientRequest request);
 
         /// <summary>
@@ -1739,6 +2154,7 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateUserPoolClient
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateUserPoolClient">REST API Reference for CreateUserPoolClient Operation</seealso>
         IAsyncResult BeginCreateUserPoolClient(CreateUserPoolClientRequest request, AsyncCallback callback, object state);
 
 
@@ -1750,7 +2166,69 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateUserPoolClient.</param>
         /// 
         /// <returns>Returns a  CreateUserPoolClientResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateUserPoolClient">REST API Reference for CreateUserPoolClient Operation</seealso>
         CreateUserPoolClientResponse EndCreateUserPoolClient(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteGroup
+
+
+        /// <summary>
+        /// Deletes a group. Currently only groups with no members can be deleted.
+        /// 
+        ///  
+        /// <para>
+        /// Requires developer credentials.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteGroup service method.</param>
+        /// 
+        /// <returns>The response from the DeleteGroup service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception gets thrown when a user is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service cannot find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteGroup">REST API Reference for DeleteGroup Operation</seealso>
+        DeleteGroupResponse DeleteGroup(DeleteGroupRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteGroup operation on AmazonCognitoIdentityProviderClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteGroup">REST API Reference for DeleteGroup Operation</seealso>
+        IAsyncResult BeginDeleteGroup(DeleteGroupRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteGroup.</param>
+        /// 
+        /// <returns>Returns a  DeleteGroupResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteGroup">REST API Reference for DeleteGroup Operation</seealso>
+        DeleteGroupResponse EndDeleteGroup(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1788,6 +2266,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteUser">REST API Reference for DeleteUser Operation</seealso>
         DeleteUserResponse DeleteUser(DeleteUserRequest request);
 
         /// <summary>
@@ -1801,6 +2280,7 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteUser
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteUser">REST API Reference for DeleteUser Operation</seealso>
         IAsyncResult BeginDeleteUser(DeleteUserRequest request, AsyncCallback callback, object state);
 
 
@@ -1812,6 +2292,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteUser.</param>
         /// 
         /// <returns>Returns a  DeleteUserResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteUser">REST API Reference for DeleteUser Operation</seealso>
         DeleteUserResponse EndDeleteUser(IAsyncResult asyncResult);
 
         #endregion
@@ -1850,6 +2331,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteUserAttributes">REST API Reference for DeleteUserAttributes Operation</seealso>
         DeleteUserAttributesResponse DeleteUserAttributes(DeleteUserAttributesRequest request);
 
         /// <summary>
@@ -1863,6 +2345,7 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteUserAttributes
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteUserAttributes">REST API Reference for DeleteUserAttributes Operation</seealso>
         IAsyncResult BeginDeleteUserAttributes(DeleteUserAttributesRequest request, AsyncCallback callback, object state);
 
 
@@ -1874,6 +2357,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteUserAttributes.</param>
         /// 
         /// <returns>Returns a  DeleteUserAttributesResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteUserAttributes">REST API Reference for DeleteUserAttributes Operation</seealso>
         DeleteUserAttributesResponse EndDeleteUserAttributes(IAsyncResult asyncResult);
 
         #endregion
@@ -1907,6 +2391,7 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when you are trying to modify a user pool while a user import
         /// job is in progress for that pool.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteUserPool">REST API Reference for DeleteUserPool Operation</seealso>
         DeleteUserPoolResponse DeleteUserPool(DeleteUserPoolRequest request);
 
         /// <summary>
@@ -1920,6 +2405,7 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteUserPool
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteUserPool">REST API Reference for DeleteUserPool Operation</seealso>
         IAsyncResult BeginDeleteUserPool(DeleteUserPoolRequest request, AsyncCallback callback, object state);
 
 
@@ -1931,6 +2417,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteUserPool.</param>
         /// 
         /// <returns>Returns a  DeleteUserPoolResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteUserPool">REST API Reference for DeleteUserPool Operation</seealso>
         DeleteUserPoolResponse EndDeleteUserPool(IAsyncResult asyncResult);
 
         #endregion
@@ -1960,6 +2447,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
         /// This exception gets thrown when the user has made too many requests for a given operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteUserPoolClient">REST API Reference for DeleteUserPoolClient Operation</seealso>
         DeleteUserPoolClientResponse DeleteUserPoolClient(DeleteUserPoolClientRequest request);
 
         /// <summary>
@@ -1973,6 +2461,7 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteUserPoolClient
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteUserPoolClient">REST API Reference for DeleteUserPoolClient Operation</seealso>
         IAsyncResult BeginDeleteUserPoolClient(DeleteUserPoolClientRequest request, AsyncCallback callback, object state);
 
 
@@ -1984,6 +2473,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteUserPoolClient.</param>
         /// 
         /// <returns>Returns a  DeleteUserPoolClientResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteUserPoolClient">REST API Reference for DeleteUserPoolClient Operation</seealso>
         DeleteUserPoolClientResponse EndDeleteUserPoolClient(IAsyncResult asyncResult);
 
         #endregion
@@ -2013,6 +2503,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
         /// This exception gets thrown when the user has made too many requests for a given operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeUserImportJob">REST API Reference for DescribeUserImportJob Operation</seealso>
         DescribeUserImportJobResponse DescribeUserImportJob(DescribeUserImportJobRequest request);
 
         /// <summary>
@@ -2026,6 +2517,7 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeUserImportJob
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeUserImportJob">REST API Reference for DescribeUserImportJob Operation</seealso>
         IAsyncResult BeginDescribeUserImportJob(DescribeUserImportJobRequest request, AsyncCallback callback, object state);
 
 
@@ -2037,6 +2529,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeUserImportJob.</param>
         /// 
         /// <returns>Returns a  DescribeUserImportJobResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeUserImportJob">REST API Reference for DescribeUserImportJob Operation</seealso>
         DescribeUserImportJobResponse EndDescribeUserImportJob(IAsyncResult asyncResult);
 
         #endregion
@@ -2066,6 +2559,10 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
         /// This exception gets thrown when the user has made too many requests for a given operation.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserPoolTaggingException">
+        /// This exception gets thrown when a user pool tag cannot be set or updated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeUserPool">REST API Reference for DescribeUserPool Operation</seealso>
         DescribeUserPoolResponse DescribeUserPool(DescribeUserPoolRequest request);
 
         /// <summary>
@@ -2079,6 +2576,7 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeUserPool
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeUserPool">REST API Reference for DescribeUserPool Operation</seealso>
         IAsyncResult BeginDescribeUserPool(DescribeUserPoolRequest request, AsyncCallback callback, object state);
 
 
@@ -2090,6 +2588,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeUserPool.</param>
         /// 
         /// <returns>Returns a  DescribeUserPoolResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeUserPool">REST API Reference for DescribeUserPool Operation</seealso>
         DescribeUserPoolResponse EndDescribeUserPool(IAsyncResult asyncResult);
 
         #endregion
@@ -2120,6 +2619,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
         /// This exception gets thrown when the user has made too many requests for a given operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeUserPoolClient">REST API Reference for DescribeUserPoolClient Operation</seealso>
         DescribeUserPoolClientResponse DescribeUserPoolClient(DescribeUserPoolClientRequest request);
 
         /// <summary>
@@ -2133,6 +2633,7 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeUserPoolClient
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeUserPoolClient">REST API Reference for DescribeUserPoolClient Operation</seealso>
         IAsyncResult BeginDescribeUserPoolClient(DescribeUserPoolClientRequest request, AsyncCallback callback, object state);
 
 
@@ -2144,6 +2645,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeUserPoolClient.</param>
         /// 
         /// <returns>Returns a  DescribeUserPoolClientResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeUserPoolClient">REST API Reference for DescribeUserPoolClient Operation</seealso>
         DescribeUserPoolClientResponse EndDescribeUserPoolClient(IAsyncResult asyncResult);
 
         #endregion
@@ -2185,6 +2687,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ForgetDevice">REST API Reference for ForgetDevice Operation</seealso>
         ForgetDeviceResponse ForgetDevice(ForgetDeviceRequest request);
 
         /// <summary>
@@ -2198,6 +2701,7 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndForgetDevice
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ForgetDevice">REST API Reference for ForgetDevice Operation</seealso>
         IAsyncResult BeginForgetDevice(ForgetDeviceRequest request, AsyncCallback callback, object state);
 
 
@@ -2209,6 +2713,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginForgetDevice.</param>
         /// 
         /// <returns>Returns a  ForgetDeviceResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ForgetDevice">REST API Reference for ForgetDevice Operation</seealso>
         ForgetDeviceResponse EndForgetDevice(IAsyncResult asyncResult);
 
         #endregion
@@ -2276,6 +2781,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ForgotPassword">REST API Reference for ForgotPassword Operation</seealso>
         ForgotPasswordResponse ForgotPassword(ForgotPasswordRequest request);
 
         /// <summary>
@@ -2289,6 +2795,7 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndForgotPassword
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ForgotPassword">REST API Reference for ForgotPassword Operation</seealso>
         IAsyncResult BeginForgotPassword(ForgotPasswordRequest request, AsyncCallback callback, object state);
 
 
@@ -2300,6 +2807,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginForgotPassword.</param>
         /// 
         /// <returns>Returns a  ForgotPasswordResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ForgotPassword">REST API Reference for ForgotPassword Operation</seealso>
         ForgotPasswordResponse EndForgotPassword(IAsyncResult asyncResult);
 
         #endregion
@@ -2330,6 +2838,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
         /// This exception gets thrown when the user has made too many requests for a given operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetCSVHeader">REST API Reference for GetCSVHeader Operation</seealso>
         GetCSVHeaderResponse GetCSVHeader(GetCSVHeaderRequest request);
 
         /// <summary>
@@ -2343,6 +2852,7 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetCSVHeader
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetCSVHeader">REST API Reference for GetCSVHeader Operation</seealso>
         IAsyncResult BeginGetCSVHeader(GetCSVHeaderRequest request, AsyncCallback callback, object state);
 
 
@@ -2354,6 +2864,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetCSVHeader.</param>
         /// 
         /// <returns>Returns a  GetCSVHeaderResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetCSVHeader">REST API Reference for GetCSVHeader Operation</seealso>
         GetCSVHeaderResponse EndGetCSVHeader(IAsyncResult asyncResult);
 
         #endregion
@@ -2395,6 +2906,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetDevice">REST API Reference for GetDevice Operation</seealso>
         GetDeviceResponse GetDevice(GetDeviceRequest request);
 
         /// <summary>
@@ -2408,6 +2920,7 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDevice
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetDevice">REST API Reference for GetDevice Operation</seealso>
         IAsyncResult BeginGetDevice(GetDeviceRequest request, AsyncCallback callback, object state);
 
 
@@ -2419,7 +2932,69 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDevice.</param>
         /// 
         /// <returns>Returns a  GetDeviceResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetDevice">REST API Reference for GetDevice Operation</seealso>
         GetDeviceResponse EndGetDevice(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetGroup
+
+
+        /// <summary>
+        /// Gets a group.
+        /// 
+        ///  
+        /// <para>
+        /// Requires developer credentials.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetGroup service method.</param>
+        /// 
+        /// <returns>The response from the GetGroup service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception gets thrown when a user is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service cannot find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetGroup">REST API Reference for GetGroup Operation</seealso>
+        GetGroupResponse GetGroup(GetGroupRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetGroup operation on AmazonCognitoIdentityProviderClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetGroup">REST API Reference for GetGroup Operation</seealso>
+        IAsyncResult BeginGetGroup(GetGroupRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetGroup.</param>
+        /// 
+        /// <returns>Returns a  GetGroupResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetGroup">REST API Reference for GetGroup Operation</seealso>
+        GetGroupResponse EndGetGroup(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2457,6 +3032,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetUser">REST API Reference for GetUser Operation</seealso>
         GetUserResponse GetUser(GetUserRequest request);
 
         /// <summary>
@@ -2470,6 +3046,7 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetUser
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetUser">REST API Reference for GetUser Operation</seealso>
         IAsyncResult BeginGetUser(GetUserRequest request, AsyncCallback callback, object state);
 
 
@@ -2481,6 +3058,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetUser.</param>
         /// 
         /// <returns>Returns a  GetUserResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetUser">REST API Reference for GetUser Operation</seealso>
         GetUserResponse EndGetUser(IAsyncResult asyncResult);
 
         #endregion
@@ -2551,6 +3129,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetUserAttributeVerificationCode">REST API Reference for GetUserAttributeVerificationCode Operation</seealso>
         GetUserAttributeVerificationCodeResponse GetUserAttributeVerificationCode(GetUserAttributeVerificationCodeRequest request);
 
         /// <summary>
@@ -2564,6 +3143,7 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetUserAttributeVerificationCode
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetUserAttributeVerificationCode">REST API Reference for GetUserAttributeVerificationCode Operation</seealso>
         IAsyncResult BeginGetUserAttributeVerificationCode(GetUserAttributeVerificationCodeRequest request, AsyncCallback callback, object state);
 
 
@@ -2575,6 +3155,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetUserAttributeVerificationCode.</param>
         /// 
         /// <returns>Returns a  GetUserAttributeVerificationCodeResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetUserAttributeVerificationCode">REST API Reference for GetUserAttributeVerificationCode Operation</seealso>
         GetUserAttributeVerificationCodeResponse EndGetUserAttributeVerificationCode(IAsyncResult asyncResult);
 
         #endregion
@@ -2610,6 +3191,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotConfirmedException">
         /// This exception is thrown when a user is not confirmed successfully.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GlobalSignOut">REST API Reference for GlobalSignOut Operation</seealso>
         GlobalSignOutResponse GlobalSignOut(GlobalSignOutRequest request);
 
         /// <summary>
@@ -2623,6 +3205,7 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGlobalSignOut
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GlobalSignOut">REST API Reference for GlobalSignOut Operation</seealso>
         IAsyncResult BeginGlobalSignOut(GlobalSignOutRequest request, AsyncCallback callback, object state);
 
 
@@ -2634,6 +3217,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGlobalSignOut.</param>
         /// 
         /// <returns>Returns a  GlobalSignOutResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GlobalSignOut">REST API Reference for GlobalSignOut Operation</seealso>
         GlobalSignOutResponse EndGlobalSignOut(IAsyncResult asyncResult);
 
         #endregion
@@ -2687,6 +3271,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/InitiateAuth">REST API Reference for InitiateAuth Operation</seealso>
         InitiateAuthResponse InitiateAuth(InitiateAuthRequest request);
 
         /// <summary>
@@ -2700,6 +3285,7 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndInitiateAuth
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/InitiateAuth">REST API Reference for InitiateAuth Operation</seealso>
         IAsyncResult BeginInitiateAuth(InitiateAuthRequest request, AsyncCallback callback, object state);
 
 
@@ -2711,6 +3297,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginInitiateAuth.</param>
         /// 
         /// <returns>Returns a  InitiateAuthResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/InitiateAuth">REST API Reference for InitiateAuth Operation</seealso>
         InitiateAuthResponse EndInitiateAuth(IAsyncResult asyncResult);
 
         #endregion
@@ -2752,6 +3339,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListDevices">REST API Reference for ListDevices Operation</seealso>
         ListDevicesResponse ListDevices(ListDevicesRequest request);
 
         /// <summary>
@@ -2765,6 +3353,7 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDevices
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListDevices">REST API Reference for ListDevices Operation</seealso>
         IAsyncResult BeginListDevices(ListDevicesRequest request, AsyncCallback callback, object state);
 
 
@@ -2776,7 +3365,69 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDevices.</param>
         /// 
         /// <returns>Returns a  ListDevicesResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListDevices">REST API Reference for ListDevices Operation</seealso>
         ListDevicesResponse EndListDevices(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListGroups
+
+
+        /// <summary>
+        /// Lists the groups associated with a user pool.
+        /// 
+        ///  
+        /// <para>
+        /// Requires developer credentials.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListGroups service method.</param>
+        /// 
+        /// <returns>The response from the ListGroups service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception gets thrown when a user is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service cannot find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListGroups">REST API Reference for ListGroups Operation</seealso>
+        ListGroupsResponse ListGroups(ListGroupsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListGroups operation on AmazonCognitoIdentityProviderClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListGroups
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListGroups">REST API Reference for ListGroups Operation</seealso>
+        IAsyncResult BeginListGroups(ListGroupsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListGroups.</param>
+        /// 
+        /// <returns>Returns a  ListGroupsResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListGroups">REST API Reference for ListGroups Operation</seealso>
+        ListGroupsResponse EndListGroups(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2805,6 +3456,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
         /// This exception gets thrown when the user has made too many requests for a given operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListUserImportJobs">REST API Reference for ListUserImportJobs Operation</seealso>
         ListUserImportJobsResponse ListUserImportJobs(ListUserImportJobsRequest request);
 
         /// <summary>
@@ -2818,6 +3470,7 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListUserImportJobs
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListUserImportJobs">REST API Reference for ListUserImportJobs Operation</seealso>
         IAsyncResult BeginListUserImportJobs(ListUserImportJobsRequest request, AsyncCallback callback, object state);
 
 
@@ -2829,6 +3482,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListUserImportJobs.</param>
         /// 
         /// <returns>Returns a  ListUserImportJobsResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListUserImportJobs">REST API Reference for ListUserImportJobs Operation</seealso>
         ListUserImportJobsResponse EndListUserImportJobs(IAsyncResult asyncResult);
 
         #endregion
@@ -2858,6 +3512,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
         /// This exception gets thrown when the user has made too many requests for a given operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListUserPoolClients">REST API Reference for ListUserPoolClients Operation</seealso>
         ListUserPoolClientsResponse ListUserPoolClients(ListUserPoolClientsRequest request);
 
         /// <summary>
@@ -2871,6 +3526,7 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListUserPoolClients
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListUserPoolClients">REST API Reference for ListUserPoolClients Operation</seealso>
         IAsyncResult BeginListUserPoolClients(ListUserPoolClientsRequest request, AsyncCallback callback, object state);
 
 
@@ -2882,6 +3538,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListUserPoolClients.</param>
         /// 
         /// <returns>Returns a  ListUserPoolClientsResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListUserPoolClients">REST API Reference for ListUserPoolClients Operation</seealso>
         ListUserPoolClientsResponse EndListUserPoolClients(IAsyncResult asyncResult);
 
         #endregion
@@ -2907,6 +3564,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
         /// This exception gets thrown when the user has made too many requests for a given operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListUserPools">REST API Reference for ListUserPools Operation</seealso>
         ListUserPoolsResponse ListUserPools(ListUserPoolsRequest request);
 
         /// <summary>
@@ -2920,6 +3578,7 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListUserPools
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListUserPools">REST API Reference for ListUserPools Operation</seealso>
         IAsyncResult BeginListUserPools(ListUserPoolsRequest request, AsyncCallback callback, object state);
 
 
@@ -2931,6 +3590,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListUserPools.</param>
         /// 
         /// <returns>Returns a  ListUserPoolsResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListUserPools">REST API Reference for ListUserPools Operation</seealso>
         ListUserPoolsResponse EndListUserPools(IAsyncResult asyncResult);
 
         #endregion
@@ -2960,6 +3620,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
         /// This exception gets thrown when the user has made too many requests for a given operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListUsers">REST API Reference for ListUsers Operation</seealso>
         ListUsersResponse ListUsers(ListUsersRequest request);
 
         /// <summary>
@@ -2973,6 +3634,7 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListUsers
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListUsers">REST API Reference for ListUsers Operation</seealso>
         IAsyncResult BeginListUsers(ListUsersRequest request, AsyncCallback callback, object state);
 
 
@@ -2984,7 +3646,69 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListUsers.</param>
         /// 
         /// <returns>Returns a  ListUsersResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListUsers">REST API Reference for ListUsers Operation</seealso>
         ListUsersResponse EndListUsers(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListUsersInGroup
+
+
+        /// <summary>
+        /// Lists the users in the specified group.
+        /// 
+        ///  
+        /// <para>
+        /// Requires developer credentials.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListUsersInGroup service method.</param>
+        /// 
+        /// <returns>The response from the ListUsersInGroup service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception gets thrown when a user is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service cannot find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListUsersInGroup">REST API Reference for ListUsersInGroup Operation</seealso>
+        ListUsersInGroupResponse ListUsersInGroup(ListUsersInGroupRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListUsersInGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListUsersInGroup operation on AmazonCognitoIdentityProviderClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListUsersInGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListUsersInGroup">REST API Reference for ListUsersInGroup Operation</seealso>
+        IAsyncResult BeginListUsersInGroup(ListUsersInGroupRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListUsersInGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListUsersInGroup.</param>
+        /// 
+        /// <returns>Returns a  ListUsersInGroupResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListUsersInGroup">REST API Reference for ListUsersInGroup Operation</seealso>
+        ListUsersInGroupResponse EndListUsersInGroup(IAsyncResult asyncResult);
 
         #endregion
         
@@ -3049,6 +3773,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ResendConfirmationCode">REST API Reference for ResendConfirmationCode Operation</seealso>
         ResendConfirmationCodeResponse ResendConfirmationCode(ResendConfirmationCodeRequest request);
 
         /// <summary>
@@ -3062,6 +3787,7 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndResendConfirmationCode
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ResendConfirmationCode">REST API Reference for ResendConfirmationCode Operation</seealso>
         IAsyncResult BeginResendConfirmationCode(ResendConfirmationCodeRequest request, AsyncCallback callback, object state);
 
 
@@ -3073,6 +3799,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginResendConfirmationCode.</param>
         /// 
         /// <returns>Returns a  ResendConfirmationCodeResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ResendConfirmationCode">REST API Reference for ResendConfirmationCode Operation</seealso>
         ResendConfirmationCodeResponse EndResendConfirmationCode(IAsyncResult asyncResult);
 
         #endregion
@@ -3154,6 +3881,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/RespondToAuthChallenge">REST API Reference for RespondToAuthChallenge Operation</seealso>
         RespondToAuthChallengeResponse RespondToAuthChallenge(RespondToAuthChallengeRequest request);
 
         /// <summary>
@@ -3167,6 +3895,7 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRespondToAuthChallenge
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/RespondToAuthChallenge">REST API Reference for RespondToAuthChallenge Operation</seealso>
         IAsyncResult BeginRespondToAuthChallenge(RespondToAuthChallengeRequest request, AsyncCallback callback, object state);
 
 
@@ -3178,6 +3907,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRespondToAuthChallenge.</param>
         /// 
         /// <returns>Returns a  RespondToAuthChallengeResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/RespondToAuthChallenge">REST API Reference for RespondToAuthChallenge Operation</seealso>
         RespondToAuthChallengeResponse EndRespondToAuthChallenge(IAsyncResult asyncResult);
 
         #endregion
@@ -3215,6 +3945,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetUserSettings">REST API Reference for SetUserSettings Operation</seealso>
         SetUserSettingsResponse SetUserSettings(SetUserSettingsRequest request);
 
         /// <summary>
@@ -3228,6 +3959,7 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSetUserSettings
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetUserSettings">REST API Reference for SetUserSettings Operation</seealso>
         IAsyncResult BeginSetUserSettings(SetUserSettingsRequest request, AsyncCallback callback, object state);
 
 
@@ -3239,6 +3971,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetUserSettings.</param>
         /// 
         /// <returns>Returns a  SetUserSettingsResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetUserSettings">REST API Reference for SetUserSettings Operation</seealso>
         SetUserSettingsResponse EndSetUserSettings(IAsyncResult asyncResult);
 
         #endregion
@@ -3305,6 +4038,7 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when Amazon Cognito encounters a user name that already exists
         /// in the user pool.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SignUp">REST API Reference for SignUp Operation</seealso>
         SignUpResponse SignUp(SignUpRequest request);
 
         /// <summary>
@@ -3318,6 +4052,7 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSignUp
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SignUp">REST API Reference for SignUp Operation</seealso>
         IAsyncResult BeginSignUp(SignUpRequest request, AsyncCallback callback, object state);
 
 
@@ -3329,6 +4064,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSignUp.</param>
         /// 
         /// <returns>Returns a  SignUpResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SignUp">REST API Reference for SignUp Operation</seealso>
         SignUpResponse EndSignUp(IAsyncResult asyncResult);
 
         #endregion
@@ -3361,6 +4097,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
         /// This exception gets thrown when the user has made too many requests for a given operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/StartUserImportJob">REST API Reference for StartUserImportJob Operation</seealso>
         StartUserImportJobResponse StartUserImportJob(StartUserImportJobRequest request);
 
         /// <summary>
@@ -3374,6 +4111,7 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartUserImportJob
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/StartUserImportJob">REST API Reference for StartUserImportJob Operation</seealso>
         IAsyncResult BeginStartUserImportJob(StartUserImportJobRequest request, AsyncCallback callback, object state);
 
 
@@ -3385,6 +4123,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartUserImportJob.</param>
         /// 
         /// <returns>Returns a  StartUserImportJobResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/StartUserImportJob">REST API Reference for StartUserImportJob Operation</seealso>
         StartUserImportJobResponse EndStartUserImportJob(IAsyncResult asyncResult);
 
         #endregion
@@ -3417,6 +4156,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
         /// This exception gets thrown when the user has made too many requests for a given operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/StopUserImportJob">REST API Reference for StopUserImportJob Operation</seealso>
         StopUserImportJobResponse StopUserImportJob(StopUserImportJobRequest request);
 
         /// <summary>
@@ -3430,6 +4170,7 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopUserImportJob
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/StopUserImportJob">REST API Reference for StopUserImportJob Operation</seealso>
         IAsyncResult BeginStopUserImportJob(StopUserImportJobRequest request, AsyncCallback callback, object state);
 
 
@@ -3441,6 +4182,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopUserImportJob.</param>
         /// 
         /// <returns>Returns a  StopUserImportJobResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/StopUserImportJob">REST API Reference for StopUserImportJob Operation</seealso>
         StopUserImportJobResponse EndStopUserImportJob(IAsyncResult asyncResult);
 
         #endregion
@@ -3482,6 +4224,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateDeviceStatus">REST API Reference for UpdateDeviceStatus Operation</seealso>
         UpdateDeviceStatusResponse UpdateDeviceStatus(UpdateDeviceStatusRequest request);
 
         /// <summary>
@@ -3495,6 +4238,7 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateDeviceStatus
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateDeviceStatus">REST API Reference for UpdateDeviceStatus Operation</seealso>
         IAsyncResult BeginUpdateDeviceStatus(UpdateDeviceStatusRequest request, AsyncCallback callback, object state);
 
 
@@ -3506,7 +4250,69 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateDeviceStatus.</param>
         /// 
         /// <returns>Returns a  UpdateDeviceStatusResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateDeviceStatus">REST API Reference for UpdateDeviceStatus Operation</seealso>
         UpdateDeviceStatusResponse EndUpdateDeviceStatus(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateGroup
+
+
+        /// <summary>
+        /// Updates the specified group with the specified attributes.
+        /// 
+        ///  
+        /// <para>
+        /// Requires developer credentials.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGroup service method.</param>
+        /// 
+        /// <returns>The response from the UpdateGroup service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception gets thrown when a user is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service cannot find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateGroup">REST API Reference for UpdateGroup Operation</seealso>
+        UpdateGroupResponse UpdateGroup(UpdateGroupRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGroup operation on AmazonCognitoIdentityProviderClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateGroup">REST API Reference for UpdateGroup Operation</seealso>
+        IAsyncResult BeginUpdateGroup(UpdateGroupRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateGroup.</param>
+        /// 
+        /// <returns>Returns a  UpdateGroupResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateGroup">REST API Reference for UpdateGroup Operation</seealso>
+        UpdateGroupResponse EndUpdateGroup(IAsyncResult asyncResult);
 
         #endregion
         
@@ -3584,6 +4390,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateUserAttributes">REST API Reference for UpdateUserAttributes Operation</seealso>
         UpdateUserAttributesResponse UpdateUserAttributes(UpdateUserAttributesRequest request);
 
         /// <summary>
@@ -3597,6 +4404,7 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateUserAttributes
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateUserAttributes">REST API Reference for UpdateUserAttributes Operation</seealso>
         IAsyncResult BeginUpdateUserAttributes(UpdateUserAttributesRequest request, AsyncCallback callback, object state);
 
 
@@ -3608,6 +4416,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateUserAttributes.</param>
         /// 
         /// <returns>Returns a  UpdateUserAttributesResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateUserAttributes">REST API Reference for UpdateUserAttributes Operation</seealso>
         UpdateUserAttributesResponse EndUpdateUserAttributes(IAsyncResult asyncResult);
 
         #endregion
@@ -3658,6 +4467,10 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when you are trying to modify a user pool while a user import
         /// job is in progress for that pool.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserPoolTaggingException">
+        /// This exception gets thrown when a user pool tag cannot be set or updated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateUserPool">REST API Reference for UpdateUserPool Operation</seealso>
         UpdateUserPoolResponse UpdateUserPool(UpdateUserPoolRequest request);
 
         /// <summary>
@@ -3671,6 +4484,7 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateUserPool
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateUserPool">REST API Reference for UpdateUserPool Operation</seealso>
         IAsyncResult BeginUpdateUserPool(UpdateUserPoolRequest request, AsyncCallback callback, object state);
 
 
@@ -3682,6 +4496,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateUserPool.</param>
         /// 
         /// <returns>Returns a  UpdateUserPoolResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateUserPool">REST API Reference for UpdateUserPool Operation</seealso>
         UpdateUserPoolResponse EndUpdateUserPool(IAsyncResult asyncResult);
 
         #endregion
@@ -3711,6 +4526,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
         /// This exception gets thrown when the user has made too many requests for a given operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateUserPoolClient">REST API Reference for UpdateUserPoolClient Operation</seealso>
         UpdateUserPoolClientResponse UpdateUserPoolClient(UpdateUserPoolClientRequest request);
 
         /// <summary>
@@ -3724,6 +4540,7 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateUserPoolClient
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateUserPoolClient">REST API Reference for UpdateUserPoolClient Operation</seealso>
         IAsyncResult BeginUpdateUserPoolClient(UpdateUserPoolClientRequest request, AsyncCallback callback, object state);
 
 
@@ -3735,6 +4552,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateUserPoolClient.</param>
         /// 
         /// <returns>Returns a  UpdateUserPoolClientResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateUserPoolClient">REST API Reference for UpdateUserPoolClient Operation</seealso>
         UpdateUserPoolClientResponse EndUpdateUserPoolClient(IAsyncResult asyncResult);
 
         #endregion
@@ -3782,6 +4600,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/VerifyUserAttribute">REST API Reference for VerifyUserAttribute Operation</seealso>
         VerifyUserAttributeResponse VerifyUserAttribute(VerifyUserAttributeRequest request);
 
         /// <summary>
@@ -3795,6 +4614,7 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndVerifyUserAttribute
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/VerifyUserAttribute">REST API Reference for VerifyUserAttribute Operation</seealso>
         IAsyncResult BeginVerifyUserAttribute(VerifyUserAttributeRequest request, AsyncCallback callback, object state);
 
 
@@ -3806,6 +4626,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginVerifyUserAttribute.</param>
         /// 
         /// <returns>Returns a  VerifyUserAttributeResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/VerifyUserAttribute">REST API Reference for VerifyUserAttribute Operation</seealso>
         VerifyUserAttributeResponse EndVerifyUserAttribute(IAsyncResult asyncResult);
 
         #endregion

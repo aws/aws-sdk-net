@@ -78,7 +78,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <para>
         /// The user account expiration limit, in days, after which the account is no longer usable.
         /// To reset the account after that time limit, you must call AdminCreateUser again, specifying
-        /// "RESEND" for the MessageAction parameter.
+        /// "RESEND" for the MessageAction parameter. The default value for this paameter is 7.
         /// </para>
         /// </summary>
         public int UnusedAccountValidityDays

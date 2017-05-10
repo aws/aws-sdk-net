@@ -266,6 +266,7 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when you are trying to modify a user pool while a user import
         /// job is in progress for that pool.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AddCustomAttributes">REST API Reference for AddCustomAttributes Operation</seealso>
         public AddCustomAttributesResponse AddCustomAttributes(AddCustomAttributesRequest request)
         {
             var marshaller = new AddCustomAttributesRequestMarshaller();
@@ -283,6 +284,7 @@ namespace Amazon.CognitoIdentityProvider
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AddCustomAttributes">REST API Reference for AddCustomAttributes Operation</seealso>
         public Task<AddCustomAttributesResponse> AddCustomAttributesAsync(AddCustomAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AddCustomAttributesRequestMarshaller();
@@ -294,12 +296,80 @@ namespace Amazon.CognitoIdentityProvider
 
         #endregion
         
+        #region  AdminAddUserToGroup
+
+
+        /// <summary>
+        /// Adds the specified user to the specified group.
+        /// 
+        ///  
+        /// <para>
+        /// Requires developer credentials.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AdminAddUserToGroup service method.</param>
+        /// 
+        /// <returns>The response from the AdminAddUserToGroup service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception gets thrown when a user is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service cannot find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
+        /// This exception is thrown when a user is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminAddUserToGroup">REST API Reference for AdminAddUserToGroup Operation</seealso>
+        public AdminAddUserToGroupResponse AdminAddUserToGroup(AdminAddUserToGroupRequest request)
+        {
+            var marshaller = new AdminAddUserToGroupRequestMarshaller();
+            var unmarshaller = AdminAddUserToGroupResponseUnmarshaller.Instance;
+
+            return Invoke<AdminAddUserToGroupRequest,AdminAddUserToGroupResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AdminAddUserToGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AdminAddUserToGroup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminAddUserToGroup">REST API Reference for AdminAddUserToGroup Operation</seealso>
+        public Task<AdminAddUserToGroupResponse> AdminAddUserToGroupAsync(AdminAddUserToGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new AdminAddUserToGroupRequestMarshaller();
+            var unmarshaller = AdminAddUserToGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AdminAddUserToGroupRequest,AdminAddUserToGroupResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  AdminConfirmSignUp
 
 
         /// <summary>
         /// Confirms user registration as an admin without using a confirmation code. Works on
         /// any user.
+        /// 
+        ///  
+        /// <para>
+        /// Requires developer credentials.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AdminConfirmSignUp service method.</param>
         /// 
@@ -342,6 +412,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminConfirmSignUp">REST API Reference for AdminConfirmSignUp Operation</seealso>
         public AdminConfirmSignUpResponse AdminConfirmSignUp(AdminConfirmSignUpRequest request)
         {
             var marshaller = new AdminConfirmSignUpRequestMarshaller();
@@ -359,6 +430,7 @@ namespace Amazon.CognitoIdentityProvider
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminConfirmSignUp">REST API Reference for AdminConfirmSignUp Operation</seealso>
         public Task<AdminConfirmSignUpResponse> AdminConfirmSignUpAsync(AdminConfirmSignUpRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AdminConfirmSignUpRequestMarshaller();
@@ -444,6 +516,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminCreateUser">REST API Reference for AdminCreateUser Operation</seealso>
         public AdminCreateUserResponse AdminCreateUser(AdminCreateUserRequest request)
         {
             var marshaller = new AdminCreateUserRequestMarshaller();
@@ -461,6 +534,7 @@ namespace Amazon.CognitoIdentityProvider
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminCreateUser">REST API Reference for AdminCreateUser Operation</seealso>
         public Task<AdminCreateUserResponse> AdminCreateUserAsync(AdminCreateUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AdminCreateUserRequestMarshaller();
@@ -477,6 +551,11 @@ namespace Amazon.CognitoIdentityProvider
 
         /// <summary>
         /// Deletes a user as an administrator. Works on any user.
+        /// 
+        ///  
+        /// <para>
+        /// Requires developer credentials.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AdminDeleteUser service method.</param>
         /// 
@@ -500,6 +579,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminDeleteUser">REST API Reference for AdminDeleteUser Operation</seealso>
         public AdminDeleteUserResponse AdminDeleteUser(AdminDeleteUserRequest request)
         {
             var marshaller = new AdminDeleteUserRequestMarshaller();
@@ -517,6 +597,7 @@ namespace Amazon.CognitoIdentityProvider
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminDeleteUser">REST API Reference for AdminDeleteUser Operation</seealso>
         public Task<AdminDeleteUserResponse> AdminDeleteUserAsync(AdminDeleteUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AdminDeleteUserRequestMarshaller();
@@ -533,6 +614,11 @@ namespace Amazon.CognitoIdentityProvider
 
         /// <summary>
         /// Deletes the user attributes in a user pool as an administrator. Works on any user.
+        /// 
+        ///  
+        /// <para>
+        /// Requires developer credentials.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AdminDeleteUserAttributes service method.</param>
         /// 
@@ -556,6 +642,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminDeleteUserAttributes">REST API Reference for AdminDeleteUserAttributes Operation</seealso>
         public AdminDeleteUserAttributesResponse AdminDeleteUserAttributes(AdminDeleteUserAttributesRequest request)
         {
             var marshaller = new AdminDeleteUserAttributesRequestMarshaller();
@@ -573,6 +660,7 @@ namespace Amazon.CognitoIdentityProvider
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminDeleteUserAttributes">REST API Reference for AdminDeleteUserAttributes Operation</seealso>
         public Task<AdminDeleteUserAttributesResponse> AdminDeleteUserAttributesAsync(AdminDeleteUserAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AdminDeleteUserAttributesRequestMarshaller();
@@ -589,6 +677,11 @@ namespace Amazon.CognitoIdentityProvider
 
         /// <summary>
         /// Disables the specified user as an administrator. Works on any user.
+        /// 
+        ///  
+        /// <para>
+        /// Requires developer credentials.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AdminDisableUser service method.</param>
         /// 
@@ -612,6 +705,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminDisableUser">REST API Reference for AdminDisableUser Operation</seealso>
         public AdminDisableUserResponse AdminDisableUser(AdminDisableUserRequest request)
         {
             var marshaller = new AdminDisableUserRequestMarshaller();
@@ -629,6 +723,7 @@ namespace Amazon.CognitoIdentityProvider
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminDisableUser">REST API Reference for AdminDisableUser Operation</seealso>
         public Task<AdminDisableUserResponse> AdminDisableUserAsync(AdminDisableUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AdminDisableUserRequestMarshaller();
@@ -645,6 +740,11 @@ namespace Amazon.CognitoIdentityProvider
 
         /// <summary>
         /// Enables the specified user as an administrator. Works on any user.
+        /// 
+        ///  
+        /// <para>
+        /// Requires developer credentials.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AdminEnableUser service method.</param>
         /// 
@@ -668,6 +768,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminEnableUser">REST API Reference for AdminEnableUser Operation</seealso>
         public AdminEnableUserResponse AdminEnableUser(AdminEnableUserRequest request)
         {
             var marshaller = new AdminEnableUserRequestMarshaller();
@@ -685,6 +786,7 @@ namespace Amazon.CognitoIdentityProvider
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminEnableUser">REST API Reference for AdminEnableUser Operation</seealso>
         public Task<AdminEnableUserResponse> AdminEnableUserAsync(AdminEnableUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AdminEnableUserRequestMarshaller();
@@ -701,6 +803,11 @@ namespace Amazon.CognitoIdentityProvider
 
         /// <summary>
         /// Forgets the device, as an administrator.
+        /// 
+        ///  
+        /// <para>
+        /// Requires developer credentials.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AdminForgetDevice service method.</param>
         /// 
@@ -727,6 +834,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminForgetDevice">REST API Reference for AdminForgetDevice Operation</seealso>
         public AdminForgetDeviceResponse AdminForgetDevice(AdminForgetDeviceRequest request)
         {
             var marshaller = new AdminForgetDeviceRequestMarshaller();
@@ -744,6 +852,7 @@ namespace Amazon.CognitoIdentityProvider
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminForgetDevice">REST API Reference for AdminForgetDevice Operation</seealso>
         public Task<AdminForgetDeviceResponse> AdminForgetDeviceAsync(AdminForgetDeviceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AdminForgetDeviceRequestMarshaller();
@@ -760,6 +869,11 @@ namespace Amazon.CognitoIdentityProvider
 
         /// <summary>
         /// Gets the device, as an administrator.
+        /// 
+        ///  
+        /// <para>
+        /// Requires developer credentials.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AdminGetDevice service method.</param>
         /// 
@@ -783,6 +897,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
         /// This exception gets thrown when the user has made too many requests for a given operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminGetDevice">REST API Reference for AdminGetDevice Operation</seealso>
         public AdminGetDeviceResponse AdminGetDevice(AdminGetDeviceRequest request)
         {
             var marshaller = new AdminGetDeviceRequestMarshaller();
@@ -800,6 +915,7 @@ namespace Amazon.CognitoIdentityProvider
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminGetDevice">REST API Reference for AdminGetDevice Operation</seealso>
         public Task<AdminGetDeviceResponse> AdminGetDeviceAsync(AdminGetDeviceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AdminGetDeviceRequestMarshaller();
@@ -817,6 +933,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <summary>
         /// Gets the specified user by user name in a user pool as an administrator. Works on
         /// any user.
+        /// 
+        ///  
+        /// <para>
+        /// Requires developer credentials.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AdminGetUser service method.</param>
         /// 
@@ -840,6 +961,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminGetUser">REST API Reference for AdminGetUser Operation</seealso>
         public AdminGetUserResponse AdminGetUser(AdminGetUserRequest request)
         {
             var marshaller = new AdminGetUserRequestMarshaller();
@@ -857,6 +979,7 @@ namespace Amazon.CognitoIdentityProvider
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminGetUser">REST API Reference for AdminGetUser Operation</seealso>
         public Task<AdminGetUserResponse> AdminGetUserAsync(AdminGetUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AdminGetUserRequestMarshaller();
@@ -873,6 +996,11 @@ namespace Amazon.CognitoIdentityProvider
 
         /// <summary>
         /// Initiates the authentication flow, as an administrator.
+        /// 
+        ///  
+        /// <para>
+        /// Requires developer credentials.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AdminInitiateAuth service method.</param>
         /// 
@@ -931,6 +1059,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminInitiateAuth">REST API Reference for AdminInitiateAuth Operation</seealso>
         public AdminInitiateAuthResponse AdminInitiateAuth(AdminInitiateAuthRequest request)
         {
             var marshaller = new AdminInitiateAuthRequestMarshaller();
@@ -948,6 +1077,7 @@ namespace Amazon.CognitoIdentityProvider
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminInitiateAuth">REST API Reference for AdminInitiateAuth Operation</seealso>
         public Task<AdminInitiateAuthResponse> AdminInitiateAuthAsync(AdminInitiateAuthRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AdminInitiateAuthRequestMarshaller();
@@ -964,6 +1094,11 @@ namespace Amazon.CognitoIdentityProvider
 
         /// <summary>
         /// Lists devices, as an administrator.
+        /// 
+        ///  
+        /// <para>
+        /// Requires developer credentials.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AdminListDevices service method.</param>
         /// 
@@ -987,6 +1122,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
         /// This exception gets thrown when the user has made too many requests for a given operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminListDevices">REST API Reference for AdminListDevices Operation</seealso>
         public AdminListDevicesResponse AdminListDevices(AdminListDevicesRequest request)
         {
             var marshaller = new AdminListDevicesRequestMarshaller();
@@ -1004,12 +1140,139 @@ namespace Amazon.CognitoIdentityProvider
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminListDevices">REST API Reference for AdminListDevices Operation</seealso>
         public Task<AdminListDevicesResponse> AdminListDevicesAsync(AdminListDevicesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AdminListDevicesRequestMarshaller();
             var unmarshaller = AdminListDevicesResponseUnmarshaller.Instance;
 
             return InvokeAsync<AdminListDevicesRequest,AdminListDevicesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  AdminListGroupsForUser
+
+
+        /// <summary>
+        /// Lists the groups that the user belongs to.
+        /// 
+        ///  
+        /// <para>
+        /// Requires developer credentials.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AdminListGroupsForUser service method.</param>
+        /// 
+        /// <returns>The response from the AdminListGroupsForUser service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception gets thrown when a user is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service cannot find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
+        /// This exception is thrown when a user is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminListGroupsForUser">REST API Reference for AdminListGroupsForUser Operation</seealso>
+        public AdminListGroupsForUserResponse AdminListGroupsForUser(AdminListGroupsForUserRequest request)
+        {
+            var marshaller = new AdminListGroupsForUserRequestMarshaller();
+            var unmarshaller = AdminListGroupsForUserResponseUnmarshaller.Instance;
+
+            return Invoke<AdminListGroupsForUserRequest,AdminListGroupsForUserResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AdminListGroupsForUser operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AdminListGroupsForUser operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminListGroupsForUser">REST API Reference for AdminListGroupsForUser Operation</seealso>
+        public Task<AdminListGroupsForUserResponse> AdminListGroupsForUserAsync(AdminListGroupsForUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new AdminListGroupsForUserRequestMarshaller();
+            var unmarshaller = AdminListGroupsForUserResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AdminListGroupsForUserRequest,AdminListGroupsForUserResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  AdminRemoveUserFromGroup
+
+
+        /// <summary>
+        /// Removes the specified user from the specified group.
+        /// 
+        ///  
+        /// <para>
+        /// Requires developer credentials.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AdminRemoveUserFromGroup service method.</param>
+        /// 
+        /// <returns>The response from the AdminRemoveUserFromGroup service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception gets thrown when a user is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service cannot find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
+        /// This exception is thrown when a user is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminRemoveUserFromGroup">REST API Reference for AdminRemoveUserFromGroup Operation</seealso>
+        public AdminRemoveUserFromGroupResponse AdminRemoveUserFromGroup(AdminRemoveUserFromGroupRequest request)
+        {
+            var marshaller = new AdminRemoveUserFromGroupRequestMarshaller();
+            var unmarshaller = AdminRemoveUserFromGroupResponseUnmarshaller.Instance;
+
+            return Invoke<AdminRemoveUserFromGroupRequest,AdminRemoveUserFromGroupResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AdminRemoveUserFromGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AdminRemoveUserFromGroup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminRemoveUserFromGroup">REST API Reference for AdminRemoveUserFromGroup Operation</seealso>
+        public Task<AdminRemoveUserFromGroupResponse> AdminRemoveUserFromGroupAsync(AdminRemoveUserFromGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new AdminRemoveUserFromGroupRequestMarshaller();
+            var unmarshaller = AdminRemoveUserFromGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AdminRemoveUserFromGroupRequest,AdminRemoveUserFromGroupResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1031,6 +1294,10 @@ namespace Amazon.CognitoIdentityProvider
         /// selected and a verified phone number exists for the user, or if email verification
         /// is selected and a verified email exists for the user, calling this API will also result
         /// in sending a message to the end user with the code to change their password.
+        /// </para>
+        ///  
+        /// <para>
+        /// Requires developer credentials.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AdminResetUserPassword service method.</param>
@@ -1070,6 +1337,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminResetUserPassword">REST API Reference for AdminResetUserPassword Operation</seealso>
         public AdminResetUserPasswordResponse AdminResetUserPassword(AdminResetUserPasswordRequest request)
         {
             var marshaller = new AdminResetUserPasswordRequestMarshaller();
@@ -1087,6 +1355,7 @@ namespace Amazon.CognitoIdentityProvider
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminResetUserPassword">REST API Reference for AdminResetUserPassword Operation</seealso>
         public Task<AdminResetUserPasswordResponse> AdminResetUserPasswordAsync(AdminResetUserPasswordRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AdminResetUserPasswordRequestMarshaller();
@@ -1103,6 +1372,11 @@ namespace Amazon.CognitoIdentityProvider
 
         /// <summary>
         /// Responds to an authentication challenge, as an administrator.
+        /// 
+        ///  
+        /// <para>
+        /// Requires developer credentials.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AdminRespondToAuthChallenge service method.</param>
         /// 
@@ -1175,6 +1449,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminRespondToAuthChallenge">REST API Reference for AdminRespondToAuthChallenge Operation</seealso>
         public AdminRespondToAuthChallengeResponse AdminRespondToAuthChallenge(AdminRespondToAuthChallengeRequest request)
         {
             var marshaller = new AdminRespondToAuthChallengeRequestMarshaller();
@@ -1192,6 +1467,7 @@ namespace Amazon.CognitoIdentityProvider
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminRespondToAuthChallenge">REST API Reference for AdminRespondToAuthChallenge Operation</seealso>
         public Task<AdminRespondToAuthChallengeResponse> AdminRespondToAuthChallengeAsync(AdminRespondToAuthChallengeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AdminRespondToAuthChallengeRequestMarshaller();
@@ -1208,6 +1484,11 @@ namespace Amazon.CognitoIdentityProvider
 
         /// <summary>
         /// Sets all the user settings for a specified user name. Works on any user.
+        /// 
+        ///  
+        /// <para>
+        /// Requires developer credentials.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AdminSetUserSettings service method.</param>
         /// 
@@ -1228,6 +1509,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminSetUserSettings">REST API Reference for AdminSetUserSettings Operation</seealso>
         public AdminSetUserSettingsResponse AdminSetUserSettings(AdminSetUserSettingsRequest request)
         {
             var marshaller = new AdminSetUserSettingsRequestMarshaller();
@@ -1245,6 +1527,7 @@ namespace Amazon.CognitoIdentityProvider
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminSetUserSettings">REST API Reference for AdminSetUserSettings Operation</seealso>
         public Task<AdminSetUserSettingsResponse> AdminSetUserSettingsAsync(AdminSetUserSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AdminSetUserSettingsRequestMarshaller();
@@ -1261,6 +1544,11 @@ namespace Amazon.CognitoIdentityProvider
 
         /// <summary>
         /// Updates the device status as an administrator.
+        /// 
+        ///  
+        /// <para>
+        /// Requires developer credentials.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AdminUpdateDeviceStatus service method.</param>
         /// 
@@ -1287,6 +1575,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminUpdateDeviceStatus">REST API Reference for AdminUpdateDeviceStatus Operation</seealso>
         public AdminUpdateDeviceStatusResponse AdminUpdateDeviceStatus(AdminUpdateDeviceStatusRequest request)
         {
             var marshaller = new AdminUpdateDeviceStatusRequestMarshaller();
@@ -1304,6 +1593,7 @@ namespace Amazon.CognitoIdentityProvider
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminUpdateDeviceStatus">REST API Reference for AdminUpdateDeviceStatus Operation</seealso>
         public Task<AdminUpdateDeviceStatusResponse> AdminUpdateDeviceStatusAsync(AdminUpdateDeviceStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AdminUpdateDeviceStatusRequestMarshaller();
@@ -1321,6 +1611,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <summary>
         /// Updates the specified user's attributes, including developer attributes, as an administrator.
         /// Works on any user.
+        /// 
+        ///  
+        /// <para>
+        /// Requires developer credentials.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AdminUpdateUserAttributes service method.</param>
         /// 
@@ -1361,6 +1656,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminUpdateUserAttributes">REST API Reference for AdminUpdateUserAttributes Operation</seealso>
         public AdminUpdateUserAttributesResponse AdminUpdateUserAttributes(AdminUpdateUserAttributesRequest request)
         {
             var marshaller = new AdminUpdateUserAttributesRequestMarshaller();
@@ -1378,6 +1674,7 @@ namespace Amazon.CognitoIdentityProvider
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminUpdateUserAttributes">REST API Reference for AdminUpdateUserAttributes Operation</seealso>
         public Task<AdminUpdateUserAttributesResponse> AdminUpdateUserAttributesAsync(AdminUpdateUserAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AdminUpdateUserAttributesRequestMarshaller();
@@ -1394,6 +1691,11 @@ namespace Amazon.CognitoIdentityProvider
 
         /// <summary>
         /// Signs out users from all devices, as an administrator.
+        /// 
+        ///  
+        /// <para>
+        /// Requires developer credentials.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AdminUserGlobalSignOut service method.</param>
         /// 
@@ -1417,6 +1719,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminUserGlobalSignOut">REST API Reference for AdminUserGlobalSignOut Operation</seealso>
         public AdminUserGlobalSignOutResponse AdminUserGlobalSignOut(AdminUserGlobalSignOutRequest request)
         {
             var marshaller = new AdminUserGlobalSignOutRequestMarshaller();
@@ -1434,6 +1737,7 @@ namespace Amazon.CognitoIdentityProvider
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminUserGlobalSignOut">REST API Reference for AdminUserGlobalSignOut Operation</seealso>
         public Task<AdminUserGlobalSignOutResponse> AdminUserGlobalSignOutAsync(AdminUserGlobalSignOutRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AdminUserGlobalSignOutRequestMarshaller();
@@ -1485,6 +1789,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ChangePassword">REST API Reference for ChangePassword Operation</seealso>
         public ChangePasswordResponse ChangePassword(ChangePasswordRequest request)
         {
             var marshaller = new ChangePasswordRequestMarshaller();
@@ -1502,6 +1807,7 @@ namespace Amazon.CognitoIdentityProvider
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ChangePassword">REST API Reference for ChangePassword Operation</seealso>
         public Task<ChangePasswordResponse> ChangePasswordAsync(ChangePasswordRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ChangePasswordRequestMarshaller();
@@ -1561,6 +1867,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ConfirmDevice">REST API Reference for ConfirmDevice Operation</seealso>
         public ConfirmDeviceResponse ConfirmDevice(ConfirmDeviceRequest request)
         {
             var marshaller = new ConfirmDeviceRequestMarshaller();
@@ -1578,6 +1885,7 @@ namespace Amazon.CognitoIdentityProvider
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ConfirmDevice">REST API Reference for ConfirmDevice Operation</seealso>
         public Task<ConfirmDeviceResponse> ConfirmDeviceAsync(ConfirmDeviceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ConfirmDeviceRequestMarshaller();
@@ -1649,6 +1957,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ConfirmForgotPassword">REST API Reference for ConfirmForgotPassword Operation</seealso>
         public ConfirmForgotPasswordResponse ConfirmForgotPassword(ConfirmForgotPasswordRequest request)
         {
             var marshaller = new ConfirmForgotPasswordRequestMarshaller();
@@ -1666,6 +1975,7 @@ namespace Amazon.CognitoIdentityProvider
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ConfirmForgotPassword">REST API Reference for ConfirmForgotPassword Operation</seealso>
         public Task<ConfirmForgotPasswordResponse> ConfirmForgotPasswordAsync(ConfirmForgotPasswordRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ConfirmForgotPasswordRequestMarshaller();
@@ -1735,6 +2045,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ConfirmSignUp">REST API Reference for ConfirmSignUp Operation</seealso>
         public ConfirmSignUpResponse ConfirmSignUp(ConfirmSignUpRequest request)
         {
             var marshaller = new ConfirmSignUpRequestMarshaller();
@@ -1752,12 +2063,80 @@ namespace Amazon.CognitoIdentityProvider
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ConfirmSignUp">REST API Reference for ConfirmSignUp Operation</seealso>
         public Task<ConfirmSignUpResponse> ConfirmSignUpAsync(ConfirmSignUpRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ConfirmSignUpRequestMarshaller();
             var unmarshaller = ConfirmSignUpResponseUnmarshaller.Instance;
 
             return InvokeAsync<ConfirmSignUpRequest,ConfirmSignUpResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateGroup
+
+
+        /// <summary>
+        /// Creates a new group in the specified user pool.
+        /// 
+        ///  
+        /// <para>
+        /// Requires developer credentials.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateGroup service method.</param>
+        /// 
+        /// <returns>The response from the CreateGroup service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.GroupExistsException">
+        /// This exception is thrown when Amazon Cognito encounters a group that already exists
+        /// in the user pool.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.LimitExceededException">
+        /// This exception is thrown when a user exceeds the limit for a requested AWS resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception gets thrown when a user is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service cannot find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateGroup">REST API Reference for CreateGroup Operation</seealso>
+        public CreateGroupResponse CreateGroup(CreateGroupRequest request)
+        {
+            var marshaller = new CreateGroupRequestMarshaller();
+            var unmarshaller = CreateGroupResponseUnmarshaller.Instance;
+
+            return Invoke<CreateGroupRequest,CreateGroupResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateGroup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateGroup">REST API Reference for CreateGroup Operation</seealso>
+        public Task<CreateGroupResponse> CreateGroupAsync(CreateGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateGroupRequestMarshaller();
+            var unmarshaller = CreateGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateGroupRequest,CreateGroupResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1794,6 +2173,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
         /// This exception gets thrown when the user has made too many requests for a given operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateUserImportJob">REST API Reference for CreateUserImportJob Operation</seealso>
         public CreateUserImportJobResponse CreateUserImportJob(CreateUserImportJobRequest request)
         {
             var marshaller = new CreateUserImportJobRequestMarshaller();
@@ -1811,6 +2191,7 @@ namespace Amazon.CognitoIdentityProvider
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateUserImportJob">REST API Reference for CreateUserImportJob Operation</seealso>
         public Task<CreateUserImportJobResponse> CreateUserImportJobAsync(CreateUserImportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateUserImportJobRequestMarshaller();
@@ -1860,6 +2241,10 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
         /// This exception gets thrown when the user has made too many requests for a given operation.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserPoolTaggingException">
+        /// This exception gets thrown when a user pool tag cannot be set or updated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateUserPool">REST API Reference for CreateUserPool Operation</seealso>
         public CreateUserPoolResponse CreateUserPool(CreateUserPoolRequest request)
         {
             var marshaller = new CreateUserPoolRequestMarshaller();
@@ -1877,6 +2262,7 @@ namespace Amazon.CognitoIdentityProvider
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateUserPool">REST API Reference for CreateUserPool Operation</seealso>
         public Task<CreateUserPoolResponse> CreateUserPoolAsync(CreateUserPoolRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateUserPoolRequestMarshaller();
@@ -1916,6 +2302,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
         /// This exception gets thrown when the user has made too many requests for a given operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateUserPoolClient">REST API Reference for CreateUserPoolClient Operation</seealso>
         public CreateUserPoolClientResponse CreateUserPoolClient(CreateUserPoolClientRequest request)
         {
             var marshaller = new CreateUserPoolClientRequestMarshaller();
@@ -1933,12 +2320,73 @@ namespace Amazon.CognitoIdentityProvider
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateUserPoolClient">REST API Reference for CreateUserPoolClient Operation</seealso>
         public Task<CreateUserPoolClientResponse> CreateUserPoolClientAsync(CreateUserPoolClientRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateUserPoolClientRequestMarshaller();
             var unmarshaller = CreateUserPoolClientResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateUserPoolClientRequest,CreateUserPoolClientResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteGroup
+
+
+        /// <summary>
+        /// Deletes a group. Currently only groups with no members can be deleted.
+        /// 
+        ///  
+        /// <para>
+        /// Requires developer credentials.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteGroup service method.</param>
+        /// 
+        /// <returns>The response from the DeleteGroup service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception gets thrown when a user is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service cannot find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteGroup">REST API Reference for DeleteGroup Operation</seealso>
+        public DeleteGroupResponse DeleteGroup(DeleteGroupRequest request)
+        {
+            var marshaller = new DeleteGroupRequestMarshaller();
+            var unmarshaller = DeleteGroupResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteGroupRequest,DeleteGroupResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteGroup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteGroup">REST API Reference for DeleteGroup Operation</seealso>
+        public Task<DeleteGroupResponse> DeleteGroupAsync(DeleteGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteGroupRequestMarshaller();
+            var unmarshaller = DeleteGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteGroupRequest,DeleteGroupResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1978,6 +2426,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteUser">REST API Reference for DeleteUser Operation</seealso>
         public DeleteUserResponse DeleteUser(DeleteUserRequest request)
         {
             var marshaller = new DeleteUserRequestMarshaller();
@@ -1995,6 +2444,7 @@ namespace Amazon.CognitoIdentityProvider
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteUser">REST API Reference for DeleteUser Operation</seealso>
         public Task<DeleteUserResponse> DeleteUserAsync(DeleteUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteUserRequestMarshaller();
@@ -2040,6 +2490,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteUserAttributes">REST API Reference for DeleteUserAttributes Operation</seealso>
         public DeleteUserAttributesResponse DeleteUserAttributes(DeleteUserAttributesRequest request)
         {
             var marshaller = new DeleteUserAttributesRequestMarshaller();
@@ -2057,6 +2508,7 @@ namespace Amazon.CognitoIdentityProvider
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteUserAttributes">REST API Reference for DeleteUserAttributes Operation</seealso>
         public Task<DeleteUserAttributesResponse> DeleteUserAttributesAsync(DeleteUserAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteUserAttributesRequestMarshaller();
@@ -2097,6 +2549,7 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when you are trying to modify a user pool while a user import
         /// job is in progress for that pool.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteUserPool">REST API Reference for DeleteUserPool Operation</seealso>
         public DeleteUserPoolResponse DeleteUserPool(DeleteUserPoolRequest request)
         {
             var marshaller = new DeleteUserPoolRequestMarshaller();
@@ -2114,6 +2567,7 @@ namespace Amazon.CognitoIdentityProvider
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteUserPool">REST API Reference for DeleteUserPool Operation</seealso>
         public Task<DeleteUserPoolResponse> DeleteUserPoolAsync(DeleteUserPoolRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteUserPoolRequestMarshaller();
@@ -2150,6 +2604,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
         /// This exception gets thrown when the user has made too many requests for a given operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteUserPoolClient">REST API Reference for DeleteUserPoolClient Operation</seealso>
         public DeleteUserPoolClientResponse DeleteUserPoolClient(DeleteUserPoolClientRequest request)
         {
             var marshaller = new DeleteUserPoolClientRequestMarshaller();
@@ -2167,6 +2622,7 @@ namespace Amazon.CognitoIdentityProvider
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteUserPoolClient">REST API Reference for DeleteUserPoolClient Operation</seealso>
         public Task<DeleteUserPoolClientResponse> DeleteUserPoolClientAsync(DeleteUserPoolClientRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteUserPoolClientRequestMarshaller();
@@ -2203,6 +2659,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
         /// This exception gets thrown when the user has made too many requests for a given operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeUserImportJob">REST API Reference for DescribeUserImportJob Operation</seealso>
         public DescribeUserImportJobResponse DescribeUserImportJob(DescribeUserImportJobRequest request)
         {
             var marshaller = new DescribeUserImportJobRequestMarshaller();
@@ -2220,6 +2677,7 @@ namespace Amazon.CognitoIdentityProvider
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeUserImportJob">REST API Reference for DescribeUserImportJob Operation</seealso>
         public Task<DescribeUserImportJobResponse> DescribeUserImportJobAsync(DescribeUserImportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeUserImportJobRequestMarshaller();
@@ -2256,6 +2714,10 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
         /// This exception gets thrown when the user has made too many requests for a given operation.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserPoolTaggingException">
+        /// This exception gets thrown when a user pool tag cannot be set or updated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeUserPool">REST API Reference for DescribeUserPool Operation</seealso>
         public DescribeUserPoolResponse DescribeUserPool(DescribeUserPoolRequest request)
         {
             var marshaller = new DescribeUserPoolRequestMarshaller();
@@ -2273,6 +2735,7 @@ namespace Amazon.CognitoIdentityProvider
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeUserPool">REST API Reference for DescribeUserPool Operation</seealso>
         public Task<DescribeUserPoolResponse> DescribeUserPoolAsync(DescribeUserPoolRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeUserPoolRequestMarshaller();
@@ -2310,6 +2773,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
         /// This exception gets thrown when the user has made too many requests for a given operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeUserPoolClient">REST API Reference for DescribeUserPoolClient Operation</seealso>
         public DescribeUserPoolClientResponse DescribeUserPoolClient(DescribeUserPoolClientRequest request)
         {
             var marshaller = new DescribeUserPoolClientRequestMarshaller();
@@ -2327,6 +2791,7 @@ namespace Amazon.CognitoIdentityProvider
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeUserPoolClient">REST API Reference for DescribeUserPoolClient Operation</seealso>
         public Task<DescribeUserPoolClientResponse> DescribeUserPoolClientAsync(DescribeUserPoolClientRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeUserPoolClientRequestMarshaller();
@@ -2375,6 +2840,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ForgetDevice">REST API Reference for ForgetDevice Operation</seealso>
         public ForgetDeviceResponse ForgetDevice(ForgetDeviceRequest request)
         {
             var marshaller = new ForgetDeviceRequestMarshaller();
@@ -2392,6 +2858,7 @@ namespace Amazon.CognitoIdentityProvider
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ForgetDevice">REST API Reference for ForgetDevice Operation</seealso>
         public Task<ForgetDeviceResponse> ForgetDeviceAsync(ForgetDeviceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ForgetDeviceRequestMarshaller();
@@ -2466,6 +2933,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ForgotPassword">REST API Reference for ForgotPassword Operation</seealso>
         public ForgotPasswordResponse ForgotPassword(ForgotPasswordRequest request)
         {
             var marshaller = new ForgotPasswordRequestMarshaller();
@@ -2483,6 +2951,7 @@ namespace Amazon.CognitoIdentityProvider
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ForgotPassword">REST API Reference for ForgotPassword Operation</seealso>
         public Task<ForgotPasswordResponse> ForgotPasswordAsync(ForgotPasswordRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ForgotPasswordRequestMarshaller();
@@ -2520,6 +2989,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
         /// This exception gets thrown when the user has made too many requests for a given operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetCSVHeader">REST API Reference for GetCSVHeader Operation</seealso>
         public GetCSVHeaderResponse GetCSVHeader(GetCSVHeaderRequest request)
         {
             var marshaller = new GetCSVHeaderRequestMarshaller();
@@ -2537,6 +3007,7 @@ namespace Amazon.CognitoIdentityProvider
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetCSVHeader">REST API Reference for GetCSVHeader Operation</seealso>
         public Task<GetCSVHeaderResponse> GetCSVHeaderAsync(GetCSVHeaderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetCSVHeaderRequestMarshaller();
@@ -2585,6 +3056,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetDevice">REST API Reference for GetDevice Operation</seealso>
         public GetDeviceResponse GetDevice(GetDeviceRequest request)
         {
             var marshaller = new GetDeviceRequestMarshaller();
@@ -2602,12 +3074,73 @@ namespace Amazon.CognitoIdentityProvider
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetDevice">REST API Reference for GetDevice Operation</seealso>
         public Task<GetDeviceResponse> GetDeviceAsync(GetDeviceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetDeviceRequestMarshaller();
             var unmarshaller = GetDeviceResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetDeviceRequest,GetDeviceResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetGroup
+
+
+        /// <summary>
+        /// Gets a group.
+        /// 
+        ///  
+        /// <para>
+        /// Requires developer credentials.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetGroup service method.</param>
+        /// 
+        /// <returns>The response from the GetGroup service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception gets thrown when a user is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service cannot find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetGroup">REST API Reference for GetGroup Operation</seealso>
+        public GetGroupResponse GetGroup(GetGroupRequest request)
+        {
+            var marshaller = new GetGroupRequestMarshaller();
+            var unmarshaller = GetGroupResponseUnmarshaller.Instance;
+
+            return Invoke<GetGroupRequest,GetGroupResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetGroup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetGroup">REST API Reference for GetGroup Operation</seealso>
+        public Task<GetGroupResponse> GetGroupAsync(GetGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetGroupRequestMarshaller();
+            var unmarshaller = GetGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetGroupRequest,GetGroupResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -2647,6 +3180,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetUser">REST API Reference for GetUser Operation</seealso>
         public GetUserResponse GetUser(GetUserRequest request)
         {
             var marshaller = new GetUserRequestMarshaller();
@@ -2664,6 +3198,7 @@ namespace Amazon.CognitoIdentityProvider
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetUser">REST API Reference for GetUser Operation</seealso>
         public Task<GetUserResponse> GetUserAsync(GetUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetUserRequestMarshaller();
@@ -2741,6 +3276,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetUserAttributeVerificationCode">REST API Reference for GetUserAttributeVerificationCode Operation</seealso>
         public GetUserAttributeVerificationCodeResponse GetUserAttributeVerificationCode(GetUserAttributeVerificationCodeRequest request)
         {
             var marshaller = new GetUserAttributeVerificationCodeRequestMarshaller();
@@ -2758,6 +3294,7 @@ namespace Amazon.CognitoIdentityProvider
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetUserAttributeVerificationCode">REST API Reference for GetUserAttributeVerificationCode Operation</seealso>
         public Task<GetUserAttributeVerificationCodeResponse> GetUserAttributeVerificationCodeAsync(GetUserAttributeVerificationCodeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetUserAttributeVerificationCodeRequestMarshaller();
@@ -2800,6 +3337,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotConfirmedException">
         /// This exception is thrown when a user is not confirmed successfully.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GlobalSignOut">REST API Reference for GlobalSignOut Operation</seealso>
         public GlobalSignOutResponse GlobalSignOut(GlobalSignOutRequest request)
         {
             var marshaller = new GlobalSignOutRequestMarshaller();
@@ -2817,6 +3355,7 @@ namespace Amazon.CognitoIdentityProvider
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GlobalSignOut">REST API Reference for GlobalSignOut Operation</seealso>
         public Task<GlobalSignOutResponse> GlobalSignOutAsync(GlobalSignOutRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GlobalSignOutRequestMarshaller();
@@ -2877,6 +3416,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/InitiateAuth">REST API Reference for InitiateAuth Operation</seealso>
         public InitiateAuthResponse InitiateAuth(InitiateAuthRequest request)
         {
             var marshaller = new InitiateAuthRequestMarshaller();
@@ -2894,6 +3434,7 @@ namespace Amazon.CognitoIdentityProvider
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/InitiateAuth">REST API Reference for InitiateAuth Operation</seealso>
         public Task<InitiateAuthResponse> InitiateAuthAsync(InitiateAuthRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new InitiateAuthRequestMarshaller();
@@ -2942,6 +3483,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListDevices">REST API Reference for ListDevices Operation</seealso>
         public ListDevicesResponse ListDevices(ListDevicesRequest request)
         {
             var marshaller = new ListDevicesRequestMarshaller();
@@ -2959,12 +3501,73 @@ namespace Amazon.CognitoIdentityProvider
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListDevices">REST API Reference for ListDevices Operation</seealso>
         public Task<ListDevicesResponse> ListDevicesAsync(ListDevicesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListDevicesRequestMarshaller();
             var unmarshaller = ListDevicesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListDevicesRequest,ListDevicesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListGroups
+
+
+        /// <summary>
+        /// Lists the groups associated with a user pool.
+        /// 
+        ///  
+        /// <para>
+        /// Requires developer credentials.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListGroups service method.</param>
+        /// 
+        /// <returns>The response from the ListGroups service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception gets thrown when a user is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service cannot find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListGroups">REST API Reference for ListGroups Operation</seealso>
+        public ListGroupsResponse ListGroups(ListGroupsRequest request)
+        {
+            var marshaller = new ListGroupsRequestMarshaller();
+            var unmarshaller = ListGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<ListGroupsRequest,ListGroupsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListGroups operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListGroups">REST API Reference for ListGroups Operation</seealso>
+        public Task<ListGroupsResponse> ListGroupsAsync(ListGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListGroupsRequestMarshaller();
+            var unmarshaller = ListGroupsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListGroupsRequest,ListGroupsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -2995,6 +3598,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
         /// This exception gets thrown when the user has made too many requests for a given operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListUserImportJobs">REST API Reference for ListUserImportJobs Operation</seealso>
         public ListUserImportJobsResponse ListUserImportJobs(ListUserImportJobsRequest request)
         {
             var marshaller = new ListUserImportJobsRequestMarshaller();
@@ -3012,6 +3616,7 @@ namespace Amazon.CognitoIdentityProvider
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListUserImportJobs">REST API Reference for ListUserImportJobs Operation</seealso>
         public Task<ListUserImportJobsResponse> ListUserImportJobsAsync(ListUserImportJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListUserImportJobsRequestMarshaller();
@@ -3048,6 +3653,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
         /// This exception gets thrown when the user has made too many requests for a given operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListUserPoolClients">REST API Reference for ListUserPoolClients Operation</seealso>
         public ListUserPoolClientsResponse ListUserPoolClients(ListUserPoolClientsRequest request)
         {
             var marshaller = new ListUserPoolClientsRequestMarshaller();
@@ -3065,6 +3671,7 @@ namespace Amazon.CognitoIdentityProvider
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListUserPoolClients">REST API Reference for ListUserPoolClients Operation</seealso>
         public Task<ListUserPoolClientsResponse> ListUserPoolClientsAsync(ListUserPoolClientsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListUserPoolClientsRequestMarshaller();
@@ -3097,6 +3704,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
         /// This exception gets thrown when the user has made too many requests for a given operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListUserPools">REST API Reference for ListUserPools Operation</seealso>
         public ListUserPoolsResponse ListUserPools(ListUserPoolsRequest request)
         {
             var marshaller = new ListUserPoolsRequestMarshaller();
@@ -3114,6 +3722,7 @@ namespace Amazon.CognitoIdentityProvider
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListUserPools">REST API Reference for ListUserPools Operation</seealso>
         public Task<ListUserPoolsResponse> ListUserPoolsAsync(ListUserPoolsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListUserPoolsRequestMarshaller();
@@ -3150,6 +3759,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
         /// This exception gets thrown when the user has made too many requests for a given operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListUsers">REST API Reference for ListUsers Operation</seealso>
         public ListUsersResponse ListUsers(ListUsersRequest request)
         {
             var marshaller = new ListUsersRequestMarshaller();
@@ -3167,12 +3777,73 @@ namespace Amazon.CognitoIdentityProvider
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListUsers">REST API Reference for ListUsers Operation</seealso>
         public Task<ListUsersResponse> ListUsersAsync(ListUsersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListUsersRequestMarshaller();
             var unmarshaller = ListUsersResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListUsersRequest,ListUsersResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListUsersInGroup
+
+
+        /// <summary>
+        /// Lists the users in the specified group.
+        /// 
+        ///  
+        /// <para>
+        /// Requires developer credentials.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListUsersInGroup service method.</param>
+        /// 
+        /// <returns>The response from the ListUsersInGroup service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception gets thrown when a user is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service cannot find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListUsersInGroup">REST API Reference for ListUsersInGroup Operation</seealso>
+        public ListUsersInGroupResponse ListUsersInGroup(ListUsersInGroupRequest request)
+        {
+            var marshaller = new ListUsersInGroupRequestMarshaller();
+            var unmarshaller = ListUsersInGroupResponseUnmarshaller.Instance;
+
+            return Invoke<ListUsersInGroupRequest,ListUsersInGroupResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListUsersInGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListUsersInGroup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListUsersInGroup">REST API Reference for ListUsersInGroup Operation</seealso>
+        public Task<ListUsersInGroupResponse> ListUsersInGroupAsync(ListUsersInGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListUsersInGroupRequestMarshaller();
+            var unmarshaller = ListUsersInGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListUsersInGroupRequest,ListUsersInGroupResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -3239,6 +3910,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ResendConfirmationCode">REST API Reference for ResendConfirmationCode Operation</seealso>
         public ResendConfirmationCodeResponse ResendConfirmationCode(ResendConfirmationCodeRequest request)
         {
             var marshaller = new ResendConfirmationCodeRequestMarshaller();
@@ -3256,6 +3928,7 @@ namespace Amazon.CognitoIdentityProvider
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ResendConfirmationCode">REST API Reference for ResendConfirmationCode Operation</seealso>
         public Task<ResendConfirmationCodeResponse> ResendConfirmationCodeAsync(ResendConfirmationCodeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ResendConfirmationCodeRequestMarshaller();
@@ -3344,6 +4017,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/RespondToAuthChallenge">REST API Reference for RespondToAuthChallenge Operation</seealso>
         public RespondToAuthChallengeResponse RespondToAuthChallenge(RespondToAuthChallengeRequest request)
         {
             var marshaller = new RespondToAuthChallengeRequestMarshaller();
@@ -3361,6 +4035,7 @@ namespace Amazon.CognitoIdentityProvider
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/RespondToAuthChallenge">REST API Reference for RespondToAuthChallenge Operation</seealso>
         public Task<RespondToAuthChallengeResponse> RespondToAuthChallengeAsync(RespondToAuthChallengeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RespondToAuthChallengeRequestMarshaller();
@@ -3405,6 +4080,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetUserSettings">REST API Reference for SetUserSettings Operation</seealso>
         public SetUserSettingsResponse SetUserSettings(SetUserSettingsRequest request)
         {
             var marshaller = new SetUserSettingsRequestMarshaller();
@@ -3422,6 +4098,7 @@ namespace Amazon.CognitoIdentityProvider
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetUserSettings">REST API Reference for SetUserSettings Operation</seealso>
         public Task<SetUserSettingsResponse> SetUserSettingsAsync(SetUserSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new SetUserSettingsRequestMarshaller();
@@ -3495,6 +4172,7 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when Amazon Cognito encounters a user name that already exists
         /// in the user pool.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SignUp">REST API Reference for SignUp Operation</seealso>
         public SignUpResponse SignUp(SignUpRequest request)
         {
             var marshaller = new SignUpRequestMarshaller();
@@ -3512,6 +4190,7 @@ namespace Amazon.CognitoIdentityProvider
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SignUp">REST API Reference for SignUp Operation</seealso>
         public Task<SignUpResponse> SignUpAsync(SignUpRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new SignUpRequestMarshaller();
@@ -3551,6 +4230,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
         /// This exception gets thrown when the user has made too many requests for a given operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/StartUserImportJob">REST API Reference for StartUserImportJob Operation</seealso>
         public StartUserImportJobResponse StartUserImportJob(StartUserImportJobRequest request)
         {
             var marshaller = new StartUserImportJobRequestMarshaller();
@@ -3568,6 +4248,7 @@ namespace Amazon.CognitoIdentityProvider
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/StartUserImportJob">REST API Reference for StartUserImportJob Operation</seealso>
         public Task<StartUserImportJobResponse> StartUserImportJobAsync(StartUserImportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new StartUserImportJobRequestMarshaller();
@@ -3607,6 +4288,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
         /// This exception gets thrown when the user has made too many requests for a given operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/StopUserImportJob">REST API Reference for StopUserImportJob Operation</seealso>
         public StopUserImportJobResponse StopUserImportJob(StopUserImportJobRequest request)
         {
             var marshaller = new StopUserImportJobRequestMarshaller();
@@ -3624,6 +4306,7 @@ namespace Amazon.CognitoIdentityProvider
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/StopUserImportJob">REST API Reference for StopUserImportJob Operation</seealso>
         public Task<StopUserImportJobResponse> StopUserImportJobAsync(StopUserImportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new StopUserImportJobRequestMarshaller();
@@ -3672,6 +4355,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateDeviceStatus">REST API Reference for UpdateDeviceStatus Operation</seealso>
         public UpdateDeviceStatusResponse UpdateDeviceStatus(UpdateDeviceStatusRequest request)
         {
             var marshaller = new UpdateDeviceStatusRequestMarshaller();
@@ -3689,12 +4373,73 @@ namespace Amazon.CognitoIdentityProvider
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateDeviceStatus">REST API Reference for UpdateDeviceStatus Operation</seealso>
         public Task<UpdateDeviceStatusResponse> UpdateDeviceStatusAsync(UpdateDeviceStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateDeviceStatusRequestMarshaller();
             var unmarshaller = UpdateDeviceStatusResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateDeviceStatusRequest,UpdateDeviceStatusResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateGroup
+
+
+        /// <summary>
+        /// Updates the specified group with the specified attributes.
+        /// 
+        ///  
+        /// <para>
+        /// Requires developer credentials.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGroup service method.</param>
+        /// 
+        /// <returns>The response from the UpdateGroup service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception gets thrown when a user is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service cannot find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateGroup">REST API Reference for UpdateGroup Operation</seealso>
+        public UpdateGroupResponse UpdateGroup(UpdateGroupRequest request)
+        {
+            var marshaller = new UpdateGroupRequestMarshaller();
+            var unmarshaller = UpdateGroupResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateGroupRequest,UpdateGroupResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGroup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateGroup">REST API Reference for UpdateGroup Operation</seealso>
+        public Task<UpdateGroupResponse> UpdateGroupAsync(UpdateGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateGroupRequestMarshaller();
+            var unmarshaller = UpdateGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateGroupRequest,UpdateGroupResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -3774,6 +4519,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateUserAttributes">REST API Reference for UpdateUserAttributes Operation</seealso>
         public UpdateUserAttributesResponse UpdateUserAttributes(UpdateUserAttributesRequest request)
         {
             var marshaller = new UpdateUserAttributesRequestMarshaller();
@@ -3791,6 +4537,7 @@ namespace Amazon.CognitoIdentityProvider
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateUserAttributes">REST API Reference for UpdateUserAttributes Operation</seealso>
         public Task<UpdateUserAttributesResponse> UpdateUserAttributesAsync(UpdateUserAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateUserAttributesRequestMarshaller();
@@ -3848,6 +4595,10 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown when you are trying to modify a user pool while a user import
         /// job is in progress for that pool.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserPoolTaggingException">
+        /// This exception gets thrown when a user pool tag cannot be set or updated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateUserPool">REST API Reference for UpdateUserPool Operation</seealso>
         public UpdateUserPoolResponse UpdateUserPool(UpdateUserPoolRequest request)
         {
             var marshaller = new UpdateUserPoolRequestMarshaller();
@@ -3865,6 +4616,7 @@ namespace Amazon.CognitoIdentityProvider
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateUserPool">REST API Reference for UpdateUserPool Operation</seealso>
         public Task<UpdateUserPoolResponse> UpdateUserPoolAsync(UpdateUserPoolRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateUserPoolRequestMarshaller();
@@ -3901,6 +4653,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
         /// This exception gets thrown when the user has made too many requests for a given operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateUserPoolClient">REST API Reference for UpdateUserPoolClient Operation</seealso>
         public UpdateUserPoolClientResponse UpdateUserPoolClient(UpdateUserPoolClientRequest request)
         {
             var marshaller = new UpdateUserPoolClientRequestMarshaller();
@@ -3918,6 +4671,7 @@ namespace Amazon.CognitoIdentityProvider
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateUserPoolClient">REST API Reference for UpdateUserPoolClient Operation</seealso>
         public Task<UpdateUserPoolClientResponse> UpdateUserPoolClientAsync(UpdateUserPoolClientRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateUserPoolClientRequestMarshaller();
@@ -3972,6 +4726,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
         /// This exception is thrown when a user is not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/VerifyUserAttribute">REST API Reference for VerifyUserAttribute Operation</seealso>
         public VerifyUserAttributeResponse VerifyUserAttribute(VerifyUserAttributeRequest request)
         {
             var marshaller = new VerifyUserAttributeRequestMarshaller();
@@ -3989,6 +4744,7 @@ namespace Amazon.CognitoIdentityProvider
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/VerifyUserAttribute">REST API Reference for VerifyUserAttribute Operation</seealso>
         public Task<VerifyUserAttributeResponse> VerifyUserAttributeAsync(VerifyUserAttributeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new VerifyUserAttributeRequestMarshaller();

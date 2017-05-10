@@ -31,6 +31,11 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// Container for the parameters to the AdminConfirmSignUp operation.
     /// Confirms user registration as an admin without using a confirmation code. Works on
     /// any user.
+    /// 
+    ///  
+    /// <para>
+    /// Requires developer credentials.
+    /// </para>
     /// </summary>
     public partial class AdminConfirmSignUpRequest : AmazonCognitoIdentityProviderRequest
     {

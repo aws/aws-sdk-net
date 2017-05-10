@@ -30,6 +30,11 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// <summary>
     /// Container for the parameters to the AdminUpdateDeviceStatus operation.
     /// Updates the device status as an administrator.
+    /// 
+    ///  
+    /// <para>
+    /// Requires developer credentials.
+    /// </para>
     /// </summary>
     public partial class AdminUpdateDeviceStatusRequest : AmazonCognitoIdentityProviderRequest
     {

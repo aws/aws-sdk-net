@@ -31,6 +31,11 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// Container for the parameters to the AdminGetUser operation.
     /// Gets the specified user by user name in a user pool as an administrator. Works on
     /// any user.
+    /// 
+    ///  
+    /// <para>
+    /// Requires developer credentials.
+    /// </para>
     /// </summary>
     public partial class AdminGetUserRequest : AmazonCognitoIdentityProviderRequest
     {

@@ -31,6 +31,11 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// Container for the parameters to the AdminUpdateUserAttributes operation.
     /// Updates the specified user's attributes, including developer attributes, as an administrator.
     /// Works on any user.
+    /// 
+    ///  
+    /// <para>
+    /// Requires developer credentials.
+    /// </para>
     /// </summary>
     public partial class AdminUpdateUserAttributesRequest : AmazonCognitoIdentityProviderRequest
     {

@@ -30,6 +30,11 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// <summary>
     /// Container for the parameters to the AdminDeleteUser operation.
     /// Deletes a user as an administrator. Works on any user.
+    /// 
+    ///  
+    /// <para>
+    /// Requires developer credentials.
+    /// </para>
     /// </summary>
     public partial class AdminDeleteUserRequest : AmazonCognitoIdentityProviderRequest
     {

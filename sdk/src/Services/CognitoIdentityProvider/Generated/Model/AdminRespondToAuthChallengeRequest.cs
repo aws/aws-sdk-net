@@ -30,6 +30,11 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// <summary>
     /// Container for the parameters to the AdminRespondToAuthChallenge operation.
     /// Responds to an authentication challenge, as an administrator.
+    /// 
+    ///  
+    /// <para>
+    /// Requires developer credentials.
+    /// </para>
     /// </summary>
     public partial class AdminRespondToAuthChallengeRequest : AmazonCognitoIdentityProviderRequest
     {

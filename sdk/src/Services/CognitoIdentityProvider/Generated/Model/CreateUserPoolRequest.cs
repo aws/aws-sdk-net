@@ -48,6 +48,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         private string _smsAuthenticationMessage;
         private SmsConfigurationType _smsConfiguration;
         private string _smsVerificationMessage;
+        private Dictionary<string, string> _userPoolTags = new Dictionary<string, string>();
 
         /// <summary>
         /// Gets and sets the property AdminCreateUserConfig. 
@@ -319,6 +320,25 @@ namespace Amazon.CognitoIdentityProvider.Model
         internal bool IsSetSmsVerificationMessage()
         {
             return this._smsVerificationMessage != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UserPoolTags. 
+        /// <para>
+        /// The cost allocation tags for the user pool. For more information, see <a href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html">Adding
+        /// Cost Allocation Tags to Your User Pool</a> 
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> UserPoolTags
+        {
+            get { return this._userPoolTags; }
+            set { this._userPoolTags = value; }
+        }
+
+        // Check to see if UserPoolTags property is set
+        internal bool IsSetUserPoolTags()
+        {
+            return this._userPoolTags != null && this._userPoolTags.Count > 0; 
         }
 
     }

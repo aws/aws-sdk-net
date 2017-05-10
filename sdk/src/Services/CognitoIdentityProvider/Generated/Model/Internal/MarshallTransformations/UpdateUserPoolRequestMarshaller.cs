@@ -180,6 +180,20 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.UserPoolId);
                 }
 
+                if(publicRequest.IsSetUserPoolTags())
+                {
+                    context.Writer.WritePropertyName("UserPoolTags");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestUserPoolTagsKvp in publicRequest.UserPoolTags)
+                    {
+                        context.Writer.WritePropertyName(publicRequestUserPoolTagsKvp.Key);
+                        var publicRequestUserPoolTagsValue = publicRequestUserPoolTagsKvp.Value;
+
+                            context.Writer.Write(publicRequestUserPoolTagsValue);
+                    }
+                    context.Writer.WriteObjectEnd();
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

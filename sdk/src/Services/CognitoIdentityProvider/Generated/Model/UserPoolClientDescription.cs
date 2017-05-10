@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// The description of the user poool client.
+    /// The description of the user pool client.
     /// </summary>
     public partial class UserPoolClientDescription
     {

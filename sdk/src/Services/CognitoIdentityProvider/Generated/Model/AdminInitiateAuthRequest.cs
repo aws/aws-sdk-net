@@ -30,6 +30,11 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// <summary>
     /// Container for the parameters to the AdminInitiateAuth operation.
     /// Initiates the authentication flow, as an administrator.
+    /// 
+    ///  
+    /// <para>
+    /// Requires developer credentials.
+    /// </para>
     /// </summary>
     public partial class AdminInitiateAuthRequest : AmazonCognitoIdentityProviderRequest
     {
