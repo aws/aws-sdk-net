@@ -1,3 +1,13 @@
+### 3.3.85.0 (2017-05-10 00:17 UTC)
+* CognitoIdentityProvider (3.3.3.0)
+	* API Update for CognitoUserPools: Group support
+* CognitoSync (3.3.1.17)
+	* Added developer guide references to CognitoSyncManager docs
+* EC2 (3.3.13.5)
+	* Added comments to EC2Metadata clarifying that the properties on this class will return null when accessed outside of EC2. Updated properties that current throw exceptions to return null instead.
+* S3 (3.3.6.0)
+	* Provide GetPresignedURL() function in S3 Unity
+
 ### 3.3.84.2 (2017-05-09 17:49 UTC)
 * CodeStar (3.3.0.5)
 	* Updated documentation for AWS CodeStar.
