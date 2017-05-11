@@ -551,6 +551,12 @@ namespace Amazon
             }
         }
 
+        /// <summary>
+        /// This method should never be called directly.
+        /// Call AWSSDKUtils.CorrectedUtcNow instead.
+        /// </summary>
+        /// <returns></returns>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("AwsSdkRules", "CR1003:PreventDateTimeNowUseRule")]
         private static DateTime GetUtcNow()
         {
             return DateTime.UtcNow;

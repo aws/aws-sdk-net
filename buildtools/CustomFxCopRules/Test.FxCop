@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FxCopProject Version="10.0" Name="Test">
+  <ProjectOptions>
+    <SharedProject>True</SharedProject>
+    <Stylesheet Apply="False">$(FxCopDir)\Xml\FxCopReport.xsl</Stylesheet>
+    <SaveMessages>
+      <Project Status="None" NewOnly="False" />
+      <Report Status="Active" NewOnly="False" />
+    </SaveMessages>
+    <ProjectFile Compress="True" DefaultTargetCheck="True" DefaultRuleCheck="True" SaveByRuleGroup="" Deterministic="True" />
+    <EnableMultithreadedLoad>True</EnableMultithreadedLoad>
+    <EnableMultithreadedAnalysis>True</EnableMultithreadedAnalysis>
+    <SourceLookup>True</SourceLookup>
+    <AnalysisExceptionsThreshold>10</AnalysisExceptionsThreshold>
+    <RuleExceptionsThreshold>1</RuleExceptionsThreshold>
+    <Spelling Locale="en-US" />
+    <OverrideRuleVisibilities>False</OverrideRuleVisibilities>
+    <CustomDictionaries SearchFxCopDir="True" SearchUserProfile="True" SearchProjectDir="True" />
+    <SearchGlobalAssemblyCache>False</SearchGlobalAssemblyCache>
+    <DeadlockDetectionTimeout>120</DeadlockDetectionTimeout>
+    <IgnoreGeneratedCode>False</IgnoreGeneratedCode>
+  </ProjectOptions>
+  <Targets>
+    <AssemblyReferenceDirectories>
+      <Directory>$(ProjectDir)/../../sdk/src/Core/bin/Debug/net35/</Directory>
+    </AssemblyReferenceDirectories>
+    <Target Name="$(ProjectDir)\..\..\sdk\src\Core\bin\Debug\net35\AWSSDK.Core.dll" Analyze="True" AnalyzeAllChildren="False">
+      <Modules AnalyzeAllChildren="False">
+        <Module Name="awssdk.core.dll" Analyze="True" AnalyzeAllChildren="False">
+          <Namespaces AnalyzeAllChildren="False">
+            <Namespace Name="" Analyze="True" AnalyzeAllChildren="True" />
+            <Namespace Name="Amazon" Analyze="True" AnalyzeAllChildren="True" />
+            <Namespace Name="Amazon.Auth.AccessControlPolicy" Analyze="True" AnalyzeAllChildren="True" />
+            <Namespace Name="Amazon.Auth.AccessControlPolicy.ActionIdentifiers" Analyze="True" AnalyzeAllChildren="True" />
+            <Namespace Name="Amazon.Auth.AccessControlPolicy.Internal" Analyze="True" AnalyzeAllChildren="True" />
+            <Namespace Name="Amazon.Internal" Analyze="True" AnalyzeAllChildren="True" />
+            <Namespace Name="Amazon.MissingTypes" Analyze="True" AnalyzeAllChildren="True" />
+            <Namespace Name="Amazon.Runtime" Analyze="True" AnalyzeAllChildren="True" />
+            <Namespace Name="Amazon.Runtime.CredentialManagement" Analyze="True" AnalyzeAllChildren="True" />
+            <Namespace Name="Amazon.Runtime.CredentialManagement.Internal" Analyze="True" AnalyzeAllChildren="True" />
+            <Namespace Name="Amazon.Runtime.Internal" Analyze="True" AnalyzeAllChildren="True" />
+            <Namespace Name="Amazon.Runtime.Internal.Auth" Analyze="True" AnalyzeAllChildren="True" />
+            <Namespace Name="Amazon.Runtime.Internal.Settings" Analyze="True" AnalyzeAllChildren="True" />
+            <Namespace Name="Amazon.Runtime.Internal.Transform" Analyze="True" AnalyzeAllChildren="True" />
+            <Namespace Name="Amazon.Runtime.Internal.Util" Analyze="True" AnalyzeAllChildren="True" />
+            <Namespace Name="Amazon.Runtime.SharedInterfaces" Analyze="True" AnalyzeAllChildren="True" />
+            <Namespace Name="Amazon.Util" Analyze="True" AnalyzeAllChildren="True" />
+            <Namespace Name="Amazon.Util.Internal" Analyze="True" AnalyzeAllChildren="True" />
+            <Namespace Name="Amazon.Util.Internal.PlatformServices" Analyze="True" AnalyzeAllChildren="True" />
+            <Namespace Name="ThirdParty.MD5" Analyze="True" AnalyzeAllChildren="True" />
+          </Namespaces>
+          <Resources AnalyzeAllChildren="True" />
+        </Module>
+      </Modules>
+    </Target>
+  </Targets>
+  <Rules>
+    <RuleFiles>
+      <RuleFile Name="$(ProjectDir)\bin\Debug\CustomFxCopRules.dll" Enabled="True" AllRulesEnabled="True" />
+    </RuleFiles>
+    <Groups />
+    <Settings />
+  </Rules>
+  <FxCopReport Version="10.0" />
+</FxCopProject>

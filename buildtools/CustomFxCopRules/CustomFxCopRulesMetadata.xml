@@ -30,4 +30,14 @@
     <Owner />
     <Email />
   </Rule>
+  <Rule TypeName="PreventDateTimeNowUseRule" Category="AwsSdkRules" CheckId="CR1003">
+    <Name>Do not use DateTime.Now or DateTime.UtcNow, use AWSSDKUtils.CorrectedNow or AWSSDKUtils.CorrectedUtcNow.</Name>
+    <Description>Checks code for DateTime.Now or DateTime.UtcNow uses.</Description>
+    <Resolution>Method {0} of member {1} gets {2}. This property should not be used within the SDK, and instead AWSSDKUtils.CorrectedNow or AWSSDKUtils.CorrectedUtcNow should be used.</Resolution>
+    <MessageLevel Certainty="100">CriticalError</MessageLevel>
+    <FixCategories>NonBreaking</FixCategories>
+    <Url />
+    <Owner />
+    <Email />
+  </Rule>
 </Rules>

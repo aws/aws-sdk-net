@@ -48,9 +48,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DateTimeNowUser.cs" />
     <Compile Include="ILoggerUser.cs" />
     <Compile Include="MD5User.cs" />
     <Compile Include="PreventHashAlgorithmCreateRule.cs" />
+    <Compile Include="PreventDateTimeNowUse.cs" />
     <Compile Include="PreventMD5Use.cs" />
     <Compile Include="PreventStaticLoggers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
