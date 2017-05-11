@@ -1,3 +1,16 @@
+### 3.3.86.0 (2017-05-11 21:05 UTC)
+* ElasticLoadBalancing (3.3.1.0)
+	* Add a new API to allow customers to describe their account limits, such as load balancer limit, target group limit etc.
+* ElasticLoadBalancingV2 (3.3.2.0)
+	* Add a new API to allow customers to describe their account limits, such as load balancer limit, target group limit etc.
+* LexModelBuildingService (3.3.1.0)
+	* Releasing new DeleteBotVersion, DeleteIntentVersion and DeleteSlotTypeVersion APIs.
+* Organizations (3.3.2.0)
+	* AWS Organizations APIs that return an Account object now include the email address associated with the account’s root user.
+* Core 3.3.14.0
+	* Added AWSConfigs.ManualClockCorrection property to manually configure SDK's clock correction.
+	* All services packages updated to require new Core
+
 ### 3.3.85.0 (2017-05-10 00:17 UTC)
 * CognitoIdentityProvider (3.3.3.0)
 	* API Update for CognitoUserPools: Group support
