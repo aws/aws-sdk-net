@@ -251,6 +251,10 @@ namespace Amazon.Organizations
         /// </summary>
         public static readonly ConstraintViolationExceptionReason HANDSHAKE_RATE_LIMIT_EXCEEDED = new ConstraintViolationExceptionReason("HANDSHAKE_RATE_LIMIT_EXCEEDED");
         /// <summary>
+        /// Constant MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE for ConstraintViolationExceptionReason
+        /// </summary>
+        public static readonly ConstraintViolationExceptionReason MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE = new ConstraintViolationExceptionReason("MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE");
+        /// <summary>
         /// Constant MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED for ConstraintViolationExceptionReason
         /// </summary>
         public static readonly ConstraintViolationExceptionReason MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED = new ConstraintViolationExceptionReason("MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED");
@@ -258,6 +262,10 @@ namespace Amazon.Organizations
         /// Constant MAX_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED for ConstraintViolationExceptionReason
         /// </summary>
         public static readonly ConstraintViolationExceptionReason MAX_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED = new ConstraintViolationExceptionReason("MAX_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED");
+        /// <summary>
+        /// Constant MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED for ConstraintViolationExceptionReason
+        /// </summary>
+        public static readonly ConstraintViolationExceptionReason MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED = new ConstraintViolationExceptionReason("MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED");
         /// <summary>
         /// Constant MIN_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED for ConstraintViolationExceptionReason
         /// </summary>
@@ -332,6 +340,10 @@ namespace Amazon.Organizations
         /// Constant INVALID_ADDRESS for CreateAccountFailureReason
         /// </summary>
         public static readonly CreateAccountFailureReason INVALID_ADDRESS = new CreateAccountFailureReason("INVALID_ADDRESS");
+        /// <summary>
+        /// Constant INVALID_EMAIL for CreateAccountFailureReason
+        /// </summary>
+        public static readonly CreateAccountFailureReason INVALID_EMAIL = new CreateAccountFailureReason("INVALID_EMAIL");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

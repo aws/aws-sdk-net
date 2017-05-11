@@ -33,6 +33,7 @@ namespace Amazon.Organizations.Model
     public partial class Account
     {
         private string _arn;
+        private string _email;
         private string _id;
         private AccountJoinedMethod _joinedMethod;
         private DateTime? _joinedTimestamp;
@@ -60,6 +61,29 @@ namespace Amazon.Organizations.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Email. 
+        /// <para>
+        /// The email address associated with the AWS account.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
+        /// is a string of characters that represents a standard Internet email address.
+        /// </para>
+        /// </summary>
+        public string Email
+        {
+            get { return this._email; }
+            set { this._email = value; }
+        }
+
+        // Check to see if Email property is set
+        internal bool IsSetEmail()
+        {
+            return this._email != null;
         }
 
         /// <summary>

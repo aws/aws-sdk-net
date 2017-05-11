@@ -105,6 +105,32 @@ namespace Amazon.Organizations.Model
         /// <para>
         /// If the request failed, a description of the reason for the failure.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// ACCOUNT_LIMIT_EXCEEDED: The account could not be created because you have reached
+        /// the limit on the number of accounts in your organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// EMAIL_ALREADY_EXISTS: The account could not be created because another AWS account
+        /// with that email address already exists.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_ADDRESS: The account could not be created because the address you provided
+        /// is not valid.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_EMAIL: The account could not be created because the email address you provided
+        /// is not valid.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INTERNAL_FAILURE: The account could not be created because of an internal failure.
+        /// Try again later. If the problem persists, contact Customer Support.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public CreateAccountFailureReason FailureReason
         {

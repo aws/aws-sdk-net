@@ -119,7 +119,7 @@ namespace Amazon.Organizations
     /// </para>
     ///  
     /// <para>
-    /// We welcome your feedback. Send your comments to <a href="mailto:aws-organizations-feedback@amazon.com">aws-organizations-feedback@amazon.com</a>
+    /// We welcome your feedback. Send your comments to <a href="mailto:feedback-awsorganizations@amazon.com">feedback-awsorganizations@amazon.com</a>
     /// or post your feedback and questions in our private <a href="http://forums.aws.amazon.com/forum.jspa?forumID=219">AWS
     /// Organizations support forum</a>. If you don't have access to the forum, send a request
     /// for access to the email address, along with your forum user ID. For more information

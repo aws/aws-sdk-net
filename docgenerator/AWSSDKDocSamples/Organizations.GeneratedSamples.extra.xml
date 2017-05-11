@@ -1,0 +1,818 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.Organizations.IAmazonOrganizations.AcceptHandshake(Amazon.Organizations.Model.AcceptHandshakeRequest)" />
+            <member name="M:Amazon.Organizations.AmazonOrganizationsClient.AcceptHandshake(Amazon.Organizations.Model.AcceptHandshakeRequest)" />
+            <member name="T:Amazon.Organizations.Model.AcceptHandshakeRequest" />
+            <member name="T:Amazon.Organizations.Model.AcceptHandshakeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Bill is the owner of an organization, and he invites Juan's account (222222222222) to join his organization. The following example shows Juan's account accepting the handshake and thus agreeing to the invitation.
+                </para>
+                <code
+                    title="To accept a handshake from another account"
+                    source=".\AWSSDKDocSamples\Organizations\Organizations.GeneratedSamples.cs"
+                    region="to-accept-a-handshake-from-another-account-1472500561150" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Organizations.IAmazonOrganizations.AttachPolicy(Amazon.Organizations.Model.AttachPolicyRequest)" />
+            <member name="M:Amazon.Organizations.AmazonOrganizationsClient.AttachPolicy(Amazon.Organizations.Model.AttachPolicyRequest)" />
+            <member name="T:Amazon.Organizations.Model.AttachPolicyRequest" />
+            <member name="T:Amazon.Organizations.Model.AttachPolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example shows how to attach a service control policy (SCP) to an OU:
+
+                </para>
+                <code
+                    title="To attach a policy to an OU"
+                    source=".\AWSSDKDocSamples\Organizations\Organizations.GeneratedSamples.cs"
+                    region="to-attach-a-policy-to-an-ou" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Organizations.IAmazonOrganizations.AttachPolicy(Amazon.Organizations.Model.AttachPolicyRequest)" />
+            <member name="M:Amazon.Organizations.AmazonOrganizationsClient.AttachPolicy(Amazon.Organizations.Model.AttachPolicyRequest)" />
+            <member name="T:Amazon.Organizations.Model.AttachPolicyRequest" />
+            <member name="T:Amazon.Organizations.Model.AttachPolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example shows how to attach a service control policy (SCP) to an account:
+
+                </para>
+                <code
+                    title="To attach a policy to an account"
+                    source=".\AWSSDKDocSamples\Organizations\Organizations.GeneratedSamples.cs"
+                    region="to-attach-a-policy-to-an-account" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Organizations.IAmazonOrganizations.CancelHandshake(Amazon.Organizations.Model.CancelHandshakeRequest)" />
+            <member name="M:Amazon.Organizations.AmazonOrganizationsClient.CancelHandshake(Amazon.Organizations.Model.CancelHandshakeRequest)" />
+            <member name="T:Amazon.Organizations.Model.CancelHandshakeRequest" />
+            <member name="T:Amazon.Organizations.Model.CancelHandshakeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Bill previously sent an invitation to Susan's account to join his organization. He changes his mind and decides to cancel the invitation before Susan accepts it. The following example shows Bill's cancellation:
+
+                </para>
+                <code
+                    title="To cancel a handshake sent to a member account"
+                    source=".\AWSSDKDocSamples\Organizations\Organizations.GeneratedSamples.cs"
+                    region="to-cancel-a-handshake-sent-to-a-member-account-1472501320506" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Organizations.IAmazonOrganizations.CreateAccount(Amazon.Organizations.Model.CreateAccountRequest)" />
+            <member name="M:Amazon.Organizations.AmazonOrganizationsClient.CreateAccount(Amazon.Organizations.Model.CreateAccountRequest)" />
+            <member name="T:Amazon.Organizations.Model.CreateAccountRequest" />
+            <member name="T:Amazon.Organizations.Model.CreateAccountResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The owner of an organization creates a member account in the organization. The following example shows that when the organization owner creates the member account, the account is preconfigured with the name "Production Account" and an owner email address of susan@example.com.  An IAM role is automatically created using the default name because the roleName parameter is not used. AWS Organizations sends Susan a "Welcome to AWS" email:
+
+
+                </para>
+                <code
+                    title="To create a new account that is automatically part of the organization"
+                    source=".\AWSSDKDocSamples\Organizations\Organizations.GeneratedSamples.cs"
+                    region="to-create-a-new-account-that-is-automatically-part-of-the-organization-1472501463507" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Organizations.IAmazonOrganizations.CreateOrganization(Amazon.Organizations.Model.CreateOrganizationRequest)" />
+            <member name="M:Amazon.Organizations.AmazonOrganizationsClient.CreateOrganization(Amazon.Organizations.Model.CreateOrganizationRequest)" />
+            <member name="T:Amazon.Organizations.Model.CreateOrganizationRequest" />
+            <member name="T:Amazon.Organizations.Model.CreateOrganizationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Bill wants to create an organization using credentials from account 111111111111. The following example shows that the account becomes the master account in the new organization. Because he does not specify a feature set, the new organization defaults to all features enabled and service control policies enabled on the root:
+
+
+                </para>
+                <code
+                    title="To create a new organization with all features enabled"
+                    source=".\AWSSDKDocSamples\Organizations\Organizations.GeneratedSamples.cs"
+                    region="to-create-a-new-organization-with-all-features enabled" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Organizations.IAmazonOrganizations.CreateOrganization(Amazon.Organizations.Model.CreateOrganizationRequest)" />
+            <member name="M:Amazon.Organizations.AmazonOrganizationsClient.CreateOrganization(Amazon.Organizations.Model.CreateOrganizationRequest)" />
+            <member name="T:Amazon.Organizations.Model.CreateOrganizationRequest" />
+            <member name="T:Amazon.Organizations.Model.CreateOrganizationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    In the following example, Bill creates an organization using credentials from account 111111111111, and configures the organization to support only the consolidated billing feature set:
+
+
+                </para>
+                <code
+                    title="To create a new organization with consolidated billing features only"
+                    source=".\AWSSDKDocSamples\Organizations\Organizations.GeneratedSamples.cs"
+                    region="to-create-a-new-organization-with-consolidated-billing-features-only" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Organizations.IAmazonOrganizations.CreateOrganizationalUnit(Amazon.Organizations.Model.CreateOrganizationalUnitRequest)" />
+            <member name="M:Amazon.Organizations.AmazonOrganizationsClient.CreateOrganizationalUnit(Amazon.Organizations.Model.CreateOrganizationalUnitRequest)" />
+            <member name="T:Amazon.Organizations.Model.CreateOrganizationalUnitRequest" />
+            <member name="T:Amazon.Organizations.Model.CreateOrganizationalUnitResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example shows how to create an OU that is named AccountingOU. The new OU is directly under the root.:
+
+
+                </para>
+                <code
+                    title="To create a new organization unit"
+                    source=".\AWSSDKDocSamples\Organizations\Organizations.GeneratedSamples.cs"
+                    region="to-create-a-new-organizational-unit" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Organizations.IAmazonOrganizations.CreatePolicy(Amazon.Organizations.Model.CreatePolicyRequest)" />
+            <member name="M:Amazon.Organizations.AmazonOrganizationsClient.CreatePolicy(Amazon.Organizations.Model.CreatePolicyRequest)" />
+            <member name="T:Amazon.Organizations.Model.CreatePolicyRequest" />
+            <member name="T:Amazon.Organizations.Model.CreatePolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example shows how to create a service control policy (SCP) that is named AllowAllS3Actions. The JSON string in the content parameter specifies the content in the policy. The parameter string is escaped with backslashes to ensure that the embedded double quotes in the JSON policy are treated as literals in the parameter, which itself is surrounded by double quotes:
+
+
+                </para>
+                <code
+                    title="To create a service control policy"
+                    source=".\AWSSDKDocSamples\Organizations\Organizations.GeneratedSamples.cs"
+                    region="to-create-a-service-control-policy" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Organizations.IAmazonOrganizations.DeclineHandshake(Amazon.Organizations.Model.DeclineHandshakeRequest)" />
+            <member name="M:Amazon.Organizations.AmazonOrganizationsClient.DeclineHandshake(Amazon.Organizations.Model.DeclineHandshakeRequest)" />
+            <member name="T:Amazon.Organizations.Model.DeclineHandshakeRequest" />
+            <member name="T:Amazon.Organizations.Model.DeclineHandshakeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example shows Susan declining an invitation to join Bill's organization. The DeclineHandshake operation returns a handshake object, showing that the state is now DECLINED:
+                </para>
+                <code
+                    title="To decline a handshake sent from the master account"
+                    source=".\AWSSDKDocSamples\Organizations\Organizations.GeneratedSamples.cs"
+                    region="to-decline-a-handshake-sent-from-the-master-account-1472502666967" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Organizations.IAmazonOrganizations.DeleteOrganizationalUnit(Amazon.Organizations.Model.DeleteOrganizationalUnitRequest)" />
+            <member name="M:Amazon.Organizations.AmazonOrganizationsClient.DeleteOrganizationalUnit(Amazon.Organizations.Model.DeleteOrganizationalUnitRequest)" />
+            <member name="T:Amazon.Organizations.Model.DeleteOrganizationalUnitRequest" />
+            <member name="T:Amazon.Organizations.Model.DeleteOrganizationalUnitResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example shows how to delete an OU. The example assumes that you previously removed all accounts and other OUs from the OU:
+
+
+                </para>
+                <code
+                    title="To delete an organization unit"
+                    source=".\AWSSDKDocSamples\Organizations\Organizations.GeneratedSamples.cs"
+                    region="to-delete-an-organizational-unit" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Organizations.IAmazonOrganizations.DeletePolicy(Amazon.Organizations.Model.DeletePolicyRequest)" />
+            <member name="M:Amazon.Organizations.AmazonOrganizationsClient.DeletePolicy(Amazon.Organizations.Model.DeletePolicyRequest)" />
+            <member name="T:Amazon.Organizations.Model.DeletePolicyRequest" />
+            <member name="T:Amazon.Organizations.Model.DeletePolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example shows how to delete a policy from an organization. The example assumes that you previously detached the policy from all entities:
+
+
+                </para>
+                <code
+                    title="To delete a policy"
+                    source=".\AWSSDKDocSamples\Organizations\Organizations.GeneratedSamples.cs"
+                    region="to-delete-a-policy" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Organizations.IAmazonOrganizations.DescribeAccount(Amazon.Organizations.Model.DescribeAccountRequest)" />
+            <member name="M:Amazon.Organizations.AmazonOrganizationsClient.DescribeAccount(Amazon.Organizations.Model.DescribeAccountRequest)" />
+            <member name="T:Amazon.Organizations.Model.DescribeAccountRequest" />
+            <member name="T:Amazon.Organizations.Model.DescribeAccountResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example shows a user in the master account (111111111111) asking for details about account 555555555555:
+                </para>
+                <code
+                    title="To get the details about an account"
+                    source=".\AWSSDKDocSamples\Organizations\Organizations.GeneratedSamples.cs"
+                    region="to-get-the-details-about-an-account-1472503166868" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Organizations.IAmazonOrganizations.DescribeCreateAccountStatus(Amazon.Organizations.Model.DescribeCreateAccountStatusRequest)" />
+            <member name="M:Amazon.Organizations.AmazonOrganizationsClient.DescribeCreateAccountStatus(Amazon.Organizations.Model.DescribeCreateAccountStatusRequest)" />
+            <member name="T:Amazon.Organizations.Model.DescribeCreateAccountStatusRequest" />
+            <member name="T:Amazon.Organizations.Model.DescribeCreateAccountStatusResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example shows how to request the status about a previous request to create an account in an organization. This operation can be called only by a principal from the organization's master account. In the example, the specified "createAccountRequestId" comes from the response of the original call to "CreateAccount":
+                </para>
+                <code
+                    title="To get information about a request to create an account"
+                    source=".\AWSSDKDocSamples\Organizations\Organizations.GeneratedSamples.cs"
+                    region="to-get-information-about-a-request-to-create-an-account-1472503727223" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Organizations.IAmazonOrganizations.DescribeHandshake(Amazon.Organizations.Model.DescribeHandshakeRequest)" />
+            <member name="M:Amazon.Organizations.AmazonOrganizationsClient.DescribeHandshake(Amazon.Organizations.Model.DescribeHandshakeRequest)" />
+            <member name="T:Amazon.Organizations.Model.DescribeHandshakeRequest" />
+            <member name="T:Amazon.Organizations.Model.DescribeHandshakeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example shows you how to request details about a handshake. The handshake ID comes either from the original call to "InviteAccountToOrganization", or from a call to "ListHandshakesForAccount" or "ListHandshakesForOrganization":
+                </para>
+                <code
+                    title="To get information about a handshake"
+                    source=".\AWSSDKDocSamples\Organizations\Organizations.GeneratedSamples.cs"
+                    region="to-get-information-about-a-handshake-1472503400505" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Organizations.IAmazonOrganizations.DescribeOrganization(Amazon.Organizations.Model.DescribeOrganizationRequest)" />
+            <member name="M:Amazon.Organizations.AmazonOrganizationsClient.DescribeOrganization(Amazon.Organizations.Model.DescribeOrganizationRequest)" />
+            <member name="T:Amazon.Organizations.Model.DescribeOrganizationRequest" />
+            <member name="T:Amazon.Organizations.Model.DescribeOrganizationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example shows how to request information about the current user's organization:/n/n
+                </para>
+                <code
+                    title="To get information about an organization"
+                    source=".\AWSSDKDocSamples\Organizations\Organizations.GeneratedSamples.cs"
+                    region="to-get-information-about-an-organization-1472503400505" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Organizations.IAmazonOrganizations.DescribeOrganizationalUnit(Amazon.Organizations.Model.DescribeOrganizationalUnitRequest)" />
+            <member name="M:Amazon.Organizations.AmazonOrganizationsClient.DescribeOrganizationalUnit(Amazon.Organizations.Model.DescribeOrganizationalUnitRequest)" />
+            <member name="T:Amazon.Organizations.Model.DescribeOrganizationalUnitRequest" />
+            <member name="T:Amazon.Organizations.Model.DescribeOrganizationalUnitResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example shows how to request details about an OU:/n/n
+                </para>
+                <code
+                    title="To get information about an organizational unit"
+                    source=".\AWSSDKDocSamples\Organizations\Organizations.GeneratedSamples.cs"
+                    region="to-get-information-about-an-organizational-unit" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Organizations.IAmazonOrganizations.DescribePolicy(Amazon.Organizations.Model.DescribePolicyRequest)" />
+            <member name="M:Amazon.Organizations.AmazonOrganizationsClient.DescribePolicy(Amazon.Organizations.Model.DescribePolicyRequest)" />
+            <member name="T:Amazon.Organizations.Model.DescribePolicyRequest" />
+            <member name="T:Amazon.Organizations.Model.DescribePolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example shows how to request information about a policy:/n/n
+                </para>
+                <code
+                    title="To get information about a policy"
+                    source=".\AWSSDKDocSamples\Organizations\Organizations.GeneratedSamples.cs"
+                    region="to-get-information-about-a-policy" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Organizations.IAmazonOrganizations.DetachPolicy(Amazon.Organizations.Model.DetachPolicyRequest)" />
+            <member name="M:Amazon.Organizations.AmazonOrganizationsClient.DetachPolicy(Amazon.Organizations.Model.DetachPolicyRequest)" />
+            <member name="T:Amazon.Organizations.Model.DetachPolicyRequest" />
+            <member name="T:Amazon.Organizations.Model.DetachPolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example shows how to detach a policy from an OU:/n/n
+                </para>
+                <code
+                    title="To detach a policy from a root, OU, or account"
+                    source=".\AWSSDKDocSamples\Organizations\Organizations.GeneratedSamples.cs"
+                    region="to-detach-a-policy-from-a-root-ou-or-account" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Organizations.IAmazonOrganizations.DisablePolicyType(Amazon.Organizations.Model.DisablePolicyTypeRequest)" />
+            <member name="M:Amazon.Organizations.AmazonOrganizationsClient.DisablePolicyType(Amazon.Organizations.Model.DisablePolicyTypeRequest)" />
+            <member name="T:Amazon.Organizations.Model.DisablePolicyTypeRequest" />
+            <member name="T:Amazon.Organizations.Model.DisablePolicyTypeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example shows how to disable the service control policy (SCP) policy type in a root. The response shows that the PolicyTypes response element no longer includes SERVICE_CONTROL_POLICY:/n/n
+                </para>
+                <code
+                    title="To disable a policy type in a root"
+                    source=".\AWSSDKDocSamples\Organizations\Organizations.GeneratedSamples.cs"
+                    region="to-disable-a-policy-type-in-a-root" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Organizations.IAmazonOrganizations.EnableAllFeatures(Amazon.Organizations.Model.EnableAllFeaturesRequest)" />
+            <member name="M:Amazon.Organizations.AmazonOrganizationsClient.EnableAllFeatures(Amazon.Organizations.Model.EnableAllFeaturesRequest)" />
+            <member name="T:Amazon.Organizations.Model.EnableAllFeaturesRequest" />
+            <member name="T:Amazon.Organizations.Model.EnableAllFeaturesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example shows the administrator asking all the invited accounts in the organization to approve enabling all features in the organization. AWS Organizations sends an email to the address that is registered with every invited member account asking the owner to approve the change by accepting the handshake that is sent. After all invited member accounts accept the handshake, the organization administrator can finalize the change to enable all features, and those with appropriate permissions can create policies and apply them to roots, OUs, and accounts:/n/n
+                </para>
+                <code
+                    title="To enable all features in an organization"
+                    source=".\AWSSDKDocSamples\Organizations\Organizations.GeneratedSamples.cs"
+                    region="to-enable-all-features-in-an-organization" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Organizations.IAmazonOrganizations.EnablePolicyType(Amazon.Organizations.Model.EnablePolicyTypeRequest)" />
+            <member name="M:Amazon.Organizations.AmazonOrganizationsClient.EnablePolicyType(Amazon.Organizations.Model.EnablePolicyTypeRequest)" />
+            <member name="T:Amazon.Organizations.Model.EnablePolicyTypeRequest" />
+            <member name="T:Amazon.Organizations.Model.EnablePolicyTypeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example shows how to enable the service control policy (SCP) policy type in a root. The output shows a root object with a PolicyTypes response element showing that SCPs are now enabled:/n/n
+                </para>
+                <code
+                    title="To enable a policy type in a root"
+                    source=".\AWSSDKDocSamples\Organizations\Organizations.GeneratedSamples.cs"
+                    region="to-enable-a-policy-type-in-a-root" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Organizations.IAmazonOrganizations.InviteAccountToOrganization(Amazon.Organizations.Model.InviteAccountToOrganizationRequest)" />
+            <member name="M:Amazon.Organizations.AmazonOrganizationsClient.InviteAccountToOrganization(Amazon.Organizations.Model.InviteAccountToOrganizationRequest)" />
+            <member name="T:Amazon.Organizations.Model.InviteAccountToOrganizationRequest" />
+            <member name="T:Amazon.Organizations.Model.InviteAccountToOrganizationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example shows the admin of the master account owned by bill@example.com inviting the account owned by juan@example.com to join an organization.
+                </para>
+                <code
+                    title="To invite an account to join an organization"
+                    source=".\AWSSDKDocSamples\Organizations\Organizations.GeneratedSamples.cs"
+                    region="to-invite-an-account-to-join-an-organization-1472508594110" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Organizations.IAmazonOrganizations.LeaveOrganization(Amazon.Organizations.Model.LeaveOrganizationRequest)" />
+            <member name="M:Amazon.Organizations.AmazonOrganizationsClient.LeaveOrganization(Amazon.Organizations.Model.LeaveOrganizationRequest)" />
+            <member name="T:Amazon.Organizations.Model.LeaveOrganizationRequest" />
+            <member name="T:Amazon.Organizations.Model.LeaveOrganizationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    TThe following example shows how to remove your member account from an organization:
+                </para>
+                <code
+                    title="To leave an organization as a member account"
+                    source=".\AWSSDKDocSamples\Organizations\Organizations.GeneratedSamples.cs"
+                    region="to-leave-an-organization-as-a-member-account-1472508784736" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Organizations.IAmazonOrganizations.ListAccounts(Amazon.Organizations.Model.ListAccountsRequest)" />
+            <member name="M:Amazon.Organizations.AmazonOrganizationsClient.ListAccounts(Amazon.Organizations.Model.ListAccountsRequest)" />
+            <member name="T:Amazon.Organizations.Model.ListAccountsRequest" />
+            <member name="T:Amazon.Organizations.Model.ListAccountsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example shows you how to request a list of the accounts in an organization:
+                </para>
+                <code
+                    title="To retrieve a list of all of the accounts in an organization"
+                    source=".\AWSSDKDocSamples\Organizations\Organizations.GeneratedSamples.cs"
+                    region="to-retrieve-a-list-of-all-of-the-accounts-in-an-organization-1472509590974" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Organizations.IAmazonOrganizations.ListAccountsForParent(Amazon.Organizations.Model.ListAccountsForParentRequest)" />
+            <member name="M:Amazon.Organizations.AmazonOrganizationsClient.ListAccountsForParent(Amazon.Organizations.Model.ListAccountsForParentRequest)" />
+            <member name="T:Amazon.Organizations.Model.ListAccountsForParentRequest" />
+            <member name="T:Amazon.Organizations.Model.ListAccountsForParentResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example shows how to request a list of the accounts in an OU:/n/n
+                </para>
+                <code
+                    title="To retrieve a list of all of the accounts in a root or OU"
+                    source=".\AWSSDKDocSamples\Organizations\Organizations.GeneratedSamples.cs"
+                    region="to-retrieve-a-list-of-all-of-the-accounts-in-a-root-or-ou-1472509590974" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Organizations.IAmazonOrganizations.ListChildren(Amazon.Organizations.Model.ListChildrenRequest)" />
+            <member name="M:Amazon.Organizations.AmazonOrganizationsClient.ListChildren(Amazon.Organizations.Model.ListChildrenRequest)" />
+            <member name="T:Amazon.Organizations.Model.ListChildrenRequest" />
+            <member name="T:Amazon.Organizations.Model.ListChildrenResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example shows how to request a list of the child OUs in a parent root or OU:/n/n
+                </para>
+                <code
+                    title="To retrieve a list of all of the child accounts and OUs in a parent root or OU"
+                    source=".\AWSSDKDocSamples\Organizations\Organizations.GeneratedSamples.cs"
+                    region="to-retrieve-a-list-of-all-of-the-child-accounts-and-OUs-in-a-parent-container" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Organizations.IAmazonOrganizations.ListCreateAccountStatus(Amazon.Organizations.Model.ListCreateAccountStatusRequest)" />
+            <member name="M:Amazon.Organizations.AmazonOrganizationsClient.ListCreateAccountStatus(Amazon.Organizations.Model.ListCreateAccountStatusRequest)" />
+            <member name="T:Amazon.Organizations.Model.ListCreateAccountStatusRequest" />
+            <member name="T:Amazon.Organizations.Model.ListCreateAccountStatusResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example shows a user requesting a list of only the completed account creation requests made for the current organization:
+                </para>
+                <code
+                    title="To get a list of completed account creation requests made in the organization"
+                    source=".\AWSSDKDocSamples\Organizations\Organizations.GeneratedSamples.cs"
+                    region="to-get-a-list-of-completed-account-creation-requests-made-in-the-organization" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Organizations.IAmazonOrganizations.ListCreateAccountStatus(Amazon.Organizations.Model.ListCreateAccountStatusRequest)" />
+            <member name="M:Amazon.Organizations.AmazonOrganizationsClient.ListCreateAccountStatus(Amazon.Organizations.Model.ListCreateAccountStatusRequest)" />
+            <member name="T:Amazon.Organizations.Model.ListCreateAccountStatusRequest" />
+            <member name="T:Amazon.Organizations.Model.ListCreateAccountStatusResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example shows a user requesting a list of only the in-progress account creation requests made for the current organization:
+                </para>
+                <code
+                    title="To get a list of all account creation requests made in the organization"
+                    source=".\AWSSDKDocSamples\Organizations\Organizations.GeneratedSamples.cs"
+                    region="to-get-a-list-of-all-account-creation-requests-made-in-the-organization-1472509174532" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Organizations.IAmazonOrganizations.ListHandshakesForAccount(Amazon.Organizations.Model.ListHandshakesForAccountRequest)" />
+            <member name="M:Amazon.Organizations.AmazonOrganizationsClient.ListHandshakesForAccount(Amazon.Organizations.Model.ListHandshakesForAccountRequest)" />
+            <member name="T:Amazon.Organizations.Model.ListHandshakesForAccountRequest" />
+            <member name="T:Amazon.Organizations.Model.ListHandshakesForAccountResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example shows you how to get a list of handshakes that are associated with the account of the credentials used to call the operation:
+                </para>
+                <code
+                    title="To retrieve a list of the handshakes sent to an account"
+                    source=".\AWSSDKDocSamples\Organizations\Organizations.GeneratedSamples.cs"
+                    region="to-retrieve-a-list-of-the-handshakes-sent-to-an-account-1472510214747" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Organizations.IAmazonOrganizations.ListHandshakesForOrganization(Amazon.Organizations.Model.ListHandshakesForOrganizationRequest)" />
+            <member name="M:Amazon.Organizations.AmazonOrganizationsClient.ListHandshakesForOrganization(Amazon.Organizations.Model.ListHandshakesForOrganizationRequest)" />
+            <member name="T:Amazon.Organizations.Model.ListHandshakesForOrganizationRequest" />
+            <member name="T:Amazon.Organizations.Model.ListHandshakesForOrganizationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example shows you how to get a list of handshakes associated with the current organization:
+                </para>
+                <code
+                    title="To retrieve a list of the handshakes associated with an organization"
+                    source=".\AWSSDKDocSamples\Organizations\Organizations.GeneratedSamples.cs"
+                    region="to-retrieve-a-list-of-the-handshakes-associated-with-an-organization-1472511206653" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Organizations.IAmazonOrganizations.ListOrganizationalUnitsForParent(Amazon.Organizations.Model.ListOrganizationalUnitsForParentRequest)" />
+            <member name="M:Amazon.Organizations.AmazonOrganizationsClient.ListOrganizationalUnitsForParent(Amazon.Organizations.Model.ListOrganizationalUnitsForParentRequest)" />
+            <member name="T:Amazon.Organizations.Model.ListOrganizationalUnitsForParentRequest" />
+            <member name="T:Amazon.Organizations.Model.ListOrganizationalUnitsForParentResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example shows how to get a list of OUs in a specified root:/n/n
+                </para>
+                <code
+                    title="To retrieve a list of all of the child OUs in a parent root or OU"
+                    source=".\AWSSDKDocSamples\Organizations\Organizations.GeneratedSamples.cs"
+                    region="to-retrieve-a-list-of-all-of-the-OUs-in-a-parent-container" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Organizations.IAmazonOrganizations.ListParents(Amazon.Organizations.Model.ListParentsRequest)" />
+            <member name="M:Amazon.Organizations.AmazonOrganizationsClient.ListParents(Amazon.Organizations.Model.ListParentsRequest)" />
+            <member name="T:Amazon.Organizations.Model.ListParentsRequest" />
+            <member name="T:Amazon.Organizations.Model.ListParentsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example shows how to list the root or OUs that contain account 444444444444:/n/n
+                </para>
+                <code
+                    title="To retrieve a list of all of the parents of a child OU or account"
+                    source=".\AWSSDKDocSamples\Organizations\Organizations.GeneratedSamples.cs"
+                    region="to-retrieve-a-list-of-all-of-the-parents-of-a-child-ou-or-account" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Organizations.IAmazonOrganizations.ListPolicies(Amazon.Organizations.Model.ListPoliciesRequest)" />
+            <member name="M:Amazon.Organizations.AmazonOrganizationsClient.ListPolicies(Amazon.Organizations.Model.ListPoliciesRequest)" />
+            <member name="T:Amazon.Organizations.Model.ListPoliciesRequest" />
+            <member name="T:Amazon.Organizations.Model.ListPoliciesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example shows how to get a list of service control policies (SCPs):/n/n
+                </para>
+                <code
+                    title="To retrieve a list policies in the organization"
+                    source=".\AWSSDKDocSamples\Organizations\Organizations.GeneratedSamples.cs"
+                    region="to-retrieve-a-list-of--policies-in-the-organization" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Organizations.IAmazonOrganizations.ListPoliciesForTarget(Amazon.Organizations.Model.ListPoliciesForTargetRequest)" />
+            <member name="M:Amazon.Organizations.AmazonOrganizationsClient.ListPoliciesForTarget(Amazon.Organizations.Model.ListPoliciesForTargetRequest)" />
+            <member name="T:Amazon.Organizations.Model.ListPoliciesForTargetRequest" />
+            <member name="T:Amazon.Organizations.Model.ListPoliciesForTargetResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example shows how to get a list of all service control policies (SCPs) of the type specified by the Filter parameter, that are directly attached to an account. The returned list does not include policies that apply to the account because of inheritance from its location in an OU hierarchy:/n/n
+                </para>
+                <code
+                    title="To retrieve a list policies attached to a root, OU, or account"
+                    source=".\AWSSDKDocSamples\Organizations\Organizations.GeneratedSamples.cs"
+                    region="to-retrieve-a-list-of-policies-attached-to-a-root-ou-or-account" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Organizations.IAmazonOrganizations.ListRoots(Amazon.Organizations.Model.ListRootsRequest)" />
+            <member name="M:Amazon.Organizations.AmazonOrganizationsClient.ListRoots(Amazon.Organizations.Model.ListRootsRequest)" />
+            <member name="T:Amazon.Organizations.Model.ListRootsRequest" />
+            <member name="T:Amazon.Organizations.Model.ListRootsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example shows how to get the list of the roots in the current organization:/n/n
+                </para>
+                <code
+                    title="To retrieve a list of roots in the organization"
+                    source=".\AWSSDKDocSamples\Organizations\Organizations.GeneratedSamples.cs"
+                    region="to-retrieve-a-list-of-roots-in-the-organization" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Organizations.IAmazonOrganizations.ListTargetsForPolicy(Amazon.Organizations.Model.ListTargetsForPolicyRequest)" />
+            <member name="M:Amazon.Organizations.AmazonOrganizationsClient.ListTargetsForPolicy(Amazon.Organizations.Model.ListTargetsForPolicyRequest)" />
+            <member name="T:Amazon.Organizations.Model.ListTargetsForPolicyRequest" />
+            <member name="T:Amazon.Organizations.Model.ListTargetsForPolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example shows how to get the list of roots, OUs, and accounts to which the specified policy is attached:/n/n
+                </para>
+                <code
+                    title="To retrieve a list of roots, OUs, and accounts to which a policy is attached"
+                    source=".\AWSSDKDocSamples\Organizations\Organizations.GeneratedSamples.cs"
+                    region="to-retrieve-a-list-of-roots-ous-and-accounts-to-which-a-policy-is-attached" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Organizations.IAmazonOrganizations.MoveAccount(Amazon.Organizations.Model.MoveAccountRequest)" />
+            <member name="M:Amazon.Organizations.AmazonOrganizationsClient.MoveAccount(Amazon.Organizations.Model.MoveAccountRequest)" />
+            <member name="T:Amazon.Organizations.Model.MoveAccountRequest" />
+            <member name="T:Amazon.Organizations.Model.MoveAccountResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example shows how to move a member account from the root to an OU:/n/n
+                </para>
+                <code
+                    title="To move an OU or account to another OU or the root"
+                    source=".\AWSSDKDocSamples\Organizations\Organizations.GeneratedSamples.cs"
+                    region="to-move-an-ou-or-account-to-another-ou-or-the-root" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Organizations.IAmazonOrganizations.RemoveAccountFromOrganization(Amazon.Organizations.Model.RemoveAccountFromOrganizationRequest)" />
+            <member name="M:Amazon.Organizations.AmazonOrganizationsClient.RemoveAccountFromOrganization(Amazon.Organizations.Model.RemoveAccountFromOrganizationRequest)" />
+            <member name="T:Amazon.Organizations.Model.RemoveAccountFromOrganizationRequest" />
+            <member name="T:Amazon.Organizations.Model.RemoveAccountFromOrganizationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example shows you how to remove an account from an organization:
+                </para>
+                <code
+                    title="To remove an account from an organization as the master account"
+                    source=".\AWSSDKDocSamples\Organizations\Organizations.GeneratedSamples.cs"
+                    region="to-remove-an-account-from-an-organization-as-the-master-account" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Organizations.IAmazonOrganizations.UpdateOrganizationalUnit(Amazon.Organizations.Model.UpdateOrganizationalUnitRequest)" />
+            <member name="M:Amazon.Organizations.AmazonOrganizationsClient.UpdateOrganizationalUnit(Amazon.Organizations.Model.UpdateOrganizationalUnitRequest)" />
+            <member name="T:Amazon.Organizations.Model.UpdateOrganizationalUnitRequest" />
+            <member name="T:Amazon.Organizations.Model.UpdateOrganizationalUnitResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example shows how to rename an OU. The output confirms the new name:/n/n
+                </para>
+                <code
+                    title="To rename an organizational unit"
+                    source=".\AWSSDKDocSamples\Organizations\Organizations.GeneratedSamples.cs"
+                    region="to-rename-an-organizational-unit" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Organizations.IAmazonOrganizations.UpdatePolicy(Amazon.Organizations.Model.UpdatePolicyRequest)" />
+            <member name="M:Amazon.Organizations.AmazonOrganizationsClient.UpdatePolicy(Amazon.Organizations.Model.UpdatePolicyRequest)" />
+            <member name="T:Amazon.Organizations.Model.UpdatePolicyRequest" />
+            <member name="T:Amazon.Organizations.Model.UpdatePolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example shows how to rename a policy and give it a new description and new content. The output confirms the new name and description text:/n/n
+                </para>
+                <code
+                    title="To update the details of a policy"
+                    source=".\AWSSDKDocSamples\Organizations\Organizations.GeneratedSamples.cs"
+                    region="to-update-the-details-of-a-policy" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Organizations.IAmazonOrganizations.UpdatePolicy(Amazon.Organizations.Model.UpdatePolicyRequest)" />
+            <member name="M:Amazon.Organizations.AmazonOrganizationsClient.UpdatePolicy(Amazon.Organizations.Model.UpdatePolicyRequest)" />
+            <member name="T:Amazon.Organizations.Model.UpdatePolicyRequest" />
+            <member name="T:Amazon.Organizations.Model.UpdatePolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example shows how to replace the JSON text of the SCP from the preceding example with a new JSON policy text string that allows S3 actions instead of EC2 actions:/n/n
+                </para>
+                <code
+                    title="To update the content of a policy"
+                    source=".\AWSSDKDocSamples\Organizations\Organizations.GeneratedSamples.cs"
+                    region="to-update-the-content-of-a-policy" />
+            </example>
+        </value>
+    </doc>
+</docs>

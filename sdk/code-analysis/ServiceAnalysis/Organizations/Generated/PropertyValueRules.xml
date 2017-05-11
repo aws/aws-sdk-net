@@ -25,7 +25,7 @@
     <property>Amazon.Organizations.Model.CreateAccountRequest.Email</property>
     <min>6</min>
     <max>64</max>
-    <pattern>[\w+=,.-]+@[\w.-]+\.[\w]+</pattern>
+    <pattern>[^\s@]+@[^\s@]+\.[^\s@]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.CreateAccountRequest.RoleName</property>
@@ -238,6 +238,12 @@
     <pattern>^arn:aws:organizations::\d{12}:account\/o-[a-z0-9]{10,32}\/\d{12}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Organizations.Model.Account.Email</property>
+    <min>6</min>
+    <max>64</max>
+    <pattern>[^\s@]+@[^\s@]+\.[^\s@]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Organizations.Model.Account.Id</property>
     <pattern>^\d{12}$</pattern>
   </property-value-rule>
@@ -296,7 +302,7 @@
     <property>Amazon.Organizations.Model.Organization.MasterAccountEmail</property>
     <min>6</min>
     <max>64</max>
-    <pattern>[\w+=,.-]+@[\w.-]+\.[\w]+</pattern>
+    <pattern>[^\s@]+@[^\s@]+\.[^\s@]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Organizations.Model.Organization.MasterAccountId</property>
