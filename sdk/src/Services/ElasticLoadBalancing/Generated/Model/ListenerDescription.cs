@@ -41,7 +41,10 @@ namespace Amazon.ElasticLoadBalancing.Model
         public ListenerDescription() { }
 
         /// <summary>
-        /// Gets and sets the property Listener.
+        /// Gets and sets the property Listener. 
+        /// <para>
+        /// The listener.
+        /// </para>
         /// </summary>
         public Listener Listener
         {

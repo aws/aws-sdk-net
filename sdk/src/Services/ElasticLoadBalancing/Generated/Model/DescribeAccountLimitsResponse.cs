@@ -28,47 +28,48 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// Contains the output of ModifyLoadBalancerAttributes.
+    /// This is the response object from the DescribeAccountLimits operation.
     /// </summary>
-    public partial class ModifyLoadBalancerAttributesResponse : AmazonWebServiceResponse
+    public partial class DescribeAccountLimitsResponse : AmazonWebServiceResponse
     {
-        private LoadBalancerAttributes _loadBalancerAttributes;
-        private string _loadBalancerName;
+        private List<Limit> _limits = new List<Limit>();
+        private string _nextMarker;
 
         /// <summary>
-        /// Gets and sets the property LoadBalancerAttributes. 
+        /// Gets and sets the property Limits. 
         /// <para>
-        /// Information about the load balancer attributes.
+        /// Information about the limits.
         /// </para>
         /// </summary>
-        public LoadBalancerAttributes LoadBalancerAttributes
+        public List<Limit> Limits
         {
-            get { return this._loadBalancerAttributes; }
-            set { this._loadBalancerAttributes = value; }
+            get { return this._limits; }
+            set { this._limits = value; }
         }
 
-        // Check to see if LoadBalancerAttributes property is set
-        internal bool IsSetLoadBalancerAttributes()
+        // Check to see if Limits property is set
+        internal bool IsSetLimits()
         {
-            return this._loadBalancerAttributes != null;
+            return this._limits != null && this._limits.Count > 0; 
         }
 
         /// <summary>
-        /// Gets and sets the property LoadBalancerName. 
+        /// Gets and sets the property NextMarker. 
         /// <para>
-        /// The name of the load balancer.
+        /// The marker to use when requesting the next set of results. If there are no additional
+        /// results, the string is empty.
         /// </para>
         /// </summary>
-        public string LoadBalancerName
+        public string NextMarker
         {
-            get { return this._loadBalancerName; }
-            set { this._loadBalancerName = value; }
+            get { return this._nextMarker; }
+            set { this._nextMarker = value; }
         }
 
-        // Check to see if LoadBalancerName property is set
-        internal bool IsSetLoadBalancerName()
+        // Check to see if NextMarker property is set
+        internal bool IsSetNextMarker()
         {
-            return this._loadBalancerName != null;
+            return this._nextMarker != null;
         }
 
     }

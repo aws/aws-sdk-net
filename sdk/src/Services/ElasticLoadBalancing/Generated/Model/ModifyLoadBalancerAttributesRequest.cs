@@ -40,7 +40,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information, see the following in the <i>Classic Load Balancers Guide</i>:
+    /// For more information, see the following in the <i>Classic Load Balancer Guide</i>:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -72,7 +72,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property LoadBalancerAttributes. 
         /// <para>
-        /// The attributes of the load balancer.
+        /// The attributes for the load balancer.
         /// </para>
         /// </summary>
         public LoadBalancerAttributes LoadBalancerAttributes

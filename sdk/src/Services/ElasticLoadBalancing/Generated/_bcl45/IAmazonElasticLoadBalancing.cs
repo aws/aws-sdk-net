@@ -43,19 +43,20 @@ namespace Amazon.ElasticLoadBalancing
     /// </para>
     ///  
     /// <para>
-    /// Elastic Load Balancing supports two types of load balancers: Classic load balancers
-    /// and Application load balancers (new). A Classic load balancer makes routing and load
+    /// Elastic Load Balancing supports two types of load balancers: Classic Load Balancers
+    /// and Application Load Balancers (new). A Classic Load Balancer makes routing and load
     /// balancing decisions either at the transport layer (TCP/SSL) or the application layer
-    /// (HTTP/HTTPS), and supports either EC2-Classic or a VPC. An Application load balancer
+    /// (HTTP/HTTPS), and supports either EC2-Classic or a VPC. An Application Load Balancer
     /// makes routing and load balancing decisions at the application layer (HTTP/HTTPS),
     /// supports path-based routing, and can route requests to one or more ports on each EC2
     /// instance or container instance in your virtual private cloud (VPC). For more information,
-    /// see the .
+    /// see the <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/what-is-load-balancing.html">Elastic
+    /// Load Balancing User Guide</a>.
     /// </para>
     ///  
     /// <para>
-    /// This reference covers the 2012-06-01 API, which supports Classic load balancers. The
-    /// 2015-12-01 API supports Application load balancers.
+    /// This reference covers the 2012-06-01 API, which supports Classic Load Balancers. The
+    /// 2015-12-01 API supports Application Load Balancers.
     /// </para>
     ///  
     /// <para>
@@ -88,7 +89,7 @@ namespace Amazon.ElasticLoadBalancing
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html">Tag
-        /// Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.
+        /// Your Classic Load Balancer</a> in the <i>Classic Load Balancer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddTags service method.</param>
@@ -104,6 +105,7 @@ namespace Amazon.ElasticLoadBalancing
         /// The quota for the number of tags that can be assigned to a load balancer has been
         /// reached.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/AddTags">REST API Reference for AddTags Operation</seealso>
         AddTagsResponse AddTags(AddTagsRequest request);
 
 
@@ -116,6 +118,7 @@ namespace Amazon.ElasticLoadBalancing
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/AddTags">REST API Reference for AddTags Operation</seealso>
         Task<AddTagsResponse> AddTagsAsync(AddTagsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -131,7 +134,7 @@ namespace Amazon.ElasticLoadBalancing
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-security-groups.html#elb-vpc-security-groups">Security
-        /// Groups for Load Balancers in a VPC</a> in the <i>Classic Load Balancers Guide</i>.
+        /// Groups for Load Balancers in a VPC</a> in the <i>Classic Load Balancer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ApplySecurityGroupsToLoadBalancer service method.</param>
@@ -146,6 +149,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.InvalidSecurityGroupException">
         /// One or more of the specified security groups do not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/ApplySecurityGroupsToLoadBalancer">REST API Reference for ApplySecurityGroupsToLoadBalancer Operation</seealso>
         ApplySecurityGroupsToLoadBalancerResponse ApplySecurityGroupsToLoadBalancer(ApplySecurityGroupsToLoadBalancerRequest request);
 
 
@@ -158,6 +162,7 @@ namespace Amazon.ElasticLoadBalancing
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/ApplySecurityGroupsToLoadBalancer">REST API Reference for ApplySecurityGroupsToLoadBalancer Operation</seealso>
         Task<ApplySecurityGroupsToLoadBalancerResponse> ApplySecurityGroupsToLoadBalancerAsync(ApplySecurityGroupsToLoadBalancerRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -172,7 +177,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <para>
         /// The load balancer evenly distributes requests across all registered subnets. For more
         /// information, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-manage-subnets.html">Add
-        /// or Remove Subnets for Your Load Balancer in a VPC</a> in the <i>Classic Load Balancers
+        /// or Remove Subnets for Your Load Balancer in a VPC</a> in the <i>Classic Load Balancer
         /// Guide</i>.
         /// </para>
         /// </summary>
@@ -191,6 +196,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.SubnetNotFoundException">
         /// One or more of the specified subnets do not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/AttachLoadBalancerToSubnets">REST API Reference for AttachLoadBalancerToSubnets Operation</seealso>
         AttachLoadBalancerToSubnetsResponse AttachLoadBalancerToSubnets(AttachLoadBalancerToSubnetsRequest request);
 
 
@@ -203,6 +209,7 @@ namespace Amazon.ElasticLoadBalancing
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/AttachLoadBalancerToSubnets">REST API Reference for AttachLoadBalancerToSubnets Operation</seealso>
         Task<AttachLoadBalancerToSubnetsResponse> AttachLoadBalancerToSubnetsAsync(AttachLoadBalancerToSubnetsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -217,7 +224,7 @@ namespace Amazon.ElasticLoadBalancing
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-healthchecks.html">Configure
-        /// Health Checks for Your Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.
+        /// Health Checks for Your Load Balancer</a> in the <i>Classic Load Balancer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ConfigureHealthCheck service method.</param>
@@ -226,6 +233,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
         /// The specified load balancer does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/ConfigureHealthCheck">REST API Reference for ConfigureHealthCheck Operation</seealso>
         ConfigureHealthCheckResponse ConfigureHealthCheck(ConfigureHealthCheckRequest request);
 
 
@@ -238,6 +246,7 @@ namespace Amazon.ElasticLoadBalancing
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/ConfigureHealthCheck">REST API Reference for ConfigureHealthCheck Operation</seealso>
         Task<ConfigureHealthCheckResponse> ConfigureHealthCheckAsync(ConfigureHealthCheckRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -265,7 +274,7 @@ namespace Amazon.ElasticLoadBalancing
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-sticky-sessions.html#enable-sticky-sessions-application">Application-Controlled
-        /// Session Stickiness</a> in the <i>Classic Load Balancers Guide</i>.
+        /// Session Stickiness</a> in the <i>Classic Load Balancer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAppCookieStickinessPolicy service method.</param>
@@ -283,6 +292,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.TooManyPoliciesException">
         /// The quota for the number of policies for this load balancer has been reached.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/CreateAppCookieStickinessPolicy">REST API Reference for CreateAppCookieStickinessPolicy Operation</seealso>
         CreateAppCookieStickinessPolicyResponse CreateAppCookieStickinessPolicy(CreateAppCookieStickinessPolicyRequest request);
 
 
@@ -295,6 +305,7 @@ namespace Amazon.ElasticLoadBalancing
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/CreateAppCookieStickinessPolicy">REST API Reference for CreateAppCookieStickinessPolicy Operation</seealso>
         Task<CreateAppCookieStickinessPolicyResponse> CreateAppCookieStickinessPolicyAsync(CreateAppCookieStickinessPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -325,7 +336,7 @@ namespace Amazon.ElasticLoadBalancing
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-sticky-sessions.html#enable-sticky-sessions-duration">Duration-Based
-        /// Session Stickiness</a> in the <i>Classic Load Balancers Guide</i>.
+        /// Session Stickiness</a> in the <i>Classic Load Balancer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLBCookieStickinessPolicy service method.</param>
@@ -343,6 +354,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.TooManyPoliciesException">
         /// The quota for the number of policies for this load balancer has been reached.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/CreateLBCookieStickinessPolicy">REST API Reference for CreateLBCookieStickinessPolicy Operation</seealso>
         CreateLBCookieStickinessPolicyResponse CreateLBCookieStickinessPolicy(CreateLBCookieStickinessPolicyRequest request);
 
 
@@ -355,6 +367,7 @@ namespace Amazon.ElasticLoadBalancing
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/CreateLBCookieStickinessPolicy">REST API Reference for CreateLBCookieStickinessPolicy Operation</seealso>
         Task<CreateLBCookieStickinessPolicyResponse> CreateLBCookieStickinessPolicyAsync(CreateLBCookieStickinessPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -363,7 +376,7 @@ namespace Amazon.ElasticLoadBalancing
 
 
         /// <summary>
-        /// Creates a Classic load balancer.
+        /// Creates a Classic Load Balancer.
         /// 
         ///  
         /// <para>
@@ -381,7 +394,7 @@ namespace Amazon.ElasticLoadBalancing
         /// You can create up to 20 load balancers per region per account. You can request an
         /// increase for the number of load balancers for your account. For more information,
         /// see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-limits.html">Limits
-        /// for Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.
+        /// for Your Classic Load Balancer</a> in the <i>Classic Load Balancer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLoadBalancer service method.</param>
@@ -423,8 +436,9 @@ namespace Amazon.ElasticLoadBalancing
         /// reached.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.UnsupportedProtocolException">
-        /// 
+        /// The specified protocol or signature version is not supported.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/CreateLoadBalancer">REST API Reference for CreateLoadBalancer Operation</seealso>
         CreateLoadBalancerResponse CreateLoadBalancer(CreateLoadBalancerRequest request);
 
 
@@ -437,6 +451,7 @@ namespace Amazon.ElasticLoadBalancing
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/CreateLoadBalancer">REST API Reference for CreateLoadBalancer Operation</seealso>
         Task<CreateLoadBalancerResponse> CreateLoadBalancerAsync(CreateLoadBalancerRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -452,7 +467,7 @@ namespace Amazon.ElasticLoadBalancing
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners
-        /// for Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.
+        /// for Your Classic Load Balancer</a> in the <i>Classic Load Balancer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLoadBalancerListeners service method.</param>
@@ -475,8 +490,9 @@ namespace Amazon.ElasticLoadBalancing
         /// The requested configuration change is not valid.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.UnsupportedProtocolException">
-        /// 
+        /// The specified protocol or signature version is not supported.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/CreateLoadBalancerListeners">REST API Reference for CreateLoadBalancerListeners Operation</seealso>
         CreateLoadBalancerListenersResponse CreateLoadBalancerListeners(CreateLoadBalancerListenersRequest request);
 
 
@@ -489,6 +505,7 @@ namespace Amazon.ElasticLoadBalancing
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/CreateLoadBalancerListeners">REST API Reference for CreateLoadBalancerListeners Operation</seealso>
         Task<CreateLoadBalancerListenersResponse> CreateLoadBalancerListenersAsync(CreateLoadBalancerListenersRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -523,6 +540,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.TooManyPoliciesException">
         /// The quota for the number of policies for this load balancer has been reached.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/CreateLoadBalancerPolicy">REST API Reference for CreateLoadBalancerPolicy Operation</seealso>
         CreateLoadBalancerPolicyResponse CreateLoadBalancerPolicy(CreateLoadBalancerPolicyRequest request);
 
 
@@ -535,6 +553,7 @@ namespace Amazon.ElasticLoadBalancing
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/CreateLoadBalancerPolicy">REST API Reference for CreateLoadBalancerPolicy Operation</seealso>
         Task<CreateLoadBalancerPolicyResponse> CreateLoadBalancerPolicyAsync(CreateLoadBalancerPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -561,6 +580,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="request">Container for the necessary parameters to execute the DeleteLoadBalancer service method.</param>
         /// 
         /// <returns>The response from the DeleteLoadBalancer service method, as returned by ElasticLoadBalancing.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DeleteLoadBalancer">REST API Reference for DeleteLoadBalancer Operation</seealso>
         DeleteLoadBalancerResponse DeleteLoadBalancer(DeleteLoadBalancerRequest request);
 
 
@@ -573,6 +593,7 @@ namespace Amazon.ElasticLoadBalancing
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DeleteLoadBalancer">REST API Reference for DeleteLoadBalancer Operation</seealso>
         Task<DeleteLoadBalancerResponse> DeleteLoadBalancerAsync(DeleteLoadBalancerRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -589,6 +610,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
         /// The specified load balancer does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DeleteLoadBalancerListeners">REST API Reference for DeleteLoadBalancerListeners Operation</seealso>
         DeleteLoadBalancerListenersResponse DeleteLoadBalancerListeners(DeleteLoadBalancerListenersRequest request);
 
 
@@ -601,6 +623,7 @@ namespace Amazon.ElasticLoadBalancing
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DeleteLoadBalancerListeners">REST API Reference for DeleteLoadBalancerListeners Operation</seealso>
         Task<DeleteLoadBalancerListenersResponse> DeleteLoadBalancerListenersAsync(DeleteLoadBalancerListenersRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -621,6 +644,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.InvalidConfigurationRequestException">
         /// The requested configuration change is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DeleteLoadBalancerPolicy">REST API Reference for DeleteLoadBalancerPolicy Operation</seealso>
         DeleteLoadBalancerPolicyResponse DeleteLoadBalancerPolicy(DeleteLoadBalancerPolicyRequest request);
 
 
@@ -633,6 +657,7 @@ namespace Amazon.ElasticLoadBalancing
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DeleteLoadBalancerPolicy">REST API Reference for DeleteLoadBalancerPolicy Operation</seealso>
         Task<DeleteLoadBalancerPolicyResponse> DeleteLoadBalancerPolicyAsync(DeleteLoadBalancerPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -652,7 +677,7 @@ namespace Amazon.ElasticLoadBalancing
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-deregister-register-instances.html">Register
-        /// or De-Register EC2 Instances</a> in the <i>Classic Load Balancers Guide</i>.
+        /// or De-Register EC2 Instances</a> in the <i>Classic Load Balancer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeregisterInstancesFromLoadBalancer service method.</param>
@@ -664,6 +689,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.InvalidEndPointException">
         /// The specified endpoint is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DeregisterInstancesFromLoadBalancer">REST API Reference for DeregisterInstancesFromLoadBalancer Operation</seealso>
         DeregisterInstancesFromLoadBalancerResponse DeregisterInstancesFromLoadBalancer(DeregisterInstancesFromLoadBalancerRequest request);
 
 
@@ -676,7 +702,41 @@ namespace Amazon.ElasticLoadBalancing
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DeregisterInstancesFromLoadBalancer">REST API Reference for DeregisterInstancesFromLoadBalancer Operation</seealso>
         Task<DeregisterInstancesFromLoadBalancerResponse> DeregisterInstancesFromLoadBalancerAsync(DeregisterInstancesFromLoadBalancerRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeAccountLimits
+
+
+        /// <summary>
+        /// Describes the current Elastic Load Balancing resource limits for your AWS account.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-limits.html">Limits
+        /// for Your Classic Load Balancer</a> in the <i>Classic Load Balancer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAccountLimits service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAccountLimits service method, as returned by ElasticLoadBalancing.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeAccountLimits">REST API Reference for DescribeAccountLimits Operation</seealso>
+        DescribeAccountLimitsResponse DescribeAccountLimits(DescribeAccountLimitsRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeAccountLimits operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAccountLimits operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeAccountLimits">REST API Reference for DescribeAccountLimits Operation</seealso>
+        Task<DescribeAccountLimitsResponse> DescribeAccountLimitsAsync(DescribeAccountLimitsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -699,6 +759,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.InvalidEndPointException">
         /// The specified endpoint is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeInstanceHealth">REST API Reference for DescribeInstanceHealth Operation</seealso>
         DescribeInstanceHealthResponse DescribeInstanceHealth(DescribeInstanceHealthRequest request);
 
 
@@ -711,6 +772,7 @@ namespace Amazon.ElasticLoadBalancing
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeInstanceHealth">REST API Reference for DescribeInstanceHealth Operation</seealso>
         Task<DescribeInstanceHealthResponse> DescribeInstanceHealthAsync(DescribeInstanceHealthRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -730,6 +792,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.LoadBalancerAttributeNotFoundException">
         /// The specified load balancer attribute does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeLoadBalancerAttributes">REST API Reference for DescribeLoadBalancerAttributes Operation</seealso>
         DescribeLoadBalancerAttributesResponse DescribeLoadBalancerAttributes(DescribeLoadBalancerAttributesRequest request);
 
 
@@ -742,6 +805,7 @@ namespace Amazon.ElasticLoadBalancing
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeLoadBalancerAttributes">REST API Reference for DescribeLoadBalancerAttributes Operation</seealso>
         Task<DescribeLoadBalancerAttributesResponse> DescribeLoadBalancerAttributesAsync(DescribeLoadBalancerAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -770,6 +834,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.PolicyNotFoundException">
         /// One or more of the specified policies do not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeLoadBalancerPolicies">REST API Reference for DescribeLoadBalancerPolicies Operation</seealso>
         DescribeLoadBalancerPoliciesResponse DescribeLoadBalancerPolicies();
 
 
@@ -795,6 +860,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.PolicyNotFoundException">
         /// One or more of the specified policies do not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeLoadBalancerPolicies">REST API Reference for DescribeLoadBalancerPolicies Operation</seealso>
         DescribeLoadBalancerPoliciesResponse DescribeLoadBalancerPolicies(DescribeLoadBalancerPoliciesRequest request);
 
 
@@ -822,6 +888,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.PolicyNotFoundException">
         /// One or more of the specified policies do not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeLoadBalancerPolicies">REST API Reference for DescribeLoadBalancerPolicies Operation</seealso>
         Task<DescribeLoadBalancerPoliciesResponse> DescribeLoadBalancerPoliciesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -834,6 +901,7 @@ namespace Amazon.ElasticLoadBalancing
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeLoadBalancerPolicies">REST API Reference for DescribeLoadBalancerPolicies Operation</seealso>
         Task<DescribeLoadBalancerPoliciesResponse> DescribeLoadBalancerPoliciesAsync(DescribeLoadBalancerPoliciesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -862,6 +930,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.PolicyTypeNotFoundException">
         /// One or more of the specified policy types do not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeLoadBalancerPolicyTypes">REST API Reference for DescribeLoadBalancerPolicyTypes Operation</seealso>
         DescribeLoadBalancerPolicyTypesResponse DescribeLoadBalancerPolicyTypes();
 
 
@@ -887,6 +956,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.PolicyTypeNotFoundException">
         /// One or more of the specified policy types do not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeLoadBalancerPolicyTypes">REST API Reference for DescribeLoadBalancerPolicyTypes Operation</seealso>
         DescribeLoadBalancerPolicyTypesResponse DescribeLoadBalancerPolicyTypes(DescribeLoadBalancerPolicyTypesRequest request);
 
 
@@ -914,6 +984,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.PolicyTypeNotFoundException">
         /// One or more of the specified policy types do not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeLoadBalancerPolicyTypes">REST API Reference for DescribeLoadBalancerPolicyTypes Operation</seealso>
         Task<DescribeLoadBalancerPolicyTypesResponse> DescribeLoadBalancerPolicyTypesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -926,6 +997,7 @@ namespace Amazon.ElasticLoadBalancing
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeLoadBalancerPolicyTypes">REST API Reference for DescribeLoadBalancerPolicyTypes Operation</seealso>
         Task<DescribeLoadBalancerPolicyTypesResponse> DescribeLoadBalancerPolicyTypesAsync(DescribeLoadBalancerPolicyTypesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -945,6 +1017,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.DependencyThrottleException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeLoadBalancers">REST API Reference for DescribeLoadBalancers Operation</seealso>
         DescribeLoadBalancersResponse DescribeLoadBalancers();
 
 
@@ -961,6 +1034,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.DependencyThrottleException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeLoadBalancers">REST API Reference for DescribeLoadBalancers Operation</seealso>
         DescribeLoadBalancersResponse DescribeLoadBalancers(DescribeLoadBalancersRequest request);
 
 
@@ -979,6 +1053,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.DependencyThrottleException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeLoadBalancers">REST API Reference for DescribeLoadBalancers Operation</seealso>
         Task<DescribeLoadBalancersResponse> DescribeLoadBalancersAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -991,6 +1066,7 @@ namespace Amazon.ElasticLoadBalancing
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeLoadBalancers">REST API Reference for DescribeLoadBalancers Operation</seealso>
         Task<DescribeLoadBalancersResponse> DescribeLoadBalancersAsync(DescribeLoadBalancersRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1007,6 +1083,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
         /// The specified load balancer does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeTags">REST API Reference for DescribeTags Operation</seealso>
         DescribeTagsResponse DescribeTags(DescribeTagsRequest request);
 
 
@@ -1019,6 +1096,7 @@ namespace Amazon.ElasticLoadBalancing
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeTags">REST API Reference for DescribeTags Operation</seealso>
         Task<DescribeTagsResponse> DescribeTagsAsync(DescribeTagsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1045,6 +1123,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.InvalidConfigurationRequestException">
         /// The requested configuration change is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DetachLoadBalancerFromSubnets">REST API Reference for DetachLoadBalancerFromSubnets Operation</seealso>
         DetachLoadBalancerFromSubnetsResponse DetachLoadBalancerFromSubnets(DetachLoadBalancerFromSubnetsRequest request);
 
 
@@ -1057,6 +1136,7 @@ namespace Amazon.ElasticLoadBalancing
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DetachLoadBalancerFromSubnets">REST API Reference for DetachLoadBalancerFromSubnets Operation</seealso>
         Task<DetachLoadBalancerFromSubnetsResponse> DetachLoadBalancerFromSubnetsAsync(DetachLoadBalancerFromSubnetsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1079,7 +1159,7 @@ namespace Amazon.ElasticLoadBalancing
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-az.html">Add
-        /// or Remove Availability Zones</a> in the <i>Classic Load Balancers Guide</i>.
+        /// or Remove Availability Zones</a> in the <i>Classic Load Balancer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableAvailabilityZonesForLoadBalancer service method.</param>
@@ -1091,6 +1171,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.InvalidConfigurationRequestException">
         /// The requested configuration change is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DisableAvailabilityZonesForLoadBalancer">REST API Reference for DisableAvailabilityZonesForLoadBalancer Operation</seealso>
         DisableAvailabilityZonesForLoadBalancerResponse DisableAvailabilityZonesForLoadBalancer(DisableAvailabilityZonesForLoadBalancerRequest request);
 
 
@@ -1103,6 +1184,7 @@ namespace Amazon.ElasticLoadBalancing
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DisableAvailabilityZonesForLoadBalancer">REST API Reference for DisableAvailabilityZonesForLoadBalancer Operation</seealso>
         Task<DisableAvailabilityZonesForLoadBalancerResponse> DisableAvailabilityZonesForLoadBalancerAsync(DisableAvailabilityZonesForLoadBalancerRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1122,7 +1204,7 @@ namespace Amazon.ElasticLoadBalancing
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-az.html">Add
-        /// or Remove Availability Zones</a> in the <i>Classic Load Balancers Guide</i>.
+        /// or Remove Availability Zones</a> in the <i>Classic Load Balancer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableAvailabilityZonesForLoadBalancer service method.</param>
@@ -1131,6 +1213,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
         /// The specified load balancer does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/EnableAvailabilityZonesForLoadBalancer">REST API Reference for EnableAvailabilityZonesForLoadBalancer Operation</seealso>
         EnableAvailabilityZonesForLoadBalancerResponse EnableAvailabilityZonesForLoadBalancer(EnableAvailabilityZonesForLoadBalancerRequest request);
 
 
@@ -1143,6 +1226,7 @@ namespace Amazon.ElasticLoadBalancing
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/EnableAvailabilityZonesForLoadBalancer">REST API Reference for EnableAvailabilityZonesForLoadBalancer Operation</seealso>
         Task<EnableAvailabilityZonesForLoadBalancerResponse> EnableAvailabilityZonesForLoadBalancerAsync(EnableAvailabilityZonesForLoadBalancerRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1162,7 +1246,7 @@ namespace Amazon.ElasticLoadBalancing
         /// </para>
         ///  
         /// <para>
-        /// For more information, see the following in the <i>Classic Load Balancers Guide</i>:
+        /// For more information, see the following in the <i>Classic Load Balancer Guide</i>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1198,6 +1282,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.LoadBalancerAttributeNotFoundException">
         /// The specified load balancer attribute does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/ModifyLoadBalancerAttributes">REST API Reference for ModifyLoadBalancerAttributes Operation</seealso>
         ModifyLoadBalancerAttributesResponse ModifyLoadBalancerAttributes(ModifyLoadBalancerAttributesRequest request);
 
 
@@ -1210,6 +1295,7 @@ namespace Amazon.ElasticLoadBalancing
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/ModifyLoadBalancerAttributes">REST API Reference for ModifyLoadBalancerAttributes Operation</seealso>
         Task<ModifyLoadBalancerAttributesResponse> ModifyLoadBalancerAttributesAsync(ModifyLoadBalancerAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1248,7 +1334,7 @@ namespace Amazon.ElasticLoadBalancing
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-deregister-register-instances.html">Register
-        /// or De-Register EC2 Instances</a> in the <i>Classic Load Balancers Guide</i>.
+        /// or De-Register EC2 Instances</a> in the <i>Classic Load Balancer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterInstancesWithLoadBalancer service method.</param>
@@ -1260,6 +1346,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.InvalidEndPointException">
         /// The specified endpoint is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/RegisterInstancesWithLoadBalancer">REST API Reference for RegisterInstancesWithLoadBalancer Operation</seealso>
         RegisterInstancesWithLoadBalancerResponse RegisterInstancesWithLoadBalancer(RegisterInstancesWithLoadBalancerRequest request);
 
 
@@ -1272,6 +1359,7 @@ namespace Amazon.ElasticLoadBalancing
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/RegisterInstancesWithLoadBalancer">REST API Reference for RegisterInstancesWithLoadBalancer Operation</seealso>
         Task<RegisterInstancesWithLoadBalancerResponse> RegisterInstancesWithLoadBalancerAsync(RegisterInstancesWithLoadBalancerRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1288,6 +1376,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
         /// The specified load balancer does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/RemoveTags">REST API Reference for RemoveTags Operation</seealso>
         RemoveTagsResponse RemoveTags(RemoveTagsRequest request);
 
 
@@ -1300,6 +1389,7 @@ namespace Amazon.ElasticLoadBalancing
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/RemoveTags">REST API Reference for RemoveTags Operation</seealso>
         Task<RemoveTagsResponse> RemoveTagsAsync(RemoveTagsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1315,7 +1405,7 @@ namespace Amazon.ElasticLoadBalancing
         ///  
         /// <para>
         /// For more information about updating your SSL certificate, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-update-ssl-cert.html">Replace
-        /// the SSL Certificate for Your Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.
+        /// the SSL Certificate for Your Load Balancer</a> in the <i>Classic Load Balancer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetLoadBalancerListenerSSLCertificate service method.</param>
@@ -1337,8 +1427,9 @@ namespace Amazon.ElasticLoadBalancing
         /// The load balancer does not have a listener configured at the specified port.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.UnsupportedProtocolException">
-        /// 
+        /// The specified protocol or signature version is not supported.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/SetLoadBalancerListenerSSLCertificate">REST API Reference for SetLoadBalancerListenerSSLCertificate Operation</seealso>
         SetLoadBalancerListenerSSLCertificateResponse SetLoadBalancerListenerSSLCertificate(SetLoadBalancerListenerSSLCertificateRequest request);
 
 
@@ -1351,6 +1442,7 @@ namespace Amazon.ElasticLoadBalancing
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/SetLoadBalancerListenerSSLCertificate">REST API Reference for SetLoadBalancerListenerSSLCertificate Operation</seealso>
         Task<SetLoadBalancerListenerSSLCertificateResponse> SetLoadBalancerListenerSSLCertificateAsync(SetLoadBalancerListenerSSLCertificateRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1378,9 +1470,9 @@ namespace Amazon.ElasticLoadBalancing
         ///  
         /// <para>
         /// For more information about enabling back-end instance authentication, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-create-https-ssl-load-balancer.html#configure_backendauth_clt">Configure
-        /// Back-end Instance Authentication</a> in the <i>Classic Load Balancers Guide</i>. For
+        /// Back-end Instance Authentication</a> in the <i>Classic Load Balancer Guide</i>. For
         /// more information about Proxy Protocol, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-proxy-protocol.html">Configure
-        /// Proxy Protocol Support</a> in the <i>Classic Load Balancers Guide</i>.
+        /// Proxy Protocol Support</a> in the <i>Classic Load Balancer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetLoadBalancerPoliciesForBackendServer service method.</param>
@@ -1395,6 +1487,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.PolicyNotFoundException">
         /// One or more of the specified policies do not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/SetLoadBalancerPoliciesForBackendServer">REST API Reference for SetLoadBalancerPoliciesForBackendServer Operation</seealso>
         SetLoadBalancerPoliciesForBackendServerResponse SetLoadBalancerPoliciesForBackendServer(SetLoadBalancerPoliciesForBackendServerRequest request);
 
 
@@ -1407,6 +1500,7 @@ namespace Amazon.ElasticLoadBalancing
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/SetLoadBalancerPoliciesForBackendServer">REST API Reference for SetLoadBalancerPoliciesForBackendServer Operation</seealso>
         Task<SetLoadBalancerPoliciesForBackendServerResponse> SetLoadBalancerPoliciesForBackendServerAsync(SetLoadBalancerPoliciesForBackendServerRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1427,7 +1521,7 @@ namespace Amazon.ElasticLoadBalancing
         /// For more information about setting policies, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/ssl-config-update.html">Update
         /// the SSL Negotiation Configuration</a>, <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-sticky-sessions.html#enable-sticky-sessions-duration">Duration-Based
         /// Session Stickiness</a>, and <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-sticky-sessions.html#enable-sticky-sessions-application">Application-Controlled
-        /// Session Stickiness</a> in the <i>Classic Load Balancers Guide</i>.
+        /// Session Stickiness</a> in the <i>Classic Load Balancer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetLoadBalancerPoliciesOfListener service method.</param>
@@ -1445,6 +1539,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.PolicyNotFoundException">
         /// One or more of the specified policies do not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/SetLoadBalancerPoliciesOfListener">REST API Reference for SetLoadBalancerPoliciesOfListener Operation</seealso>
         SetLoadBalancerPoliciesOfListenerResponse SetLoadBalancerPoliciesOfListener(SetLoadBalancerPoliciesOfListenerRequest request);
 
 
@@ -1457,6 +1552,7 @@ namespace Amazon.ElasticLoadBalancing
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/SetLoadBalancerPoliciesOfListener">REST API Reference for SetLoadBalancerPoliciesOfListener Operation</seealso>
         Task<SetLoadBalancerPoliciesOfListenerResponse> SetLoadBalancerPoliciesOfListenerAsync(SetLoadBalancerPoliciesOfListenerRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion

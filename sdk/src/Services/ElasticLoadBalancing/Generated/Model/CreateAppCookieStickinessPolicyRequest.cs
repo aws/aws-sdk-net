@@ -48,7 +48,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     ///  
     /// <para>
     /// For more information, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-sticky-sessions.html#enable-sticky-sessions-application">Application-Controlled
-    /// Session Stickiness</a> in the <i>Classic Load Balancers Guide</i>.
+    /// Session Stickiness</a> in the <i>Classic Load Balancer Guide</i>.
     /// </para>
     /// </summary>
     public partial class CreateAppCookieStickinessPolicyRequest : AmazonElasticLoadBalancingRequest

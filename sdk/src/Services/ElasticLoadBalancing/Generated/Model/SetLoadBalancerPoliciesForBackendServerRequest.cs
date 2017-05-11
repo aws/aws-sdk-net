@@ -48,9 +48,9 @@ namespace Amazon.ElasticLoadBalancing.Model
     ///  
     /// <para>
     /// For more information about enabling back-end instance authentication, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-create-https-ssl-load-balancer.html#configure_backendauth_clt">Configure
-    /// Back-end Instance Authentication</a> in the <i>Classic Load Balancers Guide</i>. For
+    /// Back-end Instance Authentication</a> in the <i>Classic Load Balancer Guide</i>. For
     /// more information about Proxy Protocol, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-proxy-protocol.html">Configure
-    /// Proxy Protocol Support</a> in the <i>Classic Load Balancers Guide</i>.
+    /// Proxy Protocol Support</a> in the <i>Classic Load Balancer Guide</i>.
     /// </para>
     /// </summary>
     public partial class SetLoadBalancerPoliciesForBackendServerRequest : AmazonElasticLoadBalancingRequest

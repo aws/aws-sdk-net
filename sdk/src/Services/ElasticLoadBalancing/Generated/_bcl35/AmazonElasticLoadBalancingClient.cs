@@ -45,19 +45,20 @@ namespace Amazon.ElasticLoadBalancing
     /// </para>
     ///  
     /// <para>
-    /// Elastic Load Balancing supports two types of load balancers: Classic load balancers
-    /// and Application load balancers (new). A Classic load balancer makes routing and load
+    /// Elastic Load Balancing supports two types of load balancers: Classic Load Balancers
+    /// and Application Load Balancers (new). A Classic Load Balancer makes routing and load
     /// balancing decisions either at the transport layer (TCP/SSL) or the application layer
-    /// (HTTP/HTTPS), and supports either EC2-Classic or a VPC. An Application load balancer
+    /// (HTTP/HTTPS), and supports either EC2-Classic or a VPC. An Application Load Balancer
     /// makes routing and load balancing decisions at the application layer (HTTP/HTTPS),
     /// supports path-based routing, and can route requests to one or more ports on each EC2
     /// instance or container instance in your virtual private cloud (VPC). For more information,
-    /// see the .
+    /// see the <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/what-is-load-balancing.html">Elastic
+    /// Load Balancing User Guide</a>.
     /// </para>
     ///  
     /// <para>
-    /// This reference covers the 2012-06-01 API, which supports Classic load balancers. The
-    /// 2015-12-01 API supports Application load balancers.
+    /// This reference covers the 2012-06-01 API, which supports Classic Load Balancers. The
+    /// 2015-12-01 API supports Application Load Balancers.
     /// </para>
     ///  
     /// <para>
@@ -281,7 +282,7 @@ namespace Amazon.ElasticLoadBalancing
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html">Tag
-        /// Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.
+        /// Your Classic Load Balancer</a> in the <i>Classic Load Balancer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddTags service method.</param>
@@ -297,6 +298,7 @@ namespace Amazon.ElasticLoadBalancing
         /// The quota for the number of tags that can be assigned to a load balancer has been
         /// reached.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/AddTags">REST API Reference for AddTags Operation</seealso>
         public AddTagsResponse AddTags(AddTagsRequest request)
         {
             var marshaller = new AddTagsRequestMarshaller();
@@ -316,6 +318,7 @@ namespace Amazon.ElasticLoadBalancing
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAddTags
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/AddTags">REST API Reference for AddTags Operation</seealso>
         public IAsyncResult BeginAddTags(AddTagsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AddTagsRequestMarshaller();
@@ -332,6 +335,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAddTags.</param>
         /// 
         /// <returns>Returns a  AddTagsResult from ElasticLoadBalancing.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/AddTags">REST API Reference for AddTags Operation</seealso>
         public  AddTagsResponse EndAddTags(IAsyncResult asyncResult)
         {
             return EndInvoke<AddTagsResponse>(asyncResult);
@@ -349,7 +353,7 @@ namespace Amazon.ElasticLoadBalancing
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-security-groups.html#elb-vpc-security-groups">Security
-        /// Groups for Load Balancers in a VPC</a> in the <i>Classic Load Balancers Guide</i>.
+        /// Groups for Load Balancers in a VPC</a> in the <i>Classic Load Balancer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ApplySecurityGroupsToLoadBalancer service method.</param>
@@ -364,6 +368,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.InvalidSecurityGroupException">
         /// One or more of the specified security groups do not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/ApplySecurityGroupsToLoadBalancer">REST API Reference for ApplySecurityGroupsToLoadBalancer Operation</seealso>
         public ApplySecurityGroupsToLoadBalancerResponse ApplySecurityGroupsToLoadBalancer(ApplySecurityGroupsToLoadBalancerRequest request)
         {
             var marshaller = new ApplySecurityGroupsToLoadBalancerRequestMarshaller();
@@ -383,6 +388,7 @@ namespace Amazon.ElasticLoadBalancing
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndApplySecurityGroupsToLoadBalancer
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/ApplySecurityGroupsToLoadBalancer">REST API Reference for ApplySecurityGroupsToLoadBalancer Operation</seealso>
         public IAsyncResult BeginApplySecurityGroupsToLoadBalancer(ApplySecurityGroupsToLoadBalancerRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ApplySecurityGroupsToLoadBalancerRequestMarshaller();
@@ -399,6 +405,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginApplySecurityGroupsToLoadBalancer.</param>
         /// 
         /// <returns>Returns a  ApplySecurityGroupsToLoadBalancerResult from ElasticLoadBalancing.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/ApplySecurityGroupsToLoadBalancer">REST API Reference for ApplySecurityGroupsToLoadBalancer Operation</seealso>
         public  ApplySecurityGroupsToLoadBalancerResponse EndApplySecurityGroupsToLoadBalancer(IAsyncResult asyncResult)
         {
             return EndInvoke<ApplySecurityGroupsToLoadBalancerResponse>(asyncResult);
@@ -415,7 +422,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <para>
         /// The load balancer evenly distributes requests across all registered subnets. For more
         /// information, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-manage-subnets.html">Add
-        /// or Remove Subnets for Your Load Balancer in a VPC</a> in the <i>Classic Load Balancers
+        /// or Remove Subnets for Your Load Balancer in a VPC</a> in the <i>Classic Load Balancer
         /// Guide</i>.
         /// </para>
         /// </summary>
@@ -434,6 +441,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.SubnetNotFoundException">
         /// One or more of the specified subnets do not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/AttachLoadBalancerToSubnets">REST API Reference for AttachLoadBalancerToSubnets Operation</seealso>
         public AttachLoadBalancerToSubnetsResponse AttachLoadBalancerToSubnets(AttachLoadBalancerToSubnetsRequest request)
         {
             var marshaller = new AttachLoadBalancerToSubnetsRequestMarshaller();
@@ -453,6 +461,7 @@ namespace Amazon.ElasticLoadBalancing
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAttachLoadBalancerToSubnets
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/AttachLoadBalancerToSubnets">REST API Reference for AttachLoadBalancerToSubnets Operation</seealso>
         public IAsyncResult BeginAttachLoadBalancerToSubnets(AttachLoadBalancerToSubnetsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AttachLoadBalancerToSubnetsRequestMarshaller();
@@ -469,6 +478,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAttachLoadBalancerToSubnets.</param>
         /// 
         /// <returns>Returns a  AttachLoadBalancerToSubnetsResult from ElasticLoadBalancing.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/AttachLoadBalancerToSubnets">REST API Reference for AttachLoadBalancerToSubnets Operation</seealso>
         public  AttachLoadBalancerToSubnetsResponse EndAttachLoadBalancerToSubnets(IAsyncResult asyncResult)
         {
             return EndInvoke<AttachLoadBalancerToSubnetsResponse>(asyncResult);
@@ -485,7 +495,7 @@ namespace Amazon.ElasticLoadBalancing
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-healthchecks.html">Configure
-        /// Health Checks for Your Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.
+        /// Health Checks for Your Load Balancer</a> in the <i>Classic Load Balancer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ConfigureHealthCheck service method.</param>
@@ -494,6 +504,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
         /// The specified load balancer does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/ConfigureHealthCheck">REST API Reference for ConfigureHealthCheck Operation</seealso>
         public ConfigureHealthCheckResponse ConfigureHealthCheck(ConfigureHealthCheckRequest request)
         {
             var marshaller = new ConfigureHealthCheckRequestMarshaller();
@@ -513,6 +524,7 @@ namespace Amazon.ElasticLoadBalancing
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndConfigureHealthCheck
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/ConfigureHealthCheck">REST API Reference for ConfigureHealthCheck Operation</seealso>
         public IAsyncResult BeginConfigureHealthCheck(ConfigureHealthCheckRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ConfigureHealthCheckRequestMarshaller();
@@ -529,6 +541,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginConfigureHealthCheck.</param>
         /// 
         /// <returns>Returns a  ConfigureHealthCheckResult from ElasticLoadBalancing.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/ConfigureHealthCheck">REST API Reference for ConfigureHealthCheck Operation</seealso>
         public  ConfigureHealthCheckResponse EndConfigureHealthCheck(IAsyncResult asyncResult)
         {
             return EndInvoke<ConfigureHealthCheckResponse>(asyncResult);
@@ -558,7 +571,7 @@ namespace Amazon.ElasticLoadBalancing
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-sticky-sessions.html#enable-sticky-sessions-application">Application-Controlled
-        /// Session Stickiness</a> in the <i>Classic Load Balancers Guide</i>.
+        /// Session Stickiness</a> in the <i>Classic Load Balancer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAppCookieStickinessPolicy service method.</param>
@@ -576,6 +589,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.TooManyPoliciesException">
         /// The quota for the number of policies for this load balancer has been reached.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/CreateAppCookieStickinessPolicy">REST API Reference for CreateAppCookieStickinessPolicy Operation</seealso>
         public CreateAppCookieStickinessPolicyResponse CreateAppCookieStickinessPolicy(CreateAppCookieStickinessPolicyRequest request)
         {
             var marshaller = new CreateAppCookieStickinessPolicyRequestMarshaller();
@@ -595,6 +609,7 @@ namespace Amazon.ElasticLoadBalancing
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateAppCookieStickinessPolicy
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/CreateAppCookieStickinessPolicy">REST API Reference for CreateAppCookieStickinessPolicy Operation</seealso>
         public IAsyncResult BeginCreateAppCookieStickinessPolicy(CreateAppCookieStickinessPolicyRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateAppCookieStickinessPolicyRequestMarshaller();
@@ -611,6 +626,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateAppCookieStickinessPolicy.</param>
         /// 
         /// <returns>Returns a  CreateAppCookieStickinessPolicyResult from ElasticLoadBalancing.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/CreateAppCookieStickinessPolicy">REST API Reference for CreateAppCookieStickinessPolicy Operation</seealso>
         public  CreateAppCookieStickinessPolicyResponse EndCreateAppCookieStickinessPolicy(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateAppCookieStickinessPolicyResponse>(asyncResult);
@@ -643,7 +659,7 @@ namespace Amazon.ElasticLoadBalancing
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-sticky-sessions.html#enable-sticky-sessions-duration">Duration-Based
-        /// Session Stickiness</a> in the <i>Classic Load Balancers Guide</i>.
+        /// Session Stickiness</a> in the <i>Classic Load Balancer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLBCookieStickinessPolicy service method.</param>
@@ -661,6 +677,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.TooManyPoliciesException">
         /// The quota for the number of policies for this load balancer has been reached.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/CreateLBCookieStickinessPolicy">REST API Reference for CreateLBCookieStickinessPolicy Operation</seealso>
         public CreateLBCookieStickinessPolicyResponse CreateLBCookieStickinessPolicy(CreateLBCookieStickinessPolicyRequest request)
         {
             var marshaller = new CreateLBCookieStickinessPolicyRequestMarshaller();
@@ -680,6 +697,7 @@ namespace Amazon.ElasticLoadBalancing
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateLBCookieStickinessPolicy
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/CreateLBCookieStickinessPolicy">REST API Reference for CreateLBCookieStickinessPolicy Operation</seealso>
         public IAsyncResult BeginCreateLBCookieStickinessPolicy(CreateLBCookieStickinessPolicyRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateLBCookieStickinessPolicyRequestMarshaller();
@@ -696,6 +714,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateLBCookieStickinessPolicy.</param>
         /// 
         /// <returns>Returns a  CreateLBCookieStickinessPolicyResult from ElasticLoadBalancing.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/CreateLBCookieStickinessPolicy">REST API Reference for CreateLBCookieStickinessPolicy Operation</seealso>
         public  CreateLBCookieStickinessPolicyResponse EndCreateLBCookieStickinessPolicy(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateLBCookieStickinessPolicyResponse>(asyncResult);
@@ -706,7 +725,7 @@ namespace Amazon.ElasticLoadBalancing
         #region  CreateLoadBalancer
 
         /// <summary>
-        /// Creates a Classic load balancer.
+        /// Creates a Classic Load Balancer.
         /// 
         ///  
         /// <para>
@@ -724,7 +743,7 @@ namespace Amazon.ElasticLoadBalancing
         /// You can create up to 20 load balancers per region per account. You can request an
         /// increase for the number of load balancers for your account. For more information,
         /// see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-limits.html">Limits
-        /// for Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.
+        /// for Your Classic Load Balancer</a> in the <i>Classic Load Balancer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLoadBalancer service method.</param>
@@ -766,8 +785,9 @@ namespace Amazon.ElasticLoadBalancing
         /// reached.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.UnsupportedProtocolException">
-        /// 
+        /// The specified protocol or signature version is not supported.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/CreateLoadBalancer">REST API Reference for CreateLoadBalancer Operation</seealso>
         public CreateLoadBalancerResponse CreateLoadBalancer(CreateLoadBalancerRequest request)
         {
             var marshaller = new CreateLoadBalancerRequestMarshaller();
@@ -787,6 +807,7 @@ namespace Amazon.ElasticLoadBalancing
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateLoadBalancer
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/CreateLoadBalancer">REST API Reference for CreateLoadBalancer Operation</seealso>
         public IAsyncResult BeginCreateLoadBalancer(CreateLoadBalancerRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateLoadBalancerRequestMarshaller();
@@ -803,6 +824,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateLoadBalancer.</param>
         /// 
         /// <returns>Returns a  CreateLoadBalancerResult from ElasticLoadBalancing.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/CreateLoadBalancer">REST API Reference for CreateLoadBalancer Operation</seealso>
         public  CreateLoadBalancerResponse EndCreateLoadBalancer(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateLoadBalancerResponse>(asyncResult);
@@ -820,7 +842,7 @@ namespace Amazon.ElasticLoadBalancing
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners
-        /// for Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.
+        /// for Your Classic Load Balancer</a> in the <i>Classic Load Balancer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLoadBalancerListeners service method.</param>
@@ -843,8 +865,9 @@ namespace Amazon.ElasticLoadBalancing
         /// The requested configuration change is not valid.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.UnsupportedProtocolException">
-        /// 
+        /// The specified protocol or signature version is not supported.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/CreateLoadBalancerListeners">REST API Reference for CreateLoadBalancerListeners Operation</seealso>
         public CreateLoadBalancerListenersResponse CreateLoadBalancerListeners(CreateLoadBalancerListenersRequest request)
         {
             var marshaller = new CreateLoadBalancerListenersRequestMarshaller();
@@ -864,6 +887,7 @@ namespace Amazon.ElasticLoadBalancing
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateLoadBalancerListeners
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/CreateLoadBalancerListeners">REST API Reference for CreateLoadBalancerListeners Operation</seealso>
         public IAsyncResult BeginCreateLoadBalancerListeners(CreateLoadBalancerListenersRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateLoadBalancerListenersRequestMarshaller();
@@ -880,6 +904,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateLoadBalancerListeners.</param>
         /// 
         /// <returns>Returns a  CreateLoadBalancerListenersResult from ElasticLoadBalancing.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/CreateLoadBalancerListeners">REST API Reference for CreateLoadBalancerListeners Operation</seealso>
         public  CreateLoadBalancerListenersResponse EndCreateLoadBalancerListeners(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateLoadBalancerListenersResponse>(asyncResult);
@@ -916,6 +941,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.TooManyPoliciesException">
         /// The quota for the number of policies for this load balancer has been reached.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/CreateLoadBalancerPolicy">REST API Reference for CreateLoadBalancerPolicy Operation</seealso>
         public CreateLoadBalancerPolicyResponse CreateLoadBalancerPolicy(CreateLoadBalancerPolicyRequest request)
         {
             var marshaller = new CreateLoadBalancerPolicyRequestMarshaller();
@@ -935,6 +961,7 @@ namespace Amazon.ElasticLoadBalancing
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateLoadBalancerPolicy
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/CreateLoadBalancerPolicy">REST API Reference for CreateLoadBalancerPolicy Operation</seealso>
         public IAsyncResult BeginCreateLoadBalancerPolicy(CreateLoadBalancerPolicyRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateLoadBalancerPolicyRequestMarshaller();
@@ -951,6 +978,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateLoadBalancerPolicy.</param>
         /// 
         /// <returns>Returns a  CreateLoadBalancerPolicyResult from ElasticLoadBalancing.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/CreateLoadBalancerPolicy">REST API Reference for CreateLoadBalancerPolicy Operation</seealso>
         public  CreateLoadBalancerPolicyResponse EndCreateLoadBalancerPolicy(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateLoadBalancerPolicyResponse>(asyncResult);
@@ -979,6 +1007,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="request">Container for the necessary parameters to execute the DeleteLoadBalancer service method.</param>
         /// 
         /// <returns>The response from the DeleteLoadBalancer service method, as returned by ElasticLoadBalancing.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DeleteLoadBalancer">REST API Reference for DeleteLoadBalancer Operation</seealso>
         public DeleteLoadBalancerResponse DeleteLoadBalancer(DeleteLoadBalancerRequest request)
         {
             var marshaller = new DeleteLoadBalancerRequestMarshaller();
@@ -998,6 +1027,7 @@ namespace Amazon.ElasticLoadBalancing
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteLoadBalancer
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DeleteLoadBalancer">REST API Reference for DeleteLoadBalancer Operation</seealso>
         public IAsyncResult BeginDeleteLoadBalancer(DeleteLoadBalancerRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteLoadBalancerRequestMarshaller();
@@ -1014,6 +1044,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteLoadBalancer.</param>
         /// 
         /// <returns>Returns a  DeleteLoadBalancerResult from ElasticLoadBalancing.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DeleteLoadBalancer">REST API Reference for DeleteLoadBalancer Operation</seealso>
         public  DeleteLoadBalancerResponse EndDeleteLoadBalancer(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteLoadBalancerResponse>(asyncResult);
@@ -1032,6 +1063,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
         /// The specified load balancer does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DeleteLoadBalancerListeners">REST API Reference for DeleteLoadBalancerListeners Operation</seealso>
         public DeleteLoadBalancerListenersResponse DeleteLoadBalancerListeners(DeleteLoadBalancerListenersRequest request)
         {
             var marshaller = new DeleteLoadBalancerListenersRequestMarshaller();
@@ -1051,6 +1083,7 @@ namespace Amazon.ElasticLoadBalancing
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteLoadBalancerListeners
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DeleteLoadBalancerListeners">REST API Reference for DeleteLoadBalancerListeners Operation</seealso>
         public IAsyncResult BeginDeleteLoadBalancerListeners(DeleteLoadBalancerListenersRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteLoadBalancerListenersRequestMarshaller();
@@ -1067,6 +1100,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteLoadBalancerListeners.</param>
         /// 
         /// <returns>Returns a  DeleteLoadBalancerListenersResult from ElasticLoadBalancing.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DeleteLoadBalancerListeners">REST API Reference for DeleteLoadBalancerListeners Operation</seealso>
         public  DeleteLoadBalancerListenersResponse EndDeleteLoadBalancerListeners(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteLoadBalancerListenersResponse>(asyncResult);
@@ -1089,6 +1123,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.InvalidConfigurationRequestException">
         /// The requested configuration change is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DeleteLoadBalancerPolicy">REST API Reference for DeleteLoadBalancerPolicy Operation</seealso>
         public DeleteLoadBalancerPolicyResponse DeleteLoadBalancerPolicy(DeleteLoadBalancerPolicyRequest request)
         {
             var marshaller = new DeleteLoadBalancerPolicyRequestMarshaller();
@@ -1108,6 +1143,7 @@ namespace Amazon.ElasticLoadBalancing
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteLoadBalancerPolicy
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DeleteLoadBalancerPolicy">REST API Reference for DeleteLoadBalancerPolicy Operation</seealso>
         public IAsyncResult BeginDeleteLoadBalancerPolicy(DeleteLoadBalancerPolicyRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteLoadBalancerPolicyRequestMarshaller();
@@ -1124,6 +1160,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteLoadBalancerPolicy.</param>
         /// 
         /// <returns>Returns a  DeleteLoadBalancerPolicyResult from ElasticLoadBalancing.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DeleteLoadBalancerPolicy">REST API Reference for DeleteLoadBalancerPolicy Operation</seealso>
         public  DeleteLoadBalancerPolicyResponse EndDeleteLoadBalancerPolicy(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteLoadBalancerPolicyResponse>(asyncResult);
@@ -1145,7 +1182,7 @@ namespace Amazon.ElasticLoadBalancing
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-deregister-register-instances.html">Register
-        /// or De-Register EC2 Instances</a> in the <i>Classic Load Balancers Guide</i>.
+        /// or De-Register EC2 Instances</a> in the <i>Classic Load Balancer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeregisterInstancesFromLoadBalancer service method.</param>
@@ -1157,6 +1194,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.InvalidEndPointException">
         /// The specified endpoint is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DeregisterInstancesFromLoadBalancer">REST API Reference for DeregisterInstancesFromLoadBalancer Operation</seealso>
         public DeregisterInstancesFromLoadBalancerResponse DeregisterInstancesFromLoadBalancer(DeregisterInstancesFromLoadBalancerRequest request)
         {
             var marshaller = new DeregisterInstancesFromLoadBalancerRequestMarshaller();
@@ -1176,6 +1214,7 @@ namespace Amazon.ElasticLoadBalancing
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeregisterInstancesFromLoadBalancer
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DeregisterInstancesFromLoadBalancer">REST API Reference for DeregisterInstancesFromLoadBalancer Operation</seealso>
         public IAsyncResult BeginDeregisterInstancesFromLoadBalancer(DeregisterInstancesFromLoadBalancerRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeregisterInstancesFromLoadBalancerRequestMarshaller();
@@ -1192,9 +1231,69 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeregisterInstancesFromLoadBalancer.</param>
         /// 
         /// <returns>Returns a  DeregisterInstancesFromLoadBalancerResult from ElasticLoadBalancing.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DeregisterInstancesFromLoadBalancer">REST API Reference for DeregisterInstancesFromLoadBalancer Operation</seealso>
         public  DeregisterInstancesFromLoadBalancerResponse EndDeregisterInstancesFromLoadBalancer(IAsyncResult asyncResult)
         {
             return EndInvoke<DeregisterInstancesFromLoadBalancerResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeAccountLimits
+
+        /// <summary>
+        /// Describes the current Elastic Load Balancing resource limits for your AWS account.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-limits.html">Limits
+        /// for Your Classic Load Balancer</a> in the <i>Classic Load Balancer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAccountLimits service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAccountLimits service method, as returned by ElasticLoadBalancing.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeAccountLimits">REST API Reference for DescribeAccountLimits Operation</seealso>
+        public DescribeAccountLimitsResponse DescribeAccountLimits(DescribeAccountLimitsRequest request)
+        {
+            var marshaller = new DescribeAccountLimitsRequestMarshaller();
+            var unmarshaller = DescribeAccountLimitsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAccountLimitsRequest,DescribeAccountLimitsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeAccountLimits operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAccountLimits operation on AmazonElasticLoadBalancingClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAccountLimits
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeAccountLimits">REST API Reference for DescribeAccountLimits Operation</seealso>
+        public IAsyncResult BeginDescribeAccountLimits(DescribeAccountLimitsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DescribeAccountLimitsRequestMarshaller();
+            var unmarshaller = DescribeAccountLimitsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeAccountLimitsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeAccountLimits operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAccountLimits.</param>
+        /// 
+        /// <returns>Returns a  DescribeAccountLimitsResult from ElasticLoadBalancing.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeAccountLimits">REST API Reference for DescribeAccountLimits Operation</seealso>
+        public  DescribeAccountLimitsResponse EndDescribeAccountLimits(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeAccountLimitsResponse>(asyncResult);
         }
 
         #endregion
@@ -1217,6 +1316,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.InvalidEndPointException">
         /// The specified endpoint is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeInstanceHealth">REST API Reference for DescribeInstanceHealth Operation</seealso>
         public DescribeInstanceHealthResponse DescribeInstanceHealth(DescribeInstanceHealthRequest request)
         {
             var marshaller = new DescribeInstanceHealthRequestMarshaller();
@@ -1236,6 +1336,7 @@ namespace Amazon.ElasticLoadBalancing
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeInstanceHealth
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeInstanceHealth">REST API Reference for DescribeInstanceHealth Operation</seealso>
         public IAsyncResult BeginDescribeInstanceHealth(DescribeInstanceHealthRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeInstanceHealthRequestMarshaller();
@@ -1252,6 +1353,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeInstanceHealth.</param>
         /// 
         /// <returns>Returns a  DescribeInstanceHealthResult from ElasticLoadBalancing.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeInstanceHealth">REST API Reference for DescribeInstanceHealth Operation</seealso>
         public  DescribeInstanceHealthResponse EndDescribeInstanceHealth(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeInstanceHealthResponse>(asyncResult);
@@ -1273,6 +1375,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.LoadBalancerAttributeNotFoundException">
         /// The specified load balancer attribute does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeLoadBalancerAttributes">REST API Reference for DescribeLoadBalancerAttributes Operation</seealso>
         public DescribeLoadBalancerAttributesResponse DescribeLoadBalancerAttributes(DescribeLoadBalancerAttributesRequest request)
         {
             var marshaller = new DescribeLoadBalancerAttributesRequestMarshaller();
@@ -1292,6 +1395,7 @@ namespace Amazon.ElasticLoadBalancing
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeLoadBalancerAttributes
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeLoadBalancerAttributes">REST API Reference for DescribeLoadBalancerAttributes Operation</seealso>
         public IAsyncResult BeginDescribeLoadBalancerAttributes(DescribeLoadBalancerAttributesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeLoadBalancerAttributesRequestMarshaller();
@@ -1308,6 +1412,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeLoadBalancerAttributes.</param>
         /// 
         /// <returns>Returns a  DescribeLoadBalancerAttributesResult from ElasticLoadBalancing.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeLoadBalancerAttributes">REST API Reference for DescribeLoadBalancerAttributes Operation</seealso>
         public  DescribeLoadBalancerAttributesResponse EndDescribeLoadBalancerAttributes(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeLoadBalancerAttributesResponse>(asyncResult);
@@ -1338,6 +1443,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.PolicyNotFoundException">
         /// One or more of the specified policies do not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeLoadBalancerPolicies">REST API Reference for DescribeLoadBalancerPolicies Operation</seealso>
         public DescribeLoadBalancerPoliciesResponse DescribeLoadBalancerPolicies()
         {
             return DescribeLoadBalancerPolicies(new DescribeLoadBalancerPoliciesRequest());
@@ -1365,6 +1471,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.PolicyNotFoundException">
         /// One or more of the specified policies do not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeLoadBalancerPolicies">REST API Reference for DescribeLoadBalancerPolicies Operation</seealso>
         public DescribeLoadBalancerPoliciesResponse DescribeLoadBalancerPolicies(DescribeLoadBalancerPoliciesRequest request)
         {
             var marshaller = new DescribeLoadBalancerPoliciesRequestMarshaller();
@@ -1384,6 +1491,7 @@ namespace Amazon.ElasticLoadBalancing
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeLoadBalancerPolicies
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeLoadBalancerPolicies">REST API Reference for DescribeLoadBalancerPolicies Operation</seealso>
         public IAsyncResult BeginDescribeLoadBalancerPolicies(DescribeLoadBalancerPoliciesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeLoadBalancerPoliciesRequestMarshaller();
@@ -1400,6 +1508,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeLoadBalancerPolicies.</param>
         /// 
         /// <returns>Returns a  DescribeLoadBalancerPoliciesResult from ElasticLoadBalancing.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeLoadBalancerPolicies">REST API Reference for DescribeLoadBalancerPolicies Operation</seealso>
         public  DescribeLoadBalancerPoliciesResponse EndDescribeLoadBalancerPolicies(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeLoadBalancerPoliciesResponse>(asyncResult);
@@ -1430,6 +1539,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.PolicyTypeNotFoundException">
         /// One or more of the specified policy types do not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeLoadBalancerPolicyTypes">REST API Reference for DescribeLoadBalancerPolicyTypes Operation</seealso>
         public DescribeLoadBalancerPolicyTypesResponse DescribeLoadBalancerPolicyTypes()
         {
             return DescribeLoadBalancerPolicyTypes(new DescribeLoadBalancerPolicyTypesRequest());
@@ -1457,6 +1567,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.PolicyTypeNotFoundException">
         /// One or more of the specified policy types do not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeLoadBalancerPolicyTypes">REST API Reference for DescribeLoadBalancerPolicyTypes Operation</seealso>
         public DescribeLoadBalancerPolicyTypesResponse DescribeLoadBalancerPolicyTypes(DescribeLoadBalancerPolicyTypesRequest request)
         {
             var marshaller = new DescribeLoadBalancerPolicyTypesRequestMarshaller();
@@ -1476,6 +1587,7 @@ namespace Amazon.ElasticLoadBalancing
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeLoadBalancerPolicyTypes
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeLoadBalancerPolicyTypes">REST API Reference for DescribeLoadBalancerPolicyTypes Operation</seealso>
         public IAsyncResult BeginDescribeLoadBalancerPolicyTypes(DescribeLoadBalancerPolicyTypesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeLoadBalancerPolicyTypesRequestMarshaller();
@@ -1492,6 +1604,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeLoadBalancerPolicyTypes.</param>
         /// 
         /// <returns>Returns a  DescribeLoadBalancerPolicyTypesResult from ElasticLoadBalancing.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeLoadBalancerPolicyTypes">REST API Reference for DescribeLoadBalancerPolicyTypes Operation</seealso>
         public  DescribeLoadBalancerPolicyTypesResponse EndDescribeLoadBalancerPolicyTypes(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeLoadBalancerPolicyTypesResponse>(asyncResult);
@@ -1513,6 +1626,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.DependencyThrottleException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeLoadBalancers">REST API Reference for DescribeLoadBalancers Operation</seealso>
         public DescribeLoadBalancersResponse DescribeLoadBalancers()
         {
             return DescribeLoadBalancers(new DescribeLoadBalancersRequest());
@@ -1531,6 +1645,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.DependencyThrottleException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeLoadBalancers">REST API Reference for DescribeLoadBalancers Operation</seealso>
         public DescribeLoadBalancersResponse DescribeLoadBalancers(DescribeLoadBalancersRequest request)
         {
             var marshaller = new DescribeLoadBalancersRequestMarshaller();
@@ -1550,6 +1665,7 @@ namespace Amazon.ElasticLoadBalancing
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeLoadBalancers
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeLoadBalancers">REST API Reference for DescribeLoadBalancers Operation</seealso>
         public IAsyncResult BeginDescribeLoadBalancers(DescribeLoadBalancersRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeLoadBalancersRequestMarshaller();
@@ -1566,6 +1682,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeLoadBalancers.</param>
         /// 
         /// <returns>Returns a  DescribeLoadBalancersResult from ElasticLoadBalancing.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeLoadBalancers">REST API Reference for DescribeLoadBalancers Operation</seealso>
         public  DescribeLoadBalancersResponse EndDescribeLoadBalancers(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeLoadBalancersResponse>(asyncResult);
@@ -1584,6 +1701,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
         /// The specified load balancer does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeTags">REST API Reference for DescribeTags Operation</seealso>
         public DescribeTagsResponse DescribeTags(DescribeTagsRequest request)
         {
             var marshaller = new DescribeTagsRequestMarshaller();
@@ -1603,6 +1721,7 @@ namespace Amazon.ElasticLoadBalancing
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeTags
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeTags">REST API Reference for DescribeTags Operation</seealso>
         public IAsyncResult BeginDescribeTags(DescribeTagsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeTagsRequestMarshaller();
@@ -1619,6 +1738,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeTags.</param>
         /// 
         /// <returns>Returns a  DescribeTagsResult from ElasticLoadBalancing.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeTags">REST API Reference for DescribeTags Operation</seealso>
         public  DescribeTagsResponse EndDescribeTags(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeTagsResponse>(asyncResult);
@@ -1647,6 +1767,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.InvalidConfigurationRequestException">
         /// The requested configuration change is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DetachLoadBalancerFromSubnets">REST API Reference for DetachLoadBalancerFromSubnets Operation</seealso>
         public DetachLoadBalancerFromSubnetsResponse DetachLoadBalancerFromSubnets(DetachLoadBalancerFromSubnetsRequest request)
         {
             var marshaller = new DetachLoadBalancerFromSubnetsRequestMarshaller();
@@ -1666,6 +1787,7 @@ namespace Amazon.ElasticLoadBalancing
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDetachLoadBalancerFromSubnets
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DetachLoadBalancerFromSubnets">REST API Reference for DetachLoadBalancerFromSubnets Operation</seealso>
         public IAsyncResult BeginDetachLoadBalancerFromSubnets(DetachLoadBalancerFromSubnetsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DetachLoadBalancerFromSubnetsRequestMarshaller();
@@ -1682,6 +1804,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDetachLoadBalancerFromSubnets.</param>
         /// 
         /// <returns>Returns a  DetachLoadBalancerFromSubnetsResult from ElasticLoadBalancing.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DetachLoadBalancerFromSubnets">REST API Reference for DetachLoadBalancerFromSubnets Operation</seealso>
         public  DetachLoadBalancerFromSubnetsResponse EndDetachLoadBalancerFromSubnets(IAsyncResult asyncResult)
         {
             return EndInvoke<DetachLoadBalancerFromSubnetsResponse>(asyncResult);
@@ -1706,7 +1829,7 @@ namespace Amazon.ElasticLoadBalancing
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-az.html">Add
-        /// or Remove Availability Zones</a> in the <i>Classic Load Balancers Guide</i>.
+        /// or Remove Availability Zones</a> in the <i>Classic Load Balancer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableAvailabilityZonesForLoadBalancer service method.</param>
@@ -1718,6 +1841,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.InvalidConfigurationRequestException">
         /// The requested configuration change is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DisableAvailabilityZonesForLoadBalancer">REST API Reference for DisableAvailabilityZonesForLoadBalancer Operation</seealso>
         public DisableAvailabilityZonesForLoadBalancerResponse DisableAvailabilityZonesForLoadBalancer(DisableAvailabilityZonesForLoadBalancerRequest request)
         {
             var marshaller = new DisableAvailabilityZonesForLoadBalancerRequestMarshaller();
@@ -1737,6 +1861,7 @@ namespace Amazon.ElasticLoadBalancing
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisableAvailabilityZonesForLoadBalancer
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DisableAvailabilityZonesForLoadBalancer">REST API Reference for DisableAvailabilityZonesForLoadBalancer Operation</seealso>
         public IAsyncResult BeginDisableAvailabilityZonesForLoadBalancer(DisableAvailabilityZonesForLoadBalancerRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DisableAvailabilityZonesForLoadBalancerRequestMarshaller();
@@ -1753,6 +1878,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisableAvailabilityZonesForLoadBalancer.</param>
         /// 
         /// <returns>Returns a  DisableAvailabilityZonesForLoadBalancerResult from ElasticLoadBalancing.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DisableAvailabilityZonesForLoadBalancer">REST API Reference for DisableAvailabilityZonesForLoadBalancer Operation</seealso>
         public  DisableAvailabilityZonesForLoadBalancerResponse EndDisableAvailabilityZonesForLoadBalancer(IAsyncResult asyncResult)
         {
             return EndInvoke<DisableAvailabilityZonesForLoadBalancerResponse>(asyncResult);
@@ -1774,7 +1900,7 @@ namespace Amazon.ElasticLoadBalancing
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-az.html">Add
-        /// or Remove Availability Zones</a> in the <i>Classic Load Balancers Guide</i>.
+        /// or Remove Availability Zones</a> in the <i>Classic Load Balancer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableAvailabilityZonesForLoadBalancer service method.</param>
@@ -1783,6 +1909,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
         /// The specified load balancer does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/EnableAvailabilityZonesForLoadBalancer">REST API Reference for EnableAvailabilityZonesForLoadBalancer Operation</seealso>
         public EnableAvailabilityZonesForLoadBalancerResponse EnableAvailabilityZonesForLoadBalancer(EnableAvailabilityZonesForLoadBalancerRequest request)
         {
             var marshaller = new EnableAvailabilityZonesForLoadBalancerRequestMarshaller();
@@ -1802,6 +1929,7 @@ namespace Amazon.ElasticLoadBalancing
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndEnableAvailabilityZonesForLoadBalancer
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/EnableAvailabilityZonesForLoadBalancer">REST API Reference for EnableAvailabilityZonesForLoadBalancer Operation</seealso>
         public IAsyncResult BeginEnableAvailabilityZonesForLoadBalancer(EnableAvailabilityZonesForLoadBalancerRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new EnableAvailabilityZonesForLoadBalancerRequestMarshaller();
@@ -1818,6 +1946,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginEnableAvailabilityZonesForLoadBalancer.</param>
         /// 
         /// <returns>Returns a  EnableAvailabilityZonesForLoadBalancerResult from ElasticLoadBalancing.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/EnableAvailabilityZonesForLoadBalancer">REST API Reference for EnableAvailabilityZonesForLoadBalancer Operation</seealso>
         public  EnableAvailabilityZonesForLoadBalancerResponse EndEnableAvailabilityZonesForLoadBalancer(IAsyncResult asyncResult)
         {
             return EndInvoke<EnableAvailabilityZonesForLoadBalancerResponse>(asyncResult);
@@ -1839,7 +1968,7 @@ namespace Amazon.ElasticLoadBalancing
         /// </para>
         ///  
         /// <para>
-        /// For more information, see the following in the <i>Classic Load Balancers Guide</i>:
+        /// For more information, see the following in the <i>Classic Load Balancer Guide</i>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1875,6 +2004,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.LoadBalancerAttributeNotFoundException">
         /// The specified load balancer attribute does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/ModifyLoadBalancerAttributes">REST API Reference for ModifyLoadBalancerAttributes Operation</seealso>
         public ModifyLoadBalancerAttributesResponse ModifyLoadBalancerAttributes(ModifyLoadBalancerAttributesRequest request)
         {
             var marshaller = new ModifyLoadBalancerAttributesRequestMarshaller();
@@ -1894,6 +2024,7 @@ namespace Amazon.ElasticLoadBalancing
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyLoadBalancerAttributes
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/ModifyLoadBalancerAttributes">REST API Reference for ModifyLoadBalancerAttributes Operation</seealso>
         public IAsyncResult BeginModifyLoadBalancerAttributes(ModifyLoadBalancerAttributesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ModifyLoadBalancerAttributesRequestMarshaller();
@@ -1910,6 +2041,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyLoadBalancerAttributes.</param>
         /// 
         /// <returns>Returns a  ModifyLoadBalancerAttributesResult from ElasticLoadBalancing.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/ModifyLoadBalancerAttributes">REST API Reference for ModifyLoadBalancerAttributes Operation</seealso>
         public  ModifyLoadBalancerAttributesResponse EndModifyLoadBalancerAttributes(IAsyncResult asyncResult)
         {
             return EndInvoke<ModifyLoadBalancerAttributesResponse>(asyncResult);
@@ -1950,7 +2082,7 @@ namespace Amazon.ElasticLoadBalancing
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-deregister-register-instances.html">Register
-        /// or De-Register EC2 Instances</a> in the <i>Classic Load Balancers Guide</i>.
+        /// or De-Register EC2 Instances</a> in the <i>Classic Load Balancer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterInstancesWithLoadBalancer service method.</param>
@@ -1962,6 +2094,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.InvalidEndPointException">
         /// The specified endpoint is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/RegisterInstancesWithLoadBalancer">REST API Reference for RegisterInstancesWithLoadBalancer Operation</seealso>
         public RegisterInstancesWithLoadBalancerResponse RegisterInstancesWithLoadBalancer(RegisterInstancesWithLoadBalancerRequest request)
         {
             var marshaller = new RegisterInstancesWithLoadBalancerRequestMarshaller();
@@ -1981,6 +2114,7 @@ namespace Amazon.ElasticLoadBalancing
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRegisterInstancesWithLoadBalancer
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/RegisterInstancesWithLoadBalancer">REST API Reference for RegisterInstancesWithLoadBalancer Operation</seealso>
         public IAsyncResult BeginRegisterInstancesWithLoadBalancer(RegisterInstancesWithLoadBalancerRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RegisterInstancesWithLoadBalancerRequestMarshaller();
@@ -1997,6 +2131,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRegisterInstancesWithLoadBalancer.</param>
         /// 
         /// <returns>Returns a  RegisterInstancesWithLoadBalancerResult from ElasticLoadBalancing.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/RegisterInstancesWithLoadBalancer">REST API Reference for RegisterInstancesWithLoadBalancer Operation</seealso>
         public  RegisterInstancesWithLoadBalancerResponse EndRegisterInstancesWithLoadBalancer(IAsyncResult asyncResult)
         {
             return EndInvoke<RegisterInstancesWithLoadBalancerResponse>(asyncResult);
@@ -2015,6 +2150,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.AccessPointNotFoundException">
         /// The specified load balancer does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/RemoveTags">REST API Reference for RemoveTags Operation</seealso>
         public RemoveTagsResponse RemoveTags(RemoveTagsRequest request)
         {
             var marshaller = new RemoveTagsRequestMarshaller();
@@ -2034,6 +2170,7 @@ namespace Amazon.ElasticLoadBalancing
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRemoveTags
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/RemoveTags">REST API Reference for RemoveTags Operation</seealso>
         public IAsyncResult BeginRemoveTags(RemoveTagsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RemoveTagsRequestMarshaller();
@@ -2050,6 +2187,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRemoveTags.</param>
         /// 
         /// <returns>Returns a  RemoveTagsResult from ElasticLoadBalancing.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/RemoveTags">REST API Reference for RemoveTags Operation</seealso>
         public  RemoveTagsResponse EndRemoveTags(IAsyncResult asyncResult)
         {
             return EndInvoke<RemoveTagsResponse>(asyncResult);
@@ -2067,7 +2205,7 @@ namespace Amazon.ElasticLoadBalancing
         ///  
         /// <para>
         /// For more information about updating your SSL certificate, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-update-ssl-cert.html">Replace
-        /// the SSL Certificate for Your Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.
+        /// the SSL Certificate for Your Load Balancer</a> in the <i>Classic Load Balancer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetLoadBalancerListenerSSLCertificate service method.</param>
@@ -2089,8 +2227,9 @@ namespace Amazon.ElasticLoadBalancing
         /// The load balancer does not have a listener configured at the specified port.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.UnsupportedProtocolException">
-        /// 
+        /// The specified protocol or signature version is not supported.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/SetLoadBalancerListenerSSLCertificate">REST API Reference for SetLoadBalancerListenerSSLCertificate Operation</seealso>
         public SetLoadBalancerListenerSSLCertificateResponse SetLoadBalancerListenerSSLCertificate(SetLoadBalancerListenerSSLCertificateRequest request)
         {
             var marshaller = new SetLoadBalancerListenerSSLCertificateRequestMarshaller();
@@ -2110,6 +2249,7 @@ namespace Amazon.ElasticLoadBalancing
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSetLoadBalancerListenerSSLCertificate
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/SetLoadBalancerListenerSSLCertificate">REST API Reference for SetLoadBalancerListenerSSLCertificate Operation</seealso>
         public IAsyncResult BeginSetLoadBalancerListenerSSLCertificate(SetLoadBalancerListenerSSLCertificateRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new SetLoadBalancerListenerSSLCertificateRequestMarshaller();
@@ -2126,6 +2266,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetLoadBalancerListenerSSLCertificate.</param>
         /// 
         /// <returns>Returns a  SetLoadBalancerListenerSSLCertificateResult from ElasticLoadBalancing.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/SetLoadBalancerListenerSSLCertificate">REST API Reference for SetLoadBalancerListenerSSLCertificate Operation</seealso>
         public  SetLoadBalancerListenerSSLCertificateResponse EndSetLoadBalancerListenerSSLCertificate(IAsyncResult asyncResult)
         {
             return EndInvoke<SetLoadBalancerListenerSSLCertificateResponse>(asyncResult);
@@ -2155,9 +2296,9 @@ namespace Amazon.ElasticLoadBalancing
         ///  
         /// <para>
         /// For more information about enabling back-end instance authentication, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-create-https-ssl-load-balancer.html#configure_backendauth_clt">Configure
-        /// Back-end Instance Authentication</a> in the <i>Classic Load Balancers Guide</i>. For
+        /// Back-end Instance Authentication</a> in the <i>Classic Load Balancer Guide</i>. For
         /// more information about Proxy Protocol, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-proxy-protocol.html">Configure
-        /// Proxy Protocol Support</a> in the <i>Classic Load Balancers Guide</i>.
+        /// Proxy Protocol Support</a> in the <i>Classic Load Balancer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetLoadBalancerPoliciesForBackendServer service method.</param>
@@ -2172,6 +2313,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.PolicyNotFoundException">
         /// One or more of the specified policies do not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/SetLoadBalancerPoliciesForBackendServer">REST API Reference for SetLoadBalancerPoliciesForBackendServer Operation</seealso>
         public SetLoadBalancerPoliciesForBackendServerResponse SetLoadBalancerPoliciesForBackendServer(SetLoadBalancerPoliciesForBackendServerRequest request)
         {
             var marshaller = new SetLoadBalancerPoliciesForBackendServerRequestMarshaller();
@@ -2191,6 +2333,7 @@ namespace Amazon.ElasticLoadBalancing
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSetLoadBalancerPoliciesForBackendServer
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/SetLoadBalancerPoliciesForBackendServer">REST API Reference for SetLoadBalancerPoliciesForBackendServer Operation</seealso>
         public IAsyncResult BeginSetLoadBalancerPoliciesForBackendServer(SetLoadBalancerPoliciesForBackendServerRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new SetLoadBalancerPoliciesForBackendServerRequestMarshaller();
@@ -2207,6 +2350,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetLoadBalancerPoliciesForBackendServer.</param>
         /// 
         /// <returns>Returns a  SetLoadBalancerPoliciesForBackendServerResult from ElasticLoadBalancing.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/SetLoadBalancerPoliciesForBackendServer">REST API Reference for SetLoadBalancerPoliciesForBackendServer Operation</seealso>
         public  SetLoadBalancerPoliciesForBackendServerResponse EndSetLoadBalancerPoliciesForBackendServer(IAsyncResult asyncResult)
         {
             return EndInvoke<SetLoadBalancerPoliciesForBackendServerResponse>(asyncResult);
@@ -2229,7 +2373,7 @@ namespace Amazon.ElasticLoadBalancing
         /// For more information about setting policies, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/ssl-config-update.html">Update
         /// the SSL Negotiation Configuration</a>, <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-sticky-sessions.html#enable-sticky-sessions-duration">Duration-Based
         /// Session Stickiness</a>, and <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-sticky-sessions.html#enable-sticky-sessions-application">Application-Controlled
-        /// Session Stickiness</a> in the <i>Classic Load Balancers Guide</i>.
+        /// Session Stickiness</a> in the <i>Classic Load Balancer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetLoadBalancerPoliciesOfListener service method.</param>
@@ -2247,6 +2391,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <exception cref="Amazon.ElasticLoadBalancing.Model.PolicyNotFoundException">
         /// One or more of the specified policies do not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/SetLoadBalancerPoliciesOfListener">REST API Reference for SetLoadBalancerPoliciesOfListener Operation</seealso>
         public SetLoadBalancerPoliciesOfListenerResponse SetLoadBalancerPoliciesOfListener(SetLoadBalancerPoliciesOfListenerRequest request)
         {
             var marshaller = new SetLoadBalancerPoliciesOfListenerRequestMarshaller();
@@ -2266,6 +2411,7 @@ namespace Amazon.ElasticLoadBalancing
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSetLoadBalancerPoliciesOfListener
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/SetLoadBalancerPoliciesOfListener">REST API Reference for SetLoadBalancerPoliciesOfListener Operation</seealso>
         public IAsyncResult BeginSetLoadBalancerPoliciesOfListener(SetLoadBalancerPoliciesOfListenerRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new SetLoadBalancerPoliciesOfListenerRequestMarshaller();
@@ -2282,6 +2428,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetLoadBalancerPoliciesOfListener.</param>
         /// 
         /// <returns>Returns a  SetLoadBalancerPoliciesOfListenerResult from ElasticLoadBalancing.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/SetLoadBalancerPoliciesOfListener">REST API Reference for SetLoadBalancerPoliciesOfListener Operation</seealso>
         public  SetLoadBalancerPoliciesOfListenerResponse EndSetLoadBalancerPoliciesOfListener(IAsyncResult asyncResult)
         {
             return EndInvoke<SetLoadBalancerPoliciesOfListenerResponse>(asyncResult);

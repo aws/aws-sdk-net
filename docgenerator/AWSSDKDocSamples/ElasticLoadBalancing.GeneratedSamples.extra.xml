@@ -1,0 +1,687 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing.AddTags(Amazon.ElasticLoadBalancing.Model.AddTagsRequest)" />
+            <member name="M:Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancingClient.AddTags(Amazon.ElasticLoadBalancing.Model.AddTagsRequest)" />
+            <member name="T:Amazon.ElasticLoadBalancing.Model.AddTagsRequest" />
+            <member name="T:Amazon.ElasticLoadBalancing.Model.AddTagsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example adds two tags to the specified load balancer.
+                </para>
+                <code
+                    title="To add tags to a load balancer"
+                    source=".\AWSSDKDocSamples\ElasticLoadBalancing\ElasticLoadBalancing.GeneratedSamples.cs"
+                    region="elb-add-tags-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing.ApplySecurityGroupsToLoadBalancer(Amazon.ElasticLoadBalancing.Model.ApplySecurityGroupsToLoadBalancerRequest)" />
+            <member name="M:Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancingClient.ApplySecurityGroupsToLoadBalancer(Amazon.ElasticLoadBalancing.Model.ApplySecurityGroupsToLoadBalancerRequest)" />
+            <member name="T:Amazon.ElasticLoadBalancing.Model.ApplySecurityGroupsToLoadBalancerRequest" />
+            <member name="T:Amazon.ElasticLoadBalancing.Model.ApplySecurityGroupsToLoadBalancerResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example associates a security group with the specified load balancer in a VPC.
+                </para>
+                <code
+                    title="To associate a security group with a load balancer in a VPC"
+                    source=".\AWSSDKDocSamples\ElasticLoadBalancing\ElasticLoadBalancing.GeneratedSamples.cs"
+                    region="elb-apply-security-groups-to-load-balancer-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing.AttachLoadBalancerToSubnets(Amazon.ElasticLoadBalancing.Model.AttachLoadBalancerToSubnetsRequest)" />
+            <member name="M:Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancingClient.AttachLoadBalancerToSubnets(Amazon.ElasticLoadBalancing.Model.AttachLoadBalancerToSubnetsRequest)" />
+            <member name="T:Amazon.ElasticLoadBalancing.Model.AttachLoadBalancerToSubnetsRequest" />
+            <member name="T:Amazon.ElasticLoadBalancing.Model.AttachLoadBalancerToSubnetsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example adds the specified subnet to the set of configured subnets for the specified load balancer.
+                </para>
+                <code
+                    title="To attach subnets to a load balancer"
+                    source=".\AWSSDKDocSamples\ElasticLoadBalancing\ElasticLoadBalancing.GeneratedSamples.cs"
+                    region="elb-attach-load-balancer-to-subnets-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing.ConfigureHealthCheck(Amazon.ElasticLoadBalancing.Model.ConfigureHealthCheckRequest)" />
+            <member name="M:Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancingClient.ConfigureHealthCheck(Amazon.ElasticLoadBalancing.Model.ConfigureHealthCheckRequest)" />
+            <member name="T:Amazon.ElasticLoadBalancing.Model.ConfigureHealthCheckRequest" />
+            <member name="T:Amazon.ElasticLoadBalancing.Model.ConfigureHealthCheckResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example specifies the health check settings used to evaluate the health of your backend EC2 instances.
+                </para>
+                <code
+                    title="To specify the health check settings for your backend EC2 instances"
+                    source=".\AWSSDKDocSamples\ElasticLoadBalancing\ElasticLoadBalancing.GeneratedSamples.cs"
+                    region="elb-configure-health-check-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing.CreateAppCookieStickinessPolicy(Amazon.ElasticLoadBalancing.Model.CreateAppCookieStickinessPolicyRequest)" />
+            <member name="M:Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancingClient.CreateAppCookieStickinessPolicy(Amazon.ElasticLoadBalancing.Model.CreateAppCookieStickinessPolicyRequest)" />
+            <member name="T:Amazon.ElasticLoadBalancing.Model.CreateAppCookieStickinessPolicyRequest" />
+            <member name="T:Amazon.ElasticLoadBalancing.Model.CreateAppCookieStickinessPolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example generates a stickiness policy that follows the sticky session lifetimes of the application-generated cookie.
+                </para>
+                <code
+                    title="To generate a stickiness policy for your load balancer"
+                    source=".\AWSSDKDocSamples\ElasticLoadBalancing\ElasticLoadBalancing.GeneratedSamples.cs"
+                    region="elb-create-app-cookie-stickiness-policy-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing.CreateLBCookieStickinessPolicy(Amazon.ElasticLoadBalancing.Model.CreateLBCookieStickinessPolicyRequest)" />
+            <member name="M:Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancingClient.CreateLBCookieStickinessPolicy(Amazon.ElasticLoadBalancing.Model.CreateLBCookieStickinessPolicyRequest)" />
+            <member name="T:Amazon.ElasticLoadBalancing.Model.CreateLBCookieStickinessPolicyRequest" />
+            <member name="T:Amazon.ElasticLoadBalancing.Model.CreateLBCookieStickinessPolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example generates a stickiness policy with sticky session lifetimes controlled by the specified expiration period.
+                </para>
+                <code
+                    title="To generate a duration-based stickiness policy for your load balancer"
+                    source=".\AWSSDKDocSamples\ElasticLoadBalancing\ElasticLoadBalancing.GeneratedSamples.cs"
+                    region="elb-create-lb-cookie-stickiness-policy-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing.CreateLoadBalancer(Amazon.ElasticLoadBalancing.Model.CreateLoadBalancerRequest)" />
+            <member name="M:Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancingClient.CreateLoadBalancer(Amazon.ElasticLoadBalancing.Model.CreateLoadBalancerRequest)" />
+            <member name="T:Amazon.ElasticLoadBalancing.Model.CreateLoadBalancerRequest" />
+            <member name="T:Amazon.ElasticLoadBalancing.Model.CreateLoadBalancerResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates a load balancer with an HTTP listener in a VPC.
+                </para>
+                <code
+                    title="To create an HTTP load balancer in a VPC"
+                    source=".\AWSSDKDocSamples\ElasticLoadBalancing\ElasticLoadBalancing.GeneratedSamples.cs"
+                    region="elb-create-load-balancer-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing.CreateLoadBalancer(Amazon.ElasticLoadBalancing.Model.CreateLoadBalancerRequest)" />
+            <member name="M:Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancingClient.CreateLoadBalancer(Amazon.ElasticLoadBalancing.Model.CreateLoadBalancerRequest)" />
+            <member name="T:Amazon.ElasticLoadBalancing.Model.CreateLoadBalancerRequest" />
+            <member name="T:Amazon.ElasticLoadBalancing.Model.CreateLoadBalancerResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates a load balancer with an HTTP listener in EC2-Classic.
+                </para>
+                <code
+                    title="To create an HTTP load balancer in EC2-Classic"
+                    source=".\AWSSDKDocSamples\ElasticLoadBalancing\ElasticLoadBalancing.GeneratedSamples.cs"
+                    region="elb-create-load-balancer-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing.CreateLoadBalancer(Amazon.ElasticLoadBalancing.Model.CreateLoadBalancerRequest)" />
+            <member name="M:Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancingClient.CreateLoadBalancer(Amazon.ElasticLoadBalancing.Model.CreateLoadBalancerRequest)" />
+            <member name="T:Amazon.ElasticLoadBalancing.Model.CreateLoadBalancerRequest" />
+            <member name="T:Amazon.ElasticLoadBalancing.Model.CreateLoadBalancerResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates a load balancer with an HTTPS listener in a VPC.
+                </para>
+                <code
+                    title="To create an HTTPS load balancer in a VPC"
+                    source=".\AWSSDKDocSamples\ElasticLoadBalancing\ElasticLoadBalancing.GeneratedSamples.cs"
+                    region="elb-create-load-balancer-3" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing.CreateLoadBalancer(Amazon.ElasticLoadBalancing.Model.CreateLoadBalancerRequest)" />
+            <member name="M:Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancingClient.CreateLoadBalancer(Amazon.ElasticLoadBalancing.Model.CreateLoadBalancerRequest)" />
+            <member name="T:Amazon.ElasticLoadBalancing.Model.CreateLoadBalancerRequest" />
+            <member name="T:Amazon.ElasticLoadBalancing.Model.CreateLoadBalancerResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates a load balancer with an HTTPS listener in EC2-Classic.
+                </para>
+                <code
+                    title="To create an HTTPS load balancer in EC2-Classic"
+                    source=".\AWSSDKDocSamples\ElasticLoadBalancing\ElasticLoadBalancing.GeneratedSamples.cs"
+                    region="elb-create-load-balancer-4" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing.CreateLoadBalancer(Amazon.ElasticLoadBalancing.Model.CreateLoadBalancerRequest)" />
+            <member name="M:Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancingClient.CreateLoadBalancer(Amazon.ElasticLoadBalancing.Model.CreateLoadBalancerRequest)" />
+            <member name="T:Amazon.ElasticLoadBalancing.Model.CreateLoadBalancerRequest" />
+            <member name="T:Amazon.ElasticLoadBalancing.Model.CreateLoadBalancerResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates an internal load balancer with an HTTP listener in a VPC.
+                </para>
+                <code
+                    title="To create an internal load balancer"
+                    source=".\AWSSDKDocSamples\ElasticLoadBalancing\ElasticLoadBalancing.GeneratedSamples.cs"
+                    region="elb-create-load-balancer-5" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing.CreateLoadBalancerListeners(Amazon.ElasticLoadBalancing.Model.CreateLoadBalancerListenersRequest)" />
+            <member name="M:Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancingClient.CreateLoadBalancerListeners(Amazon.ElasticLoadBalancing.Model.CreateLoadBalancerListenersRequest)" />
+            <member name="T:Amazon.ElasticLoadBalancing.Model.CreateLoadBalancerListenersRequest" />
+            <member name="T:Amazon.ElasticLoadBalancing.Model.CreateLoadBalancerListenersResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates a listener for your load balancer at port 80 using the HTTP protocol.
+                </para>
+                <code
+                    title="To create an HTTP listener for a load balancer"
+                    source=".\AWSSDKDocSamples\ElasticLoadBalancing\ElasticLoadBalancing.GeneratedSamples.cs"
+                    region="elb-create-load-balancer-listeners-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing.CreateLoadBalancerListeners(Amazon.ElasticLoadBalancing.Model.CreateLoadBalancerListenersRequest)" />
+            <member name="M:Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancingClient.CreateLoadBalancerListeners(Amazon.ElasticLoadBalancing.Model.CreateLoadBalancerListenersRequest)" />
+            <member name="T:Amazon.ElasticLoadBalancing.Model.CreateLoadBalancerListenersRequest" />
+            <member name="T:Amazon.ElasticLoadBalancing.Model.CreateLoadBalancerListenersResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates a listener for your load balancer at port 443 using the HTTPS protocol.
+                </para>
+                <code
+                    title="To create an HTTPS listener for a load balancer"
+                    source=".\AWSSDKDocSamples\ElasticLoadBalancing\ElasticLoadBalancing.GeneratedSamples.cs"
+                    region="elb-create-load-balancer-listeners-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing.CreateLoadBalancerPolicy(Amazon.ElasticLoadBalancing.Model.CreateLoadBalancerPolicyRequest)" />
+            <member name="M:Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancingClient.CreateLoadBalancerPolicy(Amazon.ElasticLoadBalancing.Model.CreateLoadBalancerPolicyRequest)" />
+            <member name="T:Amazon.ElasticLoadBalancing.Model.CreateLoadBalancerPolicyRequest" />
+            <member name="T:Amazon.ElasticLoadBalancing.Model.CreateLoadBalancerPolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates a policy that enables Proxy Protocol on the specified load balancer.
+                </para>
+                <code
+                    title="To create a policy that enables Proxy Protocol on a load balancer"
+                    source=".\AWSSDKDocSamples\ElasticLoadBalancing\ElasticLoadBalancing.GeneratedSamples.cs"
+                    region="elb-create-load-balancer-policy-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing.CreateLoadBalancerPolicy(Amazon.ElasticLoadBalancing.Model.CreateLoadBalancerPolicyRequest)" />
+            <member name="M:Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancingClient.CreateLoadBalancerPolicy(Amazon.ElasticLoadBalancing.Model.CreateLoadBalancerPolicyRequest)" />
+            <member name="T:Amazon.ElasticLoadBalancing.Model.CreateLoadBalancerPolicyRequest" />
+            <member name="T:Amazon.ElasticLoadBalancing.Model.CreateLoadBalancerPolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates a public key policy.
+                </para>
+                <code
+                    title="To create a public key policy"
+                    source=".\AWSSDKDocSamples\ElasticLoadBalancing\ElasticLoadBalancing.GeneratedSamples.cs"
+                    region="elb-create-load-balancer-policy-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing.CreateLoadBalancerPolicy(Amazon.ElasticLoadBalancing.Model.CreateLoadBalancerPolicyRequest)" />
+            <member name="M:Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancingClient.CreateLoadBalancerPolicy(Amazon.ElasticLoadBalancing.Model.CreateLoadBalancerPolicyRequest)" />
+            <member name="T:Amazon.ElasticLoadBalancing.Model.CreateLoadBalancerPolicyRequest" />
+            <member name="T:Amazon.ElasticLoadBalancing.Model.CreateLoadBalancerPolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates a backend server authentication policy that enables authentication on your backend instance using a public key policy.
+                </para>
+                <code
+                    title="To create a backend server authentication policy"
+                    source=".\AWSSDKDocSamples\ElasticLoadBalancing\ElasticLoadBalancing.GeneratedSamples.cs"
+                    region="elb-create-load-balancer-policy-3" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing.DeleteLoadBalancer(Amazon.ElasticLoadBalancing.Model.DeleteLoadBalancerRequest)" />
+            <member name="M:Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancingClient.DeleteLoadBalancer(Amazon.ElasticLoadBalancing.Model.DeleteLoadBalancerRequest)" />
+            <member name="T:Amazon.ElasticLoadBalancing.Model.DeleteLoadBalancerRequest" />
+            <member name="T:Amazon.ElasticLoadBalancing.Model.DeleteLoadBalancerResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example deletes the specified load balancer.
+                </para>
+                <code
+                    title="To delete a load balancer"
+                    source=".\AWSSDKDocSamples\ElasticLoadBalancing\ElasticLoadBalancing.GeneratedSamples.cs"
+                    region="elb-delete-load-balancer-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing.DeleteLoadBalancerListeners(Amazon.ElasticLoadBalancing.Model.DeleteLoadBalancerListenersRequest)" />
+            <member name="M:Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancingClient.DeleteLoadBalancerListeners(Amazon.ElasticLoadBalancing.Model.DeleteLoadBalancerListenersRequest)" />
+            <member name="T:Amazon.ElasticLoadBalancing.Model.DeleteLoadBalancerListenersRequest" />
+            <member name="T:Amazon.ElasticLoadBalancing.Model.DeleteLoadBalancerListenersResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example deletes the listener for the specified port from the specified load balancer.
+                </para>
+                <code
+                    title="To delete a listener from your load balancer"
+                    source=".\AWSSDKDocSamples\ElasticLoadBalancing\ElasticLoadBalancing.GeneratedSamples.cs"
+                    region="elb-delete-load-balancer-listeners-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing.DeleteLoadBalancerPolicy(Amazon.ElasticLoadBalancing.Model.DeleteLoadBalancerPolicyRequest)" />
+            <member name="M:Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancingClient.DeleteLoadBalancerPolicy(Amazon.ElasticLoadBalancing.Model.DeleteLoadBalancerPolicyRequest)" />
+            <member name="T:Amazon.ElasticLoadBalancing.Model.DeleteLoadBalancerPolicyRequest" />
+            <member name="T:Amazon.ElasticLoadBalancing.Model.DeleteLoadBalancerPolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example deletes the specified policy from the specified load balancer. The policy must not be enabled on any listener.
+                </para>
+                <code
+                    title="To delete a policy from your load balancer"
+                    source=".\AWSSDKDocSamples\ElasticLoadBalancing\ElasticLoadBalancing.GeneratedSamples.cs"
+                    region="elb-delete-load-balancer-policy-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing.DeregisterInstancesFromLoadBalancer(Amazon.ElasticLoadBalancing.Model.DeregisterInstancesFromLoadBalancerRequest)" />
+            <member name="M:Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancingClient.DeregisterInstancesFromLoadBalancer(Amazon.ElasticLoadBalancing.Model.DeregisterInstancesFromLoadBalancerRequest)" />
+            <member name="T:Amazon.ElasticLoadBalancing.Model.DeregisterInstancesFromLoadBalancerRequest" />
+            <member name="T:Amazon.ElasticLoadBalancing.Model.DeregisterInstancesFromLoadBalancerResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example deregisters the specified instance from the specified load balancer.
+                </para>
+                <code
+                    title="To deregister instances from a load balancer"
+                    source=".\AWSSDKDocSamples\ElasticLoadBalancing\ElasticLoadBalancing.GeneratedSamples.cs"
+                    region="elb-deregister-instances-from-load-balancer-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing.DescribeInstanceHealth(Amazon.ElasticLoadBalancing.Model.DescribeInstanceHealthRequest)" />
+            <member name="M:Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancingClient.DescribeInstanceHealth(Amazon.ElasticLoadBalancing.Model.DescribeInstanceHealthRequest)" />
+            <member name="T:Amazon.ElasticLoadBalancing.Model.DescribeInstanceHealthRequest" />
+            <member name="T:Amazon.ElasticLoadBalancing.Model.DescribeInstanceHealthResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes the health of the instances for the specified load balancer.
+                </para>
+                <code
+                    title="To describe the health of the instances for a load balancer"
+                    source=".\AWSSDKDocSamples\ElasticLoadBalancing\ElasticLoadBalancing.GeneratedSamples.cs"
+                    region="elb-describe-instance-health-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing.DescribeLoadBalancerAttributes(Amazon.ElasticLoadBalancing.Model.DescribeLoadBalancerAttributesRequest)" />
+            <member name="M:Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancingClient.DescribeLoadBalancerAttributes(Amazon.ElasticLoadBalancing.Model.DescribeLoadBalancerAttributesRequest)" />
+            <member name="T:Amazon.ElasticLoadBalancing.Model.DescribeLoadBalancerAttributesRequest" />
+            <member name="T:Amazon.ElasticLoadBalancing.Model.DescribeLoadBalancerAttributesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes the attributes of the specified load balancer.
+                </para>
+                <code
+                    title="To describe the attributes of a load balancer"
+                    source=".\AWSSDKDocSamples\ElasticLoadBalancing\ElasticLoadBalancing.GeneratedSamples.cs"
+                    region="elb-describe-load-balancer-attributes-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing.DescribeLoadBalancerPolicies(Amazon.ElasticLoadBalancing.Model.DescribeLoadBalancerPoliciesRequest)" />
+            <member name="M:Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancingClient.DescribeLoadBalancerPolicies(Amazon.ElasticLoadBalancing.Model.DescribeLoadBalancerPoliciesRequest)" />
+            <member name="T:Amazon.ElasticLoadBalancing.Model.DescribeLoadBalancerPoliciesRequest" />
+            <member name="T:Amazon.ElasticLoadBalancing.Model.DescribeLoadBalancerPoliciesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes the specified policy associated with the specified load balancer.
+                </para>
+                <code
+                    title="To describe a policy associated with a load balancer"
+                    source=".\AWSSDKDocSamples\ElasticLoadBalancing\ElasticLoadBalancing.GeneratedSamples.cs"
+                    region="elb-describe-load-balancer-policies-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing.DescribeLoadBalancerPolicyTypes(Amazon.ElasticLoadBalancing.Model.DescribeLoadBalancerPolicyTypesRequest)" />
+            <member name="M:Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancingClient.DescribeLoadBalancerPolicyTypes(Amazon.ElasticLoadBalancing.Model.DescribeLoadBalancerPolicyTypesRequest)" />
+            <member name="T:Amazon.ElasticLoadBalancing.Model.DescribeLoadBalancerPolicyTypesRequest" />
+            <member name="T:Amazon.ElasticLoadBalancing.Model.DescribeLoadBalancerPolicyTypesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes the specified load balancer policy type.
+                </para>
+                <code
+                    title="To describe a load balancer policy type defined by Elastic Load Balancing"
+                    source=".\AWSSDKDocSamples\ElasticLoadBalancing\ElasticLoadBalancing.GeneratedSamples.cs"
+                    region="elb-describe-load-balancer-policy-types-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing.DescribeLoadBalancers(Amazon.ElasticLoadBalancing.Model.DescribeLoadBalancersRequest)" />
+            <member name="M:Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancingClient.DescribeLoadBalancers(Amazon.ElasticLoadBalancing.Model.DescribeLoadBalancersRequest)" />
+            <member name="T:Amazon.ElasticLoadBalancing.Model.DescribeLoadBalancersRequest" />
+            <member name="T:Amazon.ElasticLoadBalancing.Model.DescribeLoadBalancersResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes the specified load balancer.
+                </para>
+                <code
+                    title="To describe one of your load balancers"
+                    source=".\AWSSDKDocSamples\ElasticLoadBalancing\ElasticLoadBalancing.GeneratedSamples.cs"
+                    region="elb-describe-load-balancers-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing.DescribeTags(Amazon.ElasticLoadBalancing.Model.DescribeTagsRequest)" />
+            <member name="M:Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancingClient.DescribeTags(Amazon.ElasticLoadBalancing.Model.DescribeTagsRequest)" />
+            <member name="T:Amazon.ElasticLoadBalancing.Model.DescribeTagsRequest" />
+            <member name="T:Amazon.ElasticLoadBalancing.Model.DescribeTagsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes the tags for the specified load balancer.
+                </para>
+                <code
+                    title="To describe the tags for a load balancer"
+                    source=".\AWSSDKDocSamples\ElasticLoadBalancing\ElasticLoadBalancing.GeneratedSamples.cs"
+                    region="elb-describe-tags-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing.DetachLoadBalancerFromSubnets(Amazon.ElasticLoadBalancing.Model.DetachLoadBalancerFromSubnetsRequest)" />
+            <member name="M:Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancingClient.DetachLoadBalancerFromSubnets(Amazon.ElasticLoadBalancing.Model.DetachLoadBalancerFromSubnetsRequest)" />
+            <member name="T:Amazon.ElasticLoadBalancing.Model.DetachLoadBalancerFromSubnetsRequest" />
+            <member name="T:Amazon.ElasticLoadBalancing.Model.DetachLoadBalancerFromSubnetsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example detaches the specified load balancer from the specified subnet.
+                </para>
+                <code
+                    title="To detach a load balancer from a subnet"
+                    source=".\AWSSDKDocSamples\ElasticLoadBalancing\ElasticLoadBalancing.GeneratedSamples.cs"
+                    region="elb-detach-load-balancer-from-subnets-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing.DisableAvailabilityZonesForLoadBalancer(Amazon.ElasticLoadBalancing.Model.DisableAvailabilityZonesForLoadBalancerRequest)" />
+            <member name="M:Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancingClient.DisableAvailabilityZonesForLoadBalancer(Amazon.ElasticLoadBalancing.Model.DisableAvailabilityZonesForLoadBalancerRequest)" />
+            <member name="T:Amazon.ElasticLoadBalancing.Model.DisableAvailabilityZonesForLoadBalancerRequest" />
+            <member name="T:Amazon.ElasticLoadBalancing.Model.DisableAvailabilityZonesForLoadBalancerResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example removes the specified Availability Zone from the set of Availability Zones for the specified load balancer.
+                </para>
+                <code
+                    title="To disable an Availability Zone for a load balancer"
+                    source=".\AWSSDKDocSamples\ElasticLoadBalancing\ElasticLoadBalancing.GeneratedSamples.cs"
+                    region="elb-disable-availability-zones-for-load-balancer-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing.EnableAvailabilityZonesForLoadBalancer(Amazon.ElasticLoadBalancing.Model.EnableAvailabilityZonesForLoadBalancerRequest)" />
+            <member name="M:Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancingClient.EnableAvailabilityZonesForLoadBalancer(Amazon.ElasticLoadBalancing.Model.EnableAvailabilityZonesForLoadBalancerRequest)" />
+            <member name="T:Amazon.ElasticLoadBalancing.Model.EnableAvailabilityZonesForLoadBalancerRequest" />
+            <member name="T:Amazon.ElasticLoadBalancing.Model.EnableAvailabilityZonesForLoadBalancerResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example adds the specified Availability Zone to the specified load balancer.
+                </para>
+                <code
+                    title="To enable an Availability Zone for a load balancer"
+                    source=".\AWSSDKDocSamples\ElasticLoadBalancing\ElasticLoadBalancing.GeneratedSamples.cs"
+                    region="elb-enable-availability-zones-for-load-balancer-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing.ModifyLoadBalancerAttributes(Amazon.ElasticLoadBalancing.Model.ModifyLoadBalancerAttributesRequest)" />
+            <member name="M:Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancingClient.ModifyLoadBalancerAttributes(Amazon.ElasticLoadBalancing.Model.ModifyLoadBalancerAttributesRequest)" />
+            <member name="T:Amazon.ElasticLoadBalancing.Model.ModifyLoadBalancerAttributesRequest" />
+            <member name="T:Amazon.ElasticLoadBalancing.Model.ModifyLoadBalancerAttributesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example enables cross-zone load balancing for the specified load balancer.
+                </para>
+                <code
+                    title="To enable cross-zone load balancing"
+                    source=".\AWSSDKDocSamples\ElasticLoadBalancing\ElasticLoadBalancing.GeneratedSamples.cs"
+                    region="elb-modify-load-balancer-attributes-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing.ModifyLoadBalancerAttributes(Amazon.ElasticLoadBalancing.Model.ModifyLoadBalancerAttributesRequest)" />
+            <member name="M:Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancingClient.ModifyLoadBalancerAttributes(Amazon.ElasticLoadBalancing.Model.ModifyLoadBalancerAttributesRequest)" />
+            <member name="T:Amazon.ElasticLoadBalancing.Model.ModifyLoadBalancerAttributesRequest" />
+            <member name="T:Amazon.ElasticLoadBalancing.Model.ModifyLoadBalancerAttributesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example enables connection draining for the specified load balancer.
+                </para>
+                <code
+                    title="To enable connection draining"
+                    source=".\AWSSDKDocSamples\ElasticLoadBalancing\ElasticLoadBalancing.GeneratedSamples.cs"
+                    region="elb-modify-load-balancer-attributes-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing.RegisterInstancesWithLoadBalancer(Amazon.ElasticLoadBalancing.Model.RegisterInstancesWithLoadBalancerRequest)" />
+            <member name="M:Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancingClient.RegisterInstancesWithLoadBalancer(Amazon.ElasticLoadBalancing.Model.RegisterInstancesWithLoadBalancerRequest)" />
+            <member name="T:Amazon.ElasticLoadBalancing.Model.RegisterInstancesWithLoadBalancerRequest" />
+            <member name="T:Amazon.ElasticLoadBalancing.Model.RegisterInstancesWithLoadBalancerResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example registers the specified instance with the specified load balancer.
+                </para>
+                <code
+                    title="To register instances with a load balancer"
+                    source=".\AWSSDKDocSamples\ElasticLoadBalancing\ElasticLoadBalancing.GeneratedSamples.cs"
+                    region="elb-register-instances-with-load-balancer-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing.RemoveTags(Amazon.ElasticLoadBalancing.Model.RemoveTagsRequest)" />
+            <member name="M:Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancingClient.RemoveTags(Amazon.ElasticLoadBalancing.Model.RemoveTagsRequest)" />
+            <member name="T:Amazon.ElasticLoadBalancing.Model.RemoveTagsRequest" />
+            <member name="T:Amazon.ElasticLoadBalancing.Model.RemoveTagsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example removes the specified tag from the specified load balancer.
+                </para>
+                <code
+                    title="To remove tags from a load balancer"
+                    source=".\AWSSDKDocSamples\ElasticLoadBalancing\ElasticLoadBalancing.GeneratedSamples.cs"
+                    region="elb-remove-tags-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing.SetLoadBalancerListenerSSLCertificate(Amazon.ElasticLoadBalancing.Model.SetLoadBalancerListenerSSLCertificateRequest)" />
+            <member name="M:Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancingClient.SetLoadBalancerListenerSSLCertificate(Amazon.ElasticLoadBalancing.Model.SetLoadBalancerListenerSSLCertificateRequest)" />
+            <member name="T:Amazon.ElasticLoadBalancing.Model.SetLoadBalancerListenerSSLCertificateRequest" />
+            <member name="T:Amazon.ElasticLoadBalancing.Model.SetLoadBalancerListenerSSLCertificateResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example replaces the existing SSL certificate for the specified HTTPS listener.
+                </para>
+                <code
+                    title="To update the SSL certificate for an HTTPS listener"
+                    source=".\AWSSDKDocSamples\ElasticLoadBalancing\ElasticLoadBalancing.GeneratedSamples.cs"
+                    region="elb-set-load-balancer-listener-ssl-certificate-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing.SetLoadBalancerPoliciesForBackendServer(Amazon.ElasticLoadBalancing.Model.SetLoadBalancerPoliciesForBackendServerRequest)" />
+            <member name="M:Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancingClient.SetLoadBalancerPoliciesForBackendServer(Amazon.ElasticLoadBalancing.Model.SetLoadBalancerPoliciesForBackendServerRequest)" />
+            <member name="T:Amazon.ElasticLoadBalancing.Model.SetLoadBalancerPoliciesForBackendServerRequest" />
+            <member name="T:Amazon.ElasticLoadBalancing.Model.SetLoadBalancerPoliciesForBackendServerResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example replaces the policies that are currently associated with the specified port.
+                </para>
+                <code
+                    title="To replace the policies associated with a port for a backend instance"
+                    source=".\AWSSDKDocSamples\ElasticLoadBalancing\ElasticLoadBalancing.GeneratedSamples.cs"
+                    region="elb-set-load-balancer-policies-for-backend-server-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing.SetLoadBalancerPoliciesOfListener(Amazon.ElasticLoadBalancing.Model.SetLoadBalancerPoliciesOfListenerRequest)" />
+            <member name="M:Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancingClient.SetLoadBalancerPoliciesOfListener(Amazon.ElasticLoadBalancing.Model.SetLoadBalancerPoliciesOfListenerRequest)" />
+            <member name="T:Amazon.ElasticLoadBalancing.Model.SetLoadBalancerPoliciesOfListenerRequest" />
+            <member name="T:Amazon.ElasticLoadBalancing.Model.SetLoadBalancerPoliciesOfListenerResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example replaces the policies that are currently associated with the specified listener.
+                </para>
+                <code
+                    title="To replace the policies associated with a listener"
+                    source=".\AWSSDKDocSamples\ElasticLoadBalancing\ElasticLoadBalancing.GeneratedSamples.cs"
+                    region="elb-set-load-balancer-policies-of-listener-1" />
+            </example>
+        </value>
+    </doc>
+</docs>

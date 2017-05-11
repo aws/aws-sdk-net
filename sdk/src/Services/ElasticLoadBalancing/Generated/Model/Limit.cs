@@ -28,47 +28,56 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// Contains the output of ModifyLoadBalancerAttributes.
+    /// Information about an Elastic Load Balancing resource limit for your AWS account.
     /// </summary>
-    public partial class ModifyLoadBalancerAttributesResponse : AmazonWebServiceResponse
+    public partial class Limit
     {
-        private LoadBalancerAttributes _loadBalancerAttributes;
-        private string _loadBalancerName;
+        private string _max;
+        private string _name;
 
         /// <summary>
-        /// Gets and sets the property LoadBalancerAttributes. 
+        /// Gets and sets the property Max. 
         /// <para>
-        /// Information about the load balancer attributes.
+        /// The maximum value of the limit.
         /// </para>
         /// </summary>
-        public LoadBalancerAttributes LoadBalancerAttributes
+        public string Max
         {
-            get { return this._loadBalancerAttributes; }
-            set { this._loadBalancerAttributes = value; }
+            get { return this._max; }
+            set { this._max = value; }
         }
 
-        // Check to see if LoadBalancerAttributes property is set
-        internal bool IsSetLoadBalancerAttributes()
+        // Check to see if Max property is set
+        internal bool IsSetMax()
         {
-            return this._loadBalancerAttributes != null;
+            return this._max != null;
         }
 
         /// <summary>
-        /// Gets and sets the property LoadBalancerName. 
+        /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the load balancer.
+        /// The name of the limit. The possible values are:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// classic-listeners
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// classic-load-balancers
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
-        public string LoadBalancerName
+        public string Name
         {
-            get { return this._loadBalancerName; }
-            set { this._loadBalancerName = value; }
+            get { return this._name; }
+            set { this._name = value; }
         }
 
-        // Check to see if LoadBalancerName property is set
-        internal bool IsSetLoadBalancerName()
+        // Check to see if Name property is set
+        internal bool IsSetName()
         {
-            return this._loadBalancerName != null;
+            return this._name != null;
         }
 
     }
